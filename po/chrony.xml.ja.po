@@ -1,0 +1,609 @@
+# Japanese translations for PACKAGE package
+# PACKAGE パッケージに対する英訳.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"PO-Revision-Date: 2018-06-28 07:14+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: chrony.xml:13
+#, no-c-format
+msgid "Time Synchronization with NTP"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:16
+#, no-c-format
+msgid ""
+"The NTP (network time protocol) mechanism is a protocol for synchronizing "
+"the system time over the network. First, a machine can obtain the time from "
+"a server that is a reliable time source. Second, a machine can itself act as "
+"a time source for other computers in the network. The goal is twofold&mdash;"
+"maintaining the absolute time and synchronizing the system time of all "
+"machines within a network."
+msgstr ""
+
+#. Tag: dm:docmanager
+#: chrony.xml:25
+#, no-c-format
+msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:30
+#, no-c-format
+msgid ""
+"Maintaining an exact system time is important in many situations. The built-"
+"in hardware clock does often not meet the requirements of applications such "
+"as databases or clusters. Manual correction of the system time would lead to "
+"severe problems because, for example, a backward leap can cause malfunction "
+"of critical applications. Within a network, it is usually necessary to "
+"synchronize the system time of all machines, but manual time adjustment is a "
+"bad approach. NTP provides a mechanism to solve these problems. The NTP "
+"service continuously adjusts the system time with reliable time servers in "
+"the network. It further enables the management of local reference clocks, "
+"such as radio-controlled clocks."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:42
+#, no-c-format
+msgid ""
+"Since &productname; 15, &chrony; is the default implementation of NTP. "
+"&chrony; includes two parts; &chronyd; is a daemon that can be started at "
+"boot time and &chronyc; is a command line interface program to monitor the "
+"performance of &chronyd;, and to change various operating parameters at "
+"runtime."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:50
+#, no-c-format
+msgid ""
+"To enable time synchronization by means of active directory, follow the "
+"instructions found at <xref linkend=\"proc.ad.join\"/>."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:56
+#, no-c-format
+msgid "Configuring an NTP Client with &yast;"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:58
+#, no-c-format
+msgid ""
+"The NTP daemon (&chronyd;) coming with the <systemitem>chrony</systemitem> "
+"package is preset to use the local computer hardware clock as a time "
+"reference. The precision of a hardware clock heavily depends on its time "
+"source. For example, an atomic clock or GPS receiver is a very precise time "
+"source, while a common RTC chip is not a reliable time source. &yast; "
+"simplifies the configuration of an NTP client."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:67
+#, no-c-format
+msgid ""
+"In the &yast; NTP client configuration (<menuchoice><guimenu>Network "
+"Services</guimenu> <guimenu>NTP Configuration</guimenu></menuchoice>) "
+"window, you can specify when to start the NTP daemon, the type of the "
+"configuration source, and add custom time servers."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:75
+#, no-c-format
+msgid "NTP Configuration Window"
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:87
+#, no-c-format
+msgid "NTP Daemon Start"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:88
+#, no-c-format
+msgid "You can choose from three options for when to start the NTP daemon:"
+msgstr ""
+
+#. Tag: guimenu
+#: chrony.xml:93
+#, no-c-format
+msgid "Only Manually"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:96
+#, no-c-format
+msgid ""
+"Select <guimenu>Only Manually</guimenu>, if you want to manually start the "
+"&chrony; daemon."
+msgstr ""
+
+#. Tag: guimenu
+#: chrony.xml:103
+#, no-c-format
+msgid "Synchronize without Daemon"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:106
+#, no-c-format
+msgid ""
+"Select <guimenu>Synchronize without Daemon</guimenu> to set the system time "
+"periodically without a permanently running &chrony;. You can set the "
+"<guimenu>Interval of the Synchronization in Minutes</guimenu>."
+msgstr ""
+
+#. Tag: guimenu
+#: chrony.xml:114
+#, no-c-format
+msgid "Now and On Boot"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:117
+#, no-c-format
+msgid ""
+"Select <guimenu>Now and On Boot</guimenu> to start &chronyd; automatically "
+"when the system is booted. This setting is recommended."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:127
+#, no-c-format
+msgid "Type of the Configuration Source"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:128
+#, no-c-format
+msgid ""
+"In the <guimenu>Configuration Source</guimenu> drop-down box, select either "
+"<guimenu>Dynamic</guimenu> or <guimenu>Static</guimenu>. Set "
+"<guimenu>Static</guimenu> if your server uses only a fixed set of (public) "
+"NTP servers, while <guimenu>Dynamic</guimenu> is better if your internal "
+"network offers NTP servers via DHCP."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:138
+#, no-c-format
+msgid "Configure Time Servers"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:139
+#, no-c-format
+msgid ""
+"Time servers for the client to query are listed in the lower part of the "
+"<guimenu>NTP Configuration</guimenu> window. Modify this list as needed with "
+"<guimenu>Add</guimenu>, <guimenu>Edit</guimenu>, and <guimenu>Delete</"
+"guimenu>."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:145
+#, no-c-format
+msgid "Click <guimenu>Add</guimenu> to add a new time server:"
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:149
+#, no-c-format
+msgid "Adding a Time Server"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:161
+#, no-c-format
+msgid ""
+"In the <guimenu>Address</guimenu> field, type the URL of the time server or "
+"pool of time servers with which you want to synchronize the machine time. "
+"After the URL is complete, click <guimenu>Test</guimenu> to verify that it "
+"points to a valid time source."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:169
+#, no-c-format
+msgid ""
+"Activate <guimenu>Quick Initial Sync</guimenu> to speed up the time "
+"synchronization by sending more requests at the &chronyd; daemon start."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:175
+#, no-c-format
+msgid ""
+"Activate <guimenu>Start Offline</guimenu> to speed up the boot time on "
+"systems that start the &chronyd; daemon automatically and may not have an "
+"Internet connection at boot time. This option is useful for example for "
+"laptops whose network connection is managed by &nm;."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:183
+#, no-c-format
+msgid "Confirm with <guimenu>OK</guimenu>."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:196
+#, no-c-format
+msgid "Manually Configuring NTP in the Network"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:198
+#, no-c-format
+msgid ""
+"&chrony; reads its configuration from the <filename>/etc/chrony.conf</"
+"filename> file. To keep the computer clock synchronized, you need to tell "
+"&chrony; what time servers to use. You can use specific server names or IP "
+"addresses, for example:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:205
+#, no-c-format
+msgid ""
+"server 0.europe.pool.ntp.org\n"
+"server 1.europe.pool.ntp.org\n"
+"server 2.europe.pool.ntp.org"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:207
+#, no-c-format
+msgid ""
+"You can also specify a <emphasis>pool</emphasis> name. Pool name resolves to "
+"several IP addresses:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:212
+#, no-c-format
+msgid "pool pool.ntp.org"
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:215
+#, no-c-format
+msgid "Computers on the Same Network"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:216
+#, no-c-format
+msgid ""
+"To synchronize time on multiple computers on the same network, we do not "
+"recommend to synchronize all of them with an external server. A good "
+"practice is to make one computer the time server which is synchronized with "
+"an external time server, and the other computers act as its clients. Add a "
+"<literal>local</literal> directive to the server's <filename>/etc/chrony."
+"conf</filename> to distinguish it from an authoritative time server:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:225
+#, no-c-format
+msgid "local stratum 10"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:228
+#, no-c-format
+msgid "To start &chrony;, run:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:232
+#, no-c-format
+msgid "systemctl start chronyd.service"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:234
+#, no-c-format
+msgid ""
+"After initializing &chronyd;, it takes some time before the time is "
+"stabilized and the drift file for correcting the local computer clock is "
+"created. With the drift file, the systematic error of the hardware clock can "
+"be computed when the computer is powered on. The correction is used "
+"immediately, resulting in a higher stability of the system time."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:242
+#, no-c-format
+msgid ""
+"To enable the service so that &chrony; starts automatically at boot time, "
+"run:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:247
+#, no-c-format
+msgid "systemctl enable chronyd.service"
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:250
+#, no-c-format
+msgid "Configure &chronyd; at Runtime Using &chronyc;"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:252
+#, no-c-format
+msgid ""
+"You can use &chronyc; to change the behavior of &chronyd; at runtime. It "
+"also generates status reports about the operation of &chronyd;."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:257
+#, no-c-format
+msgid ""
+"You can run &chronyc; either in interactive or non-interactive mode. To run "
+"&chronyc; interactively, enter &chronyc; on the command line. It displays a "
+"prompt and waits for your command input. For example, to check how many NTP "
+"sources are online or offline, run:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:264
+#, no-c-format
+msgid ""
+"&prompt.root;&chronyc;\n"
+"chronyc> activity\n"
+"200 OK\n"
+"4 sources online\n"
+"2 sources offline\n"
+"1 sources doing burst (return to online)\n"
+"1 sources doing burst (return to offline)\n"
+"0 sources with unknown address"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:266
+#, no-c-format
+msgid ""
+"To exit &chronyc;'s prompt, enter <command>quit</command> or <command>exit</"
+"command>."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:271
+#, no-c-format
+msgid ""
+"If you do not need to use the interactive prompt, enter the command directly:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:276
+#, no-c-format
+msgid "&prompt.root;&chronyc; activity"
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:279
+#, no-c-format
+msgid "Temporary Changes"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:280
+#, no-c-format
+msgid ""
+"Changes made using &chronyc; are not permanent. They will be lost after the "
+"next &chronyd; restart. For permanent changes, modify <filename>/etc/chrony."
+"conf</filename>."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:287
+#, no-c-format
+msgid ""
+"For a complete list of &chronyc; commands, see its manual page (<command>man "
+"1 chronyc</command>)."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:293
+#, no-c-format
+msgid "Dynamic Time Synchronization at Runtime"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:297
+#, no-c-format
+msgid ""
+"If the system boots without network connection, &chronyd; starts up, but it "
+"cannot resolve DNS names of the time servers set in the configuration file. "
+"This can happen if you use &nm; with an encrypted Wi-Fi."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:303
+#, no-c-format
+msgid ""
+"&chronyd; keeps trying to resolve the time server names specified by the "
+"<option>server</option>, <option>pool</option>, and <option>peer</option> "
+"directives in an increasing time interval until it succeeds."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:309
+#, no-c-format
+msgid ""
+"If the time server will not be reachable when &chronyd; is started, you can "
+"specify the <option>offline</option> option:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:314
+#, no-c-format
+msgid "server <replaceable>server_address</replaceable> offline"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:316
+#, no-c-format
+msgid ""
+"&chronyd; will then not try to poll the server until it is enabled using the "
+"following command:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:321
+#, no-c-format
+msgid "&prompt.root;chronyc online <replaceable>server_address</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:323
+#, no-c-format
+msgid ""
+"When the <option>auto_offline</option> option is set, &chronyd; assumes that "
+"the time server has gone offline when two requests have been sent to it "
+"without receiving a response. This option avoids the need to run the "
+"'offline' command from &chronyc; when disconnecting the network link."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:334
+#, no-c-format
+msgid "Setting Up a Local Reference Clock"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:336
+#, no-c-format
+msgid ""
+"The software package &chrony; relies on other programs (such as "
+"<systemitem>gpsd</systemitem>) to access the timing data via the SHM or SOCK "
+"driver. Use the <option>refclock</option> directive in <filename>/etc/chrony."
+"conf</filename> to specify a hardware reference clock to be used as a time "
+"source. It has two mandatory parameters: a driver name and a driver-specific "
+"parameter. The two parameters are followed by zero or more <option>refclock</"
+"option> options. &chronyd; includes the following drivers:"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:349
+#, no-c-format
+msgid "PPS - driver for the kernel 'pulse per second' API. For example:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:352
+#, no-c-format
+msgid "refclock PPS /dev/pps0 lock NMEA refid GPS"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:355
+#, no-c-format
+msgid "SHM - NTP shared memory driver. For example:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:358
+#, no-c-format
+msgid ""
+"refclock SHM 0 poll 3 refid GPS1\n"
+"refclock SHM 1:perm=0644 refid GPS2"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:361
+#, no-c-format
+msgid "SOCK - Unix domain socket driver. For example:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:364
+#, no-c-format
+msgid "refclock SOCK /var/run/chrony.ttyS0.sock"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:367
+#, no-c-format
+msgid "PHC - PTP hardware clock driver. For example:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:370
+#, no-c-format
+msgid ""
+"refclock PHC /dev/ptp0 poll 0 dpoll -2 offset -37\n"
+"refclock PHC /dev/ptp1:nocrossts poll 3 pps"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:374
+#, no-c-format
+msgid ""
+"For more information on individual drivers' options, see <command>man 8 "
+"chrony.conf</command>."
+msgstr ""
+
+#. Tag: title
+#: chrony.xml:380
+#, no-c-format
+msgid "Clock Synchronization to an External Time Reference (ETR)"
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:384
+#, no-c-format
+msgid ""
+"Support for clock synchronization to an external time reference (ETR) is "
+"available. The external time reference sends an oscillator signal and a "
+"synchronization signal every 2**20 (2 to the power of 20) microseconds to "
+"keep TOD clocks of all connected servers synchronized."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:391
+#, no-c-format
+msgid ""
+"For availability two ETR units can be connected to a machine. If the clock "
+"deviates for more than the sync-check tolerance all CPUs get a machine check "
+"that indicates that the clock is not synchronized. If this happens, all DASD "
+"I/O to XRC enabled devices is stopped until the clock is synchronized again."
+msgstr ""
+
+#. Tag: para
+#: chrony.xml:398
+#, no-c-format
+msgid ""
+"The ETR support is activated via two <literal>sysfs</literal> attributes; "
+"run the following commands as &rootuser;:"
+msgstr ""
+
+#. Tag: screen
+#: chrony.xml:403
+#, no-c-format
+msgid ""
+"echo 1 &gt; /sys/devices/system/etr/etr0/online\n"
+"echo 1 &gt; /sys/devices/system/etr/etr1/online"
+msgstr ""

@@ -1,0 +1,544 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: title
+#: storage_nvmeof.xml:9
+#, no-c-format
+msgid "&nvmeof;"
+msgstr ""
+
+#. Tag: dm:docmanager
+#: storage_nvmeof.xml:11
+#, no-c-format
+msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:16
+#, no-c-format
+msgid "This chapter describes how to set up an &nvmeof; host and target."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:22 storage_nvmeof.xml:263
+#, no-c-format
+msgid "Overview"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:23
+#, no-c-format
+msgid "<emphasis>NVM Express</emphasis> (<emphasis>&nvme;</emphasis>) is an interface standard for accessing non-volatile storage, commonly SSD disks. &nvme; supports much higher speeds and has a lower latency than SATA."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:29
+#, no-c-format
+msgid "<emphasis>&nvmeof;</emphasis> is an architecture to access &nvme; storage over different networking fabrics, for example <emphasis>RDMA</emphasis> or <emphasis>&nvme; over Fibre Channel</emphasis> (<emphasis>&fcnvme;</emphasis>). The role of &nvmeof; is similar to iSCSI. To increase the fault-tolerance, &nvmeof; has a built-in support for multipathing. The &nvmeof; multipathing is not based on the traditional &dmmpio;."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:38
+#, no-c-format
+msgid "The <emphasis>&nvme; host</emphasis> is the machine that connects to an &nvme; target. The <emphasis>&nvme; target</emphasis> is the machine that shares its &nvme; block devices."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:43
+#, no-c-format
+msgid "&nvme; is supported on &sls; &productnumber;. There are Kernel modules available for the &nvme; block storage and &nvmeof; target and host."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:48
+#, no-c-format
+msgid "To see if your hardware requires any special consideration, refer to <xref linkend=\"sec.nvmeof.hardware\"/>."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:54
+#, no-c-format
+msgid "Setting Up an &nvmeof; Host"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:55
+#, no-c-format
+msgid "To use &nvmeof;, a target must be available with one of the supported networking methods. Supported are &nvme; over Fibre Channel and RDMA. The following sections describe how to connect a host to an &nvme; target."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:62 storage_nvmeof.xml:156
+#, no-c-format
+msgid "Installing Command Line Client"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:63
+#, no-c-format
+msgid "To use &nvmeof;, you need the <command>nvme</command> command line tool. Install it with <command>zypper</command>:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:67
+#, no-c-format
+msgid "&prompt.sudo;<command>zypper in nvme-cli</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:68
+#, no-c-format
+msgid "Use <command>nvme --help</command> to list all available subcommands. Man pages are available for <command>nvme</command> subcommands. Consult them by executing <command>man nvme-<replaceable>SUBCOMMAND</replaceable></command>. For example, to view the man page for the <option>discover</option> subcommand, execute <command>man nvme-discover</command>."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:78
+#, no-c-format
+msgid "Discovering &nvmeof; Targets"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:79
+#, no-c-format
+msgid "To list available &nvme; subsystems on the &nvmeof; target, you need the discovery controller address and service ID."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:83
+#, no-c-format
+msgid "&prompt.sudo;<command>nvme discover -t <replaceable>TRANSPORT</replaceable> -a <replaceable>DISCOVERY_CONTROLLER_ADDRESS</replaceable> -s <replaceable>SERVICE_ID</replaceable></command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:84
+#, no-c-format
+msgid "Replace <replaceable>TRANSPORT</replaceable> with the underlying transport medium: <option>loop</option>, <option>rdma</option> or <option>fc</option>. Replace <replaceable>DISCOVERY_CONTROLLER_ADDRESS</replaceable> with the address of the discovery controller. For RDMA this should be an IPv4 address. Replace <replaceable>SERVICE_ID</replaceable> with the transport service ID. If the service is IP based, like RDMA, service ID specifies the port number. For Fibre Channel, the service ID is not required."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:95
+#, no-c-format
+msgid "The &nvme; hosts only see the subsystems they are allowed to connect to."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:99 storage_nvmeof.xml:129
+#, no-c-format
+msgid "Example:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:102
+#, no-c-format
+msgid "&prompt.sudo;<command>nvme discover -t rdma -a 10.0.0.1 -s 4420</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:103
+#, no-c-format
+msgid "For more details, see <command>man nvme-discover</command>."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:108
+#, no-c-format
+msgid "Connecting to &nvmeof; Targets"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:109
+#, no-c-format
+msgid "After you have identified the &nvme; subsystem, you can connect it with the <command>nvme connect</command> command."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:113
+#, no-c-format
+msgid "&prompt.sudo;<command>nvme connect -t <replaceable>transport</replaceable> -a <replaceable>DISCOVERY_CONTROLLER_ADDRESS</replaceable> -s <replaceable>SERVICE_ID</replaceable> -n <replaceable>SUBSYSTEM_NQN</replaceable></command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:114
+#, no-c-format
+msgid "Replace <replaceable>TRANSPORT</replaceable> with the underlying transport medium: <option>loop</option>, <option>rdma</option> or <option>fc</option>. Replace <replaceable>DISCOVERY_CONTROLLER_ADDRESS</replaceable> with the address of the discovery controller. For RDMA this should be an IPv4 address. Replace <replaceable>SERVICE_ID</replaceable> with the transport service ID. If the service is IP based, like RDMA, this specifies the port number. Replace <replaceable>SUBSYSTEM_NQN</replaceable> with the NVMe qualified name of the desired subsystem as found by the discovery command. <emphasis>NQN</emphasis> is the abbreviation for <emphasis> &nvme; Qualified Name</emphasis>. The NQN must be unique."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:130
+#, no-c-format
+msgid "&prompt.sudo;<command>nvme connect -t rdma -a 10.0.0.1 -s 4420 -n nqn.2014-08.com.example:nvme:nvm-subsystem-sn-d78432</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:131
+#, no-c-format
+msgid "Alternatively, use <command>nvme connect-all</command> to connect to all discovered namespaces. For advanced usage see <command>man nvme-connect</command> and <command>man nvme-connect-all</command>."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:139
+#, no-c-format
+msgid "Multipathing"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:140
+#, no-c-format
+msgid "&nvme; native multipathing is enabled by default. To print the layout of the multipath devices, use the command <command>nvme list-subsys</command>. To disable NVMe native multipathing, add <option>nvme-core.multipath=N</option> as a boot parameter."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:147
+#, no-c-format
+msgid "The command <command>multipath -ll</command> has a compatibility mode and displays &nvme; multipath devices."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:154
+#, no-c-format
+msgid "Setting Up an &nvmeof; Target"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:157
+#, no-c-format
+msgid "To configure an &nvmeof; target, you need the <command>nvmetcli</command> command line tool. Install it with <command>zypper</command>:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:161
+#, no-c-format
+msgid "&prompt.sudo;<command>zypper in nvmetcli</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:162
+#, no-c-format
+msgid "The current documentation for <command>nvmetcli</command> is available at <link xlink:href=\"http://git.infradead.org/users/hch/nvmetcli.git/blob_plain/HEAD:/Documentation/nvmetcli.txt\"></link>"
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:168
+#, no-c-format
+msgid "Configuration Steps"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:169
+#, no-c-format
+msgid "The following procedure provides an example of how to set up an &nvmeof; target."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:173
+#, no-c-format
+msgid "The configuration is stored in a tree structure. Use the command <command>cd</command> to navigate. Use <command>ls</command> to list objects. You can create new objects with <command>create</command>."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:181
+#, no-c-format
+msgid "Start the <command>nvmectli</command> interactive shell."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:184
+#, no-c-format
+msgid "&prompt.sudo;<command>nvmetcli</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:187
+#, no-c-format
+msgid "Create a new port."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:190
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd ports</command>\n"
+      "&prompt.nvmetcli;<command>create 1</command>\n"
+      "&prompt.nvmetcli;<command>ls 1/</command>\n"
+      "o- 1\n"
+      "  o- referrals\n"
+      "  o- subsystems"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:193
+#, no-c-format
+msgid "Create an &nvme; subsystem."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:194
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd /subsystems</command>\n"
+      "&prompt.nvmetcli;<command>create nqn.2014-08.org.nvmexpress:NVMf:uuid:c36f2c23-354d-416c-95de-f2b8ec353a82</command>\n"
+      "&prompt.nvmetcli;<command>cd nqn.2014-08.org.nvmexpress:NVMf:uuid:c36f2c23-354d-416c-95de-f2b8ec353a82/</command>\n"
+      "&prompt.nvmetcli;<command>ls</command>\n"
+      "o- nqn.2014-08.org.nvmexpress:NVMf:uuid:c36f2c23-354d-416c-95de-f2b8ec353a82\n"
+      "  o- allowed_hosts\n"
+      "  o- namespaces"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:197
+#, no-c-format
+msgid "Create a new namespace and set an &nvme; device to it."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:200
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd namespaces</command>\n"
+      "&prompt.nvmetcli;<command>create 1</command>\n"
+      "&prompt.nvmetcli;<command>cd 1</command>\n"
+      "&prompt.nvmetcli;<command>set device path=/dev/nvme0n1</command>\n"
+      "Parameter path is now '/dev/nvme0n1'."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:203
+#, no-c-format
+msgid "Enable the previously created namespace."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:206
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd ..</command>\n"
+      "&prompt.nvmetcli;<command>enable</command>\n"
+      "The Namespace has been enabled."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:209
+#, no-c-format
+msgid "Display the created namespace."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:212
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd ..</command>\n"
+      "&prompt.nvmetcli;<command>ls</command>\n"
+      "o- nqn.2014-08.org.nvmexpress:NVMf:uuid:c36f2c23-354d-416c-95de-f2b8ec353a82\n"
+      "  o- allowed_hosts\n"
+      "  o- namespaces\n"
+      "    o- 1"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:215
+#, no-c-format
+msgid "Allow all hosts to use the subsystem. Only do this in secure environments."
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:219
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>set attr allow_any_host=1</command>\n"
+      "Parameter allow_any_host is now '1'."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:220
+#, no-c-format
+msgid "Alternatively, you can allow only specific hosts to connect:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:223
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd nqn.2014-08.org.nvmexpress:NVMf:uuid:c36f2c23-354d-416c-95de-f2b8ec353a82/allowed_hosts/</command>\n"
+      "&prompt.nvmetcli;<command>create hostnqn</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:226
+#, no-c-format
+msgid "List all created objects:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:229
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd /</command>\n"
+      "&prompt.nvmetcli;<command>ls</command>\n"
+      "o- /\n"
+      "  o- hosts\n"
+      "  o- ports\n"
+      "  | o- 1\n"
+      "  |   o- referrals\n"
+      "  |   o- subsystems\n"
+      "  o- subsystems\n"
+      "    o- nqn.2014-08.org.nvmexpress:NVMf:uuid:c36f2c23-354d-416c-95de-f2b8ec353a82\n"
+      "      o- allowed_hosts\n"
+      "      o- namespaces\n"
+      "        o- 1"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:232
+#, no-c-format
+msgid "Make the target available via RDMA:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:235
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd ports/1/</command>\n"
+      "&prompt.nvmetcli;<command>set addr adrfam=ipv4 trtype=rdma traddr=10.0.0.1 trsvcid=4420</command>\n"
+      "Parameter trtype is now 'rdma'.\n"
+      "Parameter adrfam is now 'ipv4'.\n"
+      "Parameter trsvcid is now '4420'.\n"
+      "Parameter traddr is now '10.0.0.1'."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:236
+#, no-c-format
+msgid "Alternatively, you can make it available with Fibre Channel:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:239
+#, no-c-format
+msgid ""
+      "&prompt.nvmetcli;<command>cd ports/1/</command>\n"
+      "&prompt.nvmetcli;<command>set addr adrfam=fc trtype=fc traddr=nn-0x1000000044001123:pn-0x2000000055001123 trsvcid=none</command>"
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:244
+#, no-c-format
+msgid "Back Up and Restore Target Configuration"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:245
+#, no-c-format
+msgid "You can save the target configuration in a JSON file with the following commands:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:249
+#, no-c-format
+msgid ""
+      "&prompt.sudo;<command>nvmetcli</command>\n"
+      "&prompt.nvmetcli;<command>saveconfig nvme-target-backup.json</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:250
+#, no-c-format
+msgid "To restore the configuration, use:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:253
+#, no-c-format
+msgid "&prompt.nvmetcli;<command>restore nvme-target-backup.json</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:254
+#, no-c-format
+msgid "You can also wipe the current configuration:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:257
+#, no-c-format
+msgid "&prompt.nvmetcli;<command>clear</command>"
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:261
+#, no-c-format
+msgid "Special Hardware Configuration"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:264
+#, no-c-format
+msgid "Some hardware needs special configuration to work correctly. Skim the titles of the following sections to see if you are using any of the mentioned devices or vendors."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:271
+#, no-c-format
+msgid "Broadcom"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:272
+#, no-c-format
+msgid "If you are using the <emphasis>Broadcom Emulex LightPulse Fibre Channel SCSI</emphasis> driver, add a Kernel configuration parameter on the target and host for the <literal>lpfc</literal> module:"
+msgstr ""
+
+#. Tag: screen
+#: storage_nvmeof.xml:278
+#, no-c-format
+msgid "&prompt.sudo;<command>echo \"options lpfc lpfc_enable_fc4_type=3\" > /etc/modprobe.d/lpfc.conf</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:279
+#, no-c-format
+msgid "Make sure that the Broadcom adapter firmware has at least version 11.4.204.33. Also make sure that you have the current versions of <package>nvme-cli</package>, <package>nvmetcli</package> and the Kernel installed."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:285
+#, no-c-format
+msgid "To enable a Fibre Channel port as an &nvme; target, an additional module parameter needs to be configured: <option>lpfc_enable_nvmet=<replaceable> COMMA_SEPARATED_WWPNS</replaceable></option>. Enter the WWPN with a leading <literal>0x</literal>, for example <option>lpfc_enable_nvmet=0x2000000055001122,0x2000000055003344</option>. Only listed WWPNs will be configured for target mode. A Fibre Channel port can either be configured as target <emphasis>or</emphasis> as initiator."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:296
+#, no-c-format
+msgid "For more details, also refer to <link xlink:href=\"https://docs.broadcom.com/docs/12379413\"></link>."
+msgstr ""
+
+#. Tag: title
+#: storage_nvmeof.xml:302
+#, no-c-format
+msgid "More Information"
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:303
+#, no-c-format
+msgid "For more details about the abilities of <command>nvme</command>, refer to <command>nvme nvme-help</command>."
+msgstr ""
+
+#. Tag: para
+#: storage_nvmeof.xml:307
+#, no-c-format
+msgid "The following links provide a basic introduction to &nvme; and &nvmeof;:"
+msgstr ""
+

@@ -1,0 +1,1440 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: title
+#: deployment_boot_parameters.xml:11
+#, no-c-format
+msgid "Boot Parameters"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:14
+#, no-c-format
+msgid "&productname; allows setting several parameters during boot, for example choosing the source of the installation data or setting the network configuration."
+msgstr ""
+
+#. Tag: dm:docmanager
+#: deployment_boot_parameters.xml:21
+#, no-c-format
+msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:27
+#, no-c-format
+msgid "Using the appropriate set of boot parameters helps simplify your installation procedure. Many parameters can also be configured later using the linuxrc routines, but using the boot parameters is easier. In some automated setups, the boot parameters can be provided with <filename>initrd</filename> or an <filename>info</filename> file."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:34
+#, no-c-format
+msgid "The way the system is started for the installation depends on the architecture&mdash;system start-up is different for PC (&amd64;/&intel64;) or mainframe, for example. If you install &productname; as a &vmguest; on a &kvm; or &xen; hypervisor, follow the instructions for the &amd64;/&intel64; architecture."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:42
+#, no-c-format
+msgid "Boot Options and Boot Parameters"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:43
+#, no-c-format
+msgid "The terms <emphasis>Boot Parameters</emphasis> and <emphasis>Boot Options</emphasis> are often used interchangeably. In this documentation, we mostly use the term <emphasis>Boot Parameters</emphasis>."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:50
+#, no-c-format
+msgid "Using the Default Boot Parameters"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:51
+#, no-c-format
+msgid "The boot parameters are described in detail in <xref linkend=\"cha.install\"/>. Generally, selecting <guimenu>Installation</guimenu> starts the installation boot process."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:56
+#, no-c-format
+msgid "If problems occur, use <guimenu>Installation&mdash;ACPI Disabled</guimenu> or <guimenu>Installation&mdash;Safe Settings</guimenu>. For more information about troubleshooting the installation process, refer to <xref linkend=\"cha.installation_troubleshooting\"/>."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:62
+#, no-c-format
+msgid "The menu bar at the bottom of the screen offers some advanced functionality needed in some setups. Using the function keys (<keycap>F1</keycap> ... <keycap>F12</keycap>), you can specify additional options to pass to the installation routines without having to know the detailed syntax of these parameters (see <xref linkend=\"cha.boot_parameters\"/>). A detailed description of the available function keys is available in <xref linkend=\"sec.boot_parameters.screen\"/>."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:75
+#, no-c-format
+msgid "PC (&amd64;/&intel64;/&arm64;)"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:76
+#, no-c-format
+msgid "This section describes changing the boot parameters for &amd64;, &intel64;, and &arm64;."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:81
+#, no-c-format
+msgid "The Boot Screen on Machines Equipped with Traditional BIOS"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:82
+#, no-c-format
+msgid "The boot screen displays several options for the installation procedure. <guimenu>Boot from Hard Disk</guimenu> boots the installed system and is selected by default, because the CD is often left in the drive. Select one of the other options with the arrow keys and press <keycap function=\"enter\"></keycap> to boot it. The relevant options are:"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_boot_parameters.xml:91 deployment_boot_parameters.xml:343
+#, no-c-format
+msgid "Installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:94 deployment_boot_parameters.xml:346
+#, no-c-format
+msgid "The normal installation mode. All modern hardware functions are enabled. In case the installation fails, see <xref linkend=\"vle.boot_parameters.screen.kernel\"/> for boot parameters that disable potentially problematic functions."
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_boot_parameters.xml:103 deployment_boot_parameters.xml:355
+#, no-c-format
+msgid "Upgrade"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:106 deployment_boot_parameters.xml:358
+#, no-c-format
+msgid "Perform a system upgrade. For more information refer to <xref os=\"sles;sled\" linkend=\"cha.upgrade-paths\"/><xref os=\"osuse\" linkend=\"cha.update.osuse\"/>."
+msgstr ""
+
+#. Tag: menuchoice
+#: deployment_boot_parameters.xml:115 deployment_boot_parameters.xml:367
+#, no-c-format
+msgid "<guimenu>More</guimenu> <guimenu>Rescue System</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:118
+#, no-c-format
+msgid "Starts a minimal Linux system without a graphical user interface. For more information, see <xref linkend=\"sec.trouble.data.recover.rescue\"/>.<phrase os=\"sled;osuse\"> This option is not available on live CDs.</phrase>"
+msgstr ""
+
+#. Tag: menuchoice
+#: deployment_boot_parameters.xml:128 deployment_boot_parameters.xml:380
+#, no-c-format
+msgid "<guimenu>More</guimenu> <guimenu>Boot Linux System</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:132 deployment_boot_parameters.xml:384
+#, no-c-format
+msgid "Boot a Linux system that is already installed. You will be asked from which partition to boot the system."
+msgstr ""
+
+#. Tag: menuchoice
+#: deployment_boot_parameters.xml:140 deployment_boot_parameters.xml:392
+#, no-c-format
+msgid "<guimenu>More</guimenu> <guimenu>Check Installation Media</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:144
+#, no-c-format
+msgid "This option is only available when you install from media created from downloaded ISOs. In this case it is recommended to check the integrity of the installation medium. This option starts the installation system before automatically checking the media. In case the check was successful, the normal installation routine starts. If a corrupt media is detected, the installation routine aborts. Replace the broken medium and restart the installation process."
+msgstr ""
+
+#. Tag: menuchoice
+#: deployment_boot_parameters.xml:157
+#, no-c-format
+msgid "<guimenu>More</guimenu> <guimenu>Memory Test</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:160
+#, no-c-format
+msgid "Tests your system RAM using repeated read and write cycles. Terminate the test by rebooting. For more information, see <xref linkend=\"sec.installation_troubleshooting.noboot\"/>.<phrase os=\"sled\"> This option is not available on the live CDs.</phrase>"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:170
+#, no-c-format
+msgid "<title>The Boot Screen on Machines with a Traditional BIOS</title>"
+msgstr ""
+
+#. Tag: phrase
+#: deployment_boot_parameters.xml:172
+#, no-c-format
+msgid "<phrase>The Boot Screen on Machines with a Traditional BIOS</phrase>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:182
+#, no-c-format
+msgid "Use the function keys shown at the bottom of the screen to change the language, screen resolution, installation source or to add an additional driver from your hardware vendor:"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:189
+#, no-c-format
+msgid "<keycap>F1</keycap><guimenu>Help</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:192
+#, no-c-format
+msgid "Get context-sensitive help for the active element of the boot screen. Use the arrow keys to navigate, <keycap function=\"enter\"></keycap> to follow a link, and <keycap function=\"escape\"></keycap> to leave the help screen."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:200
+#, no-c-format
+msgid "<keycap>F2</keycap><guimenu>Language</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:203
+#, no-c-format
+msgid "Select the display language and a corresponding keyboard layout for the installation. The default language is English (US)."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:210
+#, no-c-format
+msgid "<keycap>F3</keycap><guimenu>Video Mode</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:213
+#, no-c-format
+msgid "Select various graphical display modes for the installation. By <guimenu>Default</guimenu> the video resolution is automatically determined using KMS (<quote>Kernel Mode Setting</quote>). If this setting does not work on your system, choose <guimenu>No KMS</guimenu> and, optionally, specify <literal>vga=ask</literal> on the boot command line to get prompted for the video resolution. Choose <guimenu>Text Mode</guimenu> if the graphical installation causes problems."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:225
+#, no-c-format
+msgid "<keycap>F4</keycap><guimenu>Source</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:228
+#, no-c-format
+msgid "Normally, the installation is performed from the inserted installation medium. Here, select other sources, like FTP or NFS servers. If the installation is deployed on a network with an SLP server, select an installation source available on the server with this option. <phrase os=\"sles;sled\">Find information about setting up an installation server with SLP at <xref linkend=\"cha.deployment.instserver\"/>.</phrase>"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:242
+#, no-c-format
+msgid "<keycap>F5</keycap><guimenu>Kernel</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:245
+#, no-c-format
+msgid "If you encounter problems with the regular installation, this menu offers to disable a few potentially problematic functions. If your hardware does not support ACPI (advanced configuration and power interface) select <guimenu>No ACPI</guimenu> to install without ACPI support. <guimenu>No local APIC</guimenu> disables support for APIC (Advanced Programmable Interrupt Controllers) which may cause problems with some hardware. <guimenu>Safe Settings</guimenu> boots the system with the DMA mode (for CD/DVD-ROM drives) and power management functions disabled."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:256
+#, no-c-format
+msgid "If you are not sure, try the following options first: <guimenu>Installation&mdash;ACPI Disabled</guimenu> or <guimenu>Installation&mdash;Safe Settings</guimenu>. Experts can also use the command line (<guimenu>Boot Options</guimenu>) to enter or change kernel parameters."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:266
+#, no-c-format
+msgid "<keycap>F6</keycap><guimenu>Driver</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:269
+#, no-c-format
+msgid "Press this key to notify the system that you have an optional driver update for &productname;. With <guimenu>File</guimenu> or <guimenu>URL</guimenu>, load drivers directly before the installation starts. If you select <guimenu>Yes</guimenu>, you are prompted to insert the update disk at the appropriate point in the installation process."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:278
+#, no-c-format
+msgid "Getting Driver Update Disks"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:279
+#, no-c-format
+msgid "Driver updates for &sle; are provided at <link xlink:href=\"http://drivers.suse.com/\"></link>. These drivers have been created via the &suse; SolidDriver Program."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:290
+#, no-c-format
+msgid "The Boot Screen on Machines Equipped with UEFI"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:291
+#, no-c-format
+msgid "UEFI (Unified Extensible Firmware Interface) is a new industry standard which replaces and extends the traditional BIOS. The latest UEFI implementations contain the <quote>Secure Boot</quote> extension, which prevents booting malicious code by only allowing signed boot loaders to be executed. See <xref linkend=\"cha.uefi\"/> for more information."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:298
+#, no-c-format
+msgid "The boot manager &grub;, used to boot machines with a traditional BIOS, does not support UEFI, therefore &grub; is replaced with &grub-efi;. If Secure Boot is enabled, &yast; will automatically select &grub-efi; for installation. From an administrative and user perspective, both boot manager implementations behave the same and are called <literal>&grub;</literal> in the following."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:307
+#, no-c-format
+msgid "Using Additional Drivers with Secure Boot"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:308
+#, no-c-format
+msgid "When installing with Secure Boot enabled, you cannot load drivers that are not shipped with &productname;. This is also true of drivers shipped via SolidDriver, because their signing key is not trusted by default."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:314
+#, no-c-format
+msgid "To load drivers not shipped with &productname;, do either of the following:"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:320
+#, no-c-format
+msgid "Before the installation, add the needed keys to the firmware database via firmware/system management tools."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:326
+#, no-c-format
+msgid "Use a bootable ISO that will enroll the needed keys in the MOK list on the first boot."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:332
+#, no-c-format
+msgid "For more information, see <xref linkend=\"sec.uefi.secboot\"/>."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:336
+#, no-c-format
+msgid "The boot screen displays several options for the installation procedure. Change the selected option with the arrow keys and press <keycap function=\"enter\"></keycap> to boot it. The relevant options are:"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:370
+#, no-c-format
+msgid "Starts a minimal Linux system without a graphical user interface. For more information, see <xref linkend=\"sec.trouble.data.recover.rescue\"/>.<phrase os=\"sled;osuse\"> This option is not available on Live CDs.</phrase>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:396
+#, no-c-format
+msgid "This option is only available when you install from media created from downloaded ISOs. In this case it is recommended to check the integrity of the installation medium. This option starts the installation system before automatically checking the media. In case the check was successful, the normal installation routine starts. If a corrupt media is detected, the installation routine aborts."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:408
+#, no-c-format
+msgid "<title>The Boot Screen on Machines with UEFI</title>"
+msgstr ""
+
+#. Tag: phrase
+#: deployment_boot_parameters.xml:410
+#, no-c-format
+msgid "<phrase>The Boot Screen on Machines with UEFI</phrase>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:420
+#, no-c-format
+msgid "&grub-efi; on &productname; does not support a boot prompt or function keys for adding boot parameters. By default, the installation will be started with American English and the boot media as the installation source. A DHCP lookup will be performed to configure the network. To change these defaults or to add boot parameters you need to edit the respective boot entry. Highlight it using the arrow keys and press <keycap>E</keycap>. See the on-screen help for editing hints (note that only an English keyboard is available now). The <guimenu>Installation</guimenu> entry will look similar to the following:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:431
+#, no-c-format
+msgid ""
+      "setparams 'Installation'\n"
+      "\n"
+      "   set gfxpayload=keep\n"
+      "   echo 'Loading kernel ...'\n"
+      "   linuxefi /boot/x86_64/loader/linux splash=silent\n"
+      "   echo 'Loading initial ramdisk ...'\n"
+      "   initrdefi /boot/x86_64/loader/initrd"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:432
+#, no-c-format
+msgid "Add space-separated parameters to the end of the line starting with <literal>linuxefi</literal>. To boot the edited entry, press <keycap>F10</keycap>. If you access the machine via serial console, press <keycombo><keycap function=\"escape\"></keycap> <keycap>0</keycap></keycombo>. A complete list of parameters is available at <link xlink:href=\"http://en.opensuse.org/Linuxrc\"></link>."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:443
+#, no-c-format
+msgid "List of Important Boot Parameters"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:444
+#, no-c-format
+msgid "This section contains a selection of important boot parameters."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:448
+#, no-c-format
+msgid "General Boot Parameters"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:452
+#, no-c-format
+msgid "<option>autoyast=</option><replaceable>URL</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:455
+#, no-c-format
+msgid "The <envar>autoyast</envar> parameter specifies the location of the <filename>autoinst.xml</filename> control file for automatic installation."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:463
+#, no-c-format
+msgid "manual=&lt;0|1&gt;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:465
+#, no-c-format
+msgid "The <envar>manual</envar> parameter controls whether the other parameters are only default values that still must be acknowledged by the user. Set this parameter to <literal>0</literal> if all values should be accepted and no questions asked. Setting <envar>autoyast</envar> implies setting <envar>manual</envar> to <literal>0</literal>."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:476
+#, no-c-format
+msgid "<option>Info=</option><replaceable>URL</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:479
+#, no-c-format
+msgid "Specifies a location for a file from which to read additional options."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:482
+#, no-c-format
+msgid "This helps to overcome the limitations of 10 lines (and 80 characters per line under z/VM) for the parmfile. More documentation on the Info file can be found in <xref linkend=\"invoking_autoinst.linuxrc\"/>. Since the Info file can typically only be accessed through the network on &zseries;, you cannot use it to specify options required to set up the network (these options are described in <xref linkend=\"sec.boot_parameters.list.network\"/>). Also other linuxrc specific options such as for debugging need to be specified in the parmfile to be effective."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:496
+#, no-c-format
+msgid "upgrade=&lt;0|1&gt;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:498
+#, no-c-format
+msgid "To upgrade &productname;, specify <option>Upgrade=1</option>."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:499
+#, no-c-format
+msgid "A custom parmfile is required for upgrading an existing installation of &sle;. Without this parameter, the installation provides no upgrade option."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:507
+#, no-c-format
+msgid "<option>dud=</option><replaceable>URL</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:509
+#, no-c-format
+msgid "Load driver updates from <replaceable>URL</replaceable>."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:512
+#, no-c-format
+msgid "Set <literal>dud=ftp://ftp.example.com/PATH_TO_DRIVER</literal> or <literal>dud=http://www.example.com/PATH_TO_DRIVER </literal> to load drivers from a URL. When <literal>dud=1</literal> you will be asked for the URL during boot."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:521
+#, no-c-format
+msgid "<option>language=</option><replaceable>LANGUAGE</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:523
+#, no-c-format
+msgid "Set the installation language. Some supported values are <literal>cs_CZ</literal>, <literal>de_DE</literal>, <literal>es_ES</literal>, <literal>fr_FR</literal>, <literal>ja_JP</literal>, <literal>pt_BR</literal>, <literal>pt_PT</literal>, <literal>ru_RU</literal>, <literal>zh_CN</literal>, and <literal>zh_TW</literal>."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:534
+#, no-c-format
+msgid "acpi=off"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:536
+#, no-c-format
+msgid "Disable ACPI support."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:542
+#, no-c-format
+msgid "noapic"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:544
+#, no-c-format
+msgid "No logical APIC."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:550
+#, no-c-format
+msgid "nomodeset"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:552
+#, no-c-format
+msgid "Disable KMS."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:558
+#, no-c-format
+msgid "textmode=1"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:560
+#, no-c-format
+msgid "Start installer in text mode."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:566
+#, no-c-format
+msgid "<option>console=</option><replaceable>SERIAL_DEVICE</replaceable>[,<replaceable>MODE</replaceable>]"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:568
+#, no-c-format
+msgid "<replaceable>SERIAL_DEVICE</replaceable> can be an actual serial or parallel device (for example <literal>ttyS0</literal>) or a virtual terminal (for example <literal>tty1</literal>). <replaceable>MODE</replaceable> is the baud rate, parity and stop bit (for example <literal>9600n8</literal>). The default for this setting is set by the mainboard firmware. If you do not see output on your monitor, try setting <literal>console=tty1</literal>. It is possible to define multiple devices."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:583 deployment_boot_parameters.xml:585
+#, no-c-format
+msgid "Configuring the Network Interface"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:586
+#, no-c-format
+msgid "The settings discussed in this section apply only to the network interface used during installation. Configure additional network interfaces in the installed system by following the instructions given in <xref linkend=\"sec.network.manconf\"/>."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:593
+#, no-c-format
+msgid "The network will only be configured if it is required during the installation. To force the network to be configured, use the <literal>netsetup</literal> parameter."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:600
+#, no-c-format
+msgid "netsetup=<replaceable>VALUE</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:602
+#, no-c-format
+msgid "<literal>netsetup=dhcp</literal> forces a configuration via DHCP. Set <literal>netsetup=-dhcp</literal> when configuring the network with the boot parameters <literal>hostip</literal>, <literal>gateway</literal> and <literal>nameserver</literal>. With the option <literal>netsetup=hostip,netmask,gateway,nameserver</literal> the installer asks for the network settings during boot."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:614
+#, no-c-format
+msgid "ifcfg=<replaceable>INTERFACE</replaceable>[.<replaceable>VLAN</replaceable>]=<replaceable>SETTINGS</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:618
+#, no-c-format
+msgid "<replaceable>INTERFACE</replaceable> can be <literal>*</literal> to match all interfaces or, for example, <literal>eth*</literal> to match all interfaces that start with <literal>eth</literal>. It is also possible to use MAC addresses as values."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:624
+#, no-c-format
+msgid "Optionally, a VLAN can be set behind the interface name, separated by a period."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:628
+#, no-c-format
+msgid "If <replaceable>SETTINGS</replaceable> is <literal>dhcp</literal>, all matching interfaces will be configured with DHCP. It is possible to set static parameters. With static parameters, only the first matching interface will be configured. The syntax for the static configuration is:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:634
+#, no-c-format
+msgid "ifcfg=*=\"<replaceable>IPS_NETMASK</replaceable>,<replaceable>GATEWAYS</replaceable>,<replaceable>NAMESERVERS</replaceable>,<replaceable>DOMAINS</replaceable>\""
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:635
+#, no-c-format
+msgid "Each comma separated value can in turn contain a list of space character separated values. <replaceable>IPS_NETMASK</replaceable> is in the <emphasis>CIDR notation</emphasis>, for example <literal>10.0.0.1/24</literal>. The quotes are only needed when using space character separated lists. Example with two name servers:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:642
+#, no-c-format
+msgid "ifcfg=*=\"<replaceable>10.0.0.10/24</replaceable>,<replaceable>10.0.0.1</replaceable>,<replaceable>10.0.0.1 10.0.0.2</replaceable>,<replaceable>example.com</replaceable>\""
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:646
+#, no-c-format
+msgid "hostname=host.&exampledomain;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:649
+#, no-c-format
+msgid "Enter the fully qualified host name."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:655 deployment_boot_parameters.xml:697
+#, no-c-format
+msgid "domain=&exampledomain;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:658
+#, no-c-format
+msgid "Domain search path for DNS. Allows you to use short host names instead of fully qualified ones."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:665
+#, no-c-format
+msgid "hostip=&exampledomain1ip;.2[/24]"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:668
+#, no-c-format
+msgid "Enter the IP address of the interface to configure. The IP can contain the subnet mask, for example <literal>hostip=&exampledomain1ip;.2/24</literal>. This setting is only evaluated if the network is required during the installation."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:677
+#, no-c-format
+msgid "gateway=&exampledomain1ip;.3"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:680
+#, no-c-format
+msgid "Specify the gateway to use. This setting is only evaluated if the network is required during the installation."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:687
+#, no-c-format
+msgid "nameserver=&exampledomain1ip;.4"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:690
+#, no-c-format
+msgid "Specify the DNS server in charge. This setting is only evaluated if the network is required during the installation."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:700
+#, no-c-format
+msgid "Domain search path. This setting is only evaluated if the network is required during the installation."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:710
+#, no-c-format
+msgid "Specifying the Installation Source"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:711
+#, no-c-format
+msgid "If you are not using the DVD for installation, specify an alternative installation source."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:717
+#, no-c-format
+msgid "install=SOURCE"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:720
+#, no-c-format
+msgid "Specify the location of the installation source to use. Possible protocols are <literal>cd</literal>, <literal>hd</literal>, <literal>slp</literal>, <literal>nfs</literal>, <literal>smb</literal> (Samba/CIFS), <literal>ftp</literal>, <literal>tftp</literal> <literal>http</literal>, and <literal>https</literal>. Not all source types are available on all platforms. For example &zseries; does not support <literal>cd</literal> and <literal>hd</literal>."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:729
+#, no-c-format
+msgid "The default option is <literal>cd</literal>."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:732
+#, no-c-format
+msgid "If an <literal>ftp</literal>, <literal>tftp</literal> or <literal>smb</literal> URL is given, specify the user name and password with the URL. These parameters are optional and anonymous or guest login is assumed if they are not given. Example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:738
+#, no-c-format
+msgid "install=ftp://<replaceable>USER</replaceable>:<replaceable>PASSWORD</replaceable>@<replaceable>SERVER</replaceable>/<replaceable>DIRECTORY</replaceable>/DVD1/"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:739
+#, no-c-format
+msgid "To install over an encrypted connection, use an <literal>https</literal> URL. If the certificate cannot be verified, use the <literal>sslcerts=0</literal> boot parameter to disable certificate checking."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:745
+#, no-c-format
+msgid "In case of a Samba or CIFS installation, you can also specify the domain that should be used:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:749
+#, no-c-format
+msgid "install=smb://<replaceable>WORKDOMAIN</replaceable>;<replaceable>USER</replaceable>:<replaceable>PASSWORD</replaceable>@<replaceable>SERVER</replaceable>/<replaceable>DIRECTORY</replaceable>/DVD1/"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:750
+#, no-c-format
+msgid "To use <literal>cd</literal>, <literal>hd</literal> or <literal>slp</literal>, set them as the following example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:754
+#, no-c-format
+msgid ""
+      "install=cd:/\n"
+      "install=hd:/?device=<replaceable>sda/PATH_TO_ISO</replaceable>\n"
+      "install=slp:/"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:760
+#, no-c-format
+msgid "Specifying Remote Access"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:761
+#, no-c-format
+msgid "Only one of the different remote control methods should be specified at a time. The different methods are: SSH, VNC, remote X server. <phrase os=\"sles;sled\">For information about how to use the parameters listed in this section, see <xref linkend=\"cha.remote_installation\"/>.</phrase>"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:769
+#, no-c-format
+msgid "<option>display_ip=</option><replaceable>IP_ADDRESS</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:771
+#, no-c-format
+msgid "<envar>Display_IP</envar> causes the installing system to try to connect to an X server at the given address."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:776
+#, no-c-format
+msgid "X Authentication Mechanism"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:777
+#, no-c-format
+msgid "The direct installation with the X Window System relies on a primitive authentication mechanism based on host names. This mechanism is disabled on current &productname; versions. Installation with SSH or VNC is preferred."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:787
+#, no-c-format
+msgid "vnc=1"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:789
+#, no-c-format
+msgid "Enables a VNC server during the installation."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:795
+#, no-c-format
+msgid "<option>vncpassword=</option><replaceable>PASSWORD</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:797
+#, no-c-format
+msgid "Sets the password for the VNC server."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:803
+#, no-c-format
+msgid "ssh=1"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:805
+#, no-c-format
+msgid "<envar>ssh</envar> enables SSH installation."
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:811
+#, no-c-format
+msgid "<option>ssh.password=</option><replaceable>PASSWORD</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:813
+#, no-c-format
+msgid "Specifies an SSH password for the root user during installation."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:823
+#, no-c-format
+msgid "Advanced Setups"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:824
+#, no-c-format
+msgid "To configure access to a local &rmt; or <systemitem>supportconfig</systemitem> server for the installation, you can specify boot parameters to set up these services during installation. The same applies if you need IPv6 support during the installation."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:832
+#, no-c-format
+msgid "Providing Data to Access an &rmt; Server"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:833
+#, no-c-format
+msgid "By default, updates for &productname; are delivered by the &scc;. If your network provides a so called &rmt; server to provide a local update source, you need to equip the client with the server's URL. Client and server communicate solely via HTTPS protocol, therefore you also need to enter a path to the server's certificate if the certificate was not issued by a certificate authority."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:842
+#, no-c-format
+msgid "Non-Interactive Installation Only"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:843
+#, no-c-format
+msgid "Providing parameters for accessing an &rmt; server is only needed for non-interactive installations. During an interactive installation the data can be provided during the installation (see <xref linkend=\"sec.yast_install.scc_registration\"/> for details)."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:852
+#, no-c-format
+msgid "regurl"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:854
+#, no-c-format
+msgid "URL of the &rmt; server. This URL has a fixed format of <literal>https://<replaceable>FQN</replaceable>/center/regsvc/</literal>. <replaceable>FQN</replaceable> needs to be a fully qualified host name of the &rmt; server. Example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:860
+#, no-c-format
+msgid "regurl=https://smt.&exampledomain;/center/regsvc/"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:861
+#, no-c-format
+msgid "Make sure the values you enter are correct. If <literal>regurl</literal> has not been specified correctly, the registration of the update source will fail."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:869
+#, no-c-format
+msgid "regcert"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:871
+#, no-c-format
+msgid "Location of the &rmt; server's certificate. Specify one of the following locations:"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:877
+#, no-c-format
+msgid "<term>URL</term>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:879
+#, no-c-format
+msgid "Remote location (HTTP, HTTPS or FTP) from which the certificate can be downloaded. In case regcert is not specified, it will default to <literal>http://<replaceable>FQN</replaceable>/smt.crt</literal> with <literal>FQN</literal> being the name of the &rmt; server. Example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:885
+#, no-c-format
+msgid "regcert=http://rmt.&exampledomain;/smt-ca.crt"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:889
+#, no-c-format
+msgid "local path"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:891
+#, no-c-format
+msgid "Absolute path to the certificate on the local machine. Example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:894
+#, no-c-format
+msgid "regcert=/data/inst/smt/smt-ca.cert"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:898
+#, no-c-format
+msgid "Interactive"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:900
+#, no-c-format
+msgid "Use <literal>ask</literal> to open a pop-up menu during the installation where you can specify the path to the certificate. Do not use this option with &ay;. Example"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:905
+#, no-c-format
+msgid "regcert=ask"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:909
+#, no-c-format
+msgid "Deactivate certificate installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:911
+#, no-c-format
+msgid "Use <literal>done</literal> if the certificate will be installed by an add-on product, or if you are using a certificate issued by an official certificate authority. For example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:916
+#, no-c-format
+msgid "regcert=done"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:925
+#, no-c-format
+msgid "Configuring an Alternative Data Server for <systemitem>supportconfig</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:926
+#, no-c-format
+msgid "The data that supportconfig (see <xref linkend=\"cha.adm.support\"/> for more information) gathers is sent to the &ncc; by default. It is also possible to set up a local server to collect this data. If such a server is available on your network, you need to set the server's URL on the client. This information needs to be entered at the boot prompt."
+msgstr ""
+
+#. Tag: literal
+#: deployment_boot_parameters.xml:934
+#, no-c-format
+msgid "supporturl"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:935
+#, no-c-format
+msgid "URL of the server. The URL has the format <literal>http://<replaceable>FQN</replaceable>/<replaceable>Path</replaceable>/</literal>, where <replaceable>FQN</replaceable> is the fully qualified host name of the server and <replaceable>Path</replaceable> is the location on the server. For example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:943
+#, no-c-format
+msgid "supporturl=http://support.&exampledomain;/supportconfig/data/"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:946
+#, no-c-format
+msgid "Using IPv6 for the Installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:947
+#, no-c-format
+msgid "By default you can only assign IPv4 network addresses to your machine. To enable IPv6 during installation, enter one of the following parameters at the boot prompt:"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:954
+#, no-c-format
+msgid "Accept IPv4 and IPv6"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:956
+#, no-c-format
+msgid "ipv6=1"
+msgstr ""
+
+#. Tag: term
+#: deployment_boot_parameters.xml:960
+#, no-c-format
+msgid "Accept IPv6 only"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:962
+#, no-c-format
+msgid "ipv6only=1"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:968
+#, no-c-format
+msgid "Using a Proxy for the Installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:969
+#, no-c-format
+msgid "In networks enforcing the usage of a proxy server for accessing remote Web sites, registration during installation is only possible when configuring a proxy server."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:974
+#, no-c-format
+msgid "To use a proxy during the installation, press <keycap>F4</keycap> on the boot screen and set the required parameters in the <guimenu>HTTP Proxy</guimenu> dialog. Alternatively provide the kernel parameter <literal>proxy</literal> at the boot prompt:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:980
+#, no-c-format
+msgid "l>proxy=http://<replaceable>USER</replaceable>:<replaceable>PASSWORD</replaceable>@proxy.example.com:<replaceable>PORT</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:981
+#, no-c-format
+msgid "Specifying <replaceable>USER</replaceable> and <replaceable>PASSWORD</replaceable> is optional&mdash;if the server allows anonymous access, the following data is sufficient: <literal>http://proxy.example.com:<replaceable>PORT</replaceable></literal>."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:989
+#, no-c-format
+msgid "Enabling &selnx; Support"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:990
+#, no-c-format
+msgid "Enabling &selnx; upon installation start-up enables you to configure it after the installation has been finished without having to reboot. Use the following parameters:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:995
+#, no-c-format
+msgid "security=selinux selinux=1"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:998
+#, no-c-format
+msgid "Enabling the Installer Self-Update"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:999
+#, no-c-format
+msgid "During installation and upgrade, &yast; can update itself as described in <xref linkend=\"sec.yast_install.self_update\"/> to solve potential bugs discovered after release. The <literal>self_update</literal> parameter can be used to modify the behavior of this feature."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1005
+#, no-c-format
+msgid "To enable the installer self-update, set the parameter to <literal>1</literal>:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1009
+#, no-c-format
+msgid "self_update=1"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1010
+#, no-c-format
+msgid "To use a user-defined repository, specify a URL:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1013
+#, no-c-format
+msgid "self_update=https://updates.example.com/"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:1016
+#, no-c-format
+msgid "Scale User Interface for High DPI"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1017
+#, no-c-format
+msgid "If your screen uses a very high DPI, use the boot parameter <literal>QT_AUTO_SCREEN_SCALE_FACTOR</literal>. This scales font and user interface elements to the screen DPI."
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1022
+#, no-c-format
+msgid "QT_AUTO_SCREEN_SCALE_FACTOR=1"
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:1026
+#, no-c-format
+msgid "&zseries;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1027
+#, no-c-format
+msgid "For &zseries; platforms, the system is booted (IPL, Initial Program Load) as described in <xref linkend=\"sec.prep.ipling\"/>. &productname; does not show a splash screen on these systems. During the installation, load the kernel, initrd, and parmfile manually. &yast; starts with its installation screen when a connection has been established to the installation system via VNC, X, or SSH. Because there is no splash screen, kernel or boot parameters cannot be entered on screen, but must be specified in a parmfile (see <xref linkend=\"sec.appdendix.parm\"/>)."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:1039
+#, no-c-format
+msgid "InstNetDev=osa"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1042
+#, no-c-format
+msgid "Enter the type of interface to configure. Possible values are <literal>osa</literal>, <literal>hsi</literal>, <literal>ctc</literal>, <literal>escon</literal>, and <literal>iucv</literal> (CTC, ESCON, and IUCV are no longer officially supported)."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1048
+#, no-c-format
+msgid "For the interfaces of type <literal>hsi</literal> and <literal>osa</literal>, specify an appropriate netmask and an optional broadcast address:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1053
+#, no-c-format
+msgid ""
+      "Netmask=255.255.255.0\n"
+      "Broadcast=192.168.255.255"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1054
+#, no-c-format
+msgid "For the interfaces of type <literal>ctc</literal>, <literal>escon</literal>, and <literal>iucv</literal> (CTC, ESCON, and IUCV are no longer officially supported), enter the IP address of the peer:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1060
+#, no-c-format
+msgid "Pointopoint=192.168.55.20"
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:1064
+#, no-c-format
+msgid "OsaInterface=&lt;lcs|qdio&gt;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1067
+#, no-c-format
+msgid "For <literal>osa</literal> network devices, specify the host interface (<literal>qdio</literal> or <literal>lcs</literal>)."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:1074
+#, no-c-format
+msgid "Layer2=&lt;0|1&gt;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1077
+#, no-c-format
+msgid "For <literal>osa</literal> QDIO Ethernet and <literal>hsi</literal> devices, specify whether to enable (<literal>1</literal>) or disable (<literal>0</literal>) OSI Layer 2 support."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:1085
+#, no-c-format
+msgid "OSAHWAddr=02:00:65:00:01:09"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1088
+#, no-c-format
+msgid "For Layer 2-enabled <literal>osa</literal> QDIO Ethernet devices, either specify a MAC address manually or state <literal>OSAHWADDR= </literal> (with trailing white space) for the system default."
+msgstr ""
+
+#. Tag: option
+#: deployment_boot_parameters.xml:1096
+#, no-c-format
+msgid "PortNo=&lt;0|1&gt;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1099
+#, no-c-format
+msgid "For <literal>osa</literal> network devices, specify the port number (provided the device supports this feature). The default value is 0."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1106
+#, no-c-format
+msgid "Each of the interfaces requires certain setup options:"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1111
+#, no-c-format
+msgid "Interfaces <literal>ctc</literal> and <literal>escon</literal> (CTC and ESCON are no longer officially supported):"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1115
+#, no-c-format
+msgid ""
+      "ReadChannel=0.0.0600\n"
+      "WriteChannel=0.0.0601"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1116
+#, no-c-format
+msgid "<envar>ReadChannel</envar> specifies the READ channel to use. <envar>WriteChannel</envar> specifies the WRITE channel."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1122
+#, no-c-format
+msgid "For the <literal>ctc</literal> interface (no longer officially supported), specify the protocol that should be used for this interface:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1126
+#, no-c-format
+msgid "CTCProtocol=&lt;0/1/2&gt;"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1127
+#, no-c-format
+msgid "Valid entries would be:"
+msgstr ""
+
+#. Tag: literal
+#: deployment_boot_parameters.xml:1136
+#, no-c-format
+msgid "<literal>0</literal>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1140
+#, no-c-format
+msgid "Compatibility mode, also for non-Linux peers other than OS/390 and z/OS (this is the default mode)"
+msgstr ""
+
+#. Tag: literal
+#: deployment_boot_parameters.xml:1149
+#, no-c-format
+msgid "<literal>1</literal>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1153
+#, no-c-format
+msgid "Extended mode"
+msgstr ""
+
+#. Tag: literal
+#: deployment_boot_parameters.xml:1161
+#, no-c-format
+msgid "<literal>2</literal>"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1165
+#, no-c-format
+msgid "Compatibility mode with OS/390 and z/OS"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1175
+#, no-c-format
+msgid "Network device type <literal>osa</literal> with interface <literal>lcs</literal>:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1179
+#, no-c-format
+msgid "ReadChannel=0.0.0124"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1180
+#, no-c-format
+msgid "<envar>ReadChannel</envar> stands for the channel number used in this setup. A second port number can be derived from this by adding one to <envar>ReadChannel</envar>. <envar>Portnumber</envar> is used to specify the relative port."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1188
+#, no-c-format
+msgid "Interface <literal>iucv</literal>:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1191
+#, no-c-format
+msgid "IUCVPeer=PEER"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1192
+#, no-c-format
+msgid "Enter the name of the peer machine."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1197
+#, no-c-format
+msgid "Network device type <literal>osa</literal> with interface <literal>qdio</literal> for OSA-Express Gigabit Ethernet:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1201
+#, no-c-format
+msgid ""
+      "ReadChannel=0.0.0700\n"
+      "WriteChannel=0.0.0701\n"
+      "DataChannel=0.0.0702"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1202
+#, no-c-format
+msgid "For <envar>ReadChannel</envar>, enter the number of the READ channel. For <envar>WriteChannel</envar>, enter the number of the WRITE channel. <envar>DataChannel</envar> specifies the DATA channel. Make sure that the READ channel carries an even device number."
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1210
+#, no-c-format
+msgid "Interface <literal>hsi</literal> for HiperSockets and VM guest LANs:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_boot_parameters.xml:1213
+#, no-c-format
+msgid ""
+      "ReadChannel=0.0.0800\n"
+      "WriteChannel=0.0.0801\n"
+      "DataChannel=0.0.0802"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1214
+#, no-c-format
+msgid "For <envar>ReadChannel</envar>, enter the appropriate number for the READ channel. For <envar>WriteChannel</envar> and <envar>DataChannel</envar>, enter the WRITE and DATA channel numbers."
+msgstr ""
+
+#. Tag: title
+#: deployment_boot_parameters.xml:1223
+#, no-c-format
+msgid "More Information"
+msgstr ""
+
+#. Tag: para
+#: deployment_boot_parameters.xml:1224
+#, no-c-format
+msgid "You can find more information about boot parameters in the &opensuse; wiki at <link xlink:href=\"https://en.opensuse.org/SDB:Linuxrc#Parameter_Reference\"></link>."
+msgstr ""
+

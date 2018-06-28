@@ -1,0 +1,459 @@
+# Japanese translations for PACKAGE package
+# PACKAGE パッケージに対する英訳.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"PO-Revision-Date: 2018-06-28 07:14+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: deployment_prep_zseries.xml:21
+#, no-c-format
+msgid "Installation on &zseries;"
+msgstr ""
+
+#. Tag: dm:docmanager
+#: deployment_prep_zseries.xml:23
+#, no-c-format
+msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:28
+#, no-c-format
+msgid ""
+"This chapter describes the procedure for preparing the installation of "
+"&productnamereg; on &zseries;. It provides all information needed to prepare "
+"the installation on the LPAR and z/VM side."
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:39
+#, no-c-format
+msgid "The Parmfile&mdash;Automating the System Configuration"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:41
+#, no-c-format
+msgid ""
+"The installation process can be partly automated by specifying the crucial "
+"parameters in the <filename>parmfile</filename>. The <filename>parmfile</"
+"filename> contains all the data required for network setup and DASD "
+"configuration. In addition to that, it can be used to set up the connection "
+"method to the &productname; installation system and the &yast; instance "
+"running there. User interaction is thus limited to the actual &yast; "
+"installation controlled by &yast; dialogs."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:51
+#, no-c-format
+msgid ""
+"The following parameters can be passed to the installation routine, which "
+"takes them as default values for installation. All IP addresses, server "
+"names, and numerical values are examples. Replace these values with the ones "
+"needed in your installation scenario."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:58
+#, no-c-format
+msgid ""
+"The number of lines in the parmfile is limited to 10. Specify more than one "
+"parameter on a line. Parameter names are not case-sensitive. Separate the "
+"parameters by spaces. You may specify the parameters in any order. Always "
+"keep the <literal>PARAMETER=value</literal> string together in one line. For "
+"example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_prep_zseries.xml:66
+#, no-c-format
+msgid "Hostname=s390zvm01.suse.de HostIP=10.11.134.65"
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:69
+#, no-c-format
+msgid "Using IPv6 during the Installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:70
+#, no-c-format
+msgid ""
+"By default you can only assign IPv4 network addresses to your machine. To "
+"enable IPv6 during installation, enter one of the following parameters at "
+"the boot prompt: <literal>ipv6=1</literal> (accept IPv4 and IPv6) or "
+"<literal>ipv6only=1</literal> (accept IPv6 only)."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:78
+#, no-c-format
+msgid ""
+"Some boot parameters are required. If they are missing, the automatic "
+"process pauses and asks you to enter the value manually."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:83
+#, no-c-format
+msgid ""
+"A list of available boot parameters is available at <xref linkend=\"cha."
+"boot_parameters\"/>."
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:88
+#, no-c-format
+msgid "Example Parmfiles"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:89
+#, no-c-format
+msgid ""
+"The maximum capacity of a parmfile is 860 characters. As a rule of thumb, "
+"the parmfile should contain a maximum of 10 lines with no more than 80 "
+"characters. When reading a parmfile, all lines are concatenated without "
+"adding white spaces, therefore the last character (80) of each line needs to "
+"be a <keycap function=\"space\"></keycap>."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:96
+#, no-c-format
+msgid "To receive potential error messages on the console, use"
+msgstr ""
+
+#. Tag: screen
+#: deployment_prep_zseries.xml:99
+#, no-c-format
+msgid "linuxrclog=/dev/console"
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:101
+#, no-c-format
+msgid "Parmfile for an Installation from NFS with VNC and AutoYaST"
+msgstr ""
+
+#. Tag: screen
+#: deployment_prep_zseries.xml:102
+#, no-c-format
+msgid ""
+"ramdisk_size=131072 root=/dev/ram1 ro init=/linuxrc TERM=dumb\n"
+"instnetdev=osa osainterface=qdio layer2=1 osahwaddr=\n"
+"pointopoint=&exampledomainip;.1 hostip=&exampledomainip;.2\n"
+"nameserver=&exampledomainip;.3\n"
+"install=nfs://&exampledomainip;.4/SLES/SLES-12-Server/s390x/DVD1\n"
+"autoyast=http://&exampledomainip;.5/autoinst.xml\n"
+"linuxrclog=/dev/console vnc=1 VNCPassword=testing"
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:105
+#, no-c-format
+msgid "Parmfile for Installation with NFS, SSH, and HSI and AutoYaST with NFS"
+msgstr ""
+
+#. Tag: screen
+#: deployment_prep_zseries.xml:106
+#, no-c-format
+msgid ""
+"ramdisk_size=131072 root=/dev/ram1 ro init=/linuxrc TERM=dumb\n"
+"AutoYast=nfs://&exampledomain1ip;.1/autoinst/s390.xml\n"
+"Hostname=zsystems.&exampledomain; HostIP=&exampledomain1ip;.2\n"
+"Gateway=&exampledomain1ip;.3 Nameserver=&exampledomain1ip;.4\n"
+"InstNetDev=hsi layer2=0\n"
+"Netmask=255.255.255.128 Broadcast=&exampledomain1ip;.255\n"
+"readchannel=0.0.702c writechannel=0.0.702d datachannel=0.0.702e\n"
+"install=nfs://&exampledomain1ip;.5/SLES-12-Server/s390x/DVD1/\n"
+"ssh=1 ssh.password=testing linuxrclog=/dev/console"
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:109
+#, no-c-format
+msgid "Parmfile for Installation in VLAN"
+msgstr ""
+
+#. Tag: screen
+#: deployment_prep_zseries.xml:110
+#, no-c-format
+msgid ""
+"ro ramdisk_size=50000 MANUAL=0 PORTNO=1 ReadChannel=0.0.b140\n"
+"WriteChannel=0.0.b141 DataChannel=0.0.b142\n"
+"cio_ignore=all,!condev,!0.0.b140-0.0.b142,!0.0.e92c,!0.0.5000,!0.0.5040\n"
+"HostIP= Gateway= Hostname=zsystems.&exampledomain; "
+"nameserver=&exampledomainip;.1\n"
+"Install=ftp://user:password@10.0.0.1/s390x/SLES15.0/INST/ usevnc=1\n"
+"vncpassword=12345 InstNetDev=osa Layer2=1 OSAInterface=qdio ssl_certs=0\n"
+"osahwaddr= domain=&exampledomain; self_update=0\n"
+"ifcfg=eth0.201=&exampledomainip;.2/16,&exampledomainip;.1"
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:114
+#, no-c-format
+msgid "Using the vt220 Terminal Emulator"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:116
+#, no-c-format
+msgid ""
+"Recent MicroCode Levels allow the use of an integrated vt220 terminal "
+"emulator (ASCII terminal) in addition to the standard line mode terminal. "
+"The vt220 terminal is connected to <filename>/dev/ttysclp0</filename>. The "
+"line mode terminal is connected to <filename>/dev/ttysclp_line0</filename>. "
+"For LPAR installations, the vt220 terminal emulator is activated by default."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:124
+#, no-c-format
+msgid ""
+"To start the ASCII console on HMC, log in to the HMC, and select "
+"<menuchoice> <guimenu>Systems Management</guimenu> <guimenu>Systems</"
+"guimenu> <guimenu><phrase><replaceable>IMAGE_ID</replaceable></phrase> </"
+"guimenu></menuchoice>. Select the radio button for the LPAR and select "
+"<menuchoice> <guimenu>Recovery</guimenu> <guimenu>Integrated ASCII Console</"
+"guimenu> </menuchoice>."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:134
+#, no-c-format
+msgid ""
+"To redirect the kernel messages at boot time from the system console to the "
+"vt220 terminal, add the following entries to the <literal>parameters</"
+"literal> line in <filename>/etc/zipl.conf</filename>:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_prep_zseries.xml:140
+#, no-c-format
+msgid "console=ttysclp0 console=ttysclp_line0"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:142
+#, no-c-format
+msgid ""
+"The resulting <literal>parameters</literal> line would look like the "
+"following example:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_prep_zseries.xml:147
+#, no-c-format
+msgid ""
+"parameters = \"root=/dev/dasda2 TERM=dumb console=ttysclp0 "
+"console=ttysclp_line0\""
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:149
+#, no-c-format
+msgid ""
+"Save the changes in <filename>/etc/zipl.conf</filename>, run <command>zipl</"
+"command>, and reboot the system."
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:155
+#, no-c-format
+msgid "Further In-Depth Information about &zseries;"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:157
+#, no-c-format
+msgid ""
+"Find additional in-depth technical documentation about &zseries; in the IBM "
+"Redbooks (<link xlink:href=\"https://www.redbooks.ibm.com/Redbooks.nsf/"
+"domains/zsystems\"></link>) or at IBM developerWorks (<link xlink:href="
+"\"https://www.ibm.com/developerworks/linux/linux390/\"></link>). "
+"&productname;-specific documentation is available from <link xlink:href="
+"\"https://www.ibm.com/developerworks/linux/linux390/documentation_suse.html"
+"\"></link>."
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:168
+#, no-c-format
+msgid "General Documents about Linux on &zseries;"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:169
+#, no-c-format
+msgid ""
+"A general coverage of Linux on &zseries; can be found in the following "
+"documents:"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:175
+#, no-c-format
+msgid ""
+"Linux on IBM eServer zSeries and S/390: ISP and ASP Solutions (SG24-6299)"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:180
+#, no-c-format
+msgid ""
+"These documents might not reflect the current state of Linux, but the "
+"principles of Linux deployment outlined there remain accurate."
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:187
+#, no-c-format
+msgid "Technical Issues of Linux on &zseries;"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:188
+#, no-c-format
+msgid ""
+"Refer to the following documents to get in-depth technical information about "
+"the Linux kernel and application topics. Refer to the Internet for up-to-"
+"date versions of these documents for the most recent code drop (<link xlink:"
+"href=\"http://www.ibm.com/developerworks/linux/linux390/index.html\"></"
+"link>)."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:196
+#, no-c-format
+msgid "Linux on System z Device Drivers, Features, and Commands"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:201
+#, no-c-format
+msgid "zSeries ELF Application Binary Interface Supplement"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:206
+#, no-c-format
+msgid "Linux on System z Device Drivers, Using the Dump Tools"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:211
+#, no-c-format
+msgid "IBM zEnterprise 196 Technical Guide"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:216
+#, no-c-format
+msgid "IBM zEnterprise EC12 Technical Guide"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:221
+#, no-c-format
+msgid "IBM z13 Technical Guide"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:226
+#, no-c-format
+msgid "IBM z14 Technical Guide"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:231
+#, no-c-format
+msgid ""
+"There also is a Redbook for Linux application development at <link xlink:"
+"href=\"http://www.redbooks.ibm.com\"></link>:"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:237
+#, no-c-format
+msgid ""
+"Linux on IBM eServer zSeries and S/390: Application Development (SG24-6807)"
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries.xml:246
+#, no-c-format
+msgid "Advanced Configurations for Linux on &zseries;"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:247
+#, no-c-format
+msgid ""
+"Refer to the following Redbooks, Redpapers, and links for some more complex "
+"&zseries; scenarios:"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:253
+#, no-c-format
+msgid ""
+"Linux on IBM eServer zSeries and S/390: Large Scale Deployment (SG24-6824)"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:259
+#, no-c-format
+msgid ""
+"Linux on IBM eServer zSeries and S/390: Performance Measuring and Tuning "
+"(SG24-6926)"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:265
+#, no-c-format
+msgid "Linux with zSeries and ESS: Essentials (SG24-7025)"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:270
+#, no-c-format
+msgid ""
+"IBM TotalStorage Enterprise Storage Server Implementing ESS Copy Services "
+"with IBM eServer zSeries (SG24-5680)"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:276
+#, no-c-format
+msgid ""
+"Linux on IBM zSeries and S/390: High Availability for z/VM and Linux "
+"(REDP-0220)"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:282
+#, no-c-format
+msgid "Saved Segments Planning and Administration"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries.xml:290
+#, no-c-format
+msgid "Linux on System z documentation for \"Development stream\""
+msgstr ""

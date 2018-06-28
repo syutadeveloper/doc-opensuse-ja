@@ -1,0 +1,618 @@
+# Japanese translations for PACKAGE package
+# PACKAGE パッケージに対する英訳.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"PO-Revision-Date: 2018-06-28 07:14+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: rmt_advanced.xml:8
+#, no-c-format
+msgid "Advanced Topics"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:9
+#, no-c-format
+msgid ""
+"This chapter covers usage scenarios beyond the regular workflow to give you "
+"more control over your &rmt; server."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:14
+#, no-c-format
+msgid "Backup of the &rmt; Server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:16
+#, no-c-format
+msgid ""
+"Creating backups of the &rmt; server regularly can help restore it quickly "
+"and reliably if the server fails."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:21
+#, no-c-format
+msgid "There are three main parts on the &rmt; server to back up:"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:27
+#, no-c-format
+msgid "Configuration files"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:32
+#, no-c-format
+msgid "Package repositories"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:37
+#, no-c-format
+msgid "The database"
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:44
+#, no-c-format
+msgid "Configuration Files and Repositories"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:45
+#, no-c-format
+msgid ""
+"The &rmt; server configuration is stored in the <filename>/etc/smt.conf</"
+"filename> file and files in the <filename>/etc/smt.d</filename> directory."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:50
+#, no-c-format
+msgid ""
+"As &rmt; depends on the services provided by the Apache Web server and "
+"&mariadb; database engine, you need to back up their configuration files as "
+"well. Apache configuration files are located in the <filename>/etc/apache2</"
+"filename> directory, while configuration of &mariadb; is stored in "
+"<filename>/etc/my.cnf</filename>, <filename>/etc/mysqlaccess.conf</"
+"filename>, and files in the <filename>/etc/my.cnf.d</filename> directory."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:59
+#, no-c-format
+msgid ""
+"Package repositories are stored in the <filename>/srv/www/htdocs/repo</"
+"filename> directory. While you can normally mirror the repositories on the "
+"restored server from the update server as well, the download can take a long "
+"time. Therefore backing up the repositories can save you time and bandwidth."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:67
+#, no-c-format
+msgid "Size of the Repositories"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:68
+#, no-c-format
+msgid ""
+"The software repositories can be significant in size, and you will need to "
+"transfer them from the update server."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:73
+#, no-c-format
+msgid ""
+"Use your preferred tool to back up the configuration and repository files."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:79
+#, no-c-format
+msgid "The Database"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:80
+#, no-c-format
+msgid ""
+"&rmt; uses the &mariadb; database to store information about clients, "
+"registrations, machine data, which repositories are enabled for mirroring, "
+"and custom repositories. Unlike the configuration files and repositories, "
+"the database information cannot be recovered without a valid backup."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:86
+#, no-c-format
+msgid ""
+"To back up the &rmt; database, you can for example create a cron job that "
+"performs an SQL dump into a plain text file:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:90
+#, no-c-format
+msgid ""
+"mysqldump -u root -p <replaceable>SMT_DB_PASSWORD</replaceable> smt > /"
+"<replaceable>BACKUP_DIR</replaceable>/smt-db-backup.sql"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:91
+#, no-c-format
+msgid "Then add the resulting file to your regular backup jobs."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:97
+#, no-c-format
+msgid "Disconnected &rmt; Servers"
+msgstr ""
+
+#. Tag: remark
+#: rmt_advanced.xml:101
+#, no-c-format
+msgid "2018-02-12 - fs: Will be renamed, probably: Air Gap Mode"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:103
+#, no-c-format
+msgid ""
+"In some restricted environments it is not possible for &rmt; servers to "
+"access the Internet because they are located on disconnected or isolated "
+"networks. In this case, you can back up the relevant data on an external "
+"storage device using special parameters with the &rmt; commands."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:111
+#, no-c-format
+msgid ""
+"You need an external &rmt; server that mirrors the repositories from &scc;. "
+"Then you can transfer these repositories to the &rmt; servers on the "
+"isolated network using the external storage device."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:118
+#, no-c-format
+msgid "&rmt; Disconnected Setup"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:129
+#, no-c-format
+msgid ""
+"Although the initial setup of this solution requires additional "
+"configuration, the regular update synchronization with &scc; and "
+"distribution to isolated servers is simple. The steps required during the "
+"initial setup are as follows:"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:138
+#, no-c-format
+msgid "Installing and configuring the external &rmt; server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:143
+#, no-c-format
+msgid "Installing the internal server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:148
+#, no-c-format
+msgid ""
+"Editing <filename>/etc/smt.conf</filename> and setting up a cron job on the "
+"internal &rmt; server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:154
+#, no-c-format
+msgid ""
+"Transferring the &scc; data from the external &rmt; server to the internal "
+"server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:160
+#, no-c-format
+msgid "Enabling and disabling repositories on the internal server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:165
+#, no-c-format
+msgid ""
+"Creating an &rmt; database replacement file on the internal server&mdash;"
+"when performing the mirror jobs, the file can be used instead of the normal "
+"&mariadb; database"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:173
+#, no-c-format
+msgid "Day-to-day operation requires the following actions:"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:179
+#, no-c-format
+msgid "Running the <command>smt-mirror</command> job on the external server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:185
+#, no-c-format
+msgid ""
+"Synchronizing the mirrored repositories from the external storage device to "
+"the internal &rmt; server"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:192
+#, no-c-format
+msgid "Below is a detailed description of the individual steps."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:197
+#, no-c-format
+msgid "External &rmt; Server Configuration for the Disconnected Setup"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:199
+#, no-c-format
+msgid ""
+"Install and configure &rmt; as described in <xref linkend=\"smt.installation"
+"\"/>."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:205
+#, no-c-format
+msgid "Enable the repositories for use by the internal &rmt; servers."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:210
+#, no-c-format
+msgid ""
+"Perform a standard repository mirroring from &scc; with <command>smt-mirror</"
+"command>."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:216
+#, no-c-format
+msgid "Attach a removable storage device to the server and mount it."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:221
+#, no-c-format
+msgid ""
+"Export the required &scc; data to a directory on the mounted storage device:"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:226
+#, no-c-format
+msgid ""
+"Create a directory with correct permissions for storing the data. Because "
+"the <command>smt</command> commands run as the <systemitem class=\"username"
+"\">smt</systemitem> user (whose numeric UID can differ between the servers), "
+"you need to make permissions for the directories on the external storage "
+"device less restrictive:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:233
+#, no-c-format
+msgid ""
+"&prompt.user;chmod o+w <replaceable>/path/to/scc/dir/on/storage/device</"
+"replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:236
+#, no-c-format
+msgid "Export the &scc; data:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:239 rmt_advanced.xml:373
+#, no-c-format
+msgid ""
+"&prompt.sudo;smt-sync --todir <replaceable>/path/to/scc/dir/on/storage/"
+"device</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:244
+#, no-c-format
+msgid "Create a directory with correct permissions:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:247
+#, no-c-format
+msgid ""
+"&prompt.user;mkdir <replaceable>/path/to/repository/on/storage/device</"
+"replaceable>\n"
+"&prompt.user;chmod o+w <replaceable>/path/to/repository/on/storage/device</"
+"replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:250 rmt_advanced.xml:341
+#, no-c-format
+msgid "Unmount and detach the storage device."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:257
+#, no-c-format
+msgid "Internal &rmt; Server Configuration for the Disconnected Setup"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:259
+#, no-c-format
+msgid "Ensure you have a working &sls; installation source."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:264
+#, no-c-format
+msgid ""
+"Install &rmt; the same way as on the external server with the following "
+"exceptions:"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:270
+#, no-c-format
+msgid ""
+"Select <guimenu>Generate new SCC credentials</guimenu> in the <guimenu>SCC "
+"Credentials</guimenu> dialog."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:276
+#, no-c-format
+msgid ""
+"Ignore the error message when running the synchronization script in the "
+"<guimenu>Writing SMT Configuration</guimenu> phase of the wizard."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:282
+#, no-c-format
+msgid ""
+"Abort the <guimenu>SUSE Customer Center Configuration</guimenu> wizard and "
+"click <guimenu>OK</guimenu> in the list of installed add-on products."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:291
+#, no-c-format
+msgid ""
+"Re-launch the &yast; &rmtool; Server Configuration module (<command>yast2 "
+"smt-server</command>) and go to the<guimenu> Scheduled SMT Jobs</guimenu> "
+"tab."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:298
+#, no-c-format
+msgid ""
+"Delete <literal>SCC Registration</literal> and <literal>Synchronization of "
+"Updates</literal> jobs."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:303
+#, no-c-format
+msgid ""
+"Click <guimenu>OK</guimenu> to finish the wizard, provide the &rmt; user "
+"password, and acknowledge the synchronization error again."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:309
+#, no-c-format
+msgid "Prevent registration data upstream synchronization to &scc; by setting"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:312
+#, no-c-format
+msgid "forwardRegistration = false"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:313
+#, no-c-format
+msgid "in <filename>/etc/smt.conf</filename>."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:318 rmt_advanced.xml:357
+#, no-c-format
+msgid "Connect an external storage device and mount it."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:323
+#, no-c-format
+msgid "Populate the &rmt; database with the previously created &scc; data:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:326
+#, no-c-format
+msgid ""
+"&prompt.sudo;smt-sync --fromdir <replaceable>/path/to/scc/dir/on/mobile/"
+"disk</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:329
+#, no-c-format
+msgid ""
+"Enable mirroring of the desired repositories using the <command>smt-repos -"
+"e</command> command."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:335
+#, no-c-format
+msgid "Create a database replacement file on the external storage device:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:338
+#, no-c-format
+msgid ""
+"&prompt.sudo;smt-sync --createdbreplacementfile <replaceable>/path/to/dbrepl/"
+"file/on/mobile/disk</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:347
+#, no-c-format
+msgid ""
+"Now the configuration of both the external and internal &rmt; servers is "
+"complete. However, the update repository is still empty. After you run the "
+"following daily operation routines for the first time, the repository will "
+"be synchronized, and the internal &rmt; server will be ready to serve "
+"clients."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:355
+#, no-c-format
+msgid "Daily External &rmt; Server Operation"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:362
+#, no-c-format
+msgid ""
+"Perform a mirror to a directory on the storage device based on the file "
+"stored on it:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:366
+#, no-c-format
+msgid ""
+"&prompt.sudo;smt-mirror --dbreplfile <replaceable>/path/to/dbrepl/file/on/"
+"storage/device</replaceable> \\\n"
+" --fromlocalsmt --directory <replaceable>/path/to/repository/on/storage/"
+"device</replaceable> \\\n"
+" -L /var/log/smt/smt-mirror-example.log"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:369
+#, no-c-format
+msgid ""
+"Update the database on the storage device with the product and subscription "
+"info from &scc;:"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:376
+#, no-c-format
+msgid ""
+"Optionally, scan the storage device for viruses and other unwanted content."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:381 rmt_advanced.xml:414
+#, no-c-format
+msgid "Unmount and disconnect the storage device."
+msgstr ""
+
+#. Tag: title
+#: rmt_advanced.xml:388
+#, no-c-format
+msgid "Daily Internal &rmt; Server Operation"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:390
+#, no-c-format
+msgid "Connect a storage device and mount it."
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:395
+#, no-c-format
+msgid "Update the &scc; data on the server:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:398
+#, no-c-format
+msgid ""
+"smt-sync --fromdir <replaceable>/path/to/scc/dir/on/storage/device</"
+"replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:401
+#, no-c-format
+msgid "Mirror from the storage device to the server:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:404
+#, no-c-format
+msgid ""
+"smt-mirror --fromdir <replaceable>/path/to/repository/on/storage/device</"
+"replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_advanced.xml:407
+#, no-c-format
+msgid ""
+"Update the &scc; data on the storage device with local changes in the mirror "
+"status since the last synchronization:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_advanced.xml:411
+#, no-c-format
+msgid ""
+"&prompt.sudo;smt-sync --createdbreplacementfile <replaceable>/path/to/dbrepl/"
+"file/on/storage/device</replaceable>"
+msgstr ""

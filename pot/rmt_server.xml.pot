@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: title
+#: rmt_server.xml:9
+#, no-c-format
+msgid "&rmt; Server Configuration"
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:11
+#, no-c-format
+msgid "This chapter introduces the &yast; configuration module for the &rmt; server. This module can be used to set and configure mirroring credentials, &rmt; database passwords, and e-mail addresses for receiving SMT reports. The module also lets you set the &rmt; job schedule, and activate or deactivate the &rmt; service."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:19
+#, no-c-format
+msgid "To configure &rmt; with &rmt; Server Configuration, follow the steps below."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:24
+#, no-c-format
+msgid "Start the &yast; module <guimenu>SMT Server Configuration</guimenu> from the &yast; control center or by running <command>yast smt-server</command> from the command line."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:31
+#, no-c-format
+msgid "To activate &rmt;, toggle the <guimenu>Enable Subscription Management Tool Service (SMT)</guimenu> option in the <guimenu>Customer Center Access</guimenu> section. For more information about activating &rmt; with &yast;, see <xref linkend=\"smt.yast.activation\"/>."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:39
+#, no-c-format
+msgid "If the firewall is enabled, activate <guimenu>Open Port in Firewall</guimenu>."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:45
+#, no-c-format
+msgid "In the <guimenu>Customer Center Configuration</guimenu> section of <guimenu>Customer Center Access</guimenu>, you can set the custom server URLs. Set and test credentials for the SUSE Update service. Correct credentials are necessary to enable mirroring from the download server and determine the products that should be mirrored. Also set the e-mail address used for the registration and the URL of your &rmt; server. For more information, see <xref linkend=\"smt.yast.credentials\"/>."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:75
+#, no-c-format
+msgid "When you are satisfied with the configuration, click <guimenu>OK</guimenu>. &yast; updates the &rmt; configuration and starts or restarts necessary services."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:80
+#, no-c-format
+msgid "If you want to abort the configuration and cancel any changes, click <guimenu>Cancel</guimenu>."
+msgstr ""
+
+#. Tag: title
+#: rmt_server.xml:84
+#, no-c-format
+msgid "Check for Certificate"
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:85
+#, no-c-format
+msgid "When the &rmt; Configuration applies changes, it checks whether the common server certificate exists. If the certificate does not exist, you will be asked whether the certificate should be created."
+msgstr ""
+
+#. Tag: title
+#: rmt_server.xml:94
+#, no-c-format
+msgid "Activating and Deactivating &rmt; with &yast;"
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:96
+#, no-c-format
+msgid "&yast; provides an easy way to activate or deactivate the &rmt; service. To activate &rmt; using &yast;, follow the steps below."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:103 rmt_server.xml:135
+#, no-c-format
+msgid "Switch to the <guimenu>Customer Center Access</guimenu> section in the &rmt; Configuration."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:107
+#, no-c-format
+msgid "Activate the <guimenu>Enable Subscription Management Tool service (SMT)</guimenu> option."
+msgstr ""
+
+#. Tag: title
+#: rmt_server.xml:112
+#, no-c-format
+msgid "Organization Credentials"
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:113
+#, no-c-format
+msgid "Specify organization credentials before activating &rmt;. For more information on how to set organization credentials with &yast;, see <xref linkend=\"smt.yast.credentials\"/>."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:122 rmt_server.xml:147
+#, no-c-format
+msgid "Click <guimenu>Finish</guimenu> to apply the changes and leave the &rmt; Configuration."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:129
+#, no-c-format
+msgid "To deactivate &rmt; with &yast;, proceed as follows."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:141
+#, no-c-format
+msgid "Disable the <guimenu>Enable Subscription Management Tool service (SMT)</guimenu> option."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:154
+#, no-c-format
+msgid "When activating &rmt;, &yast; performs the following actions."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:160
+#, no-c-format
+msgid "The Apache configuration is changed by creating symbolic links in the <filename>/etc/apache2/conf.d/</filename> directory. Links to the <filename>/etc/smt.d/nu_server.conf</filename> and <filename>/etc/smt.d/smt_mod_perl.conf</filename> files are created there."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:169
+#, no-c-format
+msgid "The Apache Web server is started (or reloaded if already running)."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:174
+#, no-c-format
+msgid "The &mariadb; server is started or restarted. The smt user and all necessary tables in the database are created, if needed."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:180
+#, no-c-format
+msgid "The schema of the &rmt; database is checked. If the database schema is outdated, the &rmt; database is upgraded to the current schema."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:187
+#, no-c-format
+msgid "Cron is updated by creating a symbolic link in the <filename>/etc/cron.d/</filename> directory. A link to the <filename>/etc/smt.d/novell.com-smt</filename> file is created there."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:195
+#, no-c-format
+msgid "When deactivating &rmt;, &yast; performs the following actions."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:201
+#, no-c-format
+msgid "Symbolic links that were created upon SMT activation in the /etc/apache2/conf.d/ and /etc/cron.d/ directories are deleted."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:207
+#, no-c-format
+msgid "The Cron daemon, the Apache server, and the &mariadb; database daemon are restarted. Neither Apache nor &mariadb; are stopped, as they may be used for other purposes than the &rmt; service."
+msgstr ""
+
+#. Tag: title
+#: rmt_server.xml:216 rmt_server.xml:224
+#, no-c-format
+msgid "Setting the Update Server Credentials with &yast;"
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:218
+#, no-c-format
+msgid "The following procedure describes how to set and test the download server credentials and the URL of the download server service using &yast;."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:237
+#, no-c-format
+msgid "Switch to the <guimenu>Customer Center Access</guimenu> section in the &rmt; Configuration. If the credentials have been already set with &yast; or via the <filename>/etc/smt.conf</filename> configuration file, they will be displayed in the <guimenu>User</guimenu> and <guimenu>Password</guimenu> fields."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:246
+#, no-c-format
+msgid "If you do not have credentials, visit &scc; to obtain them. For more details, see <xref linkend=\"smt.mirroring.getcredentials\"/>."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:252
+#, no-c-format
+msgid "Enter your user name and password in the appropriate fields."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:257
+#, no-c-format
+msgid "Click <guimenu>Test</guimenu> to check the credentials. &yast; will try to download a list of available repositories with the provided credentials. If the test succeeds, the last line of the test results will read <literal>Test result: success</literal>. If the test fails, check the provided credentials and try again."
+msgstr ""
+
+#. Tag: title
+#: rmt_server.xml:268
+#, no-c-format
+msgid "Successful Test of the Update Server Credentials"
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:280
+#, no-c-format
+msgid "Enter the <guimenu>SCC E-mail Used for Registration</guimenu>. This should be the address you used to register to &scc;."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:284
+#, no-c-format
+msgid "Enter <guimenu>Your SMT Server URL</guimenu> if it has not been detected automatically."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:290
+#, no-c-format
+msgid "Click <guimenu>OK</guimenu>."
+msgstr ""
+
+#. Tag: title
+#: rmt_server.xml:297
+#, no-c-format
+msgid "Setting &rmt; Database Password with &yast;"
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:299
+#, no-c-format
+msgid "For security reasons, &rmt; uses its own user in the database. &yast; provides an interface for setting up or changing the &rmt; database password. To set or change the &rmt; database password with &yast;, follow the steps below."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:308
+#, no-c-format
+msgid "Switch to the <guimenu>Database and Reporting</guimenu> section in the &rmt; Configuration module."
+msgstr ""
+
+#. Tag: para
+#: rmt_server.xml:315
+#, no-c-format
+msgid "Enter the <guimenu>Database Password for &rmt; User</guimenu>. Confirm the password by re-entering it, then click <guimenu>OK</guimenu>."
+msgstr ""
+

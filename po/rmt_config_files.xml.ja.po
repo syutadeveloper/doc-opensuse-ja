@@ -1,0 +1,745 @@
+# Japanese translations for PACKAGE package
+# PACKAGE パッケージに対する英訳.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"PO-Revision-Date: 2018-06-28 07:14+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: rmt_config_files.xml:9
+#, no-c-format
+msgid "&rmt; Configuration Files"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:11
+#, no-c-format
+msgid ""
+"The main &rmt; configuration file is <filename>/etc/rmt.conf</filename>. You "
+"can set most of the options with the &yast; &rmt; Server module. Another "
+"important configuration file is <filename>/etc/smt.d/smt-cron.conf</"
+"filename>, which contains parameters for commands launched as &rmt; "
+"scheduled jobs."
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:20
+#, no-c-format
+msgid "/etc/rmt.conf"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:21
+#, no-c-format
+msgid ""
+"The <filename>/etc/rmt.conf</filename> file has several sections. The "
+"<literal>[NU]</literal> section contains the update credentials and URL. The "
+"<literal>[DB]</literal> section contains the configuration of the &mariadb; "
+"database for &rmt;. The <literal>[LOCAL]</literal> section includes other "
+"configuration data. The <literal>[REPORT]</literal> section contains the "
+"configuration of &rmt; reports."
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:30
+#, no-c-format
+msgid "Passwords in Clear Text"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:31
+#, no-c-format
+msgid ""
+"The <filename>/etc/rmt.conf</filename> file contains passwords in clear "
+"text. Its default permissions (640, root, wwwrun) make its content easily "
+"accessible with scripts running on the Apache server. Be careful with "
+"running other software on the &rmt; Apache server. The best policy is to use "
+"this server only for &rmt;."
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:39
+#, no-c-format
+msgid "[NU] Section of /etc/rmt.conf"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:40
+#, no-c-format
+msgid "The following options are available in the [NU] section:"
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:45
+#, no-c-format
+msgid "NUUrl"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:48
+#, no-c-format
+msgid ""
+"URL of the update service. Usually it should contain the <literal>https://"
+"updates.suse.com/</literal> URL."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:55
+#, no-c-format
+msgid "NURegUrl"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:58
+#, no-c-format
+msgid ""
+"URL of the update registration service. It is used by <command>smt-sync</"
+"command>. If this option is missing, the URL from <filename>/etc/"
+"SUSEConnect</filename> is used as a fallback."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:66
+#, no-c-format
+msgid "NUUser"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:69
+#, no-c-format
+msgid ""
+"<option>NUUser</option> should contain the user name for update service. For "
+"information about getting organization credentials, see <xref linkend=\"smt."
+"mirroring.getcredentials\"/>. You can set this value with the &rmt; Server."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:78
+#, no-c-format
+msgid "NUPass"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:81
+#, no-c-format
+msgid ""
+"<option>NUPass</option> is the password for the user defined in "
+"<option>NUUser</option>. For information about getting organization "
+"credentials, see <xref linkend=\"smt.mirroring.getcredentials\"/>. You can "
+"set this value with the &rmt; Server."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:90
+#, no-c-format
+msgid "ApiType"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:93
+#, no-c-format
+msgid ""
+"<option>ApiType</option> is the type of service &rmt; uses; it can be either "
+"<literal>NCC</literal> for Novell Customer Center or <literal>SCC</literal> "
+"for &scc;. The only supported value for &rmt; 12 is <literal>SCC</literal>."
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:104
+#, no-c-format
+msgid "[DB] Section of /etc/rmt.conf"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:105
+#, no-c-format
+msgid ""
+"The three options defined in the [DB] section are used for configuring the "
+"database for &rmt;. Currently, only &mariadb; is supported by &rmt;."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:111
+#, no-c-format
+msgid "config"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:114
+#, no-c-format
+msgid ""
+"The first parameter of the DBI-&gt;connect Perl method used for connection "
+"to the &mariadb; database. The value should be in the form"
+msgstr ""
+
+#. Tag: screen
+#: rmt_config_files.xml:118
+#, no-c-format
+msgid ""
+"dbi:mysql:database=<replaceable>SMT</replaceable>;"
+"host=<replaceable>LOCALHOST</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:119
+#, no-c-format
+msgid ""
+"where <replaceable>SMT</replaceable> is the name of the database and "
+"<replaceable>LOCALHOST</replaceable> is the host name of the database server."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:127
+#, no-c-format
+msgid "user"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:130
+#, no-c-format
+msgid "The user for the database. The default value is <literal>smt</literal>."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:137
+#, no-c-format
+msgid "pass"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:140
+#, no-c-format
+msgid ""
+"The password for the database user. You can set the password with the &yast; "
+"&rmt; Server module."
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:149
+#, no-c-format
+msgid "[LOCAL] Section of /etc/rmt.conf"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:150
+#, no-c-format
+msgid ""
+"The following options are available in the <literal>[LOCAL]</literal> "
+"section:"
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:156
+#, no-c-format
+msgid "<option>url</option>"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:159
+#, no-c-format
+msgid ""
+"The base URL of the &rmt; server which is used to construct URLs of the "
+"repositories available on the server. This value should be set by &yast; "
+"automatically during installation. The format of this option should be: "
+"<literal>https://server.domain.tld/</literal>."
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:165
+#, no-c-format
+msgid ""
+"You can change the URL manually. For example, the administrator may choose "
+"to use the <literal>http://</literal> scheme instead of <literal>https://</"
+"literal> for performance reasons. Another reason may be using an alias "
+"(configured with CNAME in DNS) instead of the host name of the server. For "
+"example, <literal>http://smt.domain.tld/</literal> instead of "
+"<literal>http://server1.domain.tld/</literal>."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:177
+#, no-c-format
+msgid "nccEmail"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:180
+#, no-c-format
+msgid ""
+"E-mail address used for registration at the &scc;. The &rmt; administrator "
+"can set this value with the &yast; &rmt; Server module."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:187
+#, no-c-format
+msgid "MirrorTo"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:190
+#, no-c-format
+msgid "Determines the path to mirror to."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:196
+#, no-c-format
+msgid "MirrorAll"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:199
+#, no-c-format
+msgid ""
+"If the <option>MirrorAll</option> option is set to <literal>true</literal>, "
+"the <command>smt-sync</command> script will set all repositories that can be "
+"mirrored to be mirrored (DOMIRROR flag)."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:208
+#, no-c-format
+msgid "MirrorSRC"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:211
+#, no-c-format
+msgid ""
+"If the <option>MirrorSRC</option> option is set to <literal>true</literal>, "
+"source RPM packages are mirrored."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:231
+#, no-c-format
+msgid "rndRegister"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:234
+#, no-c-format
+msgid ""
+"Specify a delay in seconds before the clients are registered at &scc;. The "
+"value is a random number between <literal>0</literal> and <literal>450</"
+"literal>, generated by the &yast; &rmt; Server module. The purpose of this "
+"random delay is to prevent a high load on the &scc; server that would occur "
+"if all smt-register cron jobs connected at the same time."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:245
+#, no-c-format
+msgid "mirror_preunlock_hook"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:248
+#, no-c-format
+msgid ""
+"Specify the path to the script that will be run before the <command>smt-"
+"mirror</command> script removes its lock."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:255
+#, no-c-format
+msgid "mirror_postunlock_hook"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:258
+#, no-c-format
+msgid ""
+"Specify the path to the script that will be run after the <command>smt-"
+"mirror</command> script removes its lock."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:265
+#, no-c-format
+msgid "HTTPProxy"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:268
+#, no-c-format
+msgid ""
+"If you do not want to use global proxy settings, specify the proxy to be "
+"used for HTTP connection here. Use the following form: <literal>http://"
+"<replaceable>PROXY</replaceable>.&exampledomain;:<replaceable>3128</"
+"replaceable></literal>."
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:273 rmt_config_files.xml:290 rmt_config_files.xml:308
+#, no-c-format
+msgid ""
+"If the proxy settings are not configured in <filename>/etc/rmt.conf</"
+"filename>, the global proxy settings configured in <filename>/etc/syconfig/"
+"proxy</filename> are used. You can configure the global proxy settings with "
+"the &yast; Proxy module."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:282
+#, no-c-format
+msgid "HTTPSProxy"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:285
+#, no-c-format
+msgid ""
+"If you do not want to use global proxy settings, specify the proxy to be "
+"used for HTTPS connection here. Use the form: <literal>https://"
+"<replaceable>PROXY</replaceable>.&exampledomain;:<replaceable>3128</"
+"replaceable></literal>."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:299
+#, no-c-format
+msgid "ProxyUser"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:302
+#, no-c-format
+msgid ""
+"If your proxy requires authentication, specify a user name and password "
+"here, using the <literal><replaceable>USERNAME</replaceable>:"
+"<replaceable>PASSWORD</replaceable></literal> format."
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:316
+#, no-c-format
+msgid "Global User Authentication Setting"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:317
+#, no-c-format
+msgid ""
+"If you configure the global proxy settings with &yast;, manually copy "
+"<filename>/root/.curlrc</filename> to the home directory of the <systemitem "
+"class=\"username\">smt</systemitem>. Adjust the permissions with the "
+"following commands as &rootuser;:"
+msgstr ""
+
+#. Tag: screen
+#: rmt_config_files.xml:323
+#, no-c-format
+msgid ""
+"&prompt.sudo;cp /root/.curlrc /var/lib/smt/\n"
+"&prompt.sudo;chown smt:www /var/lib/smt/.curlrc"
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:328
+#, no-c-format
+msgid "requiredAuthType"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:331
+#, no-c-format
+msgid ""
+"Specify an authentication type to access the repository. There are three "
+"possible types:"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:337
+#, no-c-format
+msgid ""
+"<literal>none</literal> - no authentication is required. This is the default "
+"value."
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:343
+#, no-c-format
+msgid ""
+"<literal>lazy</literal> - only user name and password are checked. A valid "
+"user can access all repositories."
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:349
+#, no-c-format
+msgid ""
+"<literal>strict</literal> - checks also if the user has access to the "
+"repository."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:358
+#, no-c-format
+msgid "smtUser"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:361
+#, no-c-format
+msgid ""
+"Specify a user name of a Unix user under which all smt commands will run."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:368
+#, no-c-format
+msgid "signingKeyID"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:371
+#, no-c-format
+msgid ""
+"Specify the ID of the GPG key to sign modified repositories. The user "
+"specified under <option>smtUser</option> needs to have access to the key. If "
+"this option is not set, the modified repositories will be unsigned."
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:384
+#, no-c-format
+msgid "Example /etc/rmt.conf"
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:386
+#, no-c-format
+msgid "rmt.conf"
+msgstr ""
+
+#. Tag: screen
+#: rmt_config_files.xml:389
+#, no-c-format
+msgid ""
+"[NU]\n"
+"NUUrl=https://updates.suse.com/\n"
+"NURegUrl=https://scc.suse.com/connect\n"
+"NUUser = exampleuser\n"
+"NUPass = examplepassword\n"
+"ApiType = SCC\n"
+"\n"
+"[DB]\n"
+"config = dbi:mysql:database=smt;host=localhost\n"
+"user = smt\n"
+"pass = smt\n"
+"\n"
+"[LOCAL]\n"
+"# Default should be http://server.domain.top/\n"
+"url = http://smt.example.com/\n"
+"# This email address is used for registration at SCC\n"
+"nccEmail = exampleuser@example.com\n"
+"MirrorTo = /srv/www/htdocs\n"
+"MirrorAll = false\n"
+"MirrorSRC = false\n"
+"forwardRegistration = true\n"
+"rndRegister = 127\n"
+"# The hook script that should be called before the smt-mirror script removes "
+"its lock\n"
+"mirror_preunlock_hook =\n"
+"# The hook script that should be called after the smt-mirror script removed "
+"its lock\n"
+"mirror_postunlock_hook =\n"
+"# specify proxy settings here, if you do not want to use the global proxy "
+"settings\n"
+"# If you leave these options empty the global options are used.\n"
+"#\n"
+"# specify which proxy you want to use for HTTP connection\n"
+"# in the form http://proxy.example.com:3128\n"
+"HTTPProxy =\n"
+"# specify which proxy you want to use for HTTPS connection\n"
+"# in the form http://proxy.example.com:3128\n"
+"HTTPSProxy =\n"
+"# specify username and password if your proxy requires authentication\n"
+"# in the form username:password\n"
+"ProxyUser =\n"
+"#\n"
+"# require authentication to access the repository?\n"
+"# Three possible authtypes can be configured here\n"
+"# 1) none   : no authentication required (default)\n"
+"# 2) lazy   : check only username and password. A valid user has access to "
+"all repositories\n"
+"# 3) strict : check also if this user has access to the repository.\n"
+"#\n"
+"requiredAuthType = none\n"
+"#\n"
+"# the smt commands should run with this unix user\n"
+"#\n"
+"smtUser = smt\n"
+"#\n"
+"# ID of the GPG key to be used to sign modified (filtered) repositories.\n"
+"# The key must be accessible by the user who runs SMT, i.e. the user "
+"specified\n"
+"# in the 'smtUser' configuration option.\n"
+"#\n"
+"# If empty, the modified repositories will be unsigned.\n"
+"#\n"
+"signingKeyID =\n"
+"#\n"
+"# This string is sent in HTTP requests as UserAgent.\n"
+"# If the key UserAgent does not exist, a default is used.\n"
+"# If UserAgent is empty, no UserAgent string is set.\n"
+"#\n"
+"#UserAgent=\n"
+"# Organization credentials for this SMT server.\n"
+"# These are currently only used to get list of all available repositories\n"
+"# from https://your.smt.url/repo/repoindex.xml\n"
+"# Note: if authenticated as a client machine instead of these mirrorUser,\n"
+"# the above URL returns only repositories relevant for that client.\n"
+"mirrorUser =\n"
+"mirrorPassword =\n"
+"\n"
+"[REST]\n"
+"# Enable administrative access to the &rmt; RESTService by setting "
+"enableRESTAdminAccess=1\n"
+"# default: 0\n"
+"enableRESTAdminAccess = 0\n"
+"# Define the username the REST-Admin uses for login\n"
+"# default: RESTroot\n"
+"RESTAdminUser = RESTroot\n"
+"# Define the password for the REST-Admin (note: empty password is invalid)\n"
+"# default: &lt;empty&gt;\n"
+"RESTAdminPassword =\n"
+"\n"
+"[JOBQUEUE]\n"
+"# maximum age of finished (non-persistent) jobs in days\n"
+"# default: 8\n"
+"maxFinishedJobAge = 8\n"
+"# comma separated list of JobQueue status IDs that should be interpreted as "
+"successful\n"
+"# See smt-job --help for more information about possible Status IDs\n"
+"# Please note: An empty string will be interpreted as default (1,4).\n"
+"# default: 1,4\n"
+"# useful:  1,4,6\n"
+"jobStatusIsSuccess = 1,4\n"
+"\n"
+"[REPORT]\n"
+"# comma separated list of eMail addresses where the status reports will be "
+"sent to\n"
+"reportEmail = exampleuser@example.com\n"
+"# from field of report mails - if empty it defaults to \"root@&lt;"
+"hostname&gt;.&lt;domainname&gt;\"\n"
+"reportEmailFrom =\n"
+"# relay mail server - leave empty if mail should be sent directly\n"
+"mailServer =\n"
+"mailServerPort =\n"
+"# mail server authentication - leave empty if not required\n"
+"mailServerUser =\n"
+"mailServerPassword ="
+msgstr ""
+
+#. Tag: title
+#: rmt_config_files.xml:395
+#, no-c-format
+msgid "/etc/smt.d/smt-cron.conf"
+msgstr ""
+
+#. Tag: remark
+#: rmt_config_files.xml:398
+#, no-c-format
+msgid "2018-02-12 - fs: Still applicable?"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:400
+#, no-c-format
+msgid ""
+"The <filename>/etc/smt.d/smt-cron.conf</filename> configuration file "
+"contains options of the &rmt; commands launched as &rmt; scheduled jobs set "
+"with &yast; (see FIXME). Cron is used to launch these scheduled jobs. The "
+"cron table is located in the <filename>/etc/cron.d/novell.com-smt</filename> "
+"file."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:410
+#, no-c-format
+msgid "SCC_SYNC_PARAMS"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:413
+#, no-c-format
+msgid ""
+"Contains parameters of the <command>smt scc-sync</command> command, if "
+"called as part of an &rmt; scheduled job via cron. The default value is "
+"<literal>\"-L /var/log/smt/smt-sync.log --mail\"</literal>."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:421
+#, no-c-format
+msgid "MIRROR_PARAMS"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:424
+#, no-c-format
+msgid ""
+"Contains parameters of the <command>smt mirror</command> command, if called "
+"as part of an &rmt; scheduled job via cron. The default value is <literal>\"-"
+"L /var/log/smt/smt-mirror.log --mail\" </literal>."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:432
+#, no-c-format
+msgid "REGISTER_PARAMS"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:435
+#, no-c-format
+msgid ""
+"Contains parameters of the <command>smt register</command> command, if "
+"called as part of an &rmt; scheduled job via cron. The default value is "
+"<literal>\"-r -L /var/log/smt/smt-register.log --mail\" </literal>."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:443
+#, no-c-format
+msgid "REPORT_PARAMS"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:446
+#, no-c-format
+msgid ""
+"Contains parameters of the <command>smt report</command> command, if called "
+"as part of an &rmt; scheduled job via cron. The default value is <literal>"
+"\"--mail --attach -L /var/log/smt/smt-report.log\" </literal>."
+msgstr ""
+
+#. Tag: option
+#: rmt_config_files.xml:455
+#, no-c-format
+msgid "JOBQUEUECLEANUP_PARAMS"
+msgstr ""
+
+#. Tag: para
+#: rmt_config_files.xml:458
+#, no-c-format
+msgid ""
+"Contains parameters for smt jobqueue cleanup, if called as a part of an "
+"&rmt; scheduled job via cron. The default value is <literal>\"--mail -L /var/"
+"log/smt/smt-jobqueuecleanup.log\"</literal>."
+msgstr ""
