@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zypper.xml\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
-"PO-Revision-Date: 2018-07-02 15:34+0900\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"PO-Revision-Date: 2018-07-03 20:56+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "Using Zypper"
 msgstr "zypper の使用"
 
-#. Tag: dm:docmanager
-#: zypper.xml:14
+#. Tag: dm:translation
+#: zypper.xml:16
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
-msgstr "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
+msgstr "yes"
 
 #. Tag: para
 #: zypper.xml:20
@@ -40,9 +40,9 @@ msgid ""
 "accomplishing remote software management tasks or managing software from "
 "shell scripts."
 msgstr ""
-"zypper はパッケージのインストールや更新、削除などを行なうことができる、"
-"コマンドライン型のパッケージマネージャです。特にリモートからのソフトウエア"
-"管理作業や、シェルスクリプトからのソフトウエア管理に便利な仕組みです。"
+"zypper はパッケージのインストールや更新、削除などを行なうことができる、コマン"
+"ドライン型のパッケージマネージャです。特にリモートからのソフトウエア管理作業"
+"や、シェルスクリプトからのソフトウエア管理に便利な仕組みです。"
 
 #. Tag: title
 #: zypper.xml:28
@@ -75,13 +75,13 @@ msgid ""
 "The components enclosed in brackets are not required. See <command>zypper "
 "help</command> for a list of general options and all commands. To get help "
 "for a specific command, type <command>zypper help</command> "
-"<replaceable>COMMAND</replaceable>."
+"<replaceable>COMMAND</replaceable> ."
 msgstr ""
-"[] で括られた箇所は任意指定のもので、必ずしも指定する必要があるものでは"
-"ありません。オプションとコマンドの一覧については、 <command>zypper "
-"help</command> を実行してください。また、特定のコマンドに対してヘルプを"
-"表示したい場合は、 <command>zypper help</command> <replaceable>コマンド</replaceable> "
-"と入力して実行してください。"
+"[] で括られた箇所は任意指定のもので、必ずしも指定する必要があるものではありま"
+"せん。オプションとコマンドの一覧については、 <command>zypper help</command> "
+"を実行してください。また、特定のコマンドに対してヘルプを表示したい場合は、 "
+"<command>zypper help</command> <replaceable>コマンド</replaceable> と入力して"
+"実行してください。"
 
 #. Tag: term
 #: zypper.xml:48
@@ -96,15 +96,8 @@ msgid ""
 "The simplest way to execute Zypper is to type its name, followed by a "
 "command. For example, to apply all needed patches to the system, use:"
 msgstr ""
-"zypper で最も簡単な使用方法は、コマンドに続いて名前を入力する方法です。"
-"たとえば、システムに対して必要なすべての修正を適用するには、下記のように"
-"入力します:"
-
-#. Tag: screen
-#: zypper.xml:54 zypper.xml:421
-#, no-c-format
-msgid "&prompt.sudo;zypper patch"
-msgstr "&prompt.sudo;zypper patch"
+"zypper で最も簡単な使用方法は、コマンドに続いて名前を入力する方法です。たとえ"
+"ば、システムに対して必要なすべての修正を適用するには、下記のように入力します:"
 
 #. Tag: term
 #: zypper.xml:58
@@ -118,7 +111,9 @@ msgstr "グローバルオプション"
 msgid ""
 "Additionally, you can choose from one or more global options by typing them "
 "immediately before the command:"
-msgstr "また、コマンドの直前には 1 つ以上のグローバルオプションを指定することができます:"
+msgstr ""
+"また、コマンドの直前には 1 つ以上のグローバルオプションを指定することができま"
+"す:"
 
 #. Tag: screen
 #: zypper.xml:64
@@ -135,8 +130,8 @@ msgid ""
 "default answers)."
 msgstr ""
 "上記の例では <option>--non-interactive</option> というグローバルオプションを"
-"指定しています。これは、コマンドの実行時に一切の問い合わせを行なわない "
-"(既定の回答がなされたものとして扱う) オプションです。"
+"指定しています。これは、コマンドの実行時に一切の問い合わせを行なわない (既定"
+"の回答がなされたものとして扱う) オプションです。"
 
 #. Tag: term
 #: zypper.xml:73
@@ -151,8 +146,8 @@ msgid ""
 "To use options that are specific to a particular command, type them "
 "immediately after the command:"
 msgstr ""
-"特定のコマンドに固有のオプションを指定したい場合は、コマンドの直後で"
-"指定します:"
+"特定のコマンドに固有のオプションを指定したい場合は、コマンドの直後で指定しま"
+"す:"
 
 #. Tag: screen
 #: zypper.xml:79
@@ -168,9 +163,9 @@ msgid ""
 "apply all needed patches to a system without you being asked to confirm any "
 "licenses. Instead, license will be accepted automatically."
 msgstr ""
-"上記の例では <option>--auto-agree-with-licenses</option> というオプションを"
-"指定しています。これは、システムに対して修正を適用する際、ライセンスの確認を"
-"行なわない (ライセンスを自動的に受け入れる) オプションです。"
+"上記の例では <option>--auto-agree-with-licenses</option> というオプションを指"
+"定しています。これは、システムに対して修正を適用する際、ライセンスの確認を行"
+"なわない (ライセンスを自動的に受け入れる) オプションです。"
 
 #. Tag: term
 #: zypper.xml:88
@@ -183,12 +178,12 @@ msgstr "パラメータ"
 #, no-c-format
 msgid ""
 "Some commands require one or more arguments. For example, when using the "
-"command <command>install</command>, you need to specify which package or "
-"which packages you want to <emphasis>install</emphasis>:"
+"command <command>install</command> , you need to specify which package or "
+"which packages you want to <emphasis>install</emphasis> :"
 msgstr ""
-"コマンドによっては、 1 つ以上のパラメータを受け付けるものがあります。"
-"たとえば <command>install</command> というコマンドでは、 <emphasis>インストール</emphasis> "
-"したいパッケージを指定します:"
+"コマンドによっては、 1 つ以上のパラメータを受け付けるものがあります。たとえ"
+"ば <command>install</command> というコマンドでは、 <emphasis>インストール</"
+"emphasis> したいパッケージを指定します:"
 
 #. Tag: screen
 #: zypper.xml:95
@@ -203,8 +198,8 @@ msgid ""
 "Some options also require a single argument. The following command will list "
 "all known patterns:"
 msgstr ""
-"オプションによっては 1 つのパラメータを必要とするものがあります。"
-"たとえば下記のコマンドは、既知の全てのパターンを一覧表示します:"
+"オプションによっては 1 つのパラメータを必要とするものがあります。たとえば下記"
+"のコマンドは、既知の全てのパターンを一覧表示します:"
 
 #. Tag: screen
 #: zypper.xml:100
@@ -220,10 +215,10 @@ msgid ""
 "install the <package>mc</package> and <package>vim</package> packages from "
 "the <literal>factory</literal> repository while being verbose:"
 msgstr ""
-"これまでのオプションやパラメータは、組み合わせて指定することもできます。"
-"たとえば下記のコマンドは、 <literal>factory</literal> という名前のリポジトリ"
-"から <package>mc</package> と <package>vim</package> というパッケージを"
-"インストールし、インストール時に詳細な出力 (verbose) を行なうようにしています:"
+"これまでのオプションやパラメータは、組み合わせて指定することもできます。たと"
+"えば下記のコマンドは、 <literal>factory</literal> という名前のリポジトリから "
+"<package>mc</package> と <package>vim</package> というパッケージをインストー"
+"ルし、インストール時に詳細な出力 (verbose) を行なうようにしています:"
 
 #. Tag: screen
 #: zypper.xml:109
@@ -239,8 +234,8 @@ msgid ""
 "enabled (for solving any dependencies) while requesting the package from the "
 "specified repository."
 msgstr ""
-"<option>--from</option> オプションは、全てのリポジトリを有効化した状態のまま、"
-"指定したリポジトリからパッケージをインストールするためのオプションです。"
+"<option>--from</option> オプションは、全てのリポジトリを有効化した状態のま"
+"ま、指定したリポジトリからパッケージをインストールするためのオプションです。"
 
 #. Tag: para
 #: zypper.xml:115
@@ -268,11 +263,11 @@ msgid ""
 "which gets written to Zypper's log files and plug-ins (such as the Btrfs "
 "plug-in). It can be used to mark and identify transactions in log files."
 msgstr ""
-"このほか、 zypper ではグローバルオプションとして <option>--userdata <replaceable>文字列</"
-"replaceable></option> というものも用意されています。このオプションは、"
-"指定した文字列を zypper およびプラグイン (たとえば brtfs プラグイン) の"
-"ログファイル内に書き込み、後からログファイル内を検索しやすくするための"
-"オプションです。"
+"このほか、 zypper ではグローバルオプションとして <option>--userdata "
+"<replaceable>文字列</replaceable></option> というものも用意されています。この"
+"オプションは、指定した文字列を zypper およびプラグイン (たとえば brtfs プラグ"
+"イン) のログファイル内に書き込み、後からログファイル内を検索しやすくするため"
+"のオプションです。"
 
 #. Tag: screen
 #: zypper.xml:127
@@ -290,7 +285,9 @@ msgstr "zypper を利用したソフトウエアのインストールと削除"
 #: zypper.xml:132
 #, no-c-format
 msgid "To install or remove packages, use the following commands:"
-msgstr "パッケージをインストールしたり削除したりしたい場合は、下記のコマンドをお使いください:"
+msgstr ""
+"パッケージをインストールしたり削除したりしたい場合は、下記のコマンドをお使い"
+"ください:"
 
 #. Tag: screen
 #: zypper.xml:135
@@ -303,119 +300,120 @@ msgstr ""
 "sudo zypper remove <replaceable>パッケージ名</replaceable>"
 
 #. Tag: title
-#: zypper.xml:138
+#: zypper.xml:139
 #, no-c-format
 msgid "Do Not Remove Mandatory System Packages"
 msgstr "必須パッケージの削除について"
 
 #. Tag: para
-#: zypper.xml:139
+#: zypper.xml:140
 #, no-c-format
 msgid ""
 "Do not remove mandatory system packages like <package>glibc</package> , "
 "<package>zypper</package> , <package>kernel</package> . If they are removed, "
 "the system can become unstable or stop working altogether."
 msgstr ""
-"<package>glibc</package>, <package>zypper</package> , <package>kernel</package> "
-"など、システムにとって必須のパッケージを削除しないでください。これらを削除して"
-"しまうと、システムが不安定になったり、全く動作しなくなったりしてしまいます。"
+"<package>glibc</package>, <package>zypper</package> , <package>kernel</"
+"package> など、システムにとって必須のパッケージを削除しないでください。これら"
+"を削除してしまうと、システムが不安定になったり、全く動作しなくなったりしてし"
+"まいます。"
 
 #. Tag: title
-#: zypper.xml:151
+#: zypper.xml:152
 #, no-c-format
 msgid "Selecting Which Packages to Install or Remove"
 msgstr "インストールまたは削除するパッケージの選択"
 
 #. Tag: para
-#: zypper.xml:152
+#: zypper.xml:153
 #, no-c-format
 msgid ""
 "There are various ways to address packages with the commands <command>zypper "
-"install</command> and <command>zypper remove</command>."
+"install</command> and <command>zypper remove</command> ."
 msgstr ""
-"<command>zypper install</command> や <command>zypper remove</command> のコマンドでは、"
-"様々な方法でパッケージを指定することができます。"
+"<command>zypper install</command> や <command>zypper remove</command> のコマ"
+"ンドでは、様々な方法でパッケージを指定することができます。"
 
 #. Tag: term
-#: zypper.xml:158
+#: zypper.xml:159
 #, no-c-format
 msgid "By Exact Package Name"
 msgstr "パッケージ名のみ"
 
 #. Tag: screen
-#: zypper.xml:160
+#: zypper.xml:161
 #, no-c-format
 msgid "&prompt.sudo;zypper install MozillaFirefox"
 msgstr "&prompt.sudo;zypper install MozillaFirefox"
 
 #. Tag: term
-#: zypper.xml:164
+#: zypper.xml:165
 #, no-c-format
 msgid "By Exact Package Name and Version Number"
 msgstr "パッケージ名とバージョン番号"
 
 #. Tag: screen
-#: zypper.xml:166
+#: zypper.xml:167
 #, no-c-format
 msgid "&prompt.sudo;zypper install MozillaFirefox-52.2"
 msgstr "&prompt.sudo;zypper install MozillaFirefox-52.2"
 
 #. Tag: term
-#: zypper.xml:170
+#: zypper.xml:171
 #, no-c-format
 msgid "By Repository Alias and Package Name"
 msgstr "リポジトリの別名とパッケージ名"
 
 #. Tag: screen
-#: zypper.xml:172
+#: zypper.xml:173
 #, no-c-format
 msgid "&prompt.sudo;zypper install mozilla:MozillaFirefox"
 msgstr "&prompt.sudo;zypper install mozilla:MozillaFirefox"
 
 #. Tag: para
-#: zypper.xml:173
+#: zypper.xml:174
 #, no-c-format
 msgid ""
 "Where <literal>mozilla</literal> is the alias of the repository from which "
 "to install."
 msgstr ""
-"ここで、 <literal>mozilla</literal> はインストール元となるリポジトリの"
-"別名を意味します。"
+"ここで、 <literal>mozilla</literal> はインストール元となるリポジトリの別名を"
+"意味します。"
 
 #. Tag: term
-#: zypper.xml:180
+#: zypper.xml:181
 #, no-c-format
 msgid "By Package Name Using Wild Cards"
 msgstr "ワイルドカードを使用したパッケージ名"
 
 #. Tag: para
-#: zypper.xml:182
+#: zypper.xml:183
 #, no-c-format
 msgid ""
 "You can select all packages that have names starting or ending with a "
 "certain string. Use wild cards with care, especially when removing packages. "
 "The following command will install all packages starting with <quote>Moz</"
-"quote>:"
+"quote> :"
 msgstr ""
-"特定の文字列で始まる、もしくは特定の文字列で終わる全てのパッケージを"
-"インストールすることができます。なお、特にパッケージを削除する際には、"
-"よく注意して使用してください。たとえば下記のコマンドを実行すると、"
-" <quote>Moz</quote> で始まる全てのパッケージをインストールします:"
+"特定の文字列で始まる、もしくは特定の文字列で終わる全てのパッケージをインス"
+"トールすることができます。なお、特にパッケージを削除する際には、よく注意して"
+"使用してください。たとえば下記のコマンドを実行すると、 <quote>Moz</quote> で"
+"始まる全てのパッケージをインストールします:"
 
 #. Tag: screen
-#: zypper.xml:188
+#: zypper.xml:189
 #, no-c-format
 msgid "&prompt.sudo;zypper install 'Moz*'"
 msgstr "&prompt.sudo;zypper install 'Moz*'"
 
 #. Tag: title
-#: zypper.xml:190
+#: zypper.xml:191
 #, no-c-format
 msgid "Removing all <filename>-debuginfo</filename> Packages"
 msgstr "全ての <filename>-debuginfo</filename> パッケージの削除"
 
 #. Tag: para
-#: zypper.xml:191
+#: zypper.xml:192
 #, no-c-format
 msgid ""
 "When debugging a problem, you sometimes need to temporarily install a lot of "
@@ -424,77 +422,77 @@ msgid ""
 "to clean the environment, run the following:"
 msgstr ""
 "何らかの問題を調査するにあたっては、実行中のプロセスから様々な情報を取得する"
-"目的で、多数の <filename>-debuginfo</filename> パッケージを一時的に"
-"インストールしなければならない場合があります。デバッグの作業が終わると、"
-"これらは不要なパッケージとなりますので、環境を元に戻すために下記のように"
-"コマンドを実行することができます:"
+"目的で、多数の <filename>-debuginfo</filename> パッケージを一時的にインストー"
+"ルしなければならない場合があります。デバッグの作業が終わると、これらは不要な"
+"パッケージとなりますので、環境を元に戻すために下記のようにコマンドを実行する"
+"ことができます:"
 
 #. Tag: screen
-#: zypper.xml:197
+#: zypper.xml:198
 #, no-c-format
 msgid "&prompt.sudo;zypper remove '*-debuginfo'"
 msgstr "&prompt.sudo;zypper remove '*-debuginfo'"
 
 #. Tag: term
-#: zypper.xml:202
+#: zypper.xml:203
 #, no-c-format
 msgid "By Capability"
 msgstr "能力による指定"
 
 #. Tag: para
-#: zypper.xml:204
+#: zypper.xml:205
 #, no-c-format
 msgid ""
 "For example, to install a package without knowing its name, capabilities "
 "come in handy. The following command will install the package "
-"<package>MozillaFirefox</package>:"
+"<package>MozillaFirefox</package> :"
 msgstr ""
-"パッケージ名が分からない場合は、能力による指定を行なうこともできます。"
-"たとえば下記のコマンドを実行すると、 <package>MozillaFirefox</package> "
-"パッケージをインストールします:"
+"パッケージ名が分からない場合は、能力による指定を行なうこともできます。たとえ"
+"ば下記のコマンドを実行すると、 <package>MozillaFirefox</package> パッケージを"
+"インストールします:"
 
 #. Tag: screen
-#: zypper.xml:209
+#: zypper.xml:210
 #, no-c-format
 msgid "&prompt.sudo;zypper install firefox"
 msgstr "&prompt.sudo;zypper install firefox"
 
 #. Tag: term
-#: zypper.xml:213
+#: zypper.xml:214
 #, no-c-format
 msgid "By Capability, Hardware Architecture, or Version"
 msgstr "能力とハードウエアアーキテクチャ、バージョンによる指定"
 
 #. Tag: para
-#: zypper.xml:215
+#: zypper.xml:216
 #, no-c-format
 msgid ""
 "Together with a capability, you can specify a hardware architecture and a "
 "version:"
 msgstr ""
-"能力とハードウエアアーキテクチャ、バージョンをそれぞれ組み合わせて指定する"
-"こともできます:"
+"能力とハードウエアアーキテクチャ、バージョンをそれぞれ組み合わせて指定するこ"
+"ともできます:"
 
 #. Tag: para
-#: zypper.xml:221
+#: zypper.xml:222
 #, no-c-format
 msgid ""
 "The name of the desired hardware architecture is appended to the capability "
 "after a full stop. For example, to specify the &x86-64; architectures (which "
-"in Zypper is named <literal>x86_64</literal>), use:"
+"in Zypper is named <literal>x86_64</literal> ), use:"
 msgstr ""
-"能力の後ろにピリオド (.) を置き、続いて必要なハードウエアアーキテクチャを"
-"指定してください。たとえば &x86-64; アーキテクチャ (zypper では "
-"<literal>x86_64</literal> と命名されています) を指定するには、下記のようにします:"
+"能力の後ろにピリオド (.) を置き、続いて必要なハードウエアアーキテクチャを指定"
+"してください。たとえば &x86-64; アーキテクチャ (zypper では <literal>x86_64</"
+"literal> と命名されています) を指定するには、下記のようにします:"
 
 #. Tag: screen
-#: zypper.xml:227
+#: zypper.xml:228
 #, no-c-format
 msgid "&prompt.sudo;zypper install 'firefox.x86_64'"
 msgstr "&prompt.sudo;zypper install 'firefox.x86_64'"
 
 #. Tag: para
-#: zypper.xml:230
+#: zypper.xml:231
 #, no-c-format
 msgid ""
 "Versions must be appended to the end of the string and must be preceded by "
@@ -508,37 +506,39 @@ msgstr ""
 "literal> (より大きいか等しい), <literal>&gt;</literal> (より大きい)"
 
 #. Tag: screen
-#: zypper.xml:237
+#: zypper.xml:238
 #, no-c-format
 msgid "&prompt.sudo;zypper install 'firefox&gt;=52.2'"
 msgstr "&prompt.sudo;zypper install 'firefox&gt;=52.2'"
 
 #. Tag: para
-#: zypper.xml:240
+#: zypper.xml:241
 #, no-c-format
 msgid "You can also combine a hardware architecture and version requirement:"
 msgstr "ハードウエアアーキテクチャとバージョン番号の両方を指定することもできます:"
 
 #. Tag: screen
-#: zypper.xml:243
+#: zypper.xml:244
 #, no-c-format
 msgid "&prompt.sudo;zypper install 'firefox.x86_64&gt;=52.2'"
 msgstr "&prompt.sudo;zypper install 'firefox.x86_64&gt;=52.2'"
 
 #. Tag: term
-#: zypper.xml:249
+#: zypper.xml:250
 #, no-c-format
 msgid "By Path to the RPM file"
 msgstr "RPM ファイルのパスによる指定"
 
 #. Tag: para
-#: zypper.xml:251
+#: zypper.xml:252
 #, no-c-format
 msgid "You can also specify a local or remote path to a package:"
-msgstr "パッケージに対するローカルのパス、もしくはリモートのパスを指定することもできます:"
+msgstr ""
+"パッケージに対するローカルのパス、もしくはリモートのパスを指定することもでき"
+"ます:"
 
 #. Tag: screen
-#: zypper.xml:254
+#: zypper.xml:255
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper install /tmp/install/MozillaFirefox.rpm\n"
@@ -550,13 +550,13 @@ msgstr ""
 "rpm"
 
 #. Tag: title
-#: zypper.xml:260
+#: zypper.xml:262
 #, no-c-format
 msgid "Combining Installation and Removal of Packages"
 msgstr "パッケージのインストールと削除の組み合わせ"
 
 #. Tag: para
-#: zypper.xml:261
+#: zypper.xml:263
 #, no-c-format
 msgid ""
 "To install and remove packages simultaneously, use the <literal>+/-</"
@@ -569,42 +569,42 @@ msgstr ""
 "下記のようにします:"
 
 #. Tag: screen
-#: zypper.xml:269
+#: zypper.xml:271
 #, no-c-format
 msgid "&prompt.sudo;zypper install emacs -vim"
 msgstr "&prompt.sudo;zypper install emacs -vim"
 
 #. Tag: para
-#: zypper.xml:270
+#: zypper.xml:272
 #, no-c-format
 msgid ""
 "To remove <package>emacs</package> and simultaneously install <package>vim</"
 "package> , use:"
 msgstr ""
-"<package>emacs</package> パッケージを削除し、同時に <package>vim</"
-"package> パッケージをインストールしたい場合は、下記のようにします:"
+"<package>emacs</package> パッケージを削除し、同時に <package>vim</package> "
+"パッケージをインストールしたい場合は、下記のようにします:"
 
 #. Tag: screen
-#: zypper.xml:277
+#: zypper.xml:279
 #, no-c-format
 msgid "&prompt.sudo;zypper remove emacs +vim"
 msgstr "&prompt.sudo;zypper remove emacs +vim"
 
 #. Tag: para
-#: zypper.xml:278
+#: zypper.xml:280
 #, no-c-format
 msgid ""
 "To prevent the package name starting with the <literal>-</literal> being "
 "interpreted as a command option, always use it as the second argument. If "
-"this is not possible, precede it with <literal>--</literal>:"
+"this is not possible, precede it with <literal>--</literal> :"
 msgstr ""
-"<literal>-</literal> でパッケージの削除を指定する場合は、これがコマンドオプションと"
-"取り違えられたりしないようにするため、 <literal>-</literal> を 2 つめ以降に"
-"指定するようにしてください。 2 つめ以降に書くことが難しい場合は、"
-" <literal>--</literal> でオプションの終了を表わしてもかまいません:"
+"<literal>-</literal> でパッケージの削除を指定する場合は、これがコマンドオプ"
+"ションと取り違えられたりしないようにするため、 <literal>-</literal> を 2 つめ"
+"以降に指定するようにしてください。 2 つめ以降に書くことが難しい場合は、 "
+"<literal>--</literal> でオプションの終了を表わしてもかまいません:"
 
 #. Tag: screen
-#: zypper.xml:283
+#: zypper.xml:285
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper install -emacs +vim       # Wrong\n"
@@ -618,13 +618,13 @@ msgstr ""
 "&prompt.sudo;zypper remove emacs +vim         # 正しい"
 
 #. Tag: title
-#: zypper.xml:286
+#: zypper.xml:291
 #, no-c-format
 msgid "Cleaning Up Dependencies of Removed Packages"
 msgstr "削除したパッケージが必要としていた依存関係の清掃"
 
 #. Tag: para
-#: zypper.xml:287
+#: zypper.xml:292
 #, no-c-format
 msgid ""
 "If (together with a certain package), you automatically want to remove any "
@@ -632,75 +632,78 @@ msgid ""
 "<option>--clean-deps</option> option:"
 msgstr ""
 "特定のパッケージ名の指定と組み合わせることで、削除後に不要となるパッケージを"
-"自動的に削除させることもできます。これを行ないたい場合は、 <option>--clean-deps</option> "
-"オプションを指定してください:"
+"自動的に削除させることもできます。これを行ないたい場合は、 <option>--clean-"
+"deps</option> オプションを指定してください:"
 
 #. Tag: screen
-#: zypper.xml:292
+#: zypper.xml:297
 #, no-c-format
 msgid "&prompt.sudo;zypper rm <replaceable>PACKAGE_NAME</replaceable> --clean-deps"
 msgstr "&prompt.sudo;zypper rm <replaceable>パッケージ名</replaceable> --clean-deps"
 
 #. Tag: title
-#: zypper.xml:295
+#: zypper.xml:300
 #, no-c-format
 msgid "Using Zypper in Scripts"
 msgstr "スクリプト内での zypper の使用"
 
 #. Tag: para
-#: zypper.xml:296
+#: zypper.xml:301
 #, no-c-format
 msgid ""
 "By default, Zypper asks for a confirmation before installing or removing a "
 "selected package, or when a problem occurs. You can override this behavior "
 "using the <option>--non-interactive</option> option. This option must be "
-"given before the actual command (<command>install</command>, "
-"<command>remove</command>, and <command>patch</command>), as can be seen in "
-"the following:"
+"given before the actual command ( <command>install</command> , "
+"<command>remove</command> , and <command>patch</command> ), as can be seen "
+"in the following:"
 msgstr ""
-"既定では、 zypper は選択したパッケージをインストール／削除する前、および"
-"何らかの問題が発生した場合に、確認メッセージを表示します。確認メッセージの表示は、"
-"<option>--non-interactive</option> オプションを指定することで省略することが"
-"できます。ただし、このオプションは実際のコマンド (たとえば <command>install</command>, "
-"<command>remove</command>, <command>patch</command> など) よりも前に指定しなければ"
-"なりません。具体的には、下記のようになります:"
+"既定では、 zypper は選択したパッケージをインストール／削除する前、および何ら"
+"かの問題が発生した場合に、確認メッセージを表示します。確認メッセージの表示"
+"は、<option>--non-interactive</option> オプションを指定することで省略すること"
+"ができます。ただし、このオプションは実際のコマンド (たとえば "
+"<command>install</command>, <command>remove</command>, <command>patch</"
+"command> など) よりも前に指定しなければなりません。具体的には、下記のようにな"
+"ります:"
 
 #. Tag: screen
-#: zypper.xml:304
+#: zypper.xml:309
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper <option>--non-interactive</option> install "
 "<replaceable>PACKAGE_NAME</replaceable>"
 msgstr ""
-"&prompt.sudo;zypper <option>--non-interactive</option> install "
-"<replaceable>パッケージ名</replaceable>"
+"&prompt.sudo;zypper <option>--non-interactive</option> install <replaceable>"
+"パッケージ名</replaceable>"
 
 #. Tag: para
-#: zypper.xml:305
+#: zypper.xml:310
 #, no-c-format
 msgid "This option allows the use of Zypper in scripts and cron jobs."
-msgstr "このオプションを指定することで、 zypper をスクリプト内や cron のジョブ内で利用できるようになります。"
+msgstr ""
+"このオプションを指定することで、 zypper をスクリプト内や cron のジョブ内で利"
+"用できるようになります。"
 
 #. Tag: title
-#: zypper.xml:310
+#: zypper.xml:315
 #, no-c-format
 msgid "Installing or Downloading Source Packages"
 msgstr "ソースパッケージのインストールとダウンロード"
 
 #. Tag: para
-#: zypper.xml:311
+#: zypper.xml:316
 #, no-c-format
 msgid "To install the corresponding source package of a package, use:"
 msgstr "該当するソースパッケージをインストールしたい場合は、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:314
+#: zypper.xml:319
 #, no-c-format
 msgid "&prompt.user;zypper source-install <replaceable>PACKAGE_NAME</replaceable>"
 msgstr "&prompt.user;zypper source-install <replaceable>パッケージ名</replaceable>"
 
 #. Tag: para
-#: zypper.xml:315
+#: zypper.xml:320
 #, no-c-format
 msgid ""
 "When executed as &rootuser;, the default location to install source packages "
@@ -708,42 +711,45 @@ msgid ""
 "filename> when run as user. These values can be changed in your local "
 "<command>rpm</command> configuration."
 msgstr ""
-"上記のコマンドを &rootuser; で実行すると、ソースパッケージは既定で"
-" <filename>/usr/src/packages/</filename> 以下にインストールされます。それ以外の"
-"ユーザで実行すると、 <filename>~/rpmbuild</filename> 以下にインストールされます。"
-"これらの設定は、 <command>rpm</command> の設定で変更することができます。"
+"上記のコマンドを &rootuser; で実行すると、ソースパッケージは既定で "
+"<filename>/usr/src/packages/</filename> 以下にインストールされます。それ以外"
+"のユーザで実行すると、 <filename>~/rpmbuild</filename> 以下にインストールされ"
+"ます。これらの設定は、 <command>rpm</command> の設定で変更することができま"
+"す。"
 
 #. Tag: para
-#: zypper.xml:321
+#: zypper.xml:326
 #, no-c-format
 msgid ""
 "This command will also install the build dependencies of the specified "
-"package. If you do not want this, add the switch <literal>-D</literal>:"
+"package. If you do not want this, add the switch <literal>-D</literal> :"
 msgstr ""
-"このコマンドは、指定したパッケージが構築時に依存するパッケージについても、"
-"インストールを行ないます。これを回避したい場合は、 <literal>-D</literal> "
-"スイッチを指定してください:"
+"このコマンドは、指定したパッケージが構築時に依存するパッケージについても、イ"
+"ンストールを行ないます。これを回避したい場合は、 <literal>-D</literal> スイッ"
+"チを指定してください:"
 
 #. Tag: screen
-#: zypper.xml:325
+#: zypper.xml:330
 #, no-c-format
 msgid "&prompt.sudo;zypper source-install -D <replaceable>PACKAGE_NAME</replaceable>"
 msgstr "&prompt.sudo;zypper source-install -D <replaceable>パッケージ名</replaceable>"
 
 #. Tag: para
-#: zypper.xml:326
+#: zypper.xml:331
 #, no-c-format
-msgid "To install only the build dependencies use <literal>-d</literal>."
-msgstr "構築時の依存関係のみをインストールしたい場合は、 <literal>-d</literal> を指定してください。"
+msgid "To install only the build dependencies use <literal>-d</literal> ."
+msgstr ""
+"構築時の依存関係のみをインストールしたい場合は、 <literal>-d</literal> を指定"
+"してください。"
 
 #. Tag: screen
-#: zypper.xml:329
+#: zypper.xml:334
 #, no-c-format
 msgid "&prompt.sudo;zypper source-install -d <replaceable>PACKAGE_NAME</replaceable>"
 msgstr "&prompt.sudo;zypper source-install -d <replaceable>パッケージ名</replaceable>"
 
 #. Tag: para
-#: zypper.xml:330
+#: zypper.xml:335
 #, no-c-format
 msgid ""
 "Of course, this will only work if you have the repository with the source "
@@ -751,29 +757,29 @@ msgid ""
 "enabled). See <xref linkend=\"sec.zypper.instrepo\"/> for details on "
 "repository management."
 msgstr ""
-"もちろん、これらの処理はソースパッケージのあるリポジトリが有効化されている"
-"場合にのみ動作するものです (ソースパッケージのあるリポジトリは、既定で"
-"追加されていますが、有効化はされていません) 。リポジトリの管理について、"
-"詳しくは <xref linkend=\"sec.zypper.instrepo\"/> をお読みください。"
+"もちろん、これらの処理はソースパッケージのあるリポジトリが有効化されている場"
+"合にのみ動作するものです (ソースパッケージのあるリポジトリは、既定で追加され"
+"ていますが、有効化はされていません) 。リポジトリの管理について、詳しくは "
+"<xref linkend=\"sec.zypper.instrepo\"/> をお読みください。"
 
 #. Tag: para
-#: zypper.xml:336
+#: zypper.xml:341
 #, no-c-format
 msgid ""
 "A list of all source packages available in your repositories can be obtained "
 "with:"
 msgstr ""
-"お使いのリポジトリ内にある全てのソースパッケージを一覧表示するには、下記の"
-"コマンドを実行してください:"
+"お使いのリポジトリ内にある全てのソースパッケージを一覧表示するには、下記のコ"
+"マンドを実行してください:"
 
 #. Tag: screen
-#: zypper.xml:340
+#: zypper.xml:345
 #, no-c-format
 msgid "&prompt.user;zypper search -t srcpackage"
 msgstr "&prompt.user;zypper search -t srcpackage"
 
 #. Tag: para
-#: zypper.xml:341
+#: zypper.xml:346
 #, no-c-format
 msgid ""
 "You can also download source packages for all installed packages to a local "
@@ -784,39 +790,39 @@ msgstr ""
 "下記のコマンドをお使いください:"
 
 #. Tag: screen
-#: zypper.xml:345
+#: zypper.xml:350
 #, no-c-format
 msgid "&prompt.user;zypper source-download"
 msgstr "&prompt.user;zypper source-download"
 
 #. Tag: para
-#: zypper.xml:346
+#: zypper.xml:351
 #, no-c-format
 msgid ""
 "The default download directory is <filename>/var/cache/zypper/source-"
-"download</filename>. You can change it using the <option>--directory</"
+"download</filename> . You can change it using the <option>--directory</"
 "option> option. To only show missing or extraneous packages without "
 "downloading or deleting anything, use the <option>--status</option> option. "
 "To delete extraneous source packages, use the <option>--delete</option> "
 "option. To disable deleting, use the <option>--no-delete</option> option."
 msgstr ""
 "既定のダウンロード先ディレクトリは <filename>/var/cache/zypper/source-"
-"download</filename> に設定されていますが、 <option>--directory</"
-"option> オプションを指定することで、自由に変更することができます。"
-"また、ダウンロードや削除を行なうことなく、必要もしくは不要なパッケージ"
-"を確認したい場合は、 <option>--status</option> オプションを指定してください。"
-"不要なソースパッケージを削除したい場合は、 <option>--delete</option> "
-"オプションを指定してください。削除を行ないたくない場合は、 <option>--no-delete</option> "
-"を指定してください。"
+"download</filename> に設定されていますが、 <option>--directory</option> オプ"
+"ションを指定することで、自由に変更することができます。また、ダウンロードや削"
+"除を行なうことなく、必要もしくは不要なパッケージを確認したい場合は、 "
+"<option>--status</option> オプションを指定してください。不要なソースパッケー"
+"ジを削除したい場合は、 <option>--delete</option> オプションを指定してくださ"
+"い。削除を行ないたくない場合は、 <option>--no-delete</option> を指定してくだ"
+"さい。"
 
 #. Tag: title
-#: zypper.xml:357
+#: zypper.xml:362
 #, no-c-format
 msgid "Installing Packages from Disabled Repositories"
 msgstr "無効化されているリポジトリからのパッケージのインストール"
 
 #. Tag: para
-#: zypper.xml:358
+#: zypper.xml:363
 #, no-c-format
 msgid ""
 "Normally you can only install or refresh packages from enabled repositories. "
@@ -824,40 +830,40 @@ msgid ""
 "helps you specify repositories to be refreshed, temporarily enabled during "
 "the current Zypper session, and disabled after it completes."
 msgstr ""
-"通常は、パッケージをインストールしたり更新したりする場合、有効化された"
-"リポジトリのパッケージのみを使用することができます。ですが、 "
-"<option>--plus-content <replaceable>タグ</replaceable></option> オプションを"
-"指定すると、その zypper の実行時に限定して一時的にリポジトリを有効化し、"
-"インストールや交信を行なうことができるようになります。 zypper のコマンドが"
-"終了すると元に戻されます (無効化されます) 。"
+"通常は、パッケージをインストールしたり更新したりする場合、有効化されたリポジ"
+"トリのパッケージのみを使用することができます。ですが、 <option>--plus-"
+"content <replaceable>タグ</replaceable></option> オプションを指定すると、そ"
+"の zypper の実行時に限定して一時的にリポジトリを有効化し、インストールや交信"
+"を行なうことができるようになります。 zypper のコマンドが終了すると元に戻され"
+"ます (無効化されます) 。"
 
 #. Tag: para
-#: zypper.xml:365
+#: zypper.xml:370
 #, no-c-format
 msgid ""
 "For example, to enable repositories that may provide additional <filename>-"
 "debuginfo</filename> or <filename>-debugsource</filename> packages, use "
-"<option>--plus-content debug</option>. You can specify this option multiple "
+"<option>--plus-content debug</option> . You can specify this option multiple "
 "times."
 msgstr ""
-"たとえば <filename>-debuginfo</filename> や <filename>-debugsource</filename> "
-"などのパッケージを提供する追加リポジトリを有効化したい場合は、 <option>--plus-content debug</option> "
-"オプションを指定してください。なお、 <option>--plus-content</option> "
-"は必要に応じて複数回指定することができます。"
+"たとえば <filename>-debuginfo</filename> や <filename>-debugsource</"
+"filename> などのパッケージを提供する追加リポジトリを有効化したい場合は、 "
+"<option>--plus-content debug</option> オプションを指定してください。なお、 "
+"<option>--plus-content</option> は必要に応じて複数回指定することができます。"
 
 #. Tag: para
-#: zypper.xml:371
+#: zypper.xml:376
 #, no-c-format
 msgid ""
 "To temporarily enable such 'debug' repositories to install a specific "
 "<filename>-debuginfo</filename> package, use the option as follows:"
 msgstr ""
-"このような 'debug' (デバッグ) リポジトリを有効化して、特定の"
-" <filename>-debuginfo</filename> パッケージをインストールするには、"
-"下記のように実行します:"
+"このような 'debug' (デバッグ) リポジトリを有効化して、特定の <filename>-"
+"debuginfo</filename> パッケージをインストールするには、下記のように実行しま"
+"す:"
 
 #. Tag: screen
-#: zypper.xml:375
+#: zypper.xml:380
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper --plus-content debug \\\n"
@@ -867,7 +873,7 @@ msgstr ""
 "   install \"debuginfo(build-id)=eb844a5c20c70a59fc693cd1061f851fb7d046f4\""
 
 #. Tag: para
-#: zypper.xml:376
+#: zypper.xml:382
 #, no-c-format
 msgid ""
 "The <literal>build-id</literal> string is reported by <command>gdb</command> "
@@ -877,29 +883,29 @@ msgstr ""
 "コマンドで表示される ID を指定します。"
 
 #. Tag: title
-#: zypper.xml:382
+#: zypper.xml:388
 #, no-c-format
 msgid "Utilities"
 msgstr "ユーティリティ"
 
 #. Tag: para
-#: zypper.xml:383
+#: zypper.xml:389
 #, no-c-format
 msgid ""
 "To verify whether all dependencies are still fulfilled and to repair missing "
 "dependencies, use:"
 msgstr ""
-"依存関係が全て満たされていることを確認し、満たされていない場合は修復作業を"
-"実施したい場合は、下記のコマンドを実行します:"
+"依存関係が全て満たされていることを確認し、満たされていない場合は修復作業を実"
+"施したい場合は、下記のコマンドを実行します:"
 
 #. Tag: screen
-#: zypper.xml:387
+#: zypper.xml:393
 #, no-c-format
 msgid "&prompt.user;zypper verify"
 msgstr "&prompt.user;zypper verify"
 
 #. Tag: para
-#: zypper.xml:388
+#: zypper.xml:394
 #, no-c-format
 msgid ""
 "In addition to dependencies that must be fulfilled, some packages "
@@ -909,20 +915,20 @@ msgid ""
 "installed (by adding additional packages or hardware), use the following "
 "command:"
 msgstr ""
-"パッケージには、満たすべき依存関係だけでなく、 <quote>推奨</quote> "
-"という設定も用意されています。これら推奨パッケージは、利用可能で"
-"インストールできる場合にのみインストールされます。特定のパッケージを"
-"インストールした後や、ハードウエアを追加したことによって、新しく推奨される"
-"パッケージをインストールするには、下記のコマンドを実行します:"
+"パッケージには、満たすべき依存関係だけでなく、 <quote>推奨</quote> という設定"
+"も用意されています。これら推奨パッケージは、利用可能でインストールできる場合"
+"にのみインストールされます。特定のパッケージをインストールした後や、ハードウ"
+"エアを追加したことによって、新しく推奨されるパッケージをインストールするに"
+"は、下記のコマンドを実行します:"
 
 #. Tag: screen
-#: zypper.xml:396
+#: zypper.xml:402
 #, no-c-format
 msgid "&prompt.sudo;zypper install-new-recommends"
 msgstr "&prompt.sudo;zypper install-new-recommends"
 
 #. Tag: para
-#: zypper.xml:397
+#: zypper.xml:403
 #, no-c-format
 msgid ""
 "This command is very useful after plugging in a Web cam or Wi-Fi device. It "
@@ -930,162 +936,161 @@ msgid ""
 "Drivers and related software are only installable if certain hardware "
 "dependencies are fulfilled."
 msgstr ""
-"このコマンドは、たとえば Web カメラや無線 LAN デバイスを接続したような"
-"場合に有用です。これにより、デバイスを利用するためのドライバと、関連する"
-"ソフトウエアがそれぞれ存在すれば、インストールされるようになります。"
-"なお、ドライバと関連ソフトウエアは、ハードウエア要件が合致した場合にのみ"
-"インストールされます。"
+"このコマンドは、たとえば Web カメラや無線 LAN デバイスを接続したような場合に"
+"有用です。これにより、デバイスを利用するためのドライバと、関連するソフトウエ"
+"アがそれぞれ存在すれば、インストールされるようになります。なお、ドライバと関"
+"連ソフトウエアは、ハードウエア要件が合致した場合にのみインストールされます。"
 
 #. Tag: title
-#: zypper.xml:407
+#: zypper.xml:413
 #, no-c-format
 msgid "Updating Software with Zypper"
 msgstr "zypper を利用したソフトウエアの更新"
 
 #. Tag: para
-#: zypper.xml:408
+#: zypper.xml:414
 #, no-c-format
 msgid ""
 "There are three different ways to update software using Zypper: by "
 "installing patches, by installing a new version of a package or by updating "
 "the entire distribution. The latter is achieved with <command>zypper dist-"
-"upgrade</command>. Upgrading &productname; is discussed in <phrase os=\"sles;"
-"sled\"><xref linkend=\"cha.upgrade-paths\"/></phrase> <phrase os=\"osuse"
-"\"><xref linkend=\"cha.update.osuse\"/></phrase>."
+"upgrade</command> . Upgrading &productname; is discussed in <phrase os="
+"\"sles;sled\"><xref linkend=\"cha.upgrade-paths\"/></phrase> <phrase os="
+"\"osuse\"><xref linkend=\"cha.update.osuse\"/></phrase> ."
 msgstr ""
-"zypper では 3 種類の方法でソフトウエアを更新することができます。"
-" 1 つめの方法は修正 (パッチ) をインストールする方法で、 2 つめは"
-"同じパッケージの新しいバージョンをインストールする方法、そして最後は"
-"ディストリビューション全体を更新する方法です。ディストリビューション"
-"全体を更新する場合は <command>zypper dist-upgrade</command> を使用しますが、"
-"こちらに関しては <phrase os=\"sles;sled\"><xref linkend=\"cha.upgrade-paths\"/></phrase> "
-"<phrase os=\"osuse\"><xref linkend=\"cha.update.osuse\"/></phrase> を"
-"お読みください。"
+"zypper では 3 種類の方法でソフトウエアを更新することができます。 1 つめの方法"
+"は修正 (パッチ) をインストールする方法で、 2 つめは同じパッケージの新しいバー"
+"ジョンをインストールする方法、そして最後はディストリビューション全体を更新す"
+"る方法です。ディストリビューション全体を更新する場合は <command>zypper dist-"
+"upgrade</command> を使用しますが、こちらに関しては <phrase os=\"sles;sled"
+"\"><xref linkend=\"cha.upgrade-paths\"/></phrase> <phrase os=\"osuse\"><xref "
+"linkend=\"cha.update.osuse\"/></phrase> をお読みください。"
 
 #. Tag: title
-#: zypper.xml:417
+#: zypper.xml:423
 #, no-c-format
 msgid "Installing All Needed Patches"
 msgstr "必要な全パッケージのインストール"
 
 #. Tag: para
-#: zypper.xml:418
+#: zypper.xml:424
 #, no-c-format
 msgid "To install all officially released patches that apply to your system, run:"
-msgstr "お使いのシステムに対して、提供されている全ての修正をインストールするには、下記のコマンドを実行します:"
+msgstr ""
+"お使いのシステムに対して、提供されている全ての修正をインストールするには、下"
+"記のコマンドを実行します:"
+
+#. Tag: screen
+#: zypper.xml:427
+#, no-c-format
+msgid "&prompt.sudo;zypper patch"
+msgstr "&prompt.sudo;zypper patch"
 
 #. Tag: para
-#: zypper.xml:422
+#: zypper.xml:428
 #, no-c-format
 msgid ""
 "All patches available from repositories configured on your computer are "
 "checked for their relevance to your installation. If they are relevant (and "
 "not classified as <literal>optional</literal> or <literal>feature</"
-"literal>), they are installed immediately. <phrase os=\"sles;sled\">Note "
+"literal> ), they are installed immediately. <phrase os=\"sles;sled\">Note "
 "that the official update repository is only available after registering your "
 "&productname; installation.</phrase>"
 msgstr ""
-"お使いのコンピュータに設定されているリポジトリから提供されている全ての修正を、"
-"現在のインストール状態と比較してインストール作業を行ないます。これらの修正が"
-"必要なものであれば (<literal>optional</literal> (任意指定) または "
-"<literal>feature</literal> (機能追加) でなければ) 、それらを即時にインストール"
-"します。 <phrase os=\"sles;sled\">公式の更新リポジトリは、お使いの &productname; "
-"を登録した場合にのみ利用できます。</phrase>"
+"お使いのコンピュータに設定されているリポジトリについて、提供されている全ての修正"
+"を現在のインストール状態と比較して、インストール作業を行ないます。これらの修"
+"正が必要なものであれば (<literal>optional</literal> (任意指定) または "
+"<literal>feature</literal> (機能追加) でなければ) 、それらを即時にインストー"
+"ルします。 <phrase os=\"sles;sled\">なお、公式の更新リポジトリは、お使いの "
+"&productname; を登録した場合にのみ利用できます。</phrase>"
 
 #. Tag: para
-#: zypper.xml:430
+#: zypper.xml:436
 #, no-c-format
 msgid ""
 "If a patch that is about to be installed includes changes that require a "
 "system reboot, you will be warned before."
 msgstr ""
-"なお、インストールしようとしている修正がシステムの再起動を必要とするような"
-"変更を伴う場合は、その旨が事前に警告されます。"
+"なお、インストールしようとしている修正がシステムの再起動を必要とするような変"
+"更を伴う場合は、その旨が事前に警告されます。"
 
 #. Tag: para
-#: zypper.xml:434
+#: zypper.xml:440
 #, no-c-format
 msgid ""
 "The plain <command>zypper patch</command> command does not apply patches "
 "from third party repositories. To update also the third party repositories, "
 "use the <literal>with-update</literal> command option as follows:"
 msgstr ""
-"また、 <command>zypper patch</command> コマンドは、サードパーティ製のリポジトリ"
-"が提供する修正については、適用を行ないません。サードパーティ製のリポジトリについても"
-"更新を行ないたい場合は、 <literal>with-update</literal> というコマンドオプションを"
-"追加してください。"
+"また、 <command>zypper patch</command> コマンドは、サードパーティ製のリポジト"
+"リが提供する修正については、適用を行ないません。サードパーティ製のリポジトリ"
+"についても更新を行ないたい場合は、 <literal>with-update</literal> というコマ"
+"ンドオプションを追加してください。"
 
 #. Tag: screen
-#: zypper.xml:439
+#: zypper.xml:445
 #, no-c-format
 msgid "&prompt.sudo;zypper patch --with update"
 msgstr "&prompt.sudo;zypper patch --with update"
 
 #. Tag: para
-#: zypper.xml:441
+#: zypper.xml:447
 #, no-c-format
 msgid "To install also optional patches, use:"
 msgstr "任意指定の修正もあわせてインストールしたい場合は、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:444
+#: zypper.xml:450
 #, no-c-format
 msgid "&prompt.sudo;zypper patch --with-optional"
 msgstr "&prompt.sudo;zypper patch --with-optional"
 
-#. Tag: remark
-#: zypper.xml:445
-#, no-c-format
-msgid ""
-"The structure here is a bit unfortunate: We explain how to use the --cve/--"
-"bugzilla options in more detail below (\"Listing Patches\"). However, the "
-"first bit people get is the very brief intro immediately below. Not sure "
-"whether to replicate all the information from \"Listing Patches\" here. - "
-"sknorr, 2016-04-25"
-msgstr "{{コメントのため翻訳省略}}"
-
 #. Tag: para
-#: zypper.xml:453
+#: zypper.xml:459
 #, no-c-format
 msgid "To install all patches relating to a specific Bugzilla issue, use:"
-msgstr "特定の Bugzilla バグ番号に関連する全ての修正をインストールしたい場合は、下記のように実行します:"
+msgstr ""
+"特定の Bugzilla バグ番号に関連する全ての修正をインストールしたい場合は、下記"
+"のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:456
+#: zypper.xml:462
 #, no-c-format
 msgid "&prompt.sudo;zypper patch --bugzilla=<replaceable>NUMBER</replaceable>"
 msgstr "&prompt.sudo;zypper patch --bugzilla=<replaceable>番号</replaceable>"
 
 #. Tag: para
-#: zypper.xml:457
+#: zypper.xml:463
 #, no-c-format
 msgid "To install all patches relating to a specific CVE database entry, use:"
-msgstr "特定の CVE データベースエントリに対応する全ての修正をインストールしたい場合は、下記のように実行します:"
+msgstr ""
+"特定の CVE データベースエントリに対応する全ての修正をインストールしたい場合"
+"は、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:460
+#: zypper.xml:466
 #, no-c-format
 msgid "&prompt.sudo;zypper patch --cve=<replaceable>NUMBER</replaceable>"
 msgstr "&prompt.sudo;zypper patch --cve=<replaceable>番号</replaceable>"
 
 #. Tag: para
-#: zypper.xml:461
+#: zypper.xml:467
 #, no-c-format
 msgid ""
 "For example, to install a security patch with the CVE number "
-"<literal>CVE-2010-2713</literal>, execute:"
+"<literal>CVE-2010-2713</literal> , execute:"
 msgstr ""
-"たとえば、 CVE 番号 <literal>CVE-2010-2713</literal> に対応するセキュリティ修正を"
-"インストールするには、下記のように実行します:"
+"たとえば、 CVE 番号 <literal>CVE-2010-2713</literal> に対応するセキュリティ修"
+"正をインストールするには、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:465
+#: zypper.xml:471
 #, no-c-format
 msgid "&prompt.sudo;zypper patch --cve=CVE-2010-2713"
 msgstr "&prompt.sudo;zypper patch --cve=CVE-2010-2713"
 
 #. Tag: para
-#: zypper.xml:466
+#: zypper.xml:472
 #, no-c-format
 msgid ""
 "To install only patches which affect Zypper and the package management "
@@ -1095,57 +1100,57 @@ msgstr ""
 "には、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:470
+#: zypper.xml:476
 #, no-c-format
 msgid "&prompt.sudo;zypper patch --updatestack-only"
 msgstr "&prompt.sudo;zypper patch --updatestack-only"
 
 #. Tag: para
-#: zypper.xml:471
+#: zypper.xml:477
 #, no-c-format
 msgid ""
 "Bear in mind that other command options that would also update other "
 "repositories will be dropped if you use the <literal>updatestack-only</"
 "literal> command option."
 msgstr ""
-"なお、 <literal>updatestack-only</literal> オプションを指定すると、"
-"他のリポジトリが提供する更新をあわせてインストールするようなコマンドオプション"
-"は、無効化されることに注意してください。"
+"なお、 <literal>updatestack-only</literal> オプションを指定すると、他のリポジ"
+"トリが提供する更新をあわせてインストールするようなコマンドオプションは、無効"
+"化されることに注意してください。"
 
 #. Tag: title
-#: zypper.xml:478
+#: zypper.xml:484
 #, no-c-format
 msgid "Listing Patches"
 msgstr "修正の一覧表示"
 
 #. Tag: para
-#: zypper.xml:479
+#: zypper.xml:485
 #, no-c-format
 msgid ""
 "To find out whether patches are available, Zypper allows viewing the "
 "following information:"
 msgstr ""
-"どのような修正が提供されているのかを確認するにあたって、 zypper は"
-"下記のような情報を提供します:"
+"どのような修正が提供されているのかを確認するにあたって、 zypper は下記のよう"
+"な情報を提供します:"
 
 #. Tag: term
-#: zypper.xml:485
+#: zypper.xml:491
 #, no-c-format
 msgid "Number of Needed Patches"
 msgstr "必要な修正の数"
 
 #. Tag: para
-#: zypper.xml:487
+#: zypper.xml:493
 #, no-c-format
 msgid ""
 "To list the number of needed patches (patches that apply to your system but "
-"are not yet installed), use <command>patch-check</command>:"
+"are not yet installed), use <command>patch-check</command> :"
 msgstr ""
-"必要な修正の数 (お使いのシステムに適用可能で、まだインストールされていない"
-"もの) を表示するには、 <command>patch-check</command> コマンドを使用します:"
+"必要な修正の数 (お使いのシステムに適用可能で、まだインストールされていないも"
+"の) を表示するには、 <command>patch-check</command> コマンドを使用します:"
 
 #. Tag: screen
-#: zypper.xml:491
+#: zypper.xml:497
 #, no-c-format
 msgid ""
 "&prompt.user;zypper patch-check\n"
@@ -1160,35 +1165,36 @@ msgstr ""
 "5 個のパッチが必要です (1 個のセキュリティパッチ)"
 
 #. Tag: para
-#: zypper.xml:492
+#: zypper.xml:501
 #, no-c-format
 msgid ""
 "This command can be combined with the <option>--updatestack-only</option> "
 "option to list only the patches which affect Zypper and the package "
 "management itself."
 msgstr ""
-"このコマンドでは、 <option>--updatestack-only</option> オプションをあわせて"
-"指定することができます。これを指定すると、 zypper とパッケージ管理システム自身に"
-"関わる修正のみを表示します。"
+"このコマンドでは、 <option>--updatestack-only</option> オプションをあわせて指"
+"定することができます。これを指定すると、 zypper とパッケージ管理システム自身"
+"に関わる修正のみを表示します。"
 
 #. Tag: term
-#: zypper.xml:500
+#: zypper.xml:509
 #, no-c-format
 msgid "List of Needed Patches"
 msgstr "必要な修正の一覧表示"
 
 #. Tag: para
-#: zypper.xml:502
+#: zypper.xml:511
 #, no-c-format
 msgid ""
 "To list all needed patches (patches that apply to your system but are not "
-"yet installed), use <command>list-patches</command>:"
+"yet installed), use <command>list-patches</command> :"
 msgstr ""
 "必要な全ての修正 (お使いのシステムに適用可能で、まだインストールされていない"
-"もの) を一覧表示するには、 <command>list-patches</command> コマンドを使用します:"
+"もの) を一覧表示するには、 <command>list-patches</command> コマンドを使用しま"
+"す:"
 
 #. Tag: screen
-#: zypper.xml:506
+#: zypper.xml:515
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.70em\"?>&prompt.user;zypper list-patches\n"
@@ -1198,27 +1204,31 @@ msgid ""
 "Repository     | Name        | Version | Category | Status  | Summary\n"
 "---------------+-------------+---------+----------+---------+---------\n"
 "SLES12-Updates | SUSE-2014-8 | 1       | security | needed  | openssl: "
-"Update for OpenSSL"
+"Update for OpenSSL\n"
 msgstr ""
 "<?dbsuse-fo font-size=\"0.70em\"?>&prompt.user;zypper list-patches\n"
 "リポジトリのデータを読み込んでいます...\n"
 "インストール済みのパッケージを読み込んでいます...\n"
 "\n"
-"リポジトリ                        | 名前              | カテゴリ    | 重要度    | 対話性 | 状態 | 概要\n"
-"----------------------------------+-------------------+-------------+-----------+--------+------+----------------------------------------------------\n"
-"openSUSE-Leap-15.0-Update         | openSUSE-2018-473 | recommended | low       | ---    | 必要 | Recommended update for timezone, timezone-java"
+"リポジトリ                        | 名前              | カテゴリ    | 重要"
+"度    | 対話性 | 状態 | 概要\n"
+"----------------------------------+-------------------+-------------"
+"+-----------+--------+------"
+"+----------------------------------------------------\n"
+"openSUSE-Leap-15.0-Update         | openSUSE-2018-473 | recommended | "
+"low       | ---    | 必要 | Recommended update for timezone, timezone-java\n"
 
 #. Tag: screen
-#: zypper.xml:507
+#: zypper.xml:523
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.70em\"?>&prompt.user;zypper list-patches\n"
 "Repository | Name              | Category | Severity | Interactive | Status "
-"| S>\n"
+"| S&gt;\n"
 "-----------+-------------------+----------+----------+-------------+--------"
-"+-->\n"
+"+--&gt;\n"
 "Update     | openSUSE-2017-828 | security | moderate | ---         | needed "
-"| S>\n"
+"| S&gt;\n"
 "\n"
 "Found 1 applicable patch:\n"
 "1 patch needed (1 security patch)"
@@ -1227,131 +1237,133 @@ msgstr ""
 "リポジトリのデータを読み込んでいます...\n"
 "インストール済みのパッケージを読み込んでいます...\n"
 "\n"
-"リポジトリ                        | 名前              | カテゴリ    | 重要度    | 対話性 | 状態 | 概要\n"
-"----------------------------------+-------------------+-------------+-----------+--------+------+----------------------------------------------------\n"
-"openSUSE-Leap-15.0-Update         | openSUSE-2018-473 | recommended | low       | ---    | 必要 | Recommended update for timezone, timezone-java"
-"\n"
+"リポジトリ                        | 名前              | カテゴリ    | 重要"
+"度    | 対話性 | 状態 | 概要\n"
+"----------------------------------+-------------------+-------------"
+"+-----------+--------+------"
+"+----------------------------------------------------\n"
+"openSUSE-Leap-15.0-Update         | openSUSE-2018-473 | recommended | "
+"low       | ---    | 必要 | Recommended update for timezone, timezone-java\n"
 "1 個の適用可能なパッチが見つかりました:\n"
 "1 個のパッチが必要です (1 個のセキュリティパッチ)"
 
 #. Tag: term
-#: zypper.xml:511
+#: zypper.xml:533
 #, no-c-format
 msgid "List of All Patches"
 msgstr "全ての修正の一覧表示"
 
 #. Tag: para
-#: zypper.xml:513
+#: zypper.xml:535
 #, no-c-format
 msgid ""
 "To list all patches available for &productname;, regardless of whether they "
 "are already installed or apply to your installation, use <command>zypper "
-"patches</command>."
+"patches</command> ."
 msgstr ""
-"既に適用済みのものを含め、 &productname; に対して提供されている全ての修正を"
-"一覧表示するには、 <command>zypper patches</command> コマンドを使用します。"
+"既に適用済みのものを含め、 &productname; に対して提供されている全ての修正を一"
+"覧表示するには、 <command>zypper patches</command> コマンドを使用します。"
 
 #. Tag: para
-#: zypper.xml:521
+#: zypper.xml:543
 #, no-c-format
 msgid ""
 "It is also possible to list and install patches relevant to specific issues. "
 "To list specific patches, use the <command>zypper list-patches</command> "
 "command with the following options:"
 msgstr ""
-"なお、特定の問題に限定して修正を一覧表示したり、インストールしたりすることもできます。"
-"特定の修正のみを一覧表示するには、 <command>zypper list-patches</command> に続いて"
-"下記のオプションを設定してください:"
+"なお、特定の問題に限定して修正を一覧表示したり、インストールしたりすることも"
+"できます。特定の修正のみを一覧表示するには、 <command>zypper list-patches</"
+"command> に続いて下記のオプションを設定してください:"
 
 #. Tag: term
-#: zypper.xml:528
+#: zypper.xml:550
 #, no-c-format
 msgid "By Bugzilla Issues"
 msgstr "Bugzilla のバグ番号を指定する方法"
 
 #. Tag: para
-#: zypper.xml:530
+#: zypper.xml:552
 #, no-c-format
 msgid ""
 "To list all needed patches that relate to Bugzilla issues, use the option "
-"<option>--bugzilla</option>."
+"<option>--bugzilla</option> ."
 msgstr ""
-"特定の Bugzilla バグ番号に関連する全ての修正を一覧表示するには、 "
-"<option>--bugzilla</option> オプションを指定します。"
+"特定の Bugzilla バグ番号に関連する全ての修正を一覧表示するには、 <option>--"
+"bugzilla</option> オプションを指定します。"
 
 #. Tag: para
-#: zypper.xml:534
+#: zypper.xml:556
 #, no-c-format
 msgid ""
 "To list patches for a specific bug, you can also specify a bug number: "
-"<option>--bugzilla=<replaceable>NUMBER</replaceable></option>. To search for "
-"patches relating to multiple Bugzilla issues, add commas between the bug "
+"<option>--bugzilla=<replaceable>NUMBER</replaceable></option> . To search "
+"for patches relating to multiple Bugzilla issues, add commas between the bug "
 "numbers, for example:"
 msgstr ""
-"特定のバグに対する修正を一覧表示するには、 "
-"<option>--bugzilla=<replaceable>番号</replaceable></option> のようにして"
-"バグ番号を指定します。複数の Bugzilla バグに関連する修正を検索するには、"
-"バグ番号をカンマで区切って指定してください。たとえば下記のようになります:"
+"特定のバグに対する修正を一覧表示するには、 <option>--bugzilla=<replaceable>番"
+"号</replaceable></option> のようにしてバグ番号を指定します。複数の Bugzilla "
+"バグに関連する修正を検索するには、バグ番号をカンマで区切って指定してくださ"
+"い。たとえば下記のようになります:"
 
 #. Tag: screen
-#: zypper.xml:540
+#: zypper.xml:562
 #, no-c-format
 msgid "&prompt.user;zypper list-patches --bugzilla=972197,956917"
 msgstr "&prompt.user;zypper list-patches --bugzilla=972197,956917"
 
 #. Tag: term
-#: zypper.xml:544
+#: zypper.xml:566
 #, no-c-format
 msgid "By CVE Number"
 msgstr "CVE 番号を指定する方法"
 
 #. Tag: para
-#: zypper.xml:546
+#: zypper.xml:568
 #, no-c-format
 msgid ""
 "To list all needed patches that relate to an entry in the CVE database "
 "(Common Vulnerabilities and Exposures), use the option <option>--cve</"
-"option>."
+"option> ."
 msgstr ""
-"CVE (Common Vulnerabilities and Exposures; 汎用脆弱性公開) データベースの"
-"項目番号に関連する全ての修正を一覧表示するには、 <option>--cve</"
-"option> オプションを使用します。"
+"CVE (Common Vulnerabilities and Exposures; 汎用脆弱性公開) データベースの項目"
+"番号に関連する全ての修正を一覧表示するには、 <option>--cve</option> オプショ"
+"ンを使用します。"
 
 #. Tag: para
-#: zypper.xml:551
+#: zypper.xml:573
 #, no-c-format
 msgid ""
 "To list patches for a specific CVE database entry, you can also specify a "
-"CVE number: <option>--cve=<replaceable>NUMBER</replaceable></option>. To "
+"CVE number: <option>--cve=<replaceable>NUMBER</replaceable></option> . To "
 "search for patches relating to multiple CVE database entries, add commas "
 "between the CVE numbers, for example:"
 msgstr ""
-"特定の CVE データベースエントリに対応する修正を一覧表示するには、"
-" <option>--cve=<replaceable>NUMBER</replaceable></option> のようにして"
-" CVE 番号を指定します。複数の CVE データベースエントリに関連する修正を"
-"検索するには、 CVE 番号をカンマで区切って指定してください。たとえば下記のように"
-"なります:"
+"特定の CVE データベースエントリに対応する修正を一覧表示するには、 <option>--"
+"cve=<replaceable>NUMBER</replaceable></option> のようにして CVE 番号を指定し"
+"ます。複数の CVE データベースエントリに関連する修正を検索するには、 CVE 番号"
+"をカンマで区切って指定してください。たとえば下記のようになります:"
 
 #. Tag: screen
-#: zypper.xml:557
+#: zypper.xml:579
 #, no-c-format
 msgid "&prompt.user;zypper list-patches --bugzilla=CVE-2016-2315,CVE-2016-2324"
 msgstr "&prompt.user;zypper list-patches --bugzilla=CVE-2016-2315,CVE-2016-2324"
 
 #. Tag: para
-#: zypper.xml:561
+#: zypper.xml:583
 #, no-c-format
 msgid ""
 "To list all patches regardless of whether they are needed, use the option "
 "<option>--all</option> additionally. For example, to list all patches with a "
 "CVE number assigned, use:"
 msgstr ""
-"不要な修正であるかどうかに関わらず修正を一覧表示したい場合は、 <option>--all</option> "
-"オプションをお使いください。たとえば CVE 番号が割り当てられている全ての修正を"
-"一覧表示するには、下記のように実行します:"
+"不要な修正であるかどうかに関わらず修正を一覧表示したい場合は、 <option>--"
+"all</option> オプションをお使いください。たとえば CVE 番号が割り当てられてい"
+"る全ての修正を一覧表示するには、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:566
+#: zypper.xml:588
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.70em\"?>&prompt.user;zypper list-patches --all --"
@@ -1371,20 +1383,24 @@ msgstr ""
 "リポジトリのデータを読み込んでいます...\n"
 "インストール済みのパッケージを読み込んでいます...\n"
 "\n"
-"発信番号 | 番号             | パッチ            | カテゴリ | 重要度    | 対話性 | 状態     | 概要\n"
-"---------+------------------+-------------------+----------+-----------+--------+----------+------------------------------------------------\n"
-"cve      | CVE-2017-17688   | openSUSE-2018-474 | security | moderate  | ---    | 不要     | Security update for enigmail\n"
-"cve      | CVE-2018-5150    | openSUSE-2018-486 | security | important | ---    | 必要     | Security update for Mozilla Thunderbird\n"
+"発信番号 | 番号             | パッチ            | カテゴリ | 重要度    | 対話"
+"性 | 状態     | 概要\n"
+"---------+------------------+-------------------+----------+-----------"
+"+--------+----------+------------------------------------------------\n"
+"cve      | CVE-2017-17688   | openSUSE-2018-474 | security | moderate  | "
+"---    | 不要     | Security update for enigmail\n"
+"cve      | CVE-2018-5150    | openSUSE-2018-486 | security | important | "
+"---    | 必要     | Security update for Mozilla Thunderbird\n"
 "[...]"
 
 #. Tag: title
-#: zypper.xml:569
+#: zypper.xml:596
 #, no-c-format
 msgid "Installing New Package Versions"
 msgstr "新しいバージョンのパッケージのインストール"
 
 #. Tag: para
-#: zypper.xml:570
+#: zypper.xml:597
 #, no-c-format
 msgid ""
 "If a repository contains only new packages, but does not provide patches, "
@@ -1393,28 +1409,28 @@ msgid ""
 "integrity), use:"
 msgstr ""
 "リポジトリ内に新しいバージョンのパッケージだけが用意されていて、修正としては"
-"提供していない場合、 <command>zypper&nbsp;patch</command> は何も行ないません。"
-"システムの一貫性を維持したまま、利用可能な新しいバージョンに更新するには、"
-"下記のように実行します:"
+"提供していない場合、 <command>zypper&nbsp;patch</command> は何も行ないませ"
+"ん。システムの一貫性を維持したまま、利用可能な新しいバージョンに更新するに"
+"は、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:576
+#: zypper.xml:603
 #, no-c-format
 msgid "&prompt.sudo;zypper update"
 msgstr "&prompt.sudo;zypper update"
 
 #. Tag: para
-#: zypper.xml:577
+#: zypper.xml:604
 #, no-c-format
 msgid ""
 "To update individual packages, specify the package with either the update or "
 "install command:"
 msgstr ""
-"個別のパッケージを更新したい場合は、 update もしくは install のコマンドで"
-"パッケージ名を指定してください:"
+"個別のパッケージを更新したい場合は、 update もしくは install のコマンドでパッ"
+"ケージ名を指定してください:"
 
 #. Tag: screen
-#: zypper.xml:581
+#: zypper.xml:608
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper update <replaceable>PACKAGE_NAME</replaceable>\n"
@@ -1424,63 +1440,67 @@ msgstr ""
 "sudo zypper install <replaceable>パッケージ名</replaceable>"
 
 #. Tag: para
-#: zypper.xml:582
+#: zypper.xml:610
 #, no-c-format
 msgid "A list of all new installable packages can be obtained with the command:"
-msgstr "インストール可能な全ての新しいパッケージを一覧表示するには、下記のように実行します:"
+msgstr ""
+"インストール可能な全ての新しいパッケージを一覧表示するには、下記のように実行"
+"します:"
 
 #. Tag: screen
-#: zypper.xml:585
+#: zypper.xml:613
 #, no-c-format
 msgid "&prompt.user;zypper list-updates"
 msgstr "&prompt.user;zypper list-updates"
 
 #. Tag: para
-#: zypper.xml:586
+#: zypper.xml:614
 #, no-c-format
 msgid "Note that this command only lists packages that match the following criteria:"
-msgstr "ただし、下記の条件に該当する新しいバージョンだけが表示されることに注意してください:"
+msgstr ""
+"ただし、下記の条件に該当する新しいバージョンだけが表示されることに注意してく"
+"ださい:"
 
 #. Tag: para
-#: zypper.xml:592
+#: zypper.xml:620
 #, no-c-format
 msgid "has the same vendor like the already installed package,"
 msgstr "既にインストールされているパッケージと同じベンダ (製造元) であること。"
 
 #. Tag: para
-#: zypper.xml:597
+#: zypper.xml:625
 #, no-c-format
 msgid ""
 "is provided by repositories with at least the same priority than the already "
 "installed package,"
 msgstr ""
-"既にインストールされているパッケージのリポジトリと同じか、もしくは高い優先順位が"
-"設定されていること。"
+"既にインストールされているパッケージのリポジトリと同じか、もしくは高い優先順"
+"位が設定されていること。"
 
 #. Tag: para
-#: zypper.xml:603
+#: zypper.xml:631
 #, no-c-format
 msgid "is installable (all dependencies are satisfied)."
 msgstr "インストール可能であること (全ての依存関係が満たされていること) 。"
 
 #. Tag: para
-#: zypper.xml:608
+#: zypper.xml:636
 #, no-c-format
 msgid ""
 "A list of <emphasis>all</emphasis> new available packages (regardless "
 "whether installable or not) can be obtained with:"
 msgstr ""
-"インストール可能であるかどうかにかかわらず、利用可能な <emphasis>全ての</emphasis> "
-"新しいパッケージを一覧表示するには、下記のように実行します:"
+"インストール可能であるかどうかにかかわらず、利用可能な <emphasis>全ての</"
+"emphasis> 新しいパッケージを一覧表示するには、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:612
+#: zypper.xml:640
 #, no-c-format
 msgid "&prompt.sudo;zypper list-updates --all"
 msgstr "&prompt.sudo;zypper list-updates --all"
 
 #. Tag: para
-#: zypper.xml:613
+#: zypper.xml:641
 #, no-c-format
 msgid ""
 "To find out why a new package cannot be installed, use the <command>zypper "
@@ -1488,17 +1508,17 @@ msgid ""
 "above."
 msgstr ""
 "なぜインストール可能であると判断されないのかについては、上述の "
-"<command>zypper install</command> または <command>zypper update</command> "
-"コマンドでパッケージ名を指定するとわかります。"
+"<command>zypper install</command> または <command>zypper update</command> コ"
+"マンドでパッケージ名を指定するとわかります。"
 
 #. Tag: title
-#: zypper.xml:620
+#: zypper.xml:648
 #, no-c-format
 msgid "Identifying Orphaned Packages"
 msgstr "孤立したパッケージの検出"
 
 #. Tag: para
-#: zypper.xml:621
+#: zypper.xml:649
 #, no-c-format
 msgid ""
 "Whenever you remove a repository from Zypper or upgrade your system, some "
@@ -1506,36 +1526,36 @@ msgid ""
 "<emphasis>orphaned</emphasis> packages belong to no active repository "
 "anymore. The following command gives you a list of these:"
 msgstr ""
-"zypper を利用してリポジトリを削除したり、システムをアップグレードしたりした"
-"あとは、いくつかのパッケージが <quote>孤立した</quote> 状態になることが"
-"あります。これらの <emphasis>孤立した</emphasis> パッケージは、"
-"設定されている有効なリポジトリ内には存在していないパッケージを意味します。"
-"これらは下記のコマンドを実行することで、一覧表示することができます:"
+"zypper を利用してリポジトリを削除したり、システムをアップグレードしたりしたあ"
+"とは、いくつかのパッケージが <quote>孤立した</quote> 状態になることがありま"
+"す。これらの <emphasis>孤立した</emphasis> パッケージは、設定されている有効な"
+"リポジトリ内には存在していないパッケージを意味します。これらは下記のコマンド"
+"を実行することで、一覧表示することができます:"
 
 #. Tag: screen
-#: zypper.xml:627
+#: zypper.xml:655
 #, no-c-format
 msgid "&prompt.sudo;zypper packages --orphaned"
 msgstr "&prompt.sudo;zypper packages --orphaned"
 
 #. Tag: para
-#: zypper.xml:628
+#: zypper.xml:656
 #, no-c-format
 msgid ""
 "With this list, you can decide if a package is still needed or can be "
 "removed safely."
 msgstr ""
-"出力された一覧を元に、それらを現状のまま維持しておくか、不要なパッケージで"
-"あるものとして安全に削除しておくことができます。"
+"出力された一覧を元に、それらを現状のまま維持しておくか、不要なパッケージであ"
+"るものとして安全に削除しておくことができます。"
 
 #. Tag: title
-#: zypper.xml:687
+#: zypper.xml:715
 #, no-c-format
 msgid "Identifying Processes and Services Using Deleted Files"
 msgstr "削除したファイルを使用しているプロセスやサービスの検出"
 
 #. Tag: para
-#: zypper.xml:688
+#: zypper.xml:716
 #, no-c-format
 msgid ""
 "When patching, updating or removing packages, there may be running processes "
@@ -1545,17 +1565,17 @@ msgid ""
 "listed, making it easy to restart the service. By default <command>zypper "
 "ps</command> shows a table:"
 msgstr ""
-"修正のインストールやパッケージの更新／削除などを行なった場合、更新や削除によって"
-"置き換えられたり削除されたりしたファイルを、実行中のプロセスが使用したままに"
-"なっていることがあります。このような状況を検出するには、"
-" <command>zypper ps</command> コマンドをお使いください。これにより、削除された"
-"ファイルを使用しているプロセスを一覧で表示することができます。なお、プロセスが"
-"既知のサービスに属している場合は、サービス側から再起動することができるようにするため、"
-"サービス名もあわせて表示されます。既定では <command>zypper ps</command> は"
-"表形式で出力します:"
+"修正のインストールやパッケージの更新／削除などを行なった場合、更新や削除に"
+"よって置き換えられたり削除されたりしたファイルを、実行中のプロセスが使用した"
+"ままになっていることがあります。このような状況を検出するには、 "
+"<command>zypper ps</command> コマンドをお使いください。これにより、削除された"
+"ファイルを使用しているプロセスを一覧で表示することができます。なお、プロセス"
+"が既知のサービスに属している場合は、サービス側から再起動することができるよう"
+"にするため、サービス名もあわせて表示されます。既定では <command>zypper ps</"
+"command> は表形式で出力します:"
 
 #. Tag: screen
-#: zypper.xml:696
+#: zypper.xml:724
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.70em\"?>&prompt.user;zypper ps\n"
@@ -1563,76 +1583,83 @@ msgid ""
 "------+------+-----+-------+--------------+--------------"
 "+-------------------\n"
 "814   | 1    | 481 | avahi | avahi-daemon | avahi-daemon | /lib64/ld-2.19.s-"
-">\n"
+"&gt;\n"
 "      |      |     |       |              |              | /lib64/libdl-2.1-"
-">\n"
+"&gt;\n"
 "      |      |     |       |              |              | /lib64/libpthrea-"
-">\n"
+"&gt;\n"
 "      |      |     |       |              |              | /lib64/libc-2.19-"
-">\n"
+"&gt;\n"
 "[...]"
 msgstr ""
 "<?dbsuse-fo font-size=\"0.70em\"?>&prompt.user;zypper ps\n"
 "PID   | PPID | UID | ユーザ | コマンド      | サービス     | ファイル\n"
-"------+------+-----+--------+--------------+--------------+-------------------\n"
-"814   | 1    | 481 | avahi  | avahi-daemon | avahi-daemon | /lib64/ld-2.19.s->\n"
-"      |      |     |        |              |              | /lib64/libdl-2.1->\n"
-"      |      |     |        |              |              | /lib64/libpthrea->\n"
-"      |      |     |        |              |              | /lib64/libc-2.19->\n"
+"------+------+-----+--------+--------------+--------------"
+"+-------------------\n"
+"814   | 1    | 481 | avahi  | avahi-daemon | avahi-daemon | /lib64/ld-2.19.s-"
+">\n"
+"      |      |     |        |              |              | /lib64/libdl-2.1-"
+">\n"
+"      |      |     |        |              |              | /lib64/libpthrea-"
+">\n"
+"      |      |     |        |              |              | /lib64/libc-2.19-"
+">\n"
 "[...]"
 
 #. Tag: member
-#: zypper.xml:698
+#: zypper.xml:733
 #, no-c-format
-msgid "<emphasis role=\"bold\">PID</emphasis>: ID of the process"
+msgid "<emphasis role=\"bold\">PID</emphasis> : ID of the process"
 msgstr "<emphasis role=\"bold\">PID</emphasis>: そのプロセスの ID"
 
 #. Tag: member
-#: zypper.xml:700
+#: zypper.xml:735
 #, no-c-format
-msgid "<emphasis role=\"bold\">PPID</emphasis>: ID of the parent process"
+msgid "<emphasis role=\"bold\">PPID</emphasis> : ID of the parent process"
 msgstr "<emphasis role=\"bold\">PPID</emphasis>: 親プロセスの ID"
 
 #. Tag: member
-#: zypper.xml:702
+#: zypper.xml:737
 #, no-c-format
-msgid "<emphasis role=\"bold\">UID</emphasis>: ID of the user running the process"
+msgid "<emphasis role=\"bold\">UID</emphasis> : ID of the user running the process"
 msgstr "<emphasis role=\"bold\">UID</emphasis>: プロセスを実行しているユーザの ID"
 
 #. Tag: member
-#: zypper.xml:705
+#: zypper.xml:740
 #, no-c-format
 msgid ""
-"<emphasis role=\"bold\">Login</emphasis>: Login name of the user running the "
-"process"
-msgstr "<emphasis role=\"bold\">ユーザ</emphasis>: プロセスを実行しているユーザのログイン名"
-
-#. Tag: member
-#: zypper.xml:708
-#, no-c-format
-msgid ""
-"<emphasis role=\"bold\">Command</emphasis>: Command used to execute the "
-"process"
-msgstr "<emphasis role=\"bold\">コマンド</emphasis>: プロセスを実行しているコマンド"
-
-#. Tag: member
-#: zypper.xml:711
-#, no-c-format
-msgid ""
-"<emphasis role=\"bold\">Service</emphasis>: Service name (only if command is "
-"associated with a system service)"
+"<emphasis role=\"bold\">Login</emphasis> : Login name of the user running "
+"the process"
 msgstr ""
-"<emphasis role=\"bold\">サービス</emphasis>: サービス名 (コマンドがシステムサービスに"
-"属している場合のみ)"
+"<emphasis role=\"bold\">ユーザ</emphasis>: プロセスを実行しているユーザのログ"
+"イン名"
 
 #. Tag: member
-#: zypper.xml:714
+#: zypper.xml:743
 #, no-c-format
-msgid "<emphasis role=\"bold\">Files</emphasis>: The list of the deleted files"
+msgid ""
+"<emphasis role=\"bold\">Command</emphasis> : Command used to execute the "
+"process"
+msgstr "<emphasis role=\"bold\">コマンド</emphasis>: プロセスで使用しているコマンド"
+
+#. Tag: member
+#: zypper.xml:746
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Service</emphasis> : Service name (only if command "
+"is associated with a system service)"
+msgstr ""
+"<emphasis role=\"bold\">サービス</emphasis>: サービス名 (コマンドがシステム"
+"サービスに属している場合のみ)"
+
+#. Tag: member
+#: zypper.xml:749
+#, no-c-format
+msgid "<emphasis role=\"bold\">Files</emphasis> : The list of the deleted files"
 msgstr "<emphasis role=\"bold\">ファイル</emphasis>: 削除されたファイルの一覧"
 
 #. Tag: para
-#: zypper.xml:718
+#: zypper.xml:753
 #, no-c-format
 msgid ""
 "The output format of <command>zypper ps</command> can be controlled as "
@@ -1642,19 +1669,19 @@ msgstr ""
 "ことができます:"
 
 #. Tag: term
-#: zypper.xml:724
+#: zypper.xml:759
 #, no-c-format
-msgid "<command>zypper ps</command><option>-s</option>"
-msgstr "<command>zypper ps</command><option>-s</option>"
+msgid "<command>zypper ps</command> <option>-s</option>"
+msgstr "<command>zypper ps</command> <option>-s</option>"
 
 #. Tag: para
-#: zypper.xml:727
+#: zypper.xml:762
 #, no-c-format
 msgid "Create a short table not showing the deleted files."
 msgstr "削除されたファイルの一覧を表示せず、短い表形式にします。"
 
 #. Tag: screen
-#: zypper.xml:730
+#: zypper.xml:765
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.70em\"?>&prompt.user;zypper ps -s\n"
@@ -1680,19 +1707,19 @@ msgstr ""
 "2031  | 2027 | 1000 | tux     | bash         |"
 
 #. Tag: term
-#: zypper.xml:734
+#: zypper.xml:778
 #, no-c-format
-msgid "<command>zypper ps</command><option>-ss</option>"
-msgstr "<command>zypper ps</command><option>-ss</option>"
+msgid "<command>zypper ps</command> <option>-ss</option>"
+msgstr "<command>zypper ps</command> <option>-ss</option>"
 
 #. Tag: para
-#: zypper.xml:737
+#: zypper.xml:781
 #, no-c-format
 msgid "Show only processes associated with a system service."
 msgstr "システムサービスに属しているプロセスのみを表示します。"
 
 #. Tag: screen
-#: zypper.xml:740
+#: zypper.xml:784
 #, no-c-format
 msgid ""
 "PID   | PPID | UID  | User    | Command      | Service\n"
@@ -1714,19 +1741,19 @@ msgstr ""
 "1765  | 1761 | 51   | postfix | qmgr         | postfix"
 
 #. Tag: term
-#: zypper.xml:744
+#: zypper.xml:795
 #, no-c-format
-msgid "<command>zypper ps</command><option>-sss</option>"
-msgstr "<command>zypper ps</command><option>-sss</option>"
+msgid "<command>zypper ps</command> <option>-sss</option>"
+msgstr "<command>zypper ps</command> <option>-sss</option>"
 
 #. Tag: para
-#: zypper.xml:747
+#: zypper.xml:798
 #, no-c-format
 msgid "Only show system services using deleted files."
 msgstr "削除されたファイルを使用しているシステムサービスのみを表示します。"
 
 #. Tag: screen
-#: zypper.xml:750
+#: zypper.xml:801
 #, no-c-format
 msgid ""
 "avahi-daemon\n"
@@ -1740,21 +1767,23 @@ msgstr ""
 "sshd"
 
 #. Tag: term
-#: zypper.xml:754
+#: zypper.xml:808
 #, no-c-format
-msgid "<command>zypper ps</command><option>--print \"systemctl status %s\"</option>"
-msgstr "<command>zypper ps</command><option>--print \"systemctl status %s\"</option>"
+msgid "<command>zypper ps</command> <option>--print \"systemctl status %s\"</option>"
+msgstr "<command>zypper ps</command> <option>--print \"systemctl status %s\"</option>"
 
 #. Tag: para
-#: zypper.xml:758
+#: zypper.xml:812
 #, no-c-format
 msgid ""
 "Show the commands to retrieve status information for services which might "
 "need a restart."
-msgstr "再起動を必要としているサービスに対して、状態を取得するためのコマンドを表示します。"
+msgstr ""
+"再起動を必要としているサービスに対して、状態を取得するためのコマンドを表示し"
+"ます。"
 
 #. Tag: screen
-#: zypper.xml:762
+#: zypper.xml:816
 #, no-c-format
 msgid ""
 "systemctl status avahi-daemon\n"
@@ -1768,52 +1797,52 @@ msgstr ""
 "systemctl status sshd"
 
 #. Tag: para
-#: zypper.xml:766
+#: zypper.xml:823
 #, no-c-format
 msgid ""
 "For more information about service handling refer to <xref linkend=\"cha."
-"systemd\"/>."
+"systemd\"/> ."
 msgstr ""
-"サービスの取り扱いについて、詳しくは <xref linkend=\"cha."
-"systemd\"/> をお読みください。"
+"サービスの取り扱いについて、詳しくは <xref linkend=\"cha.systemd\"/> をお読み"
+"ください。"
 
 #. Tag: title
-#: zypper.xml:780
+#: zypper.xml:837
 #, no-c-format
 msgid "Managing Repositories with Zypper"
 msgstr "zypper を利用したリポジトリの管理"
 
 #. Tag: para
-#: zypper.xml:781
+#: zypper.xml:838
 #, no-c-format
 msgid ""
 "All installation or patch commands of Zypper rely on a list of known "
 "repositories. To list all repositories known to the system, use the command:"
 msgstr ""
-"zypper におけるインストールや修正のインストールは、いずれもリポジトリの"
-"設定に依存しています。システムに設定されているリポジトリを一覧表示するには、"
-"下記のコマンドを実行します:"
+"zypper におけるインストールや修正のインストールは、いずれもリポジトリの設定に"
+"依存しています。システムに設定されているリポジトリを一覧表示するには、下記の"
+"コマンドを実行します:"
 
 #. Tag: screen
-#: zypper.xml:785
+#: zypper.xml:842
 #, no-c-format
 msgid "&prompt.user;zypper repos"
 msgstr "&prompt.user;zypper repos"
 
 #. Tag: para
-#: zypper.xml:786
+#: zypper.xml:843
 #, no-c-format
 msgid "The result will look similar to the following output:"
 msgstr "出力は、たとえば下記のようになります:"
 
 #. Tag: title
-#: zypper.xml:790
+#: zypper.xml:847
 #, no-c-format
 msgid "Zypper&mdash;List of Known Repositories"
 msgstr "Zypper&mdash;既知のリポジトリの一覧表示"
 
 #. Tag: screen
-#: zypper.xml:791
+#: zypper.xml:848
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.60em\"?>&prompt.user;zypper repos\n"
@@ -1831,7 +1860,7 @@ msgstr ""
 "3 | SLES12       | SLES12        | はい    | いいえ"
 
 #. Tag: screen
-#: zypper.xml:792
+#: zypper.xml:854
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.60em\"?>&prompt.user;zypper repos\n"
@@ -1846,16 +1875,21 @@ msgid ""
 "[...]"
 msgstr ""
 "<?dbsuse-fo font-size=\"0.60em\"?>&prompt.user;zypper repos\n"
-"# | 別名                      | 名前                              | 有効   | GPGチェック | 更新\n"
-"--+---------------------------+-----------------------------------+--------+-------------+-------\n"
-"1 | repo-non-oss              | openSUSE-Leap-15.0-Non-Oss        | はい   | (r ) はい   | はい\n"
-"2 | repo-oss                  | openSUSE-Leap-15.0-Oss            | はい   | (r ) はい   | はい\n"
-"3 | repo-update               | openSUSE-Leap-15.0-Update         | はい   | (r ) はい   | はい\n"
-"4 | repo-update-non-oss       | openSUSE-Leap-15.0-Update-Non-Oss | はい   | (r ) はい   | はい"
-"[...]"
+"# | 別名                      | 名前                              | 有効   | "
+"GPGチェック | 更新\n"
+"--+---------------------------+-----------------------------------+--------"
+"+-------------+-------\n"
+"1 | repo-non-oss              | openSUSE-Leap-15.0-Non-Oss        | はい   | "
+"(r ) はい   | はい\n"
+"2 | repo-oss                  | openSUSE-Leap-15.0-Oss            | はい   | "
+"(r ) はい   | はい\n"
+"3 | repo-update               | openSUSE-Leap-15.0-Update         | はい   | "
+"(r ) はい   | はい\n"
+"4 | repo-update-non-oss       | openSUSE-Leap-15.0-Update-Non-Oss | はい   | "
+"(r ) はい   | はい[...]"
 
 #. Tag: para
-#: zypper.xml:794
+#: zypper.xml:863
 #, no-c-format
 msgid ""
 "When specifying repositories in various commands, an alias, URI or "
@@ -1865,15 +1899,15 @@ msgid ""
 "can change after modifying the list of repositories. The alias will never "
 "change by itself."
 msgstr ""
-"様々なコマンドでリポジトリを指定する際、 <command>zypper repos</command> "
-"コマンドの出力で表示される別名や URI のほか、番号も指定することができます。"
-"リポジトリの別名とは、リポジトリに対して設定する短い名前で、コマンドでの指定を"
-"簡略化するための仕組みです。なお、リポジトリに対して何らかの編集作業を行なうと、"
-"番号が変わることがありますので、ご注意ください。別名については、明示的に変更しない"
-"限り、変わることはありません。"
+"様々なコマンドでリポジトリを指定する際、 <command>zypper repos</command> コマ"
+"ンドの出力で表示される別名や URI のほか、番号も指定することができます。リポジ"
+"トリの別名とは、リポジトリに対して設定する短い名前で、コマンドでの指定を簡略"
+"化するための仕組みです。なお、リポジトリに対して何らかの編集作業を行なうと、"
+"番号が変わることがありますので、ご注意ください。別名については、明示的に変更"
+"しない限り、変わることはありません。"
 
 #. Tag: para
-#: zypper.xml:802
+#: zypper.xml:871
 #, no-c-format
 msgid ""
 "By default, details such as the URI or the priority of the repository are "
@@ -1883,110 +1917,105 @@ msgstr ""
 "表示したい場合は、下記のコマンドを実行してください:"
 
 #. Tag: screen
-#: zypper.xml:806
+#: zypper.xml:875
 #, no-c-format
 msgid "&prompt.user;zypper repos -d"
 msgstr "&prompt.user;zypper repos -d"
 
 #. Tag: title
-#: zypper.xml:808
+#: zypper.xml:877
 #, no-c-format
 msgid "Adding Repositories"
 msgstr "リポジトリの追加"
 
 #. Tag: para
-#: zypper.xml:809
+#: zypper.xml:878
 #, no-c-format
 msgid "To add a repository, run"
 msgstr "リポジトリを追加するには、下記のように実行します:"
 
 #. Tag: screen
-#: zypper.xml:812
+#: zypper.xml:881
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper addrepo <replaceable>URI</replaceable> "
 "<replaceable>ALIAS</replaceable>"
 msgstr ""
-"&prompt.sudo;zypper addrepo <replaceable>URI</replaceable> "
-"<replaceable>別名</replaceable>"
+"&prompt.sudo;zypper addrepo <replaceable>URI</replaceable> <replaceable>別名"
+"</replaceable>"
 
 #. Tag: para
-#: zypper.xml:813
+#: zypper.xml:882
 #, no-c-format
 msgid ""
 "<replaceable>URI</replaceable> can either be an Internet repository, a "
 "network resource, a directory or a CD or DVD (see <link xlink:href=\"http://"
-"en.opensuse.org/openSUSE:Libzypp_URIs\"></link> for details). The "
+"en.opensuse.org/openSUSE:Libzypp_URIs\"/> for details). The "
 "<replaceable>ALIAS</replaceable> is a shorthand and unique identifier of the "
 "repository. You can freely choose it, with the only exception that it needs "
 "to be unique. Zypper will issue a warning if you specify an alias that is "
 "already in use."
 msgstr ""
 "<replaceable>URI</replaceable> はインターネットリポジトリの場合は URL を、"
-"ネットワークリソースやディレクトリ、 CD や DVD の場合は、それぞれの形式で"
-"指定します (詳しくは <link xlink:href=\"http://ja.opensuse.org/openSUSE:Libzypp_URI\"></link> "
-" をお読みください) 。 <replaceable>別名</replaceable> はリポジトリに対して"
-"設定する、短い独自の名前を指定します。別名は自由に設定することができますが、"
-"他のリポジトリの別名とは異なるものでなければなりません。既に使用されている別名を"
-"設定しようとすると、 zypper は警告を表示します。"
+"ネットワークリソースやディレクトリ、 CD や DVD の場合は、それぞれの形式で指定"
+"します (詳しくは <link xlink:href=\"http://ja.opensuse.org/openSUSE:"
+"Libzypp_URI\"></link>  をお読みください) 。 <replaceable>別名</replaceable> "
+"はリポジトリに対して設定する、短い独自の名前を指定します。別名は自由に設定す"
+"ることができますが、他のリポジトリの別名とは異なるものでなければなりません。"
+"既に使用されている別名を設定しようとすると、 zypper は警告を表示します。"
 
 #. Tag: title
-#: zypper.xml:824
+#: zypper.xml:893
 #, no-c-format
 msgid "Refreshing Repositories"
 msgstr "リポジトリの更新"
 
 #. Tag: para
-#: zypper.xml:825
+#: zypper.xml:894
 #, no-c-format
 msgid ""
 "<command>zypper</command> enables you to fetch changes in packages from "
 "configured repositories. To fetch the changes, run:"
 msgstr ""
 "<command>zypper</command> は設定済みのリポジトリから、変更されたパッケージの"
-"情報を取得することができます。変更された情報を取得するには、下記のコマンドを実行します:"
-
-#. Tag: screen
-#: zypper.xml:829 zypper.xml:1042
-#, no-c-format
-msgid "&prompt.sudo;zypper refresh"
-msgstr "&prompt.sudo;zypper refresh"
+"情報を取得することができます。変更された情報を取得するには、下記のコマンドを"
+"実行します:"
 
 #. Tag: title
-#: zypper.xml:831
+#: zypper.xml:900
 #, no-c-format
 msgid "Default Behavior of <command>zypper</command>"
 msgstr "<command>zypper</command> の既定の動作"
 
 #. Tag: para
-#: zypper.xml:832
+#: zypper.xml:901
 #, no-c-format
 msgid ""
 "By default, some commands perform <command>refresh</command> automatically, "
 "so you do not need to run the command explicitly."
 msgstr ""
-"既定では、いくつかのコマンドで <command>refresh</command> を自動的に実行します。"
-"そのため、このコマンドを明示的に実行する必要はありません。"
+"既定では、いくつかのコマンドで <command>refresh</command> を自動的に実行しま"
+"す。そのため、このコマンドを明示的に実行する必要はありません。"
 
 #. Tag: para
-#: zypper.xml:837
+#: zypper.xml:906
 #, no-c-format
 msgid ""
 "The <command>refresh</command> command enables you to view changes also in "
 "disabled repositories, by using the <literal>--plus-content</literal> option:"
 msgstr ""
-"また、 <command>refresh</command> コマンドでは、無効化されたリポジトリの変更も"
-"取得することができます。これを実行するには、 <literal>--plus-content</literal> "
-"オプションを指定します:"
+"また、 <command>refresh</command> コマンドでは、無効化されたリポジトリの変更"
+"も取得することができます。これを実行するには、 <literal>--plus-content</"
+"literal> オプションを指定します:"
 
 #. Tag: screen
-#: zypper.xml:842
+#: zypper.xml:911
 #, no-c-format
 msgid "&prompt.sudo;zypper --plus-content refresh"
 msgstr "&prompt.sudo;zypper --plus-content refresh"
 
 #. Tag: para
-#: zypper.xml:843
+#: zypper.xml:912
 #, no-c-format
 msgid ""
 "This option fetches changes in repositories, but keeps the disabled "
@@ -1996,29 +2025,29 @@ msgstr ""
 "同じ状態のまま (つまり、無効化されたまま) になります。"
 
 #. Tag: title
-#: zypper.xml:849
+#: zypper.xml:918
 #, no-c-format
 msgid "Removing Repositories"
 msgstr "リポジトリの削除"
 
 #. Tag: para
-#: zypper.xml:850
+#: zypper.xml:919
 #, no-c-format
 msgid ""
 "To remove a repository from the list, use the command <command>zypper "
 "removerepo</command> together with the alias or number of the repository you "
 "want to delete. For example, to remove the repository <literal os=\"sles;sled"
-"\">SLEHA-12-GEO</literal><literal os=\"osuse\">Leap-42.3-NOSS</literal> from "
-"<xref linkend=\"ex.zypper.repos\"/>, use one of the following commands:"
+"\">SLEHA-12-GEO</literal> <literal os=\"osuse\">Leap-42.3-NOSS</literal> "
+"from <xref linkend=\"ex.zypper.repos\"/> , use one of the following commands:"
 msgstr ""
-"一覧からリポジトリを削除するには、 <command>zypper "
-"removerepo</command> で削除したいリポジトリの別名または番号を指定します。"
-"たとえば <xref linkend=\"ex.zypper.repos\"/> の状態から <literal os=\"sles;sled"
-"\">SLEHA-12-GEO</literal><literal os=\"osuse\">repo-update-non-oss</literal>"
-"リポジトリを削除するには、下記のいずれかのコマンドを実行します:"
+"一覧からリポジトリを削除するには、 <command>zypper removerepo</command> で削"
+"除したいリポジトリの別名または番号を指定します。たとえば <xref linkend=\"ex."
+"zypper.repos\"/> の状態から <literal os=\"sles;sled\">SLEHA-12-GEO</"
+"literal><literal os=\"osuse\">repo-update-non-oss</literal>リポジトリを削除す"
+"るには、下記のいずれかのコマンドを実行します:"
 
 #. Tag: screen
-#: zypper.xml:858
+#: zypper.xml:927
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper removerepo 1\n"
@@ -2028,7 +2057,7 @@ msgstr ""
 "&prompt.sudo;zypper removerepo \"SLEHA-12-GEO\""
 
 #. Tag: screen
-#: zypper.xml:859
+#: zypper.xml:929
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper removerepo 4\n"
@@ -2038,119 +2067,119 @@ msgstr ""
 "&prompt.sudo;zypper removerepo \"repo-update-non-oss\""
 
 #. Tag: title
-#: zypper.xml:862
+#: zypper.xml:933
 #, no-c-format
 msgid "Modifying Repositories"
 msgstr "リポジトリの修正"
 
 #. Tag: para
-#: zypper.xml:863
+#: zypper.xml:934
 #, no-c-format
 msgid ""
-"Enable or disable repositories with <command>zypper modifyrepo</command>. "
+"Enable or disable repositories with <command>zypper modifyrepo</command> . "
 "You can also alter the repository's properties (such as refreshing behavior, "
 "name or priority) with this command. The following command will enable the "
-"repository named <literal>updates</literal>, turn on auto-refresh and set "
+"repository named <literal>updates</literal> , turn on auto-refresh and set "
 "its priority to 20:"
 msgstr ""
-"<command>zypper modifyrepo</command> コマンドを使用することで、リポジトリを"
-"有効化したり無効化したりすることができます。このほか、このコマンドではリポジトリの設定 "
-"(自動更新や名前、優先順位など) も変更することができます。たとえば下記のコマンドを"
-"実行すると、 <literal>updates</literal> という名前のリポジトリの自動更新を"
-"有効化し、優先順位を 20 にします:"
+"<command>zypper modifyrepo</command> コマンドを使用することで、リポジトリを有"
+"効化したり無効化したりすることができます。このほか、このコマンドではリポジト"
+"リの設定 (自動更新や名前、優先順位など) も変更することができます。たとえば下"
+"記のコマンドを実行すると、 <literal>updates</literal> という名前のリポジトリ"
+"の自動更新を有効化し、優先順位を 20 にします:"
 
 #. Tag: screen
-#: zypper.xml:870
+#: zypper.xml:941
 #, no-c-format
 msgid "&prompt.sudo;zypper modifyrepo -er -p 20 'updates'"
 msgstr "&prompt.sudo;zypper modifyrepo -er -p 20 'updates'"
 
 #. Tag: para
-#: zypper.xml:871
+#: zypper.xml:942
 #, no-c-format
 msgid ""
 "Modifying repositories is not limited to a single repository&mdash;you can "
 "also operate on groups:"
 msgstr ""
-"リポジトリの編集は、リポジトリ 1 つに対して行なうことができるだけではありません。"
-"複数のリポジトリに対して一括で変更することもできます:"
+"リポジトリの編集は、リポジトリ 1 つに対して行なうことができるだけではありませ"
+"ん。複数のリポジトリに対して一括で変更することもできます:"
 
 #. Tag: member
-#: zypper.xml:876
+#: zypper.xml:947
 #, no-c-format
-msgid "<option>-a</option>: all repositories"
+msgid "<option>-a</option> : all repositories"
 msgstr "<option>-a</option>: 全てのリポジトリ"
 
 #. Tag: member
-#: zypper.xml:877
+#: zypper.xml:948
 #, no-c-format
-msgid "<option>-l</option>: local repositories"
+msgid "<option>-l</option> : local repositories"
 msgstr "<option>-l</option>: ローカルのリポジトリ"
 
 #. Tag: member
-#: zypper.xml:878
+#: zypper.xml:949
 #, no-c-format
-msgid "<option>-t</option>: remote repositories"
+msgid "<option>-t</option> : remote repositories"
 msgstr "<option>-t</option>: リモートのリポジトリ"
 
 #. Tag: member
-#: zypper.xml:879
+#: zypper.xml:950
 #, no-c-format
 msgid ""
-"<option>-m <replaceable>TYPE</replaceable></option>: repositories of a "
+"<option>-m <replaceable>TYPE</replaceable></option> : repositories of a "
 "certain type (where <replaceable>TYPE</replaceable> can be one of the "
-"following: <literal>http</literal>, <literal>https</literal>, <literal>ftp</"
-"literal>, <literal>cd</literal>, <literal>dvd</literal>, <literal>dir</"
-"literal>, <literal>file</literal>, <literal>cifs</literal>, <literal>smb</"
-"literal>, <literal>nfs</literal>, <literal>hd</literal>, <literal>iso</"
-"literal>)"
+"following: <literal>http</literal> , <literal>https</literal> , "
+"<literal>ftp</literal> , <literal>cd</literal> , <literal>dvd</literal> , "
+"<literal>dir</literal> , <literal>file</literal> , <literal>cifs</literal> , "
+"<literal>smb</literal> , <literal>nfs</literal> , <literal>hd</literal> , "
+"<literal>iso</literal> )"
 msgstr ""
 "<option>-m <replaceable>種類</replaceable></option>: 特定の種類のリポジトリ "
 "(<replaceable>種類</replaceable> には下記のいずれかを指定することができます: "
-"<literal>http</literal>, <literal>https</literal>, <literal>ftp</"
-"literal>, <literal>cd</literal>, <literal>dvd</literal>, <literal>dir</"
-"literal>, <literal>file</literal>, <literal>cifs</literal>, <literal>smb</"
-"literal>, <literal>nfs</literal>, <literal>hd</literal>, <literal>iso</"
-"literal>)"
+"<literal>http</literal>, <literal>https</literal>, <literal>ftp</literal>, "
+"<literal>cd</literal>, <literal>dvd</literal>, <literal>dir</literal>, "
+"<literal>file</literal>, <literal>cifs</literal>, <literal>smb</literal>, "
+"<literal>nfs</literal>, <literal>hd</literal>, <literal>iso</literal>)"
 
 #. Tag: para
-#: zypper.xml:886
+#: zypper.xml:957
 #, no-c-format
 msgid ""
 "To rename a repository alias, use the <literal>renamerepo</literal> command. "
 "The following example changes the alias from <literal>Mozilla Firefox</"
-"literal> to <literal>firefox</literal>:"
+"literal> to <literal>firefox</literal> :"
 msgstr ""
-"リポジトリの別名を変更するには、 <literal>renamerepo</literal> コマンドを使用します。"
-"下記の例では、 <literal>Mozilla Firefox</literal> という別名のリポジトリを "
-"<literal>firefox</literal> という別名に変更しています:"
+"リポジトリの別名を変更するには、 <literal>renamerepo</literal> コマンドを使用"
+"します。下記の例では、 <literal>Mozilla Firefox</literal> という別名のリポジ"
+"トリを <literal>firefox</literal> という別名に変更しています:"
 
 #. Tag: screen
-#: zypper.xml:891
+#: zypper.xml:962
 #, no-c-format
 msgid "&prompt.sudo;zypper renamerepo 'Mozilla Firefox' firefox"
 msgstr "&prompt.sudo;zypper renamerepo 'Mozilla Firefox' firefox"
 
 #. Tag: title
-#: zypper.xml:896
+#: zypper.xml:967
 #, no-c-format
 msgid "Querying Repositories and Packages with Zypper"
 msgstr "zypper を利用したリポジトリやパッケージの問い合わせ"
 
 #. Tag: para
-#: zypper.xml:897
+#: zypper.xml:968
 #, no-c-format
 msgid ""
 "Zypper offers various methods to query repositories or packages. To get "
 "lists of all products, patterns, packages or patches available, use the "
 "following commands:"
 msgstr ""
-"zypper では、様々な方法でリポジトリやパッケージの問い合わせを行なうことができます。"
-"利用可能な全ての製品 (products) やパターン (patterns) 、パッケージ (packages) や修正 (patches) などを一覧で表示するには、"
-"下記のコマンドをお使いください:"
+"zypper では、様々な方法でリポジトリやパッケージの問い合わせを行なうことができ"
+"ます。利用可能な全ての製品 (products) やパターン (patterns) 、パッケージ "
+"(packages) や修正 (patches) などを一覧で表示するには、下記のコマンドをお使い"
+"ください:"
 
 #. Tag: screen
-#: zypper.xml:902
+#: zypper.xml:973
 #, no-c-format
 msgid ""
 "&prompt.user;zypper products\n"
@@ -2164,11 +2193,11 @@ msgstr ""
 "&prompt.user;zypper patches"
 
 #. Tag: para
-#: zypper.xml:903
+#: zypper.xml:977
 #, no-c-format
 msgid ""
 "To query all repositories for certain packages, use <literal>search</"
-"literal>. To get information regarding particular packages, use the "
+"literal> . To get information regarding particular packages, use the "
 "<literal>info</literal> command."
 msgstr ""
 "特定のパッケージに対して全てのリポジトリを検索するには、 <literal>search</"
@@ -2176,13 +2205,13 @@ msgstr ""
 "<literal>info</literal> コマンドを使用します。"
 
 #. Tag: title
-#: zypper.xml:909
+#: zypper.xml:983
 #, no-c-format
 msgid "Searching for Software"
 msgstr "ソフトウエアの検索"
 
 #. Tag: para
-#: zypper.xml:910
+#: zypper.xml:984
 #, no-c-format
 msgid ""
 "The <command>zypper search</command> command works on package names, or, "
@@ -2190,61 +2219,61 @@ msgid ""
 "<literal>/</literal> are interpreted as regular expressions. By default, the "
 "search is not case-sensitive."
 msgstr ""
-"<command>zypper search</command> コマンドはパッケージ名だけでなく、必要であれば"
-"パッケージの概要説明や詳細説明を対象として検索することができます。また、"
-"<literal>/</literal> で括られた文字列は正規表現として扱われます。なお、既定では"
-"大文字と小文字を区別せずに検索します。"
+"<command>zypper search</command> コマンドはパッケージ名だけでなく、必要であれ"
+"ばパッケージの概要説明や詳細説明を対象として検索することができます。また、"
+"<literal>/</literal> で括られた文字列は正規表現として扱われます。なお、既定で"
+"は大文字と小文字を区別せずに検索します。"
 
 #. Tag: term
-#: zypper.xml:918
+#: zypper.xml:992
 #, no-c-format
 msgid "Simple search for a package name containing <literal>fire</literal>"
 msgstr "パッケージ名に <literal>fire</literal> という文字列を含むものの単純な検索"
 
 #. Tag: screen
-#: zypper.xml:921
+#: zypper.xml:995
 #, no-c-format
 msgid "&prompt.user;zypper search \"fire\""
 msgstr "&prompt.user;zypper search \"fire\""
 
 #. Tag: term
-#: zypper.xml:925
+#: zypper.xml:999
 #, no-c-format
 msgid "Simple search for the exact package <literal>MozillaFirefox</literal>"
 msgstr "<literal>MozillaFirefox</literal> という名前に一致するパッケージの検索"
 
 #. Tag: screen
-#: zypper.xml:928
+#: zypper.xml:1002
 #, no-c-format
 msgid "&prompt.user;zypper search --match-exact \"MozillaFirefox\""
 msgstr "&prompt.user;zypper search --match-exact \"MozillaFirefox\""
 
 #. Tag: term
-#: zypper.xml:932
+#: zypper.xml:1006
 #, no-c-format
 msgid "Also search in package descriptions and summaries"
 msgstr "パッケージの概要説明と詳細説明の両方を対象にする検索"
 
 #. Tag: screen
-#: zypper.xml:934
+#: zypper.xml:1008
 #, no-c-format
 msgid "&prompt.user;zypper search -d fire"
 msgstr "&prompt.user;zypper search -d fire"
 
 #. Tag: term
-#: zypper.xml:938
+#: zypper.xml:1012
 #, no-c-format
 msgid "Only display packages not already installed"
 msgstr "インストールされていないパッケージのみを表示する検索"
 
 #. Tag: screen
-#: zypper.xml:940
+#: zypper.xml:1014
 #, no-c-format
 msgid "&prompt.user;zypper search -u fire"
 msgstr "&prompt.user;zypper search -u fire"
 
 #. Tag: term
-#: zypper.xml:944
+#: zypper.xml:1018
 #, no-c-format
 msgid ""
 "Display packages containing the string <literal>fir</literal> not followed "
@@ -2254,79 +2283,81 @@ msgstr ""
 "を含まないようなパッケージの検索"
 
 #. Tag: screen
-#: zypper.xml:948
+#: zypper.xml:1022
 #, no-c-format
 msgid "&prompt.user;zypper se \"/fir[^e]/\""
 msgstr "&prompt.user;zypper se \"/fir[^e]/\""
 
 #. Tag: title
-#: zypper.xml:954
+#: zypper.xml:1028
 #, no-c-format
 msgid "Searching for Packages Across All &slea; Modules"
 msgstr "全ての &slea; モジュールに対するパッケージの検索"
 
 #. Tag: para
-#: zypper.xml:955
+#: zypper.xml:1029
 #, no-c-format
 msgid ""
 "To search for packages both within and outside of currently enabled &slea; "
-"modules, use the command <command>zypper search-packages</command>. This "
+"modules, use the command <command>zypper search-packages</command> . This "
 "command contacts the &scc; and searches all modules for matching packages."
 msgstr ""
-"現在有効化されている &slea; モジュールを、内外問わずにパッケージ検索したい場合は、"
-"<command>zypper search-packages</command> を使用します。このコマンドは"
-" &scc; に接続して、該当するパッケージに対する全てのモジュールを検索します。"
+"現在有効化されている &slea; モジュールを、内外問わずにパッケージ検索したい場"
+"合は、<command>zypper search-packages</command> を使用します。このコマンドは "
+"&scc; に接続して、該当するパッケージに対する全てのモジュールを検索します。"
 
 #. Tag: title
-#: zypper.xml:963
+#: zypper.xml:1037
 #, no-c-format
 msgid "Searching for Specific Capability"
 msgstr "特定の能力を指定する検索"
 
 #. Tag: para
-#: zypper.xml:964
+#: zypper.xml:1038
 #, no-c-format
 msgid ""
 "To search for packages which provide a special capability, use the command "
-"<literal>what-provides</literal>. For example, if you want to know which "
-"package provides the Perl module <literal>SVN::Core</literal>, use the "
+"<literal>what-provides</literal> . For example, if you want to know which "
+"package provides the Perl module <literal>SVN::Core</literal> , use the "
 "following command:"
 msgstr ""
-"特定の能力設定を指定してパッケージを検索したい場合は、<literal>what-provides</literal> "
-"コマンドを使用します。たとえば Perl モジュールの <literal>SVN::Core</literal> を"
-"提供するパッケージを検索したい場合は、下記を実行します:"
+"特定の能力設定を指定してパッケージを検索したい場合は、<literal>what-"
+"provides</literal> コマンドを使用します。たとえば Perl モジュールの "
+"<literal>SVN::Core</literal> を提供するパッケージを検索したい場合は、下記を実"
+"行します:"
 
 #. Tag: screen
-#: zypper.xml:970
+#: zypper.xml:1044
 #, no-c-format
 msgid "&prompt.user;zypper what-provides 'perl(SVN::Core)'"
 msgstr "&prompt.user;zypper what-provides 'perl(SVN::Core)'"
 
 #. Tag: para
-#: zypper.xml:971
+#: zypper.xml:1045
 #, no-c-format
 msgid ""
 "The <literal>what-provides <replaceable>PACKAGE_NAME</replaceable></literal> "
 "is similar to <command>rpm -q --whatprovides</command> "
-"<replaceable>PACKAGE_NAME</replaceable>, but RPM is only able to query the "
+"<replaceable>PACKAGE_NAME</replaceable> , but RPM is only able to query the "
 "RPM database (that is the database of all installed packages). Zypper, on "
 "the other hand, will tell you about providers of the capability from any "
 "repository, not only those that are installed."
 msgstr ""
 "<literal>what-provides <replaceable>パッケージ名</replaceable></literal> は "
-"<command>rpm -q --whatprovides</command> <replaceable>パッケージ名</replaceable> "
-"に似た仕組みですが、 RPM コマンドは RPM データベース (インストールされている全てのパッケージ"
-"に対するデータベース) 内のみを検索するのに対して、 zypper はインストールされていない"
-"ものを含めて、任意のリポジトリ内にあるパッケージを検索します。"
+"<command>rpm -q --whatprovides</command> <replaceable>パッケージ名</"
+"replaceable> に似た仕組みですが、 RPM コマンドは RPM データベース (インストー"
+"ルされている全てのパッケージに対するデータベース) 内のみを検索するのに対し"
+"て、 zypper はインストールされていないものを含めて、任意のリポジトリ内にある"
+"パッケージを検索します。"
 
 #. Tag: title
-#: zypper.xml:982
+#: zypper.xml:1056
 #, no-c-format
 msgid "Showing Package Information"
 msgstr "パッケージの情報表示"
 
 #. Tag: para
-#: zypper.xml:983
+#: zypper.xml:1057
 #, no-c-format
 msgid ""
 "To query single packages, use <command>info</command> with an exact package "
@@ -2339,63 +2370,64 @@ msgid ""
 msgstr ""
 "単一のパッケージの情報を表示したい場合は、 <command>info</command> コマンドに"
 "続いて正確なパッケージ名を指定します。これにより、指定したパッケージに対する"
-"詳細な情報が表示されます。指定したパッケージ名が、どのリポジトリ内にも見つからない"
-"場合は、パッケージ名以外を対象として検索を行ない、詳細情報を表示します。また、"
-"種類を指定 (<literal>-t</literal> オプションを設定) して情報を要求した場合で、"
-"その種類が見つからない場合、詳細な情報を表示せずに該当するもののみを表示します。"
+"詳細な情報が表示されます。指定したパッケージ名が、どのリポジトリ内にも見つか"
+"らない場合は、パッケージ名以外を対象として検索を行ない、詳細情報を表示しま"
+"す。また、種類を指定 (<literal>-t</literal> オプションを設定) して情報を要求"
+"した場合で、その種類が見つからない場合、詳細な情報を表示せずに該当するものの"
+"みを表示します。"
 
 #. Tag: para
-#: zypper.xml:992
+#: zypper.xml:1066
 #, no-c-format
 msgid ""
 "If you specify a source package, the command displays binary packages built "
 "from the source package. If you specify a binary package, the command "
 "outputs the source packages used to build the binary package."
 msgstr ""
-"また、ソースパッケージを指定すると、このコマンドはソースパッケージから"
-"構築されたバイナリパッケージを表示します。バイナリパッケージを指定した場合、"
-"このコマンドはパッケージを構築する際に使用するソースパッケージを表示します。"
+"また、ソースパッケージを指定すると、このコマンドはソースパッケージから構築さ"
+"れたバイナリパッケージを表示します。バイナリパッケージを指定した場合、このコ"
+"マンドはパッケージを構築する際に使用するソースパッケージを表示します。"
 
 #. Tag: para
-#: zypper.xml:997
+#: zypper.xml:1071
 #, no-c-format
 msgid ""
 "To also show what is required/recommended by the package, use the options "
-"<option>--requires</option> and <option>--recommends</option>:"
+"<option>--requires</option> and <option>--recommends</option> :"
 msgstr ""
-"このパッケージが必要とするパッケージや、推奨するパッケージについても表示を"
-"行ないたい場合は、それぞれ <option>--requires</option> (必要とするもの) または "
+"このパッケージが必要とするパッケージや、推奨するパッケージについても表示を行"
+"ないたい場合は、それぞれ <option>--requires</option> (必要とするもの) または "
 "<option>--recommends</option> (推奨するもの) オプションを指定してください:"
 
 #. Tag: screen
-#: zypper.xml:1001
+#: zypper.xml:1075
 #, no-c-format
 msgid "&prompt.user;zypper info --requires MozillaFirefox"
 msgstr "&prompt.user;zypper info --requires MozillaFirefox"
 
 #. Tag: title
-#: zypper.xml:1006
+#: zypper.xml:1080
 #, no-c-format
 msgid "Showing Life Cycle Information"
 msgstr "ライフサイクル情報の表示"
 
 #. Tag: para
-#: zypper.xml:1007
+#: zypper.xml:1081
 #, no-c-format
 msgid ""
 "&suse; products are generally supported for 10 years. Often, you can extend "
 "that standard life cycle by using the extended support offerings of &suse; "
 "which add 3 years of support. Depending on your product, find the exact "
-"support life cycle at <link xlink:href=\"https://www.suse.com/lifecycle\"></"
-"link>."
+"support life cycle at <link xlink:href=\"https://www.suse.com/lifecycle\"/> ."
 msgstr ""
-"&suse; 製品は一般に 10 年間のサポート期間が用意されています。また、必要であれば、"
-"標準のサポート期間に加えて 3 年間の延長サポートを提供する &suse; の拡張サポート"
-"も利用することができます。お使いの製品に対する正確なライフサイクル情報は、"
-"<link xlink:href=\"https://www.suse.com/lifecycle\"></link> をご覧ください。"
+"&suse; 製品は一般に 10 年間のサポート期間が用意されています。また、必要であれ"
+"ば、標準のサポート期間に加えて 3 年間の延長サポートを提供する &suse; の拡張サ"
+"ポートも利用することができます。お使いの製品に対する正確なライフサイクル情報"
+"は、<link xlink:href=\"https://www.suse.com/lifecycle\"></link> をご覧くださ"
+"い。"
 
 #. Tag: para
-#: zypper.xml:1014
+#: zypper.xml:1088
 #, no-c-format
 msgid ""
 "To check the life cycle of your product and the supported package, use the "
@@ -2405,7 +2437,7 @@ msgstr ""
 "<command>zypper lifecycle</command> コマンドを実行します:"
 
 #. Tag: screen
-#: zypper.xml:1018
+#: zypper.xml:1092
 #, no-c-format
 msgid ""
 "&prompt.root;<command>zypper lifecycle</command>\n"
@@ -2433,82 +2465,88 @@ msgstr ""
 "*) See https://www.suse.com/lifecycle for latest information"
 
 #. Tag: title
-#: zypper.xml:1022
+#: zypper.xml:1106
 #, no-c-format
 msgid "Configuring Zypper"
 msgstr "zypper の設定"
 
 #. Tag: para
-#: zypper.xml:1023
+#: zypper.xml:1107
 #, no-c-format
 msgid ""
 "Zypper now comes with a configuration file, allowing you to permanently "
 "change Zypper's behavior (either system-wide or user-specific). For system-"
-"wide changes, edit <filename>/etc/zypp/zypper.conf</filename>. For user-"
-"specific changes, edit <filename>~/.zypper.conf</filename>. If <filename>~/."
+"wide changes, edit <filename>/etc/zypp/zypper.conf</filename> . For user-"
+"specific changes, edit <filename>~/.zypper.conf</filename> . If <filename>~/."
 "zypper.conf</filename> does not yet exist, you can use <filename>/etc/zypp/"
 "zypper.conf</filename> as a template: copy it to <filename>~/.zypper.conf</"
 "filename> and adjust it to your liking. Refer to the comments in the file "
 "for help about the available options."
 msgstr ""
 "zypper では、設定ファイルを利用することで、システム全体もしくはユーザ単位で、"
-"動作を恒久的に変更することができます。システム全体に対する変更を行ないたい場合は、"
-" <filename>/etc/zypp/zypper.conf</filename> ファイルを編集してください。"
-"また、ユーザ単位で設定を変更したい場合は、 <filename>~/.zypper.conf</filename> "
-"ファイルを編集してください。 <filename>~/.zypper.conf</filename> ファイルが"
-"存在しない場合は、 <filename>/etc/zypp/zypper.conf</filename> ファイルを"
-"雛形としてお使いください。具体的には、左記のファイルを <filename>~/.zypper.conf</"
-"filename> にコピーしてから、必要な変更を行なってください。設定可能な項目について、"
-"詳しくはファイル内のコメントをお読みください。"
+"動作を恒久的に変更することができます。システム全体に対する変更を行ないたい場"
+"合は、 <filename>/etc/zypp/zypper.conf</filename> ファイルを編集してくださ"
+"い。また、ユーザ単位で設定を変更したい場合は、 <filename>~/.zypper.conf</"
+"filename> ファイルを編集してください。 <filename>~/.zypper.conf</filename> "
+"ファイルが存在しない場合は、 <filename>/etc/zypp/zypper.conf</filename> ファ"
+"イルを雛形としてお使いください。具体的には、左記のファイルを <filename>~/."
+"zypper.conf</filename> にコピーしてから、必要な変更を行なってください。設定可"
+"能な項目について、詳しくはファイル内のコメントをお読みください。"
 
 #. Tag: title
-#: zypper.xml:1036
+#: zypper.xml:1120
 #, no-c-format
 msgid "Troubleshooting"
 msgstr "トラブルシューティング"
 
 #. Tag: para
-#: zypper.xml:1037
+#: zypper.xml:1121
 #, no-c-format
 msgid ""
 "If you have trouble accessing packages from configured repositories (for "
 "example, Zypper cannot find a certain package even though you know it exists "
 "in one the repositories), refreshing the repositories may help:"
 msgstr ""
-"設定済みのリポジトリが提供するパッケージにアクセスできない場合 (たとえば、"
-"いずれかのリポジトリ内に存在するにもかかわらず、パッケージを見つけることができない"
-"場合) は、リポジトリを更新することで解決する場合があります:"
+"設定済みのリポジトリが提供するパッケージにアクセスできない場合 (たとえば、い"
+"ずれかのリポジトリ内に存在するにもかかわらず、パッケージを見つけることができ"
+"ない場合) は、リポジトリを更新することで解決する場合があります:"
+
+#. Tag: screen
+#: zypper.xml:1126
+#, no-c-format
+msgid "&prompt.sudo;zypper refresh"
+msgstr "&prompt.sudo;zypper refresh"
 
 #. Tag: para
-#: zypper.xml:1043
+#: zypper.xml:1127
 #, no-c-format
 msgid "If that does not help, try"
 msgstr "それでもうまく動かない場合は、下記をお試しください:"
 
 #. Tag: screen
-#: zypper.xml:1046
+#: zypper.xml:1130
 #, no-c-format
 msgid "&prompt.sudo;zypper refresh -fdb"
 msgstr "&prompt.sudo;zypper refresh -fdb"
 
 #. Tag: para
-#: zypper.xml:1047
+#: zypper.xml:1131
 #, no-c-format
 msgid ""
 "This forces a complete refresh and rebuild of the database, including a "
 "forced download of raw metadata."
 msgstr ""
-"これにより、生のメタデータを強制的にダウンロードして、完全な更新と"
-"データベースの再構築を行ないます。"
+"これにより、生のメタデータを強制的にダウンロードして、完全な更新とデータベー"
+"スの再構築を行ないます。"
 
 #. Tag: title
-#: zypper.xml:1054
+#: zypper.xml:1138
 #, no-c-format
 msgid "Zypper Rollback Feature on Btrfs File System"
 msgstr "btrfs ファイルシステムにおける zypper のロールバック機能"
 
 #. Tag: para
-#: zypper.xml:1055
+#: zypper.xml:1139
 #, no-c-format
 msgid ""
 "If the Btrfs file system is used on the root partition and <command>snapper</"
@@ -2517,41 +2555,42 @@ msgid ""
 "snapshots. These snapshots can be used to revert any changes made by Zypper. "
 "See <xref linkend=\"cha.snapper\"/> for more information."
 msgstr ""
-"ルートパーティションに btrfs ファイルシステムを使用していて、かつ <command>snapper</"
-"command> がインストールされている場合、 zypper はファイルシステムに対して変更点を"
-"コミットする際、自動的に <command>snapper</command> を呼び出して、ファイルシステムの"
-"スナップショットを採取します。これらのスナップショットは、 zypper によってなされた"
-"変更点を元に戻したいような場合に利用することができます。詳しくは"
-" <xref linkend=\"cha.snapper\"/> をお読みください。"
+"ルートパーティションに btrfs ファイルシステムを使用していて、かつ "
+"<command>snapper</command> がインストールされている場合、 zypper はファイルシ"
+"ステムに対して変更点をコミットする際、自動的に <command>snapper</command> を"
+"呼び出して、ファイルシステムのスナップショットを採取します。これらのスナップ"
+"ショットは、 zypper によってなされた変更点を元に戻したいような場合に利用する"
+"ことができます。詳しくは <xref linkend=\"cha.snapper\"/> をお読みください。"
 
 #. Tag: title
-#: zypper.xml:1065
+#: zypper.xml:1149
 #, no-c-format
 msgid "For More Information"
 msgstr "さらなる情報"
 
 #. Tag: para
-#: zypper.xml:1066
+#: zypper.xml:1150
 #, no-c-format
 msgid ""
 "For more information on managing software from the command line, enter "
-"<command>zypper help</command>, <command>zypper help&nbsp;</command> "
+"<command>zypper help</command> , <command>zypper help&nbsp;</command> "
 "<replaceable>COMMAND</replaceable> or refer to the <command>zypper(8)</"
 "command> man page. For a complete and detailed command reference, "
 "<literal>cheat sheets</literal> with the most important commands, and "
 "information on how to use Zypper in scripts and applications, refer to <link "
-"xlink:href=\"http://en.opensuse.org/SDB:Zypper_usage\"></link>. A list of "
+"xlink:href=\"http://en.opensuse.org/SDB:Zypper_usage\"/> . A list of "
 "software changes for the latest &productname; version can be found at <link "
-"xlink:href=\"http://en.opensuse.org/openSUSE:Zypper versions\"></link>."
+"xlink:href=\"http://en.opensuse.org/openSUSE:Zypper versions\"/> ."
 msgstr ""
-"コマンドラインからのソフトウエア管理について詳しく調べたい場合は、"
-" <command>zypper help</command> または <command>zypper help&nbsp;</command> "
+"コマンドラインからのソフトウエア管理について詳しく調べたい場合は、 "
+"<command>zypper help</command> または <command>zypper help&nbsp;</command> "
 "<replaceable>コマンド</replaceable> を実行するか、 <command>zypper(8)</"
-"command> のマニュアルページをお読みください。完全で詳細なコマンドリファレンスを"
-"読みたい場合や、主要なコマンドが書かれた <literal>チートシート</literal> を"
-"見たい場合、もしくは zypper をスクリプトやアプリケーション内で使用する方法について"
-"調べたい場合は、 <link xlink:href=\"https://ja.opensuse.org/SDB:Zypper_%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9\"></link> "
-"をお読みください。最新の &productname; でのソフトウエアの更新情報について"
-"知りたい場合は、 <link xlink:href=\"https://ja.opensuse.org/openSUSE:Zypper_%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3\"></link> "
-"をお読みください。"
+"command> のマニュアルページをお読みください。完全で詳細なコマンドリファレンス"
+"を読みたい場合や、主要なコマンドが書かれた <literal>チートシート</literal> を"
+"見たい場合、もしくは zypper をスクリプトやアプリケーション内で使用する方法に"
+"ついて調べたい場合は、 <link xlink:href=\"https://ja.opensuse.org/SDB:Zypper_"
+"%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9\"></link> をお読みください。最新の "
+"&productname; でのソフトウエアの更新情報について知りたい場合は、 <link xlink:"
+"href=\"https://ja.opensuse.org/openSUSE:Zypper_%E3%83%90%E3%83%BC"
+"%E3%82%B8%E3%83%A7%E3%83%B3\"></link> をお読みください。"
 
