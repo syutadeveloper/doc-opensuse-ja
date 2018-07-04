@@ -1,32 +1,33 @@
 #!/bin/sh
 
+# This script requires:
+# * "msgmerge", "msginit" from gettext-tools package
+# * 
+
 LANGCODE=ja
 
-# requires "xml2pot", "po2xml" included in kdesdk3-translate package and
-# "msgmerge", "msginit" included in gettext-tools package.
+DIR=`dirname $0`
+
 for i in `dirname $0`/srcxml/*.xml;
 do
-  POT=`dirname $0`/pot/`basename $i`.pot
-  PO=`dirname $0`/po/`basename $i`.$LANGCODE.po
-  XML=`dirname $0`/xml/`basename $i`
+  POT=$DIR/pot/`basename $i`.pot
+  PO=$DIR/po/`basename $i`.$LANGCODE.po
+  XML=$DIR/xml/`basename $i`
 
   echo -n Updating POT: `basename $i`..
-  xml2pot $i > $POT
+  $DIR/xml_po.pl --xml2pot $i > $POT
   echo done.
 
   echo -n Updating PO: `basename $i`..
   if [ -f $PO ]; then
-    msgmerge $PO $POT > $PO.new
-    mv -f $PO $PO.old
-    mv -f $PO.new $PO
-    rm -f $PO.old
+    msgmerge -U $PO $POT
   else
     msginit -i $POT --no-translator -o $PO
   fi
   echo done.
 
   echo -n Updating XML: `basename $i`..
-  po2xml $i $PO > $XML
+  $DIR/xml_po.pl --po2xml $i $PO > $XML
   echo done.
 done
 
