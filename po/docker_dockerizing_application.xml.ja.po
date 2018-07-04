@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -122,7 +122,7 @@ msgid ""
 "The following section provides you with examples and tips on how to "
 "dockerize your applications. Prior to reading further, make sure that you "
 "have activated your &slsa; base docker image as described in <xref linkend="
-"\"Building_Pre-build_Images\"/>."
+"\"Building_Pre-build_Images\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -162,7 +162,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:104
+#: docker_dockerizing_application.xml:114
 #, no-c-format
 msgid ""
 "Now you can build the image by running in the same directory as the "
@@ -170,33 +170,33 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:109
+#: docker_dockerizing_application.xml:119
 #, no-c-format
 msgid "&prompt.user;docker build --tag tux_application:latest ."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:111
+#: docker_dockerizing_application.xml:121
 #, no-c-format
 msgid ""
 "The <filename>Dockerfile</filename> example shown above performs the "
-"following operations during the <command>docker build</command>:"
+"following operations during the <command>docker build</command> :"
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:118
+#: docker_dockerizing_application.xml:128
 #, no-c-format
 msgid "Updates the &slsa; repositories."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:123
+#: docker_dockerizing_application.xml:133
 #, no-c-format
 msgid "Installs the desired version of the <literal>example</literal> package."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:128
+#: docker_dockerizing_application.xml:138
 #, no-c-format
 msgid ""
 "Copies your application package to the image. The source RPM must be placed "
@@ -204,19 +204,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:134
+#: docker_dockerizing_application.xml:144
 #, no-c-format
 msgid "Unpacks your application."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:139
+#: docker_dockerizing_application.xml:149
 #, no-c-format
 msgid "The last two steps run your application after a container is started."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:145
+#: docker_dockerizing_application.xml:155
 #, no-c-format
 msgid ""
 "After a successful build of the <literal>tux_application</literal> image, "
@@ -224,7 +224,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:150
+#: docker_dockerizing_application.xml:160
 #, no-c-format
 msgid ""
 "&prompt.user;docker run -it --name application_instance tux_application:"
@@ -232,7 +232,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:152
+#: docker_dockerizing_application.xml:162
 #, no-c-format
 msgid ""
 "You have created a container that runs a single instance of your "
@@ -241,13 +241,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: docker_dockerizing_application.xml:160
+#: docker_dockerizing_application.xml:170
 #, no-c-format
 msgid "Running Applications with Specific Configuration"
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:162
+#: docker_dockerizing_application.xml:172
 #, no-c-format
 msgid ""
 "You may need to run an application that is delivered in a standard package "
@@ -259,13 +259,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:171
+#: docker_dockerizing_application.xml:181
 #, no-c-format
 msgid "An example with the <emphasis>example</emphasis> application follows:"
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:175
+#: docker_dockerizing_application.xml:185
 #, no-c-format
 msgid ""
 "FROM suse/sles12sp3:latest\n"
@@ -281,7 +281,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:177
+#: docker_dockerizing_application.xml:196
 #, no-c-format
 msgid ""
 "The above example <filename>Dockerfile</filename> results in the following "
@@ -289,15 +289,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:184
+#: docker_dockerizing_application.xml:203
 #, no-c-format
 msgid ""
 "Refreshing of repositories and installation of the <emphasis>example</"
-"emphasis>."
+"emphasis> ."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:190
+#: docker_dockerizing_application.xml:209
 #, no-c-format
 msgid ""
 "Sets a <literal>BACKUP</literal> environment variable (the variable persists "
@@ -307,25 +307,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:198
+#: docker_dockerizing_application.xml:217
 #, no-c-format
-msgid "Creates the directory <literal>/backup</literal>."
+msgid "Creates the directory <literal>/backup</literal> ."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:203
+#: docker_dockerizing_application.xml:222
 #, no-c-format
 msgid "Copies the <filename>configuration_example</filename> to the image."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:208
+#: docker_dockerizing_application.xml:227
 #, no-c-format
 msgid "Runs the <emphasis>example</emphasis> application."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:214
+#: docker_dockerizing_application.xml:233
 #, no-c-format
 msgid ""
 "Now you can build the image and after a successful build, you can run a "
@@ -333,32 +333,32 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: docker_dockerizing_application.xml:220
+#: docker_dockerizing_application.xml:239
 #, no-c-format
 msgid "Sharing Data between an Application and the Host System"
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:222
+#: docker_dockerizing_application.xml:241
 #, no-c-format
 msgid ""
 "You may run an application that needs to share data between the "
 "application's container and the host file system. Docker enables you to do "
 "data sharing by using volumes. You can declare a mount point directly in the "
-"<filename>Dockerfile</filename>. But you cannot specify a directory on the "
+"<filename>Dockerfile</filename> . But you cannot specify a directory on the "
 "host system in the <filename>Dockerfile</filename> as the directory may not "
 "be accessible at the build time. You can find the mounted directory in the "
 "<literal>/var/lib/docker/volumes/</literal> directory on the host system."
 msgstr ""
 
 #. Tag: title
-#: docker_dockerizing_application.xml:233
+#: docker_dockerizing_application.xml:252
 #, no-c-format
 msgid "Discarding Changes to the Directory to Be Shared"
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:234
+#: docker_dockerizing_application.xml:253
 #, no-c-format
 msgid ""
 "After you declare a mount point by using the <literal>VOLUME</literal> "
@@ -367,11 +367,11 @@ msgid ""
 "volume is part of a temporary container that is then removed after a "
 "successful build. In case you need to e.g. change permissions, perform the "
 "change before you declare the directory as a mount point in the "
-"<filename>Dockerfile</filename>."
+"<filename>Dockerfile</filename> ."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:245
+#: docker_dockerizing_application.xml:264
 #, no-c-format
 msgid ""
 "You can specify a particular mount point on the host system when running a "
@@ -379,7 +379,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:250
+#: docker_dockerizing_application.xml:269
 #, no-c-format
 msgid ""
 "&prompt.user;docker run -it --name testing -v /home/tux/data:/data sles12sp3:"
@@ -387,7 +387,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:253
+#: docker_dockerizing_application.xml:272
 #, no-c-format
 msgid ""
 "Using the <literal>-v</literal> option overwrites the <literal>VOLUME</"
@@ -395,7 +395,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:260
+#: docker_dockerizing_application.xml:279
 #, no-c-format
 msgid ""
 "Now let us create an example image with a Web server that will read Web "
@@ -404,7 +404,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:266
+#: docker_dockerizing_application.xml:285
 #, no-c-format
 msgid ""
 "FROM suse/sles12sp3:latest\n"
@@ -423,7 +423,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:268
+#: docker_dockerizing_application.xml:299
 #, no-c-format
 msgid ""
 "The example above installs the Apache Web server to the image and copies all "
@@ -433,13 +433,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: docker_dockerizing_application.xml:276
+#: docker_dockerizing_application.xml:307
 #, no-c-format
 msgid "Applications Running in the Background"
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:278
+#: docker_dockerizing_application.xml:309
 #, no-c-format
 msgid ""
 "Your application may need to run in the background as a daemon or as an "
@@ -451,7 +451,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:288
+#: docker_dockerizing_application.xml:319
 #, no-c-format
 msgid ""
 "FROM suse/sles12sp3:latest\n"
@@ -468,15 +468,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:290
+#: docker_dockerizing_application.xml:331
 #, no-c-format
 msgid ""
 "Now you can build your image. Docker performs the following operations "
-"according to the instructions in the <filename>Dockerfile</filename>:"
+"according to the instructions in the <filename>Dockerfile</filename> :"
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:297
+#: docker_dockerizing_application.xml:338
 #, no-c-format
 msgid ""
 "Docker refreshes repositories and installs the <emphasis>postfix</emphasis> "
@@ -484,7 +484,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:304
+#: docker_dockerizing_application.xml:345
 #, no-c-format
 msgid ""
 "The <literal>/var/spool/mailboxes</literal> directory is created in the file "
@@ -493,29 +493,29 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:311
+#: docker_dockerizing_application.xml:352
 #, no-c-format
 msgid ""
 "Here you copy a configuration file to the particular directory. Make sure "
 "that the <filename>main.cf</filename> is located in the same directory as "
-"the <filename>Dockerfile</filename>. Bear in mind that the configuration "
+"the <filename>Dockerfile</filename> . Bear in mind that the configuration "
 "will be the same for all instance run in the future. In case you need a "
 "different configuration for each container, you will need to edit it after "
 "running the container."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:321
+#: docker_dockerizing_application.xml:362
 #, no-c-format
 msgid ""
 "Each started container will expose the ports: <emphasis>25</emphasis> and "
-"<emphasis>587</emphasis>. In case you will run several instances of this "
+"<emphasis>587</emphasis> . In case you will run several instances of this "
 "image on the same machine, you should define a specific host name for each "
 "container."
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:329
+#: docker_dockerizing_application.xml:370
 #, no-c-format
 msgid ""
 "The <literal>VOLUME</literal> instruction creates a mount point at the "
@@ -523,7 +523,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:335
+#: docker_dockerizing_application.xml:376
 #, no-c-format
 msgid ""
 "The last instructions runs the <literal>postfix</literal> mail server in the "
@@ -531,13 +531,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:342
+#: docker_dockerizing_application.xml:383
 #, no-c-format
 msgid "After a successful build, you can run a container based on the image:"
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:346
+#: docker_dockerizing_application.xml:387
 #, no-c-format
 msgid ""
 "&prompt.user;docker run -d --name mail_server -v /var/spool/mail:/var/spool/"
@@ -545,7 +545,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_dockerizing_application.xml:348
+#: docker_dockerizing_application.xml:389
 #, no-c-format
 msgid ""
 "The <literal>-d</literal> option runs the container in a detached mode and "
@@ -554,7 +554,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: docker_dockerizing_application.xml:354
+#: docker_dockerizing_application.xml:395
 #, no-c-format
 msgid ""
 "&prompt.user;docker attach <replaceable>CONTAINER_IDENTIFIER</replaceable>"

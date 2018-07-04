@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,10 +20,10 @@ msgstr ""
 msgid "Changing Language and Country Settings with &yast;"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: yast2_lang.xml:15
+#. Tag: dm:translation
+#: yast2_lang.xml:17
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -41,13 +41,13 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:33
 #, no-c-format
-msgid "For those tasks, use the &yast; language module as described in <xref linkend=\"sec.yast.langmod\"/>. Install secondary languages to get optional localization if you need to start applications or desktops in languages other than the primary one."
+msgid "For those tasks, use the &yast; language module as described in <xref linkend=\"sec.yast.langmod\"/> . Install secondary languages to get optional localization if you need to start applications or desktops in languages other than the primary one."
 msgstr ""
 
 #. Tag: para
 #: yast2_lang.xml:39
 #, no-c-format
-msgid "Apart from that, the &yast; timezone module allows you to adjust your country and timezone settings accordingly. It also lets you synchronize your system clock against a time server. For details, refer to <xref linkend=\"sec.yast.country\"/>."
+msgid "Apart from that, the &yast; timezone module allows you to adjust your country and timezone settings accordingly. It also lets you synchronize your system clock against a time server. For details, refer to <xref linkend=\"sec.yast.country\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -95,7 +95,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:87
 #, no-c-format
-msgid "You can also run a single application in another language (that has already been installed with &yast;). To do so, start it from the command line by specifying the language code as described in <xref linkend=\"sec.yast.lang.applications\"/>."
+msgid "You can also run a single application in another language (that has already been installed with &yast;). To do so, start it from the command line by specifying the language code as described in <xref linkend=\"sec.yast.lang.applications\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -143,7 +143,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:129
 #, no-c-format
-msgid "To access the &yast; language module, start &yast; and click <menuchoice> <guimenu>System</guimenu> <guimenu>Language</guimenu> </menuchoice>. Alternatively, start the <guimenu>Languages</guimenu> dialog directly by running <command>sudo yast2 language &amp;</command> from a command line."
+msgid "To access the &yast; language module, start &yast; and click <menuchoice> <guimenu>System</guimenu> <guimenu>Language</guimenu> </menuchoice> . Alternatively, start the <guimenu>Languages</guimenu> dialog directly by running <command>sudo yast2 language &amp;</command> from a command line."
 msgstr ""
 
 #. Tag: title
@@ -152,10 +152,70 @@ msgstr ""
 msgid "Installing Additional Languages"
 msgstr ""
 
-#. Tag: para
-#: yast2_lang.xml:147
+#. Tag: #text
+#: yast2_lang.xml:148
 #, no-c-format
-msgid "When installing additional languages, &yast; also allows you to set different locale settings for the user &rootuser;, see <xref linkend=\"st.yast.lang.additional.root\"/>. The option <guimenu>Locale Settings for User root</guimenu> determines how the locale variables (<envar>LC_*</envar>) in the file <filename>/etc/sysconfig/language</filename> are set for &rootuser;. You can set them to the same locale as for normal users. Alternatively, you can keep it unaffected by any language changes, or only set the variable <envar>RC_LC_CTYPE</envar> to the same values as for the normal users. The <envar>RC_LC_CTYPE</envar> variable sets the localization for language-specific function calls."
+msgid "When installing additional languages, &yast; also allows you to set different locale settings for the user &rootuser;, see"
+msgstr ""
+
+#. Tag: #text
+#: yast2_lang.xml:151
+#, no-c-format
+msgid ". The option"
+msgstr ""
+
+#. Tag: guimenu
+#: yast2_lang.xml:151
+#, no-c-format
+msgid "Locale Settings for User root"
+msgstr ""
+
+#. Tag: envar
+#: yast2_lang.xml:152
+#, no-c-format
+msgid "LC_*"
+msgstr ""
+
+#. Tag: #text
+#: yast2_lang.xml:152
+#, no-c-format
+msgid "determines how the locale variables ("
+msgstr ""
+
+#. Tag: #text
+#: yast2_lang.xml:153
+#, no-c-format
+msgid ") in the file"
+msgstr ""
+
+#. Tag: filename
+#: yast2_lang.xml:153
+#, no-c-format
+msgid "/etc/sysconfig/language"
+msgstr ""
+
+#. Tag: #text
+#: yast2_lang.xml:154
+#, no-c-format
+msgid "are set for &rootuser;. You can set them to the same locale as for normal users. Alternatively, you can keep it unaffected by any language changes, or only set the variable"
+msgstr ""
+
+#. Tag: #text
+#: yast2_lang.xml:158
+#, no-c-format
+msgid "to the same values as for the normal users. The"
+msgstr ""
+
+#. Tag: envar
+#: yast2_lang.xml:158
+#, no-c-format
+msgid "RC_LC_CTYPE"
+msgstr ""
+
+#. Tag: #text
+#: yast2_lang.xml:160
+#, no-c-format
+msgid "variable sets the localization for language-specific function calls."
 msgstr ""
 
 #. Tag: para
@@ -167,7 +227,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:168
 #, no-c-format
-msgid "To make a language the default language, set it as <guimenu>Primary Language</guimenu>."
+msgid "To make a language the default language, set it as <guimenu>Primary Language</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -185,19 +245,19 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:181
 #, no-c-format
-msgid "For advanced keyboard or time zone settings, select <menuchoice> <guimenu>Hardware</guimenu> <guimenu>System Keyboard Layout</guimenu> </menuchoice> or <menuchoice> <guimenu>System</guimenu> <guimenu>Date and Time</guimenu> </menuchoice> in &yast; to start the respective dialogs. For more information, refer to <xref linkend=\"sec.yast.hw.keym\"/> and <xref linkend=\"sec.yast.country\"/>."
+msgid "For advanced keyboard or time zone settings, select <menuchoice> <guimenu>Hardware</guimenu> <guimenu>System Keyboard Layout</guimenu> </menuchoice> or <menuchoice> <guimenu>System</guimenu> <guimenu>Date and Time</guimenu> </menuchoice> in &yast; to start the respective dialogs. For more information, refer to <xref linkend=\"sec.yast.hw.keym\"/> and <xref linkend=\"sec.yast.country\"/> ."
 msgstr ""
 
 #. Tag: para
 #: yast2_lang.xml:192
 #, no-c-format
-msgid "To change language settings specific to the user &rootuser;, click <guimenu>Details</guimenu>."
+msgid "To change language settings specific to the user &rootuser;, click <guimenu>Details</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: yast2_lang.xml:198
 #, no-c-format
-msgid "Set <guimenu>Locale Settings for User root</guimenu> to the desired value. For more information, click <guimenu>Help</guimenu>."
+msgid "Set <guimenu>Locale Settings for User root</guimenu> to the desired value. For more information, click <guimenu>Help</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -209,19 +269,19 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:212
 #, no-c-format
-msgid "If your locale was not included in the list of primary languages available, try specifying it with <guimenu>Detailed Locale Setting</guimenu>. However, some localization may be incomplete."
+msgid "If your locale was not included in the list of primary languages available, try specifying it with <guimenu>Detailed Locale Setting</guimenu> . However, some localization may be incomplete."
 msgstr ""
 
 #. Tag: para
 #: yast2_lang.xml:219
 #, no-c-format
-msgid "Confirm your changes in the dialogs with <guimenu>OK</guimenu>. If you have selected secondary languages, &yast; installs the localized software packages for the additional languages."
+msgid "Confirm your changes in the dialogs with <guimenu>OK</guimenu> . If you have selected secondary languages, &yast; installs the localized software packages for the additional languages."
 msgstr ""
 
 #. Tag: para
 #: yast2_lang.xml:226
 #, no-c-format
-msgid "The system is now multilingual. However, to start an application in a language other than the primary one, you need to set the desired language explicitly as explained in <xref linkend=\"sec.yast.lang.applications\"/>."
+msgid "The system is now multilingual. However, to start an application in a language other than the primary one, you need to set the desired language explicitly as explained in <xref linkend=\"sec.yast.lang.applications\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -245,7 +305,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:245
 #, no-c-format
-msgid "Select the desired new system language as <guimenu>Primary Language</guimenu>."
+msgid "Select the desired new system language as <guimenu>Primary Language</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -269,7 +329,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:266
 #, no-c-format
-msgid "Confirm your changes with <guimenu>OK</guimenu>."
+msgid "Confirm your changes with <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -305,7 +365,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:290
 #, no-c-format
-msgid "For example, to start f-spot in German, run <command>LANG=de_DE&nbsp;f-spot</command>. For other languages, use the appropriate language code. Get a list of all language codes available with the <command>locale&nbsp;</command> <option>-av</option> command."
+msgid "For example, to start f-spot in German, run <command>LANG=de_DE&nbsp;f-spot</command> . For other languages, use the appropriate language code. Get a list of all language codes available with the <command>locale&nbsp;</command> <option>-av</option> command."
 msgstr ""
 
 #. Tag: title
@@ -317,13 +377,13 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:301
 #, no-c-format
-msgid "Using the &yast; date and time module, adjust your system date, clock and time zone information to the area you are working in. To access the &yast; module, start &yast; and click <menuchoice> <guimenu>System</guimenu> <guimenu>Date and Time</guimenu> </menuchoice>. Alternatively, start the <guimenu>Clock and Time Zone</guimenu> dialog directly by running <command>sudo yast2 timezone &amp;</command> from a command line."
+msgid "Using the &yast; date and time module, adjust your system date, clock and time zone information to the area you are working in. To access the &yast; module, start &yast; and click <menuchoice> <guimenu>System</guimenu> <guimenu>Date and Time</guimenu> </menuchoice> . Alternatively, start the <guimenu>Clock and Time Zone</guimenu> dialog directly by running <command>sudo yast2 timezone &amp;</command> from a command line."
 msgstr ""
 
 #. Tag: para
 #: yast2_lang.xml:321
 #, no-c-format
-msgid "First, select a general region, such as <guimenu>Europe</guimenu>. Choose an appropriate country that matches the one you are working in, for example, <guimenu>Germany</guimenu>."
+msgid "First, select a general region, such as <guimenu>Europe</guimenu> . Choose an appropriate country that matches the one you are working in, for example, <guimenu>Germany</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -335,7 +395,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:334
 #, no-c-format
-msgid "If you run another operating system on your machine, such as Microsoft Windows*, it is likely your system does not use UTC, but local time. In this case, deactivate <guimenu>Hardware Clock Set To UTC</guimenu>."
+msgid "If you run another operating system on your machine, such as Microsoft Windows*, it is likely your system does not use UTC, but local time. In this case, deactivate <guimenu>Hardware Clock Set To UTC</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -386,12 +446,6 @@ msgstr ""
 msgid "Select <guimenu>Manually</guimenu> and enter date and time values."
 msgstr ""
 
-#. Tag: para
-#: yast2_lang.xml:386 yast2_lang.xml:437
-#, no-c-format
-msgid "Confirm your changes."
-msgstr ""
-
 #. Tag: title
 #: yast2_lang.xml:393
 #, no-c-format
@@ -407,7 +461,7 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:400
 #, no-c-format
-msgid "Select <guimenu>Synchronize with NTP Server</guimenu>."
+msgid "Select <guimenu>Synchronize with NTP Server</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -425,12 +479,18 @@ msgstr ""
 #. Tag: para
 #: yast2_lang.xml:426
 #, no-c-format
-msgid "To use NTP permanently, enable <guimenu>Save NTP Configuration</guimenu>."
+msgid "To use NTP permanently, enable <guimenu>Save NTP Configuration</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: yast2_lang.xml:431
 #, no-c-format
-msgid "With the <guimenu>Configure</guimenu> button, you can open the advanced NTP configuration. For details, see <xref linkend=\"sec.ntp.yast\"/>."
+msgid "With the <guimenu>Configure</guimenu> button, you can open the advanced NTP configuration. For details, see <xref linkend=\"sec.ntp.yast\"/> ."
+msgstr ""
+
+#. Tag: para
+#: yast2_lang.xml:437
+#, no-c-format
+msgid "Confirm your changes."
 msgstr ""
 

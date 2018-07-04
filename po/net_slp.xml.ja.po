@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,7 +19,7 @@ msgstr ""
 #. Tag: title
 #: net_slp.xml:9
 #, no-c-format
-msgid "<title>SLP</title>"
+msgid "SLP"
 msgstr ""
 
 #. Tag: para
@@ -35,10 +35,10 @@ msgid ""
 "configured automatically."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: net_slp.xml:22
+#. Tag: dm:translation
+#: net_slp.xml:24
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -76,8 +76,8 @@ msgid ""
 "<command>slptool</command> is a command line tool to query and register SLP "
 "services. The query functions are useful for diagnostic purposes. The most "
 "important <command>slptool</command> subcommands are listed below. "
-"<command>slptool</command>&nbsp;<option>--help</option> lists all available "
-"options and functions."
+"<command>slptool</command> &nbsp; <option>--help</option> lists all "
+"available options and functions."
 msgstr ""
 
 #. Tag: term
@@ -113,19 +113,19 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:63
+#: net_slp.xml:76
 #, no-c-format
 msgid "findsrvs <replaceable>SERVICE_TYPE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:66
+#: net_slp.xml:79
 #, no-c-format
 msgid "List all servers providing <replaceable>SERVICE_TYPE</replaceable>"
 msgstr ""
 
 #. Tag: screen
-#: net_slp.xml:69
+#: net_slp.xml:82
 #, no-c-format
 msgid ""
 "&prompt.user;slptool findsrvs service:ntp\n"
@@ -134,15 +134,15 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:73
+#: net_slp.xml:88
 #, no-c-format
 msgid ""
-"findattrs <replaceable>SERVICE_TYPE</replaceable>//<replaceable>HOST</"
+"findattrs <replaceable>SERVICE_TYPE</replaceable> // <replaceable>HOST</"
 "replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:77
+#: net_slp.xml:92
 #, no-c-format
 msgid ""
 "List attributes for <replaceable>SERVICE_TYPE</replaceable> on "
@@ -150,7 +150,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_slp.xml:81
+#: net_slp.xml:96
 #, no-c-format
 msgid ""
 "&prompt.user;slptool findattrs service:ntp://&ntpname;\n"
@@ -158,17 +158,17 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:85
+#: net_slp.xml:101
 #, no-c-format
 msgid ""
-"register <replaceable>SERVICE type</replaceable>//<replaceable>HOST</"
-"replaceable>:<replaceable>PORT</replaceable> "
-"\"(<replaceable>ATTRIBUTE=VALUE</replaceable>),"
-"(<replaceable>ATTRIBUTE=VALUE</replaceable>)\""
+"register <replaceable>SERVICE type</replaceable> // <replaceable>HOST</"
+"replaceable> : <replaceable>PORT</replaceable> "
+"\"( <replaceable>ATTRIBUTE=VALUE</replaceable> ),"
+"( <replaceable>ATTRIBUTE=VALUE</replaceable> )\""
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:91
+#: net_slp.xml:107
 #, no-c-format
 msgid ""
 "Registers <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</"
@@ -176,7 +176,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_slp.xml:95
+#: net_slp.xml:111
 #, no-c-format
 msgid ""
 "slptool register service:ntp://&ntpname;:57810 \\\n"
@@ -184,15 +184,15 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:99
+#: net_slp.xml:116
 #, no-c-format
 msgid ""
-"deregister <replaceable>SERVICE_TYPE</replaceable>//<replaceable>host</"
+"deregister <replaceable>SERVICE_TYPE</replaceable> // <replaceable>host</"
 "replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:103
+#: net_slp.xml:120
 #, no-c-format
 msgid ""
 "De-registers <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</"
@@ -200,39 +200,39 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_slp.xml:107
+#: net_slp.xml:124
 #, no-c-format
 msgid "slptool deregister service:ntp://&ntpname;"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:112
+#: net_slp.xml:129
 #, no-c-format
-msgid "For more information run <command>slptool --help</command>."
+msgid "For more information run <command>slptool --help</command> ."
 msgstr ""
 
 #. Tag: title
-#: net_slp.xml:117
+#: net_slp.xml:134
 #, no-c-format
 msgid "Providing Services via SLP"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:119
+#: net_slp.xml:136
 #, no-c-format
 msgid ""
-"To provide SLP services, the SLP daemon (<systemitem class=\"daemon\">slpd</"
-"systemitem>) must be running. Like most system services in &productname;, "
+"To provide SLP services, the SLP daemon ( <systemitem class=\"daemon\">slpd</"
+"systemitem> ) must be running. Like most system services in &productname;, "
 "<systemitem class=\"daemon\">slpd</systemitem> is controlled by means of a "
 "separate start script. After the installation, the daemon is inactive by "
 "default. To activate it for the current session, run <command>sudo systemctl "
-"start slpd</command>. If <systemitem class=\"daemon\">slpd</systemitem> "
+"start slpd</command> . If <systemitem class=\"daemon\">slpd</systemitem> "
 "should be activated on system start-up, run <command>sudo systemctl enable "
-"slpd</command>."
+"slpd</command> ."
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:131
+#: net_slp.xml:148
 #, no-c-format
 msgid ""
 "Many applications in &productname; have integrated SLP support via the "
@@ -241,13 +241,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:139
+#: net_slp.xml:156
 #, no-c-format
 msgid "Static Registration with <filename>/etc/slp.reg.d</filename>"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:142
+#: net_slp.xml:159
 #, no-c-format
 msgid ""
 "Create a separate registration file for each new service. The following "
@@ -255,7 +255,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_slp.xml:146
+#: net_slp.xml:163
 #, no-c-format
 msgid ""
 "## Register a saned service on this system\n"
@@ -268,43 +268,44 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:147
+#: net_slp.xml:170
 #, no-c-format
 msgid ""
 "The most important line in this file is the <emphasis>service URL</"
-"emphasis>, which begins with <literal>service:</literal>. This contains the "
-"service type (<literal>scanner.sane</literal>) and the address under which "
-"the service is available on the server. <replaceable>$HOSTNAME</replaceable> "
-"is automatically replaced with the full host name. The name of the TCP port "
-"on which the relevant service can be found follows, separated by a colon. "
-"Then enter the language in which the service should appear and the duration "
-"of registration in seconds. These should be separated from the service URL "
-"by commas. Set the value for the duration of registration between "
-"<literal>0</literal> and <literal>65535</literal>. <literal>0</literal> "
-"prevents registration. <literal>65535</literal> removes all restrictions."
+"emphasis> , which begins with <literal>service:</literal> . This contains "
+"the service type ( <literal>scanner.sane</literal> ) and the address under "
+"which the service is available on the server. <replaceable>$HOSTNAME</"
+"replaceable> is automatically replaced with the full host name. The name of "
+"the TCP port on which the relevant service can be found follows, separated "
+"by a colon. Then enter the language in which the service should appear and "
+"the duration of registration in seconds. These should be separated from the "
+"service URL by commas. Set the value for the duration of registration "
+"between <literal>0</literal> and <literal>65535</literal> . <literal>0</"
+"literal> prevents registration. <literal>65535</literal> removes all "
+"restrictions."
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:161
+#: net_slp.xml:184
 #, no-c-format
 msgid ""
 "The registration file also contains the two variables <systemitem>watch-port-"
-"tcp</systemitem> and <systemitem>description</systemitem>. <systemitem>watch-"
-"port-tcp</systemitem> links the SLP service announcement to whether the "
-"relevant service is active by having <systemitem class=\"daemon\">slpd</"
-"systemitem> check the status of the service. The second variable contains a "
-"more precise description of the service that is displayed in suitable "
-"browsers."
+"tcp</systemitem> and <systemitem>description</systemitem> . "
+"<systemitem>watch-port-tcp</systemitem> links the SLP service announcement "
+"to whether the relevant service is active by having <systemitem class="
+"\"daemon\">slpd</systemitem> check the status of the service. The second "
+"variable contains a more precise description of the service that is "
+"displayed in suitable browsers."
 msgstr ""
 
 #. Tag: title
-#: net_slp.xml:172
+#: net_slp.xml:195
 #, no-c-format
 msgid "&yast; and SLP"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:173
+#: net_slp.xml:196
 #, no-c-format
 msgid ""
 "Some services brokered by &yast;, such as an installation server or YOU "
@@ -313,13 +314,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:183
+#: net_slp.xml:206
 #, no-c-format
 msgid "Static Registration with <filename>/etc/slp.reg</filename>"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:186
+#: net_slp.xml:209
 #, no-c-format
 msgid ""
 "The only difference between this method and the procedure with <filename>/"
@@ -328,30 +329,30 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:194
+#: net_slp.xml:217
 #, no-c-format
 msgid "Dynamic Registration with <command>slptool</command>"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:197
+#: net_slp.xml:220
 #, no-c-format
 msgid ""
 "If a service needs to be registered dynamically without the need of "
 "configuration files, use the slptool command line utility. The same utility "
 "can also be used to de-register an existing service offering without "
-"restarting <systemitem class=\"daemon\">slpd</systemitem>. See <xref linkend="
-"\"sec.slp.sl.fend\"/> for details."
+"restarting <systemitem class=\"daemon\">slpd</systemitem> . See <xref "
+"linkend=\"sec.slp.sl.fend\"/> for details."
 msgstr ""
 
 #. Tag: title
-#: net_slp.xml:209
+#: net_slp.xml:232
 #, no-c-format
 msgid "Setting up an SLP Installation Server"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:210
+#: net_slp.xml:233
 #, no-c-format
 msgid ""
 "Announcing the installation data via SLP within your network makes the "
@@ -362,19 +363,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_slp.xml:220
+#: net_slp.xml:243
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: term
-#: net_slp.xml:224
+#: net_slp.xml:247
 #, no-c-format
 msgid "RFC 2608, 2609, 2610"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:226
+#: net_slp.xml:249
 #, no-c-format
 msgid ""
 "RFC 2608 generally deals with the definition of SLP. RFC 2609 deals with the "
@@ -382,20 +383,26 @@ msgid ""
 "DHCP via SLP."
 msgstr ""
 
+#. Tag: term
+#: net_slp.xml:257
+#, no-c-format
+msgid "<link xlink:href=\"http://www.openslp.org\"/>"
+msgstr ""
+
 #. Tag: para
-#: net_slp.xml:237
+#: net_slp.xml:260
 #, no-c-format
 msgid "The home page of the OpenSLP project."
 msgstr ""
 
-#. Tag: filename
-#: net_slp.xml:243
+#. Tag: term
+#: net_slp.xml:266
 #, no-c-format
-msgid "/usr/share/doc/packages/openslp"
+msgid "<filename>/usr/share/doc/packages/openslp</filename>"
 msgstr ""
 
 #. Tag: para
-#: net_slp.xml:246
+#: net_slp.xml:269
 #, no-c-format
 msgid ""
 "This directory contains the documentation for SLP coming with the "
@@ -404,6 +411,6 @@ msgid ""
 "RFCs, and two introductory HTML documents. Programmers who want to use the "
 "SLP functions will find more information in the <emphasis>Programmers Guide</"
 "emphasis> that is included in the <systemitem class=\"resource\">openslp-"
-"devel</systemitem> package<phrase os=\"sles;sled\"> that is provided with "
-"the &sdk;</phrase>."
+"devel</systemitem> package <phrase os=\"sles;sled\"> that is provided with "
+"the &sdk;</phrase> ."
 msgstr ""

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,8 +33,8 @@ msgid ""
 "scripts can be designed to extract, filter and summarize data, thus allowing "
 "the diagnosis of complex performance problems or functional problems. &stap; "
 "provides information similar to the output of tools like <command>netstat</"
-"command>, <command>ps</command>, <command>top</command>, and "
-"<command>iostat</command>. However, more filtering and analysis options can "
+"command> , <command>ps</command> , <command>top</command> , and "
+"<command>iostat</command> . However, more filtering and analysis options can "
 "be used for the collected information."
 msgstr ""
 
@@ -54,8 +54,8 @@ msgid ""
 "before and no system components have changed (for example, different "
 "compiler or kernel versions, library paths, or script contents), &stap; does "
 "not compile the script again. Instead, it uses the <filename>*.c</filename> "
-"and <filename>*.ko</filename> data stored in the &stap; cache (<filename>~/."
-"systemtap</filename>)."
+"and <filename>*.ko</filename> data stored in the &stap; cache ( <filename>~/."
+"systemtap</filename> )."
 msgstr ""
 
 #. Tag: para
@@ -64,7 +64,8 @@ msgstr ""
 msgid ""
 "The module is unloaded when the tap has finished running. For an example, "
 "see the test run in <xref linkend=\"sec.tuning.systemtap.setup\"/> and the "
-"respective explanation."
+"respective explanation. <!--taroth 2011-10-17: systemtap 1.5, orginal "
+"linkend: sec.tuning.systemtap.setup.classic-->"
 msgstr ""
 
 #. Tag: title
@@ -77,13 +78,13 @@ msgstr ""
 #: tuning_systemtap.xml:129
 #, no-c-format
 msgid ""
-"&stap; usage is based on &stap; scripts (<filename>*.stp</filename>). They "
+"&stap; usage is based on &stap; scripts ( <filename>*.stp</filename> ). They "
 "tell &stap; which type of information to collect, and what to do once that "
 "information is collected. The scripts are written in the &stap; scripting "
 "language that is similar to AWK and C. For the language definition, see "
-"<link xlink:href=\"http://sourceware.org/systemtap/langref/\"></link>. A lot "
-"of useful example scripts are available from <link xlink:href=\"http://www."
-"sourceware.org/systemtap/examples/\"></link>."
+"<link xlink:href=\"http://sourceware.org/systemtap/langref/\"/> . A lot of "
+"useful example scripts are available from <link xlink:href=\"http://www."
+"sourceware.org/systemtap/examples/\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -91,8 +92,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The essential idea behind a &stap; script is to name <literal>events</"
-"literal>, and to give them <literal>handlers</literal>. When &stap; runs the "
-"script, it monitors for certain events. When an event occurs, the Linux "
+"literal> , and to give them <literal>handlers</literal> . When &stap; runs "
+"the script, it monitors for certain events. When an event occurs, the Linux "
 "kernel runs the handler as a sub-routine, then resumes. Thus, events serve "
 "as the triggers for handlers to run. Handlers can record specified data and "
 "print it in a certain manner."
@@ -125,25 +126,21 @@ msgstr ""
 msgid "Tapsets"
 msgstr ""
 
-#. Tag: remark
-#: tuning_systemtap.xml:166
-#, no-c-format
-msgid ""
-"sknorr, 2014-08-21: \"tapsets are a library\" sounds wrong... to me, it "
-"would make more sense if there was a \"library of tapsets,\" i.e. a "
-"collection of systemtap scripts."
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:168
+#. Tag: #text
+#: tuning_systemtap.xml:170
 #, no-c-format
 msgid ""
 "Tapsets are a library of pre-written probes and functions that can be used "
 "in &stap; scripts. When a user runs a &stap; script, &stap; checks the "
 "script's probe events and handlers against the tapset library. &stap; then "
 "loads the corresponding probes and functions before translating the script "
-"to C. Like &stap; scripts themselves, tapsets use the file name extension "
-"<filename>*.stp</filename>."
+"to C. Like &stap; scripts themselves, tapsets use the file name extension"
+msgstr ""
+
+#. Tag: filename
+#: tuning_systemtap.xml:175
+#, no-c-format
+msgid "*.stp"
 msgstr ""
 
 #. Tag: para
@@ -170,16 +167,16 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The main commands associated with &stap; are <command>stap</command> and "
-"<command>staprun</command>. To execute them, you either need &rootuser; "
+"<command>staprun</command> . To execute them, you either need &rootuser; "
 "privileges or must be a member of the <systemitem class=\"groupname"
 "\">stapdev</systemitem> or <systemitem class=\"groupname\">stapusr</"
 "systemitem> group."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: tuning_systemtap.xml:200
 #, no-c-format
-msgid "stap"
+msgid "<command>stap</command>"
 msgstr ""
 
 #. Tag: para
@@ -192,10 +189,10 @@ msgid ""
 "system trace or probe functions are performed."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: tuning_systemtap.xml:213
 #, no-c-format
-msgid "staprun"
+msgid "<command>staprun</command>"
 msgstr ""
 
 #. Tag: para
@@ -203,14 +200,14 @@ msgstr ""
 #, no-c-format
 msgid ""
 "&stap; back-end. Loads and unloads kernel modules produced by the &stap; "
-"front-end."
+"front-end. <!--runs instrumentation modules-->"
 msgstr ""
 
 #. Tag: para
 #: tuning_systemtap.xml:224
 #, no-c-format
 msgid ""
-"For a list of options for each command, use <option>--help</option>. For "
+"For a list of options for each command, use <option>--help</option> . For "
 "details, refer to the <command>stap</command> and the <command>staprun</"
 "command> man pages."
 msgstr ""
@@ -219,35 +216,35 @@ msgstr ""
 #: tuning_systemtap.xml:244
 #, no-c-format
 msgid ""
-"To avoid giving &rootuser; access to users solely to enable them to work "
-"with &stap;, use one of the following &stap; groups. They are not available "
-"by default on &productname;, but you can create the groups and modify the "
-"access rights accordingly. Also adjust the permissions of the "
-"<command>staprun</command> command if the security implications are "
+"<!-- bsc#992981 --> To avoid giving &rootuser; access to users solely to "
+"enable them to work with &stap;, use one of the following &stap; groups. "
+"They are not available by default on &productname;, but you can create the "
+"groups and modify the access rights accordingly. Also adjust the permissions "
+"of the <command>staprun</command> command if the security implications are "
 "appropriate for your environment."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: tuning_systemtap.xml:255
 #, no-c-format
-msgid "stapdev"
+msgid "<systemitem class=\"groupname\">stapdev</systemitem>"
 msgstr ""
 
 #. Tag: para
 #: tuning_systemtap.xml:258
 #, no-c-format
 msgid ""
-"Members of this group can run &stap; scripts with <command>stap</command>, "
-"or run &stap; instrumentation modules with <command>staprun</command>. As "
+"Members of this group can run &stap; scripts with <command>stap</command> , "
+"or run &stap; instrumentation modules with <command>staprun</command> . As "
 "running <command>stap</command> involves compiling scripts into kernel "
 "modules and loading them into the kernel, members of this group still have "
 "effective &rootuser; access."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: tuning_systemtap.xml:269
 #, no-c-format
-msgid "stapusr"
+msgid "<systemitem class=\"groupname\">stapusr</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -255,9 +252,9 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Members of this group are only allowed to run &stap; instrumentation modules "
-"with <command>staprun</command>. In addition, they can only run those "
+"with <command>staprun</command> . In addition, they can only run those "
 "modules from <filename>/lib/modules/<replaceable>KERNEL_VERSION</"
-"replaceable>/systemtap/</filename>. This directory must be owned by "
+"replaceable>/systemtap/</filename> . This directory must be owned by "
 "&rootuser; and must only be writable for the &rootuser; user."
 msgstr ""
 
@@ -275,10 +272,12 @@ msgid ""
 "directories."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_systemtap.xml:293
 #, no-c-format
-msgid "/lib/modules/<replaceable>KERNEL_VERSION</replaceable>/systemtap/"
+msgid ""
+"<filename>/lib/modules/<replaceable>KERNEL_VERSION</replaceable>/systemtap/</"
+"filename>"
 msgstr ""
 
 #. Tag: para
@@ -287,10 +286,10 @@ msgstr ""
 msgid "Holds the &stap; instrumentation modules."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_systemtap.xml:302
 #, no-c-format
-msgid "/usr/share/systemtap/tapset/"
+msgid "<filename>/usr/share/systemtap/tapset/</filename>"
 msgstr ""
 
 #. Tag: para
@@ -299,10 +298,10 @@ msgstr ""
 msgid "Holds the standard library of tapsets."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_systemtap.xml:311
 #, no-c-format
-msgid "/usr/share/doc/packages/systemtap/examples"
+msgid "<filename>/usr/share/doc/packages/systemtap/examples</filename>"
 msgstr ""
 
 #. Tag: para
@@ -314,10 +313,10 @@ msgid ""
 "installed."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_systemtap.xml:323
 #, no-c-format
-msgid "~/.systemtap/cache"
+msgid "<filename>~/.systemtap/cache</filename>"
 msgstr ""
 
 #. Tag: para
@@ -326,10 +325,10 @@ msgstr ""
 msgid "Data directory for cached &stap; files."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_systemtap.xml:332
 #, no-c-format
-msgid "/tmp/stap*"
+msgid "<filename>/tmp/stap*</filename>"
 msgstr ""
 
 #. Tag: para
@@ -350,11 +349,13 @@ msgstr ""
 #: tuning_systemtap.xml:409
 #, no-c-format
 msgid ""
-"As &stap; needs information about the kernel, some additional kernel-related "
-"packages must be installed. For each kernel you want to probe with &stap;, "
-"you need to install a set of the following packages. This set should exactly "
-"match the kernel version and flavor (indicated by <literal>*</literal> in "
-"the overview below)."
+"<!--taroth 2011-10-17: commenting for now (systemtap 1.5), to be updated "
+"later--> <!--Depending on your preferred setup, check the sections below for "
+"an overview of the packages you need.--> As &stap; needs information about "
+"the kernel, some additional kernel-related packages must be installed. For "
+"each kernel you want to probe with &stap;, you need to install a set of the "
+"following packages. This set should exactly match the kernel version and "
+"flavor (indicated by <literal>*</literal> in the overview below)."
 msgstr ""
 
 #. Tag: title
@@ -374,63 +375,63 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:445
+#: tuning_systemtap.xml:446
 #, no-c-format
 msgid ""
-"For the classic &stap; setup, install the following packages (using either "
-"&yast; or <command>zypper</command>)."
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_systemtap.xml:454
-#, no-c-format
-msgid "systemtap"
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_systemtap.xml:459
-#, no-c-format
-msgid "systemtap-server"
+"<!--For this setup,...--> For the classic &stap; setup, install the "
+"following packages (using either &yast; or <command>zypper</command> )."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:463
+#: tuning_systemtap.xml:454
+#, no-c-format
+msgid "<systemitem class=\"resource\">systemtap</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:459
+#, no-c-format
+msgid "<systemitem class=\"resource\">systemtap-server</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:464
 #, no-c-format
 msgid "<systemitem class=\"resource\">systemtap-docs</systemitem> (optional)"
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: para
 #: tuning_systemtap.xml:469
 #, no-c-format
-msgid "kernel-*-base"
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_systemtap.xml:476
-#, no-c-format
-msgid "kernel-*-debuginfo"
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_systemtap.xml:481
-#, no-c-format
-msgid "kernel-*-devel"
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_systemtap.xml:486
-#, no-c-format
-msgid "kernel-source-*"
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_systemtap.xml:491
-#, no-c-format
-msgid "<systemitem>gcc</systemitem>"
+msgid "<systemitem class=\"resource\">kernel-*-base</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:499
+#: tuning_systemtap.xml:476
+#, no-c-format
+msgid "<systemitem class=\"resource\">kernel-*-debuginfo</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:481
+#, no-c-format
+msgid "<systemitem class=\"resource\">kernel-*-devel</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:486
+#, no-c-format
+msgid "<systemitem class=\"resource\">kernel-source-*</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:491
+#, no-c-format
+msgid "<systemitem class=\"resource\">gcc</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:500
 #, no-c-format
 msgid ""
 "To get access to the man pages and to a helpful collection of example &stap; "
@@ -439,7 +440,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:505
+#: tuning_systemtap.xml:506
 #, no-c-format
 msgid ""
 "To check if all packages are correctly installed on the machine and if "
@@ -447,7 +448,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:511
+#: tuning_systemtap.xml:512
 #, no-c-format
 msgid ""
 "&prompt.root;stap -v -e 'probe vfs.read {printf(\"read performed\\n\"); "
@@ -455,7 +456,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:513
+#: tuning_systemtap.xml:514
 #, no-c-format
 msgid ""
 "It probes the currently used kernel by running a script and returning an "
@@ -463,29 +464,63 @@ msgid ""
 "deployed and ready to use:"
 msgstr ""
 
-#. Tag: screen
-#: tuning_systemtap.xml:519
+#. Tag: dbsuse-fo
+#: tuning_systemtap.xml:520
+#, no-c-format
+msgid "<?dbsuse-fo font-size=\"0.71em\"?>"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:520
+#, no-c-format
+msgid "Pass"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:521
 #, no-c-format
 msgid ""
-"<?dbsuse-fo font-size=\"0.71em\"?>Pass <co xml:id=\"co.tuning.stap.pass1\"/"
-">: parsed user script and 59 library script(s) in 80usr/0sys/214real ms.\n"
-"Pass <co xml:id=\"co.tuning.stap.pass2\"/>: analyzed script: 1 probe(s), 11 "
-"function(s), 2 embed(s), 1 global(s) in\n"
-" 140usr/20sys/412real ms.\n"
-"Pass <co xml:id=\"co.tuning.stap.pass3\"/>: translated to C into\n"
-" \"/tmp/stapDwEk76/stap_1856e21ea1c246da85ad8c66b4338349_4970.c\" in "
-"160usr/0sys/408real ms.\n"
-"Pass <co xml:id=\"co.tuning.stap.pass4\"/>: compiled C into "
-"\"stap_1856e21ea1c246da85ad8c66b4338349_4970.ko\" in\n"
-" 2030usr/360sys/10182real ms.\n"
-"Pass <co xml:id=\"co.tuning.stap.pass5\"/>: starting run.\n"
-" read performed\n"
-"Pass <xref linkend=\"co.tuning.stap.pass5\"/>: run completed in "
-"10usr/20sys/257real ms."
+": parsed user script and 59 library script(s) in 80usr/0sys/214real ms.Pass"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:523
+#, no-c-format
+msgid ""
+": analyzed script: 1 probe(s), 11 function(s), 2 embed(s), 1 global(s) in "
+"140usr/20sys/412real ms.Pass"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:525
+#, no-c-format
+msgid ""
+": translated to C into \"/tmp/stapDwEk76/"
+"stap_1856e21ea1c246da85ad8c66b4338349_4970.c\" in 160usr/0sys/408real ms.Pass"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:527
+#, no-c-format
+msgid ""
+": compiled C into \"stap_1856e21ea1c246da85ad8c66b4338349_4970.ko\" in "
+"2030usr/360sys/10182real ms.Pass"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:529
+#, no-c-format
+msgid ": run completed in 10usr/20sys/257real ms."
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:529
+#, no-c-format
+msgid ": starting run. read performedPass"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:523
+#: tuning_systemtap.xml:533
 #, no-c-format
 msgid ""
 "Checks the script against the existing tapset library in <filename>/usr/"
@@ -495,42 +530,42 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:531
+#: tuning_systemtap.xml:541
 #, no-c-format
 msgid "Examines the script for its components."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:536
+#: tuning_systemtap.xml:546
 #, no-c-format
 msgid ""
 "Translates the script to C. Runs the system C compiler to create a kernel "
-"module from it. Both the resulting C code (<filename>*.c</filename>) and the "
-"kernel module (<filename>*.ko</filename>) are stored in the &stap; cache, "
-"<filename>~/.systemtap</filename>."
+"module from it. Both the resulting C code ( <filename>*.c</filename> ) and "
+"the kernel module ( <filename>*.ko</filename> ) are stored in the &stap; "
+"cache, <filename>~/.systemtap</filename> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:545
+#: tuning_systemtap.xml:555
 #, no-c-format
 msgid ""
 "Loads the module and enables all the probes (events and handlers) in the "
 "script by hooking into the kernel. The event being probed is a Virtual File "
 "System (VFS) read. As the event occurs on any processor, a valid handler is "
-"executed (prints the text <literal>read performed</literal>) and closed with "
-"no errors."
+"executed (prints the text <literal>read performed</literal> ) and closed "
+"with no errors."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:554
+#: tuning_systemtap.xml:564
 #, no-c-format
 msgid ""
 "After the &stap; session is terminated, the probes are disabled, and the "
 "kernel module is unloaded."
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:561
+#. Tag: #text
+#: tuning_systemtap.xml:576
 #, no-c-format
 msgid ""
 "In case any error messages appear during the test, check the output for "
@@ -538,32 +573,28 @@ msgid ""
 "Rebooting and loading the appropriate kernel may also be needed."
 msgstr ""
 
-#. Tag: remark
-#: tuning_systemtap.xml:566
-#, no-c-format
-msgid ""
-"jw 2010-09-23, while I am at it: I have two useful smoke tests, to verify if "
-"an installation is working, see http://docserv.suse.de/HOWTO/systemtap If "
-"you install systemtap on an older system, the debuginfo and devel packages "
-"are likely to be newer than your installed kernel. Finding the correct "
-"versions for a given kernel might be challenging. I usually circumvent this "
-"by upgrading the kernel."
-msgstr ""
-
 #. Tag: title
-#: tuning_systemtap.xml:1224
+#: tuning_systemtap.xml:1241
 #, no-c-format
 msgid "Script Syntax"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1226
+#: tuning_systemtap.xml:1243
 #, no-c-format
 msgid "&stap; scripts consist of the following two components:"
 msgstr ""
 
+#. Tag: term
+#: tuning_systemtap.xml:1249
+#, no-c-format
+msgid ""
+"<xref linkend=\"sec.tuning.systemtap.syntax.events\" xrefstyle=\"select:title"
+"\"/>"
+msgstr ""
+
 #. Tag: para
-#: tuning_systemtap.xml:1235
+#: tuning_systemtap.xml:1252
 #, no-c-format
 msgid ""
 "Name the kernel events at the associated handler should be executed. "
@@ -571,8 +602,16 @@ msgid ""
 "expiring, or starting or terminating a session."
 msgstr ""
 
+#. Tag: term
+#: tuning_systemtap.xml:1260
+#, no-c-format
+msgid ""
+"<xref linkend=\"sec.tuning.systemtap.syntax.handlers\" xrefstyle=\"select:"
+"title\"/>"
+msgstr ""
+
 #. Tag: para
-#: tuning_systemtap.xml:1246
+#: tuning_systemtap.xml:1263
 #, no-c-format
 msgid ""
 "Series of script language statements that specify the work to be done "
@@ -581,32 +620,32 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1256
+#: tuning_systemtap.xml:1273
 #, no-c-format
 msgid ""
 "An event and its corresponding handler is collectively called a "
-"<literal>probe</literal>. &stap; events are also called <literal>probe "
-"points</literal>. A probe's handler is also called a <literal>probe body</"
-"literal>."
+"<literal>probe</literal> . &stap; events are also called <literal>probe "
+"points</literal> . A probe's handler is also called a <literal>probe body</"
+"literal> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1263
+#: tuning_systemtap.xml:1280
 #, no-c-format
 msgid ""
 "Comments can be inserted anywhere in the &stap; script in various styles: "
-"using either <literal>#</literal>, <literal>/* */</literal>, or <literal>//</"
-"literal> as marker."
+"using either <literal>#</literal> , <literal>/* */</literal> , or <literal>//"
+"</literal> as marker."
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1270
+#: tuning_systemtap.xml:1287
 #, no-c-format
 msgid "Probe Format"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1271
+#: tuning_systemtap.xml:1288
 #, no-c-format
 msgid ""
 "A &stap; script can have multiple probes. They must be written in the "
@@ -614,7 +653,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1275
+#: tuning_systemtap.xml:1292
 #, no-c-format
 msgid ""
 "probe <replaceable>EVENT</replaceable> {<replaceable>STATEMENTS</"
@@ -622,7 +661,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1276
+#: tuning_systemtap.xml:1293
 #, no-c-format
 msgid ""
 "Each probe has a corresponding statement block. This statement block must be "
@@ -631,50 +670,79 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1282
+#: tuning_systemtap.xml:1299
 #, no-c-format
 msgid "Simple &stap; Script"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1283
+#: tuning_systemtap.xml:1300
 #, no-c-format
 msgid "The following example shows a simple &stap; script."
 msgstr ""
 
-#. Tag: screen
-#: tuning_systemtap.xml:1286
+#. Tag: #text
+#: tuning_systemtap.xml:1303
 #, no-c-format
-msgid ""
-"probe<co xml:id=\"co.tuning.stap.probe\"/> begin<co xml:id=\"co.tuning.stap."
-"event.begin\"/>\n"
-"{<co xml:id=\"co.tuning.stap.handler.start\"/>\n"
-"   printf<co xml:id=\"co.tuning.stap.handler.function.printf\"/> (\"hello "
-"world\\n\")<co xml:id=\"co.tuning.stap.handler.string\"/>\n"
-"   exit ()<co xml:id=\"co.tuning.stap.handler.function.exit\"/>\n"
-"}<co xml:id=\"co.tuning.stap.handler.end\"/>"
+msgid "probe"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1303
+#, no-c-format
+msgid "begin"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1304
+#, no-c-format
+msgid "{"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1305
+#, no-c-format
+msgid "(\"hello world\\n\")"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1305
+#, no-c-format
+msgid "printf"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1306
+#, no-c-format
+msgid "exit ()"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1307
+#, no-c-format
+msgid "}"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1289
+#: tuning_systemtap.xml:1310
 #, no-c-format
 msgid "Start of the probe."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1294
+#: tuning_systemtap.xml:1315
 #, no-c-format
 msgid "Event <literal>begin</literal> (the start of the &stap; session)."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1299
+#: tuning_systemtap.xml:1320
 #, no-c-format
-msgid "Start of the handler definition, indicated by <literal>{</literal>."
+msgid "Start of the handler definition, indicated by <literal>{</literal> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1304
+#: tuning_systemtap.xml:1325
 #, no-c-format
 msgid ""
 "First function defined in the handler: the <literal>printf</literal> "
@@ -682,46 +750,61 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1310
+#: tuning_systemtap.xml:1331
 #, no-c-format
 msgid ""
 "String to be printed by the <literal>printf</literal> function, followed by "
-"a line break (<literal>/n</literal>)."
+"a line break ( <literal>/n</literal> )."
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:1316
+#. Tag: #text
+#: tuning_systemtap.xml:1338
+#, no-c-format
+msgid "Second function defined in the handler: the"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1339
+#, no-c-format
+msgid "function. Note that the &stap; script will continue to run until the"
+msgstr ""
+
+#. Tag: literal
+#: tuning_systemtap.xml:1340
+#, no-c-format
+msgid "exit()"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1342
 #, no-c-format
 msgid ""
-"Second function defined in the handler: the <literal>exit()</literal> "
-"function. Note that the &stap; script will continue to run until the "
-"<literal>exit()</literal> function executes. If you want to stop the "
-"execution of the script before, stop it manually by pressing <keycombo> "
-"<keycap function=\"control\"></keycap> <keycap>C</keycap> </keycombo>."
+"function executes. If you want to stop the execution of the script before, "
+"stop it manually by pressing"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1326
+#: tuning_systemtap.xml:1347
 #, no-c-format
-msgid "End of the handler definition, indicated by <literal>}</literal>."
+msgid "End of the handler definition, indicated by <literal>}</literal> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1331
+#: tuning_systemtap.xml:1352
 #, no-c-format
 msgid ""
 "The event <literal>begin</literal> <xref linkend=\"co.tuning.stap.event.begin"
 "\" xrefstyle=\"select:label nopage\"/> (the start of the &stap; session) "
-"triggers the handler enclosed in <literal>{ }</literal>. Here, that is the "
+"triggers the handler enclosed in <literal>{ }</literal> . Here, that is the "
 "<literal>printf</literal> function <xref linkend=\"co.tuning.stap.handler."
-"function.printf\" xrefstyle=\"select:label nopage\"/>. In this case, it "
+"function.printf\" xrefstyle=\"select:label nopage\"/> . In this case, it "
 "prints <literal>hello world</literal> followed by a new line <xref linkend="
-"\"co.tuning.stap.handler.string\" xrefstyle=\"select:label nopage\"/>. Then, "
-"the script exits."
+"\"co.tuning.stap.handler.string\" xrefstyle=\"select:label nopage\"/> . "
+"Then, the script exits."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1344
+#: tuning_systemtap.xml:1365
 #, no-c-format
 msgid ""
 "If your statement block holds several statements, &stap; executes these "
@@ -733,53 +816,91 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1355
+#: tuning_systemtap.xml:1376
 #, no-c-format
 msgid "&stap; Events (Probe Points)"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1356
+#: tuning_systemtap.xml:1377
 #, no-c-format
 msgid "&stap; supports several built-in events."
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:1359
+#. Tag: #text
+#: tuning_systemtap.xml:1384
 #, no-c-format
 msgid ""
 "The general event syntax is a dotted-symbol sequence. This allows a "
 "breakdown of the event namespace into parts. Each component identifier may "
 "be parameterized by a string or number literal, with a syntax like a "
-"function call. A component may include a <literal>*</literal> character, to "
-"expand to other matching probe points. A probe point may be followed by a "
-"<literal>?</literal> character, to indicate that it is optional, and that no "
-"error should result if it fails to expand. <remark>tonyj 2010-05-8: Maybe an "
-"example? There are lots of them in syscalls.stp tapset (/usr/share/ "
-"systemptap/tapset/syscalls.stp). - taroth 2010-05-10: for next revision, no "
-"time left now</remark> Alternately, a probe point may be followed by a "
-"<literal>!</literal> character to indicate that it is both optional and "
-"sufficient."
+"function call. A component may include a"
+msgstr ""
+
+#. Tag: literal
+#: tuning_systemtap.xml:1384
+#, no-c-format
+msgid "*"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1386
+#, no-c-format
+msgid ""
+"character, to expand to other matching probe points. A probe point may be "
+"followed by a"
+msgstr ""
+
+#. Tag: literal
+#: tuning_systemtap.xml:1386
+#, no-c-format
+msgid "?"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1388
+#, no-c-format
+msgid ""
+"character, to indicate that it is optional, and that no error should result "
+"if it fails to expand."
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1391
+#, no-c-format
+msgid "Alternately, a probe point may be followed by a"
+msgstr ""
+
+#. Tag: literal
+#: tuning_systemtap.xml:1391
+#, no-c-format
+msgid "!"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1393
+#, no-c-format
+msgid "character to indicate that it is both optional and sufficient."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1373
+#: tuning_systemtap.xml:1394
 #, no-c-format
 msgid ""
 "&stap; supports multiple events per probe&mdash;they need to be separated by "
-"a comma (<literal>,</literal>). If multiple events are specified in a single "
-"probe, &stap; will execute the handler when any of the specified events "
-"occur."
+"a comma ( <literal>,</literal> ). If multiple events are specified in a "
+"single probe, &stap; will execute the handler when any of the specified "
+"events occur."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1379
+#: tuning_systemtap.xml:1400
 #, no-c-format
 msgid "In general, events can be classified into the following categories:"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1384
+#: tuning_systemtap.xml:1405
 #, no-c-format
 msgid ""
 "Synchronous events: Occur when any process executes an instruction at a "
@@ -788,19 +909,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1390
+#: tuning_systemtap.xml:1411
 #, no-c-format
 msgid ""
 "An example for a synchronous event is <literal>vfs."
-"<replaceable>FILE_OPERATION</replaceable></literal>: The entry to the "
+"<replaceable>FILE_OPERATION</replaceable></literal> : The entry to the "
 "<replaceable>FILE_OPERATION</replaceable> event for Virtual File System "
-"(VFS). For example, in <xref linkend=\"sec.tuning.systemtap.setup\"/>, "
+"(VFS). For example, in <xref linkend=\"sec.tuning.systemtap.setup\"/> , "
 "<literal>read</literal> is the <replaceable>FILE_OPERATION</replaceable> "
-"event used for VFS."
+"event used for VFS. <!--taroth 2011-10-17: sysemtap 1.5, original linkend--> "
+"<!-- <xref linkend=\"sec.tuning.systemtap.setup.classic\"/>--> <!--If you "
+"also want to monitor the exit of the <replaceable>FILE_OPERATION</"
+"replaceable> operation, append a <literal>.return</literal> to the event "
+"(for example, <literal>vfs.read.return</literal>).-->"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1406
+#: tuning_systemtap.xml:1427
 #, no-c-format
 msgid ""
 "Asynchronous events: Not tied to a particular instruction or location in "
@@ -809,19 +934,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1411
+#: tuning_systemtap.xml:1432
 #, no-c-format
 msgid ""
 "Examples for asynchronous events are: <literal>begin</literal> (start of a "
 "&stap; session&mdash;when a &stap; script is run, <literal>end</literal> "
 "(end of a &stap; session), or timer events. Timer events specify a handler "
 "to be executed periodically, like <literal>example timer."
-"s(<replaceable>SECONDS</replaceable>)</literal>, or <literal>timer."
-"ms(<replaceable>MILLISECONDS</replaceable>)</literal>."
+"s(<replaceable>SECONDS</replaceable>)</literal> , or <literal>timer."
+"ms(<replaceable>MILLISECONDS</replaceable>)</literal> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1420
+#: tuning_systemtap.xml:1441
 #, no-c-format
 msgid ""
 "When used together with other probes that collect information, timer events "
@@ -830,13 +955,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1428
+#: tuning_systemtap.xml:1449
 #, no-c-format
 msgid "Probe with Timer Event"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1429
+#: tuning_systemtap.xml:1450
 #, no-c-format
 msgid ""
 "For example, the following probe would print the text <quote>hello world</"
@@ -844,7 +969,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1433
+#: tuning_systemtap.xml:1454
 #, no-c-format
 msgid ""
 "probe timer.s(4)\n"
@@ -853,24 +978,46 @@ msgid ""
 "}"
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:1435
+#. Tag: command
+#: tuning_systemtap.xml:1461
+#, no-c-format
+msgid "stapprobes"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1461
+#, no-c-format
+msgid "man page. The"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1461
+#, no-c-format
+msgid "For detailed information about supported events, refer to the"
+msgstr ""
+
+#. Tag: citetitle
+#: tuning_systemtap.xml:1461
+#, no-c-format
+msgid "See Also"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1465
 #, no-c-format
 msgid ""
-"For detailed information about supported events, refer to the "
-"<command>stapprobes</command> man page. The <citetitle>See Also</citetitle> "
 "section of the man page also contains links to other man pages that discuss "
 "supported events for specific subsystems and components."
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1445
+#: tuning_systemtap.xml:1469
 #, no-c-format
 msgid "&stap; Handlers (Probe Body)"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1446
+#: tuning_systemtap.xml:1470
 #, no-c-format
 msgid ""
 "Each &stap; event is accompanied by a corresponding handler defined for that "
@@ -878,13 +1025,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1451
+#: tuning_systemtap.xml:1475
 #, no-c-format
 msgid "Functions"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1452
+#: tuning_systemtap.xml:1476
 #, no-c-format
 msgid ""
 "If you need the same set of statements in multiple probes, you can place "
@@ -895,7 +1042,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1459
+#: tuning_systemtap.xml:1483
 #, no-c-format
 msgid ""
 "function <replaceable>FUNCTION_NAME</replaceable>(<replaceable>ARGUMENTS</"
@@ -905,7 +1052,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1460
+#: tuning_systemtap.xml:1485
 #, no-c-format
 msgid ""
 "The statements in <replaceable>FUNCTION_NAME</replaceable> are executed when "
@@ -915,17 +1062,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1466
+#: tuning_systemtap.xml:1491
 #, no-c-format
 msgid "Functions can be defined anywhere in the script. They may take any"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1469
+#: tuning_systemtap.xml:1494
 #, no-c-format
 msgid ""
 "One of the functions needed very often was already introduced in <xref "
-"linkend=\"ex.tuning.stap.simple\"/>: the <literal>printf</literal> function "
+"linkend=\"ex.tuning.stap.simple\"/> : the <literal>printf</literal> function "
 "for printing data in a formatted way. When using the <literal>printf</"
 "literal> function, you can specify how arguments should be printed by using "
 "a format string. The format string is included in quotation marks and can "
@@ -934,7 +1081,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1478
+#: tuning_systemtap.xml:1503
 #, no-c-format
 msgid ""
 "Which format strings to use depends on your list of arguments. Format "
@@ -943,214 +1090,256 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1484
+#: tuning_systemtap.xml:1509
 #, no-c-format
 msgid "<literal>printf</literal> Function with Format Specifiers"
 msgstr ""
 
-#. Tag: screen
-#: tuning_systemtap.xml:1485
+#. Tag: #text
+#: tuning_systemtap.xml:1510
 #, no-c-format
-msgid ""
-"printf (\"<co xml:id=\"co.tuning.stap.formatstring.start\"/>%s<co xml:id="
-"\"co.tuning.stap.string.spec\"/>(%d<co xml:id=\"co.tuning.stap.int.spec\"/>) "
-"open\\n<co xml:id=\"co.tuning.stap.formatstring.end\"/>\", execname(), pid())"
+msgid "printf (\""
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1510
+#, no-c-format
+msgid ") open\\n"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1510
+#, no-c-format
+msgid "(%d"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1510
+#, no-c-format
+msgid "\", execname(), pid())"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1510
+#, no-c-format
+msgid "%s"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1488
+#: tuning_systemtap.xml:1513
 #, no-c-format
-msgid "Start of the format string, indicated by <literal>\"</literal>."
+msgid "Start of the format string, indicated by <literal>\"</literal> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1493
+#: tuning_systemtap.xml:1518
 #, no-c-format
 msgid "String format specifier."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1498
+#: tuning_systemtap.xml:1523
 #, no-c-format
 msgid "Integer format specifier."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1503
+#: tuning_systemtap.xml:1528
 #, no-c-format
-msgid "End of the format string, indicated by <literal>\"</literal>."
+msgid "End of the format string, indicated by <literal>\"</literal> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1509
+#: tuning_systemtap.xml:1534
 #, no-c-format
 msgid ""
-"The example above prints the current executable name (<literal>execname()</"
-"literal>) as a string and the process ID (<literal>pid()</literal>) as an "
+"The example above prints the current executable name ( <literal>execname()</"
+"literal> ) as a string and the process ID ( <literal>pid()</literal> ) as an "
 "integer in brackets. Then, a space, the word <literal>open</literal> and a "
 "line break follow:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1515
+#: tuning_systemtap.xml:1540
 #, no-c-format
 msgid ""
 "[...]\n"
 "vmware-guestd(2206) open\n"
 "hald(2360) open\n"
-"[...]"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1516
-#, no-c-format
-msgid ""
-"Apart from the two functions <literal>execname()</literal>and "
-"<literal>pid()</literal>) used in <xref linkend=\"ex.tuning.stap.printf."
-"formatspec\"/>, a variety of other functions can be used as <literal>printf</"
-"literal> arguments."
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1522
-#, no-c-format
-msgid "Among the most commonly used &stap; functions are the following:"
-msgstr ""
-
-#. Tag: term
-#: tuning_systemtap.xml:1527
-#, no-c-format
-msgid "tid()"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1529
-#, no-c-format
-msgid "ID of the current thread."
-msgstr ""
-
-#. Tag: term
-#: tuning_systemtap.xml:1535
-#, no-c-format
-msgid "pid()"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1537
-#, no-c-format
-msgid "Process ID of the current thread."
-msgstr ""
-
-#. Tag: term
-#: tuning_systemtap.xml:1543
-#, no-c-format
-msgid "uid()"
+"[...]\n"
+"   "
 msgstr ""
 
 #. Tag: para
 #: tuning_systemtap.xml:1545
 #, no-c-format
+msgid ""
+"Apart from the two functions <literal>execname()</literal> and "
+"<literal>pid()</literal> ) used in <xref linkend=\"ex.tuning.stap.printf."
+"formatspec\"/> , a variety of other functions can be used as "
+"<literal>printf</literal> arguments."
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1551
+#, no-c-format
+msgid "Among the most commonly used &stap; functions are the following:"
+msgstr ""
+
+#. Tag: term
+#: tuning_systemtap.xml:1556
+#, no-c-format
+msgid "tid()"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1558
+#, no-c-format
+msgid "ID of the current thread."
+msgstr ""
+
+#. Tag: term
+#: tuning_systemtap.xml:1564
+#, no-c-format
+msgid "pid()"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1566
+#, no-c-format
+msgid "Process ID of the current thread."
+msgstr ""
+
+#. Tag: term
+#: tuning_systemtap.xml:1572
+#, no-c-format
+msgid "uid()"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1574
+#, no-c-format
 msgid "ID of the current user."
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1551
+#: tuning_systemtap.xml:1580
 #, no-c-format
 msgid "cpu()"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1553
+#: tuning_systemtap.xml:1582
 #, no-c-format
 msgid "Current CPU number."
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1559
+#: tuning_systemtap.xml:1588
 #, no-c-format
 msgid "execname()"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1561
+#: tuning_systemtap.xml:1590
 #, no-c-format
 msgid "Name of the current process."
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1567
+#: tuning_systemtap.xml:1596
 #, no-c-format
 msgid "gettimeofday_s()"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1569
+#: tuning_systemtap.xml:1598
 #, no-c-format
 msgid "Number of seconds since Unix epoch (January 1, 1970)."
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1575
+#: tuning_systemtap.xml:1604
 #, no-c-format
 msgid "ctime()"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1577
+#: tuning_systemtap.xml:1606
 #, no-c-format
 msgid "Convert time into a string."
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1583
+#: tuning_systemtap.xml:1612
 #, no-c-format
 msgid "pp()"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1585
+#: tuning_systemtap.xml:1614
 #, no-c-format
 msgid "String describing the probe point currently being handled."
 msgstr ""
 
-#. Tag: term
-#: tuning_systemtap.xml:1591
-#, no-c-format
-msgid "thread_indent()"
-msgstr ""
-
 #. Tag: para
-#: tuning_systemtap.xml:1593
+#: tuning_systemtap.xml:1622
 #, no-c-format
 msgid ""
 "Useful function for organizing print results. It (internally) stores an "
-"indentation counter for each thread (<literal>tid()</literal>). The function "
-"takes one argument, an indentation delta, indicating how many spaces to add "
-"or remove from the thread's indentation counter. It returns a string with "
-"some generic trace data along with an appropriate number of indentation "
-"spaces. The generic data returned includes a time stamp (number of "
-"microseconds since the initial indentation for the thread), a process name, "
-"and the thread ID itself. This allows you to identify what functions were "
-"called, who called them, and how long they took."
+"indentation counter for each thread ( <literal>tid()</literal> ). The "
+"function takes one argument, an indentation delta, indicating how many "
+"spaces to add or remove from the thread's indentation counter. It returns a "
+"string with some generic trace data along with an appropriate number of "
+"indentation spaces. The generic data returned includes a time stamp (number "
+"of microseconds since the initial indentation for the thread), a process "
+"name, and the thread ID itself. This allows you to identify what functions "
+"were called, who called them, and how long they took."
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:1605
+#. Tag: #text
+#: tuning_systemtap.xml:1640
 #, no-c-format
 msgid ""
 "Call entries and exits often do not immediately precede each other "
 "(otherwise it would be easy to match them). In between a first call entry "
 "and its exit, usually other call entries and exits are made. The indentation "
 "counter helps you match an entry with its corresponding exit as it indents "
-"the next function call in case it is <emphasis>not</emphasis> the exit of "
-"the previous one. For an example &stap; script using "
-"<literal>thread_indent()</literal> and the respective output, refer to the "
-"<citetitle>&stap; Tutorial</citetitle>: <link xlink:href=\"http://sourceware."
-"org/systemtap/tutorial/Tracing.html#fig:socket-trace\"></link>."
+"the next function call in case it is"
+msgstr ""
+
+#. Tag: emphasis
+#: tuning_systemtap.xml:1640
+#, no-c-format
+msgid "not"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1641
+#, no-c-format
+msgid "the exit of the previous one. For an example &stap; script using"
+msgstr ""
+
+#. Tag: literal
+#: tuning_systemtap.xml:1641
+#, no-c-format
+msgid "thread_indent()"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1642
+#, no-c-format
+msgid "and the respective output, refer to the"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1644
+#, no-c-format
+msgid ":"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1620
+#: tuning_systemtap.xml:1649
 #, no-c-format
 msgid ""
 "For more information about supported &stap; functions, refer to the "
@@ -1158,29 +1347,29 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1626
+#: tuning_systemtap.xml:1655
 #, no-c-format
 msgid "Other Basic Constructs"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1627
+#: tuning_systemtap.xml:1656
 #, no-c-format
 msgid ""
 "Apart from functions, you can use other common constructs in &stap; "
 "handlers, including variables, conditional statements (like <literal>if</"
-"literal>/<literal>else</literal>, <literal>while</literal> loops, "
+"literal> / <literal>else</literal> , <literal>while</literal> loops, "
 "<literal>for</literal> loops, arrays or command line arguments."
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1634
+#: tuning_systemtap.xml:1663
 #, no-c-format
 msgid "Variables"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1635
+#: tuning_systemtap.xml:1664
 #, no-c-format
 msgid ""
 "Variables may be defined anywhere in the script. To define one, simply "
@@ -1188,13 +1377,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1639
+#: tuning_systemtap.xml:1668
 #, no-c-format
 msgid "foo = gettimeofday( )"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1640
+#: tuning_systemtap.xml:1669
 #, no-c-format
 msgid ""
 "Then you can use the variable in an expression. From the type of values "
@@ -1202,11 +1391,11 @@ msgid ""
 "identifier (string or number). Any inconsistencies will be reported as "
 "errors. In the example above, <literal>foo</literal> would automatically be "
 "classified as a number and could be printed via <literal>printf()</literal> "
-"with the integer format specifier (<literal>%d</literal>)."
+"with the integer format specifier ( <literal>%d</literal> )."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1649
+#: tuning_systemtap.xml:1678
 #, no-c-format
 msgid ""
 "However, by default, variables are local to the probe they are used in: They "
@@ -1216,13 +1405,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1657
+#: tuning_systemtap.xml:1686
 #, no-c-format
 msgid "Using Global Variables"
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1658
+#: tuning_systemtap.xml:1687
 #, no-c-format
 msgid ""
 "global count_jiffies, count_ms\n"
@@ -1238,7 +1427,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1659
+#: tuning_systemtap.xml:1697
 #, no-c-format
 msgid ""
 "This example script computes the CONFIG_HZ setting of the kernel by using "
@@ -1248,18 +1437,18 @@ msgid ""
 "interrupt frequency of the particular hardware platform). With the "
 "<literal>global</literal> statement it is possible to use the variables "
 "<literal>count_jiffies</literal> and <literal>count_ms</literal> also in the "
-"probe <literal>timer.ms(12345)</literal>. With <literal>++</literal> the "
-"value of a variable is incremented by <literal>1</literal>."
+"probe <literal>timer.ms(12345)</literal> . With <literal>++</literal> the "
+"value of a variable is incremented by <literal>1</literal> ."
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1674
+#: tuning_systemtap.xml:1712
 #, no-c-format
 msgid "Conditional Statements"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1675
+#: tuning_systemtap.xml:1713
 #, no-c-format
 msgid ""
 "There are several conditional statements that you can use in &stap; scripts. "
@@ -1267,30 +1456,37 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1681
+#: tuning_systemtap.xml:1719
 #, no-c-format
 msgid "If/Else Statements"
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:1683 tuning_systemtap.xml:1711
+#. Tag: replaceable
+#: tuning_systemtap.xml:1724
 #, no-c-format
-msgid "They are expressed in the following format:"
+msgid "STATEMENT1"
 msgstr ""
 
-#. Tag: screen
-#: tuning_systemtap.xml:1686
+#. Tag: #text
+#: tuning_systemtap.xml:1724
 #, no-c-format
-msgid ""
-"if (<replaceable>CONDITION</replaceable>)<co xml:id=\"co.tuning.systemtap."
-"cond.if\"/><replaceable>STATEMENT1</replaceable><co xml:id=\"co.tuning."
-"systemtap.cond.if.statement1\"/>\n"
-"else<co xml:id=\"co.tuning.systemtap.cond.else\"/><replaceable>STATEMENT2</"
-"replaceable><co xml:id=\"co.tuning.systemtap.cond.if.statement2\"/>"
+msgid "if ("
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1725
+#, no-c-format
+msgid "else"
+msgstr ""
+
+#. Tag: replaceable
+#: tuning_systemtap.xml:1725
+#, no-c-format
+msgid "STATEMENT2"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1687
+#: tuning_systemtap.xml:1726
 #, no-c-format
 msgid ""
 "The <literal>if</literal> statement compares an integer-valued expression to "
@@ -1299,32 +1495,53 @@ msgid ""
 "<xref linkend=\"co.tuning.systemtap.cond.if.statement1\" xrefstyle=\"select:"
 "label nopage\"/> is executed. If the condition expression is zero, the "
 "second statement <xref linkend=\"co.tuning.systemtap.cond.if.statement2\" "
-"xrefstyle=\"select:label nopage\"/> is executed. The else clause (<xref "
+"xrefstyle=\"select:label nopage\"/> is executed. The else clause ( <xref "
 "linkend=\"co.tuning.systemtap.cond.else\" xrefstyle=\"select:label nopage\"/"
 "> and <xref linkend=\"co.tuning.systemtap.cond.if.statement2\" xrefstyle="
-"\"select:label nopage\"/>) is optional. Both <xref linkend=\"co.tuning."
+"\"select:label nopage\"/> ) is optional. Both <xref linkend=\"co.tuning."
 "systemtap.cond.if.statement1\" xrefstyle=\"select:label nopage\"/> and <xref "
 "linkend=\"co.tuning.systemtap.cond.if.statement2\" xrefstyle=\"select:label "
 "nopage\"/> can also be statement blocks."
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1709
+#: tuning_systemtap.xml:1748
 #, no-c-format
 msgid "While Loops"
 msgstr ""
 
-#. Tag: screen
-#: tuning_systemtap.xml:1714
+#. Tag: para
+#: tuning_systemtap.xml:1750
 #, no-c-format
-msgid ""
-"while (<replaceable>CONDITION</replaceable>)<co xml:id=\"co.tuning.systemtap."
-"cond.while\"/><replaceable>STATEMENT</replaceable><co xml:id=\"co.tuning."
-"systemtap.cond.while.statement\"/>"
+msgid "They are expressed in the following format:"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1753
+#, no-c-format
+msgid ")"
+msgstr ""
+
+#. Tag: replaceable
+#: tuning_systemtap.xml:1753
+#, no-c-format
+msgid "CONDITION"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1753
+#, no-c-format
+msgid "while ("
+msgstr ""
+
+#. Tag: replaceable
+#: tuning_systemtap.xml:1753
+#, no-c-format
+msgid "STATEMENT"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1715
+#: tuning_systemtap.xml:1754
 #, no-c-format
 msgid ""
 "As long as <literal>condition</literal> is non-zero, the statement <xref "
@@ -1336,32 +1553,57 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1726
+#: tuning_systemtap.xml:1765
 #, no-c-format
 msgid "For Loops"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1728
+#: tuning_systemtap.xml:1767
 #, no-c-format
 msgid ""
 "They are a shortcut for <literal>while</literal> loops and are expressed in "
 "the following format:"
 msgstr ""
 
-#. Tag: screen
-#: tuning_systemtap.xml:1732
+#. Tag: #text
+#: tuning_systemtap.xml:1771
 #, no-c-format
-msgid ""
-"for (<replaceable>INITIALIZATION</replaceable><co xml:id=\"co.tuning."
-"systemtap.cond.for.init\"/>; <replaceable>CONDITIONAL</replaceable><co xml:"
-"id=\"co.tuning.systemtap.cond.for.cond\"/>; <replaceable>INCREMENT</"
-"replaceable><co xml:id=\"co.tuning.systemtap.cond.for.increment\"/>) "
-"statement"
+msgid ";"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1771
+#, no-c-format
+msgid "for ("
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1771
+#, no-c-format
+msgid ") statement"
+msgstr ""
+
+#. Tag: replaceable
+#: tuning_systemtap.xml:1771
+#, no-c-format
+msgid "INITIALIZATION"
+msgstr ""
+
+#. Tag: replaceable
+#: tuning_systemtap.xml:1771
+#, no-c-format
+msgid "INCREMENT"
+msgstr ""
+
+#. Tag: replaceable
+#: tuning_systemtap.xml:1771
+#, no-c-format
+msgid "CONDITIONAL"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1733
+#: tuning_systemtap.xml:1772
 #, no-c-format
 msgid ""
 "The expression specified in <xref linkend=\"co.tuning.systemtap.cond.for.init"
@@ -1376,91 +1618,91 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: tuning_systemtap.xml:1749
+#: tuning_systemtap.xml:1788
 #, no-c-format
 msgid "Conditional Operators"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1751
+#: tuning_systemtap.xml:1790
 #, no-c-format
 msgid "The following operators can be used in conditional statements:"
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1755
+#: tuning_systemtap.xml:1794
 #, no-c-format
-msgid "<title>==:</title>"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1756
-#, no-c-format
-msgid "Is equal to"
-msgstr ""
-
-#. Tag: title
-#: tuning_systemtap.xml:1761
-#, no-c-format
-msgid "<title>!=:</title>"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1762
-#, no-c-format
-msgid "Is not equal to"
-msgstr ""
-
-#. Tag: title
-#: tuning_systemtap.xml:1767
-#, no-c-format
-msgid "&gt;=:"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1768
-#, no-c-format
-msgid "Is greater than or equal to"
-msgstr ""
-
-#. Tag: title
-#: tuning_systemtap.xml:1773
-#, no-c-format
-msgid "&lt;=:"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1774
-#, no-c-format
-msgid "Is less than or equal to"
-msgstr ""
-
-#. Tag: title
-#: tuning_systemtap.xml:1786
-#, no-c-format
-msgid "Example Script"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1788
-#, no-c-format
-msgid ""
-"If you have installed the <systemitem class=\"resource\">systemtap-docs</"
-"systemitem> package, you can find several useful &stap; example scripts in "
-"<filename>/usr/share/doc/packages/systemtap/examples</filename>."
+msgid "==:"
 msgstr ""
 
 #. Tag: para
 #: tuning_systemtap.xml:1795
 #, no-c-format
-msgid ""
-"This section describes a rather simple example script in more detail: "
-"<filename>/usr/share/doc/packages/systemtap/examples/network/tcp_connections."
-"stp</filename>."
+msgid "Is equal to"
 msgstr ""
 
 #. Tag: title
+#: tuning_systemtap.xml:1800
+#, no-c-format
+msgid "!=:"
+msgstr ""
+
+#. Tag: para
 #: tuning_systemtap.xml:1801
+#, no-c-format
+msgid "Is not equal to"
+msgstr ""
+
+#. Tag: title
+#: tuning_systemtap.xml:1806
+#, no-c-format
+msgid "&gt;=:"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1807
+#, no-c-format
+msgid "Is greater than or equal to"
+msgstr ""
+
+#. Tag: title
+#: tuning_systemtap.xml:1812
+#, no-c-format
+msgid "&lt;=:"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1813
+#, no-c-format
+msgid "Is less than or equal to"
+msgstr ""
+
+#. Tag: title
+#: tuning_systemtap.xml:1825
+#, no-c-format
+msgid "Example Script"
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1827
+#, no-c-format
+msgid ""
+"If you have installed the <systemitem class=\"resource\">systemtap-docs</"
+"systemitem> package, you can find several useful &stap; example scripts in "
+"<filename>/usr/share/doc/packages/systemtap/examples</filename> ."
+msgstr ""
+
+#. Tag: para
+#: tuning_systemtap.xml:1834
+#, no-c-format
+msgid ""
+"This section describes a rather simple example script in more detail: "
+"<filename>/usr/share/doc/packages/systemtap/examples/network/tcp_connections."
+"stp</filename> ."
+msgstr ""
+
+#. Tag: title
+#: tuning_systemtap.xml:1840
 #, no-c-format
 msgid ""
 "Monitoring Incoming TCP Connections with <literal>tcp_connections.stp</"
@@ -1468,7 +1710,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1802
+#: tuning_systemtap.xml:1841
 #, no-c-format
 msgid ""
 "#! /usr/bin/env stap\n"
@@ -1488,7 +1730,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1805
+#: tuning_systemtap.xml:1857
 #, no-c-format
 msgid ""
 "This &stap; script monitors the incoming TCP connections and helps to "
@@ -1498,77 +1740,77 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1814
+#: tuning_systemtap.xml:1866
 #, no-c-format
-msgid "User ID (<literal>UID</literal>)"
+msgid "User ID ( <literal>UID</literal> )"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1819
+#: tuning_systemtap.xml:1871
 #, no-c-format
-msgid "Command accepting the connection (<literal>CMD</literal>)"
+msgid "Command accepting the connection ( <literal>CMD</literal> )"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1824
+#: tuning_systemtap.xml:1876
 #, no-c-format
-msgid "Process ID of the command (<literal>PID</literal>)"
+msgid "Process ID of the command ( <literal>PID</literal> )"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1829
+#: tuning_systemtap.xml:1881
 #, no-c-format
-msgid "Port used by the connection (<literal>PORT</literal>)"
+msgid "Port used by the connection ( <literal>PORT</literal> )"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1834
+#: tuning_systemtap.xml:1886
 #, no-c-format
 msgid ""
-"IP address from which the TCP connection originated (<literal>IP_SOUCE</"
-"literal>)"
+"IP address from which the TCP connection originated ( <literal>IP_SOUCE</"
+"literal> )"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1841
+#: tuning_systemtap.xml:1893
 #, no-c-format
 msgid "To run the script, execute"
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1845
+#: tuning_systemtap.xml:1897
 #, no-c-format
 msgid ""
 "stap&nbsp;/usr/share/doc/packages/systemtap/examples/network/tcp_connections."
 "stp"
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:1847
+#. Tag: #text
+#: tuning_systemtap.xml:1901
 #, no-c-format
-msgid ""
-"and follow the output on the screen. To manually stop the script, press "
-"<keycombo> <keycap function=\"control\"></keycap> <keycap>C</keycap> </"
-"keycombo>."
+msgid "and follow the output on the screen. To manually stop the script, press"
+msgstr ""
+
+#. Tag: keycap
+#: tuning_systemtap.xml:1901
+#, no-c-format
+msgid "C"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1902
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1854
+#: tuning_systemtap.xml:1906
 #, no-c-format
 msgid "User Space Probing"
 msgstr ""
 
-#. Tag: remark
-#: tuning_systemtap.xml:1857
-#, no-c-format
-msgid ""
-"taroth 2013-12-05: this will need adjustment for SLE 12 where user-space "
-"probes will use uprobes/uretprobes instead (which are in mainline) - "
-"according to tonyj everything except itrace is supposed to work"
-msgstr ""
-
-#. Tag: para
-#: tuning_systemtap.xml:1859
+#. Tag: #text
+#: tuning_systemtap.xml:1913
 #, no-c-format
 msgid ""
 "For debugging user space applications (like DTrace can do), &productname; "
@@ -1579,33 +1821,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1867
+#: tuning_systemtap.xml:1919
 #, no-c-format
 msgid ""
 "To get the required utrace infrastructure and the uprobes kernel module for "
 "user space probing, you need to install the <systemitem class=\"resource"
 "\">kernel-trace</systemitem> package in addition to the packages listed in "
-"<xref linkend=\"sec.tuning.systemtap.setup\"/>."
+"<xref linkend=\"sec.tuning.systemtap.setup\"/> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1875
+#: tuning_systemtap.xml:1927
 #, no-c-format
 msgid ""
 "<command>utrace</command> implements a framework for controlling user space "
 "tasks. It provides an interface that can be used by various tracing "
-"<quote>engines</quote>, implemented as loadable kernel modules. The engines "
+"<quote>engines</quote> , implemented as loadable kernel modules. The engines "
 "register callback functions for specific events, then attach to whichever "
 "thread they want to trace. As the callbacks are made from <quote>safe</"
 "quote> places in the kernel, this allows for great leeway in the kinds of "
 "processing the functions can do. Various events can be watched via utrace, "
 "for example, system call entry and exit, fork(), signals being sent to the "
 "task, etc. More details about the utrace infrastructure are available at "
-"<link xlink:href=\"http://sourceware.org/systemtap/wiki/utrace\"></link>."
+"<link xlink:href=\"http://sourceware.org/systemtap/wiki/utrace\"/> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1889
+#: tuning_systemtap.xml:1941
 #, no-c-format
 msgid ""
 "&stap; includes support for probing the entry into and return from a "
@@ -1614,7 +1856,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1895
+#: tuning_systemtap.xml:1947
 #, no-c-format
 msgid ""
 "To check if the currently running kernel provides the needed utrace support, "
@@ -1622,42 +1864,54 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_systemtap.xml:1900
+#: tuning_systemtap.xml:1952
 #, no-c-format
 msgid "&prompt.sudo;grep CONFIG_UTRACE /boot/config-`uname -r`"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1902
+#: tuning_systemtap.xml:1954
 #, no-c-format
 msgid ""
 "For more details about user space probing, refer to <link xlink:href="
 "\"https://sourceware.org/systemtap/SystemTap_Beginners_Guide/userspace-"
-"probing.html\"></link>."
+"probing.html\"/> ."
 msgstr ""
 
 #. Tag: title
-#: tuning_systemtap.xml:1908
+#: tuning_systemtap.xml:1960
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1910
+#: tuning_systemtap.xml:1962
 #, no-c-format
 msgid ""
 "This chapter only provides a short &stap; overview. Refer to the following "
 "links for more information about &stap;:"
 msgstr ""
 
+#. Tag: term
+#: tuning_systemtap.xml:1969
+#, no-c-format
+msgid "<link xlink:href=\"http://sourceware.org/systemtap/\"/>"
+msgstr ""
+
 #. Tag: para
-#: tuning_systemtap.xml:1920
+#: tuning_systemtap.xml:1972
 #, no-c-format
 msgid "&stap; project home page."
 msgstr ""
 
+#. Tag: term
+#: tuning_systemtap.xml:1978
+#, no-c-format
+msgid "<link xlink:href=\"http://sourceware.org/systemtap/wiki/\"/>"
+msgstr ""
+
 #. Tag: para
-#: tuning_systemtap.xml:1929
+#: tuning_systemtap.xml:1981
 #, no-c-format
 msgid ""
 "Huge collection of useful information about &stap;, ranging from detailed "
@@ -1667,22 +1921,67 @@ msgid ""
 "about &stap;."
 msgstr ""
 
-#. Tag: para
-#: tuning_systemtap.xml:1942
+#. Tag: term
+#: tuning_systemtap.xml:1991
 #, no-c-format
 msgid ""
-"Features a <citetitle>&stap; Tutorial</citetitle>, a <citetitle>&stap; "
-"Beginner's Guide</citetitle>, a <citetitle>Tapset Developer's Guide</"
-"citetitle>, and a <citetitle>&stap; Language Reference</citetitle> in PDF "
-"and HTML format. Also lists the relevant man pages."
+"<link xlink:href=\"http://sourceware.org/systemtap/documentation.html\"/>"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1995
+#, no-c-format
+msgid "Features a"
+msgstr ""
+
+#. Tag: citetitle
+#: tuning_systemtap.xml:1995
+#, no-c-format
+msgid "&stap; Tutorial"
+msgstr ""
+
+#. Tag: citetitle
+#: tuning_systemtap.xml:1996
+#, no-c-format
+msgid "Tapset Developer's Guide"
+msgstr ""
+
+#. Tag: citetitle
+#: tuning_systemtap.xml:1996
+#, no-c-format
+msgid "&stap; Beginner's Guide"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1996
+#, no-c-format
+msgid ", a"
+msgstr ""
+
+#. Tag: citetitle
+#: tuning_systemtap.xml:1997
+#, no-c-format
+msgid "&stap; Language Reference"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:1997
+#, no-c-format
+msgid ", and a"
+msgstr ""
+
+#. Tag: #text
+#: tuning_systemtap.xml:2000
+#, no-c-format
+msgid "in PDF and HTML format. Also lists the relevant man pages."
 msgstr ""
 
 #. Tag: para
-#: tuning_systemtap.xml:1953
+#: tuning_systemtap.xml:2005
 #, no-c-format
 msgid ""
 "You can also find the &stap; language reference and &stap; tutorial in your "
 "installed system under <filename>/usr/share/doc/packages/systemtap</"
-"filename>. Example &stap; scripts are available from the <filename>example</"
+"filename> . Example &stap; scripts are available from the <filename>example</"
 "filename> subdirectory."
 msgstr ""

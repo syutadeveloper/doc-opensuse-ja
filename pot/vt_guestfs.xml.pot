@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -23,7 +23,7 @@ msgstr ""
 #. Tag: para
 #: vt_guestfs.xml:12
 #, no-c-format
-msgid "s consist of disk images and definition files. Manually accessing and manipulating these guest components (outside of normal hypervisor processes) is possible, but inherently dangerous and risks compromising data integrity. libguestfs is a C library and a corresponding set of tools designed for safely accessing and modifying <xref linkend=\"gloss.vt.vm\"/> disk images&mdash;outside of normal hypervisor processes, but without the risk normally associated with manual editing."
+msgid "<xref linkend=\"gloss.vt.vm\"/> s consist of disk images and definition files. Manually accessing and manipulating these guest components (outside of normal hypervisor processes) is possible, but inherently dangerous and risks compromising data integrity. libguestfs is a C library and a corresponding set of tools designed for safely accessing and modifying <xref linkend=\"gloss.vt.vm\"/> disk images&mdash;outside of normal hypervisor processes, but without the risk normally associated with manual editing."
 msgstr ""
 
 #. Tag: title
@@ -47,19 +47,19 @@ msgstr ""
 #. Tag: para
 #: vt_guestfs.xml:45
 #, no-c-format
-msgid "<emphasis>Data Corruption</emphasis>: Concurrently accessing images, by the host machine or another node in a cluster, can cause changes to be lost or data corruption to occur if virtualization protection layers are bypassed."
+msgid "<emphasis>Data Corruption</emphasis> : Concurrently accessing images, by the host machine or another node in a cluster, can cause changes to be lost or data corruption to occur if virtualization protection layers are bypassed."
 msgstr ""
 
 #. Tag: para
 #: vt_guestfs.xml:53
 #, no-c-format
-msgid "<emphasis>Security</emphasis>: Mounting disk images as loop devices requires root access. While an image is loop mounted, other users and processes can potentially access the disk contents."
+msgid "<emphasis>Security</emphasis> : Mounting disk images as loop devices requires root access. While an image is loop mounted, other users and processes can potentially access the disk contents."
 msgstr ""
 
 #. Tag: para
 #: vt_guestfs.xml:60
 #, no-c-format
-msgid "<emphasis>Administrator Error</emphasis>: Bypassing virtualization layers correctly requires advanced understanding of virtual components and tools. Failing to isolate the images or failing to clean up properly after changes have been made can lead to further problems once back in virtualization control."
+msgid "<emphasis>Administrator Error</emphasis> : Bypassing virtualization layers correctly requires advanced understanding of virtual components and tools. Failing to isolate the images or failing to clean up properly after changes have been made can lead to further problems once back in virtualization control."
 msgstr ""
 
 #. Tag: title
@@ -71,7 +71,7 @@ msgstr ""
 #. Tag: para
 #: vt_guestfs.xml:73
 #, no-c-format
-msgid "libguestfs C library has been designed to safely and securely create, access and modify virtual machine (&vmguest;) disk images. It also provides additional language bindings: for <link xlink:href=\"http://libguestfs.org/guestfs-perl.3.html\">Perl</link>, <link xlink:href=\"http://libguestfs.org/guestfs-python.3.html\">Python</link>, PHP (only for 64-bit machines), and <link xlink:href=\"http://libguestfs.org/guestfs-ruby.3.html\"> Ruby</link>. libguestfs can access &vmguest; disk images without needing root and with multiple layers of defense against rogue disk images."
+msgid "libguestfs C library has been designed to safely and securely create, access and modify virtual machine (&vmguest;) disk images. It also provides additional language bindings: for <link xlink:href=\"http://libguestfs.org/guestfs-perl.3.html\">Perl</link> , <link xlink:href=\"http://libguestfs.org/guestfs-python.3.html\">Python</link> , PHP (only for 64-bit machines), and <link xlink:href=\"http://libguestfs.org/guestfs-ruby.3.html\"> Ruby</link> . libguestfs can access &vmguest; disk images without needing root and with multiple layers of defense against rogue disk images."
 msgstr ""
 
 #. Tag: para
@@ -113,25 +113,25 @@ msgstr ""
 #. Tag: para
 #: vt_guestfs.xml:118
 #, no-c-format
-msgid "<systemitem class=\"resource\">libguestfs0</systemitem>: which provides the main C library"
+msgid "<systemitem class=\"resource\">libguestfs0</systemitem> : which provides the main C library"
 msgstr ""
 
 #. Tag: para
 #: vt_guestfs.xml:124
 #, no-c-format
-msgid "<systemitem class=\"resource\">guestfs-data</systemitem>: which contains the appliance files used when launching images (stored in <filename>/usr/lib64/guestfs</filename>)"
+msgid "<systemitem class=\"resource\">guestfs-data</systemitem> : which contains the appliance files used when launching images (stored in <filename>/usr/lib64/guestfs</filename> )"
 msgstr ""
 
 #. Tag: para
 #: vt_guestfs.xml:131
 #, no-c-format
-msgid "<systemitem class=\"resource\">guestfs-tools</systemitem>: the core guestfs tools, man pages, and the <filename>/etc/libguestfs-tools.conf</filename> configuration file."
+msgid "<systemitem class=\"resource\">guestfs-tools</systemitem> : the core guestfs tools, man pages, and the <filename>/etc/libguestfs-tools.conf</filename> configuration file."
 msgstr ""
 
 #. Tag: para
 #: vt_guestfs.xml:138
 #, no-c-format
-msgid "<systemitem class=\"resource\">guestfs-winsupport</systemitem>: provides support for Windows file guests in the guestfs tools. This package only needs to be installed to handle Windows guests, for example when converting a Windows guest to KVM."
+msgid "<systemitem class=\"resource\">guestfs-winsupport</systemitem> : provides support for Windows file guests in the guestfs tools. This package only needs to be installed to handle Windows guests, for example when converting a Windows guest to KVM."
 msgstr ""
 
 #. Tag: para
@@ -161,7 +161,7 @@ msgstr ""
 #. Tag: para
 #: vt_guestfs.xml:160
 #, no-c-format
-msgid "The set of tools found within the guestfs-tools package is used for accessing and modifying virtual machine disk images. This functionality is provided through a familiar shell interface with built-in safeguards which ensure image integrity. Guestfs tools shells expose all capabilities of the guestfs API, and create an appliance on the fly using the packages installed on the machine and the files found in <filename>/usr/lib4/guestfs</filename>."
+msgid "The set of tools found within the guestfs-tools package is used for accessing and modifying virtual machine disk images. This functionality is provided through a familiar shell interface with built-in safeguards which ensure image integrity. Guestfs tools shells expose all capabilities of the guestfs API, and create an appliance on the fly using the packages installed on the machine and the files found in <filename>/usr/lib4/guestfs</filename> ."
 msgstr ""
 
 #. Tag: title
@@ -185,7 +185,7 @@ msgstr ""
 #. Tag: para
 #: vt_guestfs.xml:183
 #, no-c-format
-msgid "<para>Xfs</para>"
+msgid "Xfs"
 msgstr ""
 
 #. Tag: para
@@ -203,7 +203,7 @@ msgstr ""
 #. Tag: para
 #: vt_guestfs.xml:198
 #, no-c-format
-msgid "<para>raw</para>"
+msgid "raw"
 msgstr ""
 
 #. Tag: para
@@ -224,10 +224,10 @@ msgstr ""
 msgid "Guestfs may also support Windows* file systems (VFAT, NTFS), BSD* and Apple* file systems, and other disk image formats (VMDK, VHDX...). However, these file systems and disk image formats are unsupported on &productname;."
 msgstr ""
 
-#. Tag: command
+#. Tag: title
 #: vt_guestfs.xml:220
 #, no-c-format
-msgid "virt-rescue"
+msgid "<command>virt-rescue</command>"
 msgstr ""
 
 #. Tag: para
@@ -239,8 +239,7 @@ msgstr ""
 #. Tag: screen
 #: vt_guestfs.xml:228
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-rescue -a sles.qcow2\n"
+msgid "&prompt.user;virt-rescue -a sles.qcow2\n"
       "Welcome to virt-rescue, the libguestfs rescue shell.\n"
       "\n"
       "Note: The contents of / are the rescue appliance.\n"
@@ -260,20 +259,20 @@ msgid ""
       "mount: /sys bound on /sysroot/sys.\n"
       "Directory: /root\n"
       "Thu Jun  5 13:20:51 UTC 2014\n"
-      "(none):~ #"
+      "(none):~ #\n"
+      "   "
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:229
+#: vt_guestfs.xml:250
 #, no-c-format
 msgid "You are now running the &vmguest; in rescue mode:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:232
+#: vt_guestfs.xml:253
 #, no-c-format
-msgid ""
-      "(none):~ # cat /etc/fstab\n"
+msgid "(none):~ # cat /etc/fstab\n"
       "devpts  /dev/pts          devpts  mode=0620,gid=5 0 0\n"
       "proc    /proc             proc    defaults        0 0\n"
       "sysfs   /sys              sysfs   noauto          0 0\n"
@@ -283,69 +282,67 @@ msgid ""
       "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00001-part1 / ext3 defaults 1 1"
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:236
+#. Tag: title
+#: vt_guestfs.xml:264
 #, no-c-format
-msgid "virt-resize"
+msgid "<command>virt-resize</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:237
+#: vt_guestfs.xml:265
 #, no-c-format
 msgid "<command>virt-resize</command> is used to resize a virtual machine disk, making it larger or smaller overall, and resizing or deleting any partitions contained within."
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:243
+#: vt_guestfs.xml:271
 #, no-c-format
 msgid "Expanding a Disk"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:244
+#: vt_guestfs.xml:272
 #, no-c-format
 msgid "Full step-by-step example: How to expand a virtual machine disk"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:248
+#: vt_guestfs.xml:276
 #, no-c-format
 msgid "First, with virtual machine powered off, determine the size of the partitions available on this virtual machine:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:252
+#: vt_guestfs.xml:280
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-filesystems --long --parts --blkdevs -h -a sles.qcow2\n"
+msgid "&prompt.user;virt-filesystems --long --parts --blkdevs -h -a sles.qcow2\n"
       "Name       Type       MBR  Size  Parent\n"
       "/dev/sda1  partition  83   16G   /dev/sda\n"
       "/dev/sda   device     -    16G   -"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:255
+#: vt_guestfs.xml:286
 #, no-c-format
 msgid "<command>virt-resize</command> cannot do in-place disk modifications&mdash;there must be sufficient space to store the resized output disk. Use the <command>truncate</command> command to create a file of suitable size:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:261
+#: vt_guestfs.xml:292
 #, no-c-format
 msgid "&prompt.user;truncate -s 32G outdisk.img"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:264
+#: vt_guestfs.xml:295
 #, no-c-format
 msgid "Use <command>virt-resize</command> to resize the disk image. <command>virt-resize</command> requires two mandatory parameters for the input and output images:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:269
+#: vt_guestfs.xml:300
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-resize --expand /dev/sda1 sles.qcow2 outdisk.img\n"
+msgid "&prompt.user;virt-resize --expand /dev/sda1 sles.qcow2 outdisk.img\n"
       "Examining sles.qcow2 ...\n"
       "**********\n"
       "Summary of changes:\n"
@@ -366,77 +363,74 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:272
+#: vt_guestfs.xml:320
 #, no-c-format
 msgid "Confirm the image was resized properly:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:275
+#: vt_guestfs.xml:323
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-filesystems --long --parts --blkdevs -h -a outdisk.img\n"
+msgid "&prompt.user;virt-filesystems --long --parts --blkdevs -h -a outdisk.img\n"
       "Name       Type       MBR  Size  Parent\n"
       "/dev/sda1  partition  83   32G   /dev/sda\n"
       "/dev/sda   device     -    32G   -"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:278
+#: vt_guestfs.xml:329
 #, no-c-format
 msgid "Bring up the &vmguest; using the new disk image and confirm correct operation before deleting the old image."
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:287
+#: vt_guestfs.xml:338
 #, no-c-format
 msgid "Other virt-* Tools"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:288
+#: vt_guestfs.xml:339
 #, no-c-format
 msgid "There are guestfs tools to simplify administrative tasks&mdash;such as viewing and editing files, or obtaining information on the virtual machine."
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:294
+#. Tag: title
+#: vt_guestfs.xml:345
 #, no-c-format
-msgid "virt-filesystems"
+msgid "<command>virt-filesystems</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:295
+#: vt_guestfs.xml:346
 #, no-c-format
 msgid "This tool is used to report information regarding file systems, partitions, and logical volumes in a disk image or virtual machine."
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:299
+#: vt_guestfs.xml:350
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-filesystems -l -a sles.qcow2\n"
+msgid "&prompt.user;virt-filesystems -l -a sles.qcow2\n"
       "Name       Type        VFS   Label  Size         Parent\n"
       "/dev/sda1  filesystem  ext3  -      17178820608  -"
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:302
+#. Tag: title
+#: vt_guestfs.xml:355
 #, no-c-format
-msgid "virt-ls"
+msgid "<command>virt-ls</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:303
+#: vt_guestfs.xml:356
 #, no-c-format
 msgid "<command>virt-ls</command> lists file names, file sizes, checksums, extended attributes and more from a virtual machine or disk image. Multiple directory names can be given, in which case the output from each is concatenated. To list directories from a libvirt guest, use the <option>-d</option> option to specify the name of the guest. For a disk image, use the <option>-a</option> option."
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:311
+#: vt_guestfs.xml:364
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-ls -h -lR -a sles.qcow2 /var/log/\n"
+msgid "&prompt.user;virt-ls -h -lR -a sles.qcow2 /var/log/\n"
       "d 0755        776 /var/log\n"
       "- 0640          0 /var/log/NetworkManager\n"
       "- 0644        23K /var/log/Xorg.0.log\n"
@@ -451,118 +445,114 @@ msgid ""
       "[...]"
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:314
+#. Tag: title
+#: vt_guestfs.xml:379
 #, no-c-format
-msgid "virt-cat"
+msgid "<command>virt-cat</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:315
+#: vt_guestfs.xml:380
 #, no-c-format
 msgid "<command>virt-cat</command> is a command line tool to display the contents of a file that exists in the named virtual machine (or disk image). Multiple file names can be given, in which case they are concatenated together. Each file name must be a full path, starting at the root directory (starting with '/')."
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:322
+#: vt_guestfs.xml:387
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-cat -a sles.qcow2 /etc/fstab\n"
+msgid "&prompt.user;virt-cat -a sles.qcow2 /etc/fstab\n"
       "devpts /dev/pts devpts mode=0620,gid=5 0 0\n"
       "proc   /proc    proc   defaults        0 0"
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:325
+#. Tag: title
+#: vt_guestfs.xml:392
 #, no-c-format
-msgid "virt-df"
+msgid "<command>virt-df</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:326
+#: vt_guestfs.xml:393
 #, no-c-format
 msgid "<command>virt-df</command> is a command line tool to display free space on virtual machine file systems. Unlike other tools, it does not only display the size of disk allocated to a virtual machine, but can look inside disk images to show how much space is actually being used."
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:332
+#: vt_guestfs.xml:399
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-df -a sles.qcow2\n"
+msgid "&prompt.user;virt-df -a sles.qcow2\n"
       "Filesystem                           1K-blocks       Used  Available  Use%\n"
       "sles.qcow2:/dev/sda1                  16381864     520564   15022492  4%"
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:335
+#. Tag: title
+#: vt_guestfs.xml:404
 #, no-c-format
-msgid "virt-edit"
+msgid "<command>virt-edit</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:336
+#: vt_guestfs.xml:405
 #, no-c-format
 msgid "<command>virt-edit</command> is a command line tool capable of editing files that reside in the named virtual machine (or disk image)."
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:342
+#. Tag: title
+#: vt_guestfs.xml:411
 #, no-c-format
-msgid "virt-tar-in/out"
+msgid "<command>virt-tar-in/out</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:343
+#: vt_guestfs.xml:412
 #, no-c-format
 msgid "<command>virt-tar-in</command> unpacks an uncompressed TAR archive into a virtual machine disk image or named libvirt domain. <command>virt-tar-out</command> packs a virtual machine disk image directory into a TAR archive."
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:349
+#: vt_guestfs.xml:418
 #, no-c-format
 msgid "&prompt.user;virt-tar-out -a sles.qcow2 /home homes.tar"
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:352
+#. Tag: title
+#: vt_guestfs.xml:421
 #, no-c-format
-msgid "virt-copy-in/out"
+msgid "<command>virt-copy-in/out</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:353
+#: vt_guestfs.xml:422
 #, no-c-format
 msgid "<command>virt-copy-in</command> copies files and directories from the local disk into a virtual machine disk image or named libvirt domain. <command>virt-copy-out</command> copies files and directories out of a virtual machine disk image or named libvirt domain."
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:359
+#: vt_guestfs.xml:428
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-copy-in -a sles.qcow2 data.tar /tmp/\n"
+msgid "&prompt.user;virt-copy-in -a sles.qcow2 data.tar /tmp/\n"
       "virt-ls -a sles.qcow2 /tmp/\n"
       ".ICE-unix\n"
       ".X11-unix\n"
       "data.tar"
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:362
+#. Tag: title
+#: vt_guestfs.xml:435
 #, no-c-format
-msgid "virt-log"
+msgid "<command>virt-log</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:363
+#: vt_guestfs.xml:436
 #, no-c-format
 msgid "<command>virt-log</command> shows the log files of the named libvirt domain, virtual machine or disk image. If the package <package>guestfs-winsupport</package> is installed it can also show the event log of a Windows virtual machine disk image."
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:369
+#: vt_guestfs.xml:442
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-log -a windows8.qcow2\n"
+msgid "&prompt.user;virt-log -a windows8.qcow2\n"
       "<![CDATA[<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>\n"
       "<Events>\n"
       "<Event xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\"><System><Provider Name=\"EventLog\"></Provider>\n"
@@ -583,42 +573,41 @@ msgid ""
       "</EventData>\n"
       "</Event>]]>\n"
       "\n"
-      "..."
+      "...\n"
+      ""
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:374
+#. Tag: title
+#: vt_guestfs.xml:469
 #, no-c-format
-msgid "guestfish"
+msgid "<command>guestfish</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:375
+#: vt_guestfs.xml:470
 #, no-c-format
 msgid "<command>guestfish</command> is a shell and command line tool for examining and modifying virtual machine file systems. It uses libguestfs and exposes all of the functionality of the guestfs API."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:380
+#: vt_guestfs.xml:475
 #, no-c-format
 msgid "Examples of usage:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:383
+#: vt_guestfs.xml:478
 #, no-c-format
-msgid ""
-      "&prompt.user;guestfish -a disk.img &lt;&lt;EOF\n"
+msgid "&prompt.user;guestfish -a disk.img &lt;&lt;EOF\n"
       "run\n"
       "list-filesystems\n"
       "EOF"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:384
+#: vt_guestfs.xml:482
 #, no-c-format
-msgid ""
-      "guestfish\n"
+msgid "guestfish\n"
       "\n"
       "Welcome to guestfish, the guest filesystem shell for\n"
       "editing virtual machine filesystems and disk images.\n"
@@ -643,189 +632,219 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:388
+#: vt_guestfs.xml:507
 #, no-c-format
 msgid "Converting a Physical Machine into a &kvm; Guest"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:390
+#: vt_guestfs.xml:509
 #, no-c-format
 msgid "Libguestfs provides tools to help converting &xen; virtual machines or physical machines into &kvm; guests. <phrase os=\"sles\">The &xen; to &kvm; conversion scenario is covered by the <xref linkend=\"art.sles.xen2kvmquick\"/>.</phrase> The following section will cover a special use case: converting a bare metal machine into a &kvm; one."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:398
+#: vt_guestfs.xml:517
 #, no-c-format
 msgid "Converting a physical machine into a &kvm; one is not yet supported in &productname;. This feature is released as a technology preview only."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:404
+#: vt_guestfs.xml:523
 #, no-c-format
 msgid "Converting a physical machine requires collecting information about it and transmitting this to a conversion server. This is achieved by running a live system prepared with <command>virt-p2v</command> and <command>kiwi</command> tools on the machine."
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:412
+#: vt_guestfs.xml:531
 #, no-c-format
 msgid "Using virt-p2v"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:414
+#: vt_guestfs.xml:533
 #, no-c-format
 msgid "Install the needed packages with the command:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:417
+#: vt_guestfs.xml:536
 #, no-c-format
 msgid "&prompt.sudo;zypper in virt-p2v kiwi-desc-isoboot"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:420
+#: vt_guestfs.xml:539
 #, no-c-format
-msgid "These steps will document how to create an ISO image to create a bootable DVD. Alternatively, you can create a PXE boot image instead; for more information about building PXE images with &kiwi;, see <command>man virt-p2v-make-kiwi</command>."
+msgid "These steps will document how to create an ISO image to create a bootable DVD. Alternatively, you can create a PXE boot image instead; for more information about building PXE images with &kiwi;, see <command>man virt-p2v-make-kiwi</command> ."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:430
+#: vt_guestfs.xml:549
 #, no-c-format
 msgid "Create a &kiwi; configuration:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:434
+#: vt_guestfs.xml:553
 #, no-c-format
 msgid "&prompt.user;virt-p2v-make-kiwi -o <replaceable>/tmp/p2v.kiwi</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:436
+#: vt_guestfs.xml:555
 #, no-c-format
 msgid "The <option>-o</option> defines where to create the &kiwi; configuration."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:442
+#: vt_guestfs.xml:561
 #, no-c-format
 msgid "Edit the <filename>config.xml</filename> file in the generated configuration if needed. For example, in <filename>config.xml</filename> adjust the keyboard layout of the live system."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:451
+#: vt_guestfs.xml:570
 #, no-c-format
-msgid "Build the ISO image with <command>kiwi</command>:"
+msgid "Build the ISO image with <command>kiwi</command> :"
 msgstr ""
 
-#. Tag: screen
-#: vt_guestfs.xml:455
+#. Tag: #text
+#: vt_guestfs.xml:574
 #, no-c-format
-msgid ""
-      "&prompt.user;kiwi --build <replaceable>/tmp/p2v.kiwi</replaceable><co xml:id='p2v.config'/> \\\n"
-      "     -d <replaceable>/tmp/build</replaceable><co xml:id='p2v.target'/> \\\n"
-      "     --ignore-repos \\\n"
-      "     --add-repo <replaceable>http://URL/TO/SLE/REPOSITORIES</replaceable><co xml:id='p2v.repo'/> \\\n"
-      "     --type iso"
+msgid "&prompt.user;kiwi --build"
+msgstr ""
+
+#. Tag: replaceable
+#: vt_guestfs.xml:574
+#, no-c-format
+msgid "/tmp/p2v.kiwi"
+msgstr ""
+
+#. Tag: replaceable
+#: vt_guestfs.xml:575
+#, no-c-format
+msgid "/tmp/build"
+msgstr ""
+
+#. Tag: #text
+#: vt_guestfs.xml:575
+#, no-c-format
+msgid "\\ -d"
+msgstr ""
+
+#. Tag: #text
+#: vt_guestfs.xml:577
+#, no-c-format
+msgid "\\ --ignore-repos \\ --add-repo"
+msgstr ""
+
+#. Tag: replaceable
+#: vt_guestfs.xml:577
+#, no-c-format
+msgid "http://URL/TO/SLE/REPOSITORIES"
+msgstr ""
+
+#. Tag: #text
+#: vt_guestfs.xml:578
+#, no-c-format
+msgid "\\ --type iso"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:458
+#: vt_guestfs.xml:581
 #, no-c-format
 msgid "The directory where the &kiwi; configuration was generated in the previous step."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:464
+#: vt_guestfs.xml:587
 #, no-c-format
 msgid "The directory where &kiwi; will place the generated ISO image and other intermediary build results."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:470
+#: vt_guestfs.xml:593
 #, no-c-format
-msgid "The URLs to the package repositories as found with <command>zypper lr -d</command>."
+msgid "The URLs to the package repositories as found with <command>zypper lr -d</command> ."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:475
+#: vt_guestfs.xml:598
 #, no-c-format
 msgid "Use one <option>--add-repo</option> parameter per repository."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:483
+#: vt_guestfs.xml:606
 #, no-c-format
 msgid "Burn the ISO on a DVD or a USB stick. With such a medium, boot the machine to be converted."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:490
+#: vt_guestfs.xml:613
 #, no-c-format
-msgid "After the system is started, you will be asked for the connection details of the <emphasis>conversion server</emphasis>. This server is a machine with the <systemitem class=\"resource\">virt-v2v</systemitem> package installed."
+msgid "After the system is started, you will be asked for the connection details of the <emphasis>conversion server</emphasis> . This server is a machine with the <systemitem class=\"resource\">virt-v2v</systemitem> package installed."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:497
+#: vt_guestfs.xml:620
 #, no-c-format
 msgid "If the network setup is more complex than a DHCP client, click the <guimenu>Configure network</guimenu> button to open the &yast; network configuration dialog."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:503
+#: vt_guestfs.xml:626
 #, no-c-format
 msgid "Click the <guimenu>Test connection</guimenu> button to allow moving to the next page of the wizard."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:510
+#: vt_guestfs.xml:633
 #, no-c-format
 msgid "Select the disks and network interfaces to be converted and define the VM data like the amount of allocated CPUs, memory and the Virtual Machine name."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:517
+#: vt_guestfs.xml:640
 #, no-c-format
 msgid "If not defined, the created disk image format will be <emphasis>raw</emphasis> by default. This can be changed by entering the desired format in the <guimenu>Output format</guimenu> field."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:524
+#: vt_guestfs.xml:647
 #, no-c-format
-msgid "There are two possibilities to generate the virtual machine: either using the <emphasis>local</emphasis> or the <emphasis>libvirt</emphasis> output. The first one will place the Virtual Machine disk image and configuration in the path defined in the <guimenu>Output storage</guimenu> field. These can then be used to define a new libvirt-handled guest using <command>virsh</command>. The second method will create a new libvirt-handled guest with the disk image placed in the pool defined in the <guimenu>Output storage</guimenu> field."
+msgid "There are two possibilities to generate the virtual machine: either using the <emphasis>local</emphasis> or the <emphasis>libvirt</emphasis> output. The first one will place the Virtual Machine disk image and configuration in the path defined in the <guimenu>Output storage</guimenu> field. These can then be used to define a new libvirt-handled guest using <command>virsh</command> . The second method will create a new libvirt-handled guest with the disk image placed in the pool defined in the <guimenu>Output storage</guimenu> field."
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:536
+#: vt_guestfs.xml:659
 #, no-c-format
 msgid "Click <guimenu>Start conversion</guimenu> to start it."
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:545
+#: vt_guestfs.xml:668
 #, no-c-format
 msgid "Troubleshooting"
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:550
+#: vt_guestfs.xml:673
 #, no-c-format
 msgid "Btrfs-related Problems"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:551
+#: vt_guestfs.xml:674
 #, no-c-format
 msgid "When using the guestfs tools on an image with Btrfs root partition (the default with &productname;) the following error message may be displayed:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:555
+#: vt_guestfs.xml:678
 #, no-c-format
-msgid ""
-      "&prompt.user;virt-ls -a /path/to/sles12sp2.qcow2 /\n"
+msgid "&prompt.user;virt-ls -a /path/to/sles12sp2.qcow2 /\n"
       "virt-ls: multi-boot operating systems are not supported\n"
       "\n"
       "If using guestfish '-i' option, remove this option and instead\n"
@@ -839,66 +858,67 @@ msgid ""
       "\n"
       "If using other virt tools, multi-boot operating systems won't work\n"
       "with these tools.  Use the guestfish equivalent commands\n"
-      "(see the virt tool manual page)."
+      "(see the virt tool manual page).\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:556
+#: vt_guestfs.xml:694
 #, no-c-format
 msgid "This is usually caused by the presence of snapshots in the guests. In this case guestfs does not know which snapshot to bootstrap. To force the use of a snapshot, use the <option>-m</option> parameter as follows:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:561
+#: vt_guestfs.xml:699
 #, no-c-format
 msgid "&prompt.user;virt-ls -m /dev/sda2:/:subvol=@/.snapshots/2/snapshot -a /path/to/sles12sp2.qcow2 /"
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:565
+#: vt_guestfs.xml:703
 #, no-c-format
 msgid "Environment"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:566
+#: vt_guestfs.xml:704
 #, no-c-format
-msgid "When troubleshooting problems within a libguestfs appliance, the environment variable <emphasis>LIBGUESTFS_DEBUG=1</emphasis> can be used to enable debug messages. To output each command/API call in a format that is similar to guestfish commands, use the environment variable <emphasis>LIBGUESTFS_TRACE=1</emphasis>."
+msgid "When troubleshooting problems within a libguestfs appliance, the environment variable <emphasis>LIBGUESTFS_DEBUG=1</emphasis> can be used to enable debug messages. To output each command/API call in a format that is similar to guestfish commands, use the environment variable <emphasis>LIBGUESTFS_TRACE=1</emphasis> ."
 msgstr ""
 
-#. Tag: command
-#: vt_guestfs.xml:576
+#. Tag: title
+#: vt_guestfs.xml:714
 #, no-c-format
-msgid "libguestfs-test-tool"
+msgid "<command>libguestfs-test-tool</command>"
 msgstr ""
 
 #. Tag: para
-#: vt_guestfs.xml:577
+#: vt_guestfs.xml:715
 #, no-c-format
 msgid "<command>libguestfs-test-tool</command> is a test program that checks if basic libguestfs functionality is working. It will print a large amount of diagnostic messages and details of the guestfs environment, then create a test image and try to start it. If it runs to completion successfully, the following message should be seen near the end:"
 msgstr ""
 
 #. Tag: screen
-#: vt_guestfs.xml:584
+#: vt_guestfs.xml:722
 #, no-c-format
 msgid "===== TEST FINISHED OK ====="
 msgstr ""
 
 #. Tag: title
-#: vt_guestfs.xml:588
+#: vt_guestfs.xml:726
 #, no-c-format
 msgid "External References"
 msgstr ""
 
-#. Tag: link
-#: vt_guestfs.xml:595
+#. Tag: para
+#: vt_guestfs.xml:732
 #, no-c-format
-msgid "libguestfs.org"
+msgid "<link xlink:href=\"http://libguestfs.org\">libguestfs.org</link>"
 msgstr ""
 
-#. Tag: link
-#: vt_guestfs.xml:600
+#. Tag: para
+#: vt_guestfs.xml:737
 #, no-c-format
-msgid "libguestfs FAQ"
+msgid "<link xlink:href=\"http://libguestfs.org/guestfs-faq.1.html\">libguestfs FAQ</link>"
 msgstr ""
 

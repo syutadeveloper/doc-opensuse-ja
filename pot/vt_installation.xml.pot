@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -39,21 +39,9 @@ msgid "To install &kvm; and KVM tools, proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: vt_installation.xml:28 vt_installation.xml:67 vt_installation.xml:113
-#, no-c-format
-msgid "Start &yast; and choose <menuchoice> <guimenu>Virtualization</guimenu> <guimenu>Install Hypervisor and Tools</guimenu></menuchoice>."
-msgstr ""
-
-#. Tag: para
 #: vt_installation.xml:35
 #, no-c-format
-msgid "Select <guimenu>&kvm; server</guimenu> for a minimal installation of &qemu; tools. Select <guimenu>&kvm; tools</guimenu> if a &libvirt;-based management stack is also desired. Confirm with <guimenu>Accept</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: vt_installation.xml:43 vt_installation.xml:82
-#, no-c-format
-msgid "To enable normal networking for the &vmguest;, using a network bridge is recommended. &yast; offers to automatically configure a bridge on the &vmhost;. Agree to do so by choosing <guimenu>Yes</guimenu>, otherwise choose <guimenu>No</guimenu>."
+msgid "Select <guimenu>&kvm; server</guimenu> for a minimal installation of &qemu; tools. Select <guimenu>&kvm; tools</guimenu> if a &libvirt;-based management stack is also desired. Confirm with <guimenu>Accept</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -77,13 +65,19 @@ msgstr ""
 #. Tag: para
 #: vt_installation.xml:74
 #, no-c-format
-msgid "Select <guimenu>&xen; server</guimenu> for a minimal installation of &xen; tools. Select <guimenu>&xen; tools</guimenu> if a &libvirt;-based management stack is also desired. Confirm with <guimenu>Accept</guimenu>."
+msgid "Select <guimenu>&xen; server</guimenu> for a minimal installation of &xen; tools. Select <guimenu>&xen; tools</guimenu> if a &libvirt;-based management stack is also desired. Confirm with <guimenu>Accept</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: vt_installation.xml:82
+#, no-c-format
+msgid "To enable normal networking for the &vmguest;, using a network bridge is recommended. &yast; offers to automatically configure a bridge on the &vmhost;. Agree to do so by choosing <guimenu>Yes</guimenu> , otherwise choose <guimenu>No</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: vt_installation.xml:90
 #, no-c-format
-msgid "After the setup has been finished, you need to reboot the machine with the <emphasis>&xen; kernel</emphasis>."
+msgid "After the setup has been finished, you need to reboot the machine with the <emphasis>&xen; kernel</emphasis> ."
 msgstr ""
 
 #. Tag: title
@@ -95,7 +89,7 @@ msgstr ""
 #. Tag: para
 #: vt_installation.xml:96
 #, no-c-format
-msgid "If everything works as expected, change the default boot kernel with &yast; and make the &xen;-enabled kernel the default. For more information about changing the default kernel, see <xref linkend=\"sec.grub2.yast2.config\"/>."
+msgid "If everything works as expected, change the default boot kernel with &yast; and make the &xen;-enabled kernel the default. For more information about changing the default kernel, see <xref linkend=\"sec.grub2.yast2.config\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -111,9 +105,15 @@ msgid "To install containers, proceed as follows:"
 msgstr ""
 
 #. Tag: para
+#: vt_installation.xml:113
+#, no-c-format
+msgid "Start &yast; and choose <menuchoice> <guimenu>Virtualization</guimenu> <guimenu>Install Hypervisor and Tools</guimenu></menuchoice> ."
+msgstr ""
+
+#. Tag: para
 #: vt_installation.xml:120
 #, no-c-format
-msgid "Select <guimenu>libvirt lxc daemon</guimenu> and confirm with <guimenu>Accept</guimenu>."
+msgid "Select <guimenu>libvirt lxc daemon</guimenu> and confirm with <guimenu>Accept</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -125,43 +125,43 @@ msgstr ""
 #. Tag: para
 #: vt_installation.xml:133
 #, no-c-format
-msgid "It is possible using Zypper and patterns to install virtualization packages. Run the command <command>zypper in -t pattern</command> <replaceable>PATTERN</replaceable>. Available patterns are:"
+msgid "It is possible using Zypper and patterns to install virtualization packages. Run the command <command>zypper in -t pattern</command> <replaceable>PATTERN</replaceable> . Available patterns are:"
 msgstr ""
 
 #. Tag: term
 #: vt_installation.xml:141
 #, no-c-format
-msgid "<term>KVM</term>"
+msgid "KVM"
 msgstr ""
 
 #. Tag: para
 #: vt_installation.xml:145
 #, no-c-format
-msgid "<systemitem class=\"resource\">kvm_server</systemitem>: sets up the &kvm; &vmhost; with &qemu; tools for management"
+msgid "<systemitem class=\"resource\">kvm_server</systemitem> : sets up the &kvm; &vmhost; with &qemu; tools for management"
 msgstr ""
 
 #. Tag: para
 #: vt_installation.xml:151
 #, no-c-format
-msgid "<systemitem class=\"resource\">kvm_tools</systemitem>: installs the &libvirt; tools for managing and monitoring &vmguest;s"
+msgid "<systemitem class=\"resource\">kvm_tools</systemitem> : installs the &libvirt; tools for managing and monitoring &vmguest;s"
 msgstr ""
 
 #. Tag: term
 #: vt_installation.xml:160
 #, no-c-format
-msgid "<term>Xen</term>"
+msgid "Xen"
 msgstr ""
 
 #. Tag: para
 #: vt_installation.xml:164
 #, no-c-format
-msgid "<systemitem class=\"resource\">xen_server</systemitem>: sets up the &xen; &vmhost; with &xen; tools for management"
+msgid "<systemitem class=\"resource\">xen_server</systemitem> : sets up the &xen; &vmhost; with &xen; tools for management"
 msgstr ""
 
 #. Tag: para
 #: vt_installation.xml:170
 #, no-c-format
-msgid "<systemitem class=\"resource\">xen_tools</systemitem>: installs the &libvirt; tools for managing and monitoring &vmguest;s"
+msgid "<systemitem class=\"resource\">xen_tools</systemitem> : installs the &libvirt; tools for managing and monitoring &vmguest;s"
 msgstr ""
 
 #. Tag: term
@@ -185,13 +185,13 @@ msgstr ""
 #. Tag: para
 #: vt_installation.xml:192
 #, no-c-format
-msgid "UEFI support is provided by <emphasis>OVMF</emphasis> (<emphasis>Open Virtual Machine Firmware</emphasis>). To enable UEFI boot, first install the <package>qemu-ovmf-x86_64</package> or <package>qemu-uefi-aarch64</package> package."
+msgid "UEFI support is provided by <emphasis>OVMF</emphasis> ( <emphasis>Open Virtual Machine Firmware</emphasis> ). To enable UEFI boot, first install the <package>qemu-ovmf-x86_64</package> or <package>qemu-uefi-aarch64</package> package."
 msgstr ""
 
 #. Tag: para
 #: vt_installation.xml:198
 #, no-c-format
-msgid "&libvirt; is configured use <filename>/usr/share/qemu/ovmf-x86_64-ms-4m-code.bin</filename> and <filename>/usr/share/qemu/ovmf-x86_64-ms-4m-vars.bin</filename> as default UEFI firmware and VARS images. For ARM the defaults are <filename>/usr/share/qemu/aavmf-aarch64-code.bin</filename> and <filename>/usr/share/qemu/aavmf-aarch64-vars.bin</filename>."
+msgid "&libvirt; is configured use <filename>/usr/share/qemu/ovmf-x86_64-ms-4m-code.bin</filename> and <filename>/usr/share/qemu/ovmf-x86_64-ms-4m-vars.bin</filename> as default UEFI firmware and VARS images. For ARM the defaults are <filename>/usr/share/qemu/aavmf-aarch64-code.bin</filename> and <filename>/usr/share/qemu/aavmf-aarch64-vars.bin</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -203,8 +203,7 @@ msgstr ""
 #. Tag: screen
 #: vt_installation.xml:209
 #, no-c-format
-msgid ""
-      "&prompt.root;<command>rpm -ql qemu-ovmf-x86_64</command>\n"
+msgid "&prompt.root;<command>rpm -ql qemu-ovmf-x86_64</command>\n"
       "/usr/share/qemu/ovmf-x86_64-ms-code.bin\n"
       "/usr/share/qemu/ovmf-x86_64-ms-vars.bin\n"
       "/usr/share/qemu/ovmf-x86_64-ms.bin\n"
@@ -220,20 +219,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: vt_installation.xml:210
+#: vt_installation.xml:222
 #, no-c-format
 msgid "The <filename>*-code.bin</filename> files are the UEFI firmwares. The <filename>*-vars.bin</filename> files are corresponding variable store images that can be used as a template for per-VM non-volatile store. &libvirt; copies the specified <literal>vars</literal> template to a per-VM path under <filename>/var/lib/libvirt/qemu/nvram/</filename> when first creating the VM. Files without <literal>code</literal> or <literal>vars</literal> in the name can be used as a single UEFI image. They are not as useful since no UEFI variables persist across power cycles of the VM."
 msgstr ""
 
 #. Tag: para
-#: vt_installation.xml:222
+#: vt_installation.xml:234
 #, no-c-format
 msgid "The <filename>*-ms*.bin</filename> files contain Microsoft keys as found on real hardware. Therefore, they are configured as default in &libvirt;. Likewise, the <filename>*-suse*.bin</filename> files contain preinstalled &suse; and &opensuse; keys. There is also a set of files with no preinstalled keys."
 msgstr ""
 
 #. Tag: para
-#: vt_installation.xml:229
+#: vt_installation.xml:241
 #, no-c-format
-msgid "For details, see <xref linkend=\"vle.libvirt.inst.virt-install.ovmf\"/> and <link xlink:href=\"http://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt\"></link>."
+msgid "For details, see <xref linkend=\"vle.libvirt.inst.virt-install.ovmf\"/> and <link xlink:href=\"http://www.linux-kvm.org/downloads/lersek/ovmf-whitepaper-c770f8c.txt\"/> ."
 msgstr ""
 

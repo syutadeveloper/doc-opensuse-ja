@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,17 +22,17 @@ msgstr ""
 msgid "Graphical User Interface"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: x11.xml:11
+#. Tag: dm:translation
+#: x11.xml:13
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
 #: x11.xml:16
 #, no-c-format
 msgid ""
-"&productname; includes the X.org server<phrase os=\"sled;osuse\">, Wayland</"
+"&productname; includes the X.org server <phrase os=\"sled;osuse\">, Wayland</"
 "phrase> and the &gnome; desktop. This chapter describes the configuration of "
 "the graphical user interface for all users."
 msgstr ""
@@ -61,7 +61,7 @@ msgid ""
 "dynamically detected during X start-up. The use of <filename>xorg.conf</"
 "filename> is therefore deprecated. If you still need to specify custom "
 "options to change the way X behaves, you can still do so by modifying "
-"configuration files under <filename>/etc/X11/xorg.conf.d/</filename>."
+"configuration files under <filename>/etc/X11/xorg.conf.d/</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -85,7 +85,7 @@ msgid ""
 "&zseries; does not have any input or output devices supported by &xvendor;. "
 "Therefore, none of the configuration procedures described in this section "
 "apply. More relevant information for &zseries; can be found in <xref linkend="
-"\"cha.zseries\"/>."
+"\"cha.zseries\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -96,7 +96,7 @@ msgid ""
 "get more in-depth information about X11. <command>man 5 xorg.conf</command> "
 "tells you more about the format of the manual configuration (if needed). "
 "More information on the X11 development can be found on the project's home "
-"page at <link xlink:href=\"http://www.x.org\"></link>."
+"page at <link xlink:href=\"http://www.x.org\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -104,10 +104,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Drivers are found in <systemitem>xf86-video-*</systemitem> packages, for "
-"example <systemitem>xf86-video-ati</systemitem>. Many of the drivers "
+"example <systemitem>xf86-video-ati</systemitem> . Many of the drivers "
 "delivered with these packages are described in detail in the related manual "
 "page. For example, if you use the <literal>ati</literal> driver, find more "
-"information about this driver in <command>man 4 ati</command>."
+"information about this driver in <command>man 4 ati</command> ."
 msgstr ""
 
 #. Tag: para
@@ -115,10 +115,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Information about third-party drivers is available in <filename>/usr/share/"
-"doc/packages/&lt;package_name&gt;</filename>. For example, the documentation "
-"of <systemitem class=\"resource\">x11-video-nvidiaG03</systemitem> is "
-"available in <filename>/usr/share/doc/packages/x11-video-nvidiaG04</"
-"filename> after the package was installed."
+"doc/packages/&lt;package_name&gt;</filename> . For example, the "
+"documentation of <systemitem class=\"resource\">x11-video-nvidiaG03</"
+"systemitem> is available in <filename>/usr/share/doc/packages/x11-video-"
+"nvidiaG04</filename> after the package was installed."
 msgstr ""
 
 #. Tag: title
@@ -137,11 +137,11 @@ msgstr ""
 #: x11.xml:84
 #, no-c-format
 msgid ""
-"The &gnome; desktop manages its configuration with <literal>dconf</literal>. "
-"It is a hierarchically structured database or registry where the user can "
-"change their own settings, and the system administrator can set default or "
-"mandatory values for all users. <literal>dconf</literal> replaces the "
-"<literal>gconf</literal> of &gnome; 2."
+"The &gnome; desktop manages its configuration with <literal>dconf</"
+"literal> . It is a hierarchically structured database or registry where the "
+"user can change their own settings, and the system administrator can set "
+"default or mandatory values for all users. <literal>dconf</literal> replaces "
+"the <literal>gconf</literal> of &gnome; 2."
 msgstr ""
 
 #. Tag: para
@@ -160,7 +160,7 @@ msgid ""
 "The &gnome; <literal>Tweaks</literal> tool provides an easy-to-use user "
 "interface for additional configuration options beyond the normal &gnome; "
 "configuration. The tool can be started from the &gnome; application menu or "
-"from the command line with <command>gnome-tweak-tool</command>."
+"from the command line with <command>gnome-tweak-tool</command> ."
 msgstr ""
 
 #. Tag: title
@@ -191,7 +191,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Create a new directory that ends with a <literal>.d</literal> in <filename>/"
-"etc/dconf/db/</filename>. This directory can contain an arbitrary amount of "
+"etc/dconf/db/</filename> . This directory can contain an arbitrary amount of "
 "text files with configuration options. For this example, create the file "
 "<filename>/etc/dconf/db/network/00-proxy</filename> with the following "
 "content:"
@@ -208,52 +208,52 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: x11.xml:133
+#: x11.xml:136
 #, no-c-format
 msgid "Parse the new configuration directives into the dconf database format:"
 msgstr ""
 
 #. Tag: screen
-#: x11.xml:136
+#: x11.xml:139
 #, no-c-format
 msgid "&prompt.sudo;<command>dconf update</command>"
 msgstr ""
 
 #. Tag: para
-#: x11.xml:139
+#: x11.xml:142
 #, no-c-format
 msgid ""
 "Add the new <literal>network</literal> configuration database to the default "
 "user profile, by creating the file <filename>/etc/dconf/profiles/user</"
-"filename>. Then add the following content:"
+"filename> . Then add the following content:"
 msgstr ""
 
 #. Tag: screen
-#: x11.xml:144
+#: x11.xml:147
 #, no-c-format
 msgid "system-db:network"
 msgstr ""
 
 #. Tag: para
-#: x11.xml:145
+#: x11.xml:148
 #, no-c-format
 msgid ""
 "The file <filename>/etc/dconf/profiles/user</filename> is a &gnome; default "
 "that will be used. Other profiles can be defined in the environment variable "
-"<literal>DCONF_PROFILE</literal>."
+"<literal>DCONF_PROFILE</literal> ."
 msgstr ""
 
 #. Tag: para
-#: x11.xml:152
+#: x11.xml:155
 #, no-c-format
 msgid ""
 "Optional: To lock the proxy configuration for users, create the file "
-"<filename>/etc/dconf/db/network/locks/proxy</filename>. Then add a line to "
+"<filename>/etc/dconf/db/network/locks/proxy</filename> . Then add a line to "
 "this file with the keys that may not be changed:"
 msgstr ""
 
 #. Tag: screen
-#: x11.xml:157
+#: x11.xml:160
 #, no-c-format
 msgid ""
 "/system/proxy/http/host\n"
@@ -261,7 +261,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: x11.xml:160
+#: x11.xml:164
 #, no-c-format
 msgid ""
 "You can use the graphical <command>dconf-editor</command> to create a "
@@ -271,24 +271,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: x11.xml:166
+#: x11.xml:170
 #, no-c-format
 msgid ""
 "A detailed description of the global configuration is available at <link "
-"xlink:href=\"https://wiki.gnome.org/Projects/dconf/SystemAdministrators\"></"
-"link>."
+"xlink:href=\"https://wiki.gnome.org/Projects/dconf/SystemAdministrators\"/> ."
 msgstr ""
 
 #. Tag: title
-#: x11.xml:173
+#: x11.xml:177
 #, no-c-format
 msgid "More Information"
 msgstr ""
 
 #. Tag: para
-#: x11.xml:174
+#: x11.xml:178
 #, no-c-format
 msgid ""
-"For more information, see <link xlink:href=\"http://help.gnome.org/admin/"
-"\"></link>."
+"For more information, see <link xlink:href=\"http://help.gnome.org/admin/\"/"
+"> ."
 msgstr ""

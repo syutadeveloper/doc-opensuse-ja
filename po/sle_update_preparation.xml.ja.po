@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -34,7 +34,7 @@ msgstr ""
 #. Tag: dm:translation
 #: sle_update_preparation.xml:21
 #, no-c-format
-msgid "<dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: title
@@ -50,7 +50,7 @@ msgid ""
 "Upgrading the system is only supported from the most recent patch-level. "
 "Make sure the latest system updates are installed by either running "
 "<command>zypper patch</command> or by starting the &yast; module "
-"<guimenu>Online-Update</guimenu>."
+"<guimenu>Online-Update</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -109,11 +109,11 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Find the current release notes online at <link xlink:href=\"https://www.suse."
-"com/releasenotes/\"></link>."
+"com/releasenotes/\"/> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:74
+#: sle_update_preparation.xml:75
 #, no-c-format
 msgid ""
 "Alternatively, find the release notes on the installation DVD in the "
@@ -121,27 +121,84 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:80
+#: sle_update_preparation.xml:81
 #, no-c-format
 msgid "Make a Backup"
 msgstr ""
 
-#. Tag: para
-#: sle_update_preparation.xml:81
+#. Tag: filename
+#: sle_update_preparation.xml:85
+#, no-c-format
+msgid "/etc"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:85
 #, no-c-format
 msgid ""
 "Before updating, copy existing configuration files to a separate medium "
 "(such as tape device, removable hard disk, etc.) to back up the data. This "
-"primarily applies to files stored in <filename>/etc</filename> and some "
-"directories and files in <filename>/var</filename> and <filename>/opt</"
-"filename>. You may also want to write the user data in <filename>/home</"
-"filename> (the <envar>HOME</envar> directories) to a backup medium. Back up "
-"this data as &rootuser;. Only &rootuser; has read permissions for all local "
-"files."
+"primarily applies to files stored in"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:86
+#, no-c-format
+msgid "and some directories and files in"
+msgstr ""
+
+#. Tag: filename
+#: sle_update_preparation.xml:86
+#, no-c-format
+msgid "/var"
+msgstr ""
+
+#. Tag: filename
+#: sle_update_preparation.xml:87
+#, no-c-format
+msgid "/opt"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:87
+#, no-c-format
+msgid "and"
+msgstr ""
+
+#. Tag: envar
+#: sle_update_preparation.xml:88
+#, no-c-format
+msgid "HOME"
+msgstr ""
+
+#. Tag: filename
+#: sle_update_preparation.xml:88
+#, no-c-format
+msgid "/home"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:88
+#, no-c-format
+msgid ". You may also want to write the user data in"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:88
+#, no-c-format
+msgid "(the"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:89
+#, no-c-format
+msgid ""
+"directories) to a backup medium. Back up this data as &rootuser;. Only "
+"&rootuser; has read permissions for all local files."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:91
+#: sle_update_preparation.xml:92
 #, no-c-format
 msgid ""
 "If you have selected <guimenu>Update an Existing System</guimenu> as the "
@@ -154,13 +211,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:102
+#: sle_update_preparation.xml:103
 #, no-c-format
 msgid "Listing Installed Packages and Repositories"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:103
+#: sle_update_preparation.xml:104
 #, no-c-format
 msgid ""
 "It is often useful to save a list of installed packages, for example when "
@@ -169,7 +226,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:108
+#: sle_update_preparation.xml:109
 #, no-c-format
 msgid ""
 "Be aware that not all installed packages or used repositories are available "
@@ -181,7 +238,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:116
+#: sle_update_preparation.xml:117
 #, no-c-format
 msgid ""
 "Create a file named <filename>repositories.bak.repo</filename> containing a "
@@ -189,13 +246,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:120
+#: sle_update_preparation.xml:121
 #, no-c-format
 msgid "&prompt.root;<command>zypper</command> lr -e repositories.bak"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:121
+#: sle_update_preparation.xml:122
 #, no-c-format
 msgid ""
 "Also create a file named <filename>installed-software.bak</filename> "
@@ -203,15 +260,15 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:125
+#: sle_update_preparation.xml:126
 #, no-c-format
 msgid ""
-"&prompt.root;<command>rpm</command> -qa --queryformat '%{NAME}\\n' > "
+"&prompt.root;<command>rpm</command> -qa --queryformat '%{NAME}\\n' &gt; "
 "installed-software.bak"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:126
+#: sle_update_preparation.xml:127
 #, no-c-format
 msgid ""
 "Back up both files. The repositories and installed packages can be restored "
@@ -219,7 +276,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:130
+#: sle_update_preparation.xml:131
 #, no-c-format
 msgid ""
 "&prompt.root;<command>zypper</command> ar repositories.bak.repo\n"
@@ -227,24 +284,24 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:133
+#: sle_update_preparation.xml:135
 #, no-c-format
 msgid "Amount of Packages Increases with an Update to a new Major Release"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:136
+#: sle_update_preparation.xml:138
 #, no-c-format
 msgid ""
-"A system upgraded to a new major version (SLE&nbsp;<replaceable>X+1</"
-"replaceable>) may contain more packages than the initial system (SLE&nbsp;"
-"<replaceable>X</replaceable>). It will also contain more packages than a "
-"fresh installation of SLE&nbsp;<replaceable>X+1</replaceable> with the same "
+"A system upgraded to a new major version (SLE&nbsp; <replaceable>X+1</"
+"replaceable> ) may contain more packages than the initial system (SLE&nbsp; "
+"<replaceable>X</replaceable> ). It will also contain more packages than a "
+"fresh installation of SLE&nbsp; <replaceable>X+1</replaceable> with the same "
 "pattern selection. Reasons for this are:"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:146
+#: sle_update_preparation.xml:148
 #, no-c-format
 msgid ""
 "Packages got split to allow a more fine-grained package selection. For "
@@ -253,37 +310,37 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:153
+#: sle_update_preparation.xml:155
 #, no-c-format
 msgid ""
 "When a package got split into other packages all new packages are installed "
 "in the upgrade case to retain the same functionality as with the previous "
-"version. However, the new default for a fresh installation of SLE&nbsp;"
+"version. However, the new default for a fresh installation of SLE&nbsp; "
 "<replaceable>X+1</replaceable> may be to not install all packages."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:162
+#: sle_update_preparation.xml:164
 #, no-c-format
 msgid ""
-"Legacy packages from SLE&nbsp;<replaceable>X</replaceable> may be kept for "
+"Legacy packages from SLE&nbsp; <replaceable>X</replaceable> may be kept for "
 "compatibility reasons."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:168
+#: sle_update_preparation.xml:170
 #, no-c-format
 msgid "Package dependencies and the scope of patterns may have changed."
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:177
+#: sle_update_preparation.xml:179
 #, no-c-format
 msgid "Upgrading from &productname; 11 SP4"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:178
+#: sle_update_preparation.xml:180
 #, no-c-format
 msgid ""
 "If you are using MySQL, PostgreSQL or Java MD5 based certificates on "
@@ -292,19 +349,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:184
+#: sle_update_preparation.xml:186
 #, no-c-format
 msgid "Migrate Your MySQL Database"
 msgstr ""
 
-#. Tag: remark
-#: sle_update_preparation.xml:185
-#, no-c-format
-msgid "toms 2015-09-03: already reviewed by Ondrej and Kristýna."
-msgstr ""
-
 #. Tag: para
-#: sle_update_preparation.xml:186
+#: sle_update_preparation.xml:188
 #, no-c-format
 msgid ""
 "As of &sle; 12, &suse; switched from MySQL to MariaDB. Before you start any "
@@ -312,61 +363,55 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:190 sle_update_preparation.xml:273
-#, no-c-format
-msgid "To perform the database migration, do the following:"
-msgstr ""
-
-#. Tag: para
-#: sle_update_preparation.xml:195
+#: sle_update_preparation.xml:197
 #, no-c-format
 msgid "Log in to your &sle; 11 machine."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:200
+#: sle_update_preparation.xml:202
 #, no-c-format
 msgid "Create a dump file:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:203
+#: sle_update_preparation.xml:205
 #, no-c-format
 msgid ""
-"&prompt.root;<command>mysqldump</command> -u root -p --all-databases > "
+"&prompt.root;<command>mysqldump</command> -u root -p --all-databases &gt; "
 "mysql_backup.sql"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:204
+#: sle_update_preparation.xml:206
 #, no-c-format
 msgid ""
 "By default, <command>mysqldump</command> does not dump the "
 "<literal>INFORMATION_SCHEMA</literal> or <literal>performance_schema</"
 "literal> database. For more details refer to <link xlink:href=\"https://dev."
-"mysql.com/doc/refman/5.5/en/mysqldump.html\"></link>."
+"mysql.com/doc/refman/5.5/en/mysqldump.html\"/> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:212
+#: sle_update_preparation.xml:214
 #, no-c-format
 msgid ""
 "Store your dump file, the configuration file <filename>/etc/my.cnf</"
-"filename>, and the directory <filename>/etc/mysql/</filename> for later "
-"investigation (<emphasis>NOT</emphasis> installation!) in a safe place."
+"filename> , and the directory <filename>/etc/mysql/</filename> for later "
+"investigation ( <emphasis>NOT</emphasis> installation!) in a safe place."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:220
+#: sle_update_preparation.xml:222
 #, no-c-format
 msgid ""
 "Perform your upgrade. After the upgrade, your former configuration file "
 "<filename>/etc/my.cnf</filename> is still intact. You can find the new "
-"configuration in the file <filename>/etc/my.cnf.rpmnew</filename>."
+"configuration in the file <filename>/etc/my.cnf.rpmnew</filename> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:227
+#: sle_update_preparation.xml:229
 #, no-c-format
 msgid ""
 "Configure your MariaDB database to your needs. Do <emphasis>NOT</emphasis> "
@@ -375,50 +420,50 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:234
+#: sle_update_preparation.xml:236
 #, no-c-format
 msgid "Make sure you start the MariaDB server:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:237
+#: sle_update_preparation.xml:239
 #, no-c-format
 msgid "&prompt.root;<command>systemctl</command> start mysql"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:238
+#: sle_update_preparation.xml:240
 #, no-c-format
 msgid ""
 "If you want to start the MariaDB server on every boot, enable the service:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:242
+#: sle_update_preparation.xml:244
 #, no-c-format
 msgid "&prompt.root;<command>systemctl</command> enable mysql"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:245
+#: sle_update_preparation.xml:247
 #, no-c-format
 msgid "Verify that MariaDB is running properly by connecting to the database:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:248
+#: sle_update_preparation.xml:250
 #, no-c-format
 msgid "&prompt.root;<command>mysql</command> -u root -p"
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:254
+#: sle_update_preparation.xml:256
 #, no-c-format
 msgid "Migrate Your &postgresql; Database"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:255
+#: sle_update_preparation.xml:257
 #, no-c-format
 msgid ""
 "&slea; 15 gets a newer version of the &postgresql; database. Because of the "
@@ -428,7 +473,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:261
+#: sle_update_preparation.xml:263
 #, no-c-format
 msgid ""
 "The migration process is conducted by the <command>pg_upgrade</command> "
@@ -438,23 +483,29 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:267
+#: sle_update_preparation.xml:269
 #, no-c-format
 msgid ""
 "Each &postgresql; version stores its files in different, version-dependent "
 "directories. After the update the directories will change from <filename>/"
 "usr/lib/postgresql96/</filename> to <filename>/usr/lib/postgresql10/</"
-"filename>."
+"filename> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:278
+#: sle_update_preparation.xml:275
+#, no-c-format
+msgid "To perform the database migration, do the following:"
+msgstr ""
+
+#. Tag: para
+#: sle_update_preparation.xml:280
 #, no-c-format
 msgid "Make sure the following preconditions are fulfilled:"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:283
+#: sle_update_preparation.xml:285
 #, no-c-format
 msgid ""
 "If not already done, upgrade any package of the old &postgresql; version to "
@@ -462,13 +513,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:289
+#: sle_update_preparation.xml:291
 #, no-c-format
 msgid "Create a backup of your existing database."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:294
+#: sle_update_preparation.xml:296
 #, no-c-format
 msgid ""
 "Install the packages of the new &postgresql; major version. For &slea; 15 "
@@ -477,15 +528,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:302
+#: sle_update_preparation.xml:304
 #, no-c-format
 msgid ""
 "Install the package <package>postgresql10-contrib</package> which contains "
-"the command <command>pg_upgrade</command>."
+"the command <command>pg_upgrade</command> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:309
+#: sle_update_preparation.xml:311
 #, no-c-format
 msgid ""
 "Make sure you have enough free space in your &postgresql; data area, which "
@@ -495,31 +546,31 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:315
+#: sle_update_preparation.xml:317
 #, no-c-format
 msgid "VACUUM FULL"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:320
+#: sle_update_preparation.xml:322
 #, no-c-format
 msgid "Stop the &postgresql; server:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:323
+#: sle_update_preparation.xml:325
 #, no-c-format
 msgid "&prompt.root;systemctl stop postgresql.service"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:326
+#: sle_update_preparation.xml:328
 #, no-c-format
 msgid "Rename your old data directory:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:329
+#: sle_update_preparation.xml:331
 #, no-c-format
 msgid ""
 "&prompt.root;<command>mv</command> /var/lib/pgsql/data /var/lib/pgsql/data."
@@ -527,7 +578,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:332
+#: sle_update_preparation.xml:334
 #, no-c-format
 msgid ""
 "Initialize your new database instance either manually with <command>initdb</"
@@ -536,7 +587,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:337
+#: sle_update_preparation.xml:339
 #, no-c-format
 msgid ""
 "&prompt.root;systemctl start postgresql.service\n"
@@ -544,20 +595,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:340
+#: sle_update_preparation.xml:343
 #, no-c-format
 msgid ""
 "If you have changed your configuration files in the old version, consider "
 "transfering these changes to the new configuration files. This may affect "
-"the files <filename>postgresql.auto.conf</filename>, <filename>postgresql."
-"conf</filename>,<filename>pg_hba.conf</filename> and <filename>pg_ident."
-"conf</filename>. The old version of these files is located in <filename>/var/"
-"lib/pgsql/data.old/</filename>, the new versions can be found in <filename>/"
-"var/lib/pgsql/data</filename>."
+"the files <filename>postgresql.auto.conf</filename> , <filename>postgresql."
+"conf</filename> , <filename>pg_hba.conf</filename> and <filename>pg_ident."
+"conf</filename> . The old version of these files is located in <filename>/"
+"var/lib/pgsql/data.old/</filename> , the new versions can be found in "
+"<filename>/var/lib/pgsql/data</filename> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:349
+#: sle_update_preparation.xml:352
 #, no-c-format
 msgid ""
 "Note that just copying the old configuration files is not recommended, "
@@ -565,15 +616,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:356
+#: sle_update_preparation.xml:359
 #, no-c-format
 msgid ""
 "Start the migration process as user <systemitem class=\"username\">postgres</"
-"systemitem>:"
+"systemitem> :"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:360
+#: sle_update_preparation.xml:363
 #, no-c-format
 msgid ""
 "&prompt.root;su - postgres\n"
@@ -585,19 +636,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:363
+#: sle_update_preparation.xml:371
 #, no-c-format
 msgid "Start your new database instance:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:366
+#: sle_update_preparation.xml:374
 #, no-c-format
 msgid "&prompt.root;systemctl start postgresql.service"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:369
+#: sle_update_preparation.xml:377
 #, no-c-format
 msgid ""
 "Check if the migration was successful. The scope of the test depends on your "
@@ -605,13 +656,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:375
+#: sle_update_preparation.xml:383
 #, no-c-format
 msgid "Remove any old &postgresql; packages and your old data directory:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:378
+#: sle_update_preparation.xml:386
 #, no-c-format
 msgid ""
 "&prompt.root;<command>zypper</command> search -s postgresql94 | xargs zypper "
@@ -620,19 +671,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:384
+#: sle_update_preparation.xml:393
 #, no-c-format
 msgid "Create Non-MD5 Server Certificates for Java Applications"
 msgstr ""
 
-#. Tag: remark
-#: sle_update_preparation.xml:385
-#, no-c-format
-msgid "toms 2016-07-27: from bsc#970153, c#24"
-msgstr ""
-
 #. Tag: para
-#: sle_update_preparation.xml:386
+#: sle_update_preparation.xml:395
 #, no-c-format
 msgid ""
 "During the update from SP1 to SP2, MD5-based certificates were disabled as "
@@ -641,39 +686,39 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:394
+#: sle_update_preparation.xml:403
 #, no-c-format
 msgid "Open a terminal and log in as &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:399
+#: sle_update_preparation.xml:408
 #, no-c-format
 msgid "Create a private key:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:402
+#: sle_update_preparation.xml:411
 #, no-c-format
 msgid "&prompt.root;<command>openssl</command> genrsa -out server.key 1024"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:403
+#: sle_update_preparation.xml:412
 #, no-c-format
 msgid ""
 "If you want a stronger key, replace <literal>1024</literal> with a higher "
-"number, for example, <literal>4096</literal>."
+"number, for example, <literal>4096</literal> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:409
+#: sle_update_preparation.xml:418
 #, no-c-format
 msgid "Create a certificate signing request (CSR):"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:412
+#: sle_update_preparation.xml:421
 #, no-c-format
 msgid ""
 "&prompt.root;<command>openssl</command> req -new -key server.key -out server."
@@ -681,13 +726,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:415
+#: sle_update_preparation.xml:424
 #, no-c-format
 msgid "Self-sign the certificate:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:418
+#: sle_update_preparation.xml:427
 #, no-c-format
 msgid ""
 "&prompt.root;<command>openssl</command> x509 -req -days 365 -in <!--\n"
@@ -695,35 +740,37 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:421
+#: sle_update_preparation.xml:431
 #, no-c-format
 msgid "Create the PEM file:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:424
+#: sle_update_preparation.xml:434
 #, no-c-format
-msgid "&prompt.root;<command>cat</command> server.key server.crt > server.pem"
+msgid ""
+"&prompt.root;<command>cat</command> server.key server.crt &gt; server.pem"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:427
+#: sle_update_preparation.xml:437
 #, no-c-format
 msgid ""
-"Place the files <filename>server.crt</filename>, <filename>server.csr</"
-"filename>, <filename>server.key</filename>, and <filename>server.pem</"
+"Place the files <filename>server.crt</filename> , <filename>server.csr</"
+"filename> , <filename>server.key</filename> , and <filename>server.pem</"
 "filename> in the respective directories where the keys can be found. For "
-"Tomcat, for example, this directory is <filename>/etc/tomcat/ssl/</filename>."
+"Tomcat, for example, this directory is <filename>/etc/tomcat/ssl/</"
+"filename> ."
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:439
+#: sle_update_preparation.xml:449
 #, no-c-format
 msgid "Shut Down Virtual Machine Guests"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:440
+#: sle_update_preparation.xml:450
 #, no-c-format
 msgid ""
 "If your machine serves as a &vmhost; for &kvm; or &xen;, make sure to "
@@ -732,13 +779,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:448
+#: sle_update_preparation.xml:458
 #, no-c-format
 msgid "Check the <command>clientSetup4SMT.sh</command> Script on &rmt; Clients"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:449
+#: sle_update_preparation.xml:459
 #, no-c-format
 msgid ""
 "If you are migrating your client OS that is registered against an &smt; "
@@ -747,17 +794,17 @@ msgid ""
 "command> from older versions of &smt; cannot manage &smt; 12 clients. If you "
 "apply software patches regularly on your &rmt; server, you can always find "
 "the latest version of <command>clientSetup4SMT.sh</command> at <filename>&lt;"
-"SMT_HOSTNAME&gt;/repo/tools/clientSetup4SMT.sh</filename>."
+"SMT_HOSTNAME&gt;/repo/tools/clientSetup4SMT.sh</filename> ."
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:459
+#: sle_update_preparation.xml:469
 #, no-c-format
 msgid "Disk Space"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:461
+#: sle_update_preparation.xml:471
 #, no-c-format
 msgid ""
 "Software tends to grow from version to version. Therefore, take a look at "
@@ -769,46 +816,46 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:471
+#: sle_update_preparation.xml:481
 #, no-c-format
 msgid "Automatic Check for Enough Space in &yast;"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:472
+#: sle_update_preparation.xml:482
 #, no-c-format
 msgid ""
 "During the update procedure, &yast; will check how much free disk space is "
 "available and display a warning to the user if the installation may exceed "
 "the available amount. In that case, performing the update may lead to an "
-"<emphasis>unusable system</emphasis>! Only if you know exactly what you are "
+"<emphasis>unusable system</emphasis> ! Only if you know exactly what you are "
 "doing (by testing beforehand), you can skip the warning and continue the "
 "update."
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:483
+#: sle_update_preparation.xml:493
 #, no-c-format
 msgid "Checking Disk Space on Non-Btrfs File Systems"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:484
+#: sle_update_preparation.xml:494
 #, no-c-format
 msgid ""
 "Use the <command>df</command> command to list available disk space. For "
-"example, in <xref linkend=\"ex.update.df\"/>, the root partition is "
-"<filename>/dev/sda3</filename> (mounted as <filename>/</filename>)."
+"example, in <xref linkend=\"ex.update.df\"/> , the root partition is "
+"<filename>/dev/sda3</filename> (mounted as <filename>/</filename> )."
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:490
+#: sle_update_preparation.xml:500
 #, no-c-format
 msgid "List with <command>df -h</command>"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:491
+#: sle_update_preparation.xml:501
 #, no-c-format
 msgid ""
 "Filesystem     Size  Used Avail Use% Mounted on\n"
@@ -820,7 +867,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:492
+#: sle_update_preparation.xml:507
 #, no-c-format
 msgid ""
 "Filesystem     Size  Used Avail Use% Mounted on\n"
@@ -831,29 +878,29 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:497
+#: sle_update_preparation.xml:516
 #, no-c-format
 msgid "Checking Disk Space on Btrfs Root File Systems"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:498
+#: sle_update_preparation.xml:517
 #, no-c-format
 msgid ""
 "If you use Btrfs as root file systems on your machine, make sure there is "
 "enough free space. In the worst case, an upgrade needs as much disk space as "
-"the current root file system (without <filename>/.snapshot</filename>) for a "
-"new snapshot. To display available disk space use the command:"
+"the current root file system (without <filename>/.snapshot</filename> ) for "
+"a new snapshot. To display available disk space use the command:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:504
+#: sle_update_preparation.xml:523
 #, no-c-format
 msgid "&prompt.root;<command>df</command> -h /"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:505
+#: sle_update_preparation.xml:524
 #, no-c-format
 msgid ""
 "Check the available space on all other mounted partitions as well. The "
@@ -861,7 +908,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:511
+#: sle_update_preparation.xml:530
 #, no-c-format
 msgid ""
 "For all file systems including Btrfs you need enough free disk space to "
@@ -870,7 +917,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:518
+#: sle_update_preparation.xml:537
 #, no-c-format
 msgid ""
 "For Btrfs with snapshots, you need at minimum as much free space as your "
@@ -879,15 +926,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:523
+#: sle_update_preparation.xml:542
 #, no-c-format
 msgid ""
 "If you do not have enough free space, you can try to delete old snapshots "
-"with <command>snapper</command>:"
+"with <command>snapper</command> :"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:527
+#: sle_update_preparation.xml:546
 #, no-c-format
 msgid ""
 "&prompt.root;<command>snapper</command> list\n"
@@ -895,7 +942,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:528
+#: sle_update_preparation.xml:548
 #, no-c-format
 msgid ""
 "However, this may not help in all cases. Before migration, most snapshots "
@@ -903,13 +950,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:537
+#: sle_update_preparation.xml:557
 #, no-c-format
 msgid "Upgrading a Subscription Management Tool (SMT) Server"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:538
+#: sle_update_preparation.xml:558
 #, no-c-format
 msgid ""
 "A server running SMT requires a special upgrade procedure. Please refer to "
@@ -917,25 +964,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:544
+#: sle_update_preparation.xml:564
 #, no-c-format
 msgid "Temporarily Disabling Kernel Multiversion Support"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:545
+#: sle_update_preparation.xml:565
 #, no-c-format
 msgid ""
 "&productname; allows installing multiple kernel versions by enabling the "
-"respective settings in <filename>/etc/zypp/zypp.conf</filename>. Support for "
-"this feature needs to be temporarily disabled to upgrade to a service pack. "
-"When the update has successfully finished, multiversion support can be re-"
-"enabled. To disable multiversion support, comment the respective lines in "
-"<filename>/etc/zypp/zypp.conf</filename>. The result should look similar to:"
+"respective settings in <filename>/etc/zypp/zypp.conf</filename> . Support "
+"for this feature needs to be temporarily disabled to upgrade to a service "
+"pack. When the update has successfully finished, multiversion support can be "
+"re-enabled. To disable multiversion support, comment the respective lines in "
+"<filename>/etc/zypp/zypp.conf</filename> . The result should look similar to:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:554
+#: sle_update_preparation.xml:574
 #, no-c-format
 msgid ""
 "#multiversion = provides:multiversion(kernel)\n"
@@ -943,37 +990,37 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:555
+#: sle_update_preparation.xml:576
 #, no-c-format
 msgid ""
 "To re-activate this feature after a successful update, remove the comment "
 "signs. For more information about multiversion support, refer to <xref "
-"linkend=\"sec.tuning.multikernel.enable\"/>."
+"linkend=\"sec.tuning.multikernel.enable\"/> ."
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:562
+#: sle_update_preparation.xml:583
 #, no-c-format
 msgid "Upgrading on &zseries;"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:563
+#: sle_update_preparation.xml:584
 #, no-c-format
 msgid ""
 "Upgrading a &sle; installation on &zseries; requires the <command>Upgrade=1</"
 "command> kernel parameter, for example via the parmfile. See <xref linkend="
-"\"sec.appdendix.parm\" xrefstyle=\"HeadingOnPage\"/>."
+"\"sec.appdendix.parm\" xrefstyle=\"HeadingOnPage\"/> ."
 msgstr ""
 
 #. Tag: title
-#: sle_update_preparation.xml:569
+#: sle_update_preparation.xml:590
 #, no-c-format
 msgid "IBM &ppc;: Starting an X Server"
 msgstr ""
 
 #. Tag: para
-#: sle_update_preparation.xml:570
+#: sle_update_preparation.xml:591
 #, no-c-format
 msgid ""
 "On &slsa; 12 for IBM &ppc; the display manager is configured not to start a "
@@ -981,18 +1028,41 @@ msgid ""
 "the display manager now starts an X Server."
 msgstr ""
 
-#. Tag: para
-#: sle_update_preparation.xml:575
+#. Tag: #text
+#: sle_update_preparation.xml:597
 #, no-c-format
 msgid ""
 "To avoid problems during upgrade, the &productname; setting is not changed "
 "automatically. If you want the display manager to start an X Server after "
-"the upgrade, change the setting of <envar>DISPLAYMANAGER_STARTS_XSERVER</"
-"envar> in <filename>/etc/sysconfig/displaymanager</filename> as follows:"
+"the upgrade, change the setting of"
+msgstr ""
+
+#. Tag: envar
+#: sle_update_preparation.xml:600
+#, no-c-format
+msgid "DISPLAYMANAGER_STARTS_XSERVER"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:601
+#, no-c-format
+msgid "in"
+msgstr ""
+
+#. Tag: filename
+#: sle_update_preparation.xml:601
+#, no-c-format
+msgid "/etc/sysconfig/displaymanager"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_preparation.xml:602
+#, no-c-format
+msgid "as follows:"
 msgstr ""
 
 #. Tag: screen
-#: sle_update_preparation.xml:582
+#: sle_update_preparation.xml:603
 #, no-c-format
 msgid "DISPLAYMANAGER_STARTS_XSERVER=\"yes\""
 msgstr ""

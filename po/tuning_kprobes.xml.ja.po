@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -49,7 +49,7 @@ msgid ""
 "To use kernel probes, you typically need to write or obtain a specific "
 "kernel module. Such modules include both the <emphasis>init</emphasis> and "
 "the <emphasis>exit</emphasis> function. The init function (such as "
-"<systemitem>register_kprobe()</systemitem>) registers one or more probes, "
+"<systemitem>register_kprobe()</systemitem> ) registers one or more probes, "
 "while the exit function unregisters them. The registration function defines "
 "<emphasis>where</emphasis> the probe will be inserted and <emphasis>which "
 "handler</emphasis> will be called after the probe is hit. To register or "
@@ -67,11 +67,11 @@ msgid ""
 "<systemitem>printk</systemitem> kernel routine. <systemitem>printk</"
 "systemitem> is a kernel space equivalent of a user space <systemitem>printf</"
 "systemitem> routine. For more information on <systemitem>printk</"
-"systemitem>, see <link xlink:href=\"http://www.win.tue.nl/~aeb/linux/lk/lk-2."
-"html#ss2.8\">Logging kernel messages</link>. Normally, you can view these "
-"messages by inspecting the output of the &systemd; journal (see <xref "
-"linkend=\"cha.journalctl\"/>). For more information on log files, see <xref "
-"linkend=\"cha.tuning.logfiles\"/>."
+"systemitem> , see <link xlink:href=\"http://www.win.tue.nl/~aeb/linux/lk/"
+"lk-2.html#ss2.8\">Logging kernel messages</link> . Normally, you can view "
+"these messages by inspecting the output of the &systemd; journal (see <xref "
+"linkend=\"cha.journalctl\"/> ). For more information on log files, see <xref "
+"linkend=\"cha.tuning.logfiles\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -124,7 +124,7 @@ msgstr ""
 #: tuning_kprobes.xml:94
 #, no-c-format
 msgid ""
-"IA64 (does not support probes on instruction <systemitem>slot1</systemitem>)"
+"IA64 (does not support probes on instruction <systemitem>slot1</systemitem> )"
 msgstr ""
 
 #. Tag: para
@@ -139,25 +139,78 @@ msgstr ""
 msgid "Types of Kernel Probes"
 msgstr ""
 
-#. Tag: para
-#: tuning_kprobes.xml:109
+#. Tag: #text
+#: tuning_kprobes.xml:110
 #, no-c-format
-msgid ""
-"There are three types of kernel probes: <emphasis>Kprobes</emphasis>, "
-"<emphasis>Jprobes</emphasis>, and <emphasis>Kretprobes</emphasis>. "
-"Kretprobes are sometimes called <emphasis>return probes</emphasis>. You can "
-"find source code examples of all three type of probes in the Linux kernel. "
-"See the directory <filename>/usr/src/linux/samples/kprobes/</filename> "
-"(package <systemitem>kernel-source</systemitem>)."
+msgid "There are three types of kernel probes:"
 msgstr ""
 
-#. Tag: remark
-#: tuning_kprobes.xml:117
+#. Tag: emphasis
+#: tuning_kprobes.xml:110
+#, no-c-format
+msgid "Kprobes"
+msgstr ""
+
+#. Tag: emphasis
+#: tuning_kprobes.xml:111
+#, no-c-format
+msgid "Kretprobes"
+msgstr ""
+
+#. Tag: #text
+#: tuning_kprobes.xml:111
+#, no-c-format
+msgid ", and"
+msgstr ""
+
+#. Tag: #text
+#: tuning_kprobes.xml:111
+#, no-c-format
+msgid ","
+msgstr ""
+
+#. Tag: #text
+#: tuning_kprobes.xml:112
+#, no-c-format
+msgid ". Kretprobes are sometimes called"
+msgstr ""
+
+#. Tag: emphasis
+#: tuning_kprobes.xml:112
+#, no-c-format
+msgid "return probes"
+msgstr ""
+
+#. Tag: filename
+#: tuning_kprobes.xml:115
+#, no-c-format
+msgid "/usr/src/linux/samples/kprobes/"
+msgstr ""
+
+#. Tag: #text
+#: tuning_kprobes.xml:115
 #, no-c-format
 msgid ""
-"sknorr, 2014-08-21: that the words kprobes and kprobe are used "
-"interchangeably here is slightly confusing. (Same goes for jprobes and "
-"jprobe)"
+". You can find source code examples of all three type of probes in the Linux "
+"kernel. See the directory"
+msgstr ""
+
+#. Tag: #text
+#: tuning_kprobes.xml:116
+#, no-c-format
+msgid "(package"
+msgstr ""
+
+#. Tag: systemitem
+#: tuning_kprobes.xml:116
+#, no-c-format
+msgid "kernel-source"
+msgstr ""
+
+#. Tag: #text
+#: tuning_kprobes.xml:117
+#, no-c-format
+msgid ")."
 msgstr ""
 
 #. Tag: title
@@ -175,8 +228,11 @@ msgid ""
 "probed instruction. When the processor hits this break-point, the processor "
 "registers are saved, and the processing passes to &kprobes;. First, a "
 "<emphasis>pre-handler</emphasis> is executed, then the probed instruction is "
-"stepped, and, finally a <emphasis>post-handler</emphasis> is executed. The "
-"control is then passed to the instruction following the probe point."
+"stepped, and, finally a <emphasis>post-handler</emphasis> <!-- mdejmek: I "
+"think you mean \"an instruction is stopped\" here, right?--> <!-- toba: no, "
+"'stepped' is correct: instruction by instruction is run and inspected => "
+"stepped (step by step) --> is executed. The control is then passed to the "
+"instruction following the probe point."
 msgstr ""
 
 #. Tag: title
@@ -201,10 +257,12 @@ msgstr ""
 #, no-c-format
 msgid ""
 "When a jprobe is hit, the processor registers are saved, and the instruction "
-"pointer is directed to the jprobe handler routine. The control then passes "
-"to the handler with the same register contents as the function being probed. "
-"Finally, the handler calls the <systemitem>jprobe_return()</systemitem> "
-"function, and switches the control back to the control function."
+"pointer is directed to the jprobe handler routine. The control <!-- mdejmek: "
+"what does control mean here? Is it the name of a function?--> <!-- toba: the "
+"control over the code execution --> then passes to the handler with the same "
+"register contents as the function being probed. Finally, the handler calls "
+"the <systemitem>jprobe_return()</systemitem> function, and switches the "
+"control back to the control function."
 msgstr ""
 
 #. Tag: para
@@ -227,17 +285,19 @@ msgstr ""
 msgid ""
 "Return probes are also implemented through &kprobes;. When the "
 "<systemitem>register_kretprobe()</systemitem> function is called, a kprobe "
-"is attached to the entry of the probed function. After hitting the probe, "
-"the kernel probes mechanism saves the probed function return address and "
-"calls a user-defined return handler. The control is then passed back to the "
-"probed function."
+"is attached to the entry of the probed function. <!--mdejmek: sounds weird "
+"to me; maybe: ...a kprobe is attached to the entry of the probed function?--"
+"> <!--toba: you are probably right, i've fixed it --> After hitting the "
+"probe, the kernel probes mechanism saves the probed function return address "
+"and calls a user-defined return handler. The control is then passed back to "
+"the probed function."
 msgstr ""
 
 #. Tag: para
 #: tuning_kprobes.xml:179
 #, no-c-format
 msgid ""
-"Before you call <systemitem>register_kretprobe()</systemitem>, you need to "
+"Before you call <systemitem>register_kretprobe()</systemitem> , you need to "
 "set a <systemitem>maxactive</systemitem> argument, which specifies how many "
 "instances of the function can be probed at the same time. If set too low, "
 "you will miss a certain number of probes."
@@ -257,13 +317,13 @@ msgid ""
 "to register and unregister all used kernel probes, and associated probe "
 "handlers. For a more detailed description of these functions and their "
 "arguments, see the information sources in <xref linkend=\"cha.tuning.kprobes."
-"moreinfo\"/>."
+"moreinfo\"/> ."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: tuning_kprobes.xml:200
 #, no-c-format
-msgid "register_kprobe()"
+msgid "<systemitem>register_kprobe()</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -275,10 +335,10 @@ msgid ""
 "systemitem> are called."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: tuning_kprobes.xml:211
 #, no-c-format
-msgid "register_jprobe()"
+msgid "<systemitem>register_jprobe()</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -291,10 +351,10 @@ msgid ""
 "argument list and return type as the probed."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: tuning_kprobes.xml:223
 #, no-c-format
-msgid "register_kretprobe()"
+msgid "<systemitem>register_kretprobe()</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -310,8 +370,8 @@ msgstr ""
 #: tuning_kprobes.xml:234
 #, no-c-format
 msgid ""
-"<systemitem>unregister_kprobe()</systemitem>, "
-"<systemitem>unregister_jprobe()</systemitem>, "
+"<systemitem>unregister_kprobe()</systemitem> , "
+"<systemitem>unregister_jprobe()</systemitem> , "
 "<systemitem>unregister_kretprobe()</systemitem>"
 msgstr ""
 
@@ -327,8 +387,9 @@ msgstr ""
 #: tuning_kprobes.xml:244
 #, no-c-format
 msgid ""
-"<systemitem>register_kprobes()</systemitem>, <systemitem>register_jprobes()</"
-"systemitem>, <systemitem>register_kretprobes()</systemitem>"
+"<systemitem>register_kprobes()</systemitem> , "
+"<systemitem>register_jprobes()</systemitem> , "
+"<systemitem>register_kretprobes()</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -341,8 +402,8 @@ msgstr ""
 #: tuning_kprobes.xml:253
 #, no-c-format
 msgid ""
-"<systemitem>unregister_kprobes()</systemitem>, "
-"<systemitem>unregister_jprobes()</systemitem>, "
+"<systemitem>unregister_kprobes()</systemitem> , "
+"<systemitem>unregister_jprobes()</systemitem> , "
 "<systemitem>unregister_kretprobes()</systemitem>"
 msgstr ""
 
@@ -356,8 +417,8 @@ msgstr ""
 #: tuning_kprobes.xml:262
 #, no-c-format
 msgid ""
-"<systemitem>disable_kprobe()</systemitem>, <systemitem>disable_jprobe()</"
-"systemitem>, <systemitem>disable_kretprobe()</systemitem>"
+"<systemitem>disable_kprobe()</systemitem> , <systemitem>disable_jprobe()</"
+"systemitem> , <systemitem>disable_kretprobe()</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -370,8 +431,8 @@ msgstr ""
 #: tuning_kprobes.xml:271
 #, no-c-format
 msgid ""
-"<systemitem>enable_kprobe()</systemitem>, <systemitem>enable_jprobe()</"
-"systemitem>, <systemitem>enable_kretprobe()</systemitem>"
+"<systemitem>enable_kprobe()</systemitem> , <systemitem>enable_jprobe()</"
+"systemitem> , <systemitem>enable_kretprobe()</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -420,7 +481,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:297
+#: tuning_kprobes.xml:300
 #, no-c-format
 msgid ""
 "The first column lists the address in the kernel where the probe is "
@@ -430,18 +491,18 @@ msgid ""
 "optional module name of the probe. The following optional columns include "
 "the status information of the probe. If the probe is inserted on a virtual "
 "address which is not valid anymore, it is marked with <literal>[GONE]</"
-"literal>. If the probe is temporarily disabled, it is marked with "
-"<literal>[DISABLED]</literal>."
+"literal> . If the probe is temporarily disabled, it is marked with "
+"<literal>[DISABLED]</literal> ."
 msgstr ""
 
 #. Tag: title
-#: tuning_kprobes.xml:311
+#: tuning_kprobes.xml:314
 #, no-c-format
 msgid "How to Switch All Kernel Probes On or Off"
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:312
+#: tuning_kprobes.xml:315
 #, no-c-format
 msgid ""
 "The <filename>/sys/kernel/debug/kprobes/enabled</filename> file represents a "
@@ -450,25 +511,25 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_kprobes.xml:317
+#: tuning_kprobes.xml:320
 #, no-c-format
 msgid "&prompt.root;echo \"0\" &gt; /sys/kernel/debug/kprobes/enabled"
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:318
+#: tuning_kprobes.xml:321
 #, no-c-format
 msgid "on the command line as &rootuser;. To turn them on again, enter"
 msgstr ""
 
 #. Tag: screen
-#: tuning_kprobes.xml:321
+#: tuning_kprobes.xml:324
 #, no-c-format
 msgid "&prompt.root;echo \"1\" &gt; /sys/kernel/debug/kprobes/enabled"
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:322
+#: tuning_kprobes.xml:325
 #, no-c-format
 msgid ""
 "Note that this way you do not change the status of the probes. If a probe is "
@@ -477,13 +538,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_kprobes.xml:331
+#: tuning_kprobes.xml:334
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:333
+#: tuning_kprobes.xml:336
 #, no-c-format
 msgid ""
 "To learn more about kernel probes, look at the following sources of "
@@ -491,26 +552,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:340
+#: tuning_kprobes.xml:343
 #, no-c-format
 msgid ""
 "Thorough but more technically oriented information about kernel probes is in "
 "<filename>/usr/src/linux/Documentation/kprobes.txt</filename> (package "
-"<systemitem>kenrel-source</systemitem>)."
+"<systemitem>kenrel-source</systemitem> )."
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:347
+#: tuning_kprobes.xml:350
 #, no-c-format
 msgid ""
 "Examples of all three types of probes (together with related "
-"<filename>Makefile</filename>) are in the <filename>/usr/src/linux/samples/"
+"<filename>Makefile</filename> ) are in the <filename>/usr/src/linux/samples/"
 "kprobes/</filename> directory (package <systemitem>kenrel-source</"
-"systemitem>)."
+"systemitem> )."
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:355
+#: tuning_kprobes.xml:358
 #, no-c-format
 msgid ""
 "In-depth information about Linux kernel modules and <systemitem>printk</"
@@ -519,7 +580,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_kprobes.xml:363
+#: tuning_kprobes.xml:366
 #, no-c-format
 msgid ""
 "Practical but slightly outdated information about the use of kernel probes "

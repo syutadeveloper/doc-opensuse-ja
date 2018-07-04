@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Upgrading Offline"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: sle_update_offline.xml:22
+#. Tag: dm:translation
+#: sle_update_offline.xml:24
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -59,7 +59,7 @@ msgid ""
 "To upgrade your system, boot from an installation source, as you would do "
 "for a fresh installation. However, when the boot screen appears, you need to "
 "select <guimenu>Upgrade</guimenu> (instead of <guimenu>Installation</"
-"guimenu>). The upgrade can be started from:"
+"guimenu> ). The upgrade can be started from:"
 msgstr ""
 
 #. Tag: title
@@ -73,7 +73,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "This includes media such as CDs, DVDs or USB mass storage devices. For more "
-"information, see <xref linkend=\"sec.upgrade-offline.dvd\"/>."
+"information, see <xref linkend=\"sec.upgrade-offline.dvd\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -88,7 +88,7 @@ msgstr ""
 msgid ""
 "You can either boot from the local medium and then select the respective "
 "network installation type, or boot via PXE. For more information, see <xref "
-"linkend=\"sec.upgrade-offline.network\"/>."
+"linkend=\"sec.upgrade-offline.network\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -116,16 +116,7 @@ msgstr ""
 #. Tag: para
 #: sle_update_offline.xml:85
 #, no-c-format
-msgid "Select and prepare a boot medium, see <xref linkend=\"part.prep\"/>."
-msgstr ""
-
-#. Tag: para
-#: sle_update_offline.xml:90 sle_update_offline.xml:177
-#, no-c-format
-msgid ""
-"Insert the Installer DVD for &productname; &productnumber; and boot your "
-"machine. A <guimenu>Welcome</guimenu> screen is displayed, followed by the "
-"boot screen."
+msgid "Select and prepare a boot medium, see <xref linkend=\"part.prep\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -134,7 +125,7 @@ msgstr ""
 msgid ""
 "Optional: To force the installer to only install packages from the DVD and "
 "not from network sources, add the boot option <option>media_upgrade=1</"
-"option>."
+"option> ."
 msgstr ""
 
 #. Tag: para
@@ -143,15 +134,6 @@ msgstr ""
 msgid ""
 "Start up the system by selecting <emphasis>Upgrade</emphasis> in the boot "
 "menu."
-msgstr ""
-
-#. Tag: para
-#: sle_update_offline.xml:110 sle_update_offline.xml:194
-#: sle_update_offline.xml:235
-#, no-c-format
-msgid ""
-"Proceed with the upgrade process as described in <xref linkend=\"sec.upgrade-"
-"offline.yast\"/>."
 msgstr ""
 
 #. Tag: title
@@ -185,7 +167,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "A network installation source is set up according to <xref linkend=\"cha."
-"deployment.instserver\"/>."
+"deployment.instserver\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -232,7 +214,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "A bootable &sle; DVD, ISO image or functioning PXE setup. For details about "
-"booting via PXE, see <xref linkend=\"sec.deployment.prep_boot.pxeprep\"/>. "
+"booting via PXE, see <xref linkend=\"sec.deployment.prep_boot.pxeprep\"/> . "
 "Refer to <xref linkend=\"cha.remote_installation\"/> for in-depth "
 "information on starting the upgrade from a remote server."
 msgstr ""
@@ -256,15 +238,46 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:184
+#: sle_update_offline.xml:177
+#, no-c-format
+msgid ""
+"Insert the Installer DVD for &productname; &productnumber; and boot your "
+"machine. A <guimenu>Welcome</guimenu> screen is displayed, followed by the "
+"boot screen."
+msgstr ""
+
+#. Tag: keycap
+#: sle_update_offline.xml:187
+#, no-c-format
+msgid "F4"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_offline.xml:187
 #, no-c-format
 msgid ""
 "Select the type of network installation source you want to use (FTP, HTTP, "
-"NFS, SMB, or SLP). Usually you get this choice by pressing <keycap>F4</"
-"keycap>, but in case your machine is equipped with UEFI instead of a "
-"traditional BIOS, you may need to manually adjust boot parameters. For "
-"details, see <xref linkend=\"cha.boot_parameters\"/> and <xref linkend=\"cha."
-"install\"/>."
+"NFS, SMB, or SLP). Usually you get this choice by pressing"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_offline.xml:189
+#, no-c-format
+msgid ""
+", but in case your machine is equipped with UEFI instead of a traditional "
+"BIOS, you may need to manually adjust boot parameters. For details, see"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_offline.xml:190
+#, no-c-format
+msgid "and"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_offline.xml:191
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: title
@@ -288,7 +301,7 @@ msgstr ""
 msgid ""
 "Adjust the setup of your DHCP server to provide the address information "
 "needed for booting via PXE. For details, see <xref linkend=\"pro.deployment."
-"dhcp_server\"/>."
+"dhcp_server\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -297,7 +310,7 @@ msgstr ""
 msgid ""
 "Set up a TFTP server to hold the boot image needed for booting via PXE. Use "
 "the Installer DVD for &productname; &productnumber; for this or follow the "
-"instructions in <xref linkend=\"sec.deployment.tftp_server\"/>."
+"instructions in <xref linkend=\"sec.deployment.tftp_server\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -312,7 +325,15 @@ msgstr ""
 msgid ""
 "Initiate the boot of the target system and use VNC to remotely connect to "
 "the installation routine running on this machine. For more information, see "
-"<xref linkend=\"sec.remote_installation.monitor_vnc\"/>."
+"<xref linkend=\"sec.remote_installation.monitor_vnc\"/> ."
+msgstr ""
+
+#. Tag: para
+#: sle_update_offline.xml:235
+#, no-c-format
+msgid ""
+"Proceed with the upgrade process as described in <xref linkend=\"sec.upgrade-"
+"offline.yast\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -326,22 +347,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The upgrade process can be executed automatically. For details, see <xref "
-"linkend=\"CreateProfile.upgrade\"/>."
+"linkend=\"CreateProfile.upgrade\"/> ."
 msgstr ""
 
 #. Tag: title
 #: sle_update_offline.xml:252
 #, no-c-format
 msgid "Upgrading &sle;"
-msgstr ""
-
-#. Tag: remark
-#: sle_update_offline.xml:254
-#, no-c-format
-msgid ""
-"taroth 2014-11-13: argh, the following is terminology hell regarding the "
-"software strings: \"upgrade\"/\"update\" are used intermittently and without "
-"clear differentiation..."
 msgstr ""
 
 #. Tag: para
@@ -371,7 +383,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "If you select <guimenu>Installation</guimenu> instead of <guimenu>Upgrade</"
-"guimenu>, data may be lost later. You need to be extra careful not to "
+"guimenu> , data may be lost later. You need to be extra careful not to "
 "destroy your data partitions by doing a fresh installation."
 msgstr ""
 
@@ -392,7 +404,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "On the <guimenu>Welcome</guimenu> screen, choose <guimenu>Language</guimenu> "
-"and <guimenu>Keyboard</guimenu>. Proceed with <guimenu>Next</guimenu>."
+"and <guimenu>Keyboard</guimenu> . Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -406,7 +418,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "On the <guimenu>Select for Upgrade</guimenu> screen, select the partition to "
-"upgrade and click <guimenu>Next</guimenu>."
+"upgrade and click <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -424,7 +436,7 @@ msgid ""
 "On the <guimenu>Previously Used Repositories</guimenu> screen, adjust the "
 "status of the repositories: enable those you want to include in the upgrade "
 "process and disable any repositories that are no longer needed. Proceed with "
-"<guimenu>Next</guimenu>."
+"<guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -463,7 +475,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Select one migration target from the list and proceed with <guimenu>Next</"
-"guimenu>."
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -487,7 +499,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "If all settings are according to your wishes, start the installation and "
-"removal procedure by clicking <guimenu>Update</guimenu>."
+"removal procedure by clicking <guimenu>Update</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -495,7 +507,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "After the upgrade process was finished successfully, check for any "
-"<quote>orphaned packages</quote>. Orphaned packages are packages which "
+"<quote>orphaned packages</quote> . Orphaned packages are packages which "
 "belong to no active repository anymore. The following command gives you a "
 "list of these:"
 msgstr ""
@@ -527,65 +539,103 @@ msgid ""
 "&susemgr; is a server solution for providing updates, patches, and security "
 "fixes for &sle; clients. It comes with a set of tools and a Web-based user "
 "interface for management tasks. See <link xlink:href=\"https://www.suse.com/"
-"products/suse-manager/\"></link> for more information about &susemgr;."
+"products/suse-manager/\"/> for more information about &susemgr;."
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:385
+#: sle_update_offline.xml:386
 #, no-c-format
 msgid "&susemgr; can support you with SP Migration or a full system upgrade."
 msgstr ""
 
 #. Tag: term
-#: sle_update_offline.xml:393
+#: sle_update_offline.xml:394
 #, no-c-format
 msgid "SP Migration"
 msgstr ""
 
-#. Tag: para
-#: sle_update_offline.xml:395
+#. Tag: #text
+#: sle_update_offline.xml:398
 #, no-c-format
 msgid ""
 "SP Migration allows migrating from one Service Pack (SP) to another within "
 "one major version (for example, from &slsa; 12 SP1 to 12 SP2). For more "
-"information, see the <citetitle>&susemgr; Best Practices</citetitle>, "
-"chapter <quote>Client Migration</quote>, section <quote>Migrating SUSE Linux "
-"Enterprise Server 12 or later to version 12 SP2</quote>:"
+"information, see the"
 msgstr ""
 
-#. Tag: para
-#: sle_update_offline.xml:403 sle_update_offline.xml:420
+#. Tag: quote
+#: sle_update_offline.xml:401
 #, no-c-format
-msgid ""
-"<link xlink:href=\"https://www.suse.com/documentation/suse-manager/\"></"
-"link>, version 3.1."
+msgid "Migrating SUSE Linux Enterprise Server 12 or later to version 12 SP2"
 msgstr ""
 
 #. Tag: term
-#: sle_update_offline.xml:411
+#: sle_update_offline.xml:413
 #, no-c-format
 msgid "System Upgrade"
 msgstr ""
 
-#. Tag: para
-#: sle_update_offline.xml:413
+#. Tag: #text
+#: sle_update_offline.xml:416
 #, no-c-format
 msgid ""
 "With &susemgr; you can perform a system upgrade. With the integrated &ay; "
 "technology, upgrades from one major version to the next are possible. For "
-"more information, see the <citetitle>&susemgr; Best Practices</citetitle>, "
-"chapter <quote>Client Migration</quote>, section <quote>Migrating SUSE Linux "
-"Enterprise 11 SP3 to version 12 SP2</quote>:"
+"more information, see the"
+msgstr ""
+
+#. Tag: citetitle
+#: sle_update_offline.xml:418
+#, no-c-format
+msgid "&susemgr; Best Practices"
+msgstr ""
+
+#. Tag: quote
+#: sle_update_offline.xml:419
+#, no-c-format
+msgid "Client Migration"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_offline.xml:419
+#, no-c-format
+msgid ", chapter"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_offline.xml:420
+#, no-c-format
+msgid ", section"
+msgstr ""
+
+#. Tag: quote
+#: sle_update_offline.xml:420
+#, no-c-format
+msgid "Migrating SUSE Linux Enterprise 11 SP3 to version 12 SP2"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_offline.xml:421
+#, no-c-format
+msgid ":"
+msgstr ""
+
+#. Tag: para
+#: sle_update_offline.xml:422
+#, no-c-format
+msgid ""
+"<!-- 3.1 documentation will get published soon... --> <link xlink:href="
+"\"https://www.suse.com/documentation/suse-manager/\"/> , version 3.1."
 msgstr ""
 
 #. Tag: title
-#: sle_update_offline.xml:430
+#: sle_update_offline.xml:433
 #, no-c-format
 msgid "Updating Registration Status after Rollback"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:432
+#: sle_update_offline.xml:435
 #, no-c-format
 msgid ""
 "When performing a service pack upgrade, it is necessary to change the "
@@ -598,7 +648,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:442
+#: sle_update_offline.xml:445
 #, no-c-format
 msgid ""
 "When a rollback is done via Snapper, the system will notify the registration "
@@ -611,13 +661,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_offline.xml:452
+#: sle_update_offline.xml:455
 #, no-c-format
 msgid "&prompt.sudo;<command>snapper</command> rollback"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:454
+#: sle_update_offline.xml:457
 #, no-c-format
 msgid ""
 "We suggest always checking that the correct repositories are set up on the "
@@ -625,13 +675,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: sle_update_offline.xml:459
+#: sle_update_offline.xml:462
 #, no-c-format
 msgid "&prompt.sudo;<command>zypper</command> ref -s"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:461
+#: sle_update_offline.xml:464
 #, no-c-format
 msgid ""
 "This functionality is available in the <package>rollback-helper</package> "
@@ -639,13 +689,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: sle_update_offline.xml:470
+#: sle_update_offline.xml:473
 #, no-c-format
 msgid "Registering Your System"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:472
+#: sle_update_offline.xml:475
 #, no-c-format
 msgid ""
 "If the system was not registered before running the upgrade you can register "
@@ -654,31 +704,31 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:478
+#: sle_update_offline.xml:481
 #, no-c-format
 msgid "Registering your systems has these advantages:"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:484
+#: sle_update_offline.xml:487
 #, no-c-format
 msgid "Eligibility for support"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:489
+#: sle_update_offline.xml:492
 #, no-c-format
 msgid "Availability of security updates and bug fixes"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:494
+#: sle_update_offline.xml:497
 #, no-c-format
 msgid "Access to &scc;"
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:502
+#: sle_update_offline.xml:505
 #, no-c-format
 msgid ""
 "Start &yast; and select <menuchoice> <guimenu>Software</guimenu> "
@@ -687,17 +737,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:509
+#: sle_update_offline.xml:512
 #, no-c-format
 msgid ""
 "Provide the <guimenu>E-mail</guimenu> address associated with the &suse; "
 "account you or your organization uses to manage subscriptions. In case you "
-"do not have a SUSE account yet, go to the &scc; home page (<link xlink:show="
-"\"new\" xlink:href=\"&sccurl;\"></link>) to create one."
+"do not have a SUSE account yet, go to the &scc; home page ( <link xlink:show="
+"\"new\" xlink:href=\"&sccurl;\"/> ) to create one."
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:517
+#: sle_update_offline.xml:520
 #, no-c-format
 msgid ""
 "Enter the <guimenu>Registration Code</guimenu> you received with your copy "
@@ -705,7 +755,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:523
+#: sle_update_offline.xml:526
 #, no-c-format
 msgid ""
 "If one or more local registration servers are available on your network, you "
@@ -713,16 +763,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:529
+#: sle_update_offline.xml:532
 #, no-c-format
-msgid "To start the registration, proceed with <guimenu>Next</guimenu>."
+msgid "To start the registration, proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: sle_update_offline.xml:532
+#: sle_update_offline.xml:535
 #, no-c-format
 msgid ""
 "After successful registration, &yast; lists extensions, add-ons, and modules "
 "that are available for your system. To select and install them, proceed with "
-"<xref linkend=\"sec.add-ons.extensions\"/>."
+"<xref linkend=\"sec.add-ons.extensions\"/> ."
 msgstr ""

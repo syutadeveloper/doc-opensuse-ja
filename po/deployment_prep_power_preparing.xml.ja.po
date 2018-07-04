@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Preparation"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: deployment_prep_power_preparing.xml:15
+#. Tag: dm:translation
+#: deployment_prep_power_preparing.xml:17
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -38,6 +38,38 @@ msgid ""
 msgstr ""
 
 #. Tag: para
+#: deployment_prep_power_preparing.xml:29
+#, no-c-format
+msgid ""
+"<xref linkend=\"sec.prep.powerlinux.powerkvm.kimchi\" xrefstyle=\"select:"
+"title nopage\"/>"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_power_preparing.xml:35
+#, no-c-format
+msgid ""
+"<xref linkend=\"sec.prep.powerlinux.powerkvm.virt-install\" xrefstyle="
+"\"select:title nopage\"/>"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_power_preparing.xml:41
+#, no-c-format
+msgid ""
+"<xref linkend=\"sec.prep.powerlinux.powerkvm.ivm\" xrefstyle=\"select:title "
+"nopage\"/>"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_power_preparing.xml:47
+#, no-c-format
+msgid ""
+"<xref linkend=\"sec.prep.powerlinux.powerkvm.bare_metal\" xrefstyle=\"select:"
+"title nopage\"/>"
+msgstr ""
+
+#. Tag: para
 #: deployment_prep_power_preparing.xml:54
 #, no-c-format
 msgid ""
@@ -45,7 +77,7 @@ msgid ""
 "recommended you create a network installation source. The same source can "
 "also be used for the concurrent installation on several partitions or "
 "several systems. The configuration of a network installation source is "
-"described in <xref linkend=\"sec.deployment.instserver.sles9\"/>."
+"described in <xref linkend=\"sec.deployment.instserver.sles9\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -70,8 +102,8 @@ msgid ""
 "This section assumes you have &powerkvm; running on your IBM &powerlinux; "
 "server. If &powerkvm; is not preinstalled see <quote>Configuring IBM "
 "&powerkvm; on Power Systems</quote> at <link xlink:href=\"http://www.ibm.com/"
-"support/knowledgecenter/linuxonibm/liabp/liabpkickoff.htm\"></link> for "
-"installing and setting up &powerkvm;."
+"support/knowledgecenter/linuxonibm/liabp/liabpkickoff.htm\"/> for installing "
+"and setting up &powerkvm;."
 msgstr ""
 
 #. Tag: title
@@ -96,17 +128,6 @@ msgid "Creating a Template with Kimchi"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:87
-#: deployment_prep_power_preparing.xml:179
-#, no-c-format
-msgid ""
-"In the Web browser, enter the URL of the &powerlinux; server where "
-"&powerkvm; is running, for example <literal>https://"
-"<replaceable>POWERLINUX_IP</replaceable>:8001</literal> (replace "
-"<replaceable>POWERLINUX_IP</replaceable> with the IP address of your system)."
-msgstr ""
-
-#. Tag: para
 #: deployment_prep_power_preparing.xml:96
 #, no-c-format
 msgid ""
@@ -118,7 +139,7 @@ msgstr ""
 #: deployment_prep_power_preparing.xml:102
 #, no-c-format
 msgid ""
-"Click the green plus sign (<guimenu>+</guimenu>) to create the &sls; "
+"Click the green plus sign ( <guimenu>+</guimenu> ) to create the &sls; "
 "template."
 msgstr ""
 
@@ -130,10 +151,10 @@ msgid ""
 "options:"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: deployment_prep_power_preparing.xml:114
 #, no-c-format
-msgid "Local ISO Image"
+msgid "<guimenu>Local ISO Image</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -144,10 +165,10 @@ msgid ""
 "system."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: deployment_prep_power_preparing.xml:124
 #, no-c-format
-msgid "Local Image File"
+msgid "<guimenu>Local Image File</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -156,10 +177,10 @@ msgstr ""
 msgid "Select to specify a path to a local image file."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: deployment_prep_power_preparing.xml:133
 #, no-c-format
-msgid "Remote ISO file"
+msgid "<guimenu>Remote ISO file</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -173,7 +194,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Select the ISO file that you want to use to create a guest and click "
-"<guimenu>Create Templates from Selected ISO</guimenu>."
+"<guimenu>Create Templates from Selected ISO</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -181,8 +202,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "To configure the newly created template, click <menuchoice><guimenu>Actions</"
-"guimenu> <guimenu>Edit</guimenu></menuchoice>, and change the default values "
-"as required by your workload."
+"guimenu> <guimenu>Edit</guimenu></menuchoice> , and change the default "
+"values as required by your workload."
 msgstr ""
 
 #. Tag: para
@@ -191,13 +212,23 @@ msgstr ""
 msgid ""
 "For more information, see <quote>Setting up a template using Kimchi</quote> "
 "at <link xlink:href=\"http://www.ibm.com/support/knowledgecenter/linuxonibm/"
-"liabp/liabpkimchitemplate.htm\"></link>."
+"liabp/liabpkimchitemplate.htm\"/> ."
 msgstr ""
 
 #. Tag: title
 #: deployment_prep_power_preparing.xml:175
 #, no-c-format
 msgid "Installing &sls; as a Guest with Kimchi"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_power_preparing.xml:179
+#, no-c-format
+msgid ""
+"In the Web browser, enter the URL of the &powerlinux; server where "
+"&powerkvm; is running, for example <literal>https://"
+"<replaceable>POWERLINUX_IP</replaceable>:8001</literal> (replace "
+"<replaceable>POWERLINUX_IP</replaceable> with the IP address of your system)."
 msgstr ""
 
 #. Tag: para
@@ -212,7 +243,7 @@ msgstr ""
 #: deployment_prep_power_preparing.xml:194
 #, no-c-format
 msgid ""
-"Click the green plus sign (<guimenu>+</guimenu>) to create the &sls; guest."
+"Click the green plus sign ( <guimenu>+</guimenu> ) to create the &sls; guest."
 msgstr ""
 
 #. Tag: para
@@ -226,7 +257,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Choose the &sls; template created in <xref linkend=\"sec.prep.powerlinux."
-"powerkvm.template\"/> and click <guimenu>Create</guimenu>."
+"powerkvm.template\"/> and click <guimenu>Create</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -236,7 +267,7 @@ msgid ""
 "After the guest is created, it is ready to be started. Click the red power "
 "button to start the SUSE Linux Enterprise Server guest. Alternatively, "
 "select <menuchoice><guimenu>Actions</guimenu> <guimenu>Start</guimenu></"
-"menuchoice>."
+"menuchoice> ."
 msgstr ""
 
 #. Tag: para
@@ -244,8 +275,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Click <menuchoice><guimenu>Actions</guimenu> <guimenu>Connect</guimenu></"
-"menuchoice>, and connect your VNC viewer to the installation process as "
-"outlined in <xref linkend=\"sec.remote_installation.monitor_vnc.connect\"/>."
+"menuchoice> , and connect your VNC viewer to the installation process as "
+"outlined in <xref linkend=\"sec.remote_installation.monitor_vnc.connect\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -267,7 +298,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Now you can continue with the default installation via VNC as described in "
-"<xref linkend=\"cha.install\"/>."
+"<xref linkend=\"cha.install\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -288,7 +319,7 @@ msgid ""
 "&powerlinux; Server systems. <command>virt-install</command> allows many "
 "installation scenarios; in the following a remote installation scenario via "
 "VNC and PXE boot is outlined. For more information about <command>virt-"
-"install</command>, see <xref linkend=\"sec.libvirt.inst.virt-install\"/>."
+"install</command> , see <xref linkend=\"sec.libvirt.inst.virt-install\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -297,7 +328,7 @@ msgstr ""
 msgid ""
 "Prepare a repository with the installation sources and PXE boot enabled "
 "target system as described in <xref linkend=\"sec.remote_installation."
-"scenario.vncpxe\"/>."
+"scenario.vncpxe\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -319,22 +350,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:278
+#: deployment_prep_power_preparing.xml:281
 #, no-c-format
 msgid ""
 "It will use VNC graphics, and it will automatically launch the graphical "
 "client. Complete the installation as described in <xref linkend=\"cha.install"
-"\"/>."
+"\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_power_preparing.xml:286
+#: deployment_prep_power_preparing.xml:289
 #, no-c-format
 msgid "Installation in a Partition Using IVM"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:289
+#: deployment_prep_power_preparing.xml:292
 #, no-c-format
 msgid ""
 "This guide helps you install &productname; on a Power Systems server "
@@ -344,56 +375,56 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:297
+#: deployment_prep_power_preparing.xml:300
 #, no-c-format
 msgid "the Linux on Power system is powered on"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:302
+#: deployment_prep_power_preparing.xml:305
 #, no-c-format
 msgid "the Virtual I/O server is installed"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:307
+#: deployment_prep_power_preparing.xml:310
 #, no-c-format
 msgid "the IVM is initially configured"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_power_preparing.xml:313
+#: deployment_prep_power_preparing.xml:316
 #, no-c-format
 msgid "Log in to the IVM Web interface"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:315
+#: deployment_prep_power_preparing.xml:318
 #, no-c-format
 msgid ""
 "Open a Web browser window, and connect using the HTTP or HTTPS protocol to "
 "the IP address that was assigned to the IVM during the installation process "
-"(for example, https://<replaceable>IP_ADDRESS</replaceable>). The Welcome "
+"(for example, https:// <replaceable>IP_ADDRESS</replaceable> ). The Welcome "
 "window is displayed."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:323
+#: deployment_prep_power_preparing.xml:326
 #, no-c-format
 msgid ""
-"Log in as the user <systemitem class=\"username\">padmin</systemitem>, "
+"Log in as the user <systemitem class=\"username\">padmin</systemitem> , "
 "providing the password that you defined during the installation process. The "
 "IVM interface is displayed."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:330
+#: deployment_prep_power_preparing.xml:333
 #, no-c-format
-msgid "Select <guimenu>View/Modify Virtual Ethernet</guimenu>."
+msgid "Select <guimenu>View/Modify Virtual Ethernet</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:335
+#: deployment_prep_power_preparing.xml:338
 #, no-c-format
 msgid ""
 "Click <guimenu>Initialize Virtual Ethernet</guimenu> to provide Ethernet "
@@ -401,14 +432,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:341
+#: deployment_prep_power_preparing.xml:344
 #, no-c-format
 msgid ""
-"When the Virtual Ethernet is initialized, click <guimenu>Apply</guimenu>."
+"When the Virtual Ethernet is initialized, click <guimenu>Apply</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:346
+#: deployment_prep_power_preparing.xml:349
 #, no-c-format
 msgid ""
 "If your installation requires external networking, create a virtual Ethernet "
@@ -416,41 +447,41 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:352
+#: deployment_prep_power_preparing.xml:355
 #, no-c-format
 msgid "Select the <guimenu>Virtual Ethernet Bridge</guimenu> tab."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:357
+#: deployment_prep_power_preparing.xml:360
 #, no-c-format
 msgid ""
 "Select the physical adapter to bridge and proceed with <guimenu>Apply</"
-"guimenu>."
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:365
+#: deployment_prep_power_preparing.xml:368
 #, no-c-format
 msgid "Next, create a partition, following these steps:"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_power_preparing.xml:367
+#: deployment_prep_power_preparing.xml:370
 #, no-c-format
 msgid "Create a Partition"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:369
+#: deployment_prep_power_preparing.xml:372
 #, no-c-format
 msgid ""
 "In the IVM Web interface, click <menuchoice><guimenu>View/Modify Partition</"
-"guimenu> <guimenu>Create Partition</guimenu></menuchoice>."
+"guimenu> <guimenu>Create Partition</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:375
+#: deployment_prep_power_preparing.xml:378
 #, no-c-format
 msgid ""
 "Enter a name for the partition. To advance to the next step, click "
@@ -458,23 +489,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:381
+#: deployment_prep_power_preparing.xml:384
 #, no-c-format
 msgid ""
 "Specify memory for your partition. If you have created a shared memory pool, "
 "your partitions can share memory. Otherwise, select <guimenu>Dedicated</"
-"guimenu>."
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:388
+#: deployment_prep_power_preparing.xml:391
 #, no-c-format
 msgid ""
 "Specify the number of processors and the processing mode for the partition."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:394
+#: deployment_prep_power_preparing.xml:397
 #, no-c-format
 msgid ""
 "Specify a virtual Ethernet for the partition. If you do not want to "
@@ -483,7 +514,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:401
+#: deployment_prep_power_preparing.xml:404
 #, no-c-format
 msgid ""
 "Create a new virtual disk or assign existing virtual disks and physical "
@@ -491,16 +522,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:407
+#: deployment_prep_power_preparing.xml:410
 #, no-c-format
 msgid ""
 "Verify the <guimenu>Virtual disk name</guimenu> and <guimenu>Storage pool "
 "name</guimenu> for your disk and specify a <guimenu>Virtual disk size</"
-"guimenu>."
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:414
+#: deployment_prep_power_preparing.xml:417
 #, no-c-format
 msgid ""
 "Configure optical devices for your partition by expanding the "
@@ -510,28 +541,28 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:422
+#: deployment_prep_power_preparing.xml:425
 #, no-c-format
 msgid ""
 "Verify your partition configuration settings and click <guimenu>Finish</"
-"guimenu>. The partition is created and available from the <guimenu>View/"
+"guimenu> . The partition is created and available from the <guimenu>View/"
 "Modify Partitions</guimenu> list."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:429
+#: deployment_prep_power_preparing.xml:432
 #, no-c-format
 msgid "Now activate the partition you have created:"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_power_preparing.xml:431
+#: deployment_prep_power_preparing.xml:434
 #, no-c-format
 msgid "Activate the Partition"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:433
+#: deployment_prep_power_preparing.xml:436
 #, no-c-format
 msgid ""
 "In the IVM Web interface, click <guimenu>View/Modify Partition</guimenu> and "
@@ -539,150 +570,350 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:439
+#: deployment_prep_power_preparing.xml:442
 #, no-c-format
-msgid "Select <guimenu>More Tasks</guimenu>."
+msgid "Select <guimenu>More Tasks</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:444
+#: deployment_prep_power_preparing.xml:447
 #, no-c-format
-msgid "Select <guimenu>Open a terminal window</guimenu>."
+msgid "Select <guimenu>Open a terminal window</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:449
+#: deployment_prep_power_preparing.xml:452
 #, no-c-format
 msgid "Click <guimenu>Activate</guimenu> next to the partition."
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:454
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:458
 #, no-c-format
-msgid ""
-"In the terminal window, enter <keycap>1</keycap> to start the system "
-"management services (SMS)."
+msgid "In the terminal window, enter"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:460
+#, no-c-format
+msgid "to start the system management services (SMS)."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:460
+#: deployment_prep_power_preparing.xml:463
 #, no-c-format
 msgid "The machine is set up now and you can boot into the installation:"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_power_preparing.xml:464
+#: deployment_prep_power_preparing.xml:467
 #, no-c-format
 msgid "Boot the Linux Installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:466
-#: deployment_prep_power_preparing.xml:609
-#, no-c-format
-msgid ""
-"At the <guimenu>Boot selection</guimenu> window, enter <keycap>1</keycap> to "
-"select the <guimenu>SMS Menu</guimenu>. Enter <keycap>1</keycap> before the "
-"firmware boot screen is completely shown on the display, because it will "
-"disappear when complete. If you miss the screen, reboot the system."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_power_preparing.xml:474
+#: deployment_prep_power_preparing.xml:477
 #, no-c-format
 msgid ""
 "Now, you can insert the Virtual I/O Server (VIOS) media disk into the disk "
 "drive."
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:480
-#: deployment_prep_power_preparing.xml:617
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:497
 #, no-c-format
-msgid ""
-"Enter <keycap>2</keycap> to continue to the password entry on the "
-"<guimenu>Language selection</guimenu> menu. Enter the password for the admin "
-"ID."
+msgid "to select"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:497
+#, no-c-format
+msgid "Install/Boot Device"
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_power_preparing.xml:581
+#, no-c-format
+msgid "Installation on Servers with no Open Power Abstraction Layer"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:487
+#: deployment_prep_power_preparing.xml:584
+#, no-c-format
+msgid ""
+"Use this information to install Linux using a serial console or using a "
+"monitor and keyboard on a Power Systems server. This installation assumes an "
+"unmanaged (stand-alone) system that is ready to boot."
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:592
+#, no-c-format
+msgid "Power On"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:592
+#, no-c-format
+msgid "Power on your system by selecting"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:593
+#, no-c-format
+msgid "Power On/Off System"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:593
+#, no-c-format
+msgid "from the"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_prep_power_preparing.xml:594
+#, no-c-format
+msgid "0"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:594
+#, no-c-format
+msgid "menu. When asked if you want to continue using the console, enter"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:596
+#, no-c-format
+msgid "to continue doing so."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_power_preparing.xml:599
+#, no-c-format
+msgid "Insert the &productname; installation media into the disk drive."
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:605
+#, no-c-format
+msgid "From the"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:605
+#, no-c-format
+msgid "Select Language"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:607
+#, no-c-format
+msgid "to continue to booting."
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:612
+#, no-c-format
+msgid "to accept the license agreement."
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:615
+#, no-c-format
+msgid "Boot selection"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:615
+#, no-c-format
+msgid "At the"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:615
+#, no-c-format
+msgid "window, enter"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:616
+#, no-c-format
+msgid ". Enter"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:616
+#, no-c-format
+msgid "SMS Menu"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:616
+#, no-c-format
+msgid "to select the"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:619
+#, no-c-format
+msgid ""
+"before the firmware boot screen is completely shown on the display, because "
+"it will disappear when complete. If you miss the screen, reboot the system."
+msgstr ""
+
+#. Tag: #text
 #: deployment_prep_power_preparing.xml:624
 #, no-c-format
-msgid ""
-"On the main SMS menu, enter <keycap>5</keycap> to choose <guimenu>Select "
-"Boot Options</guimenu>."
+msgid "to continue to the password entry on the"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:493
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:624
 #, no-c-format
-msgid ""
-"Enter <keycap>1</keycap> to select <guimenu>Install/Boot Device</guimenu>."
+msgid "Language selection"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:499
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:626
+#, no-c-format
+msgid "menu. Enter the password for the admin ID."
+msgstr ""
+
+#. Tag: #text
 #: deployment_prep_power_preparing.xml:630
 #, no-c-format
-msgid "Enter <keycap>7</keycap> to view all of the available boot devices."
+msgid "On the main SMS menu, enter"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:504
-#: deployment_prep_power_preparing.xml:635
+#. Tag: keycap
+#: deployment_prep_power_preparing.xml:630
+#, no-c-format
+msgid "5"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:631
+#, no-c-format
+msgid "to choose"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:631
+#, no-c-format
+msgid "Select Boot Options"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_prep_power_preparing.xml:636
+#, no-c-format
+msgid "7"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:637
+#, no-c-format
+msgid "to view all of the available boot devices."
+msgstr ""
+
+#. Tag: keycap
+#: deployment_prep_power_preparing.xml:642
+#, no-c-format
+msgid "N"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:642
 #, no-c-format
 msgid ""
 "Enter the number corresponding to the device you want to use. If your device "
-"is not listed, enter <keycap>N</keycap> to display more."
+"is not listed, enter"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:510
-#: deployment_prep_power_preparing.xml:641
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:643
 #, no-c-format
-msgid ""
-"Enter <keycap>2</keycap> to perform a <guimenu>Normal Mode Boot</guimenu>."
+msgid "to display more."
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:516
-#: deployment_prep_power_preparing.xml:646
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:647
 #, no-c-format
-msgid ""
-"Enter <keycap>1</keycap> to leave the SMS menu and to start the boot process."
+msgid "Normal Mode Boot"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:522
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:647
+#, no-c-format
+msgid "to perform a"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_prep_power_preparing.xml:647
+#, no-c-format
+msgid "2"
+msgstr ""
+
+#. Tag: #text
 #: deployment_prep_power_preparing.xml:652
+#, no-c-format
+msgid "Enter"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_prep_power_preparing.xml:652
+#, no-c-format
+msgid "1"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:654
+#, no-c-format
+msgid "to leave the SMS menu and to start the boot process."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_power_preparing.xml:657
 #, no-c-format
 msgid "At the boot prompt from the installer, type"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_power_preparing.xml:525
-#: deployment_prep_power_preparing.xml:655
+#: deployment_prep_power_preparing.xml:660
 #, no-c-format
 msgid ""
 "install vnc=1\n"
 "vncpassword=<replaceable>VNC_PASSWORD</replaceable>"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:526
-#: deployment_prep_power_preparing.xml:656
+#. Tag: replaceable
+#: deployment_prep_power_preparing.xml:663
+#, no-c-format
+msgid "VNC_PASSWORD"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:663
+#, no-c-format
+msgid "Replace"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:664
 #, no-c-format
 msgid ""
-"Replace <replaceable>VNC_PASSWORD</replaceable> with a password of your "
-"choice (minimum length is eight characters) and press <keycap function="
-"\"enter\"></keycap> to start the installation of &productname;. The kernel "
-"will begin loading."
+"with a password of your choice (minimum length is eight characters) and press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:665
+#, no-c-format
+msgid ""
+"to start the installation of &productname;. The kernel will begin loading."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:533
-#: deployment_prep_power_preparing.xml:664
+#: deployment_prep_power_preparing.xml:671
 #, no-c-format
 msgid ""
 "After the kernel has started to load, the installer needs some information "
@@ -692,34 +923,69 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_power_preparing.xml:540
-#: deployment_prep_power_preparing.xml:671
+#: deployment_prep_power_preparing.xml:678
 #, no-c-format
 msgid "Start the VNC Session"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_power_preparing.xml:542
-#: deployment_prep_power_preparing.xml:673
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:681
 #, no-c-format
-msgid ""
-"On the <guimenu>Network device</guimenu> window, select <guimenu>eth0</"
-"guimenu> as your network device. Select <guimenu>OK</guimenu> and press "
-"<keycap function=\"enter\"></keycap>."
+msgid "Network device"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:681
+#, no-c-format
+msgid "On the"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:682
+#, no-c-format
+msgid "window, select"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:682
+#, no-c-format
+msgid "eth0"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:683
+#, no-c-format
+msgid "and press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:683
+#, no-c-format
+msgid "as your network device. Select"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_prep_power_preparing.xml:683
+#, no-c-format
+msgid "OK"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_power_preparing.xml:684
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:549
-#: deployment_prep_power_preparing.xml:680
+#: deployment_prep_power_preparing.xml:687
 #, no-c-format
 msgid ""
 "Test the installation media. Alternatively, proceed without the test by "
-"selecting <guimenu>Skip</guimenu>."
+"selecting <guimenu>Skip</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:555
-#: deployment_prep_power_preparing.xml:686
+#: deployment_prep_power_preparing.xml:693
 #, no-c-format
 msgid ""
 "After the system has started the VNC server, you will see a message to "
@@ -727,62 +993,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:562
-#: deployment_prep_power_preparing.xml:693
+#: deployment_prep_power_preparing.xml:700
 #, no-c-format
 msgid ""
 "Start a VNC client on your laptop or PC. Enter the IP address from the "
-"previous step followed by <literal>:1</literal>, for example &wsIVip;:1."
+"previous step followed by <literal>:1</literal> , for example &wsIVip;:1."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_power_preparing.xml:568
-#: deployment_prep_power_preparing.xml:699
+#: deployment_prep_power_preparing.xml:706
 #, no-c-format
 msgid ""
-"Complete the installation as described in <xref linkend=\"cha.install\"/>."
-msgstr ""
-
-#. Tag: title
-#: deployment_prep_power_preparing.xml:576
-#, no-c-format
-msgid "Installation on Servers with no Open Power Abstraction Layer"
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_power_preparing.xml:579
-#, no-c-format
-msgid ""
-"Use this information to install Linux using a serial console or using a "
-"monitor and keyboard on a Power Systems server. This installation assumes an "
-"unmanaged (stand-alone) system that is ready to boot."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_power_preparing.xml:586
-#, no-c-format
-msgid ""
-"Power on your system by selecting <guimenu>Power On</guimenu> from the "
-"<guimenu>Power On/Off System</guimenu> menu. When asked if you want to "
-"continue using the console, enter <keycap>0</keycap> to continue doing so."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_power_preparing.xml:594
-#, no-c-format
-msgid "Insert the &productname; installation media into the disk drive."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_power_preparing.xml:599
-#, no-c-format
-msgid ""
-"From the <guimenu>Select Language</guimenu> window, enter <keycap>2</keycap> "
-"to continue to booting."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_power_preparing.xml:605
-#, no-c-format
-msgid "Enter <keycap>1</keycap> to accept the license agreement."
+"Complete the installation as described in <xref linkend=\"cha.install\"/> ."
 msgstr ""

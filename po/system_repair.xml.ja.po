@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Using the Rescue System"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: system_repair.xml:11
+#. Tag: dm:translation
+#: system_repair.xml:13
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -85,7 +85,7 @@ msgstr ""
 msgid ""
 "Resize partitions using the parted command. Find more information about this "
 "tool at the GNU Parted Web site <link xlink:href=\"http://www.gnu.org/"
-"software/parted/parted.html\"></link>."
+"software/parted/parted.html\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -109,7 +109,7 @@ msgstr ""
 msgid ""
 "On &zseries; the installation system can be used for rescue purposes. To "
 "start the rescue system follow the instructions in <xref linkend=\"sec."
-"zseries.rescue\"/>."
+"zseries.rescue\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -124,20 +124,40 @@ msgstr ""
 msgid "Reboot the system."
 msgstr ""
 
-#. Tag: para
-#: system_repair.xml:87
+#. Tag: #text
+#: system_repair.xml:88
 #, no-c-format
-msgid ""
-"At the boot screen, press <keycap>F4</keycap> and choose <guimenu>DVD-ROM</"
-"guimenu>. Then choose <guimenu>Rescue System</guimenu> from the main menu."
+msgid "At the boot screen, press"
 msgstr ""
 
-#. Tag: para
-#: system_repair.xml:94 system_repair.xml:127 system_repair.xml:447
+#. Tag: keycap
+#: system_repair.xml:88
 #, no-c-format
-msgid ""
-"Enter <literal>root</literal> at the <literal>Rescue:</literal> prompt. A "
-"password is not required."
+msgid "F4"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:89
+#, no-c-format
+msgid "and choose"
+msgstr ""
+
+#. Tag: guimenu
+#: system_repair.xml:89
+#, no-c-format
+msgid "DVD-ROM"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:89
+#, no-c-format
+msgid ". Then choose"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:91
+#, no-c-format
+msgid "from the main menu."
 msgstr ""
 
 #. Tag: para
@@ -158,7 +178,7 @@ msgid ""
 "Enter the configuration of your PXE boot setup and add the lines "
 "<literal>install=<replaceable>PROTOCOL</replaceable>://"
 "<replaceable>INSTSOURCE</replaceable></literal> and <literal>rescue=1</"
-"literal>. If you need to start the repair system, use <literal>repair=1</"
+"literal> . If you need to start the repair system, use <literal>repair=1</"
 "literal> instead. As with a normal installation, <replaceable>PROTOCOL</"
 "replaceable> stands for any of the supported network protocols (NFS, HTTP, "
 "FTP, etc.) and <replaceable>INSTSOURCE</replaceable> for the path to your "
@@ -169,18 +189,16 @@ msgstr ""
 #: system_repair.xml:120
 #, no-c-format
 msgid ""
-"Boot the system using <quote>Wake on LAN</quote><phrase os=\"sles;sled\">, "
-"as described in <xref linkend=\"sec.deployment.prep_boot.wol\"/></phrase>."
+"Boot the system using <quote>Wake on LAN</quote> <phrase os=\"sles;sled\">, "
+"as described in <xref linkend=\"sec.deployment.prep_boot.wol\"/></phrase> ."
 msgstr ""
 
-#. Tag: para
-#: system_repair.xml:133
+#. Tag: #text
+#: system_repair.xml:136
 #, no-c-format
 msgid ""
 "When you have entered the rescue system, you can use the virtual consoles "
-"that can be reached with <keycombo><keycap function=\"alt\"></"
-"keycap><keycap>F1</keycap></keycombo> to <keycombo><keycap function=\"alt"
-"\"></keycap><keycap>F6</keycap></keycombo>."
+"that can be reached with"
 msgstr ""
 
 #. Tag: para
@@ -191,9 +209,9 @@ msgid ""
 "in the <filename>/bin</filename> directory. The <filename>/sbin</filename> "
 "directory contains important file and network utilities for reviewing and "
 "repairing the file system. This directory also contains the most important "
-"binaries for system maintenance, such as <command>fdisk</command>, "
-"<command>mkfs</command>, <command>mkswap</command>, <command>mount</"
-"command>, and <command>shutdown</command>, <command>ip</command> and "
+"binaries for system maintenance, such as <command>fdisk</command> , "
+"<command>mkfs</command> , <command>mkswap</command> , <command>mount</"
+"command> , and <command>shutdown</command> , <command>ip</command> and "
 "<command>ss</command> for maintaining the network. The directory <filename>/"
 "usr/bin</filename> contains the vi editor, find, less, and SSH."
 msgstr ""
@@ -203,7 +221,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "To see the system messages, either use the command <command>dmesg</command> "
-"or view the system log with <command>journalctl</command>."
+"or view the system log with <command>journalctl</command> ."
 msgstr ""
 
 #. Tag: title
@@ -304,15 +322,15 @@ msgstr ""
 msgid ""
 "Generally, file systems cannot be repaired on a running system. If you "
 "encounter serious problems, you may not even be able to mount your root file "
-"system and the system boot may end with a <quote>kernel panic</quote>. In "
+"system and the system boot may end with a <quote>kernel panic</quote> . In "
 "this case, the only way is to repair the system from the outside. The system "
-"contains the utilities to check and repair the <literal>btrfs</literal>, "
-"<literal>ext2</literal>, <literal>ext3</literal>, <literal>ext4</literal>, "
-"<literal>xfs</literal>, <literal>dosfs</literal>, and <literal>vfat</"
-"literal> file systems. Look for the command <command>fsck."
-"<replaceable>FILESYSTEM</replaceable></command>. For example, if you need a "
-"file system check for <literal>btrfs</literal>, use <command>fsck.btrfs</"
-"command>."
+"contains the utilities to check and repair the <literal>btrfs</literal> , "
+"<literal>ext2</literal> , <literal>ext3</literal> , <literal>ext4</"
+"literal> , <literal>xfs</literal> , <literal>dosfs</literal> , and "
+"<literal>vfat</literal> file systems. Look for the command <command>fsck."
+"<replaceable>FILESYSTEM</replaceable></command> . For example, if you need a "
+"file system check for <literal>btrfs</literal> , use <command>fsck.btrfs</"
+"command> ."
 msgstr ""
 
 #. Tag: title
@@ -350,7 +368,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "If you are using an LVM setup (refer to <xref os=\"sles\" linkend=\"part.lvm"
-"\"/><xref os=\"sled;osuse\" linkend=\"sec.yast.system.lvm\"/> for more "
+"\"/> <xref os=\"sled;osuse\" linkend=\"sec.yast.system.lvm\"/> for more "
 "general details), import all existing volume groups to be able to find and "
 "mount the device(s):"
 msgstr ""
@@ -383,27 +401,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:255
+#: system_repair.xml:261
 #, no-c-format
 msgid "Mount the root partition from the installed system:"
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:258
+#: system_repair.xml:264
 #, no-c-format
 msgid "&prompt.sudo;mount /dev/sda2 /mnt"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:261
+#: system_repair.xml:267
 #, no-c-format
 msgid ""
-"Mount <filename>/proc</filename>, <filename>/dev</filename>, and <filename>/"
-"sys</filename> partitions:"
+"Mount <filename>/proc</filename> , <filename>/dev</filename> , and "
+"<filename>/sys</filename> partitions:"
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:265
+#: system_repair.xml:271
 #, no-c-format
 msgid ""
 "&prompt.sudo;mount -t proc none /mnt/proc\n"
@@ -412,7 +430,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:268
+#: system_repair.xml:276
 #, no-c-format
 msgid ""
 "Now you can <quote>change root</quote> into the new environment, keeping the "
@@ -420,41 +438,41 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:272
+#: system_repair.xml:280
 #, no-c-format
 msgid "&prompt.user;chroot /mnt /bin/bash"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:275
+#: system_repair.xml:283
 #, no-c-format
 msgid "Finally, mount the remaining partitions from the installed system:"
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:278
+#: system_repair.xml:286
 #, no-c-format
 msgid "&prompt.user;mount -a"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:281
+#: system_repair.xml:289
 #, no-c-format
 msgid ""
 "Now you have access to the installed system. Before rebooting the system, "
 "unmount the partitions with <command>umount</command> <option>-a</option> "
 "and leave the <quote>change root</quote> environment with <command>exit</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: title
-#: system_repair.xml:290
+#: system_repair.xml:298
 #, no-c-format
 msgid "Limitations"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:291
+#: system_repair.xml:299
 #, no-c-format
 msgid ""
 "Although you have full access to the files and applications of the installed "
@@ -472,24 +490,44 @@ msgid ""
 "example. It is also not possible to start a graphical user interface."
 msgstr ""
 
-#. Tag: para
-#: system_repair.xml:306
+#. Tag: #text
+#: system_repair.xml:315
 #, no-c-format
-msgid ""
-"Also note that you leave the <quote>change root</quote> environment when you "
-"switch the console with <keycombo><keycap function=\"alt\"></"
-"keycap><keycap>F1</keycap></keycombo> to <keycombo><keycap function=\"alt"
-"\"></keycap><keycap>F6</keycap></keycombo>."
+msgid "Also note that you leave the"
+msgstr ""
+
+#. Tag: quote
+#: system_repair.xml:315
+#, no-c-format
+msgid "change root"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:317
+#, no-c-format
+msgid "environment when you switch the console with"
+msgstr ""
+
+#. Tag: keycap
+#: system_repair.xml:317
+#, no-c-format
+msgid "F1"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:318
+#, no-c-format
+msgid "to"
 msgstr ""
 
 #. Tag: title
-#: system_repair.xml:315
+#: system_repair.xml:323
 #, no-c-format
 msgid "Modifying and Re-installing the Boot Loader"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:316
+#: system_repair.xml:324
 #, no-c-format
 msgid ""
 "Sometimes a system cannot boot because the boot loader configuration is "
@@ -499,7 +537,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:322
+#: system_repair.xml:330
 #, no-c-format
 msgid ""
 "To check the boot loader configuration and re-install the boot loader, "
@@ -507,15 +545,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:328
+#: system_repair.xml:336
 #, no-c-format
 msgid ""
 "Perform the necessary steps to access the installed system as described in "
-"<xref linkend=\"sec.trouble.data.recover.rescue.access\"/>."
+"<xref linkend=\"sec.trouble.data.recover.rescue.access\"/> ."
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:334
+#: system_repair.xml:342
 #, no-c-format
 msgid ""
 "Check that the GRUB 2 boot loader is installed on the system. If not, "
@@ -523,13 +561,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:338
+#: system_repair.xml:346
 #, no-c-format
 msgid "&prompt.sudo;grub2-install /dev/sda"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:341
+#: system_repair.xml:349
 #, no-c-format
 msgid ""
 "Check whether the following files are correctly configured according to the "
@@ -537,14 +575,14 @@ msgid ""
 "and apply fixes if necessary."
 msgstr ""
 
-#. Tag: filename
-#: system_repair.xml:349
+#. Tag: para
+#: system_repair.xml:356
 #, no-c-format
-msgid "/etc/default/grub"
+msgid "<filename>/etc/default/grub</filename>"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:353
+#: system_repair.xml:361
 #, no-c-format
 msgid ""
 "<filename>/boot/grub2/device.map</filename> (optional file, only present if "
@@ -552,33 +590,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:359
+#: system_repair.xml:367
 #, no-c-format
 msgid ""
 "<filename>/boot/grub2/grub.cfg</filename> (this file is generated, do not "
 "edit)"
 msgstr ""
 
-#. Tag: filename
-#: system_repair.xml:366
+#. Tag: para
+#: system_repair.xml:373
 #, no-c-format
-msgid "/etc/sysconfig/bootloader"
+msgid "<filename>/etc/sysconfig/bootloader</filename>"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:372
+#: system_repair.xml:380
 #, no-c-format
 msgid "Re-install the boot loader using the following command sequence:"
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:375
+#: system_repair.xml:383
 #, no-c-format
 msgid "&prompt.sudo;grub2-mkconfig -o /boot/grub2/grub.cfg"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:378
+#: system_repair.xml:386
 #, no-c-format
 msgid ""
 "Unmount the partitions, log out from the <quote>change root</quote> "
@@ -586,7 +624,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:382
+#: system_repair.xml:390
 #, no-c-format
 msgid ""
 "&prompt.user;umount -a\n"
@@ -595,13 +633,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: system_repair.xml:387
+#: system_repair.xml:397
 #, no-c-format
 msgid "Fixing Kernel Installation"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:388
+#: system_repair.xml:398
 #, no-c-format
 msgid ""
 "A kernel update may introduce a new bug which can impact the operation of "
@@ -612,13 +650,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: system_repair.xml:396
+#: system_repair.xml:406
 #, no-c-format
 msgid "How to Keep Last Kernels after Update"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:397
+#: system_repair.xml:407
 #, no-c-format
 msgid ""
 "To prevent failures to boot after a faulty kernel update, use the kernel "
@@ -627,7 +665,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:402
+#: system_repair.xml:412
 #, no-c-format
 msgid ""
 "For example to always keep the last two kernels and the currently running "
@@ -635,13 +673,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: system_repair.xml:406
+#: system_repair.xml:416
 #, no-c-format
 msgid "multiversion.kernels = latest,latest-1,running"
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:407
+#: system_repair.xml:417
 #, no-c-format
 msgid ""
 "to the <filename>/etc/zypp/zypp.conf</filename> file. See <xref linkend="
@@ -649,7 +687,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:412
+#: system_repair.xml:422
 #, no-c-format
 msgid ""
 "A similar case is when you need to re-install or update a broken driver for "
@@ -661,7 +699,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:420
+#: system_repair.xml:430
 #, no-c-format
 msgid ""
 "In both cases you need to access the installed system in the rescue mode and "
@@ -670,41 +708,90 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:427
+#: system_repair.xml:437
 #, no-c-format
 msgid "Boot from the &productname; installation media."
 msgstr ""
 
-#. Tag: para
-#: system_repair.xml:432
+#. Tag: #text
+#: system_repair.xml:444
 #, no-c-format
 msgid ""
 "If you are recovering after a faulty kernel update, skip this step. If you "
-"need to use a driver update disk (DUD), press <keycap>F6</keycap> to load "
-"the driver update after the boot menu appears, and choose the path or URL to "
-"the driver update and confirm with <guimenu>Yes</guimenu>."
+"need to use a driver update disk (DUD), press"
 msgstr ""
 
-#. Tag: para
-#: system_repair.xml:440
+#. Tag: keycap
+#: system_repair.xml:444
+#, no-c-format
+msgid "F6"
+msgstr ""
+
+#. Tag: guimenu
+#: system_repair.xml:446
+#, no-c-format
+msgid "Yes"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:446
 #, no-c-format
 msgid ""
-"Choose <guimenu>Rescue System</guimenu> from the boot menu and press <keycap "
-"function=\"enter\"></keycap>. If you chose to use DUD, you will be asked to "
-"specify where the driver update is stored."
+"to load the driver update after the boot menu appears, and choose the path "
+"or URL to the driver update and confirm with"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:447
+#, no-c-format
+msgid "."
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:451
+#, no-c-format
+msgid "Choose"
+msgstr ""
+
+#. Tag: guimenu
+#: system_repair.xml:451
+#, no-c-format
+msgid "Rescue System"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:452
+#, no-c-format
+msgid "from the boot menu and press"
+msgstr ""
+
+#. Tag: #text
+#: system_repair.xml:454
+#, no-c-format
+msgid ""
+". If you chose to use DUD, you will be asked to specify where the driver "
+"update is stored."
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:453
+#: system_repair.xml:457
+#, no-c-format
+msgid ""
+"Enter <literal>root</literal> at the <literal>Rescue:</literal> prompt. A "
+"password is not required."
+msgstr ""
+
+#. Tag: para
+#: system_repair.xml:463
 #, no-c-format
 msgid ""
 "Manually mount the target system and <quote>change root</quote> into the new "
 "environment. For more information, see <xref linkend=\"sec.trouble.data."
-"recover.rescue.access\"/>."
+"recover.rescue.access\"/> ."
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:460
+#: system_repair.xml:470
 #, no-c-format
 msgid ""
 "If using DUD, install/re-install/update the faulty device driver package. "
@@ -713,7 +800,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:465
+#: system_repair.xml:475
 #, no-c-format
 msgid ""
 "If fixing faulty kernel update installation, you can install the original "
@@ -721,41 +808,41 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:471
+#: system_repair.xml:481
 #, no-c-format
 msgid ""
 "Identify your DVD device with <command>hwinfo --cdrom</command> and mount it "
-"with <command>mount /dev/sr0 /mnt</command>."
+"with <command>mount /dev/sr0 /mnt</command> ."
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:477
+#: system_repair.xml:487
 #, no-c-format
 msgid ""
 "Navigate to the directory where your kernel files are stored on the DVD, for "
-"example <command>cd /mnt/suse/x86_64/</command>."
+"example <command>cd /mnt/suse/x86_64/</command> ."
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:483
+#: system_repair.xml:493
 #, no-c-format
 msgid ""
-"Install required <systemitem>kernel-*</systemitem>, <systemitem>kernel-*-"
-"base</systemitem>, and <systemitem>kernel-*-extra</systemitem> packages of "
+"Install required <systemitem>kernel-*</systemitem> , <systemitem>kernel-*-"
+"base</systemitem> , and <systemitem>kernel-*-extra</systemitem> packages of "
 "your flavor with the <command>rpm -i</command> command."
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:507
+#: system_repair.xml:517
 #, no-c-format
 msgid ""
 "Update configuration files and reinitialize the boot loader if needed. For "
 "more information, see <xref linkend=\"sec.trouble.data.recover.rescue.grub\"/"
-">."
+"> ."
 msgstr ""
 
 #. Tag: para
-#: system_repair.xml:514
+#: system_repair.xml:524
 #, no-c-format
 msgid "Remove any bootable media from the system drive and reboot."
 msgstr ""

@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,22 +20,22 @@ msgstr ""
 msgid "Software-Defined Networking with &ovs;"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: net_sdn.xml:15
+#. Tag: dm:translation
+#: net_sdn.xml:17
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
 #: net_sdn.xml:21
 #, no-c-format
-msgid "Software-defined networking (SDN) means separating the system that controls where traffic is sent (the <emphasis>control plane</emphasis>) from the underlying system that forwards traffic to the selected destination (the <emphasis>data plane</emphasis>, also called the <emphasis>forwarding plane</emphasis>). This means that the functions previously fulfilled by a single, usually inflexible switch, can now be separated between a switch (data plane) and its controller (control plane). In this model, the controller is programmable and can be very flexible and adapt quickly to changing network conditions."
+msgid "Software-defined networking (SDN) means separating the system that controls where traffic is sent (the <emphasis>control plane</emphasis> ) from the underlying system that forwards traffic to the selected destination (the <emphasis>data plane</emphasis> , also called the <emphasis>forwarding plane</emphasis> ). This means that the functions previously fulfilled by a single, usually inflexible switch, can now be separated between a switch (data plane) and its controller (control plane). In this model, the controller is programmable and can be very flexible and adapt quickly to changing network conditions."
 msgstr ""
 
 #. Tag: para
 #: net_sdn.xml:33
 #, no-c-format
-msgid "&ovs; is software that implements a distributed virtual multilayer switch that is compatible with the <phrase role=\"productname\">OpenFlow</phrase> protocol. <phrase role=\"productname\">OpenFlow</phrase> allows a controller application to modify the configuration of a switch. <phrase role=\"productname\">OpenFlow</phrase> is layered onto the TCP protocol and is implemented in a range of hardware and software. A single controller can thus drive multiple, very different switches."
+msgid "&ovs; is software that implements a distributed virtual multilayer switch that is compatible with the <!-- phrase to disable hyphenation: --> <phrase role=\"productname\">OpenFlow</phrase> protocol. <phrase role=\"productname\">OpenFlow</phrase> allows a controller application to modify the configuration of a switch. <phrase role=\"productname\">OpenFlow</phrase> is layered onto the TCP protocol and is implemented in a range of hardware and software. A single controller can thus drive multiple, very different switches."
 msgstr ""
 
 #. Tag: title
@@ -48,12 +48,6 @@ msgstr ""
 #: net_sdn.xml:47
 #, no-c-format
 msgid "Software-defined networking with &ovs; brings several advantages with it, especially when you used together with virtual machines:"
-msgstr ""
-
-#. Tag: remark
-#: net_sdn.xml:51
-#, no-c-format
-msgid "Tried to create short version of this: https://github.com/openvswitch/ovs/blob/master/WHY-OVS.md - sknorr, 2015-09-30"
 msgstr ""
 
 #. Tag: para
@@ -80,16 +74,10 @@ msgstr ""
 msgid "You can apply and manipulate tags in network packets to identify which machine they are coming from or going to and maintain other networking context. Tagging rules can be configured and migrated."
 msgstr ""
 
-#. Tag: remark
-#: net_sdn.xml:79
-#, no-c-format
-msgid "Feedback from Éric Bischoff: \"[...] isn't that _how OVS works_, rather than _what OVS can do_?\" => Added second sentence. It does ultimately seem like a feature to me, though. Leaving it in for the moment. - sknorr, 2015-10-15"
-msgstr ""
-
 #. Tag: para
 #: net_sdn.xml:88
 #, no-c-format
-msgid "&ovs; implements the GRE protocol (<emphasis>Generic Routing Encapsulation</emphasis>). This allows you, for example, to connect private VM networks to each other."
+msgid "&ovs; implements the GRE protocol ( <emphasis>Generic Routing Encapsulation</emphasis> ). This allows you, for example, to connect private VM networks to each other."
 msgstr ""
 
 #. Tag: para
@@ -185,7 +173,7 @@ msgstr ""
 #. Tag: para
 #: net_sdn.xml:161
 #, no-c-format
-msgid "The main &ovs; daemon (<command>ovs-vswitchd</command>) provides the implementation of a switch. The &ovs; database daemon (<command>ovsdb-server</command>) serves the database that stores the configuration and state of &ovs;."
+msgid "The main &ovs; daemon ( <command>ovs-vswitchd</command> ) provides the implementation of a switch. The &ovs; database daemon ( <command>ovsdb-server</command> ) serves the database that stores the configuration and state of &ovs;."
 msgstr ""
 
 #. Tag: title
@@ -200,10 +188,10 @@ msgstr ""
 msgid "&ovs; also comes with several utilities that help you work with it. The following list is not exhaustive, but instead describes important commands only."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: net_sdn.xml:179
 #, no-c-format
-msgid "ovsdb-tool"
+msgid "<command>ovsdb-tool</command>"
 msgstr ""
 
 #. Tag: para
@@ -212,10 +200,10 @@ msgstr ""
 msgid "Create, upgrade, compact, and query &ovs; databases. Do transactions on &ovs; databases."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: net_sdn.xml:199
 #, no-c-format
-msgid "ovs-appctl"
+msgid "<command>ovs-appctl</command>"
 msgstr ""
 
 #. Tag: para
@@ -227,7 +215,7 @@ msgstr ""
 #. Tag: term
 #: net_sdn.xml:229
 #, no-c-format
-msgid "<command>ovs-dpctl</command>, <command>ovs-dpctl-top</command>"
+msgid "<command>ovs-dpctl</command> , <command>ovs-dpctl-top</command>"
 msgstr ""
 
 #. Tag: para
@@ -236,22 +224,34 @@ msgstr ""
 msgid "Create, modify, visualize, and delete data paths. Using this tool can interfere with <command>ovs-vswitchd</command> also performing data path management. Therefore, it is often used for diagnostics only."
 msgstr ""
 
-#. Tag: para
-#: net_sdn.xml:237
+#. Tag: #text
+#: net_sdn.xml:238
 #, no-c-format
-msgid "<command>ovs-dpctl-top</command> creates a <command>top</command>-like visualization for data paths."
-msgstr ""
-
-#. Tag: remark
-#: net_sdn.xml:240
-#, no-c-format
-msgid "Is visualize/ation the right word? - sknorr, 2015-09-30"
+msgid "creates a"
 msgstr ""
 
 #. Tag: command
+#: net_sdn.xml:238
+#, no-c-format
+msgid "ovs-dpctl-top"
+msgstr ""
+
+#. Tag: command
+#: net_sdn.xml:238
+#, no-c-format
+msgid "top"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:240
+#, no-c-format
+msgid "-like visualization for data paths."
+msgstr ""
+
+#. Tag: term
 #: net_sdn.xml:245
 #, no-c-format
-msgid "ovs-ofctl"
+msgid "<command>ovs-ofctl</command>"
 msgstr ""
 
 #. Tag: para
@@ -260,10 +260,10 @@ msgstr ""
 msgid "Manage any switches adhering to the <phrase role=\"productname\">OpenFlow</phrase> protocol. <command>ovs-ofctl</command> is not limited to interacting with &ovs;."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: net_sdn.xml:294
 #, no-c-format
-msgid "ovs-vsctl"
+msgid "<command>ovs-vsctl</command>"
 msgstr ""
 
 #. Tag: para
@@ -281,7 +281,7 @@ msgstr ""
 #. Tag: para
 #: net_sdn.xml:310
 #, no-c-format
-msgid "The following example configuration uses the Wicked network service that is used by default on &productname;. To learn more about Wicked, see <xref linkend=\"sec.network.manconf\"/>."
+msgid "The following example configuration uses the Wicked network service that is used by default on &productname;. To learn more about Wicked, see <xref linkend=\"sec.network.manconf\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -296,123 +296,142 @@ msgstr ""
 msgid "To configure a bridge for use by your virtual machine, create a file with content like this:"
 msgstr ""
 
-#. Tag: screen
+#. Tag: #text
 #: net_sdn.xml:324
 #, no-c-format
-msgid ""
-      "STARTMODE='auto'<co xml:id=\"ovs.ifcfg.mode\"/>\n"
-      "BOOTPROTO='dhcp'<co xml:id=\"ovs.ifcfg.protocol\"/>\n"
-      "OVS_BRIDGE='yes'<co xml:id=\"ovs.ifcfg.bridge\"/>\n"
-      "OVS_BRIDGE_PORT_DEVICE_1='<replaceable>eth0</replaceable>'<co xml:id=\"ovs.ifcfg.port\"/>"
+msgid "STARTMODE='auto'"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:325
+#, no-c-format
+msgid "BOOTPROTO='dhcp'"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:326
+#, no-c-format
+msgid "OVS_BRIDGE='yes'"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:327
+#, no-c-format
+msgid "'"
+msgstr ""
+
+#. Tag: replaceable
+#: net_sdn.xml:327
+#, no-c-format
+msgid "eth0"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:327
+#, no-c-format
+msgid "OVS_BRIDGE_PORT_DEVICE_1='"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:327
+#: net_sdn.xml:330
 #, no-c-format
 msgid "Set up the bridge automatically when the network service is started."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:332
+#: net_sdn.xml:335
 #, no-c-format
 msgid "The protocol to use for configuring the IP address."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:337
+#: net_sdn.xml:340
 #, no-c-format
 msgid "Mark the configuration as an &ovs; bridge."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:342
+#: net_sdn.xml:345
 #, no-c-format
 msgid "Choose which device/devices should be added to the bridge. To add more devices, append additional lines for each of them to the file:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:346
+#: net_sdn.xml:349
 #, no-c-format
 msgid "OVS_BRIDGE_PORT_DEVICE_<replaceable>SUFFIX</replaceable>='<replaceable>DEVICE</replaceable>'"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:347
+#: net_sdn.xml:350
 #, no-c-format
 msgid "The <replaceable>SUFFIX</replaceable> can be any alphanumeric string. However, to avoid overwriting a previous definition, make sure the <replaceable>SUFFIX</replaceable> of each device is unique."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:354
+#: net_sdn.xml:357
 #, no-c-format
-msgid "Save the file in the directory <filename>/etc/sysconfig/network</filename> under the name <filename>ifcfg-br0</filename>. Instead of <replaceable>br0</replaceable>, you can use any name you want. However, the file name needs to begin with <literal>ifcfg-</literal>."
+msgid "Save the file in the directory <filename>/etc/sysconfig/network</filename> under the name <filename>ifcfg-br0</filename> . Instead of <replaceable>br0</replaceable> , you can use any name you want. However, the file name needs to begin with <literal>ifcfg-</literal> ."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:360
+#: net_sdn.xml:363
 #, no-c-format
-msgid "To learn about further options, refer to the man pages of <literal>ifcfg</literal> (<command>man 5 ifcfg</command>) and <literal>ifcfg-ovs-bridge</literal> (<command>man 5 ifcfg-ovs-bridge</command>)."
+msgid "To learn about further options, refer to the man pages of <literal>ifcfg</literal> ( <command>man 5 ifcfg</command> ) and <literal>ifcfg-ovs-bridge</literal> ( <command>man 5 ifcfg-ovs-bridge</command> )."
 msgstr ""
 
-#. Tag: para
-#: net_sdn.xml:368
+#. Tag: #text
+#: net_sdn.xml:373
 #, no-c-format
 msgid "Now start the bridge:"
 msgstr ""
 
-#. Tag: remark
-#: net_sdn.xml:370
-#, no-c-format
-msgid "\"Start\" is weird - sknorr, 2015-10-26"
-msgstr ""
-
 #. Tag: screen
-#: net_sdn.xml:372
+#: net_sdn.xml:375
 #, no-c-format
 msgid "&prompt.root;<command>wicked</command> ifup <replaceable>br0</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:373
+#: net_sdn.xml:376
 #, no-c-format
-msgid "When Wicked is done, it should output the name of the bridge and next to it the state <literal>up</literal>."
+msgid "When Wicked is done, it should output the name of the bridge and next to it the state <literal>up</literal> ."
 msgstr ""
 
 #. Tag: title
-#: net_sdn.xml:382
+#: net_sdn.xml:385
 #, no-c-format
 msgid "Using &ovs; Directly with &kvm;"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:383
+#: net_sdn.xml:386
 #, no-c-format
-msgid "After having created the bridge as described in <xref linkend=\"sec.network.openvswitch.bridge\"/>, you can use &ovs; to manage the network access of virtual machines created with &kvm;/&qemu;."
+msgid "After having created the bridge as described in <xref linkend=\"sec.network.openvswitch.bridge\"/> , you can use &ovs; to manage the network access of virtual machines created with &kvm;/&qemu;."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:390
+#: net_sdn.xml:393
 #, no-c-format
 msgid "To be able to best use the capabilities of Wicked, make some further changes to the bridge configured before. Open the previously created <filename>/etc/sysconfig/network/ifcfg-br0</filename> and append a line for another port device:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:396
+#: net_sdn.xml:399
 #, no-c-format
 msgid "OVS_BRIDGE_PORT_DEVICE_2='<replaceable>tap0</replaceable>'"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:397
+#: net_sdn.xml:400
 #, no-c-format
-msgid "Additionally, set <literal>BOOTPROTO</literal> to <literal>none</literal>. The file should now look like this:"
+msgid "Additionally, set <literal>BOOTPROTO</literal> to <literal>none</literal> . The file should now look like this:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:401
+#: net_sdn.xml:404
 #, no-c-format
-msgid ""
-      "STARTMODE='auto'\n"
+msgid "STARTMODE='auto'\n"
       "BOOTPROTO='none'\n"
       "OVS_BRIDGE='yes'\n"
       "OVS_BRIDGE_PORT_DEVICE_1='<replaceable>eth0</replaceable>'\n"
@@ -420,224 +439,265 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:402
+#: net_sdn.xml:409
 #, no-c-format
 msgid "The new port device <replaceable>tap0</replaceable> will be configured in the next step."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:408
+#: net_sdn.xml:415
 #, no-c-format
 msgid "Now add a configuration file for the <replaceable>tap0</replaceable> device:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:412
+#: net_sdn.xml:419
 #, no-c-format
-msgid ""
-      "STARTMODE='auto'\n"
+msgid "STARTMODE='auto'\n"
       "BOOTPROTO='none'\n"
       "TUNNEL='tap'"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:413
+#: net_sdn.xml:422
 #, no-c-format
-msgid "Save the file in the directory <filename>/etc/sysconfig/network</filename> under the name <filename>ifcfg-tap0</filename>."
+msgid "Save the file in the directory <filename>/etc/sysconfig/network</filename> under the name <filename>ifcfg-tap0</filename> ."
 msgstr ""
 
 #. Tag: title
-#: net_sdn.xml:418
+#: net_sdn.xml:427
 #, no-c-format
 msgid "Allowing Other Users to Access the Tap Device"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:419
+#: net_sdn.xml:428
 #, no-c-format
 msgid "To be able to use this tap device from a virtual machine started as a user who is not &rootuser;, append:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:423
+#: net_sdn.xml:432
 #, no-c-format
 msgid "TUNNEL_SET_OWNER=<replaceable>USER_NAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:424
+#: net_sdn.xml:433
 #, no-c-format
 msgid "To allow access for an entire group, append:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:427
+#: net_sdn.xml:436
 #, no-c-format
 msgid "TUNNEL_SET_GROUP=<replaceable>GROUP_NAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:431
+#: net_sdn.xml:440
 #, no-c-format
-msgid "Finally, open the configuration for the device defined as the first <literal>OVS_BRIDGE_PORT_DEVICE</literal>. If you did not change the name, that should be <literal>eth0</literal>. Therefore, open <filename>/etc/sysconfig/network/ifcfg-eth0</filename> and make sure that the following options are set:"
-msgstr ""
-
-#. Tag: screen
-#: net_sdn.xml:438
-#, no-c-format
-msgid ""
-      "STARTMODE='auto'\n"
-      "BOOTPROTO='none'"
-msgstr ""
-
-#. Tag: para
-#: net_sdn.xml:439
-#, no-c-format
-msgid "If the file does not exist yet, create it."
-msgstr ""
-
-#. Tag: para
-#: net_sdn.xml:444
-#, no-c-format
-msgid "Restart the bridge interface using Wicked:"
+msgid "Finally, open the configuration for the device defined as the first <literal>OVS_BRIDGE_PORT_DEVICE</literal> . If you did not change the name, that should be <literal>eth0</literal> . Therefore, open <filename>/etc/sysconfig/network/ifcfg-eth0</filename> and make sure that the following options are set:"
 msgstr ""
 
 #. Tag: screen
 #: net_sdn.xml:447
 #, no-c-format
+msgid "STARTMODE='auto'\n"
+      "BOOTPROTO='none'"
+msgstr ""
+
+#. Tag: para
+#: net_sdn.xml:449
+#, no-c-format
+msgid "If the file does not exist yet, create it."
+msgstr ""
+
+#. Tag: para
+#: net_sdn.xml:454
+#, no-c-format
+msgid "Restart the bridge interface using Wicked:"
+msgstr ""
+
+#. Tag: screen
+#: net_sdn.xml:457
+#, no-c-format
 msgid "&prompt.root;<command>wicked</command> ifreload <replaceable>br0</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:448
+#: net_sdn.xml:458
 #, no-c-format
 msgid "This will also trigger a reload of the newly defined bridge port devices."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:453
+#: net_sdn.xml:463
 #, no-c-format
 msgid "To start a virtual machine, use, for example:"
 msgstr ""
 
-#. Tag: screen
-#: net_sdn.xml:456
+#. Tag: command
+#: net_sdn.xml:466
 #, no-c-format
-msgid ""
-      "&prompt.root;<command>qemu-kvm</command> \\\n"
-      "-drive file=<replaceable>/PATH/TO/DISK-IMAGE</replaceable><co xml:id=\"co.ovs.pathimage\"/> \\\n"
-      "-m 512 -net nic,vlan=0,macaddr=00:11:22:EE:EE:EE \\\n"
-      "-net tap,ifname=<replaceable>tap0</replaceable>,script=no,downscript=no<co xml:id=\"co.ovs.tapdevice\"/>"
+msgid "qemu-kvm"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:466
+#, no-c-format
+msgid "&prompt.root;"
+msgstr ""
+
+#. Tag: replaceable
+#: net_sdn.xml:467
+#, no-c-format
+msgid "/PATH/TO/DISK-IMAGE"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:467
+#, no-c-format
+msgid "\\-drive file="
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:469
+#, no-c-format
+msgid ",script=no,downscript=no"
+msgstr ""
+
+#. Tag: replaceable
+#: net_sdn.xml:469
+#, no-c-format
+msgid "tap0"
+msgstr ""
+
+#. Tag: #text
+#: net_sdn.xml:469
+#, no-c-format
+msgid "\\-m 512 -net nic,vlan=0,macaddr=00:11:22:EE:EE:EE \\-net tap,ifname="
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:459
+#: net_sdn.xml:472
 #, no-c-format
 msgid "The path to the &qemu; disk image you want to start."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:464
+#: net_sdn.xml:477
 #, no-c-format
-msgid "Use the tap device (<literal>tap0</literal>) created before."
+msgid "Use the tap device ( <literal>tap0</literal> ) created before."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:469
+#: net_sdn.xml:482
 #, no-c-format
-msgid "For further information on the usage of &kvm;/&qemu;, see <xref linkend=\"part.virt.qemu\"/>."
+msgid "For further information on the usage of &kvm;/&qemu;, see <xref linkend=\"part.virt.qemu\"/> ."
 msgstr ""
 
 #. Tag: title
-#: net_sdn.xml:478
+#: net_sdn.xml:491
 #, no-c-format
 msgid "Using &ovs; with &libvirt;"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:479
+#: net_sdn.xml:492
 #, no-c-format
-msgid "After having created the bridge as described before in <xref linkend=\"sec.network.openvswitch.bridge\"/>, you can add the bridge to an existing virtual machine managed with &libvirt;. Since &libvirt; has some support for &ovs; bridges already, you can use the bridge created in <xref linkend=\"sec.network.openvswitch.bridge\"/> without further changes to the networking configuration."
+msgid "After having created the bridge as described before in <xref linkend=\"sec.network.openvswitch.bridge\"/> , you can add the bridge to an existing virtual machine managed with &libvirt;. Since &libvirt; has some support for &ovs; bridges already, you can use the bridge created in <xref linkend=\"sec.network.openvswitch.bridge\"/> without further changes to the networking configuration."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:489
+#: net_sdn.xml:502
 #, no-c-format
 msgid "Open the domain XML file for the intended virtual machine:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:492
+#: net_sdn.xml:505
 #, no-c-format
 msgid "&prompt.root;<command>virsh</command> edit <replaceable>VM_NAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:493
+#: net_sdn.xml:506
 #, no-c-format
 msgid "Replace <replaceable>VM_NAME</replaceable> with the name of the desired virtual machine. This will open your default text editor."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:499
+#: net_sdn.xml:512
 #, no-c-format
-msgid "Find the networking section of the document by looking for a section starting with <literal>&lt;interface type=\"...\"&gt;</literal> and ending in <literal>&lt;/interface&gt;</literal>."
+msgid "Find the networking section of the document by looking for a section starting with <literal>&lt;interface type=\"...\"&gt;</literal> and ending in <literal>&lt;/interface&gt;</literal> ."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:504
+#: net_sdn.xml:517
 #, no-c-format
 msgid "Replace the existing section with a networking section that looks somewhat like this:"
 msgstr ""
 
 #. Tag: screen
-#: net_sdn.xml:508
+#: net_sdn.xml:521
 #, no-c-format
-msgid ""
-      "&lt;interface type='bridge'&gt;\n"
+msgid "&lt;interface type='bridge'&gt;\n"
       "  &lt;source bridge='br0'/&gt;\n"
       "  &lt;virtualport type='openvswitch'/&gt;\n"
       "&lt;/interface&gt;"
 msgstr ""
 
 #. Tag: title
-#: net_sdn.xml:510
+#: net_sdn.xml:526
 #, no-c-format
 msgid "Compatibility of <command>virsh iface-*</command> and &vmm; with &ovs;"
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:511
+#: net_sdn.xml:527
 #, no-c-format
 msgid "At the moment, the &ovs; compatibility of &libvirt; is not exposed through the <command>virsh iface-*</command> tools and &vmm;. If you use any of these tools, your configuration can break."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:519
+#: net_sdn.xml:535
 #, no-c-format
 msgid "You can now start or restart the virtual machine as usual."
 msgstr ""
 
 #. Tag: para
-#: net_sdn.xml:524
+#: net_sdn.xml:540
 #, no-c-format
-msgid "For further information on the usage of &libvirt;, see <xref linkend=\"part.virt.libvirt\"/>."
+msgid "For further information on the usage of &libvirt;, see <xref linkend=\"part.virt.libvirt\"/> ."
 msgstr ""
 
 #. Tag: title
-#: net_sdn.xml:531
+#: net_sdn.xml:547
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
+#. Tag: term
+#: net_sdn.xml:550
+#, no-c-format
+msgid "<link xlink:href=\"http://openvswitch.org/support/\"/>"
+msgstr ""
+
 #. Tag: para
-#: net_sdn.xml:537
+#: net_sdn.xml:553
 #, no-c-format
 msgid "The documentation section of the &ovs; project Web site"
 msgstr ""
 
+#. Tag: term
+#: net_sdn.xml:559
+#, no-c-format
+msgid "<link xlink:href=\"https://www.opennetworking.org/images/stories/downloads/sdn-resources/white-papers/wp-sdn-newnorm.pdf\"/>"
+msgstr ""
+
 #. Tag: para
-#: net_sdn.xml:546
+#: net_sdn.xml:562
 #, no-c-format
 msgid "Whitepaper by the Open Networking Foundation about software-defined networking and the <phrase role=\"productname\">OpenFlow</phrase> protocol"
 msgstr ""

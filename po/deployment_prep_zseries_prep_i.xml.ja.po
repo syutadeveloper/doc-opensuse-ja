@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Preparing for Installation"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: deployment_prep_zseries_prep_i.xml:24
+#. Tag: dm:translation
+#: deployment_prep_zseries_prep_i.xml:26
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -101,7 +101,7 @@ msgid ""
 "installation process by NFS or FTP. If the Linux workstation runs under "
 "&productname;, you can set up an installation server (NFS or FTP) using the "
 "&yast; <guimenu>Installation Server</guimenu> module as described in <xref "
-"linkend=\"sec.deployment.instserver.sles9\"/>."
+"linkend=\"sec.deployment.instserver.sles9\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -126,9 +126,9 @@ msgstr ""
 #: deployment_prep_zseries_prep_i.xml:81
 #, no-c-format
 msgid ""
-"Exporting the file system root (<filename>/</filename>) does not imply the "
+"Exporting the file system root ( <filename>/</filename> ) does not imply the "
 "export of mounted devices, such as DVD. Explicitly name the mount point in "
-"<filename>/etc/exports</filename>:"
+"<filename>/etc/exports</filename> :"
 msgstr ""
 
 #. Tag: screen
@@ -142,7 +142,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "After changing this file, restart the NFS server with the command "
-"<command>sudo systemctl restart nfsserver</command>."
+"<command>sudo systemctl restart nfsserver</command> ."
 msgstr ""
 
 #. Tag: title
@@ -157,7 +157,7 @@ msgstr ""
 msgid ""
 "Setting up an FTP server on a Linux system involves the installation and "
 "configuration of the server software like <package>pure-ftpd</package> or "
-"<package>vsftpd</package>. If you are using &productname;, refer to <xref "
+"<package>vsftpd</package> . If you are using &productname;, refer to <xref "
 "linkend=\"cha.ftp\"/> for installation instructions. Downloading the "
 "installation data via anonymous login is not supported, therefore you need "
 "to configure the FTP server to support user authentication."
@@ -183,7 +183,7 @@ msgstr ""
 msgid ""
 "For Intel-based workstations, boot from this DVD, answer the questions "
 "regarding your language and keyboard layout, and select <guimenu>Start "
-"rescue system</guimenu>. You need at least 64&nbsp;MB RAM for this. No disk "
+"rescue system</guimenu> . You need at least 64&nbsp;MB RAM for this. No disk "
 "space is needed because the entire rescue system resides in the "
 "workstation's RAM. This approach takes some Linux and networking experience, "
 "because you need to set up the networking of the workstation manually."
@@ -194,12 +194,12 @@ msgstr ""
 #, no-c-format
 msgid ""
 "For &zseries;, IPL your LPAR/VM guest from this DVD as described in <xref "
-"linkend=\"sec.prep.ipling.lpar.dvd\"/>. After entering your network "
+"linkend=\"sec.prep.ipling.lpar.dvd\"/> . After entering your network "
 "parameters, the installation system treats the DVD as the source of "
 "installation data. Because &zseries; cannot have an X11-capable terminal "
 "attached directly, choose between VNC or SSH installation. SSH also provides "
 "a graphical installation by tunneling the X connection through SSH with "
-"<command>ssh -X</command>."
+"<command>ssh -X</command> ."
 msgstr ""
 
 #. Tag: title
@@ -259,10 +259,10 @@ msgstr ""
 msgid "Where the placeholders mean:"
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: term
 #: deployment_prep_zseries_prep_i.xml:166
 #, no-c-format
-msgid "DOMAIN"
+msgid "<replaceable>DOMAIN</replaceable>"
 msgstr ""
 
 #. Tag: para
@@ -271,13 +271,13 @@ msgstr ""
 msgid "Optional workgroup or active directory domain."
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: term
 #: deployment_prep_zseries_prep_i.xml:175
 #, no-c-format
-msgid "USER"
+msgid "<replaceable>USER</replaceable>"
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: term
 #: deployment_prep_zseries_prep_i.xml:177
 #, no-c-format
 msgid "<replaceable>PW</replaceable>"
@@ -291,10 +291,10 @@ msgid ""
 "share."
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: term
 #: deployment_prep_zseries_prep_i.xml:187
 #, no-c-format
-msgid "SERVERNAME"
+msgid "<replaceable>SERVERNAME</replaceable>"
 msgstr ""
 
 #. Tag: para
@@ -303,10 +303,10 @@ msgstr ""
 msgid "The name of the server that hosts the share(s)."
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: term
 #: deployment_prep_zseries_prep_i.xml:196
 #, no-c-format
-msgid "SHAREPATH"
+msgid "<replaceable>SHAREPATH</replaceable>"
 msgstr ""
 
 #. Tag: para
@@ -366,7 +366,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "After you IPLed from the SCSI DVD as described in <xref linkend=\"sec."
-"zseries.information.iplopt.dvd\"/>, the installation system uses the DVD as "
+"zseries.information.iplopt.dvd\"/> , the installation system uses the DVD as "
 "the installation medium. In that case, you do not need the installation "
 "media on an FTP, NFS, or SMB server. However, you need the network "
 "configuration data for your &productname;, because you must set up the "
@@ -390,33 +390,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:252
-#, no-c-format
-msgid "<para>Importing the Installation Data</para>"
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:257
-#, no-c-format
-msgid "<para>Adding a Distribution</para>"
-msgstr ""
-
-#. Tag: para
 #: deployment_prep_zseries_prep_i.xml:262
 #, no-c-format
 msgid "Adding Profiles"
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:267
-#, no-c-format
-msgid "<para>Adding Systems</para>"
-msgstr ""
-
 #. Tag: title
 #: deployment_prep_zseries_prep_i.xml:273
 #, no-c-format
-msgid "<title>Importing the Installation Data</title>"
+msgid "Importing the Installation Data"
 msgstr ""
 
 #. Tag: para
@@ -428,13 +410,28 @@ msgid ""
 "following command to import the data:"
 msgstr ""
 
-#. Tag: screen
+#. Tag: replaceable
 #: deployment_prep_zseries_prep_i.xml:279
 #, no-c-format
-msgid ""
-"&prompt.sudo;cobbler import --path=<replaceable>PATH</replaceable><co xml:id="
-"\"co.cobbler.import.path\"/> --name=<replaceable>IDENTIFIER</replaceable><co "
-"xml:id=\"co.cobbler.import.dirname\"/> --arch=s390x"
+msgid "PATH"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:279
+#, no-c-format
+msgid "&prompt.sudo;cobbler import --path="
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:279
+#, no-c-format
+msgid "--name="
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:279
+#, no-c-format
+msgid "--arch=s390x"
 msgstr ""
 
 #. Tag: para
@@ -448,17 +445,17 @@ msgstr ""
 #, no-c-format
 msgid ""
 "A string identifying the imported product, for example <quote>sles12_s390x</"
-"quote>. This string is used as the name for the subdirectory where the "
+"quote> . This string is used as the name for the subdirectory where the "
 "installation data is copied to. On a Cobbler server running on &sle; this is "
 "<filename>/srv/www/cobbler/ks_mirror/<replaceable>IDENTIFIER</replaceable></"
-"filename>. This path may be different if Cobbler runs on another operating "
+"filename> . This path may be different if Cobbler runs on another operating "
 "system."
 msgstr ""
 
 #. Tag: title
 #: deployment_prep_zseries_prep_i.xml:299
 #, no-c-format
-msgid "<title>Adding a Distribution</title>"
+msgid "Adding a Distribution"
 msgstr ""
 
 #. Tag: para
@@ -470,93 +467,142 @@ msgid ""
 "server to add &productname; for &zseries;:"
 msgstr ""
 
-#. Tag: screen
+#. Tag: #text
 #: deployment_prep_zseries_prep_i.xml:305
 #, no-c-format
-msgid ""
-"&prompt.sudo;cobbler distro add --arch=s390 --breed=suse --name="
-"\"<replaceable>IDENTIFIER</replaceable>\"<co xml:id=\"co.cobbler.add."
-"identifier\"/> \\\n"
-"  --os-version=sles12<co xml:id=\"co.cobbler.add.os\"/> \\\n"
-"  --initrd=/srv/www/cobbler/ks_mirror/<replaceable>IDENTIFIER</replaceable>/"
-"boot/s390x/initrd<co xml:id=\"co.cobbler.add.initrd\"/> \\\n"
-"  --kernel=/srv/www/cobbler/ks_mirror/<replaceable>IDENTIFIER</replaceable>/"
-"boot/s390x/linux<co xml:id=\"co.cobbler.add.kernel\"/> \\\n"
-"  --kopts=\"install=http://cobbler.&exampledomain;/cobbler/ks_mirror/"
-"<replaceable>IDENTIFIER</replaceable>\"<co xml:id=\"co.cobbler.add.server\"/>"
+msgid "&prompt.sudo;cobbler distro add --arch=s390 --breed=suse --name=\""
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:306
+#, no-c-format
+msgid "\\ --os-version=sles12"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:307
+#, no-c-format
+msgid "/boot/s390x/initrd"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:307
+#, no-c-format
+msgid "\\ --initrd=/srv/www/cobbler/ks_mirror/"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:308
+#, no-c-format
+msgid "\\ --kernel=/srv/www/cobbler/ks_mirror/"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:308
+#, no-c-format
+msgid "/boot/s390x/linux"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:309
+#, no-c-format
+msgid "\\ --kopts=\"install=http://cobbler.&exampledomain;/cobbler/ks_mirror/"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:308
+#: deployment_prep_zseries_prep_i.xml:313
 #, no-c-format
 msgid ""
 "Custom identifier for the distribution, for example <quote>&slsa; "
-"&productnumber; &zseries;</quote>. Must be unique."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:314
-#, no-c-format
-msgid "Operating system identifier. Use <literal>sles12</literal>."
+"&productnumber; &zseries;</quote> . Must be unique."
 msgstr ""
 
 #. Tag: para
 #: deployment_prep_zseries_prep_i.xml:319
 #, no-c-format
-msgid ""
-"Path to the initrd. The first part of the path (<filename>/srv/www/cobbler/"
-"ks_mirror/<replaceable>IDENTIFIER</replaceable>/</filename>) depends on the "
-"location where Cobbler imported the data and the subdirectory name you chose "
-"when importing the installation data."
+msgid "Operating system identifier. Use <literal>sles12</literal> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:327
+#: deployment_prep_zseries_prep_i.xml:324
 #, no-c-format
 msgid ""
-"Path to the kernel. The first part of the path (<filename>/srv/www/cobbler/"
-"ks_mirror/<replaceable>IDENTIFIER</replaceable>/</filename>) depends on the "
+"Path to the initrd. The first part of the path ( <filename>/srv/www/cobbler/"
+"ks_mirror/<replaceable>IDENTIFIER</replaceable>/</filename> ) depends on the "
 "location where Cobbler imported the data and the subdirectory name you chose "
 "when importing the installation data."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:335
+#: deployment_prep_zseries_prep_i.xml:332
+#, no-c-format
+msgid ""
+"Path to the kernel. The first part of the path ( <filename>/srv/www/cobbler/"
+"ks_mirror/<replaceable>IDENTIFIER</replaceable>/</filename> ) depends on the "
+"location where Cobbler imported the data and the subdirectory name you chose "
+"when importing the installation data."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:340
 #, no-c-format
 msgid "URL to the installation directory on the Cobbler server."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:342
+#: deployment_prep_zseries_prep_i.xml:347
 #, no-c-format
 msgid "Adjusting the Profile"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:343
+#: deployment_prep_zseries_prep_i.xml:348
 #, no-c-format
 msgid ""
 "When adding a distribution (see <xref linkend=\"sec.prep.makeavail."
-"zpxe_cobbler.add_distro\"/>) a profile with the corresponding "
+"zpxe_cobbler.add_distro\"/> ) a profile with the corresponding "
 "<replaceable>IDENTIFIER</replaceable> is automatically generated. Use the "
 "following command to make a few required adjustments:"
 msgstr ""
 
-#. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:351
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:356
 #, no-c-format
-msgid ""
-"&prompt.sudo;cobbler distro edit \\\n"
-"--name=<replaceable>IDENTIFIER</replaceable><co xml:id=\"co.cobbler.profile."
-"name\"/> --os-version=sles10<co xml:id=\"co.cobbler.profile.os\"/> --ksmeta="
-"\"\"<co xml:id=\"co.cobbler.profile.meta\"/>\n"
-"--kopts=\"install=http://cobbler.example.com/cobbler/ks_mirror/"
-"<replaceable>IDENTIFIER</replaceable>\"<co xml:id=\"co.cobbler.profile.opts"
-"\"/>"
+msgid "&prompt.sudo;cobbler distro edit \\--name="
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:357
+#, no-c-format
+msgid "--ksmeta=\"\""
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:357
+#, no-c-format
+msgid "--os-version=sles10"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:358
+#, no-c-format
+msgid "--kopts=\"install=http://cobbler.example.com/cobbler/ks_mirror/"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:358
+#, no-c-format
+msgid "\""
+msgstr ""
+
+#. Tag: replaceable
+#: deployment_prep_zseries_prep_i.xml:358
+#, no-c-format
+msgid "IDENTIFIER"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:354
+#: deployment_prep_zseries_prep_i.xml:361
 #, no-c-format
 msgid ""
 "Identifier for the profile. Use the same string as specified when having "
@@ -564,7 +610,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:360
+#: deployment_prep_zseries_prep_i.xml:367
 #, no-c-format
 msgid ""
 "Operating system version. Distribution to which the profile should apply. "
@@ -574,7 +620,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:368
+#: deployment_prep_zseries_prep_i.xml:375
 #, no-c-format
 msgid ""
 "Option needed for templating kickstart files. Not used for &suse;, so set to "
@@ -582,7 +628,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:374
+#: deployment_prep_zseries_prep_i.xml:381
 #, no-c-format
 msgid ""
 "Space-separated list of kernel parameters. Should include at least the "
@@ -590,13 +636,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:382
+#: deployment_prep_zseries_prep_i.xml:389
 #, no-c-format
-msgid "<title>Adding Systems</title>"
+msgid "Adding Systems"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:383
+#: deployment_prep_zseries_prep_i.xml:390
 #, no-c-format
 msgid ""
 "The last step that is required is to add systems to the Cobbler server. A "
@@ -607,7 +653,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:391
+#: deployment_prep_zseries_prep_i.xml:398
 #, no-c-format
 msgid ""
 "&prompt.sudo;cobbler system add --name=linux01 --hostname=linux01.example."
@@ -620,13 +666,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:392
+#: deployment_prep_zseries_prep_i.xml:403
 #, no-c-format
 msgid ""
 "With the <option>--kopts</option> option you can specify the kernel and "
 "installation parameters you would normally specify in the parmfile. The "
 "parameters are entered as a space-separated list in the form of "
-"<replaceable>PARAMETER1=VALUE1 PARAMETER2=VALUE2</replaceable>. The "
+"<replaceable>PARAMETER1=VALUE1 PARAMETER2=VALUE2</replaceable> . The "
 "installer will prompt you for missing parameters. For a completely automated "
 "installation you need to specify all parameters for networking, DASDs and "
 "provide an &ay; file. The following shows an example for a guest equipped "
@@ -634,7 +680,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:402
+#: deployment_prep_zseries_prep_i.xml:413
 #, no-c-format
 msgid ""
 "--kopts=\" \\\n"
@@ -658,13 +704,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:406
+#: deployment_prep_zseries_prep_i.xml:434
 #, no-c-format
 msgid "Installing from DVD or Flash Disk of the HMC"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:407
+#: deployment_prep_zseries_prep_i.xml:435
 #, no-c-format
 msgid ""
 "To install &productname; on &zseries; servers, usually a network "
@@ -675,7 +721,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:414
+#: deployment_prep_zseries_prep_i.xml:442
 #, no-c-format
 msgid ""
 "To install from the media in the DVD or the flash disk of the HMC, proceed "
@@ -683,98 +729,99 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:420
+#: deployment_prep_zseries_prep_i.xml:448
 #, no-c-format
-msgid "<para>Add</para>"
-msgstr ""
-
-#. Tag: option
-#: deployment_prep_zseries_prep_i.xml:424
-#, no-c-format
-msgid "install=hmc:/"
+msgid "Add"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:426
+#: deployment_prep_zseries_prep_i.xml:451
+#, no-c-format
+msgid "<option>install=hmc:/</option>"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:454
 #, no-c-format
 msgid ""
 "to the <filename>parmfile</filename> (see <xref linkend=\"sec.appdendix.parm"
-"\"/>) or kernel options."
+"\"/> ) or kernel options."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:434
+#: deployment_prep_zseries_prep_i.xml:462
 #, no-c-format
-msgid "Alternatively, in manual mode, in <filename>linuxrc</filename>, choose:"
+msgid ""
+"Alternatively, in manual mode, in <filename>linuxrc</filename> , choose:"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:437
+#: deployment_prep_zseries_prep_i.xml:465
 #, no-c-format
-msgid "<emphasis role=\"italic\">Start Installation</emphasis>, then"
+msgid "<emphasis role=\"italic\">Start Installation</emphasis> , then"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:440
+#: deployment_prep_zseries_prep_i.xml:468
 #, no-c-format
-msgid "<emphasis role=\"italic\">Installation</emphasis>, then"
+msgid "<emphasis role=\"italic\">Installation</emphasis> , then"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:443
+#: deployment_prep_zseries_prep_i.xml:471
 #, no-c-format
-msgid "<emphasis role=\"italic\">Hardware Management Console</emphasis>."
+msgid "<emphasis role=\"italic\">Hardware Management Console</emphasis> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:446
+#: deployment_prep_zseries_prep_i.xml:474
 #, no-c-format
 msgid "The installation medium must be inserted in the HMC."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:452
+#: deployment_prep_zseries_prep_i.xml:480
 #, no-c-format
 msgid "Configure Network"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:453
+#: deployment_prep_zseries_prep_i.xml:481
 #, no-c-format
 msgid ""
 "Do not forget to configure the network in <filename>linuxrc</filename> "
 "before starting the installation. There is no way to pass on boot parameters "
 "later in time, and it is very likely that you will need network access. In "
-"<filename>linuxrc</filename>, go to <emphasis role=\"italic\">Start "
-"Installation</emphasis>, then choose <emphasis role=\"italic\">Network "
-"Setup</emphasis>."
+"<filename>linuxrc</filename> , go to <emphasis role=\"italic\">Start "
+"Installation</emphasis> , then choose <emphasis role=\"italic\">Network "
+"Setup</emphasis> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:463
+#: deployment_prep_zseries_prep_i.xml:491
 #, no-c-format
 msgid "Linux System Must Boot First"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:464
+#: deployment_prep_zseries_prep_i.xml:492
 #, no-c-format
 msgid ""
 "Before granting access to the media in the DVD or the flash disk of the HMC, "
 "wait until the Linux system is booting. IPLing can disrupt the connection "
 "between the HMC and the LPAR. If the first attempt to use the described "
 "method fails, you can grant the access and retry the option <option>HMC</"
-"option>."
+"option> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:473
+#: deployment_prep_zseries_prep_i.xml:501
 #, no-c-format
 msgid "Installation Repository"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:474
+#: deployment_prep_zseries_prep_i.xml:502
 #, no-c-format
 msgid ""
 "Because of the transitory nature of the assignment, the DVD or the flash "
@@ -783,13 +830,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:484
+#: deployment_prep_zseries_prep_i.xml:512
 #, no-c-format
 msgid "Installation Types"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:485
+#: deployment_prep_zseries_prep_i.xml:513
 #, no-c-format
 msgid ""
 "This section provides information about which steps must be performed to "
@@ -800,193 +847,188 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:492
+#: deployment_prep_zseries_prep_i.xml:520
 #, no-c-format
 msgid ""
-"As described in <xref linkend=\"sec.prep.makeavail\"/>, there are three "
+"As described in <xref linkend=\"sec.prep.makeavail\"/> , there are three "
 "different installation modes for Linux on &zseries;:"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:498
+#: deployment_prep_zseries_prep_i.xml:526
 #, no-c-format
 msgid "LPAR installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:503
+#: deployment_prep_zseries_prep_i.xml:531
 #, no-c-format
 msgid "z/VM installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:508
+#: deployment_prep_zseries_prep_i.xml:536
 #, no-c-format
 msgid "KVM guest installation"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:514
+#: deployment_prep_zseries_prep_i.xml:542
 #, no-c-format
 msgid "Overview of an LPAR Installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:516
+#: deployment_prep_zseries_prep_i.xml:544
 #, no-c-format
 msgid ""
 "Prepare the devices needed for installation. See <xref linkend=\"sec.prep."
-"prep_ipl.natlpar\"/>."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:523
-#, no-c-format
-msgid ""
-"IPL the installation system. See <xref linkend=\"sec.prep.ipling.lpar\"/>."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:530
-#: deployment_prep_zseries_prep_i.xml:565
-#, no-c-format
-msgid "Configure the network. See <xref linkend=\"sec.prep.netcfg\"/>."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:535
-#: deployment_prep_zseries_prep_i.xml:570
-#: deployment_prep_zseries_prep_i.xml:603
-#, no-c-format
-msgid ""
-"Connect to the &productname; installation system. See <xref linkend=\"sec."
-"prep.connect\"/>."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:542
-#: deployment_prep_zseries_prep_i.xml:577
-#: deployment_prep_zseries_prep_i.xml:610
-#, no-c-format
-msgid ""
-"Start the installation using &yast; and IPL the installed system. See <xref "
-"linkend=\"cha.install\"/>."
-msgstr ""
-
-#. Tag: title
-#: deployment_prep_zseries_prep_i.xml:549
-#, no-c-format
-msgid "Installation Overview of z/VM Installation"
+"prep_ipl.natlpar\"/> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_prep_zseries_prep_i.xml:551
 #, no-c-format
 msgid ""
-"Prepare the devices needed for installation. See <xref linkend=\"sec.prep."
-"prep_ipl.vm_linux_guest\"/>."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:558
-#, no-c-format
-msgid ""
-"IPL the installation system. See <xref linkend=\"sec.prep.ipling.vm\"/>."
+"IPL the installation system. See <xref linkend=\"sec.prep.ipling.lpar\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:584
+#: deployment_prep_zseries_prep_i.xml:577
 #, no-c-format
-msgid "Overview of a KVM Guest Installation"
+msgid "Installation Overview of z/VM Installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:579
+#, no-c-format
+msgid ""
+"Prepare the devices needed for installation. See <xref linkend=\"sec.prep."
+"prep_ipl.vm_linux_guest\"/> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_prep_zseries_prep_i.xml:586
 #, no-c-format
 msgid ""
-"Create a virtual disk image and write a domain XML file. See <xref linkend="
-"\"sec.prep.prep_ipl.kvm\"/>."
+"IPL the installation system. See <xref linkend=\"sec.prep.ipling.vm\"/> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:592
+#: deployment_prep_zseries_prep_i.xml:593
 #, no-c-format
-msgid ""
-"Prepare the installation target and IPL the &vmguest;. See <xref linkend="
-"\"sec.prep.ipling.kvm\"/>."
-msgstr ""
-
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:598
-#, no-c-format
-msgid "<para>.</para>"
+msgid "Configure the network. See <xref linkend=\"sec.prep.netcfg\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:619
+#: deployment_prep_zseries_prep_i.xml:612
+#, no-c-format
+msgid "Overview of a KVM Guest Installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:614
+#, no-c-format
+msgid ""
+"Create a virtual disk image and write a domain XML file. See <xref linkend="
+"\"sec.prep.prep_ipl.kvm\"/> ."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:620
+#, no-c-format
+msgid ""
+"Prepare the installation target and IPL the &vmguest;. See <xref linkend="
+"\"sec.prep.ipling.kvm\"/> ."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:626
+#, no-c-format
+msgid "<xref linkend=\"sec.prep.netcfg.data\"/> ."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:631
+#, no-c-format
+msgid ""
+"Connect to the &productname; installation system. See <xref linkend=\"sec."
+"prep.connect\"/> ."
+msgstr ""
+
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:638
+#, no-c-format
+msgid ""
+"Start the installation using &yast; and IPL the installed system. See <xref "
+"linkend=\"cha.install\"/> ."
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries_prep_i.xml:647
 #, no-c-format
 msgid "Preparing the IPL of the &productname; Installation System"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:622
+#: deployment_prep_zseries_prep_i.xml:650
 #, no-c-format
 msgid "Preparing the IPL of an LPAR Installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:623
+#: deployment_prep_zseries_prep_i.xml:651
 #, no-c-format
 msgid ""
 "Configure your &zseries; system to start in ESA/S390 or Linux-only mode with "
 "an appropriate activation profile and IOCDS. Consult IBM documentation for "
 "more on how to achieve this. Proceed with <xref linkend=\"sec.prep.ipling."
-"lpar\"/>."
+"lpar\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:631
+#: deployment_prep_zseries_prep_i.xml:659
 #, no-c-format
 msgid "Adding Linux Guest to z/VM"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:632
+#: deployment_prep_zseries_prep_i.xml:660
 #, no-c-format
 msgid ""
 "The first step is to attach and format one or multiple DASDs in the system "
 "to be used by the Linux guest in z/VM. Next, create a new user in z/VM. The "
 "example shows the directory for a user <literal>LINUX1</literal> with the "
-"password <literal>LINPWD</literal>, 1&nbsp;GB of memory (extendable up to "
+"password <literal>LINPWD</literal> , 1&nbsp;GB of memory (extendable up to "
 "2&nbsp;GB), 32&nbsp;MB of expanded RAM (XSTORE), several minidisks (MDISK), "
 "two CPUs, and an OSA QDIO device."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:641
+#: deployment_prep_zseries_prep_i.xml:669
 #, no-c-format
 msgid "Assigning Memory to z/VM guests"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:642
+#: deployment_prep_zseries_prep_i.xml:670
 #, no-c-format
 msgid ""
 "When assigning memory to a z/VM guest, make sure that the memory size suits "
 "the needs of your preferred installation type. See <xref linkend=\"sec."
-"zseries.requirements.hw.mem\"/>. To set the memory size to 1&nbsp;GB, use "
-"the command <command>CP DEFINE STORAGE 1G</command>. After the installation "
+"zseries.requirements.hw.mem\"/> . To set the memory size to 1&nbsp;GB, use "
+"the command <command>CP DEFINE STORAGE 1G</command> . After the installation "
 "has finished, reset the memory size to the desired value."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:652
+#: deployment_prep_zseries_prep_i.xml:680
 #, no-c-format
 msgid "Configuration of a z/VM Directory"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:653
+#: deployment_prep_zseries_prep_i.xml:681
 #, no-c-format
 msgid ""
 "USER LINUX1 LINPWD 1024M 2048M G\n"
@@ -1022,7 +1064,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:655
+#: deployment_prep_zseries_prep_i.xml:712
 #, no-c-format
 msgid ""
 "This example uses minidisk 201 as the guest's home disk. Minidisk 150 with "
@@ -1030,18 +1072,62 @@ msgid ""
 "the Linux installation."
 msgstr ""
 
-#. Tag: para
-#: deployment_prep_zseries_prep_i.xml:660
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:719
 #, no-c-format
-msgid ""
-"Now add (as the user <systemitem class=\"username\">MAINT</systemitem>) the "
-"guest to the user directory with <command>DIRM FOR LINUX1 ADD</command>. "
-"Enter the name of the guest (<literal>LINUX1</literal>) and press "
-"<keycap>F5</keycap>. Set up the environment of the user with:"
+msgid "Now add (as the user"
+msgstr ""
+
+#. Tag: systemitem
+#: deployment_prep_zseries_prep_i.xml:719
+#, no-c-format
+msgid "MAINT"
+msgstr ""
+
+#. Tag: command
+#: deployment_prep_zseries_prep_i.xml:720
+#, no-c-format
+msgid "DIRM FOR LINUX1 ADD"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:720
+#, no-c-format
+msgid ") the guest to the user directory with"
+msgstr ""
+
+#. Tag: literal
+#: deployment_prep_zseries_prep_i.xml:721
+#, no-c-format
+msgid "LINUX1"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:721
+#, no-c-format
+msgid ". Enter the name of the guest ("
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:721
+#, no-c-format
+msgid ") and press"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_prep_zseries_prep_i.xml:721
+#, no-c-format
+msgid "F5"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:723
+#, no-c-format
+msgid ". Set up the environment of the user with:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:667
+#: deployment_prep_zseries_prep_i.xml:724
 #, no-c-format
 msgid ""
 "DIRM DIRECT\n"
@@ -1049,7 +1135,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:668
+#: deployment_prep_zseries_prep_i.xml:726
 #, no-c-format
 msgid ""
 "The last command returns a reader file number. This number is needed for the "
@@ -1057,21 +1143,21 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:672
+#: deployment_prep_zseries_prep_i.xml:730
 #, no-c-format
 msgid "RECEIVE &lt;number&gt; USER DIRECT A (REPL)"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:673
+#: deployment_prep_zseries_prep_i.xml:731
 #, no-c-format
 msgid ""
 "You can now log in on the guest as user <systemitem class=\"username"
-"\">LINUX1</systemitem>."
+"\">LINUX1</systemitem> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:678
+#: deployment_prep_zseries_prep_i.xml:736
 #, no-c-format
 msgid ""
 "If you do not have the <literal>dirmaint</literal> option available, refer "
@@ -1079,19 +1165,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:682
+#: deployment_prep_zseries_prep_i.xml:740
 #, no-c-format
-msgid "Proceed with <xref linkend=\"sec.prep.ipling.vm\"/>."
+msgid "Proceed with <xref linkend=\"sec.prep.ipling.vm\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:687
+#: deployment_prep_zseries_prep_i.xml:745
 #, no-c-format
 msgid "Preparing the IPL of a KVM Guest Installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:688
+#: deployment_prep_zseries_prep_i.xml:746
 #, no-c-format
 msgid ""
 "A KVM guest installation requires a domain XML file defining the virtual "
@@ -1099,13 +1185,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:694
+#: deployment_prep_zseries_prep_i.xml:752
 #, no-c-format
 msgid "Create a Virtual Disk Image"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:695
+#: deployment_prep_zseries_prep_i.xml:753
 #, no-c-format
 msgid ""
 "By default libvirt searches for disk images in <filename>/var/lib/libvirt/"
@@ -1113,24 +1199,24 @@ msgid ""
 "anywhere on the file system, it is recommended to store all images in a "
 "single location for easier maintainability. The following example creates a "
 "qcow2 image with a size of 10 GB in <filename>/var/lib/libvirt/images/</"
-"filename>. For more information refer to <xref linkend=\"cha.qemu.guest_inst."
-"qemu-img\"/>."
+"filename> . For more information refer to <xref linkend=\"cha.qemu."
+"guest_inst.qemu-img\"/> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:706
+#: deployment_prep_zseries_prep_i.xml:765
 #, no-c-format
 msgid "Log in to the KVM host server."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:711
+#: deployment_prep_zseries_prep_i.xml:770
 #, no-c-format
 msgid "Run the following command to create the image:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:714
+#: deployment_prep_zseries_prep_i.xml:773
 #, no-c-format
 msgid ""
 "&prompt.sudo;qemu-img create -f qcow2 /var/lib/libvirt/images/s12lin_qcow2."
@@ -1138,13 +1224,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:719
+#: deployment_prep_zseries_prep_i.xml:778
 #, no-c-format
 msgid "Write a Domain XML File"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:720
+#: deployment_prep_zseries_prep_i.xml:779
 #, no-c-format
 msgid ""
 "A domain XML file is used to define the &vmguest;. To create the domain XML "
@@ -1153,24 +1239,24 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:726
+#: deployment_prep_zseries_prep_i.xml:785
 #, no-c-format
 msgid "Example Domain XML File"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:727
+#: deployment_prep_zseries_prep_i.xml:786
 #, no-c-format
 msgid ""
 "The following example creates a &vmguest; with a single CPU, 1 GB RAM, and "
-"the virtual disk image created in the previous section (<xref linkend=\"sec."
-"prep.prep_ipl.kvm.disk\"/>). It assumes that the host network interface to "
-"which the virtual server is attached is <literal>bond0</literal>. Change the "
-"source devices element to match your network setup."
+"the virtual disk image created in the previous section ( <xref linkend=\"sec."
+"prep.prep_ipl.kvm.disk\"/> ). It assumes that the host network interface to "
+"which the virtual server is attached is <literal>bond0</literal> . Change "
+"the source devices element to match your network setup."
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:735
+#: deployment_prep_zseries_prep_i.xml:794
 #, no-c-format
 msgid ""
 "<![CDATA[<domain type=\"kvm\">\n"
@@ -1209,19 +1295,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:742
+#: deployment_prep_zseries_prep_i.xml:832
 #, no-c-format
 msgid "IPLing the &productname; Installation System"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:745
+#: deployment_prep_zseries_prep_i.xml:835
 #, no-c-format
 msgid "IPLing an LPAR Installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:746
+#: deployment_prep_zseries_prep_i.xml:836
 #, no-c-format
 msgid ""
 "There are different ways to IPL &productname; into an LPAR. The preferred "
@@ -1230,31 +1316,24 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:752
+#: deployment_prep_zseries_prep_i.xml:842
 #, no-c-format
 msgid "IPL from DVD-ROM"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:753
+#: deployment_prep_zseries_prep_i.xml:843
 #, no-c-format
 msgid ""
 "Mark the LPAR to install and select <guimenu>Load from CD-ROM or server</"
-"guimenu>. Leave the field for the file location blank or enter the path to "
+"guimenu> . Leave the field for the file location blank or enter the path to "
 "the root directory of the first DVD-ROM and select continue. In the list of "
 "options that appears, select the default selection. <guimenu>Operating "
 "system messages</guimenu> should now show the kernel boot messages."
 msgstr ""
 
-#. Tag: title
-#: deployment_prep_zseries_prep_i.xml:763
-#: deployment_prep_zseries_prep_i.xml:835
-#, no-c-format
-msgid "IPL from FCP-Attached SCSI DVD"
-msgstr ""
-
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:764
+#: deployment_prep_zseries_prep_i.xml:854
 #, no-c-format
 msgid ""
 "You can use the <guimenu>Load</guimenu> procedure by selecting "
@@ -1266,13 +1345,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:775
+#: deployment_prep_zseries_prep_i.xml:865
 #, no-c-format
 msgid "IPLing a z/VM Installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:776
+#: deployment_prep_zseries_prep_i.xml:866
 #, no-c-format
 msgid ""
 "This section is about IPLing the installation system to install "
@@ -1280,13 +1359,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:781
+#: deployment_prep_zseries_prep_i.xml:871
 #, no-c-format
 msgid "IPL from the z/VM Reader"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:782
+#: deployment_prep_zseries_prep_i.xml:872
 #, no-c-format
 msgid ""
 "You need a working TCP/IP connection and an FTP client program within your "
@@ -1296,16 +1375,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:788
+#: deployment_prep_zseries_prep_i.xml:878
 #, no-c-format
 msgid ""
 "Log in as the z/VM Linux guest to IPL. Make the content of the directory "
 "<filename>/boot/s390x</filename> on DVD&nbsp;1 of the &productname; for "
 "&zseries; available via FTP within your network. From this directory, get "
-"the files <filename>linux</filename>, <filename>initrd</filename>, "
-"<filename>parmfile</filename>, and <filename>sles12.exec</filename>. "
+"the files <filename>linux</filename> , <filename>initrd</filename> , "
+"<filename>parmfile</filename> , and <filename>sles12.exec</filename> . "
 "Transfer the files with a fixed block size of 80 characters. Specify it with "
-"the FTP command <command>locsite fix 80</command>. It is important to copy "
+"the FTP command <command>locsite fix 80</command> . It is important to copy "
 "<filename>linux</filename> (the Linux kernel) and <filename>initrd</"
 "filename> (the installation image) as binary files, so use the "
 "<literal>binary</literal> transfer mode. <filename>parmfile</filename> and "
@@ -1313,23 +1392,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:802
+#: deployment_prep_zseries_prep_i.xml:892
 #, no-c-format
 msgid ""
 "The example shows the steps necessary. In this example, the required files "
 "are accessible from an FTP server at the IP address <literal>192.168.0.3</"
 "literal> and the login is <systemitem class=\"username\">lininst</"
-"systemitem>. It may differ for your network."
+"systemitem> . It may differ for your network."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:811
+#: deployment_prep_zseries_prep_i.xml:901
 #, no-c-format
 msgid "Transferring the Binaries via FTP"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:812
+#: deployment_prep_zseries_prep_i.xml:902
 #, no-c-format
 msgid ""
 "FTP 192.168.0.3\n"
@@ -1387,7 +1466,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:814
+#: deployment_prep_zseries_prep_i.xml:954
 #, no-c-format
 msgid ""
 "Use the REXX script sles12.exec you downloaded to IPL the Linux installation "
@@ -1396,13 +1475,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:820
+#: deployment_prep_zseries_prep_i.xml:960
 #, no-c-format
 msgid "SLES12 EXEC"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:821
+#: deployment_prep_zseries_prep_i.xml:961
 #, no-c-format
 msgid ""
 "/* REXX LOAD EXEC FOR SUSE LINUX S/390 VM GUESTS       */\n"
@@ -1419,23 +1498,30 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:823
+#: deployment_prep_zseries_prep_i.xml:973
 #, no-c-format
 msgid ""
 "With this script you can IPL the &productname; installation system with the "
-"command <command>sles12</command>. The Linux kernel then starts and prints "
+"command <command>sles12</command> . The Linux kernel then starts and prints "
 "its boot messages."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:828
+#: deployment_prep_zseries_prep_i.xml:978
 #, no-c-format
 msgid ""
-"To continue the installation, proceed to <xref linkend=\"sec.prep.netcfg\"/>."
+"To continue the installation, proceed to <xref linkend=\"sec.prep.netcfg\"/"
+"> ."
+msgstr ""
+
+#. Tag: title
+#: deployment_prep_zseries_prep_i.xml:985
+#, no-c-format
+msgid "IPL from FCP-Attached SCSI DVD"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:836
+#: deployment_prep_zseries_prep_i.xml:986
 #, no-c-format
 msgid ""
 "To IPL in z/VM, prepare the SCSI IPL process by using the SET LOADDEV "
@@ -1443,13 +1529,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:840
+#: deployment_prep_zseries_prep_i.xml:990
 #, no-c-format
 msgid "SET LOADDEV PORTNAME 200400E8 00D74E00 LUN 00020000 00000000 BOOT 2"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:841
+#: deployment_prep_zseries_prep_i.xml:991
 #, no-c-format
 msgid ""
 "After setting the LOADDEV parameter with the appropriate values, IPL your "
@@ -1457,27 +1543,27 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:845
+#: deployment_prep_zseries_prep_i.xml:995
 #, no-c-format
 msgid "IPL FC00"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:846
+#: deployment_prep_zseries_prep_i.xml:996
 #, no-c-format
 msgid ""
 "To continue the installation, proceed with <xref linkend=\"sec.prep.netcfg\"/"
-">."
+"> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:853
+#: deployment_prep_zseries_prep_i.xml:1003
 #, no-c-format
 msgid "IPL from a Cobbler Server with zPXE"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:854
+#: deployment_prep_zseries_prep_i.xml:1004
 #, no-c-format
 msgid ""
 "To IPL from a Cobbler server with zPXE you need to transfer the "
@@ -1487,7 +1573,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:860
+#: deployment_prep_zseries_prep_i.xml:1010
 #, no-c-format
 msgid ""
 "Log in as the z/VM Linux guest to IPL and transfer the script with a fixed "
@@ -1495,34 +1581,34 @@ msgid ""
 "reader.ftp.ftptrans\"/> for an example). The <filename>zpxe.rexx</filename> "
 "script is available on the installation DVD at <filename>/boot/s390x/zpxe."
 "rexx</filename> or on a &slea; Cobbler server at <filename>/usr/share/doc/"
-"packages/s390-tools/zpxe.rexx</filename>."
+"packages/s390-tools/zpxe.rexx</filename> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:870
+#: deployment_prep_zseries_prep_i.xml:1020
 #, no-c-format
 msgid ""
 "<filename>zpxe.rexx</filename> is supposed to replace the <filename>PROFILE "
 "EXEC</filename> of your guest. Make a backup copy of the existing "
 "<filename>PROFILE EXEC</filename> and rename <filename>ZPXE REXX</filename> "
-"to <filename>PROFILE EXEC</filename>. Alternatively call <filename>ZPXE "
+"to <filename>PROFILE EXEC</filename> . Alternatively call <filename>ZPXE "
 "REXX</filename> from the existing <filename>PROFILE EXEC</filename> by using "
-"a new line with the following content: <literal>'ZPXE REXX'</literal>."
+"a new line with the following content: <literal>'ZPXE REXX'</literal> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:879
+#: deployment_prep_zseries_prep_i.xml:1029
 #, no-c-format
 msgid ""
 "The last step is to create a configuration file, <filename>ZPXE CONF</"
-"filename>, telling <filename>ZPXE REXX</filename> which Cobbler server to "
+"filename> , telling <filename>ZPXE REXX</filename> which Cobbler server to "
 "contact and which disk to IPL. Run <command>xedit zpxe conf a</command> and "
 "create <filename>ZPXE CONF</filename> with the following content (replace "
 "the example data accordingly):"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:886
+#: deployment_prep_zseries_prep_i.xml:1036
 #, no-c-format
 msgid ""
 "HOST cobbler.&exampledomain;\n"
@@ -1530,7 +1616,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:887
+#: deployment_prep_zseries_prep_i.xml:1038
 #, no-c-format
 msgid ""
 "On the next login to your z/VM guest, the Cobbler server will be connected. "
@@ -1539,60 +1625,80 @@ msgid ""
 "server:"
 msgstr ""
 
-#. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:893
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:1044
 #, no-c-format
-msgid ""
-"&prompt.sudo;cobbler system edit --name <replaceable>ID</replaceable><co xml:"
-"id=\"co.cobbler.sysedit.id\"/> --netboot-enabled 1<co xml:id=\"co.cobbler."
-"sysedit.netboot\"/> --profile <replaceable>PROFILENAME</replaceable><co xml:"
-"id=\"co.cobbler.sysedit.profile\"/>"
+msgid "--netboot-enabled 1"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:1044
+#, no-c-format
+msgid "--profile"
+msgstr ""
+
+#. Tag: replaceable
+#: deployment_prep_zseries_prep_i.xml:1044
+#, no-c-format
+msgid "ID"
+msgstr ""
+
+#. Tag: replaceable
+#: deployment_prep_zseries_prep_i.xml:1044
+#, no-c-format
+msgid "PROFILENAME"
+msgstr ""
+
+#. Tag: #text
+#: deployment_prep_zseries_prep_i.xml:1044
+#, no-c-format
+msgid "&prompt.sudo;cobbler system edit --name"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:896
+#: deployment_prep_zseries_prep_i.xml:1047
 #, no-c-format
 msgid "z/VM user ID."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:901
+#: deployment_prep_zseries_prep_i.xml:1052
 #, no-c-format
 msgid "Enable IPLing from the network."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:906
+#: deployment_prep_zseries_prep_i.xml:1057
 #, no-c-format
 msgid ""
 "Name of an existing profile, see <xref linkend=\"sec.prep.makeavail."
-"zpxe_cobbler.profile\"/>."
+"zpxe_cobbler.profile\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:916
+#: deployment_prep_zseries_prep_i.xml:1067
 #, no-c-format
 msgid "IPLing a KVM Guest Installation"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:917
+#: deployment_prep_zseries_prep_i.xml:1068
 #, no-c-format
 msgid ""
 "To start the guest installation, you first need to start the &vmguest; "
-"defined in <xref linkend=\"sec.prep.prep_ipl.kvm.disk\"/>. A prerequisite "
+"defined in <xref linkend=\"sec.prep.prep_ipl.kvm.disk\"/> . A prerequisite "
 "for this is to first make the kernel and initrd required for IPLing "
 "available."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:923
+#: deployment_prep_zseries_prep_i.xml:1074
 #, no-c-format
 msgid "Preparing the installation source"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:924
+#: deployment_prep_zseries_prep_i.xml:1075
 #, no-c-format
 msgid ""
 "Kernel and initrd of the installation system need to be copied to the "
@@ -1600,7 +1706,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:930
+#: deployment_prep_zseries_prep_i.xml:1081
 #, no-c-format
 msgid ""
 "Log in to the KVM host and make sure you can connect to the remote host or "
@@ -1608,35 +1714,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:936
+#: deployment_prep_zseries_prep_i.xml:1087
 #, no-c-format
 msgid ""
 "Copy the following two files from the installation source to <filename>/var/"
-"lib/libvirt/images/</filename>. If the data is served from a remote host, "
-"use <command>ftp</command>, <command>sftp</command>, or <command>scp</"
+"lib/libvirt/images/</filename> . If the data is served from a remote host, "
+"use <command>ftp</command> , <command>sftp</command> , or <command>scp</"
 "command> to transfer the files:"
 msgstr ""
 
-#. Tag: filename
-#: deployment_prep_zseries_prep_i.xml:943
+#. Tag: member
+#: deployment_prep_zseries_prep_i.xml:1094
 #, no-c-format
-msgid "/boot/s390x/initrd"
+msgid "<filename>/boot/s390x/initrd</filename>"
 msgstr ""
 
-#. Tag: filename
-#: deployment_prep_zseries_prep_i.xml:945
+#. Tag: member
+#: deployment_prep_zseries_prep_i.xml:1096
 #, no-c-format
-msgid "/boot/s390x/cd.ikr"
+msgid "<filename>/boot/s390x/cd.ikr</filename>"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:950
+#: deployment_prep_zseries_prep_i.xml:1101
 #, no-c-format
 msgid "Rename the files on the KVM host:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:953
+#: deployment_prep_zseries_prep_i.xml:1104
 #, no-c-format
 msgid ""
 "&prompt.sudo;cd /var/lib/libvirt/images/\n"
@@ -1645,26 +1751,26 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:958
+#: deployment_prep_zseries_prep_i.xml:1111
 #, no-c-format
 msgid "IPL the &vmguest;"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:959
+#: deployment_prep_zseries_prep_i.xml:1112
 #, no-c-format
 msgid ""
 "To IPL the &vmguest;, log in to the KVM host and run the following command:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:963
+#: deployment_prep_zseries_prep_i.xml:1116
 #, no-c-format
 msgid "&prompt.user;virsh  create s12-1.xml --console"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:964
+#: deployment_prep_zseries_prep_i.xml:1117
 #, no-c-format
 msgid ""
 "After the start-up of the &vmguest; has completed, the installation system "
@@ -1672,7 +1778,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:968
+#: deployment_prep_zseries_prep_i.xml:1121
 #, no-c-format
 msgid ""
 "Domain s12-1 started\n"
@@ -1692,22 +1798,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:969
+#: deployment_prep_zseries_prep_i.xml:1135
 #, no-c-format
 msgid ""
 "Answer <guimenu>2) No</guimenu> and choose <guimenu>Installation</guimenu> "
 "on the next step. Proceed as described in <xref linkend=\"sec.prep.netcfg."
-"data\"/>."
+"data\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:979
+#: deployment_prep_zseries_prep_i.xml:1145
 #, no-c-format
 msgid "Network Configuration"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:980
+#: deployment_prep_zseries_prep_i.xml:1146
 #, no-c-format
 msgid ""
 "Wait until the kernel has completed its start-up routines. If you are "
@@ -1716,7 +1822,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:985
+#: deployment_prep_zseries_prep_i.xml:1151
 #, no-c-format
 msgid ""
 "First, choose <guimenu>Start Installation</guimenu> in the linuxrc main menu "
@@ -1725,13 +1831,13 @@ msgid ""
 "medium then select the type of network protocol you will be using for the "
 "installation. <xref linkend=\"sec.prep.makeavail\"/> describes how to make "
 "the installation data available for the various types of network "
-"connections. Currently, <guimenu>FTP</guimenu>, <guimenu>HTTP</guimenu>, "
-"<guimenu>NFS</guimenu>, and <guimenu>SMB/CIFS</guimenu> (Windows file "
+"connections. Currently, <guimenu>FTP</guimenu> , <guimenu>HTTP</guimenu> , "
+"<guimenu>NFS</guimenu> , and <guimenu>SMB/CIFS</guimenu> (Windows file "
 "sharing) are supported."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:996
+#: deployment_prep_zseries_prep_i.xml:1162
 #, no-c-format
 msgid ""
 "Now choose an OSA or HiperSockets network device over which to receive the "
@@ -1741,13 +1847,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1003
+#: deployment_prep_zseries_prep_i.xml:1169
 #, no-c-format
 msgid "Configure a HiperSockets Interface"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1004
+#: deployment_prep_zseries_prep_i.xml:1170
 #, no-c-format
 msgid ""
 "Select a Hipersocket device from the list of network devices. Then enter the "
@@ -1755,13 +1861,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1009
+#: deployment_prep_zseries_prep_i.xml:1175
 #, no-c-format
 msgid "Supported Network Connection Types and Driver Parameters"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:1010
+#: deployment_prep_zseries_prep_i.xml:1176
 #, no-c-format
 msgid ""
 "Choose the network device.\n"
@@ -1793,13 +1899,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1014
+#: deployment_prep_zseries_prep_i.xml:1205
 #, no-c-format
 msgid "Configure an OSA Express Device"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1015
+#: deployment_prep_zseries_prep_i.xml:1206
 #, no-c-format
 msgid ""
 "Select an OSA Express device from the list of network devices and provide a "
@@ -1809,28 +1915,28 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1021
+#: deployment_prep_zseries_prep_i.xml:1212
 #, no-c-format
 msgid ""
 "The port number was added to support the new 2 port OSA Express 3 Network "
 "devices. If you are not using an OSA Express 3 device, enter <literal>0</"
-"literal>. OSA Express cards also have the option of running in an <quote>OSI "
-"layer 2 support</quote> mode or using the older more common <quote>layer 3</"
-"quote> mode. The card mode affects all systems that share the device "
-"including systems on other LPARs. If in doubt, specify <literal>2</literal> "
-"for compatibility with the default mode used by other operating systems such "
-"as z/VM and z/OS. Consult with your hardware administrator for further "
-"information on these options."
+"literal> . OSA Express cards also have the option of running in an "
+"<quote>OSI layer 2 support</quote> mode or using the older more common "
+"<quote>layer 3</quote> mode. The card mode affects all systems that share "
+"the device including systems on other LPARs. If in doubt, specify "
+"<literal>2</literal> for compatibility with the default mode used by other "
+"operating systems such as z/VM and z/OS. Consult with your hardware "
+"administrator for further information on these options."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1033
+#: deployment_prep_zseries_prep_i.xml:1224
 #, no-c-format
 msgid "Network Device Driver Parameters"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:1034
+#: deployment_prep_zseries_prep_i.xml:1225
 #, no-c-format
 msgid ""
 "Choose the network device.\n"
@@ -1876,13 +1982,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1038
+#: deployment_prep_zseries_prep_i.xml:1268
 #, no-c-format
 msgid "Set Up the Network and Select the Installation Source"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1039
+#: deployment_prep_zseries_prep_i.xml:1269
 #, no-c-format
 msgid ""
 "When all network device parameters have been entered, the respective driver "
@@ -1890,7 +1996,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1043
+#: deployment_prep_zseries_prep_i.xml:1273
 #, no-c-format
 msgid ""
 "Next, decide whether to use DHCP automatic configuration for setting up the "
@@ -1901,44 +2007,44 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1052
+#: deployment_prep_zseries_prep_i.xml:1282
 #, no-c-format
 msgid "The IP address of the system to install"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1057
+#: deployment_prep_zseries_prep_i.xml:1287
 #, no-c-format
 msgid ""
 "The corresponding netmask (if not having been specified with the IP address)"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1063
+#: deployment_prep_zseries_prep_i.xml:1293
 #, no-c-format
 msgid "The IP address of a gateway to reach the server"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1068
+#: deployment_prep_zseries_prep_i.xml:1298
 #, no-c-format
 msgid "A list of search domains covered by the domain name server (DNS)"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1073
+#: deployment_prep_zseries_prep_i.xml:1303
 #, no-c-format
 msgid "The IP address of your domain name server"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1079
+#: deployment_prep_zseries_prep_i.xml:1309
 #, no-c-format
 msgid "Networking Parameters"
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:1080
+#: deployment_prep_zseries_prep_i.xml:1310
 #, no-c-format
 msgid ""
 "Automatic configuration via DHCP?\n"
@@ -1975,7 +2081,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1082
+#: deployment_prep_zseries_prep_i.xml:1341
 #, no-c-format
 msgid ""
 "Finally, you are prompted for details on the installation server, such as "
@@ -1985,63 +2091,63 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1092
+#: deployment_prep_zseries_prep_i.xml:1351
 #, no-c-format
 msgid "Connecting to the &productname; Installation System"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1093
+#: deployment_prep_zseries_prep_i.xml:1352
 #, no-c-format
 msgid ""
 "After having loaded the installation system, linuxrc wants to know what type "
 "of display you want to use to control the installation procedure. Possible "
 "choices are <literal>X11</literal> (X Window System), <literal>VNC</literal> "
 "(Virtual Network Computing protocol), <literal>SSH</literal> (text mode or "
-"X11 installation via Secure Shell), or <literal>ASCII Console</literal>. "
+"X11 installation via Secure Shell), or <literal>ASCII Console</literal> . "
 "Selecting <literal>VNC</literal> or <literal>SSH</literal> is recommended."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1101
+#: deployment_prep_zseries_prep_i.xml:1360
 #, no-c-format
 msgid ""
-"When selecting the latter (<literal>ASCII Console</literal>), &yast; will be "
-"started in text mode and you can perform the installation directly within "
+"When selecting the latter ( <literal>ASCII Console</literal> ), &yast; will "
+"be started in text mode and you can perform the installation directly within "
 "your terminal. See <xref linkend=\"cha.yast.text\"/> for instructions on how "
 "to use &yast; in text mode. Using the <literal>ASCII Console</literal> is "
 "only useful when installing into LPAR."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1110
+#: deployment_prep_zseries_prep_i.xml:1369
 #, no-c-format
 msgid "Terminal Emulation for ASCII Console"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1111
+#: deployment_prep_zseries_prep_i.xml:1370
 #, no-c-format
 msgid ""
 "To work with &yast; in text mode, it needs to run in a terminal with VT220/"
-"Linux emulation (also called <literal>ASCII console</literal>). You cannot "
+"Linux emulation (also called <literal>ASCII console</literal> ). You cannot "
 "use &yast; in a 3270 terminal, for example."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1118
+#: deployment_prep_zseries_prep_i.xml:1377
 #, no-c-format
 msgid "Initiating the Installation for VNC"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1119
+#: deployment_prep_zseries_prep_i.xml:1378
 #, no-c-format
 msgid "To remotely control an installation via VNC, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1124
+#: deployment_prep_zseries_prep_i.xml:1383
 #, no-c-format
 msgid ""
 "After the installation option <literal>VNC</literal> has been chosen, the "
@@ -2052,7 +2158,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1133
+#: deployment_prep_zseries_prep_i.xml:1392
 #, no-c-format
 msgid ""
 "Start a VNC client application on your client system. Either use vncviewer, "
@@ -2060,7 +2166,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1140
+#: deployment_prep_zseries_prep_i.xml:1399
 #, no-c-format
 msgid ""
 "Enter the IP address and the display number of the &productname; "
@@ -2068,7 +2174,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1146
+#: deployment_prep_zseries_prep_i.xml:1405
 #, no-c-format
 msgid ""
 "If you connect via a JavaScript-enabled browser, enter a URL containing the "
@@ -2077,13 +2183,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_prep_zseries_prep_i.xml:1151
+#: deployment_prep_zseries_prep_i.xml:1410
 #, no-c-format
 msgid "http://&lt;IP address of installation system&gt;:5801/"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1154
+#: deployment_prep_zseries_prep_i.xml:1413
 #, no-c-format
 msgid ""
 "After the connection has been established, start installing &productname; "
@@ -2091,19 +2197,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1162
+#: deployment_prep_zseries_prep_i.xml:1421
 #, no-c-format
 msgid "Initiating the Installation for the X Window System"
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1164
+#: deployment_prep_zseries_prep_i.xml:1423
 #, no-c-format
 msgid "X Authentication Mechanism"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1165
+#: deployment_prep_zseries_prep_i.xml:1424
 #, no-c-format
 msgid ""
 "The direct installation with the X Window System relies on a primitive "
@@ -2112,26 +2218,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1172
+#: deployment_prep_zseries_prep_i.xml:1431
 #, no-c-format
 msgid ""
 "To remotely control an installation via X forwarding, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1177
+#: deployment_prep_zseries_prep_i.xml:1436
 #, no-c-format
 msgid ""
 "Make sure that the X server allows the client (the system that is installed) "
 "to connect. Set the variable "
 "<literal>DISPLAYMANAGER_XSERVER_TCP_PORT_6000_OPEN=\"yes\"</literal> in the "
-"file <filename>/etc/sysconfig/displaymanager</filename>. Then restart the X "
+"file <filename>/etc/sysconfig/displaymanager</filename> . Then restart the X "
 "server and allow client binding to the server using <command>xhost "
-"<replaceable>CLIENT_IP_ADDRESS</replaceable></command>."
+"<replaceable>CLIENT_IP_ADDRESS</replaceable></command> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1187
+#: deployment_prep_zseries_prep_i.xml:1446
 #, no-c-format
 msgid ""
 "When prompted at the installation system, enter the IP address of the "
@@ -2139,37 +2245,37 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1193
+#: deployment_prep_zseries_prep_i.xml:1452
 #, no-c-format
 msgid "Wait until &yast; opens then start the installation."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1200
+#: deployment_prep_zseries_prep_i.xml:1459
 #, no-c-format
 msgid "Initiating the Installation for SSH"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1201
+#: deployment_prep_zseries_prep_i.xml:1460
 #, no-c-format
 msgid ""
 "To connect to an installation system with the name <literal>&exampleclient;</"
-"literal> using SSH, execute <command>ssh -X &exampleclient;</command>. If "
+"literal> using SSH, execute <command>ssh -X &exampleclient;</command> . If "
 "your workstation runs on Microsoft Windows, use the SSH and telnet client "
 "and terminal emulator Putty which is available from <link xlink:href="
-"\"http://www.chiark.greenend.org.uk/~sgtatham/putty/\"></link>. Set "
+"\"http://www.chiark.greenend.org.uk/~sgtatham/putty/\"/> . Set "
 "<guimenu>Enable X11 forwarding</guimenu> in Putty under <menuchoice> "
 "<guimenu>Connection</guimenu> <guimenu>SSH</guimenu> <guimenu>X11</guimenu> "
-"</menuchoice>. If you use another operating system, execute <command>ssh -X "
+"</menuchoice> . If you use another operating system, execute <command>ssh -X "
 "&exampleclient;</command> to connect to an installation system with the name "
-"<systemitem>&exampleclient;</systemitem>. X-Forwarding over SSH is supported "
-"if you have a local X server available. Otherwise, &yast; provides a text "
-"interface over ncurses."
+"<systemitem>&exampleclient;</systemitem> . X-Forwarding over SSH is "
+"supported if you have a local X server available. Otherwise, &yast; provides "
+"a text interface over ncurses."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1216
+#: deployment_prep_zseries_prep_i.xml:1476
 #, no-c-format
 msgid ""
 "A login prompt appears. Enter <literal>root</literal> and log in with your "
@@ -2178,51 +2284,51 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1221
+#: deployment_prep_zseries_prep_i.xml:1481
 #, no-c-format
 msgid ""
 "Proceed with the detailed description of the installation procedure that can "
-"be found in <xref linkend=\"cha.install\"/>."
+"be found in <xref linkend=\"cha.install\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_prep_zseries_prep_i.xml:1229
+#: deployment_prep_zseries_prep_i.xml:1489
 #, no-c-format
 msgid "The &productname; Boot Procedure on &zseries;"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1230
+#: deployment_prep_zseries_prep_i.xml:1490
 #, no-c-format
 msgid ""
 "The boot process for &slsa; 10 and 11 followed the scheme provided below. "
 "For in-depth information refer to the documentation provided at <link xlink:"
 "href=\"http://www.ibm.com/developerworks/linux/linux390/documentation_suse."
-"html\"></link>."
+"html\"/> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1237
+#: deployment_prep_zseries_prep_i.xml:1499
 #, no-c-format
 msgid "Provide the kernel."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1242
+#: deployment_prep_zseries_prep_i.xml:1504
 #, no-c-format
 msgid "Provide or create an initrd for the given kernel."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1247
+#: deployment_prep_zseries_prep_i.xml:1509
 #, no-c-format
 msgid ""
 "Provide the correct paths for the initrd and the kernel in <filename>/etc/"
-"zipl.conf</filename>."
+"zipl.conf</filename> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1253
+#: deployment_prep_zseries_prep_i.xml:1515
 #, no-c-format
 msgid ""
 "Install the configuration provided by <filename>/etc/zipl.conf</filename> to "
@@ -2230,7 +2336,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1259
+#: deployment_prep_zseries_prep_i.xml:1521
 #, no-c-format
 msgid ""
 "With &slsa; 12 the way &productname; is booted on &zseries; has changed. "
@@ -2238,7 +2344,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1265
+#: deployment_prep_zseries_prep_i.xml:1527
 #, no-c-format
 msgid ""
 "Alignment with other architectures: From an administrative point of view "
@@ -2246,7 +2352,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1271
+#: deployment_prep_zseries_prep_i.xml:1533
 #, no-c-format
 msgid ""
 "Btrfs: The zipl boot loader is technically incompatible with Btrfs, the new "
@@ -2255,7 +2361,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1279
+#: deployment_prep_zseries_prep_i.xml:1541
 #, no-c-format
 msgid ""
 "Support for system rollbacks with Snapper: Snapper, together with Btrfs, "
@@ -2264,7 +2370,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1286
+#: deployment_prep_zseries_prep_i.xml:1548
 #, no-c-format
 msgid ""
 "For those reasons, starting with &slsa; 12, &grub; replaces zipl on "
@@ -2277,44 +2383,44 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: deployment_prep_zseries_prep_i.xml:1296
+#: deployment_prep_zseries_prep_i.xml:1558
 #, no-c-format
 msgid "Stage One:"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1298
+#: deployment_prep_zseries_prep_i.xml:1560
 #, no-c-format
 msgid ""
 "A separate partition containing the kernel and an initrd is mounted to "
 "<filename>/boot/zipl</filename> (somewhat similar to <filename>/boot/efi</"
 "filename> on UEFI platforms). This kernel and the initrd are loaded via zipl "
-"using the configuration from <filename>/boot/zipl/config</filename>."
+"using the configuration from <filename>/boot/zipl/config</filename> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1305
+#: deployment_prep_zseries_prep_i.xml:1567
 #, no-c-format
 msgid ""
 "This configuration adds the keyword <literal>initgrub</literal> to the "
 "kernel command line. When the kernel and initrd are loaded, the initrd "
 "activates the devices required to mount the root file system (see <filename>/"
-"boot/zipl/active_devices.txt</filename>). Afterward a &grub; user space "
-"program is started, which reads <filename>/boot/grub2/grub.cfg</filename>."
+"boot/zipl/active_devices.txt</filename> ). Afterward a &grub; user space "
+"program is started, which reads <filename>/boot/grub2/grub.cfg</filename> ."
 msgstr ""
 
 #. Tag: term
-#: deployment_prep_zseries_prep_i.xml:1316
+#: deployment_prep_zseries_prep_i.xml:1578
 #, no-c-format
 msgid "Stage Two:"
 msgstr ""
 
 #. Tag: para
-#: deployment_prep_zseries_prep_i.xml:1318
+#: deployment_prep_zseries_prep_i.xml:1580
 #, no-c-format
 msgid ""
 "The kernel and the initrd specified in <filename>/boot/grub2/grub.cfg</"
-"filename> are started via <command>kexec</command>. All devices listed in "
+"filename> are started via <command>kexec</command> . All devices listed in "
 "<filename>/boot/zipl/active_devices.txt</filename> are activated, the root "
 "file system is mounted and the boot procedure continues like on the other "
 "architectures."

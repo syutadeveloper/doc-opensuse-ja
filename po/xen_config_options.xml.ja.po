@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -77,7 +77,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Paravirtualized guests can use the device type <literal>devtype=cdrom</"
-"literal>. This partly emulates the behavior of a real CD reader, and allows "
+"literal> . This partly emulates the behavior of a real CD reader, and allows "
 "CDs to be changed. It is even possible to use the eject command to open the "
 "tray of the CD reader."
 msgstr ""
@@ -104,8 +104,8 @@ msgstr ""
 msgid ""
 "When a CD is inserted in the physical CD reader on the host computer, all "
 "virtual machines with virtual CD readers based on the physical CD reader, "
-"such as <filename>/dev/cdrom/</filename>, can read the inserted CD. Assuming "
-"the operating system has automount functionality, the CD should "
+"such as <filename>/dev/cdrom/</filename> , can read the inserted CD. "
+"Assuming the operating system has automount functionality, the CD should "
 "automatically appear in the file system. Virtual CD readers cannot be used "
 "to write data to a CD. They are configured as read-only devices."
 msgstr ""
@@ -125,14 +125,6 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:80 xen_config_options.xml:173
-#, no-c-format
-msgid ""
-"Make sure that the virtual machine is running and the operating system has "
-"finished booting."
-msgstr ""
-
-#. Tag: para
 #: xen_config_options.xml:86
 #, no-c-format
 msgid ""
@@ -145,7 +137,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Select a new, unused block device in your &vmguest;, such as <filename>/dev/"
-"xvdb</filename>."
+"xvdb</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -188,7 +180,7 @@ msgstr ""
 #: xen_config_options.xml:118
 #, no-c-format
 msgid ""
-"A new block device, such as <filename>/dev/xvdb</filename>, is added to the "
+"A new block device, such as <filename>/dev/xvdb</filename> , is added to the "
 "virtual machine."
 msgstr ""
 
@@ -239,7 +231,7 @@ msgstr ""
 #. Tag: para
 #: xen_config_options.xml:147
 #, no-c-format
-msgid "mounts the CD to a mount point named <command>/mnt</command>."
+msgid "mounts the CD to a mount point named <command>/mnt</command> ."
 msgstr ""
 
 #. Tag: para
@@ -268,6 +260,14 @@ msgstr ""
 #: xen_config_options.xml:170
 #, no-c-format
 msgid "Removing Virtual CD Readers"
+msgstr ""
+
+#. Tag: para
+#: xen_config_options.xml:173
+#, no-c-format
+msgid ""
+"Make sure that the virtual machine is running and the operating system has "
+"finished booting."
 msgstr ""
 
 #. Tag: para
@@ -336,7 +336,8 @@ msgid ""
 "If a graphical desktop, such as &gnome;, is installed on the virtual machine "
 "host, you can use a remote viewer, such as a VNC viewer. On a remote "
 "computer, log in and manage the remote guest environment by using graphical "
-"tools, such as <command>tigervnc</command> or <command>virt-viewer</command>."
+"tools, such as <command>tigervnc</command> or <command>virt-viewer</"
+"command> ."
 msgstr ""
 
 #. Tag: term
@@ -412,16 +413,16 @@ msgid ""
 "client, enter one of the following commands:"
 msgstr ""
 
-#. Tag: command
-#: xen_config_options.xml:288
+#. Tag: para
+#: xen_config_options.xml:287
 #, no-c-format
-msgid "vncviewer ::590#"
+msgid "<command>vncviewer ::590#</command>"
 msgstr ""
 
-#. Tag: command
-#: xen_config_options.xml:293
+#. Tag: para
+#: xen_config_options.xml:292
 #, no-c-format
-msgid "vncviewer :#"
+msgid "<command>vncviewer :#</command>"
 msgstr ""
 
 #. Tag: para
@@ -443,23 +444,25 @@ msgstr ""
 #. Tag: screen
 #: xen_config_options.xml:308
 #, no-c-format
-msgid "&prompt.user;vncviewer &xenhostip;::590#"
+msgid ""
+"\n"
+"&prompt.user;vncviewer &xenhostip;::590#\n"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:310
+#: xen_config_options.xml:312
 #, no-c-format
 msgid "In this case, the IP address of &dom0; is &xenhostip;."
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:315
+#: xen_config_options.xml:317
 #, no-c-format
 msgid "Assigning VNC Viewer Port Numbers to Virtual Machines"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:316
+#: xen_config_options.xml:318
 #, no-c-format
 msgid ""
 "Although the default behavior of VNC viewer is to assign the first available "
@@ -468,7 +471,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:321
+#: xen_config_options.xml:323
 #, no-c-format
 msgid ""
 "To assign a specific port number on a &vmguest;, edit the xl setting of the "
@@ -478,21 +481,21 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:327
+#: xen_config_options.xml:329
 #, no-c-format
 msgid "vfb = [ 'vnc=1,vnclisten=\"localhost:2\"' ]"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:328
+#: xen_config_options.xml:330
 #, no-c-format
 msgid ""
 "For more information regarding editing the xl settings of a guest domain, "
-"see <xref linkend=\"sec.xen.manage.xl\"/>."
+"see <xref linkend=\"sec.xen.manage.xl\"/> ."
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:333
+#: xen_config_options.xml:335
 #, no-c-format
 msgid ""
 "Assign higher port numbers to avoid conflict with port numbers assigned by "
@@ -500,13 +503,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:341
+#: xen_config_options.xml:343
 #, no-c-format
 msgid "Using SDL instead of a VNC Viewer"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:342
+#: xen_config_options.xml:344
 #, no-c-format
 msgid ""
 "If you access a virtual machine's display from the virtual machine host "
@@ -516,22 +519,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:348
+#: xen_config_options.xml:350
 #, no-c-format
 msgid ""
 "To set the default to use SDL instead of VNC, change the virtual machine's "
 "configuration information to the following. For instructions, see <xref "
-"linkend=\"sec.xen.manage.xl\"/>."
+"linkend=\"sec.xen.manage.xl\"/> ."
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:353
+#: xen_config_options.xml:355
 #, no-c-format
 msgid "vfb = [ 'sdl=1' ]"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:354
+#: xen_config_options.xml:356
 #, no-c-format
 msgid ""
 "Remember that, unlike a VNC viewer window, closing an SDL window terminates "
@@ -539,13 +542,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:361
+#: xen_config_options.xml:363
 #, no-c-format
 msgid "Virtual Keyboards"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:363
+#: xen_config_options.xml:365
 #, no-c-format
 msgid ""
 "When a virtual machine is started, the host creates a virtual keyboard that "
@@ -555,7 +558,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:370
+#: xen_config_options.xml:372
 #, no-c-format
 msgid ""
 "To view a virtual machine's current <command>keymap</command> entry, enter "
@@ -563,41 +566,41 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:375
+#: xen_config_options.xml:377
 #, no-c-format
 msgid ""
 "&prompt.user;xl list -l <replaceable>VM_NAME</replaceable> | grep keymap"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:377
+#: xen_config_options.xml:379
 #, no-c-format
 msgid "To configure a virtual keyboard for a guest, use the following snippet:"
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:381
+#: xen_config_options.xml:383
 #, no-c-format
 msgid "vfb = [ 'keymap=\"de\"' ]"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:383
+#: xen_config_options.xml:385
 #, no-c-format
 msgid ""
 "For a complete list of supported keyboard layouts, see the <literal>Keymaps</"
 "literal> section of the <command>xl.cfg</command> manual page <command>man 5 "
-"xl.cfg</command>."
+"xl.cfg</command> ."
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:681
+#: xen_config_options.xml:694
 #, no-c-format
 msgid "Dedicating CPU Resources"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:683
+#: xen_config_options.xml:696
 #, no-c-format
 msgid ""
 "In &xen; it is possible to specify how many and which CPU cores the &dom0; "
@@ -609,13 +612,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:694
+#: xen_config_options.xml:707
 #, no-c-format
 msgid "&dom0;"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:695
+#: xen_config_options.xml:708
 #, no-c-format
 msgid ""
 "Dedicating CPU resources to &dom0; results in a better overall performance "
@@ -626,7 +629,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:702
+#: xen_config_options.xml:715
 #, no-c-format
 msgid ""
 "Dedicating CPU resources involves three basic steps: modifying &xen; boot "
@@ -635,31 +638,64 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:709
+#: xen_config_options.xml:722
 #, no-c-format
 msgid ""
 "First you need to append the <literal>dom0_max_vcpus=X</literal> to the "
 "&xen; boot line. Do so by adding the following line to <filename>/etc/"
-"default/grub</filename>:"
+"default/grub</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:714
+#: xen_config_options.xml:727
 #, no-c-format
 msgid "GRUB_CMDLINE_XEN=\"dom0_max_vcpus=X\""
 msgstr ""
 
-#. Tag: para
-#: xen_config_options.xml:715
+#. Tag: filename
+#: xen_config_options.xml:729
 #, no-c-format
-msgid ""
-"If <filename>/etc/default/grub</filename> already contains a line setting "
-"<envar>GRUB_CMDLINE_XEN</envar>, rather append <literal>dom0_max_vcpus=X</"
-"literal> to this line."
+msgid "/etc/default/grub"
+msgstr ""
+
+#. Tag: #text
+#: xen_config_options.xml:729
+#, no-c-format
+msgid "If"
+msgstr ""
+
+#. Tag: #text
+#: xen_config_options.xml:730
+#, no-c-format
+msgid "already contains a line setting"
+msgstr ""
+
+#. Tag: envar
+#: xen_config_options.xml:730
+#, no-c-format
+msgid "GRUB_CMDLINE_XEN"
+msgstr ""
+
+#. Tag: #text
+#: xen_config_options.xml:731
+#, no-c-format
+msgid ", rather append"
+msgstr ""
+
+#. Tag: literal
+#: xen_config_options.xml:731
+#, no-c-format
+msgid "dom0_max_vcpus=X"
+msgstr ""
+
+#. Tag: #text
+#: xen_config_options.xml:732
+#, no-c-format
+msgid "to this line."
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:720
+#: xen_config_options.xml:733
 #, no-c-format
 msgid ""
 "<literal>X</literal> needs to be replaced by the number of VCPUs dedicated "
@@ -667,33 +703,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:726
+#: xen_config_options.xml:739
 #, no-c-format
 msgid "Update the &grub; configuration file by running the following command:"
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:730
+#: xen_config_options.xml:743
 #, no-c-format
 msgid "&prompt.sudo;grub2-mkconfig -o /boot/grub2/grub.cfg"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:733
+#: xen_config_options.xml:746
 #, no-c-format
 msgid "Reboot for the change to take effect."
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:738
+#: xen_config_options.xml:751
 #, no-c-format
 msgid ""
-"The next step is to bind (or <quote>pin</quote>) each &dom0;'s VCPU to a "
+"The next step is to bind (or <quote>pin</quote> ) each &dom0;'s VCPU to a "
 "physical processor."
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:742
+#: xen_config_options.xml:755
 #, no-c-format
 msgid ""
 "&prompt.sudo;xl vcpu-pin Domain-0 0 0\n"
@@ -701,7 +737,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:743
+#: xen_config_options.xml:757
 #, no-c-format
 msgid ""
 "The first line binds &dom0;'s VCPU number 0 to the physical processor number "
@@ -710,7 +746,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:750
+#: xen_config_options.xml:764
 #, no-c-format
 msgid ""
 "Lastly, you need to make sure no &vmguest; uses the physical processors "
@@ -719,25 +755,25 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:755
+#: xen_config_options.xml:769
 #, no-c-format
 msgid "cpus=\"2-8\""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:756
+#: xen_config_options.xml:770
 #, no-c-format
 msgid "to the configuration file of the relevant &vmguest;."
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:764
+#: xen_config_options.xml:778
 #, no-c-format
 msgid "&vmguest;s"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:765
+#: xen_config_options.xml:779
 #, no-c-format
 msgid ""
 "It is often necessary to dedicate specific CPU resources to a virtual "
@@ -749,7 +785,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:774
+#: xen_config_options.xml:788
 #, no-c-format
 msgid ""
 "vcpus=2\n"
@@ -757,17 +793,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:775
+#: xen_config_options.xml:790
 #, no-c-format
 msgid ""
 "The above example dedicates <literal>2</literal> processors to the "
-"&vmguest;, and these being the 3rd and 4th one, (<literal>2</literal> and "
+"&vmguest;, and these being the 3rd and 4th one, ( <literal>2</literal> and "
 "<literal>3</literal> counted from zero). If you need to assign more physical "
 "processors, use the <literal>cpus=\"2-8\"</literal> syntax."
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:781
+#: xen_config_options.xml:796
 #, no-c-format
 msgid ""
 "If you need to change the CPU assignment for a guest named <quote>alice</"
@@ -775,7 +811,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:786
+#: xen_config_options.xml:801
 #, no-c-format
 msgid ""
 "&prompt.sudo;xl vcpu-set alice 2\n"
@@ -784,7 +820,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:787
+#: xen_config_options.xml:804
 #, no-c-format
 msgid ""
 "The example will dedicate 2 physical processors to the guest, and bind its "
@@ -793,7 +829,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:792
+#: xen_config_options.xml:809
 #, no-c-format
 msgid ""
 "&prompt.sudo;xl vcpu-list alice\n"
@@ -804,13 +840,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:886
+#: xen_config_options.xml:908
 #, no-c-format
 msgid "HVM Features"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:888
+#: xen_config_options.xml:910
 #, no-c-format
 msgid ""
 "In &xen; some features are only available for fully virtualized domains. "
@@ -819,13 +855,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:895
+#: xen_config_options.xml:917
 #, no-c-format
 msgid "Specify Boot Device on Boot"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:896
+#: xen_config_options.xml:918
 #, no-c-format
 msgid ""
 "Just as with physical hardware, it is sometimes desirable to boot a "
@@ -835,13 +871,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:902
+#: xen_config_options.xml:924
 #, no-c-format
 msgid "boot = <replaceable>BOOT_DEVICE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:903
+#: xen_config_options.xml:925
 #, no-c-format
 msgid ""
 "<replaceable>BOOT_DEVICE</replaceable> can be one of <literal>c</literal> "
@@ -851,26 +887,26 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:909
+#: xen_config_options.xml:931
 #, no-c-format
 msgid "boot = dc"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:910
+#: xen_config_options.xml:932
 #, no-c-format
 msgid ""
 "boots from CD-ROM, and falls back to the hard disk if CD-ROM is not bootable."
 msgstr ""
 
 #. Tag: title
-#: xen_config_options.xml:917
+#: xen_config_options.xml:939
 #, no-c-format
 msgid "Changing CPUIDs for Guests"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:918
+#: xen_config_options.xml:940
 #, no-c-format
 msgid ""
 "To be able to migrate a &vmguest; from one &vmhost; to a different &vmhost;, "
@@ -883,16 +919,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:928
+#: xen_config_options.xml:950
 #, no-c-format
 msgid ""
 "To gain an overview of the current CPU, have a look at <filename>/proc/"
-"cpuinfo</filename>. This contains all the important information that defines "
-"the current CPU."
+"cpuinfo</filename> . This contains all the important information that "
+"defines the current CPU."
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:933
+#: xen_config_options.xml:955
 #, no-c-format
 msgid ""
 "To redefine a CPU, first have a look at the respective cpuid definitions of "
@@ -900,19 +936,26 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: xen_config_options.xml:948
+#: xen_config_options.xml:970
 #, no-c-format
 msgid "Intel"
 msgstr ""
 
+#. Tag: para
+#: xen_config_options.xml:972
+#, no-c-format
+msgid ""
+"<link xlink:href=\"http://www.intel.com/Assets/PDF/appnote/241618.pdf\"/>"
+msgstr ""
+
 #. Tag: screen
-#: xen_config_options.xml:956
+#: xen_config_options.xml:978
 #, no-c-format
 msgid "cpuid = \"host,tm=0,sse3=0\""
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:957
+#: xen_config_options.xml:979
 #, no-c-format
 msgid ""
 "The syntax is a comma-separated list of key=value pairs, preceded by the "
@@ -923,87 +966,87 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: xen_config_options.xml:966
+#: xen_config_options.xml:988
 #, no-c-format
-msgid "<term>1</term>"
+msgid "1"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:968
+#: xen_config_options.xml:990
 #, no-c-format
 msgid "Force the corresponding bit to <literal>1</literal>"
 msgstr ""
 
 #. Tag: term
-#: xen_config_options.xml:974
+#: xen_config_options.xml:996
 #, no-c-format
-msgid "<term>0</term>"
+msgid "0"
 msgstr ""
 
 #. Tag: para
-#: xen_config_options.xml:976
+#: xen_config_options.xml:998
 #, no-c-format
 msgid "Force the corresponding bit to <literal>0</literal>"
 msgstr ""
 
 #. Tag: term
-#: xen_config_options.xml:982
+#: xen_config_options.xml:1004
 #, no-c-format
-msgid "<term>x</term>"
-msgstr ""
-
-#. Tag: para
-#: xen_config_options.xml:984
-#, no-c-format
-msgid "Use the values of the default policy"
-msgstr ""
-
-#. Tag: term
-#: xen_config_options.xml:990
-#, no-c-format
-msgid "<term>k</term>"
-msgstr ""
-
-#. Tag: para
-#: xen_config_options.xml:992
-#, no-c-format
-msgid "Use the values defined by the host"
-msgstr ""
-
-#. Tag: term
-#: xen_config_options.xml:998
-#, no-c-format
-msgid "<term>s</term>"
-msgstr ""
-
-#. Tag: para
-#: xen_config_options.xml:1000
-#, no-c-format
-msgid "Like <literal>k</literal>, but preserve the value over migrations"
+msgid "x"
 msgstr ""
 
 #. Tag: para
 #: xen_config_options.xml:1006
 #, no-c-format
-msgid ""
-"Note that counting bits is done from right to left, starting with bit "
-"<literal>0</literal>."
+msgid "Use the values of the default policy"
 msgstr ""
 
-#. Tag: title
-#: xen_config_options.xml:1013
+#. Tag: term
+#: xen_config_options.xml:1012
 #, no-c-format
-msgid "Increasing the Number of PCI-IRQs"
+msgid "k"
 msgstr ""
 
 #. Tag: para
 #: xen_config_options.xml:1014
 #, no-c-format
+msgid "Use the values defined by the host"
+msgstr ""
+
+#. Tag: term
+#: xen_config_options.xml:1020
+#, no-c-format
+msgid "s"
+msgstr ""
+
+#. Tag: para
+#: xen_config_options.xml:1022
+#, no-c-format
+msgid "Like <literal>k</literal> , but preserve the value over migrations"
+msgstr ""
+
+#. Tag: para
+#: xen_config_options.xml:1028
+#, no-c-format
+msgid ""
+"Note that counting bits is done from right to left, starting with bit "
+"<literal>0</literal> ."
+msgstr ""
+
+#. Tag: title
+#: xen_config_options.xml:1035
+#, no-c-format
+msgid "Increasing the Number of PCI-IRQs"
+msgstr ""
+
+#. Tag: para
+#: xen_config_options.xml:1036
+#, no-c-format
 msgid ""
 "In case you need to increase the default number of PCI-IRQs available to "
 "&dom0; and/or &vmguest;, you can do so by modifying the &xen; kernel command "
 "line. Use the command <command>extra_guest_irqs=</command> "
-"<replaceable>DOMU_IRGS,DOM0_IRGS</replaceable>. The optional first number "
+"<replaceable>DOMU_IRGS,DOM0_IRGS</replaceable> . The optional first number "
 "<replaceable>DOMU_IRGS</replaceable> is common for all &vmguest;s, while the "
 "optional second number <replaceable>DOM0_IRGS</replaceable> (preceded by a "
 "comma) is for &dom0;. Changing the setting for &vmguest; has no impact on "
@@ -1012,7 +1055,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: xen_config_options.xml:1027
+#: xen_config_options.xml:1049
 #, no-c-format
 msgid "extra_guest_irqs=,512"
 msgstr ""

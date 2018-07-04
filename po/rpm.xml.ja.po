@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "RPM&mdash;the Package Manager"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: rpm.xml:12
+#. Tag: dm:translation
+#: rpm.xml:14
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -33,7 +33,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "RPM (RPM Package Manager) is used for managing software packages. Its main "
-"commands are <command>rpm</command> and <command>rpmbuild</command>. The "
+"commands are <command>rpm</command> and <command>rpmbuild</command> . The "
 "powerful RPM database can be queried by the users, system administrators and "
 "package builders for detailed information about the installed software."
 msgstr ""
@@ -58,7 +58,7 @@ msgid ""
 "information used during the installation by <command>rpm</command> to "
 "configure the software package or stored in the RPM database for "
 "documentation purposes. RPM archives normally have the extension <filename>."
-"rpm</filename>."
+"rpm</filename> ."
 msgstr ""
 
 #. Tag: title
@@ -75,9 +75,9 @@ msgid ""
 "(libraries, headers, include files, etc.) have been put into separate "
 "packages. These development packages are only needed if you want to compile "
 "software yourself (for example, the most recent &gnome; packages). They can "
-"be identified by the name extension <literal>-devel</literal>, such as the "
+"be identified by the name extension <literal>-devel</literal> , such as the "
 "packages <systemitem class=\"resource\">alsa-devel</systemitem> and "
-"<systemitem class=\"resource\">gimp-devel</systemitem>."
+"<systemitem class=\"resource\">gimp-devel</systemitem> ."
 msgstr ""
 
 #. Tag: title
@@ -92,7 +92,7 @@ msgstr ""
 msgid ""
 "RPM packages have a &gpg; signature. To verify the signature of an RPM "
 "package, use the command <command>rpm --checksig&nbsp;</command> "
-"<replaceable>PACKAGE</replaceable>-1.2.3.rpm to determine whether the "
+"<replaceable>PACKAGE</replaceable> -1.2.3.rpm to determine whether the "
 "package originates from &suse; or from another trustworthy facility. This is "
 "especially recommended for update packages from the Internet."
 msgstr ""
@@ -117,23 +117,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:72
+#: rpm.xml:73
 #, no-c-format
 msgid "After importing the key, you can install PTF packages on your system."
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:78
+#: rpm.xml:79
 #, no-c-format
 msgid "Managing Packages: Install, Update, and Uninstall"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:79
+#: rpm.xml:80
 #, no-c-format
 msgid ""
 "Normally, the installation of an RPM archive is quite simple: <command>rpm -"
-"i</command> <replaceable>PACKAGE</replaceable>.rpm. With this command the "
+"i</command> <replaceable>PACKAGE</replaceable> .rpm. With this command the "
 "package is installed, but only if its dependencies are fulfilled and if "
 "there are no conflicts with other packages. With an error message, "
 "<command>rpm</command> requests those packages that need to be installed to "
@@ -146,12 +146,12 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:92
+#: rpm.xml:93
 #, no-c-format
 msgid ""
 "The options <option>-U</option> or <option>--upgrade</option> and <option>-"
 "F</option> or <option>--freshen</option> can be used to update a package "
-"(for example, <command>rpm -F</command> <replaceable>PACKAGE</replaceable>."
+"(for example, <command>rpm -F</command> <replaceable>PACKAGE</replaceable> ."
 "rpm). This command removes the files of the old version and immediately "
 "installs the new files. The difference between the two versions is that "
 "<option>-U</option> installs packages that previously did not exist in the "
@@ -161,7 +161,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:105
+#: rpm.xml:106
 #, no-c-format
 msgid ""
 "If a configuration file was not changed by the system administrator, "
@@ -170,7 +170,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:112
+#: rpm.xml:113
 #, no-c-format
 msgid ""
 "If a configuration file was changed by the system administrator before the "
@@ -178,15 +178,15 @@ msgid ""
 "<filename>.rpmorig</filename> or <filename>.rpmsave</filename> (backup file) "
 "and installs the version from the new package. This is done only if the "
 "originally installed file and the newer version are different. If this is "
-"the case, compare the backup file (<filename>.rpmorig</filename> or "
-"<filename>.rpmsave</filename>) with the newly installed file and make your "
+"the case, compare the backup file ( <filename>.rpmorig</filename> or "
+"<filename>.rpmsave</filename> ) with the newly installed file and make your "
 "changes again in the new file. Afterward, delete all <filename>.rpmorig</"
 "filename> and <filename>.rpmsave</filename> files to avoid problems with "
 "future updates."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:126
+#: rpm.xml:127
 #, no-c-format
 msgid ""
 "<filename>.rpmnew</filename> files appear if the configuration file already "
@@ -195,7 +195,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:133
+#: rpm.xml:134
 #, no-c-format
 msgid ""
 "Following an update, <filename>.rpmsave</filename> and <filename>.rpmnew</"
@@ -205,7 +205,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:140
+#: rpm.xml:141
 #, no-c-format
 msgid ""
 "Otherwise, <filename>.rpmsave</filename> is used. In other words, <filename>."
@@ -214,13 +214,13 @@ msgid ""
 "newer RPM. <filename>.rpmnew</filename> does not disclose any information to "
 "whether the system administrator has made any changes to the configuration "
 "file. A list of these files is available in <filename>/var/adm/"
-"rpmconfigcheck</filename>. Some configuration files (like <filename>/etc/"
-"httpd/httpd.conf</filename>) are not overwritten to allow continued "
+"rpmconfigcheck</filename> . Some configuration files (like <filename>/etc/"
+"httpd/httpd.conf</filename> ) are not overwritten to allow continued "
 "operation."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:151
+#: rpm.xml:152
 #, no-c-format
 msgid ""
 "The <option>-U</option> switch is <emphasis>not</emphasis> only an "
@@ -230,27 +230,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:157
+#: rpm.xml:158
 #, no-c-format
 msgid ""
 "To remove a package, enter <command>rpm -e</command> <replaceable>PACKAGE</"
-"replaceable>. This command only deletes the package if there are no "
+"replaceable> . This command only deletes the package if there are no "
 "unresolved dependencies. It is theoretically impossible to delete Tcl/Tk, "
 "for example, as long as another application requires it. Even in this case, "
 "RPM calls for assistance from the database. If such a deletion is, for "
 "whatever reason, impossible (even if <emphasis>no</emphasis> additional "
 "dependencies exist), it may be helpful to rebuild the RPM database using the "
-"option <option>--rebuilddb</option>."
+"option <option>--rebuilddb</option> ."
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:170
+#: rpm.xml:171
 #, no-c-format
 msgid "Delta RPM Packages"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:171
+#: rpm.xml:172
 #, no-c-format
 msgid ""
 "Delta RPM packages contain the difference between an old and a new version "
@@ -264,39 +264,39 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:181
+#: rpm.xml:182
 #, no-c-format
 msgid ""
 "The <command>makedeltarpm</command> and <command>applydelta</command> "
 "binaries are part of the delta RPM suite (package <systemitem>deltarpm</"
-"systemitem>) and help you create and apply delta RPM packages. With the "
+"systemitem> ) and help you create and apply delta RPM packages. With the "
 "following commands, you can create a delta RPM called <filename>new.delta."
-"rpm</filename>. The following command assumes that <filename>old.rpm</"
+"rpm</filename> . The following command assumes that <filename>old.rpm</"
 "filename> and <filename>new.rpm</filename> are present:"
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:189
+#: rpm.xml:190
 #, no-c-format
 msgid "&prompt.sudo;makedeltarpm old.rpm new.rpm new.delta.rpm"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:190
+#: rpm.xml:191
 #, no-c-format
 msgid ""
-"Using <command>applydeltarpm</command>, you can reconstruct the new RPM from "
-"the file system if the old package is already installed:"
+"Using <command>applydeltarpm</command> , you can reconstruct the new RPM "
+"from the file system if the old package is already installed:"
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:194
+#: rpm.xml:195
 #, no-c-format
 msgid "&prompt.sudo;applydeltarpm new.delta.rpm new.rpm"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:195
+#: rpm.xml:196
 #, no-c-format
 msgid ""
 "To derive it from the old RPM without accessing the file system, use the "
@@ -304,13 +304,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:199
+#: rpm.xml:200
 #, no-c-format
 msgid "&prompt.sudo;applydeltarpm -r old.rpm new.delta.rpm new.rpm"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:200
+#: rpm.xml:201
 #, no-c-format
 msgid ""
 "See <filename>/usr/share/doc/packages/deltarpm/README</filename> for "
@@ -318,124 +318,124 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:207
+#: rpm.xml:208
 #, no-c-format
 msgid "RPM Queries"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:208
+#: rpm.xml:209
 #, no-c-format
 msgid ""
 "With the <option>-q</option> option <command>rpm</command> initiates "
 "queries, making it possible to inspect an RPM archive (by adding the option "
-"<option>-p</option>) and to query the RPM database of installed packages. "
+"<option>-p</option> ) and to query the RPM database of installed packages. "
 "Several switches are available to specify the type of information required. "
-"See <xref linkend=\"tab.rpm.query\"/>."
+"See <xref linkend=\"tab.rpm.query\"/> ."
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:216
+#: rpm.xml:217
 #, no-c-format
 msgid "The Most Important RPM Query Options"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:222
 #, no-c-format
 msgid "<option>-i</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:226
+#: rpm.xml:227
 #, no-c-format
 msgid "Package information"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:234
 #, no-c-format
 msgid "<option>-l</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:238
+#: rpm.xml:239
 #, no-c-format
 msgid "File list"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:246
 #, no-c-format
-msgid "-f FILE"
+msgid "<option>-f FILE</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:250
+#: rpm.xml:251
 #, no-c-format
 msgid ""
 "Query the package that contains the file <replaceable>FILE</replaceable> "
-"(the full path must be specified with <replaceable>FILE</replaceable>)"
+"(the full path must be specified with <replaceable>FILE</replaceable> )"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:260
 #, no-c-format
 msgid "<option>-s</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:264
+#: rpm.xml:265
 #, no-c-format
-msgid "File list with status information (implies <option>-l</option>)"
+msgid "File list with status information (implies <option>-l</option> )"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:272
 #, no-c-format
 msgid "<option>-d</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:276
+#: rpm.xml:277
 #, no-c-format
-msgid "List only documentation files (implies <literal>-l</literal>)"
+msgid "List only documentation files (implies <literal>-l</literal> )"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:284
 #, no-c-format
 msgid "<option>-c</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:288
+#: rpm.xml:289
 #, no-c-format
-msgid "List only configuration files (implies <option>-l</option>)"
+msgid "List only configuration files (implies <option>-l</option> )"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:296
 #, no-c-format
-msgid "--dump"
+msgid "<option>--dump</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:300
+#: rpm.xml:301
 #, no-c-format
 msgid ""
-"File list with complete details (to be used with <option>-l</option>, "
-"<option>-c</option>, or <option>-d</option>)"
-msgstr ""
-
-#. Tag: option
-#: rpm.xml:309
-#, no-c-format
-msgid "--provides"
+"File list with complete details (to be used with <option>-l</option> , "
+"<option>-c</option> , or <option>-d</option> )"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:313
+#: rpm.xml:309
+#, no-c-format
+msgid "<option>--provides</option>"
+msgstr ""
+
+#. Tag: para
+#: rpm.xml:314
 #, no-c-format
 msgid ""
 "List features of the package that another package can request with <option>--"
@@ -443,45 +443,45 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:321
+#: rpm.xml:322
 #, no-c-format
-msgid "<option>--requires</option>, <option>-R</option>"
+msgid "<option>--requires</option> , <option>-R</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:326
+#: rpm.xml:327
 #, no-c-format
 msgid "Capabilities the package requires"
 msgstr ""
 
-#. Tag: option
+#. Tag: para
 #: rpm.xml:334
 #, no-c-format
-msgid "--scripts"
+msgid "<option>--scripts</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:338
+#: rpm.xml:339
 #, no-c-format
 msgid "Installation scripts (preinstall, postinstall, uninstall)"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:346
+#: rpm.xml:347
 #, no-c-format
 msgid ""
 "For example, the command <command>rpm -q -i wget</command> displays the "
-"information shown in <xref linkend=\"aus.update.rpm-i\"/>."
+"information shown in <xref linkend=\"aus.update.rpm-i\"/> ."
 msgstr ""
 
-#. Tag: command
-#: rpm.xml:351
+#. Tag: title
+#: rpm.xml:352
 #, no-c-format
-msgid "rpm -q -i wget"
+msgid "<command>rpm -q -i wget</command>"
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:352
+#: rpm.xml:353
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.70em\"?>Name        : wget\n"
@@ -509,7 +509,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:353
+#: rpm.xml:374
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.70em\"?>Name        : wget\n"
@@ -537,7 +537,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:355
+#: rpm.xml:396
 #, no-c-format
 msgid ""
 "The option <option>-f</option> only works if you specify the complete file "
@@ -545,7 +545,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:359
+#: rpm.xml:400
 #, no-c-format
 msgid ""
 "&prompt.user;rpm -q -f /bin/rpm /usr/bin/wget\n"
@@ -554,22 +554,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:360
+#: rpm.xml:403
 #, no-c-format
 msgid ""
 "If only part of the file name is known, use a shell script as shown in <xref "
-"linkend=\"dat.rpm.search\"/>. Pass the partial file name to the script shown "
-"as a parameter when running it."
+"linkend=\"dat.rpm.search\"/> . Pass the partial file name to the script "
+"shown as a parameter when running it."
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:366
+#: rpm.xml:409
 #, no-c-format
 msgid "Script to Search for Packages"
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:367
+#: rpm.xml:410
 #, no-c-format
 msgid ""
 "#! /bin/sh\n"
@@ -581,7 +581,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:369
+#: rpm.xml:417
 #, no-c-format
 msgid ""
 "The command <command>rpm -q --changelog</command> <replaceable>PACKAGE</"
@@ -590,129 +590,129 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:374
+#: rpm.xml:422
 #, no-c-format
 msgid ""
 "With the installed RPM database, verification checks can be made. Initiate "
-"these with <option>-V</option>, or <option>--verify</option>. With this "
+"these with <option>-V</option> , or <option>--verify</option> . With this "
 "option, <command>rpm</command> shows all files in a package that have been "
 "changed since installation. <command>rpm</command> uses eight character "
 "symbols to give some hints about the following changes:"
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:382
+#: rpm.xml:430
 #, no-c-format
 msgid "RPM Verify Options"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:388
+#. Tag: para
+#: rpm.xml:435
 #, no-c-format
 msgid "<option>5</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:392
+#: rpm.xml:440
 #, no-c-format
 msgid "MD5 check sum"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:400
+#. Tag: para
+#: rpm.xml:447
 #, no-c-format
 msgid "<option>S</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:404
+#: rpm.xml:452
 #, no-c-format
 msgid "File size"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:412
+#. Tag: para
+#: rpm.xml:459
 #, no-c-format
 msgid "<option>L</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:416
+#: rpm.xml:464
 #, no-c-format
 msgid "Symbolic link"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:424
+#. Tag: para
+#: rpm.xml:471
 #, no-c-format
 msgid "<option>T</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:428
+#: rpm.xml:476
 #, no-c-format
 msgid "Modification time"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:436
+#. Tag: para
+#: rpm.xml:483
 #, no-c-format
 msgid "<option>D</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:440
+#: rpm.xml:488
 #, no-c-format
 msgid "Major and minor device numbers"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:448
+#. Tag: para
+#: rpm.xml:495
 #, no-c-format
 msgid "<option>U</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:452
+#: rpm.xml:500
 #, no-c-format
 msgid "Owner"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:460
+#. Tag: para
+#: rpm.xml:507
 #, no-c-format
 msgid "<option>G</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:464
+#: rpm.xml:512
 #, no-c-format
 msgid "Group"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:472
+#. Tag: para
+#: rpm.xml:519
 #, no-c-format
 msgid "<option>M</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:476
+#: rpm.xml:524
 #, no-c-format
 msgid "Mode (permissions and file type)"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:484
+#: rpm.xml:532
 #, no-c-format
 msgid ""
 "In the case of configuration files, the letter <option>c</option> is "
 "printed. For example, for changes to <filename>/etc/wgetrc</filename> "
-"(<systemitem class=\"resource\">wget</systemitem> package):"
+"( <systemitem class=\"resource\">wget</systemitem> package):"
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:489
+#: rpm.xml:537
 #, no-c-format
 msgid ""
 "&prompt.user;rpm -V wget\n"
@@ -720,31 +720,31 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:490
+#: rpm.xml:539
 #, no-c-format
 msgid ""
 "The files of the RPM database are placed in <filename>/var/lib/rpm</"
-"filename>. If the partition <filename>/usr</filename> has a size of 1&nbsp;"
+"filename> . If the partition <filename>/usr</filename> has a size of 1&nbsp;"
 "GB, this database can occupy nearly 30&nbsp;MB, especially after a complete "
 "update. If the database is much larger than expected, it is useful to "
-"rebuild the database with the option <option>--rebuilddb</option>. Before "
+"rebuild the database with the option <option>--rebuilddb</option> . Before "
 "doing this, make a backup of the old database. The <command>cron</command> "
 "script <command>cron.daily</command> makes daily copies of the database "
 "(packed with gzip) and stores them in <filename>/var/adm/backup/rpmdb</"
-"filename>. The number of copies is controlled by the variable "
-"<systemitem>MAX_RPMDB_BACKUPS</systemitem> (default: <option>5</option>) in "
-"<filename>/etc/sysconfig/backup</filename>. The size of a single backup is "
-"approximately 1&nbsp;MB for 1&nbsp;GB in <filename>/usr</filename>."
+"filename> . The number of copies is controlled by the variable "
+"<systemitem>MAX_RPMDB_BACKUPS</systemitem> (default: <option>5</option> ) in "
+"<filename>/etc/sysconfig/backup</filename> . The size of a single backup is "
+"approximately 1&nbsp;MB for 1&nbsp;GB in <filename>/usr</filename> ."
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:508
+#: rpm.xml:557
 #, no-c-format
 msgid "Installing and Compiling Source Packages"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:509
+#: rpm.xml:558
 #, no-c-format
 msgid ""
 "All source packages carry a <filename>.src.rpm</filename> extension (source "
@@ -752,126 +752,126 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:514
+#: rpm.xml:563
 #, no-c-format
 msgid "Installed Source Packages"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:515
+#: rpm.xml:564
 #, no-c-format
 msgid ""
 "Source packages can be copied from the installation medium to the hard disk "
 "and unpacked with &yast;. They are not, however, marked as installed "
-"(<literal>[i]</literal>) in the package manager. This is because the source "
-"packages are not entered in the RPM database. Only <emphasis>installed</"
-"emphasis> operating system software is listed in the RPM database. When you "
-"<quote>install</quote> a source package, only the source code is added to "
-"the system."
+"( <literal>[i]</literal> ) in the package manager. This is because the "
+"source packages are not entered in the RPM database. Only "
+"<emphasis>installed</emphasis> operating system software is listed in the "
+"RPM database. When you <quote>install</quote> a source package, only the "
+"source code is added to the system."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:525
+#: rpm.xml:574
 #, no-c-format
 msgid ""
 "The following directories must be available for <command>rpm</command> and "
 "<command>rpmbuild</command> in <filename>/usr/src/packages</filename> "
 "(unless you specified custom settings in a file like <filename>/etc/rpmrc</"
-"filename>):"
+"filename> ):"
 msgstr ""
 
-#. Tag: filename
-#: rpm.xml:533
+#. Tag: term
+#: rpm.xml:582
 #, no-c-format
-msgid "SOURCES"
+msgid "<filename>SOURCES</filename>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:536
+#: rpm.xml:585
 #, no-c-format
 msgid ""
-"for the original sources (<filename>.tar.bz2</filename> or <filename>.tar."
+"for the original sources ( <filename>.tar.bz2</filename> or <filename>.tar."
 "gz</filename> files, etc.) and for distribution-specific adjustments (mostly "
 "<filename>.diff</filename> or <filename>.patch</filename> files)"
 msgstr ""
 
-#. Tag: filename
-#: rpm.xml:545
+#. Tag: term
+#: rpm.xml:594
 #, no-c-format
-msgid "SPECS"
+msgid "<filename>SPECS</filename>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:548
+#: rpm.xml:597
 #, no-c-format
 msgid ""
 "for the <filename>.spec</filename> files, similar to a meta Makefile, which "
 "control the <emphasis>build</emphasis> process"
 msgstr ""
 
-#. Tag: filename
-#: rpm.xml:555
+#. Tag: term
+#: rpm.xml:604
 #, no-c-format
-msgid "BUILD"
+msgid "<filename>BUILD</filename>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:558
+#: rpm.xml:607
 #, no-c-format
 msgid "all the sources are unpacked, patched and compiled in this directory"
 msgstr ""
 
-#. Tag: filename
-#: rpm.xml:564
+#. Tag: term
+#: rpm.xml:613
 #, no-c-format
-msgid "RPMS"
+msgid "<filename>RPMS</filename>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:567
+#: rpm.xml:616
 #, no-c-format
 msgid "where the completed binary packages are stored"
 msgstr ""
 
-#. Tag: filename
-#: rpm.xml:573
+#. Tag: term
+#: rpm.xml:622
 #, no-c-format
-msgid "SRPMS"
+msgid "<filename>SRPMS</filename>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:576
+#: rpm.xml:625
 #, no-c-format
 msgid "here are the source RPMs"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:582
+#: rpm.xml:631
 #, no-c-format
 msgid ""
 "When you install a source package with &yast;, all the necessary components "
-"are installed in <filename>/usr/src/packages</filename>: the sources and the "
-"adjustments in <filename>SOURCES</filename> and the relevant <filename>."
-"spec</filename> file in <filename>SPECS</filename>."
+"are installed in <filename>/usr/src/packages</filename> : the sources and "
+"the adjustments in <filename>SOURCES</filename> and the relevant <filename>."
+"spec</filename> file in <filename>SPECS</filename> ."
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:589
+#: rpm.xml:638
 #, no-c-format
 msgid "System Integrity"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:590
+#: rpm.xml:639
 #, no-c-format
 msgid ""
-"Do not experiment with system components (<systemitem class=\"resource"
-"\">glibc</systemitem>, <systemitem class=\"resource\">rpm</systemitem>, "
+"Do not experiment with system components ( <systemitem class=\"resource"
+"\">glibc</systemitem> , <systemitem class=\"resource\">rpm</systemitem> , "
 "etc.), because this endangers the stability of your system."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:597
+#: rpm.xml:646
 #, no-c-format
 msgid ""
 "The following example uses the <filename>wget.src.rpm</filename> package. "
@@ -880,7 +880,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:602
+#: rpm.xml:651
 #, no-c-format
 msgid ""
 "/usr/src/packages/SOURCES/wget-1.11.4.tar.bz2\n"
@@ -889,7 +889,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:603
+#: rpm.xml:654
 #, no-c-format
 msgid ""
 "<command>rpmbuild</command> <option>-b<replaceable>X</replaceable></option> "
@@ -899,137 +899,137 @@ msgid ""
 "documentation for details). The following is merely a brief explanation:"
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:612
+#. Tag: term
+#: rpm.xml:663
 #, no-c-format
 msgid "<option>-bp</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:615
+#: rpm.xml:666
 #, no-c-format
 msgid ""
-"Prepare sources in <filename>/usr/src/packages/BUILD</filename>: unpack and "
+"Prepare sources in <filename>/usr/src/packages/BUILD</filename> : unpack and "
 "patch."
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:622
+#. Tag: term
+#: rpm.xml:673
 #, no-c-format
 msgid "<option>-bc</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:625
+#: rpm.xml:676
 #, no-c-format
-msgid "Do the same as <option>-bp</option>, but with additional compilation."
+msgid "Do the same as <option>-bp</option> , but with additional compilation."
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:631
+#. Tag: term
+#: rpm.xml:682
 #, no-c-format
 msgid "<option>-bi</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:634
+#: rpm.xml:685
 #, no-c-format
 msgid ""
-"Do the same as <option>-bp</option>, but with additional installation of the "
-"built software. Caution: if the package does not support the BuildRoot "
+"Do the same as <option>-bp</option> , but with additional installation of "
+"the built software. Caution: if the package does not support the BuildRoot "
 "feature, you might overwrite configuration files."
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:642
+#. Tag: term
+#: rpm.xml:693
 #, no-c-format
 msgid "<option>-bb</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:645
+#: rpm.xml:696
 #, no-c-format
 msgid ""
-"Do the same as <option>-bi</option>, but with the additional creation of the "
-"binary package. If the compile was successful, the binary should be in "
-"<filename>/usr/src/packages/RPMS</filename>."
+"Do the same as <option>-bi</option> , but with the additional creation of "
+"the binary package. If the compile was successful, the binary should be in "
+"<filename>/usr/src/packages/RPMS</filename> ."
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:653
+#. Tag: term
+#: rpm.xml:704
 #, no-c-format
 msgid "<option>-ba</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:656
+#: rpm.xml:707
 #, no-c-format
 msgid ""
-"Do the same as <option>-bb</option>, but with the additional creation of the "
-"source RPM. If the compilation was successful, the binary should be in "
-"<filename>/usr/src/packages/SRPMS</filename>."
+"Do the same as <option>-bb</option> , but with the additional creation of "
+"the source RPM. If the compilation was successful, the binary should be in "
+"<filename>/usr/src/packages/SRPMS</filename> ."
 msgstr ""
 
-#. Tag: option
-#: rpm.xml:664
+#. Tag: term
+#: rpm.xml:715
 #, no-c-format
-msgid "--short-circuit"
+msgid "<option>--short-circuit</option>"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:667
+#: rpm.xml:718
 #, no-c-format
 msgid "Skip some steps."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:673
+#: rpm.xml:724
 #, no-c-format
 msgid ""
 "The binary RPM created can now be installed with <command>rpm</command> "
 "<option>-i</option> or, preferably, with <command>rpm</command> <option>-U</"
-"option>. Installation with <command>rpm</command> makes it appear in the RPM "
-"database."
+"option> . Installation with <command>rpm</command> makes it appear in the "
+"RPM database."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:679
+#: rpm.xml:730
 #, no-c-format
 msgid ""
 "Keep in mind, the <literal>BuildRoot</literal> directive in the spec file is "
-"deprecated since &productname; <phrase os=\"sles;sled\">12</phrase><phrase "
-"os=\"osuse\">42.1</phrase>. If you still need this feature, use the "
+"deprecated since &productname; <phrase os=\"sles;sled\">12</phrase> <phrase "
+"os=\"osuse\">42.1</phrase> . If you still need this feature, use the "
 "<option>--buildroot</option> option as a workaround. <phrase os=\"sles;sled"
 "\">For a more detailed background, see the support database at <link xlink:"
-"href=\"https://www.suse.com/support/kb/doc?id=7017104\"></link>.</phrase>"
+"href=\"https://www.suse.com/support/kb/doc?id=7017104\"/>.</phrase>"
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:690
+#: rpm.xml:742
 #, no-c-format
 msgid "Compiling RPM Packages with build"
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:691
+#: rpm.xml:743
 #, no-c-format
 msgid ""
 "The danger with many packages is that unwanted files are added to the "
 "running system during the build process. To prevent this use "
-"<systemitem>build</systemitem>, which creates a defined environment in which "
-"the package is built. To establish this chroot environment, the "
+"<systemitem>build</systemitem> , which creates a defined environment in "
+"which the package is built. To establish this chroot environment, the "
 "<command>build</command> script must be provided with a complete package "
 "tree. This tree can be made available on the hard disk, via NFS, or from "
 "DVD. Set the position with <command>build --rpms</command> "
-"<replaceable>DIRECTORY</replaceable>. Unlike <command>rpm</command>, the "
+"<replaceable>DIRECTORY</replaceable> . Unlike <command>rpm</command> , the "
 "<command>build</command> command looks for the <filename>.spec</filename> "
 "file in the source directory. To build <filename>wget</filename> (like in "
 "the above example) with the DVD mounted in the system under <filename>/media/"
-"dvd</filename>, use the following commands as &rootuser;:"
+"dvd</filename> , use the following commands as &rootuser;:"
 msgstr ""
 
 #. Tag: screen
-#: rpm.xml:706
+#: rpm.xml:758
 #, no-c-format
 msgid ""
 "&prompt.root;cd /usr/src/packages/SOURCES/\n"
@@ -1038,17 +1038,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:707
+#: rpm.xml:761
 #, no-c-format
 msgid ""
 "Subsequently, a minimum environment is established at <filename>/var/tmp/"
-"build-root</filename>. The package is built in this environment. Upon "
+"build-root</filename> . The package is built in this environment. Upon "
 "completion, the resulting packages are located in <filename>/var/tmp/build-"
-"root/usr/src/packages/RPMS</filename>."
+"root/usr/src/packages/RPMS</filename> ."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:713
+#: rpm.xml:767
 #, no-c-format
 msgid ""
 "The <command>build</command> script offers several additional options. For "
@@ -1060,27 +1060,78 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: rpm.xml:724
+#: rpm.xml:778
 #, no-c-format
 msgid "Tools for RPM Archives and the RPM Database"
 msgstr ""
 
-#. Tag: para
-#: rpm.xml:725
+#. Tag: #text
+#: rpm.xml:780
+#, no-c-format
+msgid "Midnight Commander ("
+msgstr ""
+
+#. Tag: command
+#: rpm.xml:780
+#, no-c-format
+msgid "mc"
+msgstr ""
+
+#. Tag: filename
+#: rpm.xml:783
+#, no-c-format
+msgid "HEADER"
+msgstr ""
+
+#. Tag: keycap
+#: rpm.xml:783
+#, no-c-format
+msgid "F3"
+msgstr ""
+
+#. Tag: #text
+#: rpm.xml:783
+#, no-c-format
+msgid "with"
+msgstr ""
+
+#. Tag: #text
+#: rpm.xml:783
 #, no-c-format
 msgid ""
-"Midnight Commander (<command>mc</command>) can display the contents of RPM "
-"archives and copy parts of them. It represents archives as virtual file "
-"systems, offering all usual menu options of Midnight Commander. Display the "
-"<filename>HEADER</filename> with <keycap>F3</keycap>. View the archive "
-"structure with the cursor keys and <keycap function=\"enter\"></keycap>. "
-"Copy archive components with <keycap>F5</keycap>."
+") can display the contents of RPM archives and copy parts of them. It "
+"represents archives as virtual file systems, offering all usual menu options "
+"of Midnight Commander. Display the"
+msgstr ""
+
+#. Tag: #text
+#: rpm.xml:784
+#, no-c-format
+msgid ". View the archive structure with the cursor keys and"
+msgstr ""
+
+#. Tag: #text
+#: rpm.xml:785
+#, no-c-format
+msgid ". Copy archive components with"
+msgstr ""
+
+#. Tag: keycap
+#: rpm.xml:785
+#, no-c-format
+msgid "F5"
+msgstr ""
+
+#. Tag: #text
+#: rpm.xml:786
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
-#: rpm.xml:733
+#: rpm.xml:787
 #, no-c-format
 msgid ""
 "A full-featured package manager is available as a &yast; module. For "
-"details, see <xref linkend=\"cha.yast-software\"/>."
+"details, see <xref linkend=\"cha.yast-software\"/> ."
 msgstr ""

@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,16 +20,16 @@ msgstr ""
 msgid "Using the Expert Partitioner"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: deployment_expert_partitioner_overview.xml:15
+#. Tag: dm:translation
+#: deployment_expert_partitioner_overview.xml:17
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:21
 #, no-c-format
-msgid "With the Expert Partitioner, shown in <xref linkend=\"fig.expert_partitioner.overview\"/>, manually modify the partitioning of one or several hard disks. You can add, delete, resize, and edit partitions, or access the soft RAID, and LVM configuration."
+msgid "With the Expert Partitioner, shown in <xref linkend=\"fig.expert_partitioner.overview\"/> , manually modify the partitioning of one or several hard disks. You can add, delete, resize, and edit partitions, or access the soft RAID, and LVM configuration."
 msgstr ""
 
 #. Tag: title
@@ -65,13 +65,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:60
 #, no-c-format
-msgid "All existing or suggested partitions on all connected hard disks are displayed in the list of <guimenu>Available Storage</guimenu> in the &yast; <guimenu>Expert Partitioner</guimenu> dialog. Entire hard disks are listed as devices without numbers, such as <filename>/dev/sda</filename><phrase arch=\"zseries\" os=\"sles\"> (or <filename>/dev/dasda</filename>)</phrase>. Partitions are listed as parts of these devices, such as <filename>/dev/sda1</filename><phrase arch=\"zseries\" os=\"sles\"> (or <filename>/dev/dasda1</filename>, respectively)</phrase>. The size, type, encryption status, file system, and mount point of the hard disks and their partitions are also displayed. The mount point describes where the partition appears in the Linux file system tree."
+msgid "All existing or suggested partitions on all connected hard disks are displayed in the list of <guimenu>Available Storage</guimenu> in the &yast; <guimenu>Expert Partitioner</guimenu> dialog. Entire hard disks are listed as devices without numbers, such as <filename>/dev/sda</filename> <phrase arch=\"zseries\" os=\"sles\"> (or <filename>/dev/dasda</filename>)</phrase> . Partitions are listed as parts of these devices, such as <filename>/dev/sda1</filename> <phrase arch=\"zseries\" os=\"sles\"> (or <filename>/dev/dasda1</filename>, respectively)</phrase> . The size, type, encryption status, file system, and mount point of the hard disks and their partitions are also displayed. The mount point describes where the partition appears in the Linux file system tree."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:75
 #, no-c-format
-msgid "Several functional views are available on the left hand <guimenu>System View</guimenu>. These views can be used to collect information about existing storage configurations, configure functions (like <literal>RAID</literal>, <literal>Volume Management</literal>, <literal>Crypt Files</literal>), and view file systems with additional features, such as Btrfs, NFS, or <literal>TMPFS</literal>."
+msgid "Several functional views are available on the left hand <guimenu>System View</guimenu> . These views can be used to collect information about existing storage configurations, configure functions (like <literal>RAID</literal> , <literal>Volume Management</literal> , <literal>Crypt Files</literal> ), and view file systems with additional features, such as Btrfs, NFS, or <literal>TMPFS</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -89,13 +89,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:93
 #, no-c-format
-msgid "&productname; allows to use and create different <emphasis>partition tables</emphasis>. In some cases the partition table is called <emphasis>disk label</emphasis>. The partition table is important to the boot process of your computer. To boot your machine from a partition in a newly created partition table, make sure that the table format is supported by the firmware."
+msgid "&productname; allows to use and create different <emphasis>partition tables</emphasis> . In some cases the partition table is called <emphasis>disk label</emphasis> . The partition table is important to the boot process of your computer. To boot your machine from a partition in a newly created partition table, make sure that the table format is supported by the firmware."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:101
 #, no-c-format
-msgid "To change the partition table, click the relevant disk name in the <guimenu>System View</guimenu> and choose <menuchoice><guimenu>Expert</guimenu> <guimenu>Create New Partition Table</guimenu></menuchoice>."
+msgid "To change the partition table, click the relevant disk name in the <guimenu>System View</guimenu> and choose <menuchoice><guimenu>Expert</guimenu> <guimenu>Create New Partition Table</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: title
@@ -113,7 +113,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:117
 #, no-c-format
-msgid "The limit of 4 partitions can be overcome by creating an <emphasis>extended partition</emphasis>. The extended partition itself is a primary partition and can contain more <emphasis>logical partitions</emphasis>."
+msgid "The limit of 4 partitions can be overcome by creating an <emphasis>extended partition</emphasis> . The extended partition itself is a primary partition and can contain more <emphasis>logical partitions</emphasis> ."
 msgstr ""
 
 #. Tag: para
@@ -209,13 +209,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:184
 #, no-c-format
-msgid "The &yast; Partitioner can create and format partitions with several file systems. The default file system used by &productname; is <literal>Btrfs</literal>. For details, see <xref linkend=\"sec.yast.btrfs\"/>."
+msgid "The &yast; Partitioner can create and format partitions with several file systems. The default file system used by &productname; is <literal>Btrfs</literal> . For details, see <xref linkend=\"sec.yast.btrfs\"/> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:190
 #, no-c-format
-msgid "Other commonly used file systems are available: <literal>Ext2</literal>, <literal>Ext3</literal>, <literal>Ext4</literal>, <literal>FAT</literal>, <literal>XFS</literal> and <literal>Swap</literal>."
+msgid "Other commonly used file systems are available: <literal>Ext2</literal> , <literal>Ext3</literal> , <literal>Ext4</literal> , <literal>FAT</literal> , <literal>XFS</literal> and <literal>Swap</literal> ."
 msgstr ""
 
 #. Tag: title
@@ -233,7 +233,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:205
 #, no-c-format
-msgid "Click <guimenu>Add</guimenu> to create a new partition. When using <emphasis>MBR</emphasis>, specify to create a primary or extended partition. Within the extended partition, you can create several logical partitions. For details, see <xref linkend=\"sec.expert_partitioner.tables\"/>."
+msgid "Click <guimenu>Add</guimenu> to create a new partition. When using <emphasis>MBR</emphasis> , specify to create a primary or extended partition. Within the extended partition, you can create several logical partitions. For details, see <xref linkend=\"sec.expert_partitioner.tables\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -245,13 +245,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:220
 #, no-c-format
-msgid "Select the file system to use and a mount point. &yast; suggests a mount point for each partition created. To use a different mount method, like mount by label, select <guimenu>Fstab Options</guimenu>. For more information on supported file systems, see <systemitem class=\"username\">root</systemitem>."
+msgid "Select the file system to use and a mount point. &yast; suggests a mount point for each partition created. To use a different mount method, like mount by label, select <guimenu>Fstab Options</guimenu> . For more information on supported file systems, see <systemitem class=\"username\">root</systemitem> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:229
 #, no-c-format
-msgid "Specify additional file system options if your setup requires them. This is necessary, for example, if you need persistent device names. For details on the available options, refer to <xref linkend=\"sec.expert_partitioner.options\"/>."
+msgid "Specify additional file system options if your setup requires them. This is necessary, for example, if you need persistent device names. For details on the available options, refer to <xref linkend=\"sec.expert_partitioner.options\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -275,7 +275,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:250
 #, no-c-format
-msgid "The default file system for the root partition is Btrfs. For details, see <xref linkend=\"cha.snapper\"/><phrase os=\"sles\"> and <xref linkend=\"cha.filesystems\"/></phrase>. The root file system is the default subvolume and it is not listed in the list of created subvolumes. As a default Btrfs subvolume, it can be mounted as a normal file system."
+msgid "The default file system for the root partition is Btrfs. For details, see <xref linkend=\"cha.snapper\"/> <phrase os=\"sles\"> and <xref linkend=\"cha.filesystems\"/></phrase> . The root file system is the default subvolume and it is not listed in the list of created subvolumes. As a default Btrfs subvolume, it can be mounted as a normal file system."
 msgstr ""
 
 #. Tag: title
@@ -329,7 +329,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:301
 #, no-c-format
-msgid "Start the &yast; <guimenu>Expert Partitioner</guimenu> with <menuchoice><guimenu>System</guimenu><guimenu>Partitioner</guimenu></menuchoice>."
+msgid "Start the &yast; <guimenu>Expert Partitioner</guimenu> with <menuchoice><guimenu>System</guimenu><guimenu>Partitioner</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
@@ -341,13 +341,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:313
 #, no-c-format
-msgid "Select the Btrfs partition whose subvolumes you need to manage and click <guimenu>Edit</guimenu>."
+msgid "Select the Btrfs partition whose subvolumes you need to manage and click <guimenu>Edit</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:319
 #, no-c-format
-msgid "Click <guimenu>Subvolume Handling</guimenu>. You can see a list of all existing subvolumes of the selected Btrfs partition. There are several <literal>@/.snapshots/xyz/snapshot</literal> entries&mdash;each of these subvolumes belongs to one existing snapshot."
+msgid "Click <guimenu>Subvolume Handling</guimenu> . You can see a list of all existing subvolumes of the selected Btrfs partition. There are several <literal>@/.snapshots/xyz/snapshot</literal> entries&mdash;each of these subvolumes belongs to one existing snapshot."
 msgstr ""
 
 #. Tag: para
@@ -359,13 +359,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:333
 #, no-c-format
-msgid "To remove a subvolume, select it from the list of <guimenu>Exisitng Subvolumes</guimenu> and click <guimenu>Remove</guimenu>."
+msgid "To remove a subvolume, select it from the list of <guimenu>Exisitng Subvolumes</guimenu> and click <guimenu>Remove</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:339
 #, no-c-format
-msgid "To add a new subvolume, enter its name to the <guimenu>New Subvolume</guimenu> text box and click <guimenu>Add new</guimenu>."
+msgid "To add a new subvolume, enter its name to the <guimenu>New Subvolume</guimenu> text box and click <guimenu>Add new</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -377,13 +377,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:358
 #, no-c-format
-msgid "Confirm with <guimenu>OK</guimenu> and <guimenu>Finish</guimenu>."
+msgid "Confirm with <guimenu>OK</guimenu> and <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:363
 #, no-c-format
-msgid "Leave the partitioner with <guimenu>Finish</guimenu>."
+msgid "Leave the partitioner with <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -419,7 +419,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:394
 #, no-c-format
-msgid "Even if you do not want to format the partition at this stage, assign it a file system ID to ensure that the partition is registered correctly. Typical values are <guimenu>Linux</guimenu>, <guimenu>Linux swap</guimenu>, <guimenu>Linux LVM</guimenu>, and <guimenu>Linux RAID</guimenu>."
+msgid "Even if you do not want to format the partition at this stage, assign it a file system ID to ensure that the partition is registered correctly. Typical values are <guimenu>Linux</guimenu> , <guimenu>Linux swap</guimenu> , <guimenu>Linux LVM</guimenu> , and <guimenu>Linux RAID</guimenu> ."
 msgstr ""
 
 #. Tag: term
@@ -479,7 +479,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:451
 #, no-c-format
-msgid "If you activate the encryption, all data is written to the hard disk in encrypted form. This increases the security of sensitive data, but reduces the system speed, as the encryption takes some time to process. More information about the encryption of file systems is provided in <xref linkend=\"cha.security.cryptofs\"/>."
+msgid "If you activate the encryption, all data is written to the hard disk in encrypted form. This increases the security of sensitive data, but reduces the system speed, as the encryption takes some time to process. More information about the encryption of file systems is provided in <xref linkend=\"cha.security.cryptofs\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -503,13 +503,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:476
 #, no-c-format
-msgid "Specify various parameters contained in the global file system administration file (<filename>/etc/fstab</filename>). The default settings should suffice for most setups. You can, for example, change the file system identification from the device name to a volume label. In the volume label, use all characters except <literal>/</literal> and space."
+msgid "Specify various parameters contained in the global file system administration file ( <filename>/etc/fstab</filename> ). The default settings should suffice for most setups. You can, for example, change the file system identification from the device name to a volume label. In the volume label, use all characters except <literal>/</literal> and space."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:484
 #, no-c-format
-msgid "To get persistent devices names, use the mount option <guimenu>Device ID</guimenu>, <guimenu>UUID</guimenu> or <guimenu>LABEL</guimenu>. In &productname;, persistent device names are enabled by default."
+msgid "To get persistent devices names, use the mount option <guimenu>Device ID</guimenu> , <guimenu>UUID</guimenu> or <guimenu>LABEL</guimenu> . In &productname;, persistent device names are enabled by default."
 msgstr ""
 
 #. Tag: title
@@ -527,13 +527,13 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:497
 #, no-c-format
-msgid "If you prefer to mount the partition by its label, you need to define one in the <guimenu>Volume label</guimenu> text entry. For example, you could use the partition label <literal>HOME</literal> for a partition intended to mount to <filename>/home</filename>."
+msgid "If you prefer to mount the partition by its label, you need to define one in the <guimenu>Volume label</guimenu> text entry. For example, you could use the partition label <literal>HOME</literal> for a partition intended to mount to <filename>/home</filename> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:503
 #, no-c-format
-msgid "If you intend to use quotas on the file system, use the mount option <guimenu>Enable Quota Support</guimenu>. This must be done before you can define quotas for users in the &yast; <guimenu>User Management</guimenu> module. For further information on how to configure user quota, refer to <xref linkend=\"sec.yast.userman.adv.quota\"/>."
+msgid "If you intend to use quotas on the file system, use the mount option <guimenu>Enable Quota Support</guimenu> . This must be done before you can define quotas for users in the &yast; <guimenu>User Management</guimenu> module. For further information on how to configure user quota, refer to <xref linkend=\"sec.yast.userman.adv.quota\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -551,7 +551,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:523
 #, no-c-format
-msgid "To resize an existing file system, select the partition and use <guimenu>Resize</guimenu>. Note, that it is not possible to resize partitions while mounted. To resize partitions, unmount the relevant partition before running the partitioner."
+msgid "To resize an existing file system, select the partition and use <guimenu>Resize</guimenu> . Note, that it is not possible to resize partitions while mounted. To resize partitions, unmount the relevant partition before running the partitioner."
 msgstr ""
 
 #. Tag: title
@@ -563,7 +563,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:534
 #, no-c-format
-msgid "After you select a hard disk device (like <guimenu>sda</guimenu>) in the <guimenu>System View</guimenu> pane, you can access the <guimenu>Expert</guimenu> menu in the lower right part of the <guimenu>Expert Partitioner</guimenu> window. The menu contains the following commands:"
+msgid "After you select a hard disk device (like <guimenu>sda</guimenu> ) in the <guimenu>System View</guimenu> pane, you can access the <guimenu>Expert</guimenu> menu in the lower right part of the <guimenu>Expert Partitioner</guimenu> window. The menu contains the following commands:"
 msgstr ""
 
 #. Tag: term
@@ -659,7 +659,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:610
 #, no-c-format
-msgid "Note, that different partitioning tools may start counting the cylinders of a partition with <literal>0</literal> or with <literal>1</literal>. When calculating the number of cylinders, you should always use the difference between the last and the first cylinder number and add one."
+msgid "Note, that different partitioning tools may start counting the cylinders of a partition with <literal>0</literal> or with <literal>1</literal> . When calculating the number of cylinders, you should always use the difference between the last and the first cylinder number and add one."
 msgstr ""
 
 #. Tag: title
@@ -707,7 +707,7 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:650
 #, no-c-format
-msgid "At first, the system slows like a system without swap. After all physical RAM has been allocated, swap space is used as well. At this point, the system becomes very slow and it becomes impossible to run commands from remote. Depending on the speed of the hard disks that run the swap space, the system stays in this condition for about 10 to 15 minutes until the out-of-memory kill mechanism resolves the issue. Note that you will need a certain amount of swap if the computer needs to perform a <quote>suspend to disk</quote>. In that case, the swap size should be large enough to contain the necessary data from memory (512 MB&ndash;1GB)."
+msgid "At first, the system slows like a system without swap. After all physical RAM has been allocated, swap space is used as well. At this point, the system becomes very slow and it becomes impossible to run commands from remote. Depending on the speed of the hard disks that run the swap space, the system stays in this condition for about 10 to 15 minutes until the out-of-memory kill mechanism resolves the issue. Note that you will need a certain amount of swap if the computer needs to perform a <quote>suspend to disk</quote> . In that case, the swap size should be large enough to contain the necessary data from memory (512 MB&ndash;1GB)."
 msgstr ""
 
 #. Tag: term
@@ -743,128 +743,127 @@ msgstr ""
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:697
 #, no-c-format
-msgid "Create an empty file in your system. For example, to add a swap file with 128&nbsp;MB swap at <filename>/var/lib/swap/swapfile</filename>, use the commands:"
+msgid "Create an empty file in your system. For example, to add a swap file with 128&nbsp;MB swap at <filename>/var/lib/swap/swapfile</filename> , use the commands:"
 msgstr ""
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:702
 #, no-c-format
-msgid ""
-      "&prompt.sudo;mkdir -p /var/lib/swap\n"
+msgid "&prompt.sudo;mkdir -p /var/lib/swap\n"
       "&prompt.sudo;dd if=/dev/zero of=/var/lib/swap/swapfile bs=1M count=128"
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:705
+#: deployment_expert_partitioner_overview.xml:706
 #, no-c-format
 msgid "Initialize this swap file with the command"
 msgstr ""
 
 #. Tag: screen
-#: deployment_expert_partitioner_overview.xml:708
+#: deployment_expert_partitioner_overview.xml:709
 #, no-c-format
 msgid "&prompt.sudo;mkswap /var/lib/swap/swapfile"
 msgstr ""
 
-#. Tag: step
-#: deployment_expert_partitioner_overview.xml:708
+#. Tag: #text
+#: deployment_expert_partitioner_overview.xml:710
 #, no-c-format
 msgid "&note.mkswap.swap;"
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:712
+#: deployment_expert_partitioner_overview.xml:713
 #, no-c-format
 msgid "Activate the swap with the command"
 msgstr ""
 
 #. Tag: screen
-#: deployment_expert_partitioner_overview.xml:715
+#: deployment_expert_partitioner_overview.xml:716
 #, no-c-format
 msgid "&prompt.sudo;swapon /var/lib/swap/swapfile"
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:716
+#: deployment_expert_partitioner_overview.xml:717
 #, no-c-format
 msgid "To disable this swap file, use the command"
 msgstr ""
 
 #. Tag: screen
-#: deployment_expert_partitioner_overview.xml:719
+#: deployment_expert_partitioner_overview.xml:720
 #, no-c-format
 msgid "&prompt.sudo;swapoff /var/lib/swap/swapfile"
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:722
+#: deployment_expert_partitioner_overview.xml:723
 #, no-c-format
 msgid "Check the current available swap spaces with the command"
 msgstr ""
 
 #. Tag: screen
-#: deployment_expert_partitioner_overview.xml:725
+#: deployment_expert_partitioner_overview.xml:726
 #, no-c-format
 msgid "&prompt.user;cat /proc/swaps"
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:726
+#: deployment_expert_partitioner_overview.xml:727
 #, no-c-format
 msgid "Note that at this point, it is only temporary swap space. After the next reboot, it is no longer used."
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:732
+#: deployment_expert_partitioner_overview.xml:733
 #, no-c-format
-msgid "To enable this swap file permanently, add the following line to <filename>/etc/fstab</filename>:"
+msgid "To enable this swap file permanently, add the following line to <filename>/etc/fstab</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: deployment_expert_partitioner_overview.xml:736
+#: deployment_expert_partitioner_overview.xml:737
 #, no-c-format
 msgid "/var/lib/swap/swapfile swap swap defaults 0 0"
 msgstr ""
 
 #. Tag: title
-#: deployment_expert_partitioner_overview.xml:743
+#: deployment_expert_partitioner_overview.xml:744
 #, no-c-format
 msgid "Partitioning and LVM"
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:744
+#: deployment_expert_partitioner_overview.xml:745
 #, no-c-format
-msgid "From the <guimenu>Expert partitioner</guimenu>, access the LVM configuration by clicking the <guimenu>Volume Management</guimenu> item in the <guimenu>System View</guimenu> pane. However, if a working LVM configuration already exists on your system, it is automatically activated upon entering the initial LVM configuration of a session. In this case, all disks containing a partition (belonging to an activated volume group) cannot be repartitioned. The Linux kernel cannot reread the modified partition table of a hard disk when any partition on this disk is in use. If you already have a working LVM configuration on your system, physical repartitioning should not be necessary. Instead, change the configuration of the logical volumes."
+msgid "From the <guimenu>Expert partitioner</guimenu> , access the LVM configuration by clicking the <guimenu>Volume Management</guimenu> item in the <guimenu>System View</guimenu> pane. However, if a working LVM configuration already exists on your system, it is automatically activated upon entering the initial LVM configuration of a session. In this case, all disks containing a partition (belonging to an activated volume group) cannot be repartitioned. The Linux kernel cannot reread the modified partition table of a hard disk when any partition on this disk is in use. If you already have a working LVM configuration on your system, physical repartitioning should not be necessary. Instead, change the configuration of the logical volumes."
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:757
+#: deployment_expert_partitioner_overview.xml:758
 #, no-c-format
-msgid "At the beginning of the physical volumes (PVs), information about the volume is written to the partition. To reuse such a partition for other non-LVM purposes, it is advisable to delete the beginning of this volume. For example, in the VG <literal>system</literal> and PV <filename>/dev/sda2</filename>, do this with the command:"
+msgid "At the beginning of the physical volumes (PVs), information about the volume is written to the partition. To reuse such a partition for other non-LVM purposes, it is advisable to delete the beginning of this volume. For example, in the VG <literal>system</literal> and PV <filename>/dev/sda2</filename> , do this with the command:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_expert_partitioner_overview.xml:764
+#: deployment_expert_partitioner_overview.xml:765
 #, no-c-format
 msgid "<command>dd</command> <option>if=/dev/zero of=/dev/sda2 bs=512 count=1</option>"
 msgstr ""
 
 #. Tag: title
-#: deployment_expert_partitioner_overview.xml:766
+#: deployment_expert_partitioner_overview.xml:767
 #, no-c-format
 msgid "File System for Booting"
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:767
+#: deployment_expert_partitioner_overview.xml:768
 #, no-c-format
-msgid "The file system used for booting (the root file system or <filename>/boot</filename>) must not be stored on an LVM logical volume. Instead, store it on a normal physical partition."
+msgid "The file system used for booting (the root file system or <filename>/boot</filename> ) must not be stored on an LVM logical volume. Instead, store it on a normal physical partition."
 msgstr ""
 
 #. Tag: para
-#: deployment_expert_partitioner_overview.xml:773
+#: deployment_expert_partitioner_overview.xml:774
 #, no-c-format
-msgid "For more details about LVM, see <xref linkend=\"book.storage\"/>."
+msgid "For more details about LVM, see <xref linkend=\"book.storage\"/> ."
 msgstr ""
 

@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -23,19 +23,19 @@ msgstr ""
 #. Tag: para
 #: apparmor_changehat.xml:16
 #, no-c-format
-msgid "An &aareg; profile represents the security policy for an individual program instance or process. It applies to an executable program, but if a portion of the program needs different access permissions than other portions, the program can <quote>change hats</quote> to use a different security context, distinctive from the access of the main program. This is known as a <emphasis>hat</emphasis> or <emphasis>subprofile</emphasis>."
+msgid "An &aareg; profile represents the security policy for an individual program instance or process. It applies to an executable program, but if a portion of the program needs different access permissions than other portions, the program can <quote>change hats</quote> to use a different security context, distinctive from the access of the main program. This is known as a <emphasis>hat</emphasis> or <emphasis>subprofile</emphasis> ."
 msgstr ""
 
 #. Tag: para
 #: apparmor_changehat.xml:24
 #, no-c-format
-msgid "ChangeHat enables programs to change to or from a <emphasis>hat</emphasis> within an &aa; profile. It enables you to define security at a finer level than the process. This feature requires that each application be made <quote>ChangeHat-aware</quote>, meaning that it is modified to make a request to the &aa; module to switch security domains at specific times during the application execution. One example of a ChangeHat-aware application is the Apache Web server."
+msgid "ChangeHat enables programs to change to or from a <emphasis>hat</emphasis> within an &aa; profile. It enables you to define security at a finer level than the process. This feature requires that each application be made <quote>ChangeHat-aware</quote> , meaning that it is modified to make a request to the &aa; module to switch security domains at specific times during the application execution. One example of a ChangeHat-aware application is the Apache Web server."
 msgstr ""
 
 #. Tag: para
 #: apparmor_changehat.xml:33
 #, no-c-format
-msgid "A profile can have an arbitrary number of subprofiles, but there are only two levels: a subprofile cannot have further child profiles. A subprofile is written as a separate profile. Its name consists of the name of the containing profile followed by the subprofile name, separated by a <literal>^</literal>."
+msgid "A profile can have an arbitrary number of subprofiles, but there are only two levels: a subprofile cannot have further child profiles. A subprofile is written as a separate profile. Its name consists of the name of the containing profile followed by the subprofile name, separated by a <literal>^</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -62,12 +62,6 @@ msgstr ""
 msgid "/foo//bar { }"
 msgstr ""
 
-#. Tag: para
-#: apparmor_changehat.xml:56 apparmor_changehat.xml:64
-#, no-c-format
-msgid "<para>or</para>"
-msgstr ""
-
 #. Tag: screen
 #: apparmor_changehat.xml:59
 #, no-c-format
@@ -86,6 +80,12 @@ msgstr ""
 msgid "^/foo//bar { }"
 msgstr ""
 
+#. Tag: para
+#: apparmor_changehat.xml:64
+#, no-c-format
+msgid "or"
+msgstr ""
+
 #. Tag: screen
 #: apparmor_changehat.xml:67
 #, no-c-format
@@ -101,7 +101,7 @@ msgstr ""
 #. Tag: para
 #: apparmor_changehat.xml:79
 #, no-c-format
-msgid "The rest of this chapter describes using change_hat with Apache, to contain Web server components run using <literal>mod_perl</literal> and <literal>mod_php</literal>. Similar approaches can be used with any application server by providing an application module similar to the <literal>mod_apparmor</literal> described next in <xref linkend=\"sec.apparmor.hat.config.directives\"/>."
+msgid "The rest of this chapter describes using change_hat with Apache, to contain Web server components run using <literal>mod_perl</literal> and <literal>mod_php</literal> . Similar approaches can be used with any application server by providing an application module similar to the <literal>mod_apparmor</literal> described next in <xref linkend=\"sec.apparmor.hat.config.directives\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -125,7 +125,7 @@ msgstr ""
 #. Tag: para
 #: apparmor_changehat.xml:95
 #, no-c-format
-msgid "&aa; provides a <literal>mod_apparmor</literal> module (package <systemitem class=\"resource\">apache2-mod-apparmor</systemitem>) for the Apache program<phrase os=\"sled\"> (only included in &sls;)</phrase>. This module makes the Apache Web server ChangeHat aware. Install it along with Apache."
+msgid "&aa; provides a <literal>mod_apparmor</literal> module (package <systemitem class=\"resource\">apache2-mod-apparmor</systemitem> ) for the Apache program <phrase os=\"sled\"> (only included in &sls;)</phrase> . This module makes the Apache Web server ChangeHat aware. Install it along with Apache."
 msgstr ""
 
 #. Tag: para
@@ -140,16 +140,16 @@ msgstr ""
 msgid "URI-specific hat. For example, <filename>^www_app_name/templates/classic/images/bar_left.gif</filename>"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_changehat.xml:117
+#. Tag: para
+#: apparmor_changehat.xml:116
 #, no-c-format
-msgid "DEFAULT_URI"
+msgid "<literal>DEFAULT_URI</literal>"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_changehat.xml:122
+#. Tag: para
+#: apparmor_changehat.xml:121
 #, no-c-format
-msgid "HANDLING_UNTRUSTED_INPUT"
+msgid "<literal>HANDLING_UNTRUSTED_INPUT</literal>"
 msgstr ""
 
 #. Tag: title
@@ -161,7 +161,7 @@ msgstr ""
 #. Tag: para
 #: apparmor_changehat.xml:129
 #, no-c-format
-msgid "If you install <systemitem class=\"resource\">apache2-mod-apparmor</systemitem>, make sure the module is enabled, and then restart Apache by executing the following command:"
+msgid "If you install <systemitem class=\"resource\">apache2-mod-apparmor</systemitem> , make sure the module is enabled, and then restart Apache by executing the following command:"
 msgstr ""
 
 #. Tag: screen
@@ -173,7 +173,7 @@ msgstr ""
 #. Tag: para
 #: apparmor_changehat.xml:138
 #, no-c-format
-msgid "Apache is configured by placing directives in plain text configuration files. The main configuration file is usually <filename>/etc/apache2/httpd.conf</filename>. When you compile Apache, you can indicate the location of this file. Directives can be placed in any of these configuration files to alter the way Apache behaves. When you make changes to the main configuration files, you need to reload Apache with <command>sudo systemctl reload apache2</command>, so the changes are recognized."
+msgid "Apache is configured by placing directives in plain text configuration files. The main configuration file is usually <filename>/etc/apache2/httpd.conf</filename> . When you compile Apache, you can indicate the location of this file. Directives can be placed in any of these configuration files to alter the way Apache behaves. When you make changes to the main configuration files, you need to reload Apache with <command>sudo systemctl reload apache2</command> , so the changes are recognized."
 msgstr ""
 
 #. Tag: title
@@ -185,13 +185,13 @@ msgstr ""
 #. Tag: para
 #: apparmor_changehat.xml:151
 #, no-c-format
-msgid "&lt;VirtualHost&gt; and &lt;/VirtualHost&gt; directives are used to enclose a group of directives that will apply only to a particular virtual host. For more information on Apache virtual host directives, refer to <link xlink:href=\"http://httpd.apache.org/docs/2.4/en/mod/core.html#virtualhost\"></link>."
+msgid "&lt;VirtualHost&gt; and &lt;/VirtualHost&gt; directives are used to enclose a group of directives that will apply only to a particular virtual host. For more information on Apache virtual host directives, refer to <link xlink:href=\"http://httpd.apache.org/docs/2.4/en/mod/core.html#virtualhost\"/> ."
 msgstr ""
 
 #. Tag: para
 #: apparmor_changehat.xml:158
 #, no-c-format
-msgid "The ChangeHat-specific configuration keyword is <literal>AADefaultHatName</literal>. It is used similarly to <literal>AAHatName</literal>, for example, <literal>AADefaultHatName My_Funky_Default_Hat</literal>."
+msgid "The ChangeHat-specific configuration keyword is <literal>AADefaultHatName</literal> . It is used similarly to <literal>AAHatName</literal> , for example, <literal>AADefaultHatName My_Funky_Default_Hat</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -215,7 +215,7 @@ msgstr ""
 #. Tag: para
 #: apparmor_changehat.xml:181
 #, no-c-format
-msgid "Location and directory directives specify hat names in the program configuration file so the Apache calls the hat regarding its security. For Apache, you can find documentation about the location and directory directives at <link xlink:href=\"http://httpd.apache.org/docs/2.4/en/sections.html\"></link>."
+msgid "Location and directory directives specify hat names in the program configuration file so the Apache calls the hat regarding its security. For Apache, you can find documentation about the location and directory directives at <link xlink:href=\"http://httpd.apache.org/docs/2.4/en/sections.html\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -227,222 +227,214 @@ msgstr ""
 #. Tag: screen
 #: apparmor_changehat.xml:192
 #, no-c-format
-msgid ""
-      "&lt;Location /foo/&gt;\n"
+msgid "&lt;Location /foo/&gt;\n"
       "  AAHatName MY_HAT_NAME\n"
-      "&lt;/Location&gt;"
+      "&lt;/Location&gt;\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:193
+#: apparmor_changehat.xml:196
 #, no-c-format
-msgid "This tries to use <literal>MY_HAT_NAME</literal> for any URI beginning with <filename>/foo/</filename> (<filename>/foo/</filename>, <filename>/foo/bar</filename>, <filename>/foo/cgi/path/blah_blah/blah</filename>, etc.)."
+msgid "This tries to use <literal>MY_HAT_NAME</literal> for any URI beginning with <filename>/foo/</filename> ( <filename>/foo/</filename> , <filename>/foo/bar</filename> , <filename>/foo/cgi/path/blah_blah/blah</filename> , etc.)."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:199
+#: apparmor_changehat.xml:202
 #, no-c-format
 msgid "The directory directive works similarly to the location directive, except it refers to a path in the file system as in the following example:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:204
+#: apparmor_changehat.xml:207
 #, no-c-format
-msgid ""
-      "&lt;Directory \"/srv/www/www.example.org/docs\"&gt;\n"
+msgid "&lt;Directory \"/srv/www/www.example.org/docs\"&gt;\n"
       "  # Note lack of trailing slash\n"
       "  AAHatName example.org\n"
       "&lt;/Directory&gt;"
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:208
+#: apparmor_changehat.xml:214
 #, no-c-format
 msgid "Managing ChangeHat-Aware Applications"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:210
+#: apparmor_changehat.xml:216
 #, no-c-format
 msgid "In the previous section you learned about <literal>mod_apparmor</literal> and the way it helps you to secure a specific Web application. This section walks you through a real-life example of creating a hat for a Web application, and using &aa;'s change_hat feature to secure it. Note that this chapter focuses on &aa;'s command line tools, as &yast;'s &aa; module has limited functionality."
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:220
+#: apparmor_changehat.xml:226
 #, no-c-format
 msgid "With &aa;'s Command Line Tools"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:221
+#: apparmor_changehat.xml:227
 #, no-c-format
-msgid "For illustration purposes, let us choose the Web application called <emphasis>Adminer</emphasis> (<link xlink:href=\"http://www.adminer.org/en/\"></link>). It is a full-featured SQL database management tool written in PHP, yet consisting of a single PHP file. For Adminer to work, you need to set up an Apache Web server, PHP and its Apache module, and one of the database drivers available for PHP&mdash;&mysql; in this example. You can install the required packages with"
+msgid "For illustration purposes, let us choose the Web application called <emphasis>Adminer</emphasis> ( <link xlink:href=\"http://www.adminer.org/en/\"/> ). It is a full-featured SQL database management tool written in PHP, yet consisting of a single PHP file. For Adminer to work, you need to set up an Apache Web server, PHP and its Apache module, and one of the database drivers available for PHP&mdash;&mysql; in this example. You can install the required packages with"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:232
+#: apparmor_changehat.xml:238
 #, no-c-format
-msgid "zypper in apache2 apache2-mod_apparmor apache2-mod_php5 php5 php5-mysql"
-msgstr ""
-
-#. Tag: para
-#: apparmor_changehat.xml:234
-#, no-c-format
-msgid "To set up the Web environment for running Adminer, follow these steps:"
-msgstr ""
-
-#. Tag: title
-#: apparmor_changehat.xml:239
-#, no-c-format
-msgid "Setting Up a Web Server Environment"
+msgid "zypper in apache2 apache2-mod_apparmor apache2-mod_php5 php5 php5-mysql\n"
+      ""
 msgstr ""
 
 #. Tag: para
 #: apparmor_changehat.xml:241
 #, no-c-format
+msgid "To set up the Web environment for running Adminer, follow these steps:"
+msgstr ""
+
+#. Tag: title
+#: apparmor_changehat.xml:246
+#, no-c-format
+msgid "Setting Up a Web Server Environment"
+msgstr ""
+
+#. Tag: para
+#: apparmor_changehat.xml:248
+#, no-c-format
 msgid "Make sure <literal>apparmor</literal> and <literal>php5</literal> modules are enabled for Apache. To enable the modules in any case, use:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:245
+#: apparmor_changehat.xml:252
 #, no-c-format
 msgid "&prompt.user;a2enmod apparmor php5"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:246
+#: apparmor_changehat.xml:253
 #, no-c-format
 msgid "and then restart Apache with"
 msgstr ""
 
-#. Tag: screen
-#: apparmor_changehat.xml:249 apparmor_changehat.xml:336
-#, no-c-format
-msgid "&prompt.sudo;systemctl restart apache2"
-msgstr ""
-
 #. Tag: para
-#: apparmor_changehat.xml:252
+#: apparmor_changehat.xml:259
 #, no-c-format
 msgid "Make sure &mysql; is running. If unsure, restart it with"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:255
+#: apparmor_changehat.xml:262
 #, no-c-format
 msgid "&prompt.sudo;systemctl restart mysql"
 msgstr ""
 
-#. Tag: remark
-#: apparmor_changehat.xml:256
+#. Tag: para
+#: apparmor_changehat.xml:269
 #, no-c-format
-msgid "taroth 2014-02-26: at the moment, there is no mariadb.service, starting mysql seems to be the right way - wrote mail to mhrusecky to ask if this is bound to change anytime soon for SLE 12"
+msgid "Download Adminer from <link xlink:href=\"http://www.adminer.org\"/> , copy it to <filename>/srv/www/htdocs/adminer/</filename> , and rename it to <filename>adminer.php</filename> , so that its full path is <filename>/srv/www/htdocs/adminer/adminer.php</filename> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:262
-#, no-c-format
-msgid "Download Adminer from <link xlink:href=\"http://www.adminer.org\"></link>, copy it to <filename>/srv/www/htdocs/adminer/</filename>, and rename it to <filename>adminer.php</filename>, so that its full path is <filename>/srv/www/htdocs/adminer/adminer.php</filename>."
-msgstr ""
-
-#. Tag: para
-#: apparmor_changehat.xml:270
+#: apparmor_changehat.xml:277
 #, no-c-format
 msgid "Test Adminer in your Web browser by entering <literal>http://localhost/adminer/adminer.php</literal> in its URI address field. If you installed Adminer to a remote server, replace <literal>localhost</literal> with the real host name of the server."
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:277
+#: apparmor_changehat.xml:284
 #, no-c-format
 msgid "Adminer Login Page"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:288
+#: apparmor_changehat.xml:295
 #, no-c-format
-msgid "If you encounter problems viewing the Adminer login page, try to look for help in the Apache error log <filename>/var/log/apache2/error.log</filename>. Another reason you cannot access the Web page may be that your Apache is already under &aa; control and its &aa; profile is too tight to permit viewing Adminer. Check it with <command>aa-status</command>, and if needed, set Apache temporarily in complain mode with"
+msgid "If you encounter problems viewing the Adminer login page, try to look for help in the Apache error log <filename>/var/log/apache2/error.log</filename> . Another reason you cannot access the Web page may be that your Apache is already under &aa; control and its &aa; profile is too tight to permit viewing Adminer. Check it with <command>aa-status</command> , and if needed, set Apache temporarily in complain mode with"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:296
+#: apparmor_changehat.xml:303
 #, no-c-format
 msgid "&prompt.root;sudo aa-complain usr.sbin.httpd2-prefork"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:301
+#: apparmor_changehat.xml:308
 #, no-c-format
-msgid "After the Web environment for Adminer is ready, you need to configure Apache's <literal>mod_apparmor</literal>, so that &aa; can detect accesses to Adminer and change to the specific <quote>hat</quote>."
+msgid "After the Web environment for Adminer is ready, you need to configure Apache's <literal>mod_apparmor</literal> , so that &aa; can detect accesses to Adminer and change to the specific <quote>hat</quote> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:308
+#: apparmor_changehat.xml:315
 #, no-c-format
 msgid "Configuring <literal>mod_apparmor</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:310
+#: apparmor_changehat.xml:317
 #, no-c-format
-msgid "Apache has several configuration files under <filename>/etc/apache2/</filename> and <filename>/etc/apache2/conf.d/</filename>. Choose your preferred one and open it in a text editor. In this example, the <command>vim</command> editor is used to create a new configuration file <filename>/etc/apache2/conf.d/apparmor.conf</filename>."
+msgid "Apache has several configuration files under <filename>/etc/apache2/</filename> and <filename>/etc/apache2/conf.d/</filename> . Choose your preferred one and open it in a text editor. In this example, the <command>vim</command> editor is used to create a new configuration file <filename>/etc/apache2/conf.d/apparmor.conf</filename> ."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:318
+#: apparmor_changehat.xml:325
 #, no-c-format
 msgid "&prompt.sudo;vim /etc/apache2/conf.d/apparmor.conf"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:321
+#: apparmor_changehat.xml:328
 #, no-c-format
 msgid "Copy the following snippet into the edited file."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:324
+#: apparmor_changehat.xml:331
 #, no-c-format
-msgid ""
-      "&lt;Directory /srv/www/htdocs/adminer&gt;\n"
+msgid "&lt;Directory /srv/www/htdocs/adminer&gt;\n"
       "  AAHatName adminer\n"
       "&lt;/Directory&gt;"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:325
+#: apparmor_changehat.xml:334
 #, no-c-format
 msgid "It tells Apache to let &aa; know about a change_hat event when the Web user accesses the directory <filename>/adminer</filename> (and any file/directory inside) in Apache's document root. Remember, we placed the <filename>adminer.php</filename> application there."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:333
+#: apparmor_changehat.xml:342
 #, no-c-format
 msgid "Save the file, close the editor, and restart Apache with"
 msgstr ""
 
-#. Tag: para
-#: apparmor_changehat.xml:340
+#. Tag: screen
+#: apparmor_changehat.xml:345
 #, no-c-format
-msgid "Apache now knows about our Adminer and changing a <quote>hat</quote> for it. It is time to create the related hat for Adminer in the &aa; configuration. If you do not have an &aa; profile yet, create one before proceeding. Remember that if your Apache's main binary is <filename>/usr/sbin/httpd2-prefork</filename>, then the related profile is named <filename>/etc/apparmor.d/usr.sbin.httpd2-prefork</filename>."
+msgid "&prompt.sudo;systemctl restart apache2"
+msgstr ""
+
+#. Tag: para
+#: apparmor_changehat.xml:349
+#, no-c-format
+msgid "Apache now knows about our Adminer and changing a <quote>hat</quote> for it. It is time to create the related hat for Adminer in the &aa; configuration. If you do not have an &aa; profile yet, create one before proceeding. Remember that if your Apache's main binary is <filename>/usr/sbin/httpd2-prefork</filename> , then the related profile is named <filename>/etc/apparmor.d/usr.sbin.httpd2-prefork</filename> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:350
+#: apparmor_changehat.xml:359
 #, no-c-format
 msgid "Creating a Hat for Adminer"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:352
+#: apparmor_changehat.xml:361
 #, no-c-format
 msgid "Open (or create one if it does not exist) the file <filename>/etc/apparmor.d/usr.sbin.httpd2-prefork</filename> in a text editor. Its contents should be similar to the following:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:357
+#: apparmor_changehat.xml:366
 #, no-c-format
-msgid ""
-      "#include &lt;tunables/global&gt;\n"
+msgid "#include &lt;tunables/global&gt;\n"
       "\n"
       "/usr/sbin/httpd2-prefork {\n"
       "  #include &lt;abstractions/apache2-common&gt;\n"
@@ -471,54 +463,70 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:360
+#: apparmor_changehat.xml:394
 #, no-c-format
-msgid "Before the last closing curly bracket (<literal>}</literal>), insert the following section:"
+msgid "Before the last closing curly bracket ( <literal>}</literal> ), insert the following section:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:364
+#: apparmor_changehat.xml:398
 #, no-c-format
-msgid ""
-      "^adminer flags=(complain) {\n"
+msgid "^adminer flags=(complain) {\n"
       "}"
 msgstr ""
 
-#. Tag: para
-#: apparmor_changehat.xml:365
+#. Tag: literal
+#: apparmor_changehat.xml:401
 #, no-c-format
-msgid "Note the <literal>(complain)</literal> addition after the hat name&mdash;it tells &aa; to leave the <systemitem>adminer</systemitem> hat in complain mode. That is because we need to learn the hat profile by accessing Adminer later on."
+msgid "(complain)"
 msgstr ""
 
-#. Tag: remark
-#: apparmor_changehat.xml:370
+#. Tag: #text
+#: apparmor_changehat.xml:401
 #, no-c-format
-msgid "@cboltz: i did it this way myself and it worked perfectly"
+msgid "Note the"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_changehat.xml:402
+#, no-c-format
+msgid "addition after the hat name&mdash;it tells &aa; to leave the"
+msgstr ""
+
+#. Tag: systemitem
+#: apparmor_changehat.xml:403
+#, no-c-format
+msgid "adminer"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_changehat.xml:405
+#, no-c-format
+msgid "hat in complain mode. That is because we need to learn the hat profile by accessing Adminer later on."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:374
+#: apparmor_changehat.xml:409
 #, no-c-format
 msgid "Save the file, and then restart &aa;, then Apache."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:377
+#: apparmor_changehat.xml:412
 #, no-c-format
 msgid "&prompt.sudo;systemctl reload apparmor apache2"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:380
+#: apparmor_changehat.xml:415
 #, no-c-format
 msgid "Check if the <systemitem>adminer</systemitem> hat really is in complain mode."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:384
+#: apparmor_changehat.xml:419
 #, no-c-format
-msgid ""
-      "&prompt.sudo;aa-status\n"
+msgid "&prompt.sudo;aa-status\n"
       "apparmor module is loaded.\n"
       "39 profiles are loaded.\n"
       "37 profiles are in enforce mode.\n"
@@ -530,50 +538,50 @@ msgid ""
       "2 profiles are in complain mode.\n"
       "   /usr/bin/getopt\n"
       "   /usr/sbin/httpd2-prefork//adminer\n"
-      "[...]"
+      "[...]\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:385
+#: apparmor_changehat.xml:433
 #, no-c-format
 msgid "As we can see, the <literal>httpd2-prefork//adminer</literal> is loaded in complain mode."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:392
+#: apparmor_changehat.xml:440
 #, no-c-format
 msgid "Our last task is to find out the right set of rules for the <systemitem>adminer</systemitem> hat. That is why we set the <systemitem>adminer</systemitem> hat into complain mode&mdash;the logging facility collects useful information about the access requirements of <filename>adminer.php</filename> as we use it via the Web browser. <command>aa-logprof</command> then helps us with creating the hat's profile."
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:403
+#: apparmor_changehat.xml:451
 #, no-c-format
 msgid "Generating Rules for the <systemitem>adminer</systemitem> Hat"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:405
+#: apparmor_changehat.xml:453
 #, no-c-format
-msgid "Open Adminer in the Web browser. If you installed it locally, then the URI is <literal>http://localhost/adminer/adminer.php</literal>."
+msgid "Open Adminer in the Web browser. If you installed it locally, then the URI is <literal>http://localhost/adminer/adminer.php</literal> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:411
+#: apparmor_changehat.xml:459
 #, no-c-format
 msgid "Choose the database engine you want to use (&mysql; in our case), and log in to Adminer using the existing database user name and password. You do not need to specify the database name as you can do so after logging in. Perform any operations with Adminer you like&mdash;create a new database, create a new table for it, set user privileges, and so on."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:421
+#: apparmor_changehat.xml:469
 #, no-c-format
 msgid "After the short testing of Adminer's user interface, switch back to console and examine the log for collected data."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:425
+#: apparmor_changehat.xml:473
 #, no-c-format
-msgid ""
-      "&prompt.sudo;aa-logprof\n"
+msgid "&prompt.sudo;aa-logprof\n"
       "Reading log entries from /var/log/messages.\n"
       "Updating AppArmor profiles in /etc/apparmor.d.\n"
       "Complain-mode changes:\n"
@@ -591,88 +599,85 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:426
+#: apparmor_changehat.xml:488
 #, no-c-format
 msgid "From the <command>aa-logprof</command> message, it is clear that our new <systemitem>adminer</systemitem> hat was correctly detected:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:430
+#: apparmor_changehat.xml:492
 #, no-c-format
 msgid "Profile:  /usr/sbin/httpd2-prefork^adminer"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:431
+#: apparmor_changehat.xml:493
 #, no-c-format
-msgid "The <command>aa-logprof</command> command will ask you to pick the right rule for each discovered &aa; event. Specify the one you want to use, and confirm with <guimenu>Allow</guimenu>. For more information on working with the <command>aa-genprof</command> and <command>aa-logprof</command> interface, see <xref linkend=\"sec.apparmor.commandline.profiling.summary.genprof\"/>."
+msgid "The <command>aa-logprof</command> command will ask you to pick the right rule for each discovered &aa; event. Specify the one you want to use, and confirm with <guimenu>Allow</guimenu> . For more information on working with the <command>aa-genprof</command> and <command>aa-logprof</command> interface, see <xref linkend=\"sec.apparmor.commandline.profiling.summary.genprof\"/> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:440
+#: apparmor_changehat.xml:502
 #, no-c-format
-msgid "<command>aa-logprof</command> usually offers several valid rules for the examined event. Some are <emphasis>abstractions</emphasis>&mdash;predefined sets of rules affecting a specific common group of targets. Sometimes it is useful to include such an abstraction instead of a direct URI rule:"
+msgid "<command>aa-logprof</command> usually offers several valid rules for the examined event. Some are <emphasis>abstractions</emphasis> &mdash;predefined sets of rules affecting a specific common group of targets. Sometimes it is useful to include such an abstraction instead of a direct URI rule:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:447
+#: apparmor_changehat.xml:509
 #, no-c-format
-msgid ""
-      "1 - #include &lt;abstractions/php5&gt;\n"
+msgid " 1 - #include &lt;abstractions/php5&gt;\n"
       " [2 - /var/lib/php5/sess_3jdmii9cacj1e3jnahbtopajl7p064ai242]"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:448
+#: apparmor_changehat.xml:511
 #, no-c-format
 msgid "In the example above, it is recommended hitting <guimenu>1</guimenu> and confirming with <guimenu>A</guimenu> to allow the abstraction."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:455
+#: apparmor_changehat.xml:518
 #, no-c-format
 msgid "After the last change, you will be asked to save the changed profile."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:458
+#: apparmor_changehat.xml:521
 #, no-c-format
-msgid ""
-      "The following local profiles were changed. Would you like to save them?\n"
+msgid "The following local profiles were changed. Would you like to save them?\n"
       " [1 - /usr/sbin/httpd2-prefork]\n"
       "\n"
       " (S)ave Changes / [(V)iew Changes] / Abo(r)t"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:459
+#: apparmor_changehat.xml:525
 #, no-c-format
 msgid "Hit <guimenu>S</guimenu> to save the changes."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:464
+#: apparmor_changehat.xml:530
 #, no-c-format
 msgid "Set the profile to enforce mode with <command>aa-enforce</command>"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:467
+#: apparmor_changehat.xml:533
 #, no-c-format
 msgid "&prompt.sudo;aa-enforce usr.sbin.httpd2-prefork"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:468
+#: apparmor_changehat.xml:534
 #, no-c-format
 msgid "and check its status with <command>aa-status</command>"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_changehat.xml:471
+#: apparmor_changehat.xml:537
 #, no-c-format
-msgid ""
-      "&prompt.sudo;aa-status\n"
+msgid "&prompt.sudo;aa-status\n"
       "apparmor module is loaded.\n"
       "39 profiles are loaded.\n"
       "38 profiles are in enforce mode.\n"
@@ -685,74 +690,74 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:472
+#: apparmor_changehat.xml:547
 #, no-c-format
 msgid "As you can see, the <literal>//adminer</literal> hat jumped from <emphasis>complain</emphasis> to <emphasis>enforce</emphasis> mode."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:478
+#: apparmor_changehat.xml:553
 #, no-c-format
 msgid "Try to run Adminer in the Web browser, and if you encounter problems running it, switch it to the complain mode, repeat the steps that previously did not work well, and update the profile with <command>aa-logprof</command> until you are satisfied with the application's functionality."
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:489
+#: apparmor_changehat.xml:564
 #, no-c-format
 msgid "Hat and Parent Profile Relationship"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:490
+#: apparmor_changehat.xml:565
 #, no-c-format
-msgid "The profile <filename>^adminer</filename> is only available in the context of a process running under the parent profile <filename>usr.sbin.httpd2-prefork</filename>."
+msgid "The profile <filename>^adminer</filename> is only available in the context of a process running under the parent profile <filename>usr.sbin.httpd2-prefork</filename> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_changehat.xml:498
+#: apparmor_changehat.xml:573
 #, no-c-format
 msgid "Adding Hats and Entries to Hats in &yast;"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:499
+#: apparmor_changehat.xml:574
 #, no-c-format
-msgid "When you use the <guimenu>Edit Profile</guimenu> dialog (for instructions, refer to <xref xrefstyle=\"SectTitleOnPage\" linkend=\"sec.apparmor.yast.edit\"/>) or when you add a new profile using <guimenu>Manually Add Profile</guimenu> (for instructions, refer to <xref xrefstyle=\"SectTitleOnPage\" linkend=\"sec.apparmor.yast.add\"/>), you are given the option of adding hats (subprofiles) to your &aa; profiles. Add a ChangeHat subprofile from the <guimenu>&aa; Profile Dialog</guimenu> window as in the following."
+msgid "When you use the <guimenu>Edit Profile</guimenu> dialog (for instructions, refer to <xref xrefstyle=\"SectTitleOnPage\" linkend=\"sec.apparmor.yast.edit\"/> ) or when you add a new profile using <guimenu>Manually Add Profile</guimenu> (for instructions, refer to <xref xrefstyle=\"SectTitleOnPage\" linkend=\"sec.apparmor.yast.add\"/> ), you are given the option of adding hats (subprofiles) to your &aa; profiles. Add a ChangeHat subprofile from the <guimenu>&aa; Profile Dialog</guimenu> window as in the following."
 msgstr ""
 
-#. Tag: phrase
-#: apparmor_changehat.xml:512
+#. Tag: textobject
+#: apparmor_changehat.xml:587
 #, no-c-format
-msgid "&aa; profile dialog"
-msgstr ""
-
-#. Tag: para
-#: apparmor_changehat.xml:524
-#, no-c-format
-msgid "From the <guimenu>&aa; Profile Dialog</guimenu> window, click <guimenu>Add Entry</guimenu> then select <guimenu>Hat</guimenu>. The <guimenu>EnterHat Name</guimenu> dialog opens:"
-msgstr ""
-
-#. Tag: phrase
-#: apparmor_changehat.xml:531
-#, no-c-format
-msgid "Enter hat name"
+msgid "<phrase>&aa; profile dialog</phrase>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:543
+#: apparmor_changehat.xml:599
+#, no-c-format
+msgid "From the <guimenu>&aa; Profile Dialog</guimenu> window, click <guimenu>Add Entry</guimenu> then select <guimenu>Hat</guimenu> . The <guimenu>EnterHat Name</guimenu> dialog opens:"
+msgstr ""
+
+#. Tag: textobject
+#: apparmor_changehat.xml:606
+#, no-c-format
+msgid "<phrase>Enter hat name</phrase>"
+msgstr ""
+
+#. Tag: para
+#: apparmor_changehat.xml:618
 #, no-c-format
 msgid "Enter the name of the hat to add to the &aa; profile. The name is the URI that, when accessed, receives the permissions set in the hat."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:549
+#: apparmor_changehat.xml:624
 #, no-c-format
-msgid "Click <guimenu>Create Hat</guimenu>. You are returned to the <guimenu>&aa; Profile Dialog</guimenu> screen."
+msgid "Click <guimenu>Create Hat</guimenu> . You are returned to the <guimenu>&aa; Profile Dialog</guimenu> screen."
 msgstr ""
 
 #. Tag: para
-#: apparmor_changehat.xml:555
+#: apparmor_changehat.xml:630
 #, no-c-format
-msgid "After adding the new hat, click <guimenu>Done</guimenu>."
+msgid "After adding the new hat, click <guimenu>Done</guimenu> ."
 msgstr ""
 

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -67,7 +67,7 @@ msgid ""
 "This guide provides a basic understanding of how audit works and how it can "
 "be set up. For more information about Common Criteria itself, refer to <link "
 "xlink:href=\"http://www.commoncriteriaportal.org/\">the Common Criteria Web "
-"site</link>."
+"site</link> ."
 msgstr ""
 
 #. Tag: para
@@ -128,7 +128,7 @@ msgstr ""
 msgid ""
 "Audit does not handle the renaming of UIDs. Therefore avoid renaming UIDs "
 "(for example, changing <literal>tux</literal> from <literal>uid=1001</"
-"literal> to <literal>uid=2000</literal>) and obsolete UIDs rather than "
+"literal> to <literal>uid=2000</literal> ) and obsolete UIDs rather than "
 "renaming them. Otherwise you would need to change <command>auditctl</"
 "command> data (audit rules) and would have problems retrieving old data "
 "correctly."
@@ -278,18 +278,18 @@ msgid ""
 "audit daemon to stop logging when it runs out of disk space."
 msgstr ""
 
-#. Tag: title
-#: audit_components.xml:219 audit_components.xml:227
-#, no-c-format
-msgid "Introducing the Components of Linux Audit"
-msgstr ""
-
 #. Tag: para
 #: audit_components.xml:221
 #, no-c-format
 msgid ""
 "The following figure illustrates how the various components of audit "
 "interact with each other:"
+msgstr ""
+
+#. Tag: title
+#: audit_components.xml:227
+#, no-c-format
+msgid "Introducing the Components of Linux Audit"
 msgstr ""
 
 #. Tag: para
@@ -314,15 +314,15 @@ msgid ""
 "generated through the audit kernel interface and triggered by application "
 "and system activity to disk. The way the audit daemon is started is "
 "controlled by &systemd;. The audit system functions (when started) are "
-"controlled by <filename>/etc/audit/auditd.conf</filename>. For more "
+"controlled by <filename>/etc/audit/auditd.conf</filename> . For more "
 "information about <systemitem class=\"daemon\">auditd</systemitem> and its "
-"configuration, refer to <xref linkend=\"sec.audit.auditd\"/>."
+"configuration, refer to <xref linkend=\"sec.audit.auditd\"/> ."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: audit_components.xml:260
 #, no-c-format
-msgid "auditctl"
+msgid "<command>auditctl</command>"
 msgstr ""
 
 #. Tag: para
@@ -332,8 +332,8 @@ msgid ""
 "The <command>auditctl</command> utility controls the audit system. It "
 "controls the log generation parameters and kernel settings of the audit "
 "interface and the rule sets that determine which events are tracked. For "
-"more information about <command>auditctl</command>, refer to <xref linkend="
-"\"sec.audit.auditctl\"/>."
+"more information about <command>auditctl</command> , refer to <xref linkend="
+"\"sec.audit.auditctl\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -349,7 +349,7 @@ msgid ""
 "The file <filename>/etc/audit/audit.rules</filename> contains a sequence of "
 "<command>auditctl</command> commands that are loaded at system boot time "
 "immediately after the audit daemon is started. For more information about "
-"audit rules, refer to <xref linkend=\"sec.audit.rules\"/>."
+"audit rules, refer to <xref linkend=\"sec.audit.rules\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -365,8 +365,8 @@ msgid ""
 "The <command>aureport</command> utility allows you to create custom reports "
 "from the audit event log. This report generation can easily be scripted, and "
 "the output can be used by various other applications, for example, to plot "
-"these results. For more information about <command>aureport</command>, refer "
-"to <xref linkend=\"sec.audit.aureport\"/>."
+"these results. For more information about <command>aureport</command> , "
+"refer to <xref linkend=\"sec.audit.aureport\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -381,8 +381,8 @@ msgstr ""
 msgid ""
 "The <command>ausearch</command> utility can search the audit log file for "
 "certain events using various keys or other characteristics of the logged "
-"format. For more information about <command>ausearch</command>, refer to "
-"<xref linkend=\"sec.audit.ausearch\"/>."
+"format. For more information about <command>ausearch</command> , refer to "
+"<xref linkend=\"sec.audit.ausearch\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -395,11 +395,11 @@ msgstr ""
 #: audit_components.xml:311
 #, no-c-format
 msgid ""
-"The audit dispatcher daemon (<systemitem class=\"daemon\">audispd</"
-"systemitem>) can be used to relay event notifications to other applications "
+"The audit dispatcher daemon ( <systemitem class=\"daemon\">audispd</"
+"systemitem> ) can be used to relay event notifications to other applications "
 "instead of (or in addition to) writing them to disk in the audit log. For "
-"more information about <systemitem class=\"daemon\">audispd</systemitem>, "
-"refer to <xref linkend=\"sec.audit.audisp\"/>."
+"more information about <systemitem class=\"daemon\">audispd</systemitem> , "
+"refer to <xref linkend=\"sec.audit.audisp\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -413,10 +413,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The <command>autrace</command> utility traces individual processes in a "
-"fashion similar to <command>strace</command>. The output of "
+"fashion similar to <command>strace</command> . The output of "
 "<command>autrace</command> is logged to the audit log. For more information "
-"about <command>autrace</command>, refer to <xref linkend=\"sec.audit.autrace"
-"\"/>."
+"about <command>autrace</command> , refer to <xref linkend=\"sec.audit.autrace"
+"\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -430,9 +430,9 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Prints a list of the last logged-in users, similarly to <command>last</"
-"command>. <command>aulast</command> searches back through the audit logs (or "
-"the given audit log file) and displays a list of all users logged in and out "
-"based on the range of time in the audit logs."
+"command> . <command>aulast</command> searches back through the audit logs "
+"(or the given audit log file) and displays a list of all users logged in and "
+"out based on the range of time in the audit logs."
 msgstr ""
 
 #. Tag: term
@@ -461,16 +461,30 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Before you can actually start generating audit logs and processing them, "
-"configure the audit daemon itself. The <filename>/etc/audit/auditd.conf</"
-"filename> configuration file determines how the audit system functions when "
-"the daemon has been started. For most use cases, the default settings "
-"shipped with &productname; should suffice. For CAPP environments, most of "
-"these parameters need tweaking. The following list briefly introduces the "
-"parameters available:"
+"configure the audit daemon itself. <!-- fs 2016-11-17: bsc #918655 Not sure "
+"where this can be configured now (not in /etc/audit/auditd.conf); therefore "
+"keeping this as reference Configure how the Audit system functions in "
+"<filename>/etc/audit/auditd.conf</filename>. </para> <para> The most "
+"important configuration parameters in <filename>/etc/sysconfig/auditd</"
+"filename> are: </para><screen>AUDITD_LANG=\"en_US\"AUDITD_DISABLE_CONTEXTS="
+"\"no\"</screen> <variablelist> <varlistentry> <term><envar>AUDITD_LANG</"
+"envar> </term> <listitem> <para> The locale information used by audit. The "
+"default setting is <literal>en_US</literal>. Setting it to <literal>none</"
+"literal> would remove all locale information from audit's environment. </"
+"para> </listitem> </varlistentry> <varlistentry> "
+"<term><envar>AUDITD_DISABLE_CONTEXTS</envar> </term> <listitem> <para> "
+"Disable system call auditing by default. Set to <literal>no</literal> for "
+"full audit functionality including file and directory watches and system "
+"call auditing. </para> </listitem> </varlistentry> </variablelist> <para>--> "
+"The <filename>/etc/audit/auditd.conf</filename> configuration file "
+"determines how the audit system functions when the daemon has been started. "
+"For most use cases, the default settings shipped with &productname; should "
+"suffice. For CAPP environments, most of these parameters need tweaking. The "
+"following list briefly introduces the parameters available:"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:414
+#: audit_components.xml:415
 #, no-c-format
 msgid ""
 "log_file = /var/log/audit/audit.log\n"
@@ -502,7 +516,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:416
+#: audit_components.xml:442
 #, no-c-format
 msgid ""
 "Depending on whether you want your environment to satisfy the requirements "
@@ -513,15 +527,15 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:426
+#: audit_components.xml:452
 #, no-c-format
 msgid ""
-"<literal>log_file</literal>, <literal>log_format</literal> and "
+"<literal>log_file</literal> , <literal>log_format</literal> and "
 "<literal>log_group</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:430
+#: audit_components.xml:456
 #, no-c-format
 msgid ""
 "<literal>log_file</literal> specifies the location where the audit logs "
@@ -539,16 +553,8 @@ msgid ""
 "the group's ID."
 msgstr ""
 
-#. Tag: title
-#: audit_components.xml:447 audit_components.xml:488 audit_components.xml:582
-#: audit_components.xml:620 audit_components.xml:662 audit_components.xml:685
-#: audit_components.xml:706
-#, no-c-format
-msgid "CAPP Environment"
-msgstr ""
-
 #. Tag: para
-#: audit_components.xml:448
+#: audit_components.xml:474
 #, no-c-format
 msgid ""
 "In a CAPP environment, have the audit log reside on its own partition. By "
@@ -556,14 +562,8 @@ msgid ""
 "accurate and that you do not have other processes consuming this space."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:458 audit_components.xml:2390
-#, no-c-format
-msgid "priority_boost"
-msgstr ""
-
 #. Tag: para
-#: audit_components.xml:461
+#: audit_components.xml:487
 #, no-c-format
 msgid ""
 "Determine how much of a priority boost the audit daemon should get. Possible "
@@ -572,31 +572,31 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:469
+#: audit_components.xml:495
 #, no-c-format
 msgid "<literal>flush</literal> and <literal>freq</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:472
+#: audit_components.xml:498
 #, no-c-format
 msgid ""
 "Specifies whether, how, and how often the audit logs should be written to "
-"disk. Valid values for <literal>flush</literal> are <literal>none</literal>, "
-"<literal>incremental</literal>, <literal>data</literal>, and <literal>sync</"
-"literal>. <literal>none</literal> tells the audit daemon not to make any "
-"special effort to write the audit data to disk. <literal>incremental</"
-"literal> tells the audit daemon to explicitly flush the data to disk. A "
-"frequency must be specified if <literal>incremental</literal> is used. A "
-"<literal>freq</literal> value of <literal>20</literal> tells the audit "
-"daemon to request that the kernel flush the data to disk after every 20 "
-"records. The <literal>data</literal> option keeps the data portion of the "
-"disk file synchronized at all times while the <literal>sync</literal> option "
-"takes care of both metadata and data."
+"disk. Valid values for <literal>flush</literal> are <literal>none</"
+"literal> , <literal>incremental</literal> , <literal>data</literal> , and "
+"<literal>sync</literal> . <literal>none</literal> tells the audit daemon not "
+"to make any special effort to write the audit data to disk. "
+"<literal>incremental</literal> tells the audit daemon to explicitly flush "
+"the data to disk. A frequency must be specified if <literal>incremental</"
+"literal> is used. A <literal>freq</literal> value of <literal>20</literal> "
+"tells the audit daemon to request that the kernel flush the data to disk "
+"after every 20 records. The <literal>data</literal> option keeps the data "
+"portion of the disk file synchronized at all times while the <literal>sync</"
+"literal> option takes care of both metadata and data."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:489
+#: audit_components.xml:515
 #, no-c-format
 msgid ""
 "In a CAPP environment, make sure that the audit trail is always fully up to "
@@ -604,44 +604,44 @@ msgid ""
 "literal> with the <literal>flush</literal> parameter."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:498
+#. Tag: term
+#: audit_components.xml:524
 #, no-c-format
-msgid "num_logs"
+msgid "<literal>num_logs</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:501
+#: audit_components.xml:527
 #, no-c-format
 msgid ""
 "Specify the number of log files to keep if you have given <literal>rotate</"
-"literal> as the <literal>max_log_file_action</literal>. Possible values "
-"range from <literal>0</literal> to <literal>99</literal>. A value less than "
+"literal> as the <literal>max_log_file_action</literal> . Possible values "
+"range from <literal>0</literal> to <literal>99</literal> . A value less than "
 "<literal>2</literal> means that the log files are not rotated. As you "
 "increase the number of files to rotate, you increase the amount of work "
 "required of the audit daemon. While doing this rotation, <systemitem class="
 "\"daemon\">auditd</systemitem> cannot always service new data arriving from "
 "the kernel as quickly, which can result in a backlog condition (triggering "
 "<systemitem class=\"daemon\">auditd</systemitem> to react according to the "
-"failure flag, described in <xref linkend=\"sec.audit.auditctl\"/>). In this "
+"failure flag, described in <xref linkend=\"sec.audit.auditctl\"/> ). In this "
 "situation, increasing the backlog limit is recommended. Do so by changing "
 "the value of the <literal>-b</literal> parameter in the <filename>/etc/audit/"
 "audit.rules</filename> file."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:521
+#: audit_components.xml:547
 #, no-c-format
 msgid "<literal>disp_qos</literal> and <literal>dispatcher</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:524
+#: audit_components.xml:550
 #, no-c-format
 msgid ""
 "The dispatcher is started by the audit daemon during its start. The audit "
 "daemon relays the audit messages to the application specified in "
-"<literal>dispatcher</literal>. This application must be a highly trusted "
+"<literal>dispatcher</literal> . This application must be a highly trusted "
 "one, because it needs to run as &rootuser;. <literal>disp_qos</literal> "
 "determines whether you allow for <literal>lossy</literal> or "
 "<literal>lossless</literal> communication between the audit daemon and the "
@@ -649,56 +649,56 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:533
+#: audit_components.xml:559
 #, no-c-format
 msgid ""
-"If you select <literal>lossy</literal>, the audit daemon might discard some "
+"If you select <literal>lossy</literal> , the audit daemon might discard some "
 "audit messages when the message queue is full. These events still get "
 "written to disk if <literal>log_format</literal> is set to <literal>raw</"
-"literal>, but they might not get through to the dispatcher. If you select "
+"literal> , but they might not get through to the dispatcher. If you select "
 "<literal>lossless</literal> the audit logging to disk is blocked until there "
 "is an empty spot in the message queue. The default value is <literal>lossy</"
-"literal>."
+"literal> ."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:545
+#: audit_components.xml:571
 #, no-c-format
 msgid "<literal>name_format</literal> and <literal>name</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:548
+#: audit_components.xml:574
 #, no-c-format
 msgid ""
 "<literal>name_format</literal> controls how computer names are resolved. "
 "Possible values are <literal>none</literal> (no name will be used), "
 "<literal>hostname</literal> (value returned by gethostname), <literal>fqd</"
 "literal> (fully qualified host name as received through a DNS lookup), "
-"<literal>numeric</literal> (IP address) and <literal>user</literal>. "
+"<literal>numeric</literal> (IP address) and <literal>user</literal> . "
 "<literal>user</literal> is a custom string that needs to be defined with the "
 "<literal>name</literal> parameter."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:560
+#: audit_components.xml:586
 #, no-c-format
 msgid ""
 "<literal>max_log_file</literal> and <literal>max_log_file_action</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:563
+#: audit_components.xml:589
 #, no-c-format
 msgid ""
 "<literal>max_log_file</literal> takes a numerical value that specifies the "
 "maximum file size in megabytes that the log file can reach before a "
 "configurable action is triggered. The action to be taken is specified in "
-"<literal>max_log_file_action</literal>. Possible values for "
-"<literal>max_log_file_action</literal> are <literal>ignore</literal>, "
-"<literal>syslog</literal>, <literal>suspend</literal>, <literal>rotate</"
-"literal>, and <literal>keep_logs</literal>. <literal>ignore</literal> tells "
-"the audit daemon to do nothing when the size limit is reached, "
+"<literal>max_log_file_action</literal> . Possible values for "
+"<literal>max_log_file_action</literal> are <literal>ignore</literal> , "
+"<literal>syslog</literal> , <literal>suspend</literal> , <literal>rotate</"
+"literal> , and <literal>keep_logs</literal> . <literal>ignore</literal> "
+"tells the audit daemon to do nothing when the size limit is reached, "
 "<literal>syslog</literal> tells it to issue a warning and send it to syslog, "
 "and <literal>suspend</literal> causes the audit daemon to stop writing logs "
 "to disk, leaving the daemon itself still alive. <literal>rotate</literal> "
@@ -708,7 +708,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:583
+#: audit_components.xml:609
 #, no-c-format
 msgid ""
 "To keep a complete audit trail in CAPP environments, the <literal>keep_logs</"
@@ -720,25 +720,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:596
+#: audit_components.xml:622
 #, no-c-format
 msgid "<literal>space_left</literal> and <literal>space_left_action</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:599
+#: audit_components.xml:625
 #, no-c-format
 msgid ""
 "<literal>space_left</literal> takes a numerical value in megabytes of "
 "remaining disk space that triggers a configurable action by the audit "
-"daemon. The action is specified in <literal>space_left_action</literal>. "
-"Possible values for this parameter are <literal>ignore</literal>, "
-"<literal>syslog</literal>, <literal>email</literal>, <literal>exec</"
-"literal>, <literal>suspend</literal>, <literal>single</literal>, and "
-"<literal>halt</literal>. <literal>ignore</literal> tells the audit daemon to "
-"ignore the warning and do nothing, <literal>syslog</literal> has it issue a "
-"warning to syslog, and <literal>email</literal> sends an e-mail to the "
-"account specified under <literal>action_mail_acct</literal>. <literal>exec</"
+"daemon. The action is specified in <literal>space_left_action</literal> . "
+"Possible values for this parameter are <literal>ignore</literal> , "
+"<literal>syslog</literal> , <literal>email</literal> , <literal>exec</"
+"literal> , <literal>suspend</literal> , <literal>single</literal> , and "
+"<literal>halt</literal> . <literal>ignore</literal> tells the audit daemon "
+"to ignore the warning and do nothing, <literal>syslog</literal> has it issue "
+"a warning to syslog, and <literal>email</literal> sends an e-mail to the "
+"account specified under <literal>action_mail_acct</literal> . <literal>exec</"
 "literal> plus a path to a script executes the given script. Note that it is "
 "not possible to pass parameters to the script. <literal>suspend</literal> "
 "tells the audit daemon to stop writing to disk but remain alive while "
@@ -747,7 +747,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:621
+#: audit_components.xml:647
 #, no-c-format
 msgid ""
 "Make sure that <literal>space_left</literal> is set to a value that gives "
@@ -756,27 +756,27 @@ msgid ""
 "space would involve calling <command>aureport -t</command> and archiving the "
 "oldest logs on a separate archiving partition or resource. The actual value "
 "for <literal>space_left</literal> depends on the size of your deployment. "
-"Set <literal>space_left_action</literal> to <literal>email</literal>."
+"Set <literal>space_left_action</literal> to <literal>email</literal> ."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:635
+#. Tag: term
+#: audit_components.xml:661
 #, no-c-format
-msgid "action_mail_acct"
+msgid "<literal>action_mail_acct</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:638
+#: audit_components.xml:664
 #, no-c-format
 msgid ""
 "Specify an e-mail address or alias to which any alert messages should be "
-"sent. The default setting is <literal>root</literal>, but you can enter any "
+"sent. The default setting is <literal>root</literal> , but you can enter any "
 "local or remote account as long as e-mail and the network are properly "
 "configured on your system and <filename>/usr/lib/sendmail</filename> exists."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:648
+#: audit_components.xml:674
 #, no-c-format
 msgid ""
 "<literal>admin_space_left</literal> and <literal>admin_space_left_action</"
@@ -784,7 +784,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:651
+#: audit_components.xml:677
 #, no-c-format
 msgid ""
 "<literal>admin_space_left</literal> takes a numerical value in megabytes of "
@@ -792,83 +792,89 @@ msgid ""
 "this limit is reached and the administrator has one last chance to react to "
 "this alert and free disk space for the audit logs. The value of "
 "<literal>admin_space_left</literal> should be lower than the value for "
-"<literal>space_left</literal>. The possible values for "
+"<literal>space_left</literal> . The possible values for "
 "<literal>admin_space_left_action</literal> are the same as for "
-"<literal>space_left_action</literal>."
+"<literal>space_left_action</literal> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:663
+#: audit_components.xml:689
 #, no-c-format
 msgid ""
 "Set <literal>admin_space_left</literal> to a value that would allow the "
 "administrator's actions to be recorded. The action should be set to "
-"<literal>single</literal>."
+"<literal>single</literal> ."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:672
+#. Tag: term
+#: audit_components.xml:698
 #, no-c-format
-msgid "disk_full_action"
+msgid "<literal>disk_full_action</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:675
+#: audit_components.xml:701
 #, no-c-format
 msgid ""
 "Specify which action to take when the system runs out of disk space for the "
-"audit logs. Valid values are <literal>ignore</literal>, <literal>syslog</"
-"literal>, <literal>rotate</literal>, <literal>exec</literal>, "
-"<literal>suspend</literal>, <literal>single</literal>, and <literal>halt</"
-"literal>. For an explanation of these values refer to <xref linkend=\"var."
-"audit.auditd.space_left\"/>."
+"audit logs. Valid values are <literal>ignore</literal> , <literal>syslog</"
+"literal> , <literal>rotate</literal> , <literal>exec</literal> , "
+"<literal>suspend</literal> , <literal>single</literal> , and <literal>halt</"
+"literal> . For an explanation of these values refer to <xref linkend=\"var."
+"audit.auditd.space_left\"/> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:686
+#: audit_components.xml:712
 #, no-c-format
 msgid ""
 "As the <literal>disk_full_action</literal> is triggered when there is "
 "absolutely no more room for any audit logs, you should bring the system down "
-"to single-user mode (<literal>single</literal>) or shut it down completely "
-"(<literal>halt</literal>)."
+"to single-user mode ( <literal>single</literal> ) or shut it down completely "
+"( <literal>halt</literal> )."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:696
+#. Tag: term
+#: audit_components.xml:722
 #, no-c-format
-msgid "disk_error_action"
+msgid "<literal>disk_error_action</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:699
+#: audit_components.xml:725
 #, no-c-format
 msgid ""
 "Specify which action to take when the audit daemon encounters any kind of "
 "disk error while writing the logs to disk or rotating the logs. The possible "
-"value are the same as for <literal>space_left_action</literal>."
+"value are the same as for <literal>space_left_action</literal> ."
+msgstr ""
+
+#. Tag: title
+#: audit_components.xml:732
+#, no-c-format
+msgid "CAPP Environment"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:707
+#: audit_components.xml:733
 #, no-c-format
 msgid ""
-"Use <literal>syslog</literal>, <literal>single</literal>, or <literal>halt</"
-"literal> depending on your site's policies regarding the handling of any "
-"kind of hardware failure."
+"Use <literal>syslog</literal> , <literal>single</literal> , or "
+"<literal>halt</literal> depending on your site's policies regarding the "
+"handling of any kind of hardware failure."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:716
+#: audit_components.xml:742
 #, no-c-format
 msgid ""
-"<literal>tcp_listen_port</literal>, <literal>tcp_listen_queue</literal>, "
-"<literal>tcp_client_ports</literal>, <literal>tcp_client_max_idle</literal>, "
-"and <literal>tcp_max_per_addr</literal>"
+"<literal>tcp_listen_port</literal> , <literal>tcp_listen_queue</literal> , "
+"<literal>tcp_client_ports</literal> , <literal>tcp_client_max_idle</"
+"literal> , and <literal>tcp_max_per_addr</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:721
+#: audit_components.xml:747
 #, no-c-format
 msgid ""
 "The audit daemon can receive audit events from other audit daemons. The tcp "
@@ -884,7 +890,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:734
+#: audit_components.xml:760
 #, no-c-format
 msgid ""
 "Specifying a single allowed client port may make it difficult for the client "
@@ -893,7 +899,7 @@ msgid ""
 "closure TIME_WAIT state times out. If a client does not respond anymore, "
 "<systemitem class=\"daemon\">auditd</systemitem> complains. Specify the "
 "number of seconds after which this will happen with "
-"<literal>tcp_client_max_idle</literal>. Keep in mind that this setting is "
+"<literal>tcp_client_max_idle</literal> . Keep in mind that this setting is "
 "valid for all clients and therefore should be higher than any individual "
 "client heartbeat setting, preferably by a factor of two. "
 "<literal>tcp_max_per_addr</literal> is a numeric value representing how many "
@@ -901,7 +907,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:749
+#: audit_components.xml:775
 #, no-c-format
 msgid ""
 "We recommend using privileged ports for client and server to prevent non-"
@@ -909,7 +915,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:758
+#: audit_components.xml:784
 #, no-c-format
 msgid ""
 "When the daemon configuration in <filename>/etc/audit/auditd.conf</filename> "
@@ -919,13 +925,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:767
+#: audit_components.xml:793
 #, no-c-format
 msgid "Controlling the Audit System Using <command>auditctl</command>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:769
+#: audit_components.xml:795
 #, no-c-format
 msgid ""
 "<command>auditctl</command> is responsible for controlling the status and "
@@ -936,12 +942,13 @@ msgid ""
 "daemon on the <command>auditctl</command> command line or by composing a "
 "rule set and instructing the audit daemon to process this file. By default, "
 "the <systemitem class=\"daemon\">auditd</systemitem> daemon is configured to "
-"check for audit rules under <filename>/etc/audit/audit.rules</filename>. For "
-"more details on audit rules, refer to <xref linkend=\"sec.audit.rules\"/>."
+"check for audit rules under <filename>/etc/audit/audit.rules</filename> . "
+"For more details on audit rules, refer to <xref linkend=\"sec.audit.rules\"/"
+"> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:784
+#: audit_components.xml:810
 #, no-c-format
 msgid ""
 "The main <command>auditctl</command> commands to control basic audit system "
@@ -949,21 +956,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:791
+#: audit_components.xml:817
 #, no-c-format
 msgid ""
 "<command>auditctl</command> <option>-e</option> to enable or disable audit"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:797
+#: audit_components.xml:823
 #, no-c-format
 msgid ""
 "<command>auditctl</command> <option>-f</option> to control the failure flag"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:803
+#: audit_components.xml:829
 #, no-c-format
 msgid ""
 "<command>auditctl</command> <option>-r</option> to control the rate limit "
@@ -971,14 +978,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:809
+#: audit_components.xml:835
 #, no-c-format
 msgid ""
 "<command>auditctl</command> <option>-b</option> to control the backlog limit"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:815
+#: audit_components.xml:841
 #, no-c-format
 msgid ""
 "<command>auditctl</command> <option>-s</option> to query the current status "
@@ -986,7 +993,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:820
+#: audit_components.xml:846
 #, no-c-format
 msgid ""
 "Before running <command>auditctl -S</command> on your system, add <option>-F "
@@ -994,35 +1001,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:829
+#: audit_components.xml:855
 #, no-c-format
 msgid ""
-"The <option>-e</option>, <option>-f</option>, <option>-r</option>, and "
+"The <option>-e</option> , <option>-f</option> , <option>-r</option> , and "
 "<option>-b</option> options can also be specified in the <filename>audit."
 "rules</filename> file to avoid having to enter them each time the audit "
 "daemon is started."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:836
+#: audit_components.xml:862
 #, no-c-format
 msgid ""
 "Any time you query the status of the audit daemon with <command>auditctl</"
 "command> <option>-s</option> or change the status flag with "
 "<command>auditctl</command> <option>-e<replaceable>FLAG</replaceable></"
-"option>, a status message (including information on each of the above-"
+"option> , a status message (including information on each of the above-"
 "mentioned parameters) is printed. The following example highlights the "
 "typical audit status message."
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:847
+#: audit_components.xml:873
 #, no-c-format
 msgid "Example output of <command>auditctl</command> <option>-s</option>"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:848
+#: audit_components.xml:874
 #, no-c-format
 msgid ""
 "AUDIT_STATUS: enabled=1 flag=2 pid=3105 rate_limit=0 backlog_limit=8192 "
@@ -1030,37 +1037,37 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:852
+#: audit_components.xml:878
 #, no-c-format
 msgid "Audit Status Flags"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:857
+#: audit_components.xml:883
 #, no-c-format
 msgid "Flag"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:862
+#: audit_components.xml:888
 #, no-c-format
 msgid "Meaning [Possible Values]"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:867
+#: audit_components.xml:893
 #, no-c-format
 msgid "Command"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:877
+#. Tag: para
+#: audit_components.xml:902
 #, no-c-format
-msgid "enabled"
+msgid "<literal>enabled</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:881
+#: audit_components.xml:907
 #, no-c-format
 msgid ""
 "Set the enable flag. [0..2] 0=disable, 1=enable, 2=enable and lock down the "
@@ -1068,19 +1075,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:887
+#: audit_components.xml:913
 #, no-c-format
 msgid "<command>auditctl</command> <option>-e [0|1|2]</option>"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:895
+#. Tag: para
+#: audit_components.xml:920
 #, no-c-format
-msgid "flag"
+msgid "<literal>flag</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:899
+#: audit_components.xml:925
 #, no-c-format
 msgid ""
 "Set the failure flag. [0..2] 0=silent, 1=printk, 2=panic (immediate halt "
@@ -1088,19 +1095,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:905
+#: audit_components.xml:931
 #, no-c-format
 msgid "<command>auditctl</command> <option>-f [0|1|2]</option>"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:913 audit_components.xml:1404
-#, no-c-format
-msgid "<literal>pid</literal>"
-msgstr ""
-
 #. Tag: para
-#: audit_components.xml:917
+#: audit_components.xml:943
 #, no-c-format
 msgid ""
 "Process ID under which <systemitem class=\"daemon\">auditd</systemitem> is "
@@ -1108,19 +1109,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:923 audit_components.xml:979 audit_components.xml:996
+#: audit_components.xml:956
 #, no-c-format
-msgid "&mdash;"
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:931
-#, no-c-format
-msgid "rate_limit"
+msgid "<literal>rate_limit</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:935
+#: audit_components.xml:961
 #, no-c-format
 msgid ""
 "Set a limit in messages per second. If the rate is not zero and is exceeded, "
@@ -1128,21 +1123,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:941
+#: audit_components.xml:967
 #, no-c-format
 msgid ""
 "<command>auditctl</command> <option>-r <replaceable>RATE</replaceable></"
 "option>"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:950
+#. Tag: para
+#: audit_components.xml:975
 #, no-c-format
-msgid "backlog_limit"
+msgid "<literal>backlog_limit</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:954
+#: audit_components.xml:980
 #, no-c-format
 msgid ""
 "Specify the maximum number of outstanding audit buffers allowed. If all "
@@ -1150,59 +1145,66 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:961
+#: audit_components.xml:987
 #, no-c-format
 msgid ""
 "<command>auditctl</command> <option>-b <replaceable>BACKLOG</replaceable></"
 "option>"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:970
+#. Tag: para
+#: audit_components.xml:995
 #, no-c-format
-msgid "lost"
+msgid "<literal>lost</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:974
+#: audit_components.xml:1000
 #, no-c-format
 msgid "Count the current number of lost audit messages."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:987
+#. Tag: para
+#: audit_components.xml:1012
 #, no-c-format
-msgid "backlog"
+msgid "<literal>backlog</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:991
+#: audit_components.xml:1017
 #, no-c-format
 msgid "Count the current number of outstanding audit buffers."
 msgstr ""
 
+#. Tag: para
+#: audit_components.xml:1022
+#, no-c-format
+msgid "&mdash;"
+msgstr ""
+
 #. Tag: title
-#: audit_components.xml:1006
+#: audit_components.xml:1032
 #, no-c-format
 msgid "Passing Parameters to the Audit System"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1008
+#: audit_components.xml:1034
 #, no-c-format
 msgid ""
 "Commands to control the audit system can be invoked individually from the "
 "shell using <command>auditctl</command> or batch read from a file using "
-"<command>auditctl -</command> <option>R</option>. This latter method is used "
-"by the init scripts to load rules from the file <filename>/etc/audit/audit."
-"rules</filename> after the audit daemon has been started. The rules are "
-"executed in order from top to bottom. Each of these rules would expand to a "
-"separate <command>auditctl</command> command. The syntax used in the rules "
-"file is the same as that used for the <command>auditctl</command> command."
+"<command>auditctl -</command> <option>R</option> . This latter method is "
+"used by the init scripts to load rules from the file <filename>/etc/audit/"
+"audit.rules</filename> after the audit daemon has been started. The rules "
+"are executed in order from top to bottom. Each of these rules would expand "
+"to a separate <command>auditctl</command> command. The syntax used in the "
+"rules file is the same as that used for the <command>auditctl</command> "
+"command."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1020
+#: audit_components.xml:1046
 #, no-c-format
 msgid ""
 "Changes made to the running audit system by executing <command>auditctl</"
@@ -1214,23 +1216,37 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1031
+#: audit_components.xml:1057
 #, no-c-format
 msgid "Example Audit Rules&mdash;Audit System Parameters"
 msgstr ""
 
-#. Tag: screen
-#: audit_components.xml:1032
+#. Tag: #text
+#: audit_components.xml:1058
 #, no-c-format
-msgid ""
-"-b 1000<co xml:id=\"co.aurules.b\"/>\n"
-"-f 1<co xml:id=\"co.aurules.f\"/>\n"
-"-r 10<co xml:id=\"co.aurules.r\"/>\n"
-"-e 1<co xml:id=\"co.aurules.e\"/>"
+msgid "-b 1000"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1059
+#, no-c-format
+msgid "-f 1"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1060
+#, no-c-format
+msgid "-r 10"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1061
+#, no-c-format
+msgid "-e 1"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1037
+#: audit_components.xml:1066
 #, no-c-format
 msgid ""
 "Specify the maximum number of outstanding audit buffers. Depending on the "
@@ -1239,7 +1255,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1044
+#: audit_components.xml:1073
 #, no-c-format
 msgid ""
 "Specify the failure flag to use. See <xref linkend=\"tab.audit.auditctl\"/> "
@@ -1247,7 +1263,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1050
+#: audit_components.xml:1079
 #, no-c-format
 msgid ""
 "Specify the maximum number of messages per second that may be issued by the "
@@ -1255,13 +1271,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1056
+#: audit_components.xml:1085
 #, no-c-format
 msgid "Enable or disable the audit subsystem."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1062
+#: audit_components.xml:1091
 #, no-c-format
 msgid ""
 "Using audit, you can track any kind of file system access to important "
@@ -1270,36 +1286,45 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1069
+#: audit_components.xml:1098
 #, no-c-format
 msgid "Example Audit Rules&mdash;File System Auditing"
 msgstr ""
 
-#. Tag: screen
-#: audit_components.xml:1070
+#. Tag: #text
+#: audit_components.xml:1099
 #, no-c-format
-msgid ""
-"-w /etc/shadow<co xml:id=\"co.aurules.fs\"/>\n"
-"-w /etc -p rx<co xml:id=\"co.aurules.fsmode\"/>\n"
-"-w /etc/passwd -k fk_passwd -p rwxa<co xml:id=\"co.aurules.fskey\"/>"
+msgid "-w /etc/shadow"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1100
+#, no-c-format
+msgid "-w /etc -p rx"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1101
+#, no-c-format
+msgid "-w /etc/passwd -k fk_passwd -p rwxa"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1073
+#: audit_components.xml:1104
 #, no-c-format
 msgid ""
 "The <literal>-w</literal> option tells audit to add a watch to the file "
-"specified, in this case <filename>/etc/shadow</filename>. All system calls "
+"specified, in this case <filename>/etc/shadow</filename> . All system calls "
 "requesting access permissions to this file are analyzed."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1080
+#: audit_components.xml:1111
 #, no-c-format
 msgid ""
 "This rule adds a watch to the <filename>/etc</filename> directory and "
 "applies permission filtering for read and execute access to this directory "
-"(<literal>-p rx</literal>). Any system call requesting any of these two "
+"( <literal>-p rx</literal> ). Any system call requesting any of these two "
 "permissions is analyzed. Only the creation of new files and the deletion of "
 "existing ones are logged as directory-related events. To get more specific "
 "events for files located under this particular directory, you should add a "
@@ -1309,20 +1334,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1093
+#: audit_components.xml:1124
 #, no-c-format
 msgid ""
-"This rule adds a file watch to <filename>/etc/passwd</filename>. Permission "
+"This rule adds a file watch to <filename>/etc/passwd</filename> . Permission "
 "filtering is applied for read, write, execute, and attribute change "
 "permissions. The <literal>-k</literal> option allows you to specify a key to "
 "use to filter the audit logs for this particular event later (for example "
-"with <command>ausearch</command>). You may use the same key on different "
+"with <command>ausearch</command> ). You may use the same key on different "
 "rules to be able to group rules when searching for them. It is also possible "
 "to apply multiple keys to a rule."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1107
+#: audit_components.xml:1138
 #, no-c-format
 msgid ""
 "System call auditing lets you track your system's behavior on a level even "
@@ -1333,81 +1358,104 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1116
+#: audit_components.xml:1147
 #, no-c-format
 msgid "Example Audit Rules&mdash;System Call Auditing"
 msgstr ""
 
-#. Tag: screen
-#: audit_components.xml:1117
+#. Tag: #text
+#: audit_components.xml:1148
 #, no-c-format
-msgid ""
-"-a exit,always -S mkdir<co xml:id=\"co.aurules.scalladd\"/>\n"
-"-a exit,always -S access -F a1=4<co xml:id=\"co.aurules.scallfilter\"/>\n"
-"-a exit,always -S ipc -F a0=2<co xml:id=\"co.aurules.scallipc\"/>\n"
-"-a exit,always -S open -F success!=0<co xml:id=\"co.aurules.scalls\"/>\n"
-"-a task,always -F auid=0<co xml:id=\"co.aurules.scalltask\"/>\n"
-"-a task,always -F uid=0 -F auid=501 -F gid=wheel<co xml:id=\"co.aurules."
-"scallsu\"/>"
+msgid "-a exit,always -S mkdir"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1149
+#, no-c-format
+msgid "-a exit,always -S access -F a1=4"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1150
+#, no-c-format
+msgid "-a exit,always -S ipc -F a0=2"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1151
+#, no-c-format
+msgid "-a exit,always -S open -F success!=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1152
+#, no-c-format
+msgid "-a task,always -F auid=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1153
+#, no-c-format
+msgid "-a task,always -F uid=0 -F auid=501 -F gid=wheel"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1122
+#: audit_components.xml:1158
 #, no-c-format
 msgid ""
 "This rule activates auditing for the <systemitem>mkdir</systemitem> system "
 "call. The <literal>-a</literal> option adds system call rules. This rule "
 "triggers an event whenever the <systemitem>mkdir</systemitem> system call is "
-"entered (<literal>exit</literal>, <literal>always</literal>). The <literal>-"
-"S</literal> option specifies the system call to which this rule should be "
-"applied."
+"entered ( <literal>exit</literal> , <literal>always</literal> ). The "
+"<literal>-S</literal> option specifies the system call to which this rule "
+"should be applied."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1132
+#: audit_components.xml:1168
 #, no-c-format
 msgid ""
 "This rule adds auditing to the access system call, but only if the second "
-"argument of the system call (<literal>mode</literal>) is <literal>4</"
-"literal> (<literal>R_OK</literal>). <literal>exit,always</literal> tells "
+"argument of the system call ( <literal>mode</literal> ) is <literal>4</"
+"literal> ( <literal>R_OK</literal> ). <literal>exit,always</literal> tells "
 "audit to add an audit context to this system call when entering it, and to "
 "write out a report when it gets audited."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1142
+#: audit_components.xml:1178
 #, no-c-format
 msgid ""
 "This rule adds an audit context to the IPC multiplexed system call. The "
 "specific <literal>ipc</literal> system call is passed as the first syscall "
 "argument and can be selected using <option>-F "
-"a0=<replaceable>IPC_CALL_NUMBER</replaceable></option>."
+"a0=<replaceable>IPC_CALL_NUMBER</replaceable></option> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1150
+#: audit_components.xml:1186
 #, no-c-format
 msgid "This rule audits failed attempts to call open."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1155
+#: audit_components.xml:1191
 #, no-c-format
 msgid ""
-"This rule is an example of a task rule (keyword: <literal>task</literal>). "
+"This rule is an example of a task rule (keyword: <literal>task</literal> ). "
 "It is different from the other rules above in that it applies to processes "
 "that are forked or cloned. To filter these kind of events, you can only use "
 "fields that are known at fork time, such as UID, GID, and AUID. This example "
-"rule filters for all tasks carrying an audit ID of <literal>0</literal>."
+"rule filters for all tasks carrying an audit ID of <literal>0</literal> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1165
+#: audit_components.xml:1201
 #, no-c-format
 msgid ""
 "This last rule makes heavy use of filters. All filter options are combined "
 "with a logical AND operator, meaning that this rule applies to all tasks "
-"that carry the audit ID of <literal>501</literal>, run as &rootuser;, and "
+"that carry the audit ID of <literal>501</literal> , run as &rootuser;, and "
 "have <literal>wheel</literal> as the group. A process is given an audit ID "
 "on user login. This ID is then handed down to any child process started by "
 "the initial process of the user. Even if the user changes his identity, the "
@@ -1415,21 +1463,21 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1179
+#: audit_components.xml:1215
 #, no-c-format
 msgid "Filtering System Call Arguments"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1180
+#: audit_components.xml:1216
 #, no-c-format
 msgid ""
 "For more details on filtering system call arguments, refer to <xref linkend="
-"\"sec.audit.scenipc\"/>."
+"\"sec.audit.scenipc\"/> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1186
+#: audit_components.xml:1222
 #, no-c-format
 msgid ""
 "You cannot only add rules to the audit system, but also remove them. There "
@@ -1438,22 +1486,31 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1193
+#: audit_components.xml:1229
 #, no-c-format
 msgid "Deleting Audit Rules and Events"
 msgstr ""
 
-#. Tag: screen
-#: audit_components.xml:1194
+#. Tag: #text
+#: audit_components.xml:1230
 #, no-c-format
-msgid ""
-"-D<co xml:id=\"co.aurules.d\"/>\n"
-"-d exit,always -S mkdir<co xml:id=\"co.aurules.scalldel\"/>\n"
-"-W /etc<co xml:id=\"co.aurules.fsdel\"/>"
+msgid "-D"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1231
+#, no-c-format
+msgid "-d exit,always -S mkdir"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1232
+#, no-c-format
+msgid "-W /etc"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1199
+#: audit_components.xml:1237
 #, no-c-format
 msgid ""
 "Clear the queue of audit rules and delete any preexisting rules. This rule "
@@ -1466,7 +1523,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1211
+#: audit_components.xml:1249
 #, no-c-format
 msgid ""
 "This rule deletes a system call rule. The <literal>-d</literal> option must "
@@ -1475,32 +1532,32 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1218
+#: audit_components.xml:1256
 #, no-c-format
 msgid ""
 "This rule tells audit to discard the rule with the directory watch on "
 "<filename>/etc</filename> from the rules queue. This rule deletes any rule "
-"containing a directory watch on <filename>/etc</filename>, regardless of any "
-"permission filtering or key options."
+"containing a directory watch on <filename>/etc</filename> , regardless of "
+"any permission filtering or key options."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1227
+#: audit_components.xml:1265
 #, no-c-format
 msgid ""
 "To get an overview of which rules are currently in use in your audit setup, "
-"run <command>auditctl</command> <option>-l</option>. This command displays "
+"run <command>auditctl</command> <option>-l</option> . This command displays "
 "all rules with one rule per line."
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1234
+#: audit_components.xml:1272
 #, no-c-format
 msgid "Listing Rules with <command>auditctl</command> <option>-l</option>"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1235
+#: audit_components.xml:1273
 #, no-c-format
 msgid ""
 "exit,always watch=/etc perm=rx\n"
@@ -1513,13 +1570,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1239
+#: audit_components.xml:1283
 #, no-c-format
 msgid "Creating Filter Rules"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1240
+#: audit_components.xml:1284
 #, no-c-format
 msgid ""
 "You can build very sophisticated audit rules by using the various filter "
@@ -1529,13 +1586,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1249
+#: audit_components.xml:1293
 #, no-c-format
 msgid "Understanding the Audit Logs and Generating Reports"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1251
+#: audit_components.xml:1295
 #, no-c-format
 msgid ""
 "To understand what the <command>aureport</command> utility does, it is vital "
@@ -1545,13 +1602,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1259
+#: audit_components.xml:1303
 #, no-c-format
 msgid "Understanding the Audit Logs"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1260
+#: audit_components.xml:1304
 #, no-c-format
 msgid ""
 "The following examples highlight two typical events that are logged by audit "
@@ -1563,13 +1620,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1270
+#: audit_components.xml:1314
 #, no-c-format
 msgid "A Simple Audit Event&mdash;Viewing the Audit Log"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1271
+#: audit_components.xml:1315
 #, no-c-format
 msgid ""
 "type=SYSCALL msg=audit(1234874638.599:5207): arch=c000003e syscall=2 "
@@ -1582,23 +1639,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1273
+#: audit_components.xml:1320
 #, no-c-format
 msgid ""
-"The above event, a simple <command>less /var/log/audit/audit.log</command>, "
+"The above event, a simple <command>less /var/log/audit/audit.log</command> , "
 "wrote three messages to the log. All of them are closely linked together and "
 "you would not be able to make sense of one of them without the others. The "
 "first message reveals the following information:"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1282 audit_components.xml:2485
-#, no-c-format
-msgid "type"
-msgstr ""
-
 #. Tag: para
-#: audit_components.xml:1285
+#: audit_components.xml:1332
 #, no-c-format
 msgid ""
 "The type of event recorded. In this case, it assigns the <literal>SYSCALL</"
@@ -1613,14 +1664,14 @@ msgid ""
 "literal> event to determine the object accessed."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1301
+#. Tag: term
+#: audit_components.xml:1348
 #, no-c-format
 msgid "<literal>msg</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1306
+#: audit_components.xml:1353
 #, no-c-format
 msgid ""
 "A message ID enclosed in brackets. The ID splits into two parts. All "
@@ -1630,14 +1681,14 @@ msgid ""
 "If the application makes a second system call, it gets another event ID."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1317
+#. Tag: term
+#: audit_components.xml:1364
 #, no-c-format
-msgid "arch"
+msgid "<literal>arch</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1320
+#: audit_components.xml:1367
 #, no-c-format
 msgid ""
 "References the CPU architecture of the system call. Decode this information "
@@ -1645,44 +1696,44 @@ msgid ""
 "command> commands when searching the logs."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1328
+#. Tag: term
+#: audit_components.xml:1375
 #, no-c-format
-msgid "syscall"
+msgid "<literal>syscall</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1331
+#: audit_components.xml:1378
 #, no-c-format
 msgid ""
 "The type of system call as it would have been printed by an strace on this "
 "particular system call. This data is taken from the list of system calls "
 "under <filename>/usr/include/asm/unistd.h</filename> and may vary depending "
 "on the architecture. In this case, <literal>syscall=2</literal> refers to "
-"the open system call (see <command>man open(2)</command>) invoked by the "
+"the open system call (see <command>man open(2)</command> ) invoked by the "
 "less application."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1342
+#. Tag: term
+#: audit_components.xml:1389
 #, no-c-format
-msgid "success"
+msgid "<literal>success</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1345
+#: audit_components.xml:1392
 #, no-c-format
 msgid "Whether the system call succeeded or failed."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1351
+#. Tag: term
+#: audit_components.xml:1398
 #, no-c-format
-msgid "exit"
+msgid "<literal>exit</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1354
+#: audit_components.xml:1401
 #, no-c-format
 msgid ""
 "The exit value returned by the system call. For the <command>open</command> "
@@ -1691,13 +1742,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1362
+#: audit_components.xml:1409
 #, no-c-format
 msgid "<literal>a0</literal> to <literal>a3</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1365
+#: audit_components.xml:1412
 #, no-c-format
 msgid ""
 "The first four arguments to the system call in numeric form. The values of "
@@ -1706,64 +1757,165 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1370
+#: audit_components.xml:1417
 #, no-c-format
 msgid "a0=62fb60 a1=8000 a2=31 a3=0"
 msgstr ""
 
-#. Tag: para
-#: audit_components.xml:1371
+#. Tag: literal
+#: audit_components.xml:1419
 #, no-c-format
-msgid ""
-"<literal>a0</literal> is the start address of the passed path name. "
-"<literal>a1</literal> is the flags. <literal>8000</literal> in hex notation "
-"translates to <literal>100000</literal> in octal notation, which in turn "
-"translates to <literal>O_LARGEFILE</literal>. <literal>a2</literal> is the "
-"mode, which, because <literal>O_CREAT</literal> was not specified, is "
-"unused. <remark>jsegitz 2014-07-22: a2 is 31, not unused</remark> "
-"<literal>a3</literal> is not passed by the <command>open</command> system "
-"call. Check the manual page of the relevant system call to find out which "
-"arguments are used with it."
+msgid "a0"
 msgstr ""
 
 #. Tag: literal
-#: audit_components.xml:1386
+#: audit_components.xml:1420
 #, no-c-format
-msgid "items"
+msgid "8000"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1420
+#, no-c-format
+msgid "is the start address of the passed path name."
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1420
+#, no-c-format
+msgid "is the flags."
+msgstr ""
+
+#. Tag: literal
+#: audit_components.xml:1420
+#, no-c-format
+msgid "a1"
+msgstr ""
+
+#. Tag: literal
+#: audit_components.xml:1421
+#, no-c-format
+msgid "100000"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1421
+#, no-c-format
+msgid "in hex notation translates to"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1422
+#, no-c-format
+msgid "in octal notation, which in turn translates to"
+msgstr ""
+
+#. Tag: literal
+#: audit_components.xml:1422
+#, no-c-format
+msgid "O_LARGEFILE"
+msgstr ""
+
+#. Tag: literal
+#: audit_components.xml:1423
+#, no-c-format
+msgid "a2"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1423
+#, no-c-format
+msgid "."
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1424
+#, no-c-format
+msgid "is the mode, which, because"
+msgstr ""
+
+#. Tag: literal
+#: audit_components.xml:1424
+#, no-c-format
+msgid "O_CREAT"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1425
+#, no-c-format
+msgid "was not specified, is unused."
+msgstr ""
+
+#. Tag: literal
+#: audit_components.xml:1426
+#, no-c-format
+msgid "a3"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1426
+#, no-c-format
+msgid "is not passed by the"
+msgstr ""
+
+#. Tag: command
+#: audit_components.xml:1426
+#, no-c-format
+msgid "open"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1429
+#, no-c-format
+msgid ""
+"system call. Check the manual page of the relevant system call to find out "
+"which arguments are used with it."
+msgstr ""
+
+#. Tag: term
+#: audit_components.xml:1433
+#, no-c-format
+msgid "<literal>items</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1389
+#: audit_components.xml:1436
 #, no-c-format
 msgid "The number of strings passed to the application."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1395
+#. Tag: term
+#: audit_components.xml:1442
 #, no-c-format
-msgid "ppid"
+msgid "<literal>ppid</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1398
+#: audit_components.xml:1445
 #, no-c-format
 msgid "The process ID of the parent of the process analyzed."
 msgstr ""
 
+#. Tag: term
+#: audit_components.xml:1451
+#, no-c-format
+msgid "<literal>pid</literal>"
+msgstr ""
+
 #. Tag: para
-#: audit_components.xml:1407
+#: audit_components.xml:1454
 #, no-c-format
 msgid "The process ID of the process analyzed."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1413
+#. Tag: term
+#: audit_components.xml:1460
 #, no-c-format
-msgid "auid"
+msgid "<literal>auid</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1416
+#: audit_components.xml:1463
 #, no-c-format
 msgid ""
 "The audit ID. A process is given an audit ID on user login. This ID is then "
@@ -1773,28 +1925,28 @@ msgid ""
 "user who logged in."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1426
+#. Tag: term
+#: audit_components.xml:1473
 #, no-c-format
 msgid "<literal>uid</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1429
+#: audit_components.xml:1476
 #, no-c-format
 msgid ""
 "The user ID of the user who started the process. In this case, <literal>0</"
 "literal> for &rootuser;."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1436
+#. Tag: term
+#: audit_components.xml:1483
 #, no-c-format
 msgid "<literal>gid</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1439
+#: audit_components.xml:1486
 #, no-c-format
 msgid ""
 "The group ID of the user who started the process. In this case, <literal>0</"
@@ -1802,14 +1954,14 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1446
+#: audit_components.xml:1493
 #, no-c-format
 msgid ""
-"<literal>euid</literal>, <literal>suid</literal>, <literal>fsuid</literal>"
+"<literal>euid</literal> , <literal>suid</literal> , <literal>fsuid</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1449
+#: audit_components.xml:1496
 #, no-c-format
 msgid ""
 "Effective user ID, set user ID, and file system user ID of the user that "
@@ -1817,103 +1969,97 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1456
+#: audit_components.xml:1503
 #, no-c-format
 msgid ""
-"<literal>egid</literal>, <literal>sgid</literal>, <literal>fsgid</literal>"
+"<literal>egid</literal> , <literal>sgid</literal> , <literal>fsgid</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1459
+#: audit_components.xml:1506
 #, no-c-format
 msgid ""
 "Effective group ID, set group ID, and file system group ID of the user that "
 "started the process."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1466
+#. Tag: term
+#: audit_components.xml:1513
 #, no-c-format
 msgid "<literal>tty</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1469
+#: audit_components.xml:1516
 #, no-c-format
 msgid ""
 "The terminal from which the application was started. In this case, a pseudo-"
 "terminal used in an SSH session."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1476
+#. Tag: term
+#: audit_components.xml:1523
 #, no-c-format
 msgid "<literal>ses</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1479
+#: audit_components.xml:1526
 #, no-c-format
 msgid ""
 "The login session ID. This process attribute is set when a user logs in and "
 "can tie any process to a particular user login."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1486
+#. Tag: term
+#: audit_components.xml:1533
 #, no-c-format
-msgid "comm"
+msgid "<literal>comm</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1489
+#: audit_components.xml:1536
 #, no-c-format
 msgid "The application name under which it appears in the task list."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1495
+#. Tag: term
+#: audit_components.xml:1542
 #, no-c-format
 msgid "<literal>exe</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1498
+#: audit_components.xml:1545
 #, no-c-format
 msgid "The resolved path name to the binary program."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1504
+#. Tag: term
+#: audit_components.xml:1551
 #, no-c-format
-msgid "subj"
+msgid "<literal>subj</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1507
+#: audit_components.xml:1554
 #, no-c-format
 msgid ""
 "<systemitem class=\"daemon\">auditd</systemitem> records whether the process "
 "is subject to any security context, such as &aa;. <literal>unconstrained</"
-"literal>, as in this case, means that the process is not confined with &aa;. "
-"If the process had been confined, the binary path name plus the &aa; profile "
-"mode would have been logged."
+"literal> , as in this case, means that the process is not confined with "
+"&aa;. If the process had been confined, the binary path name plus the &aa; "
+"profile mode would have been logged."
 msgstr ""
 
-#. Tag: remark
-#: audit_components.xml:1515
-#, no-c-format
-msgid "jsegitz 2014-07-22: doesn't show in the example"
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1519
+#. Tag: term
+#: audit_components.xml:1566
 #, no-c-format
 msgid "<literal>key</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1522
+#: audit_components.xml:1569
 #, no-c-format
 msgid ""
 "If you are auditing many directories or files, assign key strings to each of "
@@ -1922,7 +2068,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1531
+#: audit_components.xml:1578
 #, no-c-format
 msgid ""
 "The second message triggered by the example <command>less</command> call "
@@ -1931,21 +2077,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1536
+#: audit_components.xml:1583
 #, no-c-format
 msgid ""
 "The third message reveals the following (the <literal>type</literal> and "
 "<literal>message</literal> flags have already been introduced):"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1542
+#. Tag: term
+#: audit_components.xml:1589
 #, no-c-format
-msgid "item"
+msgid "<literal>item</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1545
+#: audit_components.xml:1592
 #, no-c-format
 msgid ""
 "In this example, <literal>item</literal> references the <literal>a0</"
@@ -1956,53 +2102,47 @@ msgid ""
 "for the second path argument."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1557 audit_components.xml:2417
-#, no-c-format
-msgid "name"
-msgstr ""
-
 #. Tag: para
-#: audit_components.xml:1560
+#: audit_components.xml:1607
 #, no-c-format
 msgid "Refers to the path name passed as an argument to the open system call."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1567
+#. Tag: term
+#: audit_components.xml:1614
 #, no-c-format
-msgid "inode"
+msgid "<literal>inode</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1570
+#: audit_components.xml:1617
 #, no-c-format
-msgid "Refers to the inode number corresponding to <literal>name</literal>."
+msgid "Refers to the inode number corresponding to <literal>name</literal> ."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1576
+#. Tag: term
+#: audit_components.xml:1623
 #, no-c-format
 msgid "<literal>dev</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1579
+#: audit_components.xml:1626
 #, no-c-format
 msgid ""
 "Specifies the device on which the file is stored. In this case, "
-"<literal>08:06</literal>, which stands for <literal>/dev/sda1</literal> or "
+"<literal>08:06</literal> , which stands for <literal>/dev/sda1</literal> or "
 "<quote>first partition on the first IDE device.</quote>"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1588
+#. Tag: term
+#: audit_components.xml:1635
 #, no-c-format
-msgid "mode"
+msgid "<literal>mode</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1591
+#: audit_components.xml:1638
 #, no-c-format
 msgid ""
 "Numerical representation of the file's access permissions. In this case, "
@@ -2011,25 +2151,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1600
+#: audit_components.xml:1647
 #, no-c-format
 msgid "<literal>ouid</literal> and <literal>ogid</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1603
+#: audit_components.xml:1650
 #, no-c-format
 msgid "Refer to the UID and GID of the inode itself."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1609
+#. Tag: term
+#: audit_components.xml:1656
 #, no-c-format
-msgid "rdev"
+msgid "<literal>rdev</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1612
+#: audit_components.xml:1659
 #, no-c-format
 msgid ""
 "Not applicable for this example. The <literal>rdev</literal> entry only "
@@ -2037,70 +2177,99 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1619
+#: audit_components.xml:1666
 #, no-c-format
 msgid ""
-"highlights the audit events triggered by an incoming SSH connection. Most of "
-"the messages are related to the PAM stack and reflect the different stages "
-"of the SSH PAM process. Several of the audit messages carry nested PAM "
-"messages in them that signify that a particular stage of the PAM process has "
-"been reached. Although the PAM messages are logged by audit, audit assigns "
-"its own message type to each event:"
+"<xref linkend=\"ex.audit.aureport.sshd\"/> highlights the audit events "
+"triggered by an incoming SSH connection. Most of the messages are related to "
+"the PAM stack and reflect the different stages of the SSH PAM process. "
+"Several of the audit messages carry nested PAM messages in them that signify "
+"that a particular stage of the PAM process has been reached. Although the "
+"PAM messages are logged by audit, audit assigns its own message type to each "
+"event:"
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1629
+#: audit_components.xml:1676
 #, no-c-format
 msgid "An Advanced Audit Event&mdash;Login via SSH"
 msgstr ""
 
-#. Tag: screen
-#: audit_components.xml:1630
+#. Tag: #text
+#: audit_components.xml:1677
+#, no-c-format
+msgid "type=USER_AUTH msg=audit(1234877011.791:7731): user pid=26127 uid=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1679
 #, no-c-format
 msgid ""
-"type=USER_AUTH msg=audit(1234877011.791:7731): user pid=26127 uid=0 <co xml:"
-"id=\"co.audit.sshd.auth\"/>\n"
 "auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"root\" exe="
-"\"/usr/sbin/sshd\"\n"
-"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh res=success)'\n"
-"type=USER_ACCT msg=audit(1234877011.795:7732): user pid=26127 uid=0 <co xml:"
-"id=\"co.audit.sshd.acct\"/>\n"
+"\"/usr/sbin/sshd\"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh "
+"res=success)'type=USER_ACCT msg=audit(1234877011.795:7732): user pid=26127 "
+"uid=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1682
+#, no-c-format
+msgid ""
 "auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"root\" exe=\"/"
-"usr/sbin/sshd\"\n"
-"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh res=success)'\n"
-"type=CRED_ACQ msg=audit(1234877011.799:7733): user pid=26125 uid=0 <co xml:"
-"id=\"co.audit.sshd.acq\"/>\n"
+"usr/sbin/sshd\"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh "
+"res=success)'type=CRED_ACQ msg=audit(1234877011.799:7733): user pid=26125 "
+"uid=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1685
+#, no-c-format
+msgid ""
 "auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/"
-"sbin/sshd\"\n"
-"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'\n"
-"type=LOGIN msg=audit(1234877011.799:7734): login pid=26125 uid=0\n"
-"old auid=4294967295 new auid=0 old ses=4294967295 new ses=1172\n"
-"type=USER_START msg=audit(1234877011.799:7735): user pid=26125 uid=0 <co xml:"
-"id=\"co.audit.sshd.start\"/>\n"
+"sbin/sshd\"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 "
+"res=success)'type=LOGIN msg=audit(1234877011.799:7734): login pid=26125 "
+"uid=0old auid=4294967295 new auid=0 old ses=4294967295 new "
+"ses=1172type=USER_START msg=audit(1234877011.799:7735): user pid=26125 uid=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1690
+#, no-c-format
+msgid ""
 "auid=0 ses=1172 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/sbin/sshd"
-"\"\n"
-"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'\n"
-"type=USER_LOGIN msg=audit(1234877011.823:7736): user pid=26128 uid=0 <co xml:"
-"id=\"co.audit.sshd.login\"/>\n"
-"auid=0 ses=1172 msg='uid=0: exe=\"/usr/sbin/sshd\"\n"
-"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'\n"
-"type=CRED_REFR msg=audit(1234877011.828:7737): user pid=26128 uid=0 <co xml:"
-"id=\"co.audit.sshd.refr\"/>\n"
-"auid=0 ses=1172 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/sshd\"\n"
-"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'"
+"\"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 "
+"res=success)'type=USER_LOGIN msg=audit(1234877011.823:7736): user pid=26128 "
+"uid=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1693
+#, no-c-format
+msgid ""
+"auid=0 ses=1172 msg='uid=0: exe=\"/usr/sbin/sshd\"(hostname=&wsIname;, "
+"addr=&wsIip;, terminal=/dev/pts/0 res=success)'type=CRED_REFR "
+"msg=audit(1234877011.828:7737): user pid=26128 uid=0"
+msgstr ""
+
+#. Tag: #text
+#: audit_components.xml:1696
+#, no-c-format
+msgid ""
+"auid=0 ses=1172 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/sshd"
+"\"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1634
+#: audit_components.xml:1700
 #, no-c-format
 msgid ""
 "PAM reports that is has successfully requested user authentication for "
 "&rootuser; from a remote host (&wsIname;, &wsIip;). The terminal where this "
-"is happening is <literal>ssh</literal>."
+"is happening is <literal>ssh</literal> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1641
+#: audit_components.xml:1707
 #, no-c-format
 msgid ""
 "PAM reports that it has successfully determined whether the user is "
@@ -2108,22 +2277,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1647
+#: audit_components.xml:1713
 #, no-c-format
 msgid ""
 "PAM reports that the appropriate credentials to log in have been acquired "
-"and that the terminal changed to a normal terminal (<literal>/dev/pts0</"
-"literal>)."
+"and that the terminal changed to a normal terminal ( <literal>/dev/pts0</"
+"literal> )."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1654
+#: audit_components.xml:1720
 #, no-c-format
 msgid "PAM reports that it has successfully opened a session for &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1660
+#: audit_components.xml:1726
 #, no-c-format
 msgid ""
 "The user has successfully logged in. This event is the one used by "
@@ -2131,19 +2300,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1667
+#: audit_components.xml:1733
 #, no-c-format
 msgid "PAM reports that the credentials have been successfully reacquired."
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1675
+#: audit_components.xml:1741
 #, no-c-format
 msgid "Generating Custom Audit Reports"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1676
+#: audit_components.xml:1742
 #, no-c-format
 msgid ""
 "The raw audit reports stored in the <filename>/var/log/audit</filename> "
@@ -2153,21 +2322,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1682
+#: audit_components.xml:1748
 #, no-c-format
 msgid ""
 "The following use cases highlight a few of the possible report types that "
-"you can generate with <command>aureport</command>:"
-msgstr ""
-
-#. Tag: term
-#: audit_components.xml:1688 audit_components.xml:1959
-#, no-c-format
-msgid "Read Audit Logs from Another File"
+"you can generate with <command>aureport</command> :"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1690
+#: audit_components.xml:1756
 #, no-c-format
 msgid ""
 "When the audit logs have moved to another machine or when you want to "
@@ -2177,7 +2340,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1697
+#: audit_components.xml:1763
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -if myfile</command>\n"
@@ -2209,18 +2372,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1698
+#: audit_components.xml:1789
 #, no-c-format
 msgid ""
 "The above command, <command>aureport</command> without any arguments, "
 "provides only the standard general summary report generated from the logs "
-"contained in <filename>myfile</filename>. To create more detailed reports, "
+"contained in <filename>myfile</filename> . To create more detailed reports, "
 "combine the <option>-if</option> option with any of the options below. For "
 "example, generate a login report that is limited to a certain time frame:"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1706
+#: audit_components.xml:1797
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -l -ts 14:00 -te 15:00 -if myfile</command>\n"
@@ -2234,13 +2397,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1710
+#: audit_components.xml:1808
 #, no-c-format
 msgid "Convert Numeric Entities to Text"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1712
+#: audit_components.xml:1810
 #, no-c-format
 msgid ""
 "Some information, such as user IDs, are printed in numeric form. To convert "
@@ -2249,13 +2412,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1721
+#: audit_components.xml:1819
 #, no-c-format
 msgid "Create a Rough Summary Report"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1723
+#: audit_components.xml:1821
 #, no-c-format
 msgid ""
 "If you are interested in the current audit statistics (events, logins, "
@@ -2263,22 +2426,22 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1731
+#: audit_components.xml:1829
 #, no-c-format
 msgid "Create a Summary Report of Failed Events"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1733
+#: audit_components.xml:1831
 #, no-c-format
 msgid ""
 "If you want to break down the overall statistics of plain <command>aureport</"
 "command> to the statistics of failed events, use <command>aureport</command> "
-"<option>--failed</option>:"
+"<option>--failed</option> :"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1738
+#: audit_components.xml:1836
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport --failed</command>\n"
@@ -2310,22 +2473,22 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1742
+#: audit_components.xml:1865
 #, no-c-format
 msgid "Create a Summary Report of Successful Events"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1744
+#: audit_components.xml:1867
 #, no-c-format
 msgid ""
 "If you want to break down the overall statistics of a plain "
 "<command>aureport</command> to the statistics of successful events, use "
-"<command>aureport</command> <option>--success</option>:"
+"<command>aureport</command> <option>--success</option> :"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1749
+#: audit_components.xml:1872
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport --success</command>\n"
@@ -2357,13 +2520,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1753
+#: audit_components.xml:1901
 #, no-c-format
 msgid "Create Summary Reports"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1755
+#: audit_components.xml:1903
 #, no-c-format
 msgid ""
 "In addition to the dedicated summary reports (main summary and failed and "
@@ -2374,7 +2537,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1762
+#: audit_components.xml:1910
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -u -i --summary</command>\n"
@@ -2389,13 +2552,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1766
+#: audit_components.xml:1922
 #, no-c-format
 msgid "Create a Report of Events"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1768
+#: audit_components.xml:1924
 #, no-c-format
 msgid ""
 "To get an overview of the events logged by audit, use the <command>aureport</"
@@ -2404,7 +2567,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1774
+#: audit_components.xml:1930
 #, no-c-format
 msgid ""
 "&prompt.sudo;aureport -e -ts 14:00 -te 14:21\n"
@@ -2428,13 +2591,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1778
+#: audit_components.xml:1951
 #, no-c-format
 msgid "Create a Report from All Process Events"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1780
+#: audit_components.xml:1953
 #, no-c-format
 msgid ""
 "To analyze the log from a process's point of view, use the "
@@ -2444,7 +2607,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1787
+#: audit_components.xml:1960
 #, no-c-format
 msgid ""
 "<command>aureport -p</command>\n"
@@ -2459,13 +2622,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1791
+#: audit_components.xml:1972
 #, no-c-format
 msgid "Create a Report from All System Call Events"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1793
+#: audit_components.xml:1974
 #, no-c-format
 msgid ""
 "To analyze the audit log from a system call's point of view, use the "
@@ -2476,7 +2639,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1800
+#: audit_components.xml:1981
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -s</command>\n"
@@ -2491,13 +2654,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1804
+#: audit_components.xml:1993
 #, no-c-format
 msgid "Create a Report from All Executable Events"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1806
+#: audit_components.xml:1995
 #, no-c-format
 msgid ""
 "To analyze the audit log from an executable's point of view, use the "
@@ -2508,7 +2671,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1813
+#: audit_components.xml:2002
 #, no-c-format
 msgid ""
 "<command>aureport -x</command>\n"
@@ -2523,13 +2686,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1817
+#: audit_components.xml:2014
 #, no-c-format
 msgid "Create a Report about Files"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1819
+#: audit_components.xml:2016
 #, no-c-format
 msgid ""
 "To generate a report from the audit log that focuses on file access, use the "
@@ -2541,7 +2704,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1827
+#: audit_components.xml:2024
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -f</command>\n"
@@ -2556,13 +2719,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1831
+#: audit_components.xml:2036
 #, no-c-format
 msgid "Create a Report about Users"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1833
+#: audit_components.xml:2038
 #, no-c-format
 msgid ""
 "To generate a report from the audit log that illustrates which users are "
@@ -2573,7 +2736,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1841
+#: audit_components.xml:2046
 #, no-c-format
 msgid ""
 "<command>aureport -u</command>\n"
@@ -2588,13 +2751,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1845
+#: audit_components.xml:2058
 #, no-c-format
 msgid "Create a Report about Logins"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1847
+#: audit_components.xml:2060
 #, no-c-format
 msgid ""
 "To create a report that focuses on login attempts to your machine, run the "
@@ -2605,7 +2768,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1854
+#: audit_components.xml:2067
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -l -i</command>\n"
@@ -2620,23 +2783,23 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1858
+#: audit_components.xml:2079
 #, no-c-format
 msgid "Limit a Report to a Certain Time Frame"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1860
+#: audit_components.xml:2081
 #, no-c-format
 msgid ""
 "To analyze the logs for a particular time frame, such as only the working "
 "hours of Feb 16, 2009, first find out whether this data is contained in the "
 "current <filename>audit.log</filename> or whether the logs have been rotated "
-"in by running <command>aureport</command> <option>-t</option>:"
+"in by running <command>aureport</command> <option>-t</option> :"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1867
+#: audit_components.xml:2088
 #, no-c-format
 msgid ""
 "<command>aureport -t</command>\n"
@@ -2647,7 +2810,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1868
+#: audit_components.xml:2093
 #, no-c-format
 msgid ""
 "The current <filename>audit.log</filename> contains all the desired data. "
@@ -2657,7 +2820,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1874
+#: audit_components.xml:2099
 #, no-c-format
 msgid ""
 "Then, specify the start date and time and the end date and time of the "
@@ -2666,7 +2829,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1879
+#: audit_components.xml:2104
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -ts 02/16/09 8:00 -te 02/16/09 18:00 -l</"
@@ -2684,18 +2847,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1880
+#: audit_components.xml:2115
 #, no-c-format
 msgid ""
 "The start date and time are specified with the <option>-ts</option> option. "
 "Any event that has a time stamp equal to or after your given start time "
 "appears in the report. If you omit the date, <command>aureport</command> "
-"assumes that you meant <emphasis>today</emphasis>. If you omit the time, it "
-"assumes that the start time should be midnight of the date specified."
+"assumes that you meant <emphasis>today</emphasis> . If you omit the time, it "
+"assumes that the start time should be midnight of the date specified. <!-- "
+"fs 2016-11-17: /etc/sysconfig/audit has been removed without replacement Use "
+"the 24 clock notation rather than the 12 hour one and adjust the date format "
+"to your locale (specified in <filename>/etc/sysconfig/audit</filename> under "
+"<envar>AUDITD_LANG</envar>, default is <literal>en_US</literal>).-->"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1898
+#: audit_components.xml:2133
 #, no-c-format
 msgid ""
 "Specify the end date and time with the <option>-te</option> option. Any "
@@ -2703,11 +2870,11 @@ msgid ""
 "in the report. If you omit the date, <command>aureport</command> assumes "
 "that you meant today. If you omit the time, it assumes that the end time "
 "should be now. Use the same format for the date and time as for <option>-ts</"
-"option>."
+"option> ."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1909
+#: audit_components.xml:2144
 #, no-c-format
 msgid ""
 "All reports except the summary ones are printed in column format and sent to "
@@ -2717,13 +2884,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1919
+#: audit_components.xml:2154
 #, no-c-format
 msgid "Querying the Audit Daemon Logs with <command>ausearch</command>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1921
+#: audit_components.xml:2156
 #, no-c-format
 msgid ""
 "The <command>aureport</command> tool helps you to create overall summaries "
@@ -2732,19 +2899,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1928
+#: audit_components.xml:2163
 #, no-c-format
 msgid ""
 "<command>ausearch</command> allows you to search the audit logs using "
 "special keys and search phrases that relate to most of the flags that appear "
-"in event messages in <filename>/var/log/audit/audit.log</filename>. Not all "
+"in event messages in <filename>/var/log/audit/audit.log</filename> . Not all "
 "record types contain the same search phrases. There are no "
 "<literal>hostname</literal> or <literal>uid</literal> entries in a "
 "<literal>PATH</literal> record, for example."
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1938
+#: audit_components.xml:2173
 #, no-c-format
 msgid ""
 "When searching, make sure that you choose appropriate search criteria to "
@@ -2758,21 +2925,27 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:1950
+#: audit_components.xml:2185
 #, no-c-format
 msgid "Using Multiple Search Options"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1951
+#: audit_components.xml:2186
 #, no-c-format
 msgid ""
 "Any of the command line options can be combined with logical AND operators "
 "to narrow down your search."
 msgstr ""
 
+#. Tag: term
+#: audit_components.xml:2194
+#, no-c-format
+msgid "Read Audit Logs from Another File"
+msgstr ""
+
 #. Tag: para
-#: audit_components.xml:1961
+#: audit_components.xml:2196
 #, no-c-format
 msgid ""
 "When the audit logs have moved to another machine or when you want to "
@@ -2782,7 +2955,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1967
+#: audit_components.xml:2202
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>ausearch -</command> <replaceable>option</replaceable> "
@@ -2790,13 +2963,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1971
+#: audit_components.xml:2206
 #, no-c-format
 msgid "Convert Numeric Results into Text"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1973
+#: audit_components.xml:2208
 #, no-c-format
 msgid ""
 "Some information, such as user IDs are printed in numeric form. To convert "
@@ -2805,17 +2978,17 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:1982
+#: audit_components.xml:2217
 #, no-c-format
 msgid "Search by Audit Event ID"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1984
+#: audit_components.xml:2219
 #, no-c-format
 msgid ""
 "If you have previously run an audit report or done an <command>autrace</"
-"command>, you should analyze the trail of a particular event in the log. "
+"command> , you should analyze the trail of a particular event in the log. "
 "Most of the report types described in <xref linkend=\"sec.audit.aureport\"/> "
 "include audit event IDs in their output. An audit event ID is the second "
 "part of an audit message ID, which consists of a Unix epoch time stamp and "
@@ -2825,13 +2998,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:1996
+#: audit_components.xml:2231
 #, no-c-format
 msgid "Use a command similar to the following:"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:1999
+#: audit_components.xml:2234
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>ausearch -a 5207</command>\n"
@@ -2847,7 +3020,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2000
+#: audit_components.xml:2240
 #, no-c-format
 msgid ""
 "The <command>ausearch</command> <option>-a</option> command grabs all "
@@ -2856,31 +3029,31 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2008
+#: audit_components.xml:2248
 #, no-c-format
 msgid "Search by Message Type"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2010
+#: audit_components.xml:2250
 #, no-c-format
 msgid ""
 "To search for audit records of a particular message type, use the "
 "<command>ausearch</command> <option>-m <replaceable>MESSAGE_TYPE</"
 "replaceable></option> command. Examples of valid message types include "
-"<literal>PATH</literal>, <literal>SYSCALL</literal>, and "
-"<literal>USER_LOGIN</literal>. Running <command>ausearch</command> <option>-"
+"<literal>PATH</literal> , <literal>SYSCALL</literal> , and "
+"<literal>USER_LOGIN</literal> . Running <command>ausearch</command> <option>-"
 "m</option> without a message type displays a list of all message types."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2022
+#: audit_components.xml:2262
 #, no-c-format
 msgid "Search by Login ID"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2024
+#: audit_components.xml:2264
 #, no-c-format
 msgid ""
 "To view records associated with a particular login user ID, use the "
@@ -2890,51 +3063,51 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2033
+#: audit_components.xml:2273
 #, no-c-format
 msgid "Search by User ID"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2035
+#: audit_components.xml:2275
 #, no-c-format
 msgid ""
 "View records related to any of the user IDs (both user ID and effective user "
-"ID) with <command>ausearch</command> <option>-ua</option>. View reports "
+"ID) with <command>ausearch</command> <option>-ua</option> . View reports "
 "related to a particular user ID with <command>ausearch</command> <option>-ui "
-"<replaceable>UID</replaceable></option>. Search for records related to a "
+"<replaceable>UID</replaceable></option> . Search for records related to a "
 "particular effective user ID, use the <command>ausearch</command> <option>-"
-"ue <replaceable>EUID</replaceable></option>. Searching for a user ID means "
+"ue <replaceable>EUID</replaceable></option> . Searching for a user ID means "
 "the user ID of the user creating a process. Searching for an effective user "
 "ID means the user ID and privileges that are required to run this process."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2050
+#: audit_components.xml:2290
 #, no-c-format
 msgid "Search by Group ID"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2052
+#: audit_components.xml:2292
 #, no-c-format
 msgid ""
 "View records related to any of the group IDs (both group ID and effective "
 "group ID) with the <command>ausearch</command> <option>-ga</option> command. "
 "View reports related to a particular user ID with <command>ausearch</"
-"command> <option>-gi <replaceable>GID</replaceable></option>. Search for "
+"command> <option>-gi <replaceable>GID</replaceable></option> . Search for "
 "records related to a particular effective group ID, use <command>ausearch</"
-"command> <option>-ge <replaceable>EGID</replaceable></option>."
+"command> <option>-ge <replaceable>EGID</replaceable></option> ."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2064
+#: audit_components.xml:2304
 #, no-c-format
 msgid "Search by Command Line Name"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2066
+#: audit_components.xml:2306
 #, no-c-format
 msgid ""
 "View records related to a certain command, using the <command>ausearch</"
@@ -2944,13 +3117,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2076
+#: audit_components.xml:2316
 #, no-c-format
 msgid "Search by Executable Name"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2078
+#: audit_components.xml:2318
 #, no-c-format
 msgid ""
 "View records related to a certain executable with the <command>ausearch</"
@@ -2960,13 +3133,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2088
+#: audit_components.xml:2328
 #, no-c-format
 msgid "Search by System Call Name"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2090
+#: audit_components.xml:2330
 #, no-c-format
 msgid ""
 "View records related to a certain system call with the <command>ausearch</"
@@ -2976,13 +3149,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2100
+#: audit_components.xml:2340
 #, no-c-format
 msgid "Search by Process ID"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2102
+#: audit_components.xml:2342
 #, no-c-format
 msgid ""
 "View records related to a certain process ID with the <command>ausearch</"
@@ -2992,119 +3165,113 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2112
+#: audit_components.xml:2352
 #, no-c-format
 msgid "Search by Event or System Call Success Value"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2114
+#: audit_components.xml:2354
 #, no-c-format
 msgid ""
 "View records containing a certain system call success value with "
 "<command>ausearch</command> <option>-sv <replaceable>SUCCESS_VALUE</"
-"replaceable></option>, for example, <command>ausearch</command> <option>-sv "
+"replaceable></option> , for example, <command>ausearch</command> <option>-sv "
 "yes</option> for all successful system calls."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2124
+#: audit_components.xml:2364
 #, no-c-format
 msgid "Search by File Name"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2126
+#: audit_components.xml:2366
 #, no-c-format
 msgid ""
 "View records containing a certain file name with <command>ausearch</command> "
-"<option>-f <replaceable>FILE_NAME</replaceable></option>, for example, "
+"<option>-f <replaceable>FILE_NAME</replaceable></option> , for example, "
 "<command>ausearch</command> <option>-f /foo/bar</option> for all records "
 "related to the <filename>/foo/bar</filename> file. Using the file name alone "
 "would work as well, but using relative paths does not work."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2138
+#: audit_components.xml:2378
 #, no-c-format
 msgid "Search by Terminal"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2140
+#: audit_components.xml:2380
 #, no-c-format
 msgid ""
 "View records of events related to a certain terminal only with "
 "<command>ausearch</command> <option>-tm <replaceable>TERM</replaceable></"
-"option>, for example, <command>ausearch</command> <option>-tm ssh</option> "
+"option> , for example, <command>ausearch</command> <option>-tm ssh</option> "
 "to view all records related to events on the SSH terminal and "
 "<command>ausearch</command> <option>-tm tty</option> to view all events "
 "related to the console."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2152
+#: audit_components.xml:2392
 #, no-c-format
 msgid "Search by Host Name"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2154
+#: audit_components.xml:2394
 #, no-c-format
 msgid ""
 "View records related to a certain remote host name with <command>ausearch</"
-"command> <option>-hn <replaceable>HOSTNAME</replaceable></option>, for "
-"example, <command>ausearch</command> <option>-hn &wsIname;</option>. You can "
-"use a host name, fully qualified domain name, or numeric network address."
+"command> <option>-hn <replaceable>HOSTNAME</replaceable></option> , for "
+"example, <command>ausearch</command> <option>-hn &wsIname;</option> . You "
+"can use a host name, fully qualified domain name, or numeric network address."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2165
+#: audit_components.xml:2405
 #, no-c-format
 msgid "Search by Key Field"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2167
+#: audit_components.xml:2407
 #, no-c-format
 msgid ""
 "View records that contain a certain key assigned in the audit rule set to "
 "identify events of a particular type. Use the <command>ausearch</command> "
-"<option>-k <replaceable>KEY_FIELD</replaceable></option>, for example, "
+"<option>-k <replaceable>KEY_FIELD</replaceable></option> , for example, "
 "<command>ausearch</command> <option>-k CFG_etc</option> to display any "
 "records containing the <literal>CFG_etc</literal> key."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2178
+#: audit_components.xml:2418
 #, no-c-format
 msgid "Search by Word"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2180
+#: audit_components.xml:2420
 #, no-c-format
 msgid ""
 "View records that contain a certain string assigned in the audit rule set to "
 "identify events of a particular type. The whole string will be matched on "
 "file name, host name, and terminal. Use the <command>ausearch</command> "
-"<option>-w <replaceable>WORD</replaceable></option>."
-msgstr ""
-
-#. Tag: remark
-#: audit_components.xml:2187
-#, no-c-format
-msgid "jsegitz 2014-07-23: also matches SELinux context"
+"<option>-w <replaceable>WORD</replaceable></option> ."
 msgstr ""
 
 #. Tag: term
-#: audit_components.xml:2191
+#: audit_components.xml:2431
 #, no-c-format
 msgid "Limit a Search to a Certain Time Frame"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2193
+#: audit_components.xml:2433
 #, no-c-format
 msgid ""
 "Use <option>-ts</option> and <option>-te</option> to limit the scope of your "
@@ -3112,17 +3279,17 @@ msgid ""
 "specify the start date and time and the <option>-te</option> option is used "
 "to specify the end date and time. These options can be combined with any of "
 "the above. The use of these options is similar to use with "
-"<command>aureport</command>."
+"<command>aureport</command> ."
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:2206
+#: audit_components.xml:2446
 #, no-c-format
 msgid "Analyzing Processes with <command>autrace</command>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2208
+#: audit_components.xml:2448
 #, no-c-format
 msgid ""
 "In addition to monitoring your system using the rules you set up, you can "
@@ -3135,7 +3302,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2218
+#: audit_components.xml:2458
 #, no-c-format
 msgid ""
 "When performing an <command>autrace</command> on a process, make sure that "
@@ -3146,7 +3313,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:2226
+#: audit_components.xml:2466
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>auditctl -D</command>\n"
@@ -3162,30 +3329,30 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2228
+#: audit_components.xml:2477
 #, no-c-format
 msgid ""
 "Always use the full path to the executable to track with <command>autrace</"
-"command>. After the trace is complete, <command>autrace</command> provides "
+"command> . After the trace is complete, <command>autrace</command> provides "
 "the event ID of the trace, so you can analyze the entire data trail with "
-"<command>ausearch</command>. To restore the audit system to use the audit "
+"<command>ausearch</command> . To restore the audit system to use the audit "
 "rule set again, restart the audit daemon with <command>systemctl restart "
-"auditd</command>."
+"auditd</command> ."
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:2238
+#: audit_components.xml:2487
 #, no-c-format
 msgid "Visualizing Audit Data"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2240
+#: audit_components.xml:2489
 #, no-c-format
 msgid ""
 "Neither the data trail in <filename>/var/log/audit/audit.log</filename> nor "
-"the different report types generated by <command>aureport</command>, "
-"described in <xref linkend=\"sec.audit.aureport.gen\"/>, provide an "
+"the different report types generated by <command>aureport</command> , "
+"described in <xref linkend=\"sec.audit.aureport.gen\"/> , provide an "
 "intuitive reading experience to the user. The <command>aureport</command> "
 "output is formatted in columns and thus easily available to any sed, Perl, "
 "or awk scripts that users might connect to the audit framework to visualize "
@@ -3193,10 +3360,10 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2250
+#: audit_components.xml:2499
 #, no-c-format
 msgid ""
-"The visualization scripts (see <xref linkend=\"sec.audit.viz\"/>) are one "
+"The visualization scripts (see <xref linkend=\"sec.audit.viz\"/> ) are one "
 "example of how to use standard Linux tools available with &productname; or "
 "any other Linux distribution to create easy-to-read audit output. The "
 "following examples help you understand how the plain audit reports can be "
@@ -3204,7 +3371,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2258
+#: audit_components.xml:2507
 #, no-c-format
 msgid ""
 "The first example illustrates the relationship of programs and system calls. "
@@ -3214,7 +3381,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:2265
+#: audit_components.xml:2514
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>aureport -s -i</command>\n"
@@ -3230,7 +3397,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2267
+#: audit_components.xml:2525
 #, no-c-format
 msgid ""
 "The first thing that the visualization script needs to do on this report is "
@@ -3241,7 +3408,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:2275
+#: audit_components.xml:2533
 #, no-c-format
 msgid ""
 "LC_ALL=C aureport -s -i | awk '/^[0-9]/ { print $6\" \"$4 }' | sort | uniq | "
@@ -3249,23 +3416,23 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:2295
+#: audit_components.xml:2553
 #, no-c-format
 msgid "Flow Graph&mdash;Program versus System Call Relationship"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2306
+#: audit_components.xml:2564
 #, no-c-format
 msgid ""
 "The second example illustrates the different types of events and how many of "
 "each type have been logged. The appropriate <command>aureport</command> "
 "command to extract this kind of information is <command>aureport -e</"
-"command>:"
+"command> :"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:2313
+#: audit_components.xml:2571
 #, no-c-format
 msgid ""
 "&prompt.sudo;aureport -e -i --summary\n"
@@ -3286,7 +3453,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2315
+#: audit_components.xml:2587
 #, no-c-format
 msgid ""
 "Because this type of report already contains a two column output, it is only "
@@ -3294,34 +3461,34 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:2320
+#: audit_components.xml:2592
 #, no-c-format
 msgid "&prompt.sudo;aureport -e -i --summary  | mkbar events"
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:2323
+#: audit_components.xml:2595
 #, no-c-format
 msgid "Bar Chart&mdash;Common Event Types"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2334
+#: audit_components.xml:2606
 #, no-c-format
 msgid ""
 "For background information about the visualization of audit data, refer to "
 "the Web site of the audit project at <link xlink:href=\"http://people.redhat."
-"com/sgrubb/audit/visualize/index.html\"></link>."
+"com/sgrubb/audit/visualize/index.html\"/> ."
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:2341
+#: audit_components.xml:2613
 #, no-c-format
 msgid "Relaying Audit Event Notifications"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2343
+#: audit_components.xml:2615
 #, no-c-format
 msgid ""
 "The auditing system also allows external applications to access and use the "
@@ -3332,26 +3499,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2352
+#: audit_components.xml:2624
 #, no-c-format
 msgid ""
 "<systemitem class=\"daemon\">audispd</systemitem> is a daemon which controls "
 "the audit dispatcher. It is normally started by <systemitem class=\"daemon"
-"\">auditd</systemitem>. <systemitem class=\"daemon\">audispd</systemitem> "
+"\">auditd</systemitem> . <systemitem class=\"daemon\">audispd</systemitem> "
 "takes audit events and distributes them to the programs which want to "
 "analyze them in real time. Configuration of <systemitem class=\"daemon"
 "\">auditd</systemitem> is stored in <filename>/etc/audisp/audispd.conf</"
-"filename>. The file has the following options:"
+"filename> . The file has the following options:"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2365
+#. Tag: term
+#: audit_components.xml:2637
 #, no-c-format
-msgid "q_depth"
+msgid "<literal>q_depth</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2368
+#: audit_components.xml:2640
 #, no-c-format
 msgid ""
 "Specifies the size of the event dispatcher internal queue. If syslog "
@@ -3359,14 +3526,14 @@ msgid ""
 "is 80."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2376
+#. Tag: term
+#: audit_components.xml:2648
 #, no-c-format
-msgid "overflow_action"
+msgid "<literal>overflow_action</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2379
+#: audit_components.xml:2651
 #, no-c-format
 msgid ""
 "Specifies the way the audit daemon will react to the internal queue "
@@ -3377,8 +3544,14 @@ msgid ""
 "(shuts the system down)."
 msgstr ""
 
+#. Tag: term
+#: audit_components.xml:2662
+#, no-c-format
+msgid "<literal>priority_boost</literal>"
+msgstr ""
+
 #. Tag: para
-#: audit_components.xml:2393
+#: audit_components.xml:2665
 #, no-c-format
 msgid ""
 "Specifies the priority for the audit event dispatcher (in addition to the "
@@ -3386,14 +3559,14 @@ msgid ""
 "priority."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2401
+#. Tag: term
+#: audit_components.xml:2673
 #, no-c-format
-msgid "name_format"
+msgid "<literal>name_format</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2404
+#: audit_components.xml:2676
 #, no-c-format
 msgid ""
 "Specifies the way the computer node name is inserted into the audit event. "
@@ -3402,26 +3575,32 @@ msgid ""
 "systemitem> system call), <option>fqd</option> (fully qualified domain name "
 "of the machine), <option>numeric</option> (IP address of the machine), or "
 "<option>user</option> (user defined string from the <option>name</option> "
-"option). Default is <option>none</option>."
+"option). Default is <option>none</option> ."
+msgstr ""
+
+#. Tag: term
+#: audit_components.xml:2689
+#, no-c-format
+msgid "<literal>name</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2420
+#: audit_components.xml:2692
 #, no-c-format
 msgid ""
 "Specifies a user defined string which identifies the machine. The "
-"<option>name_format</option> option must be set to <option>user</option>, "
+"<option>name_format</option> option must be set to <option>user</option> , "
 "otherwise this option is ignored."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2428
+#. Tag: term
+#: audit_components.xml:2700
 #, no-c-format
-msgid "max_restarts"
+msgid "<literal>max_restarts</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2431
+#: audit_components.xml:2703
 #, no-c-format
 msgid ""
 "A non-negative number that tells the audit event dispatcher how many times "
@@ -3429,16 +3608,17 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:2440
+#: audit_components.xml:2712
 #, no-c-format
 msgid "Example /etc/audisp/audispd.conf"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:2441
+#: audit_components.xml:2713
 #, no-c-format
 msgid ""
-"q_depth = 80\n"
+"\n"
+"  q_depth = 80\n"
 "  overflow_action = SYSLOG\n"
 "  priority_boost = 4\n"
 "  name_format = HOSTNAME\n"
@@ -3446,7 +3626,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2444
+#: audit_components.xml:2721
 #, no-c-format
 msgid ""
 "The plug-in programs install their configuration files in a special "
@@ -3455,68 +3635,75 @@ msgid ""
 "plug-in configuration files have the following options:"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2453
+#. Tag: term
+#: audit_components.xml:2730
 #, no-c-format
-msgid "active"
+msgid "<literal>active</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2456
+#: audit_components.xml:2733
 #, no-c-format
 msgid ""
 "Specifies if the program will use <systemitem class=\"daemon\">audispd</"
-"systemitem>. Possible values are <option>yes</option> or <option>no</option>."
+"systemitem> . Possible values are <option>yes</option> or <option>no</"
+"option> ."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2464
+#. Tag: term
+#: audit_components.xml:2741
 #, no-c-format
-msgid "direction"
+msgid "<literal>direction</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2467
+#: audit_components.xml:2744
 #, no-c-format
 msgid ""
 "Specifies the way the plug-in was designed to communicate with audit. It "
 "informs the event dispatcher in which directions the events flow. Possible "
-"values are <option>in</option> or <option>out</option>."
+"values are <option>in</option> or <option>out</option> ."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2475
+#. Tag: term
+#: audit_components.xml:2752
 #, no-c-format
-msgid "path"
+msgid "<literal>path</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2478
+#: audit_components.xml:2755
 #, no-c-format
 msgid ""
 "Specifies the absolute path to the plug-in executable. In case of internal "
 "plug-ins, this option specifies the plug-in name."
 msgstr ""
 
+#. Tag: term
+#: audit_components.xml:2762
+#, no-c-format
+msgid "<literal>type</literal>"
+msgstr ""
+
 #. Tag: para
-#: audit_components.xml:2488
+#: audit_components.xml:2765
 #, no-c-format
 msgid ""
 "Specifies the way the plug-in is to be run. Possible values are "
-"<option>builtin</option> or <option>always</option>. Use <option>builtin</"
-"option> for internal plug-ins (<literal>af_unix</literal> and "
-"<literal>syslog</literal>) and <option>always</option> for most (if not all) "
-"other plug-ins. Default is <option>always</option>."
+"<option>builtin</option> or <option>always</option> . Use <option>builtin</"
+"option> for internal plug-ins ( <literal>af_unix</literal> and "
+"<literal>syslog</literal> ) and <option>always</option> for most (if not "
+"all) other plug-ins. Default is <option>always</option> ."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2499
+#. Tag: term
+#: audit_components.xml:2776
 #, no-c-format
-msgid "args"
+msgid "<literal>args</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2502
+#: audit_components.xml:2779
 #, no-c-format
 msgid ""
 "Specifies the argument that is passed to the plug-in program. Normally, plug-"
@@ -3524,35 +3711,36 @@ msgid ""
 "need to receive any arguments. There is a limit of 2 arguments."
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:2511
+#. Tag: term
+#: audit_components.xml:2788
 #, no-c-format
-msgid "format"
+msgid "<literal>format</literal>"
 msgstr ""
 
 #. Tag: para
-#: audit_components.xml:2514
+#: audit_components.xml:2791
 #, no-c-format
 msgid ""
 "Specifies the format of data that the audit dispatcher passes to the plug-in "
 "program. Valid options are <option>binary</option> or <option>string</"
-"option>. <option>binary</option> passes the data exactly as the event "
+"option> . <option>binary</option> passes the data exactly as the event "
 "dispatcher receives them from the audit daemon. <option>string</option> "
 "instructs the dispatcher to change the event into a string that is parseable "
-"by the audit parsing library. Default is <option>string</option>."
+"by the audit parsing library. Default is <option>string</option> ."
 msgstr ""
 
 #. Tag: title
-#: audit_components.xml:2528
+#: audit_components.xml:2805
 #, no-c-format
 msgid "Example /etc/audisp/plugins.d/syslog.conf"
 msgstr ""
 
 #. Tag: screen
-#: audit_components.xml:2529
+#: audit_components.xml:2806
 #, no-c-format
 msgid ""
-"active = no\n"
+"\n"
+"  active = no\n"
 "  direction = out\n"
 "  path = builtin_syslog\n"
 "  type = builtin\n"

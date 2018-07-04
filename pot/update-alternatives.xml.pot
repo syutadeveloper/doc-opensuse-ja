@@ -5,19 +5,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-07-03 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: xml-stylesheet
+#: update-alternatives.xml:5
+#, no-c-format
+msgid "<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook51-profile.xsl\" type=\"text/xml\" title=\"Profiling step\"?>"
+msgstr ""
 
 #. Tag: title
 #: update-alternatives.xml:17
 #, no-c-format
-msgid "<command>update-alternatives</command>: Managing Multiple Versions of Commands and Files"
+msgid "<command>update-alternatives</command> : Managing Multiple Versions of Commands and Files"
 msgstr ""
 
 #. Tag: para
@@ -26,10 +32,10 @@ msgstr ""
 msgid "Often, there are several versions of the same tool installed on a system. To give administrators a choice and to make it possible to install and use different versions side by side, the alternatives system allows managing such versions consistently."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: update-alternatives.xml:28
+#. Tag: dm:translation
+#: update-alternatives.xml:30
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: title
@@ -41,7 +47,7 @@ msgstr ""
 #. Tag: para
 #: update-alternatives.xml:36
 #, no-c-format
-msgid "On &productname;, some programs perform the same or similar tasks. For example, if Java 1.7 and Java 1.8 are both installed on the system, the &as; script (<command>update-alternatives</command>) is called from inside the RPM package. By default, the &as; will refer to version 1.8: Higher versions also have a higher priority. However, the administrator can change the default and can point the generic name to version 1.7."
+msgid "On &productname;, some programs perform the same or similar tasks. For example, if Java 1.7 and Java 1.8 are both installed on the system, the &as; script ( <command>update-alternatives</command> ) is called from inside the RPM package. By default, the &as; will refer to version 1.8: Higher versions also have a higher priority. However, the administrator can change the default and can point the generic name to version 1.7."
 msgstr ""
 
 #. Tag: para
@@ -69,229 +75,237 @@ msgid "The default <filename class=\"directory\">/var/lib/rpm/alternatives</file
 msgstr ""
 
 #. Tag: term
-#: update-alternatives.xml:59
+#: update-alternatives.xml:60
 #, no-c-format
 msgid "Alternative"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:61
+#: update-alternatives.xml:62
 #, no-c-format
 msgid "The name of a specific file in the file system, which can be made accessible via a generic name using the &as;."
 msgstr ""
 
 #. Tag: term
-#: update-alternatives.xml:68
+#: update-alternatives.xml:69
 #, no-c-format
 msgid "Alternatives directory"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:70
+#: update-alternatives.xml:71
 #, no-c-format
 msgid "The default <filename class=\"directory\">/etc/alternatives</filename> directory containing symbolic links."
 msgstr ""
 
 #. Tag: term
-#: update-alternatives.xml:77
+#: update-alternatives.xml:78
 #, no-c-format
 msgid "Generic name"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:79
+#: update-alternatives.xml:80
 #, no-c-format
-msgid "A name (for example, <command>/usr/bin/edit</command>) that refers to one file out of several available using the &as;."
+msgid "A name (for example, <command>/usr/bin/edit</command> ) that refers to one file out of several available using the &as;."
 msgstr ""
 
 #. Tag: term
-#: update-alternatives.xml:86
+#: update-alternatives.xml:87
 #, no-c-format
 msgid "Link group"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:88
+#: update-alternatives.xml:89
 #, no-c-format
 msgid "A set of related symbolic links that can be updated as a group."
 msgstr ""
 
 #. Tag: term
-#: update-alternatives.xml:94
+#: update-alternatives.xml:95
 #, no-c-format
 msgid "Master link"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:96
+#: update-alternatives.xml:97
 #, no-c-format
 msgid "The link in a link group that determines how the other links in the group are configured."
 msgstr ""
 
 #. Tag: term
-#: update-alternatives.xml:103
+#: update-alternatives.xml:104
 #, no-c-format
 msgid "Slave link"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:105
+#: update-alternatives.xml:106
 #, no-c-format
 msgid "A link in a link group controlled by the master link."
 msgstr ""
 
 #. Tag: term
-#: update-alternatives.xml:111
+#: update-alternatives.xml:112
 #, no-c-format
 msgid "Symbolic link (Symlink)"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:113
+#: update-alternatives.xml:114
 #, no-c-format
 msgid "A file that is a reference to another file in the same file system. The &as; uses symbolic links in the alternatives directory to switch between versions of a file."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:118
+#: update-alternatives.xml:119
 #, no-c-format
 msgid "Symbolic links in the alternatives directory can be modified by the administrator through the <command>update-alternatives</command> command."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:126
+#: update-alternatives.xml:127
 #, no-c-format
 msgid "The &as; provides the <command>update-alternatives</command> command to create, remove, maintain, and show information about symbolic links. While these symbolic links usually point to commands, they can also point to JAR archives, man pages, and other files. Examples in this chapter use commands and man pages, but they are also applicable to other file types."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:134
+#: update-alternatives.xml:135
 #, no-c-format
 msgid "The &as; uses the alternatives directory to collect links to possible alternatives. When a new package with an alternative is installed, the new alternative is added to the system. Whether the new package's alternative is selected as the default depends on its priority and on the mode that is set. Usually, packages with a higher version also have a higher priority. The &as; can operate in two modes:"
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:146
+#: update-alternatives.xml:147
 #, no-c-format
 msgid "Automatic Mode"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:147
+#: update-alternatives.xml:148
 #, no-c-format
 msgid "In this mode, the &as; ensures that the links in the group point to the highest priority alternatives appropriate for the group."
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:155
+#: update-alternatives.xml:156
 #, no-c-format
 msgid "Manual Mode"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:156
+#: update-alternatives.xml:157
 #, no-c-format
 msgid "In this mode, the &as; does not make any changes to the system administrator's settings."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:163
+#: update-alternatives.xml:164
 #, no-c-format
 msgid "For example, the <command>java</command> command has the following link hierarchy in the &as;:"
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:168
+#: update-alternatives.xml:169
 #, no-c-format
 msgid "&AS; of the <command>java</command> Command"
 msgstr ""
 
-#. Tag: screen
-#: update-alternatives.xml:169
+#. Tag: #text
+#: update-alternatives.xml:170
 #, no-c-format
-msgid ""
-      "/usr/bin/java <co xml:id=\"co.ua.java.name\"/>\n"
-      " -> /etc/alternatives/java <co xml:id=\"co.ua.java.symbolic-link\"/>\n"
-      "     -> /usr/lib64/jvm/jre-1.8.0-openjdk/bin/java <co xml:id=\"co.ua.java.alternatives\"/>"
+msgid "/usr/bin/java"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:171
+#, no-c-format
+msgid "-&gt; /etc/alternatives/java"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:172
+#, no-c-format
+msgid "-&gt; /usr/lib64/jvm/jre-1.8.0-openjdk/bin/java"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:173
+#: update-alternatives.xml:179
 #, no-c-format
 msgid "The generic name."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:178
+#: update-alternatives.xml:184
 #, no-c-format
 msgid "The symbolic link in the alternatives directory."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:183
+#: update-alternatives.xml:189
 #, no-c-format
 msgid "One of the alternatives."
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:192
+#: update-alternatives.xml:198
 #, no-c-format
 msgid "Use Cases"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:193
+#: update-alternatives.xml:199
 #, no-c-format
 msgid "By default, the <command>update-alternatives</command> script is called from inside an RPM package. When a package is installed or removed, the script takes care of all its symbolic links. But you can run it manually from the command line for:"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:201
+#: update-alternatives.xml:207
 #, no-c-format
 msgid "displaying the current alternatives for a generic name."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:206
+#: update-alternatives.xml:212
 #, no-c-format
 msgid "changing the defaults of an alternative."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:211
+#: update-alternatives.xml:217
 #, no-c-format
 msgid "creating a set of related files for an alternative."
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:219
+#: update-alternatives.xml:225
 #, no-c-format
 msgid "Getting an Overview of Alternatives"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:220
+#: update-alternatives.xml:226
 #, no-c-format
 msgid "To retrieve the names of all configured alternatives, use:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:223
+#: update-alternatives.xml:229
 #, no-c-format
 msgid "&prompt.user;<command>ls /var/lib/alternatives</command>"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:224
+#: update-alternatives.xml:230
 #, no-c-format
 msgid "To get an overview of all configured alternatives and their values, use"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:227
+#: update-alternatives.xml:233
 #, no-c-format
-msgid ""
-      "&prompt.sudo;<command>update-alternatives --get-selections</command>\n"
+msgid "&prompt.sudo;<command>update-alternatives --get-selections</command>\n"
       "asadmin                        auto     /usr/bin/asadmin-2.7\n"
       "awk                            auto     /usr/bin/gawk\n"
       "chardetect                     auto     /usr/bin/chardetect-3.6\n"
@@ -301,42 +315,40 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:231
+#: update-alternatives.xml:243
 #, no-c-format
 msgid "Viewing Details on Specific Alternatives"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:232
+#: update-alternatives.xml:244
 #, no-c-format
 msgid "The easiest way to check the alternatives is to follow the symbolic links of your command. For example, if you want to know what the <command>java</command> command is referring to, use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:238
+#: update-alternatives.xml:250
 #, no-c-format
-msgid ""
-      "&prompt.user;<command>readlink --canonicalize /usr/bin/java</command>\n"
+msgid "&prompt.user;<command>readlink --canonicalize /usr/bin/java</command>\n"
       "/usr/lib64/jvm/jre-1.8.0-openjdk/bin/java"
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:239
-#, no-c-format
-msgid "If you see the same path (in our example, it is <filename>/usr/bin/java</filename>), there are no alternatives available for this command."
 msgstr ""
 
 #. Tag: para
 #: update-alternatives.xml:252
 #, no-c-format
+msgid "If you see the same path (in our example, it is <filename>/usr/bin/java</filename> ), there are no alternatives available for this command."
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:272
+#, no-c-format
 msgid "To see the full alternatives (including slaves), use the <option>--display</option> option:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:256
+#: update-alternatives.xml:276
 #, no-c-format
-msgid ""
-      "&prompt.sudo;<command>update-alternatives --display java</command>\n"
+msgid "&prompt.sudo;<command>update-alternatives --display java</command>\n"
       "java - auto mode\n"
       "  link best version is /usr/lib64/jvm/jre-1.8.0-openjdk/bin/java\n"
       "  link currently points to /usr/lib64/jvm/jre-1.8.0-openjdk/bin/java\n"
@@ -352,38 +364,36 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:260
+#: update-alternatives.xml:292
 #, no-c-format
 msgid "Setting the Default Version of Alternatives"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:261
+#: update-alternatives.xml:293
 #, no-c-format
 msgid "By default, commands in <filename>/usr/bin</filename> refer to the alternatives directory with the highest priority. For example, by default, the command <command>java</command> shows the following version number:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:267
+#: update-alternatives.xml:299
 #, no-c-format
-msgid ""
-      "&prompt.user;<command>java -version</command>\n"
+msgid "&prompt.user;<command>java -version</command>\n"
       "openjdk version \"1.8.0_151\"\n"
       "OpenJDK Runtime Environment (IcedTea 3.6.0) (build 1.8.0_151-b12 suse-10.18.2-x86_64)\n"
       "OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode)"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:268
+#: update-alternatives.xml:303
 #, no-c-format
 msgid "To change the default <command>java</command> command to refer to a previous version, run:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:272
+#: update-alternatives.xml:307
 #, no-c-format
-msgid ""
-      "&prompt.sudo;<command>update-alternatives --config java</command>\n"
+msgid "&prompt.sudo;<command>update-alternatives --config java</command>\n"
       "root's password:\n"
       "There are 2 choices for the alternative java (providing /usr/bin/java).\n"
       "\n"
@@ -393,166 +403,178 @@ msgid ""
       "  1            /usr/lib64/jvm/jre-1.7.0-openjdk/bin/java   1705      manual mode\n"
       "  2            /usr/lib64/jvm/jre-1.8.0-openjdk/bin/java   1805      manual mode\n"
       "\n"
-      "Press &lt;enter> to keep the current choice[*], or type selection number:"
+      "Press &lt;enter&gt; to keep the current choice[*], or type selection number:"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:273
+#: update-alternatives.xml:318
 #, no-c-format
-msgid "Depending on your system and installed versions, the exact Java version number will be different. After you have selected <literal>1</literal>, <command>java</command> shows the following version number:"
+msgid "Depending on your system and installed versions, the exact Java version number will be different. After you have selected <literal>1</literal> , <command>java</command> shows the following version number:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:279
+#: update-alternatives.xml:324
 #, no-c-format
-msgid ""
-      "&prompt.user;<command>java -version</command>\n"
+msgid "&prompt.user;<command>java -version</command>\n"
       "java version \"1.7.0_141\"\n"
       "OpenJDK Runtime Environment (IcedTea 2.6.10) (suse-42.3.1-x86_64)\n"
       "OpenJDK 64-Bit Server VM (build 24.141-b02, mixed mode)"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:280
+#: update-alternatives.xml:328
 #, no-c-format
 msgid "Also, keep in mind the following points:"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:285
+#: update-alternatives.xml:333
 #, no-c-format
 msgid "When working in manual mode and installing another Java version, the &as; neither touches the links nor changes the generic name."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:292
+#: update-alternatives.xml:340
 #, no-c-format
-msgid "When working in automatic mode and installing another Java version, the &as; changes the Java master link and all slave links (as you can see in <xref linkend=\"sec.ua.view\"/>). To check the master-slave relationships, use:"
+msgid "When working in automatic mode and installing another Java version, the &as; changes the Java master link and all slave links (as you can see in <xref linkend=\"sec.ua.view\"/> ). To check the master-slave relationships, use:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:298
+#: update-alternatives.xml:346
 #, no-c-format
 msgid "&prompt.sudo;<command>update-alternatives --display java</command>"
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:304
+#: update-alternatives.xml:352
 #, no-c-format
 msgid "Installing Custom Alternatives"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:305
+#: update-alternatives.xml:353
 #, no-c-format
 msgid "This section describes how to set up custom alternatives on a system. The example makes the following assumptions:"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:311
+#: update-alternatives.xml:359
 #, no-c-format
-msgid "There are two scripts, <command>foo-2</command> and <command>foo-3</command>, with similar functionality."
+msgid "There are two scripts, <command>foo-2</command> and <command>foo-3</command> , with similar functionality."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:317
+#: update-alternatives.xml:365
 #, no-c-format
-msgid "The scripts are stored in the <filename>/usr/local/bin</filename> directory to avoid any conflicts with the system tools in <filename>/usr/bin</filename>."
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:324
-#, no-c-format
-msgid "There is a master link <command>foo</command> that points to either <command>foo-2</command> or <command>foo-3</command>."
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:330
-#, no-c-format
-msgid "To provide alternatives on your system, follow these steps:"
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:335
-#, no-c-format
-msgid "Copy your scripts into the <filename>/usr/local/bin</filename> directory."
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:340
-#, no-c-format
-msgid "Make the scripts executable:"
-msgstr ""
-
-#. Tag: screen
-#: update-alternatives.xml:343
-#, no-c-format
-msgid "&prompt.sudo;<command>chmod +x /usr/local/bin/foo-{2,3}</command>"
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:346
-#, no-c-format
-msgid "Run <command>update-alternatives</command> for both scripts:"
-msgstr ""
-
-#. Tag: screen
-#: update-alternatives.xml:349
-#, no-c-format
-msgid ""
-      "&prompt.sudo;update-alternatives --install \\\n"
-      "   /usr/local/bin/foo <co xml:id=\"co.ua.ua-install.usr-local-bin-foo\"/>\\\n"
-      "   foo <co xml:id=\"co.ua.ua-install.foo\"/>\\\n"
-      "   /usr/local/bin/foo-2 <co xml:id=\"co.ua.ua-install.usr-local-bin-foo.path\"/>\\\n"
-      "   200 <co xml:id=\"co.ua.ua-install.prio\"/>\n"
-      "&prompt.sudo;update-alternatives --install \\\n"
-      "   /usr/local/bin/foo <xref linkend=\"co.ua.ua-install.usr-local-bin-foo\"/>\\\n"
-      "   foo <xref linkend=\"co.ua.ua-install.foo\"/>\\\n"
-      "   /usr/local/bin/foo-3 <xref linkend=\"co.ua.ua-install.usr-local-bin-foo.path\"/>\\\n"
-      "   300 <xref linkend=\"co.ua.ua-install.prio\"/>"
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:350
-#, no-c-format
-msgid "The options after <option>--install</option> have the following meanings:"
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:355
-#, no-c-format
-msgid "The generic name. To avoid confusion, this is usually the script name without any version numbers."
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:361
-#, no-c-format
-msgid "The name of the master link. Must be the same."
-msgstr ""
-
-#. Tag: para
-#: update-alternatives.xml:366
-#, no-c-format
-msgid "The path to the original script(s) located in <filename>/usr/local/bin</filename>."
+msgid "The scripts are stored in the <filename>/usr/local/bin</filename> directory to avoid any conflicts with the system tools in <filename>/usr/bin</filename> ."
 msgstr ""
 
 #. Tag: para
 #: update-alternatives.xml:372
 #, no-c-format
-msgid "The priority. We give <command>foo-2</command> a lower priority than <command>foo-3</command>. It is good practice to use a significant number increase to separate priorities. For example, a priority of 200 for <command>foo-2</command> and 300 for <command>foo-3</command>."
+msgid "There is a master link <command>foo</command> that points to either <command>foo-2</command> or <command>foo-3</command> ."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:384 update-alternatives.xml:458
+#: update-alternatives.xml:378
 #, no-c-format
-msgid "Check the master link:"
+msgid "To provide alternatives on your system, follow these steps:"
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:383
+#, no-c-format
+msgid "Copy your scripts into the <filename>/usr/local/bin</filename> directory."
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:388
+#, no-c-format
+msgid "Make the scripts executable:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:387
+#: update-alternatives.xml:391
 #, no-c-format
-msgid ""
-      "&prompt.sudo;<command>update-alternatives --display foo</command>\n"
+msgid "&prompt.sudo;<command>chmod +x /usr/local/bin/foo-{2,3}</command>"
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:394
+#, no-c-format
+msgid "Run <command>update-alternatives</command> for both scripts:"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:400
+#, no-c-format
+msgid "\\ /usr/local/bin/foo-2"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:401
+#, no-c-format
+msgid "\\ 200"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:402
+#, no-c-format
+msgid "&prompt.sudo;update-alternatives --install \\ /usr/local/bin/foo"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:404
+#, no-c-format
+msgid "\\ foo"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:405
+#, no-c-format
+msgid "\\ /usr/local/bin/foo-3"
+msgstr ""
+
+#. Tag: #text
+#: update-alternatives.xml:406
+#, no-c-format
+msgid "\\ 300"
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:407
+#, no-c-format
+msgid "The options after <option>--install</option> have the following meanings:"
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:412
+#, no-c-format
+msgid "The generic name. To avoid confusion, this is usually the script name without any version numbers."
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:418
+#, no-c-format
+msgid "The name of the master link. Must be the same."
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:423
+#, no-c-format
+msgid "The path to the original script(s) located in <filename>/usr/local/bin</filename> ."
+msgstr ""
+
+#. Tag: para
+#: update-alternatives.xml:429
+#, no-c-format
+msgid "The priority. We give <command>foo-2</command> a lower priority than <command>foo-3</command> . It is good practice to use a significant number increase to separate priorities. For example, a priority of 200 for <command>foo-2</command> and 300 for <command>foo-3</command> ."
+msgstr ""
+
+#. Tag: screen
+#: update-alternatives.xml:444
+#, no-c-format
+msgid "&prompt.sudo;<command>update-alternatives --display foo</command>\n"
       "foo - auto mode\n"
       "  link best version is /usr/local/bin/foo-3\n"
       "  link currently points to /usr/local/bin/foo-3\n"
@@ -562,34 +584,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:390
+#: update-alternatives.xml:453
 #, no-c-format
-msgid "After you completed the described steps, you can use the master link <command>/usr/local/bin/foo</command>."
+msgid "After you completed the described steps, you can use the master link <command>/usr/local/bin/foo</command> ."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:394
+#: update-alternatives.xml:457
 #, no-c-format
 msgid "If needed, you can install additional alternatives. To remove an alternative, use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:398
+#: update-alternatives.xml:461
 #, no-c-format
 msgid "&prompt.sudo;<command>update-alternatives --remove foo /usr/local/bin/foo-2</command>"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:399
+#: update-alternatives.xml:462
 #, no-c-format
 msgid "After this script has been removed, the &as; for the foo group looks like this:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:403
+#: update-alternatives.xml:466
 #, no-c-format
-msgid ""
-      "&prompt.sudo;<command>update-alternatives --display foo</command>\n"
+msgid "&prompt.sudo;<command>update-alternatives --display foo</command>\n"
       "foo - auto mode\n"
       "  link best version is /usr/local/bin/foo-3\n"
       "  link currently points to /usr/local/bin/foo-3\n"
@@ -598,76 +619,75 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:407
+#: update-alternatives.xml:475
 #, no-c-format
 msgid "Defining Dependent Alternatives"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:408
+#: update-alternatives.xml:476
 #, no-c-format
-msgid "If you have alternatives, the script itself is not enough. Most commands are not completely stand-alone: They usually ship with additional files, such as extensions, configurations, or man pages. To create alternatives which are dependent on a master link, use <emphasis>slave alternatives</emphasis>."
+msgid "If you have alternatives, the script itself is not enough. Most commands are not completely stand-alone: They usually ship with additional files, such as extensions, configurations, or man pages. To create alternatives which are dependent on a master link, use <emphasis>slave alternatives</emphasis> ."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:415
+#: update-alternatives.xml:483
 #, no-c-format
 msgid "Let us assume we want to extend our example in <xref linkend=\"sec.ua.install\"/> and provide man pages and configuration files:"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:421
+#: update-alternatives.xml:489
 #, no-c-format
 msgid "Two man pages, <filename>foo-2.1.gz</filename> and <filename>foo-3.1.gz</filename> stored in the <filename>/usr/local/man/man1</filename> directory."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:427
+#: update-alternatives.xml:495
 #, no-c-format
-msgid "Two configuration files, <filename>foo-2.conf</filename> and <filename>foo-3.conf</filename>, stored in <filename>/etc</filename>."
+msgid "Two configuration files, <filename>foo-2.conf</filename> and <filename>foo-3.conf</filename> , stored in <filename>/etc</filename> ."
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:433
+#: update-alternatives.xml:501
 #, no-c-format
 msgid "Follow these steps to add the additional files to your alternatives:"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:438
+#: update-alternatives.xml:506
 #, no-c-format
-msgid "Copy the configuration files into <filename>/etc</filename>:"
+msgid "Copy the configuration files into <filename>/etc</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:441
+#: update-alternatives.xml:509
 #, no-c-format
 msgid "&prompt.sudo;<command>cp foo-{2,3}.conf /etc</command>"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:444
+#: update-alternatives.xml:512
 #, no-c-format
 msgid "Copy the man pages into the <filename>/usr/local/man/man1</filename> directory:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:448
+#: update-alternatives.xml:516
 #, no-c-format
 msgid "&prompt.sudo;<command>cp foo-{2,3}.1.gz /usr/local/man/man1/</command>"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:451
+#: update-alternatives.xml:519
 #, no-c-format
 msgid "Add the slave links to the main scripts with the <option>--slave</option> option:"
 msgstr ""
 
 #. Tag: screen
-#: update-alternatives.xml:455
+#: update-alternatives.xml:523
 #, no-c-format
-msgid ""
-      "&prompt.sudo;<command>update-alternatives --install \\\n"
+msgid "&prompt.sudo;<command>update-alternatives --install \\\n"
       "   /usr/local/bin/foo foo /usr/local/bin/foo-2 200 \\\n"
       "   --slave /usr/local/man/man1/foo.1.gz \\\n"
       "   foo.1.gz \\\n"
@@ -685,11 +705,16 @@ msgid ""
       "   /etc/foo-3.conf</command>"
 msgstr ""
 
-#. Tag: screen
-#: update-alternatives.xml:459
+#. Tag: para
+#: update-alternatives.xml:541
 #, no-c-format
-msgid ""
-      "foo - auto mode\n"
+msgid "Check the master link:"
+msgstr ""
+
+#. Tag: screen
+#: update-alternatives.xml:542
+#, no-c-format
+msgid "foo - auto mode\n"
       "  link best version is /usr/local/bin/foo-3\n"
       "  link currently points to /usr/local/bin/foo-3\n"
       "  link foo is /usr/local/bin/foo\n"
@@ -704,20 +729,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:462
+#: update-alternatives.xml:556
 #, no-c-format
-msgid "If you change the links with <command>update-alternatives --config foo</command> to <command>foo-2</command>, then all slave links will change as well."
+msgid "If you change the links with <command>update-alternatives --config foo</command> to <command>foo-2</command> , then all slave links will change as well."
 msgstr ""
 
 #. Tag: title
-#: update-alternatives.xml:470
+#: update-alternatives.xml:564
 #, no-c-format
 msgid "Managing Alternatives with &yast;"
 msgstr ""
 
 #. Tag: para
-#: update-alternatives.xml:471
+#: update-alternatives.xml:565
 #, no-c-format
-msgid "To manage alternatives with &yast;, install the package <package>yast2-alternatives</package>. You can then start the module from the &yast; control center, using the entry <menuchoice><guimenu>Miscellaneous</guimenu> <guimenu>Alternatives</guimenu></menuchoice>."
+msgid "To manage alternatives with &yast;, install the package <package>yast2-alternatives</package> . You can then start the module from the &yast; control center, using the entry <menuchoice><guimenu>Miscellaneous</guimenu> <guimenu>Alternatives</guimenu></menuchoice> ."
 msgstr ""
 

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,8 +28,8 @@ msgstr ""
 msgid ""
 "Docker is a lightweight virtualization solution to run multiple virtual "
 "units (containers) simultaneously on a single control host. Containers are "
-"isolated with Kernel Control Groups (<xref linkend=\"vle.docker.cgroup\"/>) "
-"and <xref linkend=\"vle.docker.namespace\"/>."
+"isolated with Kernel Control Groups ( <xref linkend=\"vle.docker.cgroup\"/"
+"> ) and <xref linkend=\"vle.docker.namespace\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -103,9 +103,9 @@ msgid ""
 "<emphasis>virtual machine</emphasis> on the host server. A Docker image is "
 "made by a series of layers built one over the other. Each layer corresponds "
 "to a permanent change, for example an update of an application. The changes "
-"are stored in a file called a <emphasis>dockerfile</emphasis>. For more "
+"are stored in a file called a <emphasis>dockerfile</emphasis> . For more "
 "details see <link xlink:href=\"http://docs.docker.com/engine/reference/"
-"glossary#image\">the official Docker documentation</link>."
+"glossary#image\">the official Docker documentation</link> ."
 msgstr ""
 
 #. Tag: term
@@ -135,8 +135,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "A <emphasis>container</emphasis> is a running instance based on a particular "
-"Docker <xref linkend=\"Docker_Image\"/>. Each <emphasis>container</emphasis> "
-"can be distinguished by a unique container ID."
+"Docker <xref linkend=\"Docker_Image\"/> . Each <emphasis>container</"
+"emphasis> can be distinguished by a unique container ID."
 msgstr ""
 
 #. Tag: term
@@ -160,7 +160,7 @@ msgstr ""
 msgid ""
 "public registry - where everyone (usually registered) can download and use "
 "images. A typical public registry is <link xlink:href=\"https://hub.docker."
-"com/\">Docker Hub</link>."
+"com/\">Docker Hub</link> ."
 msgstr ""
 
 #. Tag: para
@@ -196,10 +196,10 @@ msgstr ""
 #: docker_overview.xml:147
 #, no-c-format
 msgid ""
-"<emphasis>Control groups</emphasis>, also called <literal>cgroups</literal>, "
-"is a Linux kernel feature that allows aggregating or partitioning tasks "
-"(processes) and all their children into hierarchically organized groups to "
-"isolate resources."
+"<emphasis>Control groups</emphasis> , also called <literal>cgroups</"
+"literal> , is a Linux kernel feature that allows aggregating or partitioning "
+"tasks (processes) and all their children into hierarchically organized "
+"groups to isolate resources."
 msgstr ""
 
 #. Tag: term
@@ -341,13 +341,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Docker uses a client/server architecture. You can use the <emphasis>CLI "
-"client</emphasis> to communicate with the <emphasis>daemon</emphasis>. The "
+"client</emphasis> to communicate with the <emphasis>daemon</emphasis> . The "
 "<emphasis>daemon</emphasis> then performs operations with containers and "
 "manages images locally or in registry. The <emphasis>CLI client</emphasis> "
 "can run on the same server as the host daemon or on a different machine. The "
 "<emphasis>CLI client</emphasis> communicates with the <emphasis>daemon</"
 "emphasis> by using network sockets. The architecture is depicted in <xref "
-"linkend=\"Docker_architecture\"/>."
+"linkend=\"Docker_architecture\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -392,7 +392,7 @@ msgstr ""
 #: docker_overview.xml:292
 #, no-c-format
 msgid ""
-"<systemitem class=\"resource\">vfs</systemitem>: this driver is "
+"<systemitem class=\"resource\">vfs</systemitem> : this driver is "
 "automatically used when the Docker host file system does not support copy-on-"
 "write. This is a simple driver which does not offer some advantages of "
 "Docker (like sharing layers, more on that in the next sections). It is "
@@ -403,16 +403,16 @@ msgstr ""
 #: docker_overview.xml:301
 #, no-c-format
 msgid ""
-"<systemitem class=\"resource\">devicemapper</systemitem>: this driver relies "
-"on the device-mapper thin provisioning module. It supports copy-on-write, "
-"hence it offers all the advantages of Docker."
+"<systemitem class=\"resource\">devicemapper</systemitem> : this driver "
+"relies on the device-mapper thin provisioning module. It supports copy-on-"
+"write, hence it offers all the advantages of Docker."
 msgstr ""
 
 #. Tag: para
 #: docker_overview.xml:308
 #, no-c-format
 msgid ""
-"<systemitem class=\"resource\">btrfs</systemitem>: this driver relies on "
+"<systemitem class=\"resource\">btrfs</systemitem> : this driver relies on "
 "Btrfs to provide all the features required by Docker. To use this driver the "
 "<filename>/var/lib/docker</filename> directory must be on a Btrfs file "
 "system."
@@ -422,7 +422,7 @@ msgstr ""
 #: docker_overview.xml:316
 #, no-c-format
 msgid ""
-"<systemitem class=\"resource\">AUFS</systemitem>: this driver relies on the "
+"<systemitem class=\"resource\">AUFS</systemitem> : this driver relies on the "
 "AUFS union file system. Neither the upstream kernel nor the SUSE one "
 "supports this file system. Hence the AUFS driver is not built into the SUSE "
 "Docker package."
@@ -436,17 +436,62 @@ msgid ""
 "use the <systemitem class=\"resource\">btrfs</systemitem> driver."
 msgstr ""
 
-#. Tag: para
-#: docker_overview.xml:328
+#. Tag: envar
+#: docker_overview.xml:330
+#, no-c-format
+msgid "DOCKER_OPTS"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:330
 #, no-c-format
 msgid ""
-"It is possible to specify which driver to use by changing the value of the "
-"<envar>DOCKER_OPTS</envar> variable defined inside of the <filename>/etc/"
-"sysconfig/docker</filename> file. This can be done either manually or using "
-"&yast; by browsing to <menuchoice> <guimenu>System</guimenu> <guimenu>/etc/"
-"sysconfig Editor</guimenu> <guimenu>System</guimenu> <guimenu>Management</"
-"guimenu> <guimenu>DOCKER_OPTS</guimenu> </menuchoice> menu and entering the "
-"<systemitem class=\"library\">-s storage_driver</systemitem> string."
+"It is possible to specify which driver to use by changing the value of the"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:331
+#, no-c-format
+msgid "variable defined inside of the"
+msgstr ""
+
+#. Tag: filename
+#: docker_overview.xml:331
+#, no-c-format
+msgid "/etc/sysconfig/docker"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:332
+#, no-c-format
+msgid "file. This can be done either manually or using &yast; by browsing to"
+msgstr ""
+
+#. Tag: menuchoice
+#: docker_overview.xml:332
+#, no-c-format
+msgid ""
+"<guimenu>System</guimenu> <guimenu>/etc/sysconfig Editor</guimenu> "
+"<guimenu>System</guimenu> <guimenu>Management</guimenu> "
+"<guimenu>DOCKER_OPTS</guimenu>"
+msgstr ""
+
+#. Tag: systemitem
+#: docker_overview.xml:336
+#, no-c-format
+msgid "-s storage_driver"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:336
+#, no-c-format
+msgid "menu and entering the"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:337
+#, no-c-format
+msgid "string."
 msgstr ""
 
 #. Tag: para
@@ -478,26 +523,49 @@ msgid ""
 "in case of a file system corruption."
 msgstr ""
 
-#. Tag: remark
-#: docker_overview.xml:351
+#. Tag: #text
+#: docker_overview.xml:357
 #, no-c-format
-msgid ""
-"2017-03-13 - fs: For SLE 12 SP3, check whether this still applies. Maybe a "
-"subvolume will be created by default, see bsc #102029."
+msgid "In case you choose the Btrfs file system for"
 msgstr ""
 
-#. Tag: para
-#: docker_overview.xml:355
+#. Tag: filename
+#: docker_overview.xml:359
+#, no-c-format
+msgid "/var/lib/docker"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:359
 #, no-c-format
 msgid ""
-"In case you choose the Btrfs file system for <filename>/var/lib/docker</"
-"filename>, it is strongly recommended to create a subvolume for it. This "
-"ensures that the directory is excluded from file system snapshots. If not "
-"excluding <filename>/var/lib/docker</filename> from snapshots, the file "
-"system will likely run out of disk space soon after you start deploying "
-"containers. What's more, a rollback to a previous snapshot will also reset "
-"the Docker database and images. Refer to <citetitle>Creating and Mounting "
-"New Subvolumes</citetitle> at <link xlink:href=\"https://www.suse.com/"
-"documentation/sles-12/book_sle_admin/data/sec_snapper_setup.html\"></link> "
-"for details."
+", it is strongly recommended to create a subvolume for it. This ensures that "
+"the directory is excluded from file system snapshots. If not excluding"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:363
+#, no-c-format
+msgid ""
+"from snapshots, the file system will likely run out of disk space soon after "
+"you start deploying containers. What's more, a rollback to a previous "
+"snapshot will also reset the Docker database and images. Refer to"
+msgstr ""
+
+#. Tag: citetitle
+#: docker_overview.xml:363
+#, no-c-format
+msgid "Creating and Mounting New Subvolumes"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:364
+#, no-c-format
+msgid "at"
+msgstr ""
+
+#. Tag: #text
+#: docker_overview.xml:367
+#, no-c-format
+msgid "for details."
 msgstr ""

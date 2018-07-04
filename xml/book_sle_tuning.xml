@@ -2,12 +2,9 @@
 <?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE book
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE book [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
-
 <!-- fs 2011-10-11:
 
 Still missing - check with PM if wanted:
@@ -34,29 +31,21 @@ Tuning (not mentioned in FATE)
 <!-- SLE System Analysis and Tuning Guide                                  -->
 <!-- ##################################################################### -->
 <?provo dirname="tuning/"?>
-<book version="5.0" xml:lang="en" xml:id="book.sle.tuning"
-  xmlns="http://docbook.org/ns/docbook"
-  xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:xlink="http://www.w3.org/1999/xlink">
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en" xml:id="book.sle.tuning">
   <info>
-      <title
->&tuning;</title>
-      <productname
->&productname;</productname>
-      <productnumber
->&productnumber;</productnumber>
+      <title>&tuning;</title>
+      <productname>&productname;</productname>
+      <productnumber>&productnumber;</productnumber>
       <date>
         <?dbtimestamp format="B d, Y"?>
       </date>
       <xi:include href="common_copyright_gfdl.xml"/>
       <abstract>
-        <para
->&abstract_tuning; </para>
+        <para> &abstract_tuning; </para>
       </abstract>
       <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
         <dm:bugtracker>
-          <dm:assignee
->fs@suse.com</dm:assignee>
+          <dm:assignee>fs@suse.com</dm:assignee>
         </dm:bugtracker>
       </dm:docmanager>
     </info>
@@ -66,8 +55,7 @@ Tuning (not mentioned in FATE)
 <!-- Part: Basics                                                          -->
 <!-- ===================================================================== -->
  <part xml:id="part.tuning.basics">
-  <title
->Basics</title>
+  <title>Basics</title>
   <xi:include href="tuning_how.xml"/>
  </part>
 
@@ -75,8 +63,7 @@ Tuning (not mentioned in FATE)
 <!-- Part: System Monitoring                                               -->
 <!-- ===================================================================== -->
  <part xml:id="part.tuning.monitoring">
-  <title
->System Monitoring</title>
+  <title>System Monitoring</title>
   <xi:include href="utilities.xml"/>
   <xi:include href="tuning_logfiles.xml"/>
  </part>
@@ -85,8 +72,7 @@ Tuning (not mentioned in FATE)
 <!-- Part: Kernel Monitoring                                               -->
 <!-- ===================================================================== -->
  <part xml:id="part.tuning.kerneltrace">
-  <title
->Kernel Monitoring</title>
+  <title>Kernel Monitoring</title>
   <xi:include href="tuning_systemtap.xml"/>
   <xi:include href="tuning_kprobes.xml"/>
   <xi:include href="tuning_perf.xml"/>
@@ -97,8 +83,7 @@ Tuning (not mentioned in FATE)
 <!-- Part: Resource Management and Optimization                            -->
 <!-- ===================================================================== -->
  <part xml:id="part.tuning.resources">
-  <title
->Resource Management</title>
+  <title>Resource Management</title>
   <xi:include href="tuning_systemresources.xml"/>
   <xi:include href="tuning_cgroups.xml"/>
   <xi:include href="tuning_numactl.xml"/>
@@ -109,8 +94,7 @@ Tuning (not mentioned in FATE)
 <!-- Part: Kernel Optimization                                             -->
 <!-- ===================================================================== -->
  <part xml:id="part.tuning.kernel">
-  <title
->Kernel Tuning</title>
+  <title>Kernel Tuning</title>
   <xi:include href="tuning_storagescheduler.xml"/>
   <xi:include href="tuning_taskscheduler.xml"/>
   <xi:include href="tuning_memory.xml"/>
@@ -121,8 +105,7 @@ Tuning (not mentioned in FATE)
 <!-- Part: Handling System Dumps                                           -->
 <!-- ===================================================================== -->
  <part xml:id="part.tuning.dumps">
-  <title
->Handling System Dumps</title>
+  <title>Handling System Dumps</title>
   <xi:include href="tuning_tracing.xml"/>
   <xi:include href="tuning_kexec.xml"/>
  </part>
@@ -131,8 +114,7 @@ Tuning (not mentioned in FATE)
 <!-- Part: Synchronized Clocks with PTP                                    -->
 <!-- ===================================================================== -->
  <part xml:id="part.tuning.ptp">
-  <title
->Synchronized Clocks with &ptp;</title>
+  <title>Synchronized Clocks with &ptp;</title>
   <xi:include href="tuning_ptp.xml"/>
  </part>
 

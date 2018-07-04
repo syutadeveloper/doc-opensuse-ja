@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid ""
 "Hypervisors allow for various storage caching strategies to be specified "
 "when configuring a &vmguest;. Each guest disk interface can have one of the "
-"following cache modes specified: <emphasis>writethrough</emphasis>, "
-"<emphasis>writeback</emphasis>, <emphasis>none</emphasis>, "
-"<emphasis>directsync</emphasis>, or <emphasis>unsafe</emphasis>. If no cache "
-"mode is specified, an appropriate default cache mode is used. These cache "
-"modes influence how host-based storage is accessed, as follows:"
+"following cache modes specified: <emphasis>writethrough</emphasis> , "
+"<emphasis>writeback</emphasis> , <emphasis>none</emphasis> , "
+"<emphasis>directsync</emphasis> , or <emphasis>unsafe</emphasis> . If no "
+"cache mode is specified, an appropriate default cache mode is used. These "
+"cache modes influence how host-based storage is accessed, as follows:"
 msgstr ""
 
 #. Tag: para
@@ -106,12 +106,13 @@ msgid ""
 "versions&mdash;as shipped with &productname;&mdash;the various guest storage "
 "interfaces have been fixed to handle <emphasis>writeback</emphasis> or "
 "<emphasis>writethrough</emphasis> semantics more correctly. This allows for "
-"the default caching mode to be switched to <emphasis>writeback</emphasis>. "
-"The guest driver for each of <literal>ide</literal>, <literal>scsi</"
-"literal>, and <literal>virtio</literal> have within their power to disable "
+"the default caching mode to be switched to <emphasis>writeback</emphasis> . "
+"The guest driver for each of <literal>ide</literal> , <literal>scsi</"
+"literal> , and <literal>virtio</literal> have within their power to disable "
 "the write back cache, causing the caching mode used to revert to "
-"<emphasis>writethrough</emphasis>. The typical guest's storage drivers will "
-"maintain the default caching mode as <emphasis>writeback</emphasis>, however."
+"<emphasis>writethrough</emphasis> . The typical guest's storage drivers will "
+"maintain the default caching mode as <emphasis>writeback</emphasis> , "
+"however."
 msgstr ""
 
 #. Tag: term
@@ -132,12 +133,6 @@ msgid ""
 "writeback cache, so the guest would not need to send down flush commands to "
 "manage data integrity. The storage behaves as if there is a writethrough "
 "cache."
-msgstr ""
-
-#. Tag: term
-#: vt_cachemodes.xml:109 vt_cachemodes.xml:195
-#, no-c-format
-msgid "writeback"
 msgstr ""
 
 #. Tag: para
@@ -176,12 +171,6 @@ msgid ""
 "host's disk."
 msgstr ""
 
-#. Tag: term
-#: vt_cachemodes.xml:144 vt_cachemodes.xml:210
-#, no-c-format
-msgid "unsafe"
-msgstr ""
-
 #. Tag: para
 #: vt_cachemodes.xml:146
 #, no-c-format
@@ -209,7 +198,7 @@ msgid ""
 "literal> semantics. This means, writes are reported as completed only when "
 "the data has been committed to the storage device, and when it is also "
 "desirable to bypass the host page cache. Like <xref linkend=\"cache."
-"writethrough\"/>, it is helpful to guests that do not send flushes when "
+"writethrough\"/> , it is helpful to guests that do not send flushes when "
 "needed. It was the last cache mode added, completing the possible "
 "combinations of caching and direct access semantics."
 msgstr ""
@@ -231,12 +220,18 @@ msgstr ""
 #, no-c-format
 msgid ""
 "These are the safest modes, and considered equally safe, given that the "
-"guest operating system is <quote>modern and well behaved</quote>, which "
+"guest operating system is <quote>modern and well behaved</quote> , which "
 "means that it uses flushes as needed. If you have a suspect guest, use "
-"<emphasis>writethough</emphasis>, or <emphasis>directsync</emphasis>. Note "
+"<emphasis>writethough</emphasis> , or <emphasis>directsync</emphasis> . Note "
 "that some file systems are not compatible with <literal>none</literal> or "
-"<literal>directsync</literal>, as they do not support O_DIRECT, which these "
+"<literal>directsync</literal> , as they do not support O_DIRECT, which these "
 "cache modes rely on."
+msgstr ""
+
+#. Tag: term
+#: vt_cachemodes.xml:195
+#, no-c-format
+msgid "writeback"
 msgstr ""
 
 #. Tag: para
@@ -250,6 +245,12 @@ msgid ""
 "data loss in the unlikely case of a host failure, because there is a window "
 "of time between the time a write is reported as completed, and that write "
 "being committed to the storage device."
+msgstr ""
+
+#. Tag: term
+#: vt_cachemodes.xml:210
+#, no-c-format
+msgid "unsafe"
 msgstr ""
 
 #. Tag: para
@@ -282,7 +283,7 @@ msgid ""
 "the page cache and the IO scheduler used. Additionally, not flushing the "
 "write cache increases performance, but with risk, as noted above. As a "
 "general rule, high-end systems typically perform best with the cache mode "
-"<literal>none</literal>, because of the reduced data copying that occurs. "
+"<literal>none</literal> , because of the reduced data copying that occurs. "
 "The potential benefit of having multiple guests share the common host page "
 "cache, the ratio of reads to writes, and the use of AIO mode "
 "<literal>native</literal> (see below) should also be considered."
@@ -299,11 +300,11 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The caching of storage data and metadata restricts the configurations that "
-"support live migration. Currently, only <literal>raw</literal>, "
+"support live migration. Currently, only <literal>raw</literal> , "
 "<literal>qcow2</literal> and <literal>qed</literal> image formats can be "
 "used for live migration. If a clustered file system is used, all cache modes "
 "support live migration. Otherwise the only cache mode that supports live "
-"migration on read/write shared storage is <literal>none</literal>."
+"migration on read/write shared storage is <literal>none</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -314,10 +315,10 @@ msgid ""
 "based on several factors. If the guest storage is hosted on a clustered file "
 "system, is read-only or is marked shareable, then the cache mode is ignored "
 "when determining if migration can be allowed. Otherwise &libvirt; will not "
-"allow migration unless the cache mode is set to <literal>none</literal>. "
+"allow migration unless the cache mode is set to <literal>none</literal> . "
 "However, this restriction can be overridden with the <quote>unsafe</quote> "
 "option to the migration APIs, which is also supported by <command>virsh</"
-"command>, as for example in"
+"command> , as for example in"
 msgstr ""
 
 #. Tag: screen
@@ -331,8 +332,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The cache mode <literal>none</literal> is required for the AIO mode setting "
-"<literal>native</literal>. If another cache mode is used, then the AIO mode "
-"will silently be switched back to the default <literal>threads</literal>. "
+"<literal>native</literal> . If another cache mode is used, then the AIO mode "
+"will silently be switched back to the default <literal>threads</literal> . "
 "The guest flush within the host is implemented using "
-"<systemitem>fdatasync()</systemitem>."
+"<systemitem>fdatasync()</systemitem> ."
 msgstr ""

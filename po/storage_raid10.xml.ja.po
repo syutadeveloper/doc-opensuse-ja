@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Creating Software RAID&nbsp;10 Devices"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: storage_raid10.xml:11
+#. Tag: dm:translation
+#: storage_raid10.xml:13
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -215,40 +215,9 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:165 storage_raid10.xml:321
-#, no-c-format
-msgid "Multipathing"
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:166 storage_raid10.xml:322
-#, no-c-format
-msgid ""
-"If you need to manage multiple connections to the devices, you must "
-"configure multipath I/O before configuring the RAID devices. For "
-"information, see <xref linkend=\"cha.multipath\" xrefstyle=\"ChapTitleOnPage"
-"\"/>."
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:173 storage_raid10.xml:335 storage_raid10.xml:960
-#, no-c-format
-msgid ""
-"The procedure in this section uses the device names shown in the following "
-"table. Ensure that you modify the device names with the names of your own "
-"devices."
-msgstr ""
-
-#. Tag: title
 #: storage_raid10.xml:179
 #, no-c-format
 msgid "Scenario for Creating a RAID 10 (1+0) by Nesting"
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:187 storage_raid10.xml:349 storage_raid10.xml:973
-#, no-c-format
-msgid "Raw Devices"
 msgstr ""
 
 #. Tag: para
@@ -261,62 +230,6 @@ msgstr ""
 #: storage_raid10.xml:197
 #, no-c-format
 msgid "RAID 1+0 (striped mirrors)"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:207 storage_raid10.xml:369
-#, no-c-format
-msgid "/dev/sdb1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:209 storage_raid10.xml:371
-#, no-c-format
-msgid "/dev/sdc1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:215 storage_raid10.xml:377
-#, no-c-format
-msgid "/dev/md0"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:221 storage_raid10.xml:383
-#, no-c-format
-msgid "/dev/md2"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:228 storage_raid10.xml:390
-#, no-c-format
-msgid "/dev/sdd1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:230 storage_raid10.xml:392
-#, no-c-format
-msgid "/dev/sde1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:236 storage_raid10.xml:398
-#, no-c-format
-msgid "/dev/md1"
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:245 storage_raid10.xml:407 storage_raid10.xml:1011
-#, no-c-format
-msgid "Open a terminal console."
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:250 storage_raid10.xml:412
-#, no-c-format
-msgid ""
-"If necessary, create four 0xFD Linux RAID partitions of equal size using a "
-"disk partitioner such as parted."
 msgstr ""
 
 #. Tag: para
@@ -338,7 +251,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:263
+#: storage_raid10.xml:264
 #, no-c-format
 msgid ""
 "Create the nested RAID 1+0 device. At the command prompt, enter the "
@@ -347,7 +260,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:268
+#: storage_raid10.xml:269
 #, no-c-format
 msgid ""
 "&prompt.sudo;mdadm --create /dev/md2 --run --level=0 --chunk=64 \\\n"
@@ -355,108 +268,47 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:269 storage_raid10.xml:423
-#, no-c-format
-msgid "The default chunk size is 64 KB."
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:274 storage_raid10.xml:436
-#, no-c-format
-msgid ""
-"Create a file system on the RAID 1+0 device <filename>/dev/md2</filename>, "
-"for example an XFS file system:"
-msgstr ""
-
-#. Tag: screen
-#: storage_raid10.xml:278 storage_raid10.xml:440
-#, no-c-format
-msgid "&prompt.sudo;mkfs.xfs /dev/md2"
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:279 storage_raid10.xml:441 storage_raid10.xml:1042
-#, no-c-format
-msgid "Modify the command to use a different file system."
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:284
+#: storage_raid10.xml:286
 #, no-c-format
 msgid ""
 "Edit the <filename>/etc/mdadm.conf</filename> file or create it, if it does "
 "not exist (for example by running <command>sudo vi /etc/mdadm.conf</"
-"command>). Add the following lines (if the file already exists, the first "
+"command> ). Add the following lines (if the file already exists, the first "
 "line probably already exists)."
 msgstr ""
 
-#. Tag: screen
-#: storage_raid10.xml:290 storage_raid10.xml:452
-#, no-c-format
-msgid ""
-"DEVICE containers partitions\n"
-"ARRAY /dev/md0 UUID=<replaceable>UUID</replaceable>\n"
-"ARRAY /dev/md1 UUID=<replaceable>UUID</replaceable>\n"
-"ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:291 storage_raid10.xml:453
-#, no-c-format
-msgid "The UUID of each device can be retrieved with the following command:"
-msgstr ""
-
-#. Tag: screen
-#: storage_raid10.xml:294 storage_raid10.xml:456
-#, no-c-format
-msgid ""
-"&prompt.sudo;mdadm -D /dev/<replaceable>DEVICE</replaceable> | grep UUID"
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:297 storage_raid10.xml:459
-#, no-c-format
-msgid ""
-"Edit the <filename>/etc/fstab</filename> file to add an entry for the RAID "
-"1+0 device <filename>/dev/md2</filename>. The following example shows an "
-"entry for a RAID device with the XFS file system and <filename>/data</"
-"filename> as a mount point."
-msgstr ""
-
-#. Tag: screen
-#: storage_raid10.xml:303 storage_raid10.xml:465
-#, no-c-format
-msgid "/dev/md2 /data xfs defaults 1 2"
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:306 storage_raid10.xml:468 storage_raid10.xml:1069
-#, no-c-format
-msgid "Mount the RAID device:"
-msgstr ""
-
-#. Tag: screen
-#: storage_raid10.xml:309 storage_raid10.xml:471 storage_raid10.xml:1072
-#, no-c-format
-msgid "&prompt.sudo;mount /data"
-msgstr ""
-
 #. Tag: title
-#: storage_raid10.xml:315
+#: storage_raid10.xml:320
 #, no-c-format
 msgid "Creating Nested RAID 10 (0+1) with mdadm"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:316
+#: storage_raid10.xml:321
 #, no-c-format
 msgid ""
 "A nested RAID 0+1 is built by creating two to four RAID 0 (striping) "
 "devices, then mirroring them as component devices in a RAID 1."
 msgstr ""
 
+#. Tag: title
+#: storage_raid10.xml:326
+#, no-c-format
+msgid "Multipathing"
+msgstr ""
+
 #. Tag: para
-#: storage_raid10.xml:329
+#: storage_raid10.xml:327
+#, no-c-format
+msgid ""
+"If you need to manage multiple connections to the devices, you must "
+"configure multipath I/O before configuring the RAID devices. For "
+"information, see <xref linkend=\"cha.multipath\" xrefstyle=\"ChapTitleOnPage"
+"\"/> ."
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:334
 #, no-c-format
 msgid ""
 "In this configuration, spare devices cannot be specified for the underlying "
@@ -466,25 +318,75 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:341
+#: storage_raid10.xml:346
 #, no-c-format
 msgid "Scenario for Creating a RAID 10 (0+1) by Nesting"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:354
+#: storage_raid10.xml:359
 #, no-c-format
 msgid "RAID 0 (stripe)"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:359
+#: storage_raid10.xml:364
 #, no-c-format
 msgid "RAID 0+1 (mirrored stripes)"
 msgstr ""
 
+#. Tag: member
+#: storage_raid10.xml:374
+#, no-c-format
+msgid "<filename>/dev/sdb1</filename>"
+msgstr ""
+
+#. Tag: member
+#: storage_raid10.xml:376
+#, no-c-format
+msgid "<filename>/dev/sdc1</filename>"
+msgstr ""
+
 #. Tag: para
-#: storage_raid10.xml:418
+#: storage_raid10.xml:381
+#, no-c-format
+msgid "<filename>/dev/md0</filename>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:387
+#, no-c-format
+msgid "<filename>/dev/md2</filename>"
+msgstr ""
+
+#. Tag: member
+#: storage_raid10.xml:395
+#, no-c-format
+msgid "<filename>/dev/sdd1</filename>"
+msgstr ""
+
+#. Tag: member
+#: storage_raid10.xml:397
+#, no-c-format
+msgid "<filename>/dev/sde1</filename>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:402
+#, no-c-format
+msgid "<filename>/dev/md1</filename>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:417
+#, no-c-format
+msgid ""
+"If necessary, create four 0xFD Linux RAID partitions of equal size using a "
+"disk partitioner such as parted."
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:423
 #, no-c-format
 msgid ""
 "Create two software RAID&nbsp;0 devices, using two different devices for "
@@ -492,7 +394,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:422
+#: storage_raid10.xml:427
 #, no-c-format
 msgid ""
 "&prompt.sudo;mdadm --create /dev/md0 --run --level=0 --chunk=64 \\\n"
@@ -502,7 +404,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:428
+#: storage_raid10.xml:431
+#, no-c-format
+msgid "The default chunk size is 64 KB."
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:436
 #, no-c-format
 msgid ""
 "Create the nested RAID 0+1 device. At the command prompt, enter the "
@@ -511,7 +419,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:433
+#: storage_raid10.xml:441
 #, no-c-format
 msgid ""
 "&prompt.sudo;mdadm --create /dev/md2 --run --level=1 --raid-devices=2 /dev/"
@@ -519,23 +427,66 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:446 storage_raid10.xml:1047
+#: storage_raid10.xml:444
 #, no-c-format
 msgid ""
-"Edit the <filename>/etc/mdadm.conf</filename> file or create it, if it does "
-"not exist (for example by running <command>sudo vi /etc/mdadm.conf</"
-"command>). Add the following lines (if the file exists, the first line "
-"probably already exists, too)."
+"Create a file system on the RAID 1+0 device <filename>/dev/md2</filename> , "
+"for example an XFS file system:"
+msgstr ""
+
+#. Tag: screen
+#: storage_raid10.xml:448
+#, no-c-format
+msgid "&prompt.sudo;mkfs.xfs /dev/md2"
+msgstr ""
+
+#. Tag: screen
+#: storage_raid10.xml:460
+#, no-c-format
+msgid ""
+"DEVICE containers partitions\n"
+"ARRAY /dev/md0 UUID=<replaceable>UUID</replaceable>\n"
+"ARRAY /dev/md1 UUID=<replaceable>UUID</replaceable>\n"
+"ARRAY /dev/md2 UUID=<replaceable>UUID</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:464
+#, no-c-format
+msgid "The UUID of each device can be retrieved with the following command:"
+msgstr ""
+
+#. Tag: screen
+#: storage_raid10.xml:467
+#, no-c-format
+msgid ""
+"&prompt.sudo;mdadm -D /dev/<replaceable>DEVICE</replaceable> | grep UUID"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:470
+#, no-c-format
+msgid ""
+"Edit the <filename>/etc/fstab</filename> file to add an entry for the RAID "
+"1+0 device <filename>/dev/md2</filename> . The following example shows an "
+"entry for a RAID device with the XFS file system and <filename>/data</"
+"filename> as a mount point."
+msgstr ""
+
+#. Tag: screen
+#: storage_raid10.xml:476
+#, no-c-format
+msgid "/dev/md2 /data xfs defaults 1 2"
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:477
+#: storage_raid10.xml:488
 #, no-c-format
 msgid "Creating a Complex RAID 10"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:479
+#: storage_raid10.xml:490
 #, no-c-format
 msgid ""
 "&yast; (and <command>mdadm</command> with the <option>--level=10</option> "
@@ -546,7 +497,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:487
+#: storage_raid10.xml:498
 #, no-c-format
 msgid ""
 "The complex RAID&nbsp;10 is similar in purpose to a nested RAID&nbsp;10 "
@@ -554,79 +505,79 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:493
+#: storage_raid10.xml:504
 #, no-c-format
 msgid "Complex RAID 10 compared to Nested RAID 10"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:501
+#: storage_raid10.xml:512
 #, no-c-format
 msgid "Feature"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:506
+#: storage_raid10.xml:517
 #, no-c-format
 msgid "Complex RAID&nbsp;10"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:511
+#: storage_raid10.xml:522
 #, no-c-format
 msgid "Nested RAID&nbsp;10 (1+0)"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:520
+#: storage_raid10.xml:531
 #, no-c-format
 msgid "Number of devices"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:525
+#: storage_raid10.xml:536
 #, no-c-format
 msgid "Allows an even or odd number of component devices"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:530
+#: storage_raid10.xml:541
 #, no-c-format
 msgid "Requires an even number of component devices"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:537
+#: storage_raid10.xml:548
 #, no-c-format
 msgid "Component devices"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:542
+#: storage_raid10.xml:553
 #, no-c-format
 msgid "Managed as a single RAID device"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:547
+#: storage_raid10.xml:558
 #, no-c-format
 msgid "Manage as a nested RAID device"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:554
+#: storage_raid10.xml:565
 #, no-c-format
 msgid "Striping"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:559
+#: storage_raid10.xml:570
 #, no-c-format
 msgid "Striping occurs in the near or far layout on component devices."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:562
+#: storage_raid10.xml:573
 #, no-c-format
 msgid ""
 "The far layout provides sequential read throughput that scales by number of "
@@ -634,43 +585,43 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:568
+#: storage_raid10.xml:579
 #, no-c-format
 msgid "Striping occurs consecutively across component devices"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:575
+#: storage_raid10.xml:586
 #, no-c-format
 msgid "Multiple copies of data"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:580
+#: storage_raid10.xml:591
 #, no-c-format
 msgid "Two or more copies, up to the number of devices in the array"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:585
+#: storage_raid10.xml:596
 #, no-c-format
 msgid "Copies on each mirrored segment"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:592
+#: storage_raid10.xml:603
 #, no-c-format
 msgid "Hot spare devices"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:597
+#: storage_raid10.xml:608
 #, no-c-format
 msgid "A single spare can service all component devices"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:602
+#: storage_raid10.xml:613
 #, no-c-format
 msgid ""
 "Configure a spare for each underlying mirrored array, or configure a spare "
@@ -678,13 +629,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:613
+#: storage_raid10.xml:624
 #, no-c-format
 msgid "Number of Devices and Replicas in the Complex RAID&nbsp;10"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:614
+#: storage_raid10.xml:625
 #, no-c-format
 msgid ""
 "When configuring a complex RAID&nbsp;10 array, you must specify the number "
@@ -694,7 +645,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:620
+#: storage_raid10.xml:631
 #, no-c-format
 msgid ""
 "You must use at least as many component devices as the number of replicas "
@@ -705,7 +656,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:627
+#: storage_raid10.xml:638
 #, no-c-format
 msgid ""
 "For example, if you specify two replicas for an array created with five "
@@ -715,13 +666,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:636
+#: storage_raid10.xml:647
 #, no-c-format
 msgid "Layout"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:637
+#: storage_raid10.xml:648
 #, no-c-format
 msgid ""
 "The complex RAID&nbsp;10 setup supports three different layouts which define "
@@ -732,13 +683,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:645
+#: storage_raid10.xml:656
 #, no-c-format
 msgid "Near Layout"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:646
+#: storage_raid10.xml:657
 #, no-c-format
 msgid ""
 "With the near layout, copies of a block of data are striped near each other "
@@ -750,7 +701,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:654
+#: storage_raid10.xml:665
 #, no-c-format
 msgid ""
 "The near layout for the complex RAID&nbsp;10 yields read and write "
@@ -758,13 +709,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:658
+#: storage_raid10.xml:669
 #, no-c-format
 msgid "Near layout with an even number of disks and two replicas:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:661
+#: storage_raid10.xml:672
 #, no-c-format
 msgid ""
 "sda1 sdb1 sdc1 sde1\n"
@@ -776,13 +727,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:662
+#: storage_raid10.xml:678
 #, no-c-format
 msgid "Near layout with an odd number of disks and two replicas:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:665
+#: storage_raid10.xml:681
 #, no-c-format
 msgid ""
 "sda1 sdb1 sdc1 sde1 sdf1\n"
@@ -794,13 +745,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:668
+#: storage_raid10.xml:689
 #, no-c-format
 msgid "Far Layout"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:669
+#: storage_raid10.xml:690
 #, no-c-format
 msgid ""
 "The far layout stripes data over the early part of all drives, then stripes "
@@ -810,7 +761,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:675
+#: storage_raid10.xml:696
 #, no-c-format
 msgid ""
 "With a far layout, the read performance of the complex RAID&nbsp;10 is "
@@ -821,7 +772,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:682
+#: storage_raid10.xml:703
 #, no-c-format
 msgid ""
 "The speed of the RAID&nbsp;10 for writing is similar to other mirrored RAID "
@@ -832,13 +783,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:689
+#: storage_raid10.xml:710
 #, no-c-format
 msgid "Far layout with an even number of disks and two replicas:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:692
+#: storage_raid10.xml:713
 #, no-c-format
 msgid ""
 "sda1 sdb1 sdc1 sde1\n"
@@ -850,13 +801,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:693
+#: storage_raid10.xml:719
 #, no-c-format
 msgid "Far layout with an odd number of disks and two replicas:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:696
+#: storage_raid10.xml:722
 #, no-c-format
 msgid ""
 "sda1 sdb1 sdc1 sde1 sdf1\n"
@@ -868,13 +819,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:699
+#: storage_raid10.xml:730
 #, no-c-format
 msgid "Offset Layout"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:700
+#: storage_raid10.xml:731
 #, no-c-format
 msgid ""
 "The offset layout duplicates stripes so that the multiple copies of a given "
@@ -885,13 +836,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:707
+#: storage_raid10.xml:738
 #, no-c-format
 msgid "Offset layout with an even number of disks and two replicas:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:710
+#: storage_raid10.xml:741
 #, no-c-format
 msgid ""
 "sda1 sdb1 sdc1 sde1\n"
@@ -904,13 +855,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:711
+#: storage_raid10.xml:748
 #, no-c-format
 msgid "Offset layout with an odd number of disks and two replicas:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:714
+#: storage_raid10.xml:751
 #, no-c-format
 msgid ""
 "sda1 sdb1 sdc1 sde1 sdf1\n"
@@ -923,13 +874,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:717
+#: storage_raid10.xml:760
 #, no-c-format
 msgid "Specifying the number of Replicas and the Layout with &yast; and mdadm"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:718
+#: storage_raid10.xml:761
 #, no-c-format
 msgid ""
 "The number of replicas and the layout is specified as <guimenu>Parity "
@@ -937,14 +888,14 @@ msgid ""
 "parameter for mdadm. The following values are accepted:"
 msgstr ""
 
-#. Tag: literal
-#: storage_raid10.xml:725
+#. Tag: term
+#: storage_raid10.xml:768
 #, no-c-format
-msgid "n<replaceable>N</replaceable>"
+msgid "<literal>n<replaceable>N</replaceable></literal>"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:728
+#: storage_raid10.xml:771
 #, no-c-format
 msgid ""
 "Specify <literal>n</literal> for near layout and replace <replaceable>N</"
@@ -952,28 +903,28 @@ msgid ""
 "default that is used when not configuring layout and the number of replicas."
 msgstr ""
 
-#. Tag: literal
-#: storage_raid10.xml:737
+#. Tag: term
+#: storage_raid10.xml:780
 #, no-c-format
-msgid "f<replaceable>N</replaceable>"
+msgid "<literal>f<replaceable>N</replaceable></literal>"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:740
+#: storage_raid10.xml:783
 #, no-c-format
 msgid ""
 "Specify <literal>f</literal> for far layout and replace <replaceable>N</"
 "replaceable> with the number of replicas."
 msgstr ""
 
-#. Tag: literal
-#: storage_raid10.xml:747
+#. Tag: term
+#: storage_raid10.xml:790
 #, no-c-format
-msgid "o<replaceable>N</replaceable>"
+msgid "<literal>o<replaceable>N</replaceable></literal>"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:750
+#: storage_raid10.xml:793
 #, no-c-format
 msgid ""
 "Specify <literal>o</literal> for offset layout and replace <replaceable>N</"
@@ -981,13 +932,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:758
+#: storage_raid10.xml:801
 #, no-c-format
 msgid "Number of Replicas"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:759
+#: storage_raid10.xml:802
 #, no-c-format
 msgid ""
 "&yast; automatically offers a selection of all possible values for the "
@@ -995,30 +946,30 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:768
+#: storage_raid10.xml:811
 #, no-c-format
 msgid "Creating a Complex RAID&nbsp;10 with the &yast; Partitioner"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:771
+#: storage_raid10.xml:814
 #, no-c-format
 msgid "Launch &yast; and open the Partitioner."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:776
+#: storage_raid10.xml:819
 #, no-c-format
 msgid ""
 "If necessary, create partitions that should be used with your RAID "
 "configuration. Do not format them and set the partition type to "
-"<guimenu>0xFD Linux RAID</guimenu>. When using existing partitions it is not "
-"necessary to change their partition type&mdash;&yast; will automatically do "
-"so. Refer to <xref linkend=\"sec.expert_partitioner\"/> for details."
+"<guimenu>0xFD Linux RAID</guimenu> . When using existing partitions it is "
+"not necessary to change their partition type&mdash;&yast; will automatically "
+"do so. Refer to <xref linkend=\"sec.expert_partitioner\"/> for details."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:784
+#: storage_raid10.xml:827
 #, no-c-format
 msgid ""
 "For RAID&nbsp;10 at least four partitions are needed. It is strongly "
@@ -1029,42 +980,42 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:793
+#: storage_raid10.xml:836
 #, no-c-format
-msgid "In the left panel, select <guimenu>RAID</guimenu>."
+msgid "In the left panel, select <guimenu>RAID</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:796
+#: storage_raid10.xml:839
 #, no-c-format
 msgid "A list of existing RAID configurations opens in the right panel."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:801
+#: storage_raid10.xml:844
 #, no-c-format
-msgid "At the lower left of the RAID page, click <guimenu>Add RAID</guimenu>."
+msgid "At the lower left of the RAID page, click <guimenu>Add RAID</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:806
+#: storage_raid10.xml:849
 #, no-c-format
 msgid ""
-"Under <guimenu>RAID Type</guimenu>, select <guimenu>RAID 10 (Mirroring and "
-"Striping)</guimenu>."
+"Under <guimenu>RAID Type</guimenu> , select <guimenu>RAID 10 (Mirroring and "
+"Striping)</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:810
+#: storage_raid10.xml:853
 #, no-c-format
 msgid ""
 "You can optionally assign a <guimenu>RAID Name</guimenu> to your RAID. It "
 "will make it available as <filename>/dev/md/<replaceable>NAME</replaceable></"
-"filename>. See <xref linkend=\"sec.raid.yast.names\"/> for more information."
+"filename> . See <xref linkend=\"sec.raid.yast.names\"/> for more information."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:818
+#: storage_raid10.xml:861
 #, no-c-format
 msgid ""
 "In the <guimenu>Available Devices</guimenu> list, select the desired "
@@ -1073,7 +1024,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:835
+#: storage_raid10.xml:878
 #, no-c-format
 msgid ""
 "(Optional) Click <guimenu>Classify</guimenu> to specify the preferred order "
@@ -1081,7 +1032,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:839
+#: storage_raid10.xml:882
 #, no-c-format
 msgid ""
 "For RAID types such as RAID&nbsp;10, where the order of added disks matters, "
@@ -1093,7 +1044,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:849
+#: storage_raid10.xml:892
 #, no-c-format
 msgid ""
 "Select each disk in turn and click one of the <guimenu>Class X</guimenu> "
@@ -1102,76 +1053,87 @@ msgid ""
 "(only A and B, for example). Assign all available RAID disks this way."
 msgstr ""
 
-#. Tag: para
-#: storage_raid10.xml:856
+#. Tag: #text
+#: storage_raid10.xml:900
+#, no-c-format
+msgid "You can press the"
+msgstr ""
+
+#. Tag: #text
+#: storage_raid10.xml:901
+#, no-c-format
+msgid "or"
+msgstr ""
+
+#. Tag: #text
+#: storage_raid10.xml:905
 #, no-c-format
 msgid ""
-"You can press the <keycap function=\"control\"></keycap> or <keycap function="
-"\"shift\"></keycap> key to select multiple devices. You can also right-click "
-"a selected device and choose the appropriate class from the context menu."
+"key to select multiple devices. You can also right-click a selected device "
+"and choose the appropriate class from the context menu."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:864
+#: storage_raid10.xml:908
 #, no-c-format
 msgid ""
 "Specify the order of the devices by selecting one of the sorting options:"
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:869
+#: storage_raid10.xml:913
 #, no-c-format
-msgid "<guimenu>Sorted</guimenu>:"
+msgid "<guimenu>Sorted</guimenu> :"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:870
+#: storage_raid10.xml:914
 #, no-c-format
 msgid ""
 "Sorts all devices of class A before all devices of class B and so on. For "
-"example: <literal>AABBCC</literal>."
+"example: <literal>AABBCC</literal> ."
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:876
+#: storage_raid10.xml:920
 #, no-c-format
-msgid "<guimenu>Interleaved</guimenu>:"
+msgid "<guimenu>Interleaved</guimenu> :"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:877
+#: storage_raid10.xml:921
 #, no-c-format
 msgid ""
 "Sorts devices by the first device of class A, then first device of class B, "
 "then all the following classes with assigned devices. Then the second device "
 "of class A, the second device of class B, and so on follows. All devices "
 "without a class are sorted to the end of the devices list. For example: "
-"<literal>ABCABC</literal>."
+"<literal>ABCABC</literal> ."
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:886
+#: storage_raid10.xml:930
 #, no-c-format
 msgid "Pattern File:"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:887
+#: storage_raid10.xml:931
 #, no-c-format
 msgid ""
 "Select an existing file that contains multiple lines, where each is a "
-"regular expression and a class name (<literal>\"sda.* A\"</literal>). All "
+"regular expression and a class name ( <literal>\"sda.* A\"</literal> ). All "
 "devices that match the regular expression are assigned to the specified "
 "class for that line. The regular expression is matched against the kernel "
-"name (<filename>/dev/sda1</filename>), the udev path name (<filename>/dev/"
-"disk/by-path/pci-0000:00:1f.2-scsi-0:0:0:0-part1</filename>) and then the "
-"udev ID (<filename>dev/disk/by-id/ata-ST3500418AS_9VMN8X8L-part1</"
-"filename>). The first match made determines the class if a device’s name "
+"name ( <filename>/dev/sda1</filename> ), the udev path name ( <filename>/dev/"
+"disk/by-path/pci-0000:00:1f.2-scsi-0:0:0:0-part1</filename> ) and then the "
+"udev ID ( <filename>dev/disk/by-id/ata-ST3500418AS_9VMN8X8L-part1</"
+"filename> ). The first match made determines the class if a device’s name "
 "matches more than one regular expression."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:903
+#: storage_raid10.xml:947
 #, no-c-format
 msgid ""
 "At the bottom of the dialog, click <guimenu>OK</guimenu> to confirm the "
@@ -1179,40 +1141,40 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:921 storage_raid10.xml:945
-#, no-c-format
-msgid "Click <guimenu>Next</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: storage_raid10.xml:926
+#: storage_raid10.xml:970
 #, no-c-format
 msgid ""
-"Under <guimenu>RAID Options</guimenu>, specify the <guimenu>Chunk Size</"
-"guimenu> and <guimenu>Parity Algorithm</guimenu>, then click <guimenu>Next</"
-"guimenu>."
+"Under <guimenu>RAID Options</guimenu> , specify the <guimenu>Chunk Size</"
+"guimenu> and <guimenu>Parity Algorithm</guimenu> , then click <guimenu>Next</"
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:931
+#: storage_raid10.xml:975
 #, no-c-format
 msgid ""
 "For a RAID 10, the parity options are n (near), f (far), and o (offset). The "
 "number indicates the number of replicas of each data block that are "
 "required. Two is the default. For information, see <xref linkend=\"sec."
-"raid10.complex.layout\" xrefstyle=\"SectTitleOnPage\"/>."
+"raid10.complex.layout\" xrefstyle=\"SectTitleOnPage\"/> ."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:939
+#: storage_raid10.xml:983
 #, no-c-format
 msgid ""
 "Add a file system and mount options to the RAID device, then click "
-"<guimenu>Finish</guimenu>."
+"<guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:950
+#: storage_raid10.xml:989
+#, no-c-format
+msgid "Click <guimenu>Next</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:994
 #, no-c-format
 msgid ""
 "Verify the changes to be made, then click <guimenu>Finish</guimenu> to "
@@ -1220,55 +1182,76 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid10.xml:959
+#: storage_raid10.xml:1003
 #, no-c-format
 msgid "Creating a Complex RAID 10 with mdadm"
 msgstr ""
 
+#. Tag: para
+#: storage_raid10.xml:1004
+#, no-c-format
+msgid ""
+"The procedure in this section uses the device names shown in the following "
+"table. Ensure that you modify the device names with the names of your own "
+"devices."
+msgstr ""
+
 #. Tag: title
-#: storage_raid10.xml:966
+#: storage_raid10.xml:1010
 #, no-c-format
 msgid "Scenario for Creating a RAID&nbsp;10 Using mdadm"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:978
+#: storage_raid10.xml:1017
+#, no-c-format
+msgid "Raw Devices"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1022
 #, no-c-format
 msgid "RAID&nbsp;10"
 msgstr ""
 
-#. Tag: filename
-#: storage_raid10.xml:988
+#. Tag: para
+#: storage_raid10.xml:1031
 #, no-c-format
-msgid "/dev/sdf1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:991
-#, no-c-format
-msgid "/dev/sdg1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:994
-#, no-c-format
-msgid "/dev/sdh1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:997
-#, no-c-format
-msgid "/dev/sdi1"
-msgstr ""
-
-#. Tag: filename
-#: storage_raid10.xml:1002
-#, no-c-format
-msgid "/dev/md3"
+msgid "<filename>/dev/sdf1</filename>"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:1016
+#: storage_raid10.xml:1034
+#, no-c-format
+msgid "<filename>/dev/sdg1</filename>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1037
+#, no-c-format
+msgid "<filename>/dev/sdh1</filename>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1040
+#, no-c-format
+msgid "<filename>/dev/sdi1</filename>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1045
+#, no-c-format
+msgid "<filename>/dev/md3</filename>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1055
+#, no-c-format
+msgid "Open a terminal console."
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1060
 #, no-c-format
 msgid ""
 "If necessary, create at least four 0xFD Linux RAID partitions of equal size "
@@ -1276,13 +1259,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:1022
+#: storage_raid10.xml:1066
 #, no-c-format
 msgid "Create a RAID&nbsp;10 by entering the following command."
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:1025
+#: storage_raid10.xml:1069
 #, no-c-format
 msgid ""
 "&prompt.sudo;mdadm --create /dev/md3 --run --level=10 --chunk=32 --raid-"
@@ -1291,7 +1274,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:1026
+#: storage_raid10.xml:1071
 #, no-c-format
 msgid ""
 "Make sure to adjust the value for <option>--raid-devices</option> and the "
@@ -1299,30 +1282,46 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:1030
+#: storage_raid10.xml:1075
 #, no-c-format
 msgid ""
 "The command creates an array with near layout and two replicas. To change "
 "any of the two values, use the <option>--layout</option> as described in "
-"<xref linkend=\"sec.raid10.complex.layout.parameter\"/>."
+"<xref linkend=\"sec.raid10.complex.layout.parameter\"/> ."
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:1037
+#: storage_raid10.xml:1082
 #, no-c-format
 msgid ""
 "Create a file system on the RAID&nbsp;10 device <filename>/dev/md3</"
-"filename>, for example an XFS file system:"
+"filename> , for example an XFS file system:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:1041
+#: storage_raid10.xml:1086
 #, no-c-format
 msgid "&prompt.sudo;mkfs.xfs /dev/md3"
 msgstr ""
 
+#. Tag: para
+#: storage_raid10.xml:1087
+#, no-c-format
+msgid "Modify the command to use a different file system."
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1092
+#, no-c-format
+msgid ""
+"Edit the <filename>/etc/mdadm.conf</filename> file or create it, if it does "
+"not exist (for example by running <command>sudo vi /etc/mdadm.conf</"
+"command> ). Add the following lines (if the file exists, the first line "
+"probably already exists, too)."
+msgstr ""
+
 #. Tag: screen
-#: storage_raid10.xml:1053
+#: storage_raid10.xml:1098
 #, no-c-format
 msgid ""
 "DEVICE containers partitions\n"
@@ -1330,29 +1329,41 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:1054
+#: storage_raid10.xml:1100
 #, no-c-format
 msgid "The UUID of the device can be retrieved with the following command:"
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:1057
+#: storage_raid10.xml:1103
 #, no-c-format
 msgid "&prompt.sudo;mdadm -D /dev/md3 | grep UUID"
 msgstr ""
 
 #. Tag: para
-#: storage_raid10.xml:1060
+#: storage_raid10.xml:1106
 #, no-c-format
 msgid ""
 "Edit the <filename>/etc/fstab</filename> file to add an entry for the "
-"RAID&nbsp;10 device <filename>/dev/md3</filename>. The following example "
+"RAID&nbsp;10 device <filename>/dev/md3</filename> . The following example "
 "shows an entry for a RAID device with the XFS file system and <filename>/"
 "data</filename> as a mount point."
 msgstr ""
 
 #. Tag: screen
-#: storage_raid10.xml:1066
+#: storage_raid10.xml:1112
 #, no-c-format
 msgid "/dev/md3 /data xfs defaults 1 2"
+msgstr ""
+
+#. Tag: para
+#: storage_raid10.xml:1115
+#, no-c-format
+msgid "Mount the RAID device:"
+msgstr ""
+
+#. Tag: screen
+#: storage_raid10.xml:1118
+#, no-c-format
+msgid "&prompt.sudo;mount /data"
 msgstr ""

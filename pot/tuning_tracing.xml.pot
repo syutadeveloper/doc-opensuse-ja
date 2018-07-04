@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -59,8 +59,7 @@ msgstr ""
 #. Tag: screen
 #: tuning_tracing.xml:51
 #, no-c-format
-msgid ""
-      "&prompt.user;strace ls\n"
+msgid "&prompt.user;strace ls\n"
       "execve(\"/bin/ls\", [\"ls\"], [/* 52 vars */]) = 0\n"
       "brk(0)                                  = 0x618000\n"
       "mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) \\\n"
@@ -89,16 +88,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:53
+#: tuning_tracing.xml:78
 #, no-c-format
-msgid "To attach <command>strace</command> to an already running process, you need to specify the <option>-p</option> with the process ID (<systemitem>PID</systemitem>) of the process that you want to monitor:"
+msgid "To attach <command>strace</command> to an already running process, you need to specify the <option>-p</option> with the process ID ( <systemitem>PID</systemitem> ) of the process that you want to monitor:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:59
+#: tuning_tracing.xml:84
 #, no-c-format
-msgid ""
-      "&prompt.user;strace -p `pidof cron`\n"
+msgid "&prompt.user;strace -p `pidof cron`\n"
       " Process 1261 attached\n"
       " restart_syscall(&lt;... resuming interrupted call ...&gt;) = 0\n"
       "  stat(\"/etc/localtime\", {st_mode=S_IFREG|0644, st_size=2309, ...}) = 0\n"
@@ -123,20 +121,20 @@ msgid ""
       "  read(5, \"\\2\\0\\0\\0\\1\\0\\0\\0\\5\\0\\0\\0\\2\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\5\\0\\0\\0\\6\\0\\0\\0\"..., 36) = 36\n"
       "  read(5, \"root\\0x\\0root\\0/root\\0/bin/bash\\0\", 28) = 28\n"
       "  close(5)\n"
-      "  [...]"
+      "  [...]\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:61
+#: tuning_tracing.xml:112
 #, no-c-format
 msgid "The <option>-e</option> option understands several sub-options and arguments. For example, to trace all attempts to open or write to a particular file, use the following:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:67
+#: tuning_tracing.xml:118
 #, no-c-format
-msgid ""
-      "&prompt.user;strace -e trace=open,write ls ~\n"
+msgid "&prompt.user;strace -e trace=open,write ls ~\n"
       "open(\"/etc/ld.so.cache\", O_RDONLY)       = 3\n"
       "open(\"/lib64/librt.so.1\", O_RDONLY)      = 3\n"
       "open(\"/lib64/libselinux.so.1\", O_RDONLY) = 3\n"
@@ -146,20 +144,20 @@ msgid ""
       "[...]\n"
       "open(\"/usr/lib/locale/cs_CZ.utf8/LC_CTYPE\", O_RDONLY) = 3\n"
       "open(\".\", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = 3\n"
-      "write(1, \"addressbook.db.bak\\nbin\\ncxoffice\\n\"..., 311) = 311"
+      "write(1, \"addressbook.db.bak\\nbin\\ncxoffice\\n\"..., 311) = 311\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:69
+#: tuning_tracing.xml:131
 #, no-c-format
-msgid "To trace only network related system calls, use <option>-e trace=network</option>:"
+msgid "To trace only network related system calls, use <option>-e trace=network</option> :"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:74
+#: tuning_tracing.xml:136
 #, no-c-format
-msgid ""
-      "&prompt.user;strace -e trace=network -p 26520\n"
+msgid "&prompt.user;strace -e trace=network -p 26520\n"
       "Process 26520 attached - interrupt to quit\n"
       "socket(PF_NETLINK, SOCK_RAW, 0)         = 50\n"
       "bind(50, {sa_family=AF_NETLINK, pid=0, groups=00000000}, 12) = 0\n"
@@ -171,16 +169,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:76
+#: tuning_tracing.xml:146
 #, no-c-format
 msgid "The <option>-c</option> calculates the time the kernel spent on each system call:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:81
+#: tuning_tracing.xml:151
 #, no-c-format
-msgid ""
-      "&prompt.user;strace -c find /etc -name xorg.conf\n"
+msgid "&prompt.user;strace -c find /etc -name xorg.conf\n"
       "/etc/X11/xorg.conf\n"
       "% time     seconds  usecs/call     calls    errors syscall\n"
       "------ ----------- ----------- --------- --------- ----------------\n"
@@ -202,16 +199,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:83
+#: tuning_tracing.xml:171
 #, no-c-format
-msgid "To trace all child processes of a process, use <option>-f</option>:"
+msgid "To trace all child processes of a process, use <option>-f</option> :"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:87
+#: tuning_tracing.xml:175
 #, no-c-format
-msgid ""
-      "&prompt.user;strace -f rcapache2 status\n"
+msgid "&prompt.user;strace -f rcapache2 status\n"
       "execve(\"/usr/sbin/rcapache2\", [\"rcapache2\", \"status\"], [/* 81 vars */]) = 0\n"
       "brk(0)                                  = 0x69e000\n"
       "mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) \\\n"
@@ -241,16 +237,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:89
+#: tuning_tracing.xml:203
 #, no-c-format
-msgid "If you need to analyze the output of <command>strace</command> and the output messages are too long to be inspected directly in the console window, use <option>-o</option>. In that case, unnecessary messages, such as information about attaching and detaching processes, are suppressed. You can also suppress these messages (normally printed on the standard output) with <option>-q</option>. To add time stamps at the beginning of each line with a system call, use <option>-t</option>:"
+msgid "If you need to analyze the output of <command>strace</command> and the output messages are too long to be inspected directly in the console window, use <option>-o</option> . In that case, unnecessary messages, such as information about attaching and detaching processes, are suppressed. You can also suppress these messages (normally printed on the standard output) with <option>-q</option> . To add time stamps at the beginning of each line with a system call, use <option>-t</option> :"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:99
+#: tuning_tracing.xml:213
 #, no-c-format
-msgid ""
-      "&prompt.user;strace -t -o strace_sleep.txt sleep 1; more strace_sleep.txt\n"
+msgid "&prompt.user;strace -t -o strace_sleep.txt sleep 1; more strace_sleep.txt\n"
       "08:44:06 execve(\"/bin/sleep\", [\"sleep\", \"1\"], [/* 81 vars */]) = 0\n"
       "08:44:06 brk(0)                         = 0x606000\n"
       "08:44:06 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, \\\n"
@@ -264,34 +259,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:101
+#: tuning_tracing.xml:225
 #, no-c-format
 msgid "The behavior and output format of strace can be largely controlled. For more information, see the relevant manual page (man 1 strace)."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:107
+#: tuning_tracing.xml:231
 #, no-c-format
 msgid "Tracing Library Calls with ltrace"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:109
+#: tuning_tracing.xml:233
 #, no-c-format
-msgid "<command>ltrace</command> traces dynamic library calls of a process. It is used in a similar way to <command>strace</command>, and most of their parameters have a very similar or identical meaning. By default, <command>ltrace</command> uses <filename>/etc/ltrace.conf</filename> or <filename>~/.ltrace.conf</filename> configuration files. You can, however, specify an alternative one with the <option>-F <replaceable>CONFIG_FILE</replaceable></option> option."
+msgid "<command>ltrace</command> traces dynamic library calls of a process. It is used in a similar way to <command>strace</command> , and most of their parameters have a very similar or identical meaning. By default, <command>ltrace</command> uses <filename>/etc/ltrace.conf</filename> or <filename>~/.ltrace.conf</filename> configuration files. You can, however, specify an alternative one with the <option>-F <replaceable>CONFIG_FILE</replaceable></option> option."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:119
+#: tuning_tracing.xml:243
 #, no-c-format
 msgid "In addition to library calls, <command>ltrace</command> with the <option>-S</option> option can trace system calls as well:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:124
+#: tuning_tracing.xml:248
 #, no-c-format
-msgid ""
-      "&prompt.user;ltrace -S -o ltrace_find.txt find /etc -name \\\n"
+msgid "&prompt.user;ltrace -S -o ltrace_find.txt find /etc -name \\\n"
       "xorg.conf; more ltrace_find.txt\n"
       "SYS_brk(NULL)                                              = 0x00628000\n"
       "SYS_mmap(0, 4096, 3, 34, 0xffffffff)                       = 0x7f1327ea1000\n"
@@ -312,16 +306,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:126
+#: tuning_tracing.xml:267
 #, no-c-format
 msgid "You can change the type of traced events with the <option>-e</option> option. The following example prints library calls related to <systemitem>fnmatch</systemitem> and <systemitem>strlen</systemitem> functions:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:133
+#: tuning_tracing.xml:274
 #, no-c-format
-msgid ""
-      "&prompt.user;ltrace -e fnmatch,strlen find /etc -name xorg.conf\n"
+msgid "&prompt.user;ltrace -e fnmatch,strlen find /etc -name xorg.conf\n"
       "[...]\n"
       "fnmatch(\"xorg.conf\", \"xorg.conf\", 0)             = 0\n"
       "strlen(\"Xresources\")                             = 10\n"
@@ -333,314 +326,312 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:135
+#: tuning_tracing.xml:284
 #, no-c-format
-msgid "To display only the symbols included in a specific library, use <option>-l <replaceable>/path/to/library</replaceable></option>:"
+msgid "To display only the symbols included in a specific library, use <option>-l <replaceable>/path/to/library</replaceable></option> :"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:140
+#: tuning_tracing.xml:289
 #, no-c-format
-msgid ""
-      "&prompt.user;ltrace -l /lib64/librt.so.1 sleep 1\n"
+msgid "&prompt.user;ltrace -l /lib64/librt.so.1 sleep 1\n"
       "clock_gettime(1, 0x7fff4b5c34d0, 0, 0, 0)                  = 0\n"
       "clock_gettime(1, 0x7fff4b5c34c0, 0xffffffffff600180, -1, 0) = 0\n"
       "+++ exited (status 0) +++"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:142
+#: tuning_tracing.xml:294
 #, no-c-format
-msgid "You can make the output more readable by indenting each nested call by the specified number of space with the <option>-n <replaceable>NUM_OF_SPACES</replaceable></option>."
+msgid "You can make the output more readable by indenting each nested call by the specified number of space with the <option>-n <replaceable>NUM_OF_SPACES</replaceable></option> ."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:149
+#: tuning_tracing.xml:301
 #, no-c-format
 msgid "Debugging and Profiling with Valgrind"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:151
+#: tuning_tracing.xml:303
 #, no-c-format
 msgid "Valgrind is a set of tools to debug and profile your programs so that they can run both faster and with less errors. Valgrind can detect problems related to memory management and threading, or can also serve as a framework for building new debugging tools. It is well known that this tool can incur high overhead, causing, for example, higher runtimes or changing the normal program behavior under concurrent workloads based on timing."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:161
+#: tuning_tracing.xml:313
 #, no-c-format
 msgid "Installation"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:162
+#: tuning_tracing.xml:314
 #, no-c-format
 msgid "Valgrind is not shipped with standard &productname; distribution. To install it on your system, you need to obtain &sdk;, and either install it and run"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:167
+#: tuning_tracing.xml:319
 #, no-c-format
 msgid "<command>zypper</command> <option>install <replaceable>VALGRIND</replaceable></option>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:171
+#: tuning_tracing.xml:323
 #, no-c-format
 msgid "or browse through the &sdk; directory tree, locate the Valgrind package and install it with"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:175
+#: tuning_tracing.xml:327
 #, no-c-format
-msgid "<command>rpm</command> <option>-i</option> valgrind-<replaceable>VERSION_ARCHITECTURE</replaceable>.rpm"
+msgid "<command>rpm</command> <option>-i</option> valgrind- <replaceable>VERSION_ARCHITECTURE</replaceable> .rpm"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:179
+#: tuning_tracing.xml:331
 #, no-c-format
-msgid "The SDK is a module for &sle; and is available via an online channel from the &scc;. Alternatively download it from <link xlink:href=\"http://download.suse.com/\"></link>. (Search for <literal>&sle; Software Development Kit</literal>). Refer to <xref linkend=\"cha.add-ons\"/> for details."
+msgid "The SDK is a module for &sle; and is available via an online channel from the &scc;. Alternatively download it from <link xlink:href=\"http://download.suse.com/\"/> . (Search for <literal>&sle; Software Development Kit</literal> ). Refer to <xref linkend=\"cha.add-ons\"/> for details."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:188
+#: tuning_tracing.xml:341
 #, no-c-format
 msgid "Supported Architectures"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:189
+#: tuning_tracing.xml:342
 #, no-c-format
 msgid "&productname; supports Valgrind on the following architectures:"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:194
+#: tuning_tracing.xml:347
 #, no-c-format
 msgid "&x86-64;"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:199
+#: tuning_tracing.xml:352
 #, no-c-format
 msgid "&ppc;"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:204
+#: tuning_tracing.xml:357
 #, no-c-format
 msgid "&zseries;"
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:212
+#: tuning_tracing.xml:365
 #, no-c-format
 msgid "General Information"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:213
+#: tuning_tracing.xml:366
 #, no-c-format
 msgid "The main advantage of Valgrind is that it works with existing compiled executables. You do not need to recompile or modify your programs to use it. Run Valgrind like this:"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:218
+#: tuning_tracing.xml:371
 #, no-c-format
 msgid "<command>valgrind</command> <replaceable>VALGRIND_OPTIONS</replaceable> your-prog <replaceable>YOUR-PROGRAM-OPTIONS</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:222
+#: tuning_tracing.xml:375
 #, no-c-format
-msgid "Valgrind consists of several tools, and each provides specific functionality. Information in this section is general and valid regardless of the used tool. The most important configuration option is <option>--tool</option>. This option tells Valgrind which tool to run. If you omit this option, <systemitem>memcheck</systemitem> is selected by default. For example, to run <command>find ~</command> <option>-name</option> .bashrc with Valgrind's <systemitem>memcheck</systemitem> tools, enter the following in the command line:"
+msgid "Valgrind consists of several tools, and each provides specific functionality. Information in this section is general and valid regardless of the used tool. The most important configuration option is <option>--tool</option> . This option tells Valgrind which tool to run. If you omit this option, <systemitem>memcheck</systemitem> is selected by default. For example, to run <command>find ~</command> <option>-name</option> .bashrc with Valgrind's <systemitem>memcheck</systemitem> tools, enter the following in the command line:"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:233
+#: tuning_tracing.xml:386
 #, no-c-format
-msgid "<command>valgrind</command> <option>--tool</option>=memcheck find ~ -name .bashrc"
+msgid "<command>valgrind</command> <option>--tool</option> =memcheck find ~ -name .bashrc"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:237
+#: tuning_tracing.xml:390
 #, no-c-format
 msgid "A list of standard Valgrind tools with a brief description follows:"
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_tracing.xml:242
+#. Tag: term
+#: tuning_tracing.xml:395
 #, no-c-format
-msgid "memcheck"
+msgid "<systemitem>memcheck</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:245
+#: tuning_tracing.xml:398
 #, no-c-format
 msgid "Detects memory errors. It helps you tune your programs to behave correctly."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_tracing.xml:252
+#. Tag: term
+#: tuning_tracing.xml:405
 #, no-c-format
-msgid "cachegrind"
+msgid "<systemitem>cachegrind</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:255
+#: tuning_tracing.xml:408
 #, no-c-format
 msgid "Profiles cache prediction. It helps you tune your programs to run faster."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_tracing.xml:262
+#. Tag: term
+#: tuning_tracing.xml:415
 #, no-c-format
-msgid "callgrind"
+msgid "<systemitem>callgrind</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:265
+#: tuning_tracing.xml:418
 #, no-c-format
 msgid "Works in a similar way to <systemitem>cachegrind</systemitem> but also gathers additional cache-profiling information."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_tracing.xml:272
+#. Tag: term
+#: tuning_tracing.xml:425
 #, no-c-format
-msgid "exp-drd"
+msgid "<systemitem>exp-drd</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:275
+#: tuning_tracing.xml:428
 #, no-c-format
 msgid "Detects thread errors. It helps you tune your multi-threaded programs to behave correctly."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_tracing.xml:282
+#. Tag: term
+#: tuning_tracing.xml:435
 #, no-c-format
-msgid "helgrind"
+msgid "<systemitem>helgrind</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:285
+#: tuning_tracing.xml:438
 #, no-c-format
 msgid "Another thread error detector. Similar to <systemitem>exp-drd</systemitem> but uses different techniques for problem analysis."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_tracing.xml:293
+#. Tag: term
+#: tuning_tracing.xml:446
 #, no-c-format
-msgid "massif"
+msgid "<systemitem>massif</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:296
+#: tuning_tracing.xml:449
 #, no-c-format
 msgid "A heap profiler. Heap is an area of memory used for dynamic memory allocation. This tool helps you tune your program to use less memory."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_tracing.xml:303
+#. Tag: term
+#: tuning_tracing.xml:456
 #, no-c-format
-msgid "lackey"
+msgid "<systemitem>lackey</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:306
+#: tuning_tracing.xml:459
 #, no-c-format
 msgid "An example tool showing instrumentation basics."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:315
+#: tuning_tracing.xml:468
 #, no-c-format
 msgid "Default Options"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:316
+#: tuning_tracing.xml:469
 #, no-c-format
 msgid "Valgrind can read options at start-up. There are three places which Valgrind checks:"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:322
+#: tuning_tracing.xml:475
 #, no-c-format
 msgid "The file <filename>.valgrindrc</filename> in the home directory of the user who runs Valgrind."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:328
+#: tuning_tracing.xml:481
 #, no-c-format
 msgid "The environment variable <literal>$VALGRIND_OPTS</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:333
+#: tuning_tracing.xml:486
 #, no-c-format
 msgid "The file <filename>.valgrindrc</filename> in the current directory where Valgrind is run from."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:339
+#: tuning_tracing.xml:492
 #, no-c-format
-msgid "These resources are parsed exactly in this order, while later given options take precedence over earlier processed options. Options specific to a particular Valgrind tool must be prefixed with the tool name and a colon. For example, if you want <systemitem>cachegrind</systemitem> to always write profile data to the <filename>/tmp/cachegrind_<replaceable>PID</replaceable>.log</filename>, add the following line to the <filename>.valgrindrc</filename> file in your home directory:"
+msgid "These resources are parsed exactly in this order, while later given options take precedence over earlier processed options. Options specific to a particular Valgrind tool must be prefixed with the tool name and a colon. For example, if you want <systemitem>cachegrind</systemitem> to always write profile data to the <filename>/tmp/cachegrind_<replaceable>PID</replaceable>.log</filename> , add the following line to the <filename>.valgrindrc</filename> file in your home directory:"
 msgstr ""
 
-#. Tag: literal
-#: tuning_tracing.xml:350
+#. Tag: para
+#: tuning_tracing.xml:502
 #, no-c-format
-msgid "--cachegrind:cachegrind-out-file=/tmp/cachegrind_%p.log"
+msgid "<literal>--cachegrind:cachegrind-out-file=/tmp/cachegrind_%p.log</literal>"
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:355
+#: tuning_tracing.xml:508
 #, no-c-format
 msgid "How Valgrind Works"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:356
+#: tuning_tracing.xml:509
 #, no-c-format
 msgid "Valgrind takes control of your executable before it starts. It reads debugging information from the executable and related shared libraries. The executable's code is redirected to the selected Valgrind tool, and the tool adds its own code to handle its debugging. Then the code is handed back to the Valgrind core and the execution continues."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:363
+#: tuning_tracing.xml:516
 #, no-c-format
 msgid "For example, <systemitem>memcheck</systemitem> adds its code, which checks every memory access. As a consequence, the program runs much slower than in the native execution environment."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:368
+#: tuning_tracing.xml:521
 #, no-c-format
 msgid "Valgrind simulates every instruction of your program. Therefore, it not only checks the code of your program, but also all related libraries (including the C library), libraries used for graphical environment, and so on. If you try to detect errors with Valgrind, it also detects errors in associated libraries (like C, X11, or Gtk libraries). Because you probably do not need these errors, Valgrind can selectively, suppress these error messages to suppression files. The <option>--gen-suppressions=yes</option> tells Valgrind to report these suppressions which you can copy to a file."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:379
+#: tuning_tracing.xml:532
 #, no-c-format
-msgid "You should supply a real executable (machine code) as a Valgrind argument. If your application is run, for example, from a shell or Perl script, you will by mistake get error reports related to <command>/bin/sh</command> (or <command>/usr/bin/perl</command>). In such cases, you can use <option>--trace-children=yes</option> to work around this issue. However, using the executable itself will avoid any confusion over this issue."
+msgid "You should supply a real executable (machine code) as a Valgrind argument. If your application is run, for example, from a shell or Perl script, you will by mistake get error reports related to <command>/bin/sh</command> (or <command>/usr/bin/perl</command> ). In such cases, you can use <option>--trace-children=yes</option> to work around this issue. However, using the executable itself will avoid any confusion over this issue."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:392
+#: tuning_tracing.xml:545
 #, no-c-format
 msgid "Messages"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:393
+#: tuning_tracing.xml:546
 #, no-c-format
 msgid "During its runtime, Valgrind reports messages with detailed errors and important events. The following example explains the messages:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:397
+#: tuning_tracing.xml:550
 #, no-c-format
-msgid ""
-      "&prompt.user;valgrind --tool=memcheck find ~ -name .bashrc\n"
+msgid "&prompt.user;valgrind --tool=memcheck find ~ -name .bashrc\n"
       "[...]\n"
       "==6558== Conditional jump or move depends on uninitialised value(s)\n"
       "==6558==    at 0x400AE79: _dl_relocate_object (in /lib64/ld-2.11.1.so)\n"
@@ -666,60 +657,58 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:398
+#: tuning_tracing.xml:573
 #, no-c-format
 msgid "The <literal>==6558==</literal> introduces Valgrind's messages and contains the process ID number (PID). You can easily distinguish Valgrind's messages from the output of the program itself, and decide which messages belong to a particular process."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:404
+#: tuning_tracing.xml:579
 #, no-c-format
-msgid "To make Valgrind's messages more detailed, use <option>-v</option> or even <option>-v -v</option>."
+msgid "To make Valgrind's messages more detailed, use <option>-v</option> or even <option>-v -v</option> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:408
+#: tuning_tracing.xml:583
 #, no-c-format
 msgid "You can make Valgrind send its messages to three different places:"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:413
+#: tuning_tracing.xml:588
 #, no-c-format
 msgid "By default, Valgrind sends its messages to the file descriptor 2, which is the standard error output. You can tell Valgrind to send its messages to any other file descriptor with the <option>--log-fd=<replaceable>FILE_DESCRIPTOR_NUMBER</replaceable></option> option."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:422
+#: tuning_tracing.xml:597
 #, no-c-format
-msgid "The second and probably more useful way is to send Valgrind's messages to a file with <option>--log-file=<replaceable>FILENAME</replaceable></option>. This option accepts several variables, for example, <literal>%p</literal> gets replaced with the PID of the currently profiled process. This way you can send messages to different files based on their PID. <literal>%q{env_var}</literal> is replaced with the value of the related <literal>env_var</literal> environment variable."
+msgid "The second and probably more useful way is to send Valgrind's messages to a file with <option>--log-file=<replaceable>FILENAME</replaceable></option> . This option accepts several variables, for example, <literal>%p</literal> gets replaced with the PID of the currently profiled process. This way you can send messages to different files based on their PID. <literal>%q{env_var}</literal> is replaced with the value of the related <literal>env_var</literal> environment variable."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:432
+#: tuning_tracing.xml:607
 #, no-c-format
 msgid "The following example checks for possible memory errors during the Apache Web server restart, while following children processes and writing detailed Valgrind's messages to separate files distinguished by the current process PID:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:438
+#: tuning_tracing.xml:613
 #, no-c-format
-msgid ""
-      "&prompt.user;valgrind -v --tool=memcheck --trace-children=yes \\\n"
+msgid "&prompt.user;valgrind -v --tool=memcheck --trace-children=yes \\\n"
       "--log-file=valgrind_pid_%p.log rcapache2 restart"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:439
+#: tuning_tracing.xml:615
 #, no-c-format
 msgid "This process created 52 log files in the testing system, and took 75 seconds instead of the usual 7 seconds needed to run <command>sudo systemctl restart apache2</command> without Valgrind, which is approximately 10 times more."
 msgstr ""
 
 #. Tag: screen
-#: tuning_tracing.xml:445
+#: tuning_tracing.xml:621
 #, no-c-format
-msgid ""
-      "&prompt.user;ls -1 valgrind_pid_*log\n"
+msgid "&prompt.user;ls -1 valgrind_pid_*log\n"
       "valgrind_pid_11780.log\n"
       "valgrind_pid_11782.log\n"
       "valgrind_pid_11783.log\n"
@@ -730,56 +719,56 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:448
+#: tuning_tracing.xml:631
 #, no-c-format
 msgid "You may also prefer to send the Valgrind's messages over the network. You need to specify the <literal>aa.bb.cc.dd</literal> IP address and <literal>port_num</literal> port number of the network socket with the <option>--log-socket=<replaceable>AA.BB.CC.DD:PORT_NUM</replaceable></option> option. If you omit the port number, 1500 will be used."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:455
+#: tuning_tracing.xml:638
 #, no-c-format
-msgid "It is useless to send Valgrind's messages to a network socket if no application is capable of receiving them on the remote machine. That is why <command>valgrind-listener</command>, a simple listener, is shipped together with Valgrind. It accepts connections on the specified port and copies everything it receives to the standard output."
+msgid "It is useless to send Valgrind's messages to a network socket if no application is capable of receiving them on the remote machine. That is why <command>valgrind-listener</command> , a simple listener, is shipped together with Valgrind. It accepts connections on the specified port and copies everything it receives to the standard output."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:468
+#: tuning_tracing.xml:651
 #, no-c-format
 msgid "Error Messages"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:469
+#: tuning_tracing.xml:652
 #, no-c-format
 msgid "Valgrind remembers all error messages, and if it detects a new error, the error is compared against old error messages. This way Valgrind checks for duplicate error messages. In case of a duplicate error, it is recorded but no message is shown. This mechanism prevents you from being overwhelmed by millions of duplicate errors."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:476
+#: tuning_tracing.xml:659
 #, no-c-format
-msgid "The <option>-v</option> option will add a summary of all reports (sorted by their total count) to the end of the Valgrind's execution output. Moreover, Valgrind stops collecting errors if it detects either 1000 different errors, or 10 000 000 errors in total. If you want to suppress this limit and wish to see all error messages, use <option>--error-limit=no</option>."
+msgid "The <option>-v</option> option will add a summary of all reports (sorted by their total count) to the end of the Valgrind's execution output. Moreover, Valgrind stops collecting errors if it detects either 1000 different errors, or 10 000 000 errors in total. If you want to suppress this limit and wish to see all error messages, use <option>--error-limit=no</option> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:484
+#: tuning_tracing.xml:667
 #, no-c-format
 msgid "Some errors usually cause other ones. Therefore, fix errors in the same order as they appear and re-check the program continuously."
 msgstr ""
 
 #. Tag: title
-#: tuning_tracing.xml:491
+#: tuning_tracing.xml:674
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:495
+#: tuning_tracing.xml:678
 #, no-c-format
-msgid "For a complete list of options related to the described tracing tools, see the corresponding man page (<command>man 1 strace</command>, <command>man 1 ltrace</command>, and <command>man 1 valgrind</command>)."
+msgid "For a complete list of options related to the described tracing tools, see the corresponding man page ( <command>man 1 strace</command> , <command>man 1 ltrace</command> , and <command>man 1 valgrind</command> )."
 msgstr ""
 
 #. Tag: para
-#: tuning_tracing.xml:503
+#: tuning_tracing.xml:686
 #, no-c-format
-msgid "To describe advanced usage of Valgrind is beyond the scope of this document. It is very well documented, see <link xlink:href=\"http://valgrind.org/docs/manual/manual.html\">Valgrind User Manual</link>. These pages are indispensable if you need more advanced information on Valgrind or the usage and purpose of its standard tools."
+msgid "To describe advanced usage of Valgrind is beyond the scope of this document. It is very well documented, see <link xlink:href=\"http://valgrind.org/docs/manual/manual.html\">Valgrind User Manual</link> . These pages are indispensable if you need more advanced information on Valgrind or the usage and purpose of its standard tools."
 msgstr ""
 

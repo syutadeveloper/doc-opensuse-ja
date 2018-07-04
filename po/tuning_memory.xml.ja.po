@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -31,29 +31,41 @@ msgid ""
 "other subsystems."
 msgstr ""
 
-#. Tag: remark
-#: tuning_memory.xml:58
+#. Tag: quote
+#: tuning_memory.xml:65
 #, no-c-format
-msgid ""
-"sknorr, 2014-08-21: Using VM for \"virtual memory manager\" is really "
-"dangerous - everyone knows that VM means \"virtual machine\" and half of the "
-"people reading this chapter might skip this prargraph and be completely "
-"confused. At least use VMM or shorten \"memory management subsystem\" to "
-"\"memory subsystem\", the latter of which I think should be short enough."
+msgid "VM"
 msgstr ""
 
-#. Tag: para
-#: tuning_memory.xml:63
+#. Tag: #text
+#: tuning_memory.xml:65
 #, no-c-format
 msgid ""
 "The memory management subsystem, also called the virtual memory manager, "
-"will subsequently be called <quote>VM</quote>. The role of the VM is to "
-"manage the allocation of physical memory (RAM) for the entire kernel and "
-"user programs. It is also responsible for providing a virtual memory "
-"environment for user processes (managed via POSIX APIs with Linux "
-"extensions). Finally, the VM is responsible for freeing up RAM when there is "
-"a shortage, either by trimming caches or swapping out <quote>anonymous</"
-"quote> memory."
+"will subsequently be called"
+msgstr ""
+
+#. Tag: #text
+#: tuning_memory.xml:71
+#, no-c-format
+msgid ""
+". The role of the VM is to manage the allocation of physical memory (RAM) "
+"for the entire kernel and user programs. It is also responsible for "
+"providing a virtual memory environment for user processes (managed via POSIX "
+"APIs with Linux extensions). Finally, the VM is responsible for freeing up "
+"RAM when there is a shortage, either by trimming caches or swapping out"
+msgstr ""
+
+#. Tag: quote
+#: tuning_memory.xml:71
+#, no-c-format
+msgid "anonymous"
+msgstr ""
+
+#. Tag: #text
+#: tuning_memory.xml:72
+#, no-c-format
+msgid "memory."
 msgstr ""
 
 #. Tag: para
@@ -112,8 +124,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Memory allocations in general can be characterized as <quote>pinned</quote> "
-"(also known as <quote>unreclaimable</quote>), <quote>reclaimable</quote> or "
-"<quote>swappable</quote>."
+"(also known as <quote>unreclaimable</quote> ), <quote>reclaimable</quote> or "
+"<quote>swappable</quote> ."
 msgstr ""
 
 #. Tag: title
@@ -127,11 +139,11 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Anonymous memory tends to be program heap and stack memory (for example, "
-"<literal>&gt;malloc()</literal>). It is reclaimable, except in special cases "
-"such as <literal>mlock</literal> or if there is no available swap space. "
-"Anonymous memory must be written to swap before it can be reclaimed. Swap I/"
-"O (both swapping in and swapping out pages) tends to be less efficient than "
-"pagecache I/O, because of allocation and access patterns."
+"<literal>&gt;malloc()</literal> ). It is reclaimable, except in special "
+"cases such as <literal>mlock</literal> or if there is no available swap "
+"space. Anonymous memory must be written to swap before it can be reclaimed. "
+"Swap I/O (both swapping in and swapping out pages) tends to be less "
+"efficient than pagecache I/O, because of allocation and access patterns."
 msgstr ""
 
 #. Tag: title
@@ -156,8 +168,8 @@ msgstr ""
 msgid ""
 "When a file is written to, the new data is stored in pagecache before being "
 "written back to a disk or the network (making it a write-back cache). When a "
-"page has new data not written back yet, it is called <quote>dirty</quote>. "
-"Pages not classified as dirty are <quote>clean</quote>. Clean pagecache "
+"page has new data not written back yet, it is called <quote>dirty</quote> . "
+"Pages not classified as dirty are <quote>clean</quote> . Clean pagecache "
 "pages can be reclaimed if there is a memory shortage by simply freeing them. "
 "Dirty pages must first be made clean before being reclaimed."
 msgstr ""
@@ -205,18 +217,18 @@ msgstr ""
 msgid ""
 "As applications write to files, the pagecache becomes dirty and the "
 "buffercache may become dirty. When the amount of dirty memory reaches a "
-"specified number of pages in bytes (<emphasis>vm.dirty_background_bytes</"
-"emphasis>), or when the amount of dirty memory reaches a specific ratio to "
-"total memory (<emphasis>vm.dirty_background_ratio</emphasis>), or when the "
+"specified number of pages in bytes ( <emphasis>vm.dirty_background_bytes</"
+"emphasis> ), or when the amount of dirty memory reaches a specific ratio to "
+"total memory ( <emphasis>vm.dirty_background_ratio</emphasis> ), or when the "
 "pages have been dirty for longer than a specified amount of time "
-"(<emphasis>vm.dirty_expire_centisecs</emphasis>), the kernel begins "
+"( <emphasis>vm.dirty_expire_centisecs</emphasis> ), the kernel begins "
 "writeback of pages starting with files that had the pages dirtied first. The "
 "background bytes and ratios are mutually exclusive and setting one will "
 "overwrite the other. Flusher threads perform writeback in the background and "
 "allow applications to continue running. If the I/O cannot keep up with "
 "applications dirtying pagecache, and dirty data reaches a critical setting "
-"(<emphasis>vm.dirty_bytes</emphasis> or <emphasis>vm.dirty_ratio</"
-"emphasis>), then applications begin to be throttled to prevent dirty data "
+"( <emphasis>vm.dirty_bytes</emphasis> or <emphasis>vm.dirty_ratio</"
+"emphasis> ), then applications begin to be throttled to prevent dirty data "
 "exceeding this threshold."
 msgstr ""
 
@@ -294,8 +306,8 @@ msgid ""
 "memory compared to &productname; 10. This is because of <systemitem class="
 "\"resource\">glibc</systemitem> changing its default behavior while "
 "allocating user space memory. See <link xlink:href=\"http://www.gnu.org/s/"
-"libc/manual/html_node/Malloc-Tunable-Parameters.html\"></link> for "
-"explanation of these parameters."
+"libc/manual/html_node/Malloc-Tunable-Parameters.html\"/> for explanation of "
+"these parameters."
 msgstr ""
 
 #. Tag: para
@@ -371,10 +383,10 @@ msgstr ""
 msgid "Reclaim Ratios"
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:284
 #, no-c-format
-msgid "/proc/sys/vm/swappiness"
+msgid "<filename>/proc/sys/vm/swappiness</filename>"
 msgstr ""
 
 #. Tag: para
@@ -384,7 +396,7 @@ msgid ""
 "This control is used to define how aggressively the kernel swaps out "
 "anonymous memory relative to pagecache and other caches. Increasing the "
 "value increases the amount of swapping. The default value is <literal>60</"
-"literal>."
+"literal> ."
 msgstr ""
 
 #. Tag: para
@@ -414,10 +426,10 @@ msgid ""
 "swap data back in when it is needed."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:312
 #, no-c-format
-msgid "/proc/sys/vm/vfs_cache_pressure"
+msgid "<filename>/proc/sys/vm/vfs_cache_pressure</filename>"
 msgstr ""
 
 #. Tag: para
@@ -435,17 +447,17 @@ msgstr ""
 msgid ""
 "It is difficult to know when this should be changed, other than by "
 "experimentation. The <command>slabtop</command> command (part of the package "
-"<systemitem class=\"resource\">procps</systemitem>) shows top memory objects "
-"used by the kernel. The vfs caches are the \"dentry\" and the \"*_inode_cache"
-"\" objects. If these are consuming a large amount of memory in relation to "
-"pagecache, it may be worth trying to increase pressure. Could also help to "
-"reduce swapping. The default value is <literal>100</literal>."
+"<systemitem class=\"resource\">procps</systemitem> ) shows top memory "
+"objects used by the kernel. The vfs caches are the \"dentry\" and the "
+"\"*_inode_cache\" objects. If these are consuming a large amount of memory "
+"in relation to pagecache, it may be worth trying to increase pressure. Could "
+"also help to reduce swapping. The default value is <literal>100</literal> ."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:334
 #, no-c-format
-msgid "/proc/sys/vm/min_free_kbytes"
+msgid "<filename>/proc/sys/vm/min_free_kbytes</filename>"
 msgstr ""
 
 #. Tag: para
@@ -463,10 +475,10 @@ msgid ""
 "of RAM."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:351
 #, no-c-format
-msgid "/proc/sys/vm/watermark_scale_factor"
+msgid "<filename>/proc/sys/vm/watermark_scale_factor</filename>"
 msgstr ""
 
 #. Tag: para
@@ -497,10 +509,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Workloads that frequently stall in direct reclaim, accounted by "
-"<literal>allocstall</literal> in <filename>/proc/vmstat</filename>, may "
+"<literal>allocstall</literal> in <filename>/proc/vmstat</filename> , may "
 "benefit from altering this parameter. Similarly, if <command>kswapd</"
 "command> is sleeping prematurely, as accounted for by "
-"<literal>kswapd_low_wmark_hit_quickly</literal>, then it may indicate that "
+"<literal>kswapd_low_wmark_hit_quickly</literal> , then it may indicate that "
 "the number of pages kept free to avoid stalls is too low."
 msgstr ""
 
@@ -531,10 +543,10 @@ msgid ""
 "Increasing writeback ratios and times can improve this type of slowdown."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:398
 #, no-c-format
-msgid "/proc/sys/vm/dirty_background_ratio"
+msgid "<filename>/proc/sys/vm/dirty_background_ratio</filename>"
 msgstr ""
 
 #. Tag: para
@@ -547,10 +559,10 @@ msgid ""
 "literal> (%)."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:410
 #, no-c-format
-msgid "/proc/sys/vm/dirty_background_bytes"
+msgid "<filename>/proc/sys/vm/dirty_background_bytes</filename>"
 msgstr ""
 
 #. Tag: para
@@ -559,31 +571,32 @@ msgstr ""
 msgid ""
 "This contains the amount of dirty memory at which the background kernel "
 "flusher threads will start writeback. <filename>dirty_background_bytes</"
-"filename> is the counterpart of <filename>dirty_background_ratio</filename>. "
-"If one of them is set, the other one will automatically be read as "
-"<literal>0</literal>."
+"filename> is the counterpart of <filename>dirty_background_ratio</"
+"filename> . If one of them is set, the other one will automatically be read "
+"as <literal>0</literal> ."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:423
 #, no-c-format
-msgid "/proc/sys/vm/dirty_ratio"
+msgid "<filename>/proc/sys/vm/dirty_ratio</filename>"
 msgstr ""
 
 #. Tag: para
 #: tuning_memory.xml:426
 #, no-c-format
 msgid ""
-"Similar percentage value as for <filename>dirty_background_ratio</filename>. "
-"When this is exceeded, applications that want to write to the pagecache are "
-"blocked and wait for kernel background flusher threads to reduce the amount "
-"of dirty memory. The default value is <literal>20</literal> (%)."
+"Similar percentage value as for <filename>dirty_background_ratio</"
+"filename> . When this is exceeded, applications that want to write to the "
+"pagecache are blocked and wait for kernel background flusher threads to "
+"reduce the amount of dirty memory. The default value is <literal>20</"
+"literal> (%)."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:436
 #, no-c-format
-msgid "/proc/sys/vm/dirty_bytes"
+msgid "<filename>/proc/sys/vm/dirty_bytes</filename>"
 msgstr ""
 
 #. Tag: para
@@ -594,16 +607,16 @@ msgid ""
 "however the amount of dirty memory is in bytes as opposed to a percentage of "
 "reclaimable memory. Since both <filename>dirty_ratio</filename> and "
 "<filename>dirty_bytes</filename> control the same tunable, if one of them is "
-"set, the other one will automatically be read as <literal>0</literal>. The "
+"set, the other one will automatically be read as <literal>0</literal> . The "
 "minimum value allowed for <filename>dirty_bytes</filename> is two pages (in "
 "bytes); any value lower than this limit will be ignored and the old "
 "configuration will be retained."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: tuning_memory.xml:453
 #, no-c-format
-msgid "/proc/sys/vm/dirty_expire_centisecs"
+msgid "<filename>/proc/sys/vm/dirty_expire_centisecs</filename>"
 msgstr ""
 
 #. Tag: para
@@ -628,8 +641,8 @@ msgid ""
 "throughput by avoiding writeback I/O and to submitting more optimal I/O "
 "patterns increases. However, more dirty memory can either harm latency when "
 "memory needs to be reclaimed or at points of data integrity "
-"(<quote>synchronization points</quote>) when it needs to be written back to "
-"disk."
+"( <quote>synchronization points</quote> ) when it needs to be written back "
+"to disk."
 msgstr ""
 
 #. Tag: title
@@ -646,8 +659,8 @@ msgid ""
 "contains file-backed data that needs writing to disk. This guarantees that "
 "the system can always allocate the necessary data structures to complete I/"
 "O. The maximum amount of memory that can be dirty and requires writing at "
-"any time is controlled by <literal>vm.dirty_ratio</literal> (<filename>/proc/"
-"sys/vm/dirty_ratio</filename>). The defaults are:"
+"any time is controlled by <literal>vm.dirty_ratio</literal> ( <filename>/"
+"proc/sys/vm/dirty_ratio</filename> ). The defaults are:"
 msgstr ""
 
 #. Tag: screen
@@ -659,7 +672,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:491
+#: tuning_memory.xml:492
 #, no-c-format
 msgid ""
 "The primary advantage of using the lower ratio in &sle; 12 is that page "
@@ -673,7 +686,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:502
+#: tuning_memory.xml:503
 #, no-c-format
 msgid ""
 "There are exceptions and if your application is affected by this, it will "
@@ -681,13 +694,13 @@ msgid ""
 "dirty data rate limiting then monitor <literal>/proc/"
 "<replaceable>PID_OF_APPLICATION</replaceable>/stack</literal> and it will be "
 "observed that the application spends significant time in "
-"<literal>balance_dirty_pages_ratelimited</literal>. If this is observed and "
+"<literal>balance_dirty_pages_ratelimited</literal> . If this is observed and "
 "it is a problem, then increase the value of <literal>vm.dirty_ratio</"
 "literal> to 40 to restore the &sle; 11 SP3 behavior."
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:513
+#: tuning_memory.xml:514
 #, no-c-format
 msgid ""
 "It is important to note that the overall I/O throughput is the same "
@@ -696,16 +709,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:518
+#: tuning_memory.xml:519
 #, no-c-format
 msgid ""
 "This is an example of using <command>dd</command> to asynchronously write "
 "30% of memory to disk which would happen to be affected by the change in "
-"<literal>vm.dirty_ratio</literal>:"
+"<literal>vm.dirty_ratio</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: tuning_memory.xml:523
+#: tuning_memory.xml:524
 #, no-c-format
 msgid ""
 "&prompt.root;MEMTOTAL_MBYTES=`free -m | grep Mem: | awk '{print $2}'`\n"
@@ -719,19 +732,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:524
+#: tuning_memory.xml:531
 #, no-c-format
 msgid ""
 "Note that the parameter affects the time it takes for the command to "
 "complete and the apparent write speed of the device. With "
-"<literal>dirty_ratio=40</literal>, more of the data is cached and written to "
-"disk in the background by the kernel. It is very important to note that the "
-"speed of I/O is identical in both cases. To demonstrate, this is the result "
-"when <command>dd</command> synchronizes the data before exiting:"
+"<literal>dirty_ratio=40</literal> , more of the data is cached and written "
+"to disk in the background by the kernel. It is very important to note that "
+"the speed of I/O is identical in both cases. To demonstrate, this is the "
+"result when <command>dd</command> synchronizes the data before exiting:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_memory.xml:533
+#: tuning_memory.xml:540
 #, no-c-format
 msgid ""
 "&prompt.root;sysctl vm.dirty_ratio=40\n"
@@ -745,7 +758,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:534
+#: tuning_memory.xml:546
 #, no-c-format
 msgid ""
 "Note that <literal>dirty_ratio</literal> had almost no impact here and is "
@@ -756,19 +769,21 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_memory.xml:544
+#: tuning_memory.xml:556
 #, no-c-format
 msgid "Readahead Parameters"
 msgstr ""
 
-#. Tag: filename
-#: tuning_memory.xml:547
+#. Tag: term
+#: tuning_memory.xml:559
 #, no-c-format
-msgid "/sys/block/<replaceable>&lt;bdev&gt;</replaceable>/queue/read_ahead_kb"
+msgid ""
+"<filename>/sys/block/<replaceable>&lt;bdev&gt;</replaceable>/queue/"
+"read_ahead_kb</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:550
+#: tuning_memory.xml:562
 #, no-c-format
 msgid ""
 "If one or more processes are sequentially reading a file, the kernel reads "
@@ -785,13 +800,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_memory.xml:570
+#: tuning_memory.xml:582
 #, no-c-format
 msgid "Transparent Huge Page Parameters"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:571
+#: tuning_memory.xml:583
 #, no-c-format
 msgid ""
 "Transparent Huge Pages (THP) provide a way to dynamically allocate huge "
@@ -805,34 +820,34 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:581
+#: tuning_memory.xml:593
 #, no-c-format
 msgid ""
 "There are cases when THP may be undesirable. Workloads with sparse memory "
 "access patterns can perform poorly with THP due to excessive memory usage. "
 "For example, 2 MB of memory may be used at fault time instead of 4 KB for "
 "each fault and ultimately lead to premature page reclaim. On releases older "
-"than <phrase os=\"sles;sled\">&sle; 12 SP2</phrase><phrase os=\"osuse"
-"\">&opensuse; Leap 42.2</phrase>, it was possible for an application to "
+"than <phrase os=\"sles;sled\">&sle; 12 SP2</phrase> <phrase os=\"osuse"
+"\">&opensuse; Leap 42.2</phrase> , it was possible for an application to "
 "stall for long periods of time trying to allocate a THP which frequently led "
 "to a recommendation of disabling THP. Such recommendations should be re-"
-"evaluated for <phrase os=\"sles;sled\">&sle; 12 SP3</phrase><phrase os="
+"evaluated for <phrase os=\"sles;sled\">&sle; 12 SP3</phrase> <phrase os="
 "\"osuse\">&opensuse; Leap 42.3</phrase>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:593
+#: tuning_memory.xml:605
 #, no-c-format
 msgid ""
 "The behavior of THP may be configured via the <option>transparent_hugepage=</"
 "option> kernel parameter or via sysfs. For example, it may be disabled by "
-"adding the kernel parameter <option>transparent_hugepage=never</option>, "
+"adding the kernel parameter <option>transparent_hugepage=never</option> , "
 "rebuilding your grub2 configuration, and rebooting. Verify if THP is "
 "disabled with:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_memory.xml:601
+#: tuning_memory.xml:613
 #, no-c-format
 msgid ""
 "&prompt.root;cat /sys/kernel/mm/transparent_hugepage/enabled\n"
@@ -840,7 +855,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:602
+#: tuning_memory.xml:615
 #, no-c-format
 msgid ""
 "If disabled, the value <literal>never</literal> is shown in square brackets "
@@ -850,19 +865,19 @@ msgid ""
 "allocate THP for address spaces explicitly specified by an application."
 msgstr ""
 
-#. Tag: filename
-#: tuning_memory.xml:612
+#. Tag: term
+#: tuning_memory.xml:625
 #, no-c-format
-msgid "/sys/kernel/mm/transparent_hugepage/defrag"
+msgid "<filename>/sys/kernel/mm/transparent_hugepage/defrag</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:615
+#: tuning_memory.xml:628
 #, no-c-format
 msgid ""
 "This parameter controls how much effort an application commits when "
 "allocating a THP. A value of <literal>always</literal> is the default for "
-"<phrase os=\"sles;sled\">&sle; 12 SP1 and earlier</phrase><phrase os=\"osuse"
+"<phrase os=\"sles;sled\">&sle; 12 SP1 and earlier</phrase> <phrase os=\"osuse"
 "\">&opensuse; 42.1 and earlier</phrase> releases that supported THP. If a "
 "THP is not available, the application will try to defragment memory. It "
 "potentially incurs large stalls in an application if the memory is "
@@ -870,30 +885,30 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:624
+#: tuning_memory.xml:637
 #, no-c-format
 msgid ""
 "A value of <literal>madvise</literal> means that THP allocation requests "
 "will only defragment if the application explicitly requests it. This is the "
-"default for <phrase os=\"sles;sled\">&sle; 12 SP2</phrase><phrase os=\"osuse"
+"default for <phrase os=\"sles;sled\">&sle; 12 SP2</phrase> <phrase os=\"osuse"
 "\">&opensuse; 42.2</phrase> and later releases."
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:631
+#: tuning_memory.xml:644
 #, no-c-format
 msgid ""
 "<literal>defer</literal> is only available on <phrase os=\"sles;sled\">&sle; "
-"12 SP2</phrase><phrase os=\"osuse\">&opensuse; 42.2</phrase> and later "
+"12 SP2</phrase> <phrase os=\"osuse\">&opensuse; 42.2</phrase> and later "
 "releases. If a THP is not available, the application will fall back to using "
 "small pages if a THP is not available. It will wake the <command>kswapd</"
 "command> and <command>kcompactd</command> kernel threads to defragment "
 "memory in the background and a THP will be allocated later by "
-"<command>khugepaged</command>."
+"<command>khugepaged</command> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:641
+#: tuning_memory.xml:654
 #, no-c-format
 msgid ""
 "The final option <literal>never</literal> will use small pages if a THP is "
@@ -901,29 +916,30 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_memory.xml:650
+#: tuning_memory.xml:663
 #, no-c-format
 msgid "khugepaged Parameters"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:651
+#: tuning_memory.xml:664
 #, no-c-format
 msgid ""
 "khugepaged will be automatically started when <literal>transparent_hugepage</"
-"literal> is set to <literal>always</literal> or <literal>madvise</literal>, "
+"literal> is set to <literal>always</literal> or <literal>madvise</literal> , "
 "and it will be automatically shut down if it is set to <literal>never</"
-"literal>. Normally this runs at low frequency but the behavior can be tuned."
+"literal> . Normally this runs at low frequency but the behavior can be tuned."
 msgstr ""
 
-#. Tag: filename
-#: tuning_memory.xml:660
+#. Tag: term
+#: tuning_memory.xml:673
 #, no-c-format
-msgid "/sys/kernel/mm/transparent_hugepage/khugepaged/defrag"
+msgid ""
+"<filename>/sys/kernel/mm/transparent_hugepage/khugepaged/defrag</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:662
+#: tuning_memory.xml:675
 #, no-c-format
 msgid ""
 "A value of 0 will disable <command>khugepaged</command> even though THP may "
@@ -932,14 +948,16 @@ msgid ""
 "<command>khugepaged</command> tries to update an application memory usage."
 msgstr ""
 
-#. Tag: filename
-#: tuning_memory.xml:673
+#. Tag: term
+#: tuning_memory.xml:686
 #, no-c-format
-msgid "/sys/kernel/mm/transparent_hugepage/khugepaged/pages_to_scan"
+msgid ""
+"<filename>/sys/kernel/mm/transparent_hugepage/khugepaged/pages_to_scan</"
+"filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:675
+#: tuning_memory.xml:688
 #, no-c-format
 msgid ""
 "This parameter controls how many pages are scanned by <command>khugepaged</"
@@ -948,14 +966,16 @@ msgid ""
 "background faster at the cost of CPU usage."
 msgstr ""
 
-#. Tag: filename
-#: tuning_memory.xml:686
+#. Tag: term
+#: tuning_memory.xml:699
 #, no-c-format
-msgid "/sys/kernel/mm/transparent_hugepage/khugepaged/scan_sleep_millisecs"
+msgid ""
+"<filename>/sys/kernel/mm/transparent_hugepage/khugepaged/"
+"scan_sleep_millisecs</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:688
+#: tuning_memory.xml:701
 #, no-c-format
 msgid ""
 "<command>khugepaged</command> sleeps for a short interval specified by this "
@@ -964,14 +984,16 @@ msgid ""
 "value of 0 will force continual scanning."
 msgstr ""
 
-#. Tag: filename
-#: tuning_memory.xml:698
+#. Tag: term
+#: tuning_memory.xml:711
 #, no-c-format
-msgid "/sys/kernel/mm/transparent_hugepage/khugepaged/alloc_sleep_millisecs"
+msgid ""
+"<filename>/sys/kernel/mm/transparent_hugepage/khugepaged/"
+"alloc_sleep_millisecs</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:701
+#: tuning_memory.xml:714
 #, no-c-format
 msgid ""
 "This parameter controls how long <command>khugepaged</command> will sleep in "
@@ -980,7 +1002,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:711
+#: tuning_memory.xml:724
 #, no-c-format
 msgid ""
 "The remaining parameters for <command>khugepaged</command> are rarely useful "
@@ -989,13 +1011,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_memory.xml:718
+#: tuning_memory.xml:731
 #, no-c-format
 msgid "Further VM Parameters"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:719
+#: tuning_memory.xml:732
 #, no-c-format
 msgid ""
 "For the complete list of the VM tunable parameters, see <filename>/usr/src/"
@@ -1005,19 +1027,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_memory.xml:764
+#: tuning_memory.xml:777
 #, no-c-format
 msgid "Monitoring VM Behavior"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:766
+#: tuning_memory.xml:779
 #, no-c-format
 msgid "Some simple tools that can help monitor VM behavior:"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:772
+#: tuning_memory.xml:785
 #, no-c-format
 msgid ""
 "vmstat: This tool gives a good overview of what the VM is doing. See <xref "
@@ -1025,29 +1047,29 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:778
+#: tuning_memory.xml:791
 #, no-c-format
 msgid ""
-"<filename>/proc/meminfo</filename>: This file gives a detailed breakdown of "
+"<filename>/proc/meminfo</filename> : This file gives a detailed breakdown of "
 "where memory is being used. See <xref linkend=\"sec.util.memory.meminfo\"/> "
 "for details."
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:785
+#: tuning_memory.xml:798
 #, no-c-format
 msgid ""
-"<command>slabtop</command>: This tool provides detailed information about "
+"<command>slabtop</command> : This tool provides detailed information about "
 "kernel slab memory usage. buffer_head, dentry, inode_cache, "
 "ext3_inode_cache, etc. are the major caches. This command is available with "
-"the package <systemitem class=\"resource\">procps</systemitem>."
+"the package <systemitem class=\"resource\">procps</systemitem> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:793
+#: tuning_memory.xml:806
 #, no-c-format
 msgid ""
-"<filename>/proc/vmstat</filename>: This file gives a detailed breakdown of "
+"<filename>/proc/vmstat</filename> : This file gives a detailed breakdown of "
 "internal VM behavior. The information contained within is implementation "
 "specific and may not always be available. Some information is duplicated in "
 "<filename>/proc/meminfo</filename> and other can be presented in a friendly "
@@ -1056,14 +1078,14 @@ msgid ""
 "information that are hard to derive from other sources are as follows:"
 msgstr ""
 
-#. Tag: literal
-#: tuning_memory.xml:805
+#. Tag: term
+#: tuning_memory.xml:818
 #, no-c-format
-msgid "pgscan_kswapd_*, pgsteal_kswapd_*"
+msgid "<literal>pgscan_kswapd_*, pgsteal_kswapd_*</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:807
+#: tuning_memory.xml:820
 #, no-c-format
 msgid ""
 "These report respectively the number of pages scanned and reclaimed by "
@@ -1074,14 +1096,14 @@ msgid ""
 "with."
 msgstr ""
 
-#. Tag: literal
-#: tuning_memory.xml:818
+#. Tag: term
+#: tuning_memory.xml:831
 #, no-c-format
-msgid "pgscan_direct_*, pgsteal_direct_*"
+msgid "<literal>pgscan_direct_*, pgsteal_direct_*</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:820
+#: tuning_memory.xml:833
 #, no-c-format
 msgid ""
 "These report respectively the number of pages scanned and reclaimed by an "
@@ -1089,25 +1111,25 @@ msgid ""
 "<literal>allocstall</literal> counter. This is more serious than "
 "<command>kswapd</command> activity as these events indicate that processes "
 "are stalling. Heavy activity here combined with <command>kswapd</command> "
-"and high rates of <literal>pgpgin</literal>, <literal>pgpout</literal> and/"
+"and high rates of <literal>pgpgin</literal> , <literal>pgpout</literal> and/"
 "or high rates of <literal>pswapin</literal> or <literal>pswpout</literal> "
 "are signs that a system is thrashing heavily."
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:831
+#: tuning_memory.xml:844
 #, no-c-format
 msgid "More detailed information can be obtained using tracepoints."
 msgstr ""
 
-#. Tag: literal
-#: tuning_memory.xml:837
+#. Tag: term
+#: tuning_memory.xml:850
 #, no-c-format
-msgid "thp_fault_alloc, thp_fault_fallback"
+msgid "<literal>thp_fault_alloc, thp_fault_fallback</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:839
+#: tuning_memory.xml:852
 #, no-c-format
 msgid ""
 "These counters correspond to how many THPs were allocated directly by an "
@@ -1116,14 +1138,14 @@ msgid ""
 "very sensitive to TLB pressure."
 msgstr ""
 
-#. Tag: literal
-#: tuning_memory.xml:848
+#. Tag: term
+#: tuning_memory.xml:861
 #, no-c-format
-msgid "thp_collapse_alloc, thp_collapse_alloc_failed"
+msgid "<literal>thp_collapse_alloc, thp_collapse_alloc_failed</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:850
+#: tuning_memory.xml:863
 #, no-c-format
 msgid ""
 "These counters correspond to how many THPs were allocated by "
@@ -1134,14 +1156,16 @@ msgid ""
 "are sensitive to TLB pressure."
 msgstr ""
 
-#. Tag: literal
-#: tuning_memory.xml:861
+#. Tag: term
+#: tuning_memory.xml:874
 #, no-c-format
-msgid "compact_*_scanned, compact_stall, compact_fail, compact_success"
+msgid ""
+"<literal>compact_*_scanned, compact_stall, compact_fail, compact_success</"
+"literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_memory.xml:863
+#: tuning_memory.xml:876
 #, no-c-format
 msgid ""
 "These counters may increase when THP is enabled and the system is "

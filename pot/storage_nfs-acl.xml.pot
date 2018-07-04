@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,22 +20,58 @@ msgstr ""
 msgid "Managing Access Control Lists over NFSv4"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: storage_nfs-acl.xml:11
+#. Tag: dm:translation
+#: storage_nfs-acl.xml:13
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
-#. Tag: para
-#: storage_nfs-acl.xml:16
+#. Tag: literal
+#: storage_nfs-acl.xml:18
 #, no-c-format
-msgid "There is no single standard for Access Control Lists (ACLs) in Linux beyond the simple read, write, and execute (<literal>rwx</literal>) flags for user, group, and others (<literal>ugo</literal>). One option for finer control is the <citetitle>Draft POSIX ACLs</citetitle>, which were never formally standardized by POSIX. Another is the NFSv4 ACLs, which were designed to be part of the NFSv4 network file system with the goal of making something that provided reasonable compatibility between POSIX systems on Linux and WIN32 systems on Microsoft Windows."
+msgid "rwx"
+msgstr ""
+
+#. Tag: #text
+#: storage_nfs-acl.xml:18
+#, no-c-format
+msgid "There is no single standard for Access Control Lists (ACLs) in Linux beyond the simple read, write, and execute ("
+msgstr ""
+
+#. Tag: literal
+#: storage_nfs-acl.xml:19
+#, no-c-format
+msgid "ugo"
+msgstr ""
+
+#. Tag: #text
+#: storage_nfs-acl.xml:19
+#, no-c-format
+msgid ") flags for user, group, and others ("
+msgstr ""
+
+#. Tag: #text
+#: storage_nfs-acl.xml:20
+#, no-c-format
+msgid "). One option for finer control is the"
+msgstr ""
+
+#. Tag: citetitle
+#: storage_nfs-acl.xml:20
+#, no-c-format
+msgid "Draft POSIX ACLs"
+msgstr ""
+
+#. Tag: #text
+#: storage_nfs-acl.xml:25
+#, no-c-format
+msgid ", which were never formally standardized by POSIX. Another is the NFSv4 ACLs, which were designed to be part of the NFSv4 network file system with the goal of making something that provided reasonable compatibility between POSIX systems on Linux and WIN32 systems on Microsoft Windows."
 msgstr ""
 
 #. Tag: para
 #: storage_nfs-acl.xml:26
 #, no-c-format
-msgid "NFSv4 ACLs are not sufficient to correctly implement Draft POSIX ACLs so no attempt has been made to map ACL accesses on an NFSv4 client (such as using <command>setfacl</command>)."
+msgid "NFSv4 ACLs are not sufficient to correctly implement Draft POSIX ACLs so no attempt has been made to map ACL accesses on an NFSv4 client (such as using <command>setfacl</command> )."
 msgstr ""
 
 #. Tag: para
@@ -44,22 +80,22 @@ msgstr ""
 msgid "When using NFSv4, Draft POSIX ACLs cannot be used even in emulation and NFSv4 ACLs need to be used directly; that means while <command>setfacl</command> can work on NFSv3, it cannot work on NFSv4. To allow NFSv4 ACLs to be used on an NFSv4 file system, SUSE Linux Enterprise Server provides the <filename>nfs4-acl-tools</filename> package, which contains the following:"
 msgstr ""
 
-#. Tag: command
-#: storage_nfs-acl.xml:41
+#. Tag: para
+#: storage_nfs-acl.xml:40
 #, no-c-format
-msgid "nfs4-getfacl"
+msgid "<command>nfs4-getfacl</command>"
 msgstr ""
 
-#. Tag: command
-#: storage_nfs-acl.xml:46
+#. Tag: para
+#: storage_nfs-acl.xml:45
 #, no-c-format
-msgid "nfs4-setfacl"
+msgid "<command>nfs4-setfacl</command>"
 msgstr ""
 
-#. Tag: command
-#: storage_nfs-acl.xml:51
+#. Tag: para
+#: storage_nfs-acl.xml:50
 #, no-c-format
-msgid "nfs4-editacl"
+msgid "<command>nfs4-editacl</command>"
 msgstr ""
 
 #. Tag: para
@@ -80,9 +116,27 @@ msgstr ""
 msgid "Additional Information"
 msgstr ""
 
-#. Tag: para
-#: storage_nfs-acl.xml:67
+#. Tag: #text
+#: storage_nfs-acl.xml:68
 #, no-c-format
-msgid "For information, see <citetitle>Introduction to NFSv4 ACLs</citetitle> at <link xlink:href=\"http://wiki.linux-nfs.org/wiki/index.php/ACLs#Introduction_to_NFSv4_ACLs\"></link>."
+msgid "For information, see"
+msgstr ""
+
+#. Tag: citetitle
+#: storage_nfs-acl.xml:68
+#, no-c-format
+msgid "Introduction to NFSv4 ACLs"
+msgstr ""
+
+#. Tag: #text
+#: storage_nfs-acl.xml:69
+#, no-c-format
+msgid "at"
+msgstr ""
+
+#. Tag: #text
+#: storage_nfs-acl.xml:70
+#, no-c-format
+msgid "."
 msgstr ""
 

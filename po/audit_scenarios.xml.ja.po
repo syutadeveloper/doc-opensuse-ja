@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -41,7 +41,8 @@ msgstr ""
 #. Tag: para
 #: audit_scenarios.xml:27
 #, no-c-format
-msgid "Basic audit configuration (see <xref linkend=\"sec.audit.scenbasic\"/>)"
+msgid ""
+"Basic audit configuration (see <xref linkend=\"sec.audit.scenbasic\"/> )"
 msgstr ""
 
 #. Tag: para
@@ -49,7 +50,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Watches on audit log files and configuration files (see <xref linkend=\"sec."
-"audit.scenauconf\"/>)"
+"audit.scenauconf\"/> )"
 msgstr ""
 
 #. Tag: para
@@ -57,7 +58,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Monitoring operations on file system objects (see <xref linkend=\"sec.audit."
-"scenfs\"/>)"
+"scenfs\"/> )"
 msgstr ""
 
 #. Tag: para
@@ -65,22 +66,22 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Monitoring security databases (see <xref linkend=\"sec.audit.scensecurity\"/"
-">)"
+"> )"
 msgstr ""
 
 #. Tag: para
 #: audit_scenarios.xml:50
 #, no-c-format
 msgid ""
-"Monitoring miscellaneous system calls (<xref linkend=\"sec.audit.scenmisc\"/"
-">)"
+"Monitoring miscellaneous system calls ( <xref linkend=\"sec.audit.scenmisc\"/"
+"> )"
 msgstr ""
 
 #. Tag: para
 #: audit_scenarios.xml:56
 #, no-c-format
 msgid ""
-"Filtering system call arguments (see <xref linkend=\"sec.audit.scenipc\"/>)"
+"Filtering system call arguments (see <xref linkend=\"sec.audit.scenipc\"/> )"
 msgstr ""
 
 #. Tag: para
@@ -135,23 +136,32 @@ msgstr ""
 msgid "Adding Basic Audit Configuration Parameters"
 msgstr ""
 
-#. Tag: screen
+#. Tag: #text
 #: audit_scenarios.xml:95
 #, no-c-format
-msgid ""
-"-D<co xml:id=\"co.auctld\"/>\n"
-"-b 8192<co xml:id=\"co.auctlb\"/>\n"
-"-f 2<co xml:id=\"co.auctlf\"/>"
+msgid "-D"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:96
+#, no-c-format
+msgid "-b 8192"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:97
+#, no-c-format
+msgid "-f 2"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:99
+#: audit_scenarios.xml:101
 #, no-c-format
 msgid "Delete any preexisting rules before starting to define new ones."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:104
+#: audit_scenarios.xml:106
 #, no-c-format
 msgid ""
 "Set the number of buffers to take the audit messages. Depending on the level "
@@ -159,7 +169,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:111
+#: audit_scenarios.xml:113
 #, no-c-format
 msgid ""
 "Set the failure flag to use when the kernel needs to handle critical errors. "
@@ -169,33 +179,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:120
+#: audit_scenarios.xml:122
 #, no-c-format
 msgid ""
 "By emptying the rule queue with the <option>-D</option> option, you make "
 "sure that audit does not use any other rule set than what you are offering "
-"it by means of this file. Choosing an appropriate buffer number (<option>-b</"
-"option>) is vital to avoid having your system fail because of too high an "
-"audit load. Choosing the panic failure flag <option>-f 2</option> ensures "
+"it by means of this file. Choosing an appropriate buffer number ( <option>-"
+"b</option> ) is vital to avoid having your system fail because of too high "
+"an audit load. Choosing the panic failure flag <option>-f 2</option> ensures "
 "that your audit records are complete even if the system is encountering "
 "critical errors. By shutting down the system on a critical error, audit "
 "makes sure that no process escapes from its control as it otherwise might if "
-"level 1 (<option>printk</option>) were chosen."
+"level 1 ( <option>printk</option> ) were chosen."
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:133
+#: audit_scenarios.xml:135
 #, no-c-format
 msgid "Choosing the Failure Flag"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:134
+#: audit_scenarios.xml:136
 #, no-c-format
 msgid ""
 "Before using your audit rule set on a live system, make sure that the setup "
 "has been thoroughly evaluated on test systems using the <emphasis>worst case "
-"production workload</emphasis>. It is even more critical that you do this "
+"production workload</emphasis> . It is even more critical that you do this "
 "when specifying the <option>-f 2</option> flag, because this instructs the "
 "kernel to panic (perform an immediate halt without flushing pending data to "
 "disk) if any thresholds are exceeded. Consider the use of the <option>-f 2</"
@@ -203,13 +213,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:147
+#: audit_scenarios.xml:149
 #, no-c-format
 msgid "Adding Watches on Audit Log Files and Configuration Files"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:149
+#: audit_scenarios.xml:151
 #, no-c-format
 msgid ""
 "Adding watches on your audit configuration files and the log files "
@@ -218,13 +228,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:156
+#: audit_scenarios.xml:158
 #, no-c-format
 msgid "Creating Directory and File Watches"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:157
+#: audit_scenarios.xml:159
 #, no-c-format
 msgid ""
 "Creating watches on a directory is not necessarily sufficient if you need "
@@ -233,25 +243,29 @@ msgid ""
 "file access, add watches for each file to monitor."
 msgstr ""
 
-#. Tag: screen
-#: audit_scenarios.xml:166
+#. Tag: #text
+#: audit_scenarios.xml:168
+#, no-c-format
+msgid "-w /var/log/audit/"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:176
 #, no-c-format
 msgid ""
-"-w /var/log/audit/ <co xml:id=\"co.auctllog\"/>\n"
-"-w /var/log/audit/audit.log\n"
-"\n"
-"-w /var/log/audit/audit_log.1\n"
-"-w /var/log/audit/audit_log.2\n"
-"-w /var/log/audit/audit_log.3\n"
-"-w /var/log/audit/audit_log.4\n"
-"\n"
-"-w /etc/audit/auditd.conf -p wa<co xml:id=\"co.auctlconf\"/>\n"
-"-w /etc/audit/audit.rules -p wa\n"
-"-w /etc/libaudit.conf -p wa"
+"-w /var/log/audit/audit.log-w /var/log/audit/audit_log.1-w /var/log/audit/"
+"audit_log.2-w /var/log/audit/audit_log.3-w /var/log/audit/audit_log.4-w /etc/"
+"audit/auditd.conf -p wa"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:178
+#, no-c-format
+msgid "-w /etc/audit/audit.rules -p wa-w /etc/libaudit.conf -p wa"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:170
+#: audit_scenarios.xml:182
 #, no-c-format
 msgid ""
 "Set a watch on the directory where the audit log is located. Trigger an "
@@ -260,7 +274,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:177
+#: audit_scenarios.xml:189
 #, no-c-format
 msgid ""
 "Set a watch on an audit configuration file. Log all write and attribute "
@@ -268,13 +282,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:185
+#: audit_scenarios.xml:197
 #, no-c-format
 msgid "Monitoring File System Objects"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:187
+#: audit_scenarios.xml:199
 #, no-c-format
 msgid ""
 "Auditing system calls helps track your system's activity well beyond the "
@@ -285,14 +299,8 @@ msgid ""
 "etc.)."
 msgstr ""
 
-#. Tag: title
-#: audit_scenarios.xml:197 audit_scenarios.xml:404
-#, no-c-format
-msgid "Auditing System Calls"
-msgstr ""
-
 #. Tag: para
-#: audit_scenarios.xml:198
+#: audit_scenarios.xml:210
 #, no-c-format
 msgid ""
 "Auditing system calls results in a high logging activity. This activity, in "
@@ -303,35 +311,57 @@ msgid ""
 "details on how to tweak the relevant settings."
 msgstr ""
 
-#. Tag: screen
-#: audit_scenarios.xml:209
+#. Tag: #text
+#: audit_scenarios.xml:221
 #, no-c-format
 msgid ""
 "-a entry,always -S chmod -S fchmod -S chown -S chown32 -S fchown -S fchown32 "
-"-S lchown -S lchown32<co xml:id=\"co.auctlfso\"/>\n"
-"\n"
+"-S lchown -S lchown32"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:223
+#, no-c-format
+msgid ""
 "-a entry,always -S creat -S open -S truncate -S truncate64 -S ftruncate -S "
-"ftruncate64<co xml:id=\"co.auctlmod\"/>\n"
-"\n"
-"-a entry,always -S mkdir -S rmdir<co xml:id=\"co.auctlfsdir\"/>\n"
-"\n"
-"-a entry,always -S unlink -S rename -S link -S symlink<co xml:id=\"co."
-"auctlfsmov\"/>\n"
-"\n"
-"-a entry,always -S setxattr<co xml:id=\"co.auctlfsea\"/>\n"
-"-a entry,always -S lsetxattr\n"
-"-a entry,always -S fsetxattr\n"
-"-a entry,always -S removexattr\n"
-"-a entry,always -S lremovexattr\n"
-"-a entry,always -S fremovexattr\n"
-"\n"
-"-a entry,always -S mknod<co xml:id=\"co.auctlfssf\"/>\n"
-"\n"
-"-a entry,always -S mount -S umount -S umount2<co xml:id=\"co.auctlfsfso\"/>"
+"ftruncate64"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:225
+#, no-c-format
+msgid "-a entry,always -S mkdir -S rmdir"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:227
+#, no-c-format
+msgid "-a entry,always -S unlink -S rename -S link -S symlink"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:229
+#, no-c-format
+msgid "-a entry,always -S setxattr"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:236
+#, no-c-format
+msgid ""
+"-a entry,always -S lsetxattr-a entry,always -S fsetxattr-a entry,always -S "
+"removexattr-a entry,always -S lremovexattr-a entry,always -S fremovexattr-a "
+"entry,always -S mknod"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:238
+#, no-c-format
+msgid "-a entry,always -S mount -S umount -S umount2"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:213
+#: audit_scenarios.xml:242
 #, no-c-format
 msgid ""
 "Enable an audit context for system calls related to changing file ownership "
@@ -341,7 +371,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:222
+#: audit_scenarios.xml:251
 #, no-c-format
 msgid ""
 "Enable an audit context for system calls related to file content "
@@ -351,7 +381,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:230
+#: audit_scenarios.xml:259
 #, no-c-format
 msgid ""
 "Enable an audit context for any directory operation, like creating or "
@@ -359,7 +389,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:236
+#: audit_scenarios.xml:265
 #, no-c-format
 msgid ""
 "Enable an audit context for any linking operation, such as creating a "
@@ -367,7 +397,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:242
+#: audit_scenarios.xml:271
 #, no-c-format
 msgid ""
 "Enable an audit context for any operation related to extended file system "
@@ -375,7 +405,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:248
+#: audit_scenarios.xml:277
 #, no-c-format
 msgid ""
 "Enable an audit context for the <command>mknod</command> system call, which "
@@ -383,7 +413,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:254
+#: audit_scenarios.xml:283
 #, no-c-format
 msgid ""
 "Enable an audit context for any mount or umount operation. For the &x86; "
@@ -392,13 +422,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:263
+#: audit_scenarios.xml:292
 #, no-c-format
 msgid "Monitoring Security Configuration Files and Databases"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:265
+#: audit_scenarios.xml:294
 #, no-c-format
 msgid ""
 "To make sure that your system is not made to do undesired things, track any "
@@ -409,7 +439,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:274
+#: audit_scenarios.xml:303
 #, no-c-format
 msgid ""
 "Tracking changes to your system configuration (kernel, services, time, etc.) "
@@ -421,67 +451,61 @@ msgid ""
 "other configuration files related to secure authentication and communication."
 msgstr ""
 
-#. Tag: screen
-#: audit_scenarios.xml:285
+#. Tag: #text
+#: audit_scenarios.xml:329
 #, no-c-format
 msgid ""
-"<co xml:id=\"co.audit.at\"/>\n"
-"-w /var/spool/atspool\n"
-"-w /etc/at.allow\n"
-"-w /etc/at.deny\n"
-"\n"
-"-w /etc/cron.allow -p wa\n"
-"-w /etc/cron.deny -p wa\n"
-"-w /etc/cron.d/ -p wa\n"
-"-w /etc/cron.daily/ -p wa\n"
-"-w /etc/cron.hourly/ -p wa\n"
-"-w /etc/cron.monthly/ -p wa\n"
-"-w /etc/cron.weekly/ -p wa\n"
-"-w /etc/crontab -p wa\n"
-"-w /var/spool/cron/root\n"
-"\n"
-"<co xml:id=\"co.audit.security\"/>\n"
-"-w /etc/group -p wa\n"
-"-w /etc/passwd -p wa\n"
-"-w /etc/shadow\n"
-"\n"
-"-w /etc/login.defs -p wa\n"
-"-w /etc/securetty\n"
-"-w /var/log/lastlog\n"
-"\n"
-"<co xml:id=\"co.audit.nw\"/>\n"
-"-w /etc/hosts -p wa\n"
-"-w /etc/sysconfig/\n"
-"w /etc/init.d/\n"
-"w /etc/ld.so.conf -p wa\n"
-"w /etc/localtime -p wa\n"
-"w /etc/sysctl.conf -p wa\n"
-"w /etc/modprobe.d/\n"
-"w /etc/modprobe.conf.local -p wa\n"
-"w /etc/modprobe.conf -p wa\n"
-"<co xml:id=\"co.audit.pam\"/>\n"
-"w /etc/pam.d/\n"
-"<co xml:id=\"co.audit.pfix\"/>\n"
-"-w /etc/aliases -p wa\n"
-"-w /etc/postfix/ -p wa\n"
-"\n"
-"<co xml:id=\"co.audit.ssh\"/>\n"
-"-w /etc/ssh/sshd_config\n"
-"\n"
-"-w /etc/stunnel/stunnel.conf\n"
-"-w /etc/stunnel/stunnel.pem\n"
-"\n"
-"-w /etc/vsftpd.ftpusers\n"
-"-w /etc/vsftpd.conf\n"
-"\n"
-"<co xml:id=\"co.audit.misc\"/>\n"
-"-a exit,always -S sethostname\n"
-"-w /etc/issue -p wa\n"
-"-w /etc/issue.net -p wa"
+"-w /var/spool/atspool-w /etc/at.allow-w /etc/at.deny-w /etc/cron.allow -p wa-"
+"w /etc/cron.deny -p wa-w /etc/cron.d/ -p wa-w /etc/cron.daily/ -p wa-w /etc/"
+"cron.hourly/ -p wa-w /etc/cron.monthly/ -p wa-w /etc/cron.weekly/ -p wa-w /"
+"etc/crontab -p wa-w /var/spool/cron/root"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:338
+#, no-c-format
+msgid ""
+"-w /etc/group -p wa-w /etc/passwd -p wa-w /etc/shadow-w /etc/login.defs -p "
+"wa-w /etc/securetty-w /var/log/lastlog"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:348
+#, no-c-format
+msgid ""
+"-w /etc/hosts -p wa-w /etc/sysconfig/w /etc/init.d/w /etc/ld.so.conf -p waw /"
+"etc/localtime -p waw /etc/sysctl.conf -p waw /etc/modprobe.d/w /etc/modprobe."
+"conf.local -p waw /etc/modprobe.conf -p wa"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:350
+#, no-c-format
+msgid "w /etc/pam.d/"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:354
+#, no-c-format
+msgid "-w /etc/aliases -p wa-w /etc/postfix/ -p wa"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:363
+#, no-c-format
+msgid ""
+"-w /etc/ssh/sshd_config-w /etc/stunnel/stunnel.conf-w /etc/stunnel/stunnel."
+"pem-w /etc/vsftpd.ftpusers-w /etc/vsftpd.conf"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:366
+#, no-c-format
+msgid "-a exit,always -S sethostname-w /etc/issue -p wa-w /etc/issue.net -p wa"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:289
+#: audit_scenarios.xml:370
 #, no-c-format
 msgid ""
 "Set watches on the <systemitem>at</systemitem> and <systemitem>cron</"
@@ -489,14 +513,8 @@ msgid ""
 "events."
 msgstr ""
 
-#. Tag: remark
-#: audit_scenarios.xml:294
-#, no-c-format
-msgid "jsegitz 2014-07-23: no labels get assigned"
-msgstr ""
-
 #. Tag: para
-#: audit_scenarios.xml:297
+#: audit_scenarios.xml:378
 #, no-c-format
 msgid ""
 "Set watches on the user, group, password, and login databases and logs and "
@@ -505,25 +523,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:304
+#: audit_scenarios.xml:385
 #, no-c-format
 msgid ""
 "Set a watch and a label on the static host name configuration in <filename>/"
-"etc/hosts</filename>. Track changes to the system configuration directory, "
-"<filename>/etc/sysconfig</filename>. Enable per-file watches if you are "
+"etc/hosts</filename> . Track changes to the system configuration directory, "
+"<filename>/etc/sysconfig</filename> . Enable per-file watches if you are "
 "interested in file events. Set watches and labels for changes to the boot "
-"configuration in the <filename>/etc/init.d</filename> directory. Enable per-"
-"file watches if you are interested in file events. Set watches and labels "
-"for any changes to the linker configuration in <filename>/etc/ld.so.conf</"
-"filename>. Set watches and a label for <filename>/etc/localtime</filename>. "
-"Set watches and labels for the kernel configuration files <filename>/etc/"
-"sysctl.conf</filename>, <filename>/etc/modprobe.d/</filename>, <filename>/"
-"etc/modprobe.conf.local</filename>, and <filename>/etc/modprobe.conf</"
-"filename>."
+"configuration in <!--taroth 2014-03-07: /etc/inittab no longer exists: "
+"<filename>/etc/inittab</filename> and--> the <filename>/etc/init.d</"
+"filename> directory. Enable per-file watches if you are interested in file "
+"events. Set watches and labels for any changes to the linker configuration "
+"in <filename>/etc/ld.so.conf</filename> . Set watches and a label for "
+"<filename>/etc/localtime</filename> . Set watches and labels for the kernel "
+"configuration files <filename>/etc/sysctl.conf</filename> , <filename>/etc/"
+"modprobe.d/</filename> , <filename>/etc/modprobe.conf.local</filename> , and "
+"<filename>/etc/modprobe.conf</filename> ."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:324
+#: audit_scenarios.xml:405
 #, no-c-format
 msgid ""
 "Set watches on the PAM configuration directory. If you are interested in "
@@ -532,7 +551,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:331
+#: audit_scenarios.xml:412
 #, no-c-format
 msgid ""
 "Set watches to the postfix configuration to log any write attempt or "
@@ -540,34 +559,34 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:337
+#: audit_scenarios.xml:418
 #, no-c-format
 msgid ""
-"Set watches and labels on the SSH, <command>stunnel</command>, and "
+"Set watches and labels on the SSH, <command>stunnel</command> , and "
 "<command>vsftpd</command> configuration files."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:344
+#: audit_scenarios.xml:425
 #, no-c-format
 msgid ""
 "Perform an audit of the <systemitem>sethostname</systemitem> system call and "
 "set watches and labels on the system identification configuration in "
-"<filename>/etc/issue</filename> and <filename>/etc/issue.net</filename>."
+"<filename>/etc/issue</filename> and <filename>/etc/issue.net</filename> ."
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:354
+#: audit_scenarios.xml:435
 #, no-c-format
 msgid "Monitoring Miscellaneous System Calls"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:356
+#: audit_scenarios.xml:437
 #, no-c-format
 msgid ""
 "Apart from auditing file system related system calls, as described in <xref "
-"linkend=\"sec.audit.scenfs\"/>, you can also track various other system "
+"linkend=\"sec.audit.scenfs\"/> , you can also track various other system "
 "calls. Tracking task creation helps you understand your applications' "
 "behavior. Auditing the <systemitem>umask</systemitem> system call lets you "
 "track how processes modify creation mask. Tracking any attempts to change "
@@ -575,34 +594,38 @@ msgid ""
 "manipulate the system time."
 msgstr ""
 
-#. Tag: screen
-#: audit_scenarios.xml:366
+#. Tag: #text
+#: audit_scenarios.xml:450
 #, no-c-format
-msgid ""
-"<co xml:id=\"co.audit.attrib\"/>\n"
-"-a entry,always -S clone -S fork -S vfork\n"
-"\n"
-"<co xml:id=\"co.audit.umask\"/>\n"
-"-a entry,always -S umask\n"
-"\n"
-"<co xml:id=\"co.audit.time\"/>\n"
-"-a entry,always -S adjtimex -S settimeofday"
+msgid "-a entry,always -S clone -S fork -S vfork"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:453
+#, no-c-format
+msgid "-a entry,always -S umask"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:454
+#, no-c-format
+msgid "-a entry,always -S adjtimex -S settimeofday"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:370
+#: audit_scenarios.xml:458
 #, no-c-format
 msgid "Track task creation."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:375
+#: audit_scenarios.xml:463
 #, no-c-format
 msgid "Add an audit context to the umask system call."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:380
+#: audit_scenarios.xml:468
 #, no-c-format
 msgid ""
 "Track attempts to change the system time. <literal>adjtimex</literal> can be "
@@ -611,17 +634,17 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:389
+#: audit_scenarios.xml:477
 #, no-c-format
 msgid "Filtering System Call Arguments"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:391
+#: audit_scenarios.xml:479
 #, no-c-format
 msgid ""
 "In addition to the system call auditing introduced in <xref linkend=\"sec."
-"audit.scenfs\"/> and <xref linkend=\"sec.audit.scenmisc\"/>, you can track "
+"audit.scenfs\"/> and <xref linkend=\"sec.audit.scenmisc\"/> , you can track "
 "application behavior to an even higher degree. Applying filters helps you "
 "focus audit on areas of primary interest to you. This section introduces "
 "filtering system call arguments for non-multiplexed system calls like access "
@@ -630,8 +653,14 @@ msgid ""
 "ipc are not multiplexed on 64-bit architectures, such as &x86-64;."
 msgstr ""
 
+#. Tag: title
+#: audit_scenarios.xml:492
+#, no-c-format
+msgid "Auditing System Calls"
+msgstr ""
+
 #. Tag: para
-#: audit_scenarios.xml:405
+#: audit_scenarios.xml:493
 #, no-c-format
 msgid ""
 "Auditing system calls results in high logging activity, which in turn puts a "
@@ -643,116 +672,131 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:416
+#: audit_scenarios.xml:504
 #, no-c-format
 msgid ""
 "The access system call checks whether a process would be allowed to read, "
 "write or test for the existence of a file or file system object. Using the "
 "<option>-F</option> filter flag, build rules matching specific access calls "
-"in the format<option>-F a1=<replaceable>ACCESS_MODE</replaceable></option>. "
-"Check <filename>/usr/include/fcntl.h</filename> for a list of possible "
-"arguments to the access system call."
+"in the format <option>-F a1=<replaceable>ACCESS_MODE</replaceable></"
+"option> . Check <filename>/usr/include/fcntl.h</filename> for a list of "
+"possible arguments to the access system call."
 msgstr ""
 
-#. Tag: screen
-#: audit_scenarios.xml:426
+#. Tag: #text
+#: audit_scenarios.xml:514
 #, no-c-format
-msgid ""
-"-a entry,always -S access -F a1=4<co xml:id=\"co.audit.accessr\"/>\n"
-"-a entry,always -S access -F a1=6<co xml:id=\"co.audit.accessrw\"/>\n"
-"-a entry,always -S access -F a1=7<co xml:id=\"co.audit.accessrwx\"/>"
+msgid "-a entry,always -S access -F a1=4"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:515
+#, no-c-format
+msgid "-a entry,always -S access -F a1=6"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:516
+#, no-c-format
+msgid "-a entry,always -S access -F a1=7"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:430
+#: audit_scenarios.xml:520
 #, no-c-format
 msgid ""
 "Audit the access system call, but only if the second argument of the system "
-"call (<literal>mode</literal>) is <literal>4</literal> (<literal>R_OK</"
-"literal>). This rule filters for all access calls testing for sufficient "
+"call ( <literal>mode</literal> ) is <literal>4</literal> ( <literal>R_OK</"
+"literal> ). This rule filters for all access calls testing for sufficient "
 "read permissions to a file or file system object accessed by a user or "
 "process."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:439
+#: audit_scenarios.xml:529
 #, no-c-format
 msgid ""
 "Audit the access system call, but only if the second argument of the system "
-"call (<literal>mode</literal>) is <literal>6</literal>, meaning <literal>4 "
-"OR 2</literal>, which translates to <literal>R_OK OR W_OK</literal>. This "
-"rule filters for access calls testing for sufficient read and write "
-"permissions."
+"call ( <literal>mode</literal> ) is <literal>6</literal> , meaning "
+"<literal>4 OR 2</literal> , which translates to <literal>R_OK OR W_OK</"
+"literal> . This rule filters for access calls testing for sufficient read "
+"and write permissions."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:448
+#: audit_scenarios.xml:538
 #, no-c-format
 msgid ""
 "Audit the access system call, but only if the second argument of the system "
-"call (<literal>mode</literal>) is <literal>7</literal>, meaning <literal>4 "
-"OR 2 OR 1</literal>, which translates to <literal>R_OK OR W_OK OR X_OK</"
-"literal>. This rule filters for access calls testing for sufficient read, "
-"write, and execute permissions."
+"call ( <literal>mode</literal> ) is <literal>7</literal> , meaning "
+"<literal>4 OR 2 OR 1</literal> , which translates to <literal>R_OK OR W_OK "
+"OR X_OK</literal> . This rule filters for access calls testing for "
+"sufficient read, write, and execute permissions."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:458
+#: audit_scenarios.xml:548
 #, no-c-format
 msgid ""
 "The socketcall system call is a multiplexed system call. Multiplexed means "
 "that there is only one system call for all possible calls and that libc "
-"passes the actual system call to use as the first argument (<literal>a0</"
-"literal>). Check the manual page of socketcall for possible system calls and "
-"refer to <filename>/usr/src/linux/include/linux/net.h</filename> for a list "
-"of possible argument values and system call names. Audit supports filtering "
-"for specific system calls using a <option>-F a0=<replaceable>SYSCALL_NUMBER</"
-"replaceable></option>."
+"passes the actual system call to use as the first argument ( <literal>a0</"
+"literal> ). Check the manual page of socketcall for possible system calls "
+"and refer to <filename>/usr/src/linux/include/linux/net.h</filename> for a "
+"list of possible argument values and system call names. Audit supports "
+"filtering for specific system calls using a <option>-F "
+"a0=<replaceable>SYSCALL_NUMBER</replaceable></option> ."
 msgstr ""
 
-#. Tag: screen
-#: audit_scenarios.xml:470
+#. Tag: #text
+#: audit_scenarios.xml:560
+#, no-c-format
+msgid "-a entry,always -S socketcall -F a0=1 -F a1=10"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:564
 #, no-c-format
 msgid ""
-"-a entry,always -S socketcall -F a0=1 -F a1=10<co xml:id=\"co.audit."
-"socket1\"/>\n"
-"## Use this line on x86_64, ia64 instead\n"
-"#-a entry,always -S socket -F a0=10\n"
-"\n"
-"-a entry,always -S socketcall -F a0=5<co xml:id=\"co.audit.socket2\"/>\n"
-"## Use this line on x86_64, ia64 instead\n"
-"#-a entry, always -S accept"
+"## Use this line on x86_64, ia64 instead#-a entry,always -S socket -F a0=10-"
+"a entry,always -S socketcall -F a0=5"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:566
+#, no-c-format
+msgid "## Use this line on x86_64, ia64 instead#-a entry, always -S accept"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:474
+#: audit_scenarios.xml:570
 #, no-c-format
 msgid ""
 "Audit the socket(PF_INET6) system call. The <option>-F a0=1</option> filter "
 "matches all socket system calls and the <option>-F a1=10</option> filter "
 "narrows the matches down to socket system calls carrying the IPv6 protocol "
 "family domain parameter (PF_INET6). Check <filename>/usr/include/linux/net."
-"h</filename> for the first argument (<literal>a0</literal>) and <filename>/"
+"h</filename> for the first argument ( <literal>a0</literal> ) and <filename>/"
 "usr/src/linux/include/linux/socket.h</filename> for the second parameter "
-"(<literal>a1</literal>). 64-bit platforms, like &x86-64;, do not use "
+"( <literal>a1</literal> ). 64-bit platforms, like &x86-64;, do not use "
 "multiplexing on socketcall system calls. For these platforms, comment the "
 "rule and add the plain system call rules with a filter on PF_INET6."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:490
+#: audit_scenarios.xml:586
 #, no-c-format
 msgid ""
 "Audit the socketcall system call. The filter flag is set to filter for "
 "<option>a0=5</option> as the first argument to socketcall, which translates "
 "to the accept system call if you check <filename>/usr/include/linux/net.h</"
-"filename>. 64-bit platforms, like &x86-64;, do not use multiplexing on "
+"filename> . 64-bit platforms, like &x86-64;, do not use multiplexing on "
 "socketcall system calls. For these platforms, comment the rule and add the "
 "plain system call rule without argument filtering."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:502
+#: audit_scenarios.xml:598
 #, no-c-format
 msgid ""
 "The ipc system call is another example of multiplexed system calls. The "
@@ -762,96 +806,87 @@ msgid ""
 "filename> for possible argument values."
 msgstr ""
 
-#. Tag: screen
-#: audit_scenarios.xml:511
+#. Tag: #text
+#: audit_scenarios.xml:616
 #, no-c-format
 msgid ""
-"<co xml:id=\"co.audit.mqueue\"/>\n"
-"## msgctl\n"
-"-a entry,always -S ipc -F a0=14\n"
-"## msgget\n"
-"-a entry,always -S ipc -F a0=13\n"
-"## Use these lines on x86_64, ia64 instead\n"
-"#-a entry,always -S msgctl\n"
-"#-a entry,always -S msgget\n"
-"\n"
-"<co xml:id=\"co.audit.semaph\"/>\n"
-"## semctl\n"
-"-a entry,always -S ipc -F a0=3\n"
-"## semget\n"
-"-a entry,always -S ipc -F a0=2\n"
-"## semop\n"
-"-a entry,always -S ipc -F a0=1\n"
-"## semtimedop\n"
-"-a entry,always -S ipc -F a0=4\n"
-"## Use these lines on x86_64, ia64 instead\n"
-"#-a entry,always -S semctl\n"
-"#-a entry,always -S semget\n"
-"#-a entry,always -S semop\n"
-"#-a entry,always -S semtimedop\n"
-"\n"
-"<co xml:id=\"co.audit.sharedmem\"/>\n"
-"## shmctl\n"
-"-a entry,always -S ipc -F a0=24\n"
-"## shmget\n"
-"-a entry,always -S ipc -F a0=23\n"
-"## Use these lines on x86_64, ia64 instead\n"
-"#-a entry,always -S shmctl\n"
-"#-a entry,always -S shmget"
+"## msgctl-a entry,always -S ipc -F a0=14## msgget-a entry,always -S ipc -F "
+"a0=13## Use these lines on x86_64, ia64 instead#-a entry,always -S msgctl#-a "
+"entry,always -S msgget"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:631
+#, no-c-format
+msgid ""
+"## semctl-a entry,always -S ipc -F a0=3## semget-a entry,always -S ipc -F "
+"a0=2## semop-a entry,always -S ipc -F a0=1## semtimedop-a entry,always -S "
+"ipc -F a0=4## Use these lines on x86_64, ia64 instead#-a entry,always -S "
+"semctl#-a entry,always -S semget#-a entry,always -S semop#-a entry,always -S "
+"semtimedop"
+msgstr ""
+
+#. Tag: #text
+#: audit_scenarios.xml:638
+#, no-c-format
+msgid ""
+"## shmctl-a entry,always -S ipc -F a0=24## shmget-a entry,always -S ipc -F "
+"a0=23## Use these lines on x86_64, ia64 instead#-a entry,always -S shmctl#-a "
+"entry,always -S shmget"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:515
+#: audit_scenarios.xml:642
 #, no-c-format
 msgid ""
 "Audit system calls related to IPC SYSV message queues. In this case, the "
 "<literal>a0</literal> values specify that auditing is added for the msgctl "
-"and msgget system calls (<literal>14</literal> and <literal>13</literal>). "
+"and msgget system calls ( <literal>14</literal> and <literal>13</literal> ). "
 "64-bit platforms, like &x86-64;, do not use multiplexing on ipc system "
 "calls. For these platforms, comment the first two rules and add the plain "
 "system call rules without argument filtering."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:526
+#: audit_scenarios.xml:653
 #, no-c-format
 msgid ""
 "Audit system calls related to IPC SYSV message semaphores. In this case, the "
 "<literal>a0</literal> values specify that auditing is added for the semctl, "
-"semget, semop, and semtimedop system calls (<literal>3</literal>, "
-"<literal>2</literal>, <literal>1</literal>, and <literal>4</literal>). 64-"
+"semget, semop, and semtimedop system calls ( <literal>3</literal> , "
+"<literal>2</literal> , <literal>1</literal> , and <literal>4</literal> ). 64-"
 "bit platforms, like &x86-64;, do not use multiplexing on ipc system calls. "
 "For these platforms, comment the first four rules and add the plain system "
 "call rules without argument filtering."
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:538
+#: audit_scenarios.xml:665
 #, no-c-format
 msgid ""
 "Audit system calls related to IPC SYSV shared memory. In this case, the "
 "<literal>a0</literal> values specify that auditing is added for the shmctl "
-"and shmget system calls (<literal>24</literal>, <literal>23</literal>). 64-"
-"bit platforms, like &x86-64;, do not use multiplexing on ipc system calls. "
-"For these platforms, comment the first two rules and add the plain system "
-"call rules without argument filtering."
+"and shmget system calls ( <literal>24</literal> , <literal>23</literal> ). "
+"64-bit platforms, like &x86-64;, do not use multiplexing on ipc system "
+"calls. For these platforms, comment the first two rules and add the plain "
+"system call rules without argument filtering."
 msgstr ""
 
 #. Tag: title
-#: audit_scenarios.xml:551
+#: audit_scenarios.xml:678
 #, no-c-format
 msgid "Managing Audit Event Records Using Keys"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:553
+#: audit_scenarios.xml:680
 #, no-c-format
 msgid ""
 "After configuring a few rules generating events and populating the logs, you "
 "need to find a way to tell one event from the other. Using the "
 "<command>ausearch</command> command, you can filter the logs for various "
 "criteria. Using <command>ausearch</command> <option>-m "
-"<replaceable>MESSAGE_TYPE</replaceable></option>, you can at least filter "
+"<replaceable>MESSAGE_TYPE</replaceable></option> , you can at least filter "
 "for events of a certain type. However, to be able to filter for events "
 "related to a particular rule, you need to add a key to this rule in the "
 "<filename>/etc/audit/audit.rules</filename> file. This key is then added to "
@@ -862,20 +897,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:568
+#: audit_scenarios.xml:695
 #, no-c-format
 msgid ""
 "As an example, assume you have added the following rule to your rule file:"
 msgstr ""
 
 #. Tag: screen
-#: audit_scenarios.xml:573
+#: audit_scenarios.xml:700
 #, no-c-format
 msgid "-w /etc/audit/audit.rules -p wa"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:575
+#: audit_scenarios.xml:702
 #, no-c-format
 msgid ""
 "Without a key assigned to it, you would probably need to filter for "
@@ -885,24 +920,24 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: audit_scenarios.xml:582
+#: audit_scenarios.xml:709
 #, no-c-format
 msgid "-w /etc/audit/audit.rules -p wa -k CFG_audit.rules"
 msgstr ""
 
 #. Tag: para
-#: audit_scenarios.xml:584
+#: audit_scenarios.xml:711
 #, no-c-format
 msgid ""
 "You can specify any text string as key. Distinguish watches related to "
 "different types of files (configuration files or log files) from one another "
-"using different key prefixes (<literal>CFG</literal>, <literal>LOG</"
-"literal>, etc.) followed by the file name. Finding any records related to "
+"using different key prefixes ( <literal>CFG</literal> , <literal>LOG</"
+"literal> , etc.) followed by the file name. Finding any records related to "
 "the above rule now comes down to the following:"
 msgstr ""
 
 #. Tag: screen
-#: audit_scenarios.xml:592
+#: audit_scenarios.xml:719
 #, no-c-format
 msgid ""
 "<command>ausearch -k CFG_audit.rules</command>\n"

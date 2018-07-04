@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE sect1 [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
-
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.grub2.yast2.config">
- <title
->Configuring the Boot Loader with &yast;</title>
+ <title>Configuring the Boot Loader with &yast;</title>
 
  <info>
-  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager"
-><dm:bugtracker
-></dm:bugtracker
-> <dm:translation
->yes</dm:translation
-> </dm:docmanager>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker/>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
  </info>
 
- <para
->The easiest way to configure general options of the boot loader in your &productname; system is to use the &yast; module. In the &yastcc;, select <menuchoice
-> <guimenu
->System</guimenu
-> <guimenu
->Boot Loader</guimenu
-></menuchoice
->. The module shows the current boot loader configuration of your system and allows you to make changes. </para>
+ <para>
+  The easiest way to configure general options of the boot loader in your
+  &productname; system is to use the &yast; module. In the &yastcc;, select
+  <menuchoice> <guimenu>System</guimenu> <guimenu>Boot
+  Loader</guimenu></menuchoice>. The module shows the current boot loader
+  configuration of your system and allows you to make changes.
+ </para>
 
- <para
->Use the <guimenu
->Boot Code Options</guimenu
-> tab to view and change settings related to type, location and advanced loader settings. You can choose whether to use &grub; in standard or EFI mode. </para>
+ <para>
+  Use the <guimenu>Boot Code Options</guimenu> tab to view and change settings
+  related to type, location and advanced loader settings. You can choose
+  whether to use &grub; in standard or EFI mode.
+ </para>
 
  <figure xml:id="fig.grub2.yast.boot.code.options0">
-  <title
->Boot Code Options</title>
+  <title>Boot Code Options</title>
   <mediaobject>
    <imageobject role="fo">
     <imagedata fileref="yast2_bootloader_boot_code.png" width="75%" format="PNG"/>
@@ -46,103 +39,94 @@
  </figure>
 
  <important>
-  <title
->EFI Systems require GRUB2-EFI</title>
-  <para
->If you have an EFI system you can only install GRUB2-EFI, otherwise your system is no longer bootable. </para>
+  <title>EFI Systems require GRUB2-EFI</title>
+  <para>
+   If you have an EFI system you can only install GRUB2-EFI, otherwise your
+   system is no longer bootable.
+  </para>
  </important>
 
  <important>
-  <title
->Reinstalling the Boot Loader</title>
-  <para
->To reinstall the boot loader, make sure to change a setting in &yast; and then change it back. For example, to reinstall GRUB2-EFI, select <guimenu
->GRUB2</guimenu
-> first and then immediately switch back to <guimenu
->GRUB2-EFI</guimenu
->. </para>
-  <para
->Otherwise, the boot loader may only be partially reinstalled. </para>
+  <title>Reinstalling the Boot Loader</title>
+  <para>
+   To reinstall the boot loader, make sure to change a setting in &yast; and
+   then change it back. For example, to reinstall GRUB2-EFI, select
+   <guimenu>GRUB2</guimenu> first and then immediately switch back to
+   <guimenu>GRUB2-EFI</guimenu>.
+  </para>
+  <para>
+   Otherwise, the boot loader may only be partially reinstalled.
+  </para>
  </important>
 
  <note>
-  <title
->Custom Boot Loader</title>
-  <para
->To use a boot loader other than the ones listed, select <guimenu
->Do Not Install Any Boot Loader</guimenu
->. Read the documentation of your boot loader carefully before choosing this option. </para>
+  <title>Custom Boot Loader</title>
+  <para>
+   To use a boot loader other than the ones listed, select <guimenu>Do Not
+   Install Any Boot Loader</guimenu>. Read the documentation of your boot
+   loader carefully before choosing this option.
+  </para>
  </note>
 
  <sect2 xml:id="sec.grub2.yast2.location">
-  <title
->Boot Loader Location and Boot Code Options</title>
+  <title>Boot Loader Location and Boot Code Options</title>
 
-  <para
->The default location of the boot loader depends on the partition setup and is either the Master Boot Record (MBR) or the boot sector of the <filename
->/</filename
-> partition. To modify the location of the boot loader, follow these steps: </para>
+  <para>
+   The default location of the boot loader depends on the partition setup and
+   is either the Master Boot Record (MBR) or the boot sector of the
+   <filename>/</filename> partition. To modify the location of the boot loader,
+   follow these steps:
+  </para>
   <procedure xml:id="pro.sec.grub2.yast2.location">
-   <title
->Changing the Boot Loader Location</title>
+   <title>Changing the Boot Loader Location</title>
    <step>
-    <para
->Select the <guimenu
->Boot Code Options</guimenu
-> tab and then choose one of the following options for <guimenu
->Boot Loader Location</guimenu
->: </para>
+    <para>
+     Select the <guimenu>Boot Code Options</guimenu> tab and then choose one of
+     the following options for <guimenu>Boot Loader Location</guimenu>:
+    </para>
     <variablelist>
      <varlistentry>
-      <term
-><guimenu
->Boot from Master Boot Record</guimenu>
+      <term><guimenu>Boot from Master Boot Record</guimenu>
       </term>
       <listitem>
-       <para
->This installs the boot loader in the MBR of the disk containing the directory <filename
->/boot</filename
->. Usually this will be the disk mounted to <filename
->/</filename
->, but if <filename
->/boot</filename
-> is mounted to a separate partition on a different disk, the MBR of that disk will be used. </para>
+       <para>
+        This installs the boot loader in the MBR of the disk containing the
+        directory <filename>/boot</filename>. Usually this will be the disk
+        mounted to <filename>/</filename>, but if <filename>/boot</filename> is
+        mounted to a separate partition on a different disk, the MBR of that
+        disk will be used.
+       </para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
-><guimenu
->Boot from Root Partition</guimenu>
+      <term><guimenu>Boot from Root Partition</guimenu>
       </term>
       <listitem>
-       <para
->This installs the boot loader in the boot sector of the <filename
->/</filename
-> partition. </para>
+       <para>
+        This installs the boot loader in the boot sector of the
+        <filename>/</filename> partition.
+       </para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
-><guimenu
->Custom Boot Partition</guimenu>
+      <term><guimenu>Custom Boot Partition</guimenu>
       </term>
       <listitem>
-       <para
->Use this option to specify the location of the boot loader manually. </para>
+       <para>
+        Use this option to specify the location of the boot loader manually.
+       </para>
       </listitem>
      </varlistentry>
     </variablelist>
    </step>
    <step>
-    <para
->Click <guimenu
->OK</guimenu
-> to apply your changes. </para>
+    <para>
+     Click <guimenu>OK</guimenu> to apply your changes.
+    </para>
    </step>
   </procedure>
   <figure xml:id="fig.grub2.yast.boot.code.options">
-   <title
->Code Options</title>
+   <title>Code Options</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="yast2_bootloader_boot_code.png" width="75%" format="PNG"/>
@@ -152,106 +136,106 @@
     </imageobject>
    </mediaobject>
   </figure>
-  <para
->The <guimenu
->Boot Code Options</guimenu
-> tab includes the following additional options: </para>
+  <para>
+   The <guimenu>Boot Code Options</guimenu> tab includes the following
+   additional options:
+  </para>
    <variablelist>
     <varlistentry>
-     <term
-><guimenu
->Set Active Flag in Partition Table for Boot Partition</guimenu>
+     <term><guimenu>Set Active Flag in Partition Table for Boot
+      Partition</guimenu>
      </term>
      <listitem>
-      <para
->Activates the partition that contains the <filename
->/boot</filename
-> directory. For &power; systems it activates the PReP partition. Use this option on systems with old BIOS and/or legacy operating systems because they may fail to boot from a non-active partition. It is safe to leave this option active. </para>
+      <para>
+       Activates the partition that contains the
+       <filename>/boot</filename> directory. For &power; systems it
+       activates the PReP partition. Use this option on systems with
+       old BIOS and/or legacy operating systems because they may fail
+       to boot from a non-active partition. It is safe to leave this
+       option active.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Write Generic Boot Code to MBR</guimenu>
+     <term><guimenu>Write Generic Boot Code to MBR</guimenu>
      </term>
      <listitem>
-      <para
->If MBR contains a custom 'non-GRUB' code, this option replaces it with a generic, operating system independent code. If you deactivate this option, the system may become unbootable. </para>
+      <para>
+       If MBR contains a custom 'non-GRUB' code, this option replaces it with a
+       generic, operating system independent code. If you deactivate this
+       option, the system may become unbootable.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Enable Trusted Boot Support</guimenu>
+     <term><guimenu>Enable Trusted Boot Support</guimenu>
      </term>
      <listitem>
-      <para
->Starts TrustedGRUB2 which supports trusted computing functionality (Trusted Platform Module (TPM)). For more information refer to <link xlink:href="https://github.com/Sirrix-AG/TrustedGRUB2"
-></link
->. </para>
+      <para>
+       Starts TrustedGRUB2 which supports trusted computing functionality
+       (Trusted Platform Module (TPM)). For more information refer to
+       <link xlink:href="https://github.com/Sirrix-AG/TrustedGRUB2"/>.
+      </para>
      </listitem>
     </varlistentry>
    </variablelist>
  </sect2>
 
  <sect2 xml:id="sec.grub2.yast2.config.order">
-  <title
->Adjusting the Disk Order</title>
-  <para
->If your computer has more than one hard disk, you can specify the boot sequence of the disks. The first disk in the list is where &grub; will be installed in the case of booting from MBR. It is the disk where &productname; is installed by default. The rest of the list is a hint for &grub;'s device mapper (see <xref linkend="sec.grub2.map"/>). </para>
+  <title>Adjusting the Disk Order</title>
+  <para>
+   If your computer has more than one hard disk, you can specify the boot
+   sequence of the disks. The first disk in the list is where &grub; will be
+   installed in the case of booting from MBR. It is the disk where &productname;
+   is installed by default. The rest of the list is a hint for
+   &grub;'s device mapper (see <xref linkend="sec.grub2.map"/>).
+  </para>
   <warning>
-   <title
->Unbootable System</title>
-   <para
->The default value is usually valid for almost all deployments. If you change the boot order of disks wrongly, the system may become unbootable on the next reboot. For example, if the first disk in the list is not part of the BIOS boot order, and the other disks in the list have empty MBRs. </para>
+   <title>Unbootable System</title>
+   <para>
+    The default value is usually valid for almost all deployments. If you change
+    the boot order of disks wrongly, the system may become unbootable on the
+    next reboot. For example, if the first disk in the list is not part of the BIOS
+    boot order, and the other disks in the list have empty MBRs.
+   </para>
   </warning>
   <procedure xml:id="pro.sec.grub2.yast2.config.order">
-   <title
->Setting the Disk Order</title>
+   <title>Setting the Disk Order</title>
    <step>
-    <para
->Open the <guimenu
->Boot Code Options</guimenu
-> tab. </para>
+    <para>
+     Open the <guimenu>Boot Code Options</guimenu> tab.
+    </para>
    </step>
    <step>
-    <para
->Click <guimenu
->Edit Disk Boot Order</guimenu
->. </para>
+    <para>
+     Click <guimenu>Edit Disk Boot Order</guimenu>.
+    </para>
    </step>
    <step>
-    <para
->If more than one disk is listed, select a disk and click <guimenu
->Up</guimenu
-> or <guimenu
->Down</guimenu
-> to reorder the displayed disks. </para>
+    <para>
+     If more than one disk is listed, select a disk and click
+     <guimenu>Up</guimenu> or <guimenu>Down</guimenu> to reorder the displayed
+     disks.
+    </para>
    </step>
    <step>
-    <para
->Click <guimenu
->OK</guimenu
-> two times to save the changes. </para>
+    <para>
+     Click <guimenu>OK</guimenu> two times to save the changes.
+    </para>
    </step>
   </procedure>
  </sect2>
 
  <sect2 xml:id="sec.grub2.yast2.config.advanced">
-  <title
->Configuring Advanced Options</title>
-  <para
->Advanced boot parameters can be configured via the <guimenu
->Boot Loader Options</guimenu
-> tab. </para>
+  <title>Configuring Advanced Options</title>
+  <para>
+   Advanced boot parameters can be configured via the <guimenu>Boot Loader
+   Options</guimenu> tab.
+  </para>
   <sect3 xml:id="sec.grub2.yast2.config.advanced.boot-loader">
-   <title
-><guimenu
->Boot Loader Options</guimenu
-> Tab</title>
+   <title><guimenu>Boot Loader Options</guimenu> Tab</title>
    <figure xml:id="fig.grub2.yast.bootloader.options">
-    <title
->Boot loader Options</title>
+    <title>Boot loader Options</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="yast2_bootloader_options.png" width="75%" format="PNG"/>
@@ -263,71 +247,61 @@
    </figure>
    <variablelist>
     <varlistentry>
-     <term
-><guimenu
->Boot Loader Time-Out</guimenu>
+     <term><guimenu>Boot Loader Time-Out</guimenu>
      </term>
      <listitem>
-      <para
->Change the value of <guimenu
->Time-Out in Seconds</guimenu
-> by typing in a new value and clicking the appropriate arrow key with your mouse. </para>
+      <para>
+       Change the value of <guimenu>Time-Out in Seconds</guimenu> by typing in
+       a new value and clicking the appropriate arrow key with your mouse.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Probe Foreign OS</guimenu>
+     <term><guimenu>Probe Foreign OS</guimenu>
      </term>
      <listitem>
-      <para
->When selected, the boot loader searches for other systems like Windows or other Linux installations. </para>
+      <para>
+       When selected, the boot loader searches for other systems like Windows
+       or other Linux installations.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Hide Menu on Boot</guimenu>
+     <term><guimenu>Hide Menu on Boot</guimenu>
      </term>
      <listitem>
-      <para
->Hides the boot menu and boots the default entry. </para>
+      <para>
+       Hides the boot menu and boots the default entry.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Adjusting the Default Boot Entry</guimenu>
+     <term><guimenu>Adjusting the Default Boot Entry</guimenu>
      </term>
      <listitem>
-      <para
->Select the desired entry from the <quote
->Default Boot Section</quote
-> list. Note that the <quote
->&gt;</quote
-> sign in the boot entry name delimits the boot section and its subsection. </para>
+      <para>
+       Select the desired entry from the <quote>Default Boot Section</quote>
+       list. Note that the <quote>&gt;</quote> sign in the boot entry name
+       delimits the boot section and its subsection.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="vle.grub2.yast2.boot.password">
-     <term
-><guimenu
->Protect Boot Loader with Password</guimenu>
+     <term><guimenu>Protect Boot Loader with Password</guimenu>
      </term>
      <listitem>
-      <para
->Protects the boot loader and the system with an additional password. For more information, see <xref linkend="sec.grub2.password"/>. </para>
+      <para>
+       Protects the boot loader and the system with an additional password. For
+       more information, see <xref linkend="sec.grub2.password"/>.
+      </para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect3>
   <sect3 xml:id="sec.grub2.yast2.config.advanced.kernel_parameters">
-   <title
-><guimenu
->Kernel Parameters</guimenu
-> Tab</title>
+   <title><guimenu>Kernel Parameters</guimenu> Tab</title>
    <figure xml:id="fig.grub2.yast.kernel.parameters">
-    <title
->Kernel Parameters</title>
+    <title>Kernel Parameters</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="yast2_bootloader_kernel_parameters.png" width="75%" format="PNG"/>
@@ -339,55 +313,49 @@
    </figure>
    <variablelist>
     <varlistentry>
-     <term
-><guimenu
->Console resolution</guimenu>
+     <term><guimenu>Console resolution</guimenu>
      </term>
      <listitem>
-      <para
->The <guimenu
->Console resolution</guimenu
-> option specifies the default screen resolution during the boot process. </para>
+      <para>
+       The <guimenu>Console resolution</guimenu> option specifies the default
+       screen resolution during the boot process.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Kernel Command Line Parameter</guimenu>
+     <term><guimenu>Kernel Command Line Parameter</guimenu>
      </term>
      <listitem>
-      <para
->The optional kernel parameters are added at the end of the default parameters. For a list of all possible parameters, see <link xlink:href="http://en.opensuse.org/Linuxrc"
-></link
->. </para>
+      <para>
+       The optional kernel parameters are added at the end of the default
+       parameters. For a list of all possible parameters, see
+       <link xlink:href="http://en.opensuse.org/Linuxrc"/>.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Use graphical console</guimenu>
+     <term><guimenu>Use graphical console</guimenu>
      </term>
      <listitem>
-      <para
->When checked, the boot menu appears on a graphical splash screen rather than in a text mode. The resolution of the boot screen can be then set from the <guimenu
->Console resolution</guimenu
-> list, and graphical theme definition file can be specified with the <guimenu
->Console theme</guimenu
-> file-chooser. </para>
+      <para>
+       When checked, the boot menu appears on a graphical splash screen rather
+       than in a text mode. The resolution of the boot screen can be then set
+       from the <guimenu>Console resolution</guimenu> list, and graphical theme
+       definition file can be specified with the <guimenu>Console
+       theme</guimenu> file-chooser.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
-><guimenu
->Use Serial Console</guimenu>
+     <term><guimenu>Use Serial Console</guimenu>
      </term>
      <listitem>
-      <para
->If your machine is controlled via a serial console, activate this option and specify which COM port to use at which speed. See <command
->info grub</command
-> or <link xlink:href="http://www.gnu.org/software/grub/manual/grub.html#Serial-terminal"
-></link
-> </para>
+      <para>
+       If your machine is controlled via a serial console, activate this option
+       and specify which COM port to use at which speed. See <command>info
+       grub</command> or
+       <link xlink:href="http://www.gnu.org/software/grub/manual/grub.html#Serial-terminal"/>
+      </para>
      </listitem>
     </varlistentry>
    </variablelist>

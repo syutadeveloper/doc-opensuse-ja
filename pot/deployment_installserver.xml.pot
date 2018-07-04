@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -26,10 +26,10 @@ msgstr ""
 msgid "This chapter describes how to create a server that provides the data required for installing &productname; over the network."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: deployment_installserver.xml:20
+#. Tag: dm:translation
+#: deployment_installserver.xml:22
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -71,13 +71,13 @@ msgstr ""
 #. Tag: para
 #: deployment_installserver.xml:57
 #, no-c-format
-msgid "Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Miscellaneous</guimenu> <guimenu>Installation Server</guimenu></menuchoice>."
+msgid "Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Miscellaneous</guimenu> <guimenu>Installation Server</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
 #: deployment_installserver.xml:64
 #, no-c-format
-msgid "Select the repository type (HTTP, FTP, or NFS). The selected service is started automatically every time the system starts. If a service of the selected type is already running on your system and you want to configure it manually for the server, deactivate the automatic configuration of the server service with <guimenu>Do Not Configure Any Network Services</guimenu>. In both cases, define the directory in which the installation data should be made available on the server."
+msgid "Select the repository type (HTTP, FTP, or NFS). The selected service is started automatically every time the system starts. If a service of the selected type is already running on your system and you want to configure it manually for the server, deactivate the automatic configuration of the server service with <guimenu>Do Not Configure Any Network Services</guimenu> . In both cases, define the directory in which the installation data should be made available on the server."
 msgstr ""
 
 #. Tag: para
@@ -89,7 +89,7 @@ msgstr ""
 #. Tag: para
 #: deployment_installserver.xml:80
 #, no-c-format
-msgid "Define an alias for the root directory of the FTP or HTTP server on which the installation data should be found. The repository will later be located under <literal>ftp://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (FTP) or under <literal>http://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (HTTP). <replaceable>Name</replaceable> stands for the name of the repository, which is defined in the following step. If you selected NFS in the previous step, define wild cards and export options. The NFS server will be accessible under <literal>nfs://<replaceable>Server-IP</replaceable>/<replaceable>Name</replaceable></literal>. Details of NFS and exports can be found in <xref linkend=\"cha.nfs\"/>."
+msgid "<!--adjust to standard network example--> Define an alias for the root directory of the FTP or HTTP server on which the installation data should be found. The repository will later be located under <literal>ftp://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (FTP) or under <literal>http://<replaceable>Server-IP</replaceable>/<replaceable>Alias</replaceable>/<replaceable>Name</replaceable></literal> (HTTP). <replaceable>Name</replaceable> stands for the name of the repository, which is defined in the following step. If you selected NFS in the previous step, define wild cards and export options. The NFS server will be accessible under <literal>nfs://<replaceable>Server-IP</replaceable>/<replaceable>Name</replaceable></literal> . Details of NFS and exports can be found in <xref linkend=\"cha.nfs\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -119,7 +119,7 @@ msgstr ""
 #. Tag: para
 #: deployment_installserver.xml:120
 #, no-c-format
-msgid "Consider announcing your repository via OpenSLP if your network setup supports this option. This saves you from entering the network installation path on every target machine. The target systems are booted using the SLP boot parameter and find the network repository without any further configuration. For details on this option, refer to <xref linkend=\"cha.boot_parameters\"/>."
+msgid "Consider announcing your repository via OpenSLP if your network setup supports this option. This saves you from entering the network installation path on every target machine. The target systems are booted using the SLP boot parameter and find the network repository without any further configuration. For details on this option, refer to <xref linkend=\"cha.boot_parameters\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -131,7 +131,7 @@ msgstr ""
 #. Tag: para
 #: deployment_installserver.xml:142
 #, no-c-format
-msgid "Upload the installation data. The most lengthy step in configuring an installation server is copying the actual installation media. Insert the media in the sequence requested by &yast; and wait for the copying procedure to end. When the sources have been fully copied, return to the overview of existing repositories and close the configuration by selecting <guimenu>Finish</guimenu>."
+msgid "Upload the installation data. The most lengthy step in configuring an installation server is copying the actual installation media. Insert the media in the sequence requested by &yast; and wait for the copying procedure to end. When the sources have been fully copied, return to the overview of existing repositories and close the configuration by selecting <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -143,7 +143,7 @@ msgstr ""
 #. Tag: para
 #: deployment_installserver.xml:161
 #, no-c-format
-msgid "To deactivate a repository, select the repository to remove then select <guimenu>Delete</guimenu>. The installation data are removed from the system. To deactivate the network service, use the respective &yast; module."
+msgid "To deactivate a repository, select the repository to remove then select <guimenu>Delete</guimenu> . The installation data are removed from the system. To deactivate the network service, use the respective &yast; module."
 msgstr ""
 
 #. Tag: para
@@ -177,12 +177,6 @@ msgid "To create a directory to hold the installation data, proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:198 deployment_installserver.xml:252 deployment_installserver.xml:300 deployment_installserver.xml:343 deployment_installserver.xml:663
-#, no-c-format
-msgid "Log in as &rootuser;."
-msgstr ""
-
-#. Tag: para
 #: deployment_installserver.xml:203
 #, no-c-format
 msgid "Create a directory that will later hold all installation data and change into this directory. For example:"
@@ -191,556 +185,576 @@ msgstr ""
 #. Tag: screen
 #: deployment_installserver.xml:207
 #, no-c-format
-msgid ""
-      "&prompt.root;mkdir /srv/install/<replaceable>PRODUCT</replaceable>/<replaceable>PRODUCTVERSION</replaceable>\n"
+msgid "&prompt.root;mkdir /srv/install/<replaceable>PRODUCT</replaceable>/<replaceable>PRODUCTVERSION</replaceable>\n"
       "&prompt.root;cd /srv/install/<replaceable>PRODUCT</replaceable>/<replaceable>PRODUCTVERSION</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:208
+#: deployment_installserver.xml:209
 #, no-c-format
 msgid "Replace <replaceable>PRODUCT</replaceable> with an abbreviation of the product name and <replaceable>PRODUCTVERSION</replaceable> with a string that contains the product name and version."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:215
+#: deployment_installserver.xml:216
 #, no-c-format
 msgid "For each DVD contained in the media kit execute the following commands:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:220
+#: deployment_installserver.xml:221
 #, no-c-format
 msgid "Copy the entire content of the installation DVD into the installation server directory:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:224
+#: deployment_installserver.xml:225
 #, no-c-format
 msgid "&prompt.root;cp -a /media/<replaceable>PATH_TO_YOUR_DVD_DRIVE</replaceable> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:225
+#: deployment_installserver.xml:226
 #, no-c-format
-msgid "Replace <replaceable>PATH_TO_YOUR_DVD_DRIVE</replaceable> with the actual path under which your DVD drive is addressed. Depending on the type of drive used in your system, this can be <filename>cdrom</filename>, <filename>cdrecorder</filename>, <filename>dvd</filename>, or <filename>dvdrecorder</filename>."
+msgid "Replace <replaceable>PATH_TO_YOUR_DVD_DRIVE</replaceable> with the actual path under which your DVD drive is addressed. Depending on the type of drive used in your system, this can be <filename>cdrom</filename> , <filename>cdrecorder</filename> , <filename>dvd</filename> , or <filename>dvdrecorder</filename> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:234
+#: deployment_installserver.xml:235
 #, no-c-format
 msgid "Rename the directory to the DVD number:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:237
+#: deployment_installserver.xml:238
 #, no-c-format
 msgid "&prompt.root;mv <replaceable>PATH_TO_YOUR_DVD_DRIVE</replaceable> DVD<replaceable>X</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:238
+#: deployment_installserver.xml:239
 #, no-c-format
 msgid "Replace <replaceable>X</replaceable> with the actual number of your DVD."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:247
+#: deployment_installserver.xml:248
 #, no-c-format
 msgid "On &productname;, you can export the repository with NFS using &yast;. Proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:257
+#: deployment_installserver.xml:258
 #, no-c-format
-msgid "Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Network Services</guimenu> <guimenu>NFS Server</guimenu></menuchoice>."
+msgid "Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Network Services</guimenu> <guimenu>NFS Server</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:263
+#: deployment_installserver.xml:264
 #, no-c-format
-msgid "Select <guimenu>Start</guimenu> and <guimenu>Open Port in Firewall</guimenu> and click <guimenu>Next</guimenu>."
+msgid "Select <guimenu>Start</guimenu> and <guimenu>Open Port in Firewall</guimenu> and click <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:269
+#: deployment_installserver.xml:270
 #, no-c-format
-msgid "Select <guimenu>Add Directory</guimenu> and browse for the directory containing the installation sources, in this case, <filename><replaceable>PRODUCTVERSION</replaceable></filename>."
+msgid "Select <guimenu>Add Directory</guimenu> and browse for the directory containing the installation sources, in this case, <filename><replaceable>PRODUCTVERSION</replaceable></filename> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:276
+#: deployment_installserver.xml:277
 #, no-c-format
 msgid "Select <guimenu>Add Host</guimenu> and enter the host names of the machines to which to export the installation data. Instead of specifying host names here, you could also use wild cards, ranges of network addresses, or the domain name of your network. Enter the appropriate export options or leave the default, which works fine in most setups. For more information about the syntax used in exporting NFS shares, read the <systemitem>exports</systemitem> man page."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:287
+#: deployment_installserver.xml:288
 #, no-c-format
-msgid "Click <guimenu>Finish</guimenu>. The NFS server holding the &productname; repository is automatically started and integrated into the boot process."
+msgid "Click <guimenu>Finish</guimenu> . The NFS server holding the &productname; repository is automatically started and integrated into the boot process."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:295
+#: deployment_installserver.xml:296
 #, no-c-format
 msgid "If you prefer manually exporting the repository via NFS instead of using the &yast; NFS Server module, proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:305
+#: deployment_installserver.xml:306
 #, no-c-format
 msgid "Open the file <filename>/etc/exports</filename> and enter the following line:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:309
+#: deployment_installserver.xml:310
 #, no-c-format
 msgid "/<replaceable>PRODUCTVERSION</replaceable> *(ro,root_squash,sync)"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:310
+#: deployment_installserver.xml:311
 #, no-c-format
-msgid "This exports the directory <filename>/<replaceable>PRODUCTVERSION</replaceable></filename> to any host that is part of this network or to any host that can connect to this server. To limit the access to this server, use netmasks or domain names instead of the general wild card <literal>*</literal>. Refer to the <systemitem>export</systemitem> man page for details. Save and exit this configuration file."
+msgid "This exports the directory <filename>/<replaceable>PRODUCTVERSION</replaceable></filename> to any host that is part of this network or to any host that can connect to this server. To limit the access to this server, use netmasks or domain names instead of the general wild card <literal>*</literal> . Refer to the <systemitem>export</systemitem> man page for details. Save and exit this configuration file."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:321
+#: deployment_installserver.xml:322
 #, no-c-format
 msgid "To add the NFS service to the list of servers started during system boot, execute the following commands:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:325
+#: deployment_installserver.xml:326
 #, no-c-format
 msgid "&prompt.root;systemctl enable nfsserver"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:328
+#: deployment_installserver.xml:329
 #, no-c-format
-msgid "Start the NFS server with <command>systemctl start nfsserver</command>. If you need to change the configuration of your NFS server later, modify the configuration file and restart the NFS daemon with <command>systemctl restart nfsserver</command>."
+msgid "Start the NFS server with <command>systemctl start nfsserver</command> . If you need to change the configuration of your NFS server later, modify the configuration file and restart the NFS daemon with <command>systemctl restart nfsserver</command> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:338
+#: deployment_installserver.xml:339
 #, no-c-format
 msgid "Announcing the NFS server via OpenSLP makes its address known to all clients in your network."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:348
+#: deployment_installserver.xml:349
 #, no-c-format
 msgid "Create the <filename>/etc/slp.reg.d/install.suse.nfs.reg</filename> configuration file with the following lines:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:352
+#: deployment_installserver.xml:353
 #, no-c-format
-msgid ""
-      "<?dbsuse-fo font-size=\"7pt\"?># Register the NFS Installation Server\n"
+msgid "<?dbsuse-fo font-size=\"7pt\"?># Register the NFS Installation Server\n"
       "service:install.suse:nfs://$HOSTNAME/<replaceable>PATH_TO_REPOSITORY</replaceable>/DVD1,en,65535\n"
       "description=NFS Repository"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:353
+#: deployment_installserver.xml:356
 #, no-c-format
 msgid "Replace <replaceable>PATH_TO_REPOSITORY</replaceable> with the actual path to the installation source on your server."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:359 deployment_installserver.xml:454
+#: deployment_installserver.xml:368
 #, no-c-format
-msgid "Start the OpenSLP daemon with <command>systemctl start slpd</command>."
-msgstr ""
-
-#. Tag: para
-#: deployment_installserver.xml:365
-#, no-c-format
-msgid "For more information about OpenSLP, refer to the package documentation located under <filename>/usr/share/doc/packages/openslp/</filename> or refer to <xref linkend=\"cha.slp\"/>. For more Information about NFS, refer to <xref linkend=\"cha.nfs\"/>."
+msgid "For more information about OpenSLP, refer to the package documentation located under <filename>/usr/share/doc/packages/openslp/</filename> or refer to <xref linkend=\"cha.slp\"/> . For more Information about NFS, refer to <xref linkend=\"cha.nfs\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_installserver.xml:373
+#: deployment_installserver.xml:376
 #, no-c-format
 msgid "Setting Up an FTP Repository Manually"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:375
+#: deployment_installserver.xml:378
 #, no-c-format
 msgid "Creating an FTP repository is very similar to creating an NFS repository. An FTP repository can be announced over the network using OpenSLP as well."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:382 deployment_installserver.xml:480
-#, no-c-format
-msgid "Create a directory holding the installation sources as described in <xref linkend=\"sec.deployment.instserver.nfs\"/>."
-msgstr ""
-
-#. Tag: para
-#: deployment_installserver.xml:388
+#: deployment_installserver.xml:391
 #, no-c-format
 msgid "Configure the FTP server to distribute the contents of your installation directory:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:394
+#: deployment_installserver.xml:397
 #, no-c-format
 msgid "Log in as &rootuser; and install the package <systemitem>vsftpd</systemitem> using the &yast; software management."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:400
+#: deployment_installserver.xml:403
 #, no-c-format
 msgid "Enter the FTP server root directory:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:403
+#: deployment_installserver.xml:406
 #, no-c-format
 msgid "&prompt.root;cd <option>/srv/ftp</option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:406
+#: deployment_installserver.xml:409
 #, no-c-format
 msgid "Create a subdirectory holding the installation sources in the FTP root directory:"
 msgstr ""
 
-#. Tag: screen
-#: deployment_installserver.xml:410 deployment_installserver.xml:504
-#, no-c-format
-msgid "&prompt.root;mkdir <replaceable>REPOSITORY</replaceable>"
-msgstr ""
-
 #. Tag: para
-#: deployment_installserver.xml:411 deployment_installserver.xml:505
-#, no-c-format
-msgid "Replace <replaceable>REPOSITORY</replaceable> with the product name."
-msgstr ""
-
-#. Tag: para
-#: deployment_installserver.xml:416
+#: deployment_installserver.xml:419
 #, no-c-format
 msgid "Mount the contents of the installation repository into the change root environment of the FTP server:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:420
+#: deployment_installserver.xml:423
 #, no-c-format
 msgid "&prompt.root;mount --bind <replaceable>PATH_TO_REPOSITORY</replaceable> /srv/ftp/<replaceable>REPOSITORY</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:421
+#: deployment_installserver.xml:424
 #, no-c-format
-msgid "Replace <replaceable>PATH_TO_REPOSITORY</replaceable> and <replaceable>REPOSITORY</replaceable> with values matching your setup. If you need to make this permanent, add it to <filename>/etc/fstab</filename>."
+msgid "Replace <replaceable>PATH_TO_REPOSITORY</replaceable> and <replaceable>REPOSITORY</replaceable> with values matching your setup. If you need to make this permanent, add it to <filename>/etc/fstab</filename> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:429
+#: deployment_installserver.xml:432
 #, no-c-format
-msgid "Start vsftpd with <command>vsftpd</command>."
+msgid "Start vsftpd with <command>vsftpd</command> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:436 deployment_installserver.xml:538
-#, no-c-format
-msgid "Announce the repository via OpenSLP, if this is supported by your network setup:"
-msgstr ""
-
-#. Tag: para
-#: deployment_installserver.xml:442
+#: deployment_installserver.xml:445
 #, no-c-format
 msgid "Create the <filename>/etc/slp.reg.d/install.suse.ftp.reg</filename> configuration file with the following lines:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:446
+#: deployment_installserver.xml:449
 #, no-c-format
-msgid ""
-      "<?dbsuse-fo font-size=\"7pt\"?># Register the FTP Installation Server\n"
+msgid "<?dbsuse-fo font-size=\"7pt\"?># Register the FTP Installation Server\n"
       "service:install.suse:ftp://$HOSTNAME/<replaceable>REPOSITORY</replaceable>/DVD1,en,65535\n"
       "description=FTP Repository"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:447
+#: deployment_installserver.xml:452
 #, no-c-format
 msgid "Replace <replaceable>REPOSITORY</replaceable> with the actual name of the repository directory on your server. The <literal>service:</literal> line should be entered as one continuous line."
 msgstr ""
 
+#. Tag: para
+#: deployment_installserver.xml:459
+#, no-c-format
+msgid "Start the OpenSLP daemon with <command>systemctl start slpd</command> ."
+msgstr ""
+
 #. Tag: title
-#: deployment_installserver.xml:463
+#: deployment_installserver.xml:468
 #, no-c-format
 msgid "Configuring an FTP Server with &yast;"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:464
+#: deployment_installserver.xml:469
 #, no-c-format
-msgid "If you prefer using &yast; instead of manually configuring the FTP installation server, refer to <xref linkend=\"cha.ftp\"/>."
+msgid "If you prefer using &yast; instead of manually configuring the FTP installation server, refer to <xref linkend=\"cha.ftp\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_installserver.xml:471
+#: deployment_installserver.xml:476
 #, no-c-format
 msgid "Setting Up an HTTP Repository Manually"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:473
+#: deployment_installserver.xml:478
 #, no-c-format
 msgid "Creating an HTTP repository is very similar to creating an NFS repository. An HTTP repository can be announced over the network using OpenSLP as well."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:486
+#: deployment_installserver.xml:485
+#, no-c-format
+msgid "Create a directory holding the installation sources as described in <xref linkend=\"sec.deployment.instserver.nfs\"/> ."
+msgstr ""
+
+#. Tag: para
+#: deployment_installserver.xml:491
 #, no-c-format
 msgid "Configure the HTTP server to distribute the contents of your installation directory:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:492
+#: deployment_installserver.xml:497
 #, no-c-format
-msgid "<phrase os=\"sles\">Install the Web server Apache as described in <xref linkend=\"sec.apache2.quickstart.installation\"/></phrase><phrase os=\"sled\">Install the Web server Apache</phrase>."
+msgid "<phrase os=\"sles\">Install the Web server Apache as described in <xref linkend=\"sec.apache2.quickstart.installation\"/></phrase> <phrase os=\"sled\">Install the Web server Apache</phrase> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:499
+#: deployment_installserver.xml:504
 #, no-c-format
-msgid "Enter the root directory of the HTTP server (<filename>/srv/www/htdocs</filename>) and create the subdirectory that will hold the installation sources:"
+msgid "Enter the root directory of the HTTP server ( <filename>/srv/www/htdocs</filename> ) and create the subdirectory that will hold the installation sources:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_installserver.xml:509
+#, no-c-format
+msgid "&prompt.root;mkdir <replaceable>REPOSITORY</replaceable>"
 msgstr ""
 
 #. Tag: para
 #: deployment_installserver.xml:510
 #, no-c-format
-msgid "Create a symbolic link from the location of the installation sources to the root directory of the Web server (<filename>/srv/www/htdocs</filename>):"
+msgid "Replace <replaceable>REPOSITORY</replaceable> with the product name."
+msgstr ""
+
+#. Tag: para
+#: deployment_installserver.xml:515
+#, no-c-format
+msgid "Create a symbolic link from the location of the installation sources to the root directory of the Web server ( <filename>/srv/www/htdocs</filename> ):"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:515
+#: deployment_installserver.xml:520
 #, no-c-format
 msgid "&prompt.root;ln -s <replaceable>/PATH_TO_REPOSITORY</replaceable>/srv/www/htdocs/<replaceable>REPOSITORY</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:518
+#: deployment_installserver.xml:523
 #, no-c-format
-msgid "Modify the configuration file of the HTTP server (<filename>/etc/apache2/default-server.conf</filename>) to make it follow symbolic links. Replace the following line:"
+msgid "Modify the configuration file of the HTTP server ( <filename>/etc/apache2/default-server.conf</filename> ) to make it follow symbolic links. Replace the following line:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:523
+#: deployment_installserver.xml:528
 #, no-c-format
 msgid "Options None"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:524
+#: deployment_installserver.xml:529
 #, no-c-format
 msgid "with"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:527
+#: deployment_installserver.xml:532
 #, no-c-format
 msgid "Options Indexes FollowSymLinks"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:530
+#: deployment_installserver.xml:535
 #, no-c-format
-msgid "Reload the HTTP server configuration using <command>systemctl reload apache2</command>."
+msgid "Reload the HTTP server configuration using <command>systemctl reload apache2</command> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:544
+#: deployment_installserver.xml:543
 #, no-c-format
-msgid "Create the <filename>/etc/slp.reg.d/install.suse.http.reg</filename> configuration file with the following lines:"
-msgstr ""
-
-#. Tag: screen
-#: deployment_installserver.xml:548
-#, no-c-format
-msgid ""
-      "<?dbsuse-fo font-size=\"6.5pt\"?># Register the HTTP Installation Server<!--adjust to standard network example-->\n"
-      "service:install.suse:http://$HOSTNAME/<replaceable>REPOSITORY</replaceable>/DVD1/,en,65535\n"
-      "description=HTTP Repository"
+msgid "Announce the repository via OpenSLP, if this is supported by your network setup:"
 msgstr ""
 
 #. Tag: para
 #: deployment_installserver.xml:549
 #, no-c-format
-msgid "Replace <replaceable>REPOSITORY</replaceable> with the actual path to the repository on your server. The <literal>service:</literal> line should be entered as one continuous line."
+msgid "Create the <filename>/etc/slp.reg.d/install.suse.http.reg</filename> configuration file with the following lines:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_installserver.xml:553
+#, no-c-format
+msgid "<?dbsuse-fo font-size=\"6.5pt\"?># Register the HTTP Installation Server<!--adjust to standard network example-->\n"
+      "service:install.suse:http://$HOSTNAME/<replaceable>REPOSITORY</replaceable>/DVD1/,en,65535\n"
+      "description=HTTP Repository"
 msgstr ""
 
 #. Tag: para
 #: deployment_installserver.xml:556
 #, no-c-format
-msgid "Start the OpenSLP daemon using <command>systemctl start slpd</command>."
+msgid "Replace <replaceable>REPOSITORY</replaceable> with the actual path to the repository on your server. The <literal>service:</literal> line should be entered as one continuous line."
+msgstr ""
+
+#. Tag: para
+#: deployment_installserver.xml:563
+#, no-c-format
+msgid "Start the OpenSLP daemon using <command>systemctl start slpd</command> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_installserver.xml:565
+#: deployment_installserver.xml:572
 #, no-c-format
 msgid "Managing an SMB Repository"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:567
+#: deployment_installserver.xml:574
 #, no-c-format
 msgid "Using SMB, you can import the installation sources from a Microsoft Windows server and start your Linux deployment even with no Linux machine around."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:573
+#: deployment_installserver.xml:580
 #, no-c-format
 msgid "To set up an exported Windows Share holding your &productname; repository, proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:578
+#: deployment_installserver.xml:585
 #, no-c-format
 msgid "Log in to your Windows machine."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:583
+#: deployment_installserver.xml:590
 #, no-c-format
-msgid "Create a new directory that will hold the entire installation tree and name it <filename>INSTALL</filename>, for example."
+msgid "Create a new directory that will hold the entire installation tree and name it <filename>INSTALL</filename> , for example."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:589
+#: deployment_installserver.xml:596
 #, no-c-format
 msgid "Export this share according to the procedure outlined in your Windows documentation."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:595
-#, no-c-format
-msgid "Enter this share and create a subdirectory, called <filename><replaceable>PRODUCT</replaceable></filename>. Replace <replaceable>PRODUCT</replaceable> with the actual product name."
-msgstr ""
-
-#. Tag: para
 #: deployment_installserver.xml:602
 #, no-c-format
-msgid "Enter the <filename>INSTALL/<replaceable>PRODUCT</replaceable></filename> directory and copy each DVD to a separate directory, such as <literal>DVD1</literal> and <literal>DVD2</literal>."
+msgid "Enter this share and create a subdirectory, called <filename><replaceable>PRODUCT</replaceable></filename> . Replace <replaceable>PRODUCT</replaceable> with the actual product name."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:610
+#: deployment_installserver.xml:609
+#, no-c-format
+msgid "Enter the <filename>INSTALL/<replaceable>PRODUCT</replaceable></filename> directory and copy each DVD to a separate directory, such as <literal>DVD1</literal> and <literal>DVD2</literal> ."
+msgstr ""
+
+#. Tag: para
+#: deployment_installserver.xml:617
 #, no-c-format
 msgid "To use an SMB mounted share as a repository, proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:616
+#: deployment_installserver.xml:623
 #, no-c-format
 msgid "Boot the installation target."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:621
+#: deployment_installserver.xml:628
 #, no-c-format
-msgid "Select <guimenu>Installation</guimenu>."
+msgid "Select <guimenu>Installation</guimenu> ."
 msgstr ""
 
-#. Tag: para
-#: deployment_installserver.xml:626
+#. Tag: keycap
+#: deployment_installserver.xml:634
 #, no-c-format
-msgid "Press <keycap>F4</keycap> for a selection of the repository."
+msgid "F4"
 msgstr ""
 
-#. Tag: para
-#: deployment_installserver.xml:631
+#. Tag: #text
+#: deployment_installserver.xml:634
 #, no-c-format
-msgid "Choose SMB and enter the Windows machine's name or IP address, the share name (<filename>INSTALL/<replaceable>PRODUCT</replaceable>/DVD1</filename>, in this example), user name, and password. The syntax looks like this:"
+msgid "Press"
 msgstr ""
 
-#. Tag: screen
-#: deployment_installserver.xml:637
+#. Tag: #text
+#: deployment_installserver.xml:635
 #, no-c-format
-msgid "smb://workdomain;user:password@server/INSTALL/DVD1"
+msgid "for a selection of the repository."
 msgstr ""
 
 #. Tag: para
 #: deployment_installserver.xml:638
 #, no-c-format
-msgid "After you press <keycap function=\"enter\"></keycap>, &yast; starts and you can perform the installation."
+msgid "Choose SMB and enter the Windows machine's name or IP address, the share name ( <filename>INSTALL/<replaceable>PRODUCT</replaceable>/DVD1</filename> , in this example), user name, and password. The syntax looks like this:"
+msgstr ""
+
+#. Tag: screen
+#: deployment_installserver.xml:644
+#, no-c-format
+msgid "smb://workdomain;user:password@server/INSTALL/DVD1"
+msgstr ""
+
+#. Tag: #text
+#: deployment_installserver.xml:646
+#, no-c-format
+msgid "After you press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_installserver.xml:646
+#, no-c-format
+msgid ", &yast; starts and you can perform the installation."
 msgstr ""
 
 #. Tag: title
-#: deployment_installserver.xml:646
+#: deployment_installserver.xml:653
 #, no-c-format
 msgid "Using ISO Images of the Installation Media on the Server"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:648
+#: deployment_installserver.xml:655
 #, no-c-format
 msgid "Instead of copying physical media into your server directory manually, you can also mount the ISO images of the installation media into your installation server and use them as a repository. To set up an HTTP, NFS or FTP server that uses ISO images instead of media copies, proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:657
+#: deployment_installserver.xml:664
 #, no-c-format
 msgid "Download the ISO images and save them to the machine to use as the installation server."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:668
+#: deployment_installserver.xml:670
 #, no-c-format
-msgid "Choose and create an appropriate location for the installation data, as described in <xref linkend=\"sec.deployment.instserver.nfs\"/>, <xref linkend=\"sec.deployment.instserver.ftp\"/>, or <xref linkend=\"sec.deployment.instserver.http\"/>."
+msgid "Log in as &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:676
+#: deployment_installserver.xml:675
+#, no-c-format
+msgid "Choose and create an appropriate location for the installation data, as described in <xref linkend=\"sec.deployment.instserver.nfs\"/> , <xref linkend=\"sec.deployment.instserver.ftp\"/> , or <xref linkend=\"sec.deployment.instserver.http\"/> ."
+msgstr ""
+
+#. Tag: para
+#: deployment_installserver.xml:683
 #, no-c-format
 msgid "Create subdirectories for each DVD."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:681
+#: deployment_installserver.xml:688
 #, no-c-format
 msgid "To mount and unpack each ISO image to the final location, issue the following command:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:685
+#: deployment_installserver.xml:692
 #, no-c-format
 msgid "&prompt.root;mount -o loop <replaceable>PATH_TO_ISO</replaceable> <replaceable>PATH_TO_REPOSITORY</replaceable>/<replaceable>PRODUCT</replaceable>/<replaceable>MEDIUMX</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:686
+#: deployment_installserver.xml:693
 #, no-c-format
 msgid "Replace <replaceable>PATH_TO_ISO</replaceable> with the path to your local copy of the ISO image. Replace <replaceable>PATH_TO_REPOSITORY</replaceable> with the source directory of your server. Replace <replaceable>PRODUCT</replaceable> with the product name and replace <replaceable>MEDIUMX</replaceable> with the type (CD or DVD) and number of media you are using."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:695
+#: deployment_installserver.xml:702
 #, no-c-format
 msgid "Repeat the previous step to mount all ISO images needed for your product."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:700
+#: deployment_installserver.xml:707
 #, no-c-format
-msgid "Start your installation server as usual, as described in <xref linkend=\"sec.deployment.instserver.nfs\"/>, <xref linkend=\"sec.deployment.instserver.ftp\"/>, or <xref linkend=\"sec.deployment.instserver.http\"/>."
+msgid "Start your installation server as usual, as described in <xref linkend=\"sec.deployment.instserver.nfs\"/> , <xref linkend=\"sec.deployment.instserver.ftp\"/> , or <xref linkend=\"sec.deployment.instserver.http\"/> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_installserver.xml:709
+#: deployment_installserver.xml:716
 #, no-c-format
-msgid "To automatically mount the ISO images at boot time, add the respective mount entries to <filename>/etc/fstab</filename>. An entry according to the previous example would look like the following:"
+msgid "To automatically mount the ISO images at boot time, add the respective mount entries to <filename>/etc/fstab</filename> . An entry according to the previous example would look like the following:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_installserver.xml:715
+#: deployment_installserver.xml:722
 #, no-c-format
 msgid "<replaceable>PATH_TO_ISO</replaceable>&nbsp;<replaceable>PATH_TO_REPOSITORY</replaceable>/<replaceable>PRODUCT</replaceable><replaceable>MEDIUM</replaceable>&nbsp;auto&nbsp;loop"
 msgstr ""

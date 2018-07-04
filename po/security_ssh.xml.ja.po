@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -33,11 +33,11 @@ msgid ""
 "an attacker and the illegal account could be used to obtain administrator or "
 "<systemitem class=\"username\">root</systemitem> access, or to penetrate "
 "other systems. In the past, remote connections were established with "
-"<command>telnet</command>, <command>rsh</command> or <command>rlogin</"
-"command>, which offered no guards against eavesdropping in the form of "
+"<command>telnet</command> , <command>rsh</command> or <command>rlogin</"
+"command> , which offered no guards against eavesdropping in the form of "
 "encryption or other security mechanisms. There are other unprotected "
 "communication channels, like the traditional FTP protocol and some remote "
-"copying programs like <command>rcp</command>."
+"copying programs like <command>rcp</command> ."
 msgstr ""
 
 #. Tag: para
@@ -58,10 +58,11 @@ msgstr ""
 #, no-c-format
 msgid ""
 "&productname; installs the OpenSSH package by default providing the commands "
-"<command>ssh</command>, <command>scp</command>, and <command>sftp</command>. "
-"In the default configuration, remote access of a &productname; system is "
-"only possible with the OpenSSH utilities, and only if the <systemitem class="
-"\"daemon\">sshd</systemitem> is running and the firewall permits access."
+"<command>ssh</command> , <command>scp</command> , and <command>sftp</"
+"command> . In the default configuration, remote access of a &productname; "
+"system is only possible with the OpenSSH utilities, and only if the "
+"<systemitem class=\"daemon\">sshd</systemitem> is running and the firewall "
+"permits access."
 msgstr ""
 
 #. Tag: para
@@ -77,7 +78,7 @@ msgstr ""
 #. Tag: title
 #: security_ssh.xml:57
 #, no-c-format
-msgid "<command>ssh</command>&mdash;Secure Shell"
+msgid "<command>ssh</command> &mdash;Secure Shell"
 msgstr ""
 
 #. Tag: para
@@ -98,7 +99,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:68
+#: security_ssh.xml:69
 #, no-c-format
 msgid ""
 "If the user name is the same on both machines, you can omit it. Using "
@@ -109,18 +110,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:76
+#: security_ssh.xml:77
 #, no-c-format
 msgid ""
 "Furthermore, <command>ssh</command> offers the possibility to run non-"
 "interactive commands on remote systems using <command>ssh</command> "
-"<replaceable>HOST</replaceable> <replaceable>COMMAND</replaceable>. "
+"<replaceable>HOST</replaceable> <replaceable>COMMAND</replaceable> . "
 "<replaceable>COMMAND</replaceable> needs to be properly quoted. Multiple "
 "commands can be concatenated as on a local shell."
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:84
+#: security_ssh.xml:85
 #, no-c-format
 msgid ""
 "&prompt.user;ssh root@&exampleserver; \"dmesg -T | tail -n 25\"\n"
@@ -128,31 +129,65 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:87
+#: security_ssh.xml:89
 #, no-c-format
 msgid "Starting X Applications on a Remote Host"
 msgstr ""
 
-#. Tag: para
-#: security_ssh.xml:88
+#. Tag: #text
+#: security_ssh.xml:92
+#, no-c-format
+msgid "with the"
+msgstr ""
+
+#. Tag: option
+#: security_ssh.xml:92
+#, no-c-format
+msgid "-X"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:92
+#, no-c-format
+msgid "SSH also simplifies the use of remote X applications. If you run"
+msgstr ""
+
+#. Tag: command
+#: security_ssh.xml:92
+#, no-c-format
+msgid "ssh"
+msgstr ""
+
+#. Tag: envar
+#: security_ssh.xml:93
+#, no-c-format
+msgid "DISPLAY"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:93
+#, no-c-format
+msgid "option, the"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:97
 #, no-c-format
 msgid ""
-"SSH also simplifies the use of remote X applications. If you run "
-"<command>ssh</command> with the <option>-X</option> option, the "
-"<envar>DISPLAY</envar> variable is automatically set on the remote machine "
-"and all X output is exported to the local machine over the existing SSH "
-"connection. At the same time, X applications started remotely cannot be "
-"intercepted by unauthorized individuals."
+"variable is automatically set on the remote machine and all X output is "
+"exported to the local machine over the existing SSH connection. At the same "
+"time, X applications started remotely cannot be intercepted by unauthorized "
+"individuals."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:99
+#: security_ssh.xml:101
 #, no-c-format
 msgid "Agent Forwarding"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:100
+#: security_ssh.xml:102
 #, no-c-format
 msgid ""
 "By adding the <option>-A</option> option, the ssh-agent authentication "
@@ -163,75 +198,79 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:108
+#: security_ssh.xml:110
 #, no-c-format
 msgid ""
 "This mechanism is deactivated in the default settings, but can be "
 "permanently activated at any time in the systemwide configuration file "
 "<filename>/etc/ssh/sshd_config</filename> by setting "
-"<literal>AllowAgentForwarding yes</literal>."
+"<literal>AllowAgentForwarding yes</literal> ."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:117
+#: security_ssh.xml:119
 #, no-c-format
-msgid "<command>scp</command>&mdash;Secure Copy"
+msgid "<command>scp</command> &mdash;Secure Copy"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:119
+#: security_ssh.xml:121
 #, no-c-format
 msgid ""
 "<command>scp</command> copies files to or from a remote machine. If the user "
 "name on &wsI; is different than the user name on &exampleserver;, specify "
 "the latter using the <option><replaceable>USER_NAME</replaceable>@host</"
 "option> format. If the file should be copied into a directory other than the "
-"remote user's home directory, specify it as &exampleserver;:"
-"<replaceable>DIRECTORY</replaceable>. The following examples show how to "
+"remote user's home directory, specify it as &exampleserver;: "
+"<replaceable>DIRECTORY</replaceable> . The following examples show how to "
 "copy a file from a local to a remote machine and vice versa."
 msgstr ""
 
-#. Tag: screen
-#: security_ssh.xml:131
+#. Tag: #text
+#: security_ssh.xml:133
 #, no-c-format
 msgid ""
-"&prompt.user;scp ~/MyLetter.tex &exampleuser_plain;@&exampleserver;:/tmp <co "
-"xml:id=\"co.scp.local.remote\"/>\n"
-"&prompt.user;scp &exampleuser_plain;@&exampleserver;:/tmp/MyLetter.tex ~ <co "
-"xml:id=\"co.scp.remote.local\"/>"
+"&prompt.user;scp ~/MyLetter.tex &exampleuser_plain;@&exampleserver;:/tmp"
 msgstr ""
 
-#. Tag: para
+#. Tag: #text
 #: security_ssh.xml:134
 #, no-c-format
-msgid "local to remote"
+msgid ""
+"&prompt.user;scp &exampleuser_plain;@&exampleserver;:/tmp/MyLetter.tex ~"
 msgstr ""
 
 #. Tag: para
 #: security_ssh.xml:137
 #, no-c-format
+msgid "local to remote"
+msgstr ""
+
+#. Tag: para
+#: security_ssh.xml:140
+#, no-c-format
 msgid "remote to local"
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:141
+#: security_ssh.xml:144
 #, no-c-format
 msgid "The <option>-l</option> Option"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:142
+#: security_ssh.xml:145
 #, no-c-format
 msgid ""
 "With the <command>ssh</command> command, the option <option>-l</option> can "
 "be used to specify a remote user (as an alternative to the "
 "<option><replaceable>USER_NAME</replaceable>@host</option> format). With "
 "<command>scp</command> the option <option>-l</option> is used to limit the "
-"bandwidth consumed by <command>scp</command>."
+"bandwidth consumed by <command>scp</command> ."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:152
+#: security_ssh.xml:155
 #, no-c-format
 msgid ""
 "After the correct password is entered, <command>scp</command> starts the "
@@ -240,7 +279,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:159
+#: security_ssh.xml:162
 #, no-c-format
 msgid ""
 "<command>scp</command> also provides a recursive copying feature for entire "
@@ -248,13 +287,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:164
+#: security_ssh.xml:167
 #, no-c-format
 msgid "&prompt.user;scp -r src/ sun:backup/"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:166
+#: security_ssh.xml:169
 #, no-c-format
 msgid ""
 "copies the entire contents of the directory <filename>src</filename> "
@@ -264,7 +303,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:173
+#: security_ssh.xml:176
 #, no-c-format
 msgid ""
 "The <option>-p</option> option tells <command>scp</command> to leave the "
@@ -274,31 +313,31 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:181
+#: security_ssh.xml:184
 #, no-c-format
-msgid "<command>sftp</command>&mdash;Secure File Transfer"
+msgid "<command>sftp</command> &mdash;Secure File Transfer"
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:184
+#: security_ssh.xml:187
 #, no-c-format
 msgid "Using <command>sftp</command>"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:185
+#: security_ssh.xml:188
 #, no-c-format
 msgid ""
 "If you want to copy several files from or to different locations, "
 "<command>sftp</command> is a convenient alternative to <command>scp</"
-"command>. It opens a shell with a set of commands similar to a regular FTP "
+"command> . It opens a shell with a set of commands similar to a regular FTP "
 "shell. Type <command>help</command> at the sftp-prompt to get a list of "
 "available commands. More details are available from the <command>sftp</"
 "command> man page."
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:194
+#: security_ssh.xml:197
 #, no-c-format
 msgid ""
 "&prompt.user;sftp &exampleserver;\n"
@@ -312,13 +351,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:197
+#: security_ssh.xml:207
 #, no-c-format
 msgid "Setting Permissions for File Uploads"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:198
+#: security_ssh.xml:208
 #, no-c-format
 msgid ""
 "As with a regular FTP server, a user cannot only download, but also upload "
@@ -329,13 +368,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_ssh.xml:208
+#: security_ssh.xml:218
 #, no-c-format
 msgid "Setting a umask"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:210
+#: security_ssh.xml:220
 #, no-c-format
 msgid ""
 "A umask works as a filter against the permissions of the original file on "
@@ -343,127 +382,127 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:223
+#: security_ssh.xml:233
 #, no-c-format
 msgid "permissions original"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:228
+#: security_ssh.xml:238
 #, no-c-format
 msgid "umask"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:233
+#: security_ssh.xml:243
 #, no-c-format
 msgid "permissions uploaded"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:242
+#: security_ssh.xml:252
 #, no-c-format
 msgid "0666"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:247 security_ssh.xml:264
-#, no-c-format
-msgid "0002"
-msgstr ""
-
-#. Tag: para
-#: security_ssh.xml:252
+#: security_ssh.xml:262
 #, no-c-format
 msgid "0664"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:259 security_ssh.xml:269
+#: security_ssh.xml:274
+#, no-c-format
+msgid "0002"
+msgstr ""
+
+#. Tag: para
+#: security_ssh.xml:279
 #, no-c-format
 msgid "0600"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:276
+#: security_ssh.xml:286
 #, no-c-format
 msgid "0775"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:281
+#: security_ssh.xml:291
 #, no-c-format
 msgid "0025"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:286
+#: security_ssh.xml:296
 #, no-c-format
 msgid "0750"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:294
+#: security_ssh.xml:304
 #, no-c-format
 msgid ""
 "To apply a umask on an SFTP server, edit the file <filename>/etc/ssh/"
-"sshd_configuration</filename>. Search for the line beginning with "
+"sshd_configuration</filename> . Search for the line beginning with "
 "<literal>Subsystem sftp</literal> and add the <option>-u</option> parameter "
 "with the desired setting, for example:"
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:300
+#: security_ssh.xml:310
 #, no-c-format
 msgid "Subsystem sftp /usr/lib/ssh/sftp-server -u 0002"
 msgstr ""
 
 #. Tag: term
-#: security_ssh.xml:304
+#: security_ssh.xml:314
 #, no-c-format
 msgid "Explicitly Setting the Permissions"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:306
+#: security_ssh.xml:316
 #, no-c-format
 msgid ""
 "Explicitly setting the permissions sets the same permissions for all files "
 "uploaded via SFTP. Specify a three-digit pattern such as <literal>600</"
-"literal>, <literal>644</literal>, or <literal>755</literal> with <option>-u</"
-"option>. When both <option>-m</option> and <option>-u</option> are "
+"literal> , <literal>644</literal> , or <literal>755</literal> with <option>-"
+"u</option> . When both <option>-m</option> and <option>-u</option> are "
 "specified, <literal>-u</literal> is ignored."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:314
+#: security_ssh.xml:324
 #, no-c-format
 msgid ""
 "To apply explicit permissions for uploaded files on an SFTP server, edit the "
-"file <filename>/etc/ssh/sshd_configuration</filename>. Search for the line "
+"file <filename>/etc/ssh/sshd_configuration</filename> . Search for the line "
 "beginning with <literal>Subsystem sftp</literal> and add the <option>-m</"
 "option> parameter with the desired setting, for example:"
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:321
+#: security_ssh.xml:331
 #, no-c-format
 msgid "Subsystem sftp /usr/lib/ssh/sftp-server -m 600"
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:328
+#: security_ssh.xml:338
 #, no-c-format
-msgid "The SSH Daemon (<systemitem class=\"daemon\">sshd</systemitem>)"
+msgid "The SSH Daemon ( <systemitem class=\"daemon\">sshd</systemitem> )"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:330
+#: security_ssh.xml:340
 #, no-c-format
 msgid ""
 "To work with the SSH client programs <command>ssh</command> and "
-"<command>scp</command>, a server (the SSH daemon) must be running in the "
-"background, listening for connections on <literal>TCP/IP port 22</literal>. "
+"<command>scp</command> , a server (the SSH daemon) must be running in the "
+"background, listening for connections on <literal>TCP/IP port 22</literal> . "
 "The daemon generates three key pairs when starting for the first time. Each "
 "key pair consists of a private and a public key. Therefore, this procedure "
 "is called public key-based. To guarantee the security of the communication "
@@ -471,12 +510,12 @@ msgid ""
 "administrator. The file permissions are set accordingly by the default "
 "installation. The private keys are only required locally by the SSH daemon "
 "and must not be given to anyone else. The public key components "
-"(recognizable by the name extension <filename>.pub</filename>) are sent to "
+"(recognizable by the name extension <filename>.pub</filename> ) are sent to "
 "the client requesting the connection. They are readable for all users."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:346
+#: security_ssh.xml:356
 #, no-c-format
 msgid ""
 "A connection is initiated by the SSH client. The waiting SSH daemon and the "
@@ -487,7 +526,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:354
+#: security_ssh.xml:364
 #, no-c-format
 msgid ""
 "For the communication between SSH server and SSH client, OpenSSH supports "
@@ -497,7 +536,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:361
+#: security_ssh.xml:371
 #, no-c-format
 msgid ""
 "When using version&nbsp;1 of SSH, the server sends its public host key and a "
@@ -510,7 +549,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:371
+#: security_ssh.xml:381
 #, no-c-format
 msgid ""
 "The private host and server keys are absolutely required to decrypt the "
@@ -521,13 +560,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:381
+#: security_ssh.xml:391
 #, no-c-format
 msgid "Viewing the SSH Daemon Log File"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:382
+#: security_ssh.xml:392
 #, no-c-format
 msgid ""
 "To watch the log entries from the <systemitem class=\"daemon\">sshd</"
@@ -535,19 +574,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:386
+#: security_ssh.xml:396
 #, no-c-format
 msgid "&prompt.sudo;journalctl -u sshd"
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:391
+#: security_ssh.xml:401
 #, no-c-format
 msgid "Maintaining SSH Keys"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:392
+#: security_ssh.xml:402
 #, no-c-format
 msgid ""
 "It is recommended to back up the private and public keys stored in "
@@ -557,13 +596,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:400
+#: security_ssh.xml:410
 #, no-c-format
 msgid "Existing SSH Host Keys"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:401
+#: security_ssh.xml:411
 #, no-c-format
 msgid ""
 "If you install &productname; on a machine with existing Linux installations, "
@@ -572,35 +611,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:408
+#: security_ssh.xml:418
 #, no-c-format
 msgid ""
 "When establishing a secure connection with a remote host for the first time, "
 "the client stores all public host keys in <filename>~/.ssh/known_hosts</"
-"filename>. This prevents any man-in-the-middle attacks&mdash;attempts by "
+"filename> . This prevents any man-in-the-middle attacks&mdash;attempts by "
 "foreign SSH servers to use spoofed names and IP addresses. Such attacks are "
 "detected either by a host key that is not included in <filename>~/.ssh/"
-"known_hosts</filename>, or by the server's inability to decrypt the session "
+"known_hosts</filename> , or by the server's inability to decrypt the session "
 "key in the absence of an appropriate private counterpart."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:419
+#: security_ssh.xml:429
 #, no-c-format
 msgid ""
 "If the public keys of a host have changed (that needs to be verified before "
 "connecting to such a server), the offending keys can be removed with "
-"<command>ssh-keygen -r <replaceable>HOSTNAME</replaceable></command>."
+"<command>ssh-keygen -r <replaceable>HOSTNAME</replaceable></command> ."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:427
+#: security_ssh.xml:437
 #, no-c-format
 msgid "Rotating Host Keys"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:428
+#: security_ssh.xml:438
 #, no-c-format
 msgid ""
 "As of version 6.8, OpenSSH comes with a protocol extension that supports "
@@ -611,32 +650,32 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:437
+#: security_ssh.xml:447
 #, no-c-format
 msgid "Restarting sshd"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:438
+#: security_ssh.xml:448
 #, no-c-format
 msgid "After installing new host keys on the server, restart sshd."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:442
+#: security_ssh.xml:452
 #, no-c-format
 msgid ""
 "This protocol extension can inform a client of all the new host keys on the "
-"server, if the user initiates a connection with <command>ssh</command>. "
+"server, if the user initiates a connection with <command>ssh</command> . "
 "Then, the software on the client updates <filename>~/.ssh/known_hosts</"
-"filename>, and the user is not required to accept new keys of previously "
+"filename> , and the user is not required to accept new keys of previously "
 "known and trusted hosts manually. The local <filename>known_hosts</filename> "
 "file will contain all the host keys of the remote hosts, in addition to the "
 "one that authenticated the host during this session."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:453
+#: security_ssh.xml:463
 #, no-c-format
 msgid ""
 "Once the administrator of the server knows that all the clients have fetched "
@@ -646,27 +685,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:460
+#: security_ssh.xml:470
 #, no-c-format
 msgid "For more information, see:"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:470
+#: security_ssh.xml:475
 #, no-c-format
 msgid ""
-"<link xlink:href=\"http://heise.de/-2540907\"></link> (<quote>Endlich neue "
-"Schlüssel für SSH-Server</quote>, German only)"
+"<link xlink:href=\"http://blog.djm.net.au/2015/02/key-rotation-in-openssh-68."
+"html\"/>"
+msgstr ""
+
+#. Tag: para
+#: security_ssh.xml:480
+#, no-c-format
+msgid ""
+"<link xlink:href=\"http://heise.de/-2540907\"/> ( <quote>Endlich neue "
+"Schlüssel für SSH-Server</quote> , German only)"
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:482
+#: security_ssh.xml:492
 #, no-c-format
 msgid "SSH Authentication Mechanisms"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:484
+#: security_ssh.xml:494
 #, no-c-format
 msgid ""
 "In its simplest form, authentication is done by entering the user's password "
@@ -678,40 +725,40 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:494
+#: security_ssh.xml:504
 #, no-c-format
 msgid ""
 "To accomplish a login that does not require to enter the remote user's "
 "password, SSH uses another key pair, which needs to be generated by the "
-"user. It consists of a public (<filename>id_rsa.pub</filename> or "
-"<filename>id_dsa.pub</filename>) and a private key (<filename>id_rsa</"
-"filename> or <filename>id_dsa</filename>)."
+"user. It consists of a public ( <filename>id_rsa.pub</filename> or "
+"<filename>id_dsa.pub</filename> ) and a private key ( <filename>id_rsa</"
+"filename> or <filename>id_dsa</filename> )."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:502
+#: security_ssh.xml:512
 #, no-c-format
 msgid ""
 "To be able to log in without having to specify the remote user's password, "
 "the public key of the <quote>SSH user</quote> must be in <filename>~/.ssh/"
-"authorized_keys</filename>. This approach also ensures that the remote user "
+"authorized_keys</filename> . This approach also ensures that the remote user "
 "has got full control: adding the key requires the remote user's password and "
 "removing the key revokes the permission to log in from remote."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:511
+#: security_ssh.xml:521
 #, no-c-format
 msgid ""
 "For maximum security such a key should be protected by a passphrase which "
-"needs to be entered every time you use <command>ssh</command>, <command>scp</"
-"command>, or <command>sftp</command>. Contrary to the simple authentication, "
-"this passphrase is independent from the remote user and therefore always the "
-"same."
+"needs to be entered every time you use <command>ssh</command> , "
+"<command>scp</command> , or <command>sftp</command> . Contrary to the simple "
+"authentication, this passphrase is independent from the remote user and "
+"therefore always the same."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:519
+#: security_ssh.xml:529
 #, no-c-format
 msgid ""
 "An alternative to the key-based authentication described above, SSH also "
@@ -723,13 +770,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:530
+#: security_ssh.xml:540
 #, no-c-format
 msgid "File Permissions for Host-Based Authentication"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:531
+#: security_ssh.xml:541
 #, no-c-format
 msgid ""
 "If the host-based authentication is to be used, the file <filename>/usr/lib/"
@@ -738,34 +785,49 @@ msgid ""
 "not the default setting in &productname;. In such case, set the file "
 "permissions manually. You should use <filename>/etc/permissions.local</"
 "filename> for this purpose, to make sure that the setuid bit is preserved "
-"after security updates of <package>openssh</package>."
+"after security updates of <package>openssh</package> ."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:544
+#: security_ssh.xml:554
 #, no-c-format
 msgid "Generating an SSH Key"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:547
+#: security_ssh.xml:557
 #, no-c-format
 msgid ""
 "To generate a key with default parameters (RSA, 2048 bits), enter the "
-"command <command>ssh-keygen</command>."
+"command <command>ssh-keygen</command> ."
 msgstr ""
 
-#. Tag: para
-#: security_ssh.xml:553
+#. Tag: filename
+#: security_ssh.xml:565
 #, no-c-format
-msgid ""
-"Accept the default location to store the key (<filename>~/.ssh/id_rsa</"
-"filename>) by pressing <keycap function=\"enter\"></keycap> (strongly "
-"recommended) or enter an alternative location."
+msgid "~/.ssh/id_rsa"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:565
+#, no-c-format
+msgid "Accept the default location to store the key ("
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:566
+#, no-c-format
+msgid ") by pressing"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:568
+#, no-c-format
+msgid "(strongly recommended) or enter an alternative location."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:561
+#: security_ssh.xml:571
 #, no-c-format
 msgid ""
 "Enter a passphrase consisting of 10 to 30 characters. The same rules as for "
@@ -774,101 +836,132 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:568
+#: security_ssh.xml:578
 #, no-c-format
 msgid ""
 "You should make absolutely sure that the private key is not accessible by "
 "anyone other than yourself (always set its permissions to <literal>0600</"
-"literal>). The private key must never fall into the hands of another person."
+"literal> ). The private key must never fall into the hands of another person."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:574
+#: security_ssh.xml:584
 #, no-c-format
 msgid ""
 "To change the password of an existing key pair, use the command <command>ssh-"
-"keygen -p</command>."
+"keygen -p</command> ."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:581
+#: security_ssh.xml:591
 #, no-c-format
 msgid "Copying an SSH Key"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:582
+#: security_ssh.xml:592
 #, no-c-format
 msgid ""
 "To copy a public SSH key to <filename>~/.ssh/authorized_keys</filename> of a "
-"user on a remote machine, use the command <command>ssh-copy-id</command>. To "
-"copy your personal key stored under <filename>~/.ssh/id_rsa.pub</filename> "
-"you may use the short form. To copy DSA keys or keys of other users, you "
-"need to specify the path:"
+"user on a remote machine, use the command <command>ssh-copy-id</command> . "
+"To copy your personal key stored under <filename>~/.ssh/id_rsa.pub</"
+"filename> you may use the short form. To copy DSA keys or keys of other "
+"users, you need to specify the path:"
 msgstr ""
 
-#. Tag: screen
-#: security_ssh.xml:590
+#. Tag: #text
+#: security_ssh.xml:600
+#, no-c-format
+msgid "&prompt.user;"
+msgstr ""
+
+#. Tag: prompt
+#: security_ssh.xml:600
+#, no-c-format
+msgid "~/.ssh/id_rsa.pub"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:601
+#, no-c-format
+msgid "ssh-copy-id -i &exampleuser_plain;@&exampleserver;&prompt.user;"
+msgstr ""
+
+#. Tag: prompt
+#: security_ssh.xml:603
+#, no-c-format
+msgid "~/.ssh/id_dsa.pub"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:604
 #, no-c-format
 msgid ""
-"&prompt.user;<prompt>~/.ssh/id_rsa.pub</prompt>\n"
-"ssh-copy-id -i &exampleuser_plain;@&exampleserver;\n"
-"\n"
-"&prompt.user;<prompt>~/.ssh/id_dsa.pub</prompt>\n"
-"ssh-copy-id -i ~/.ssh/id_dsa.pub  &exampleuser_plain;@&exampleserver;\n"
-"\n"
-"&prompt.user;<prompt>~notme/.ssh/id_rsa.pub</prompt>\n"
-"ssh-copy-id -i ~notme/.ssh/id_rsa.pub  &exampleuser_plain;@&exampleserver;"
+"ssh-copy-id -i ~/.ssh/id_dsa.pub &exampleuser_plain;@&exampleserver;&prompt."
+"user;"
+msgstr ""
+
+#. Tag: prompt
+#: security_ssh.xml:606
+#, no-c-format
+msgid "~notme/.ssh/id_rsa.pub"
+msgstr ""
+
+#. Tag: #text
+#: security_ssh.xml:607
+#, no-c-format
+msgid ""
+"ssh-copy-id -i ~notme/.ssh/id_rsa.pub &exampleuser_plain;@&exampleserver;"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:591
+#: security_ssh.xml:608
 #, no-c-format
 msgid ""
 "To successfully copy the key, you need to enter the remote user's password. "
 "To remove an existing key, manually edit <filename>~/.ssh/authorized_keys</"
-"filename>."
+"filename> ."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:599
+#: security_ssh.xml:616
 #, no-c-format
 msgid "Using the <command>ssh-agent</command>"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:600
+#: security_ssh.xml:617
 #, no-c-format
 msgid ""
 "When doing lots of secure shell operations it is cumbersome to type the SSH "
 "passphrase for each such operation. Therefore, the SSH package provides "
-"another tool, <command>ssh-agent</command>, which retains the private keys "
+"another tool, <command>ssh-agent</command> , which retains the private keys "
 "for the duration of an X or terminal session. All other windows or programs "
-"are started as clients to the <command>ssh-agent</command>. By starting the "
+"are started as clients to the <command>ssh-agent</command> . By starting the "
 "agent, a set of environment variables is set, which will be used by "
-"<command>ssh</command>, <command>scp</command>, or <command>sftp</command> "
+"<command>ssh</command> , <command>scp</command> , or <command>sftp</command> "
 "to locate the agent for automatic login. See the <command>ssh-agent</"
 "command> man page for details."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:612
+#: security_ssh.xml:629
 #, no-c-format
 msgid ""
 "After the <command>ssh-agent</command> is started, you need to add your keys "
-"by using <command>ssh-add</command>. It will prompt for the passphrase. "
+"by using <command>ssh-add</command> . It will prompt for the passphrase. "
 "After the password has been provided once, you can use the secure shell "
 "commands within the running session without having to authenticate again."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:620
+#: security_ssh.xml:637
 #, no-c-format
 msgid "Using <command>ssh-agent</command> in an X Session"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:621
+#: security_ssh.xml:638
 #, no-c-format
 msgid ""
 "On &productname;, the <command>ssh-agent</command> is automatically started "
@@ -878,7 +971,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:629
+#: security_ssh.xml:646
 #, no-c-format
 msgid ""
 "Log in as the desired user and check whether the file <filename>~/.xinitrc</"
@@ -886,15 +979,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:635
+#: security_ssh.xml:652
 #, no-c-format
 msgid ""
 "If it does not exist, use an existing template or copy it from <filename>/"
-"etc/skel</filename>:"
+"etc/skel</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:639
+#: security_ssh.xml:656
 #, no-c-format
 msgid ""
 "if [ -f ~/.xinitrc.template ]; then mv ~/.xinitrc.template ~/.xinitrc; \\\n"
@@ -902,7 +995,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:642
+#: security_ssh.xml:660
 #, no-c-format
 msgid ""
 "If you have copied the template, search for the following lines and "
@@ -911,7 +1004,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:647
+#: security_ssh.xml:665
 #, no-c-format
 msgid ""
 "# if test -S \"$SSH_AUTH_SOCK\" -a -x \"$SSH_ASKPASS\"; then\n"
@@ -920,20 +1013,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:650
+#: security_ssh.xml:670
 #, no-c-format
 msgid ""
 "When starting a new X session, you will be prompted for your SSH passphrase."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:658
+#: security_ssh.xml:678
 #, no-c-format
 msgid "Using <command>ssh-agent</command> in a Terminal Session"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:659
+#: security_ssh.xml:679
 #, no-c-format
 msgid ""
 "In a terminal session you need to manually start the <command>ssh-agent</"
@@ -944,15 +1037,16 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:667
+#: security_ssh.xml:687
 #, no-c-format
 msgid ""
 "&prompt.user;ssh-agent -s /bin/bash\n"
-"eval $(ssh-agent)"
+"eval $(ssh-agent)\n"
+"    "
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:668
+#: security_ssh.xml:690
 #, no-c-format
 msgid ""
 "After the agent has been started, run <command>ssh-add</command> to provide "
@@ -960,22 +1054,22 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:686
+#: security_ssh.xml:708
 #, no-c-format
 msgid "Port Forwarding"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:688
+#: security_ssh.xml:710
 #, no-c-format
 msgid ""
 "<command>ssh</command> can also be used to redirect TCP/IP connections. This "
-"feature, also called <literal>SSH tunneling</literal>, redirects TCP "
+"feature, also called <literal>SSH tunneling</literal> , redirects TCP "
 "connections to a certain port to another machine via an encrypted channel."
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:695
+#: security_ssh.xml:717
 #, no-c-format
 msgid ""
 "With the following command, any connection directed to &wsI; port 25 (SMTP) "
@@ -986,13 +1080,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:704
+#: security_ssh.xml:726
 #, no-c-format
 msgid "&prompt.root;ssh -L 25:&exampleserver;:25 &wsI;"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:706
+#: security_ssh.xml:728
 #, no-c-format
 msgid ""
 "Similarly, all POP3 requests (port&nbsp;110) on &wsI; can be forwarded to "
@@ -1000,13 +1094,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_ssh.xml:711
+#: security_ssh.xml:733
 #, no-c-format
 msgid "&prompt.root;ssh -L 110:&exampleserver;:110 &wsI;"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:713
+#: security_ssh.xml:735
 #, no-c-format
 msgid ""
 "Both commands must be executed as &rootuser;, because the connection is made "
@@ -1015,134 +1109,146 @@ msgid ""
 "<literal>localhost</literal> for this to work. Additional information can be "
 "found in the manual pages for each of the programs described above and in "
 "the OpenSSH package documentation under <filename>/usr/share/doc/packages/"
-"openssh</filename>."
+"openssh</filename> ."
 msgstr ""
 
 #. Tag: title
-#: security_ssh.xml:725
+#: security_ssh.xml:747
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
+#. Tag: term
+#: security_ssh.xml:753
+#, no-c-format
+msgid "<link xlink:href=\"http://www.openssh.com\"/>"
+msgstr ""
+
 #. Tag: para
-#: security_ssh.xml:734
+#: security_ssh.xml:756
 #, no-c-format
 msgid "The home page of OpenSSH"
 msgstr ""
 
+#. Tag: term
+#: security_ssh.xml:762
+#, no-c-format
+msgid "<link xlink:href=\"http://en.wikibooks.org/wiki/OpenSSH\"/>"
+msgstr ""
+
 #. Tag: para
-#: security_ssh.xml:743
+#: security_ssh.xml:765
 #, no-c-format
 msgid "The OpenSSH Wikibook"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:749
+#. Tag: term
+#: security_ssh.xml:771
 #, no-c-format
-msgid "man sshd"
+msgid "<command>man sshd</command>"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:752
+#: security_ssh.xml:774
 #, no-c-format
 msgid "The man page of the OpenSSH daemon"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:758
+#. Tag: term
+#: security_ssh.xml:780
 #, no-c-format
-msgid "man ssh_config"
+msgid "<command>man ssh_config</command>"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:761
+#: security_ssh.xml:783
 #, no-c-format
 msgid "The man page of the OpenSSH SSH client configuration files"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:767
+#. Tag: term
+#: security_ssh.xml:789
 #, no-c-format
-msgid "man scp"
+msgid "<command>man scp</command>"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:769
+#. Tag: term
+#: security_ssh.xml:791
 #, no-c-format
-msgid "man sftp"
+msgid "<command>man sftp</command>"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:771
+#. Tag: term
+#: security_ssh.xml:793
 #, no-c-format
-msgid "man slogin"
+msgid "<command>man slogin</command>"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:773
+#. Tag: term
+#: security_ssh.xml:795
 #, no-c-format
-msgid "man ssh"
+msgid "<command>man ssh</command>"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:775
+#. Tag: term
+#: security_ssh.xml:797
 #, no-c-format
-msgid "man ssh-add"
+msgid "<command>man ssh-add</command>"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:777
+#. Tag: term
+#: security_ssh.xml:799
 #, no-c-format
-msgid "man ssh-agent"
+msgid "<command>man ssh-agent</command>"
 msgstr ""
 
-#. Tag: command
-#: security_ssh.xml:779
-#, no-c-format
-msgid "man ssh-copy-id"
-msgstr ""
-
-#. Tag: command
-#: security_ssh.xml:781
-#, no-c-format
-msgid "man ssh-keyconvert"
-msgstr ""
-
-#. Tag: command
-#: security_ssh.xml:783
-#, no-c-format
-msgid "man ssh-keygen"
-msgstr ""
-
-#. Tag: command
-#: security_ssh.xml:785
-#, no-c-format
-msgid "man ssh-keyscan"
-msgstr ""
-
-#. Tag: para
-#: security_ssh.xml:788
-#, no-c-format
-msgid ""
-"Man pages of several binary files to securely copy files (<command>scp</"
-"command>, <command>sftp</command>), to log in (<command>slogin</command>, "
-"<command>ssh</command>), and to manage keys."
-msgstr ""
-
-#. Tag: filename
-#: security_ssh.xml:798
-#, no-c-format
-msgid "/usr/share/doc/packages/openssh/README.SUSE"
-msgstr ""
-
-#. Tag: filename
+#. Tag: term
 #: security_ssh.xml:801
 #, no-c-format
-msgid "/usr/share/doc/packages/openssh/README.FIPS"
+msgid "<command>man ssh-copy-id</command>"
+msgstr ""
+
+#. Tag: term
+#: security_ssh.xml:803
+#, no-c-format
+msgid "<command>man ssh-keyconvert</command>"
+msgstr ""
+
+#. Tag: term
+#: security_ssh.xml:805
+#, no-c-format
+msgid "<command>man ssh-keygen</command>"
+msgstr ""
+
+#. Tag: term
+#: security_ssh.xml:807
+#, no-c-format
+msgid "<command>man ssh-keyscan</command>"
 msgstr ""
 
 #. Tag: para
-#: security_ssh.xml:804
+#: security_ssh.xml:810
+#, no-c-format
+msgid ""
+"Man pages of several binary files to securely copy files ( <command>scp</"
+"command> , <command>sftp</command> ), to log in ( <command>slogin</"
+"command> , <command>ssh</command> ), and to manage keys."
+msgstr ""
+
+#. Tag: term
+#: security_ssh.xml:819
+#, no-c-format
+msgid "<filename>/usr/share/doc/packages/openssh/README.SUSE</filename>"
+msgstr ""
+
+#. Tag: term
+#: security_ssh.xml:822
+#, no-c-format
+msgid "<filename>/usr/share/doc/packages/openssh/README.FIPS</filename>"
+msgstr ""
+
+#. Tag: para
+#: security_ssh.xml:826
 #, no-c-format
 msgid ""
 "&suse; package specific documentation; changes in defaults with respect to "

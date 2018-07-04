@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -138,10 +138,10 @@ msgid ""
 "One or more of the following default patterns may not be needed in all cases:"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:150
 #, no-c-format
-msgid "&gnome; Desktop Environment"
+msgid "<guimenu>&gnome; Desktop Environment</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -153,10 +153,10 @@ msgid ""
 "sufficient."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:161
 #, no-c-format
-msgid "X Window System"
+msgid "<guimenu>X Window System</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -170,10 +170,10 @@ msgid ""
 "pattern."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:174
 #, no-c-format
-msgid "Print Server"
+msgid "<guimenu>Print Server</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -194,8 +194,10 @@ msgstr ""
 msgid ""
 "A running &xgeneric; consumes many resources and is rarely needed on a "
 "server. It is strongly recommended to start the system in target "
-"<systemitem>multi-user.target</systemitem>. You will still be able to "
-"remotely start graphical applications."
+"<systemitem>multi-user.target</systemitem> . You will still be able to "
+"remotely start graphical applications. <!-- 2014-08-20, tiwai: startx no "
+"longer works for users --> <!-- or use the <command>startx</command> command "
+"to start a local graphical desktop. -->"
 msgstr ""
 
 #. Tag: title
@@ -221,9 +223,11 @@ msgstr ""
 msgid ""
 "If you are using the graphical version of &yast;, you can click the column "
 "headlines to sort the list of services. Use this to get an overview of which "
-"services are currently running. Use the <guimenu>Start/Stop</guimenu> button "
-"to disable the service for the running session. To permanently disable it, "
-"use the <guimenu>Enable/Disable</guimenu> button."
+"services are currently running. <!--or which services are started in the "
+"server's default runlevel. Click a service to see its description.--> Use "
+"the <guimenu>Start/Stop</guimenu> button to disable the service for the "
+"running session. To permanently disable it, use the <guimenu>Enable/Disable</"
+"guimenu> button."
 msgstr ""
 
 #. Tag: para
@@ -235,10 +239,10 @@ msgid ""
 "disable the others:"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:231
 #, no-c-format
-msgid "alsasound"
+msgid "<guimenu>alsasound</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -247,10 +251,10 @@ msgstr ""
 msgid "Loads the Advanced Linux Sound System."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:240
 #, no-c-format
-msgid "auditd"
+msgid "<guimenu>auditd</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -261,10 +265,10 @@ msgid ""
 "details). Disable this if you do not use Audit."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:250
 #, no-c-format
-msgid "bluez-coldplug"
+msgid "<guimenu>bluez-coldplug</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -273,10 +277,10 @@ msgstr ""
 msgid "Handles cold plugging of Bluetooth dongles."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:259
 #, no-c-format
-msgid "cups"
+msgid "<guimenu>cups</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -285,10 +289,10 @@ msgstr ""
 msgid "A printer daemon."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:268
 #, no-c-format
-msgid "java.binfmt_misc"
+msgid "<guimenu>java.binfmt_misc</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -299,7 +303,7 @@ msgid ""
 "filename> Java programs."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:278
 #, no-c-format
 msgid "<guimenu>nfs</guimenu>"
@@ -311,10 +315,10 @@ msgstr ""
 msgid "Services needed to mount NFS."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:287
 #, no-c-format
-msgid "smbfs"
+msgid "<guimenu>smbfs</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -323,10 +327,10 @@ msgstr ""
 msgid "Services needed to mount SMB/CIFS file systems from a Windows* server."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: tuning_systemresources.xml:296
 #, no-c-format
-msgid "splash / splash_early"
+msgid "<guimenu>splash / splash_early</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -364,14 +368,14 @@ msgstr ""
 msgid ""
 "&productname; ships with several file systems, including Btrfs, Ext4, Ext3, "
 "Ext2, ReiserFS, and XFS. Each file system has its own advantages and "
-"disadvantages.<phrase os=\"sles\"> Refer to <xref linkend=\"cha.filesystems"
+"disadvantages. <phrase os=\"sles\"> Refer to <xref linkend=\"cha.filesystems"
 "\"/> for detailed information.</phrase>"
 msgstr ""
 
 #. Tag: title
 #: tuning_systemresources.xml:326
 #, no-c-format
-msgid "<title>NFS</title>"
+msgid "NFS"
 msgstr ""
 
 #. Tag: para
@@ -379,10 +383,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "NFS (Version 3) tuning is covered in detail in the NFS Howto at <link xlink:"
-"href=\"http://nfs.sourceforge.net/nfs-howto/\"></link>. The first thing to "
+"href=\"http://nfs.sourceforge.net/nfs-howto/\"/> . The first thing to "
 "experiment with when mounting NFS shares is increasing the read write "
 "blocksize to <literal>32768</literal> by using the mount options "
-"<option>wsize</option> and <option>rsize</option>."
+"<option>wsize</option> and <option>rsize</option> ."
 msgstr ""
 
 #. Tag: title
@@ -397,15 +401,15 @@ msgstr ""
 msgid ""
 "Each file and directory in a file system has three time stamps associated "
 "with it: a time when the file was last read called <emphasis>access time</"
-"emphasis>, a time when the file data was last modified called "
-"<emphasis>modification time</emphasis>, and a time when the file metadata "
-"was last modified called <emphasis>change time</emphasis>. Keeping access "
+"emphasis> , a time when the file data was last modified called "
+"<emphasis>modification time</emphasis> , and a time when the file metadata "
+"was last modified called <emphasis>change time</emphasis> . Keeping access "
 "time always up to date has significant performance overhead since every read-"
 "only access will incur a write operation. Thus by default every file system "
 "updates access time only if current file access time is older than a day or "
 "if it is older than file modification or change time. This feature is called "
 "<emphasis>relative access time</emphasis> and the corresponding mount option "
-"is <option>relatime</option>. Updates of access time can be completely "
+"is <option>relatime</option> . Updates of access time can be completely "
 "disabled using the <option>noatime</option> mount option, however you need "
 "to verify your applications do not use it. This can be true for file and Web "
 "servers or for network storage. If the default relative access time update "
@@ -456,7 +460,7 @@ msgid ""
 "independent kernel process. Thus the I/O priority setting generally does not "
 "apply for these writes. Also be aware that I/O class and priority setting is "
 "obeyed only by <emphasis>CFQ</emphasis> I/O scheduler (refer to <xref "
-"linkend=\"cha.tuning.io.schedulers\"/>). You can set the following three "
+"linkend=\"cha.tuning.io.schedulers\"/> ). You can set the following three "
 "scheduling classes:"
 msgstr ""
 
@@ -516,5 +520,5 @@ msgid ""
 "For more details and the exact command syntax refer to the "
 "<systemitem>ionice(1)</systemitem> man page. If you need more reliable "
 "control over bandwidth available to each application, use Kernel Control "
-"Groups as described in <xref linkend=\"sec.tuning.cgroups.subsys\"/>."
+"Groups as described in <xref linkend=\"sec.tuning.cgroups.subsys\"/> ."
 msgstr ""

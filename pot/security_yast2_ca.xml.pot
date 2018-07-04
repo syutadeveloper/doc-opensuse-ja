@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -41,7 +41,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:54
 #, no-c-format
-msgid "Digital certification uses cryptographic processes to encrypt and protect data from access by unauthorized people. The user data is encrypted using a second data record, or <emphasis>key</emphasis>. The key is applied to the user data in a mathematical process, producing an altered data record in which the original content can no longer be identified. Asymmetrical encryption is now in general use (<emphasis>public key method</emphasis>). Keys always occur in pairs:"
+msgid "Digital certification uses cryptographic processes to encrypt and protect data from access by unauthorized people. The user data is encrypted using a second data record, or <emphasis>key</emphasis> . The key is applied to the user data in a mathematical process, producing an altered data record in which the original content can no longer be identified. Asymmetrical encryption is now in general use ( <emphasis>public key method</emphasis> ). Keys always occur in pairs:"
 msgstr ""
 
 #. Tag: term
@@ -83,7 +83,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:112
 #, no-c-format
-msgid "Trustworthy organizations that issue and sign public key certificates are usually part of a certification infrastructure. This is responsible for the other aspects of certificate management, such as publication, withdrawal, and renewal of certificates. An infrastructure of this kind is generally called a <emphasis>public key infrastructure</emphasis> or <emphasis>PKI</emphasis>. One familiar PKI is the <emphasis>OpenPGP</emphasis> standard in which users publish their certificates themselves without central authorization points. These certificates become trustworthy when signed by other parties in the <quote>web of trust.</quote>"
+msgid "Trustworthy organizations that issue and sign public key certificates are usually part of a certification infrastructure. This is responsible for the other aspects of certificate management, such as publication, withdrawal, and renewal of certificates. An infrastructure of this kind is generally called a <emphasis>public key infrastructure</emphasis> or <emphasis>PKI</emphasis> . One familiar PKI is the <emphasis>OpenPGP</emphasis> standard in which users publish their certificates themselves without central authorization points. These certificates become trustworthy when signed by other parties in the <quote>web of trust.</quote>"
 msgstr ""
 
 #. Tag: para
@@ -113,37 +113,19 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:158
 #, no-c-format
-msgid "The extensions can contain any additional information. An application is only required to be able to evaluate an extension if it is identified as <emphasis>critical</emphasis>. If an application does not recognize a critical extension, it must reject the certificate. Some extensions are only useful for a specific application, such as signature or encryption."
+msgid "The extensions can contain any additional information. An application is only required to be able to evaluate an extension if it is identified as <emphasis>critical</emphasis> . If an application does not recognize a critical extension, it must reject the certificate. Some extensions are only useful for a specific application, such as signature or encryption."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:165
 #, no-c-format
-msgid "shows the fields of a basic X.509 certificate in version 3."
+msgid "<xref linkend=\"tab.yast.ca.intro.x509\" xrefstyle=\"select:label nopage\"/> shows the fields of a basic X.509 certificate in version 3."
 msgstr ""
 
 #. Tag: title
 #: security_yast2_ca.xml:170
 #, no-c-format
 msgid "X.509v3 Certificate"
-msgstr ""
-
-#. Tag: para
-#: security_yast2_ca.xml:175 security_yast2_ca.xml:342
-#, no-c-format
-msgid "Field"
-msgstr ""
-
-#. Tag: para
-#: security_yast2_ca.xml:180 security_yast2_ca.xml:347
-#, no-c-format
-msgid "Content"
-msgstr ""
-
-#. Tag: para
-#: security_yast2_ca.xml:189 security_yast2_ca.xml:356
-#, no-c-format
-msgid "Version"
 msgstr ""
 
 #. Tag: para
@@ -165,21 +147,9 @@ msgid "Unique certificate ID (an integer)"
 msgstr ""
 
 #. Tag: para
-#: security_yast2_ca.xml:213 security_yast2_ca.xml:368
-#, no-c-format
-msgid "Signature"
-msgstr ""
-
-#. Tag: para
 #: security_yast2_ca.xml:218
 #, no-c-format
 msgid "The ID of the algorithm used to sign the certificate"
-msgstr ""
-
-#. Tag: para
-#: security_yast2_ca.xml:225 security_yast2_ca.xml:380
-#, no-c-format
-msgid "Issuer"
 msgstr ""
 
 #. Tag: para
@@ -249,12 +219,6 @@ msgid "Unique ID of the owner (optional)"
 msgstr ""
 
 #. Tag: para
-#: security_yast2_ca.xml:297 security_yast2_ca.xml:430
-#, no-c-format
-msgid "Extensions"
-msgstr ""
-
-#. Tag: para
 #: security_yast2_ca.xml:302
 #, no-c-format
 msgid "Optional additional information, such as <quote>KeyUsage</quote> or <quote>BasicConstraints</quote>"
@@ -285,15 +249,45 @@ msgid "X.509 Certificate Revocation List (CRL)"
 msgstr ""
 
 #. Tag: para
+#: security_yast2_ca.xml:342
+#, no-c-format
+msgid "Field"
+msgstr ""
+
+#. Tag: para
+#: security_yast2_ca.xml:347
+#, no-c-format
+msgid "Content"
+msgstr ""
+
+#. Tag: para
+#: security_yast2_ca.xml:356
+#, no-c-format
+msgid "Version"
+msgstr ""
+
+#. Tag: para
 #: security_yast2_ca.xml:361
 #, no-c-format
 msgid "The version of the CRL, such as v2"
 msgstr ""
 
 #. Tag: para
+#: security_yast2_ca.xml:368
+#, no-c-format
+msgid "Signature"
+msgstr ""
+
+#. Tag: para
 #: security_yast2_ca.xml:373
 #, no-c-format
 msgid "The ID of the algorithm used to sign the CRL"
+msgstr ""
+
+#. Tag: para
+#: security_yast2_ca.xml:380
+#, no-c-format
+msgid "Issuer"
 msgstr ""
 
 #. Tag: para
@@ -339,6 +333,12 @@ msgid "Every entry contains the serial number of the certificate, the time of re
 msgstr ""
 
 #. Tag: para
+#: security_yast2_ca.xml:430
+#, no-c-format
+msgid "Extensions"
+msgstr ""
+
+#. Tag: para
 #: security_yast2_ca.xml:435
 #, no-c-format
 msgid "Optional CRL extensions"
@@ -353,7 +353,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:447
 #, no-c-format
-msgid "The certificates and CRLs for a CA must be made publicly accessible using a <emphasis>repository</emphasis>. Because the signature protects the certificates and CRLs from being forged, the repository itself does not need to be secured in a special way. Instead, it tries to grant the simplest and fastest access possible. For this reason, certificates are often provided on an LDAP or HTTP server. Find explanations about LDAP in <xref linkend=\"cha.security.ldap\"/>. <xref os=\"sles;osuse\" linkend=\"cha.apache2\"/> contains information about the HTTP server."
+msgid "The certificates and CRLs for a CA must be made publicly accessible using a <emphasis>repository</emphasis> . Because the signature protects the certificates and CRLs from being forged, the repository itself does not need to be secured in a special way. Instead, it tries to grant the simplest and fastest access possible. For this reason, certificates are often provided on an LDAP or HTTP server. Find explanations about LDAP in <xref linkend=\"cha.security.ldap\"/> . <xref os=\"sles;osuse\" linkend=\"cha.apache2\"/> contains information about the HTTP server."
 msgstr ""
 
 #. Tag: title
@@ -395,19 +395,19 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:495
 #, no-c-format
-msgid "Start &yast; and go to <menuchoice><guimenu>Security and Users</guimenu><guimenu>CA Management</guimenu></menuchoice>."
+msgid "Start &yast; and go to <menuchoice><guimenu>Security and Users</guimenu><guimenu>CA Management</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:501
 #, no-c-format
-msgid "Click <guimenu>Create Root CA</guimenu>."
+msgid "Click <guimenu>Create Root CA</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:506
 #, no-c-format
-msgid "Enter the basic data for the CA in the first dialog, shown in <xref linkend=\"fig.yast.ca.ca_basic\" xrefstyle=\"select:label nopage\"/>. The text boxes have the following meanings:"
+msgid "Enter the basic data for the CA in the first dialog, shown in <xref linkend=\"fig.yast.ca.ca_basic\" xrefstyle=\"select:label nopage\"/> . The text boxes have the following meanings:"
 msgstr ""
 
 #. Tag: title
@@ -416,10 +416,10 @@ msgstr ""
 msgid "&yast; CA Module&mdash;Basic Data for a Root CA"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: security_yast2_ca.xml:524
 #, no-c-format
-msgid "CA Name"
+msgid "<guimenu>CA Name</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -428,10 +428,10 @@ msgstr ""
 msgid "Enter the technical name of the CA. Directory names, among other things, are derived from this name, which is why only the characters listed in the help can be used. The technical name is also displayed in the overview when the module is started."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: security_yast2_ca.xml:536
 #, no-c-format
-msgid "Common Name"
+msgid "<guimenu>Common Name</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -440,10 +440,10 @@ msgstr ""
 msgid "Enter the name for use in referring to the CA."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: security_yast2_ca.xml:545
 #, no-c-format
-msgid "E-Mail Addresses"
+msgid "<guimenu>E-Mail Addresses</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -452,10 +452,10 @@ msgstr ""
 msgid "Several e-mail addresses can be entered that can be seen by the CA user. This can be helpful for inquiries."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: security_yast2_ca.xml:555
 #, no-c-format
-msgid "Country"
+msgid "<guimenu>Country</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -467,7 +467,7 @@ msgstr ""
 #. Tag: term
 #: security_yast2_ca.xml:564
 #, no-c-format
-msgid "<guimenu>Organization</guimenu>, <guimenu>Organizational Unit</guimenu>, <guimenu>Locality</guimenu>, <guimenu>State</guimenu>"
+msgid "<guimenu>Organization</guimenu> , <guimenu>Organizational Unit</guimenu> , <guimenu>Locality</guimenu> , <guimenu>State</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -479,7 +479,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:574
 #, no-c-format
-msgid "Proceed with <guimenu>Next</guimenu>."
+msgid "Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -488,10 +488,10 @@ msgstr ""
 msgid "Enter a password in the second dialog. This password is always required when using the CA&mdash;when creating a sub-CA or generating certificates. The text boxes have the following meaning:"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: security_yast2_ca.xml:586
 #, no-c-format
-msgid "Key Length"
+msgid "<guimenu>Key Length</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -500,10 +500,10 @@ msgstr ""
 msgid "<guimenu>Key Length</guimenu> contains a meaningful default and does not generally need to be changed unless an application cannot deal with this key length. The higher the number the more secure your password is."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: security_yast2_ca.xml:598
 #, no-c-format
-msgid "Valid Period (days)"
+msgid "<guimenu>Valid Period (days)</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -515,13 +515,13 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:610
 #, no-c-format
-msgid "Clicking <guimenu>Advanced Options</guimenu> opens a dialog for setting different attributes from the X.509 extensions (<xref linkend=\"fig.yast.ca.extensions\"/>). These values have rational default settings and should only be changed if you are really sure of what you are doing. Proceed with <guimenu>Next</guimenu>."
+msgid "Clicking <guimenu>Advanced Options</guimenu> opens a dialog for setting different attributes from the X.509 extensions ( <xref linkend=\"fig.yast.ca.extensions\"/> ). These values have rational default settings and should only be changed if you are really sure of what you are doing. Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:619
 #, no-c-format
-msgid "Review the summary. &yast; displays the current settings for confirmation. Click <guimenu>Create</guimenu>. The root CA is created then appears in the overview."
+msgid "Review the summary. &yast; displays the current settings for confirmation. Click <guimenu>Create</guimenu> . The root CA is created then appears in the overview."
 msgstr ""
 
 #. Tag: para
@@ -543,39 +543,21 @@ msgid "If you need to change your password for your CA, proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: security_yast2_ca.xml:645 security_yast2_ca.xml:700 security_yast2_ca.xml:793 security_yast2_ca.xml:851 security_yast2_ca.xml:914 security_yast2_ca.xml:994
-#, no-c-format
-msgid "Start &yast; and open the CA module."
-msgstr ""
-
-#. Tag: para
-#: security_yast2_ca.xml:650 security_yast2_ca.xml:705 security_yast2_ca.xml:798 security_yast2_ca.xml:856
-#, no-c-format
-msgid "Select the required root CA and click <guimenu>Enter CA</guimenu>."
-msgstr ""
-
-#. Tag: para
 #: security_yast2_ca.xml:655
 #, no-c-format
-msgid "Enter the password if you entered a CA the first time. &yast; displays the CA key information in the <guimenu>Description</guimenu> tab (see <xref linkend=\"fig.yast.ca.usage\" xrefstyle=\"select:label nopage\"/>)."
+msgid "Enter the password if you entered a CA the first time. &yast; displays the CA key information in the <guimenu>Description</guimenu> tab (see <xref linkend=\"fig.yast.ca.usage\" xrefstyle=\"select:label nopage\"/> )."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:663
 #, no-c-format
-msgid "Click <guimenu>Advanced</guimenu> and select <guimenu>Change CA Password</guimenu>. A dialog opens."
+msgid "Click <guimenu>Advanced</guimenu> and select <guimenu>Change CA Password</guimenu> . A dialog opens."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:669
 #, no-c-format
 msgid "Enter the old and the new password."
-msgstr ""
-
-#. Tag: para
-#: security_yast2_ca.xml:674 security_yast2_ca.xml:840
-#, no-c-format
-msgid "Finish with <guimenu>OK</guimenu>"
 msgstr ""
 
 #. Tag: title
@@ -605,7 +587,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:710
 #, no-c-format
-msgid "Enter the password if you are entering a CA for the first time. &yast; displays the CA key information in the tab <guimenu>Description</guimenu> (see <xref linkend=\"fig.yast.ca.usage\" xrefstyle=\"select:label nopage\"/>)."
+msgid "Enter the password if you are entering a CA for the first time. &yast; displays the CA key information in the tab <guimenu>Description</guimenu> (see <xref linkend=\"fig.yast.ca.usage\" xrefstyle=\"select:label nopage\"/> )."
 msgstr ""
 
 #. Tag: title
@@ -617,13 +599,13 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:729
 #, no-c-format
-msgid "Click <guimenu>Advanced</guimenu> and select <guimenu>Create SubCA</guimenu>. This opens the same dialog as for creating a root CA."
+msgid "Click <guimenu>Advanced</guimenu> and select <guimenu>Create SubCA</guimenu> . This opens the same dialog as for creating a root CA."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:735
 #, no-c-format
-msgid "Proceed as described in <xref linkend=\"sec.security.yast_ca.module.rootca\"/>."
+msgid "Proceed as described in <xref linkend=\"sec.security.yast_ca.module.rootca\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -647,13 +629,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:755
 #, no-c-format
-msgid "Select the <guimenu>Certificates</guimenu> tab. Reset compromised or otherwise unwanted sub-CAs here, using <guimenu>Revoke</guimenu>. Revocation alone is not enough to deactivate a sub-CA. You must also publish revoked sub-CAs in a CRL. The creation of CRLs is described in <xref linkend=\"sec.security.yast_ca.module.crl\"/>."
-msgstr ""
-
-#. Tag: para
-#: security_yast2_ca.xml:764 security_yast2_ca.xml:884
-#, no-c-format
-msgid "Finish with <guimenu>OK</guimenu>."
+msgid "Select the <guimenu>Certificates</guimenu> tab. Reset compromised or otherwise unwanted sub-CAs here, using <guimenu>Revoke</guimenu> . Revocation alone is not enough to deactivate a sub-CA. You must also publish revoked sub-CAs in a CRL. The creation of CRLs is described in <xref linkend=\"sec.security.yast_ca.module.crl\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -665,7 +641,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:773
 #, no-c-format
-msgid "Creating client and server certificates is very similar to creating CAs in <xref linkend=\"sec.security.yast_ca.module.rootca\"/>. The same principles apply here. In certificates intended for e-mail signature, the e-mail address of the sender (the private key owner) should be contained in the certificate to enable the e-mail program to assign the correct certificate."
+msgid "Creating client and server certificates is very similar to creating CAs in <xref linkend=\"sec.security.yast_ca.module.rootca\"/> . The same principles apply here. In certificates intended for e-mail signature, the e-mail address of the sender (the private key owner) should be contained in the certificate to enable the e-mail program to assign the correct certificate."
 msgstr ""
 
 #. Tag: para
@@ -681,15 +657,9 @@ msgid "To create client and server certificates, do the following:"
 msgstr ""
 
 #. Tag: para
-#: security_yast2_ca.xml:803 security_yast2_ca.xml:861
-#, no-c-format
-msgid "Enter the password if you are entering a CA for the first time. &yast; displays the CA key information in the <guimenu>Description</guimenu> tab."
-msgstr ""
-
-#. Tag: para
 #: security_yast2_ca.xml:810
 #, no-c-format
-msgid "Click <guimenu>Certificates</guimenu> (see <xref linkend=\"fig.yast.ca.cert\" xrefstyle=\"select:label nopage\"/>)."
+msgid "Click <guimenu>Certificates</guimenu> (see <xref linkend=\"fig.yast.ca.cert\" xrefstyle=\"select:label nopage\"/> )."
 msgstr ""
 
 #. Tag: title
@@ -711,21 +681,39 @@ msgid "Click <menuchoice> <guimenu>Add</guimenu> <guimenu>Add Client Certificate
 msgstr ""
 
 #. Tag: para
+#: security_yast2_ca.xml:840
+#, no-c-format
+msgid "Finish with <guimenu>OK</guimenu>"
+msgstr ""
+
+#. Tag: para
 #: security_yast2_ca.xml:845
 #, no-c-format
 msgid "To revoke compromised or otherwise unwanted certificates, do the following:"
 msgstr ""
 
 #. Tag: para
+#: security_yast2_ca.xml:856
+#, no-c-format
+msgid "Select the required root CA and click <guimenu>Enter CA</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: security_yast2_ca.xml:861
+#, no-c-format
+msgid "Enter the password if you are entering a CA for the first time. &yast; displays the CA key information in the <guimenu>Description</guimenu> tab."
+msgstr ""
+
+#. Tag: para
 #: security_yast2_ca.xml:868
 #, no-c-format
-msgid "Click <guimenu>Certificates</guimenu> (see <xref linkend=\"sec.security.yast_ca.module.subca\"/>)."
+msgid "Click <guimenu>Certificates</guimenu> (see <xref linkend=\"sec.security.yast_ca.module.subca\"/> )."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:874
 #, no-c-format
-msgid "Select the certificate to revoke and click <guimenu>Revoke</guimenu>."
+msgid "Select the certificate to revoke and click <guimenu>Revoke</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -735,9 +723,15 @@ msgid "Choose a reason to revoke this certificate."
 msgstr ""
 
 #. Tag: para
+#: security_yast2_ca.xml:884
+#, no-c-format
+msgid "Finish with <guimenu>OK</guimenu> ."
+msgstr ""
+
+#. Tag: para
 #: security_yast2_ca.xml:890
 #, no-c-format
-msgid "Revocation alone is not enough to deactivate a certificate. Also publish revoked certificates in a CRL. <xref linkend=\"sec.security.yast_ca.module.crl\"/> explains how to create CRLs. Revoked certificates can be completely removed after publication in a CRL with <guimenu>Delete</guimenu>."
+msgid "Revocation alone is not enough to deactivate a certificate. Also publish revoked certificates in a CRL. <xref linkend=\"sec.security.yast_ca.module.crl\"/> explains how to create CRLs. Revoked certificates can be completely removed after publication in a CRL with <guimenu>Delete</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -755,19 +749,19 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:919
 #, no-c-format
-msgid "Enter the required root CA, as described in <xref linkend=\"sec.security.yast_ca.module.subca\"/>."
+msgid "Enter the required root CA, as described in <xref linkend=\"sec.security.yast_ca.module.subca\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:925
 #, no-c-format
-msgid "Click <menuchoice> <guimenu>Advanced</guimenu> <guimenu>Edit Default</guimenu></menuchoice>."
+msgid "Click <menuchoice> <guimenu>Advanced</guimenu> <guimenu>Edit Default</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:931
 #, no-c-format
-msgid "Choose type of certificate to change and proceed with <guimenu>Next</guimenu>."
+msgid "Choose type of certificate to change and proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -785,7 +779,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:954
 #, no-c-format
-msgid "Change the associated value on the right side and set or delete the critical setting with <guimenu>critical</guimenu>."
+msgid "Change the associated value on the right side and set or delete the critical setting with <guimenu>critical</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -797,7 +791,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:965
 #, no-c-format
-msgid "Finish your changes with <guimenu>Save</guimenu>."
+msgid "Finish your changes with <guimenu>Save</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -825,15 +819,21 @@ msgid "The system maintains only one CRL for each CA. To create or update this C
 msgstr ""
 
 #. Tag: para
+#: security_yast2_ca.xml:994
+#, no-c-format
+msgid "Start &yast; and open the CA module."
+msgstr ""
+
+#. Tag: para
 #: security_yast2_ca.xml:999
 #, no-c-format
-msgid "Enter the required CA, as described in <xref linkend=\"sec.security.yast_ca.module.subca\"/>."
+msgid "Enter the required CA, as described in <xref linkend=\"sec.security.yast_ca.module.subca\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:1005
 #, no-c-format
-msgid "Click <guimenu>CRL</guimenu>. The dialog that opens displays a summary of the last CRL of this CA."
+msgid "Click <guimenu>CRL</guimenu> . The dialog that opens displays a summary of the last CRL of this CA."
 msgstr ""
 
 #. Tag: para
@@ -869,7 +869,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:1041
 #, no-c-format
-msgid "The executing computer should be configured with the &yast; LDAP client for LDAP export. This provides LDAP server information at runtime that can be used when completing dialog fields. Otherwise (although export may be possible), all LDAP data must be entered manually. You must always enter several passwords (see <xref linkend=\"tab.yast.ca.ldap.password\"/>)."
+msgid "The executing computer should be configured with the &yast; LDAP client for LDAP export. This provides LDAP server information at runtime that can be used when completing dialog fields. Otherwise (although export may be possible), all LDAP data must be entered manually. You must always enter several passwords (see <xref linkend=\"tab.yast.ca.ldap.password\"/> )."
 msgstr ""
 
 #. Tag: title
@@ -941,7 +941,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:1114
 #, no-c-format
-msgid "To export a CA, enter the CA as described in <xref linkend=\"sec.security.yast_ca.module.subca\"/>. Select <menuchoice> <guimenu>Extended</guimenu><guimenu>Export to LDAP</guimenu></menuchoice> in the subsequent dialog, which opens the dialog for entering LDAP data. If your system has been configured with the &yast; LDAP client, the fields are already partly completed. Otherwise, enter all the data manually. Entries are made in LDAP in a separate tree with the attribute <quote>caCertificate</quote>."
+msgid "To export a CA, enter the CA as described in <xref linkend=\"sec.security.yast_ca.module.subca\"/> . Select <menuchoice> <guimenu>Extended</guimenu><guimenu>Export to LDAP</guimenu></menuchoice> in the subsequent dialog, which opens the dialog for entering LDAP data. If your system has been configured with the &yast; LDAP client, the fields are already partly completed. Otherwise, enter all the data manually. Entries are made in LDAP in a separate tree with the attribute <quote>caCertificate</quote> ."
 msgstr ""
 
 #. Tag: term
@@ -953,7 +953,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:1143
 #, no-c-format
-msgid "Enter the CA containing the certificate to export then select <guimenu>Certificates</guimenu>. Select the required certificate from the certificate list in the upper part of the dialog and select <menuchoice> <guimenu>Export</guimenu><guimenu>Export to LDAP</guimenu></menuchoice>. The LDAP data is entered here in the same way as for CAs. The certificate is saved with the corresponding user object in the LDAP tree with the attributes <quote>userCertificate</quote> (PEM format) and <quote>userPKCS12</quote> (PKCS12 format)."
+msgid "Enter the CA containing the certificate to export then select <guimenu>Certificates</guimenu> . Select the required certificate from the certificate list in the upper part of the dialog and select <menuchoice> <guimenu>Export</guimenu><guimenu>Export to LDAP</guimenu></menuchoice> . The LDAP data is entered here in the same way as for CAs. The certificate is saved with the corresponding user object in the LDAP tree with the attributes <quote>userCertificate</quote> (PEM format) and <quote>userPKCS12</quote> (PKCS12 format)."
 msgstr ""
 
 #. Tag: term
@@ -965,7 +965,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:1159
 #, no-c-format
-msgid "Enter the CA containing the CRL to export and select <guimenu>CRL</guimenu>. If desired, create a new CRL and click <guimenu>Export</guimenu>. The dialog that opens displays the export parameters. You can export the CRL for this CA either once or in periodical time intervals. Activate the export by selecting <guimenu>Export to LDAP</guimenu> and enter the respective LDAP data. To do this at regular intervals, select the <guimenu>Repeated Recreation and Export</guimenu> radio button and change the interval, if appropriate."
+msgid "Enter the CA containing the CRL to export and select <guimenu>CRL</guimenu> . If desired, create a new CRL and click <guimenu>Export</guimenu> . The dialog that opens displays the export parameters. You can export the CRL for this CA either once or in periodical time intervals. Activate the export by selecting <guimenu>Export to LDAP</guimenu> and enter the respective LDAP data. To do this at regular intervals, select the <guimenu>Repeated Recreation and Export</guimenu> radio button and change the interval, if appropriate."
 msgstr ""
 
 #. Tag: title
@@ -983,13 +983,13 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:1186
 #, no-c-format
-msgid "Export a file in the same way for certificates, CAs as with LDAP, described in <xref linkend=\"sec.security.yast_ca.module.exportldap\"/>, except you should select <guimenu>Export as File</guimenu> instead of <guimenu>Export to LDAP</guimenu>. This then takes you to a dialog for selecting the required output format and entering the password and file name. The certificate is stored at the required location after clicking <guimenu>OK</guimenu>."
+msgid "Export a file in the same way for certificates, CAs as with LDAP, described in <xref linkend=\"sec.security.yast_ca.module.exportldap\"/> , except you should select <guimenu>Export as File</guimenu> instead of <guimenu>Export to LDAP</guimenu> . This then takes you to a dialog for selecting the required output format and entering the password and file name. The certificate is stored at the required location after clicking <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:1195
 #, no-c-format
-msgid "For CRLs click <guimenu>Export</guimenu>, select <guimenu>Export to file</guimenu>, choose the export format (PEM or DER) and enter the path. Proceed with <guimenu>OK</guimenu> to save it to the respective location."
+msgid "For CRLs click <guimenu>Export</guimenu> , select <guimenu>Export to file</guimenu> , choose the export format (PEM or DER) and enter the path. Proceed with <guimenu>OK</guimenu> to save it to the respective location."
 msgstr ""
 
 #. Tag: para
@@ -1007,7 +1007,7 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:1213
 #, no-c-format
-msgid "If you have exported a server certificate with &yast; to your media on an isolated CA management computer, you can import this certificate on a server as a <emphasis>common server certificate</emphasis>. Do this during installation or at a later point with &yast;."
+msgid "If you have exported a server certificate with &yast; to your media on an isolated CA management computer, you can import this certificate on a server as a <emphasis>common server certificate</emphasis> . Do this during installation or at a later point with &yast;."
 msgstr ""
 
 #. Tag: para
@@ -1055,12 +1055,12 @@ msgstr ""
 #. Tag: para
 #: security_yast2_ca.xml:1261
 #, no-c-format
-msgid "Enter the password and click <guimenu>Next</guimenu>. The certificate is imported then displayed in the description field."
+msgid "Enter the password and click <guimenu>Next</guimenu> . The certificate is imported then displayed in the description field."
 msgstr ""
 
 #. Tag: para
 #: security_yast2_ca.xml:1267
 #, no-c-format
-msgid "Close &yast; with <guimenu>Finish</guimenu>."
+msgid "Close &yast; with <guimenu>Finish</guimenu> ."
 msgstr ""
 

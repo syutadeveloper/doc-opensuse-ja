@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. Tag: dm:translation
 #: sle_update_backporting.xml:16
 #, no-c-format
-msgid "<dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -40,7 +40,8 @@ msgid ""
 "current while maintaining compatibility for your application software on top "
 "of &sle; products. You will also learn how to check which public security "
 "issues actually are addressed in your &sle; system software, and the current "
-"status of your software."
+"status of your software. <!--To do so, we first provide some background on "
+"how free software is developed and how it gets into Linux distributions.-->"
 msgstr ""
 
 #. Tag: title
@@ -84,7 +85,7 @@ msgid ""
 "package has become part of a released distribution. Usually they stick "
 "instead with the upstream version that they initially released and create "
 "patches based on upstream changes to fix bugs. This practice is known as "
-"<emphasis>backporting</emphasis>."
+"<emphasis>backporting</emphasis> ."
 msgstr ""
 
 #. Tag: para
@@ -206,27 +207,31 @@ msgid ""
 "release, but that have been backported into the &suse; package."
 msgstr ""
 
-#. Tag: remark
-#: sle_update_backporting.xml:161
-#, no-c-format
-msgid ""
-"froh: there will be some new \"CVE fixed in &sle;\" lookup tool, need to "
-"work with sarsene@ to figure the details or a link."
-msgstr ""
-
-#. Tag: para
-#: sle_update_backporting.xml:163
+#. Tag: #text
+#: sle_update_backporting.xml:168
 #, no-c-format
 msgid ""
 "One particular area where this limited value of version numbers when "
 "backporting is involved can cause problems is with security scanning tools. "
 "Some security vulnerability scanning tools (or particular tests in such "
 "tools) operate solely on version information. These tools and tests are "
-"therefore prone to generating <quote>false positives</quote> (when a piece "
-"of software is incorrectly identified as vulnerable) when backports are "
-"involved. When evaluating reports from security scanning tools, always check "
-"whether an entry is based on a version number or on an actual vulnerability "
-"test."
+"therefore prone to generating"
+msgstr ""
+
+#. Tag: quote
+#: sle_update_backporting.xml:168
+#, no-c-format
+msgid "false positives"
+msgstr ""
+
+#. Tag: #text
+#: sle_update_backporting.xml:173
+#, no-c-format
+msgid ""
+"(when a piece of software is incorrectly identified as vulnerable) when "
+"backports are involved. When evaluating reports from security scanning "
+"tools, always check whether an entry is based on a version number or on an "
+"actual vulnerability test."
 msgstr ""
 
 #. Tag: title
@@ -258,24 +263,24 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_backporting.xml:189
+#: sle_update_backporting.xml:190
 #, no-c-format
 msgid "The output briefly documents the change history of the package."
 msgstr ""
 
 #. Tag: para
-#: sle_update_backporting.xml:194
+#: sle_update_backporting.xml:195
 #, no-c-format
 msgid ""
 "The package changelog may contain entries like <literal>bsc#1234</literal> "
-"(<quote><emphasis>B</emphasis>ugzilla <emphasis>S</emphasis>use.<emphasis>C</"
-"emphasis>om</quote>) that refer to bugs in &suse;'s Bugzilla tracking system "
-"or links to other bugtracking systems. Because of confidentiality policies, "
-"not all such information may be accessible to you."
+"( <quote><emphasis>B</emphasis>ugzilla <emphasis>S</emphasis>use."
+"<emphasis>C</emphasis>om</quote> ) that refer to bugs in &suse;'s Bugzilla "
+"tracking system or links to other bugtracking systems. Because of "
+"confidentiality policies, not all such information may be accessible to you."
 msgstr ""
 
 #. Tag: para
-#: sle_update_backporting.xml:204
+#: sle_update_backporting.xml:205
 #, no-c-format
 msgid ""
 "A package may contain a <filename>/usr/share/doc/<replaceable>PACKAGENAME</"
@@ -284,7 +289,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_backporting.xml:212
+#: sle_update_backporting.xml:213
 #, no-c-format
 msgid ""
 "The RPM source package contains the patches that were applied during the "
@@ -297,11 +302,11 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: sle_update_backporting.xml:224
+#: sle_update_backporting.xml:225
 #, no-c-format
 msgid ""
 "For security bug fixes, consult the <link xlink:href=\"http://www.suse.com/"
-"support/security/#1\">&suse; security announcements</link>. These often "
+"support/security/#1\">&suse; security announcements</link> . These often "
 "refer to bugs through standardized names like <literal>CAN-2005-2495</"
 "literal> which are maintained by the <link xlink:href=\"http://cve.mitre.org"
 "\">Common Vulnerabilities and Exposures (CVE)</link> project."

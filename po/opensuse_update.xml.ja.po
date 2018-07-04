@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -29,11 +29,11 @@ msgid ""
 "You can upgrade an existing system without completely reinstalling it. There "
 "are two types of renewing the system or parts of it: <emphasis>updating "
 "individual software packages</emphasis> and <emphasis>upgrading the entire "
-"system</emphasis>. Updating individual packages is covered in <xref linkend="
-"\"cha.yast-software\"/> and <xref linkend=\"cha.onlineupdate.you\"/>. Two "
+"system</emphasis> . Updating individual packages is covered in <xref linkend="
+"\"cha.yast-software\"/> and <xref linkend=\"cha.onlineupdate.you\"/> . Two "
 "ways to upgrade the system are discussed in the following sections&mdash; "
 "see <xref linkend=\"sec.upgrade.yast\"/> and <xref linkend=\"sec.update."
-"zypper\"/>."
+"zypper\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -42,25 +42,54 @@ msgstr ""
 msgid "Upgrading the System"
 msgstr ""
 
-#. Tag: title
-#: opensuse_update.xml:29
+#. Tag: #text
+#: opensuse_update.xml:33
 #, no-c-format
-msgid ""
-"<productname>&productname;</productname> <productnumber>&productnumber;</"
-"productnumber> is only available as 64-bit version"
+msgid "is only available as 64-bit version"
 msgstr ""
 
-#. Tag: para
-#: opensuse_update.xml:34
+#. Tag: productnumber
+#: opensuse_update.xml:36
+#, no-c-format
+msgid "&productnumber;"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:39
+#, no-c-format
+msgid "and"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:39
 #, no-c-format
 msgid ""
-"<productname>&productname;</productname> <productnumber>&productnumber;</"
-"productnumber> is only available as 64-bit version. Upgrading 32-bit "
-"installations to 64-bit is not supported. Please follow the instructions in "
-"<xref linkend=\"art.opensuse.installquick\"/> and <xref linkend=\"cha.install"
-"\"/> to install <productname>&productname;</productname> on your computer or "
-"consider switching to <link xlink:href=\"https://en.opensuse.org/Portal:"
-"Tumbleweed\"> &opensuse; Tumbleweed</link>."
+"is only available as 64-bit version. Upgrading 32-bit installations to 64-"
+"bit is not supported. Please follow the instructions in"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:40
+#, no-c-format
+msgid "to install"
+msgstr ""
+
+#. Tag: productname
+#: opensuse_update.xml:40
+#, no-c-format
+msgid "&productname;"
+msgstr ""
+
+#. Tag: link
+#: opensuse_update.xml:42
+#, no-c-format
+msgid "&opensuse; Tumbleweed"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:42
+#, no-c-format
+msgid "on your computer or consider switching to"
 msgstr ""
 
 #. Tag: para
@@ -69,7 +98,7 @@ msgstr ""
 msgid ""
 "The release notes are bundled in the installer, and you may also read them "
 "online at <link xlink:href=\"https://doc.opensuse.org/release-notes/\"> "
-"&productname; Release Notes</link>."
+"&productname; Release Notes</link> ."
 msgstr ""
 
 #. Tag: para
@@ -91,38 +120,99 @@ msgstr ""
 msgid "Preparations"
 msgstr ""
 
-#. Tag: para
-#: opensuse_update.xml:63
+#. Tag: filename
+#: opensuse_update.xml:66
+#, no-c-format
+msgid "/etc"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:66
 #, no-c-format
 msgid ""
 "Before upgrading, copy the old configuration files to a separate medium "
 "(such as removable hard disk or USB flash drive) to secure the data. This "
-"primarily applies to files stored in <filename>/etc</filename> as well as "
-"some of the directories and files in <filename>/var</filename>. You may also "
-"want to write the user data in <filename>/home</filename> (the <envar>HOME</"
-"envar> directories) to a backup medium. Back up this data as <systemitem "
-"class=\"username\">root</systemitem>. Only <systemitem class=\"username"
-"\">root</systemitem> has read permission for all local files."
+"primarily applies to files stored in"
+msgstr ""
+
+#. Tag: filename
+#: opensuse_update.xml:67
+#, no-c-format
+msgid "/var"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:67
+#, no-c-format
+msgid "as well as some of the directories and files in"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:68
+#, no-c-format
+msgid ". You may also want to write the user data in"
+msgstr ""
+
+#. Tag: filename
+#: opensuse_update.xml:68
+#, no-c-format
+msgid "/home"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:69
+#, no-c-format
+msgid "(the"
+msgstr ""
+
+#. Tag: envar
+#: opensuse_update.xml:69
+#, no-c-format
+msgid "HOME"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:70
+#, no-c-format
+msgid "directories) to a backup medium. Back up this data as"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:71
+#, no-c-format
+msgid ". Only"
+msgstr ""
+
+#. Tag: systemitem
+#: opensuse_update.xml:72
+#, no-c-format
+msgid "root"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:74
+#, no-c-format
+msgid "has read permission for all local files."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:74
+#: opensuse_update.xml:75
 #, no-c-format
 msgid ""
 "Before starting your update, make note of the root partition. The command "
 "<command>df&nbsp;/</command> lists the device name of the root partition. In "
-"<xref linkend=\"aus.update.df\"/>, the root partition to write down is "
-"<filename>/dev/sda3</filename> (mounted as <filename>/</filename>)."
+"<xref linkend=\"aus.update.df\"/> , the root partition to write down is "
+"<filename>/dev/sda3</filename> (mounted as <filename>/</filename> )."
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:83
+#: opensuse_update.xml:84
 #, no-c-format
 msgid "List with <command>df -h</command>"
 msgstr ""
 
 #. Tag: screen
-#: opensuse_update.xml:84
+#: opensuse_update.xml:85
 #, no-c-format
 msgid ""
 "Filesystem     Size  Used Avail Use% Mounted on\n"
@@ -134,13 +224,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:89
+#: opensuse_update.xml:95
 #, no-c-format
 msgid "Possible Problems"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:90
+#: opensuse_update.xml:96
 #, no-c-format
 msgid ""
 "If you upgrade a default system from the previous version to this version, "
@@ -151,13 +241,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:98
+#: opensuse_update.xml:104
 #, no-c-format
 msgid "Checking passwd and group in /etc"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:99
+#: opensuse_update.xml:105
 #, no-c-format
 msgid ""
 "Before upgrading the system, make sure that <filename>/etc/passwd</filename> "
@@ -168,13 +258,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:110
+#: opensuse_update.xml:116
 #, no-c-format
 msgid "Shut Down Virtual Machines"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:111
+#: opensuse_update.xml:117
 #, no-c-format
 msgid ""
 "If your machine serves as a &vmhost; for &kvm; or &xen;, make sure to "
@@ -183,45 +273,45 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:118
+#: opensuse_update.xml:124
 #, no-c-format
 msgid "PostgreSQL"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:119
+#: opensuse_update.xml:125
 #, no-c-format
 msgid ""
 "Before updating <phrase role=\"productname\">PostgreSQL</phrase> "
-"(<systemitem class=\"resource\">postgres</systemitem>), dump the databases. "
-"See the manual page of <command>pg_dump</command>. This is only necessary if "
-"you actually used PostgreSQL prior to your update."
+"( <systemitem class=\"resource\">postgres</systemitem> ), dump the "
+"databases. See the manual page of <command>pg_dump</command> . This is only "
+"necessary if you actually used PostgreSQL prior to your update."
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:129
+#: opensuse_update.xml:135
 #, no-c-format
 msgid "Upgrading with YaST"
-msgstr ""
-
-#. Tag: para
-#: opensuse_update.xml:130
-#, no-c-format
-msgid ""
-"Following the preparation procedure outlined in <xref linkend=\"cha.update-"
-"preparation\"/>, you can now upgrade your system:"
 msgstr ""
 
 #. Tag: para
 #: opensuse_update.xml:136
 #, no-c-format
 msgid ""
-"Optionally, prepare an installation server. For background information, see "
-"<xref linkend=\"sec.deployment.instserver.sles9\"/>."
+"Following the preparation procedure outlined in <xref linkend=\"cha.update-"
+"preparation\"/> , you can now upgrade your system:"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:144
+#: opensuse_update.xml:142
+#, no-c-format
+msgid ""
+"Optionally, prepare an installation server. For background information, see "
+"<xref linkend=\"sec.deployment.instserver.sles9\"/> ."
+msgstr ""
+
+#. Tag: para
+#: opensuse_update.xml:150
 #, no-c-format
 msgid ""
 "Insert the &productname; DVD into the drive, then reboot the computer to "
@@ -231,27 +321,77 @@ msgid ""
 "supported."
 msgstr ""
 
-#. Tag: para
-#: opensuse_update.xml:151
+#. Tag: #text
+#: opensuse_update.xml:158
 #, no-c-format
-msgid ""
-"Use <keycap>F2</keycap> to change the language for the installer. A "
-"corresponding keyboard layout is chosen automatically. See <xref linkend="
-"\"sec.boot_parameters.screen\"/> or <xref linkend=\"sec.boot_parameters.uefi"
-"\"/> for more information about changing boot parameters."
+msgid "Use"
 msgstr ""
 
-#. Tag: para
-#: opensuse_update.xml:170
+#. Tag: keycap
+#: opensuse_update.xml:158
 #, no-c-format
-msgid ""
-"Select <guimenu>Upgrade</guimenu> on the boot screen, then press <keycap "
-"function=\"enter\"></keycap>. This boots the system and loads the "
-"&productname; installer. Do not select <guimenu>Installation</guimenu>."
+msgid "F2"
 msgstr ""
 
-#. Tag: para
+#. Tag: #text
+#: opensuse_update.xml:160
+#, no-c-format
+msgid ""
+"to change the language for the installer. A corresponding keyboard layout is "
+"chosen automatically. See"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:161
+#, no-c-format
+msgid "or"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:163
+#, no-c-format
+msgid "for more information about changing boot parameters."
+msgstr ""
+
+#. Tag: #text
 #: opensuse_update.xml:177
+#, no-c-format
+msgid "Select"
+msgstr ""
+
+#. Tag: guimenu
+#: opensuse_update.xml:177
+#, no-c-format
+msgid "Upgrade"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:178
+#, no-c-format
+msgid "on the boot screen, then press"
+msgstr ""
+
+#. Tag: guimenu
+#: opensuse_update.xml:179
+#, no-c-format
+msgid "Installation"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:179
+#, no-c-format
+msgid ""
+". This boots the system and loads the &productname; installer. Do not select"
+msgstr ""
+
+#. Tag: #text
+#: opensuse_update.xml:180
+#, no-c-format
+msgid "."
+msgstr ""
+
+#. Tag: para
+#: opensuse_update.xml:183
 #, no-c-format
 msgid ""
 "The <guimenu>Language</guimenu> and <guimenu>Keyboard Layout</guimenu> are "
@@ -260,45 +400,45 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:182
+#: opensuse_update.xml:188
 #, no-c-format
 msgid ""
 "Read the License Agreement. It is presented in the language you have chosen "
 "on the boot screen. <guimenu>License Translations</guimenu> are available. "
-"Proceed with <guimenu>Next</guimenu>."
+"Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:199
+#: opensuse_update.xml:205
 #, no-c-format
 msgid ""
 "&yast; determines if there are multiple root partitions. If there is only "
 "one, continue with the next step. If there are several, select the right "
-"partition and confirm with <guimenu>Next</guimenu> (<filename>/dev/sda3</"
+"partition and confirm with <guimenu>Next</guimenu> ( <filename>/dev/sda3</"
 "filename> was selected in the example in <xref linkend=\"cha.update-"
-"preparation\"/>). &yast; reads the old <filename>fstab</filename> on this "
+"preparation\"/> ). &yast; reads the old <filename>fstab</filename> on this "
 "partition to analyze and mount the file systems listed there."
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:232
+#: opensuse_update.xml:238
 #, no-c-format
 msgid "Release Notes"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:233
+#: opensuse_update.xml:239
 #, no-c-format
 msgid ""
 "From this point on, the Release Notes can be viewed from any screen during "
-"the installation process by selecting <guimenu>Release Notes</guimenu>."
+"the installation process by selecting <guimenu>Release Notes</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:241
+#: opensuse_update.xml:247
 #, no-c-format
 msgid ""
-"&yast; shows a list of <guimenu>Previously Used Repositories</guimenu>. By "
+"&yast; shows a list of <guimenu>Previously Used Repositories</guimenu> . By "
 "default all repositories will get removed. If you had not added any custom "
 "repositories, do not change the settings. The packages for the upgrade will "
 "be installed from DVD and you can optionally enable the default online "
@@ -306,7 +446,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:248
+#: opensuse_update.xml:254
 #, no-c-format
 msgid ""
 "If you have had added custom repositories, for example from the &opensuse; "
@@ -314,28 +454,29 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:254
+#: opensuse_update.xml:260
 #, no-c-format
 msgid ""
-"Leave the repository in state <literal>Removed</literal>. Software that was "
-"installed from this repository will get removed during the upgrade. Use this "
-"method if no version of the repository that matches the new &opensuse; Leap "
-"version, is available."
+"\tLeave the repository in state <literal>Removed</literal> . Software\tthat "
+"was installed from this repository will get removed during the\tupgrade. Use "
+"this method if no version of the repository that matches\tthe new &opensuse; "
+"Leap version, is available."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:262
+#: opensuse_update.xml:268
 #, no-c-format
 msgid ""
-"Update and enable the repository. Use this method if a version that matches "
-"the new &opensuse; Leap version is available for the repository. Change it's "
-"URL by clicking the repository in the list and then <guimenu>Change</"
-"guimenu>. Enable the repository afterwards by clicking <guimenu>Toggle "
-"Status</guimenu> until it is set to <guimenu>Enable</guimenu>."
+"\tUpdate and enable the repository. Use this method if a version that"
+"\tmatches the new &opensuse; Leap version is available for the\trepository. "
+"Change it's URL by clicking the repository in the list and\tthen "
+"<guimenu>Change</guimenu> . Enable the repository afterwards by\tclicking "
+"<guimenu>Toggle Status</guimenu> until it is set to\t <guimenu>Enable</"
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:272
+#: opensuse_update.xml:278
 #, no-c-format
 msgid ""
 "Do not use repositories matching the previous version unless you are "
@@ -344,7 +485,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:321
+#: opensuse_update.xml:327
 #, no-c-format
 msgid ""
 "In case an Internet connection is available, you may now activate optional "
@@ -355,15 +496,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:340
+#: opensuse_update.xml:346
 #, no-c-format
 msgid ""
-"After having proceeded with <guimenu>Next</guimenu>, you need to confirm the "
-"license agreement for the online repositories with <guimenu>Next</guimenu>."
+"After having proceeded with <guimenu>Next</guimenu> , you need to confirm "
+"the license agreement for the online repositories with <guimenu>Next</"
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:348
+#: opensuse_update.xml:354
 #, no-c-format
 msgid ""
 "Use the <guimenu>Installation Settings</guimenu> screen to review and&mdash;"
@@ -372,30 +514,30 @@ msgid ""
 "headline."
 msgstr ""
 
-#. Tag: guimenu
-#: opensuse_update.xml:356
+#. Tag: term
+#: opensuse_update.xml:362
 #, no-c-format
-msgid "System"
+msgid "<guimenu>System</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:359
+#: opensuse_update.xml:365
 #, no-c-format
 msgid ""
-"View detailed hardware information by clicking <guimenu>System</guimenu>. In "
-"the resulting screen you can also change <guimenu>Kernel Settings</"
-"guimenu>&mdash;see <xref linkend=\"sec.yast_install.proposal.system\"/> for "
+"View detailed hardware information by clicking <guimenu>System</guimenu> . "
+"In the resulting screen you can also change <guimenu>Kernel Settings</"
+"guimenu> &mdash;see <xref linkend=\"sec.yast_install.proposal.system\"/> for "
 "more information."
 msgstr ""
 
-#. Tag: guimenu
-#: opensuse_update.xml:368
+#. Tag: term
+#: opensuse_update.xml:374
 #, no-c-format
-msgid "Update Options"
+msgid "<guimenu>Update Options</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:371
+#: opensuse_update.xml:377
 #, no-c-format
 msgid ""
 "By default, &yast; will update perform full <guimenu>Update with "
@@ -405,21 +547,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:378
+#: opensuse_update.xml:384
 #, no-c-format
 msgid ""
 "Here you can change the package selection or change the <guimenu>Update "
-"Mode</guimenu> to <guimenu>Only Update Installed Packages</guimenu>."
+"Mode</guimenu> to <guimenu>Only Update Installed Packages</guimenu> ."
 msgstr ""
 
-#. Tag: guimenu
-#: opensuse_update.xml:386
+#. Tag: term
+#: opensuse_update.xml:392
 #, no-c-format
-msgid "Packages"
+msgid "<guimenu>Packages</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:389
+#: opensuse_update.xml:395
 #, no-c-format
 msgid ""
 "You can further tweak the package selection on the <guimenu>Packages</"
@@ -429,21 +571,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:395
+#: opensuse_update.xml:401
 #, no-c-format
 msgid ""
 "If you intend to enhance your system, it is recommended to finish the "
 "upgrade first and then install additional software."
 msgstr ""
 
-#. Tag: guimenu
-#: opensuse_update.xml:402
+#. Tag: term
+#: opensuse_update.xml:408
 #, no-c-format
-msgid "Backup"
+msgid "<guimenu>Backup</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:405
+#: opensuse_update.xml:411
 #, no-c-format
 msgid ""
 "You also have the possibility to make backups of various system components. "
@@ -451,44 +593,44 @@ msgid ""
 "not have a recent system backup."
 msgstr ""
 
-#. Tag: guimenu
-#: opensuse_update.xml:413
+#. Tag: term
+#: opensuse_update.xml:419
 #, no-c-format
-msgid "Language"
+msgid "<guimenu>Language</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:416
+#: opensuse_update.xml:422
 #, no-c-format
 msgid ""
-"This section allows you to change the <guimenu>Primary Language</"
-"guimenu>primary language and configure additional <guimenu>Secontry "
-"Languages.</guimenu>. Optionally, you can adjust the keyboard layout and "
-"timezone to the selected primary language."
+"This section allows you to change the <guimenu>Primary Language</guimenu> "
+"primary language and configure additional <guimenu>Secontry Languages.</"
+"guimenu> . Optionally, you can adjust the keyboard layout and timezone to "
+"the selected primary language."
 msgstr ""
 
-#. Tag: guimenu
-#: opensuse_update.xml:425
+#. Tag: term
+#: opensuse_update.xml:431
 #, no-c-format
-msgid "Keyboard Layout"
+msgid "<guimenu>Keyboard Layout</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:428
+#: opensuse_update.xml:434
 #, no-c-format
 msgid ""
 "Here you can change the keyboard layout and adjust additional "
-"<guimenu>Expert Keyboard Settings</guimenu>."
+"<guimenu>Expert Keyboard Settings</guimenu> ."
 msgstr ""
 
-#. Tag: guimenu
-#: opensuse_update.xml:435
+#. Tag: term
+#: opensuse_update.xml:441
 #, no-c-format
-msgid "Booting"
+msgid "<guimenu>Booting</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:438
+#: opensuse_update.xml:444
 #, no-c-format
 msgid ""
 "This section shows the boot loader configuration. Changing the defaults is "
@@ -497,43 +639,45 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:458
+#: opensuse_update.xml:464
 #, no-c-format
 msgid ""
 "After you have finalized the system configuration on the "
 "<guimenu>Installation Settings</guimenu> screen, click <guimenu>Update</"
-"guimenu>. Depending on your software selection you may need to agree to "
+"guimenu> . Depending on your software selection you may need to agree to "
 "license agreements before the installation confirmation screen pops up. Up "
 "to this point no changes have been made to your system. After you click "
 "<guimenu>Update</guimenu> a second time, the upgrade process starts."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:480
+#: opensuse_update.xml:486
 #, no-c-format
 msgid ""
 "Once the basic upgrade installation is finished, &yast; reboots the system. "
-"Finally, &yast; updates the remaining software, if any<phrase os=\"sles;sled"
+"<!-- test the Internet connection as offered by the &yast; dialog. --> "
+"Finally, &yast; updates the remaining software, if any <phrase os=\"sles;sled"
 "\">, offers the &ncc; Configuration,</phrase> and displays the release "
-"notes, if wanted."
+"notes, if wanted. <!-- Click <guimenu>Finish</guimenu> to write the &yast; "
+"configuration. -->"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:491
+#: opensuse_update.xml:497
 #, no-c-format
 msgid ""
 "For more information about the &ncc;, see <xref linkend=\"sec.yast_install."
-"scc_registration\"/>."
+"scc_registration\"/> ."
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:500
+#: opensuse_update.xml:506
 #, no-c-format
 msgid "Updating Individual Packages"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:501
+#: opensuse_update.xml:507
 #, no-c-format
 msgid ""
 "Regardless of your overall updated environment, you can always update "
@@ -542,44 +686,44 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:506
+#: opensuse_update.xml:512
 #, no-c-format
 msgid ""
 "Use the &yast; software management tool to update packages as described in "
-"<xref linkend=\"cha.yast-software\"/>. Select components from the &yast; "
+"<xref linkend=\"cha.yast-software\"/> . Select components from the &yast; "
 "package selection list according to your needs. If a newer version of a "
 "package exists, the version numbers of the installed and the available "
 "versions are listed in blue color in the <guimenu>Installed (Available)</"
 "guimenu> column. If you select a package essential for the overall operation "
 "of the system, &yast; issues a warning. Such packages should be updated only "
 "in the update mode. For example, many packages contain <emphasis>shared "
-"libraries</emphasis>. Updating these programs and applications in the "
+"libraries</emphasis> . Updating these programs and applications in the "
 "running system may lead to system instability."
 msgstr ""
 
 #. Tag: title
-#: opensuse_update.xml:521
+#: opensuse_update.xml:527
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:523
+#: opensuse_update.xml:529
 #, no-c-format
 msgid ""
 "Problems and special issues of the various versions are published online as "
 "they are identified. See the links listed below. Important updates of "
 "individual packages can be accessed using the &yast; Online Update. For more "
-"information, see <xref linkend=\"cha.onlineupdate.you\"/>."
+"information, see <xref linkend=\"cha.onlineupdate.you\"/> ."
 msgstr ""
 
 #. Tag: para
-#: opensuse_update.xml:530
+#: opensuse_update.xml:536
 #, no-c-format
 msgid ""
-"Refer to the <literal>Product highlights</literal> (<link xlink:href="
-"\"http://en.opensuse.org/Product_highlights\"></link> and the <literal>Bugs</"
+"Refer to the <literal>Product highlights</literal> ( <link xlink:href="
+"\"http://en.opensuse.org/Product_highlights\"/> and the <literal>Bugs</"
 "literal> article in the &opensuse; wiki at <link xlink:href=\"http://en."
-"opensuse.org/openSUSE:Most_annoying_bugs\"></link> for information about "
-"recent changes and issues."
+"opensuse.org/openSUSE:Most_annoying_bugs\"/> for information about recent "
+"changes and issues."
 msgstr ""

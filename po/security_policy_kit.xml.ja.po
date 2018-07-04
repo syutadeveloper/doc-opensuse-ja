@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,9 +30,9 @@ msgid ""
 "a negotiator between the unprivileged user session and the privileged system "
 "context. Whenever a process from the user session tries to carry out an "
 "action in the system context, &pk; is queried. Based on its "
-"configuration&mdash;specified in a so-called <quote>policy</quote>&mdash;the "
-"answer could be <quote>yes</quote>, <quote>no</quote>, or <quote>needs "
-"authentication</quote>. Unlike classical privilege authorization programs "
+"configuration&mdash;specified in a so-called <quote>policy</quote> &mdash;"
+"the answer could be <quote>yes</quote> , <quote>no</quote> , or <quote>needs "
+"authentication</quote> . Unlike classical privilege authorization programs "
 "such as sudo, &pk; does not grant &rootuser; permissions to an entire "
 "session, but only to the action in question."
 msgstr ""
@@ -47,14 +47,10 @@ msgstr ""
 #: security_policy_kit.xml:36
 #, no-c-format
 msgid ""
-"&pk; works by limiting specific actions by users, by group, or by name. It "
-"then defines how those users are allowed to perform this action."
-msgstr ""
-
-#. Tag: remark
-#: security_policy_kit.xml:45
-#, no-c-format
-msgid "toms 2013-10-02: Add graphic about system architecture"
+"<!--&pk; is a framework for defining and handling authorizations to grant "
+"access to privileged operations for unprivileged applications.--> &pk; works "
+"by limiting specific actions by users, by group, or by name. It then defines "
+"how those users are allowed to perform this action."
 msgstr ""
 
 #. Tag: title
@@ -69,10 +65,11 @@ msgstr ""
 msgid ""
 "When a user starts a session (using the graphical environment or on the "
 "console), each session consists of the <emphasis>authority</emphasis> and an "
-"<emphasis>authentication agent</emphasis>. The authority is implemented as a "
-"service on the system message bus, whereas the authentication agent is used "
-"to authenticate the current user, which started the session. The current "
-"user needs to prove their authenticity, for example, using a passphrase."
+"<emphasis>authentication agent</emphasis> . The authority is implemented as "
+"a service on the system message bus, whereas the authentication agent is "
+"used to authenticate the current user, which started the session. The "
+"current user needs to prove their authenticity, for example, using a "
+"passphrase."
 msgstr ""
 
 #. Tag: para
@@ -94,13 +91,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "&pk;'s configuration depends on <emphasis>actions</emphasis> and "
-"<emphasis>authorization rules</emphasis>:"
+"<emphasis>authorization rules</emphasis> :"
 msgstr ""
 
 #. Tag: term
 #: security_policy_kit.xml:105
 #, no-c-format
-msgid "Actions (file extension <filename>*.policy</filename>)"
+msgid "Actions (file extension <filename>*.policy</filename> )"
 msgstr ""
 
 #. Tag: para
@@ -108,7 +105,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Written as XML files and located in <filename>/usr/share/polkit-1/actions</"
-"filename>. Each file defines one or more actions, and each action contains "
+"filename> . Each file defines one or more actions, and each action contains "
 "descriptions and default permissions. Although a system administrator can "
 "write their own rules, &pk;'s files must not be edited."
 msgstr ""
@@ -116,7 +113,7 @@ msgstr ""
 #. Tag: term
 #: security_policy_kit.xml:117
 #, no-c-format
-msgid "Authorization Rules (file extension <filename>*.rules</filename>)"
+msgid "Authorization Rules (file extension <filename>*.rules</filename> )"
 msgstr ""
 
 #. Tag: para
@@ -145,10 +142,10 @@ msgid ""
 "page for further details):"
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: security_policy_kit.xml:141
 #, no-c-format
-msgid "pkaction"
+msgid "<command>pkaction</command>"
 msgstr ""
 
 #. Tag: para
@@ -159,10 +156,10 @@ msgid ""
 "policykit.query\"/> for more information."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: security_policy_kit.xml:152
 #, no-c-format
-msgid "pkcheck"
+msgid "<command>pkcheck</command>"
 msgstr ""
 
 #. Tag: para
@@ -170,13 +167,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Checks whether a process is authorized, specified by either <option>--"
-"process</option> or <option>--system-bus-name</option>."
+"process</option> or <option>--system-bus-name</option> ."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: security_policy_kit.xml:162
 #, no-c-format
-msgid "pkexec"
+msgid "<command>pkexec</command>"
 msgstr ""
 
 #. Tag: para
@@ -186,10 +183,10 @@ msgid ""
 "Allows an authorized user to execute the specific program as another user."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: security_policy_kit.xml:172
 #, no-c-format
-msgid "pkttyagent"
+msgid "<command>pkttyagent</command>"
 msgstr ""
 
 #. Tag: para
@@ -450,8 +447,8 @@ msgid ""
 "Every time a &pk;-enabled process carries out a privileged operation, &pk; "
 "is asked whether this process is entitled to do so. &pk; answers according "
 "to the policy defined for this process. The answers can be <literal>yes</"
-"literal>, <literal>no</literal>, or <literal>authentication needed</"
-"literal>. By default, a policy contains <literal>implicit</literal> "
+"literal> , <literal>no</literal> , or <literal>authentication needed</"
+"literal> . By default, a policy contains <literal>implicit</literal> "
 "privileges, which automatically apply to all users. It is also possible to "
 "specify <literal>explicit</literal> privileges which apply to a specific "
 "user."
@@ -470,7 +467,7 @@ msgid ""
 "Implicit privileges can be defined for any active and inactive sessions. An "
 "active session is the one in which you are currently working. It becomes "
 "inactive when you switch to another console for example. When setting "
-"implicit privileges to <quote>no</quote>, no user is authorized, whereas "
+"implicit privileges to <quote>no</quote> , no user is authorized, whereas "
 "<quote>yes</quote> authorizes all users. However, usually it is useful to "
 "demand authentication."
 msgstr ""
@@ -521,7 +518,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The authentication dialog offers a check button <guimenu>Remember "
-"authorization for this session</guimenu>. If checked, the authentication is "
+"authorization for this session</guimenu> . If checked, the authentication is "
 "valid until the user logs out."
 msgstr ""
 
@@ -536,7 +533,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The authentication dialog offers a check button <guimenu>Remember "
-"authorization</guimenu>. If checked, the user needs to authenticate only "
+"authorization</guimenu> . If checked, the user needs to authenticate only "
 "once."
 msgstr ""
 
@@ -577,49 +574,105 @@ msgstr ""
 msgid ""
 "Each application supporting &pk; comes with a default set of implicit "
 "policies defined by the application's developers. Those policies are the so-"
-"called <quote>upstream defaults</quote>. The privileges defined by the "
+"called <quote>upstream defaults</quote> . The privileges defined by the "
 "upstream defaults are not necessarily the ones that are activated by default "
 "on &suse; systems. &productname; comes with a predefined set of privileges "
 "that override the upstream defaults:"
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: security_policy_kit.xml:392
 #, no-c-format
-msgid "/etc/polkit-default-privs.standard"
+msgid "<filename>/etc/polkit-default-privs.standard</filename>"
 msgstr ""
 
 #. Tag: para
 #: security_policy_kit.xml:395
 #, no-c-format
 msgid ""
-"Defines privileges suitable for most desktop systems<phrase os=\"sled\">. It "
-"is active by default.</phrase>"
+"Defines privileges suitable for most desktop systems <phrase os=\"sled\">. "
+"It is active by default.</phrase>"
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: security_policy_kit.xml:402
 #, no-c-format
-msgid "/etc/polkit-default-privs.restrictive"
+msgid "<filename>/etc/polkit-default-privs.restrictive</filename>"
 msgstr ""
 
 #. Tag: para
 #: security_policy_kit.xml:405
 #, no-c-format
 msgid ""
-"Designed for machines administrated centrally<phrase os=\"sles\">. It is "
+"Designed for machines administrated centrally <phrase os=\"sles\">. It is "
 "active by default.</phrase>"
 msgstr ""
 
-#. Tag: para
-#: security_policy_kit.xml:412
+#. Tag: #text
+#: security_policy_kit.xml:414
 #, no-c-format
 msgid ""
-"To switch between the two sets of default privileges, adjust the value of "
-"<varname>POLKIT_DEFAULT_PRIVS</varname> to either <literal>restrictive</"
-"literal> or <literal>standard</literal> in <filename>/etc/sysconfig/"
-"security</filename>. Then run the command <command>set_polkit_default_privs</"
-"command> as &rootuser;."
+"To switch between the two sets of default privileges, adjust the value of"
+msgstr ""
+
+#. Tag: varname
+#: security_policy_kit.xml:414
+#, no-c-format
+msgid "POLKIT_DEFAULT_PRIVS"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:415
+#, no-c-format
+msgid "or"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:415
+#, no-c-format
+msgid "to either"
+msgstr ""
+
+#. Tag: literal
+#: security_policy_kit.xml:415
+#, no-c-format
+msgid "restrictive"
+msgstr ""
+
+#. Tag: literal
+#: security_policy_kit.xml:415
+#, no-c-format
+msgid "standard"
+msgstr ""
+
+#. Tag: filename
+#: security_policy_kit.xml:416
+#, no-c-format
+msgid "/etc/sysconfig/security"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:416
+#, no-c-format
+msgid "in"
+msgstr ""
+
+#. Tag: command
+#: security_policy_kit.xml:417
+#, no-c-format
+msgid "set_polkit_default_privs"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:417
+#, no-c-format
+msgid ". Then run the command"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:417
+#, no-c-format
+msgid "as &rootuser;."
 msgstr ""
 
 #. Tag: para
@@ -627,9 +680,9 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Do not modify the two files in the list above. To define your own custom set "
-"of privileges, use <filename>/etc/polkit-default-privs.local</filename>. For "
-"details, refer to <xref linkend=\"sec.security.policykit.change."
-"modify_config.implicit\"/>."
+"of privileges, use <filename>/etc/polkit-default-privs.local</filename> . "
+"For details, refer to <xref linkend=\"sec.security.policykit.change."
+"modify_config.implicit\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -654,7 +707,7 @@ msgid ""
 "commands as another user (see <xref linkend=\"sec.security.policykit.oview."
 "commands\"/> for a short overview). Each existing policy has a speaking, "
 "unique name with which it can be identified. List all available policies "
-"with the command <command>pkaction</command>."
+"with the command <command>pkaction</command> ."
 msgstr ""
 
 #. Tag: para
@@ -665,7 +718,7 @@ msgid ""
 "lists all policies. By adding the <option>--show-overrides</option> option, "
 "you can list all policies that differ from the default values. To reset the "
 "privileges for a given action to the (upstream) defaults, use the option "
-"<option>--reset-defaults&nbsp;<replaceable>ACTION</replaceable></option>. "
+"<option>--reset-defaults&nbsp;<replaceable>ACTION</replaceable></option> . "
 "See <command>man pkaction</command> for more information."
 msgstr ""
 
@@ -674,7 +727,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "If you want to display the needed authorization for a given policy (for "
-"example, <literal>org.freedesktop.login1.reboot</literal>) use "
+"example, <literal>org.freedesktop.login1.reboot</literal> ) use "
 "<command>pkaction</command> as follows:"
 msgstr ""
 
@@ -696,7 +749,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:463
+#: security_policy_kit.xml:472
 #, no-c-format
 msgid ""
 "The keyword <literal>auth_admin_keep</literal> means that users need to "
@@ -704,29 +757,29 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:469
+#: security_policy_kit.xml:478
 #, no-c-format
 msgid "Restrictions of <command>pkaction</command> on &productname;"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:470
+#: security_policy_kit.xml:479
 #, no-c-format
 msgid ""
 "<command>pkaction</command> always operates on the upstream defaults. "
 "Therefore it cannot be used to list or restore the defaults shipped with "
 "&productname;. To do so, refer to <xref linkend=\"sec.security.policykit."
-"change.defaults\"/>."
+"change.defaults\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:479
+#: security_policy_kit.xml:488
 #, no-c-format
 msgid "Modifying Configuration Files"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:481
+#: security_policy_kit.xml:490
 #, no-c-format
 msgid ""
 "Adjusting privileges by modifying configuration files is useful when you "
@@ -736,13 +789,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:489
+#: security_policy_kit.xml:498
 #, no-c-format
 msgid "Adding Action Rules"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:490
+#: security_policy_kit.xml:499
 #, no-c-format
 msgid ""
 "The available actions depend on what additional packages you have installed "
@@ -751,80 +804,98 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:495
+#: security_policy_kit.xml:504
 #, no-c-format
 msgid ""
 "To get an idea, the following example describes how the command "
-"<command>gparted</command> (<quote>&gnome; Partition Editor</quote>) is "
+"<command>gparted</command> ( <quote>&gnome; Partition Editor</quote> ) is "
 "integrated into &pk;."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:500
+#: security_policy_kit.xml:509
 #, no-c-format
 msgid ""
 "The file <filename>/usr/share/polkit-1/actions/org.opensuse.policykit."
 "gparted.policy</filename> contains the following content:"
 msgstr ""
 
-#. Tag: screen
-#: security_policy_kit.xml:505
+#. Tag: #text
+#: security_policy_kit.xml:514
 #, no-c-format
 msgid ""
-"&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n"
-"&lt;!DOCTYPE policyconfig PUBLIC\n"
-" \"-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN\"\n"
-" \"http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd"
-"\"&gt;\n"
-"&lt;policyconfig&gt; <co xml:id=\"co.polkit.actions.policyconfig\"/>\n"
-"\n"
-"  &lt;action id=\"org.opensuse.policykit.gparted\"&gt; <co xml:id=\"co."
-"polkit.actions.action\"/>\n"
-"    &lt;message&gt;Authentication is required to run the GParted Partition "
-"Editor&lt;/message&gt;\n"
-"    &lt;icon_name&gt;gparted&lt;/icon_name&gt;\n"
-"    &lt;defaults&gt; <co xml:id=\"co.polkit.actions.defaults\"/>\n"
-"      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;\n"
-"      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;\n"
-"     &lt; allow_active&gt;auth_admin&lt;/allow_active&gt;\n"
-"    &lt;/defaults&gt;\n"
-"    &lt;annotate <co xml:id=\"co.polkit.actions.annotate\"/>\n"
-"      key=\"org.freedesktop.policykit.exec.path\"&gt;/usr/sbin/gparted&lt;/"
-"annotate&gt;\n"
-"    &lt;annotate <xref linkend=\"co.polkit.actions.annotate\"/>\n"
-"      key=\"org.freedesktop.policykit.exec.allow_gui\"&gt;true&lt;/"
-"annotate&gt;\n"
-"  &lt;/action&gt;\n"
-"\n"
-"&lt;/policyconfig&gt;"
+"&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;!DOCTYPE policyconfig "
+"PUBLIC \"-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN\" "
+"\"http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd\"&gt;"
+"&lt;policyconfig&gt;"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:520
+#, no-c-format
+msgid "&lt;action id=\"org.opensuse.policykit.gparted\"&gt;"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:521
+#, no-c-format
+msgid ""
+"&lt;message&gt;Authentication is required to run the GParted Partition "
+"Editor&lt;/message&gt; &lt;icon_name&gt;gparted&lt;/icon_name&gt; &lt;"
+"defaults&gt;"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:524
+#, no-c-format
+msgid ""
+"&lt;allow_any&gt;auth_admin&lt;/allow_any&gt; &lt;allow_inactive&gt;"
+"auth_admin&lt;/allow_inactive&gt; &lt; allow_active&gt;auth_admin&lt;/"
+"allow_active&gt; &lt;/defaults&gt; &lt;annotate"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:529
+#, no-c-format
+msgid ""
+"key=\"org.freedesktop.policykit.exec.path\"&gt;/usr/sbin/gparted&lt;/"
+"annotate&gt; &lt;annotate"
+msgstr ""
+
+#. Tag: #text
+#: security_policy_kit.xml:531
+#, no-c-format
+msgid ""
+"key=\"org.freedesktop.policykit.exec.allow_gui\"&gt;true&lt;/annotate&gt; "
+"&lt;/action&gt;&lt;/policyconfig&gt;"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:508
+#: security_policy_kit.xml:537
 #, no-c-format
 msgid "Root element of the policy file."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:513
+#: security_policy_kit.xml:542
 #, no-c-format
 msgid "Contains one single action."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:518
+#: security_policy_kit.xml:547
 #, no-c-format
 msgid ""
 "The <literal>defaults</literal> element contains several permissions used in "
-"remote sessions like SSH, VNC (element <literal>allow_inactive</literal>), "
+"remote sessions like SSH, VNC (element <literal>allow_inactive</literal> ), "
 "when logged directly into the machine on a TTY or X display (element "
-"<literal>allow_active</literal>), or for both (element <literal>allow_any</"
-"literal>). The value <literal>auth_admin</literal> indicates authentication "
+"<literal>allow_active</literal> ), or for both (element <literal>allow_any</"
+"literal> ). The value <literal>auth_admin</literal> indicates authentication "
 "is required as an administrative user."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:529
+#: security_policy_kit.xml:558
 #, no-c-format
 msgid ""
 "The <literal>annotate</literal> element contains specific information "
@@ -833,7 +904,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:537
+#: security_policy_kit.xml:566
 #, no-c-format
 msgid ""
 "To add your own policy, create a <filename>.policy</filename> file with the "
@@ -842,44 +913,45 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:545
+#: security_policy_kit.xml:574
 #, no-c-format
 msgid "Adding Authorization Rules"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:546
+#: security_policy_kit.xml:575
 #, no-c-format
 msgid ""
 "Your own authorization rules overrule the default settings. To add your own "
-"settings, store your files under <filename>/etc/polkit-1/rules.d/</filename>."
+"settings, store your files under <filename>/etc/polkit-1/rules.d/</"
+"filename> ."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:551
+#: security_policy_kit.xml:580
 #, no-c-format
 msgid ""
 "The files in this directory start with a two-digit number, followed by a "
-"descriptive name, and end with <filename>.rules</filename>. Functions inside "
-"these files are executed in the order they have been sorted in. For example, "
-"<filename>00-foo.rules</filename> is sorted (and hence executed) before "
-"<filename>60-bar.rules</filename> or even <filename>90-default-privs.rules</"
-"filename>."
+"descriptive name, and end with <filename>.rules</filename> . Functions "
+"inside these files are executed in the order they have been sorted in. For "
+"example, <filename>00-foo.rules</filename> is sorted (and hence executed) "
+"before <filename>60-bar.rules</filename> or even <filename>90-default-privs."
+"rules</filename> ."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:559
+#: security_policy_kit.xml:588
 #, no-c-format
 msgid ""
 "Inside the file, the script checks for the specified action ID, which is "
 "defined in the <filename>.policy</filename> file. For example, if you want "
 "to allow the command <command>gparted</command> to be executed by any member "
 "of the <systemitem class=\"groupname\">admin</systemitem> group, check for "
-"the action ID <literal>org.opensuse.policykit.gparted</literal>:"
+"the action ID <literal>org.opensuse.policykit.gparted</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: security_policy_kit.xml:567
+#: security_policy_kit.xml:596
 #, no-c-format
 msgid ""
 "/* Allow users in admin group to run GParted without authentication */\n"
@@ -892,50 +964,50 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:568
+#: security_policy_kit.xml:603
 #, no-c-format
 msgid ""
 "Find the description of all classes and methods of the functions in the &pk; "
 "API at <link xlink:href=\"http://www.freedesktop.org/software/polkit/docs/"
-"latest/ref-api.html\"></link>."
+"latest/ref-api.html\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:576
+#: security_policy_kit.xml:611
 #, no-c-format
 msgid "Modifying Configuration Files for Implicit Privileges"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:577
+#: security_policy_kit.xml:612
 #, no-c-format
 msgid ""
 "&productname; ships with two sets of default authorizations, located in "
 "<filename>/etc/polkit-default-privs.standard</filename> and <filename>/etc/"
-"polkit-default-privs.restrictive</filename>. For more information, refer to "
-"<xref linkend=\"sec.security.policykit.policies.default\"/>."
+"polkit-default-privs.restrictive</filename> . For more information, refer to "
+"<xref linkend=\"sec.security.policykit.policies.default\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:584
+#: security_policy_kit.xml:619
 #, no-c-format
 msgid ""
 "Custom privileges are defined in <filename>/etc/polkit-default-privs.local</"
-"filename>. Privileges defined here will always take precedence over the ones "
-"defined in the other configuration files. To define your custom set of "
+"filename> . Privileges defined here will always take precedence over the "
+"ones defined in the other configuration files. To define your custom set of "
 "privileges, do the following:"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:593
+#: security_policy_kit.xml:628
 #, no-c-format
 msgid ""
-"Open <filename>/etc/polkit-default-privs.local</filename>. To define a "
+"Open <filename>/etc/polkit-default-privs.local</filename> . To define a "
 "privilege, add a line for each policy with the following format:"
 msgstr ""
 
 #. Tag: screen
-#: security_policy_kit.xml:597
+#: security_policy_kit.xml:632
 #, no-c-format
 msgid ""
 "<replaceable>&lt;privilege_identifier&gt;</replaceable>&nbsp;&nbsp;&nbsp;"
@@ -945,13 +1017,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:598
+#: security_policy_kit.xml:633
 #, no-c-format
 msgid "For example:"
 msgstr ""
 
 #. Tag: screen
-#: security_policy_kit.xml:601
+#: security_policy_kit.xml:636
 #, no-c-format
 msgid ""
 "org.freedesktop.policykit.modify-defaults&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
@@ -959,115 +1031,115 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:602
+#: security_policy_kit.xml:637
 #, no-c-format
 msgid ""
 "The following values are valid for the <replaceable>SESSION</replaceable> "
 "placeholders:"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:608
+#. Tag: term
+#: security_policy_kit.xml:643
 #, no-c-format
 msgid "<literal>yes</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:611
+#: security_policy_kit.xml:646
 #, no-c-format
 msgid "grant privilege"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:617
+#. Tag: term
+#: security_policy_kit.xml:652
 #, no-c-format
 msgid "<literal>no</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:620
+#: security_policy_kit.xml:655
 #, no-c-format
 msgid "block"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:626
+#. Tag: term
+#: security_policy_kit.xml:661
 #, no-c-format
-msgid "auth_self"
+msgid "<literal>auth_self</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:629
+#: security_policy_kit.xml:664
 #, no-c-format
 msgid ""
 "user needs to authenticate with own password every time the privilege is "
 "requested"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:636
+#. Tag: term
+#: security_policy_kit.xml:671
 #, no-c-format
-msgid "auth_self_keep_session"
+msgid "<literal>auth_self_keep_session</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:639
+#: security_policy_kit.xml:674
 #, no-c-format
 msgid ""
 "user needs to authenticate with own password once per session, privilege is "
 "granted for the whole session"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:646
+#. Tag: term
+#: security_policy_kit.xml:681
 #, no-c-format
-msgid "auth_self_keep_always"
+msgid "<literal>auth_self_keep_always</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:649
+#: security_policy_kit.xml:684
 #, no-c-format
 msgid ""
 "user needs to authenticate with own password once, privilege is granted for "
 "the current and for future sessions"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:656
+#. Tag: term
+#: security_policy_kit.xml:691
 #, no-c-format
-msgid "auth_admin"
+msgid "<literal>auth_admin</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:659
+#: security_policy_kit.xml:694
 #, no-c-format
 msgid ""
 "user needs to authenticate with &rootuser; password every time the privilege "
 "is requested"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:666
+#. Tag: term
+#: security_policy_kit.xml:701
 #, no-c-format
-msgid "auth_admin_keep_session"
+msgid "<literal>auth_admin_keep_session</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:669
+#: security_policy_kit.xml:704
 #, no-c-format
 msgid ""
 "user needs to authenticate with &rootuser; password once per session, "
 "privilege is granted for the whole session"
 msgstr ""
 
-#. Tag: literal
-#: security_policy_kit.xml:676
+#. Tag: term
+#: security_policy_kit.xml:711
 #, no-c-format
-msgid "auth_admin_keep_always"
+msgid "<literal>auth_admin_keep_always</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:679
+#: security_policy_kit.xml:714
 #, no-c-format
 msgid ""
 "user needs to authenticate with &rootuser; password once, privilege is "
@@ -1075,60 +1147,60 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:688
+#: security_policy_kit.xml:723
 #, no-c-format
 msgid "Run as &rootuser; for changes to take effect:"
 msgstr ""
 
 #. Tag: screen
-#: security_policy_kit.xml:691
+#: security_policy_kit.xml:726
 #, no-c-format
 msgid "# /sbin/set_polkit_default_privs"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:694
+#: security_policy_kit.xml:729
 #, no-c-format
 msgid ""
 "Optionally check the list of all privilege identifiers with the command "
-"<command>pkaction</command>."
+"<command>pkaction</command> ."
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:703
+#: security_policy_kit.xml:738
 #, no-c-format
 msgid "Restoring the Default Privileges"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:705
+#: security_policy_kit.xml:740
 #, no-c-format
 msgid ""
 "&productname; comes with a predefined set of privileges that is activated by "
 "default and thus overrides the upstream defaults. For details, refer to "
-"<xref linkend=\"sec.security.policykit.policies.default\"/>."
+"<xref linkend=\"sec.security.policykit.policies.default\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:712
+#: security_policy_kit.xml:747
 #, no-c-format
 msgid ""
 "Since the graphical &pk; tools and the command line tools always operate on "
 "the upstream defaults, &productname; includes an additional command-line "
-"tool, <command>set_polkit_default_privs</command>. It resets privileges to "
-"the values defined in <filename>/etc/polkit-default-privs.*</filename>. "
+"tool, <command>set_polkit_default_privs</command> . It resets privileges to "
+"the values defined in <filename>/etc/polkit-default-privs.*</filename> . "
 "However, the command <command>set_polkit_default_privs</command> will only "
 "reset policies that are set to the upstream defaults."
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:723
+#: security_policy_kit.xml:758
 #, no-c-format
 msgid "Restoring the &productname; Defaults"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:725
+#: security_policy_kit.xml:760
 #, no-c-format
 msgid ""
 "Make sure <filename>/etc/polkit-default-privs.local</filename> does not "
@@ -1136,13 +1208,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_policy_kit.xml:730
+#: security_policy_kit.xml:765
 #, no-c-format
 msgid "Custom Policy Configuration"
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:731
+#: security_policy_kit.xml:766
 #, no-c-format
 msgid ""
 "Policies defined in <filename>/etc/polkit-default-privs.local</filename> "
@@ -1150,7 +1222,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_policy_kit.xml:739
+#: security_policy_kit.xml:774
 #, no-c-format
 msgid ""
 "To reset all policies to the upstream defaults first and then apply the "
@@ -1158,7 +1230,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_policy_kit.xml:743
+#: security_policy_kit.xml:778
 #, no-c-format
 msgid ""
 "&prompt.sudo;rm -f /var/lib/polkit/* &amp;&amp; set_polkit_default_privs"

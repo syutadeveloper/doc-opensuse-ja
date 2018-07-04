@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,16 +20,16 @@ msgstr ""
 msgid "On-Demand Mounting with Autofs"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: autofs.xml:11
+#. Tag: dm:translation
+#: autofs.xml:13
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
 #: autofs.xml:16
 #, no-c-format
-msgid "<systemitem>autofs</systemitem> is a program that automatically mounts specified directories on an on-demand basis. It is based on a kernel module for high efficiency, and can manage both local directories and network shares. These automatic mount points are mounted only when they are accessed, and unmounted after a certain period of inactivity. This on-demand behavior saves bandwidth and results in better performance than static mounts managed by <filename>/etc/fstab</filename>. While <systemitem>autofs</systemitem> is a control script, <command>automount</command> is the command (daemon) that does the actual auto-mounting."
+msgid "<systemitem>autofs</systemitem> is a program that automatically mounts specified directories on an on-demand basis. It is based on a kernel module for high efficiency, and can manage both local directories and network shares. These automatic mount points are mounted only when they are accessed, and unmounted after a certain period of inactivity. This on-demand behavior saves bandwidth and results in better performance than static mounts managed by <filename>/etc/fstab</filename> . While <systemitem>autofs</systemitem> is a control script, <command>automount</command> is the command (daemon) that does the actual auto-mounting."
 msgstr ""
 
 #. Tag: title
@@ -59,7 +59,7 @@ msgstr ""
 #. Tag: para
 #: autofs.xml:43
 #, no-c-format
-msgid "You need to configure <systemitem>autofs</systemitem> manually by editing its configuration files with a text editor, such as <command>vim</command>. There are two basic steps to configure <systemitem>autofs</systemitem>&mdash;the <emphasis>master</emphasis> map file, and specific map files."
+msgid "You need to configure <systemitem>autofs</systemitem> manually by editing its configuration files with a text editor, such as <command>vim</command> . There are two basic steps to configure <systemitem>autofs</systemitem> &mdash;the <emphasis>master</emphasis> map file, and specific map files."
 msgstr ""
 
 #. Tag: title
@@ -71,486 +71,475 @@ msgstr ""
 #. Tag: para
 #: autofs.xml:53
 #, no-c-format
-msgid "The default master configuration file for <systemitem>autofs</systemitem> is <filename>/etc/auto.master</filename>. You can change its location by changing the value of the <option>DEFAULT_MASTER_MAP_NAME</option> option in <filename>/etc/sysconfig/autofs</filename>. Here is the content of the default one for &productname;:"
+msgid "The default master configuration file for <systemitem>autofs</systemitem> is <filename>/etc/auto.master</filename> . You can change its location by changing the value of the <option>DEFAULT_MASTER_MAP_NAME</option> option in <filename>/etc/sysconfig/autofs</filename> . Here is the content of the default one for &productname;:"
 msgstr ""
 
-#. Tag: screen
-#: autofs.xml:60
+#. Tag: #text
+#: autofs.xml:64
 #, no-c-format
-msgid ""
-      "#\n"
-      "# Sample auto.master file\n"
-      "# This is an automounter map and it has the following format\n"
-      "# key [ -mount-options-separated-by-comma ] location\n"
-      "# For details of the format look at autofs(5).<co xml:id=\"co.autofs.manpage\"/>\n"
-      "#\n"
-      "#/misc  /etc/auto.misc<co xml:id=\"co.autofs.map\"/>\n"
-      "#/net -hosts\n"
-      "#\n"
-      "# Include /etc/auto.master.d/*.autofs<co xml:id=\"co.autofs.include\"/>\n"
-      "#\n"
-      "#+dir:/etc/auto.master.d\n"
-      "#\n"
-      "# Include central master map if it can be found using\n"
-      "# nsswitch sources.\n"
-      "#\n"
-      "# Note that if there are entries for /net or /misc (as\n"
-      "# above) in the included master map any keys that are the\n"
-      "# same will not be seen as the first read key seen takes\n"
-      "# precedence.\n"
-      "#\n"
-      "+auto.master<co xml:id=\"co.autofs.plus\"/>"
+msgid "## Sample auto.master file# This is an automounter map and it has the following format# key [ -mount-options-separated-by-comma ] location# For details of the format look at autofs(5)."
+msgstr ""
+
+#. Tag: #text
+#: autofs.xml:66
+#, no-c-format
+msgid "##/misc /etc/auto.misc"
+msgstr ""
+
+#. Tag: #text
+#: autofs.xml:69
+#, no-c-format
+msgid "#/net -hosts## Include /etc/auto.master.d/*.autofs"
+msgstr ""
+
+#. Tag: #text
+#: autofs.xml:81
+#, no-c-format
+msgid "##+dir:/etc/auto.master.d## Include central master map if it can be found using# nsswitch sources.## Note that if there are entries for /net or /misc (as# above) in the included master map any keys that are the# same will not be seen as the first read key seen takes# precedence.#+auto.master"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:63
+#: autofs.xml:84
 #, no-c-format
-msgid "The <systemitem>autofs</systemitem> manual page (<command>man 5 autofs</command>) offers a lot of valuable information on the format of the automounter maps."
+msgid "The <systemitem>autofs</systemitem> manual page ( <command>man 5 autofs</command> ) offers a lot of valuable information on the format of the automounter maps."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:70
+#: autofs.xml:91
 #, no-c-format
 msgid "Although commented out (#) by default, this is an example of a simple automounter mapping syntax."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:76
+#: autofs.xml:97
 #, no-c-format
-msgid "In case you need to split the master map into several files, uncomment the line, and put the mappings (suffixed with <literal>.autofs</literal>) in the <filename>/etc/auto.master.d/</filename> directory."
+msgid "In case you need to split the master map into several files, uncomment the line, and put the mappings (suffixed with <literal>.autofs</literal> ) in the <filename>/etc/auto.master.d/</filename> directory."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:83
+#: autofs.xml:104
 #, no-c-format
 msgid "<literal>+auto.master</literal> ensures that those using NIS <phrase os=\"sles;osuse\">(see <xref linkend=\"sec.nis.server\"/> for more information on NIS)</phrase> will still find their master map."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:90
+#: autofs.xml:111
 #, no-c-format
 msgid "Entries in <filename>auto.master</filename> have three fields with the following syntax:"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:94
+#: autofs.xml:115
 #, no-c-format
 msgid "mount point      map name      options"
 msgstr ""
 
-#. Tag: term
-#: autofs.xml:97 autofs.xml:188
-#, no-c-format
-msgid "mount point"
-msgstr ""
-
 #. Tag: para
-#: autofs.xml:99
+#: autofs.xml:120
 #, no-c-format
-msgid "The base location where to mount the <systemitem>autofs</systemitem> file system, such as <literal>/home</literal>."
+msgid "The base location where to mount the <systemitem>autofs</systemitem> file system, such as <literal>/home</literal> ."
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:106
+#: autofs.xml:127
 #, no-c-format
 msgid "map name"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:108
+#: autofs.xml:129
 #, no-c-format
-msgid "The name of a map source to use for mounting. For the syntax of the maps files, see <xref linkend=\"sec.autofs.mapfiles\"/>."
-msgstr ""
-
-#. Tag: term
-#: autofs.xml:115 autofs.xml:200
-#, no-c-format
-msgid "options"
+msgid "The name of a map source to use for mounting. For the syntax of the maps files, see <xref linkend=\"sec.autofs.mapfiles\"/> ."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:117
+#: autofs.xml:138
 #, no-c-format
 msgid "These options (if specified) will apply as defaults to all entries in the given map."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:125
+#: autofs.xml:146
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:126
+#: autofs.xml:147
 #, no-c-format
-msgid "For more detailed information on the specific values of the optional <literal>map-type</literal>, <literal>format</literal>, and <literal>options</literal>, see the <guimenu>auto.master</guimenu> manual page (<command>man 5 auto.master</command>)."
+msgid "For more detailed information on the specific values of the optional <literal>map-type</literal> , <literal>format</literal> , and <literal>options</literal> , see the <guimenu>auto.master</guimenu> manual page ( <command>man 5 auto.master</command> )."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:133
+#: autofs.xml:154
 #, no-c-format
-msgid "The following entry in <filename>auto.master</filename> tells <systemitem>autofs</systemitem> to look in <filename>/etc/auto.smb</filename>, and create mount points in the <filename>/smb</filename> directory."
+msgid "The following entry in <filename>auto.master</filename> tells <systemitem>autofs</systemitem> to look in <filename>/etc/auto.smb</filename> , and create mount points in the <filename>/smb</filename> directory."
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:139
+#: autofs.xml:160
 #, no-c-format
 msgid "/smb   /etc/auto.smb"
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:141
+#: autofs.xml:162
 #, no-c-format
 msgid "Direct Mounts"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:142
+#: autofs.xml:163
 #, no-c-format
-msgid "Direct mounts create a mount point at the path specified inside the relevant map file. Instead of specifying the mount point in <filename>auto.master</filename>, replace the mount point field with <literal>/-</literal>. For example, the following line tells <systemitem>autofs</systemitem> to create a mount point at the place specified in <filename>auto.smb</filename>:"
+msgid "Direct mounts create a mount point at the path specified inside the relevant map file. Instead of specifying the mount point in <filename>auto.master</filename> , replace the mount point field with <literal>/-</literal> . For example, the following line tells <systemitem>autofs</systemitem> to create a mount point at the place specified in <filename>auto.smb</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:150
+#: autofs.xml:171
 #, no-c-format
 msgid "/-        /etc/auto.smb"
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:152
+#: autofs.xml:173
 #, no-c-format
 msgid "Maps without Full Path"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:153
+#: autofs.xml:174
 #, no-c-format
 msgid "If the map file is not specified with its full local or network path, it is located using the Name Service Switch (NSS) configuration:"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:157
+#: autofs.xml:178
 #, no-c-format
 msgid "/-        auto.smb"
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:163
+#: autofs.xml:184
 #, no-c-format
 msgid "Map Files"
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:165
+#: autofs.xml:186
 #, no-c-format
 msgid "Other Types of Maps"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:166
+#: autofs.xml:187
 #, no-c-format
-msgid "Although <emphasis>files</emphasis> are the most common types of maps for auto-mounting with <systemitem>autofs</systemitem>, there are other types as well. A map specification can be the output of a command, or a result of a query in LDAP or database. For more detailed information on map types, see the manual page <command>man 5 auto.master</command>."
+msgid "Although <emphasis>files</emphasis> are the most common types of maps for auto-mounting with <systemitem>autofs</systemitem> , there are other types as well. A map specification can be the output of a command, or a result of a query in LDAP or database. For more detailed information on map types, see the manual page <command>man 5 auto.master</command> ."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:174
+#: autofs.xml:195
 #, no-c-format
 msgid "Map files specify the (local or network) source location, and the mount point where to mount the source locally. The general format of maps is similar to the master map. The difference is that the <emphasis>options</emphasis> appear between the mount point and the location instead of at the end of the entry:"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:181
+#: autofs.xml:202
 #, no-c-format
 msgid "mount point      options      location"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:182
+#: autofs.xml:203
 #, no-c-format
-msgid "Make sure that map files are not marked as executable. You can remove the executable bits by executing <command>chmod -x <replaceable>MAP_FILE</replaceable></command>."
+msgid "Make sure that map files are not marked as executable. You can remove the executable bits by executing <command>chmod -x <replaceable>MAP_FILE</replaceable></command> ."
+msgstr ""
+
+#. Tag: term
+#: autofs.xml:209
+#, no-c-format
+msgid "mount point"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:190
+#: autofs.xml:211
 #, no-c-format
-msgid "Specifies where to mount the source location. This can be either a single directory name (so-called <emphasis>indirect</emphasis> mount) to be added to the base mount point specified in <filename>auto.master</filename>, or the full path of the mount point (direct mount, see <xref linkend=\"sec.autofs.directmount\"/>)."
+msgid "Specifies where to mount the source location. This can be either a single directory name (so-called <emphasis>indirect</emphasis> mount) to be added to the base mount point specified in <filename>auto.master</filename> , or the full path of the mount point (direct mount, see <xref linkend=\"sec.autofs.directmount\"/> )."
+msgstr ""
+
+#. Tag: term
+#: autofs.xml:221
+#, no-c-format
+msgid "options"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:202
+#: autofs.xml:223
 #, no-c-format
 msgid "Specifies optional comma-separated list of mount options for the relevant entries. If <filename>auto.master</filename> contains options for this map file as well, theses are appended."
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:210
+#: autofs.xml:231
 #, no-c-format
 msgid "location"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:212
+#: autofs.xml:233
 #, no-c-format
-msgid "Specifies from where the file system is to be mounted. It is usually an NFS or SMB volume in the usual notation <literal>host_name:path_name</literal>. If the file system to be mounted begins with a '/' (such as local <filename>/dev</filename> entries or smbfs shares), a colon symbol ':' needs to be prefixed, such as <literal>:/dev/sda1</literal>."
+msgid "Specifies from where the file system is to be mounted. It is usually an NFS or SMB volume in the usual notation <literal>host_name:path_name</literal> . If the file system to be mounted begins with a '/' (such as local <filename>/dev</filename> entries or smbfs shares), a colon symbol ':' needs to be prefixed, such as <literal>:/dev/sda1</literal> ."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:226
+#: autofs.xml:247
 #, no-c-format
 msgid "Operation and Debugging"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:228
+#: autofs.xml:249
 #, no-c-format
 msgid "This section introduces information on how to control the <systemitem>autofs</systemitem> service operation, and how to view more debugging information when tuning the automounter operation."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:235
+#: autofs.xml:256
 #, no-c-format
 msgid "Controlling the <systemitem>autofs</systemitem> Service"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:236
+#: autofs.xml:257
 #, no-c-format
 msgid "The operation of the <systemitem>autofs</systemitem> service is controlled by &systemd;. The general syntax of the <command>systemctl</command> command for <systemitem>autofs</systemitem> is"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:241
+#: autofs.xml:262
 #, no-c-format
 msgid "&prompt.sudo;systemctl <replaceable>SUB_COMMAND</replaceable> autofs"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:242
+#: autofs.xml:263
 #, no-c-format
 msgid "where <replaceable>SUB_COMMAND</replaceable> is one of:"
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:247
+#: autofs.xml:268
 #, no-c-format
 msgid "enable"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:249
+#: autofs.xml:270
 #, no-c-format
 msgid "Starts the automounter daemon at boot."
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:255
+#: autofs.xml:276
 #, no-c-format
 msgid "start"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:257
+#: autofs.xml:278
 #, no-c-format
 msgid "Starts the automounter daemon."
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:263
+#: autofs.xml:284
 #, no-c-format
 msgid "stop"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:265
+#: autofs.xml:286
 #, no-c-format
 msgid "Stops the automounter daemon. Automatic mount points are not accessible."
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:271
+#: autofs.xml:292
 #, no-c-format
 msgid "status"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:273
+#: autofs.xml:294
 #, no-c-format
 msgid "Prints the current status of the <systemitem>autofs</systemitem> service together with a part of a relevant log file."
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:280
+#: autofs.xml:301
 #, no-c-format
 msgid "restart"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:282
+#: autofs.xml:303
 #, no-c-format
 msgid "Stops and starts the automounter, terminating all running daemons and starting new ones."
 msgstr ""
 
 #. Tag: term
-#: autofs.xml:289
+#: autofs.xml:310
 #, no-c-format
 msgid "reload"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:291
+#: autofs.xml:312
 #, no-c-format
 msgid "Checks the current <filename>auto.master</filename> map, restarts those daemons whose entries have changed, and starts new ones for new entries."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:301
+#: autofs.xml:322
 #, no-c-format
 msgid "Debugging the Automounter Problems"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:302
+#: autofs.xml:323
 #, no-c-format
-msgid "If you experience problems when mounting directories with <systemitem>autofs</systemitem>, it is useful to run the <command>automount</command> daemon manually and watch its output messages:"
+msgid "If you experience problems when mounting directories with <systemitem>autofs</systemitem> , it is useful to run the <command>automount</command> daemon manually and watch its output messages:"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:309
+#: autofs.xml:330
 #, no-c-format
-msgid "Stop <systemitem>autofs</systemitem>."
+msgid "Stop <systemitem>autofs</systemitem> ."
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:312
+#: autofs.xml:333
 #, no-c-format
 msgid "&prompt.sudo;systemctl stop autofs"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:315
+#: autofs.xml:336
 #, no-c-format
 msgid "From one terminal, run <command>automount</command> manually in the foreground, producing verbose output."
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:319
+#: autofs.xml:340
 #, no-c-format
 msgid "&prompt.sudo;automount -f -v"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:322
+#: autofs.xml:343
 #, no-c-format
-msgid "From another terminal, try to mount the auto-mounting file systems by accessing the mount points (for example by <command>cd</command> or <command>ls</command>)."
+msgid "From another terminal, try to mount the auto-mounting file systems by accessing the mount points (for example by <command>cd</command> or <command>ls</command> )."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:329
+#: autofs.xml:350
 #, no-c-format
 msgid "Check the output of <command>automount</command> from the first terminal for more information why the mount failed, or why it was not even attempted."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:339
+#: autofs.xml:360
 #, no-c-format
 msgid "Auto-Mounting an NFS Share"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:341
+#: autofs.xml:362
 #, no-c-format
-msgid "The following procedure illustrates how to configure <systemitem>autofs</systemitem> to auto-mount an NFS share available on your network. It uses the information mentioned above, and assumes you are familiar with NFS exports. For more information on NFS, see <xref linkend=\"cha.nfs\"/>."
-msgstr ""
-
-#. Tag: para
-#: autofs.xml:351
-#, no-c-format
-msgid "Edit the master map file <filename>/etc/auto.master</filename>:"
-msgstr ""
-
-#. Tag: screen
-#: autofs.xml:354
-#, no-c-format
-msgid "&prompt.sudo;vim /etc/auto.master"
-msgstr ""
-
-#. Tag: para
-#: autofs.xml:355
-#, no-c-format
-msgid "Add a new entry for the new NFS mount at the end of <filename>/etc/auto.master</filename>:"
-msgstr ""
-
-#. Tag: screen
-#: autofs.xml:359
-#, no-c-format
-msgid "/nfs      /etc/auto.nfs      --timeout=10"
-msgstr ""
-
-#. Tag: para
-#: autofs.xml:360
-#, no-c-format
-msgid "It tells <systemitem>autofs</systemitem> that the base mount point is <filename>/nfs</filename>, the NFS shares are specified in the <filename>/etc/auto.nfs</filename> map, and that all shares in this map will be automatically unmounted after 10 seconds of inactivity."
-msgstr ""
-
-#. Tag: para
-#: autofs.xml:368
-#, no-c-format
-msgid "Create a new map file for NFS shares:"
-msgstr ""
-
-#. Tag: screen
-#: autofs.xml:371
-#, no-c-format
-msgid "&prompt.sudo;vim /etc/auto.nfs"
+msgid "The following procedure illustrates how to configure <systemitem>autofs</systemitem> to auto-mount an NFS share available on your network. It uses the information mentioned above, and assumes you are familiar with NFS exports. For more information on NFS, see <xref linkend=\"cha.nfs\"/> ."
 msgstr ""
 
 #. Tag: para
 #: autofs.xml:372
 #, no-c-format
-msgid "<filename>/etc/auto.nfs</filename> normally contains a separate line for each NFS share. Its format is described in <xref linkend=\"sec.autofs.mapfiles\"/>. Add the line describing the mount point and the NFS share network address:"
+msgid "Edit the master map file <filename>/etc/auto.master</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:378
+#: autofs.xml:375
+#, no-c-format
+msgid "&prompt.sudo;vim /etc/auto.master"
+msgstr ""
+
+#. Tag: para
+#: autofs.xml:376
+#, no-c-format
+msgid "Add a new entry for the new NFS mount at the end of <filename>/etc/auto.master</filename> :"
+msgstr ""
+
+#. Tag: screen
+#: autofs.xml:380
+#, no-c-format
+msgid "/nfs      /etc/auto.nfs      --timeout=10"
+msgstr ""
+
+#. Tag: para
+#: autofs.xml:381
+#, no-c-format
+msgid "It tells <systemitem>autofs</systemitem> that the base mount point is <filename>/nfs</filename> , the NFS shares are specified in the <filename>/etc/auto.nfs</filename> map, and that all shares in this map will be automatically unmounted after 10 seconds of inactivity."
+msgstr ""
+
+#. Tag: para
+#: autofs.xml:389
+#, no-c-format
+msgid "Create a new map file for NFS shares:"
+msgstr ""
+
+#. Tag: screen
+#: autofs.xml:392
+#, no-c-format
+msgid "&prompt.sudo;vim /etc/auto.nfs"
+msgstr ""
+
+#. Tag: para
+#: autofs.xml:393
+#, no-c-format
+msgid "<filename>/etc/auto.nfs</filename> normally contains a separate line for each NFS share. Its format is described in <xref linkend=\"sec.autofs.mapfiles\"/> . Add the line describing the mount point and the NFS share network address:"
+msgstr ""
+
+#. Tag: screen
+#: autofs.xml:399
 #, no-c-format
 msgid "export      jupiter.com:/home/geeko/doc/export"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:379
+#: autofs.xml:400
 #, no-c-format
-msgid "The above line means that the <filename>/home/geeko/doc/export</filename> directory on the <literal>jupiter.com</literal> host will be auto-mounted to the <filename>/nfs/export</filename> directory on the local host (<filename>/nfs</filename> is taken from the <filename>auto.master</filename> map) when requested. The <filename>/nfs/export</filename> directory will be created automatically by <systemitem>autofs</systemitem>."
+msgid "The above line means that the <filename>/home/geeko/doc/export</filename> directory on the <literal>jupiter.com</literal> host will be auto-mounted to the <filename>/nfs/export</filename> directory on the local host ( <filename>/nfs</filename> is taken from the <filename>auto.master</filename> map) when requested. The <filename>/nfs/export</filename> directory will be created automatically by <systemitem>autofs</systemitem> ."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:390
+#: autofs.xml:411
 #, no-c-format
 msgid "Optionally comment out the related line in <filename>/etc/fstab</filename> if you previously mounted the same NFS share statically. The line should look similar to this:"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:395
+#: autofs.xml:416
 #, no-c-format
 msgid "#jupiter.com:/home/geeko/doc/export /nfs/export nfs defaults 0 0"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:398
+#: autofs.xml:419
 #, no-c-format
 msgid "Reload <systemitem>autofs</systemitem> and check if it works:"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:401 autofs.xml:430
+#: autofs.xml:423
 #, no-c-format
-msgid "&prompt.sudo;systemctl restart autofs"
-msgstr ""
-
-#. Tag: screen
-#: autofs.xml:402
-#, no-c-format
-msgid ""
-      "# ls -l /nfs/export\n"
+msgid "# ls -l /nfs/export\n"
       "total 20\n"
       "drwxr-xr-x  5 1001 users 4096 Jan 14  2017 .images/\n"
       "drwxr-xr-x 10 1001 users 4096 Aug 16  2017 .profiled/\n"
@@ -559,125 +548,130 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:403
+#: autofs.xml:429
 #, no-c-format
 msgid "If you can see the list of files on the remote share, then <systemitem>autofs</systemitem> is functioning."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:411
+#: autofs.xml:437
 #, no-c-format
 msgid "Advanced Topics"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:413
+#: autofs.xml:439
 #, no-c-format
-msgid "This section describes topics that are beyond the basic introduction to <systemitem>autofs</systemitem>&mdash;auto-mounting of NFS shares that are available on your network, using wild cards in map files, and information specific to the CIFS file system."
+msgid "This section describes topics that are beyond the basic introduction to <systemitem>autofs</systemitem> &mdash;auto-mounting of NFS shares that are available on your network, using wild cards in map files, and information specific to the CIFS file system."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:421
+#: autofs.xml:447
 #, no-c-format
 msgid "<filename>/net</filename> Mount Point"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:422
+#: autofs.xml:448
 #, no-c-format
-msgid "This helper mount point is useful if you use a lot of NFS shares. <filename>/net</filename> auto-mounts all NFS shares on your local network on demand. The entry is already present in the <filename>auto.master</filename> file, so all you need to do is uncomment it and restart <systemitem>autofs</systemitem>:"
+msgid "This helper mount point is useful if you use a lot of NFS shares. <filename>/net</filename> auto-mounts all NFS shares on your local network on demand. The entry is already present in the <filename>auto.master</filename> file, so all you need to do is uncomment it and restart <systemitem>autofs</systemitem> :"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:429
+#: autofs.xml:455
 #, no-c-format
 msgid "/net      -hosts"
 msgstr ""
 
-#. Tag: para
-#: autofs.xml:431
+#. Tag: screen
+#: autofs.xml:456
 #, no-c-format
-msgid "For example, if you have a server named <literal>jupiter</literal> with an NFS share called <filename>/export</filename>, you can mount it by typing"
+msgid "&prompt.sudo;systemctl restart autofs"
+msgstr ""
+
+#. Tag: para
+#: autofs.xml:457
+#, no-c-format
+msgid "For example, if you have a server named <literal>jupiter</literal> with an NFS share called <filename>/export</filename> , you can mount it by typing"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:435
+#: autofs.xml:461
 #, no-c-format
 msgid "&prompt.sudo;cd /net/jupiter/export"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:436
+#: autofs.xml:462
 #, no-c-format
 msgid "on the command line."
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:442
+#: autofs.xml:468
 #, no-c-format
 msgid "Using Wild Cards to Auto-Mount Subdirectories"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:443
+#: autofs.xml:469
 #, no-c-format
 msgid "If you have a directory with subdirectories that you need to auto-mount individually&mdash;the typical case is the <filename>/home</filename> directory with individual users' home directories inside&mdash; <systemitem>autofs</systemitem> offers a clever solution for that."
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:449
+#: autofs.xml:475
 #, no-c-format
-msgid "In case of home directories, add the following line in <filename>auto.master</filename>:"
+msgid "In case of home directories, add the following line in <filename>auto.master</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:453
+#: autofs.xml:479
 #, no-c-format
 msgid "/home      /etc/auto.home"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:454
+#: autofs.xml:480
 #, no-c-format
 msgid "Now you need to add the correct mapping to the <filename>/etc/auto.home</filename> file, so that the users' home directories are mounted automatically. One solution is to create separate entries for each directory:"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:460
+#: autofs.xml:486
 #, no-c-format
-msgid ""
-      "wilber      jupiter.com:/home/wilber\n"
+msgid "wilber      jupiter.com:/home/wilber\n"
       "penguin      jupiter.com:/home/penguin\n"
       "tux      jupiter.com:/home/tux\n"
       "[...]"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:461
+#: autofs.xml:490
 #, no-c-format
-msgid "This is very awkward as you need to manage the list of users inside <filename>auto.home</filename>. You can use the asterisk '*' instead of the mount point, and the ampersand '&amp;' instead of the directory to be mounted:"
+msgid "This is very awkward as you need to manage the list of users inside <filename>auto.home</filename> . You can use the asterisk '*' instead of the mount point, and the ampersand '&amp;' instead of the directory to be mounted:"
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:467
+#: autofs.xml:496
 #, no-c-format
 msgid "*      jupiter:/home/&amp;"
 msgstr ""
 
 #. Tag: title
-#: autofs.xml:471
+#: autofs.xml:500
 #, no-c-format
 msgid "Auto-Mounting CIFS File System"
 msgstr ""
 
 #. Tag: para
-#: autofs.xml:472
+#: autofs.xml:501
 #, no-c-format
 msgid "If you want to auto-mount an SMB/CIFS share (see <xref linkend=\"cha.samba\"/> for more information on the SMB/CIFS protocol), you need to modify the syntax of the map file. Add <option>-fstype=cifs</option> in the option field, and prefix the share location with a colon ':'."
 msgstr ""
 
 #. Tag: screen
-#: autofs.xml:479
+#: autofs.xml:508
 #, no-c-format
 msgid "mount point      -fstype=cifs      ://jupiter.com/export"
 msgstr ""

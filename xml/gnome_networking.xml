@@ -1,118 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE chapter [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.gnome.network" xml:lang="en">
- <title
->Accessing Network Resources</title>
+ <title>Accessing Network Resources</title>
  <info>
-  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager"
-><dm:bugtracker
-></dm:bugtracker
-> <dm:translation
->yes</dm:translation
-> </dm:docmanager>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker/>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
  </info>
- <para
->From your desktop, you can access files and directories or certain services on remote hosts or make your own files and directories available to other users in your network. &productnamereg; offers the following ways of accessing and creating network shared resources. </para>
+ <para>
+  From your desktop, you can access files and directories or certain services
+  on remote hosts or make your own files and directories available to other
+  users in your network. &productnamereg; offers the following ways of
+  accessing and creating network shared resources.
+ </para>
  <variablelist>
   <varlistentry>
-   <term
->Network Browsing</term>
+   <term>Network Browsing</term>
    <listitem>
-    <para
->Your file manager, &nautilus;, lets you browse your network for shared resources and services. Learn more about this in <xref linkend="sec.gnome.network.accshare"/>. </para>
+    <para>
+     Your file manager, &nautilus;, lets you browse your network for shared
+     resources and services. Learn more about this in
+     <xref linkend="sec.gnome.network.accshare"/>.
+    </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term
->Sharing Directories in Mixed Environments</term>
+   <term>Sharing Directories in Mixed Environments</term>
    <listitem>
-    <para
->Using &nautilus;, configure your files and directories to share with other members of your network. Make your data readable or writable for users from any Windows or Linux workstation. Learn more about this in <xref linkend="sec.gnome.network.smbshare"/>. </para>
+    <para>
+     Using &nautilus;, configure your files and directories to share with other
+     members of your network. Make your data readable or writable for users
+     from any Windows or Linux workstation. Learn more about this in
+     <xref linkend="sec.gnome.network.smbshare"/>.
+    </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term
->Managing Windows Files</term>
+   <term>Managing Windows Files</term>
    <listitem>
-    <para
->&productname; can be configured to integrate into an existing Windows network. Your Linux machine then behaves like a Windows client. It takes all account information from the Active Directory domain controller, just as the Windows clients do. Learn more about this in <xref linkend="sec.gnome.network.ad.data"/>. </para>
+    <para>
+     &productname; can be configured to integrate into an existing Windows
+     network. Your Linux machine then behaves like a Windows client. It takes
+     all account information from the Active Directory domain controller, just
+     as the Windows clients do. Learn more about this in
+     <xref linkend="sec.gnome.network.ad.data"/>.
+    </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term
->Configuring and Accessing a Windows Network Printer</term>
+   <term>Configuring and Accessing a Windows Network Printer</term>
    <listitem>
-    <para
->You can configure a Windows network printer through the &gnome; control center. Learn how to do this in <xref linkend="sec.gnome.network.ad.printer"/>. </para>
+    <para>
+     You can configure a Windows network printer through the &gnome; control
+     center. Learn how to do this in
+     <xref linkend="sec.gnome.network.ad.printer"/>.
+    </para>
    </listitem>
   </varlistentry>
  </variablelist>
  <sect1 xml:id="sec.gnomeuser.start.network.connect">
-  <title
->Connecting to a Network</title>
+  <title>Connecting to a Network</title>
 
-  <para
->You can connect to a network with wired and wireless connections. To view your network connection, check the network icon in the right part of the main panel. If you click the icon, you can see more details in the menu. Click the connection name to see more details and access the settings. </para>
+  <para>
+   You can connect to a network with wired and wireless connections. To view
+   your network connection, check the network icon in the right part of the
+   main panel. If you click the icon, you can see more details in the menu.
+   Click the connection name to see more details and access the settings.
+  </para>
 
-  <para
->To learn more about connecting to a network, see <xref linkend="cha.nm"/>. </para>
+  <para>
+   To learn more about connecting to a network, see <xref linkend="cha.nm"/>.
+  </para>
  </sect1>
  <sect1 xml:id="sec.gnome.network.general">
-  <title
->General Notes on File Sharing and Network Browsing</title>
+  <title>General Notes on File Sharing and Network Browsing</title>
 
   <important os="sles;sled">
-   <title
->Contact Your Administrator Before Setup</title>
-   <para
->Whether and to what extent you can use file sharing and network browsing and in your network highly depends on the network structure and on the configuration of your machine. </para>
-   <para
->Before setting up either of them, contact your system administrator. Check whether your network structure supports a feature and whether your company's security policies permit it. </para>
+   <title>Contact Your Administrator Before Setup</title>
+   <para>
+    Whether and to what extent you can use file sharing and network browsing
+    and in your network highly depends on the network structure and on the
+    configuration of your machine.
+   </para>
+   <para>
+    Before setting up either of them, contact your system administrator. Check
+    whether your network structure supports a feature and whether your
+    company's security policies permit it.
+   </para>
   </important>
 
-  <para
->Network browsing, be it SMB browsing for Windows shares or SLP browsing for remote services, relies heavily on the machine's ability to send broadcast messages to all clients in the network. These messages and the clients' replies to them enable your machine to detect any available shares or services. </para>
+  <para>
+   Network browsing, be it SMB browsing for Windows shares or SLP browsing for
+   remote services, relies heavily on the machine's ability to send broadcast
+   messages to all clients in the network. These messages and the clients'
+   replies to them enable your machine to detect any available shares or
+   services.
+  </para>
 
-  <para
->For broadcasts to work effectively, your machine must be part of the same subnet as all other machines it is querying. If network browsing does not work on your machine or the detected shares and services do not meet your expectations, <phrase os="sles;sled"
->contact your system administrator to</phrase
-> ensure that you are connected to the appropriate subnet. </para>
+  <para>
+   For broadcasts to work effectively, your machine must be part of the same
+   subnet as all other machines it is querying. If network browsing does not
+   work on your machine or the detected shares and services do not meet your
+   expectations, <phrase os="sles;sled">contact your system administrator
+   to</phrase> ensure that you are connected to the appropriate subnet.
+  </para>
 
-  <para
->To allow network browsing, your machine needs to keep several network ports open to send and receive network messages that provide details on the network and the availability of shares and services. <phrase os="sled;sles"
->The standard &productname; is configured for tight security and has a firewall that protects your machine against the Internet. </phrase
-> </para>
+  <para>
+   To allow network browsing, your machine needs to keep several network ports
+   open to send and receive network messages that provide details on the
+   network and the availability of shares and services.
+   <phrase os="sled;sles">The standard &productname; is configured for tight
+   security and has a firewall that protects your machine against the Internet.
+   </phrase>
+  </para>
 
-  <para
-><phrase os="sled;sles"
->To adjust the firewall configuration, you either need to ask your system administrator to put your interface into the internal zone or to disable the firewall entirely (depending on your company's security policy).</phrase
-> If you try to browse a network while a restrictive firewall is running on your machine, &nautilus; warns you that your security restrictions are not allowing it to query the network. </para>
+  <para>
+   <phrase os="sled;sles">To adjust the firewall configuration, you either need
+   to ask your system administrator to put your interface into the internal
+   zone or to disable the firewall entirely (depending on your company's
+   security policy).</phrase> If you try to browse a network while a
+   restrictive firewall is running on your machine, &nautilus; warns you that
+   your security restrictions are not allowing it to query the network.
+  </para>
  </sect1>
  <sect1 xml:id="sec.gnome.network.accshare">
-  <title
->Accessing Network Shares</title>
+  <title>Accessing Network Shares</title>
 
-  <para
->Networking workstations can be set up to share directories. Typically, files and directories are marked to allow users remote access. These are called <emphasis
->network shares</emphasis
->. If your system is configured to access network shares, you can use your file manager to access these shares and browse them just as easily as if they were located on your local machine. Your level of access to the shared directories (whether read-only or write access, as well) is dependent on the permissions granted to you by the owner of the shares. </para>
+  <para>
+   Networking workstations can be set up to share directories. Typically, files
+   and directories are marked to allow users remote access. These are called
+   <emphasis>network shares</emphasis>. If your system is configured to access
+   network shares, you can use your file manager to access these shares and
+   browse them just as easily as if they were located on your local machine.
+   Your level of access to the shared directories (whether read-only or write
+   access, as well) is dependent on the permissions granted to you by the owner
+   of the shares.
+  </para>
 
-  <para
->To access network shares, open &nautilus; and click <guimenu
->Other Locations</guimenu
-> in the sidebar. &nautilus; displays the servers and networks that you can access. Double-click a server or network to access its shares. You might be required to authenticate to the server by providing a user name and password. Common network shares are SFTP-accessible resources (SSH File Transfer Protocol) or Windows shares. </para>
+  <para>
+   To access network shares, open &nautilus; and click <guimenu>Other
+   Locations</guimenu> in the sidebar. &nautilus; displays the servers and
+   networks that you can access. Double-click a server or network to access its
+   shares. You might be required to authenticate to the server by providing a
+   user name and password. Common network shares are SFTP-accessible resources
+   (SSH File Transfer Protocol) or Windows shares.
+  </para>
 
 <!--taroth 2016-06-02 FIXME: check if this has changed and update
    screenshot ('windows network' icon is currently not visible although samba
    packages are installed-->
 
   <figure>
-   <title
->Network File Browser</title>
+   <title>Network File Browser</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="network_browser.png" width="100%" format="PNG"/>
@@ -124,18 +166,14 @@
   </figure>
 
   <procedure>
-   <title
->Adding a Network Place</title>
+   <title>Adding a Network Place</title>
    <step>
-    <para
->Open &nautilus; and click <guimenu
->Other Locations</guimenu
-> in the sidebar. It shows a <guimenu
->Connect to Server</guimenu
-> text box. </para>
+    <para>
+     Open &nautilus; and click <guimenu>Other Locations</guimenu> in the
+     sidebar. It shows a <guimenu>Connect to Server</guimenu> text box.
+    </para>
 <!--<figure>
-     <title
->Connect to the Server Dialog</title>
+     <title>Connect to the Server Dialog</title>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="connect_server_a.png" format="PNG" width="50%"/>
@@ -144,78 +182,77 @@
        <imagedata fileref="connect_server_a.png" format="PNG" width="50%"/>
       </imageobject>
      </mediaobject>
-    </figure
->-->
+    </figure>-->
    </step>
    <step>
-    <para
->Enter the server address. </para>
+    <para>
+     Enter the server address.
+    </para>
    </step>
    <step>
-    <para
->Click <guimenu
->Connect</guimenu
->. </para>
+    <para>
+     Click <guimenu>Connect</guimenu>.
+    </para>
    </step>
   </procedure>
  </sect1>
  <sect1 xml:id="sec.gnome.network.smbshare">
-  <title
->Sharing Directories</title>
+  <title>Sharing Directories</title>
 
-  <para
->Sharing and exchanging documents is a must-have in corporate environments. &nautilus; offers you file sharing, which makes your files and directories available to both Linux and Windows users. </para>
+  <para>
+   Sharing and exchanging documents is a must-have in corporate environments.
+   &nautilus; offers you file sharing, which makes your files and directories
+   available to both Linux and Windows users.
+  </para>
 
   <sect2 xml:id="sec.gnome.network.sharingcomputer">
-   <title
->Enabling Sharing on the Computer</title>
-   <para
->Before you can share a directory, you must enable sharing on your computer. To enable sharing: </para>
+   <title>Enabling Sharing on the Computer</title>
+   <para>
+    Before you can share a directory, you must enable sharing on your computer.
+    To enable sharing:
+   </para>
    <procedure>
     <step>
-     <para
->Start &yast; from the main menu. </para>
+     <para>
+      Start &yast; from the main menu.
+     </para>
     </step>
     <step>
-     <para
->Enter the &rootuser; password. </para>
+     <para>
+      Enter the &rootuser; password.
+     </para>
     </step>
     <step>
-     <para
->In the category <guimenu
->Network Services</guimenu
->, click <guimenu
->Windows Domain Membership</guimenu
->. </para>
+     <para>
+      In the category <guimenu>Network Services</guimenu>, click
+      <guimenu>Windows Domain Membership</guimenu>.
+     </para>
     </step>
     <step>
-     <para
->Click <guimenu
->Allow Users to Share Their Directories</guimenu
->, then click <guimenu
->OK</guimenu
->. </para>
+     <para>
+      Click <guimenu>Allow Users to Share Their Directories</guimenu>, then
+      click <guimenu>OK</guimenu>.
+     </para>
     </step>
    </procedure>
   </sect2>
 
   <sect2 xml:id="sec.gnome.network.sharingfolder">
-   <title
->Enabling Sharing for a Directory</title>
-   <para
->To configure file sharing for a directory: </para>
+   <title>Enabling Sharing for a Directory</title>
+   <para>
+    To configure file sharing for a directory:
+   </para>
    <procedure>
     <step>
-     <para
->Open &nautilus;. </para>
+     <para>
+      Open &nautilus;.
+     </para>
     </step>
     <step>
-     <para
->Right-click a directory, select <guimenu
->Properties</guimenu
-> and click <guimenu
->Share</guimenu
->. </para>
+     <para>
+      Right-click a directory, select <guimenu>Properties</guimenu> and click
+      <guimenu>Share</guimenu>.
+     </para>
      <informalfigure>
       <mediaobject>
        <imageobject role="fo">
@@ -228,120 +265,137 @@
      </informalfigure>
     </step>
     <step>
-     <para
->Select <guimenu
->Share this folder</guimenu
->. </para>
+     <para>
+      Select <guimenu>Share this folder</guimenu>.
+     </para>
     </step>
     <step>
-     <para
->If you want other people to be able to write to the directory, select <guimenu
->Allow others to create and delete files in this folder</guimenu
->. To allow access for people without a user account check <guimenu
->Guest Access</guimenu
->. </para>
+     <para>
+      If you want other people to be able to write to the directory, select
+      <guimenu>Allow others to create and delete files in this
+      folder</guimenu>. To allow access for people without a user account check
+      <guimenu>Guest Access</guimenu>.
+     </para>
     </step>
     <step>
-     <para
->Click <guimenu
->Create Share</guimenu
->. </para>
+     <para>
+      Click <guimenu>Create Share</guimenu>.
+     </para>
     </step>
     <step>
-     <para
->If the directory does not already have the permissions that are required for sharing, a dialog appears. Click <guimenu
->Add the permissions automatically</guimenu
->. </para>
+     <para>
+      If the directory does not already have the permissions that are required
+      for sharing, a dialog appears. Click <guimenu>Add the permissions
+      automatically</guimenu>.
+     </para>
     </step>
    </procedure>
-   <para
->The directory icon changes to indicate that the directory is now shared. </para>
+   <para>
+    The directory icon changes to indicate that the directory is now shared.
+   </para>
    <important>
-    <title
->Samba Domain Browsing and Firewalls</title>
-    <para
->Samba domain browsing only works if your system's firewall is configured accordingly. Either disable the firewall entirely or assign the browsing interface to the internal firewall zone. <phrase os="sles;sled"
->Ask your system administrator how to proceed. </phrase
-> </para>
+    <title>Samba Domain Browsing and Firewalls</title>
+    <para>
+     Samba domain browsing only works if your system's firewall is configured
+     accordingly. Either disable the firewall entirely or assign the browsing
+     interface to the internal firewall zone. <phrase os="sles;sled">Ask your
+     system administrator how to proceed. </phrase>
+    </para>
    </important>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.gnome.network.ad.data">
-  <title
->Managing Windows Files</title>
+  <title>Managing Windows Files</title>
 
-  <para
->With your &productname; machine being an Active Directory client, you can browse, view and manipulate data located on Windows servers. The following examples are the most prominent ones: </para>
+  <para>
+   With your &productname; machine being an Active Directory client, you can
+   browse, view and manipulate data located on Windows servers. The following
+   examples are the most prominent ones:
+  </para>
 
   <variablelist>
    <varlistentry>
-    <term
->Browsing Windows Files with &nautilus;</term>
+    <term>Browsing Windows Files with &nautilus;</term>
     <listitem>
-     <para
->Use &nautilus;'s network browsing features to browse your Windows data. </para>
+     <para>
+      Use &nautilus;'s network browsing features to browse your Windows data.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Viewing Windows Data with &nautilus;</term>
+    <term>Viewing Windows Data with &nautilus;</term>
     <listitem>
-     <para
->Use &nautilus; to display the contents of your Windows user directory as you would for displaying a Linux directory. Create new files and directories on the Windows server. </para>
+     <para>
+      Use &nautilus; to display the contents of your Windows user directory as
+      you would for displaying a Linux directory. Create new files and
+      directories on the Windows server.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Manipulating Windows Data with &gnome; Applications</term>
+    <term>Manipulating Windows Data with &gnome; Applications</term>
     <listitem>
-     <para
->Many &gnome; applications allow you to open files on the Windows server, manipulate them and save them back to the Windows server. </para>
+     <para>
+      Many &gnome; applications allow you to open files on the Windows server,
+      manipulate them and save them back to the Windows server.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Single Sign-On</term>
+    <term>Single Sign-On</term>
     <listitem>
-     <para
->&gnome; applications, including &nautilus;, support Single Sign-On. This means that you do not need to re-authenticate when you access other Windows resources. These can be Web servers, proxy servers or groupware servers like Microsoft Exchange*. Authentication against all these is handled silently in the background using the user name and password you provided when you logged in. </para>
+     <para>
+      &gnome; applications, including &nautilus;, support Single Sign-On. This
+      means that you do not need to re-authenticate when you access other
+      Windows resources. These can be Web servers, proxy servers or groupware
+      servers like Microsoft Exchange*. Authentication against all these is
+      handled silently in the background using the user name and password you
+      provided when you logged in.
+     </para>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para
->To access your Windows data using &nautilus;, proceed as follows: <remark
->taroth 2016-06-02: FIXME: check the procedure below with next Beta/ samba team as the Windows network icon was not available in my installation </remark>
+  <para>
+   To access your Windows data using &nautilus;, proceed as follows:
+   <remark>taroth 2016-06-02: FIXME: check the procedure below with next Beta/
+   samba team as the Windows network icon was not available in my installation
+   </remark>
   </para>
 
   <procedure>
    <step>
-    <para
->Open &nautilus; and click <guimenu
->Other Locations</guimenu
-> in the Places pane. </para>
+    <para>
+     Open &nautilus; and click <guimenu>Other Locations</guimenu> in the Places
+     pane.
+    </para>
    </step>
    <step>
-    <para
->Double-click <guimenu
->Windows Network</guimenu
->. </para>
+    <para>
+     Double-click <guimenu>Windows Network</guimenu>.
+    </para>
    </step>
    <step>
-    <para
->Double-click the icon of the workgroup containing the computer you want to access. </para>
+    <para>
+     Double-click the icon of the workgroup containing the computer you want to
+     access.
+    </para>
    </step>
    <step>
-    <para
->Click the computer’s icon (and authenticate if prompted to do so) and navigate to the shared directory on that computer. </para>
+    <para>
+     Click the computer’s icon (and authenticate if prompted to do so) and
+     navigate to the shared directory on that computer.
+    </para>
    </step>
   </procedure>
 
-  <para
->To create directories in your Windows user directory using &nautilus;, proceed as you would when creating a Linux directory. </para>
+  <para>
+   To create directories in your Windows user directory using &nautilus;,
+   proceed as you would when creating a Linux directory.
+  </para>
  </sect1>
  <sect1 xml:id="sec.gnome.network.ad.printer">
-  <title
->Configuring and Accessing a Windows Network Printer</title>
+  <title>Configuring and Accessing a Windows Network Printer</title>
 
 <!--taroth 2016-06-02: by default, the dialog shows the following message
    "Sorry! The system printing service does not seem to be available", despite
@@ -349,82 +403,74 @@
    however this is IMHO not appropriate for a desktop product, thus filed
    https://bugzilla.suse.com/show_bug.cgi?id=982800-->
 
-  <para
->Being part of a corporate network and authenticating against a Windows Active Directory server, you can access corporate resources such as printers. &gnome; allows you to configure printing from your Linux client to a Windows network printer. </para>
+  <para>
+   Being part of a corporate network and authenticating against a Windows
+   Active Directory server, you can access corporate resources such as
+   printers. &gnome; allows you to configure printing from your Linux client to
+   a Windows network printer.
+  </para>
 
-  <para
->To configure a Windows network printer for use through your Linux workstation, proceed as follows: </para>
+  <para>
+   To configure a Windows network printer for use through your Linux
+   workstation, proceed as follows:
+  </para>
 
   <procedure>
    <step>
-    <para
->Make sure the CUPS printing service is available and automatically started at boot time: </para>
-    <screen
->&prompt.sudo;systemctl enable cups.service
+    <para>
+     <!--taroth 2016-06-10: http://bugzilla.suse.com/show_bug.cgi?id=982800-->
+     Make sure the CUPS printing service is available and automatically started
+     at boot time:
+    </para>
+    <screen>&prompt.sudo;systemctl enable cups.service
 &prompt.sudo;systemctl start cups.service</screen>
    </step>
    <step>
-    <para
->Start the printer configuration by right-clicking the desktop and choosing <guimenu
->Settings</guimenu
-> and then <menuchoice
-> <guimenu
->Devices</guimenu
-> <guimenu
->Printers</guimenu
-> </menuchoice
->. </para>
+    <para>
+     Start the printer configuration by right-clicking the desktop and
+     choosing <guimenu>Settings</guimenu> and then  <menuchoice>
+     <guimenu>Devices</guimenu> <guimenu>Printers</guimenu> </menuchoice>.
+    </para>
    </step>
    <step>
-    <para
->Click <guimenu
->Unlock</guimenu
-> in the upper right corner and enter the <systemitem class="username"
->root</systemitem
-> password. </para>
+    <para>
+     Click <guimenu>Unlock</guimenu> in the upper right corner and enter the
+     <systemitem class="username">root</systemitem> password.
+    </para>
    </step>
    <step>
-    <para
->Click <guimenu
->Add a Printer</guimenu
->. </para>
+    <para>
+     Click <guimenu>Add a Printer</guimenu>.
+    </para>
    </step>
    <step>
-    <para
->Select a Windows printer connected via Samba. </para>
+    <para>
+     Select a Windows printer connected via Samba.
+    </para>
    </step>
 <!-- <step>
     <para>
-     Open the SMB Browser with <guimenu
->Browse</guimenu
-> and select a
+     Open the SMB Browser with <guimenu>Browse</guimenu> and select a
      workgroup, a server and the printer. Either enter the authentication
      credentials or choose to be prompted for authentication each time when
-     accessing the printer. Click <guimenu
->Forward</guimenu
->.
+     accessing the printer. Click <guimenu>Forward</guimenu>.
     </para>
    </step>
    <step>
     <para>
      Choose the printer's manufacturer and the printer model from the list
      and select a driver. The one that is marked with
-     <guimenu
->recommended</guimenu
-> normally produces the best results.
-     Proceed with <guimenu
->Forward</guimenu
-> and provide a name, a
+     <guimenu>recommended</guimenu> normally produces the best results.
+     Proceed with <guimenu>Forward</guimenu> and provide a name, a
      description and a location for the printer. Click
-     <guimenu
->Apply</guimenu
->.
+     <guimenu>Apply</guimenu>.
     </para>
-   </step
->-->
+   </step>-->
   </procedure>
 
-  <para
->To print to the Windows network printer configured above, select it from the list of available printers. </para>
+  <para>
+   To print to the Windows network printer configured above, select it from the
+   list of available printers.
+  </para>
  </sect1>
 </chapter>

@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -23,7 +23,7 @@ msgstr ""
 #. Tag: para
 #: libvirt_networking.xml:11
 #, no-c-format
-msgid "This chapter introduces common networking configurations supported by &libvirt;. It does not depend on the hypervisor used. It is valid for all hypervisors supported by &libvirt;, such as &kvm; or &xen;. These setups can be achieved using both the graphical interface of &vmm; and the command line tool <command>virsh</command>."
+msgid "This chapter introduces common networking configurations supported by &libvirt;. It does not depend on the hypervisor used. It is valid for all hypervisors supported by &libvirt;, such as &kvm; or &xen;. These setups can be achieved using both the graphical interface of &vmm; and the command line tool <command>virsh</command> ."
 msgstr ""
 
 #. Tag: para
@@ -53,7 +53,7 @@ msgstr ""
 #. Tag: para
 #: libvirt_networking.xml:43
 #, no-c-format
-msgid "A virtual network is a computer network which does not consist of a physical network link, but rather uses a virtual network link. Each host can have several virtual networks defined. Virtual networks are based on virtual devices that connect virtual machines inside a hypervisor. They allow outgoing traffic translated to the LAN and are provided with DHCP and DNS services. Virtual networks can be either <emphasis>isolated</emphasis>, or <emphasis>forwarded</emphasis> to a physical network."
+msgid "A virtual network is a computer network which does not consist of a physical network link, but rather uses a virtual network link. Each host can have several virtual networks defined. Virtual networks are based on virtual devices that connect virtual machines inside a hypervisor. They allow outgoing traffic translated to the LAN and are provided with DHCP and DNS services. Virtual networks can be either <emphasis>isolated</emphasis> , or <emphasis>forwarded</emphasis> to a physical network."
 msgstr ""
 
 #. Tag: para
@@ -93,12 +93,6 @@ msgid "Defining Virtual Networks"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:84 libvirt_networking.xml:236 libvirt_networking.xml:263 libvirt_networking.xml:290
-#, no-c-format
-msgid "Start &vmm;. In the list of available connections, right-click the name of the connection for which you need to configure the virtual network, and then select <guimenu>Details</guimenu>."
-msgstr ""
-
-#. Tag: para
 #: libvirt_networking.xml:91
 #, no-c-format
 msgid "In the <guimenu>Connection Details</guimenu> window, click the <guimenu>Virtual Networks</guimenu> tab. You can see the list of all virtual networks available for the current connection. On the right, there are details of the selected virtual network."
@@ -113,19 +107,13 @@ msgstr ""
 #. Tag: para
 #: libvirt_networking.xml:110
 #, no-c-format
-msgid "To add a new virtual network, click <guimenu>Add</guimenu>."
+msgid "To add a new virtual network, click <guimenu>Add</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: libvirt_networking.xml:115
 #, no-c-format
-msgid "Specify a name for the new virtual network and click <guimenu>Forward</guimenu>."
-msgstr ""
-
-#. Tag: title
-#: libvirt_networking.xml:120 libvirt_networking.xml:138 libvirt_networking.xml:185
-#, no-c-format
-msgid "Create virtual network"
+msgid "Specify a name for the new virtual network and click <guimenu>Forward</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -137,7 +125,7 @@ msgstr ""
 #. Tag: para
 #: libvirt_networking.xml:150
 #, no-c-format
-msgid "&libvirt; can provide your virtual network with a DHCP server. If you need it, activate <guimenu>Enable DHCPv4</guimenu>, then type the start and end IP address range of assignable addresses."
+msgid "&libvirt; can provide your virtual network with a DHCP server. If you need it, activate <guimenu>Enable DHCPv4</guimenu> , then type the start and end IP address range of assignable addresses."
 msgstr ""
 
 #. Tag: para
@@ -147,21 +135,27 @@ msgid "To enable static routing for the new virtual network, activate the releva
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:163 libvirt_networking.xml:176
-#, no-c-format
-msgid "Click <guimenu>Forward</guimenu> to proceed."
-msgstr ""
-
-#. Tag: para
 #: libvirt_networking.xml:168
 #, no-c-format
 msgid "To specify IPv6-related options&mdash;network address space, DHCPv6 server, or static route&mdash;activate <guimenu>Enable IPv6 network address space definition</guimenu> and activate the relevant options and fill in the relevant boxes."
 msgstr ""
 
 #. Tag: para
+#: libvirt_networking.xml:176
+#, no-c-format
+msgid "Click <guimenu>Forward</guimenu> to proceed."
+msgstr ""
+
+#. Tag: para
 #: libvirt_networking.xml:181
 #, no-c-format
 msgid "Select whether you want isolated or forwarded virtual network."
+msgstr ""
+
+#. Tag: title
+#: libvirt_networking.xml:185
+#, no-c-format
+msgid "Create virtual network"
 msgstr ""
 
 #. Tag: para
@@ -185,7 +179,7 @@ msgstr ""
 #. Tag: para
 #: libvirt_networking.xml:216
 #, no-c-format
-msgid "Click <guimenu>Finish</guimenu> to create the new virtual network. On the &vmhost;, a new virtual network bridge <literal>virbr<replaceable>X</replaceable></literal> is available, which corresponds to the newly created virtual network. You can check with <command>bridge link</command>. &libvirt; automatically adds iptables rules to allow traffic to/from guests attached to the new <emphasis>virbr<replaceable>X</replaceable></emphasis> device."
+msgid "Click <guimenu>Finish</guimenu> to create the new virtual network. On the &vmhost;, a new virtual network bridge <literal>virbr<replaceable>X</replaceable></literal> is available, which corresponds to the newly created virtual network. You can check with <command>bridge link</command> . &libvirt; automatically adds iptables rules to allow traffic to/from guests attached to the new <emphasis>virbr<replaceable>X</replaceable></emphasis> device."
 msgstr ""
 
 #. Tag: title
@@ -201,15 +195,9 @@ msgid "To start a virtual network that is temporarily stopped, follow these step
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:243 libvirt_networking.xml:270 libvirt_networking.xml:297
-#, no-c-format
-msgid "In the <guimenu>Connection Details</guimenu> window, click the <guimenu>Virtual Networks</guimenu> tab. You can see the list of all virtual networks available for the current connection."
-msgstr ""
-
-#. Tag: para
 #: libvirt_networking.xml:250
 #, no-c-format
-msgid "To start the virtual network, click <guimenu>Start</guimenu>."
+msgid "To start the virtual network, click <guimenu>Start</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -227,7 +215,7 @@ msgstr ""
 #. Tag: para
 #: libvirt_networking.xml:277
 #, no-c-format
-msgid "Select the virtual network to be stopped, then click <guimenu>Stop</guimenu>."
+msgid "Select the virtual network to be stopped, then click <guimenu>Stop</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -243,9 +231,21 @@ msgid "To delete a virtual network from &vmhost;, follow these steps:"
 msgstr ""
 
 #. Tag: para
+#: libvirt_networking.xml:290
+#, no-c-format
+msgid "Start &vmm;. In the list of available connections, right-click the name of the connection for which you need to configure the virtual network, and then select <guimenu>Details</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:297
+#, no-c-format
+msgid "In the <guimenu>Connection Details</guimenu> window, click the <guimenu>Virtual Networks</guimenu> tab. You can see the list of all virtual networks available for the current connection."
+msgstr ""
+
+#. Tag: para
 #: libvirt_networking.xml:304
 #, no-c-format
-msgid "Select the virtual network to be deleted, then click <guimenu>Delete</guimenu>."
+msgid "Select the virtual network to be deleted, then click <guimenu>Delete</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -269,65 +269,63 @@ msgstr ""
 #. Tag: para
 #: libvirt_networking.xml:322
 #, no-c-format
-msgid "Add <literal>libvirt</literal> to <filename>/etc/nsswitch.conf</filename>:"
+msgid "Add <literal>libvirt</literal> to <filename>/etc/nsswitch.conf</filename> :"
 msgstr ""
 
 #. Tag: screen
 #: libvirt_networking.xml:326
 #, no-c-format
-msgid ""
-      "...\n"
+msgid "...\n"
       "hosts:  files libvirt mdns_minimal [NOTFOUND=return] dns\n"
       "..."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:329
+#: libvirt_networking.xml:331
 #, no-c-format
 msgid "If NSCD is running, restart it:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:332
+#: libvirt_networking.xml:334
 #, no-c-format
 msgid "&prompt.sudo;systemctl restart nscd"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:335
+#: libvirt_networking.xml:337
 #, no-c-format
 msgid "Now you can reach the guest system by name from the host."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:338
+#: libvirt_networking.xml:340
 #, no-c-format
-msgid "The NSS module has limited functionality. It reads <filename>/var/lib/libvirt/dnsmasq/*.status</filename> files to find the host name and corresponding IP addresses in a JSON record describing each lease provided by <command>dnsmasq</command>. Host name translation can only be done on those &vmhost;s using a libvirt-managed bridged network backed by <command>dnsmasq</command>."
+msgid "The NSS module has limited functionality. It reads <filename>/var/lib/libvirt/dnsmasq/*.status</filename> files to find the host name and corresponding IP addresses in a JSON record describing each lease provided by <command>dnsmasq</command> . Host name translation can only be done on those &vmhost;s using a libvirt-managed bridged network backed by <command>dnsmasq</command> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:346
+#: libvirt_networking.xml:348
 #, no-c-format
-msgid "For more information, see <link xlink:href=\"http://wiki.libvirt.org/page/NSS_module\"></link>."
+msgid "For more information, see <link xlink:href=\"http://wiki.libvirt.org/page/NSS_module\"/> ."
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:354
+#: libvirt_networking.xml:357
 #, no-c-format
 msgid "Managing Virtual Networks with <command>virsh</command>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:355
+#: libvirt_networking.xml:358
 #, no-c-format
 msgid "You can manage &libvirt;-provided virtual networks with the <command>virsh</command> command line tool. To view all network related <command>virsh</command> commands, run"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:360
+#: libvirt_networking.xml:363
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh help network\n"
+msgid "&prompt.sudo;virsh help network\n"
       "Networking (help keyword 'network'):\n"
       " net-autostart                  autostart a network\n"
       "        net-create                     create a network from an XML file\n"
@@ -346,242 +344,256 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:361
+#: libvirt_networking.xml:379
 #, no-c-format
-msgid "To view brief help information for a specific <command>virsh</command> command, run <command>virsh help <replaceable>VIRSH_COMMAND</replaceable></command>:"
+msgid "To view brief help information for a specific <command>virsh</command> command, run <command>virsh help <replaceable>VIRSH_COMMAND</replaceable></command> :"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:366
+#: libvirt_networking.xml:384
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh help net-create\n"
+msgid "&prompt.sudo;virsh help net-create\n"
       "  NAME\n"
       "    net-create - create a network from an XML file\n"
       "\n"
       "  SYNOPSIS\n"
-      "    net-create &lt;file>\n"
+      "    net-create &lt;file&gt;\n"
       "\n"
       "  DESCRIPTION\n"
       "    Create a network.\n"
       "\n"
       "  OPTIONS\n"
-      "    [--file] &lt;string>  file containing an XML network description"
+      "    [--file] &lt;string&gt;  file containing an XML network description"
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:368
+#: libvirt_networking.xml:397
 #, no-c-format
 msgid "Creating a Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:375
+#: libvirt_networking.xml:404
 #, no-c-format
 msgid "To create a new <emphasis>running</emphasis> virtual network, run"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:378
+#: libvirt_networking.xml:407
 #, no-c-format
 msgid "&prompt.sudo;virsh net-create <replaceable>VNET_DEFINITION.xml</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:379
+#: libvirt_networking.xml:408
 #, no-c-format
 msgid "The <replaceable>VNET_DEFINITION.xml</replaceable> XML file includes the definition of the virtual network that &libvirt; accepts."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:383
+#: libvirt_networking.xml:412
 #, no-c-format
 msgid "To define a new virtual network without activating it, run"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:386
+#: libvirt_networking.xml:415
 #, no-c-format
 msgid "&prompt.sudo;virsh net-define <replaceable>VNET_DEFINITION.xml</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:387
+#: libvirt_networking.xml:416
 #, no-c-format
 msgid "The following examples illustrate definitions of different types of virtual networks."
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:392
+#: libvirt_networking.xml:421
 #, no-c-format
 msgid "NAT Based Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:393
+#: libvirt_networking.xml:422
 #, no-c-format
 msgid "The following configuration allows &vmguest;s outgoing connectivity if it is available on &vmhost;. In the absence of &vmhost; networking, it allows guests to talk directly to each other."
 msgstr ""
 
-#. Tag: screen
-#: libvirt_networking.xml:398
+#. Tag: #text
+#: libvirt_networking.xml:428
 #, no-c-format
-msgid ""
-      "&lt;network>\n"
-      "&lt;name>vnet_nated&lt;/name><co xml:id=\"vnet.xml.name\"/>\n"
-      "&lt;bridge name=\"virbr1\" /><co xml:id=\"vnet.xml.bridge\"/>\n"
-      " &lt;forward mode=\"nat\"/><co xml:id=\"vnet.xml.forward\"/>\n"
-      " &lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\"><co xml:id=\"vnet.xml.ip\"/>\n"
-      "  &lt;dhcp>\n"
-      "   &lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" /><co xml:id=\"vnet.xml.dhcp\"/>\n"
-      "   &lt;host mac=\"52:54:00:c7:92:da\" name=\"host1.testing.com\" \\\n"
-      "    ip=\"192.168.1.23.101\" /><co xml:id=\"vnet.xml.dhcp_host\"/>\n"
-      "   &lt;host mac=\"52:54:00:c7:92:db\" name=\"host2.testing.com\" \\\n"
-      "    ip=\"192.168.1.23.102\" />\n"
-      "   &lt;host mac=\"52:54:00:c7:92:dc\" name=\"host3.testing.com\" \\\n"
-      "    ip=\"192.168.1.23.103\" />\n"
-      "  &lt;/dhcp>\n"
-      " &lt;/ip>\n"
-      "&lt;/network>"
+msgid "&lt;network&gt;&lt;name&gt;vnet_nated&lt;/name&gt;"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_networking.xml:430
+#, no-c-format
+msgid "&lt;bridge name=\"virbr1\" /&gt;"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_networking.xml:431
+#, no-c-format
+msgid "&lt;forward mode=\"nat\"/&gt;"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_networking.xml:432
+#, no-c-format
+msgid "&lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\"&gt;"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_networking.xml:433
+#, no-c-format
+msgid "&lt;dhcp&gt; &lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" /&gt;"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_networking.xml:435
+#, no-c-format
+msgid "&lt;host mac=\"52:54:00:c7:92:da\" name=\"host1.testing.com\" \\ ip=\"192.168.1.23.101\" /&gt;"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_networking.xml:437
+#, no-c-format
+msgid "&lt;host mac=\"52:54:00:c7:92:db\" name=\"host2.testing.com\" \\ ip=\"192.168.1.23.102\" /&gt; &lt;host mac=\"52:54:00:c7:92:dc\" name=\"host3.testing.com\" \\ ip=\"192.168.1.23.103\" /&gt; &lt;/dhcp&gt; &lt;/ip&gt;&lt;/network&gt;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:401
+#: libvirt_networking.xml:447
 #, no-c-format
 msgid "The name of the new virtual network."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:406
+#: libvirt_networking.xml:452
 #, no-c-format
-msgid "The name of the bridge device used to construct the virtual network. When defining a new network with a &lt;forward> mode of \"nat\" or \"route\" (or an isolated network with no &lt;forward> element), &libvirt; will automatically generate a unique name for the bridge device if none is given."
+msgid "The name of the bridge device used to construct the virtual network. When defining a new network with a &lt;forward&gt; mode of \"nat\" or \"route\" (or an isolated network with no &lt;forward&gt; element), &libvirt; will automatically generate a unique name for the bridge device if none is given."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:415
+#: libvirt_networking.xml:461
 #, no-c-format
-msgid "Inclusion of the &lt;forward> element indicates that the virtual network will be connected to the physical LAN. The <literal>mode</literal> attribute specifies the forwarding method. The most common modes are \"nat\" (default, network address translation), \"route\" (direct forwarding to the physical network, no address translation), and \"bridge\" (network bridge configured outside of &libvirt;). If the &lt;forward> element is not specified, the virtual network will be isolated from other networks. For a complete list of forwarding modes, see <link xlink:href=\"http://libvirt.org/formatnetwork.html#elementsConnect\"></link>."
+msgid "Inclusion of the &lt;forward&gt; element indicates that the virtual network will be connected to the physical LAN. The <literal>mode</literal> attribute specifies the forwarding method. The most common modes are \"nat\" (default, network address translation), \"route\" (direct forwarding to the physical network, no address translation), and \"bridge\" (network bridge configured outside of &libvirt;). If the &lt;forward&gt; element is not specified, the virtual network will be isolated from other networks. For a complete list of forwarding modes, see <link xlink:href=\"http://libvirt.org/formatnetwork.html#elementsConnect\"/> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:429
+#: libvirt_networking.xml:475
 #, no-c-format
 msgid "The IP address and netmask for the network bridge."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:434
+#: libvirt_networking.xml:480
 #, no-c-format
 msgid "Enable DHCP server for the virtual network, offering IP addresses ranging from the specified <literal>start</literal> and <literal>end</literal> attribute."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:441
+#: libvirt_networking.xml:487
 #, no-c-format
-msgid "The optional &lt;host> elements specify hosts that will be given names and predefined IP addresses by the built-in DHCP server. Any IPv4 host element must specify the following: the MAC address of the host to be assigned a given name, the IP to be assigned to that host, and the name to be given to that host by the DHCP server. An IPv6 host element differs slightly from that for IPv4: there is no <literal>mac</literal> attribute since a MAC address has no defined meaning in IPv6. Instead, the <literal>name</literal> attribute is used to identify the host to be assigned the IPv6 address. For DHCPv6, the <literal>name</literal> is the plain name of the client host sent by the client to the server. Note that this method of assigning a specific IP address can also be used instead of the <literal>mac</literal> attribute for IPv4."
+msgid "The optional &lt;host&gt; elements specify hosts that will be given names and predefined IP addresses by the built-in DHCP server. Any IPv4 host element must specify the following: the MAC address of the host to be assigned a given name, the IP to be assigned to that host, and the name to be given to that host by the DHCP server. An IPv6 host element differs slightly from that for IPv4: there is no <literal>mac</literal> attribute since a MAC address has no defined meaning in IPv6. Instead, the <literal>name</literal> attribute is used to identify the host to be assigned the IPv6 address. For DHCPv6, the <literal>name</literal> is the plain name of the client host sent by the client to the server. Note that this method of assigning a specific IP address can also be used instead of the <literal>mac</literal> attribute for IPv4."
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:459
+#: libvirt_networking.xml:505
 #, no-c-format
 msgid "Routed Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:460
+#: libvirt_networking.xml:506
 #, no-c-format
 msgid "The following configuration routes traffic from the virtual network to the LAN without applying any NAT. The IP address range must be preconfigured in the routing tables of the router on the &vmhost; network."
 msgstr ""
 
-#. Tag: screen
-#: libvirt_networking.xml:466
+#. Tag: #text
+#: libvirt_networking.xml:513
 #, no-c-format
-msgid ""
-      "&lt;network>\n"
-      " &lt;name>vnet_routed&lt;/name>\n"
-      " &lt;bridge name=\"virbr1\" />\n"
-      " &lt;forward mode=\"route\" dev=\"eth1\"/><co xml:id=\"vnet.xml.route\"/>\n"
-      " &lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\">\n"
-      "  &lt;dhcp>\n"
-      "   &lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" />\n"
-      "  &lt;/dhcp>\n"
-      " &lt;/ip>\n"
-      "&lt;/network>"
+msgid "&lt;network&gt; &lt;name&gt;vnet_routed&lt;/name&gt; &lt;bridge name=\"virbr1\" /&gt; &lt;forward mode=\"route\" dev=\"eth1\"/&gt;"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_networking.xml:517
+#, no-c-format
+msgid "&lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\"&gt; &lt;dhcp&gt; &lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" /&gt; &lt;/dhcp&gt; &lt;/ip&gt;&lt;/network&gt;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:469
+#: libvirt_networking.xml:526
 #, no-c-format
 msgid "The guest traffic may only go out via the <systemitem>eth1</systemitem> network device on the &vmhost;."
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:477
+#: libvirt_networking.xml:534
 #, no-c-format
 msgid "Isolated Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:478
+#: libvirt_networking.xml:535
 #, no-c-format
-msgid "This configuration provides a completely isolated private network. The guests can talk to each other, and to &vmhost;, but cannot reach any other machines on the LAN, as the &lt;forward> element is missing in the XML description."
+msgid "This configuration provides a completely isolated private network. The guests can talk to each other, and to &vmhost;, but cannot reach any other machines on the LAN, as the &lt;forward&gt; element is missing in the XML description."
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:484
+#: libvirt_networking.xml:541
 #, no-c-format
-msgid ""
-      "&lt;network>\n"
-      " &lt;name>vnet_isolated&lt;/name>\n"
-      " &lt;bridge name=\"virbr3\" />\n"
-      " &lt;ip address=\"192.168.152.1\" netmask=\"255.255.255.0\">\n"
-      "  &lt;dhcp>\n"
-      "   &lt;range start=\"192.168.152.2\" end=\"192.168.152.254\" />\n"
-      "  &lt;/dhcp>\n"
-      " &lt;/ip>\n"
-      " &lt;/network>"
+msgid "&lt;network&gt;\n"
+      " &lt;name&gt;vnet_isolated&lt;/name&gt;\n"
+      " &lt;bridge name=\"virbr3\" /&gt;\n"
+      " &lt;ip address=\"192.168.152.1\" netmask=\"255.255.255.0\"&gt;\n"
+      "  &lt;dhcp&gt;\n"
+      "   &lt;range start=\"192.168.152.2\" end=\"192.168.152.254\" /&gt;\n"
+      "  &lt;/dhcp&gt;\n"
+      " &lt;/ip&gt;\n"
+      " &lt;/network&gt;\n"
+      ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:487
+#: libvirt_networking.xml:553
 #, no-c-format
 msgid "Using an Existing Bridge on &vmhost;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:488
+#: libvirt_networking.xml:554
 #, no-c-format
-msgid "This configuration shows how to use an existing &vmhost;'s network bridge <literal>br0</literal>. &vmguest;s are directly connected to the physical network. Their IP addresses will all be on the subnet of the physical network, and there will be no restrictions on incoming or outgoing connections."
+msgid "This configuration shows how to use an existing &vmhost;'s network bridge <literal>br0</literal> . &vmguest;s are directly connected to the physical network. Their IP addresses will all be on the subnet of the physical network, and there will be no restrictions on incoming or outgoing connections."
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:495
+#: libvirt_networking.xml:561
 #, no-c-format
-msgid ""
-      "&lt;network>\n"
-      "        &lt;name>host-bridge&lt;/name>\n"
-      "        &lt;forward mode=\"bridge\"/>\n"
-      "        &lt;bridge name=\"br0\"/>\n"
-      "&lt;/network>"
+msgid "&lt;network&gt;\n"
+      "        &lt;name&gt;host-bridge&lt;/name&gt;\n"
+      "        &lt;forward mode=\"bridge\"/&gt;\n"
+      "        &lt;bridge name=\"br0\"/&gt;\n"
+      "&lt;/network&gt;\n"
+      ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:499
+#: libvirt_networking.xml:570
 #, no-c-format
 msgid "Listing Networks"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:500
+#: libvirt_networking.xml:571
 #, no-c-format
 msgid "To list all virtual networks available to &libvirt;, run:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:503
+#: libvirt_networking.xml:574
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh net-list --all\n"
+msgid "&prompt.sudo;virsh net-list --all\n"
       "\n"
       " Name                 State      Autostart     Persistent\n"
       "----------------------------------------------------------\n"
@@ -592,16 +604,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:506
+#: libvirt_networking.xml:584
 #, no-c-format
 msgid "To list available domains, run:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:509
+#: libvirt_networking.xml:587
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh list\n"
+msgid "&prompt.sudo;virsh list\n"
       " Id    Name                           State\n"
       "----------------------------------------------------\n"
       " 1     nated_sles12sp3                running\n"
@@ -609,16 +620,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:510
+#: libvirt_networking.xml:592
 #, no-c-format
-msgid "To get a list of interfaces of a running domain, run <option>domifaddr <replaceable>DOMAIN</replaceable></option>, or optionally specify the interface to limit the output to this interface. By default, it additionally outputs their IP and MAC addresses:"
+msgid "To get a list of interfaces of a running domain, run <option>domifaddr <replaceable>DOMAIN</replaceable></option> , or optionally specify the interface to limit the output to this interface. By default, it additionally outputs their IP and MAC addresses:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:516
+#: libvirt_networking.xml:598
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh domifaddr nated_sles12sp3 --interface vnet0 --source lease\n"
+msgid "&prompt.sudo;virsh domifaddr nated_sles12sp3 --interface vnet0 --source lease\n"
       " Name       MAC address          Protocol     Address\n"
       "-------------------------------------------------------------------------------\n"
       " vnet0      52:54:00:9e:0d:2b    ipv6         fd00:dead:beef:55::140/64\n"
@@ -626,38 +636,36 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:517
+#: libvirt_networking.xml:603
 #, no-c-format
 msgid "To print brief information of all virtual interfaces associated with the specified domain, run:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:521
+#: libvirt_networking.xml:607
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh domiflist nated_sles12sp3\n"
+msgid "&prompt.sudo;virsh domiflist nated_sles12sp3\n"
       "Interface  Type       Source       Model       MAC\n"
       "---------------------------------------------------------\n"
       "vnet0      network    vnet_nated   virtio      52:54:00:9e:0d:2b"
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:524
+#: libvirt_networking.xml:613
 #, no-c-format
 msgid "Getting Details about a Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:525
+#: libvirt_networking.xml:614
 #, no-c-format
 msgid "To get detailed information about a network, run:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:528
+#: libvirt_networking.xml:617
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh net-info vnet_routed\n"
+msgid "&prompt.sudo;virsh net-info vnet_routed\n"
       "Name:           vnet_routed\n"
       "UUID:           756b48ff-d0c6-4c0a-804c-86c4c832a498\n"
       "Active:         yes\n"
@@ -667,417 +675,413 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:531
+#: libvirt_networking.xml:626
 #, no-c-format
 msgid "Starting a Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:532
+#: libvirt_networking.xml:627
 #, no-c-format
 msgid "To start an inactive network that was already defined, find its name (or unique identifier, UUID) with:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:536
+#: libvirt_networking.xml:631
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh net-list --inactive\n"
+msgid "&prompt.sudo;virsh net-list --inactive\n"
       " Name                 State      Autostart     Persistent\n"
       "----------------------------------------------------------\n"
       " vnet_isolated        inactive   yes           yes"
 msgstr ""
 
-#. Tag: para
-#: libvirt_networking.xml:537 libvirt_networking.xml:549
-#, no-c-format
-msgid "Then run:"
-msgstr ""
-
 #. Tag: screen
-#: libvirt_networking.xml:540
+#: libvirt_networking.xml:638
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh net-start vnet_isolated\n"
+msgid "&prompt.sudo;virsh net-start vnet_isolated\n"
       "Network vnet_isolated started"
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:543
+#: libvirt_networking.xml:642
 #, no-c-format
 msgid "Stopping a Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:544
+#: libvirt_networking.xml:643
 #, no-c-format
 msgid "To stop an active network, find its name (or unique identifier, UUID) with:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:548
+#: libvirt_networking.xml:647
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh net-list --inactive\n"
+msgid "&prompt.sudo;virsh net-list --inactive\n"
       " Name                 State      Autostart     Persistent\n"
       "----------------------------------------------------------\n"
       " vnet_isolated        active     yes           yes"
 msgstr ""
 
-#. Tag: screen
-#: libvirt_networking.xml:552
+#. Tag: para
+#: libvirt_networking.xml:651
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh net-destroy vnet_isolated\n"
+msgid "Then run:"
+msgstr ""
+
+#. Tag: screen
+#: libvirt_networking.xml:654
+#, no-c-format
+msgid "&prompt.sudo;virsh net-destroy vnet_isolated\n"
       "Network vnet_isolated destroyed"
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:555
+#: libvirt_networking.xml:658
 #, no-c-format
 msgid "Removing a Network"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:556
+#: libvirt_networking.xml:659
 #, no-c-format
 msgid "To remove the definition of an inactive network from &vmhost; permanently, run:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:560
+#: libvirt_networking.xml:663
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh net-undefine vnet_isolated\n"
+msgid "&prompt.sudo;virsh net-undefine vnet_isolated\n"
       "Network vnet_isolated has been undefined"
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:565
+#: libvirt_networking.xml:669
 #, no-c-format
 msgid "Bridged Networking"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:567
+#: libvirt_networking.xml:671
 #, no-c-format
 msgid "A network bridge is used to connect two or more network segments. It behaves like a virtual network switch, and guest machines treat it transparently as a physical network interface. Any physical or virtual device can be connected to the bridge."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:574
+#: libvirt_networking.xml:678
 #, no-c-format
 msgid "If there is a network bridge present on &vmhost;, you can connect a &vmguest; to it directly. This provides the &vmguest; with full incoming and outgoing network access."
 msgstr ""
 
 #. Tag: title
-#: libvirt_networking.xml:581
+#: libvirt_networking.xml:685
 #, no-c-format
 msgid "Managing Network Bridges with &yast;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:582
+#: libvirt_networking.xml:686
 #, no-c-format
 msgid "This section includes procedures to add or remove network bridges with &yast;."
 msgstr ""
 
-#. Tag: title
-#: libvirt_networking.xml:587 libvirt_networking.xml:688
-#, no-c-format
-msgid "Adding a Network Bridge"
-msgstr ""
-
 #. Tag: para
-#: libvirt_networking.xml:588
+#: libvirt_networking.xml:692
 #, no-c-format
 msgid "To add a network bridge on &vmhost;, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:593 libvirt_networking.xml:659
+#: libvirt_networking.xml:704
 #, no-c-format
-msgid "Start <menuchoice><guimenu>&yast;</guimenu><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice>."
+msgid "Activate the <guimenu>Overview</guimenu> tab and click <guimenu>Add</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:600
+#: libvirt_networking.xml:710
 #, no-c-format
-msgid "Activate the <guimenu>Overview</guimenu> tab and click <guimenu>Add</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:606
-#, no-c-format
-msgid "Select <guimenu>Bridge</guimenu> from the <guimenu>Device Type</guimenu> list and enter the bridge device interface name in the <guimenu>Configuration Name</guimenu> entry. Proceed with <guimenu>Next</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:614
-#, no-c-format
-msgid "In the <guimenu>Address</guimenu> tab, specify networking details such as DHCP/static IP address, subnet mask or host name."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:618
-#, no-c-format
-msgid "Using <guimenu>Dynamic Address</guimenu> is only useful when also assigning a device to a bridge that is connected to some DHCP server."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:622
-#, no-c-format
-msgid "If you intend to create a virtual bridge that has no connection to a real Ethernet device, use <guimenu>Statically assigned IP Address</guimenu>. In this case, it is a good idea to use addresses from the private IP address ranges, for example, <literal>192.168.x.x</literal> or <literal>10.x.x.x</literal>."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:629
-#, no-c-format
-msgid "To create a bridge that should only serve as a connection between the different guests without connection to the host system, set the IP address to <literal>0.0.0.0</literal> and the subnet mask to <literal>255.255.255.255</literal>. The network scripts handle this special address as an unset IP address."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:638
-#, no-c-format
-msgid "Activate the <guimenu>Bridged Devices</guimenu> tab and activate the network devices you want to include in the network bridge."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:644
-#, no-c-format
-msgid "Click <guimenu>Next</guimenu> to return to the <guimenu>Overview</guimenu> tab and confirm with <guimenu>OK</guimenu>. The new network bridge should be active on &vmhost; now."
-msgstr ""
-
-#. Tag: title
-#: libvirt_networking.xml:653 libvirt_networking.xml:741
-#, no-c-format
-msgid "Deleting a Network Bridge"
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:654
-#, no-c-format
-msgid "To delete an existing network bridge, follow these steps:"
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:666
-#, no-c-format
-msgid "Select the bridge device you want to delete from the list in the <guimenu>Overview</guimenu> tab."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:672
-#, no-c-format
-msgid "Delete the bridge with <guimenu>Delete</guimenu> and confirm with <guimenu>OK</guimenu>."
-msgstr ""
-
-#. Tag: title
-#: libvirt_networking.xml:682
-#, no-c-format
-msgid "Managing Network Bridges from the Command Line"
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:683
-#, no-c-format
-msgid "This section includes procedures to add or remove network bridges using the command line."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:689
-#, no-c-format
-msgid "To add a new network bridge device on &vmhost;, follow these steps:"
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:694
-#, no-c-format
-msgid "Log in as &rootuser; on the &vmhost; where you want to create a new network bridge."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:700
-#, no-c-format
-msgid "Choose a name for the new bridge&mdash;<replaceable>virbr_test</replaceable> in our example&mdash; and run"
-msgstr ""
-
-#. Tag: screen
-#: libvirt_networking.xml:705
-#, no-c-format
-msgid "&prompt.root;ip link add name <replaceable>VIRBR_TEST</replaceable>"
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:708
-#, no-c-format
-msgid "Check if the bridge was created on &vmhost;:"
-msgstr ""
-
-#. Tag: screen
-#: libvirt_networking.xml:711 libvirt_networking.xml:758
-#, no-c-format
-msgid ""
-      "&prompt.root;bridge vlan\n"
-      "[...]\n"
-      "virbr_test  1 PVID Egress Untagged"
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:712
-#, no-c-format
-msgid "<literal>virbr_test</literal> is present, but is not associated with any physical network interface."
+msgid "Select <guimenu>Bridge</guimenu> from the <guimenu>Device Type</guimenu> list and enter the bridge device interface name in the <guimenu>Configuration Name</guimenu> entry. Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: libvirt_networking.xml:718
 #, no-c-format
-msgid "Bring the network bridge up and add a network interface to the bridge:"
-msgstr ""
-
-#. Tag: screen
-#: libvirt_networking.xml:721
-#, no-c-format
-msgid ""
-      "&prompt.root;ip link set virbr_test up\n"
-      "&prompt.root;ip link set eth1 master virbr_test"
-msgstr ""
-
-#. Tag: title
-#: libvirt_networking.xml:723
-#, no-c-format
-msgid "Network Interface Must Be Unused"
+msgid "In the <guimenu>Address</guimenu> tab, specify networking details such as DHCP/static IP address, subnet mask or host name."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:724
+#: libvirt_networking.xml:722
 #, no-c-format
-msgid "You can only enslave a network interface that is not yet used by other network bridge."
+msgid "Using <guimenu>Dynamic Address</guimenu> is only useful when also assigning a device to a bridge that is connected to some DHCP server."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:731
+#: libvirt_networking.xml:726
 #, no-c-format
-msgid "Optionally, enable STP (see <link xlink:href=\"https://en.wikipedia.org/wiki/Spanning_Tree_Protocol\">Spanning Tree Protocol</link>):"
+msgid "If you intend to create a virtual bridge that has no connection to a real Ethernet device, use <guimenu>Statically assigned IP Address</guimenu> . In this case, it is a good idea to use addresses from the private IP address ranges, for example, <literal>192.168.x.x</literal> or <literal>10.x.x.x</literal> ."
 msgstr ""
 
-#. Tag: screen
-#: libvirt_networking.xml:736
+#. Tag: para
+#: libvirt_networking.xml:733
 #, no-c-format
-msgid "&prompt.root;bridge link set dev virbr_test cost 4"
+msgid "To create a bridge that should only serve as a connection between the different guests without connection to the host system, set the IP address to <literal>0.0.0.0</literal> and the subnet mask to <literal>255.255.255.255</literal> . The network scripts handle this special address as an unset IP address."
 msgstr ""
 
 #. Tag: para
 #: libvirt_networking.xml:742
 #, no-c-format
-msgid "To delete an existing network bridge device on &vmhost; from the command line, follow these steps:"
+msgid "Activate the <guimenu>Bridged Devices</guimenu> tab and activate the network devices you want to include in the network bridge."
 msgstr ""
 
 #. Tag: para
 #: libvirt_networking.xml:748
 #, no-c-format
-msgid "Log in as &rootuser; on the &vmhost; where you want to delete an existing network bridge."
+msgid "Click <guimenu>Next</guimenu> to return to the <guimenu>Overview</guimenu> tab and confirm with <guimenu>OK</guimenu> . The new network bridge should be active on &vmhost; now."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:754
+#: libvirt_networking.xml:758
 #, no-c-format
-msgid "List existing network bridges to identify the name of the bridge to remove:"
+msgid "To delete an existing network bridge, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:761
+#: libvirt_networking.xml:763
 #, no-c-format
-msgid "Delete the bridge:"
+msgid "Start <menuchoice><guimenu>&yast;</guimenu><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice> ."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:770
+#, no-c-format
+msgid "Select the bridge device you want to delete from the list in the <guimenu>Overview</guimenu> tab."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:776
+#, no-c-format
+msgid "Delete the bridge with <guimenu>Delete</guimenu> and confirm with <guimenu>OK</guimenu> ."
+msgstr ""
+
+#. Tag: title
+#: libvirt_networking.xml:786
+#, no-c-format
+msgid "Managing Network Bridges from the Command Line"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:787
+#, no-c-format
+msgid "This section includes procedures to add or remove network bridges using the command line."
+msgstr ""
+
+#. Tag: title
+#: libvirt_networking.xml:792
+#, no-c-format
+msgid "Adding a Network Bridge"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:793
+#, no-c-format
+msgid "To add a new network bridge device on &vmhost;, follow these steps:"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:798
+#, no-c-format
+msgid "Log in as &rootuser; on the &vmhost; where you want to create a new network bridge."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:804
+#, no-c-format
+msgid "Choose a name for the new bridge&mdash; <replaceable>virbr_test</replaceable> in our example&mdash; and run"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_networking.xml:764
+#: libvirt_networking.xml:809
 #, no-c-format
-msgid "&prompt.root;ip link delete dev virbr_test"
-msgstr ""
-
-#. Tag: title
-#: libvirt_networking.xml:771
-#, no-c-format
-msgid "Using VLAN Interfaces"
+msgid "&prompt.root;ip link add name <replaceable>VIRBR_TEST</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:772
+#: libvirt_networking.xml:812
 #, no-c-format
-msgid "Sometimes, it is necessary to create a private connection either between two &vmhost;s or between &vmguest; systems. For example, to migrate &vmguest; to hosts in a different network segment, or to create a private bridge that only &vmguest; systems may connect to (even when running on different &vmhost; systems). An easy way to build such connections is to set up VLAN networks."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:780
-#, no-c-format
-msgid "VLAN interfaces are commonly set up on the &vmhost;. They either interconnect the different &vmhost; systems, or they may be set up as a physical interface to an otherwise virtual-only bridge. It is even possible to create a bridge with a VLAN as a physical interface that has no IP address in the &vmhost;. That way, the guest systems have no possibility to access the host over this network."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:788
-#, no-c-format
-msgid "Run the &yast; module <menuchoice><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice>. Follow this procedure to set up the VLAN device:"
-msgstr ""
-
-#. Tag: title
-#: libvirt_networking.xml:794
-#, no-c-format
-msgid "Setting up VLAN Interfaces with &yast;"
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:796
-#, no-c-format
-msgid "Click <guimenu>Add</guimenu> to create a new network interface."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:801
-#, no-c-format
-msgid "In the <guimenu>Hardware Dialog</guimenu>, select <guimenu>Device Type</guimenu> <guimenu>VLAN</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:807
-#, no-c-format
-msgid "Change the value of <guimenu>Configuration Name</guimenu> to the ID of your VLAN. Note that VLAN ID <literal>1</literal> is commonly used for management purposes."
-msgstr ""
-
-#. Tag: para
-#: libvirt_networking.xml:814
-#, no-c-format
-msgid "Click <guimenu>Next</guimenu>."
+msgid "Check if the bridge was created on &vmhost;:"
 msgstr ""
 
 #. Tag: para
 #: libvirt_networking.xml:819
 #, no-c-format
-msgid "Select the interface that the VLAN device should connect to below <guimenu>Real Interface for VLAN</guimenu>. If the desired interface does not appear in the list, first set up this interface without an IP Address."
+msgid "<literal>virbr_test</literal> is present, but is not associated with any physical network interface."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:827
+#: libvirt_networking.xml:825
+#, no-c-format
+msgid "Bring the network bridge up and add a network interface to the bridge:"
+msgstr ""
+
+#. Tag: screen
+#: libvirt_networking.xml:828
+#, no-c-format
+msgid "\n"
+      "&prompt.root;ip link set virbr_test up\n"
+      "&prompt.root;ip link set eth1 master virbr_test\n"
+      ""
+msgstr ""
+
+#. Tag: title
+#: libvirt_networking.xml:833
+#, no-c-format
+msgid "Network Interface Must Be Unused"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:834
+#, no-c-format
+msgid "You can only enslave a network interface that is not yet used by other network bridge."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:841
+#, no-c-format
+msgid "Optionally, enable STP (see <link xlink:href=\"https://en.wikipedia.org/wiki/Spanning_Tree_Protocol\">Spanning Tree Protocol</link> ):"
+msgstr ""
+
+#. Tag: screen
+#: libvirt_networking.xml:846
+#, no-c-format
+msgid "&prompt.root;bridge link set dev virbr_test cost 4"
+msgstr ""
+
+#. Tag: title
+#: libvirt_networking.xml:851
+#, no-c-format
+msgid "Deleting a Network Bridge"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:852
+#, no-c-format
+msgid "To delete an existing network bridge device on &vmhost; from the command line, follow these steps:"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:858
+#, no-c-format
+msgid "Log in as &rootuser; on the &vmhost; where you want to delete an existing network bridge."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:864
+#, no-c-format
+msgid "List existing network bridges to identify the name of the bridge to remove:"
+msgstr ""
+
+#. Tag: screen
+#: libvirt_networking.xml:868
+#, no-c-format
+msgid "&prompt.root;bridge vlan\n"
+      "[...]\n"
+      "virbr_test  1 PVID Egress Untagged\n"
+      ""
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:874
+#, no-c-format
+msgid "Delete the bridge:"
+msgstr ""
+
+#. Tag: screen
+#: libvirt_networking.xml:877
+#, no-c-format
+msgid "&prompt.root;ip link delete dev virbr_test"
+msgstr ""
+
+#. Tag: title
+#: libvirt_networking.xml:884
+#, no-c-format
+msgid "Using VLAN Interfaces"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:885
+#, no-c-format
+msgid "Sometimes, it is necessary to create a private connection either between two &vmhost;s or between &vmguest; systems. For example, to migrate &vmguest; to hosts in a different network segment, or to create a private bridge that only &vmguest; systems may connect to (even when running on different &vmhost; systems). An easy way to build such connections is to set up VLAN networks."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:893
+#, no-c-format
+msgid "VLAN interfaces are commonly set up on the &vmhost;. They either interconnect the different &vmhost; systems, or they may be set up as a physical interface to an otherwise virtual-only bridge. It is even possible to create a bridge with a VLAN as a physical interface that has no IP address in the &vmhost;. That way, the guest systems have no possibility to access the host over this network."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:901
+#, no-c-format
+msgid "Run the &yast; module <menuchoice><guimenu>System</guimenu><guimenu>Network Settings</guimenu></menuchoice> . Follow this procedure to set up the VLAN device:"
+msgstr ""
+
+#. Tag: title
+#: libvirt_networking.xml:907
+#, no-c-format
+msgid "Setting up VLAN Interfaces with &yast;"
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:909
+#, no-c-format
+msgid "Click <guimenu>Add</guimenu> to create a new network interface."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:914
+#, no-c-format
+msgid "In the <guimenu>Hardware Dialog</guimenu> , select <guimenu>Device Type</guimenu> <guimenu>VLAN</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:920
+#, no-c-format
+msgid "Change the value of <guimenu>Configuration Name</guimenu> to the ID of your VLAN. Note that VLAN ID <literal>1</literal> is commonly used for management purposes."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:927
+#, no-c-format
+msgid "Click <guimenu>Next</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:932
+#, no-c-format
+msgid "Select the interface that the VLAN device should connect to below <guimenu>Real Interface for VLAN</guimenu> . If the desired interface does not appear in the list, first set up this interface without an IP Address."
+msgstr ""
+
+#. Tag: para
+#: libvirt_networking.xml:940
 #, no-c-format
 msgid "Select the desired method for assigning an IP address to the VLAN device."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:832
+#: libvirt_networking.xml:945
 #, no-c-format
 msgid "Click <guimenu>Next</guimenu> to finish the configuration."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:837
+#: libvirt_networking.xml:950
 #, no-c-format
 msgid "It is also possible to use the VLAN interface as a physical interface of a bridge. This makes it possible to connect several &vmhost;-only networks and allows to live-migrate &vmguest; systems that are connected to such a network."
 msgstr ""
 
 #. Tag: para
-#: libvirt_networking.xml:843
+#: libvirt_networking.xml:956
 #, no-c-format
-msgid "&yast; does not always allow to set no IP address. However, this may be a desired feature especially if &vmhost;-only networks should be connected. In this case, use the special address <literal>0.0.0.0</literal> with netmask <literal>255.255.255.255</literal>. The system scripts handle this address as no IP address set."
+msgid "&yast; does not always allow to set no IP address. However, this may be a desired feature especially if &vmhost;-only networks should be connected. In this case, use the special address <literal>0.0.0.0</literal> with netmask <literal>255.255.255.255</literal> . The system scripts handle this address as no IP address set."
 msgstr ""
 

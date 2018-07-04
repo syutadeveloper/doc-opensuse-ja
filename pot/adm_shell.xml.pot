@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -26,16 +26,16 @@ msgstr ""
 msgid "Today, many people use computers with a graphical user interface (GUI) like &gnome;. Although they offer lots of features, their use is limited when it comes to the execution of automated tasks. Shells are a good addition to GUIs and this chapter gives you an overview of some aspects of shells, in this case Bash."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: adm_shell.xml:24
+#. Tag: dm:translation
+#: adm_shell.xml:26
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: title
 #: adm_shell.xml:31
 #, no-c-format
-msgid "What is <quote>The Shell</quote>?"
+msgid "What is <quote>The Shell</quote> ?"
 msgstr ""
 
 #. Tag: para
@@ -105,33 +105,15 @@ msgid "Bash Configuration Files for Login Shells"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:92 adm_shell.xml:214
+#: adm_shell.xml:106
 #, no-c-format
-msgid "File"
+msgid "<filename>/etc/profile</filename>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:97 adm_shell.xml:219
+#: adm_shell.xml:119
 #, no-c-format
-msgid "Description"
-msgstr ""
-
-#. Tag: filename
-#: adm_shell.xml:107
-#, no-c-format
-msgid "/etc/profile"
-msgstr ""
-
-#. Tag: para
-#: adm_shell.xml:111 adm_shell.xml:172
-#, no-c-format
-msgid "Do not modify this file, otherwise your modifications can be destroyed during your next update!"
-msgstr ""
-
-#. Tag: filename
-#: adm_shell.xml:120
-#, no-c-format
-msgid "/etc/profile.local"
+msgid "<filename>/etc/profile.local</filename>"
 msgstr ""
 
 #. Tag: para
@@ -140,10 +122,10 @@ msgstr ""
 msgid "Use this file if you extend <filename>/etc/profile</filename>"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:132
+#. Tag: para
+#: adm_shell.xml:131
 #, no-c-format
-msgid "/etc/profile.d/"
+msgid "<filename>/etc/profile.d/</filename>"
 msgstr ""
 
 #. Tag: para
@@ -152,10 +134,10 @@ msgstr ""
 msgid "Contains system-wide configuration files for specific programs"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:144
+#. Tag: para
+#: adm_shell.xml:143
 #, no-c-format
-msgid "~/.profile"
+msgid "<filename>~/.profile</filename>"
 msgstr ""
 
 #. Tag: para
@@ -167,7 +149,7 @@ msgstr ""
 #. Tag: para
 #: adm_shell.xml:157
 #, no-c-format
-msgid "Note that the login shell also sources the configuration files listed under <xref linkend=\"tab.adm.shell.configs.nonloginshells\"/>."
+msgid "Note that the login shell also sources the configuration files listed under <xref linkend=\"tab.adm.shell.configs.nonloginshells\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -176,16 +158,22 @@ msgstr ""
 msgid "Bash Configuration Files for Non-Login Shells"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:168
+#. Tag: para
+#: adm_shell.xml:167
 #, no-c-format
-msgid "/etc/bash.bashrc"
+msgid "<filename>/etc/bash.bashrc</filename>"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:181
+#. Tag: para
+#: adm_shell.xml:172
 #, no-c-format
-msgid "/etc/bash.bashrc.local"
+msgid "Do not modify this file, otherwise your modifications can be destroyed during your next update!"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:180
+#, no-c-format
+msgid "<filename>/etc/bash.bashrc.local</filename>"
 msgstr ""
 
 #. Tag: para
@@ -194,10 +182,10 @@ msgstr ""
 msgid "Use this file to insert your system-wide modifications for Bash only"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:193
+#. Tag: para
+#: adm_shell.xml:192
 #, no-c-format
-msgid "~/.bashrc"
+msgid "<filename>~/.bashrc</filename>"
 msgstr ""
 
 #. Tag: para
@@ -218,10 +206,22 @@ msgstr ""
 msgid "Special Files for Bash"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:229
+#. Tag: para
+#: adm_shell.xml:214
 #, no-c-format
-msgid "~/.bash_history"
+msgid "File"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:219
+#, no-c-format
+msgid "Description"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:228
+#, no-c-format
+msgid "<filename>~/.bash_history</filename>"
 msgstr ""
 
 #. Tag: para
@@ -230,10 +230,10 @@ msgstr ""
 msgid "Contains a list of all commands you have been typing"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:241
+#. Tag: para
+#: adm_shell.xml:240
 #, no-c-format
-msgid "~/.bash_logout"
+msgid "<filename>~/.bash_logout</filename>"
 msgstr ""
 
 #. Tag: para
@@ -242,10 +242,10 @@ msgstr ""
 msgid "Executed when logging out"
 msgstr ""
 
-#. Tag: filename
-#: adm_shell.xml:253
+#. Tag: para
+#: adm_shell.xml:252
 #, no-c-format
-msgid "~/.alias"
+msgid "<filename>~/.alias</filename>"
 msgstr ""
 
 #. Tag: para
@@ -272,757 +272,837 @@ msgstr ""
 msgid "A Shell Script Printing a Text"
 msgstr ""
 
-#. Tag: screen
+#. Tag: #text
 #: adm_shell.xml:282
 #, no-c-format
-msgid ""
-      "#!/bin/sh <co xml:id=\"co.adm.shell.shebang\"/>\n"
-      "# Output the following line: <co xml:id=\"co.adm.shell.comment\"/>\n"
-      "echo \"Hello World\" <co xml:id=\"co.adm.shell.echo\"/>"
+msgid "#!/bin/sh"
 msgstr ""
 
-#. Tag: para
-#: adm_shell.xml:285
+#. Tag: #text
+#: adm_shell.xml:283
 #, no-c-format
-msgid "The first line begins with the <emphasis>Shebang</emphasis> characters (<literal>#!</literal>) which is an indicator that this file is a script. The script is executed with the specified interpreter after the Shebang, in this case <command>/bin/sh</command>."
+msgid "# Output the following line:"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:284
+#, no-c-format
+msgid "echo \"Hello World\""
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:293
+#: adm_shell.xml:287
+#, no-c-format
+msgid "The first line begins with the <emphasis>Shebang</emphasis> characters ( <literal>#!</literal> ) which is an indicator that this file is a script. The script is executed with the specified interpreter after the Shebang, in this case <command>/bin/sh</command> ."
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:295
 #, no-c-format
 msgid "The second line is a comment beginning with the hash sign. It is recommended to comment difficult lines to remember what they do."
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:299
+#: adm_shell.xml:301
 #, no-c-format
 msgid "The third line uses the built-in command <command>echo</command> to print the corresponding text."
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:307
+#: adm_shell.xml:309
 #, no-c-format
 msgid "Before you can run this script you need some prerequisites:"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:313
+#: adm_shell.xml:315
 #, no-c-format
 msgid "Every script should contain a Shebang line (as in the example above). If the line is missing, you need to call the interpreter manually."
 msgstr ""
 
-#. Tag: para
-#: adm_shell.xml:319
+#. Tag: #text
+#: adm_shell.xml:324
 #, no-c-format
-msgid "You can save the script wherever you want. However, it is a good idea to save it in a directory where the shell can find it. The search path in a shell is determined by the environment variable <envar>PATH</envar>. Usually a normal user does not have write access to <filename>/usr/bin</filename>. Therefore it is recommended to save your scripts in the users' directory <filename>~/bin/</filename>. The above example gets the name <filename>hello.sh</filename>."
+msgid "You can save the script wherever you want. However, it is a good idea to save it in a directory where the shell can find it. The search path in a shell is determined by the environment variable"
+msgstr ""
+
+#. Tag: filename
+#: adm_shell.xml:326
+#, no-c-format
+msgid "/usr/bin"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:326
+#, no-c-format
+msgid ". Usually a normal user does not have write access to"
+msgstr ""
+
+#. Tag: filename
+#: adm_shell.xml:327
+#, no-c-format
+msgid "~/bin/"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:327
+#, no-c-format
+msgid ". Therefore it is recommended to save your scripts in the users' directory"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:328
+#, no-c-format
+msgid ". The above example gets the name"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:330
+#: adm_shell.xml:332
 #, no-c-format
 msgid "The script needs executable permissions. Set the permissions with the following command:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:334
+#: adm_shell.xml:336
 #, no-c-format
 msgid "&prompt.user;chmod +x ~/bin/hello.sh"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:338
+#: adm_shell.xml:340
 #, no-c-format
 msgid "If you have fulfilled all of the above prerequisites, you can execute the script in the following ways:"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:346
+#: adm_shell.xml:348
 #, no-c-format
 msgid "As Absolute Path"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:347
+#: adm_shell.xml:349
 #, no-c-format
-msgid "The script can be executed with an absolute path. In our case, it is <command>~/bin/hello.sh</command>."
+msgid "The script can be executed with an absolute path. In our case, it is <command>~/bin/hello.sh</command> ."
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:355
+#: adm_shell.xml:357
 #, no-c-format
 msgid "Everywhere"
 msgstr ""
 
-#. Tag: para
-#: adm_shell.xml:356
+#. Tag: #text
+#: adm_shell.xml:359
 #, no-c-format
-msgid "If the <envar>PATH</envar> environment variable contains the directory where the script is located, you can execute the script with <command>hello.sh</command>."
+msgid "If the"
+msgstr ""
+
+#. Tag: command
+#: adm_shell.xml:361
+#, no-c-format
+msgid "hello.sh"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:361
+#, no-c-format
+msgid "environment variable contains the directory where the script is located, you can execute the script with"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:366
+#: adm_shell.xml:368
 #, no-c-format
 msgid "Redirecting Command Events"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:368
+#: adm_shell.xml:370
 #, no-c-format
 msgid "Each command can use three channels, either for input or output:"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:375
+#: adm_shell.xml:377
 #, no-c-format
 msgid "Standard Output"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:376
+#: adm_shell.xml:378
 #, no-c-format
 msgid "This is the default output channel. Whenever a command prints something, it uses the standard output channel."
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:384
+#: adm_shell.xml:386
 #, no-c-format
 msgid "Standard Input"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:385
+#: adm_shell.xml:387
 #, no-c-format
 msgid "If a command needs input from users or other commands, it uses this channel."
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:393
+#: adm_shell.xml:395
 #, no-c-format
 msgid "Standard Error"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:394
+#: adm_shell.xml:396
 #, no-c-format
 msgid "Commands use this channel for error reporting."
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:401
+#: adm_shell.xml:403
 #, no-c-format
 msgid "To redirect these channels, there are the following possibilities:"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:407
+#. Tag: term
+#: adm_shell.xml:409
 #, no-c-format
-msgid "Command &gt; File"
+msgid "<literal>Command &gt; File</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:410
+#: adm_shell.xml:412
 #, no-c-format
-msgid "Saves the output of the command into a file, an existing file will be deleted. For example, the <command>ls</command> command writes its output into the file <filename>listing.txt</filename>:"
+msgid "Saves the output of the command into a file, an existing file will be deleted. For example, the <command>ls</command> command writes its output into the file <filename>listing.txt</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:415
+#: adm_shell.xml:417
 #, no-c-format
 msgid "&prompt.user;ls &gt; listing.txt"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:419
+#. Tag: term
+#: adm_shell.xml:421
 #, no-c-format
-msgid "Command &gt;&gt; File"
+msgid "<literal>Command &gt;&gt; File</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:422
+#: adm_shell.xml:424
 #, no-c-format
-msgid "Appends the output of the command to a file. For example, the <command>ls</command> command appends its output to the file <filename>listing.txt</filename>:"
+msgid "Appends the output of the command to a file. For example, the <command>ls</command> command appends its output to the file <filename>listing.txt</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:427
+#: adm_shell.xml:429
 #, no-c-format
 msgid "&prompt.user;ls &gt;&gt; listing.txt"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:431
+#. Tag: term
+#: adm_shell.xml:433
 #, no-c-format
-msgid "Command &lt; File"
+msgid "<literal>Command &lt; File</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:434
+#: adm_shell.xml:436
 #, no-c-format
 msgid "Reads the file as input for the given command. For example, the <command>read</command> command reads in the content of the file into the variable:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:439
+#: adm_shell.xml:441
 #, no-c-format
 msgid "&prompt.user;read a &lt; foo"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:443
+#. Tag: term
+#: adm_shell.xml:445
 #, no-c-format
-msgid "Command1 | Command2"
+msgid "<literal>Command1 | Command2</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:446
+#: adm_shell.xml:448
 #, no-c-format
-msgid "Redirects the output of the left command as input for the right command. For example, the <command>cat</command> command outputs the content of the <filename>/proc/cpuinfo</filename> file. This output is used by <command>grep</command> to filter only those lines which contain <literal>cpu</literal>:"
+msgid "Redirects the output of the left command as input for the right command. For example, the <command>cat</command> command outputs the content of the <filename>/proc/cpuinfo</filename> file. This output is used by <command>grep</command> to filter only those lines which contain <literal>cpu</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:453
+#: adm_shell.xml:455
 #, no-c-format
 msgid "&prompt.user;cat /proc/cpuinfo | grep cpu"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:458
+#: adm_shell.xml:460
 #, no-c-format
-msgid "Every channel has a <emphasis>file descriptor</emphasis>: 0 (zero) for standard input, 1 for standard output and 2 for standard error. It is allowed to insert this file descriptor before a <literal>&lt;</literal> or <literal>&gt;</literal> character. For example, the following line searches for a file starting with <filename>foo</filename>, but suppresses its errors by redirecting it to <filename>/dev/null</filename>:"
+msgid "Every channel has a <emphasis>file descriptor</emphasis> : 0 (zero) for standard input, 1 for standard output and 2 for standard error. It is allowed to insert this file descriptor before a <literal>&lt;</literal> or <literal>&gt;</literal> character. For example, the following line searches for a file starting with <filename>foo</filename> , but suppresses its errors by redirecting it to <filename>/dev/null</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:467
+#: adm_shell.xml:469
 #, no-c-format
 msgid "&prompt.user;find / -name \"foo*\" 2&gt;/dev/null"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:470
+#: adm_shell.xml:472
 #, no-c-format
 msgid "Using Aliases"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:472
+#: adm_shell.xml:474
 #, no-c-format
 msgid "An alias is a shortcut definition of one or more commands. The syntax for an alias is:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:477
+#: adm_shell.xml:479
 #, no-c-format
 msgid "alias <replaceable>NAME</replaceable>=<replaceable>DEFINITION</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:479
+#: adm_shell.xml:481
 #, no-c-format
-msgid "For example, the following line defines an alias <command>lt</command> that outputs a long listing (option <option>-l</option>), sorts it by modification time (<option>-t</option>), and prints it in reverse sorted order (<option>-r</option>):"
+msgid "For example, the following line defines an alias <command>lt</command> that outputs a long listing (option <option>-l</option> ), sorts it by modification time ( <option>-t</option> ), and prints it in reverse sorted order ( <option>-r</option> ):"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:485
+#: adm_shell.xml:487
 #, no-c-format
 msgid "&prompt.user;alias lt='ls -ltr'"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:487
+#: adm_shell.xml:489
 #, no-c-format
-msgid "To view all alias definitions, use <command>alias</command>. Remove your alias with <command>unalias</command> and the corresponding alias name."
+msgid "To view all alias definitions, use <command>alias</command> . Remove your alias with <command>unalias</command> and the corresponding alias name."
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:493
+#: adm_shell.xml:495
 #, no-c-format
 msgid "Using Variables in Bash"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:495
+#: adm_shell.xml:497
 #, no-c-format
 msgid "A shell variable can be global or local. Global variables, or environment variables, can be accessed in all shells. In contrast, local variables are visible in the current shell only."
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:501
+#: adm_shell.xml:503
 #, no-c-format
 msgid "To view all environment variables, use the <command>printenv</command> command. If you need to know the value of a variable, insert the name of your variable as an argument:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:507
+#: adm_shell.xml:509
 #, no-c-format
 msgid "&prompt.user;printenv PATH"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:509
+#: adm_shell.xml:511
 #, no-c-format
-msgid "A variable, be it global or local, can also be viewed with <command>echo</command>:"
+msgid "A variable, be it global or local, can also be viewed with <command>echo</command> :"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:514
+#: adm_shell.xml:516
 #, no-c-format
 msgid "&prompt.user;echo $PATH"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:516
+#: adm_shell.xml:518
 #, no-c-format
 msgid "To set a local variable, use a variable name followed by the equal sign, followed by the value:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:521
+#: adm_shell.xml:523
 #, no-c-format
 msgid "&prompt.user;PROJECT=\"SLED\""
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:523
+#: adm_shell.xml:525
 #, no-c-format
-msgid "Do not insert spaces around the equal sign, otherwise you get an error. To set an environment variable, use <command>export</command>:"
+msgid "Do not insert spaces around the equal sign, otherwise you get an error. To set an environment variable, use <command>export</command> :"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:528
+#: adm_shell.xml:530
 #, no-c-format
 msgid "&prompt.user;export NAME=\"tux\""
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:530
+#: adm_shell.xml:532
 #, no-c-format
-msgid "To remove a variable, use <command>unset</command>:"
+msgid "To remove a variable, use <command>unset</command> :"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:534
+#: adm_shell.xml:536
 #, no-c-format
 msgid "&prompt.user;unset NAME"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:536
+#: adm_shell.xml:538
 #, no-c-format
 msgid "The following table contains some common environment variables which can be used in you shell scripts:"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:542
+#: adm_shell.xml:544
 #, no-c-format
 msgid "Useful Environment Variables"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:548
+#: adm_shell.xml:550
 #, no-c-format
 msgid "HOME"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:552
+#: adm_shell.xml:554
 #, no-c-format
 msgid "the home directory of the current user"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:560
+#: adm_shell.xml:562
 #, no-c-format
 msgid "HOST"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:564
+#: adm_shell.xml:566
 #, no-c-format
 msgid "the current host name"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:572
+#: adm_shell.xml:574
 #, no-c-format
 msgid "LANG"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:576
+#: adm_shell.xml:578
 #, no-c-format
 msgid "when a tool is localized, it uses the language from this environment variable. English can also be set to <literal>C</literal>"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:585
+#: adm_shell.xml:587
 #, no-c-format
 msgid "PATH"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:589
+#: adm_shell.xml:591
 #, no-c-format
 msgid "the search path of the shell, a list of directories separated by colon"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:597
+#: adm_shell.xml:599
 #, no-c-format
-msgid "<envar>PS1</envar>"
+msgid "PS1"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:601
+#: adm_shell.xml:603
 #, no-c-format
 msgid "specifies the normal prompt printed before each command"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:609
+#: adm_shell.xml:611
 #, no-c-format
-msgid "<envar>PS2</envar>"
+msgid "PS2"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:613
+#: adm_shell.xml:615
 #, no-c-format
 msgid "specifies the secondary prompt printed when you execute a multi-line command"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:622
+#: adm_shell.xml:624
 #, no-c-format
-msgid "<envar>PWD</envar>"
+msgid "PWD"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:626
+#: adm_shell.xml:628
 #, no-c-format
 msgid "current working directory"
 msgstr ""
 
 #. Tag: envar
-#: adm_shell.xml:634
+#: adm_shell.xml:636
 #, no-c-format
 msgid "USER"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:638
+#: adm_shell.xml:640
 #, no-c-format
 msgid "the current user"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:648
+#: adm_shell.xml:650
 #, no-c-format
 msgid "Using Argument Variables"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:655
+#: adm_shell.xml:657
 #, no-c-format
 msgid "For example, if you have the script <command>foo.sh</command> you can execute it like this:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:659
+#: adm_shell.xml:661
 #, no-c-format
 msgid "&prompt.user;foo.sh \"Tux Penguin\" 2000"
 msgstr ""
 
-#. Tag: para
-#: adm_shell.xml:660
+#. Tag: #text
+#: adm_shell.xml:664
 #, no-c-format
-msgid "To access all the arguments which are passed to your script, you need positional parameters. These are <envar>$1</envar> for the first argument, <envar>$2</envar> for the second, and so on. You can have up to nine parameters. To get the script name, use <envar>$0</envar>."
+msgid "To access all the arguments which are passed to your script, you need positional parameters. These are"
+msgstr ""
+
+#. Tag: envar
+#: adm_shell.xml:664
+#, no-c-format
+msgid "$1"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:665
+#, no-c-format
+msgid "for the first argument,"
+msgstr ""
+
+#. Tag: envar
+#: adm_shell.xml:665
+#, no-c-format
+msgid "$2"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:666
+#, no-c-format
+msgid "for the second, and so on. You can have up to nine parameters. To get the script name, use"
+msgstr ""
+
+#. Tag: envar
+#: adm_shell.xml:666
+#, no-c-format
+msgid "$0"
+msgstr ""
+
+#. Tag: #text
+#: adm_shell.xml:667
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:666
+#: adm_shell.xml:668
 #, no-c-format
 msgid "The following script <command>foo.sh</command> prints all arguments from 1 to 4:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:670
+#: adm_shell.xml:672
 #, no-c-format
-msgid ""
-      "#!/bin/sh\n"
+msgid "#!/bin/sh\n"
       "echo \\\"$1\\\" \\\"$2\\\" \\\"$3\\\" \\\"$4\\\""
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:671
+#: adm_shell.xml:674
 #, no-c-format
 msgid "If you execute this script with the above arguments, you get:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:674
+#: adm_shell.xml:677
 #, no-c-format
 msgid "\"Tux Penguin\" \"2000\" \"\" \"\""
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:738
+#: adm_shell.xml:754
 #, no-c-format
 msgid "Using Variable Substitution"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:739
+#: adm_shell.xml:755
 #, no-c-format
 msgid "Variable substitutions apply a pattern to the content of a variable either from the left or right side. The following list contains the possible syntax forms:"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:746
+#. Tag: term
+#: adm_shell.xml:762
 #, no-c-format
-msgid "${VAR#pattern}"
+msgid "<literal>${VAR#pattern}</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:749
+#: adm_shell.xml:765
 #, no-c-format
 msgid "removes the shortest possible match from the left:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:752
+#: adm_shell.xml:768
 #, no-c-format
-msgid ""
-      "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
+msgid "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
       "&prompt.user;echo ${file#*/}\n"
       "home/tux/book/book.tar.bz2"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:756
+#. Tag: term
+#: adm_shell.xml:774
 #, no-c-format
-msgid "${VAR##pattern}"
+msgid "<literal>${VAR##pattern}</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:759
+#: adm_shell.xml:777
 #, no-c-format
 msgid "removes the longest possible match from the left:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:762
+#: adm_shell.xml:780
 #, no-c-format
-msgid ""
-      "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
+msgid "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
       "&prompt.user;echo ${file##*/}\n"
       "book.tar.bz2"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:766
-#, no-c-format
-msgid "${VAR%pattern}"
-msgstr ""
-
-#. Tag: para
-#: adm_shell.xml:769
-#, no-c-format
-msgid "removes the shortest possible match from the right:"
-msgstr ""
-
-#. Tag: screen
-#: adm_shell.xml:772
-#, no-c-format
-msgid ""
-      "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
-      "&prompt.user;echo ${file%.*}\n"
-      "/home/tux/book/book.tar"
-msgstr ""
-
-#. Tag: literal
-#: adm_shell.xml:776
-#, no-c-format
-msgid "${VAR%%pattern}"
-msgstr ""
-
-#. Tag: para
-#: adm_shell.xml:779
-#, no-c-format
-msgid "removes the longest possible match from the right:"
-msgstr ""
-
-#. Tag: screen
-#: adm_shell.xml:782
-#, no-c-format
-msgid ""
-      "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
-      "&prompt.user;echo ${file%%.*}\n"
-      "/home/tux/book/book"
-msgstr ""
-
-#. Tag: literal
+#. Tag: term
 #: adm_shell.xml:786
 #, no-c-format
-msgid "${VAR/pattern_1/pattern_2}"
+msgid "<literal>${VAR%pattern}</literal>"
 msgstr ""
 
 #. Tag: para
 #: adm_shell.xml:789
 #, no-c-format
-msgid "substitutes the content of <replaceable>VAR</replaceable> from the <replaceable>PATTERN_1</replaceable> with <replaceable>PATTERN_2</replaceable>:"
+msgid "removes the shortest possible match from the right:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:794
+#: adm_shell.xml:792
 #, no-c-format
-msgid ""
-      "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
+msgid "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
+      "&prompt.user;echo ${file%.*}\n"
+      "/home/tux/book/book.tar"
+msgstr ""
+
+#. Tag: term
+#: adm_shell.xml:798
+#, no-c-format
+msgid "<literal>${VAR%%pattern}</literal>"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:801
+#, no-c-format
+msgid "removes the longest possible match from the right:"
+msgstr ""
+
+#. Tag: screen
+#: adm_shell.xml:804
+#, no-c-format
+msgid "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
+      "&prompt.user;echo ${file%%.*}\n"
+      "/home/tux/book/book"
+msgstr ""
+
+#. Tag: term
+#: adm_shell.xml:810
+#, no-c-format
+msgid "<literal>${VAR/pattern_1/pattern_2}</literal>"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:813
+#, no-c-format
+msgid "substitutes the content of <replaceable>VAR</replaceable> from the <replaceable>PATTERN_1</replaceable> with <replaceable>PATTERN_2</replaceable> :"
+msgstr ""
+
+#. Tag: screen
+#: adm_shell.xml:818
+#, no-c-format
+msgid "&prompt.user;file=/home/tux/book/book.tar.bz2\n"
       "&prompt.user;echo ${file/tux/wilber}\n"
       "/home/wilber/book/book.tar.bz2"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:814
+#: adm_shell.xml:840
 #, no-c-format
 msgid "Grouping and Combining Commands"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:816
+#: adm_shell.xml:842
 #, no-c-format
 msgid "Shells allow you to concatenate and group commands for conditional execution. Each command returns an exit code which determines the success or failure of its operation. If it is 0 (zero) the command was successful, everything else marks an error which is specific to the command."
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:823
+#: adm_shell.xml:849
 #, no-c-format
 msgid "The following list shows, how commands can be grouped:"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:829
-#, no-c-format
-msgid "Command1 ; Command2"
-msgstr ""
-
-#. Tag: para
-#: adm_shell.xml:832
-#, no-c-format
-msgid "executes the commands in sequential order. The exit code is not checked. The following line displays the content of the file with <command>cat</command> and then prints its file properties with <command>ls</command> regardless of their exit codes:"
-msgstr ""
-
-#. Tag: screen
-#: adm_shell.xml:838
-#, no-c-format
-msgid "&prompt.user;cat filelist.txt ; ls -l filelist.txt"
-msgstr ""
-
-#. Tag: literal
-#: adm_shell.xml:842
-#, no-c-format
-msgid "Command1 &amp;&amp; Command2"
-msgstr ""
-
-#. Tag: para
-#: adm_shell.xml:845
-#, no-c-format
-msgid "runs the right command, if the left command was successful (logical AND). The following line displays the content of the file and prints its file properties only, when the previous command was successful (compare it with the previous entry in this list):"
-msgstr ""
-
-#. Tag: screen
-#: adm_shell.xml:851
-#, no-c-format
-msgid "&prompt.user;cat filelist.txt &amp;&amp; ls -l filelist.txt"
-msgstr ""
-
-#. Tag: literal
+#. Tag: term
 #: adm_shell.xml:855
 #, no-c-format
-msgid "Command1 || Command2"
+msgid "<literal>Command1 ; Command2</literal>"
 msgstr ""
 
 #. Tag: para
 #: adm_shell.xml:858
 #, no-c-format
-msgid "runs the right command, when the left command has failed (logical OR). The following line creates only a directory in <filename>/home/wilber/bar</filename> when the creation of the directory in <filename>/home/tux/foo</filename> has failed:"
+msgid "executes the commands in sequential order. The exit code is not checked. The following line displays the content of the file with <command>cat</command> and then prints its file properties with <command>ls</command> regardless of their exit codes:"
 msgstr ""
 
 #. Tag: screen
 #: adm_shell.xml:864
 #, no-c-format
-msgid "&prompt.user;mkdir /home/tux/foo || mkdir /home/wilber/bar"
+msgid "&prompt.user;cat filelist.txt ; ls -l filelist.txt"
 msgstr ""
 
-#. Tag: literal
-#: adm_shell.xml:875
+#. Tag: term
+#: adm_shell.xml:868
 #, no-c-format
-msgid "funcname(){ ... }"
+msgid "<literal>Command1 &amp;&amp; Command2</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:878
+#: adm_shell.xml:871
 #, no-c-format
-msgid "creates a shell function. You can use the positional parameters to access its arguments. The following line defines the function <literal>hello</literal> to print a short message:"
+msgid "runs the right command, if the left command was successful (logical AND). The following line displays the content of the file and prints its file properties only, when the previous command was successful (compare it with the previous entry in this list):"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:883
+#: adm_shell.xml:877
 #, no-c-format
-msgid "&prompt.user;hello() { echo \"Hello $1\"; }"
+msgid "&prompt.user;cat filelist.txt &amp;&amp; ls -l filelist.txt"
+msgstr ""
+
+#. Tag: term
+#: adm_shell.xml:881
+#, no-c-format
+msgid "<literal>Command1 || Command2</literal>"
 msgstr ""
 
 #. Tag: para
 #: adm_shell.xml:884
 #, no-c-format
-msgid "You can call this function like this:"
+msgid "runs the right command, when the left command has failed (logical OR). The following line creates only a directory in <filename>/home/wilber/bar</filename> when the creation of the directory in <filename>/home/tux/foo</filename> has failed:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:887
+#: adm_shell.xml:890
 #, no-c-format
-msgid "&prompt.user;hello Tux"
+msgid "&prompt.user;mkdir /home/tux/foo || mkdir /home/wilber/bar"
+msgstr ""
+
+#. Tag: term
+#: adm_shell.xml:901
+#, no-c-format
+msgid "<literal>funcname(){ ... }</literal>"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:888
+#: adm_shell.xml:904
 #, no-c-format
-msgid "which prints:"
+msgid "creates a shell function. You can use the positional parameters to access its arguments. The following line defines the function <literal>hello</literal> to print a short message:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:891
-#, no-c-format
-msgid "Hello Tux"
-msgstr ""
-
-#. Tag: title
-#: adm_shell.xml:897
-#, no-c-format
-msgid "Working with Common Flow Constructs"
-msgstr ""
-
-#. Tag: para
-#: adm_shell.xml:899
-#, no-c-format
-msgid "To control the flow of your script, a shell has <command>while</command>, <command>if</command>, <command>for</command> and <command>case</command> constructs."
-msgstr ""
-
-#. Tag: title
-#: adm_shell.xml:908
-#, no-c-format
-msgid "The if Control Command"
-msgstr ""
-
-#. Tag: para
 #: adm_shell.xml:909
 #, no-c-format
-msgid "The <command>if</command> command is used to check expressions. For example, the following code tests whether the current user is Tux:"
+msgid "&prompt.user;hello() { echo \"Hello $1\"; }"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:910
+#, no-c-format
+msgid "You can call this function like this:"
 msgstr ""
 
 #. Tag: screen
 #: adm_shell.xml:913
 #, no-c-format
-msgid ""
-      "if test $USER = \"tux\"; then\n"
+msgid "&prompt.user;hello Tux"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:914
+#, no-c-format
+msgid "which prints:"
+msgstr ""
+
+#. Tag: screen
+#: adm_shell.xml:917
+#, no-c-format
+msgid "Hello Tux"
+msgstr ""
+
+#. Tag: title
+#: adm_shell.xml:923
+#, no-c-format
+msgid "Working with Common Flow Constructs"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:925
+#, no-c-format
+msgid "To control the flow of your script, a shell has <command>while</command> , <command>if</command> , <command>for</command> and <command>case</command> constructs."
+msgstr ""
+
+#. Tag: title
+#: adm_shell.xml:934
+#, no-c-format
+msgid "The if Control Command"
+msgstr ""
+
+#. Tag: para
+#: adm_shell.xml:935
+#, no-c-format
+msgid "The <command>if</command> command is used to check expressions. For example, the following code tests whether the current user is Tux:"
+msgstr ""
+
+#. Tag: screen
+#: adm_shell.xml:939
+#, no-c-format
+msgid "if test $USER = \"tux\"; then\n"
       "  echo \"Hello Tux.\"\n"
       "else\n"
       "  echo \"You are not Tux.\"\n"
@@ -1030,95 +1110,92 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:914
+#: adm_shell.xml:944
 #, no-c-format
 msgid "The test expression can be as complex or simple as possible. The following expression checks if the file <filename>foo.txt</filename> exists:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:918
+#: adm_shell.xml:948
 #, no-c-format
-msgid ""
-      "if test -e /tmp/foo.txt ; then\n"
+msgid "if test -e /tmp/foo.txt ; then\n"
       "  echo \"Found foo.txt\"\n"
       "fi"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:919
+#: adm_shell.xml:951
 #, no-c-format
 msgid "The test expression can also be abbreviated in square brackets:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:922
+#: adm_shell.xml:954
 #, no-c-format
-msgid ""
-      "if [ -e /tmp/foo.txt ] ; then\n"
+msgid "if [ -e /tmp/foo.txt ] ; then\n"
       "  echo \"Found foo.txt\"\n"
       "fi"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:923
+#: adm_shell.xml:957
 #, no-c-format
-msgid "Find more useful expressions at <link xlink:href=\"https://bash.cyberciti.biz/guide/If..else..fi\"></link>."
+msgid "Find more useful expressions at <link xlink:href=\"https://bash.cyberciti.biz/guide/If..else..fi\"/> ."
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:930
+#: adm_shell.xml:964
 #, no-c-format
 msgid "Creating Loops with the <command>for</command> Command"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:931
+#: adm_shell.xml:965
 #, no-c-format
 msgid "The <command>for</command> loop allows you to execute commands to a list of entries. For example, the following code prints some information about PNG files in the current directory:"
 msgstr ""
 
 #. Tag: screen
-#: adm_shell.xml:936
+#: adm_shell.xml:970
 #, no-c-format
-msgid ""
-      "for i in *.png; do\n"
+msgid "for i in *.png; do\n"
       " ls -l $i\n"
       "done"
 msgstr ""
 
 #. Tag: title
-#: adm_shell.xml:940
+#: adm_shell.xml:976
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:942
+#: adm_shell.xml:978
 #, no-c-format
-msgid "Important information about Bash is provided in the man pages <command>man bash</command>. More about this topic can be found in the following list:"
+msgid "Important information about Bash is provided in the man pages <command>man bash</command> . More about this topic can be found in the following list:"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:949
+#: adm_shell.xml:985
 #, no-c-format
-msgid "<link xlink:href=\"http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html\"></link>&mdash;Bash Guide for Beginners"
+msgid "<link xlink:href=\"http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html\"/> &mdash;Bash Guide for Beginners"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:955
+#: adm_shell.xml:991
 #, no-c-format
-msgid "<link xlink:href=\"http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html\"></link>&mdash;BASH Programming - Introduction HOW-TO"
+msgid "<link xlink:href=\"http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html\"/> &mdash;BASH Programming - Introduction HOW-TO"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:961
+#: adm_shell.xml:997
 #, no-c-format
-msgid "<link xlink:href=\"http://tldp.org/LDP/abs/html/index.html\"></link>&mdash;Advanced Bash-Scripting Guide"
+msgid "<link xlink:href=\"http://tldp.org/LDP/abs/html/index.html\"/> &mdash;Advanced Bash-Scripting Guide"
 msgstr ""
 
 #. Tag: para
-#: adm_shell.xml:967
+#: adm_shell.xml:1003
 #, no-c-format
-msgid "<link xlink:href=\"http://www.grymoire.com/Unix/Sh.html\"></link>&mdash;Sh - the Bourne Shell"
+msgid "<link xlink:href=\"http://www.grymoire.com/Unix/Sh.html\"/> &mdash;Sh - the Bourne Shell"
 msgstr ""
 

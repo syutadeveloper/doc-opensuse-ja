@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -32,10 +32,10 @@ msgid ""
 "configuration file manually."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: net_samba.xml:29
+#. Tag: dm:translation
+#: net_samba.xml:31
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: title
@@ -117,9 +117,9 @@ msgid ""
 "names are not already in use. The NetBIOS interface can be implemented for "
 "different network architectures. An implementation that works relatively "
 "closely with network hardware is called <phrase role=\"productname"
-"\">NetBEUI</phrase>, but this is often called <phrase role=\"productname"
-"\">NetBIOS</phrase>. Network protocols implemented with NetBIOS are IPX from "
-"Novell (NetBIOS via TCP/IP) and TCP/IP."
+"\">NetBEUI</phrase> , but this is often called <phrase role=\"productname"
+"\">NetBIOS</phrase> . Network protocols implemented with NetBIOS are IPX "
+"from Novell (NetBIOS via TCP/IP) and TCP/IP."
 msgstr ""
 
 #. Tag: para
@@ -167,12 +167,6 @@ msgid ""
 "the Samba client."
 msgstr ""
 
-#. Tag: term
-#: net_samba.xml:127
-#, no-c-format
-msgid "<term>Shares</term>"
-msgstr ""
-
 #. Tag: para
 #: net_samba.xml:129
 #, no-c-format
@@ -188,7 +182,7 @@ msgstr ""
 #. Tag: term
 #: net_samba.xml:140
 #, no-c-format
-msgid "<term>DC</term>"
+msgid "DC"
 msgstr ""
 
 #. Tag: para
@@ -211,9 +205,9 @@ msgstr ""
 msgid ""
 "To install a Samba server, start &yast; and select "
 "<menuchoice><guimenu>Software</guimenu> <guimenu>Software Management</"
-"guimenu></menuchoice>. Choose <menuchoice><guimenu>View</guimenu> "
+"guimenu></menuchoice> . Choose <menuchoice><guimenu>View</guimenu> "
 "<guimenu>Patterns</guimenu></menuchoice> and select <guimenu>File Server</"
-"guimenu>. Confirm the installation of the required packages to finish the "
+"guimenu> . Confirm the installation of the required packages to finish the "
 "installation process."
 msgstr ""
 
@@ -229,7 +223,7 @@ msgstr ""
 msgid ""
 "You can start or stop the Samba server automatically (during boot) or "
 "manually. Starting and stopping policy is a part of the &yast; Samba server "
-"configuration described in <xref linkend=\"sec.samba.yast2.conf\"/>."
+"configuration described in <xref linkend=\"sec.samba.yast2.conf\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -238,14 +232,14 @@ msgstr ""
 msgid ""
 "From a command line, stop services required for Samba with "
 "<command>systemctl stop smb nmb</command> and start them with "
-"<command>systemctl start nmb smb</command>. The <literal>smb</literal> "
+"<command>systemctl start nmb smb</command> . The <literal>smb</literal> "
 "service cares about <literal>winbind</literal> if needed."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: title
 #: net_samba.xml:180
 #, no-c-format
-msgid "winbind"
+msgid "<systemitem>winbind</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -289,7 +283,7 @@ msgstr ""
 msgid ""
 "To configure a Samba server, start &yast; and select "
 "<menuchoice><guimenu>Network Services</guimenu><guimenu>Samba Server</"
-"guimenu></menuchoice>."
+"guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: title
@@ -306,7 +300,7 @@ msgid ""
 "Installation</guimenu> dialog starts, prompting you to make a few basic "
 "decisions concerning administration of the server. At the end of the "
 "configuration it prompts for the Samba administrator password "
-"(<guimenu>Samba Root Password</guimenu>). For later starts, the "
+"( <guimenu>Samba Root Password</guimenu> ). For later starts, the "
 "<guimenu>Samba Configuration</guimenu> dialog appears."
 msgstr ""
 
@@ -329,7 +323,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Select an existing name from <guimenu>Workgroup or Domain Name</guimenu> or "
-"enter a new one and click <guimenu>Next</guimenu>."
+"enter a new one and click <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: term
@@ -344,7 +338,7 @@ msgstr ""
 msgid ""
 "In the next step, specify whether your server should act as a primary domain "
 "controller (PDC), backup domain controller (BDC), or not act as a domain "
-"controller. Continue with <guimenu>Next</guimenu>."
+"controller. Continue with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -352,8 +346,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "If you do not want to proceed with a detailed server configuration, confirm "
-"with <guimenu>OK</guimenu>. Then in the final pop-up box, set the "
-"<guimenu>Samba root Password</guimenu>."
+"with <guimenu>OK</guimenu> . Then in the final pop-up box, set the "
+"<guimenu>Samba root Password</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -361,9 +355,9 @@ msgstr ""
 #, no-c-format
 msgid ""
 "You can change all settings later in the <guimenu>Samba Configuration</"
-"guimenu> dialog with the <guimenu>Start-Up</guimenu>, <guimenu>Shares</"
-"guimenu>, <guimenu>Identity</guimenu>, <guimenu>Trusted Domains</guimenu>, "
-"and <guimenu>LDAP Settings</guimenu> tabs."
+"guimenu> dialog with the <guimenu>Start-Up</guimenu> , <guimenu>Shares</"
+"guimenu> , <guimenu>Identity</guimenu> , <guimenu>Trusted Domains</"
+"guimenu> , and <guimenu>LDAP Settings</guimenu> tabs."
 msgstr ""
 
 #. Tag: title
@@ -378,8 +372,8 @@ msgstr ""
 msgid ""
 "During the first start of the Samba server module the <guimenu>Samba "
 "Configuration</guimenu> dialog appears directly after the two initial steps "
-"described in <xref linkend=\"sec.samba.yast2.conf.inst\"/>. Use it to adjust "
-"your Samba server configuration."
+"described in <xref linkend=\"sec.samba.yast2.conf.inst\"/> . Use it to "
+"adjust your Samba server configuration."
 msgstr ""
 
 #. Tag: para
@@ -402,9 +396,9 @@ msgstr ""
 msgid ""
 "In the <guimenu>Start Up</guimenu> tab, configure the start of the Samba "
 "server. To start the service every time your system boots, select "
-"<guimenu>During Boot</guimenu>. To activate manual start, choose "
-"<guimenu>Manually</guimenu>. More information about starting a Samba server "
-"is provided in <xref linkend=\"sec.samba.serv.start\"/>."
+"<guimenu>During Boot</guimenu> . To activate manual start, choose "
+"<guimenu>Manually</guimenu> . More information about starting a Samba server "
+"is provided in <xref linkend=\"sec.samba.serv.start\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -412,16 +406,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In this tab, you can also open ports in your firewall. To do so, select "
-"<guimenu>Open Port in Firewall</guimenu>. If you have multiple network "
+"<guimenu>Open Port in Firewall</guimenu> . If you have multiple network "
 "interfaces, select the network interface for Samba services by clicking "
-"<guimenu>Firewall Details</guimenu>, selecting the interfaces, and clicking "
-"<guimenu>OK</guimenu>."
-msgstr ""
-
-#. Tag: title
-#: net_samba.xml:311 net_samba.xml:530
-#, no-c-format
-msgid "<title>Shares</title>"
+"<guimenu>Firewall Details</guimenu> , selecting the interfaces, and clicking "
+"<guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -431,7 +419,7 @@ msgid ""
 "In the <guimenu>Shares</guimenu> tab, determine the Samba shares to "
 "activate. There are some predefined shares, like homes and printers. Use "
 "<guimenu>Toggle Status</guimenu> to switch between <guimenu>Active</guimenu> "
-"and <guimenu>Inactive</guimenu>. Click <guimenu>Add</guimenu> to add new "
+"and <guimenu>Inactive</guimenu> . Click <guimenu>Add</guimenu> to add new "
 "shares and <guimenu>Delete</guimenu> to delete the selected share."
 msgstr ""
 
@@ -444,9 +432,10 @@ msgid ""
 "own with other users. For example, <systemitem>users</systemitem> for a "
 "local scope or <systemitem>DOMAIN\\Users</systemitem> for a domain scope. "
 "The user also must make sure that the file system permissions allow access. "
-"With <guimenu>Maximum Number of Shares</guimenu>, limit the total amount of "
+"With <guimenu>Maximum Number of Shares</guimenu> , limit the total amount of "
 "shares that may be created. To permit access to user shares without "
-"authentication, enable <guimenu>Allow Guest Access</guimenu>."
+"authentication, enable <guimenu>Allow Guest Access</guimenu> . <!-- Bug "
+"579993 is this option gone? -->"
 msgstr ""
 
 #. Tag: title
@@ -460,14 +449,17 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In the <guimenu>Identity</guimenu> tab, you can determine the domain with "
-"which the host is associated (<guimenu>Base Settings</guimenu>) and whether "
-"to use an alternative host name in the network (<guimenu>NetBIOS Hostname</"
-"guimenu>). It is also possible to use Microsoft Windows Internet Name "
-"Service (WINS) for name resolution. In this case, activate <guimenu>Use WINS "
-"for Hostname Resolution</guimenu> and decide whether to <guimenu>Retrieve "
-"WINS server via DHCP</guimenu>. To set expert global settings or set a user "
-"authentication source, <phrase os=\"sles;osuse\">for example LDAP instead of "
-"TDB database, </phrase>click <guimenu>Advanced Settings</guimenu>."
+"which the host is associated ( <guimenu>Base Settings</guimenu> ) and "
+"whether to use an alternative host name in the network ( <guimenu>NetBIOS "
+"Hostname</guimenu> ). <!-- [x] Retrieve WINS server via DHCP [ ] Use WINS "
+"for Hostname Resolution--> It is also possible to use Microsoft Windows "
+"Internet Name Service (WINS) for name resolution. In this case, activate "
+"<guimenu>Use WINS for Hostname Resolution</guimenu> and decide whether to "
+"<guimenu>Retrieve WINS server via DHCP</guimenu> . To set expert global "
+"settings or set a user authentication source, <phrase os=\"sles;osuse\">for "
+"example LDAP instead of TDB database, </phrase> click <guimenu>Advanced "
+"Settings</guimenu> . <!-- FIXME: check, whether http://bugzilla.suse.com/"
+"show_bug.cgi?id=580102 causes GUI changes. 2010-02-16, ke -->"
 msgstr ""
 
 #. Tag: title
@@ -482,8 +474,8 @@ msgstr ""
 msgid ""
 "To enable users from other domains to access your domain, make the "
 "appropriate settings in the <guimenu>Trusted Domains</guimenu> tab. To add a "
-"new domain, click <guimenu>Add</guimenu>. To remove the selected domain, "
-"click <guimenu>Delete</guimenu>."
+"new domain, click <guimenu>Add</guimenu> . To remove the selected domain, "
+"click <guimenu>Delete</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -496,10 +488,10 @@ msgstr ""
 #: net_samba.xml:393
 #, no-c-format
 msgid ""
-"In the tab <guimenu>LDAP Settings</guimenu>, you can determine the LDAP "
+"In the tab <guimenu>LDAP Settings</guimenu> , you can determine the LDAP "
 "server to use for authentication. To test the connection to your LDAP "
-"server, click <guimenu>Test Connection</guimenu>. To set expert LDAP "
-"settings or use default values, click <guimenu>Advanced Settings</guimenu>."
+"server, click <guimenu>Test Connection</guimenu> . To set expert LDAP "
+"settings or use default values, click <guimenu>Advanced Settings</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -507,7 +499,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "For more information about LDAP configuration, see <xref linkend=\"cha."
-"security.ldap\"/>."
+"security.ldap\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -521,17 +513,11 @@ msgstr ""
 #, no-c-format
 msgid ""
 "If you intend to use Samba as a server, install <systemitem class=\"resource"
-"\">samba</systemitem>. The main configuration file for Samba is <filename>/"
-"etc/samba/smb.conf</filename>. This file can be divided into two logical "
+"\">samba</systemitem> . The main configuration file for Samba is <filename>/"
+"etc/samba/smb.conf</filename> . This file can be divided into two logical "
 "parts. The <literal>[global]</literal> section contains the central and "
 "global settings. The following default sections contain the individual file "
 "and printer shares:"
-msgstr ""
-
-#. Tag: para
-#: net_samba.xml:420
-#, no-c-format
-msgid "<para>[homes]</para>"
 msgstr ""
 
 #. Tag: para
@@ -588,16 +574,10 @@ msgid ""
 "machines can access your Samba server via SMB in a Windows environment."
 msgstr ""
 
-#. Tag: remark
-#: net_samba.xml:462
-#, no-c-format
-msgid "ke: Important entries missing?"
-msgstr ""
-
-#. Tag: literal
+#. Tag: term
 #: net_samba.xml:465
 #, no-c-format
-msgid "workgroup = WORKGROUP"
+msgid "<literal>workgroup = WORKGROUP</literal>"
 msgstr ""
 
 #. Tag: para
@@ -609,15 +589,15 @@ msgid ""
 "networking environment. Your Samba server appears under its DNS name unless "
 "this name has been assigned to some other machine in the network. If the DNS "
 "name is not available, set the server name using "
-"<literal>netbiosname=<replaceable>MYNAME</replaceable></literal>. For more "
+"<literal>netbiosname=<replaceable>MYNAME</replaceable></literal> . For more "
 "details about this parameter, see the <systemitem>smb.conf</systemitem> man "
 "page."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: net_samba.xml:481
 #, no-c-format
-msgid "os level = 20"
+msgid "<literal>os level = 20</literal>"
 msgstr ""
 
 #. Tag: para
@@ -630,7 +610,7 @@ msgid ""
 "interruptions caused by a misconfigured Samba server. More information about "
 "this topic can be found in the Network Browsing chapter of the Samba 3 "
 "Howto; for more information on the Samba 3 Howto, see <xref linkend=\"sec."
-"samba.info\"/>."
+"samba.info\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -640,7 +620,7 @@ msgid ""
 "If no other SMB server is in your network (such as a Windows 2000 server) "
 "and you want the Samba server to keep a list of all systems present in the "
 "local environment, set the <literal>os level</literal> to a higher value "
-"(for example, <literal>65</literal>). Your Samba server is then chosen as "
+"(for example, <literal>65</literal> ). Your Samba server is then chosen as "
 "LMB for your local network."
 msgstr ""
 
@@ -675,10 +655,16 @@ msgid ""
 "If your Windows machines are connected to separate subnets and need to still "
 "be aware of each other, you have to set up a WINS server. To turn a Samba "
 "server into such a WINS server, set the option <literal>wins support = Yes</"
-"literal>. Make sure that only one Samba server of the network has this "
+"literal> . Make sure that only one Samba server of the network has this "
 "setting enabled. The options <literal>wins server</literal> and "
 "<literal>wins support</literal> must never be enabled at the same time in "
 "your <filename>smb.conf</filename> file."
+msgstr ""
+
+#. Tag: title
+#: net_samba.xml:530
+#, no-c-format
+msgid "Shares"
 msgstr ""
 
 #. Tag: para
@@ -686,7 +672,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The following examples illustrate how a CD-ROM drive and the user "
-"directories (<literal>homes</literal>) are made available to the SMB clients."
+"directories ( <literal>homes</literal> ) are made available to the SMB "
+"clients."
 msgstr ""
 
 #. Tag: term
@@ -721,13 +708,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_samba.xml:552
+#: net_samba.xml:555
 #, no-c-format
 msgid "<option>[cdrom]</option> and <option>comment</option>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:555
+#: net_samba.xml:558
 #, no-c-format
 msgid ""
 "The <literal>[cdrom]</literal> section entry is the name of the share that "
@@ -735,22 +722,22 @@ msgid ""
 "<literal>comment</literal> can be added to further describe the share."
 msgstr ""
 
-#. Tag: option
-#: net_samba.xml:564
+#. Tag: term
+#: net_samba.xml:567
 #, no-c-format
-msgid "path = /media/cdrom"
+msgid "<option>path = /media/cdrom</option>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:567
+#: net_samba.xml:570
 #, no-c-format
 msgid ""
 "<option>path</option> exports the directory <filename>/media/cdrom</"
-"filename>."
+"filename> ."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:574
+#: net_samba.xml:577
 #, no-c-format
 msgid ""
 "By means of a very restrictive default configuration, this kind of share is "
@@ -762,14 +749,14 @@ msgid ""
 "<literal>[global]</literal> section."
 msgstr ""
 
-#. Tag: option
-#: net_samba.xml:586
+#. Tag: term
+#: net_samba.xml:589
 #, no-c-format
 msgid "<option>[homes]</option>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:589
+#: net_samba.xml:592
 #, no-c-format
 msgid ""
 "The <option>[homes]</option> share is of special importance here. If the "
@@ -778,13 +765,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:595
+#: net_samba.xml:598
 #, no-c-format
 msgid "[homes] Share"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:596
+#: net_samba.xml:599
 #, no-c-format
 msgid ""
 "[homes]\n"
@@ -796,13 +783,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_samba.xml:600
+#: net_samba.xml:608
 #, no-c-format
-msgid "<term>[homes]</term>"
+msgid "[homes]"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:602
+#: net_samba.xml:610
 #, no-c-format
 msgid ""
 "As long as there is no other share using the share name of the user "
@@ -811,14 +798,14 @@ msgid ""
 "is the user name."
 msgstr ""
 
-#. Tag: option
-#: net_samba.xml:611
+#. Tag: term
+#: net_samba.xml:619
 #, no-c-format
-msgid "valid users = %S"
+msgid "<option>valid users = %S</option>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:614
+#: net_samba.xml:622
 #, no-c-format
 msgid ""
 "<literal>%S</literal> is replaced with the concrete name of the share when a "
@@ -827,42 +814,42 @@ msgid ""
 "user's share are restricted exclusively to that user."
 msgstr ""
 
-#. Tag: option
-#: net_samba.xml:624
+#. Tag: term
+#: net_samba.xml:632
 #, no-c-format
-msgid "browseable = No"
+msgid "<option>browseable = No</option>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:627
+#: net_samba.xml:635
 #, no-c-format
 msgid "This setting makes the share invisible in the network environment."
 msgstr ""
 
-#. Tag: option
-#: net_samba.xml:633
+#. Tag: term
+#: net_samba.xml:641
 #, no-c-format
-msgid "read only = No"
+msgid "<option>read only = No</option>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:636
+#: net_samba.xml:644
 #, no-c-format
 msgid ""
 "By default, Samba prohibits write access to any exported share by means of "
 "the <literal>read only = Yes</literal> parameter. To make a share writable, "
-"set the value <literal>read only = No</literal>, which is synonymous with "
-"<literal>writable = Yes</literal>."
+"set the value <literal>read only = No</literal> , which is synonymous with "
+"<literal>writable = Yes</literal> ."
 msgstr ""
 
-#. Tag: option
-#: net_samba.xml:645
+#. Tag: term
+#: net_samba.xml:653
 #, no-c-format
-msgid "create mask = 0640"
+msgid "<option>create mask = 0640</option>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:648
+#: net_samba.xml:656
 #, no-c-format
 msgid ""
 "Systems that are not based on MS Windows NT do not understand the concept of "
@@ -873,32 +860,32 @@ msgid ""
 "members of the owner's primary group have read permissions. <option>valid "
 "users = %S</option> prevents read access even if the group has read "
 "permissions. For the group to have read or write access, deactivate the line "
-"<option>valid users = %S</option>."
+"<option>valid users = %S</option> ."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:667
+#: net_samba.xml:675
 #, no-c-format
 msgid "Do Not Share <literal>NFS</literal> Mounts with Samba"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:668
+#: net_samba.xml:676
 #, no-c-format
 msgid ""
 "Sharing <literal>NFS</literal> mounts with Samba may result in data loss and "
 "is not supported. Install Samba directly on the file server or consider "
-"using alternatives such as <literal>iSCSI</literal>."
+"using alternatives such as <literal>iSCSI</literal> ."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:676
+#: net_samba.xml:684
 #, no-c-format
 msgid "Security Levels"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:677
+#: net_samba.xml:685
 #, no-c-format
 msgid ""
 "To improve security, each share access can be protected with a password. SMB "
@@ -906,13 +893,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_samba.xml:683
+#: net_samba.xml:691
 #, no-c-format
-msgid "User Level Security (<literal>security = user</literal>)"
+msgid "User Level Security ( <literal>security = user</literal> )"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:685
+#: net_samba.xml:693
 #, no-c-format
 msgid ""
 "This variant introduces the concept of the user to SMB. Each user must "
@@ -922,13 +909,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_samba.xml:707
+#: net_samba.xml:715
 #, no-c-format
-msgid "ADS Level Security (<literal>security = ADS</literal>)"
+msgid "ADS Level Security ( <literal>security = ADS</literal> )"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:709
+#: net_samba.xml:717
 #, no-c-format
 msgid ""
 "In this mode, Samba will act as a domain member in an Active Directory "
@@ -939,24 +926,24 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: net_samba.xml:719
+#: net_samba.xml:727
 #, no-c-format
-msgid "Domain Level Security (<literal>security = domain</literal>)"
+msgid "Domain Level Security ( <literal>security = domain</literal> )"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:721
+#: net_samba.xml:729
 #, no-c-format
 msgid ""
 "This mode will only work correctly if the machine has been joined into a "
 "Windows NT Domain. Samba will try to validate user name and password by "
 "passing it to a Windows NT Primary or Backup Domain Controller. The same way "
 "as a Windows NT Server would do. It expects the encrypted passwords "
-"parameter to be set to <literal>yes</literal>."
+"parameter to be set to <literal>yes</literal> ."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:731
+#: net_samba.xml:739
 #, no-c-format
 msgid ""
 "The selection of share, user, server, or domain level security applies to "
@@ -967,22 +954,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:738
+#: net_samba.xml:746
 #, no-c-format
 msgid ""
 "More information about this subject can be found in the Samba 3 HOWTO. For "
 "multiple servers on one system, pay attention to the options "
-"<option>interfaces</option> and <option>bind interfaces only</option>."
+"<option>interfaces</option> and <option>bind interfaces only</option> ."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:747
+#: net_samba.xml:755
 #, no-c-format
 msgid "Configuring Clients"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:749
+#: net_samba.xml:757
 #, no-c-format
 msgid ""
 "Clients can only access the Samba server via TCP/IP. NetBEUI and NetBIOS via "
@@ -990,25 +977,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:755
+#: net_samba.xml:763
 #, no-c-format
 msgid "Configuring a Samba Client with &yast;"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:756
+#: net_samba.xml:764
 #, no-c-format
 msgid ""
 "Configure a Samba client to access resources (files or printers) on the "
 "Samba or Windows server. Enter the NT or Active Directory domain or "
 "workgroup in the dialog <menuchoice> <guimenu>Network Services</guimenu> "
-"<guimenu>Windows Domain Membership</guimenu></menuchoice>. If you activate "
-"<guimenu>Also Use SMB Information for Linux Authentication</guimenu>, the "
+"<guimenu>Windows Domain Membership</guimenu></menuchoice> . If you activate "
+"<guimenu>Also Use SMB Information for Linux Authentication</guimenu> , the "
 "user authentication runs over the Samba, NT or Kerberos server."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:764
+#: net_samba.xml:772
 #, no-c-format
 msgid ""
 "Click <guimenu>Expert Settings</guimenu> for advanced configuration options. "
@@ -1019,7 +1006,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:772
+#: net_samba.xml:780
 #, no-c-format
 msgid ""
 "After completing all settings, confirm the dialog to finish the "
@@ -1027,13 +1014,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:779
+#: net_samba.xml:787
 #, no-c-format
 msgid "Samba as Login Server"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:781
+#: net_samba.xml:789
 #, no-c-format
 msgid ""
 "In networks where predominantly Windows clients are found, it is often "
@@ -1042,17 +1029,17 @@ msgid ""
 "controller (PDC). You can use a Windows NT server configured as PDC, but "
 "this task can also be done with a Samba server. The entries that must be "
 "made in the <literal>[global]</literal> section of <filename>smb.conf</"
-"filename> are shown in <xref linkend=\"dat.samba.smb.conf.dom\"/>."
+"filename> are shown in <xref linkend=\"dat.samba.smb.conf.dom\"/> ."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:793
+#: net_samba.xml:801
 #, no-c-format
 msgid "Global Section in smb.conf"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:794
+#: net_samba.xml:802
 #, no-c-format
 msgid ""
 "[global]\n"
@@ -1062,18 +1049,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:797
+#: net_samba.xml:808
 #, no-c-format
 msgid ""
 "It is necessary to prepare user accounts and passwords in an encryption "
 "format that conforms with Windows. Do this with the command "
-"<command>smbpasswd</command> <option>-a name</option>. Create the domain "
+"<command>smbpasswd</command> <option>-a name</option> . Create the domain "
 "account for the computers, required by the Windows domain concept, with the "
 "following commands:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:805
+#: net_samba.xml:816
 #, no-c-format
 msgid ""
 "useradd hostname\\$\n"
@@ -1081,27 +1068,28 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:807
+#: net_samba.xml:819
 #, no-c-format
 msgid ""
 "With the <command>useradd</command> command, a dollar sign is added. The "
 "command <command>smbpasswd</command> inserts this automatically when the "
 "parameter <option>-m</option> is used. The commented configuration example "
-"(<filename>/usr/share/doc/packages/samba/examples/smb.conf.SUSE</filename>) "
-"contains settings that automate this task."
+"( <filename>/usr/share/doc/packages/samba/examples/smb.conf.SUSE</"
+"filename> ) contains settings that automate this task."
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:815
+#: net_samba.xml:827
 #, no-c-format
 msgid ""
 "add machine script = /usr/sbin/useradd -g nogroup -c \"NT Machine Account\" "
 "\\\n"
-"-s /bin/false %m\\$"
+"-s /bin/false %m\\$\n"
+"     "
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:817
+#: net_samba.xml:831
 #, no-c-format
 msgid ""
 "To make sure that Samba can execute this script correctly, choose a Samba "
@@ -1112,19 +1100,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:825
+#: net_samba.xml:839
 #, no-c-format
 msgid "net groupmap add ntgroup=\"Domain Admins\" unixgroup=ntadmin"
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:828
+#: net_samba.xml:842
 #, no-c-format
 msgid "Samba Server in the Network with Active Directory"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:830
+#: net_samba.xml:844
 #, no-c-format
 msgid ""
 "If you run Linux servers and Windows servers together, you can build two "
@@ -1135,27 +1123,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:838
+#: net_samba.xml:852
 #, no-c-format
 msgid "To join an AD domain proceed as follows:"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:844
+#: net_samba.xml:858
 #, no-c-format
 msgid "Log in as &rootuser; and start &yast;."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:849
+#: net_samba.xml:863
 #, no-c-format
 msgid ""
 "Start <menuchoice> <guimenu>Network Services</guimenu> <guimenu>Windows "
-"Domain Membership</guimenu> </menuchoice>."
+"Domain Membership</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:855
+#: net_samba.xml:869
 #, no-c-format
 msgid ""
 "Enter the domain to join at <guimenu>Domain or Workgroup</guimenu> in the "
@@ -1163,13 +1151,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:860
+#: net_samba.xml:874
 #, no-c-format
 msgid "Determining Windows Domain Membership"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:872
+#: net_samba.xml:886
 #, no-c-format
 msgid ""
 "Check <guimenu>Also Use SMB Information for Linux Authentication</guimenu> "
@@ -1177,22 +1165,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:878
+#: net_samba.xml:892
 #, no-c-format
 msgid ""
 "Click <guimenu>OK</guimenu> and confirm the domain join when prompted for it."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:884
+#: net_samba.xml:898
 #, no-c-format
 msgid ""
 "Provide the password for the Windows Administrator on the AD server and "
-"click <guimenu>OK</guimenu>."
+"click <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:888
+#: net_samba.xml:902
 #, no-c-format
 msgid ""
 "Your server is now set up to pull in all authentication data from the Active "
@@ -1200,13 +1188,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:896
+#: net_samba.xml:910
 #, no-c-format
 msgid "Identity Mapping"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:897
+#: net_samba.xml:911
 #, no-c-format
 msgid ""
 "In an environment with more than one Samba server, UIDs and GIDs will not be "
@@ -1214,17 +1202,17 @@ msgid ""
 "on the order in which they first log in, which results in UID conflicts "
 "across servers. To fix this, you need to use identity mapping. See <link "
 "xlink:href=\"https://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/"
-"idmapper.html\"></link> for more details."
+"idmapper.html\"/> for more details."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:909
+#: net_samba.xml:923
 #, no-c-format
 msgid "Advanced Topics"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:911
+#: net_samba.xml:925
 #, no-c-format
 msgid ""
 "This section introduces more advanced techniques to manage both the client "
@@ -1232,13 +1220,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:917
+#: net_samba.xml:931
 #, no-c-format
 msgid "Transparent File Compression on Btrfs"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:918
+#: net_samba.xml:932
 #, no-c-format
 msgid ""
 "Samba allows clients to remotely manipulate file and directory compression "
@@ -1249,13 +1237,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:926
+#: net_samba.xml:940
 #, no-c-format
 msgid "Windows Explorer <guimenu>Advanced Attributes</guimenu> Dialog"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:936
+#: net_samba.xml:950
 #, no-c-format
 msgid ""
 "Files flagged for compression are transparently compressed and decompressed "
@@ -1267,7 +1255,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:944
+#: net_samba.xml:958
 #, no-c-format
 msgid ""
 "Windows Explorer presents compressed files and directories visually "
@@ -1275,49 +1263,49 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:949
+#: net_samba.xml:963
 #, no-c-format
 msgid "Windows Explorer Directory Listing with Compressed Files"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:959
+#: net_samba.xml:973
 #, no-c-format
 msgid "You can enable Samba share compression either manually by adding"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:962
+#: net_samba.xml:976
 #, no-c-format
 msgid "vfs objects = btrfs"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:963
+#: net_samba.xml:977
 #, no-c-format
 msgid ""
-"to the share configuration in <filename>/etc/samba/smb.conf</filename>, or "
+"to the share configuration in <filename>/etc/samba/smb.conf</filename> , or "
 "using &yast;: <menuchoice><guimenu>Network Services</guimenu><guimenu>Samba "
-"Server</guimenu><guimenu>Add</guimenu></menuchoice>, and checking "
-"<guimenu>Utilize Btrfs Features</guimenu>."
+"Server</guimenu><guimenu>Add</guimenu></menuchoice> , and checking "
+"<guimenu>Utilize Btrfs Features</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:969
+#: net_samba.xml:983
 #, no-c-format
 msgid ""
 "A general overview of compression on Btrfs can be found in <xref linkend="
-"\"sec.filesystems.major.btrfs.compress\"/>."
+"\"sec.filesystems.major.btrfs.compress\"/> ."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:976
+#: net_samba.xml:990
 #, no-c-format
 msgid "Snapshots"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:977
+#: net_samba.xml:991
 #, no-c-format
 msgid ""
 "Snapshots, also called Shadow Copies, are copies of the state of a file "
@@ -1328,13 +1316,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:986
+#: net_samba.xml:1000
 #, no-c-format
 msgid "Previous Versions"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:987
+#: net_samba.xml:1001
 #, no-c-format
 msgid ""
 "Snapshots on a Samba server can be exposed to remote Windows clients as file "
@@ -1342,7 +1330,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:991
+#: net_samba.xml:1005
 #, no-c-format
 msgid ""
 "To enable snapshots on a Samba server, the following conditions must be "
@@ -1350,13 +1338,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:997
+#: net_samba.xml:1011
 #, no-c-format
 msgid "The SMB network share resides on a Btrfs subvolume."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1002
+#: net_samba.xml:1016
 #, no-c-format
 msgid ""
 "The SMB network share path has a related snapper configuration file. You can "
@@ -1364,7 +1352,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1006
+#: net_samba.xml:1020
 #, no-c-format
 msgid ""
 "&prompt.sudo;snapper -c &lt;cfg_name&gt; create-config <option>/path/to/"
@@ -1372,38 +1360,38 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1007
+#: net_samba.xml:1021
 #, no-c-format
-msgid "For more information on snapper, see <xref linkend=\"cha.snapper\"/>."
+msgid "For more information on snapper, see <xref linkend=\"cha.snapper\"/> ."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1012
+#: net_samba.xml:1026
 #, no-c-format
 msgid ""
 "The snapshot directory tree must allow access for relevant users. For more "
 "information, see the PERMISSIONS section of the vfs_snapper manual page "
-"(<command>man 8 vfs_snapper</command>)."
+"( <command>man 8 vfs_snapper</command> )."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1019
+#: net_samba.xml:1033
 #, no-c-format
 msgid ""
 "To support remote snapshots, you need to modify the <filename>/etc/samba/smb."
 "conf</filename> file. You can do it either with <menuchoice><guimenu>&yast;</"
 "guimenu><guimenu>Network Services</guimenu><guimenu>Samba Server</guimenu></"
-"menuchoice>, or manually by enhancing the relevant share section with"
+"menuchoice> , or manually by enhancing the relevant share section with"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1026
+#: net_samba.xml:1040
 #, no-c-format
 msgid "vfs objects = snapper"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1027
+#: net_samba.xml:1041
 #, no-c-format
 msgid ""
 "Note that you need to restart the Samba service for manual <filename>smb."
@@ -1411,19 +1399,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1031
+#: net_samba.xml:1045
 #, no-c-format
 msgid "&prompt.sudo;systemctl restart nmb smb"
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1033
+#: net_samba.xml:1047
 #, no-c-format
 msgid "Adding a New Samba Share with Snapshotting Enabled"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1043
+#: net_samba.xml:1057
 #, no-c-format
 msgid ""
 "After being configured, snapshots created by snapper for the Samba share "
@@ -1432,19 +1420,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1049
+#: net_samba.xml:1063
 #, no-c-format
 msgid "The <guimenu>Previous Versions</guimenu> tab in Windows Explorer"
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1061
+#: net_samba.xml:1075
 #, no-c-format
 msgid "Remote Share Snapshots"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1062
+#: net_samba.xml:1076
 #, no-c-format
 msgid ""
 "By default, snapshots can only be created and deleted on the Samba server "
@@ -1453,7 +1441,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1067
+#: net_samba.xml:1081
 #, no-c-format
 msgid ""
 "Samba can be configured to process share snapshot creation and deletion "
@@ -1461,16 +1449,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1072
+#: net_samba.xml:1086
 #, no-c-format
 msgid ""
 "In addition to the configuration and prerequisites documented in <xref "
-"linkend=\"sec.samba.advanced.snapshots.client\"/>, the following global "
-"configuration is required in <filename>/etc/samba/smb.conf</filename>:"
+"linkend=\"sec.samba.advanced.snapshots.client\"/> , the following global "
+"configuration is required in <filename>/etc/samba/smb.conf</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1077
+#: net_samba.xml:1091
 #, no-c-format
 msgid ""
 "[global]\n"
@@ -1480,24 +1468,24 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1078
+#: net_samba.xml:1095
 #, no-c-format
 msgid ""
 "FSRVP clients, including Samba's <command>rpcclient</command> and Windows "
-"Server 2012 <command>DiskShadow.exe</command>, can then instruct Samba to "
+"Server 2012 <command>DiskShadow.exe</command> , can then instruct Samba to "
 "create or delete a snapshot for a given share, and expose the snapshot as a "
 "new share."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1086
+#: net_samba.xml:1103
 #, no-c-format
 msgid ""
 "Managing Snapshots Remotely from Linux with <command>rpcclient</command>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1087
+#: net_samba.xml:1104
 #, no-c-format
 msgid ""
 "The <systemitem>samba-client</systemitem> package contains an FSRVP client "
@@ -1508,7 +1496,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1095
+#: net_samba.xml:1112
 #, no-c-format
 msgid ""
 "Using <command>rpcclient</command> to Request a Windows Server 2012 Share "
@@ -1516,7 +1504,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1096
+#: net_samba.xml:1113
 #, no-c-format
 msgid ""
 "Connect to <literal>win-server.example.com</literal> server as an "
@@ -1524,7 +1512,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1100
+#: net_samba.xml:1117
 #, no-c-format
 msgid ""
 "&prompt.root;rpcclient -U '<replaceable>EXAMPLE</replaceable>"
@@ -1534,30 +1522,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1101
+#: net_samba.xml:1119
 #, no-c-format
-msgid "Check that the SMB share is visible for <command>rpcclient</command>:"
-msgstr ""
-
-#. Tag: screen
-#: net_samba.xml:1104 net_samba.xml:1124
-#, no-c-format
-msgid ""
-"&prompt.root;rpcclient $&gt; netshareenum\n"
-"netname: windows_server_2012_share\n"
-"remark:\n"
-"path:   C:\\Shares\\windows_server_2012_share\n"
-"password:       (null)"
+msgid "Check that the SMB share is visible for <command>rpcclient</command> :"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1105
+#: net_samba.xml:1127
 #, no-c-format
 msgid "Check that the SMB share supports snapshot creation:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1108
+#: net_samba.xml:1130
 #, no-c-format
 msgid ""
 "&prompt.root;rpcclient $&gt; fss_is_path_sup windows_server_2012_share \\\n"
@@ -1565,13 +1542,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1109
+#: net_samba.xml:1132
 #, no-c-format
 msgid "Request the creation of a share snapshot:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1112
+#: net_samba.xml:1135
 #, no-c-format
 msgid ""
 "&prompt.root;rpcclient $&gt; fss_create_expose backup ro "
@@ -1589,13 +1566,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1113
+#: net_samba.xml:1144
 #, no-c-format
 msgid "Confirm that the snapshot share is exposed by the server:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1116
+#: net_samba.xml:1147
 #, no-c-format
 msgid ""
 "&prompt.root;rpcclient $&gt; netshareenum\n"
@@ -1612,13 +1589,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1117
+#: net_samba.xml:1157
 #, no-c-format
 msgid "Attempt to delete the snapshot share:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1120
+#: net_samba.xml:1160
 #, no-c-format
 msgid ""
 "&prompt.root;rpcclient $&gt; fss_delete windows_server_2012_share \\\n"
@@ -1629,13 +1606,24 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1121
+#: net_samba.xml:1164
 #, no-c-format
 msgid "Confirm that the snapshot share has been removed by the server:"
 msgstr ""
 
+#. Tag: screen
+#: net_samba.xml:1167
+#, no-c-format
+msgid ""
+"&prompt.root;rpcclient $&gt; netshareenum\n"
+"netname: windows_server_2012_share\n"
+"remark:\n"
+"path:   C:\\Shares\\windows_server_2012_share\n"
+"password:       (null)"
+msgstr ""
+
 #. Tag: title
-#: net_samba.xml:1128
+#: net_samba.xml:1175
 #, no-c-format
 msgid ""
 "Managing Snapshots Remotely from Windows with <command>DiskShadow.exe</"
@@ -1643,51 +1631,83 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1129
+#: net_samba.xml:1176
 #, no-c-format
 msgid ""
 "You can manage snapshots of SMB shares on the Linux Samba server from the "
 "Windows environment acting as a client as well. Windows Server 2012 includes "
 "the <command>DiskShadow.exe</command> utility that can manage remote shares "
 "similar to the <command>rpcclient</command> described in <xref linkend=\"sec."
-"samba.advanced.snapshots.client.linux\"/>. Note that you need to carefully "
+"samba.advanced.snapshots.client.linux\"/> . Note that you need to carefully "
 "set up the Samba server first."
 msgstr ""
 
-#. Tag: para
-#: net_samba.xml:1137
+#. Tag: #text
+#: net_samba.xml:1186
 #, no-c-format
 msgid ""
 "Following is an example procedure to set up the Samba server so that the "
-"Windows Server client can manage its share's snapshots. Note that "
-"<replaceable>EXAMPLE</replaceable> is the Active Directory domain used in "
-"the testing environment, <uri>fsrvp-server.example.com</uri> is the host "
-"name of the Samba server, and <filename>/srv/smb</filename> is the path to "
-"the SMB share."
+"Windows Server client can manage its share's snapshots. Note that"
+msgstr ""
+
+#. Tag: replaceable
+#: net_samba.xml:1186
+#, no-c-format
+msgid "EXAMPLE"
+msgstr ""
+
+#. Tag: uri
+#: net_samba.xml:1188
+#, no-c-format
+msgid "fsrvp-server.example.com"
+msgstr ""
+
+#. Tag: #text
+#: net_samba.xml:1188
+#, no-c-format
+msgid "is the Active Directory domain used in the testing environment,"
+msgstr ""
+
+#. Tag: #text
+#: net_samba.xml:1189
+#, no-c-format
+msgid "is the host name of the Samba server, and"
+msgstr ""
+
+#. Tag: filename
+#: net_samba.xml:1189
+#, no-c-format
+msgid "/srv/smb"
+msgstr ""
+
+#. Tag: #text
+#: net_samba.xml:1190
+#, no-c-format
+msgid "is the path to the SMB share."
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1145
+#: net_samba.xml:1192
 #, no-c-format
 msgid "Detailed Samba Server Configuration"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1147
+#: net_samba.xml:1194
 #, no-c-format
 msgid ""
-"Join Active Directory domain via &yast;.<phrase os=\"sles;osuse\"> For more "
+"Join Active Directory domain via &yast;. <phrase os=\"sles;osuse\"> For more "
 "information, <xref linkend=\"sec.samba.adnet\"/>.</phrase>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1153
+#: net_samba.xml:1200
 #, no-c-format
 msgid "Ensure that the Active Domain DNS entry was correct:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1156
+#: net_samba.xml:1203
 #, no-c-format
 msgid ""
 "fsrvp-server:~ # net -U 'Administrator' ads dns register \\\n"
@@ -1696,44 +1716,44 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1159
+#: net_samba.xml:1208
 #, no-c-format
 msgid "Create Btrfs subvolume at <filename>/srv/smb</filename>"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1162
+#: net_samba.xml:1211
 #, no-c-format
 msgid "fsrvp-server:~ # btrfs subvolume create /srv/smb"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1165
+#: net_samba.xml:1214
 #, no-c-format
 msgid ""
 "Create snapper configuration file for path <filename>/srv/smb</filename>"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1168
+#: net_samba.xml:1217
 #, no-c-format
 msgid ""
 "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; create-config /srv/smb"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1171
+#: net_samba.xml:1220
 #, no-c-format
 msgid ""
-"Create new share with path <filename>/srv/smb</filename>, and &yast; "
+"Create new share with path <filename>/srv/smb</filename> , and &yast; "
 "<guimenu>Expose Snapshots</guimenu> check box enabled. Make sure to add the "
 "following snippets to the global section of <filename>/etc/samba/smb.conf</"
 "filename> as mentioned in <xref linkend=\"sec.samba.advanced.snapshots.server"
-"\"/>:"
+"\"/> :"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1178
+#: net_samba.xml:1227
 #, no-c-format
 msgid ""
 "[global]\n"
@@ -1743,19 +1763,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1181
+#: net_samba.xml:1233
 #, no-c-format
 msgid "Restart Samba with <command>systemctl restart nmb smb</command>"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1186
+#: net_samba.xml:1238
 #, no-c-format
 msgid "Configure snapper permissions:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1189
+#: net_samba.xml:1241
 #, no-c-format
 msgid ""
 "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; set-config \\\n"
@@ -1763,7 +1783,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1190
+#: net_samba.xml:1243
 #, no-c-format
 msgid ""
 "Ensure that any ALLOW_USERS are also permitted traversal of the <filename>."
@@ -1771,20 +1791,20 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1194
+#: net_samba.xml:1247
 #, no-c-format
 msgid ""
 "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; set-config SYNC_ACL=yes"
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1196
+#: net_samba.xml:1249
 #, no-c-format
 msgid "Path Escaping"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1197
+#: net_samba.xml:1250
 #, no-c-format
 msgid ""
 "Be careful about the '\\' escapes! Escape twice to ensure that the value "
@@ -1793,7 +1813,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1204
+#: net_samba.xml:1257
 #, no-c-format
 msgid ""
 "\"EXAMPLE\\win-client$\" corresponds to the Windows client computer account. "
@@ -1801,13 +1821,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1211
+#: net_samba.xml:1264
 #, no-c-format
 msgid "Grant Windows client account necessary privileges:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1214
+#: net_samba.xml:1267
 #, no-c-format
 msgid ""
 "fsrvp-server:~ # net -U 'Administrator' rpc rights grant \\\n"
@@ -1816,7 +1836,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1215
+#: net_samba.xml:1270
 #, no-c-format
 msgid ""
 "The previous command is not needed for the \"EXAMPLE\\Administrator\" user, "
@@ -1824,44 +1844,44 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1222
+#: net_samba.xml:1277
 #, no-c-format
 msgid "Windows Client Setup and <command>DiskShadow.exe</command> in Action"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1224
+#: net_samba.xml:1279
 #, no-c-format
 msgid "Boot Windows Server 2012 (example host name WIN-CLIENT)."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1229
+#: net_samba.xml:1284
 #, no-c-format
 msgid ""
 "Join the same Active Directory domain EXAMPLE as with the &productname;."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1234
+#: net_samba.xml:1289
 #, no-c-format
 msgid "Reboot."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1239
+#: net_samba.xml:1294
 #, no-c-format
 msgid "Open Powershell."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1244
+#: net_samba.xml:1299
 #, no-c-format
 msgid "Start <command>DiskShadow.exe</command> and begin the backup procedure:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1247
+#: net_samba.xml:1302
 #, no-c-format
 msgid ""
 "PS C:\\Users\\Administrator.EXAMPLE&gt; diskshadow.exe\n"
@@ -1873,25 +1893,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1250
+#: net_samba.xml:1310
 #, no-c-format
 msgid "Specify that shadow copy persists across program exit, reset or reboot:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1253
+#: net_samba.xml:1313
 #, no-c-format
 msgid "DISKSHADOW&gt; set context PERSISTENT"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1256
+#: net_samba.xml:1316
 #, no-c-format
 msgid "Check whether the specified share supports snapshots, and create one:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1259
+#: net_samba.xml:1319
 #, no-c-format
 msgid ""
 "DISKSHADOW&gt; add volume \\\\fsrvp-server\\sles_snapper\n"
@@ -1927,26 +1947,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1262
+#: net_samba.xml:1347
 #, no-c-format
 msgid "Finish the backup procedure:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1265
+#: net_samba.xml:1350
 #, no-c-format
 msgid "DISKSHADOW&gt; end backup"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1268
+#: net_samba.xml:1353
 #, no-c-format
 msgid ""
 "After the snapshot was created, try to delete it and verify the deletion:"
 msgstr ""
 
 #. Tag: screen
-#: net_samba.xml:1272
+#: net_samba.xml:1357
 #, no-c-format
 msgid ""
 "DISKSHADOW&gt; delete shadows volume \\\\FSRVP-SERVER\\SLES_SNAPPER\\\n"
@@ -1963,31 +1983,32 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_samba.xml:1279
+#: net_samba.xml:1374
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1281
+#: net_samba.xml:1376
 #, no-c-format
 msgid ""
 "Documentation for Samba ships with the <systemitem>samba-doc</systemitem> "
 "package which is not installed by default. Install it with <command>zypper "
-"install samba-doc</command>. Enter <command>apropos</command> <option>samba</"
-"option> at the command line to display some manual pages or browse the "
-"<filename>/usr/share/doc/packages/samba</filename> directory for more online "
-"documentation and examples. Find a commented example configuration "
-"(<filename>smb.conf.SUSE</filename>) in the <filename>examples</filename> "
-"subdirectory. Another file to look for Samba related information is "
-"<filename>/usr/share/doc/packages/samba/README.SUSE</filename>."
+"install samba-doc</command> . Enter <command>apropos</command> "
+"<option>samba</option> at the command line to display some manual pages or "
+"browse the <filename>/usr/share/doc/packages/samba</filename> directory for "
+"more online documentation and examples. Find a commented example "
+"configuration ( <filename>smb.conf.SUSE</filename> ) in the "
+"<filename>examples</filename> subdirectory. Another file to look for Samba "
+"related information is <filename>/usr/share/doc/packages/samba/README.SUSE</"
+"filename> ."
 msgstr ""
 
 #. Tag: para
-#: net_samba.xml:1294
+#: net_samba.xml:1389
 #, no-c-format
 msgid ""
-"The Samba HOWTO (see <link xlink:href=\"https://wiki.samba.org\"></link>) "
+"The Samba HOWTO (see <link xlink:href=\"https://wiki.samba.org\"/> ) "
 "provided by the Samba team includes a section about troubleshooting. In "
 "addition to that, Part V of the document provides a step-by-step guide to "
 "checking your configuration."

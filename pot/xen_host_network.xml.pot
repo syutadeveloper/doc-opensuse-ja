@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -41,7 +41,7 @@ msgstr ""
 #. Tag: para
 #: xen_host_network.xml:40
 #, no-c-format
-msgid "In case the necessary packages for a &xen; &vmhost; are installed manually with <systemitem>rpm</systemitem> or <systemitem>zypper</systemitem>, the remaining system configuration needs to be done by the administrator manually or with &yast;."
+msgid "In case the necessary packages for a &xen; &vmhost; are installed manually with <systemitem>rpm</systemitem> or <systemitem>zypper</systemitem> , the remaining system configuration needs to be done by the administrator manually or with &yast;."
 msgstr ""
 
 #. Tag: para
@@ -53,7 +53,7 @@ msgstr ""
 #. Tag: para
 #: xen_host_network.xml:53
 #, no-c-format
-msgid "For more general information about managing network bridges, see <xref linkend=\"libvirt.networks.bridged\"/>."
+msgid "For more general information about managing network bridges, see <xref linkend=\"libvirt.networks.bridged\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -131,553 +131,588 @@ msgstr ""
 #. Tag: para
 #: xen_host_network.xml:135
 #, no-c-format
-msgid "For debugging or system management purposes, it may be useful to know which virtual interface in &dom0; is connected to which Ethernet device in a running guest. This information may be read from the device naming in &dom0;. All virtual devices follow the rule <literal>vif&lt;domain number&gt;.&lt;interface_number&gt;</literal>."
+msgid "For debugging or system management purposes, it may be useful to know which virtual interface in &dom0; is connected to which Ethernet device in a running guest. This information may be read from the device naming in &dom0;. All virtual devices follow the rule <literal>vif&lt;domain number&gt;.&lt;interface_number&gt;</literal> ."
 msgstr ""
 
 #. Tag: para
 #: xen_host_network.xml:144
 #, no-c-format
-msgid "For example, if you want to know the device name for the third interface (eth2) of the &vmguest; with id 5, the device in &dom0; would be <literal>vif5.2</literal>. To obtain a list of all available interfaces, run the command <command>ip a</command>."
+msgid "For example, if you want to know the device name for the third interface (eth2) of the &vmguest; with id 5, the device in &dom0; would be <literal>vif5.2</literal> . To obtain a list of all available interfaces, run the command <command>ip a</command> ."
 msgstr ""
 
 #. Tag: para
 #: xen_host_network.xml:151
 #, no-c-format
-msgid "The device naming does not contain any information about which bridge this interface is connected to. However, this information is available in &dom0;. To get an overview about which interface is connected to which bridge, run the command <command>bridge link</command>. The output may look followingly:"
+msgid "The device naming does not contain any information about which bridge this interface is connected to. However, this information is available in &dom0;. To get an overview about which interface is connected to which bridge, run the command <command>bridge link</command> . The output may look followingly:"
 msgstr ""
 
 #. Tag: screen
 #: xen_host_network.xml:159
 #, no-c-format
-msgid ""
-      "&prompt.sudo;bridge link\n"
-      "2: eth0 state DOWN : &lt;NO-CARRIER,BROADCAST,MULTICAST,SLAVE,UP> mtu 1500 master br0\n"
-      "3: eth1 state UP : &lt;BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 master br1"
+msgid "&prompt.sudo;bridge link\n"
+      "2: eth0 state DOWN : &lt;NO-CARRIER,BROADCAST,MULTICAST,SLAVE,UP&gt; mtu 1500 master br0\n"
+      "3: eth1 state UP : &lt;BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP&gt; mtu 1500 master br1\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:161
+#: xen_host_network.xml:164
 #, no-c-format
-msgid "In this example, there are three configured bridges: <literal>br0</literal>, <literal>br1</literal> and <literal>br2</literal>. Currently, <literal>br0</literal> and <literal>br1</literal> each have a real Ethernet device added: <literal>eth0</literal> and <literal>eth1</literal>, respectively."
+msgid "In this example, there are three configured bridges: <literal>br0</literal> , <literal>br1</literal> and <literal>br2</literal> . Currently, <literal>br0</literal> and <literal>br1</literal> each have a real Ethernet device added: <literal>eth0</literal> and <literal>eth1</literal> , respectively."
 msgstr ""
 
 #. Tag: title
-#: xen_host_network.xml:170
+#: xen_host_network.xml:173
 #, no-c-format
 msgid "Host-Based Routing in &xen;"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:172
+#: xen_host_network.xml:175
 #, no-c-format
 msgid "&xen; can be set up to use host-based routing in the controlling &dom0;. Unfortunately, this is not yet well supported from &yast; and requires quite an amount of manual editing of configuration files. Thus, this is a task that requires an advanced administrator."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:179
+#: xen_host_network.xml:182
 #, no-c-format
 msgid "The following configuration will only work when using fixed IP addresses. Using DHCP is not practicable with this procedure, because the IP address must be known to both, the &vmguest; and the &vmhost; system."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:185
+#: xen_host_network.xml:188
 #, no-c-format
 msgid "The easiest way to create a routed guest is to change the networking from a bridged to a routed network. As a requirement to the following procedures, a &vmguest; with a bridged network setup must be installed. For example, the &vmhost; is named &xenhost; with the IP &xenhostip;, and the &vmguest; has the name &xenguest; with the IP &xenguestip;."
 msgstr ""
 
 #. Tag: title
-#: xen_host_network.xml:195
+#: xen_host_network.xml:198
 #, no-c-format
 msgid "Configuring a routed IPv4 &vmguest;"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:197
+#: xen_host_network.xml:200
 #, no-c-format
 msgid "Make sure that &xenguest; is shut down. Use <systemitem>xl</systemitem> commands to shut down and check."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:203
+#: xen_host_network.xml:206
 #, no-c-format
 msgid "Prepare the network configuration on the &vmhost; &xenhost;:"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:208
+#: xen_host_network.xml:211
 #, no-c-format
 msgid "Create a hotplug interface that will be used to route the traffic. To accomplish this, create a file named <filename>/etc/sysconfig/network/ifcfg-&xenguest;.0</filename> with the following content:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:214
+#: xen_host_network.xml:217
 #, no-c-format
-msgid ""
-      "NAME=\"&xen; guest &xenguest;\"\n"
+msgid "NAME=\"&xen; guest &xenguest;\"\n"
       "BOOTPROTO=\"static\"\n"
-      "STARTMODE=\"hotplug\""
+      "STARTMODE=\"hotplug\"\n"
+      "     "
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:217 xen_host_network.xml:386
-#, no-c-format
-msgid "Edit the file <filename>/etc/sysconfig/&susefirewallfiles;</filename> and add the following configurations:"
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:224
+#: xen_host_network.xml:230
 #, no-c-format
 msgid "Add &xenguest;.0 to the devices in FW_DEV_EXT:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:227
+#: xen_host_network.xml:233
 #, no-c-format
 msgid "FW_DEV_EXT=\"br0 &xenguest;.0\""
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:230 xen_host_network.xml:399
-#, no-c-format
-msgid "Switch on the routing in the firewall:"
-msgstr ""
-
-#. Tag: screen
-#: xen_host_network.xml:233 xen_host_network.xml:402
-#, no-c-format
-msgid "FW_ROUTE=\"yes\""
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:236
+#: xen_host_network.xml:242
 #, no-c-format
 msgid "Tell the firewall which address should be forwarded:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:239
+#: xen_host_network.xml:245
 #, no-c-format
 msgid "FW_FORWARD=\"&xenguestip;/32,0/0\""
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:242 xen_host_network.xml:423
+#: xen_host_network.xml:256
 #, no-c-format
-msgid "Finally, restart the firewall with the command:"
+msgid "Add a static route to the interface of &xenguest;. To accomplish this, add the following line to the end of <filename>/etc/sysconfig/network/routes</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:245 xen_host_network.xml:426
-#, no-c-format
-msgid "&prompt.sudo;systemctl restart &susefirewallfiles;"
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:250
-#, no-c-format
-msgid "Add a static route to the interface of &xenguest;. To accomplish this, add the following line to the end of <filename>/etc/sysconfig/network/routes</filename>:"
-msgstr ""
-
-#. Tag: screen
-#: xen_host_network.xml:255
+#: xen_host_network.xml:261
 #, no-c-format
 msgid "&xenguestip;  -  -  &xenguest;.0"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:258
-#, no-c-format
-msgid "To make sure that the switches and routers that the &vmhost; is connected to know about the routed interface, activate <literal>proxy_arp</literal> on &xenhost;. Add the following lines to <filename>/etc/sysctl.conf</filename>:"
-msgstr ""
-
-#. Tag: screen
 #: xen_host_network.xml:264
 #, no-c-format
-msgid ""
-      "net.ipv4.conf.default.proxy_arp = 1\n"
-      "net.ipv4.conf.all.proxy_arp = 1"
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:267
-#, no-c-format
-msgid "Activate all changes with the commands:"
+msgid "To make sure that the switches and routers that the &vmhost; is connected to know about the routed interface, activate <literal>proxy_arp</literal> on &xenhost;. Add the following lines to <filename>/etc/sysctl.conf</filename> :"
 msgstr ""
 
 #. Tag: screen
 #: xen_host_network.xml:270
 #, no-c-format
+msgid "net.ipv4.conf.default.proxy_arp = 1\n"
+      "net.ipv4.conf.all.proxy_arp = 1"
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:274
+#, no-c-format
+msgid "Activate all changes with the commands:"
+msgstr ""
+
+#. Tag: screen
+#: xen_host_network.xml:277
+#, no-c-format
 msgid "&prompt.sudo;systemctl restart systemd-sysctl wicked"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:275
+#: xen_host_network.xml:282
 #, no-c-format
-msgid "Proceed with configuring the &xen; configuration of the &vmguest; by changing the vif interface configuration for &xenguest; as described in <xref linkend=\"sec.xen.manage.xl\"/>. Make the following changes to the text file you generate during the process:"
+msgid "Proceed with configuring the &xen; configuration of the &vmguest; by changing the vif interface configuration for &xenguest; as described in <xref linkend=\"sec.xen.manage.xl\"/> . Make the following changes to the text file you generate during the process:"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:283
+#: xen_host_network.xml:290
 #, no-c-format
 msgid "Remove the snippet"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:286 xen_host_network.xml:462
-#, no-c-format
-msgid "bridge=br0"
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:289 xen_host_network.xml:465
-#, no-c-format
-msgid "And add the following one:"
-msgstr ""
-
-#. Tag: screen
-#: xen_host_network.xml:292
+#: xen_host_network.xml:299
 #, no-c-format
 msgid "vifname=vif&xenguest;.0"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:293
+#: xen_host_network.xml:300
 #, no-c-format
-msgid "<para>or</para>"
+msgid "or"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:296
+#: xen_host_network.xml:303
 #, no-c-format
 msgid "vifname=vif&xenguest;.0=emu"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:297
+#: xen_host_network.xml:304
 #, no-c-format
 msgid "for a fully virtualized domain."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:302 xen_host_network.xml:471
-#, no-c-format
-msgid "Change the script that is used to set up the interface to the following:"
-msgstr ""
-
-#. Tag: screen
-#: xen_host_network.xml:306 xen_host_network.xml:475
-#, no-c-format
-msgid "script=/etc/xen/scripts/vif-route-ifup"
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:309 xen_host_network.xml:478
-#, no-c-format
-msgid "Activate the new configuration and start the &vmguest;."
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:316
+#: xen_host_network.xml:323
 #, no-c-format
 msgid "The remaining configuration tasks must be accomplished from inside the &vmguest;."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:322 xen_host_network.xml:491
-#, no-c-format
-msgid "Open a console to the &vmguest; with <command>xl console</command> <replaceable>DOMAIN</replaceable> and log in."
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:328
+#: xen_host_network.xml:335
 #, no-c-format
 msgid "Check that the guest IP is set to &xenguestip;."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:333 xen_host_network.xml:502
-#, no-c-format
-msgid "Provide &vmguest; with a host route and a default gateway to the &vmhost;. Do this by adding the following lines to <filename>/etc/sysconfig/network/routes</filename>:"
-msgstr ""
-
-#. Tag: screen
-#: xen_host_network.xml:338 xen_host_network.xml:507
-#, no-c-format
-msgid ""
-      "&xenhostip; - - eth0\n"
-      "default &xenhostip; - -"
-msgstr ""
-
-#. Tag: para
-#: xen_host_network.xml:343
+#: xen_host_network.xml:352
 #, no-c-format
 msgid "Finally, test the network connection from the &vmguest; to the world outside and from the network to your &vmguest;."
 msgstr ""
 
 #. Tag: title
-#: xen_host_network.xml:351
+#: xen_host_network.xml:360
 #, no-c-format
 msgid "Creating a Masqueraded Network Setup"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:353
+#: xen_host_network.xml:362
 #, no-c-format
-msgid "Creating a masqueraded network setup is quite similar to the routed setup. However, there is no proxy_arp needed, and some firewall rules are different. To create a masqueraded network to a guest &xennatguest; with the IP address &xennatip; where the host has its external interface on <literal>br0</literal>, proceed as follows. For easier configuration, only the already installed guest is modified to use a masqueraded network:"
+msgid "Creating a masqueraded network setup is quite similar to the routed setup. However, there is no proxy_arp needed, and some firewall rules are different. To create a masqueraded network to a guest &xennatguest; with the IP address &xennatip; where the host has its external interface on <literal>br0</literal> , proceed as follows. For easier configuration, only the already installed guest is modified to use a masqueraded network:"
 msgstr ""
 
 #. Tag: title
-#: xen_host_network.xml:364
+#: xen_host_network.xml:373
 #, no-c-format
 msgid "Configuring a masqueraded IPv4 VM Guest"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:366
+#: xen_host_network.xml:375
 #, no-c-format
-msgid "Shut down the &vmguest; system with <command>xl shutdown</command> <replaceable>DOMAIN</replaceable>."
+msgid "Shut down the &vmguest; system with <command>xl shutdown</command> <replaceable>DOMAIN</replaceable> ."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:372
+#: xen_host_network.xml:381
 #, no-c-format
 msgid "Prepare the network configuration on the &vmhost;:"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:377
+#: xen_host_network.xml:386
 #, no-c-format
 msgid "Create a hotplug interface that will be used to route the traffic. To accomplish this, create a file named <filename>/etc/sysconfig/network/ifcfg-&xennatguest;.0</filename> with the following content:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:383
+#: xen_host_network.xml:392
 #, no-c-format
-msgid ""
-      "NAME=\"&xen; guest &xennatguest;\"\n"
+msgid "NAME=\"&xen; guest &xennatguest;\"\n"
       "BOOTPROTO=\"static\"\n"
-      "STARTMODE=\"hotplug\""
+      "STARTMODE=\"hotplug\"\n"
+      "     "
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:393
+#: xen_host_network.xml:398
 #, no-c-format
-msgid "Add &xennatguest;.0 to the devices in FW_DEV_DMZ:"
-msgstr ""
-
-#. Tag: screen
-#: xen_host_network.xml:396
-#, no-c-format
-msgid "FW_DEV_DMZ=\"&xennatguest;.0\""
+msgid "Edit the file <filename>/etc/sysconfig/&susefirewallfiles;</filename> and add the following configurations:"
 msgstr ""
 
 #. Tag: para
 #: xen_host_network.xml:405
 #, no-c-format
-msgid "Switch on masquerading in the firewall:"
+msgid "Add &xennatguest;.0 to the devices in FW_DEV_DMZ:"
 msgstr ""
 
 #. Tag: screen
 #: xen_host_network.xml:408
 #, no-c-format
-msgid "FW_MASQUERADE=\"yes\""
+msgid "FW_DEV_DMZ=\"&xennatguest;.0\""
 msgstr ""
 
 #. Tag: para
 #: xen_host_network.xml:411
 #, no-c-format
-msgid "Tell the firewall which network should be masqueraded:"
+msgid "Switch on the routing in the firewall:"
 msgstr ""
 
 #. Tag: screen
 #: xen_host_network.xml:414
 #, no-c-format
-msgid "FW_MASQ_NETS=\"&xennatip;/32\""
+msgid "FW_ROUTE=\"yes\""
 msgstr ""
 
 #. Tag: para
 #: xen_host_network.xml:417
 #, no-c-format
-msgid "Remove the networks from the masquerading exceptions:"
+msgid "Switch on masquerading in the firewall:"
 msgstr ""
 
 #. Tag: screen
 #: xen_host_network.xml:420
 #, no-c-format
+msgid "FW_MASQUERADE=\"yes\""
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:423
+#, no-c-format
+msgid "Tell the firewall which network should be masqueraded:"
+msgstr ""
+
+#. Tag: screen
+#: xen_host_network.xml:426
+#, no-c-format
+msgid "FW_MASQ_NETS=\"&xennatip;/32\""
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:429
+#, no-c-format
+msgid "Remove the networks from the masquerading exceptions:"
+msgstr ""
+
+#. Tag: screen
+#: xen_host_network.xml:432
+#, no-c-format
 msgid "FW_NOMASQ_NETS=\"\""
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:431
+#: xen_host_network.xml:435
 #, no-c-format
-msgid "Add a static route to the interface of &xennatguest;. To accomplish this, add the following line to the end of <filename>/etc/sysconfig/network/routes</filename>:"
+msgid "Finally, restart the firewall with the command:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:436
+#: xen_host_network.xml:438
+#, no-c-format
+msgid "&prompt.sudo;systemctl restart &susefirewallfiles;"
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:443
+#, no-c-format
+msgid "Add a static route to the interface of &xennatguest;. To accomplish this, add the following line to the end of <filename>/etc/sysconfig/network/routes</filename> :"
+msgstr ""
+
+#. Tag: screen
+#: xen_host_network.xml:448
 #, no-c-format
 msgid "&xennatip; - - &xennatguest;.0"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:439
+#: xen_host_network.xml:451
 #, no-c-format
 msgid "Activate all changes with the command:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:442
+#: xen_host_network.xml:454
 #, no-c-format
 msgid "&prompt.sudo;systemctl restart wicked"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:447
+#: xen_host_network.xml:459
 #, no-c-format
 msgid "Proceed with configuring the &xen; configuration of the &vmguest;."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:453
+#: xen_host_network.xml:465
 #, no-c-format
-msgid "Change the vif interface configuration for &xennatguest; as described in <xref linkend=\"sec.xen.manage.xl\"/>."
+msgid "Change the vif interface configuration for &xennatguest; as described in <xref linkend=\"sec.xen.manage.xl\"/> ."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:459
+#: xen_host_network.xml:471
 #, no-c-format
 msgid "Remove the entry:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:468
+#: xen_host_network.xml:474
+#, no-c-format
+msgid "bridge=br0"
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:477
+#, no-c-format
+msgid "And add the following one:"
+msgstr ""
+
+#. Tag: screen
+#: xen_host_network.xml:480
 #, no-c-format
 msgid "vifname=vif&xennatguest;.0"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:485
+#: xen_host_network.xml:483
 #, no-c-format
-msgid "The remaining configuration tasks need to be accomplished from inside the &vmguest;."
+msgid "Change the script that is used to set up the interface to the following:"
+msgstr ""
+
+#. Tag: screen
+#: xen_host_network.xml:487
+#, no-c-format
+msgid "script=/etc/xen/scripts/vif-route-ifup"
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:490
+#, no-c-format
+msgid "Activate the new configuration and start the &vmguest;."
 msgstr ""
 
 #. Tag: para
 #: xen_host_network.xml:497
 #, no-c-format
+msgid "The remaining configuration tasks need to be accomplished from inside the &vmguest;."
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:503
+#, no-c-format
+msgid "Open a console to the &vmguest; with <command>xl console</command> <replaceable>DOMAIN</replaceable> and log in."
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:509
+#, no-c-format
 msgid "Check whether the guest IP is set to &xennatip;."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:512
+#: xen_host_network.xml:514
+#, no-c-format
+msgid "Provide &vmguest; with a host route and a default gateway to the &vmhost;. Do this by adding the following lines to <filename>/etc/sysconfig/network/routes</filename> :"
+msgstr ""
+
+#. Tag: screen
+#: xen_host_network.xml:519
+#, no-c-format
+msgid "&xenhostip; - - eth0\n"
+      "default &xenhostip; - -\n"
+      "     "
+msgstr ""
+
+#. Tag: para
+#: xen_host_network.xml:526
 #, no-c-format
 msgid "Finally, test the network connection from the &vmguest; to the outside world."
 msgstr ""
 
 #. Tag: title
-#: xen_host_network.xml:521
+#: xen_host_network.xml:535
 #, no-c-format
 msgid "Special Configurations"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:523
+#: xen_host_network.xml:537
 #, no-c-format
 msgid "There are many network configuration possibilities available to &xen;. The following configurations are not activated by default:"
 msgstr ""
 
 #. Tag: title
-#: xen_host_network.xml:529
+#: xen_host_network.xml:543
 #, no-c-format
 msgid "Bandwidth Throttling in Virtual Networks"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:530
+#: xen_host_network.xml:544
 #, no-c-format
-msgid "With &xen;, you may limit the network transfer rate a virtual guest may use to access a bridge. To configure this, you need to modify the &vmguest; configuration as described in <xref linkend=\"sec.xen.manage.xl\"/>."
+msgid "With &xen;, you may limit the network transfer rate a virtual guest may use to access a bridge. To configure this, you need to modify the &vmguest; configuration as described in <xref linkend=\"sec.xen.manage.xl\"/> ."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:536
+#: xen_host_network.xml:550
 #, no-c-format
 msgid "In the configuration file, first search for the device that is connected to the virtual bridge. The configuration looks like the following:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:540
+#: xen_host_network.xml:554
 #, no-c-format
 msgid "vif = [ 'mac=00:16:3e:4f:94:a9,bridge=br0' ]"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:541
+#: xen_host_network.xml:555
 #, no-c-format
 msgid "To add a maximum transfer rate, add a parameter <systemitem>rate</systemitem> to this configuration as in:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:545
+#: xen_host_network.xml:559
 #, no-c-format
 msgid "vif = [ 'mac=00:16:3e:4f:94:a9,bridge=br0,rate=100Mb/s' ]"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:546
+#: xen_host_network.xml:560
 #, no-c-format
 msgid "Note that the rate is either <literal>Mb/s</literal> (megabits per second) or <literal>MB/s</literal> (megabytes per second). In the above example, the maximum transfer rate of the virtual interface is 100 megabits. By default, there is no limitation to the bandwidth of a guest to the virtual bridge."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:553
+#: xen_host_network.xml:567
 #, no-c-format
 msgid "It is even possible to fine-tune the behavior by specifying the time window that is used to define the granularity of the credit replenishment:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:558
+#: xen_host_network.xml:572
 #, no-c-format
 msgid "vif = [ 'mac=00:16:3e:4f:94:a9,bridge=br0,rate=100Mb/s@20ms' ]"
 msgstr ""
 
 #. Tag: title
-#: xen_host_network.xml:562
+#: xen_host_network.xml:576
 #, no-c-format
 msgid "Monitoring the Network Traffic"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:563
+#: xen_host_network.xml:577
 #, no-c-format
 msgid "To monitor the traffic on a specific interface, the little application <systemitem>iftop</systemitem> is a nice program that displays the current network traffic in a terminal."
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:568
+#: xen_host_network.xml:582
 #, no-c-format
-msgid "When running a &xen; &vmhost;, you need to define the interface that is monitored. The interface that &dom0; uses to get access to the physical network is the bridge device, for example <systemitem>br0</systemitem>. This, however, may vary on your system. To monitor all traffic to the physical interface, run a terminal as &rootuser; and use the command:"
+msgid "When running a &xen; &vmhost;, you need to define the interface that is monitored. The interface that &dom0; uses to get access to the physical network is the bridge device, for example <systemitem>br0</systemitem> . This, however, may vary on your system. To monitor all traffic to the physical interface, run a terminal as &rootuser; and use the command:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:576
+#: xen_host_network.xml:590
 #, no-c-format
 msgid "iftop -i br0"
 msgstr ""
 
 #. Tag: para
-#: xen_host_network.xml:577
+#: xen_host_network.xml:591
 #, no-c-format
 msgid "To monitor the network traffic of a special network interface of a specific &vmguest;, supply the correct virtual interface. For example, to monitor the first Ethernet device of the domain with id 5, use the command:"
 msgstr ""
 
 #. Tag: screen
-#: xen_host_network.xml:583
+#: xen_host_network.xml:597
 #, no-c-format
 msgid "ftop -i vif5.0"
 msgstr ""
 
-#. Tag: para
-#: xen_host_network.xml:584
+#. Tag: #text
+#: xen_host_network.xml:599
 #, no-c-format
-msgid "To quit <command>iftop</command>, press the key <keycap>Q</keycap>. More options and possibilities are available in the manual page <command>man 8 iftop</command>."
+msgid "To quit"
+msgstr ""
+
+#. Tag: command
+#: xen_host_network.xml:599
+#, no-c-format
+msgid "iftop"
+msgstr ""
+
+#. Tag: #text
+#: xen_host_network.xml:599
+#, no-c-format
+msgid ", press the key"
+msgstr ""
+
+#. Tag: keycap
+#: xen_host_network.xml:599
+#, no-c-format
+msgid "Q"
+msgstr ""
+
+#. Tag: command
+#: xen_host_network.xml:600
+#, no-c-format
+msgid "man 8 iftop"
+msgstr ""
+
+#. Tag: #text
+#: xen_host_network.xml:600
+#, no-c-format
+msgid ". More options and possibilities are available in the manual page"
+msgstr ""
+
+#. Tag: #text
+#: xen_host_network.xml:602
+#, no-c-format
+msgid "."
 msgstr ""
 

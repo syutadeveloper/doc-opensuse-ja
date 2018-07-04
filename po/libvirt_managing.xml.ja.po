@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid ""
 "Most management tasks, such as starting or stopping a &vmguest;, can either "
 "be done using the graphical application &vmm; or on the command line using "
-"<command>virsh</command>. Connecting to the graphical console via VNC is "
+"<command>virsh</command> . Connecting to the graphical console via VNC is "
 "only possible from a graphical user interface."
 msgstr ""
 
@@ -43,10 +43,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "If started on a &vmhost;, the &libvirt; tools &vmm;, <command>virsh</"
-"command>, and <command>virt-viewer</command> can be used to manage &vmguest;"
+"command> , and <command>virt-viewer</command> can be used to manage &vmguest;"
 "s on the host. However, it is also possible to manage &vmguest;s on a remote "
 "&vmhost;. This requires configuring remote access for &libvirt; on the host. "
-"For instructions, see <xref linkend=\"cha.libvirt.connect\"/>."
+"For instructions, see <xref linkend=\"cha.libvirt.connect\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -54,11 +54,11 @@ msgstr ""
 #, no-c-format
 msgid ""
 "To connect to such a remote host with &vmm;, you need to set up a connection "
-"as explained in <xref linkend=\"sec.libvirt.connect.connecting.vmm\"/>. If "
+"as explained in <xref linkend=\"sec.libvirt.connect.connecting.vmm\"/> . If "
 "connecting to a remote host using <command>virsh</command> or <command>virt-"
-"viewer</command>, you need to specify a connection URI with the parameter "
+"viewer</command> , you need to specify a connection URI with the parameter "
 "<option>-c</option> (for example, <command>virsh -c qemu+tls://&wsIIIname;/"
-"system</command> or <command>virsh -c xen+ssh://</command>). The form of "
+"system</command> or <command>virsh -c xen+ssh://</command> ). The form of "
 "connection URI depends on the connection type and the hypervisor&mdash;see "
 "<xref linkend=\"sec.libvirt.connect.connecting\"/> for details."
 msgstr ""
@@ -95,8 +95,9 @@ msgstr ""
 msgid ""
 "The main window of the &vmm; lists all &vmguest;s for each &vmhost; it is "
 "connected to. Each &vmguest; entry contains the machine's name, its status "
-"(<guimenu>Running</guimenu>, <guimenu>Paused</guimenu>, or <guimenu>Shutoff</"
-"guimenu>) displayed as an icon and literally, and a CPU usage bar."
+"( <guimenu>Running</guimenu> , <guimenu>Paused</guimenu> , or "
+"<guimenu>Shutoff</guimenu> ) displayed as an icon and literally, and a CPU "
+"usage bar."
 msgstr ""
 
 #. Tag: title
@@ -142,7 +143,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "For more information and further options, see <command>virsh help list</"
-"command> or <command>man 1 virsh</command>."
+"command> or <command>man 1 virsh</command> ."
 msgstr ""
 
 #. Tag: title
@@ -175,14 +176,22 @@ msgid ""
 "applicable) and a password."
 msgstr ""
 
-#. Tag: para
-#: libvirt_managing.xml:107
+#. Tag: #text
+#: libvirt_managing.xml:108
 #, no-c-format
-msgid ""
-"When you click into the VNC console, the cursor is <quote>grabbed</quote> "
-"and cannot be used outside the console anymore. To release it, press "
-"<keycombo> <keycap function=\"alt\"></keycap> <keycap function=\"control\"></"
-"keycap> </keycombo>."
+msgid "When you click into the VNC console, the cursor is"
+msgstr ""
+
+#. Tag: quote
+#: libvirt_managing.xml:108
+#, no-c-format
+msgid "grabbed"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:110
+#, no-c-format
+msgid "and cannot be used outside the console anymore. To release it, press"
 msgstr ""
 
 #. Tag: title
@@ -200,19 +209,61 @@ msgid ""
 "linkend=\"sec.libvirt.config.tablet\"/> for more information."
 msgstr ""
 
-#. Tag: para
-#: libvirt_managing.xml:121
+#. Tag: #text
+#: libvirt_managing.xml:122
+#, no-c-format
+msgid "Certain key combinations such as"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:124
 #, no-c-format
 msgid ""
-"Certain key combinations such as <keycombo> <keycap function=\"control\"></"
-"keycap> <keycap function=\"alt\"></keycap> <keycap function=\"delete\"></"
-"keycap> </keycombo> are interpreted by the host system and are not passed to "
-"the &vmguest;. To pass such key combinations to a &vmguest;, open the "
-"<guimenu>Send Key</guimenu> menu from the VNC window and choose the desired "
-"key combination entry. The <guimenu>Send Key</guimenu> menu is only "
-"available when using &vmm; and <command>virt-viewer</command>. With &vmm;, "
-"you can alternatively use the <quote>sticky key</quote> feature as explained "
-"in <xref linkend=\"tip.libvirt.inst.vmm.sticky\"/>."
+"are interpreted by the host system and are not passed to the &vmguest;. To "
+"pass such key combinations to a &vmguest;, open the"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:127
+#, no-c-format
+msgid ""
+"menu from the VNC window and choose the desired key combination entry. The"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:127
+#, no-c-format
+msgid "menu is only available when using &vmm; and"
+msgstr ""
+
+#. Tag: guimenu
+#: libvirt_managing.xml:127
+#, no-c-format
+msgid "Send Key"
+msgstr ""
+
+#. Tag: command
+#: libvirt_managing.xml:128
+#, no-c-format
+msgid "virt-viewer"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:128
+#, no-c-format
+msgid ". With &vmm;, you can alternatively use the"
+msgstr ""
+
+#. Tag: quote
+#: libvirt_managing.xml:129
+#, no-c-format
+msgid "sticky key"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:130
+#, no-c-format
+msgid "feature as explained in"
 msgstr ""
 
 #. Tag: title
@@ -231,19 +282,13 @@ msgid ""
 "<command>tightvnc</command> or <command>tigervnc</command> support neither "
 "SASL authentication nor TLS/SSL. The only supported alternative to &vmm; and "
 "<command>virt-viewer</command> is Remmina (refer to <xref linkend=\"vnc."
-"remmina\"/>."
+"remmina\"/> ."
 msgstr ""
 
 #. Tag: title
 #: libvirt_managing.xml:145
 #, no-c-format
 msgid "Opening a Graphical Console with &vmm;"
-msgstr ""
-
-#. Tag: para
-#: libvirt_managing.xml:148 libvirt_managing.xml:889
-#, no-c-format
-msgid "In the &vmm;, right-click a &vmguest; entry."
 msgstr ""
 
 #. Tag: para
@@ -303,7 +348,7 @@ msgstr ""
 #: libvirt_managing.xml:187
 #, no-c-format
 msgid ""
-"Connect to the inactive guest named <literal>sles12</literal>; the "
+"Connect to the inactive guest named <literal>sles12</literal> ; the "
 "connection window will open once the guest starts"
 msgstr ""
 
@@ -327,7 +372,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "For more information, see <command>virt-viewer</command> <option>--help</"
-"option> or <command>man 1 virt-viewer</command>."
+"option> or <command>man 1 virt-viewer</command> ."
 msgstr ""
 
 #. Tag: title
@@ -360,8 +405,8 @@ msgid ""
 "Accessing the graphical console of a virtual machine requires a graphical "
 "environment on the client accessing the &vmguest;. As an alternative, "
 "virtual machines managed with libvirt can also be accessed from the shell "
-"via the serial console and <command>virsh</command>. To open a serial "
-"console to a &vmguest; named <quote>sles12</quote>, run the following "
+"via the serial console and <command>virsh</command> . To open a serial "
+"console to a &vmguest; named <quote>sles12</quote> , run the following "
 "command:"
 msgstr ""
 
@@ -416,7 +461,7 @@ msgstr ""
 msgid ""
 "Launch the &yast; Boot Loader module and switch to the <guimenu>Kernel "
 "Parameters</guimenu> tab. Add <literal>console=ttyS0</literal> to the field "
-"<guimenu>Optional Kernel Command Line Parameter</guimenu>."
+"<guimenu>Optional Kernel Command Line Parameter</guimenu> ."
 msgstr ""
 
 #. Tag: term
@@ -432,8 +477,8 @@ msgid ""
 "Launch the &yast; Boot Loader module and select the boot entry for which to "
 "activate serial console access. Choose <guimenu>Edit</guimenu> and add "
 "<literal>console=ttyS0</literal> to the field <guimenu>Optional Kernel "
-"Command Line Parameter</guimenu>. Additionally, edit <filename>/etc/inittab</"
-"filename> and uncomment the line with the following content:"
+"Command Line Parameter</guimenu> . Additionally, edit <filename>/etc/"
+"inittab</filename> and uncomment the line with the following content:"
 msgstr ""
 
 #. Tag: screen
@@ -453,7 +498,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Starting, stopping or pausing a &vmguest; can be done with either &vmm; or "
-"<command>virsh</command>. You can also configure a &vmguest; to be "
+"<command>virsh</command> . You can also configure a &vmguest; to be "
 "automatically started when booting the &vmhost;."
 msgstr ""
 
@@ -479,7 +524,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "To be able to perform a graceful shutdown, the &vmguest; must be configured "
-"to support <xref linkend=\"gloss.vt.acpi\"/>. If you have created the guest "
+"to support <xref linkend=\"gloss.vt.acpi\"/> . If you have created the guest "
 "with the &vmm;, ACPI should be available in the &vmguest;."
 msgstr ""
 
@@ -501,6 +546,18 @@ msgid ""
 "If ACPI was enabled during a Windows XP/Windows Server 2003 guest "
 "installation, turning it on in the &vmguest; configuration only is not "
 "sufficient. For more information, see:"
+msgstr ""
+
+#. Tag: para
+#: libvirt_managing.xml:312
+#, no-c-format
+msgid "<link xlink:href=\"https://support.microsoft.com/en-us/kb/314088\"/>"
+msgstr ""
+
+#. Tag: para
+#: libvirt_managing.xml:317
+#, no-c-format
+msgid "<link xlink:href=\"https://support.microsoft.com/en-us/kb/309283\"/>"
 msgstr ""
 
 #. Tag: para
@@ -541,7 +598,7 @@ msgstr ""
 #: libvirt_managing.xml:342
 #, no-c-format
 msgid ""
-"Choose <guimenu>Run</guimenu>, <guimenu>Pause</guimenu>, or one of the "
+"Choose <guimenu>Run</guimenu> , <guimenu>Pause</guimenu> , or one of the "
 "<guimenu>Shutdown options</guimenu> from the pop-up menu."
 msgstr ""
 
@@ -556,14 +613,14 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Open a VNC Window as described in <xref linkend=\"sec.libvirt.managing."
-"console.vnc.vmm\"/>."
+"console.vnc.vmm\"/> ."
 msgstr ""
 
 #. Tag: para
 #: libvirt_managing.xml:357
 #, no-c-format
 msgid ""
-"Choose <guimenu>Run</guimenu>, <guimenu>Pause</guimenu>, or one of the "
+"Choose <guimenu>Run</guimenu> , <guimenu>Pause</guimenu> , or one of the "
 "<guimenu>Shut Down</guimenu> options either from the toolbar or from the "
 "<guimenu>Virtual Machine</guimenu> menu."
 msgstr ""
@@ -602,13 +659,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Choose <guimenu>Boot Options</guimenu> and check <guimenu>Start virtual "
-"machine on host boot up</guimenu>."
+"machine on host boot up</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: libvirt_managing.xml:391
 #, no-c-format
-msgid "Save the new configuration with <guimenu>Apply</guimenu>."
+msgid "Save the new configuration with <guimenu>Apply</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -796,15 +853,15 @@ msgid ""
 "To be able to work with a saved &vmguest; again, use the restore operation. "
 "If you used <command>virsh</command> to save a &vmguest;, you cannot restore "
 "it using &vmm;. In this case, make sure to restore using <command>virsh</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: title
 #: libvirt_managing.xml:507
 #, no-c-format
 msgid ""
-"Only for &vmguest;s with Disk Types <literal>raw</literal>, <literal>qcow2</"
-"literal>, <literal>qed</literal>"
+"Only for &vmguest;s with Disk Types <literal>raw</literal> , <literal>qcow2</"
+"literal> , <literal>qed</literal>"
 msgstr ""
 
 #. Tag: para
@@ -812,8 +869,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Saving and restoring &vmguest;s is only possible if the &vmguest; is using a "
-"virtual disk of the type <literal>raw</literal> (<filename>.img</filename>), "
-"<emphasis>qcow2</emphasis>, or <literal>qed</literal>."
+"virtual disk of the type <literal>raw</literal> ( <filename>.img</"
+"filename> ), <emphasis>qcow2</emphasis> , or <literal>qed</literal> ."
 msgstr ""
 
 #. Tag: title
@@ -840,7 +897,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Choose <menuchoice> <guimenu>Virtual Machine</guimenu> <guimenu>Shutdown</"
-"guimenu> <guimenu>Save</guimenu> </menuchoice>."
+"guimenu> <guimenu>Save</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: title
@@ -862,7 +919,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Choose <menuchoice> <guimenu>Virtual Machine</guimenu> <guimenu>Restore</"
-"guimenu> </menuchoice>."
+"guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: para
@@ -872,7 +929,7 @@ msgid ""
 "If the &vmguest; was previously saved using &vmm;, you will not be offered "
 "an option to <guimenu>Run</guimenu> the guest. However, note the caveats on "
 "machines saved with <command>virsh</command> outlined in <xref linkend=\"adm."
-"vm.restore\"/>."
+"vm.restore\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -918,7 +975,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "To restore a &vmguest;, use <command>virsh</command> <option>restore</"
-"option>:"
+"option> :"
 msgstr ""
 
 #. Tag: screen
@@ -1006,7 +1063,7 @@ msgid ""
 "file with all the changes is called an 'overlay' or 'derived' file. External "
 "snapshots are useful when performing backups of &vmguest;s. For more "
 "information on external snapshots in &qemu;, refer to <xref linkend=\"cha."
-"qemu.guest_inst.qemu-img.effect\"/>."
+"qemu.guest_inst.qemu-img.effect\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -1062,7 +1119,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "To open the snapshot management view in &vmm;, open the VNC window as "
-"described in <xref linkend=\"sec.libvirt.managing.console.vnc.vmm\"/>. Now "
+"described in <xref linkend=\"sec.libvirt.managing.console.vnc.vmm\"/> . Now "
 "either choose <menuchoice> <guimenu>View</guimenu> <guimenu>Snapshots</"
 "guimenu> </menuchoice> or click <guimenu>Manage VM Snapshots</guimenu> in "
 "the toolbar."
@@ -1121,19 +1178,13 @@ msgstr ""
 msgid ""
 "Provide a <guimenu>Name</guimenu> and, optionally, a description. The name "
 "cannot be changed after the snapshot has been taken. To be able to identify "
-"the snapshot later easily, use a <quote>speaking name</quote>."
+"the snapshot later easily, use a <quote>speaking name</quote> ."
 msgstr ""
 
 #. Tag: para
 #: libvirt_managing.xml:729
 #, no-c-format
-msgid "Confirm with <guimenu>Finish</guimenu>."
-msgstr ""
-
-#. Tag: title
-#: libvirt_managing.xml:736 libvirt_managing.xml:853
-#, no-c-format
-msgid "Deleting a Snapshot"
+msgid "Confirm with <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -1152,13 +1203,7 @@ msgstr ""
 #. Tag: para
 #: libvirt_managing.xml:748
 #, no-c-format
-msgid "Confirm the deletion with <guimenu>Yes</guimenu>."
-msgstr ""
-
-#. Tag: title
-#: libvirt_managing.xml:755 libvirt_managing.xml:861
-#, no-c-format
-msgid "Starting a Snapshot"
+msgid "Confirm the deletion with <guimenu>Yes</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -1177,7 +1222,7 @@ msgstr ""
 #. Tag: para
 #: libvirt_managing.xml:767
 #, no-c-format
-msgid "Confirm the start with <guimenu>Yes</guimenu>."
+msgid "Confirm the start with <guimenu>Yes</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -1190,7 +1235,7 @@ msgstr ""
 #: libvirt_managing.xml:777
 #, no-c-format
 msgid ""
-"To list all existing snapshots for a domain (<replaceable>admin_server</"
+"To list all existing snapshots for a domain ( <replaceable>admin_server</"
 "replaceable> in the following), run the <literal>snapshot-list</literal> "
 "command:"
 msgstr ""
@@ -1215,7 +1260,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:783
+#: libvirt_managing.xml:795
 #, no-c-format
 msgid ""
 "The snapshot that was last started is shown with the <literal>snapshot-"
@@ -1223,15 +1268,15 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:787
+#: libvirt_managing.xml:799
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-current --domain admin_server\n"
-"Basic installation incl. SMT for CLOUD4"
+"Basic installation incl. SMT for CLOUD4\n"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:788
+#: libvirt_managing.xml:802
 #, no-c-format
 msgid ""
 "Details about a particular snapshot can be obtained by running the "
@@ -1239,7 +1284,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:792
+#: libvirt_managing.xml:806
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-info --domain admin_server \\\n"
@@ -1252,70 +1297,77 @@ msgid ""
 "Parent:         Basic installation incl. SMT for CLOUD3-HA\n"
 "Children:       0\n"
 "Descendants:    0\n"
-"Metadata:       yes"
+"Metadata:       yes\n"
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:794
+#: libvirt_managing.xml:819
 #, no-c-format
 msgid "Creating Internal Snapshots"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:795
+#: libvirt_managing.xml:820
 #, no-c-format
 msgid ""
 "To take an internal snapshot of a &vmguest;, both live and offline, use the "
 "<literal>snapshot-create-as</literal> command as follows:"
 msgstr ""
 
-#. Tag: screen
-#: libvirt_managing.xml:799
+#. Tag: #text
+#: libvirt_managing.xml:824
 #, no-c-format
-msgid ""
-"&prompt.user;virsh snapshot-create-as --domain admin_server<co xml:id="
-"\"virsh.snapshot.add.domain\"/> --name \"Snapshot 1\"<co xml:id=\"virsh."
-"snapshot.add.name\"/> \\\n"
-"--description \"First snapshot\"<co xml:id=\"virsh.snapshot.add.description"
-"\"/>"
+msgid "&prompt.user;virsh snapshot-create-as --domain admin_server"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:824
+#, no-c-format
+msgid "--name \"Snapshot 1\""
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:825
+#, no-c-format
+msgid "\\--description \"First snapshot\""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:802
+#: libvirt_managing.xml:828
 #, no-c-format
 msgid "Domain name. Mandatory."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:807
+#: libvirt_managing.xml:833
 #, no-c-format
 msgid ""
 "Name of the snapshot. It is recommended to use a <quote>speaking name</"
-"quote>, since that makes it easier to identify the snapshot. Mandatory."
+"quote> , since that makes it easier to identify the snapshot. Mandatory."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:814
+#: libvirt_managing.xml:840
 #, no-c-format
 msgid "Description for the snapshot. Optional."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:821
+#: libvirt_managing.xml:847
 #, no-c-format
 msgid "Creating External Snapshots"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:822
+#: libvirt_managing.xml:848
 #, no-c-format
 msgid ""
-"With <command>virsh</command>, you can take external snapshots of the "
+"With <command>virsh</command> , you can take external snapshots of the "
 "guest's memory state, disk state, or both."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:826
+#: libvirt_managing.xml:852
 #, no-c-format
 msgid ""
 "To take both live and offline external snapshot of the guest's disk, specify "
@@ -1323,7 +1375,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:830
+#: libvirt_managing.xml:856
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-create-as --domain admin_server --name \\\n"
@@ -1331,7 +1383,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:831
+#: libvirt_managing.xml:858
 #, no-c-format
 msgid ""
 "You can specify the <option>--diskspec</option> option to control how the "
@@ -1339,7 +1391,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:835
+#: libvirt_managing.xml:862
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-create-as --domain admin_server --name \\\n"
@@ -1348,7 +1400,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:836
+#: libvirt_managing.xml:865
 #, no-c-format
 msgid ""
 "To take a live external snapshot of the guest's memory, specify the "
@@ -1356,7 +1408,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:840
+#: libvirt_managing.xml:869
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-create-as --domain admin_server --name \\\n"
@@ -1365,16 +1417,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:841
+#: libvirt_managing.xml:872
 #, no-c-format
 msgid ""
 "To take a live external snapshot of both the guest's disk and memory states, "
-"combine the <option>--live</option>, <option>--diskspec</option>, and "
+"combine the <option>--live</option> , <option>--diskspec</option> , and "
 "<option>--memspec</option> options:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:846
+#: libvirt_managing.xml:877
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-create-as --domain admin_server --name \\\n"
@@ -1383,16 +1435,44 @@ msgid ""
 " --diskspec vda,snapshot=external,file=/path/to/snapshot_file"
 msgstr ""
 
-#. Tag: para
-#: libvirt_managing.xml:847
+#. Tag: citetitle
+#: libvirt_managing.xml:882
 #, no-c-format
-msgid ""
-"Refer to the <citetitle>SNAPSHOT COMMANDS</citetitle> section in "
-"<command>man 1 virsh</command> for more details."
+msgid "SNAPSHOT COMMANDS"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:882
+#, no-c-format
+msgid "Refer to the"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:883
+#, no-c-format
+msgid "section in"
+msgstr ""
+
+#. Tag: command
+#: libvirt_managing.xml:883
+#, no-c-format
+msgid "man 1 virsh"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:884
+#, no-c-format
+msgid "for more details."
+msgstr ""
+
+#. Tag: title
+#: libvirt_managing.xml:887
+#, no-c-format
+msgid "Deleting a Snapshot"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:854
+#: libvirt_managing.xml:888
 #, no-c-format
 msgid ""
 "To delete a snapshot of a &vmguest; and restore the disk space it occupies, "
@@ -1400,22 +1480,28 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:858
+#: libvirt_managing.xml:892
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-delete --domain admin_server --snapshotname "
 "\"Snapshot 2\""
 msgstr ""
 
+#. Tag: title
+#: libvirt_managing.xml:895
+#, no-c-format
+msgid "Starting a Snapshot"
+msgstr ""
+
 #. Tag: para
-#: libvirt_managing.xml:862
+#: libvirt_managing.xml:896
 #, no-c-format
 msgid ""
 "To start a snapshot, use the <literal>snapshot-revert</literal> command:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:865
+#: libvirt_managing.xml:899
 #, no-c-format
 msgid ""
 "&prompt.user;virsh snapshot-revert --domain admin_server --snapshotname "
@@ -1423,7 +1509,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:866
+#: libvirt_managing.xml:900
 #, no-c-format
 msgid ""
 "To start the current snapshot (the one the &vmguest; was started off), it is "
@@ -1432,19 +1518,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:871
+#: libvirt_managing.xml:905
 #, no-c-format
 msgid "&prompt.user;virsh snapshot-revert --domain admin_server --current"
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:876
+#: libvirt_managing.xml:910
 #, no-c-format
 msgid "Deleting a &vmguest;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:878
+#: libvirt_managing.xml:912
 #, no-c-format
 msgid ""
 "By default, deleting a &vmguest; using <command>virsh</command> removes only "
@@ -1454,19 +1540,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:886
+#: libvirt_managing.xml:920
 #, no-c-format
 msgid "Deleting a &vmguest; with &vmm;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:894
+#: libvirt_managing.xml:923
 #, no-c-format
-msgid "From the context menu, choose <guimenu>Delete</guimenu>."
+msgid "In the &vmm;, right-click a &vmguest; entry."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:899
+#: libvirt_managing.xml:928
+#, no-c-format
+msgid "From the context menu, choose <guimenu>Delete</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: libvirt_managing.xml:933
 #, no-c-format
 msgid ""
 "A confirmation window opens. Clicking <guimenu>Delete</guimenu> will "
@@ -1474,60 +1566,60 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:903
+#: libvirt_managing.xml:937
 #, no-c-format
 msgid ""
 "You can also permanently delete the guest's virtual disk by activating "
-"<guimenu>Delete Associated Storage Files</guimenu>. The deletion is not "
+"<guimenu>Delete Associated Storage Files</guimenu> . The deletion is not "
 "recoverable either."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:913
+#: libvirt_managing.xml:947
 #, no-c-format
 msgid "Deleting a &vmguest; with <command>virsh</command>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:914
+#: libvirt_managing.xml:948
 #, no-c-format
 msgid ""
 "To delete a &vmguest;, it needs to be shut down first. It is not possible to "
 "delete a running guest. For information on shutting down, see <xref linkend="
-"\"sec.libvirt.managing.status\"/>."
+"\"sec.libvirt.managing.status\"/> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:919
+#: libvirt_managing.xml:953
 #, no-c-format
 msgid ""
-"To delete a &vmguest; with <command>virsh</command>, run <command>virsh</"
-"command> <option>undefine</option> <replaceable>VM_NAME</replaceable>."
+"To delete a &vmguest; with <command>virsh</command> , run <command>virsh</"
+"command> <option>undefine</option> <replaceable>VM_NAME</replaceable> ."
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:924
+#: libvirt_managing.xml:958
 #, no-c-format
 msgid "&prompt.user;virsh undefine sles12"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:925
+#: libvirt_managing.xml:959
 #, no-c-format
 msgid ""
 "There is no option to automatically delete the attached storage files. If "
 "they are managed by libvirt, delete them as described in <xref linkend=\"sec."
-"libvirt.storage.virsh.del_volumes\"/>."
+"libvirt.storage.virsh.del_volumes\"/> ."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:933
+#: libvirt_managing.xml:967
 #, no-c-format
 msgid "Migrating &vmguest;s"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:935
+#: libvirt_managing.xml:969
 #, no-c-format
 msgid ""
 "One of the major advantages of virtualization is that &vmguest;s are "
@@ -1538,13 +1630,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:944
+#: libvirt_managing.xml:978
 #, no-c-format
 msgid "Migration Requirements"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:945
+#: libvirt_managing.xml:979
 #, no-c-format
 msgid ""
 "To successfully migrate a &vmguest; to another &vmhost;, the following "
@@ -1552,7 +1644,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:951
+#: libvirt_managing.xml:985
 #, no-c-format
 msgid ""
 "It is recommended that the source and destination systems have the same "
@@ -1560,25 +1652,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:957
+#: libvirt_managing.xml:991
 #, no-c-format
 msgid ""
 "Storage devices must be accessible from both machines (for example, via NFS "
 "or iSCSI) and must be configured as a storage pool on both machines. For "
-"more information, see <xref linkend=\"cha.libvirt.storage\"/>."
+"more information, see <xref linkend=\"cha.libvirt.storage\"/> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:962
+#: libvirt_managing.xml:996
 #, no-c-format
 msgid ""
 "This is also true for CD-ROM or floppy images that are connected during the "
 "move. However, you can disconnect them prior to the move as described in "
-"<xref linkend=\"sec.libvirt.config.cdrom.media_change\"/>."
+"<xref linkend=\"sec.libvirt.config.cdrom.media_change\"/> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:969
+#: libvirt_managing.xml:1003
 #, no-c-format
 msgid ""
 "&libvirtd; needs to run on both &vmhost;s and you must be able to open a "
@@ -1587,18 +1679,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:977
+#: libvirt_managing.xml:1011
 #, no-c-format
 msgid ""
 "If a firewall is running on the target host, ports need to be opened to "
 "allow the migration. If you do not specify a port during the migration "
 "process, &libvirt; chooses one from the range 49152:49215. Make sure that "
 "either this range (recommended) or a dedicated port of your choice is opened "
-"in the firewall on the <emphasis>target host</emphasis>."
+"in the firewall on the <emphasis>target host</emphasis> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:986
+#: libvirt_managing.xml:1020
 #, no-c-format
 msgid ""
 "Host and target machine should be in the same subnet on the network, "
@@ -1606,7 +1698,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:992
+#: libvirt_managing.xml:1026
 #, no-c-format
 msgid ""
 "All &vmhost;'s participating in migration must have the same UID for the "
@@ -1614,7 +1706,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:998
+#: libvirt_managing.xml:1032
 #, no-c-format
 msgid ""
 "No running or paused &vmguest; with the same name must exist on the target "
@@ -1623,7 +1715,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1005
+#: libvirt_managing.xml:1039
 #, no-c-format
 msgid ""
 "All CPU models except <emphasis>host cpu</emphasis> model are supported when "
@@ -1631,45 +1723,47 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1011
+#: libvirt_managing.xml:1045
 #, no-c-format
-msgid "disk device type is not migratable."
+msgid ""
+"<xref linkend=\"gloss.vt.acronym.sata\"/> disk device type is not migratable."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1017
+#: libvirt_managing.xml:1051
 #, no-c-format
 msgid "File system pass-through feature is incompatible with migration."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1022
+#: libvirt_managing.xml:1056
 #, no-c-format
 msgid ""
 "The &vmhost; and &vmguest; need to have proper timekeeping installed. See "
-"<xref linkend=\"sec.kvm.managing.clock\"/>."
+"<xref linkend=\"sec.kvm.managing.clock\"/> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1028
+#: libvirt_managing.xml:1062
 #, no-c-format
 msgid ""
 "No physical devices can be passed from host to guest. Live migration is "
 "currently not supported when using devices with PCI pass-through or <xref "
-"linkend=\"vt.io.sriov\"/>. If live migration needs to be supported, you need "
-"to use software virtualization (paravirtualization or full virtualization)."
+"linkend=\"vt.io.sriov\"/> . If live migration needs to be supported, you "
+"need to use software virtualization (paravirtualization or full "
+"virtualization)."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1037
+#: libvirt_managing.xml:1071
 #, no-c-format
 msgid ""
 "Cache mode setting is an important setting for migration. See: <xref linkend="
-"\"sec.cache.mode.live.migration\"/>."
+"\"sec.cache.mode.live.migration\"/> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1043
+#: libvirt_managing.xml:1077
 #, no-c-format
 msgid ""
 "Live migration of &vmguest;s from a host running one operating system to a "
@@ -1678,25 +1772,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1051
+#: libvirt_managing.xml:1085
 #, no-c-format
 msgid "&slsa; 12 SP2 to &slsa; 15"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1056
+#: libvirt_managing.xml:1090
 #, no-c-format
 msgid "&slsa; 12 SP3 to &slsa; 15"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1061
+#: libvirt_managing.xml:1095
 #, no-c-format
 msgid "&slsa; 12 SP4 to &slsa; 15 (when released)"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1067
+#: libvirt_managing.xml:1101
 #, no-c-format
 msgid ""
 "Backward migration (for example from &slsa; 12 SP1 or SP2 to 12 or from "
@@ -1704,19 +1798,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1073
+#: libvirt_managing.xml:1107
 #, no-c-format
 msgid "The image directory should be located in the same path on both hosts."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1081
+#: libvirt_managing.xml:1115
 #, no-c-format
 msgid "Migrating with &vmm;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1082
+#: libvirt_managing.xml:1116
 #, no-c-format
 msgid ""
 "When using the &vmm; to migrate &vmguest;s, it does not matter on which "
@@ -1726,7 +1820,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1090
+#: libvirt_managing.xml:1124
 #, no-c-format
 msgid ""
 "Start &vmm; and establish a connection to the target or the source host. If "
@@ -1735,22 +1829,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1097
+#: libvirt_managing.xml:1131
 #, no-c-format
 msgid ""
 "Right-click the &vmguest; that you want to migrate and choose "
-"<guimenu>Migrate</guimenu>. Make sure the guest is running or paused&mdash;"
+"<guimenu>Migrate</guimenu> . Make sure the guest is running or paused&mdash;"
 "it is not possible to migrate guests that are shut down."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1103
+#: libvirt_managing.xml:1137
 #, no-c-format
 msgid "Increasing the Speed of the Migration"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1104
+#: libvirt_managing.xml:1138
 #, no-c-format
 msgid ""
 "To increase the speed of the migration somewhat, pause the &vmguest;. This "
@@ -1759,7 +1853,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1112
+#: libvirt_managing.xml:1146
 #, no-c-format
 msgid ""
 "Choose a <guimenu>New Host</guimenu> for the &vmguest;. If the desired "
@@ -1767,43 +1861,44 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1117
+#: libvirt_managing.xml:1151
 #, no-c-format
 msgid ""
 "To change the default options for connecting to the remote host, under "
-"<guimenu>Connection</guimenu>, set the <guimenu>Mode</guimenu>, and the "
+"<guimenu>Connection</guimenu> , set the <guimenu>Mode</guimenu> , and the "
 "target host's <guimenu>Address</guimenu> (IP address or host name) and "
-"<guimenu>Port</guimenu>. If you specify a <guimenu>Port</guimenu>, you must "
-"also specify an <guimenu>Address</guimenu>."
+"<guimenu>Port</guimenu> . If you specify a <guimenu>Port</guimenu> , you "
+"must also specify an <guimenu>Address</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1124
+#: libvirt_managing.xml:1158
 #, no-c-format
 msgid ""
-"Under <guimenu>Advanced options</guimenu>, choose whether the move should be "
-"permanent (default) or temporary, using <guimenu>Temporary move</guimenu>."
+"Under <guimenu>Advanced options</guimenu> , choose whether the move should "
+"be permanent (default) or temporary, using <guimenu>Temporary move</"
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1129
+#: libvirt_managing.xml:1163
 #, no-c-format
 msgid ""
-"Additionally, there is the option <guimenu>Allow unsafe</guimenu>, which "
+"Additionally, there is the option <guimenu>Allow unsafe</guimenu> , which "
 "allows migrating without disabling the cache of the &vmhost;. This can speed "
 "up the migration but only works when the current configuration allows for a "
 "consistent view of the &vmguest; storage without using <literal>cache=&quot;"
-"none&quot;</literal>/<literal>0_DIRECT</literal>."
+"none&quot;</literal> / <literal>0_DIRECT</literal> ."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1137
+#: libvirt_managing.xml:1171
 #, no-c-format
 msgid "Bandwidth Option"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1138
+#: libvirt_managing.xml:1172
 #, no-c-format
 msgid ""
 "In recent versions of &vmm;, the option of setting a bandwidth for the "
@@ -1812,13 +1907,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1146
+#: libvirt_managing.xml:1180
 #, no-c-format
-msgid "To perform the migration, click <guimenu>Migrate</guimenu>."
+msgid "To perform the migration, click <guimenu>Migrate</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1149
+#: libvirt_managing.xml:1183
 #, no-c-format
 msgid ""
 "When the migration is complete, the <guimenu>Migrate</guimenu> window closes "
@@ -1828,23 +1923,23 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1160
+#: libvirt_managing.xml:1194
 #, no-c-format
 msgid "Migrating with <command>virsh</command>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1161
+#: libvirt_managing.xml:1195
 #, no-c-format
 msgid ""
 "To migrate a &vmguest; with <command>virsh</command> <option>migrate</"
-"option>, you need to have direct or remote shell access to the &vmhost;, "
+"option> , you need to have direct or remote shell access to the &vmhost;, "
 "because the command needs to be run on the host. The migration command looks "
 "like this:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1167
+#: libvirt_managing.xml:1201
 #, no-c-format
 msgid ""
 "&prompt.user;virsh migrate [OPTIONS] <replaceable>VM_ID_or_NAME</"
@@ -1853,49 +1948,49 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1168
+#: libvirt_managing.xml:1202
 #, no-c-format
 msgid ""
 "The most important options are listed below. See <command>virsh help "
 "migrate</command> for a full list."
 msgstr ""
 
-#. Tag: option
-#: libvirt_managing.xml:1174
+#. Tag: term
+#: libvirt_managing.xml:1208
 #, no-c-format
-msgid "--live"
+msgid "<option>--live</option>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1177
+#: libvirt_managing.xml:1211
 #, no-c-format
 msgid ""
 "Does a live migration. If not specified, the guest will be paused during the "
-"migration (<quote>offline migration</quote>)."
+"migration ( <quote>offline migration</quote> )."
 msgstr ""
 
-#. Tag: option
-#: libvirt_managing.xml:1184
+#. Tag: term
+#: libvirt_managing.xml:1218
 #, no-c-format
-msgid "--suspend"
+msgid "<option>--suspend</option>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1187
+#: libvirt_managing.xml:1221
 #, no-c-format
 msgid ""
 "Does an offline migration and does not restart the &vmguest; on the target "
 "host."
 msgstr ""
 
-#. Tag: option
-#: libvirt_managing.xml:1194
+#. Tag: term
+#: libvirt_managing.xml:1228
 #, no-c-format
-msgid "--persistent"
+msgid "<option>--persistent</option>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1197
+#: libvirt_managing.xml:1231
 #, no-c-format
 msgid ""
 "By default a migrated &vmguest; will be migrated temporarily, so its "
@@ -1903,14 +1998,14 @@ msgid ""
 "down. Use this switch to make the migration persistent."
 msgstr ""
 
-#. Tag: option
-#: libvirt_managing.xml:1205
+#. Tag: term
+#: libvirt_managing.xml:1239
 #, no-c-format
-msgid "--undefinesource"
+msgid "<option>--undefinesource</option>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1208
+#: libvirt_managing.xml:1242
 #, no-c-format
 msgid ""
 "When specified, the &vmguest; definition on the source host will be deleted "
@@ -1919,35 +2014,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1216
+#: libvirt_managing.xml:1250
 #, no-c-format
 msgid ""
 "The following examples use &wsIVname; as the source system and &wsIname; as "
 "the target system; the &vmguest;'s name is <literal>opensuse131</literal> "
-"with Id <literal>37</literal>."
+"with Id <literal>37</literal> ."
 msgstr ""
 
 #. Tag: term
-#: libvirt_managing.xml:1223
+#: libvirt_managing.xml:1257
 #, no-c-format
 msgid "Offline migration with default parameters"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1225
+#: libvirt_managing.xml:1259
 #, no-c-format
 msgid ""
 "&prompt.user;virsh migrate 37 qemu+ssh://&exampleuser_plain;@&wsIname;/system"
 msgstr ""
 
 #. Tag: term
-#: libvirt_managing.xml:1229
+#: libvirt_managing.xml:1263
 #, no-c-format
 msgid "Transient live migration with default parameters"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1231
+#: libvirt_managing.xml:1265
 #, no-c-format
 msgid ""
 "&prompt.user;virsh migrate --live opensuse131 qemu+ssh://&exampleuser_plain;"
@@ -1955,13 +2050,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: libvirt_managing.xml:1235
+#: libvirt_managing.xml:1269
 #, no-c-format
 msgid "Persistent live migration; delete VM definition on source"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1237
+#: libvirt_managing.xml:1271
 #, no-c-format
 msgid ""
 "&prompt.user;virsh migrate --live --persistent --undefinesource 37 \\\n"
@@ -1969,13 +2064,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: libvirt_managing.xml:1241
+#: libvirt_managing.xml:1276
 #, no-c-format
 msgid "Offline migration using port 49152"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1243
+#: libvirt_managing.xml:1278
 #, no-c-format
 msgid ""
 "&prompt.user;virsh migrate opensuse131 qemu+ssh://&exampleuser_plain;"
@@ -1984,13 +2079,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1248
+#: libvirt_managing.xml:1284
 #, no-c-format
 msgid "Transient Compared to Persistent Migrations"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1249
+#: libvirt_managing.xml:1285
 #, no-c-format
 msgid ""
 "By default <command>virsh migrate</command> creates a temporary (transient) "
@@ -2000,11 +2095,11 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1255
+#: libvirt_managing.xml:1291
 #, no-c-format
 msgid ""
 "To create a permanent copy of a guest on the target host, use the switch "
-"<option>--persistent</option>. A shut down version of the original guest "
+"<option>--persistent</option> . A shut down version of the original guest "
 "description remains on the source host, too. Use the option <option>--"
 "undefinesource</option> together with <option>--persistent</option> for a "
 "<quote>real</quote> move where a permanent copy is created on the target "
@@ -2012,7 +2107,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1264
+#: libvirt_managing.xml:1300
 #, no-c-format
 msgid ""
 "It is not recommended to use <option>--undefinesource</option> without the "
@@ -2021,19 +2116,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1276
+#: libvirt_managing.xml:1312
 #, no-c-format
 msgid "Step-by-Step Example"
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1279
+#: libvirt_managing.xml:1315
 #, no-c-format
 msgid "Exporting the Storage"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1280
+#: libvirt_managing.xml:1316
 #, no-c-format
 msgid ""
 "First you need to export the storage, to share the Guest image between host. "
@@ -2044,19 +2139,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1287
+#: libvirt_managing.xml:1323
 #, no-c-format
 msgid "/volume1/VM 10.0.1.0/24  (rw,sync,no_root_squash)"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1288
+#: libvirt_managing.xml:1324
 #, no-c-format
 msgid "You need to restart the NFS server:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1291
+#: libvirt_managing.xml:1327
 #, no-c-format
 msgid ""
 "&prompt.sudo;systemctl restart nfsserver\n"
@@ -2065,13 +2160,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1294
+#: libvirt_managing.xml:1332
 #, no-c-format
 msgid "Defining the Pool on the Target Hosts"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1295
+#: libvirt_managing.xml:1333
 #, no-c-format
 msgid ""
 "On each host where you want to migrate the &vmguest;, the pool must be "
@@ -2079,12 +2174,12 @@ msgid ""
 "NFS server IP address is 10.0.1.99, its share is the <filename>/volume1/VM</"
 "filename> directory, and we want to get it mounted in the <filename>/var/lib/"
 "libvirt/images/VM</filename> directory. The pool name will be <emphasis>VM</"
-"emphasis>. To define this pool, create a <filename>VM.xml</filename> file "
+"emphasis> . To define this pool, create a <filename>VM.xml</filename> file "
 "with the following content:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1304
+#: libvirt_managing.xml:1342
 #, no-c-format
 msgid ""
 "&lt;pool type='netfs'&gt;\n"
@@ -2106,20 +2201,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1305
+#: libvirt_managing.xml:1358
 #, no-c-format
 msgid ""
 "Then load it into &libvirt; using the <command>pool-define</command> command:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1309
+#: libvirt_managing.xml:1362
 #, no-c-format
 msgid "&prompt.root;virsh pool-define VM.xml"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1310
+#: libvirt_managing.xml:1363
 #, no-c-format
 msgid ""
 "An alternative way to define this pool is to use the <command>virsh</"
@@ -2127,7 +2222,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1314
+#: libvirt_managing.xml:1367
 #, no-c-format
 msgid ""
 "&prompt.root;virsh pool-define-as VM --type netfs --source-host 10.0.1.99 "
@@ -2137,7 +2232,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1315
+#: libvirt_managing.xml:1370
 #, no-c-format
 msgid ""
 "The following commands assume that you are in the interactive shell of "
@@ -2146,63 +2241,56 @@ msgid ""
 "start automatically at host boot (autostart option):"
 msgstr ""
 
-#. Tag: screen
-#: libvirt_managing.xml:1321
+#. Tag: #text
+#: libvirt_managing.xml:1377
 #, no-c-format
-msgid ""
-"<prompt>virsh # </prompt>pool-autostart VM\n"
-"Pool VM marked as autostarted"
+msgid "pool-autostart VMPool VM marked as autostarted"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1322
+#: libvirt_managing.xml:1378
 #, no-c-format
 msgid "If you want to disable the autostart:"
 msgstr ""
 
-#. Tag: screen
-#: libvirt_managing.xml:1325
+#. Tag: #text
+#: libvirt_managing.xml:1382
 #, no-c-format
-msgid ""
-"<prompt>virsh # </prompt>pool-autostart VM --disable\n"
-"Pool VM unmarked as autostarted"
+msgid "pool-autostart VM --disablePool VM unmarked as autostarted"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1326
+#: libvirt_managing.xml:1383
 #, no-c-format
 msgid "Check if the pool is present:"
 msgstr ""
 
-#. Tag: screen
-#: libvirt_managing.xml:1329
+#. Tag: #text
+#: libvirt_managing.xml:1392
 #, no-c-format
 msgid ""
-"<prompt>virsh # </prompt>pool-list --all\n"
-" Name                 State      Autostart\n"
-"-------------------------------------------\n"
-" default              active     yes\n"
-" VM                   active     yes\n"
-"\n"
-"<prompt>virsh # </prompt>pool-info VM\n"
-"Name:           VM\n"
-"UUID:           42efe1b3-7eaa-4e24-a06a-ba7c9ee29741\n"
-"State:          running\n"
-"Persistent:     yes\n"
-"Autostart:      yes\n"
-"Capacity:       2,68 TiB\n"
-"Allocation:     2,38 TiB\n"
-"Available:      306,05 GiB"
+"pool-list --all Name State "
+"Autostart------------------------------------------- default active yes VM "
+"active yes"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1400
+#, no-c-format
+msgid ""
+"pool-info VMName: VMUUID: 42efe1b3-7eaa-4e24-a06a-ba7c9ee29741State: "
+"runningPersistent: yesAutostart: yesCapacity: 2,68 TiBAllocation: 2,38 "
+"TiBAvailable: 306,05 GiB"
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1331
+#: libvirt_managing.xml:1402
 #, no-c-format
 msgid "Pool Needs to Exist on All Target Hosts"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1332
+#: libvirt_managing.xml:1403
 #, no-c-format
 msgid ""
 "Remember: this pool must be defined on each host where you want to be able "
@@ -2210,29 +2298,34 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1339
+#: libvirt_managing.xml:1410
 #, no-c-format
 msgid "Creating the Volume"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1340
+#: libvirt_managing.xml:1411
 #, no-c-format
 msgid ""
 "The pool has been defined&mdash;now we need a volume which will contain the "
 "disk image:"
 msgstr ""
 
-#. Tag: screen
-#: libvirt_managing.xml:1344
+#. Tag: prompt
+#: libvirt_managing.xml:1415
+#, no-c-format
+msgid "virsh #"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1416
 #, no-c-format
 msgid ""
-"<prompt>virsh # </prompt>vol-create-as VM sled12.qcow12 8G --format qcow2\n"
-"Vol sled12.qcow12 created"
+"vol-create-as VM sled12.qcow12 8G --format qcow2Vol sled12.qcow12 created"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1345
+#: libvirt_managing.xml:1417
 #, no-c-format
 msgid ""
 "The volume names shown will be used later to install the guest with virt-"
@@ -2240,13 +2333,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1351
+#: libvirt_managing.xml:1423
 #, no-c-format
 msgid "Creating the &vmguest;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1352
+#: libvirt_managing.xml:1424
 #, no-c-format
 msgid ""
 "Let's create a &productname; &vmguest; with the <command>virt-install</"
@@ -2257,7 +2350,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1359
+#: libvirt_managing.xml:1431
 #, no-c-format
 msgid ""
 "&prompt.root;virt-install --connect qemu:///system --virt-type kvm --name "
@@ -2271,13 +2364,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1362
+#: libvirt_managing.xml:1439
 #, no-c-format
 msgid "Migrate the &vmguest;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1363
+#: libvirt_managing.xml:1440
 #, no-c-format
 msgid ""
 "Everything is ready to do the migration now. Run the <command>migrate</"
@@ -2286,7 +2379,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1368
+#: libvirt_managing.xml:1445
 #, no-c-format
 msgid ""
 "virsh # migrate --live sled12 --verbose qemu+ssh://<replaceable>IP/Hostname</"
@@ -2296,19 +2389,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1373
+#: libvirt_managing.xml:1452
 #, no-c-format
 msgid "Monitoring"
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1378
+#: libvirt_managing.xml:1457
 #, no-c-format
 msgid "Monitoring with &vmm;"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1379
+#: libvirt_managing.xml:1458
 #, no-c-format
 msgid ""
 "After starting &vmm; and connecting to the &vmhost;, a CPU usage graph of "
@@ -2316,68 +2409,69 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1383
+#: libvirt_managing.xml:1462
 #, no-c-format
 msgid ""
 "It is also possible to get information about disk and network usage with "
 "this tool, however, you must first activate this in <guimenu>Preferences</"
-"guimenu>:"
+"guimenu> :"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1390
+#: libvirt_managing.xml:1469
 #, no-c-format
-msgid "Run <command>virt-manager</command>."
+msgid "Run <command>virt-manager</command> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1395
+#: libvirt_managing.xml:1474
 #, no-c-format
 msgid ""
 "Select <menuchoice><guimenu>Edit</guimenu> <guimenu>Preferences</guimenu></"
-"menuchoice>."
+"menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1401
+#: libvirt_managing.xml:1480
 #, no-c-format
 msgid ""
-"Change the tab from <guimenu>General</guimenu> to <guimenu>Polling</guimenu>."
+"Change the tab from <guimenu>General</guimenu> to <guimenu>Polling</"
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1407
+#: libvirt_managing.xml:1486
 #, no-c-format
 msgid ""
 "Activate the check boxes for the kind of activity you want to see: "
-"<guimenu>Poll Disk I/O</guimenu>, <guimenu>Poll Network I/O</guimenu>, and "
-"<guimenu>Poll Memory stats</guimenu>."
+"<guimenu>Poll Disk I/O</guimenu> , <guimenu>Poll Network I/O</guimenu> , and "
+"<guimenu>Poll Memory stats</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1414
+#: libvirt_managing.xml:1493
 #, no-c-format
 msgid ""
 "If desired, also change the update interval using <guimenu>Update status "
-"every n seconds</guimenu>."
+"every n seconds</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1420
+#: libvirt_managing.xml:1499
 #, no-c-format
 msgid "Close the <guimenu>Preferences</guimenu> dialog."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1425
+#: libvirt_managing.xml:1504
 #, no-c-format
 msgid ""
 "Activate the graphs that should be displayed under <menuchoice> "
-"<guimenu>View</guimenu> <guimenu>Graph</guimenu> </menuchoice>."
+"<guimenu>View</guimenu> <guimenu>Graph</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1431
+#: libvirt_managing.xml:1510
 #, no-c-format
 msgid ""
 "Afterward, the disk and network statistics are also displayed in the main "
@@ -2385,48 +2479,48 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1435
+#: libvirt_managing.xml:1514
 #, no-c-format
 msgid ""
 "More precise data is available from the VNC window. Open a VNC window as "
-"described in <xref linkend=\"sec.libvirt.managing.console.vnc\"/>. Choose "
+"described in <xref linkend=\"sec.libvirt.managing.console.vnc\"/> . Choose "
 "<guimenu>Details</guimenu> from the toolbar or the <guimenu>View</guimenu> "
 "menu. The statistics are displayed from the <guimenu>Performance</guimenu> "
 "entry of the left-hand tree menu."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1445
+#: libvirt_managing.xml:1524
 #, no-c-format
 msgid "Monitoring with <command>virt-top</command>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1446
+#: libvirt_managing.xml:1525
 #, no-c-format
 msgid ""
 "<command>virt-top</command> is a command line tool similar to the well-known "
-"process monitoring tool <command>top</command>. <command>virt-top</command> "
+"process monitoring tool <command>top</command> . <command>virt-top</command> "
 "uses libvirt and therefore is capable of showing statistics for &vmguest;s "
 "running on different hypervisors. It is recommended to use <command>virt-"
 "top</command> instead of hypervisor-specific tools like <command>xentop</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1454
+#: libvirt_managing.xml:1533
 #, no-c-format
 msgid ""
 "By default <command>virt-top</command> shows statistics for all running "
 "&vmguest;s. Among the data that is displayed is the percentage of memory "
-"used (<literal>%MEM</literal>) and CPU (<literal>%CPU</literal>) and the "
-"uptime of the guest (<literal>TIME</literal>). The data is updated regularly "
-"(every three seconds by default). The following shows the output on a "
-"&vmhost; with seven &vmguest;s, four of them inactive:"
+"used ( <literal>%MEM</literal> ) and CPU ( <literal>%CPU</literal> ) and the "
+"uptime of the guest ( <literal>TIME</literal> ). The data is updated "
+"regularly (every three seconds by default). The following shows the output "
+"on a &vmhost; with seven &vmguest;s, four of them inactive:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1462
+#: libvirt_managing.xml:1541
 #, no-c-format
 msgid ""
 "virt-top 13:40:19 - x86_64 8/8CPU 1283MHz 16067MB 7.6% 0.5%\n"
@@ -2445,126 +2539,186 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1463
+#: libvirt_managing.xml:1553
 #, no-c-format
 msgid ""
 "By default the output is sorted by ID. Use the following key combinations to "
 "change the sort field:"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1468
+#. Tag: keycap
+#: libvirt_managing.xml:1558
 #, no-c-format
-msgid ""
-"<keycombo><keycap function=\"shift\"></keycap><keycap>P</keycap></keycombo>: "
-"CPU usage"
+msgid "P"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1471
+#. Tag: #text
+#: libvirt_managing.xml:1560
 #, no-c-format
-msgid ""
-"<keycombo><keycap function=\"shift\"></keycap><keycap>M</keycap></keycombo>: "
-"Total memory allocated by the guest"
+msgid ": CPU usage"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1474
+#. Tag: keycap
+#: libvirt_managing.xml:1561
 #, no-c-format
-msgid ""
-"<keycombo><keycap function=\"shift\"></keycap><keycap>T</keycap></keycombo>: "
-"Time"
+msgid "M"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1476
+#. Tag: #text
+#: libvirt_managing.xml:1563
 #, no-c-format
-msgid ""
-"<keycombo><keycap function=\"shift\"></keycap><keycap>I</keycap></keycombo>: "
-"ID"
+msgid ": Total memory allocated by the guest"
+msgstr ""
+
+#. Tag: keycap
+#: libvirt_managing.xml:1564
+#, no-c-format
+msgid "T"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1565
+#, no-c-format
+msgid ": Time"
+msgstr ""
+
+#. Tag: keycap
+#: libvirt_managing.xml:1566
+#, no-c-format
+msgid "I"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1567
+#, no-c-format
+msgid ": ID"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1570
+#, no-c-format
+msgid "To use any other field for sorting, press"
+msgstr ""
+
+#. Tag: keycap
+#: libvirt_managing.xml:1572
+#, no-c-format
+msgid "F"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1573
+#, no-c-format
+msgid "and select a field from the list. To toggle the sort order, use"
+msgstr ""
+
+#. Tag: keycap
+#: libvirt_managing.xml:1575
+#, no-c-format
+msgid "R"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1576
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1479
-#, no-c-format
-msgid ""
-"To use any other field for sorting, press <keycombo> <keycap function=\"shift"
-"\"></keycap> <keycap>F</keycap> </keycombo> and select a field from the "
-"list. To toggle the sort order, use <keycombo> <keycap function=\"shift\"></"
-"keycap> <keycap>R</keycap> </keycombo>."
-msgstr ""
-
-#. Tag: para
-#: libvirt_managing.xml:1485
+#: libvirt_managing.xml:1577
 #, no-c-format
 msgid ""
 "<command>virt-top</command> also supports different views on the &vmguest;s "
 "data, which can be changed on-the-fly by pressing the following keys:"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1490
+#. Tag: keycap
+#: libvirt_managing.xml:1582
 #, no-c-format
-msgid "<keycap>0</keycap>: default view"
+msgid "0"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1491
+#. Tag: #text
+#: libvirt_managing.xml:1582
 #, no-c-format
-msgid "<keycap>1</keycap>: show physical CPUs"
+msgid ": default view"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1492
+#. Tag: #text
+#: libvirt_managing.xml:1583
 #, no-c-format
-msgid "<keycap>2</keycap>: show network interfaces"
+msgid ": show physical CPUs"
 msgstr ""
 
-#. Tag: member
-#: libvirt_managing.xml:1493
+#. Tag: keycap
+#: libvirt_managing.xml:1583
 #, no-c-format
-msgid "<keycap>3</keycap>: show virtual disks"
+msgid "1"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1584
+#, no-c-format
+msgid ": show network interfaces"
+msgstr ""
+
+#. Tag: keycap
+#: libvirt_managing.xml:1584
+#, no-c-format
+msgid "2"
+msgstr ""
+
+#. Tag: keycap
+#: libvirt_managing.xml:1585
+#, no-c-format
+msgid "3"
+msgstr ""
+
+#. Tag: #text
+#: libvirt_managing.xml:1585
+#, no-c-format
+msgid ": show virtual disks"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1495
+#: libvirt_managing.xml:1587
 #, no-c-format
 msgid ""
 "<command>virt-top</command> supports more hot keys to change the view of the "
 "data and many command line switches that affect the behavior of the program. "
-"For more information, see <command>man 1 virt-top</command>."
+"For more information, see <command>man 1 virt-top</command> ."
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1503
+#: libvirt_managing.xml:1595
 #, no-c-format
 msgid "Monitoring with <command>kvm_stat</command>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1504
+#: libvirt_managing.xml:1596
 #, no-c-format
 msgid ""
 "<command>kvm_stat</command> can be used to trace &kvm; performance events. "
-"It monitors <filename>/sys/kernel/debug/kvm</filename>, so it needs the "
+"It monitors <filename>/sys/kernel/debug/kvm</filename> , so it needs the "
 "debugfs to be mounted. On &productname; it should be mounted by default. In "
 "case it is not mounted, use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1510
+#: libvirt_managing.xml:1602
 #, no-c-format
 msgid "&prompt.sudo;mount -t debugfs none /sys/kernel/debug"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1511
+#: libvirt_managing.xml:1603
 #, no-c-format
 msgid "<command>kvm_stat</command> can be used in three different modes:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1514
+#: libvirt_managing.xml:1606
 #, no-c-format
 msgid ""
 "kvm_stat                    # update in 1 second intervals\n"
@@ -2574,13 +2728,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: libvirt_managing.xml:1516
+#: libvirt_managing.xml:1611
 #, no-c-format
 msgid "Typical Output of <command>kvm_stat</command>"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1517
+#: libvirt_managing.xml:1612
 #, no-c-format
 msgid ""
 "kvm statistics\n"
@@ -2620,16 +2774,15 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: libvirt_managing.xml:1518
+#: libvirt_managing.xml:1646
 #, no-c-format
 msgid "?????"
 msgstr ""
 
 #. Tag: para
-#: libvirt_managing.xml:1520
+#: libvirt_managing.xml:1648
 #, no-c-format
 msgid ""
 "See <link xlink:href=\"http://clalance.blogspot.com/2009/01/kvm-performance-"
-"tools.html\"></link> for further information on how to interpret these "
-"values."
+"tools.html\"/> for further information on how to interpret these values."
 msgstr ""

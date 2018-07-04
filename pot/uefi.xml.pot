@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,10 +20,10 @@ msgstr ""
 msgid "UEFI (Unified Extensible Firmware Interface)"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: uefi.xml:24
+#. Tag: dm:translation
+#: uefi.xml:26
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -35,7 +35,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:34
 #, no-c-format
-msgid "UEFI is becoming more and more available on PC systems and thus is replacing the traditional PC-BIOS. UEFI, for example, properly supports 64-bit systems and offers secure booting (<quote>Secure Boot</quote>, firmware version 2.3.1c or better required), which is one of its most important features. Lastly, with UEFI a standard firmware will become available on all x86 platforms."
+msgid "UEFI is becoming more and more available on PC systems and thus is replacing the traditional PC-BIOS. UEFI, for example, properly supports 64-bit systems and offers secure booting ( <quote>Secure Boot</quote> , firmware version 2.3.1c or better required), which is one of its most important features. Lastly, with UEFI a standard firmware will become available on all x86 platforms."
 msgstr ""
 
 #. Tag: para
@@ -71,7 +71,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:68
 #, no-c-format
-msgid "For more information, see <link xlink:href=\"http://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface\"></link>. The following sections are not meant as a general UEFI overview; these are only hints about how some features are implemented in &productname;."
+msgid "For more information, see <link xlink:href=\"http://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface\"/> . The following sections are not meant as a general UEFI overview; these are only hints about how some features are implemented in &productname;."
 msgstr ""
 
 #. Tag: title
@@ -83,7 +83,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:79
 #, no-c-format
-msgid "In the world of UEFI, securing the bootstrapping process means establishing a chain of trust. The <quote>platform</quote> is the root of this chain of trust; in the context of &productname;, the mainboard and the on-board firmware could be considered the <quote>platform</quote>. In other words, it is the hardware vendor, and the chain of trust flows from that hardware vendor to the component manufacturers, the OS vendors, etc."
+msgid "In the world of UEFI, securing the bootstrapping process means establishing a chain of trust. The <quote>platform</quote> is the root of this chain of trust; in the context of &productname;, the mainboard and the on-board firmware could be considered the <quote>platform</quote> . In other words, it is the hardware vendor, and the chain of trust flows from that hardware vendor to the component manufacturers, the OS vendors, etc."
 msgstr ""
 
 #. Tag: para
@@ -107,7 +107,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:108
 #, no-c-format
-msgid "Key Exchange Keys (KEK) can be added to the UEFI key database. This way, you can use other certificates, as long as they are signed with the private part of the PK."
+msgid "<!-- WP, re-phrased --> Key Exchange Keys (KEK) can be added to the UEFI key database. This way, you can use other certificates, as long as they are signed with the private part of the PK. <!-- but they must stillhave a connection to the private portion of the Platform key.-->"
 msgstr ""
 
 #. Tag: title
@@ -197,25 +197,25 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:213
 #, no-c-format
-msgid "The first is the so-called <quote>Authenticated Variables</quote>, which can be updated from both within the boot process (the so-called Boot Services Environment) and the running OS. This can be done only when the new value of the variable is signed with the same key that the old value of the variable was signed with. And they can only be appended to or changed to a value with a higher serial number."
+msgid "The first is the so-called <quote>Authenticated Variables</quote> , which can be updated from both within the boot process (the so-called Boot Services Environment) and the running OS. This can be done only when the new value of the variable is signed with the same key that the old value of the variable was signed with. And they can only be appended to or changed to a value with a higher serial number."
 msgstr ""
 
 #. Tag: para
 #: uefi.xml:223
 #, no-c-format
-msgid "The second is the so-called <quote>Boot Services Only Variables</quote>. These variables are accessible to any code that runs during the boot process. After the boot process ends and before the OS starts, the boot loader must call the <literal>ExitBootServices</literal> call. After that, these variables are no longer accessible, and the OS cannot touch them."
+msgid "The second is the so-called <quote>Boot Services Only Variables</quote> . These variables are accessible to any code that runs during the boot process. After the boot process ends and before the OS starts, the boot loader must call the <literal>ExitBootServices</literal> call. After that, these variables are no longer accessible, and the OS cannot touch them."
 msgstr ""
 
 #. Tag: para
 #: uefi.xml:233
 #, no-c-format
-msgid "The various UEFI key lists are of the first type, as this allows online updating, adding, and blacklisting of keys, drivers, and firmware fingerprints. It is the second type of variable, the <quote>Boot Services Only Variable</quote>, that helps to implement Secure Boot in a secure and open source-friendly manner, and thus compatible with GPLv3."
+msgid "The various UEFI key lists are of the first type, as this allows online updating, adding, and blacklisting of keys, drivers, and firmware fingerprints. It is the second type of variable, the <quote>Boot Services Only Variable</quote> , that helps to implement Secure Boot in a secure and open source-friendly manner, and thus compatible with GPLv3."
 msgstr ""
 
 #. Tag: para
 #: uefi.xml:241
 #, no-c-format
-msgid "SUSE starts with <systemitem>shim</systemitem>&mdash;a small and simple EFI boot loader signed by SUSE and Microsoft."
+msgid "SUSE starts with <systemitem>shim</systemitem> &mdash;a small and simple EFI boot loader signed by SUSE and Microsoft."
 msgstr ""
 
 #. Tag: para
@@ -227,7 +227,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:248
 #, no-c-format
-msgid "<systemitem>shim</systemitem> then goes on to verify that the boot loader it wants to load is trusted. In a default situation <systemitem>shim</systemitem> will use an independent SUSE certificate embedded in its body. In addition, <systemitem>shim</systemitem> will allow to <quote>enroll</quote> additional keys, overriding the default SUSE key. In the following, we call them <quote>Machine Owner Keys</quote> or MOKs for short."
+msgid "<systemitem>shim</systemitem> then goes on to verify that the boot loader it wants to load is trusted. <!-- ??? It will not use the SUSE KEK nor theMicrosoft certificate for this. --> In a default situation <systemitem>shim</systemitem> will use an independent SUSE certificate embedded in its body. In addition, <systemitem>shim</systemitem> will allow to <quote>enroll</quote> additional keys, overriding the default SUSE key. In the following, we call them <quote>Machine Owner Keys</quote> or MOKs for short."
 msgstr ""
 
 #. Tag: para
@@ -245,7 +245,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:276
 #, no-c-format
-msgid "If the user (<quote>machine owner</quote>) wants to replace any components of the boot process, Machine Owner Keys (MOKs) are to be used. The <systemitem>mokutils</systemitem> tool will help with signing components and managing MOKs."
+msgid "If the user ( <quote>machine owner</quote> ) wants to replace any components of the boot process, Machine Owner Keys (MOKs) are to be used. The <systemitem>mokutils</systemitem> tool will help with signing components and managing MOKs."
 msgstr ""
 
 #. Tag: para
@@ -263,7 +263,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:301
 #, no-c-format
-msgid "The boot loader, after having been loaded and verified by <systemitem>shim</systemitem>, will call back to <systemitem>shim</systemitem> when it wants to verify the kernel&mdash;to avoid duplication of the verification code. <systemitem>Shim</systemitem> will use the same list of MOKs for this and tell the boot loader whether it can load the kernel."
+msgid "The boot loader, after having been loaded and verified by <systemitem>shim</systemitem> , will call back to <systemitem>shim</systemitem> when it wants to verify the kernel&mdash;to avoid duplication of the verification code. <systemitem>Shim</systemitem> will use the same list of MOKs for this and tell the boot loader whether it can load the kernel."
 msgstr ""
 
 #. Tag: para
@@ -281,7 +281,7 @@ msgstr ""
 #. Tag: para
 #: uefi.xml:320
 #, no-c-format
-msgid "The following is based on <link xlink:href=\"http://en.opensuse.org/openSUSE:UEFI#Booting_a_custom_kernel\"></link>."
+msgid "The following is based on <link xlink:href=\"http://en.opensuse.org/openSUSE:UEFI#Booting_a_custom_kernel\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -299,428 +299,460 @@ msgstr ""
 #. Tag: screen
 #: uefi.xml:334
 #, no-c-format
-msgid ""
-      "openssl req -new -x509 -newkey rsa:2048 -keyout key.asc \\\n"
+msgid "openssl req -new -x509 -newkey rsa:2048 -keyout key.asc \\\n"
       "  -out cert.pem -nodes -days 666 -subj \"/CN=$USER/\""
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:335
+#: uefi.xml:336
 #, no-c-format
-msgid "For more information about creating certificates, see <link xlink:href=\"http://en.opensuse.org/openSUSE:UEFI_Image_File_Sign_Tools#Create_Your_Own_Certificate\"></link>."
+msgid "<!-- bnc#811869 --> For more information about creating certificates, see <link xlink:href=\"http://en.opensuse.org/openSUSE:UEFI_Image_File_Sign_Tools#Create_Your_Own_Certificate\"/> ."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:342
+#: uefi.xml:343
 #, no-c-format
 msgid "Package the key and the certificate as a PKCS#12 structure:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:345
+#: uefi.xml:346
 #, no-c-format
-msgid ""
-      "&prompt.user;openssl pkcs12 -export -inkey key.asc -in cert.pem \\\n"
+msgid "&prompt.user;openssl pkcs12 -export -inkey key.asc -in cert.pem \\\n"
       "  -name kernel_cert -out cert.p12"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:348
+#: uefi.xml:350
 #, no-c-format
-msgid "Generate an NSS database for use with <command>pesign</command>:"
+msgid "Generate an NSS database for use with <command>pesign</command> :"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:351
+#: uefi.xml:353
 #, no-c-format
 msgid "&prompt.user;certutil -d . -N"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:354
+#: uefi.xml:356
 #, no-c-format
 msgid "Import the key and the certificate contained in PKCS#12 into the NSS database:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:358
+#: uefi.xml:360
 #, no-c-format
 msgid "&prompt.user;pk12util -d . -i cert.p12"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:361
+#: uefi.xml:363
 #, no-c-format
-msgid "<quote>Bless</quote> the kernel with the new signature using <command>pesign</command>:"
+msgid "<quote>Bless</quote> the kernel with the new signature using <command>pesign</command> :"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:365
+#: uefi.xml:367
 #, no-c-format
-msgid ""
-      "&prompt.user;pesign -n . -c kernel_cert -i arch/x86/boot/bzImage \\\n"
+msgid "&prompt.user;pesign -n . -c kernel_cert -i arch/x86/boot/bzImage \\\n"
       "  -o vmlinuz.signed -s"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:368
+#: uefi.xml:371
 #, no-c-format
 msgid "List the signatures on the kernel image:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:371
+#: uefi.xml:374
 #, no-c-format
 msgid "&prompt.user;pesign -n . -S -i vmlinuz.signed"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:372
+#: uefi.xml:375
 #, no-c-format
 msgid "At that point, you can install the kernel in <filename>/boot</filename> as usual. Because the kernel now has a custom signature the certificate used for signing needs to be imported into the UEFI firmware or MOK."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:379
+#: uefi.xml:382
 #, no-c-format
 msgid "Convert the certificate to the DER format for import into the firmware or MOK:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:383
+#: uefi.xml:386
 #, no-c-format
 msgid "&prompt.user;openssl x509 -in cert.pem -outform der -out cert.der"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:386
+#: uefi.xml:389
 #, no-c-format
 msgid "Copy the certificate to the ESP for easier access:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:389
+#: uefi.xml:392
 #, no-c-format
 msgid "&prompt.sudo;cp cert.der /boot/efi/"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:392
+#: uefi.xml:395
 #, no-c-format
 msgid "Use <command>mokutil</command> to launch the MOK list automatically."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:399
+#: uefi.xml:402
 #, no-c-format
 msgid "Import the certificate to MOK:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:402
+#: uefi.xml:405
 #, no-c-format
 msgid "&prompt.user;mokutil --root-pw --import cert.der"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:403
+#: uefi.xml:406
 #, no-c-format
 msgid "The <option>--root-pw</option> option enables usage of the &rootuser; user directly."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:409
+#: uefi.xml:412
 #, no-c-format
 msgid "Check the list of certificates that are prepared to be enrolled:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:412
+#: uefi.xml:415
 #, no-c-format
 msgid "&prompt.user;mokutil --list-new"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:415
+#: uefi.xml:418
 #, no-c-format
 msgid "Reboot the system; <systemitem>shim</systemitem> should launch MokManager. You need to enter the &rootuser; password to confirm the import of the certificate to the MOK list."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:422
+#: uefi.xml:425
 #, no-c-format
 msgid "Check if the newly imported key was enrolled:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:425
+#: uefi.xml:428
 #, no-c-format
 msgid "&prompt.user;mokutil --list-enrolled"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:432
+#: uefi.xml:435
 #, no-c-format
 msgid "Alternatively, this is the procedure if you want to launch MOK manually:"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:436
+#: uefi.xml:439
 #, no-c-format
 msgid "Reboot"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:441
+#: uefi.xml:444
 #, no-c-format
-msgid "In the &grub; menu press the '<literal>c</literal>' key."
+msgid "In the &grub; menu press the ' <literal>c</literal> ' key."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:446
+#: uefi.xml:449
 #, no-c-format
 msgid "Type:"
 msgstr ""
 
 #. Tag: screen
-#: uefi.xml:449
+#: uefi.xml:452
 #, no-c-format
-msgid ""
-      "chainloader $efibootdir/MokManager.efi\n"
+msgid "chainloader $efibootdir/MokManager.efi\n"
       "boot"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:452
+#: uefi.xml:456
 #, no-c-format
-msgid "Select <guimenu>Enroll key from disk</guimenu>."
+msgid "Select <guimenu>Enroll key from disk</guimenu> ."
 msgstr ""
 
-#. Tag: para
-#: uefi.xml:457
+#. Tag: #text
+#: uefi.xml:462
 #, no-c-format
-msgid "Navigate to the <filename>cert.der</filename> file and press <keycap function=\"enter\"></keycap>."
+msgid "Navigate to the"
 msgstr ""
 
-#. Tag: para
+#. Tag: filename
+#: uefi.xml:462
+#, no-c-format
+msgid "cert.der"
+msgstr ""
+
+#. Tag: #text
 #: uefi.xml:463
 #, no-c-format
-msgid "Follow the instructions to enroll the key. Normally this should be pressing '<literal>0</literal>' and then '<literal>y</literal>' to confirm."
+msgid "file and press"
+msgstr ""
+
+#. Tag: #text
+#: uefi.xml:464
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:468
+#: uefi.xml:467
+#, no-c-format
+msgid "Follow the instructions to enroll the key. Normally this should be pressing ' <literal>0</literal> ' and then ' <literal>y</literal> ' to confirm."
+msgstr ""
+
+#. Tag: para
+#: uefi.xml:472
 #, no-c-format
 msgid "Alternatively, the firmware menu may provide ways to add a new key to the Signature Database."
 msgstr ""
 
 #. Tag: title
-#: uefi.xml:504
+#: uefi.xml:508
 #, no-c-format
 msgid "Using Non-Inbox Drivers"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:505
+#: uefi.xml:509
 #, no-c-format
 msgid "There is no support for adding non-inbox drivers (that is, drivers that do not come with &productname;) during installation with Secure Boot enabled. The signing key used for SolidDriver/PLDP is not trusted by default."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:510
+#: uefi.xml:514
 #, no-c-format
 msgid "It is possible to install third party drivers during installation with Secure Boot enabled in two different ways. In both cases:"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:516
+#: uefi.xml:520
 #, no-c-format
 msgid "Add the needed keys to the firmware database via firmware/system management tools before the installation. This option depends on the specific hardware you are using. Consult your hardware vendor for more information."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:524
+#: uefi.xml:528
 #, no-c-format
-msgid "Use a bootable driver ISO from <link xlink:href=\"https://drivers.suse.com/\"></link> or your hardware vendor to enroll the needed keys in the MOK list at first boot."
+msgid "Use a bootable driver ISO from <link xlink:href=\"https://drivers.suse.com/\"/> or your hardware vendor to enroll the needed keys in the MOK list at first boot."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:531
+#: uefi.xml:535
 #, no-c-format
 msgid "To use the bootable driver ISO to enroll the driver keys to the MOK list, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:537
+#: uefi.xml:541
 #, no-c-format
 msgid "Burn the ISO image above to an empty CD/DVD medium."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:542
+#: uefi.xml:546
 #, no-c-format
 msgid "Start the installation using the new CD/DVD medium, having the standard installation media at hand or a URL to a network installation server."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:547
+#: uefi.xml:551
 #, no-c-format
 msgid "If doing a network installation, enter the URL of the network installation source on the boot command line using the <option>install=</option> option."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:552
+#: uefi.xml:556
 #, no-c-format
 msgid "If doing installation from optical media, the installer will first boot from the driver kit and then ask to insert the first installation disk of the product."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:559
+#: uefi.xml:563
 #, no-c-format
 msgid "An initrd containing updated drivers will be used for installation."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:564
+#: uefi.xml:568
 #, no-c-format
-msgid "For more information, see <link xlink:href=\"https://drivers.suse.com/doc/Usage/Secure_Boot_Certificate.html\"></link>."
+msgid "For more information, see <link xlink:href=\"https://drivers.suse.com/doc/Usage/Secure_Boot_Certificate.html\"/> ."
 msgstr ""
 
 #. Tag: title
-#: uefi.xml:572
+#: uefi.xml:576
 #, no-c-format
 msgid "Features and Limitations"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:573
+#: uefi.xml:577
 #, no-c-format
 msgid "When booting in Secure Boot mode, the following features apply:"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:578
+#: uefi.xml:582
 #, no-c-format
 msgid "Installation to UEFI default boot loader location, a mechanism to keep or restore the EFI boot entry."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:584
+#: uefi.xml:588
 #, no-c-format
 msgid "Reboot via UEFI."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:589
+#: uefi.xml:593
 #, no-c-format
 msgid "Xen hypervisor will boot with UEFI when there is no legacy BIOS to fall back to."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:595
+#: uefi.xml:599
 #, no-c-format
 msgid "UEFI IPv6 PXE boot support."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:600
+#: uefi.xml:604
 #, no-c-format
 msgid "UEFI videomode support, the kernel can retrieve video mode from UEFI to configure KMS mode with the same parameters."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:606
+#: uefi.xml:610
 #, no-c-format
 msgid "UEFI booting from USB devices is supported."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:611
+#: uefi.xml:615
 #, no-c-format
 msgid "When booting in Secure Boot mode, the following limitations apply:"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:616
+#: uefi.xml:620
 #, no-c-format
 msgid "To ensure that Secure Boot cannot be easily circumvented, some kernel features are disabled when running under Secure Boot."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:623
+#: uefi.xml:627
 #, no-c-format
 msgid "Boot loader, kernel, and kernel modules must be signed."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:628
+#: uefi.xml:632
 #, no-c-format
 msgid "Kexec and Kdump are disabled."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:633
+#: uefi.xml:637
 #, no-c-format
 msgid "Hibernation (suspend on disk) is disabled."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:638
+#: uefi.xml:642
 #, no-c-format
 msgid "Access to <filename>/dev/kmem</filename> and <filename>/dev/mem</filename> is not possible, not even as root user."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:644
+#: uefi.xml:648
 #, no-c-format
 msgid "Access to the I/O port is not possible, not even as root user. All X11 graphical drivers must use a kernel driver."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:650
+#: uefi.xml:654
 #, no-c-format
 msgid "PCI BAR access through sysfs is not possible."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:655
+#: uefi.xml:659
 #, no-c-format
 msgid "<literal>custom_method</literal> in ACPI is not available."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:660
+#: uefi.xml:664
 #, no-c-format
 msgid "debugfs for asus-wmi module is not available."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:665
+#: uefi.xml:669
 #, no-c-format
 msgid "the <literal>acpi_rsdp</literal> parameter does not have any effect on the kernel."
 msgstr ""
 
 #. Tag: title
-#: uefi.xml:687
+#: uefi.xml:691
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:691
+#: uefi.xml:695
 #, no-c-format
-msgid "<link xlink:href=\"http://www.uefi.org\"></link> &mdash;UEFI home page where you can find the current UEFI specifications."
+msgid "<link xlink:href=\"http://www.uefi.org\"/> &mdash;UEFI home page where you can find the current UEFI specifications."
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:697
+#: uefi.xml:701
 #, no-c-format
 msgid "Blog posts by Olaf Kirch and Vojtěch Pavlík (the chapter above is heavily based on these posts):"
 msgstr ""
 
 #. Tag: para
-#: uefi.xml:720
+#: uefi.xml:707
 #, no-c-format
-msgid "<link xlink:href=\"http://en.opensuse.org/openSUSE:UEFI\"></link> &mdash;UEFI with openSUSE."
+msgid "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-plan/\"/>"
+msgstr ""
+
+#. Tag: para
+#: uefi.xml:712
+#, no-c-format
+msgid "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-overview/\"/>"
+msgstr ""
+
+#. Tag: para
+#: uefi.xml:717
+#, no-c-format
+msgid "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-details/\"/>"
+msgstr ""
+
+#. Tag: para
+#: uefi.xml:724
+#, no-c-format
+msgid "<link xlink:href=\"http://en.opensuse.org/openSUSE:UEFI\"/> &mdash;UEFI with openSUSE."
 msgstr ""
 

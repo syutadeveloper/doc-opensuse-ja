@@ -1,143 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE chapter [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
-
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.selinux">
- <title
->Configuring &selnx;</title>
+ <title>Configuring &selnx;</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
-   <dm:bugtracker
-></dm:bugtracker>
+   <dm:bugtracker/>
   </dm:docmanager>
  </info>
- <para
->In this chapter, you will learn how to set up and manage &selnx; on &productname;. The following topics are covered: </para>
+ <para>
+  In this chapter, you will learn how to set up and manage &selnx; on
+  &productname;. The following topics are covered:
+ </para>
  <itemizedlist mark="bullet" spacing="normal">
   <listitem>
-   <para
->Why Use &selnx;? </para>
+   <para>
+    Why Use &selnx;?
+   </para>
   </listitem>
   <listitem>
-   <para
->Understanding &selnx; </para>
+   <para>
+    Understanding &selnx;
+   </para>
   </listitem>
   <listitem>
-   <para
->Setting Up &selnx; </para>
+   <para>
+    Setting Up &selnx;
+   </para>
   </listitem>
   <listitem>
-   <para
->Managing &selnx; </para>
+   <para>
+    Managing &selnx;
+   </para>
   </listitem>
  </itemizedlist>
  <sect1 xml:id="sec.selinux.why">
-  <title
->Why Use &selnx;?</title>
-
-  <para
->&selnx; was developed as an additional Linux security solution that uses the security framework in the Linux kernel. The purpose was to allow for a more granular security policy that goes beyond what is offered by the default existing permissions of Read, Write, and Execute, and beyond assigning permissions to the different capabilities that are available on Linux. &selnx; does this by trapping all system calls that reach the kernel, and denying them by default. This means that on a system that has &selnx; enabled and nothing else configured, nothing will work. To allow your system to do anything, as an administrator you will need to write rules and put them in a policy. </para>
-
-  <para
->An example explains why a solution such as &selnx; (or its counterpart &aa;) is needed: </para>
+  <title>Why Use &selnx;?</title>
 
   <para>
-   <quote
->One morning, I found out that my server was hacked. The server was running a fully patched &slsa; installation. A firewall was configured on it and no unnecessary services were offered by this server. Further analysis revealed that the hacker had come in through a vulnerable PHP script that was a part of one of the Apache virtual hosts that were running on this server. The intruder had managed to get access to a shell, using the <systemitem class="username"
->wwwrun</systemitem
-> account that was used by the Apache Web server. As this <systemitem class="username"
->wwwrun</systemitem
-> user, the intruder had created several scripts in the <filename
->/var/tmp</filename
-> and the <filename
->/tmp</filename
-> directories, which were a part of a botnet that was launching a Distributed Denial of Service attack against several servers.</quote>
+   &selnx; was developed as an additional Linux security solution that uses
+   the security framework in the Linux kernel. The purpose was to allow for
+   a more granular security policy that goes beyond what is offered by the
+   default existing permissions of Read, Write, and Execute, and beyond
+   assigning permissions to the different capabilities that are available on
+   Linux. &selnx; does this by trapping all system calls that reach the
+   kernel, and denying them by default. This means that on a system that has
+   &selnx; enabled and nothing else configured, nothing will work. To allow
+   your system to do anything, as an administrator you will need to write
+   rules and put them in a policy.
   </para>
 
-  <para
->The interesting thing about this hack is that it occurred on a server where nothing was really wrong. All permissions where set OK, but the intruder had managed to get into the system. What becomes clearly evident from this example is that in some cases additional security is needed&mdash;a security that goes beyond what is offered by using &selnx;. As a less complete and less complex alternative, &aa; can be used. </para>
+  <para>
+   An example explains why a solution such as &selnx; (or its counterpart
+   &aa;) is needed:
+  </para>
 
-  <para
->&aa; confines specific processes in their abilities to read/write and execute files (and other things). Its view is mostly that things that happen inside a process cannot escape. </para>
+  <para>
+   <quote>One morning, I found out that my server was hacked. The server was
+   running a fully patched &slsa; installation. A firewall was configured on
+   it and no unnecessary services were offered by this server. Further
+   analysis revealed that the hacker had come in through a vulnerable PHP script
+   that was a part of one of the Apache virtual hosts that were running on
+   this server. The intruder had managed to get access to a shell, using the
+   <systemitem class="username">wwwrun</systemitem> account that was used by
+   the Apache Web server. As this
+   <systemitem class="username">wwwrun</systemitem> user, the intruder had
+   created several scripts in the <filename>/var/tmp</filename> and the
+   <filename>/tmp</filename> directories, which were a part of a botnet that
+   was launching a Distributed Denial of Service attack against several
+   servers.</quote>
+  </para>
 
-  <para
->&selnx; instead uses labels attached to objects (for example, files, binaries, network sockets) and uses them to determine privilege boundaries, thereby building up a level of confinement that can span more than a process or even the whole system. </para>
+  <para>
+   The interesting thing about this hack is that it occurred on a server
+   where nothing was really wrong. All permissions where set OK, but the
+   intruder had managed to get into the system. What becomes clearly evident
+   from this example is that in some cases additional security is
+   needed&mdash;a security that goes beyond what is offered by using
+   &selnx;. As a less complete and less complex alternative, &aa; can be
+   used.
+  </para>
 
-  <para
->&selnx; was developed by the US National Security Agency (NSA), and since the beginning Red Hat has been heavily involved in its development. The first version of &selnx; was offered in the era of <trademark
->Red Hat Enterprise Linux 4</trademark
->, around the year 2006. In the beginning it offered support for essential services only, but over the years it has developed into a system that offers many rules that are collected in policies to offer protection to a broad range of services. </para>
+  <para>
+   &aa; confines specific processes in their abilities to read/write and
+   execute files (and other things). Its view is mostly that things that
+   happen inside a process cannot escape.
+  </para>
 
-  <para
->&selnx; was developed in accordance with some certification standards like Common Criteria and FIPS 140. Because some customers specifically requested solutions that met these standards, &selnx; rapidly became relatively popular. </para>
+  <para>
+   &selnx; instead uses labels attached to objects (for example, files, binaries,
+   network sockets) and uses them to determine privilege boundaries, thereby
+   building up a level of confinement that can span more than a process or
+   even the whole system.
+  </para>
 
-  <para
->As an alternative to &selnx;, Immunix, a company that was purchased by Novell in 2005, had developed &aa;. &aa; was built on top of the same security principles as &selnx;, but took a completely different approach, where it was possible to restrict services to exactly what they needed to do by using an easy to use wizard-driven procedure. Nevertheless, &aa; has never reached the same status as &selnx;, even if there are some good arguments to secure a server with &aa; rather than with &selnx;. </para>
+  <para>
+   &selnx; was developed by the US National Security Agency (NSA), and since
+   the beginning Red Hat has been heavily involved in its development. The
+   first version of &selnx; was offered in the era of <trademark>Red Hat
+   Enterprise Linux 4</trademark>, around the year 2006. In the beginning it
+   offered support for essential services only, but over the years it has
+   developed into a system that offers many rules that are collected in
+   policies to offer protection to a broad range of services.
+  </para>
 
-  <para
->Because many organizations are requesting &selnx; to be in the Linux distributions they are using, &suse; is offering support for the &selnx; framework in &productname;. This does not mean that the default installation of &productname; will switch from &aa; to &selnx; in the near future. </para>
+  <para>
+   &selnx; was developed in accordance with some certification standards
+   like Common Criteria and FIPS 140. Because some customers specifically
+   requested solutions that met these standards, &selnx; rapidly became
+   relatively popular.
+  </para>
+
+  <para>
+   As an alternative to &selnx;, Immunix, a company that was purchased by
+   Novell in 2005, had developed &aa;. &aa; was built on top of the same
+   security principles as &selnx;, but took a completely different approach,
+   where it was possible to restrict services to exactly what they needed to
+   do by using an easy to use wizard-driven procedure. Nevertheless, &aa;
+   has never reached the same status as &selnx;, even if there are some good
+   arguments to secure a server with &aa; rather than with &selnx;.
+  </para>
+
+  <para>
+   Because many organizations are requesting &selnx; to be in the
+   Linux distributions they are using, &suse; is offering support for the
+   &selnx; framework in &productname;. This does not mean that the default
+   installation of &productname; will switch from &aa; to &selnx; in the
+   near future.
+  </para>
 
   <sect2 xml:id="sec.selinux.support">
-   <title
->Support Status</title>
-   <para
->The &selnx; framework is supported on &productname;. This means that &productnameshort; offers all binaries and libraries you need to be able to use &selnx; on your server. You may however miss some software that you may be familiar with from other Linux distributions. </para>
-   <para
->&selnx; support is at a fairly early stage in &productname;, which means that unexpected behavior may occur. To limit this risk as much as possible, it is best to use only the binaries that have been provided by default on &productname;. </para>
+   <title>Support Status</title>
+   <para>
+    The &selnx; framework is supported on &productname;. This means that
+    &productnameshort; offers all binaries and libraries you need to be able
+    to use &selnx; on your server. You may however miss some software that
+    you may be familiar with from other Linux distributions.
+   </para>
+   <para>
+    &selnx; support is at a fairly early stage in &productname;, which means
+    that unexpected behavior may occur. To limit this risk as much as
+    possible, it is best to use only the binaries that have been provided by
+    default on &productname;.
+   </para>
   </sect2>
 
   <sect2 xml:id="sec.selinux.component">
-   <title
->Understanding &selnx; Components</title>
-   <para
->Before starting the configuration of &selnx;, you should know a bit about how &selnx; is organized. Three components play a role: </para>
+   <title>Understanding &selnx; Components</title>
+   <para>
+    Before starting the configuration of &selnx;, you should know a bit
+    about how &selnx; is organized. Three components play a role:
+   </para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para
->The security framework in the Linux kernel </para>
+     <para>
+      The security framework in the Linux kernel
+     </para>
     </listitem>
     <listitem>
-     <para
->The &selnx; libraries and binaries </para>
+     <para>
+      The &selnx; libraries and binaries
+     </para>
     </listitem>
     <listitem>
-     <para
->The &selnx; policy </para>
+     <para>
+      The &selnx; policy
+     </para>
     </listitem>
    </itemizedlist>
-   <para
->The default kernel of &productname; supports &selnx; and the tools that are needed to manage it. The most important part of the work of the administrator with regard to &selnx; is managing the policy. </para>
-   <para
->In the &selnx; policy, security labels are applied to different objects on a Linux server. These objects typically are users, ports, processes and files. Using these security labels, rules are created that define what is and what is not allowed on a server. Remember, by default &selnx; denies everything, and by creating the appropriate rules you can allow the access that is strictly necessary. Rules should therefore exist for all programs that you want to use on a system. Alternatively, you should configure parts of a system to run in unconfined mode, which means that specific ports, programs, users, files and directories are not protected by &selnx;. This mode is useful if you only want to use &selnx; to protect some essential services, while you are not specifically worried about other services. To get a really secure system, you should avoid this. </para>
-   <para
->To ensure the appropriate protection of your system, you need an &selnx; policy. This must be a tailor-made policy in which all files are provided with a label, and all services and users have a security label as well to express which files and directories can be accessed by which user and processed on the server. Developing such a policy is a tremendous amount of work. </para>
-   <para
->The complexity of &selnx; is also one of the main arguments against using it. Because a typical Linux system is so very complex, it is easy to overlook something and leave an opening that intruders can abuse to get into your system. And even if it is set up completely the way it should be, it still is very hard for an administrator to overlook all aspects with &selnx;. With regard to the complexity, &aa; takes a completely different approach and works with automated procedures that allow the administrator to set up &aa; protection and understand exactly what is happening. </para>
-   <para
->Note that a freely available &selnx; policy might work on your server, but is unlikely to offer the same protection as a custom policy. &suse; also does not support third-party policies. </para>
+   <para>
+    The default kernel of &productname; supports &selnx; and the tools that
+    are needed to manage it. The most important part of the work of the
+    administrator with regard to &selnx; is managing the policy.
+   </para>
+   <para>
+    In the &selnx; policy, security labels are applied to different objects
+    on a Linux server. These objects typically are users, ports, processes
+    and files. Using these security labels, rules are created that define
+    what is and what is not allowed on a server. Remember, by default
+    &selnx; denies everything, and by creating the appropriate rules you can
+    allow the access that is strictly necessary. Rules should therefore
+    exist for all programs that you want to use on a system. Alternatively,
+    you should configure parts of a system to run in unconfined mode, which
+    means that specific ports, programs, users, files and directories are
+    not protected by &selnx;. This mode is useful if you only want to use
+    &selnx; to protect some essential services, while you are not
+    specifically worried about other services. To get a really secure
+    system, you should avoid this.
+   </para>
+   <para>
+    To ensure the appropriate protection of your system, you need an &selnx;
+    policy. This must be a tailor-made policy in which all files are
+    provided with a label, and all services and users have a security label
+    as well to express which files and directories can be accessed by which
+    user and processed on the server. Developing such a policy is a
+    tremendous amount of work.
+   </para>
+   <para>
+    The complexity of &selnx; is also one of the main arguments against
+    using it. Because a typical Linux system is so very complex, it is easy
+    to overlook something and leave an opening that intruders can abuse to
+    get into your system. And even if it is set up completely the way it
+    should be, it still is very hard for an administrator to overlook all
+    aspects with &selnx;. With regard to the complexity, &aa; takes a
+    completely different approach and works with automated procedures that
+    allow the administrator to set up &aa; protection and understand exactly
+    what is happening.
+   </para>
+   <para>
+    Note that a freely available &selnx; policy might work on your server,
+    but is unlikely to offer the same protection as a custom policy. &suse;
+    also does not support third-party policies.
+   </para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.selinux.policy">
-  <title
->Policy</title>
+  <title>Policy</title>
 
-  <para
->As mentioned, the policy is the key component in &selnx;. It defines rules that specify which objects can access which files, directories, ports and processes on a system. To do this, a security context is defined for all of these. On an &selnx; system where the policy has been applied to label the file system, you can use the <command
->ls -Z</command
-> command on any directory to find the security context for the files in that directory. <xref linkend="ex.selnx.con.set" xrefstyle="select:label quotedtitle nopage"/> shows the security context settings for the directories in the <filename
->/</filename
-> directory of a &productname; system with an &selnx;-labeled file system. </para>
+  <para>
+   As mentioned, the policy is the key component in &selnx;. It defines
+   rules that specify which objects can access which files, directories,
+   ports and processes on a system. To do this, a security context is
+   defined for all of these. On an &selnx; system where the policy has been
+   applied to label the file system, you can use the <command>ls
+   -Z</command> command on any directory to find the security context for
+   the files in that directory.
+   <xref linkend="ex.selnx.con.set" xrefstyle="select:label quotedtitle nopage"/>
+   shows the security context settings for the directories in the
+   <filename>/</filename> directory of a &productname; system with an
+   &selnx;-labeled file system.
+  </para>
 
   <example xml:id="ex.selnx.con.set">
-   <title
->Security Context Settings Using <command
->ls -Z</command
-></title>
-<screen
->ls -Z
+   <title>Security Context Settings Using <command>ls -Z</command></title>
+<screen>ls -Z
 system_u:object_r:bin_t bin
 system_u:object_r:boot_t boot
 system_u:object_r:device_t dev
@@ -160,92 +257,87 @@ system_u:object_r:usr_t usr
 system_u:object_r:var_t var</screen>
   </example>
 
-  <para
->The most important line in the security context is the context type. This is the part of the security context that ends in _t. It tells &selnx; which kind of access the object is allowed. In the policy, rules are specified to define which type of user or which type of role has access to which type of context. For example, this can happen by using a rule like the following: </para>
+  <para>
+   The most important line in the security context is the context type. This
+   is the part of the security context that ends in _t. It tells &selnx;
+   which kind of access the object is allowed. In the policy, rules are
+   specified to define which type of user or which type of role has access
+   to which type of context. For example, this can happen by using a rule
+   like the following:
+  </para>
 
-<screen
->allow user_t bin_t:file {read execute gettattr};</screen>
+<screen>allow user_t bin_t:file {read execute gettattr};</screen>
 
-  <para
->This example rule states that the user who has the context type <systemitem class="username"
->user_t</systemitem
-> (this user is called the source object) is allowed to access objects of class "file" with the context type <filename
->bin_t</filename
-> (the target), using the permissions read, execute and getattr. </para>
+  <para>
+   This example rule states that the user who has the context type
+   <systemitem class="username">user_t</systemitem> (this user is called
+   the source object) is allowed to access objects of class "file"
+   with the context type <filename>bin_t</filename> (the target), using the
+   permissions read, execute and getattr.
+  </para>
 
-  <para
->The standard policy that you are going to use contains a huge amount of rules. To make it more manageable, policies are often split into modules. This allows administrator to switch protection on or off for different parts of the system. </para>
+  <para>
+   The standard policy that you are going to use contains a huge amount of
+   rules. To make it more manageable, policies are often split into modules.
+   This allows administrator to switch protection on or off for different
+   parts of the system.
+  </para>
 
-  <para
->When compiling the policy for your system, you will have a choice to either work with a modular policy, or a monolithic policy, where one huge policy is used to protect everything on your system. It is strongly recommended to use a modular policy and not a monolithic policy. Modular policies are much easier to manage. </para>
+  <para>
+   When compiling the policy for your system, you will have a choice to
+   either work with a modular policy, or a monolithic policy, where one huge
+   policy is used to protect everything on your system. It is strongly
+   recommended to use a modular policy and not a monolithic policy. Modular
+   policies are much easier to manage.
+  </para>
  </sect1>
  <sect1 xml:id="sec.selinux.install">
-  <title
->Installing &selnx; Packages and Modifying &grub;</title>
+  <title>Installing &selnx; Packages and Modifying &grub;</title>
 
-  <para
->The easiest way to make sure that all &selnx; components are installed is by using &yast;. The procedure described below shows what to do on an installed &productname;: </para>
+  <para>
+   The easiest way to make sure that all &selnx; components are installed is
+   by using &yast;. The procedure described below shows what to do on an
+   installed &productname;:
+  </para>
 
   <procedure>
    <step>
-    <para
->Log in to your server as <systemitem class="username"
->root</systemitem
-> and start &yast;. </para>
+    <para>
+     Log in to your server as <systemitem class="username">root</systemitem>
+     and start &yast;.
+    </para>
    </step>
    <step>
-    <para
->Select <menuchoice
-> <guimenu
->Software</guimenu
-> <guimenu
->Software Management</guimenu
-> </menuchoice
-> </para>
+    <para>
+     Select <menuchoice> <guimenu>Software</guimenu> <guimenu>Software
+     Management</guimenu> </menuchoice>
+    </para>
    </step>
    <step>
-    <para
-><menuchoice
-> <guimenu
->Select View</guimenu
-> <guimenu
->Patterns</guimenu
-> </menuchoice
-> and select the entire C<guimenu
->/C++ Development</guimenu
-> category for installation. </para>
+    <para>
+     <menuchoice> <guimenu>Select View</guimenu> <guimenu>Patterns</guimenu>
+     </menuchoice> and select the entire C<guimenu>/C++ Development</guimenu> category for installation.
+    </para>
    </step>
    <step>
-    <para
-><menuchoice
-> <guimenu
->Select View</guimenu
-> <guimenu
->Search</guimenu
-> </menuchoice
-> and make sure that <guimenu
->Search in Name</guimenu
->, <guimenu
->Keywords</guimenu
-> and <guimenu
->Summary</guimenu
-> are selected. Now enter the keyword <literal
->selinux</literal
-> and click <guimenu
->Search</guimenu
->. You now see a list of packages. </para>
+    <para>
+     <menuchoice> <guimenu>Select View</guimenu> <guimenu>Search</guimenu>
+     </menuchoice> and make sure that <guimenu>Search in Name</guimenu>,
+     <guimenu>Keywords</guimenu> and <guimenu>Summary</guimenu> are
+     selected. Now enter the keyword <literal>selinux</literal> and click
+     <guimenu>Search</guimenu>. You now see a list of packages.
+    </para>
    </step>
    <step>
-    <para
->Make sure that all the packages you have found are selected and click <guimenu
->Accept</guimenu
-> to install them. </para>
+    <para>
+     Make sure that all the packages you have found are selected and click
+     <guimenu>Accept</guimenu> to install them.
+    </para>
    </step>
   </procedure>
 
   <figure xml:id="fig.packages.yast">
-   <title
->Selecting all &selnx; Packages in &yast;</title>
+   <title>Selecting all &selnx; Packages in &yast;</title>
    <mediaobject>
     <imageobject role="pdf">
      <imagedata fileref="selnx_policy_compiler.png" width="85%"/>
@@ -256,164 +348,148 @@ system_u:object_r:var_t var</screen>
    </mediaobject>
   </figure>
 
-  <para
->After installing the &selnx; packages, you need to modify the &grub; boot loader. Do this from &yast;, select <menuchoice
-> <guimenu
->System</guimenu
-> <guimenu
->Boot Loader</guimenu
-> <guimenu
->Kernel Parameters</guimenu
-></menuchoice
->. Now add the following parameters to the <guimenu
->Optional Kernel Command Line Parameters</guimenu
->: </para>
+  <para>
+   After installing the &selnx; packages, you need to modify the &grub; boot
+   loader. Do this from &yast;, select <menuchoice>
+   <guimenu>System</guimenu> <guimenu>Boot Loader</guimenu> <guimenu>Kernel
+   Parameters</guimenu></menuchoice>. Now add the following parameters to
+   the <guimenu>Optional Kernel Command Line Parameters</guimenu>:
+  </para>
 
-<screen
->security=selinux selinux=1 enforcing=0</screen>
+<screen>security=selinux selinux=1 enforcing=0</screen>
 
-  <para
->These options are used for the following purposes: </para>
+  <para>
+   These options are used for the following purposes:
+  </para>
 
   <variablelist>
    <varlistentry>
-    <term
-><literal
->security=selinux</literal>
+    <term><literal>security=selinux</literal>
     </term>
     <listitem>
-     <para
->This option tells the kernel to use &selnx; and not &aa; </para>
+     <para>
+      This option tells the kernel to use &selnx; and not &aa;
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->selinux=1</literal>
+    <term><literal>selinux=1</literal>
     </term>
     <listitem>
-     <para
->This option switches on &selnx; </para>
+     <para>
+      This option switches on &selnx;
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->enforcing=0</literal>
+    <term><literal>enforcing=0</literal>
     </term>
     <listitem>
-     <para
->This option puts &selnx; in permissive mode. In this mode, &selnx; is fully functional, but does not enforce any of the security settings in the policy. Use this mode for configuring your system. To switch on &selnx; protection, when the system is fully operational, change the option to <literal
->enforcing=1</literal
-> and add <literal
->SELINUX=enforcing</literal
-> in <filename
->/etc/selinux/config</filename
->. </para>
+     <para>
+      This option puts &selnx; in permissive mode. In this mode, &selnx; is
+      fully functional, but does not enforce any of the security settings in
+      the policy. Use this mode for configuring your system. To switch on
+      &selnx; protection, when the system is fully operational, change the
+      option to <literal>enforcing=1</literal> and add
+      <literal>SELINUX=enforcing</literal> in
+      <filename>/etc/selinux/config</filename>.
+     </para>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para
->After installing the &selnx; packages and enabling the &selnx; &grub; boot parameters, reboot your server to activate the configuration. </para>
+  <para>
+   After installing the &selnx; packages and enabling the &selnx; &grub;
+   boot parameters, reboot your server to activate the configuration.
+  </para>
  </sect1>
  <sect1 xml:id="sec.selinux.compilepolicy">
-  <title
->&selnx; Policy</title>
+  <title>&selnx; Policy</title>
 
-  <para
->The policy is an essential component of &selnx;. &productname; &productnumber; includes the <emphasis
->minimum</emphasis
-> &selnx; reference policy in the package <package
->selinux-policy-minimum</package
->. The examples in this chapter refer to this policy if not stated otherwise. </para>
+  <para>
+   The policy is an essential component of &selnx;. &productname; &productnumber;
+   includes the <emphasis>minimum</emphasis> &selnx; reference policy in the
+   package <package>selinux-policy-minimum</package>. The examples in
+   this chapter refer to this policy if not stated otherwise.
+  </para>
 
   <tip>
-   <para
->To install a different policy, you need to download it from <link xlink:href="https://build.opensuse.org/package/binaries/security:SELinux/selinux-policy?repository=SLE_12"
-></link
-> and install:</para>
-<screen
->&prompt.sudo;zypper in selinux-policy-targeted-<replaceable>VERSION_NUMBER</replaceable>.noarch.rpm</screen>
+   <para>
+    To install a different policy, you need to download it from
+    <link xlink:href="https://build.opensuse.org/package/binaries/security:SELinux/selinux-policy?repository=SLE_12"/>
+    and install:</para>
+<screen>&prompt.sudo;zypper in selinux-policy-targeted-<replaceable>VERSION_NUMBER</replaceable>.noarch.rpm</screen>
   </tip>
 
-  <para
->After installing the policy, you are ready to start file system labeling. Run </para>
+  <para>
+   After installing the policy, you are ready to start file system labeling.
+   Run
+  </para>
 
-<screen
->&prompt.sudo;restorecon -Rp /</screen>
+<screen>&prompt.sudo;restorecon -Rp /</screen>
 
-  <para
->to start the <command
->/sbin/setfiles</command
-> command to label all files on your system. The <filename
->/etc/selinux/minimum/contexts/files/file_contexts</filename
-> input file is used. The <filename
->file_contexts</filename
-> file needs to match your actual file system as much as possible. Otherwise, it can lead to a completely unbootable system. If that happens, modify the records in <filename
->file_contexts</filename
-> with the <command
->semanage fcontext</command
-> command to match the real structure of the file system your server is using. For example </para>
+  <para>
+   to start the <command>/sbin/setfiles</command> command to label all files
+   on your system. The
+   <filename>/etc/selinux/minimum/contexts/files/file_contexts</filename>
+   input file is used. The <filename>file_contexts</filename> file needs to
+   match your actual file system as much as possible. Otherwise, it can lead
+   to a completely unbootable system. If that happens, modify the records in
+   <filename>file_contexts</filename> with the <command>semanage
+   fcontext</command> command to match the real structure of the file system
+   your server is using. For example
+  </para>
 
-<screen
->&prompt.sudo;semanage fcontext -a -t samba_share_t /etc/example_file</screen>
+<screen>&prompt.sudo;semanage fcontext -a -t samba_share_t /etc/example_file</screen>
 
-  <para
->changes the file type from the default <literal
->etc_t</literal
-> to <literal
->samba_share_t</literal
-> and adds the following record to the related <filename
->file_contexts.local</filename
-> file: </para>
+  <para>
+   changes the file type from the default <literal>etc_t</literal> to
+   <literal>samba_share_t</literal> and adds the following record to the
+   related <filename>file_contexts.local</filename> file:
+  </para>
 
-<screen
->/etc/example_file    unconfined_u:object_r:samba_share_t:s0</screen>
+<screen>/etc/example_file    unconfined_u:object_r:samba_share_t:s0</screen>
 
-  <para
->Then run </para>
+  <para>
+   Then run
+  </para>
 
-<screen
->&prompt.sudo;restorecon -v /etc/example_file</screen>
+<screen>&prompt.sudo;restorecon -v /etc/example_file</screen>
 
-  <para
->for the type change to take effect. </para>
+  <para>
+   for the type change to take effect.
+  </para>
 
-  <para
->Before doing this, make sure to read the rest of this chapter, so you fully understand how context type is applied to files and directories. Do not forget to make a backup of the <filename
->file_contexts</filename
-> file before starting. </para>
+  <para>
+   Before doing this, make sure to read the rest of this chapter, so you
+   fully understand how context type is applied to files and directories. Do
+   not forget to make a backup of the <filename>file_contexts</filename>
+   file before starting.
+  </para>
 
   <note>
-   <title
->The User <systemitem class="username"
->nobody</systemitem
-></title>
-   <para
->While using <command
->semanage</command
->, you may get a message that complains about the home directory of <systemitem class="username"
->nobody</systemitem
->. In this case, change the login shell of user <systemitem class="username"
->nobody</systemitem
-> to <filename
->/sbin/nologin</filename
->. Then the settings of <systemitem class="username"
->nobody</systemitem
-> match the current policy settings. </para>
+   <title>The User <systemitem class="username">nobody</systemitem></title>
+   <para>
+    While using <command>semanage</command>, you may get a message that
+    complains about the home directory of
+    <systemitem class="username">nobody</systemitem>. In this case, change
+    the login shell of user <systemitem class="username">nobody</systemitem>
+    to <filename>/sbin/nologin</filename>. Then the settings of
+    <systemitem class="username">nobody</systemitem> match the current
+    policy settings.
+   </para>
   </note>
 
-  <para
->After another reboot &selnx; should be operational. To verify this, use the command <command
->sestatus -v</command
->. It should give you an output similar to <xref linkend="ex.selnx.sestatus" xrefstyle="select:label quotedtitle nopage"/>. </para>
+  <para>
+   After another reboot &selnx; should be operational. To verify this, use
+   the command <command>sestatus -v</command>. It should give you an output
+   similar to
+   <xref linkend="ex.selnx.sestatus" xrefstyle="select:label quotedtitle nopage"/>.
+  </para>
 
   <example xml:id="ex.selnx.sestatus">
-   <title
->Verifying that &selnx; is functional</title>
-<screen
->&prompt.sudo;sestatus -v
+   <title>Verifying that &selnx; is functional</title>
+<screen>&prompt.sudo;sestatus -v
 SELinux status:                 enabled
 SELinuxfs mount:                /selinux
 Current mode:                   permissive
@@ -443,36 +519,44 @@ Controlling term:               root:object_r:user_devpts_t
   </example>
  </sect1>
  <sect1 xml:id="sec.selinux.configure">
-  <title
->Configuring &selnx;</title>
+  <title>Configuring &selnx;</title>
 
-  <para
->At this point you have a completely functional &selnx; system and it is time to further configure it. In the current status, &selnx; is operational but not in enforcing mode. This means that it does not limit you in doing anything, it logs everything that it should be doing if it were in enforcing mode. This is good, because based on the log files you can find what it is that it would prevent you from doing. As a first test, put &selnx; in enforcing mode and find out if you can still use your server after doing so: check that the option <option
->enforcing=1</option
-> is set in the &grub; configuration file, while <option
->SELINUX=enforcing</option
-> is set in <filename
->/etc/selinux/config</filename
->. Reboot your server and see if it still comes up the way you expect it to. If it does, leave it like that and start modifying the server in a way that everything works as expected. However, you may not even be able to boot the server properly. In that case, switch back to the mode where &selnx; is not enforcing and start tuning your server. </para>
+  <para>
+   At this point you have a completely functional &selnx; system and it is
+   time to further configure it. In the current status, &selnx; is
+   operational but not in enforcing mode. This means that it does not limit
+   you in doing anything, it logs everything that it should be doing if it
+   were in enforcing mode. This is good, because based on the log files you
+   can find what it is that it would prevent you from doing. As a first
+   test, put &selnx; in enforcing mode and find out if you can still use
+   your server after doing so: check that the option
+   <option>enforcing=1</option> is set in the &grub; configuration file,
+   while <option>SELINUX=enforcing</option> is set in
+   <filename>/etc/selinux/config</filename>. Reboot your server and see if
+   it still comes up the way you expect it to. If it does, leave it like
+   that and start modifying the server in a way that everything works as
+   expected. However, you may not even be able to boot the server properly.
+   In that case, switch back to the mode where &selnx; is not enforcing and
+   start tuning your server.
+  </para>
 
-  <!-- <sect2 xml:id="sec.selinux.verify"
-> -->
-  <!--  <title
->Verifying the Installation</title
-> -->
-   <para
->Before you start tuning your server, verify the &selnx; installation. You have already used the command <command
->sestatus -v</command
-> to view the current mode, process, and file contexts. Next, run </para>
-<screen
->&prompt.sudo;semanage boolean -l</screen>
-   <para
->which lists all Boolean switches that are available, and at the same time verifies that you can access the policy. <xref linkend="ex.selnx.ls.bool"/> shows part of the output of this command. </para>
+  <!-- <sect2 xml:id="sec.selinux.verify"> -->
+  <!--  <title>Verifying the Installation</title> -->
+   <para>
+    Before you start tuning your server, verify the &selnx; installation.
+    You have already used the command <command>sestatus -v</command> to view
+    the current mode, process, and file contexts. Next, run
+   </para>
+<screen>&prompt.sudo;semanage boolean -l</screen>
+   <para>
+    which lists all Boolean switches that are available, and at
+    the same time verifies that you can access the policy.
+    <xref linkend="ex.selnx.ls.bool"/> shows part of the output of this
+    command.
+   </para>
    <example xml:id="ex.selnx.ls.bool">
-    <title
->Getting a List of Booleans and Verifying Policy Access</title>
-<screen
->&prompt.sudo;semanage boolean -l
+    <title>Getting a List of Booleans and Verifying Policy Access</title>
+<screen>&prompt.sudo;semanage boolean -l
 SELinux boolean                          Description
 ftp_home_dir                   -&gt; off   ftp_home_dir
 mozilla_read_content           -&gt; off   mozilla_read_content
@@ -486,18 +570,20 @@ allow_ftpd_full_access         -&gt; off   allow_ftpd_full_access
 samba_domain_controller        -&gt; off   samba_domain_controller
 httpd_enable_cgi               -&gt; off   httpd_enable_cgi
 virt_use_nfs                   -&gt; off   virt_use_nfs</screen>
-    <para
->Another command that outputs useful information at this stage is </para>
-<screen
->&prompt.sudo;semanage fcontext -l</screen>
-    <para
->It shows the default file context settings as provided by the policy (see <xref linkend="ex.selnx.fcon" xrefstyle="select:label quotedtitle nopage"/> for partial output of this command). </para>
+    <para>
+     Another command that outputs useful information at this stage is
+    </para>
+<screen>&prompt.sudo;semanage fcontext -l</screen>
+    <para>
+     It shows the default file context settings as provided by the policy
+     (see
+     <xref linkend="ex.selnx.fcon" xrefstyle="select:label quotedtitle nopage"/>
+     for partial output of this command).
+    </para>
    </example>
    <example xml:id="ex.selnx.fcon">
-    <title
->Getting File Context Information</title>
-<screen
->&prompt.sudo;semanage fcontext -l
+    <title>Getting File Context Information</title>
+<screen>&prompt.sudo;semanage fcontext -l
 /var/run/usb(/.*)?                                 all files          system_u:object_r:hotplug_var_run_t
 /var/run/utmp                                      regular file       system_u:object_r:initrc_var_run_t
 /var/run/vbe.*                                     regular file       system_u:object_r:hald_var_run_t
@@ -511,28 +597,41 @@ virt_use_nfs                   -&gt; off   virt_use_nfs</screen>
 /var/run/xdmctl(/.*)?                              all files          system_u:object_r:xdm_var_run_t
 /var/run/yiff-[0-9]+\.pid                          regular file       system_u:object_r:soundd_var_run_t</screen>
    </example>
-  <!-- </sect2
-> -->
+  <!-- </sect2> -->
  </sect1>
  <sect1 xml:id="sec.selinux.manage">
-  <title
->Managing &selnx;</title>
+  <title>Managing &selnx;</title>
 
-  <para
->The base &selnx; configuration is now operational and it can now be configured to secure your server. In &selnx;, an additional set of rules is used to define exactly which process or user can access which files, directories, or ports. To do this, &selnx; applies a context to every file, directory, process, and port. This context is a security label that defines how this file, directory, process, or port should be treated. These context labels are used by the &selnx; policy, which defines exactly what should be done with the context labels. By default, the policy blocks all non-default access, which means that, as an administrator, you need to enable all features that are non-default on your server. </para>
+  <para>
+   The base &selnx; configuration is now operational and it can now be
+   configured to secure your server. In &selnx;, an additional set of rules
+   is used to define exactly which process or user can access which files,
+   directories, or ports. To do this, &selnx; applies a context to every
+   file, directory, process, and port. This context is a security label that
+   defines how this file, directory, process, or port should be treated.
+   These context labels are used by the &selnx; policy, which defines
+   exactly what should be done with the context labels. By default, the
+   policy blocks all non-default access, which means that, as an
+   administrator, you need to enable all features that are non-default on
+   your server.
+  </para>
 
   <sect2 xml:id="sec.selinux.viewcontext">
-   <title
->Viewing the Security Context</title>
-   <para
->As already mentioned, files, directories, and ports can be labeled. Within each label, different contexts are used. To be able to perform your daily administration work, the type context is what you are most interested in. As an administrator, you will mostly work with the type context. Many commands allow you to use the <option
->-Z</option
-> option to list current context settings. In <xref linkend="ex.selnx.def.con" xrefstyle="select:label quotedtitle nopage"/> you can see what the context settings are for the directories in the root directory. </para>
+   <title>Viewing the Security Context</title>
+   <para>
+    As already mentioned, files, directories, and ports can be labeled.
+    Within each label, different contexts are used. To be able to perform
+    your daily administration work, the type context is what you are most
+    interested in. As an administrator, you will mostly work with the type
+    context. Many commands allow you to use the <option>-Z</option> option
+    to list current context settings. In
+    <xref linkend="ex.selnx.def.con" xrefstyle="select:label quotedtitle nopage"/>
+    you can see what the context settings are for the directories in the
+    root directory.
+   </para>
    <example xml:id="ex.selnx.def.con">
-    <title
->The default context for directories in the root directory</title>
-<screen
->&prompt.sudo;ls -Z
+    <title>The default context for directories in the root directory</title>
+<screen>&prompt.sudo;ls -Z
 dr-xr-xr-x. root root system_u:object_r:bin_t:s0       bin
 dr-xr-xr-x. root root system_u:object_r:boot_t:s0      boot
 drwxr-xr-x. root root system_u:object_r:cgroup_t:s0    cgroup
@@ -564,25 +663,29 @@ drwxrwxrwt. root root system_u:object_r:tmp_t:s0       tmp
 drwxr-xr-x. root root system_u:object_r:usr_t:s0       usr
 drwxr-xr-x. root root system_u:object_r:var_t:s0       var</screen>
    </example>
-   <para
->In the listing above, you can see the complete context for all directories. It consists of a user, a role, and a type. The s0 setting indicates the security level in Multi Level Security environments. These environments are not discussed here. In such an environment, make sure that s0 is set. The Context Type defines what kind of activity is permitted in the directory. Compare, for example, the <filename
->/root</filename
-> directory, which has the <filename
->admin_home_t</filename
-> context type, and the <filename
->/home</filename
-> directory, which has the <filename
->home_root_t</filename
-> context type. In the &selnx; policy, different kinds of access are defined for these context types. </para>
-   <para
->Security labels are not only associated with files, but also with other items, such as ports and processes. In <xref linkend="ex.selnx.set.proc" xrefstyle="select:label quotedtitle nopage"/> for example you can see the context settings for processes on your server. </para>
+   <para>
+    In the listing above, you can see the complete context for all
+    directories. It consists of a user, a role, and a type. The s0 setting
+    indicates the security level in Multi Level Security environments. These
+    environments are not discussed here. In such an environment, make sure
+    that s0 is set. The Context Type defines what kind of activity is
+    permitted in the directory. Compare, for example, the
+    <filename>/root</filename> directory, which has the
+    <filename>admin_home_t</filename> context type, and the
+    <filename>/home</filename> directory, which has the
+    <filename>home_root_t</filename> context type. In the &selnx; policy,
+    different kinds of access are defined for these context types.
+   </para>
+   <para>
+    Security labels are not only associated with files, but also with other
+    items, such as ports and processes. In
+    <xref linkend="ex.selnx.set.proc" xrefstyle="select:label quotedtitle nopage"/>
+    for example you can see the context settings for processes on your
+    server.
+   </para>
    <example xml:id="ex.selnx.set.proc">
-    <title
->Showing &selnx; settings for processes with <command
->ps Zaux</command
-></title>
-<screen
->&prompt.sudo;ps Zaux
+    <title>Showing &selnx; settings for processes with <command>ps Zaux</command></title>
+<screen>&prompt.sudo;ps Zaux
 LABEL                           USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 system_u:system_r:init_t        root         1  0.0  0.0  10640   808 ?        Ss   05:31   0:00 init [5]
 system_u:system_r:kernel_t      root         2  0.0  0.0      0     0 ?        S    05:31   0:00 [kthreadd]
@@ -603,66 +706,81 @@ system_u:system_r:sysadm_t      root      3442  0.0  0.0   4596   800 tty2     S
   </sect2>
 
   <sect2 xml:id="sec.selinux.selectmode">
-   <title
->Selecting the &selnx; Mode</title>
-   <para
->In &selnx;, three different modes can be used: </para>
+   <title>Selecting the &selnx; Mode</title>
+   <para>
+    In &selnx;, three different modes can be used:
+   </para>
    <variablelist>
     <varlistentry>
-     <term
->Enforcing:</term>
+     <term>Enforcing:</term>
      <listitem>
-      <para
->This is the default mode. &selnx; protects your server according to the rules in the policy, and &selnx; logs all of its activity to the audit log. </para>
+      <para>
+       This is the default mode. &selnx; protects your server according to
+       the rules in the policy, and &selnx; logs all of its activity to the
+       audit log.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
->Permissive:</term>
+     <term>Permissive:</term>
      <listitem>
-      <para
->This mode is useful for troubleshooting. If set to Permissive, &selnx; does not protect your server, but it still logs everything that happens to the log files. </para>
+      <para>
+       This mode is useful for troubleshooting. If set to Permissive,
+       &selnx; does not protect your server, but it still logs everything
+       that happens to the log files.
+      </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term
->Disabled:</term>
+     <term>Disabled:</term>
      <listitem>
-      <para
->In this mode, &selnx; is switched off completely and no logging occurs. The file system labels however are not removed from the file system. </para>
+      <para>
+       In this mode, &selnx; is switched off completely and no logging
+       occurs. The file system labels however are not removed from the file
+       system.
+      </para>
      </listitem>
     </varlistentry>
    </variablelist>
-   <para
->You have already read how you can set the current &selnx; mode from &grub; while booting using the enforcing boot parameter. </para>
+   <para>
+    You have already read how you can set the current &selnx; mode from
+    &grub; while booting using the enforcing boot parameter.
+   </para>
   </sect2>
 
   <sect2 xml:id="sec.selinux.modifycontext">
-   <title
->Modifying &selnx; Context Types</title>
-   <para
->An important part of the work of an administrator is setting context types on files to ensure appropriate working of &selnx;. </para>
-   <para
->If a file is created within a specific directory, it inherits the context type of the parent directory by default. If, however, a file is moved from one location to another location, it retains the context type that it had in the old location. </para>
-   <para
->To set the context type for files, you can use the <command
->semanage fcontext</command
-> command. With this command, you write the new context type to the policy, but it does not change the actual context type immediately! To apply the context types that are in the policy, you need to run the <command
->restorecon</command
-> command afterward. </para>
-   <para
->The challenge when working with <command
->semanage fcontext</command
-> is to find out which context you actually need. You can use </para>
-<screen
->&prompt.sudo;semanage fcontext -l</screen>
-   <para
->to list all contexts in the policy, but it may be a bit hard to find out the actual context you need from that list as it is rather long (see <xref linkend="ex.selnx.semanage" xrefstyle="select:label quotedtitle nopage"/>). </para>
+   <title>Modifying &selnx; Context Types</title>
+   <para>
+    An important part of the work of an administrator is setting context
+    types on files to ensure appropriate working of &selnx;.
+   </para>
+   <para>
+    If a file is created within a specific directory, it inherits the
+    context type of the parent directory by default. If, however, a file is
+    moved from one location to another location, it retains the context type
+    that it had in the old location.
+   </para>
+   <para>
+    To set the context type for files, you can use the <command>semanage
+    fcontext</command> command. With this command, you write the new context
+    type to the policy, but it does not change the actual context type
+    immediately! To apply the context types that are in the policy, you need
+    to run the <command>restorecon</command> command afterward.
+   </para>
+   <para>
+    The challenge when working with <command>semanage fcontext</command> is
+    to find out which context you actually need. You can use
+   </para>
+<screen>&prompt.sudo;semanage fcontext -l</screen>
+   <para>
+    to list all contexts in the policy, but it may be a bit hard
+    to find out the actual context you need from that list as it is rather
+    long (see
+    <xref linkend="ex.selnx.semanage" xrefstyle="select:label quotedtitle nopage"/>).
+   </para>
    <example xml:id="ex.selnx.semanage">
-    <title
->Viewing Default File Contexts</title>
-<screen
->&prompt.sudo;semanage fcontext -l | less
+    <title>Viewing Default File Contexts</title>
+<screen>&prompt.sudo;semanage fcontext -l | less
 &selnx; fcontext                                   type               Context
 
 /                                                  directory          system_u:object_r:root_t:s0
@@ -677,255 +795,255 @@ system_u:system_r:sysadm_t      root      3442  0.0  0.0   4596   800 tty2     S
 /bin                                               directory          system_u:object_r:bin_t:s0
 /bin/.*                                            all files          system_u:object_r:bin_t:s0</screen>
    </example>
-   <para
->There are three ways to find out which context settings are available for your services: </para>
+   <para>
+    There are three ways to find out which context settings are available
+    for your services:
+   </para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para
->Install the service and look at the default context settings that are used. This is the easiest and recommended option. </para>
+     <para>
+      Install the service and look at the default context settings that are
+      used. This is the easiest and recommended option.
+     </para>
     </listitem>
     <listitem>
-     <para
->Consult the man page for the specific service. Some services have a man page that ends in <literal
->_selinux</literal
->, which contains all the information you need to find the correct context settings. </para>
-     <para
->When you have found the right context setting, apply it using <command
->semanage fcontext</command
->. This command takes <option
->-t</option
-> context type as its first argument, followed by the name of the directory or file to which you want to apply the context settings. To apply the context to everything that already exists in the directory where you want to apply the context, you add the regular expression <literal
->(/.*)?</literal
-> to the name of the directory. This means: optionally, match a slash followed by any character. The examples section of the <command
->semanage</command
-> man page has some useful usage examples for <command
->semanage</command
->. For more information on regular expressions, see for example the tutorial at <link xlink:href="http://www.regular-expressions.info/"
-></link
->. </para>
+     <para>
+      Consult the man page for the specific service. Some services have a
+      man page that ends in <literal>_selinux</literal>, which contains all
+      the information you need to find the correct context settings.
+     </para>
+     <para>
+      When you have found the right context setting, apply it using
+      <command>semanage fcontext</command>. This command takes
+      <option>-t</option> context type as its first argument, followed by
+      the name of the directory or file to which you want to apply the
+      context settings. To apply the context to everything that already
+      exists in the directory where you want to apply the context, you add
+      the regular expression <literal>(/.*)?</literal> to the name of the
+      directory. This means: optionally, match a slash followed by any
+      character. The examples section of the <command>semanage</command> man
+      page has some useful usage examples for <command>semanage</command>.
+      For more information on regular expressions, see for example the
+      tutorial at <link xlink:href="http://www.regular-expressions.info/"/>.
+     </para>
     </listitem>
     <listitem>
-     <para
->Display a list of all context types that are available on your system: </para>
-<screen
->&prompt.sudo;seinfo -t</screen>
-     <para
->Since the command by itself outputs an overwhelming amount of information, it should be used in combination with <command
->grep</command
-> or a similar command for filtering. </para>
+     <para>
+      Display a list of all context types that are available on your system:
+     </para>
+<screen>&prompt.sudo;seinfo -t</screen>
+     <para>
+      Since the command by itself outputs an overwhelming amount of
+      information, it should be used in combination with
+      <command>grep</command> or a similar command for filtering.
+     </para>
     </listitem>
    </itemizedlist>
   </sect2>
 
   <sect2 xml:id="sec.selinux.applyfilecontext">
-   <title
->Applying File Contexts</title>
-   <para
->To help you apply the &selnx; context properly, the following procedure shows how to set a context using <command
->semanage fcontext</command
-> and <command
->restorecon</command
->. You will notice that at first attempt, the Web server with a non-default document root does not work. After changing the &selnx; context, it will:</para>
+   <title>Applying File Contexts</title>
+   <para> To help you apply the &selnx; context properly, the following
+        procedure shows how to set a context using <command>semanage
+          fcontext</command> and <command>restorecon</command>. You will
+        notice that at first attempt, the Web server with a non-default
+        document root does not work. After changing the &selnx; context,
+        it will:</para>
    <procedure>
     <step>
-     <para
->Create the <filename
->/web</filename
-> directory and then change to it: </para>
-<screen
->&prompt.sudo;mkdir /web  &amp;&amp; cd /web</screen>
+     <para>
+      Create the <filename>/web</filename> directory and then change to it:
+     </para>
+<screen>&prompt.sudo;mkdir /web  &amp;&amp; cd /web</screen>
     </step>
     <step>
-     <para
->Use a text editor to create the file <filename
->/web/index.html</filename
-> that contains the text welcome to my Web site. </para>
+     <para>
+      Use a text editor to create the file
+      <filename>/web/index.html</filename> that contains the text welcome to
+      my Web site.
+     </para>
     </step>
     <step>
-     <para
->Open the file <filename
->/etc/apache2/default-server.conf</filename
-> with an editor, and change the DocumentRoot line to <literal
->DocumentRoot /web</literal
-> </para>
+     <para>
+      Open the file <filename>/etc/apache2/default-server.conf</filename>
+      with an editor, and change the DocumentRoot line to
+      <literal>DocumentRoot /web</literal>
+     </para>
     </step>
     <step>
-     <para
->Start the Apache Web server: </para>
-<screen
->&prompt.sudo;systemctl start apache2</screen>
+     <para>
+      Start the Apache Web server:
+     </para>
+<screen>&prompt.sudo;systemctl start apache2</screen>
     </step>
     <step>
-     <para
->Open a session to your local Web server: </para>
-<screen
->&prompt.user;w3m localhost</screen>
-     <para
->You will receive a <emphasis
->Connection refused</emphasis
-> message. Press <keycap function="enter"
-></keycap
->, and then <command
->q</command
-> to quit w3m. </para>
+     <para>
+      Open a session to your local Web server:
+     </para>
+<screen>&prompt.user;w3m localhost</screen>
+     <para>
+      You will receive a <emphasis>Connection refused</emphasis> message.
+      Press <keycap function="enter"/>, and then <command>q</command> to
+      quit w3m.
+     </para>
     </step>
     <step>
-     <para
->Find the current context type for the default Apache <literal
->DocumentRoot</literal
->, which is <filename
->/srv/www/htdocs</filename
->. It should be set to <filename
->httpd_sys_content_t</filename
->: </para>
-<screen
->&prompt.sudo;ls -Z /srv/www</screen>
+     <para>
+      Find the current context type for the default Apache
+      <literal>DocumentRoot</literal>, which is
+      <filename>/srv/www/htdocs</filename>. It should be set to
+      <filename>httpd_sys_content_t</filename>:
+     </para>
+<screen>&prompt.sudo;ls -Z /srv/www</screen>
     </step>
     <step>
-     <para
->Set the new context in the policy and press <keycap function="enter"
-></keycap
->: </para>
-<screen
->&prompt.sudo;semanage fcontext -a -f "" -t httpd_sys_content_t '/web(/.*) ?'</screen>
+     <para>
+      Set the new context in the policy and press
+      <keycap function="enter"/>:
+     </para>
+<screen>&prompt.sudo;semanage fcontext -a -f "" -t httpd_sys_content_t '/web(/.*) ?'</screen>
     </step>
     <step>
-     <para
->Apply the new context type: </para>
-<screen
->&prompt.sudo;restorecon /web</screen>
+     <para>
+      Apply the new context type:
+     </para>
+<screen>&prompt.sudo;restorecon /web</screen>
     </step>
     <step>
-     <para
->Show the context of the files in the directory <filename
->/web</filename
->. You will see that the new context type has been set properly to the <filename
->/web</filename
-> directory, but not to its contents. </para>
-<screen
->&prompt.sudo;ls -Z /web</screen>
+     <para>
+      Show the context of the files in the directory
+      <filename>/web</filename>. You will see that the new context type has
+      been set properly to the <filename>/web</filename> directory, but not
+      to its contents.
+     </para>
+<screen>&prompt.sudo;ls -Z /web</screen>
     </step>
     <step>
-     <para
->Apply the new context recursively to the <filename
->/web</filename
-> directory. The type context has now been set correctly. </para>
-<screen
->&prompt.sudo;restorecon -R /web</screen>
+     <para>
+      Apply the new context recursively to the <filename>/web</filename>
+      directory. The type context has now been set correctly.
+     </para>
+<screen>&prompt.sudo;restorecon -R /web</screen>
     </step>
     <step>
-     <para
->Restart the Web server: </para>
-<screen
->&prompt.sudo;systemctl restart apache2</screen>
-     <para
->You should now be able to access the contents of the <filename
->/web</filename
-> directory. </para>
+     <para>
+      Restart the Web server:
+     </para>
+<screen>&prompt.sudo;systemctl restart apache2</screen>
+     <para>
+      You should now be able to access the contents of the
+      <filename>/web</filename> directory.
+     </para>
     </step>
    </procedure>
   </sect2>
 
   <sect2 xml:id="sec.selinux.configurepolicy">
-   <title
->Configuring &selnx; Policies</title>
-   <para
->The easiest way to change the behavior of the policy is by working with Booleans. These are on-off switches that you can use to change the settings in the policy. To find out which Booleans are available, run </para>
-<screen
->&prompt.sudo;semanage boolean -l</screen>
-   <para
->It will show a long list of Booleans, with a short description of what each of these Booleans will do for you. When you have found the Boolean you want to set, you can use <command
->setsebool -P</command
->, followed by the name of the Boolean that you want to change. It is important to use the <option
->-P</option
-> option at all times when using <command
->setsebool</command
->. This option writes the setting to the policy file on disk, and this is the only way to make sure that the Boolean is applied automatically after a reboot. </para>
-   <para
->The procedure below gives an example of changing Boolean settings </para>
+   <title>Configuring &selnx; Policies</title>
+   <para>
+    The easiest way to change the behavior of the policy is by working with
+    Booleans. These are on-off switches that you can use to change the
+    settings in the policy. To find out which Booleans are available, run
+   </para>
+<screen>&prompt.sudo;semanage boolean -l</screen>
+   <para>
+    It will show a long list of Booleans, with a short description of
+    what each of these Booleans will do for you. When you have found the
+    Boolean you want to set, you can use <command>setsebool -P</command>,
+    followed by the name of the Boolean that you want to change. It is
+    important to use the <option>-P</option> option at all times when using
+    <command>setsebool</command>. This option writes the setting to the
+    policy file on disk, and this is the only way to make sure that the
+    Boolean is applied automatically after a reboot.
+   </para>
+   <para>
+    The procedure below gives an example of changing Boolean settings
+   </para>
    <procedure>
     <step>
-     <para
->List Booleans that are related to FTP servers.</para>
-<screen
->&prompt.sudo;semanage boolean -l | grep ftp</screen>
+     <para>
+      List Booleans that are related to FTP servers.</para>
+<screen>&prompt.sudo;semanage boolean -l | grep ftp</screen>
     </step>
     <step>
-     <para
->Turn the Boolean off: </para>
-<screen
->&prompt.sudo;setsebool allow_ftpd_anon_write off</screen>
-     <para
->Note that it does not take much time to write the change. Then verify that the Boolean is indeed turned off:</para>
-<screen
->&prompt.sudo;semanage boolean -l|grep ftpd_anon</screen>
+     <para>
+      Turn the Boolean off:
+     </para>
+<screen>&prompt.sudo;setsebool allow_ftpd_anon_write off</screen>
+     <para>
+      Note that it does not take much time to write the change. Then verify
+      that the Boolean is indeed turned off:</para>
+<screen>&prompt.sudo;semanage boolean -l|grep ftpd_anon</screen>
     </step>
     <step>
-     <para
->Reboot your server. </para>
+     <para>
+      Reboot your server.
+     </para>
     </step>
     <step>
-     <para
->Check again to see if the <literal
->allow_ftpd_anon_write</literal
-> Boolean is still turned on. As it has not yet been written to the policy, you will notice that it is off. </para>
+     <para>
+      Check again to see if the <literal>allow_ftpd_anon_write</literal>
+      Boolean is still turned on. As it has not yet been written to the
+      policy, you will notice that it is off.
+     </para>
     </step>
     <step>
-     <para
->Switch the Boolean and write the setting to the policy: </para>
-<screen
->&prompt.sudo;setsebool -P allow_ftpd_anon_write</screen>
+     <para>
+      Switch the Boolean and write the setting to the policy:
+     </para>
+<screen>&prompt.sudo;setsebool -P allow_ftpd_anon_write</screen>
     </step>
    </procedure>
   </sect2>
 
   <sect2 xml:id="sec.selinux.module">
-   <title
->Working with &selnx; Modules</title>
-   <para
->By default, &selnx; uses a modular policy. This means that the policy that implements &selnx; features is not just one huge policy, but it consists of many smaller modules. Each module covers a specific part of the &selnx; configuration. The concept of the &selnx; module was introduced to make it easier for third party vendors to make their services compatible with &selnx;. To get an overview of the &selnx; modules, you can use the <command
->semodule -l</command
-> command. This command lists all current modules in use by &selnx; and their version numbers. </para>
-   <para
->As an administrator, you can switch modules on or off. This can be useful if you want to disable only a part of &selnx; and not everything to run a specific service without &selnx; protection. Especially in the case of &productname;, where there is not a completely supported &selnx; policy yet, it can make sense to switch off all modules that you do not need so that you can focus on the services that really do need &selnx; protection. To switch off an &selnx; module, use </para>
-<screen
->&prompt.sudo;semodule -d <replaceable>MODULENAME</replaceable></screen>
-   <para
->To switch it on again, you can use </para>
-   <screen
->&prompt.sudo;semodule -e modulename</screen>
+   <title>Working with &selnx; Modules</title>
+   <para>
+    By default, &selnx; uses a modular policy. This means that the
+    policy that implements &selnx; features is not just one huge policy, but
+    it consists of many smaller modules. Each module covers a specific part
+    of the &selnx; configuration. The concept of the &selnx; module was
+    introduced to make it easier for third party vendors to make their
+    services compatible with &selnx;. To get an overview of the &selnx;
+    modules, you can use the <command>semodule -l</command> command. This
+    command lists all current modules in use by &selnx; and their
+    version numbers.
+   </para>
+   <para>
+    As an administrator, you can switch modules on or off. This can be
+    useful if you want to disable only a part of &selnx; and not everything
+    to run a specific service without &selnx; protection. Especially in the
+    case of &productname;, where there is not a completely supported &selnx;
+    policy yet, it can make sense to switch off all modules that you do not
+    need so that you can focus on the services that really do need &selnx;
+    protection. To switch off an &selnx; module, use
+   </para>
+<screen>&prompt.sudo;semodule -d <replaceable>MODULENAME</replaceable></screen>
+   <para>
+    To switch it on again, you can use
+   </para>
+   <screen>&prompt.sudo;semodule -e modulename</screen>
    <!--
-    <remark
->jsegitz, 2015-10-30: not true, the source files aren't available</remark>
+    <remark>jsegitz, 2015-10-30: not true, the source files aren't available</remark>
    <para>
     It will change the current state of the module in the
-    <filename
->/etc/selinux/minimum/policy/modules.conf</filename
-> file.
+    <filename>/etc/selinux/minimum/policy/modules.conf</filename> file.
    </para>
    <para>
     To handle policy modules properly, it helps to understand what you are
     dealing with. In the end, a policy module is a compiled policy file that
-    you can load using the <command
->semodule -e</command
-> command. You can
+    you can load using the <command>semodule -e</command> command. You can
     recognize these files by the extension they use:
-    *<filename
->.pp</filename
-> (which stands for Policy Package). In some
+    *<filename>.pp</filename> (which stands for Policy Package). In some
     cases it can be useful to modify modules to have them do exactly what
     you need them to do. Three different kinds of files are used as input
     files for policy modules and you can find them in subdirectories of the
-    <filename
->/etc/selinux/minimum/policy/modules</filename
-> directory:
+    <filename>/etc/selinux/minimum/policy/modules</filename> directory:
    </para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <para>
-      <filename
->*.te</filename
-> files contain the actual allow rules and
+      <filename>*.te</filename> files contain the actual allow rules and
       calls to interfaces (also transition rules). These rules tell the
       policy how to deal with specific subprocesses that are started. You
       will not often change these as an administrator.
@@ -933,21 +1051,15 @@ system_u:system_r:sysadm_t      root      3442  0.0  0.0   4596   800 tty2     S
     </listitem>
     <listitem>
      <para>
-      <filename
->*.if</filename
-> files contain interface definitions. As an
+      <filename>*.if</filename> files contain interface definitions. As an
       administrator you do not typically change the contents of these files.
      </para>
     </listitem>
     <listitem>
      <para>
-      <filename
->*.fc</filename
-> files contain the labeling instructions that
+      <filename>*.fc</filename> files contain the labeling instructions that
       apply to this policy. As an administrator, you may need to change
-      their contents with the <command
->semanage</command
-> to modify the
+      their contents with the <command>semanage</command> to modify the
       default behavior of policies.
      </para>
     </listitem>
@@ -956,18 +1068,12 @@ system_u:system_r:sysadm_t      root      3442  0.0  0.0   4596   800 tty2     S
     In
     <xref linkend="ex.selnx.li.apachefc" xrefstyle="select:label quotedtitle nopage"/>
     below you can see the first 20 lines of the
-    <filename
->apache.fc</filename
-> file. This is the file that contains the
+    <filename>apache.fc</filename> file. This is the file that contains the
     default file contexts that are used for the Apache server.
    </para>
    <example xml:id="ex.selnx.li.apachefc">
-    <title
->The First 20 Lines of <filename
->apache.fc</filename
-></title>
-<screen
->/etc/apache(2)?(/.*)? gen_context(system_u:object_r:httpd_config_t,s0)
+    <title>The First 20 Lines of <filename>apache.fc</filename></title>
+<screen>/etc/apache(2)?(/.*)? gen_context(system_u:object_r:httpd_config_t,s0)
 /etc/apache-ssl(2)?(/.*)? gen_context(system_u:object_r:httpd_config_t,s0)
 /etc/htdig(/.*)? gen_context(system_u:object_r:httpd_sys_content_t,s0)
 /etc/httpd -d gen_context(system_u:object_r:httpd_config_t,s0) /etc/httpd/conf.*
@@ -984,83 +1090,71 @@ gen_context(system_u:object_r:httpd_sys_script_exec_t,s0)
 /usr/lib(64)?/apache2/modules(/.*)?
 gen_context(system_u:object_r:httpd_modules_t,s0)</screen>
    </example>
-   <remark
->jsegitz, 2015-10-30: these are not the first 20 lines of the file and it's also syntactically incorrect. Please check the current file</remark>
+   <remark>jsegitz, 2015-10-30: these are not the first 20 lines of the file and it's also syntactically incorrect. Please check the current file</remark>
    <para>
-    In the <filename
->fc</filename
-> file, you will be able to recognize
+    In the <filename>fc</filename> file, you will be able to recognize
     different elements. First is the name of the directory or file to which
     the file context will apply. As you can see, variables can be used (as
     is the case in the first line that starts with
-    <varname
->HOME_DIR</varname
->),
-    <remark
->jsegitz, 2015-10-30: the description doesn't match the listing</remark>
+    <varname>HOME_DIR</varname>),
+    <remark>jsegitz, 2015-10-30: the description doesn't match the listing</remark>
     and typically, regular expressions will be used as well. Next, the
     gen_context command tells the policy to which context the files related
     to the policy module should be set. This is the same context setting
-    that you can see when using <command
->ls -Z</command
-> on the file or
+    that you can see when using <command>ls -Z</command> on the file or
     directory.
    </para>
    -->
-   <para
->As an administrator, you do not typically change the contents of the policy files that come from the &selnx; Policy RPM. You would rather use <command
->semanage fcontext</command
-> to change file contexts. If you are using <command
->audit2allow</command
-> to generate policies for your server, you should change the policy files after all. </para>
-   <para
->To change the contents of any of the policy module files, compile the changes into a new policy module file. To do this, first install the <systemitem
->selinux-policy-devel</systemitem
-> package. Then, in the directory where the files created by <command
->audit2allow</command
-> are located, run: </para>
-   <screen
->&prompt.user;make -f /usr/share/selinux/devel/Makefile</screen>
-   <para
->When <command
->make</command
-> has completed, you can manually load the modules into the system, using <command
->semodule -i</command
->. </para>
+   <para>
+    As an administrator, you do not typically change the contents of the
+    policy files that come from the &selnx; Policy RPM. You would rather use
+    <command>semanage fcontext</command> to change file contexts. If you are
+    using <command>audit2allow</command> to generate policies for your
+    server, you should change the policy files after all.
+   </para>
+   <para>
+    To change the contents of any of the policy module files,
+    compile the changes into a new policy module file. To do this,
+    first install the <systemitem>selinux-policy-devel</systemitem> package.
+    Then, in the directory where the files created by
+    <command>audit2allow</command> are located, run:
+   </para>
+   <screen>&prompt.user;make -f /usr/share/selinux/devel/Makefile</screen>
+   <para>
+    When <command>make</command> has completed, you can manually load the
+    modules into the system, using <command>semodule -i</command>.
+   </para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.selinux.troubleshoot">
-  <title
->Troubleshooting</title>
+  <title>Troubleshooting</title>
 
-  <para
->By default, if &selnx; is the reason something is not working, a log message to this effect is sent to the <filename
->/var/log/audit/audit.log</filename
-> file. That is, if the auditd service is running. If you see an empty <filename
->/var/log/audit</filename
->, start the auditd service using </para>
+  <para>
+   By default, if &selnx; is the reason something is not working, a log
+   message to this effect is sent to the
+   <filename>/var/log/audit/audit.log</filename> file. That is, if the
+   auditd service is running. If you see an empty
+   <filename>/var/log/audit</filename>, start the auditd service using
+  </para>
 
-<screen
->&prompt.sudo;systemctl start auditd</screen>
+<screen>&prompt.sudo;systemctl start auditd</screen>
 
-  <para
->and enable it in the targets of your system, using </para>
+  <para>
+   and enable it in the targets of your system, using
+  </para>
 
-<screen
->&prompt.sudo;systemctl enable auditd</screen>
+<screen>&prompt.sudo;systemctl enable auditd</screen>
 
-  <para
->In <xref linkend="ex.selnx.li.auditlog" xrefstyle="select:label quotedtitle nopage"/> you can see a partial example of the contents of <filename
->/var/log/audit/audit.log</filename
-> </para>
+  <para>
+   In
+   <xref linkend="ex.selnx.li.auditlog" xrefstyle="select:label quotedtitle nopage"/>
+   you can see a partial example of the contents of
+   <filename>/var/log/audit/audit.log</filename>
+  </para>
 
   <example xml:id="ex.selnx.li.auditlog">
-   <title
->Example Lines from <filename
->/etc/audit/audit.log</filename
-></title>
-<screen
->type=DAEMON_START msg=audit(1348173810.874:6248): auditd start, ver=1.7.7 format=raw kernel=3.0.13-0.27-default auid=0 pid=4235 subj=system_u:system_r:auditd_t res=success
+   <title>Example Lines from <filename>/etc/audit/audit.log</filename></title>
+<screen>type=DAEMON_START msg=audit(1348173810.874:6248): auditd start, ver=1.7.7 format=raw kernel=3.0.13-0.27-default auid=0 pid=4235 subj=system_u:system_r:auditd_t res=success
 type=AVC msg=audit(1348173901.081:292): avc:  denied  { write } for  pid=3426 comm="smartd" name="smartmontools" dev=sda6 ino=581743 scontext=system_u:system_r:fsdaemon_t tcontext=system_u:object_r:var_lib_t tclass=dir
 type=AVC msg=audit(1348173901.081:293): avc:  denied  { remove_name } for  pid=3426 comm="smartd" name="smartd.WDC_WD2500BEKT_75PVMT0-WD_WXC1A21E0454.ata.state~" dev=sda6 ino=582390 scontext=system_u:system_r:fsdaemon_t tcontext=system_u:object_r:var_lib_t tclass=dir
 type=AVC msg=audit(1348173901.081:294): avc:  denied  { unlink } for  pid=3426 comm="smartd" name="smartd.WDC_WD2500BEKT_75PVMT0-WD_WXC1A21E0454.ata.state~" dev=sda6 ino=582390 scontext=system_u:system_r:fsdaemon_t tcontext=system_u:object_r:var_lib_t tclass=file
@@ -1072,130 +1166,116 @@ type=AVC msg=audit(1348173901.081:299): avc:  denied  { getattr } for  pid=3426 
 type=AVC msg=audit(1348173901.309:300): avc:  denied  { append } for  pid=1316</screen>
   </example>
 
-  <para
->At first look, the lines in <filename
->audit.log</filename
-> are a bit hard to read. However, on closer examination they are not that hard to understand. Every line can be broken down into sections. For example, the sections in the last line are: </para>
+  <para>
+   At first look, the lines in <filename>audit.log</filename> are a bit hard
+   to read. However, on closer examination they are not that hard to
+   understand. Every line can be broken down into sections. For example, the
+   sections in the last line are:
+  </para>
 
   <variablelist>
    <varlistentry>
-    <term
-><literal
->type=AVC</literal
->:</term>
+    <term><literal>type=AVC</literal>:</term>
     <listitem>
-     <para
->every &selnx;-related audit log line starts with the type identification <literal
->type=AVC</literal
-> </para>
+     <para>
+      every &selnx;-related audit log line starts with the type
+      identification <literal>type=AVC</literal>
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->msg=audit(1348173901.309:300)</literal
->: </term>
+    <term><literal>msg=audit(1348173901.309:300)</literal>: </term>
     <listitem>
-     <para
->This is the time stamp, which unfortunately is written in epoch time, the number of seconds that have passed since Jan 1, 1970. You can use <command
->date -d</command
-> on the part up to the dot in the epoch time notation to find out when the event has happened: </para>
-<screen
->&prompt.user;date -d @1348173901
+     <para>
+      This is the time stamp, which unfortunately is written in epoch time,
+      the number of seconds that have passed since Jan 1, 1970. You can use
+      <command>date -d</command> on the part up to the dot in the epoch time
+      notation to find out when the event has happened:
+     </para>
+<screen>&prompt.user;date -d @1348173901
 Thu Sep 20 16:45:01 EDT 2012</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->avc: denied { append }</literal
->:</term>
+    <term><literal>avc: denied { append }</literal>:</term>
     <listitem>
-     <para
->the specific action that was denied. In this case the system has denied the appending of data to a file. While browsing through the audit log file, you can see other system actions, such as write open, getattr and more. </para>
+     <para>
+      the specific action that was denied. In this case the system has
+      denied the appending of data to a file. While browsing through the
+      audit log file, you can see other system actions, such as write open,
+      getattr and more.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->for pid=1316</literal
->:</term>
+    <term><literal>for pid=1316</literal>:</term>
     <listitem>
-     <para
->the process ID of the command or process that initiated the action </para>
+     <para>
+      the process ID of the command or process that initiated the action
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->comm="rsyslogd"</literal
->:</term>
+    <term><literal>comm="rsyslogd"</literal>:</term>
     <listitem>
-     <para
->the specific command that was associated with that PID </para>
+     <para>
+      the specific command that was associated with that PID
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->name="smartmontools"</literal
->:</term>
+    <term><literal>name="smartmontools"</literal>:</term>
     <listitem>
-     <para
->the name of the subject of the action </para>
+     <para>
+      the name of the subject of the action
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->dev=sda6 ino=582296</literal
->:</term>
+    <term><literal>dev=sda6 ino=582296</literal>:</term>
     <listitem>
-     <para
->the block device and inode number of the file that was involved </para>
+     <para>
+      the block device and inode number of the file that was involved
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->scontext=system_u:system_r:syslogd_t</literal
->:</term>
+    <term><literal>scontext=system_u:system_r:syslogd_t</literal>:</term>
     <listitem>
-     <para
->the source context, which is the context of the initiator of the action </para>
+     <para>
+      the source context, which is the context of the initiator of the
+      action
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
-><literal
->tclass=file</literal
->:</term>
+    <term><literal>tclass=file</literal>:</term>
     <listitem>
-     <para
->a class identification of the subject </para>
+     <para>
+      a class identification of the subject
+     </para>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para
->Instead of interpreting the events in audit.log yourself, there is another approach. You can use the <command
->audit2allow</command
-> command, which helps analyze the cryptic log messages in <filename
->/var/log/audit/audit.log</filename
->. An audit2allow troubleshooting session always consists of three different commands. First, you would use <command
->audit2allow -w -a</command
-> to present the audit information in a more readable way. The <command
->audit2allow -w -a</command
-> by default works on the audit.log file. If you want to analyze a specific message in the audit.log file, copy it to a temporary file and analyze the file with: </para>
+  <para>
+   Instead of interpreting the events in audit.log yourself, there is
+   another approach. You can use the <command>audit2allow</command> command,
+   which helps analyze the cryptic log messages in
+   <filename>/var/log/audit/audit.log</filename>. An audit2allow
+   troubleshooting session always consists of three different commands.
+   First, you would use <command>audit2allow -w -a</command> to present the
+   audit information in a more readable way. The <command>audit2allow -w
+   -a</command> by default works on the audit.log file. If you want to
+   analyze a specific message in the audit.log file, copy it to a temporary
+   file and analyze the file with:
+  </para>
 
-<screen
->&prompt.sudo;audit2allow -w -i <replaceable>FILENAME</replaceable></screen>
+<screen>&prompt.sudo;audit2allow -w -i <replaceable>FILENAME</replaceable></screen>
 
   <example>
-   <title
->Analyzing Audit Messages</title>
-<screen
->&prompt.sudo;audit2allow -w -i testfile
+   <title>Analyzing Audit Messages</title>
+<screen>&prompt.sudo;audit2allow -w -i testfile
 type=AVC msg=audit(1348173901.309:300): avc:  denied  { append } for  pid=1316
 comm="rsyslogd" name="acpid" dev=sda6 ino=582296
 scontext=system_u:system_r:syslogd_t tcontext=system_u:object_r:apmd_log_t tclass=file</screen>
@@ -1203,74 +1283,63 @@ scontext=system_u:system_r:syslogd_t tcontext=system_u:object_r:apmd_log_t tclas
 
   <variablelist>
    <varlistentry>
-    <term
->This was caused by:</term>
+    <term>This was caused by:</term>
     <listitem>
-     <para
->Missing type enforcement (TE) allow rule. </para>
-     <para
->To generate a loadable module to allow this access, run </para>
-<screen
->&prompt.sudo;audit2allow</screen>
+     <para>
+      Missing type enforcement (TE) allow rule.
+     </para>
+     <para>
+      To generate a loadable module to allow this access, run
+     </para>
+<screen>&prompt.sudo;audit2allow</screen>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para
->To find out which specific rule has denied access, you can use <command
->audit2allow -a</command
-> to show the enforcing rules from all events that were logged to the <filename
->audit.log </filename
-> file, or <command
->audit2allow -i <replaceable
->FILENAME</replaceable
-></command
-> to show it for messages that you have stored in a specific file: </para>
+  <para>
+   To find out which specific rule has denied access, you can use
+   <command>audit2allow -a</command> to show the enforcing rules from all
+   events that were logged to the <filename>audit.log </filename> file, or
+   <command>audit2allow -i <replaceable>FILENAME</replaceable></command> to
+   show it for messages that you have stored in a specific file:
+  </para>
 
   <example>
-   <title
->Viewing Which Lines Deny Access</title>
-<screen
->&prompt.sudo;audit2allow -i testfile
+   <title>Viewing Which Lines Deny Access</title>
+<screen>&prompt.sudo;audit2allow -i testfile
 #============= syslogd_t ==============
 allow syslogd_t apmd_log_t:file append;</screen>
   </example>
 
-  <para
->To create an &selnx; module with the name <literal
->mymodule</literal
-> that you can load to allow the access that was previously denied, run </para>
+  <para>
+   To create an &selnx; module with the name <literal>mymodule</literal>
+   that you can load to allow the access that was previously denied, run
+  </para>
 
-<screen
->&prompt.sudo;audit2allow -a -R -M mymodule</screen>
+<screen>&prompt.sudo;audit2allow -a -R -M mymodule</screen>
 
-  <para
->If you want to do this for all events that have been logged to the audit.log, use the <option
->-a -M</option
-> command arguments. To do it only for specific messages that are in a specific file, use <option
->-i -M</option
-> as in the example below: </para>
+  <para>
+   If you want to do this for all events that have been logged to the
+   audit.log, use the <option>-a -M</option> command arguments. To do it
+   only for specific messages that are in a specific file, use <option>-i
+   -M</option> as in the example below:
+  </para>
 
   <example>
-   <title
->Creating a Policy Module Allowing an Action Previously Denied</title>
-<screen
->&prompt.sudo;audit2allow -i testfile -M example
+   <title>Creating a Policy Module Allowing an Action Previously Denied</title>
+<screen>&prompt.sudo;audit2allow -i testfile -M example
 ******************** IMPORTANT ***********************
 To make this policy package active, execute:
 
 semodule -i example.pp</screen>
   </example>
 
-  <para
->As indicated by the <command
->audit2allow</command
-> command, you can now run this module by using the <command
->semodule -i</command
-> command, followed by the name of the module that <command
->audit2allow</command
-> has created for you (<filename
->example.pp</filename
-> in the above example). </para>
+  <para>
+   As indicated by the <command>audit2allow</command> command, you can now
+   run this module by using the <command>semodule -i</command> command,
+   followed by the name of the module that <command>audit2allow</command>
+   has created for you (<filename>example.pp</filename> in the above
+   example).
+  </para>
  </sect1>
 </chapter>

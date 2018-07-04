@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -29,22 +29,13 @@ msgid ""
 "In Linux, objects such as files or folders or processes generally belong to "
 "the user who created or initiated them. There are some exceptions to this "
 "rule. For more information about the exceptions, refer to <xref linkend="
-"\"cha.security.acls\"/>. The group which is associated with a file or a "
+"\"cha.security.acls\"/> . The group which is associated with a file or a "
 "folder depends on the primary group the user belongs to when creating the "
 "object."
 msgstr ""
 
-#. Tag: remark
-#: newbie_perm_i.xml:23
-#, no-c-format
-msgid ""
-"taroth 060522: what does determine the access permissions which are set when "
-"creating a new file? -toms: umask - taroth 061014: no time left, explain or "
-"refer to in next revision"
-msgstr ""
-
-#. Tag: para
-#: newbie_perm_i.xml:25
+#. Tag: #text
+#: newbie_perm_i.xml:32
 #, no-c-format
 msgid ""
 "When you create a new file or directory, initial access permissions for this "
@@ -80,12 +71,6 @@ msgid ""
 "directory and shows the details for each file and folder in that directory."
 msgstr ""
 
-#. Tag: title
-#: newbie_perm_i.xml:50 newbie_perm_i.xml:302
-#, no-c-format
-msgid "Access Permissions For Files and Folders"
-msgstr ""
-
 #. Tag: screen
 #: newbie_perm_i.xml:51
 #, no-c-format
@@ -107,95 +92,95 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:53
+#: newbie_perm_i.xml:59
 #, no-c-format
 msgid ""
 "As shown in the third column, all objects belong to user &exampleuser;. They "
 "are assigned to the group &examplegroup; which is the primary group the user "
 "&exampleuser; belongs to. To retrieve the access permissions the first "
 "column of the list must be examined more closely. Let's have a look at the "
-"file <filename>kde-start.xml</filename>:"
+"file <filename>kde-start.xml</filename> :"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:68
+#: newbie_perm_i.xml:74
 #, no-c-format
 msgid "Type"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:73
+#: newbie_perm_i.xml:79
 #, no-c-format
 msgid "User Permissions"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:78
+#: newbie_perm_i.xml:84
 #, no-c-format
 msgid "Group Permissions"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:83
+#: newbie_perm_i.xml:89
 #, no-c-format
 msgid "Permissions for Others"
 msgstr ""
 
-#. Tag: literal
-#: newbie_perm_i.xml:91
+#. Tag: para
+#: newbie_perm_i.xml:96
 #, no-c-format
 msgid "<literal>-</literal>"
 msgstr ""
 
-#. Tag: literal
-#: newbie_perm_i.xml:96
+#. Tag: para
+#: newbie_perm_i.xml:101
 #, no-c-format
 msgid "<literal>rw-</literal>"
 msgstr ""
 
-#. Tag: literal
-#: newbie_perm_i.xml:101 newbie_perm_i.xml:106
+#. Tag: para
+#: newbie_perm_i.xml:111
 #, no-c-format
 msgid "<literal>r--</literal>"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:113
+#: newbie_perm_i.xml:119
 #, no-c-format
 msgid ""
 "The first column of the list consists of one leading character followed by "
 "nine characters grouped in three blocks. The leading character indicates the "
-"file type of the object: in this case, the hyphen (<literal>&ndash;</"
-"literal>) shows that <filename>kde-start.xml</filename> is a file. If you "
+"file type of the object: in this case, the hyphen ( <literal>&ndash;</"
+"literal> ) shows that <filename>kde-start.xml</filename> is a file. If you "
 "find the character <literal>d</literal> instead, this shows that the object "
 "is a directory, like <filename>local</filename> in <xref linkend=\"ex.new."
-"users.accperm.ugo\"/>."
+"users.accperm.ugo\"/> ."
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:123
+#: newbie_perm_i.xml:129
 #, no-c-format
 msgid ""
 "The next three blocks show the access permissions for the owner, the group "
 "and other users (from left to right). Each block follows the same pattern: "
-"the first position shows read permissions (<literal>r</literal>), the next "
-"position shows write permissions (<literal>w</literal>), the last one shows "
-"execute permission (<literal>x</literal>). A lack of either permission is "
-"indicated by <literal>-</literal>. In our example, the owner of "
-"<filename>kde-start.xml</filename> has read and write access to the file but "
-"cannot execute it. The &examplegroup; group can read the file but cannot "
+"the first position shows read permissions ( <literal>r</literal> ), the next "
+"position shows write permissions ( <literal>w</literal> ), the last one "
+"shows execute permission ( <literal>x</literal> ). A lack of either "
+"permission is indicated by <literal>-</literal> . In our example, the owner "
+"of <filename>kde-start.xml</filename> has read and write access to the file "
+"but cannot execute it. The &examplegroup; group can read the file but cannot "
 "write or execute it. The same holds true for the other users as shown in the "
 "third block of characters."
 msgstr ""
 
 #. Tag: title
-#: newbie_perm_i.xml:139
+#: newbie_perm_i.xml:145
 #, no-c-format
 msgid "Files and Folders"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:140
+#: newbie_perm_i.xml:146
 #, no-c-format
 msgid ""
 "Access permissions have a slightly different impact depending on the type of "
@@ -204,60 +189,60 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: newbie_perm_i.xml:146
+#: newbie_perm_i.xml:152
 #, no-c-format
 msgid "Access Permissions For Files And Directories"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:151
+#: newbie_perm_i.xml:157
 #, no-c-format
 msgid "Access Permission"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:156
+#: newbie_perm_i.xml:162
 #, no-c-format
 msgid "File"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:161
+#: newbie_perm_i.xml:167
 #, no-c-format
 msgid "Folder"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:170
+#: newbie_perm_i.xml:176
 #, no-c-format
 msgid "Read (r)"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:175
+#: newbie_perm_i.xml:181
 #, no-c-format
 msgid "Users can open and read the file."
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:180
+#: newbie_perm_i.xml:186
 #, no-c-format
 msgid ""
 "Users can view the contents of the directory. Without this permission, users "
 "cannot list the contents of this directory with <command>ls</command> "
-"<option>-l</option>, for example. However, if they only have execute "
+"<option>-l</option> , for example. However, if they only have execute "
 "permission for the directory, they can nevertheless access certain files in "
 "this directory if they know of their existence."
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:192
+#: newbie_perm_i.xml:198
 #, no-c-format
 msgid "Write (w)"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:197
+#: newbie_perm_i.xml:203
 #, no-c-format
 msgid ""
 "Users can change the file: They can add or drop data and can even delete the "
@@ -267,19 +252,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:206
+#: newbie_perm_i.xml:212
 #, no-c-format
 msgid "Users can create, rename or delete files in the directory."
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:213
+#: newbie_perm_i.xml:219
 #, no-c-format
 msgid "Execute (x)"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:218
+#: newbie_perm_i.xml:224
 #, no-c-format
 msgid ""
 "Users can execute the file. This permission is only relevant for files like "
@@ -290,7 +275,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:228
+#: newbie_perm_i.xml:234
 #, no-c-format
 msgid ""
 "Users can change into the directory and execute files there. If they do not "
@@ -299,7 +284,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:238
+#: newbie_perm_i.xml:244
 #, no-c-format
 msgid ""
 "Note that access to a certain file is always dependent on the correct "
@@ -308,13 +293,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: newbie_perm_i.xml:246
+#: newbie_perm_i.xml:252
 #, no-c-format
 msgid "Modifying File Permissions"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:247
+#: newbie_perm_i.xml:253
 #, no-c-format
 msgid ""
 "In Linux, objects such as files or folder or processes generally belong to "
@@ -322,11 +307,11 @@ msgid ""
 "file or a folder depends on the primary group the user belongs to when "
 "creating the object. When you create a new file or directory, initial access "
 "permissions for this object are set according to a predefined scheme. For "
-"further details refer to <xref linkend=\"sec.new.bash.accperm\"/>."
+"further details refer to <xref linkend=\"sec.new.bash.accperm\"/> ."
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:256
+#: newbie_perm_i.xml:262
 #, no-c-format
 msgid ""
 "As the owner of a file or directory (and, of course, as &rootuser;), you can "
@@ -334,7 +319,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:261
+#: newbie_perm_i.xml:267
 #, no-c-format
 msgid ""
 "To change object attributes like access permissions of a file or folder, use "
@@ -342,19 +327,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:267
+#: newbie_perm_i.xml:273
 #, no-c-format
 msgid "the users for which to change the permissions,"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:272
+#: newbie_perm_i.xml:278
 #, no-c-format
 msgid "the type of access permission you want to remove, set or add and"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:277
+#: newbie_perm_i.xml:283
 #, no-c-format
 msgid ""
 "the files or folders for which you want to change permissions separated by "
@@ -362,18 +347,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:283
+#: newbie_perm_i.xml:289
 #, no-c-format
 msgid ""
 "The users for which you can change file access permissions fall into the "
-"following categories: the owner of the file (user, <literal>u</literal>), "
-"the group that own the file (group, <literal>g</literal>) and the other "
-"users (others, <literal>o</literal>). You can add, remove or set one or more "
-"of the following permissions: read, write or execute."
+"following categories: the owner of the file (user, <literal>u</literal> ), "
+"the group that own the file (group, <literal>g</literal> ) and the other "
+"users (others, <literal>o</literal> ). You can add, remove or set one or "
+"more of the following permissions: read, write or execute."
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:290
+#: newbie_perm_i.xml:296
 #, no-c-format
 msgid ""
 "As &rootuser;, you can also change the ownership of a file: with the command "
@@ -382,21 +367,27 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: newbie_perm_i.xml:296
+#: newbie_perm_i.xml:302
 #, no-c-format
 msgid "Examples for Changing Access Permissions and Ownership"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:297
+#: newbie_perm_i.xml:303
 #, no-c-format
 msgid ""
 "The following example shows the output of an <command>ls</command> <option>-"
 "l</option> command in a shell."
 msgstr ""
 
+#. Tag: title
+#: newbie_perm_i.xml:308
+#, no-c-format
+msgid "Access Permissions For Files and Folders"
+msgstr ""
+
 #. Tag: screen
-#: newbie_perm_i.xml:303
+#: newbie_perm_i.xml:309
 #, no-c-format
 msgid ""
 "-rw-r----- 1 &exampleuser_plain; &examplegroup_plain;      0 2015-06-23 "
@@ -416,7 +407,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:305
+#: newbie_perm_i.xml:317
 #, no-c-format
 msgid ""
 "In the example above, user &exampleuser; owns the file <filename>kde-start."
@@ -427,13 +418,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: newbie_perm_i.xml:314
+#: newbie_perm_i.xml:326
 #, no-c-format
 msgid "Changing Access Permissions"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:315
+#: newbie_perm_i.xml:327
 #, no-c-format
 msgid ""
 "Suppose you are &exampleuser; and want to modify the access permissions to "
@@ -441,47 +432,47 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:320
+#: newbie_perm_i.xml:332
 #, no-c-format
 msgid ""
 "If you want to grant the &examplegroup; group also write access to "
-"<filename>kde-start.xml</filename>, enter"
+"<filename>kde-start.xml</filename> , enter"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:324
+#: newbie_perm_i.xml:336
 #, no-c-format
 msgid "&prompt.user;chmod g+w kde-start.xml"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:327
+#: newbie_perm_i.xml:339
 #, no-c-format
 msgid ""
 "To grant the &examplegroup; group and other users write access to "
-"<filename>kde-start.xml</filename>, enter"
+"<filename>kde-start.xml</filename> , enter"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:331
+#: newbie_perm_i.xml:343
 #, no-c-format
 msgid "&prompt.user;chmod go+w kde-start.xml"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:334
+#: newbie_perm_i.xml:346
 #, no-c-format
 msgid "To remove write access for all users, enter"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:337
+#: newbie_perm_i.xml:349
 #, no-c-format
 msgid "&prompt.user;chmod -w kde-start.xml"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:338
+#: newbie_perm_i.xml:350
 #, no-c-format
 msgid ""
 "If you do not specify any kind of users, the changes apply to all "
@@ -491,41 +482,41 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:347
+#: newbie_perm_i.xml:359
 #, no-c-format
 msgid ""
 "To prohibit the &examplegroup; group and others to change into the directory "
-"<filename>local</filename>, enter"
+"<filename>local</filename> , enter"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:351
+#: newbie_perm_i.xml:363
 #, no-c-format
 msgid "&prompt.user;chmod go-x local"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:354
+#: newbie_perm_i.xml:366
 #, no-c-format
 msgid ""
 "To grant others write permissions for two files, for <filename>kde_quick."
-"xml</filename> and <filename>gnome_quick.xml</filename>, enter"
+"xml</filename> and <filename>gnome_quick.xml</filename> , enter"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:359
+#: newbie_perm_i.xml:371
 #, no-c-format
 msgid "&prompt.user;chmod o+w  kde_quick.xml gnome_quick.xml"
 msgstr ""
 
 #. Tag: title
-#: newbie_perm_i.xml:363
+#: newbie_perm_i.xml:375
 #, no-c-format
 msgid "Changing Ownership"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:364
+#: newbie_perm_i.xml:376
 #, no-c-format
 msgid ""
 "Suppose you are &exampleuser; and want to transfer the ownership of the file "
@@ -534,49 +525,49 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:371
+#: newbie_perm_i.xml:383
 #, no-c-format
 msgid "Enter the username and password for &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:376
+#: newbie_perm_i.xml:388
 #, no-c-format
 msgid "Enter"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:379
+#: newbie_perm_i.xml:391
 #, no-c-format
 msgid "&prompt.root;chown &exampleuserII; kde_quick.xml"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:382
+#: newbie_perm_i.xml:394
 #, no-c-format
 msgid "Check what happened with"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:385
+#: newbie_perm_i.xml:397
 #, no-c-format
 msgid "&prompt.user;ls -l kde_quick.xml"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:386
+#: newbie_perm_i.xml:398
 #, no-c-format
 msgid "You should get the following output:"
 msgstr ""
 
 #. Tag: screen
-#: newbie_perm_i.xml:389
+#: newbie_perm_i.xml:401
 #, no-c-format
 msgid "-rw-r--r-- 1 wilber users  47896 2006-06-21 09:46 kde_quick.xml"
 msgstr ""
 
 #. Tag: para
-#: newbie_perm_i.xml:392
+#: newbie_perm_i.xml:404
 #, no-c-format
 msgid ""
 "If the ownership is set according to your wishes, switch back to your normal "

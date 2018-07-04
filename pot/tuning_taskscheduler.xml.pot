@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -41,7 +41,7 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:35
 #, no-c-format
-msgid "The Linux kernel controls the way that tasks (or processes) are managed on the system. The task scheduler, sometimes called <emphasis>process scheduler</emphasis>, is the part of the kernel that decides which task to run next. It is responsible for best using system resources to guarantee that multiple tasks are being executed simultaneously. This makes it a core component of any multitasking operating system."
+msgid "The Linux kernel controls the way that tasks (or processes) are managed on the system. The task scheduler, sometimes called <emphasis>process scheduler</emphasis> , is the part of the kernel that decides which task to run next. It is responsible for best using system resources to guarantee that multiple tasks are being executed simultaneously. This makes it a core component of any multitasking operating system."
 msgstr ""
 
 #. Tag: title
@@ -59,13 +59,13 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:52
 #, no-c-format
-msgid "Therefore, some processes need to be stopped temporarily, or <emphasis>suspended</emphasis>, so that others can be running again. The scheduler decides what process in the queue will run next."
+msgid "Therefore, some processes need to be stopped temporarily, or <emphasis>suspended</emphasis> , so that others can be running again. The scheduler decides what process in the queue will run next."
 msgstr ""
 
 #. Tag: para
 #: tuning_taskscheduler.xml:57
 #, no-c-format
-msgid "As already mentioned, Linux, like all other Unix variants, is a <emphasis>multitasking</emphasis> operating system. That means that several tasks can be running at the same time. Linux provides a so called <emphasis>preemptive</emphasis> multitasking, where the scheduler decides when a process is suspended. This forced suspension is called <emphasis>preemption</emphasis>. All Unix flavors have been providing preemptive multitasking since the beginning."
+msgid "As already mentioned, Linux, like all other Unix variants, is a <emphasis>multitasking</emphasis> operating system. That means that several tasks can be running at the same time. Linux provides a so called <emphasis>preemptive</emphasis> multitasking, where the scheduler decides when a process is suspended. This forced suspension is called <emphasis>preemption</emphasis> . All Unix flavors have been providing preemptive multitasking since the beginning."
 msgstr ""
 
 #. Tag: title
@@ -74,16 +74,34 @@ msgstr ""
 msgid "Timeslice"
 msgstr ""
 
-#. Tag: para
-#: tuning_taskscheduler.xml:70
+#. Tag: emphasis
+#: tuning_taskscheduler.xml:72
 #, no-c-format
-msgid "The time period for which a process will be running before it is <emphasis>preempted</emphasis> is defined in advance. It is called a <emphasis>timeslice</emphasis> of a process and represents the amount of processor time that is provided to each process. By assigning timeslices, the scheduler makes global decisions for the running system, and prevents individual processes from dominating over the processor resources."
+msgid "preempted"
 msgstr ""
 
-#. Tag: remark
+#. Tag: #text
+#: tuning_taskscheduler.xml:72
+#, no-c-format
+msgid "The time period for which a process will be running before it is"
+msgstr ""
+
+#. Tag: emphasis
+#: tuning_taskscheduler.xml:73
+#, no-c-format
+msgid "timeslice"
+msgstr ""
+
+#. Tag: #text
+#: tuning_taskscheduler.xml:73
+#, no-c-format
+msgid "is defined in advance. It is called a"
+msgstr ""
+
+#. Tag: #text
 #: tuning_taskscheduler.xml:78
 #, no-c-format
-msgid "sknorr, 2014-08-22: \"dominate over\" sounds weird, not sure if just \"dominate\" would be better, though."
+msgid "of a process and represents the amount of processor time that is provided to each process. By assigning timeslices, the scheduler makes global decisions for the running system, and prevents individual processes from dominating over the processor resources."
 msgstr ""
 
 #. Tag: title
@@ -113,7 +131,7 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:103
 #, no-c-format
-msgid "One approach is to classify a process either <emphasis>I/O-bound</emphasis> or <emphasis>processor-bound</emphasis>."
+msgid "One approach is to classify a process either <emphasis>I/O-bound</emphasis> or <emphasis>processor-bound</emphasis> ."
 msgstr ""
 
 #. Tag: term
@@ -143,7 +161,7 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:135
 #, no-c-format
-msgid "Another approach is to divide processes by type into <emphasis>interactive</emphasis>, <emphasis>batch</emphasis>, and <emphasis>real-time</emphasis> processes."
+msgid "Another approach is to divide processes by type into <emphasis>interactive</emphasis> , <emphasis>batch</emphasis> , and <emphasis>real-time</emphasis> processes."
 msgstr ""
 
 #. Tag: para
@@ -164,12 +182,6 @@ msgstr ""
 msgid "<emphasis>Real-time</emphasis> processes must never be blocked by low-priority processes, and the scheduler guarantees a short response time to them. Applications for editing multimedia content are a good example here."
 msgstr ""
 
-#. Tag: title
-#: tuning_taskscheduler.xml:213
-#, no-c-format
-msgid "<title>Completely Fair Scheduler</title>"
-msgstr ""
-
 #. Tag: para
 #: tuning_taskscheduler.xml:215
 #, no-c-format
@@ -185,13 +197,13 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:229
 #, no-c-format
-msgid "The core of the scheduler was enhanced with <emphasis>scheduling classes</emphasis>. These classes are modular and represent scheduling policies."
+msgid "The core of the scheduler was enhanced with <emphasis>scheduling classes</emphasis> . These classes are modular and represent scheduling policies."
 msgstr ""
 
 #. Tag: term
 #: tuning_taskscheduler.xml:237
 #, no-c-format
-msgid "<term>Completely Fair Scheduler</term>"
+msgid "Completely Fair Scheduler"
 msgstr ""
 
 #. Tag: para
@@ -227,13 +239,13 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:265
 #, no-c-format
-msgid "CFS tries to guarantee a fair approach to each runnable task. To find the most balanced way of task scheduling, it uses the concept of <emphasis>red-black tree</emphasis>. A red-black tree is a type of self-balancing data search tree which provides inserting and removing entries in a reasonable way so that it remains well balanced. For more information, see the wiki pages of <link xlink:href=\"http://en.wikipedia.org/wiki/Red_black_tree\">Red-black tree</link>."
+msgid "CFS tries to guarantee a fair approach to each runnable task. To find the most balanced way of task scheduling, it uses the concept of <emphasis>red-black tree</emphasis> . A red-black tree is a type of self-balancing data search tree which provides inserting and removing entries in a reasonable way so that it remains well balanced. For more information, see the wiki pages of <link xlink:href=\"http://en.wikipedia.org/wiki/Red_black_tree\">Red-black tree</link> ."
 msgstr ""
 
 #. Tag: para
 #: tuning_taskscheduler.xml:275
 #, no-c-format
-msgid "When CFS schedules a task it accumulates <quote>virtual runtime</quote> or <emphasis>vruntime</emphasis>. The next task picked to run is always the task with the minimum accumulated vruntime so far. By balancing the red-black tree when tasks are inserted into the <emphasis>run queue</emphasis> (a planned time line of processes to be executed next), the task with the minimum vruntime is always the first entry in the red-black tree."
+msgid "When CFS schedules a task it accumulates <quote>virtual runtime</quote> or <emphasis>vruntime</emphasis> . The next task picked to run is always the task with the minimum accumulated vruntime so far. By balancing the red-black tree when tasks are inserted into the <emphasis>run queue</emphasis> (a planned time line of processes to be executed next), the task with the minimum vruntime is always the first entry in the red-black tree."
 msgstr ""
 
 #. Tag: para
@@ -257,7 +269,7 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:301
 #, no-c-format
-msgid "The kernel scheduler lets you group runnable tasks using control groups. For more information, see <xref linkend=\"cha.tuning.cgroups\"/>."
+msgid "The kernel scheduler lets you group runnable tasks using control groups. For more information, see <xref linkend=\"cha.tuning.cgroups\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -401,7 +413,7 @@ msgstr ""
 #. Tag: para
 #: tuning_taskscheduler.xml:403
 #, no-c-format
-msgid "Similar to <systemitem>SCHED_FIFO</systemitem>, but uses the Round Robin scheduling algorithm."
+msgid "Similar to <systemitem>SCHED_FIFO</systemitem> , but uses the Round Robin scheduling algorithm."
 msgstr ""
 
 #. Tag: title
@@ -431,110 +443,109 @@ msgstr ""
 #. Tag: screen
 #: tuning_taskscheduler.xml:428
 #, no-c-format
-msgid ""
-      "&prompt.root;chrt -p 16244\n"
+msgid "&prompt.root;chrt -p 16244\n"
       "pid 16244's current scheduling policy: SCHED_OTHER\n"
-      "pid 16244's current scheduling priority: 0"
+      "pid 16244's current scheduling priority: 0\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:429
+#: tuning_taskscheduler.xml:432
 #, no-c-format
 msgid "Before setting a new scheduling policy on the process, you need to find out the minimum and maximum valid priorities for each scheduling algorithm:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_taskscheduler.xml:434
+#: tuning_taskscheduler.xml:437
 #, no-c-format
-msgid ""
-      "&prompt.root;chrt -m\n"
+msgid "&prompt.root;chrt -m\n"
       "SCHED_SCHED_OTHER min/max priority : 0/0\n"
       "SCHED_SCHED_FIFO min/max priority : 1/99\n"
       "SCHED_SCHED_RR min/max priority : 1/99\n"
       "SCHED_SCHED_BATCH min/max priority : 0/0\n"
-      "SCHED_SCHED_IDLE min/max priority : 0/0"
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:435
-#, no-c-format
-msgid "In the above example, SCHED_OTHER, SCHED_BATCH, SCHED_IDLE polices only allow for priority 0, while that of SCHED_FIFO and SCHED_RR can range from 1 to 99."
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:440
-#, no-c-format
-msgid "To set SCHED_BATCH scheduling policy:"
-msgstr ""
-
-#. Tag: screen
-#: tuning_taskscheduler.xml:443
-#, no-c-format
-msgid ""
-      "&prompt.root;chrt -b -p 0 16244\n"
-      "pid 16244's current scheduling policy: SCHED_BATCH\n"
-      "pid 16244's current scheduling priority: 0"
+      "SCHED_SCHED_IDLE min/max priority : 0/0\n"
+      ""
 msgstr ""
 
 #. Tag: para
 #: tuning_taskscheduler.xml:444
 #, no-c-format
-msgid "For more information on <command>chrt</command>, see its man page (<command>man 1 chrt</command>)."
+msgid "In the above example, SCHED_OTHER, SCHED_BATCH, SCHED_IDLE polices only allow for priority 0, while that of SCHED_FIFO and SCHED_RR can range from 1 to 99."
+msgstr ""
+
+#. Tag: para
+#: tuning_taskscheduler.xml:449
+#, no-c-format
+msgid "To set SCHED_BATCH scheduling policy:"
+msgstr ""
+
+#. Tag: screen
+#: tuning_taskscheduler.xml:452
+#, no-c-format
+msgid "&prompt.root;chrt -b -p 0 16244\n"
+      "pid 16244's current scheduling policy: SCHED_BATCH\n"
+      "pid 16244's current scheduling priority: 0\n"
+      ""
+msgstr ""
+
+#. Tag: para
+#: tuning_taskscheduler.xml:456
+#, no-c-format
+msgid "For more information on <command>chrt</command> , see its man page ( <command>man 1 chrt</command> )."
 msgstr ""
 
 #. Tag: title
-#: tuning_taskscheduler.xml:451
+#: tuning_taskscheduler.xml:463
 #, no-c-format
 msgid "Runtime Tuning with <command>sysctl</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:452
+#: tuning_taskscheduler.xml:464
 #, no-c-format
 msgid "The <command>sysctl</command> interface for examining and changing kernel parameters at runtime introduces important variables by means of which you can change the default behavior of the task scheduler. The syntax of the <command>sysctl</command> is simple, and all the following commands must be entered on the command line as &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:459
+#: tuning_taskscheduler.xml:471
 #, no-c-format
 msgid "To read a value from a kernel variable, enter"
 msgstr ""
 
 #. Tag: screen
-#: tuning_taskscheduler.xml:462
+#: tuning_taskscheduler.xml:474
 #, no-c-format
 msgid "&prompt.root;<command>sysctl</command> <replaceable>VARIABLE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:463
+#: tuning_taskscheduler.xml:475
 #, no-c-format
 msgid "To assign a value, enter"
 msgstr ""
 
 #. Tag: screen
-#: tuning_taskscheduler.xml:466
+#: tuning_taskscheduler.xml:478
 #, no-c-format
 msgid "&prompt.root;<command>sysctl</command> <replaceable>VARIABLE</replaceable>=<replaceable>VALUE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:467
+#: tuning_taskscheduler.xml:479
 #, no-c-format
 msgid "To get a list of all scheduler related <command>sysctl</command> variables, enter"
 msgstr ""
 
 #. Tag: screen
-#: tuning_taskscheduler.xml:471
+#: tuning_taskscheduler.xml:483
 #, no-c-format
 msgid "&prompt.root;<command>sysctl</command> <option>-A</option> | <command>grep</command> <replaceable>\"sched\"</replaceable> | <command>grep</command> <option>-v</option><replaceable>\"domain\"</replaceable>"
 msgstr ""
 
 #. Tag: screen
-#: tuning_taskscheduler.xml:472
+#: tuning_taskscheduler.xml:484
 #, no-c-format
-msgid ""
-      "&prompt.root;sysctl -A | grep \"sched\" | grep -v \"domain\"\n"
+msgid "&prompt.root;sysctl -A | grep \"sched\" | grep -v \"domain\"\n"
       "kernel.sched_cfs_bandwidth_slice_us = 5000\n"
       "kernel.sched_child_runs_first = 0\n"
       "kernel.sched_compat_yield = 0\n"
@@ -553,238 +564,237 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:473
+#: tuning_taskscheduler.xml:500
 #, no-c-format
 msgid "Note that variables ending with <quote>_ns</quote> and <quote>_us</quote> accept values in nanoseconds and microseconds, respectively."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:487
+#: tuning_taskscheduler.xml:514
 #, no-c-format
-msgid "A list of the most important task scheduler <command>sysctl</command> tuning variables (located at <filename>/proc/sys/kernel/</filename>) with a short description follows:"
+msgid "A list of the most important task scheduler <command>sysctl</command> tuning variables (located at <filename>/proc/sys/kernel/</filename> ) with a short description follows:"
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:494
+#. Tag: term
+#: tuning_taskscheduler.xml:521
 #, no-c-format
-msgid "sched_cfs_bandwidth_slice_us"
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:497
-#, no-c-format
-msgid "When CFS bandwidth control is in use, this parameter controls the amount of run-time (bandwidth) transferred to a run queue from the task's control group bandwidth pool. Small values allow the global bandwidth to be shared in a fine-grained manner among tasks, larger values reduce transfer overhead. See <link xlink:href=\"https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt\"></link>."
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:508
-#, no-c-format
-msgid "sched_child_runs_first"
+msgid "<systemitem>sched_cfs_bandwidth_slice_us</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:511
+#: tuning_taskscheduler.xml:524
 #, no-c-format
-msgid "A freshly forked child runs before the parent continues execution. Setting this parameter to <literal>1</literal> is beneficial for an application in which the child performs an execution after fork. For example <command>make</command> <option>-j<replaceable>&lt;NO_CPUS&gt;</replaceable></option> performs better when sched_child_runs_first is turned off. The default value is <literal>0</literal>."
+msgid "When CFS bandwidth control is in use, this parameter controls the amount of run-time (bandwidth) transferred to a run queue from the task's control group bandwidth pool. Small values allow the global bandwidth to be shared in a fine-grained manner among tasks, larger values reduce transfer overhead. See <link xlink:href=\"https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt\"/> ."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:523
+#. Tag: term
+#: tuning_taskscheduler.xml:535
 #, no-c-format
-msgid "sched_compat_yield"
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:526
-#, no-c-format
-msgid "Enables the aggressive CPU yielding behavior of the old <emphasis>O(1)</emphasis> scheduler by moving the relinquishing task to the end of the runnable queue (right-most position in the red-black tree). Applications that depend on the <option>sched_yield(2)</option> syscall behavior may see performance improvements by giving other processes a chance to run when there are highly contended resources (such as locks). On the other hand, given that this call occurs in context switching, misusing the call can hurt the workload. Only use it when you see a drop in performance. The default value is <literal>0</literal>."
-msgstr ""
-
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:541
-#, no-c-format
-msgid "sched_migration_cost_ns"
+msgid "<systemitem>sched_child_runs_first</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:544
+#: tuning_taskscheduler.xml:538
 #, no-c-format
-msgid "Amount of time after the last execution that a task is considered to be <quote>cache hot</quote> in migration decisions. A <quote>hot</quote> task is less likely to be migrated to another CPU, so increasing this variable reduces task migrations. The default value is <literal>500000</literal> (ns)."
+msgid "A freshly forked child runs before the parent continues execution. Setting this parameter to <literal>1</literal> is beneficial for an application in which the child performs an execution after fork. For example <command>make</command> <option>-j<replaceable>&lt;NO_CPUS&gt;</replaceable></option> performs better when sched_child_runs_first is turned off. The default value is <literal>0</literal> ."
+msgstr ""
+
+#. Tag: term
+#: tuning_taskscheduler.xml:550
+#, no-c-format
+msgid "<systemitem>sched_compat_yield</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:551
+#: tuning_taskscheduler.xml:553
 #, no-c-format
-msgid "If the CPU idle time is higher than expected when there are runnable processes, try reducing this value. If tasks bounce between CPUs or nodes too often, try increasing it."
+msgid "Enables the aggressive CPU yielding behavior of the old <emphasis>O(1)</emphasis> scheduler by moving the relinquishing task to the end of the runnable queue (right-most position in the red-black tree). Applications that depend on the <option>sched_yield(2)</option> syscall behavior may see performance improvements by giving other processes a chance to run when there are highly contended resources (such as locks). On the other hand, given that this call occurs in context switching, misusing the call can hurt the workload. Only use it when you see a drop in performance. The default value is <literal>0</literal> ."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:559
+#. Tag: term
+#: tuning_taskscheduler.xml:568
 #, no-c-format
-msgid "sched_latency_ns"
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:562
-#, no-c-format
-msgid "Targeted preemption latency for CPU bound tasks. Increasing this variable increases a CPU bound task's timeslice. A task's timeslice is its weighted fair share of the scheduling period:"
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:567
-#, no-c-format
-msgid "timeslice = scheduling period * (task's weight/total weight of tasks in the run queue)"
+msgid "<systemitem>sched_migration_cost_ns</systemitem>"
 msgstr ""
 
 #. Tag: para
 #: tuning_taskscheduler.xml:571
 #, no-c-format
+msgid "Amount of time after the last execution that a task is considered to be <quote>cache hot</quote> in migration decisions. A <quote>hot</quote> task is less likely to be migrated to another CPU, so increasing this variable reduces task migrations. The default value is <literal>500000</literal> (ns)."
+msgstr ""
+
+#. Tag: para
+#: tuning_taskscheduler.xml:578
+#, no-c-format
+msgid "If the CPU idle time is higher than expected when there are runnable processes, try reducing this value. If tasks bounce between CPUs or nodes too often, try increasing it."
+msgstr ""
+
+#. Tag: term
+#: tuning_taskscheduler.xml:586
+#, no-c-format
+msgid "<systemitem>sched_latency_ns</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: tuning_taskscheduler.xml:589
+#, no-c-format
+msgid "Targeted preemption latency for CPU bound tasks. Increasing this variable increases a CPU bound task's timeslice. A task's timeslice is its weighted fair share of the scheduling period:"
+msgstr ""
+
+#. Tag: para
+#: tuning_taskscheduler.xml:594
+#, no-c-format
+msgid "timeslice = scheduling period * (task's weight/total weight of tasks in the run queue)"
+msgstr ""
+
+#. Tag: para
+#: tuning_taskscheduler.xml:598
+#, no-c-format
 msgid "The task's weight depends on the task's nice level and the scheduling policy. Minimum task weight for a SCHED_OTHER task is 15, corresponding to nice 19. The maximum task weight is 88761, corresponding to nice -20."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:577
+#: tuning_taskscheduler.xml:604
 #, no-c-format
-msgid "Timeslices become smaller as the load increases. When the number of runnable tasks exceeds <systemitem>sched_latency_ns</systemitem>/<systemitem>sched_min_granularity_ns</systemitem>, the slice becomes number_of_running_tasks * <systemitem>sched_min_granularity_ns</systemitem>. Prior to that, the slice is equal to <systemitem>sched_latency_ns</systemitem>."
+msgid "Timeslices become smaller as the load increases. When the number of runnable tasks exceeds <systemitem>sched_latency_ns</systemitem> / <systemitem>sched_min_granularity_ns</systemitem> , the slice becomes number_of_running_tasks * <systemitem>sched_min_granularity_ns</systemitem> . Prior to that, the slice is equal to <systemitem>sched_latency_ns</systemitem> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:585
+#: tuning_taskscheduler.xml:612
 #, no-c-format
 msgid "This value also specifies the maximum amount of time during which a sleeping task is considered to be running for entitlement calculations. Increasing this variable increases the amount of time a waking task may consume before being preempted, thus increasing scheduler latency for CPU bound tasks. The default value is <literal>6000000</literal> (ns)."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:596
+#. Tag: term
+#: tuning_taskscheduler.xml:623
 #, no-c-format
-msgid "sched_min_granularity_ns"
+msgid "<systemitem>sched_min_granularity_ns</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:599
+#: tuning_taskscheduler.xml:626
 #, no-c-format
 msgid "Minimal preemption granularity for CPU bound tasks. See <systemitem>sched_latency_ns</systemitem> for details. The default value is <literal>4000000</literal> (ns)."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:607
+#. Tag: term
+#: tuning_taskscheduler.xml:634
 #, no-c-format
-msgid "sched_wakeup_granularity_ns"
+msgid "<systemitem>sched_wakeup_granularity_ns</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:610
+#: tuning_taskscheduler.xml:637
 #, no-c-format
 msgid "The wake-up preemption granularity. Increasing this variable reduces wake-up preemption, reducing disturbance of compute bound tasks. Lowering it improves wake-up latency and throughput for latency critical tasks, particularly when a short duty cycle load component must compete with CPU bound components. The default value is <literal>2500000</literal> (ns)."
 msgstr ""
 
 #. Tag: title
-#: tuning_taskscheduler.xml:619
+#: tuning_taskscheduler.xml:646
 #, no-c-format
 msgid "Setting the Right Wake-up Granularity Value"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:620
+#: tuning_taskscheduler.xml:647
 #, no-c-format
 msgid "Settings larger than half of <systemitem>sched_latency_ns</systemitem> will result in no wake-up preemption. Short duty cycle tasks will be unable to compete with CPU hogs effectively."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:630
+#. Tag: term
+#: tuning_taskscheduler.xml:657
 #, no-c-format
-msgid "sched_rr_timeslice_ms"
+msgid "<systemitem>sched_rr_timeslice_ms</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:633
+#: tuning_taskscheduler.xml:660
 #, no-c-format
 msgid "Quantum that SCHED_RR tasks are allowed to run before they are preempted and put to the end of the task list."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:640
+#. Tag: term
+#: tuning_taskscheduler.xml:667
 #, no-c-format
-msgid "sched_rt_period_us"
+msgid "<systemitem>sched_rt_period_us</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:643
+#: tuning_taskscheduler.xml:670
 #, no-c-format
 msgid "Period over which real-time task bandwidth enforcement is measured. The default value is <literal>1000000</literal> (µs)."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:650
+#. Tag: term
+#: tuning_taskscheduler.xml:677
 #, no-c-format
-msgid "sched_rt_runtime_us"
+msgid "<systemitem>sched_rt_runtime_us</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:653
+#: tuning_taskscheduler.xml:680
 #, no-c-format
 msgid "Quantum allocated to real-time tasks during sched_rt_period_us. Setting to -1 disables RT bandwidth enforcement. By default, RT tasks may consume 95%CPU/sec, thus leaving 5%CPU/sec or 0.05s to be used by SCHED_OTHER tasks. The default value is <literal>950000</literal> (µs)."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:663
+#. Tag: term
+#: tuning_taskscheduler.xml:690
 #, no-c-format
-msgid "sched_nr_migrate"
+msgid "<systemitem>sched_nr_migrate</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:666
+#: tuning_taskscheduler.xml:693
 #, no-c-format
-msgid "Controls how many tasks can be migrated across processors for load-balancing purposes. Because balancing iterates the runqueue with interrupts disabled (softirq), it can incur in irq-latency penalties for real-time tasks. Therefore increasing this value may give a performance boost to large SCHED_OTHER threads at the expense of increased irq-latencies for real-time tasks. The default value is <literal>32</literal>."
+msgid "Controls how many tasks can be migrated across processors for load-balancing purposes. Because balancing iterates the runqueue with interrupts disabled (softirq), it can incur in irq-latency penalties for real-time tasks. Therefore increasing this value may give a performance boost to large SCHED_OTHER threads at the expense of increased irq-latencies for real-time tasks. The default value is <literal>32</literal> ."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_taskscheduler.xml:678
+#. Tag: term
+#: tuning_taskscheduler.xml:705
 #, no-c-format
-msgid "sched_time_avg_ms"
+msgid "<systemitem>sched_time_avg_ms</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:681
+#: tuning_taskscheduler.xml:708
 #, no-c-format
 msgid "This parameter sets the period over which the time spent running real-time tasks is averaged. That average assists CFS in making load-balancing decisions and gives an indication of how busy a CPU is with high-priority real-time tasks."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:687
+#: tuning_taskscheduler.xml:714
 #, no-c-format
 msgid "The optimal setting for this parameter is highly workload dependent and depends, among other things, on how frequently real-time tasks are running and for how long."
 msgstr ""
 
 #. Tag: title
-#: tuning_taskscheduler.xml:723
+#: tuning_taskscheduler.xml:752
 #, no-c-format
 msgid "Debugging Interface and Scheduler Statistics"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:724
+#: tuning_taskscheduler.xml:753
 #, no-c-format
 msgid "CFS comes with a new improved debugging interface, and provides runtime statistics information. Relevant files were added to the <filename>/proc</filename> file system, which can be examined simply with the <command>cat</command> or <command>less</command> command. A list of the related <filename>/proc</filename> files follows with their short description:"
 msgstr ""
 
-#. Tag: filename
-#: tuning_taskscheduler.xml:734
+#. Tag: term
+#: tuning_taskscheduler.xml:763
 #, no-c-format
-msgid "/proc/sched_debug"
+msgid "<filename>/proc/sched_debug</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:737
+#: tuning_taskscheduler.xml:766
 #, no-c-format
-msgid "Contains the current values of all tunable variables (see <xref linkend=\"sec.tuning.taskscheduler.cfs.tuning\"/>) that affect the task scheduler behavior, CFS statistics, and information about the run queues (CFS, RT and deadline) on all available processors. A summary of the task running on each processor is also shown, with the task name and PID, along with scheduler specific statistics. The first being <option>tree-key</option> column, it indicates the task's virtual runtime, and its name comes from the kernel sorting all runnable tasks by this key in a red-black tree. The <option>switches</option> column indicates the total number of switches (involuntary or not), and naturally the <option>prio</option> refers to the process priority. The <option>wait-time</option> value indicates the amount of time the task waited to be scheduled. Finally both <option>sum-exec</option> and <option>sum-sleep</option> account for the total amount of time (in nanoseconds) the task was running on the processor or asleep, respectively."
+msgid "Contains the current values of all tunable variables (see <xref linkend=\"sec.tuning.taskscheduler.cfs.tuning\"/> ) that affect the task scheduler behavior, CFS statistics, and information about the run queues (CFS, RT and deadline) on all available processors. A summary of the task running on each processor is also shown, with the task name and PID, along with scheduler specific statistics. The first being <option>tree-key</option> column, it indicates the task's virtual runtime, and its name comes from the kernel sorting all runnable tasks by this key in a red-black tree. The <option>switches</option> column indicates the total number of switches (involuntary or not), and naturally the <option>prio</option> refers to the process priority. The <option>wait-time</option> value indicates the amount of time the task waited to be scheduled. Finally both <option>sum-exec</option> and <option>sum-sleep</option> account for the total amount of time (in nanoseconds) the task was running on the processor or asleep, respectively."
 msgstr ""
 
 #. Tag: screen
-#: tuning_taskscheduler.xml:755
+#: tuning_taskscheduler.xml:784
 #, no-c-format
-msgid ""
-      "&prompt.root;cat /proc/sched_debug\n"
+msgid "&prompt.root;cat /proc/sched_debug\n"
       "Sched Debug Version: v0.11, 4.4.21-64-default #1\n"
       "ktime                                   : 23533900.395978\n"
       "sched_clk                               : 23543587.726648\n"
@@ -827,35 +837,34 @@ msgid ""
       "R  cc1 63477     98876.717832       197   120      0.000000         ..."
 msgstr ""
 
-#. Tag: filename
-#: tuning_taskscheduler.xml:759
+#. Tag: term
+#: tuning_taskscheduler.xml:828
 #, no-c-format
-msgid "/proc/schedstat"
+msgid "<filename>/proc/schedstat</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:762
+#: tuning_taskscheduler.xml:831
 #, no-c-format
 msgid "Displays statistics relevant to the current run queue. Also domain-specific statistics for SMP systems are displayed for all connected processors. Because the output format is not user-friendly, read the contents of <filename>/usr/src/linux/Documentation/scheduler/sched-stats.txt</filename> for more information."
 msgstr ""
 
-#. Tag: filename
-#: tuning_taskscheduler.xml:773
+#. Tag: term
+#: tuning_taskscheduler.xml:842
 #, no-c-format
-msgid "/proc/<replaceable>PID</replaceable>/sched"
+msgid "<filename>/proc/<replaceable>PID</replaceable>/sched</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:776
+#: tuning_taskscheduler.xml:845
 #, no-c-format
-msgid "Displays scheduling information on the process with id <replaceable>PID</replaceable>."
+msgid "Displays scheduling information on the process with id <replaceable>PID</replaceable> ."
 msgstr ""
 
 #. Tag: screen
-#: tuning_taskscheduler.xml:780
+#: tuning_taskscheduler.xml:849
 #, no-c-format
-msgid ""
-      "&prompt.root;cat /proc/$(pidof gdm)/sched\n"
+msgid "&prompt.root;cat /proc/$(pidof gdm)/sched\n"
       "gdm (744, #threads: 3)\n"
       "-------------------------------------------------------------------\n"
       "se.exec_start                                :          8888.758381\n"
@@ -873,54 +882,85 @@ msgid ""
       "mm-&gt;numa_scan_seq                            :                    0\n"
       "numa_migrations, 0\n"
       "numa_faults_memory, 0, 0, 1, 0, -1\n"
-      "numa_faults_memory, 1, 0, 0, 0, -1"
+      "numa_faults_memory, 1, 0, 0, 0, -1\n"
+      ""
 msgstr ""
 
 #. Tag: title
-#: tuning_taskscheduler.xml:787
+#: tuning_taskscheduler.xml:875
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:789
+#: tuning_taskscheduler.xml:877
 #, no-c-format
 msgid "To get a compact knowledge about Linux kernel task scheduling, you need to explore several information sources. Here are some:"
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:796
+#: tuning_taskscheduler.xml:884
 #, no-c-format
-msgid "For task scheduler System Calls description, see the relevant manual page (for example <command>man 2 sched_setaffinity</command>)."
+msgid "For task scheduler System Calls description, see the relevant manual page (for example <command>man 2 sched_setaffinity</command> )."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:802
+#: tuning_taskscheduler.xml:890
 #, no-c-format
 msgid "General information on scheduling is described in <link xlink:href=\"http://en.wikipedia.org/wiki/Scheduling_(computing)\">Scheduling</link> wiki page."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:837
+#: tuning_taskscheduler.xml:925
 #, no-c-format
-msgid "A useful lecture on Linux scheduler policy and algorithm is available in <link xlink:href=\"http://www.inf.fu-berlin.de/lehre/SS01/OS/Lectures/Lecture08.pdf\"></link>."
+msgid "A useful lecture on Linux scheduler policy and algorithm is available in <link xlink:href=\"http://www.inf.fu-berlin.de/lehre/SS01/OS/Lectures/Lecture08.pdf\"/> ."
+msgstr ""
+
+#. Tag: citetitle
+#: tuning_taskscheduler.xml:934
+#, no-c-format
+msgid "Linux Kernel Development"
+msgstr ""
+
+#. Tag: #text
+#: tuning_taskscheduler.xml:934
+#, no-c-format
+msgid "A good overview of Linux process scheduling is given in"
+msgstr ""
+
+#. Tag: #text
+#: tuning_taskscheduler.xml:936
+#, no-c-format
+msgid "by Robert Love (ISBN-10: 0-672-32512-8). See"
+msgstr ""
+
+#. Tag: #text
+#: tuning_taskscheduler.xml:937
+#, no-c-format
+msgid "."
+msgstr ""
+
+#. Tag: #text
+#: tuning_taskscheduler.xml:942
+#, no-c-format
+msgid "A very comprehensive overview of the Linux kernel internals is given in"
+msgstr ""
+
+#. Tag: citetitle
+#: tuning_taskscheduler.xml:942
+#, no-c-format
+msgid "Understanding the Linux Kernel"
+msgstr ""
+
+#. Tag: #text
+#: tuning_taskscheduler.xml:944
+#, no-c-format
+msgid "by Daniel P. Bovet and Marco Cesati (ISBN 978-0-596-00565-8)."
 msgstr ""
 
 #. Tag: para
-#: tuning_taskscheduler.xml:844
+#: tuning_taskscheduler.xml:947
 #, no-c-format
-msgid "A good overview of Linux process scheduling is given in <citetitle>Linux Kernel Development</citetitle> by Robert Love (ISBN-10: 0-672-32512-8). See <link xlink:href=\"http://www.informit.com/articles/article.aspx?p=101760\"></link>."
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:852
-#, no-c-format
-msgid "A very comprehensive overview of the Linux kernel internals is given in <citetitle>Understanding the Linux Kernel</citetitle> by Daniel P. Bovet and Marco Cesati (ISBN 978-0-596-00565-8)."
-msgstr ""
-
-#. Tag: para
-#: tuning_taskscheduler.xml:859
-#, no-c-format
-msgid "Technical information about task scheduler is covered in files under <filename>/usr/src/linux/Documentation/scheduler</filename>."
+msgid "Technical information about task scheduler is covered in files under <filename>/usr/src/linux/Documentation/scheduler</filename> ."
 msgstr ""
 

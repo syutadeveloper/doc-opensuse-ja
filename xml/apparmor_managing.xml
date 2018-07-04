@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE chapter [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.apparmor.managing">
- <title
->Managing Profiled Applications</title>
+ <title>Managing Profiled Applications</title>
  <info>
       <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
         <dm:bugtracker>
           </dm:bugtracker>
       </dm:docmanager>
     </info>
-    <para
->After creating profiles and immunizing your applications, &productnamereg; becomes more efficient and better protected as long as you perform &aareg; profile maintenance (which involves analyzing log files, refining your profiles, backing up your set of profiles and keeping it up-to-date). You can deal with these issues before they become a problem by setting up event notification by e-mail, updating profiles from system log entries by running the aa-logprof tool, and dealing with maintenance issues. </para>
+    <para>
+  After creating profiles and immunizing your applications,
+  &productnamereg; becomes more efficient and better protected as long as
+  you perform &aareg; profile maintenance (which involves analyzing log
+  files, refining your profiles, backing up your set of profiles and keeping
+  it up-to-date). You can deal with these issues before they become a
+  problem by setting up event notification by e-mail, updating profiles from
+  system log entries by running the aa-logprof tool, and dealing with
+  maintenance issues.
+ </para>
 <!-- fs 2011-11-09 - see bnc #722915
      (reporting is not available in 12.1 (aa-eventd isn't maintained upstream,
       and doesn't understand the (not-so-)new audit.log format))
 
  <sect1 id="sec.apparmor.managing.monitor">
-  <title
->Monitoring Your Secured Applications</title>
+  <title>Monitoring Your Secured Applications</title>
 
   <para>
    Applications that are confined by &aa; security profiles generate
@@ -33,9 +37,7 @@
 
   <para>
    For reporting and alerting, &aa; uses a user space daemon
-   (<command
->/usr/sbin/aa-eventd</command
->). This daemon monitors log
+   (<command>/usr/sbin/aa-eventd</command>). This daemon monitors log
    traffic, sends out notifications, and runs scheduled reports. It does not
    require any end user configuration and it is started automatically as
    part of the security event notification through the &yast; &aa; Control
@@ -46,9 +48,7 @@
   <para>
    Apart from transparently enabling and disabling aa-eventd with the &yast;
    modules, you can manually toggle its status with the
-   <command
->rcaaeventd</command
-> init script. The &aa; event daemon is not
+   <command>rcaaeventd</command> init script. The &aa; event daemon is not
    required for proper functioning of the profiling process (such as
    enforcement or learning). It is required for reporting only.
   </para>
@@ -69,8 +69,7 @@
   </para>
  </sect1>
  <sect1 id="sec.apparmor.managing.config_sen">
-  <title
->Configuring Security Event Notification</title>
+  <title>Configuring Security Event Notification</title>
 
   <para>
    Security event notification is a &aa; feature that informs you when
@@ -82,34 +81,29 @@
 
   <variablelist>
    <varlistentry>
-    <term
->Terse</term>
+    <term>Terse</term>
     <listitem>
      <para>
       Terse notification summarizes the total number of system events
       without providing details. For example:
      </para>
-<screen
->&wsIname; has had 41 security events since Mon Sep 10 14:53:16 2007.
+<screen>&wsIname; has had 41 security events since Mon Sep 10 14:53:16 2007.
 </screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Summary Notification</term>
+    <term>Summary Notification</term>
     <listitem>
      <para>
       Summary notification displays the logged &aa; security events and
       lists the number of individual occurrences, including the date of the
       last occurrence. For example:
      </para>
-<screen
->AppArmor: PERMITTING access to capability &rsquo;setgid&rsquo; (httpd2-prefork(6347) profile /usr/sbin/httpd2-prefork active /usr/sbin/httpd2-prefork) 2 times, the latest at Sat Oct  9 16:05:54 2004.</screen>
+<screen>AppArmor: PERMITTING access to capability &rsquo;setgid&rsquo; (httpd2-prefork(6347) profile /usr/sbin/httpd2-prefork active /usr/sbin/httpd2-prefork) 2 times, the latest at Sat Oct  9 16:05:54 2004.</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Verbose Notification</term>
+    <term>Verbose Notification</term>
     <listitem>
      <para>
       Verbose notification displays unmodified, logged &aa; security
@@ -122,8 +116,7 @@
       <xref xrefstyle="HeadingOnPage" linkend="sec.apparmor.commandline.profiling.summary.logprof"/>)
       uses to interpret profiles. For example:
      </para>
-<screen
->type=APPARMOR_DENIED msg=audit(1189428793.218:2880):
+<screen>type=APPARMOR_DENIED msg=audit(1189428793.218:2880):
       operation="file_permission" requested_mask="::w" denied_mask="::w" fsuid=1000 name="/var/log/apache2/error_log" pid=22969 profile="/usr/sbin/httpd2-prefork"
 </screen>
     </listitem>
@@ -140,21 +133,13 @@
   <procedure>
    <step>
     <para>
-     In the <guimenu
->Enable Security Event Notification</guimenu
-> section of
-     the <guimenu
->&aa; Configuration</guimenu
-> window, click
-     <guimenu
->Configure</guimenu
->.
+     In the <guimenu>Enable Security Event Notification</guimenu> section of
+     the <guimenu>&aa; Configuration</guimenu> window, click
+     <guimenu>Configure</guimenu>.
     </para>
     <informalfigure>
      <mediaobject>
-      <textobject role="description"
-><phrase
->Security event
+      <textobject role="description"><phrase>Security event
 	  notification window</phrase>
       </textobject>
       <imageobject role="fo">
@@ -168,17 +153,9 @@
    </step>
    <step>
     <para>
-     In the <guimenu
->Security Event Notification</guimenu
-> window, enable
-     <guimenu
->Terse</guimenu
->, <guimenu
->Summary</guimenu
->, or
-     <guimenu
->Verbose</guimenu
-> event notification.
+     In the <guimenu>Security Event Notification</guimenu> window, enable
+     <guimenu>Terse</guimenu>, <guimenu>Summary</guimenu>, or
+     <guimenu>Verbose</guimenu> event notification.
     </para>
     <substeps>
      <step>
@@ -251,21 +228,16 @@
        for which a notification should be sent. Security events are logged
        and the notifications are sent at the time indicated by the interval
        when events are equal to or greater than the selected severity level.
-       If the interval is <guimenu
->1 day</guimenu
->, the notification is sent
+       If the interval is <guimenu>1 day</guimenu>, the notification is sent
        daily, if security events occur.
       </para>
       <note>
-       <title
->Severity Levels</title>
+       <title>Severity Levels</title>
        <para>
         &aa; sends out event messages for things that are in the severity
         database and above the level selected. Severity levels are numbered
         1 through 10, with 10 being the most severe security incident. The
-        <filename
->/etc/severity.db</filename
-> file defines the severity
+        <filename>/etc/severity.db</filename> file defines the severity
         level of potential security events. The severity levels are
         determined by the importance of different security events, such as
         certain resources accessed or services denied.
@@ -276,30 +248,19 @@
    </step>
    <step>
     <para>
-     Click <guimenu
->OK</guimenu
->.
+     Click <guimenu>OK</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Click <guimenu
->Done</guimenu
-> in the <guimenu
->&aa;
-     Configuration</guimenu
-> window.
+     Click <guimenu>Done</guimenu> in the <guimenu>&aa;
+     Configuration</guimenu> window.
     </para>
    </step>
    <step>
     <para>
-     Click <menuchoice
-> <guimenu
->File</guimenu
-> <guimenu
->Quit</guimenu>
-     </menuchoice
-> in the &yast; Control Center.
+     Click <menuchoice> <guimenu>File</guimenu> <guimenu>Quit</guimenu>
+     </menuchoice> in the &yast; Control Center.
     </para>
    </step>
   </procedure>
@@ -313,8 +274,7 @@
   </para>
  </sect1>
  <sect1 id="sec.apparmor.managing.config_reports">
-  <title
->Configuring Reports</title>
+  <title>Configuring Reports</title>
 
   <para>
    &aa;'s reporting feature adds flexibility by enhancing the way users can
@@ -359,11 +319,7 @@
    the log files without manually sifting through the messages only useful
    to the aa-logprof tool. Narrow down the size of the report by filtering
    by date range or program name. You can also export an
-   <filename
->html</filename
-> or <filename
->csv</filename
-> file.
+   <filename>html</filename> or <filename>csv</filename> file.
   </para>
 
   <para>
@@ -372,8 +328,7 @@
 
   <variablelist>
    <varlistentry>
-    <term
->Executive Security Summary</term>
+    <term>Executive Security Summary</term>
     <listitem>
      <para>
       A combined report, consisting of one or more security incident reports
@@ -384,8 +339,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Application Audit Report</term>
+    <term>Application Audit Report</term>
     <listitem>
      <para>
       <remark role="clarity">
@@ -400,8 +354,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Security Incident Report</term>
+    <term>Security Incident Report</term>
     <listitem>
      <para>
       A report that displays application security for a single host. It
@@ -421,35 +374,20 @@
   <procedure>
    <step>
     <para>
-     Open <menuchoice
-> <guimenu
->&yast;</guimenu
-> <guimenu
->&aa;</guimenu>
-     </menuchoice
->.
+     Open <menuchoice> <guimenu>&yast;</guimenu> <guimenu>&aa;</guimenu>
+     </menuchoice>.
     </para>
    </step>
    <step>
     <para>
-     In <guimenu
->&aa;</guimenu
->, click <guimenu
->&aa; Reports</guimenu
->. The
-     <guimenu
->&aa; Security Event Reports</guimenu
-> window appears. From the
-     <guimenu
->Reports</guimenu
-> window, select an option and proceed to the
+     In <guimenu>&aa;</guimenu>, click <guimenu>&aa; Reports</guimenu>. The
+     <guimenu>&aa; Security Event Reports</guimenu> window appears. From the
+     <guimenu>Reports</guimenu> window, select an option and proceed to the
      respective section for instructions:
     </para>
     <informalfigure>
      <mediaobject>
-      <textobject role="description"
-><phrase
->Reports window</phrase>
+      <textobject role="description"><phrase>Reports window</phrase>
       </textobject>
       <imageobject role="fo">
        <imagedata format="PNG" fileref="report1.png" width="75%"/>
@@ -461,20 +399,13 @@
     </informalfigure>
     <variablelist>
      <varlistentry>
-      <term
->View Archive</term>
+      <term>View Archive</term>
       <listitem>
        <para>
         Displays all reports that have been run and stored in
-        <filename
->/var/log/apparmor/reports-archived/</filename
->. Select the
-        report you want to see in detail and click <guimenu
->View</guimenu
->.
-        For <guimenu
->View Archive</guimenu
-> instructions, proceed to
+        <filename>/var/log/apparmor/reports-archived/</filename>. Select the
+        report you want to see in detail and click <guimenu>View</guimenu>.
+        For <guimenu>View Archive</guimenu> instructions, proceed to
         <xref
 	  xrefstyle="SectTitleOnPage"
 	  linkend="sec.apparmor.managing.config_reports.view"/>.
@@ -482,37 +413,30 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Run Now</term>
+      <term>Run Now</term>
       <listitem>
        <para>
         Produces an instant version of the selected report type. If you
         select a security incident report, it can be further filtered in
-        various ways. For <guimenu
->Run Now</guimenu
-> instructions, proceed
+        various ways. For <guimenu>Run Now</guimenu> instructions, proceed
         to
         <xref xrefstyle="SectTitleOnPage" linkend="sec.apparmor.managing.config_reports.on_demand"/>.
        </para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Add</term>
+      <term>Add</term>
       <listitem>
        <para>
         Creates a scheduled security incident report. For
-        <guimenu
->Add</guimenu
-> instructions, proceed to
+        <guimenu>Add</guimenu> instructions, proceed to
         <xref
 	  xrefstyle="SectTitleOnPage" linkend="sec.apparmor.managing.config_reports.new"/>.
        </para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Edit</term>
+      <term>Edit</term>
       <listitem>
        <para>
         Edits a scheduled security incident report.
@@ -520,8 +444,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Delete</term>
+      <term>Delete</term>
       <listitem>
        <para>
         Deletes a scheduled security incident report. All stock or canned
@@ -530,8 +453,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Back</term>
+      <term>Back</term>
       <listitem>
        <para>
         Returns you to the &aa; main screen.
@@ -539,8 +461,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Abort</term>
+      <term>Abort</term>
       <listitem>
        <para>
         Returns you to the &aa; main screen.
@@ -548,13 +469,10 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Next</term>
+      <term>Next</term>
       <listitem>
        <para>
-        Performs the same function as the <guimenu
->Run Now</guimenu
-> button.
+        Performs the same function as the <guimenu>Run Now</guimenu> button.
        </para>
       </listitem>
      </varlistentry>
@@ -563,12 +481,9 @@
   </procedure>
 
   <sect2 id="sec.apparmor.managing.config_reports.view">
-   <title
->Viewing Archived Reports</title>
+   <title>Viewing Archived Reports</title>
    <para>
-    <guimenu
->View Reports</guimenu
-> enables you to specify the location of a
+    <guimenu>View Reports</guimenu> enables you to specify the location of a
     collection of reports from one or more systems, including the ability to
     filter by date or names of programs accessed and display them all
     together in one report.
@@ -576,18 +491,12 @@
    <procedure>
     <step>
      <para>
-      From the <guimenu
->&aa; Security Event Report</guimenu
-> window, select
-      <guimenu
->View Archive</guimenu
->.
+      From the <guimenu>&aa; Security Event Report</guimenu> window, select
+      <guimenu>View Archive</guimenu>.
      </para>
      <informalfigure>
       <mediaobject>
-       <textobject role="description"
-><phrase
->Security Event Report</phrase>
+       <textobject role="description"><phrase>Security Event Report</phrase>
        </textobject>
        <imageobject role="fo">
         <imagedata format="PNG" fileref="reports_viewarch_pg1.png" width="75%"/>
@@ -601,72 +510,43 @@
     <step>
      <para>
       Select the report type to view. Toggle between the different types:
-      <guimenu
->SIR</guimenu
-> (Security Incident Report), <guimenu
->App
-      Aud</guimenu
-> (Application Audit), and <guimenu
->ESS</guimenu>
+      <guimenu>SIR</guimenu> (Security Incident Report), <guimenu>App
+      Aud</guimenu> (Application Audit), and <guimenu>ESS</guimenu>
       (Executive Security Summary).
      </para>
     </step>
     <step>
      <para>
       You can alter the directory location of the archived reports in
-      <guimenu
->Location of Archived Reports</guimenu
->. Select
-      <guimenu
->Accept</guimenu
-> to use the current directory or select
-      <guimenu
->Browse</guimenu
-> to find a new report location. The default
-      directory is <filename
->/var/log/apparmor/reports-archived</filename
->.
+      <guimenu>Location of Archived Reports</guimenu>. Select
+      <guimenu>Accept</guimenu> to use the current directory or select
+      <guimenu>Browse</guimenu> to find a new report location. The default
+      directory is <filename>/var/log/apparmor/reports-archived</filename>.
      </para>
     </step>
     <step>
      <para>
-      To view all the reports in the archive, select <guimenu
->View
-      All</guimenu
->. To view a specific report, select a report file listed
-      in the <guimenu
->Report</guimenu
-> field then select
-      <guimenu
->View</guimenu
->.
+      To view all the reports in the archive, select <guimenu>View
+      All</guimenu>. To view a specific report, select a report file listed
+      in the <guimenu>Report</guimenu> field then select
+      <guimenu>View</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      For <guimenu
->Application Audit</guimenu
-> and <guimenu
->Executive
-      Security Summary</guimenu
-> reports, proceed to
+      For <guimenu>Application Audit</guimenu> and <guimenu>Executive
+      Security Summary</guimenu> reports, proceed to
       <xref xrefstyle="StepXRef" linkend="ste.apparmor.managing.config_reports.view.toc"/>.
      </para>
     </step>
     <step>
      <para>
-      The <guimenu
->Report Configuration Dialog</guimenu
-> opens for
-      <guimenu
->Security Incident</guimenu
-> reports.
+      The <guimenu>Report Configuration Dialog</guimenu> opens for
+      <guimenu>Security Incident</guimenu> reports.
      </para>
      <informalfigure>
       <mediaobject>
-       <textobject role="description"
-><phrase
->Report Configuration</phrase>
+       <textobject role="description"><phrase>Report Configuration</phrase>
        </textobject>
        <imageobject role="fo">
         <imagedata format="PNG" fileref="report_config.png" width="75%"/>
@@ -679,29 +559,23 @@
     </step>
     <step>
      <para>
-      The <guimenu
->Report Configuration</guimenu
-> dialog enables you to
+      The <guimenu>Report Configuration</guimenu> dialog enables you to
       filter the reports selected in the previous screen. Enter the desired
       filter details. The fields are:
      </para>
      <variablelist>
       <varlistentry>
-       <term
->Date Range</term>
+       <term>Date Range</term>
        <listitem>
         <para>
          To display reports for a certain time period, select
-         <guimenu
->Filter By Date Range</guimenu
->. Enter the start and end
+         <guimenu>Filter By Date Range</guimenu>. Enter the start and end
          dates that define the scope of the report.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Program Name</term>
+       <term>Program Name</term>
        <listitem>
         <para>
          When you enter a program name or pattern that matches the name of
@@ -711,8 +585,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Profile Name</term>
+       <term>Profile Name</term>
        <listitem>
         <para>
          When you enter the name of the profile, the report displays the
@@ -722,21 +595,17 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->PID Number</term>
+       <term>PID Number</term>
        <listitem>
         <para>
-         <guimenu
->PID number</guimenu
-> is a number that uniquely identifies
+         <guimenu>PID number</guimenu> is a number that uniquely identifies
          one specific process or running program (this number is valid only
          during the lifetime of that process).
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Severity</term>
+       <term>Severity</term>
        <listitem>
         <para>
          Select the lowest severity level for security events to include in
@@ -746,8 +615,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Detail</term>
+       <term>Detail</term>
        <listitem>
         <para>
          A source to which the profile has denied access. This includes
@@ -757,53 +625,30 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Access Type</term>
+       <term>Access Type</term>
        <listitem>
         <para>
          The access type describes what is actually happening with the
-         security event. The options are <option
->PERMITTING</option
->,
-         <option
->REJECTING</option
->, or <option
->AUDITING</option
->.
+         security event. The options are <option>PERMITTING</option>,
+         <option>REJECTING</option>, or <option>AUDITING</option>.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Mode</term>
+       <term>Mode</term>
        <listitem>
         <para>
-         The <guimenu
->Mode</guimenu
-> is the permission that the profile
+         The <guimenu>Mode</guimenu> is the permission that the profile
          grants to the program or process to which it is applied. The
-         options are <option
->all</option
-> (all modes without filtering),
-         <option
->r</option
-> (read), <option
->w</option
-> (write),
-         <option
->l</option
-> (link),<option
->x</option
-> (execute), and
-         <option
->m</option
-> (mmap).
+         options are <option>all</option> (all modes without filtering),
+         <option>r</option> (read), <option>w</option> (write),
+         <option>l</option> (link),<option>x</option> (execute), and
+         <option>m</option> (mmap).
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Export Type</term>
+       <term>Export Type</term>
        <listitem>
         <para>
          Enables you to export a CSV (comma separated values) or HTML file.
@@ -815,21 +660,14 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Location to Store Log</term>
+       <term>Location to Store Log</term>
        <listitem>
         <para>
          Enables you to change the location at which to store the exported
          report. The default location is
-         <filename
->/var/log/apparmor/reports-exported</filename
->. When you
-         change this location, select <guimenu
->Accept</guimenu
->. Select
-         <guimenu
->Browse</guimenu
-> to browse the file system.
+         <filename>/var/log/apparmor/reports-exported</filename>. When you
+         change this location, select <guimenu>Accept</guimenu>. Select
+         <guimenu>Browse</guimenu> to browse the file system.
         </para>
        </listitem>
       </varlistentry>
@@ -838,9 +676,7 @@
     <step>
      <para>
       To see the report, filtered as desired, select
-      <guimenu
->Next</guimenu
->. One of the three reports displays.
+      <guimenu>Next</guimenu>. One of the three reports displays.
      </para>
     </step>
     <step id="ste.apparmor.managing.config_reports.view.toc">
@@ -871,17 +707,14 @@
     </step>
    </procedure>
    <sect3 id="sec.apparmor.managing.config_reports.view.audit">
-    <title
->Application Audit Report</title>
+    <title>Application Audit Report</title>
     <para>
      An application audit report is an auditing tool that reports which
      application servers are running and whether they are confined by &aa;.
     </para>
     <informalfigure>
      <mediaobject>
-      <textobject role="description"
-><phrase
->Application audit report</phrase>
+      <textobject role="description"><phrase>Application audit report</phrase>
       </textobject>
       <imageobject role="fo">
        <imagedata format="PNG" fileref="reports_run_appaudit.png" width="75%"/>
@@ -896,8 +729,7 @@
     </para>
     <variablelist>
      <varlistentry>
-      <term
->Host</term>
+      <term>Host</term>
       <listitem>
        <para>
         The machine protected by &aa; for which the security events are
@@ -906,8 +738,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Date</term>
+      <term>Date</term>
       <listitem>
        <para>
         The date during which security events occurred.
@@ -915,8 +746,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Program</term>
+      <term>Program</term>
       <listitem>
        <para>
         The name and path of the executing process.
@@ -924,8 +754,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Profile</term>
+      <term>Profile</term>
       <listitem>
        <para>
         The absolute name of the security profile that is applied to the
@@ -934,8 +763,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->PID</term>
+      <term>PID</term>
       <listitem>
        <para>
         A number that uniquely identifies one specific process or running
@@ -945,8 +773,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->State</term>
+      <term>State</term>
       <listitem>
        <para>
         This field reveals whether the program listed in the program field
@@ -956,8 +783,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Type</term>
+      <term>Type</term>
       <listitem>
        <para>
         This field reveals the type of confinement the security event
@@ -969,8 +795,7 @@
     </variablelist>
    </sect3>
    <sect3 id="sec.apparmor.managing.config_reports.view.sir">
-    <title
->Security Incident Report</title>
+    <title>Security Incident Report</title>
     <para>
      A security incident report displays security events of interest to an
      administrator. The SIR reports policy violations for locally confined
@@ -980,8 +805,7 @@
     </para>
     <variablelist>
      <varlistentry>
-      <term
->Policy Exceptions</term>
+      <term>Policy Exceptions</term>
       <listitem>
        <para>
         When an application requests a resource that is not defined within
@@ -994,8 +818,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Policy Engine State Changes</term>
+      <term>Policy Engine State Changes</term>
       <listitem>
        <para>
         Enforces policy for applications and maintains its own state,
@@ -1007,9 +830,7 @@
     </variablelist>
     <informalfigure>
      <mediaobject>
-      <textobject role="description"
-><phrase
->Security incident report</phrase>
+      <textobject role="description"><phrase>Security incident report</phrase>
       </textobject>
       <imageobject role="fo">
        <imagedata format="PNG" fileref="reports_run_sir.png" width="75%"/>
@@ -1024,8 +845,7 @@
     </para>
     <variablelist>
      <varlistentry>
-      <term
->Host</term>
+      <term>Host</term>
       <listitem>
        <para>
         The machine protected by &aa; for which the security events are
@@ -1034,8 +854,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Date</term>
+      <term>Date</term>
       <listitem>
        <para>
         The date during which security events occurred.
@@ -1043,8 +862,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Program</term>
+      <term>Program</term>
       <listitem>
        <para>
         The name of the executing process.
@@ -1052,8 +870,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Profile</term>
+      <term>Profile</term>
       <listitem>
        <para>
         The absolute name of the security profile that is applied to the
@@ -1062,8 +879,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->PID</term>
+      <term>PID</term>
       <listitem>
        <para>
         A number that uniquely identifies one specific process or running
@@ -1073,8 +889,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Severity</term>
+      <term>Severity</term>
       <listitem>
        <para>
         Severity levels of events are reported from the severity database.
@@ -1087,27 +902,18 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Mode</term>
+      <term>Mode</term>
       <listitem>
        <para>
         The mode is the permission that the profile grants to the program or
-        process to which it is applied. The options are <option
->r</option>
-        (read), <option
->w</option
-> (write), <option
->l</option
-> (link), and
-        <option
->x</option
-> (execute).
+        process to which it is applied. The options are <option>r</option>
+        (read), <option>w</option> (write), <option>l</option> (link), and
+        <option>x</option> (execute).
        </para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Detail</term>
+      <term>Detail</term>
       <listitem>
        <para>
         A source to which the profile has denied access. This includes
@@ -1117,35 +923,25 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Access Type</term>
+      <term>Access Type</term>
       <listitem>
        <para>
         The access type describes what is actually happening with the
-        security event. The options are <option
->PERMITTING</option
->,
-        <option
->REJECTING</option
->, or <option
->AUDITING</option
->.
+        security event. The options are <option>PERMITTING</option>,
+        <option>REJECTING</option>, or <option>AUDITING</option>.
        </para>
       </listitem>
      </varlistentry>
     </variablelist>
    </sect3>
    <sect3 id="sec.apparmor.managing.config_reports.view.ess">
-    <title
->Executive Security Summary</title>
+    <title>Executive Security Summary</title>
     <para>
      A combined report consisting of one or more high-level reports from one
      or more machines. This report can provide a single view of security
      events on multiple machines as long as each machine's data is copied to
      the report archive directory, which is
-     <filename
->/var/log/apparmor/reports-archived</filename
->. One line of
+     <filename>/var/log/apparmor/reports-archived</filename>. One line of
      the ESS report represents a range of SIR reports.
     </para>
 
@@ -1153,9 +949,7 @@
 
     <informalfigure>
      <mediaobject>
-      <textobject role="description"
-><phrase
->Executive security
+      <textobject role="description"><phrase>Executive security
 	 summary</phrase>
       </textobject>
       <imageobject role="fo">
@@ -1173,8 +967,7 @@
     </para>
     <variablelist>
      <varlistentry>
-      <term
->Host</term>
+      <term>Host</term>
       <listitem>
        <para>
         The machine protected by &aa; for which the security events are
@@ -1183,8 +976,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Start Date</term>
+      <term>Start Date</term>
       <listitem>
        <para>
         The first date in a range of dates during which security events are
@@ -1193,8 +985,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->End Date</term>
+      <term>End Date</term>
       <listitem>
        <para>
         The last date in a range of dates during which security events are
@@ -1203,8 +994,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Num Rejects</term>
+      <term>Num Rejects</term>
       <listitem>
        <para>
         In the date range given, the total number of security events that
@@ -1213,8 +1003,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Num Events</term>
+      <term>Num Events</term>
       <listitem>
        <para>
         In the date range given, the total number of security events.
@@ -1222,8 +1011,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->Ave. Sev</term>
+      <term>Ave. Sev</term>
       <listitem>
        <para>
         This is the average of the severity levels reported in the date
@@ -1232,8 +1020,7 @@
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term
->High Sev</term>
+      <term>High Sev</term>
       <listitem>
        <para>
         This is the severity of the highest severity event reported in the
@@ -1246,12 +1033,9 @@
   </sect2>
 
   <sect2 id="sec.apparmor.managing.config_reports.on_demand">
-   <title
->Run Now: Running On-Demand Reports</title>
+   <title>Run Now: Running On-Demand Reports</title>
    <para>
-    The <guimenu
->Run Now</guimenu
-> report feature enables you to instantly
+    The <guimenu>Run Now</guimenu> report feature enables you to instantly
     extract report information from the &aa; event logs without waiting for
     scheduled events. If you need help navigating to the main report screen,
     see
@@ -1262,34 +1046,24 @@
     <step>
      <para>
       Select the report to run instantly from the list of reports in the
-      <guimenu
->Schedule Reports</guimenu
-> window.
+      <guimenu>Schedule Reports</guimenu> window.
      </para>
     </step>
     <step>
      <para>
-      Select <guimenu
->Run Now</guimenu
-> or <guimenu
->Next</guimenu
->. The next
+      Select <guimenu>Run Now</guimenu> or <guimenu>Next</guimenu>. The next
       screen is dependent on which report you selected in the previous step.
       As an example, select a security incident report.
      </para>
     </step>
     <step>
      <para>
-      The <guimenu
->Report Configuration Dialog</guimenu
-> opens for security
+      The <guimenu>Report Configuration Dialog</guimenu> opens for security
       incident reports.
      </para>
      <informalfigure>
       <mediaobject>
-       <textobject role="description"
-><phrase
->Report Configuration</phrase>
+       <textobject role="description"><phrase>Report Configuration</phrase>
        </textobject>
        <imageobject role="fo">
         <imagedata format="PNG" fileref="report_config.png" width="75%"/>
@@ -1302,29 +1076,23 @@
     </step>
     <step>
      <para>
-      The <guimenu
->Report Configuration Dialog</guimenu
-> enables you to
+      The <guimenu>Report Configuration Dialog</guimenu> enables you to
       filter the reports selected in the previous screen. Enter the desired
       filter details. The following filter options are available:
      </para>
      <variablelist>
       <varlistentry>
-       <term
->Date Range</term>
+       <term>Date Range</term>
        <listitem>
         <para>
-         To limit reports to a certain time period, select <guimenu
->Filter
-         By Date Range</guimenu
->. Enter the start and end dates that
+         To limit reports to a certain time period, select <guimenu>Filter
+         By Date Range</guimenu>. Enter the start and end dates that
          determine the scope of the report.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Program Name</term>
+       <term>Program Name</term>
        <listitem>
         <para>
          When you enter a program name or pattern that matches the name of
@@ -1334,8 +1102,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Profile Name</term>
+       <term>Profile Name</term>
        <listitem>
         <para>
          When you enter the name of the profile, the report displays the
@@ -1345,8 +1112,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->PID Number</term>
+       <term>PID Number</term>
        <listitem>
         <para>
          A number that uniquely identifies one specific process or running
@@ -1356,8 +1122,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Severity</term>
+       <term>Severity</term>
        <listitem>
         <para>
          Select the lowest severity level for security events to include in
@@ -1367,8 +1132,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Detail</term>
+       <term>Detail</term>
        <listitem>
         <para>
          A source to which the profile has denied access. This includes
@@ -1378,45 +1142,28 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Access Type</term>
+       <term>Access Type</term>
        <listitem>
         <para>
          The access type describes the action being taken with the security
-         event. The options are <option
->PERMITTING</option
->,
-         <option
->REJECTING</option
->, or <option
->AUDITING</option
->.
+         event. The options are <option>PERMITTING</option>,
+         <option>REJECTING</option>, or <option>AUDITING</option>.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Mode</term>
+       <term>Mode</term>
        <listitem>
         <para>
          The mode is the permission that the profile grants to the program
          or process to which it is applied. The options are
-         <option
->r</option
-> (read), <option
->w</option
-> (write),
-         <option
->l</option
-> (link), and <option
->x</option
-> (execute).
+         <option>r</option> (read), <option>w</option> (write),
+         <option>l</option> (link), and <option>x</option> (execute).
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Export Type</term>
+       <term>Export Type</term>
        <listitem>
         <para>
          Enables you to export a CSV (comma separated values) or HTML file.
@@ -1428,21 +1175,14 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Location to Store Log</term>
+       <term>Location to Store Log</term>
        <listitem>
         <para>
          Enables you to change the location that the exported report is
          stored. The default location is
-         <filename
->/var/log/apparmor/reports-exported</filename
->. When you
-         change this location, select <guimenu
->Accept</guimenu
->. Select
-         <guimenu
->Browse</guimenu
-> to browse the file system.
+         <filename>/var/log/apparmor/reports-exported</filename>. When you
+         change this location, select <guimenu>Accept</guimenu>. Select
+         <guimenu>Browse</guimenu> to browse the file system.
         </para>
        </listitem>
       </varlistentry>
@@ -1451,9 +1191,7 @@
     <step>
      <para>
       To see the report, filtered as desired, select
-      <guimenu
->Next</guimenu
->. One of the three reports displays.
+      <guimenu>Next</guimenu>. One of the three reports displays.
      </para>
     </step>
    </procedure>
@@ -1484,14 +1222,11 @@
   </sect2>
 
   <sect2 id="sec.apparmor.managing.config_reports.new">
-   <title
->Adding New Reports</title>
+   <title>Adding New Reports</title>
    <para>
     Adding new reports enables you to create a scheduled security incident
     report that displays &aa; security events according to your preset
-    filters. When a report is set up in <guimenu
->Schedule Reports</guimenu
->,
+    filters. When a report is set up in <guimenu>Schedule Reports</guimenu>,
     it periodically launches a report of &aa; security events that have
     occurred on the system.
    </para>
@@ -1516,18 +1251,12 @@
    <procedure>
     <step>
      <para>
-      Click <guimenu
->Add</guimenu
-> to create a new security incident report.
-      The first page of <guimenu
->Add Scheduled SIR</guimenu
-> opens.
+      Click <guimenu>Add</guimenu> to create a new security incident report.
+      The first page of <guimenu>Add Scheduled SIR</guimenu> opens.
      </para>
      <informalfigure>
       <mediaobject>
-       <textobject role="description"
-><phrase
->Add scheduled SIR</phrase>
+       <textobject role="description"><phrase>Add scheduled SIR</phrase>
        </textobject>
        <imageobject role="fo">
         <imagedata format="PNG" fileref="reports_add_pg1.png" width="75%"/>
@@ -1545,8 +1274,7 @@
      </para>
      <variablelist>
       <varlistentry>
-       <term
->Report Name</term>
+       <term>Report Name</term>
        <listitem>
         <para>
          Specify the name of the report. Use names that easily distinguish
@@ -1555,37 +1283,28 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Day of Month</term>
+       <term>Day of Month</term>
        <listitem>
         <para>
          Select any day of the month to activate monthly filtering in
-         reports. If you select <literal
->All</literal
->, monthly filtering is
+         reports. If you select <literal>All</literal>, monthly filtering is
          not performed.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Day of Week</term>
+       <term>Day of Week</term>
        <listitem>
         <para>
          Select the day of the week on which to schedule weekly reports, if
-         desired. If you select <literal
->ALL</literal
->, weekly filtering is
+         desired. If you select <literal>ALL</literal>, weekly filtering is
          not performed. If monthly reporting is selected, this field
-         defaults to <literal
->ALL</literal
->.
+         defaults to <literal>ALL</literal>.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Hour and Minute</term>
+       <term>Hour and Minute</term>
        <listitem>
         <para>
          Select the time. This specifies the hour and minute that you would
@@ -1596,8 +1315,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->E-Mail Target</term>
+       <term>E-Mail Target</term>
        <listitem>
         <para>
          You have the ability to send the scheduled security incident report
@@ -1607,8 +1325,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Export Type</term>
+       <term>Export Type</term>
        <listitem>
         <para>
          This option enables you to export a CSV (comma separated values) or
@@ -1620,21 +1337,14 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Location to Store Log</term>
+       <term>Location to Store Log</term>
        <listitem>
         <para>
          Enables you to change the location where the exported report is
          stored. The default location is
-         <filename
->/var/log/apparmor/reports-exported</filename
->. When you
-         change this location, select <guimenu
->Accept</guimenu
->. Select
-         <guimenu
->Browse</guimenu
-> to browse the file system.
+         <filename>/var/log/apparmor/reports-exported</filename>. When you
+         change this location, select <guimenu>Accept</guimenu>. Select
+         <guimenu>Browse</guimenu> to browse the file system.
         </para>
        </listitem>
       </varlistentry>
@@ -1642,18 +1352,12 @@
     </step>
     <step>
      <para>
-      Click <guimenu
->Next</guimenu
-> to proceed to the second page of
-      <guimenu
->Add Scheduled SIR</guimenu
->.
+      Click <guimenu>Next</guimenu> to proceed to the second page of
+      <guimenu>Add Scheduled SIR</guimenu>.
      </para>
      <informalfigure>
       <mediaobject>
-       <textobject role="description"
-><phrase
->Add scheduled SIR, page 2</phrase>
+       <textobject role="description"><phrase>Add scheduled SIR, page 2</phrase>
        </textobject>
        <imageobject role="fo">
         <imagedata format="PNG" fileref="reports_add_pg2.png" width="75%"/>
@@ -1671,8 +1375,7 @@
      </para>
      <variablelist>
       <varlistentry>
-       <term
->Program Name</term>
+       <term>Program Name</term>
        <listitem>
         <para>
          You can specify a program name or pattern that matches the name of
@@ -1683,8 +1386,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Profile Name</term>
+       <term>Profile Name</term>
        <listitem>
         <para>
          You can specify the name of the profile for which the report should
@@ -1694,8 +1396,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->PID Number</term>
+       <term>PID Number</term>
        <listitem>
         <para>
          A number that uniquely identifies one specific process or running
@@ -1705,8 +1406,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Detail</term>
+       <term>Detail</term>
        <listitem>
         <para>
          A source to which the profile has denied access. This includes
@@ -1716,8 +1416,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Severity</term>
+       <term>Severity</term>
        <listitem>
         <para>
          Select the lowest severity level of security events to include in
@@ -1727,39 +1426,23 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Access Type</term>
+       <term>Access Type</term>
        <listitem>
         <para>
          The access type describes the action being taken with the security
-         event. The options are <option
->PERMITTING</option
->,
-         <option
->REJECTING</option
->, or <option
->AUDITING</option
->.
+         event. The options are <option>PERMITTING</option>,
+         <option>REJECTING</option>, or <option>AUDITING</option>.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Mode</term>
+       <term>Mode</term>
        <listitem>
         <para>
          The mode is the permission that the profile grants to the program
          or process to which it is applied. The options are
-         <literal
->r</literal
-> (read), <literal
->w</literal
-> (write),
-         <literal
->l</literal
-> (link), and <literal
->x</literal
-> (execute).
+         <literal>r</literal> (read), <literal>w</literal> (write),
+         <literal>l</literal> (link), and <literal>x</literal> (execute).
         </para>
        </listitem>
       </varlistentry>
@@ -1767,12 +1450,8 @@
     </step>
     <step>
      <para>
-      Click <guimenu
->Save</guimenu
-> to save this report. &aa; returns to
-      the <guimenu
->Scheduled Reports</guimenu
-> main window where the newly
+      Click <guimenu>Save</guimenu> to save this report. &aa; returns to
+      the <guimenu>Scheduled Reports</guimenu> main window where the newly
       scheduled report appears in the list of reports.
      </para>
     </step>
@@ -1780,16 +1459,11 @@
   </sect2>
 
   <sect2 id="sec.apparmor.managing.config_reports.edit">
-   <title
->Editing Reports</title>
+   <title>Editing Reports</title>
    <para>
-    From the &aa; <guimenu
->Reports</guimenu
-> screen, you can select and edit
-    a report. The three preconfigured reports (<emphasis
->stock
-    reports</emphasis
->) cannot be edited or deleted.
+    From the &aa; <guimenu>Reports</guimenu> screen, you can select and edit
+    a report. The three preconfigured reports (<emphasis>stock
+    reports</emphasis>) cannot be edited or deleted.
    </para>
    <note>
     <para>
@@ -1804,26 +1478,19 @@
    <procedure>
     <step>
      <para>
-      From the list of reports in the <guimenu
->Schedule Reports</guimenu>
+      From the list of reports in the <guimenu>Schedule Reports</guimenu>
       window, select the report to edit. This example assumes that you have
       selected a security incident report.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu
->Edit</guimenu
-> to edit the security incident report.
-      The first page of the <guimenu
->Edit Scheduled SIR</guimenu
-> displays.
+      Click <guimenu>Edit</guimenu> to edit the security incident report.
+      The first page of the <guimenu>Edit Scheduled SIR</guimenu> displays.
      </para>
      <informalfigure>
       <mediaobject>
-       <textobject role="description"
-><phrase
->Edit scheduled SIR</phrase>
+       <textobject role="description"><phrase>Edit scheduled SIR</phrase>
        </textobject>
        <imageobject role="fo">
         <imagedata format="PNG" fileref="reports_edit_pg1.png" width="75%"/>
@@ -1840,37 +1507,28 @@
      </para>
      <variablelist>
       <varlistentry>
-       <term
->Day of Month</term>
+       <term>Day of Month</term>
        <listitem>
         <para>
          Select any day of the month to activate monthly filtering in
-         reports. If you select <literal
->All</literal
->, monthly filtering is
+         reports. If you select <literal>All</literal>, monthly filtering is
          not performed.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Day of Week</term>
+       <term>Day of Week</term>
        <listitem>
         <para>
          Select the day of the week on which to schedule the weekly reports.
-         If you select <option
->All</option
->, weekly filtering is not
+         If you select <option>All</option>, weekly filtering is not
          performed. If monthly reporting is selected, this defaults to
-         <option
->All</option
->.
+         <option>All</option>.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Hour and Minute</term>
+       <term>Hour and Minute</term>
        <listitem>
         <para>
          Select the time. This specifies the hour and minute that you would
@@ -1882,8 +1540,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->E-Mail Target</term>
+       <term>E-Mail Target</term>
        <listitem>
         <para>
          You have the ability to send the scheduled security incident report
@@ -1893,8 +1550,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Export Type</term>
+       <term>Export Type</term>
        <listitem>
         <para>
          This option enables you to export a CSV (comma separated values) or
@@ -1906,21 +1562,14 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Location to Store Log</term>
+       <term>Location to Store Log</term>
        <listitem>
         <para>
          Enables you to change the location where the exported report is
          stored. The default location is
-         <filename
->/var/log/apparmor/reports-exported</filename
->. When you
-         change this location, select <guimenu
->Accept</guimenu
->. Select
-         <guimenu
->Browse</guimenu
-> to browse the file system.
+         <filename>/var/log/apparmor/reports-exported</filename>. When you
+         change this location, select <guimenu>Accept</guimenu>. Select
+         <guimenu>Browse</guimenu> to browse the file system.
         </para>
        </listitem>
       </varlistentry>
@@ -1928,21 +1577,13 @@
     </step>
     <step>
      <para>
-      Click <guimenu
->Next</guimenu
-> to proceed to the next <guimenu
->Edit
-      Scheduled SIR</guimenu
-> page. The second page of <guimenu
->Edit
-      Scheduled Reports</guimenu
-> opens.
+      Click <guimenu>Next</guimenu> to proceed to the next <guimenu>Edit
+      Scheduled SIR</guimenu> page. The second page of <guimenu>Edit
+      Scheduled Reports</guimenu> opens.
      </para>
      <informalfigure>
       <mediaobject>
-       <textobject role="description"
-><phrase
->Edit scheduled reports, page two</phrase>
+       <textobject role="description"><phrase>Edit scheduled reports, page two</phrase>
        </textobject>
        <imageobject role="fo">
         <imagedata format="PNG" fileref="reports_edit_pg2.png" width="75%"/>
@@ -1960,8 +1601,7 @@
      </para>
      <variablelist>
       <varlistentry>
-       <term
->Program Name</term>
+       <term>Program Name</term>
        <listitem>
         <para>
          You can specify a program name or pattern that matches the name of
@@ -1972,8 +1612,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Profile Name</term>
+       <term>Profile Name</term>
        <listitem>
         <para>
          You can specify the name of the profile for which to display
@@ -1983,8 +1622,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->PID Number</term>
+       <term>PID Number</term>
        <listitem>
         <para>
          Process ID number is a number that uniquely identifies one specific
@@ -1994,8 +1632,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Detail</term>
+       <term>Detail</term>
        <listitem>
         <para>
          A source to which the profile has denied access. This includes
@@ -2005,8 +1642,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Severity</term>
+       <term>Severity</term>
        <listitem>
         <para>
          Select the lowest severity level for security events to include in
@@ -2016,39 +1652,23 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Access Type</term>
+       <term>Access Type</term>
        <listitem>
         <para>
          The access type describes the action being taken with the security
-         event. The options are <option
->PERMITTING</option
->,
-         <option
->REJECTING</option
->, or <option
->AUDITING</option
->.
+         event. The options are <option>PERMITTING</option>,
+         <option>REJECTING</option>, or <option>AUDITING</option>.
         </para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
->Mode</term>
+       <term>Mode</term>
        <listitem>
         <para>
          The mode is the permission that the profile grants to the program
          or process to which it is applied. The options are
-         <literal
->r</literal
-> (read), <literal
->w</literal
-> (write),
-         <literal
->l</literal
-> (link), and <literal
->x</literal
-> (execute).
+         <literal>r</literal> (read), <literal>w</literal> (write),
+         <literal>l</literal> (link), and <literal>x</literal> (execute).
         </para>
        </listitem>
       </varlistentry>
@@ -2056,12 +1676,8 @@
     </step>
     <step>
      <para>
-      Select <guimenu
->Save</guimenu
-> to save the changes to this report.
-      &aa; returns to the <guimenu
->Scheduled Reports</guimenu
-> main window
+      Select <guimenu>Save</guimenu> to save the changes to this report.
+      &aa; returns to the <guimenu>Scheduled Reports</guimenu> main window
       where the scheduled report appears in the list of reports.
      </para>
     </step>
@@ -2069,12 +1685,9 @@
   </sect2>
 
   <sect2 id="sec.apparmor.managing.config_reports.del">
-   <title
->Deleting Reports</title>
+   <title>Deleting Reports</title>
    <para>
-    <guimenu
->Delete a Report</guimenu
-> enables you to permanently remove a
+    <guimenu>Delete a Report</guimenu> enables you to permanently remove a
     report from the list of &aa; scheduled reports. To delete a report,
     follow these instructions:
    </para>
@@ -2082,21 +1695,15 @@
     <step>
      <para>
       To remove a report from the list of reports, highlight the report and
-      click <guimenu
->Delete</guimenu
->.
+      click <guimenu>Delete</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      From the confirmation pop-up, select <guimenu
->Cancel</guimenu
-> if you
+      From the confirmation pop-up, select <guimenu>Cancel</guimenu> if you
       do not want to delete the selected report. If you are sure you want to
       remove the report permanently from the list of reports, select
-      <guimenu
->Delete</guimenu
->.
+      <guimenu>Delete</guimenu>.
      </para>
     </step>
    </procedure>
@@ -2126,8 +1733,7 @@ b) desktop notifications
  offer for 12.1.
 
  <sect1 id="sec.apparmor.managing.dmon">
-  <title
->Configuring and Using the &aa; Desktop Monitor Applet</title>
+  <title>Configuring and Using the &aa; Desktop Monitor Applet</title>
 
   <para>
    The Linux audit framework contains a dispatcher that can send &aa; events
@@ -2135,109 +1741,124 @@ b) desktop notifications
    applet is one example of an application that gathers &aa; events via
    dbus. To configure audit to use the dbus dispatcher, set the
    dispatcher in your audit configuration in
-   <filename
->/etc/audit/auditd.conf</filename
-> to
-   <literal
->apparmor-dbus</literal
-> and restart auditd:
+   <filename>/etc/audit/auditd.conf</filename> to
+   <literal>apparmor-dbus</literal> and restart auditd:
   </para>
 
-<screen
->dispatcher=/usr/bin/apparmor-dbus
+<screen>dispatcher=/usr/bin/apparmor-dbus
 </screen>
 
   <para>
    Once the dbus dispatcher is configured correctly, add the &aa; Desktop
    Monitor to the &gnome; panel by right-clicking the panel and selecting
-   <menuchoice
-> <guimenu
->Add to Panel</guimenu
-> <guimenu
->&aa; Desktop
-   Monitor</guimenu
-> </menuchoice
->. As soon as a <literal
->REJECT</literal>
+   <menuchoice> <guimenu>Add to Panel</guimenu> <guimenu>&aa; Desktop
+   Monitor</guimenu> </menuchoice>. As soon as a <literal>REJECT</literal>
    event is logged, the applet's panel icon changes appearance and you can
    click the applet to see the number of reject events per confined
    application. To view the exact log messages, refer to the audit log under
-   <filename
->/var/log/audit/audit.log</filename
->. React to any
-   <literal
->REJECT</literal
-> events as described in
+   <filename>/var/log/audit/audit.log</filename>. React to any
+   <literal>REJECT</literal> events as described in
    <xref linkend="sec.apparmor.managing.react"/>.
   </para>
  </sect1>
 -->
  <sect1 xml:id="sec.apparmor.managing.react">
-  <title
->Reacting to Security Event Rejections</title>
+  <title>Reacting to Security Event Rejections</title>
 
-  <para
->When you receive a security event rejection, examine the access violation and determine if that event indicated a threat or was part of normal application behavior. Application-specific knowledge is required to make the determination. If the rejected action is part of normal application behavior, run <command
->aa-logprof</command
-> at the command line. </para>
+  <para>
+   When you receive a security event rejection, examine the access violation
+   and determine if that event indicated a threat or was part of normal
+   application behavior. Application-specific knowledge is required to make
+   the determination. If the rejected action is part of normal application
+   behavior, run <command>aa-logprof</command> at the command line.
+  </para>
 
-  <para
->If the rejected action is not part of normal application behavior, this access should be considered a possible intrusion attempt (that was prevented) and this notification should be passed to the person responsible for security within your organization. </para>
+  <para>
+   If the rejected action is not part of normal application behavior, this
+   access should be considered a possible intrusion attempt (that was
+   prevented) and this notification should be passed to the person
+   responsible for security within your organization.
+  </para>
  </sect1>
  <sect1 xml:id="sec.apparmor.managing.maintain">
-  <title
->Maintaining Your Security Profiles</title>
+  <title>Maintaining Your Security Profiles</title>
 
-  <para
->In a production environment, you should plan on maintaining profiles for all of the deployed applications. The security policies are an integral part of your deployment. You should plan on taking steps to back up and restore security policy files, plan for software changes, and allow any needed modification of security policies that your environment dictates. </para>
+  <para>
+   In a production environment, you should plan on maintaining profiles for
+   all of the deployed applications. The security policies are an integral
+   part of your deployment. You should plan on taking steps to back up and
+   restore security policy files, plan for software changes, and allow any
+   needed modification of security policies that your environment dictates.
+  </para>
 
   <sect2 xml:id="sec.apparmor.managing.maintain.backup">
-   <title
->Backing Up Your Security Profiles</title>
-   <para
->Backing up profiles might save you from having to re-profile all your programs after a disk crash. Also, if profiles are changed, you can easily restore previous settings by using the backed up files. </para>
-   <para
->Back up profiles by copying the profile files to a specified directory. </para>
+   <title>Backing Up Your Security Profiles</title>
+   <para>
+    Backing up profiles might save you from having to re-profile all your
+    programs after a disk crash. Also, if profiles are changed, you can
+    easily restore previous settings by using the backed up files.
+   </para>
+   <para>
+    Back up profiles by copying the profile files to a specified directory.
+   </para>
    <procedure>
     <step>
-     <para
->You should first archive the files into one file. To do this, open a terminal window and enter the following as &rootuser;: </para>
-<screen
->&prompt.sudo;tar zclpf profiles.tgz /etc/apparmor.d</screen>
-     <para
->The simplest method to ensure that your security policy files are regularly backed up is to include the directory <filename
->/etc/apparmor.d</filename
-> in the list of directories that your backup system archives. </para>
+     <para>
+      You should first archive the files into one file. To do this, open a
+      terminal window and enter the following as &rootuser;:
+     </para>
+<screen>&prompt.sudo;tar zclpf profiles.tgz /etc/apparmor.d</screen>
+     <para>
+      The simplest method to ensure that your security policy files are
+      regularly backed up is to include the directory
+      <filename>/etc/apparmor.d</filename> in the list of directories that
+      your backup system archives.
+     </para>
     </step>
     <step>
-     <para
->You can also use <command
->scp</command
-> or a file manager like Nautilus to store the files on some kind of storage media, the network, or another computer. </para>
+     <para>
+      You can also use <command>scp</command> or a file manager like
+      Nautilus to store the files on some kind of storage media, the
+      network, or another computer.
+     </para>
     </step>
    </procedure>
   </sect2>
 
   <sect2 xml:id="sec.apparmor.managing.maintain.change">
-   <title
->Changing Your Security Profiles</title>
-   <para
->Maintenance of security profiles includes changing them if you decide that your system requires more or less security for its applications. To change your profiles in &aa;, refer to <xref xrefstyle="SectTitleOnPage" linkend="sec.apparmor.yast.edit"/>. </para>
+   <title>Changing Your Security Profiles</title>
+   <para>
+    Maintenance of security profiles includes changing them if you decide
+    that your system requires more or less security for its applications. To
+    change your profiles in &aa;, refer to
+    <xref xrefstyle="SectTitleOnPage" linkend="sec.apparmor.yast.edit"/>.
+   </para>
   </sect2>
 
   <sect2 xml:id="sec.apparmor.managing.maintain.change.new_software">
-   <title
->Introducing New Software into Your Environment</title>
-   <para
->When you add a new application version or patch to your system, you should always update the profile to fit your needs. You have several options, depending on your company's software deployment strategy. You can deploy your patches and upgrades into a test or production environment. The following explains how to do this with each method. </para>
-   <para
->If you intend to deploy a patch or upgrade in a test environment, the best method for updating your profiles is to run <command
->aa-logprof</command
-> in a terminal as &rootuser;. For detailed instructions, refer to <xref xrefstyle="HeadingOnPage" linkend="sec.apparmor.commandline.profiling.summary.logprof"/>. </para>
-   <para
->If you intend to deploy a patch or upgrade directly into a production environment, the best method for updating your profiles is to monitor the system frequently to determine if any new rejections should be added to the profile and update as needed using <command
->aa-logprof</command
->. For detailed instructions, refer to <xref xrefstyle="HeadingOnPage" linkend="sec.apparmor.commandline.profiling.summary.logprof"/>. </para>
+   <title>Introducing New Software into Your Environment</title>
+   <para>
+    When you add a new application version or patch to your system, you
+    should always update the profile to fit your needs. You have several
+    options, depending on your company's software deployment strategy. You
+    can deploy your patches and upgrades into a test or production
+    environment. The following explains how to do this with each method.
+   </para>
+   <para>
+    If you intend to deploy a patch or upgrade in a test environment, the
+    best method for updating your profiles is to run
+    <command>aa-logprof</command> in a terminal as &rootuser;. For
+    detailed instructions, refer to
+    <xref xrefstyle="HeadingOnPage" linkend="sec.apparmor.commandline.profiling.summary.logprof"/>.
+   </para>
+   <para>
+    If you intend to deploy a patch or upgrade directly into a production
+    environment, the best method for updating your profiles is to monitor
+    the system frequently to determine if any new rejections should be added
+    to the profile and update as needed using <command>aa-logprof</command>.
+    For detailed instructions, refer to
+    <xref xrefstyle="HeadingOnPage" linkend="sec.apparmor.commandline.profiling.summary.logprof"/>.
+   </para>
   </sect2>
  </sect1>
 </chapter>

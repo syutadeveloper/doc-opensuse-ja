@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -38,16 +38,76 @@ msgstr ""
 msgid "Accessing Monitor Console"
 msgstr ""
 
-#. Tag: para
-#: qemu_monitor.xml:33
+#. Tag: #text
+#: qemu_monitor.xml:34
 #, no-c-format
-msgid "You can access the monitor console from &qemu; window either by a keyboard shortcut&mdash;press <keycombo><keycap function=\"control\"></keycap> <keycap function=\"alt\"></keycap><keycap>2</keycap></keycombo> (to return to &qemu;, press <keycombo><keycap function=\"control\"></keycap> <keycap function=\"alt\"></keycap><keycap>1</keycap></keycombo>)&mdash;or alternatively by clicking <guimenu>View</guimenu> in the &qemu; GUI window, then <guimenu>compatmonitor0</guimenu>. The most convenient way is to show the &qemu; window tabs with <menuchoice><guimenu>View</guimenu> <guimenu>Show Tabs</guimenu></menuchoice>. Then you can easily switch between the guest screen, monitor screen, and the output of the serial and parallel console."
+msgid "You can access the monitor console from &qemu; window either by a keyboard shortcut&mdash;press"
+msgstr ""
+
+#. Tag: keycap
+#: qemu_monitor.xml:36
+#, no-c-format
+msgid "2"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:37
+#, no-c-format
+msgid "(to return to &qemu;, press"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:38
+#, no-c-format
+msgid ")&mdash;or alternatively by clicking"
+msgstr ""
+
+#. Tag: keycap
+#: qemu_monitor.xml:38
+#, no-c-format
+msgid "1"
+msgstr ""
+
+#. Tag: guimenu
+#: qemu_monitor.xml:39
+#, no-c-format
+msgid "View"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:39
+#, no-c-format
+msgid "in the &qemu; GUI window, then"
+msgstr ""
+
+#. Tag: guimenu
+#: qemu_monitor.xml:40
+#, no-c-format
+msgid "compatmonitor0"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:41
+#, no-c-format
+msgid ". The most convenient way is to show the &qemu; window tabs with"
+msgstr ""
+
+#. Tag: menuchoice
+#: qemu_monitor.xml:42
+#, no-c-format
+msgid "<guimenu>View</guimenu> <guimenu>Show Tabs</guimenu>"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:46
+#, no-c-format
+msgid ". Then you can easily switch between the guest screen, monitor screen, and the output of the serial and parallel console."
 msgstr ""
 
 #. Tag: para
 #: qemu_monitor.xml:48
 #, no-c-format
-msgid "To get help while using the console, use <command>help</command> or <command>?</command>. To get help for a specific command, use <command>help</command> <replaceable>COMMAND</replaceable>."
+msgid "To get help while using the console, use <command>help</command> or <command>?</command> . To get help for a specific command, use <command>help</command> <replaceable>COMMAND</replaceable> ."
 msgstr ""
 
 #. Tag: title
@@ -59,13 +119,13 @@ msgstr ""
 #. Tag: para
 #: qemu_monitor.xml:57
 #, no-c-format
-msgid "To get information about the guest system, use <command>info</command>. If used without any option, the list of possible options is printed. Options determine which part of the system will be analyzed:"
+msgid "To get information about the guest system, use <command>info</command> . If used without any option, the list of possible options is printed. Options determine which part of the system will be analyzed:"
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:66
 #, no-c-format
-msgid "info version"
+msgid "<command>info version</command>"
 msgstr ""
 
 #. Tag: para
@@ -74,10 +134,10 @@ msgstr ""
 msgid "Shows the version of &qemu;."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:75
 #, no-c-format
-msgid "info commands"
+msgid "<command>info commands</command>"
 msgstr ""
 
 #. Tag: para
@@ -86,10 +146,10 @@ msgstr ""
 msgid "Lists available QMP commands."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:84
 #, no-c-format
-msgid "info network"
+msgid "<command>info network</command>"
 msgstr ""
 
 #. Tag: para
@@ -98,10 +158,10 @@ msgstr ""
 msgid "Shows the network state."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:93
 #, no-c-format
-msgid "info chardev"
+msgid "<command>info chardev</command>"
 msgstr ""
 
 #. Tag: para
@@ -110,10 +170,10 @@ msgstr ""
 msgid "Shows the character devices."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:102
 #, no-c-format
-msgid "info block"
+msgid "<command>info block</command>"
 msgstr ""
 
 #. Tag: para
@@ -122,10 +182,10 @@ msgstr ""
 msgid "Information about block devices, such as hard disks, floppy drives, or CD-ROMs."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:112
 #, no-c-format
-msgid "info blockstats"
+msgid "<command>info blockstats</command>"
 msgstr ""
 
 #. Tag: para
@@ -134,10 +194,10 @@ msgstr ""
 msgid "Read and write statistics on block devices."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:121
 #, no-c-format
-msgid "info registers"
+msgid "<command>info registers</command>"
 msgstr ""
 
 #. Tag: para
@@ -146,10 +206,10 @@ msgstr ""
 msgid "Shows the CPU registers."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:130
 #, no-c-format
-msgid "info cpus"
+msgid "<command>info cpus</command>"
 msgstr ""
 
 #. Tag: para
@@ -158,10 +218,10 @@ msgstr ""
 msgid "Shows information about available CPUs."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:139
 #, no-c-format
-msgid "info history"
+msgid "<command>info history</command>"
 msgstr ""
 
 #. Tag: para
@@ -170,10 +230,10 @@ msgstr ""
 msgid "Shows the command line history."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:148
 #, no-c-format
-msgid "info irq"
+msgid "<command>info irq</command>"
 msgstr ""
 
 #. Tag: para
@@ -182,10 +242,10 @@ msgstr ""
 msgid "Shows the interrupt statistics."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:157
 #, no-c-format
-msgid "info pic"
+msgid "<command>info pic</command>"
 msgstr ""
 
 #. Tag: para
@@ -194,10 +254,10 @@ msgstr ""
 msgid "Shows the i8259 (PIC) state."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:166
 #, no-c-format
-msgid "info pci"
+msgid "<command>info pci</command>"
 msgstr ""
 
 #. Tag: para
@@ -206,10 +266,10 @@ msgstr ""
 msgid "Shows the PCI information."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:175
 #, no-c-format
-msgid "info tlb"
+msgid "<command>info tlb</command>"
 msgstr ""
 
 #. Tag: para
@@ -218,10 +278,10 @@ msgstr ""
 msgid "Shows virtual to physical memory mappings."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:184
 #, no-c-format
-msgid "info mem"
+msgid "<command>info mem</command>"
 msgstr ""
 
 #. Tag: para
@@ -230,10 +290,10 @@ msgstr ""
 msgid "Shows the active virtual memory mappings."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:193
 #, no-c-format
-msgid "info jit"
+msgid "<command>info jit</command>"
 msgstr ""
 
 #. Tag: para
@@ -242,10 +302,10 @@ msgstr ""
 msgid "Shows dynamic compiler information."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:202
 #, no-c-format
-msgid "info kvm"
+msgid "<command>info kvm</command>"
 msgstr ""
 
 #. Tag: para
@@ -254,10 +314,10 @@ msgstr ""
 msgid "Shows the KVM information."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:211
 #, no-c-format
-msgid "info numa"
+msgid "<command>info numa</command>"
 msgstr ""
 
 #. Tag: para
@@ -266,10 +326,10 @@ msgstr ""
 msgid "Shows the NUMA information."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:220
 #, no-c-format
-msgid "info usb"
+msgid "<command>info usb</command>"
 msgstr ""
 
 #. Tag: para
@@ -278,10 +338,10 @@ msgstr ""
 msgid "Shows the guest USB devices."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:229
 #, no-c-format
-msgid "info usbhost"
+msgid "<command>info usbhost</command>"
 msgstr ""
 
 #. Tag: para
@@ -290,10 +350,10 @@ msgstr ""
 msgid "Shows the host USB devices."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:238
 #, no-c-format
-msgid "info profile"
+msgid "<command>info profile</command>"
 msgstr ""
 
 #. Tag: para
@@ -302,10 +362,10 @@ msgstr ""
 msgid "Shows the profiling information."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:247
 #, no-c-format
-msgid "info capture"
+msgid "<command>info capture</command>"
 msgstr ""
 
 #. Tag: para
@@ -314,22 +374,16 @@ msgstr ""
 msgid "Shows the capture (audio grab) information."
 msgstr ""
 
-#. Tag: command
-#: qemu_monitor.xml:256 qemu_monitor.xml:715
-#, no-c-format
-msgid "info snapshots"
-msgstr ""
-
 #. Tag: para
 #: qemu_monitor.xml:259
 #, no-c-format
 msgid "Shows the currently saved virtual machine snapshots."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:265
 #, no-c-format
-msgid "info status"
+msgid "<command>info status</command>"
 msgstr ""
 
 #. Tag: para
@@ -338,10 +392,10 @@ msgstr ""
 msgid "Shows the current virtual machine status."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:274
 #, no-c-format
-msgid "info mice"
+msgid "<command>info mice</command>"
 msgstr ""
 
 #. Tag: para
@@ -350,10 +404,10 @@ msgstr ""
 msgid "Shows which guest mice are receiving events."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:283
 #, no-c-format
-msgid "info vnc"
+msgid "<command>info vnc</command>"
 msgstr ""
 
 #. Tag: para
@@ -362,10 +416,10 @@ msgstr ""
 msgid "Shows the VNC server status."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:292
 #, no-c-format
-msgid "info name"
+msgid "<command>info name</command>"
 msgstr ""
 
 #. Tag: para
@@ -374,10 +428,10 @@ msgstr ""
 msgid "Shows the current virtual machine name."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:301
 #, no-c-format
-msgid "info uuid"
+msgid "<command>info uuid</command>"
 msgstr ""
 
 #. Tag: para
@@ -386,10 +440,10 @@ msgstr ""
 msgid "Shows the current virtual machine UUID."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:310
 #, no-c-format
-msgid "info usernet"
+msgid "<command>info usernet</command>"
 msgstr ""
 
 #. Tag: para
@@ -398,10 +452,10 @@ msgstr ""
 msgid "Shows the user network stack connection states."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:319
 #, no-c-format
-msgid "info migrate"
+msgid "<command>info migrate</command>"
 msgstr ""
 
 #. Tag: para
@@ -410,10 +464,10 @@ msgstr ""
 msgid "Shows the migration status."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:328
 #, no-c-format
-msgid "info balloon"
+msgid "<command>info balloon</command>"
 msgstr ""
 
 #. Tag: para
@@ -422,10 +476,10 @@ msgstr ""
 msgid "Shows the balloon device information."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:337
 #, no-c-format
-msgid "info qtree"
+msgid "<command>info qtree</command>"
 msgstr ""
 
 #. Tag: para
@@ -434,10 +488,10 @@ msgstr ""
 msgid "Shows the device tree."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:346
 #, no-c-format
-msgid "info qdm"
+msgid "<command>info qdm</command>"
 msgstr ""
 
 #. Tag: para
@@ -446,10 +500,10 @@ msgstr ""
 msgid "Shows the qdev device model list."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:355
 #, no-c-format
-msgid "info roms"
+msgid "<command>info roms</command>"
 msgstr ""
 
 #. Tag: para
@@ -458,22 +512,22 @@ msgstr ""
 msgid "Shows the ROMs."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:364
 #, no-c-format
-msgid "info migrate_cache_size"
+msgid "<command>info migrate_cache_size</command>"
 msgstr ""
 
 #. Tag: para
 #: qemu_monitor.xml:367
 #, no-c-format
-msgid "Shows the current migration xbzrle (<quote>Xor Based Zero Run Length Encoding</quote>) cache size."
+msgid "Shows the current migration xbzrle ( <quote>Xor Based Zero Run Length Encoding</quote> ) cache size."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:374
 #, no-c-format
-msgid "info migrate_capabilities"
+msgid "<command>info migrate_capabilities</command>"
 msgstr ""
 
 #. Tag: para
@@ -482,10 +536,10 @@ msgstr ""
 msgid "Shows the status of the various migration capabilities, such as xbzrle compression."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:384
 #, no-c-format
-msgid "info mtree"
+msgid "<command>info mtree</command>"
 msgstr ""
 
 #. Tag: para
@@ -494,10 +548,10 @@ msgstr ""
 msgid "Shows the &vmguest; memory hierarchy."
 msgstr ""
 
-#. Tag: command
+#. Tag: term
 #: qemu_monitor.xml:393
 #, no-c-format
-msgid "info trace-events"
+msgid "<command>info trace-events</command>"
 msgstr ""
 
 #. Tag: para
@@ -521,59 +575,57 @@ msgstr ""
 #. Tag: screen
 #: qemu_monitor.xml:411
 #, no-c-format
-msgid ""
+msgid "\n"
       "(qemu) change vnc password\n"
       "Password: ********\n"
-      "(qemu)"
+      "(qemu)\n"
+      "    "
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:414
+#: qemu_monitor.xml:418
 #, no-c-format
 msgid "Managing Devices"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:416
+#: qemu_monitor.xml:420
 #, no-c-format
 msgid "To add a new disk while the guest is running (hotplug), use the <command>drive_add</command> and <command>device_add</command> commands. First define a new drive to be added as a device to bus 0:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:422
+#: qemu_monitor.xml:426
 #, no-c-format
-msgid ""
-      "(qemu) drive_add 0 if=none,file=/tmp/test.img,format=raw,if=disk1\n"
+msgid "(qemu) drive_add 0 if=none,file=/tmp/test.img,format=raw,if=disk1\n"
       "OK"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:424
+#: qemu_monitor.xml:429
 #, no-c-format
 msgid "You can confirm your new device by querying the block subsystem:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:428
+#: qemu_monitor.xml:433
 #, no-c-format
-msgid ""
-      "(qemu) info block\n"
+msgid "(qemu) info block\n"
       "[...]\n"
       "disk1: removable=1 locked=0 tray-open=0 file=/tmp/test.img ro=0 drv=raw \\\n"
       "encrypted=0 bps=0 bps_rd=0 bps_wr=0 iops=0 iops_rd=0 iops_wr=0"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:430
+#: qemu_monitor.xml:438
 #, no-c-format
-msgid "After the new drive is defined, it needs to be connected to a device so that the guest can see it. The typical device would be a <literal>virtio-blk-pci</literal> or <literal>scsi-disk</literal>. To get the full list of available driver values, run:"
+msgid "After the new drive is defined, it needs to be connected to a device so that the guest can see it. The typical device would be a <literal>virtio-blk-pci</literal> or <literal>scsi-disk</literal> . To get the full list of available driver values, run:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:437
+#: qemu_monitor.xml:445
 #, no-c-format
-msgid ""
-      "(qemu) device_add ?\n"
+msgid "(qemu) device_add ?\n"
       "name \"VGA\", bus PCI\n"
       "name \"usb-storage\", bus usb-bus\n"
       "[...]\n"
@@ -581,28 +633,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:439
+#: qemu_monitor.xml:451
 #, no-c-format
 msgid "Now add the device"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:443
+#: qemu_monitor.xml:455
 #, no-c-format
 msgid "(qemu) device_add virtio-blk-pci,drive=disk1,id=myvirtio1"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:445
+#: qemu_monitor.xml:457
 #, no-c-format
 msgid "and confirm with"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:449
+#: qemu_monitor.xml:461
 #, no-c-format
-msgid ""
-      "(qemu) info pci\n"
+msgid "(qemu) info pci\n"
       "[...]\n"
       "Bus  0, device   4, function 0:\n"
       "    SCSI controller: PCI device 1af4:1001\n"
@@ -613,560 +664,645 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:452
+#: qemu_monitor.xml:471
 #, no-c-format
-msgid "Devices added with the <command>device_add</command> command can be removed from the guest with <command>device_del</command>. Enter <command>help device_del</command> on the &qemu; monitor command line for more information."
+msgid "Devices added with the <command>device_add</command> command can be removed from the guest with <command>device_del</command> . Enter <command>help device_del</command> on the &qemu; monitor command line for more information."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:460
+#: qemu_monitor.xml:479
 #, no-c-format
 msgid "To release the device or file connected to the removable media device, use the <command>eject</command> <replaceable>DEVICE</replaceable> command. Use the optional <option>-f</option> to force ejection."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:466
+#: qemu_monitor.xml:485
 #, no-c-format
 msgid "To change removable media (like CD-ROMs), use the <command>change</command> <replaceable>DEVICE</replaceable> command. The name of the removable media can be determined using the <command>info block</command> command:"
 msgstr ""
 
-#. Tag: screen
-#: qemu_monitor.xml:473
+#. Tag: command
+#: qemu_monitor.xml:493
 #, no-c-format
-msgid ""
-      "<prompt>(qemu) </prompt><command>info block</command>\n"
-      "ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device\n"
-      "<prompt>(qemu) </prompt><command>change ide1-cd0 /path/to/image</command>"
+msgid "info block"
+msgstr ""
+
+#. Tag: command
+#: qemu_monitor.xml:495
+#, no-c-format
+msgid "change ide1-cd0 /path/to/image"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:495
+#, no-c-format
+msgid "ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device"
+msgstr ""
+
+#. Tag: prompt
+#: qemu_monitor.xml:495
+#, no-c-format
+msgid "(qemu)"
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:476
+#: qemu_monitor.xml:499
 #, no-c-format
 msgid "Controlling Keyboard and Mouse"
 msgstr ""
 
-#. Tag: para
-#: qemu_monitor.xml:478
+#. Tag: #text
+#: qemu_monitor.xml:504
 #, no-c-format
-msgid "It is possible to use the monitor console to emulate keyboard and mouse input if necessary. For example, if your graphical user interface intercepts some key combinations at low level (such as <keycombo><keycap function=\"control\"></keycap><keycap function=\"alt\"></keycap><keycap>F1</keycap></keycombo> in X Window), you can still enter them using the <command>sendkey</command> <replaceable>KEYS</replaceable>:"
+msgid "It is possible to use the monitor console to emulate keyboard and mouse input if necessary. For example, if your graphical user interface intercepts some key combinations at low level (such as"
+msgstr ""
+
+#. Tag: keycap
+#: qemu_monitor.xml:505
+#, no-c-format
+msgid "F1"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:506
+#, no-c-format
+msgid "in X Window), you can still enter them using the"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:508
+#, no-c-format
+msgid ":"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:486
+#: qemu_monitor.xml:510
 #, no-c-format
 msgid "sendkey ctrl-alt-f1"
 msgstr ""
 
-#. Tag: para
-#: qemu_monitor.xml:488
+#. Tag: #text
+#: qemu_monitor.xml:513
 #, no-c-format
-msgid "To list the key names used in the <replaceable>KEYS</replaceable> option, enter <command>sendkey</command> and press <keycap function=\"tab\"></keycap>."
+msgid "To list the key names used in the"
+msgstr ""
+
+#. Tag: replaceable
+#: qemu_monitor.xml:513
+#, no-c-format
+msgid "KEYS"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:514
+#, no-c-format
+msgid "and press"
+msgstr ""
+
+#. Tag: command
+#: qemu_monitor.xml:514
+#, no-c-format
+msgid "sendkey"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:514
+#, no-c-format
+msgid "option, enter"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:515
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:493
+#: qemu_monitor.xml:517
 #, no-c-format
 msgid "To control the mouse, the following commands can be used:"
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:499
+#: qemu_monitor.xml:523
 #, no-c-format
-msgid "<command>mouse_move</command> <replaceable>DX</replaceable> <replaceable>dy</replaceable> [<replaceable>DZ</replaceable>]"
+msgid "<command>mouse_move</command> <replaceable>DX</replaceable> <replaceable>dy</replaceable> [ <replaceable>DZ</replaceable> ]"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:502
+#: qemu_monitor.xml:526
 #, no-c-format
 msgid "Move the active mouse pointer to the specified coordinates dx, dy with the optional scroll axis dz."
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:509
+#: qemu_monitor.xml:533
 #, no-c-format
 msgid "<command>mouse_button</command> <replaceable>VAL</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:512
+#: qemu_monitor.xml:536
 #, no-c-format
 msgid "Change the state of the mouse buttons (1=left, 2=middle, 4=right)."
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:518
+#: qemu_monitor.xml:542
 #, no-c-format
 msgid "<command>mouse_set</command> <replaceable>INDEX</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:521
+#: qemu_monitor.xml:545
 #, no-c-format
 msgid "Set which mouse device receives events. Device index numbers can be obtained with the <command>info mice</command> command."
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:530
+#: qemu_monitor.xml:554
 #, no-c-format
 msgid "Changing Available Memory"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:532
+#: qemu_monitor.xml:556
 #, no-c-format
-msgid "If the virtual machine was started with the <option>-balloon virtio</option> option (the paravirtualized balloon device is therefore enabled), you can change the available memory dynamically. For more information about enabling the balloon device, see <xref linkend=\"cha.qemu.guest_inst.qemu-kvm\"/>."
+msgid "If the virtual machine was started with the <option>-balloon virtio</option> option (the paravirtualized balloon device is therefore enabled), you can change the available memory dynamically. For more information about enabling the balloon device, see <xref linkend=\"cha.qemu.guest_inst.qemu-kvm\"/> ."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:540
+#: qemu_monitor.xml:564
 #, no-c-format
 msgid "To get information about the balloon device in the monitor console and to determine whether the device is enabled, use the <command>info balloon</command> command:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:546
+#: qemu_monitor.xml:570
 #, no-c-format
 msgid "(qemu) info balloon"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:548
+#: qemu_monitor.xml:572
 #, no-c-format
 msgid "If the balloon device is enabled, use the <command>balloon</command> <replaceable>MEMORY_IN_MB</replaceable> command to set the requested amount of memory:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:554
+#: qemu_monitor.xml:578
 #, no-c-format
 msgid "(qemu) balloon 400"
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:557
+#: qemu_monitor.xml:581
 #, no-c-format
 msgid "Dumping Virtual Machine Memory"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:559
+#: qemu_monitor.xml:583
 #, no-c-format
 msgid "To save the content of the virtual machine memory to a disk or console output, use the following commands:"
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:566
+#: qemu_monitor.xml:590
 #, no-c-format
-msgid "<command>memsave</command><replaceable>ADDR</replaceable><replaceable>SIZE</replaceable><replaceable>FILENAME</replaceable>"
+msgid "<command>memsave</command> <replaceable>ADDR</replaceable> <replaceable>SIZE</replaceable> <replaceable>FILENAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:569
+#: qemu_monitor.xml:593
 #, no-c-format
 msgid "Saves virtual memory dump starting at <replaceable>ADDR</replaceable> of size <replaceable>SIZE</replaceable> to file <replaceable>FILENAME</replaceable>"
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:577
+#: qemu_monitor.xml:601
 #, no-c-format
-msgid "<command>pmemsave</command><replaceable>ADDR</replaceable><replaceable>SIZE</replaceable><replaceable>FILENAME</replaceable>"
+msgid "<command>pmemsave</command> <replaceable>ADDR</replaceable> <replaceable>SIZE</replaceable> <replaceable>FILENAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:580
+#: qemu_monitor.xml:604
 #, no-c-format
-msgid "Saves physical memory dump starting at <replaceable>ADDR</replaceable> of size <replaceable>SIZE</replaceable> to file <replaceable>FILENAME</replaceable>-"
+msgid "Saves physical memory dump starting at <replaceable>ADDR</replaceable> of size <replaceable>SIZE</replaceable> to file <replaceable>FILENAME</replaceable> -"
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:588
+#: qemu_monitor.xml:612
 #, no-c-format
-msgid "x /<replaceable>FMT</replaceable><replaceable>ADDR</replaceable>"
+msgid "x / <replaceable>FMT</replaceable> <replaceable>ADDR</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:591
+#: qemu_monitor.xml:615
 #, no-c-format
-msgid "Makes a virtual memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal><replaceable>COUNT</replaceable><replaceable>FORMAT</replaceable><replaceable>SIZE</replaceable></literal>:"
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:598
-#, no-c-format
-msgid "The <replaceable>COUNT</replaceable> parameter is the number of items to be dumped."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:602
-#, no-c-format
-msgid "The <replaceable>FORMAT</replaceable> can be <literal>x</literal> (hex), <literal>d</literal> (signed decimal), <literal>u</literal> (unsigned decimal), <literal>o</literal> (octal), <literal>c</literal> (char) or <literal>i</literal> (assembly instruction)."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:608
-#, no-c-format
-msgid "The <replaceable>SIZE</replaceable> parameter can be <literal>b</literal> (8 bits), <literal>h</literal> (16 bits), <literal>w</literal> (32 bits) or <literal>g</literal> (64 bits). On x86, <literal>h</literal> or <literal>w</literal> can be specified with the <literal>i</literal> format to respectively select 16 or 32-bit code instruction size."
-msgstr ""
-
-#. Tag: term
-#: qemu_monitor.xml:619
-#, no-c-format
-msgid "xp /<replaceable>FMT</replaceable><replaceable>ADDR</replaceable>"
+msgid "Makes a virtual memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal><replaceable>COUNT</replaceable><replaceable>FORMAT</replaceable><replaceable>SIZE</replaceable></literal> :"
 msgstr ""
 
 #. Tag: para
 #: qemu_monitor.xml:622
 #, no-c-format
-msgid "Makes a physical memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal><replaceable>COUNT</replaceable><replaceable>FORMAT</replaceable><replaceable>SIZE</replaceable></literal>:"
+msgid "The <replaceable>COUNT</replaceable> parameter is the number of items to be dumped."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:629
+#: qemu_monitor.xml:626
+#, no-c-format
+msgid "The <replaceable>FORMAT</replaceable> can be <literal>x</literal> (hex), <literal>d</literal> (signed decimal), <literal>u</literal> (unsigned decimal), <literal>o</literal> (octal), <literal>c</literal> (char) or <literal>i</literal> (assembly instruction)."
+msgstr ""
+
+#. Tag: term
+#: qemu_monitor.xml:643
+#, no-c-format
+msgid "xp / <replaceable>FMT</replaceable> <replaceable>ADDR</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:646
+#, no-c-format
+msgid "Makes a physical memory dump starting at address <replaceable>ADDR</replaceable> and formatted according to the <replaceable>FMT</replaceable> string. The <replaceable>FMT</replaceable> string consists of three parameters <literal><replaceable>COUNT</replaceable><replaceable>FORMAT</replaceable><replaceable>SIZE</replaceable></literal> :"
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:653
 #, no-c-format
 msgid "The <replaceable>COUNT</replaceable> parameter is the number of the items to be dumped."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:633
+#: qemu_monitor.xml:657
 #, no-c-format
 msgid "The <replaceable>FORMAT</replaceable> can be <literal>x</literal> (hex), <literal>d</literal> (signed decimal), <literal>u</literal> (unsigned decimal), <literal>o</literal> (octal), <literal>c</literal> (char) or <literal>i</literal> (asm instruction)."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:639
+#: qemu_monitor.xml:663
 #, no-c-format
-msgid "The <replaceable>SIZE</replaceable> parameter can be <literal>b</literal> (8 bits), <literal>h</literal> (16 bits), <literal>w</literal> (32 bits) or <literal>g</literal> (64 bits). On x86, <literal>h</literal> or <literal>w</literal> can be specified with the<literal>i</literal> format to respectively select 16 or 32-bit code instruction size."
+msgid "The <replaceable>SIZE</replaceable> parameter can be <literal>b</literal> (8 bits), <literal>h</literal> (16 bits), <literal>w</literal> (32 bits) or <literal>g</literal> (64 bits). On x86, <literal>h</literal> or <literal>w</literal> can be specified with the <literal>i</literal> format to respectively select 16 or 32-bit code instruction size."
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:652
+#: qemu_monitor.xml:676
 #, no-c-format
 msgid "Managing Virtual Machine Snapshots"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:654
+#: qemu_monitor.xml:678
 #, no-c-format
 msgid "Managing snapshots in QEMU monitor is not officially supported by &suse; yet. The information found in this section may be helpful in specific cases."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:660
+#: qemu_monitor.xml:684
 #, no-c-format
-msgid "snapshots are snapshots of the complete virtual machine including the state of CPU, RAM, and the content of all writable disks. To use virtual machine snapshots, you must have at least one non-removable and writable block device using the <literal>qcow2</literal> disk image format."
+msgid "<xref linkend=\"gloss.vt.vm\"/> snapshots are snapshots of the complete virtual machine including the state of CPU, RAM, and the content of all writable disks. To use virtual machine snapshots, you must have at least one non-removable and writable block device using the <literal>qcow2</literal> disk image format."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:668
+#: qemu_monitor.xml:692
 #, no-c-format
-msgid "Snapshots are helpful when you need to save your virtual machine in a particular state. For example, after you have configured network services on a virtualized server and want to quickly start the virtual machine in the same state that was saved last. You can also create a snapshot after the virtual machine has been powered off to create a backup state before you try something experimental and possibly make &vmguest; unstable. This section introduces the former case, while the latter is described in <xref linkend=\"cha.qemu.guest_inst.qemu-img.snapshots\"/>."
+msgid "Snapshots are helpful when you need to save your virtual machine in a particular state. For example, after you have configured network services on a virtualized server and want to quickly start the virtual machine in the same state that was saved last. You can also create a snapshot after the virtual machine has been powered off to create a backup state before you try something experimental and possibly make &vmguest; unstable. This section introduces the former case, while the latter is described in <xref linkend=\"cha.qemu.guest_inst.qemu-img.snapshots\"/> ."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:679
+#: qemu_monitor.xml:703
 #, no-c-format
 msgid "The following commands are available for managing snapshots in &qemu; monitor:"
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:686
+#: qemu_monitor.xml:710
 #, no-c-format
-msgid "<command>savevm</command><replaceable>NAME</replaceable>"
+msgid "<command>savevm</command> <replaceable>NAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:689
+#: qemu_monitor.xml:713
 #, no-c-format
 msgid "Creates a new virtual machine snapshot under the tag <replaceable>NAME</replaceable> or replaces an existing snapshot."
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:696
+#: qemu_monitor.xml:720
 #, no-c-format
-msgid "<command>loadvm</command><replaceable>NAME</replaceable>"
+msgid "<command>loadvm</command> <replaceable>NAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:699
+#: qemu_monitor.xml:723
 #, no-c-format
-msgid "Loads a virtual machine snapshot tagged <replaceable>NAME</replaceable>."
+msgid "Loads a virtual machine snapshot tagged <replaceable>NAME</replaceable> ."
 msgstr ""
 
-#. Tag: command
-#: qemu_monitor.xml:706
+#. Tag: term
+#: qemu_monitor.xml:730
 #, no-c-format
-msgid "delvm"
+msgid "<command>delvm</command>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:709
+#: qemu_monitor.xml:733
 #, no-c-format
 msgid "Deletes a virtual machine snapshot."
 msgstr ""
 
-#. Tag: para
-#: qemu_monitor.xml:718
+#. Tag: term
+#: qemu_monitor.xml:739
 #, no-c-format
-msgid "Prints information about available snapshots."
-msgstr ""
-
-#. Tag: screen
-#: qemu_monitor.xml:721
-#, no-c-format
-msgid ""
-      "(qemu) info snapshots\n"
-      "Snapshot list:\n"
-      "ID<co xml:id=\"co.qemu_monitor.snapshot.l.id\"/>      TAG<co xml:id=\"co.qemu_monitor.snapshot.l.tag\"/>                 VM SIZE<co xml:id=\"co.qemu_monitor.snapshot.l.size\"/>   DATE<co xml:id=\"co.qemu_monitor.snapshot.l.date\"/>          VM CLOCK<co xml:id=\"co.qemu_monitor.snapshot.l.clock\"/>\n"
-      "1         booting                4.4M 2013-11-22 10:51:10   00:00:20.476\n"
-      "2         booted                 184M 2013-11-22 10:53:03   00:02:05.394\n"
-      "3         logged_in              273M 2013-11-22 11:00:25   00:04:34.843\n"
-      "4         ff_and_term_running    372M 2013-11-22 11:12:27   00:08:44.965"
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:724
-#, no-c-format
-msgid "Unique identification number of the snapshot. Usually auto-incremented."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:730
-#, no-c-format
-msgid "Unique description string of the snapshot. It is meant as a human readable version of the ID."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:736
-#, no-c-format
-msgid "The disk space occupied by the snapshot. Note that the more memory is consumed by running applications, the bigger the snapshot is."
+msgid "<command>info snapshots</command>"
 msgstr ""
 
 #. Tag: para
 #: qemu_monitor.xml:742
 #, no-c-format
+msgid "Prints information about available snapshots."
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:747
+#, no-c-format
+msgid "(qemu) info snapshotsSnapshot list:ID"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:747
+#, no-c-format
+msgid "VM SIZE"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:747
+#, no-c-format
+msgid "TAG"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:747
+#, no-c-format
+msgid "DATE"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:747
+#, no-c-format
+msgid "VM CLOCK"
+msgstr ""
+
+#. Tag: #text
+#: qemu_monitor.xml:751
+#, no-c-format
+msgid "1 booting 4.4M 2013-11-22 10:51:10 00:00:20.4762 booted 184M 2013-11-22 10:53:03 00:02:05.3943 logged_in 273M 2013-11-22 11:00:25 00:04:34.8434 ff_and_term_running 372M 2013-11-22 11:12:27 00:08:44.965"
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:754
+#, no-c-format
+msgid "Unique identification number of the snapshot. Usually auto-incremented."
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:760
+#, no-c-format
+msgid "Unique description string of the snapshot. It is meant as a human readable version of the ID."
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:766
+#, no-c-format
+msgid "The disk space occupied by the snapshot. Note that the more memory is consumed by running applications, the bigger the snapshot is."
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:772
+#, no-c-format
 msgid "Time and date the snapshot was created."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:747
+#: qemu_monitor.xml:777
 #, no-c-format
 msgid "The current state of the virtual machine's clock."
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:757
+#: qemu_monitor.xml:787
 #, no-c-format
 msgid "Suspending and Resuming Virtual Machine Execution"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:759
+#: qemu_monitor.xml:789
 #, no-c-format
 msgid "The following commands are available for suspending and resuming virtual machines:"
 msgstr ""
 
-#. Tag: command
-#: qemu_monitor.xml:766
+#. Tag: term
+#: qemu_monitor.xml:796
 #, no-c-format
-msgid "stop"
+msgid "<command>stop</command>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:769
+#: qemu_monitor.xml:799
 #, no-c-format
 msgid "Suspends the execution of the virtual machine."
 msgstr ""
 
-#. Tag: command
-#: qemu_monitor.xml:775
+#. Tag: term
+#: qemu_monitor.xml:805
 #, no-c-format
-msgid "cont"
+msgid "<command>cont</command>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:778
+#: qemu_monitor.xml:808
 #, no-c-format
 msgid "Resumes the execution of the virtual machine."
 msgstr ""
 
-#. Tag: command
-#: qemu_monitor.xml:784
+#. Tag: term
+#: qemu_monitor.xml:814
 #, no-c-format
-msgid "system_reset"
+msgid "<command>system_reset</command>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:787
+#: qemu_monitor.xml:817
 #, no-c-format
 msgid "Resets the virtual machine. The effect is similar to the reset button on a physical machine. This may leave the file system in an unclean state."
 msgstr ""
 
-#. Tag: command
-#: qemu_monitor.xml:795
+#. Tag: term
+#: qemu_monitor.xml:825
 #, no-c-format
-msgid "system_powerdown"
+msgid "<command>system_powerdown</command>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:798
+#: qemu_monitor.xml:828
 #, no-c-format
 msgid "Sends an <xref linkend=\"gloss.vt.acpi\"/> shutdown request to the machine. The effect is similar to the power button on a physical machine."
 msgstr ""
 
 #. Tag: term
-#: qemu_monitor.xml:806
+#: qemu_monitor.xml:836
 #, no-c-format
 msgid "<command>q</command> or <command>quit</command>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:809
+#: qemu_monitor.xml:839
 #, no-c-format
 msgid "Terminates &qemu; immediately."
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:817
+#: qemu_monitor.xml:847
 #, no-c-format
 msgid "Live Migration"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:819
+#: qemu_monitor.xml:849
 #, no-c-format
 msgid "The live migration process allows to transmit any virtual machine from one host system to another host system without any interruption in availability. It is possible to change hosts permanently or only during maintenance."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:826
+#: qemu_monitor.xml:856
 #, no-c-format
 msgid "The requirements for live migration:"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:832
+#: qemu_monitor.xml:862
 #, no-c-format
 msgid "All requirements from <xref linkend=\"libvirt.admin.live.migration.requirements\"/> are applicable."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:839
+#: qemu_monitor.xml:869
 #, no-c-format
 msgid "Live migration is only possible between &vmhost;s with the same CPU features."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:845
+#: qemu_monitor.xml:875
 #, no-c-format
-msgid "interface, <xref linkend=\"gloss.vt.virtfs\"/> feature, and the <option>-mem-path</option> command line option are not compatible with migration."
+msgid "<xref linkend=\"gloss.vt.storage.ahci\"/> interface, <xref linkend=\"gloss.vt.virtfs\"/> feature, and the <option>-mem-path</option> command line option are not compatible with migration."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:853
+#: qemu_monitor.xml:883
 #, no-c-format
 msgid "The guest on the source and destination hosts must be started in the same way."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:859
+#: qemu_monitor.xml:889
 #, no-c-format
 msgid "<option>-snapshot</option> qemu command line option should not be used for migration (and this <command>qemu</command> command line option is not supported)."
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:868
+#: qemu_monitor.xml:898
 #, no-c-format
 msgid "Support Status"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:869
+#: qemu_monitor.xml:899
 #, no-c-format
-msgid "The <literal>postcopy</literal> mode is not yet supported in &productname;. It is released as a technology preview only. For more information about <literal>postcopy</literal>, see <link xlink:href=\"http://wiki.qemu.org/Features/PostCopyLiveMigration\"></link>."
+msgid "The <literal>postcopy</literal> mode is not yet supported in &productname;. It is released as a technology preview only. For more information about <literal>postcopy</literal> , see <link xlink:href=\"http://wiki.qemu.org/Features/PostCopyLiveMigration\"/> ."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:877
+#: qemu_monitor.xml:907
 #, no-c-format
-msgid "More recommendations can be found at the following Web site: <link xlink:href=\"http://www.linux-kvm.org/page/Migration\"></link>"
+msgid "More recommendations can be found at the following Web site: <link xlink:href=\"http://www.linux-kvm.org/page/Migration\"/>"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:882
+#: qemu_monitor.xml:912
 #, no-c-format
 msgid "The live migration process has the following steps:"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:888
+#: qemu_monitor.xml:918
 #, no-c-format
 msgid "The virtual machine instance is running on the source host."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:893
+#: qemu_monitor.xml:923
 #, no-c-format
 msgid "The virtual machine is started on the destination host in the frozen listening mode. The parameters used are the same as on the source host plus the <option>-incoming tcp:<replaceable>IP</replaceable>:<replaceable>PORT</replaceable></option> parameter, where <replaceable>IP</replaceable> specifies the IP address and <replaceable>PORT</replaceable> specifies the port for listening to the incoming migration. If 0 is set as IP address, the virtual machine listens on all interfaces."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:905
+#: qemu_monitor.xml:935
 #, no-c-format
-msgid "On the source host, switch to the monitor console and use the <command>migrate -d tcp:</command> <replaceable>DESTINATION_IP</replaceable>:<replaceable>PORT</replaceable> command to initiate the migration."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:913
-#, no-c-format
-msgid "To determine the state of the migration, use the <command>info migrate</command> command in the monitor console on the source host."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:919
-#, no-c-format
-msgid "To cancel the migration, use the <command>migrate_cancel</command> command in the monitor console on the source host."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:925
-#, no-c-format
-msgid "To set the maximum tolerable downtime for migration in seconds, use the <command>migrate_set_downtime</command> <replaceable>NUMBER_OF_SECONDS</replaceable> command."
-msgstr ""
-
-#. Tag: para
-#: qemu_monitor.xml:932
-#, no-c-format
-msgid "To set the maximum speed for migration in bytes per second, use the <command>migrate_set_speed</command> <replaceable>BYTES_PER_SECOND</replaceable> command."
-msgstr ""
-
-#. Tag: title
-#: qemu_monitor.xml:941
-#, no-c-format
-msgid "QMP - &qemu; Machine Protocol"
+msgid "On the source host, switch to the monitor console and use the <command>migrate -d tcp:</command> <replaceable>DESTINATION_IP</replaceable> : <replaceable>PORT</replaceable> command to initiate the migration."
 msgstr ""
 
 #. Tag: para
 #: qemu_monitor.xml:943
 #, no-c-format
+msgid "To determine the state of the migration, use the <command>info migrate</command> command in the monitor console on the source host."
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:949
+#, no-c-format
+msgid "To cancel the migration, use the <command>migrate_cancel</command> command in the monitor console on the source host."
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:955
+#, no-c-format
+msgid "To set the maximum tolerable downtime for migration in seconds, use the <command>migrate_set_downtime</command> <replaceable>NUMBER_OF_SECONDS</replaceable> command."
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:962
+#, no-c-format
+msgid "To set the maximum speed for migration in bytes per second, use the <command>migrate_set_speed</command> <replaceable>BYTES_PER_SECOND</replaceable> command."
+msgstr ""
+
+#. Tag: title
+#: qemu_monitor.xml:971
+#, no-c-format
+msgid "QMP - &qemu; Machine Protocol"
+msgstr ""
+
+#. Tag: para
+#: qemu_monitor.xml:973
+#, no-c-format
 msgid "QMP is a JSON-based protocol that allows applications&mdash;such as &libvirt;&mdash;to communicate with a running &qemu; instance. There are several ways you can access the &qemu; monitor using QMP commands."
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:951
+#: qemu_monitor.xml:981
 #, no-c-format
 msgid "Access QMP via Standard Input/Output"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:952
+#: qemu_monitor.xml:982
 #, no-c-format
 msgid "The most flexible way to use QMP is by specifying the <option>-mon</option> option. The following example creates a QMP instance using standard input/output. Note that in the following examples, <literal>-&gt;</literal> marks lines with commands sent from client to the running &qemu; instance, while <literal>&lt;-</literal> marks lines with the output returned from &qemu;."
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:961
+#: qemu_monitor.xml:991
 #, no-c-format
-msgid ""
-      "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
       "-chardev stdio,id=mon0 \\\n"
       "-mon chardev=mon0,mode=control,pretty=on\n"
       "\n"
@@ -1187,16 +1323,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:962
+#: qemu_monitor.xml:1009
 #, no-c-format
 msgid "When a new QMP connection is established, QMP sends its greeting message and enters capabilities negotiation mode. In this mode, only the <command>qmp_capabilities</command> command works. To exit capabilities negotiation mode and enter command mode, the <command>qmp_capabilities</command> command must be issued first:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:969
+#: qemu_monitor.xml:1016
 #, no-c-format
-msgid ""
-      "-&gt; { \"execute\": \"qmp_capabilities\" }\n"
+msgid "-&gt; { \"execute\": \"qmp_capabilities\" }\n"
       "&lt;- {\n"
       "    \"return\": {\n"
       "    }\n"
@@ -1204,22 +1339,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:970
+#: qemu_monitor.xml:1021
 #, no-c-format
 msgid "Note that <literal>\"return\": {}</literal> is a QMP's success response."
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:973
+#: qemu_monitor.xml:1024
 #, no-c-format
 msgid "QMP's commands can have arguments. For example to eject a CD-ROM drive, enter the following:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:977
+#: qemu_monitor.xml:1028
 #, no-c-format
-msgid ""
-      "-&gt;{ \"execute\": \"eject\", \"arguments\": { \"device\": \"ide1-cd0\" } }\n"
+msgid "-&gt;{ \"execute\": \"eject\", \"arguments\": { \"device\": \"ide1-cd0\" } }\n"
       "&lt;- {\n"
       "    \"timestamp\": {\n"
       "        \"seconds\": 1410353381,\n"
@@ -1238,37 +1372,35 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:981
+#: qemu_monitor.xml:1047
 #, no-c-format
 msgid "Access QMP via Telnet"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:982
+#: qemu_monitor.xml:1048
 #, no-c-format
 msgid "Instead of the standard input/output, you can connect the QMP interface to a network socket and communicate with it via a specified port:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:986
+#: qemu_monitor.xml:1052
 #, no-c-format
-msgid ""
-      "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
       "-chardev socket,id=mon0,host=localhost,port=4444,server,nowait \\\n"
       "-mon chardev=mon0,mode=control,pretty=on"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:987
+#: qemu_monitor.xml:1055
 #, no-c-format
 msgid "And then run telnet to connect to port 4444:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:990
+#: qemu_monitor.xml:1058
 #, no-c-format
-msgid ""
-      "&prompt.user;telnet localhost 4444\n"
+msgid "&prompt.user;telnet localhost 4444\n"
       "Trying ::1...\n"
       "Connected to localhost.\n"
       "Escape character is '^]'.\n"
@@ -1289,74 +1421,70 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:991
+#: qemu_monitor.xml:1076
 #, no-c-format
 msgid "You can create several monitor interfaces at the same time. The following example creates one HMP instance&mdash;human monitor which understands 'normal' &qemu; monitor's commands&mdash;on the standard input/output, and one QMP instance on localhost port 4444:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:997
+#: qemu_monitor.xml:1082
 #, no-c-format
-msgid ""
-      "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
       "-chardev stdio,id=mon0 -mon chardev=mon0,mode=readline \\\n"
       "-chardev socket,id=mon1,host=localhost,port=4444,server,nowait \\\n"
       "  -mon chardev=mon1,mode=control,pretty=on"
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:1001
+#: qemu_monitor.xml:1089
 #, no-c-format
 msgid "Access QMP via Unix Socket"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:1002
+#: qemu_monitor.xml:1090
 #, no-c-format
 msgid "Invoke &qemu; using the <option>-qmp</option> option, and create a unix socket:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:1006
+#: qemu_monitor.xml:1094
 #, no-c-format
-msgid ""
-      "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
       "-qmp unix:/tmp/qmp-sock,server --monitor stdio\n"
       "\n"
       "QEMU waiting for connection on: unix:./qmp-sock,server"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:1007
+#: qemu_monitor.xml:1098
 #, no-c-format
 msgid "To communicate with the &qemu; instance via the <literal>/tmp/qmp-sock</literal> socket, use <command>nc</command> (see <command>man 1 nc</command> for more information) from another terminal on the same host:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:1013
+#: qemu_monitor.xml:1104
 #, no-c-format
-msgid ""
-      "&prompt.sudo;nc -U /tmp/qmp-sock\n"
+msgid "&prompt.sudo;nc -U /tmp/qmp-sock\n"
       "&lt;- {\"QMP\": {\"version\": {\"qemu\": {\"micro\": 0, \"minor\": 0, \"major\": 2} [...]"
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:1017
+#: qemu_monitor.xml:1109
 #, no-c-format
 msgid "Access QMP via &libvirt;'s <command>virsh</command> Command"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:1018
+#: qemu_monitor.xml:1110
 #, no-c-format
-msgid "If you run your virtual machines under &libvirt; (see <xref linkend=\"part.virt.libvirt\"/>), you can communicate with its running guests by running the <command>virsh qemu-monitor-command</command>:"
+msgid "If you run your virtual machines under &libvirt; (see <xref linkend=\"part.virt.libvirt\"/> ), you can communicate with its running guests by running the <command>virsh qemu-monitor-command</command> :"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:1024
+#: qemu_monitor.xml:1116
 #, no-c-format
-msgid ""
-      "&prompt.sudo;virsh qemu-monitor-command vm_guest1 \\\n"
+msgid "&prompt.sudo;virsh qemu-monitor-command vm_guest1 \\\n"
       "--pretty '{\"execute\":\"query-kvm\"}'\n"
       "&lt;- {\n"
       "    \"return\": {\n"
@@ -1368,25 +1496,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:1025
+#: qemu_monitor.xml:1125
 #, no-c-format
 msgid "In the above example, we ran the simple command <command>query-kvm</command> which checks if the host is capable of running &kvm; and if &kvm; is enabled."
 msgstr ""
 
 #. Tag: title
-#: qemu_monitor.xml:1031
+#: qemu_monitor.xml:1131
 #, no-c-format
 msgid "Generating Human-Readable Output"
 msgstr ""
 
 #. Tag: para
-#: qemu_monitor.xml:1032
+#: qemu_monitor.xml:1132
 #, no-c-format
 msgid "To use the standard human-readable output format of &qemu; instead of the JSON format, use the <option>--hmp</option> option:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_monitor.xml:1037
+#: qemu_monitor.xml:1137
 #, no-c-format
 msgid "&prompt.sudo;virsh qemu-monitor-command vm_guest1 --hmp \"query-kvm\""
 msgstr ""

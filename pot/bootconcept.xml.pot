@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -26,10 +26,10 @@ msgstr ""
 msgid "Booting a Linux system involves different components and tasks. After a firmware and hardware initialization process, which depends on the machine's architecture, the kernel is started by means of the boot loader &grub;. After this point, the boot process is completely controlled by the operating system and handled by &systemd;. &systemd; provides a set of <quote>targets</quote> that boot configurations for everyday usage, maintenance or emergencies."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: bootconcept.xml:22
+#. Tag: dm:translation
+#: bootconcept.xml:24
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: title
@@ -44,16 +44,16 @@ msgstr ""
 msgid "This chapter uses terms that can be interpreted ambiguously. To understand how they are used here, read the definitions below:"
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: bootconcept.xml:37
 #, no-c-format
-msgid "init"
+msgid "<systemitem>init</systemitem>"
 msgstr ""
 
 #. Tag: para
 #: bootconcept.xml:39
 #, no-c-format
-msgid "Two different processes are commonly named <quote>init</quote>:"
+msgid "Two different processes are commonly named <quote>init</quote> :"
 msgstr ""
 
 #. Tag: para
@@ -71,7 +71,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:56
 #, no-c-format
-msgid "In both cases, the &systemd; program is taking care of this task. It is first executed from the <systemitem>initramfs</systemitem> to mount the root file system. Once that has succeeded, it is re-executed from the root file system as the initial process. To avoid confusing these two &systemd; processes, we refer to the first process as <emphasis>init on initramfs</emphasis> and to the second one as <emphasis>systemd</emphasis>."
+msgid "In both cases, the &systemd; program is taking care of this task. It is first executed from the <systemitem>initramfs</systemitem> to mount the root file system. Once that has succeeded, it is re-executed from the root file system as the initial process. To avoid confusing these two &systemd; processes, we refer to the first process as <emphasis>init on initramfs</emphasis> and to the second one as <emphasis>systemd</emphasis> ."
 msgstr ""
 
 #. Tag: term
@@ -89,7 +89,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:78
 #, no-c-format
-msgid "Beginning with kernel 2.6.13, the initrd has been replaced by the <systemitem>initramfs</systemitem> (initial RAM file system) which does not require a file system driver to be mounted. &productname; exclusively uses an <systemitem>initramfs</systemitem>. However, since the <systemitem>initramfs</systemitem> is stored as <filename>/boot/initrd</filename>, it is often called <quote>initrd</quote>. In this chapter we exclusively use the name <systemitem>initramfs</systemitem>."
+msgid "Beginning with kernel 2.6.13, the initrd has been replaced by the <systemitem>initramfs</systemitem> (initial RAM file system) which does not require a file system driver to be mounted. &productname; exclusively uses an <systemitem>initramfs</systemitem> . However, since the <systemitem>initramfs</systemitem> is stored as <filename>/boot/initrd</filename> , it is often called <quote>initrd</quote> . In this chapter we exclusively use the name <systemitem>initramfs</systemitem> ."
 msgstr ""
 
 #. Tag: title
@@ -102,6 +102,30 @@ msgstr ""
 #: bootconcept.xml:94
 #, no-c-format
 msgid "The Linux boot process consists of several stages, each represented by a different component:"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:100
+#, no-c-format
+msgid "<xref linkend=\"sec.boot.proc.initialization\" xrefstyle=\"HeadingOnPage\"/>"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:105
+#, no-c-format
+msgid "<xref linkend=\"sec.boot.proc.kernel\" xrefstyle=\"HeadingOnPage\"/>"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:110
+#, no-c-format
+msgid "<xref linkend=\"sec.boot.initramfs\" xrefstyle=\"HeadingOnPage\"/>"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:115
+#, no-c-format
+msgid "<xref linkend=\"sec.boot.systemd\" xrefstyle=\"HeadingOnPage\"/>"
 msgstr ""
 
 #. Tag: title
@@ -119,7 +143,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:130
 #, no-c-format
-msgid "&productname; uses the boot loader &grub; on all architectures. Depending on the architecture and firmware, starting the &grub; boot loader can be a multi-step process. The purpose of the boot loader is to load the kernel and the initial, RAM-based file system (initramfs). For more information about &grub;, refer to <xref linkend=\"cha.grub2\"/>."
+msgid "&productname; uses the boot loader &grub; on all architectures. Depending on the architecture and firmware, starting the &grub; boot loader can be a multi-step process. The purpose of the boot loader is to load the kernel and the initial, RAM-based file system (initramfs). For more information about &grub;, refer to <xref linkend=\"cha.grub2\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -149,7 +173,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:171
 #, no-c-format
-msgid "On machines with UEFI the boot process is much simpler than on machines with a traditional BIOS. The firmware is capable to read from a FAT formatted system partition of disks with a GPT partition table. This EFI system-partition (in the running system mounted as <filename>/boot/efi</filename>) holds enough space to host a fully-fledged &grub; which is directly loaded and executed by the firmware."
+msgid "On machines with UEFI the boot process is much simpler than on machines with a traditional BIOS. The firmware is capable to read from a FAT formatted system partition of disks with a GPT partition table. This EFI system-partition (in the running system mounted as <filename>/boot/efi</filename> ) holds enough space to host a fully-fledged &grub; which is directly loaded and executed by the firmware."
 msgstr ""
 
 #. Tag: para
@@ -173,13 +197,13 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:201
 #, no-c-format
-msgid "<command>zipl</command> boots from the ext2-formatted partition <filename>/boot/zipl</filename>. This partition contains a minimal kernel and an initramfs that are loaded into memory. The initramfs contains a Btrfs driver (among others) and the boot loader &grub;. The kernel is started with a parameter <literal>initgrub</literal>, that tells it to start &grub;."
+msgid "<command>zipl</command> boots from the ext2-formatted partition <filename>/boot/zipl</filename> . This partition contains a minimal kernel and an initramfs that are loaded into memory. The initramfs contains a Btrfs driver (among others) and the boot loader &grub;. The kernel is started with a parameter <literal>initgrub</literal> , that tells it to start &grub;."
 msgstr ""
 
 #. Tag: para
 #: bootconcept.xml:211
 #, no-c-format
-msgid "The kernel mounts the root file system, so <filename>/boot</filename> becomes accessible. Now &grub; is started from the initramfs. It reads its configuration from <filename>/boot/grub2/grub.cfg</filename> and loads the final kernel and initramfs from <filename>/boot</filename>. The new kernel now gets loaded via &kexec;."
+msgid "The kernel mounts the root file system, so <filename>/boot</filename> becomes accessible. Now &grub; is started from the initramfs. It reads its configuration from <filename>/boot/grub2/grub.cfg</filename> and loads the final kernel and initramfs from <filename>/boot</filename> . The new kernel now gets loaded via &kexec;."
 msgstr ""
 
 #. Tag: title
@@ -191,13 +215,13 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:225
 #, no-c-format
-msgid "When the boot loader has passed on system control, the boot process is the same on all architectures. The boot loader loads both the kernel and an initial RAM-based file system (<systemitem>initramfs</systemitem>) into memory and the kernel takes over."
+msgid "When the boot loader has passed on system control, the boot process is the same on all architectures. The boot loader loads both the kernel and an initial RAM-based file system ( <systemitem>initramfs</systemitem> ) into memory and the kernel takes over."
 msgstr ""
 
 #. Tag: para
 #: bootconcept.xml:231
 #, no-c-format
-msgid "After the kernel has set up memory management and has detected the CPU type and its features, it initializes the hardware and mounts the temporary root file system from the memory that was loaded with the <systemitem>initramfs</systemitem>."
+msgid "After the kernel has set up memory management and has detected the CPU type and its features, it initializes the hardware and mounts the temporary root file system from the memory that was loaded with the <systemitem>initramfs</systemitem> ."
 msgstr ""
 
 #. Tag: title
@@ -209,7 +233,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:240
 #, no-c-format
-msgid "<systemitem>initramfs</systemitem> (initial RAM file system) is a small cpio archive that the kernel can load into a RAM disk. It is located at <filename>/boot/initrd</filename>. It can be created with a tool called <command>dracut</command>&mdash;refer to <command>man 8 dracut</command> for details."
+msgid "<systemitem>initramfs</systemitem> (initial RAM file system) is a small cpio archive that the kernel can load into a RAM disk. It is located at <filename>/boot/initrd</filename> . It can be created with a tool called <command>dracut</command> &mdash;refer to <command>man 8 dracut</command> for details."
 msgstr ""
 
 #. Tag: para
@@ -221,7 +245,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:257
 #, no-c-format
-msgid "Before the root file system can be mounted and the operating system can be started, the kernel needs the corresponding drivers to access the device on which the root file system is located. These drivers may include special drivers for certain kinds of hard disks or even network drivers to access a network file system. The needed modules for the root file system are loaded by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem>. After the modules are loaded, <systemitem class=\"service\">udev</systemitem> provides the <systemitem>initramfs</systemitem> with the needed devices. Later in the boot process, after changing the root file system, it is necessary to regenerate the devices. This is done by the &systemd; unit <filename>systemd-udev-trigger.service</filename>."
+msgid "Before the root file system can be mounted and the operating system can be started, the kernel needs the corresponding drivers to access the device on which the root file system is located. These drivers may include special drivers for certain kinds of hard disks or even network drivers to access a network file system. The needed modules for the root file system are loaded by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem> . After the modules are loaded, <systemitem class=\"service\">udev</systemitem> provides the <systemitem>initramfs</systemitem> with the needed devices. Later in the boot process, after changing the root file system, it is necessary to regenerate the devices. This is done by the &systemd; unit <filename>systemd-udev-trigger.service</filename> ."
 msgstr ""
 
 #. Tag: title
@@ -233,7 +257,31 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:274
 #, no-c-format
-msgid "Since the <systemitem>initramfs</systemitem> contains drivers, it needs to be updated whenever a new version of one of its drivers is available. This is done automatically when installing the package containing the driver update. &yast; or zypper will inform you about this by showing the output of the command that generates the <systemitem>initramfs</systemitem>. However, there are some occasions on which you need to regenerate an <systemitem>initramfs</systemitem> manually:"
+msgid "Since the <systemitem>initramfs</systemitem> contains drivers, it needs to be updated whenever a new version of one of its drivers is available. This is done automatically when installing the package containing the driver update. &yast; or zypper will inform you about this by showing the output of the command that generates the <systemitem>initramfs</systemitem> . However, there are some occasions on which you need to regenerate an <systemitem>initramfs</systemitem> manually:"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:286
+#, no-c-format
+msgid "<!-- Adding Drivers Because of Hardware Changes --> <xref xrefstyle=\"select:title\" linkend=\"var.initrd.regenerate.drivers\"/>"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:292
+#, no-c-format
+msgid "<!-- Moving System Directories to a RAID or LVM --> <xref xrefstyle=\"select:title\" linkend=\"var.initrd.regenerate.raidroot\"/>"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:298
+#, no-c-format
+msgid "<!-- Adding Physical Volumes to a LVM Group Containg the Root File System --> <xref xrefstyle=\"select:title\" linkend=\"var.initrd.regenerate.lvmadd\"/>"
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:306
+#, no-c-format
+msgid "<!-- Changing Kernel Variables --> <xref xrefstyle=\"select:title\" linkend=\"var.initrd.regenerate.kernelvars\"/>"
 msgstr ""
 
 #. Tag: term
@@ -272,12 +320,6 @@ msgstr ""
 msgid "force_drivers+=\"<replaceable>DRIVER1</replaceable> <replaceable>DRIVER2</replaceable>\""
 msgstr ""
 
-#. Tag: para
-#: bootconcept.xml:333 bootconcept.xml:352 bootconcept.xml:369
-#, no-c-format
-msgid "Proceed with <xref linkend=\"pro.generate.initramfs\"/>."
-msgstr ""
-
 #. Tag: term
 #: bootconcept.xml:339
 #, no-c-format
@@ -293,7 +335,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:347
 #, no-c-format
-msgid "To do so, create the respective entries in <filename>/etc/fstab</filename> and mount the new entries (for example with <command>mount -a</command> and/or <command>swapon -a</command>)."
+msgid "To do so, create the respective entries in <filename>/etc/fstab</filename> and mount the new entries (for example with <command>mount -a</command> and/or <command>swapon -a</command> )."
 msgstr ""
 
 #. Tag: term
@@ -305,7 +347,13 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:362
 #, no-c-format
-msgid "Whenever you add (or remove) a disk to a logical volume group or a Btrfs RAID containing the root file system, you need to create an <systemitem>initramfs</systemitem> that contains support for the enlarged volume. Follow the instructions at <xref linkend=\"pro.generate.initramfs\"/>."
+msgid "Whenever you add (or remove) a disk to a logical volume group or a Btrfs RAID containing the root file system, you need to create an <systemitem>initramfs</systemitem> that contains support for the enlarged volume. Follow the instructions at <xref linkend=\"pro.generate.initramfs\"/> ."
+msgstr ""
+
+#. Tag: para
+#: bootconcept.xml:369
+#, no-c-format
+msgid "Proceed with <xref linkend=\"pro.generate.initramfs\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -317,7 +365,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:377
 #, no-c-format
-msgid "If you change the values of kernel variables via the <command>sysctl</command> interface by editing related files (<filename>/etc/sysctl.conf</filename> or <filename>/etc/sysctl.d/*.conf</filename>), the change will be lost on the next system reboot. Even if you load the values with <command>sysctl --system</command> at runtime, the changes are not saved into the <systemitem>initramfs</systemitem> file. You need to update it by proceeding as outlined in <xref linkend=\"pro.generate.initramfs\"/>."
+msgid "If you change the values of kernel variables via the <command>sysctl</command> interface by editing related files ( <filename>/etc/sysctl.conf</filename> or <filename>/etc/sysctl.d/*.conf</filename> ), the change will be lost on the next system reboot. Even if you load the values with <command>sysctl --system</command> at runtime, the changes are not saved into the <systemitem>initramfs</systemitem> file. You need to update it by proceeding as outlined in <xref linkend=\"pro.generate.initramfs\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -347,13 +395,13 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:402
 #, no-c-format
-msgid "Replace <replaceable>MY_INITRAMFS</replaceable> with a file name of your choice. The new <systemitem>initramfs</systemitem> will be created as <filename>/boot/<replaceable>MY_INITRAMFS</replaceable></filename>."
+msgid "Replace <replaceable>MY_INITRAMFS</replaceable> with a file name of your choice. The new <systemitem>initramfs</systemitem> will be created as <filename>/boot/<replaceable>MY_INITRAMFS</replaceable></filename> ."
 msgstr ""
 
 #. Tag: para
 #: bootconcept.xml:407
 #, no-c-format
-msgid "Alternatively, run <command>dracut -f</command>. This will overwrite the currently used, existing file."
+msgid "Alternatively, run <command>dracut -f</command> . This will overwrite the currently used, existing file."
 msgstr ""
 
 #. Tag: para
@@ -371,7 +419,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:421
 #, no-c-format
-msgid "On the IBM &zseries; architecture, additionally run <command>grub2-install</command>."
+msgid "On the IBM &zseries; architecture, additionally run <command>grub2-install</command> ."
 msgstr ""
 
 #. Tag: title
@@ -383,7 +431,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:433
 #, no-c-format
-msgid "The temporary root file system mounted by the kernel from the <systemitem>initramfs</systemitem> contains the executable &systemd; (which is called <systemitem>init</systemitem> on <systemitem>initramfs</systemitem> in the following, also see <xref linkend=\"sec.boot.terminology\"/>. This program performs all actions needed to mount the proper root file system. It provides kernel functionality for the needed file system and device drivers for mass storage controllers with <systemitem class=\"service\">udev</systemitem>."
+msgid "The temporary root file system mounted by the kernel from the <systemitem>initramfs</systemitem> contains the executable &systemd; (which is called <systemitem>init</systemitem> on <systemitem>initramfs</systemitem> in the following, also see <xref linkend=\"sec.boot.terminology\"/> . This program performs all actions needed to mount the proper root file system. It provides kernel functionality for the needed file system and device drivers for mass storage controllers with <systemitem class=\"service\">udev</systemitem> ."
 msgstr ""
 
 #. Tag: para
@@ -413,7 +461,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:467
 #, no-c-format
-msgid "The kernel generates device events depending on loaded modules. <systemitem class=\"service\">udev</systemitem> handles these events and generates the required special block files on a RAM file system in <filename>/dev</filename>. Without those special files, the file system and other devices would not be accessible."
+msgid "The kernel generates device events depending on loaded modules. <systemitem class=\"service\">udev</systemitem> handles these events and generates the required special block files on a RAM file system in <filename>/dev</filename> . Without those special files, the file system and other devices would not be accessible."
 msgstr ""
 
 #. Tag: term
@@ -443,7 +491,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:495
 #, no-c-format
-msgid "If the file system resides on a network block device like iSCSI or SAN, the connection to the storage server is also set up by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem>. &productname; supports booting from a secondary iSCSI target if the primary target is not available. <phrase os=\"sles\">For more details regarding configuration of the booting iSCSI target refer to <xref linkend=\"sec.iscsi.initiator.yast\"/></phrase>."
+msgid "If the file system resides on a network block device like iSCSI or SAN, the connection to the storage server is also set up by <systemitem>init</systemitem> on <systemitem>initramfs</systemitem> . &productname; supports booting from a secondary iSCSI target if the primary target is not available. <phrase os=\"sles\">For more details regarding configuration of the booting iSCSI target refer to <xref linkend=\"sec.iscsi.initiator.yast\"/></phrase> ."
 msgstr ""
 
 #. Tag: title
@@ -467,7 +515,7 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:525
 #, no-c-format
-msgid "When <systemitem>init</systemitem> on <systemitem>initramfs</systemitem> is called during the initial boot as part of the installation process, its tasks differ from those mentioned above. Note that the installation system also does not start &systemd; from <systemitem>initramfs</systemitem>&mdash;these tasks are performed by <command>linuxrc</command>."
+msgid "When <systemitem>init</systemitem> on <systemitem>initramfs</systemitem> is called during the initial boot as part of the installation process, its tasks differ from those mentioned above. Note that the installation system also does not start &systemd; from <systemitem>initramfs</systemitem> &mdash;these tasks are performed by <command>linuxrc</command> ."
 msgstr ""
 
 #. Tag: term
@@ -491,13 +539,13 @@ msgstr ""
 #. Tag: para
 #: bootconcept.xml:552
 #, no-c-format
-msgid "As mentioned in <xref linkend=\"sec.boot.initrd\"/>, the boot process starts with a minimum set of drivers that can be used with most hardware configurations. On &aarch64;, &power;, and &x86-64; machines <command>linuxrc</command> starts an initial hardware scanning process that determines the set of drivers suitable for your hardware configuration. On IBM &zseries;, a list of drivers and their parameters needs to be provided for example via linuxrc or a parmfile."
+msgid "As mentioned in <xref linkend=\"sec.boot.initrd\"/> , the boot process starts with a minimum set of drivers that can be used with most hardware configurations. On &aarch64;, &power;, and &x86-64; machines <command>linuxrc</command> starts an initial hardware scanning process that determines the set of drivers suitable for your hardware configuration. On IBM &zseries;, a list of drivers and their parameters needs to be provided for example via linuxrc or a parmfile."
 msgstr ""
 
 #. Tag: para
 #: bootconcept.xml:561
 #, no-c-format
-msgid "These drivers are used to generate a custom <systemitem>initramfs</systemitem> that is needed to boot the system. If the modules are not needed for boot but for coldplug, the modules can be loaded with &systemd;; for more information, see <xref linkend=\"sec.boot.systemd.advanced.kernel_modules\"/>."
+msgid "These drivers are used to generate a custom <systemitem>initramfs</systemitem> that is needed to boot the system. If the modules are not needed for boot but for coldplug, the modules can be loaded with &systemd;; for more information, see <xref linkend=\"sec.boot.systemd.advanced.kernel_modules\"/> ."
 msgstr ""
 
 #. Tag: term

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,10 +30,10 @@ msgid ""
 "provide the required infrastructure for booting with PXE."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: deployment_pxe.xml:20
+#. Tag: dm:translation
+#: deployment_pxe.xml:22
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -52,11 +52,11 @@ msgstr ""
 msgid ""
 "PXE only boots a kernel and initrd. This can be used to boot into an "
 "installation environment or into live systems. To set up the installation "
-"sources, see <xref linkend=\"cha.deployment.instserver\"/>."
+"sources, see <xref linkend=\"cha.deployment.instserver\"/> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:38
+#: deployment_pxe.xml:39
 #, no-c-format
 msgid ""
 "This section covers the configuration tasks needed in complex boot "
@@ -65,23 +65,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:43
+#: deployment_pxe.xml:44
 #, no-c-format
 msgid ""
 "The examples assume that the DHCP, TFTP and NFS server reside on the same "
-"machine with the IP <literal>192.168.1.1</literal>. All services can reside "
+"machine with the IP <literal>192.168.1.1</literal> . All services can reside "
 "on different machines without any problems. Make sure to change the IP "
 "addresses as required."
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:50
+#: deployment_pxe.xml:51
 #, no-c-format
 msgid "Setting Up a DHCP Server"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:51
+#: deployment_pxe.xml:52
 #, no-c-format
 msgid ""
 "In addition to providing automatic address allocation to your network "
@@ -94,29 +94,29 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:63
+#: deployment_pxe.xml:64
 #, no-c-format
 msgid "Log in as &rootuser; to the machine hosting the DHCP server."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:68
+#: deployment_pxe.xml:69
 #, no-c-format
 msgid ""
 "Enable the DHCP server by executing <command>systemctl enable dhcpd</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:74
+#: deployment_pxe.xml:75
 #, no-c-format
 msgid ""
 "Append the following lines to a subnet configuration of your DHCP server's "
-"configuration file located under <filename>/etc/dhcpd.conf</filename>:"
+"configuration file located under <filename>/etc/dhcpd.conf</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:79
+#: deployment_pxe.xml:80
 #, no-c-format
 msgid ""
 "# The following lines are optional\n"
@@ -147,27 +147,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:80
+#: deployment_pxe.xml:105
 #, no-c-format
 msgid ""
 "This configuration example uses the subnet <literal>192.168.1.0/24</literal> "
 "with the DHCP, DNS and gateway on the server with the IP "
-"<literal>192.168.1.1</literal>. Make sure that all used IP addresses are "
+"<literal>192.168.1.1</literal> . Make sure that all used IP addresses are "
 "changed according to your network layout. For more information about the "
-"options available in <filename>dhcpd.conf</filename>, refer to the "
+"options available in <filename>dhcpd.conf</filename> , refer to the "
 "<systemitem>dhcpd.conf</systemitem> manual page."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:89
+#: deployment_pxe.xml:114
 #, no-c-format
 msgid ""
 "Restart the DHCP server by executing <command>systemctl restart dhcpd</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:95
+#: deployment_pxe.xml:120
 #, no-c-format
 msgid ""
 "If you plan to use SSH for the remote control of a PXE and Wake on LAN "
@@ -177,7 +177,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:101
+#: deployment_pxe.xml:126
 #, no-c-format
 msgid ""
 "group {\n"
@@ -185,11 +185,11 @@ msgid ""
 "   hardware ethernet <replaceable>MAC_ADDRESS</replaceable>;\n"
 "   fixed-address <replaceable>IP_ADDRESS</replaceable>;\n"
 "   }\n"
-"}"
+"}\n"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:102
+#: deployment_pxe.xml:133
 #, no-c-format
 msgid ""
 "The host statement introduces the host name of the installation target. To "
@@ -199,7 +199,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:108
+#: deployment_pxe.xml:139
 #, no-c-format
 msgid ""
 "After restarting the DHCP server, it provides a static IP to the host "
@@ -207,13 +207,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:115
+#: deployment_pxe.xml:146
 #, no-c-format
 msgid "Setting Up a TFTP Server"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:116
+#: deployment_pxe.xml:147
 #, no-c-format
 msgid ""
 "The following procedures describe how to prepare the server for target "
@@ -222,42 +222,42 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:122
+#: deployment_pxe.xml:153
 #, no-c-format
 msgid "Installing TFTP Server"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:123
+#: deployment_pxe.xml:154
 #, no-c-format
 msgid "To install a TFTP server, use the following procedure:"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:129
+#: deployment_pxe.xml:160
 #, no-c-format
 msgid "Install the <systemitem>tftp</systemitem> package."
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:132
+#: deployment_pxe.xml:163
 #, no-c-format
 msgid "&prompt.sudo;<command>zypper in tftp</command>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:135
+#: deployment_pxe.xml:166
 #, no-c-format
 msgid ""
 "Review the <systemitem class=\"daemon\">tftpd</systemitem> configuration in "
 "<filename>/etc/sysconfig/tftp</filename> and add or change options as "
 "required. Refer to <command>man 8 tftpd</command> for more details. The TFTP "
 "daemon works without changing the configuration. The default root directory "
-"for the files is <filename>/srv/tftpboot</filename>."
+"for the files is <filename>/srv/tftpboot</filename> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:144
+#: deployment_pxe.xml:175
 #, no-c-format
 msgid ""
 "Ensure that <systemitem class=\"daemon\">tftpd</systemitem> is started at "
@@ -265,7 +265,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:148
+#: deployment_pxe.xml:179
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>systemctl enable tftp.socket</command>\n"
@@ -273,13 +273,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:153
+#: deployment_pxe.xml:185
 #, no-c-format
 msgid "Installing Files for Boot"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:154
+#: deployment_pxe.xml:186
 #, no-c-format
 msgid ""
 "&productname; provides the required files for booting via a PXE on BIOS or "
@@ -288,7 +288,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:158
+#: deployment_pxe.xml:190
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>zypper in tftpboot-installation-SLES-"
@@ -297,49 +297,49 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:159
+#: deployment_pxe.xml:191
 #, no-c-format
 msgid ""
 "Replace <replaceable>OS_VERSION</replaceable> with the version of your "
 "&productname; installation, for example <literal>15</literal> and "
 "<replaceable>ARCHITECTURE</replaceable> with the architecture of your "
-"system, for example <literal>x86_64</literal>. You can use <command>zypper "
+"system, for example <literal>x86_64</literal> . You can use <command>zypper "
 "se tftpboot</command> to search for all available versions and architectures."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:167
+#: deployment_pxe.xml:199
 #, no-c-format
 msgid ""
 "The files will be installed in <filename>/srv/tftpboot/SLES-"
 "<replaceable>OS_VERSION</replaceable>-<replaceable>ARCHITECTURE</"
-"replaceable></filename>. You can also copy the files for other versions and "
+"replaceable></filename> . You can also copy the files for other versions and "
 "architectures of &productname; to the <filename>/srv/tftpboot</filename> "
 "directory."
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:176
+#: deployment_pxe.xml:208
 #, no-c-format
 msgid "Configuring PXELINUX"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:177
+#: deployment_pxe.xml:209
 #, no-c-format
 msgid ""
 "Open the file <filename>/srv/tftpboot/SLES-<replaceable>OS_VERSION</"
 "replaceable>-<replaceable>ARCHITECTURE</replaceable>/net/pxelinux.cfg/"
 "default</filename> in an editor. Replace the path for the <literal>install</"
 "literal> parameter according to your setup as described in <xref linkend="
-"\"cha.deployment.instserver\"/>. Also replace <replaceable>TFTP_SERVER</"
+"\"cha.deployment.instserver\"/> . Also replace <replaceable>TFTP_SERVER</"
 "replaceable> with the IP address of the TFTP server. For an overview of the "
 "PXELINUX configuration options, see <xref linkend=\"sec.deployment.prep_boot."
-"pxeopts\"/>."
+"pxeopts\"/> ."
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:187
+#: deployment_pxe.xml:219
 #, no-c-format
 msgid ""
 "default linux\n"
@@ -362,15 +362,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:188
+#: deployment_pxe.xml:231
 #, no-c-format
 msgid ""
 "For details about the boot parameters that are used in the <literal>append</"
-"literal> line, see <xref linkend=\"sec.boot_parameters.list\"/>."
+"literal> line, see <xref linkend=\"sec.boot_parameters.list\"/> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:192
+#: deployment_pxe.xml:235
 #, no-c-format
 msgid ""
 "If required, edit the <filename>/srv/tftpboot/SLES-<replaceable>OS_VERSION</"
@@ -379,13 +379,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:199
+#: deployment_pxe.xml:242
 #, no-c-format
 msgid "Preparing PXE Boot for EFI with GRUB2"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:200
+#: deployment_pxe.xml:243
 #, no-c-format
 msgid ""
 "There is no need to change the GRUB2 configuration files. However, in the "
@@ -393,35 +393,35 @@ msgid ""
 "If you want to fully install &productname; via the network, add the "
 "<option>install</option> parameter to the <option>linuxefi</option> lines in "
 "the file <filename>/srv/tftpboot/SLES-<replaceable>OS_VERSION</replaceable>-"
-"<replaceable>ARCHITECTURE</replaceable>/EFI/BOOT/grub.cfg</filename>. Set "
+"<replaceable>ARCHITECTURE</replaceable>/EFI/BOOT/grub.cfg</filename> . Set "
 "the <literal>install</literal> parameter according to your setup as "
-"described in <xref linkend=\"cha.deployment.instserver\"/>. For details "
+"described in <xref linkend=\"cha.deployment.instserver\"/> . For details "
 "about other boot parameters that are used in the <literal>efilinux</literal> "
-"lines, see <xref linkend=\"sec.boot_parameters.list\"/>."
+"lines, see <xref linkend=\"sec.boot_parameters.list\"/> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:216
+#: deployment_pxe.xml:259
 #, no-c-format
 msgid "PXELINUX Configuration Options"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:218
+#: deployment_pxe.xml:261
 #, no-c-format
 msgid ""
 "The options listed here are a subset of all the options available for the "
 "PXELINUX configuration file."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:225
+#. Tag: term
+#: deployment_pxe.xml:268
 #, no-c-format
-msgid "APPEND <replaceable>OPTIONS</replaceable>"
+msgid "<option>APPEND <replaceable>OPTIONS</replaceable></option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:228
+#: deployment_pxe.xml:271
 #, no-c-format
 msgid ""
 "Adds one or more options to the kernel command line. These are added for "
@@ -430,29 +430,29 @@ msgid ""
 "options to override them."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:237
+#. Tag: term
+#: deployment_pxe.xml:280
 #, no-c-format
-msgid "APPEND -"
+msgid "<option>APPEND -</option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:240
+#: deployment_pxe.xml:283
 #, no-c-format
 msgid ""
 "Appends nothing. <option>APPEND</option> with a single hyphen as argument in "
 "a <option>LABEL</option> section can be used to override a global "
-"<option>APPEND</option>."
+"<option>APPEND</option> ."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:248
+#. Tag: term
+#: deployment_pxe.xml:291
 #, no-c-format
-msgid "DEFAULT <replaceable>KERNEL_OPTIONS</replaceable>..."
+msgid "<option>DEFAULT <replaceable>KERNEL_OPTIONS</replaceable>...</option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:251
+#: deployment_pxe.xml:294
 #, no-c-format
 msgid ""
 "Sets the default kernel command line. If PXELINUX boots automatically, it "
@@ -461,7 +461,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:257
+#: deployment_pxe.xml:300
 #, no-c-format
 msgid ""
 "If no configuration file exists or no DEFAULT entry is defined in the "
@@ -469,24 +469,25 @@ msgid ""
 "no options."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:266
+#. Tag: term
+#: deployment_pxe.xml:309
 #, no-c-format
-msgid "IFAPPEND <replaceable>FLAG</replaceable>"
+msgid "<option>IFAPPEND <replaceable>FLAG</replaceable></option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:269
+#: deployment_pxe.xml:312
 #, no-c-format
 msgid ""
 "Adds a specific option to the kernel command line depending on the "
 "<replaceable>FLAG</replaceable> value. The <option>IFAPPEND</option> option "
 "is available only on PXELINUX. <replaceable>FLAG</replaceable> expects a "
-"value, described in <xref linkend=\"tab.deployment.boot.pxeopts.ifappend\"/>:"
+"value, described in <xref linkend=\"tab.deployment.boot.pxeopts.ifappend\"/"
+"> :"
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:277
+#: deployment_pxe.xml:320
 #, no-c-format
 msgid ""
 "Generated and Added Kernel Command Line Options from <option>IFAPPEND</"
@@ -494,25 +495,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:284 deployment_pxe.xml:409
-#, no-c-format
-msgid "Argument"
-msgstr ""
-
-#. Tag: para
-#: deployment_pxe.xml:289
+#: deployment_pxe.xml:332
 #, no-c-format
 msgid "Generated Kernel Command Line / Description"
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:299
+#. Tag: para
+#: deployment_pxe.xml:341
 #, no-c-format
 msgid "<option>1</option>"
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:303
+#: deployment_pxe.xml:346
 #, no-c-format
 msgid ""
 "ip=<replaceable>CLIENT_IP</replaceable>:<replaceable>BOOT_SERVER_IP</"
@@ -521,7 +516,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:304
+#: deployment_pxe.xml:347
 #, no-c-format
 msgid ""
 "The placeholders are replaced based on the input from the DHCP/BOOTP or PXE "
@@ -529,7 +524,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:308
+#: deployment_pxe.xml:351
 #, no-c-format
 msgid ""
 "Note, this option is not a substitute for running a DHCP client in the "
@@ -537,20 +532,20 @@ msgid ""
 "will expire, making the IP address available for reuse by the DHCP server."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:319
+#. Tag: para
+#: deployment_pxe.xml:361
 #, no-c-format
 msgid "<option>2</option>"
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:323
+#: deployment_pxe.xml:366
 #, no-c-format
 msgid "BOOTIF=<replaceable>MAC_ADDRESS_OF_BOOT_INTERFACE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:324
+#: deployment_pxe.xml:367
 #, no-c-format
 msgid ""
 "This option is useful to avoid timeouts when the installation server probes "
@@ -560,36 +555,36 @@ msgid ""
 "interface."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:336
+#. Tag: para
+#: deployment_pxe.xml:378
 #, no-c-format
 msgid "<option>4</option>"
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:340
+#: deployment_pxe.xml:383
 #, no-c-format
 msgid "SYSUUID=<replaceable>SYSTEM_UUID</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:341
+#: deployment_pxe.xml:384
 #, no-c-format
 msgid ""
 "Adds UUIDs in lowercase hexadecimals, see <filename>/usr/share/doc/packages/"
 "syslinux/pxelinux.txt</filename>"
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:353
+#. Tag: term
+#: deployment_pxe.xml:396
 #, no-c-format
 msgid ""
-"LABEL <replaceable>LABEL</replaceable> KERNEL <replaceable>IMAGE</"
-"replaceable> APPEND <replaceable>OPTIONS</replaceable>..."
+"<option>LABEL <replaceable>LABEL</replaceable> KERNEL <replaceable>IMAGE</"
+"replaceable> APPEND <replaceable>OPTIONS</replaceable>...</option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:357
+#: deployment_pxe.xml:400
 #, no-c-format
 msgid ""
 "Indicates that if <replaceable>LABEL</replaceable> is entered as the kernel "
@@ -603,13 +598,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:377
+#: deployment_pxe.xml:422
 #, no-c-format
 msgid "PXELINUX uses the following syntax:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:380
+#: deployment_pxe.xml:425
 #, no-c-format
 msgid ""
 "label <replaceable>MYLABEL</replaceable>\n"
@@ -618,7 +613,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:381
+#: deployment_pxe.xml:428
 #, no-c-format
 msgid ""
 "Labels are mangled as if they were file names and they must be unique after "
@@ -628,21 +623,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:387
+#: deployment_pxe.xml:434
 #, no-c-format
 msgid ""
 "The kernel does not need to be a Linux kernel. It can also be a boot sector "
 "or a COMBOOT file."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:394
+#. Tag: term
+#: deployment_pxe.xml:441
 #, no-c-format
-msgid "LOCALBOOT <replaceable>TYPE</replaceable>"
+msgid "<option>LOCALBOOT <replaceable>TYPE</replaceable></option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:397
+#: deployment_pxe.xml:444
 #, no-c-format
 msgid ""
 "On PXELINUX, specifying <option>LOCALBOOT 0</option> instead of a "
@@ -651,45 +646,51 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:414
+#: deployment_pxe.xml:456
+#, no-c-format
+msgid "Argument"
+msgstr ""
+
+#. Tag: para
+#: deployment_pxe.xml:461
 #, no-c-format
 msgid "Description"
 msgstr ""
 
-#. Tag: literal
-#: deployment_pxe.xml:424
+#. Tag: para
+#: deployment_pxe.xml:470
 #, no-c-format
 msgid "<literal>0</literal>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:428
+#: deployment_pxe.xml:475
 #, no-c-format
 msgid "Perform a normal boot"
 msgstr ""
 
-#. Tag: literal
-#: deployment_pxe.xml:436
+#. Tag: para
+#: deployment_pxe.xml:482
 #, no-c-format
 msgid "<literal>4</literal>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:440
+#: deployment_pxe.xml:487
 #, no-c-format
 msgid ""
 "Perform a local boot with the Universal Network Driver Interface (UNDI) "
 "driver still resident in memory"
 msgstr ""
 
-#. Tag: literal
-#: deployment_pxe.xml:449
+#. Tag: para
+#: deployment_pxe.xml:495
 #, no-c-format
 msgid "<literal>5</literal>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:453
+#: deployment_pxe.xml:500
 #, no-c-format
 msgid ""
 "Perform a local boot with the entire PXE stack, including the UNDI driver, "
@@ -697,21 +698,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:462
+#: deployment_pxe.xml:509
 #, no-c-format
 msgid ""
 "All other values are undefined. If you do not know what the UNDI or PXE "
-"stacks are, specify <literal>0</literal>."
+"stacks are, specify <literal>0</literal> ."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:469
+#. Tag: term
+#: deployment_pxe.xml:516
 #, no-c-format
-msgid "TIMEOUT <replaceable>TIME-OUT</replaceable>"
+msgid "<option>TIMEOUT <replaceable>TIME-OUT</replaceable></option>"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:472
+#: deployment_pxe.xml:519
 #, no-c-format
 msgid ""
 "Indicates how long to wait at the boot prompt until booting automatically, "
@@ -722,25 +723,68 @@ msgid ""
 "hour)."
 msgstr ""
 
-#. Tag: option
-#: deployment_pxe.xml:483
+#. Tag: term
+#: deployment_pxe.xml:530
 #, no-c-format
-msgid "PROMPT<replaceable> flag_val</replaceable>"
+msgid "<option>PROMPT<replaceable> flag_val</replaceable></option>"
 msgstr ""
 
-#. Tag: para
-#: deployment_pxe.xml:486
+#. Tag: #text
+#: deployment_pxe.xml:534
 #, no-c-format
-msgid ""
-"If <option>flag_val</option> is 0, displays the boot prompt only if <keycap "
-"function=\"shift\"></keycap> or <keycap function=\"alt\"></keycap> is "
-"pressed or <keycap>Caps Lock</keycap> or <keycap>Scroll Lock</keycap> is set "
-"(this is the default). If <option>flag_val</option> is 1, always displays "
-"the boot prompt."
+msgid "If"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:535
+#, no-c-format
+msgid "is 0, displays the boot prompt only if"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_pxe.xml:536
+#, no-c-format
+msgid "Caps Lock"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:536
+#, no-c-format
+msgid "or"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:536
+#, no-c-format
+msgid "is pressed or"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_pxe.xml:536
+#, no-c-format
+msgid "Scroll Lock"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:537
+#, no-c-format
+msgid "is set (this is the default). If"
+msgstr ""
+
+#. Tag: option
+#: deployment_pxe.xml:537
+#, no-c-format
+msgid "flag_val"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:539
+#, no-c-format
+msgid "is 1, always displays the boot prompt."
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:493
+#: deployment_pxe.xml:540
 #, no-c-format
 msgid ""
 "F2  <replaceable>FILENAME</replaceable>\n"
@@ -750,26 +794,72 @@ msgid ""
 "F10 <replaceable>FILENAME</replaceable>"
 msgstr ""
 
-#. Tag: para
-#: deployment_pxe.xml:494
+#. Tag: #text
+#: deployment_pxe.xml:549
 #, no-c-format
 msgid ""
 "Displays the indicated file on the screen when a function key is pressed at "
 "the boot prompt. This can be used to implement preboot online help "
 "(presumably for the kernel command line options). For backward compatibility "
-"with earlier releases, <keycap>F10</keycap> can be also entered as "
-"<literal>F0</literal>. Note that there is currently no way to bind file "
-"names to <keycap>F11</keycap> and <keycap>F12</keycap>."
+"with earlier releases,"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_pxe.xml:549
+#, no-c-format
+msgid "F10"
+msgstr ""
+
+#. Tag: literal
+#: deployment_pxe.xml:550
+#, no-c-format
+msgid "F0"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:550
+#, no-c-format
+msgid "can be also entered as"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:551
+#, no-c-format
+msgid ". Note that there is currently no way to bind file names to"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_pxe.xml:551
+#, no-c-format
+msgid "F11"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:551
+#, no-c-format
+msgid "and"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_pxe.xml:551
+#, no-c-format
+msgid "F12"
+msgstr ""
+
+#. Tag: #text
+#: deployment_pxe.xml:552
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:507
+#: deployment_pxe.xml:558
 #, no-c-format
 msgid "Preparing the Target System for PXE Boot"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:509
+#: deployment_pxe.xml:560
 #, no-c-format
 msgid ""
 "Prepare the system's BIOS for PXE boot by including the PXE option in the "
@@ -777,13 +867,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:515
+#: deployment_pxe.xml:566
 #, no-c-format
 msgid "BIOS Boot Order"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:516
+#: deployment_pxe.xml:567
 #, no-c-format
 msgid ""
 "Do not place the PXE option ahead of the hard disk boot parameter in the "
@@ -792,13 +882,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:524
+#: deployment_pxe.xml:575
 #, no-c-format
 msgid "Preparing the Target System for Wake on LAN"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:526
+#: deployment_pxe.xml:577
 #, no-c-format
 msgid ""
 "Wake on LAN (WOL) requires the appropriate BIOS option to be enabled prior "
@@ -807,13 +897,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:533
+#: deployment_pxe.xml:584
 #, no-c-format
 msgid "Wake on LAN"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:535
+#: deployment_pxe.xml:586
 #, no-c-format
 msgid ""
 "Wake on LAN allows a machine to be turned on by a special network packet "
@@ -823,13 +913,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:543
+#: deployment_pxe.xml:594
 #, no-c-format
 msgid "Wake on LAN across Different Network Segments"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:544
+#: deployment_pxe.xml:595
 #, no-c-format
 msgid ""
 "If the controlling machine is not located on the same network segment as the "
@@ -839,7 +929,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:552
+#: deployment_pxe.xml:603
 #, no-c-format
 msgid ""
 "Users of &sls; can use a &yast; module called WOL to easily configure Wake "
@@ -848,33 +938,33 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:559
+#: deployment_pxe.xml:610
 #, no-c-format
 msgid "Wake on LAN with &yast;"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:560
+#: deployment_pxe.xml:611
 #, no-c-format
 msgid "Use this procedure to configure Wake on LAN with &yast;."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:565
+#: deployment_pxe.xml:616
 #, no-c-format
 msgid "Log in as &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:570
+#: deployment_pxe.xml:621
 #, no-c-format
 msgid ""
 "Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Network Services</"
-"guimenu> <guimenu>WOL</guimenu></menuchoice>."
+"guimenu> <guimenu>WOL</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:576
+#: deployment_pxe.xml:627
 #, no-c-format
 msgid ""
 "Click <guimenu>Add</guimenu> and enter the host name and MAC address of the "
@@ -882,40 +972,40 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:582
+#: deployment_pxe.xml:633
 #, no-c-format
 msgid ""
 "To turn on this machine, select the appropriate entry and click "
-"<guimenu>Wake up</guimenu>."
+"<guimenu>Wake up</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_pxe.xml:590
+#: deployment_pxe.xml:641
 #, no-c-format
 msgid "Booting from CD or USB Drive Instead of PXE"
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:591
+#: deployment_pxe.xml:642
 #, no-c-format
 msgid ""
 "You can also use a CD, DVD or USB drive with a small system image instead of "
 "booting via PXE. The necessary files will be fetched via NFS when the kernel "
 "and initrd are loaded. A bootable image can be created with "
-"<command>mksusecd</command>. This can be useful if the target machine does "
+"<command>mksusecd</command> . This can be useful if the target machine does "
 "not support PXE boot."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:598
+#: deployment_pxe.xml:649
 #, no-c-format
 msgid ""
-"Install it with <command>sudo zypper in mksusecd</command>. Use the "
+"Install it with <command>sudo zypper in mksusecd</command> . Use the "
 "following command to create a bootable ISO image:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:602
+#: deployment_pxe.xml:653
 #, no-c-format
 msgid ""
 "&prompt.user;<command>mksusecd</command> --create image.iso \\\n"
@@ -926,17 +1016,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:603
+#: deployment_pxe.xml:656
 #, no-c-format
 msgid ""
 "Replace <replaceable>ARCH</replaceable> with the directory corresponding to "
 "the target system architecture. Also replace <replaceable>OS_version</"
 "replaceable> and <replaceable>SP_version</replaceable> according to your "
-"paths in <xref linkend=\"sec.deployment.tftp_server\"/>."
+"paths in <xref linkend=\"sec.deployment.tftp_server\"/> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:609
+#: deployment_pxe.xml:662
 #, no-c-format
 msgid ""
 "Instead of using an NFS server for the <option>--net</option> option, it is "
@@ -945,7 +1035,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:614
+#: deployment_pxe.xml:667
 #, no-c-format
 msgid ""
 "&prompt.user;<command>mksusecd</command> --create image.iso \\\n"
@@ -954,7 +1044,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:615
+#: deployment_pxe.xml:670
 #, no-c-format
 msgid ""
 "The <filename>image.iso</filename> can be written to a DVD or CD, or using "
@@ -962,7 +1052,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: deployment_pxe.xml:618
+#: deployment_pxe.xml:673
 #, no-c-format
 msgid ""
 "&prompt.root;<command>dd</command> if=image.iso of=/dev/"
@@ -970,7 +1060,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_pxe.xml:619
+#: deployment_pxe.xml:674
 #, no-c-format
 msgid ""
 "Replace <replaceable>USB_DEVICE</replaceable> with the device name of your "

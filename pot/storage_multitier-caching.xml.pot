@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,10 +20,10 @@ msgstr ""
 msgid "Multi-tier Caching for Block Device Operations"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: storage_multitier-caching.xml:10
+#. Tag: dm:translation
+#: storage_multitier-caching.xml:12
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -143,7 +143,7 @@ msgstr ""
 #. Tag: para
 #: storage_multitier-caching.xml:104
 #, no-c-format
-msgid "A request for I/O operations is pointed to the cached device's cache first. If it cannot find the requested values, it looks in the device itself, which is slow. This is called a <emphasis>cache miss</emphasis>."
+msgid "A request for I/O operations is pointed to the cached device's cache first. If it cannot find the requested values, it looks in the device itself, which is slow. This is called a <emphasis>cache miss</emphasis> ."
 msgstr ""
 
 #. Tag: term
@@ -155,7 +155,7 @@ msgstr ""
 #. Tag: para
 #: storage_multitier-caching.xml:114
 #, no-c-format
-msgid "When a requested value is found in the cached device's cache, it is served fast. This is called a <emphasis>cache hit</emphasis>."
+msgid "When a requested value is found in the cached device's cache, it is served fast. This is called a <emphasis>cache hit</emphasis> ."
 msgstr ""
 
 #. Tag: term
@@ -167,7 +167,7 @@ msgstr ""
 #. Tag: para
 #: storage_multitier-caching.xml:123
 #, no-c-format
-msgid "Cache that holds no values (is empty) and causes <emphasis>cache misses</emphasis>. As the cached block device operations progress, it gets filled with data and becomes <emphasis>warm</emphasis>."
+msgid "Cache that holds no values (is empty) and causes <emphasis>cache misses</emphasis> . As the cached block device operations progress, it gets filled with data and becomes <emphasis>warm</emphasis> ."
 msgstr ""
 
 #. Tag: term
@@ -179,7 +179,7 @@ msgstr ""
 #. Tag: para
 #: storage_multitier-caching.xml:133
 #, no-c-format
-msgid "Cache that already holds some values and is likely to result in <emphasis>cache hits</emphasis>."
+msgid "Cache that already holds some values and is likely to result in <emphasis>cache hits</emphasis> ."
 msgstr ""
 
 #. Tag: title
@@ -191,7 +191,7 @@ msgstr ""
 #. Tag: para
 #: storage_multitier-caching.xml:144
 #, no-c-format
-msgid "Following are the basic caching modes that multi-tier caches use: <emphasis>write-back</emphasis>, <emphasis>write-through</emphasis>, <emphasis>write-around</emphasis> and <emphasis>pass-through</emphasis>."
+msgid "Following are the basic caching modes that multi-tier caches use: <emphasis>write-back</emphasis> , <emphasis>write-through</emphasis> , <emphasis>write-around</emphasis> and <emphasis>pass-through</emphasis> ."
 msgstr ""
 
 #. Tag: term
@@ -389,156 +389,153 @@ msgstr ""
 #. Tag: screen
 #: storage_multitier-caching.xml:309
 #, no-c-format
-msgid ""
-      "/dev/bcache/by-uuid/<replaceable>UUID</replaceable>\n"
+msgid "/dev/bcache/by-uuid/<replaceable>UUID</replaceable>\n"
       "/dev/bcache/by-label/<replaceable>LABEL</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:310
+#: storage_multitier-caching.xml:311
 #, no-c-format
 msgid "You can normally format and mount &bcache; devices as usual:"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:313
+#: storage_multitier-caching.xml:314
 #, no-c-format
-msgid ""
-      "&prompt.sudo;mkfs.ext4 /dev/bcache0\n"
+msgid "&prompt.sudo;mkfs.ext4 /dev/bcache0\n"
       "&prompt.sudo;mount /dev/bcache0 /mnt"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:314
+#: storage_multitier-caching.xml:316
 #, no-c-format
-msgid "You can control &bcache; devices through <systemitem>sysfs</systemitem> at <filename>/sys/block/bcache<replaceable>N</replaceable>/bcache</filename>."
+msgid "You can control &bcache; devices through <systemitem>sysfs</systemitem> at <filename>/sys/block/bcache<replaceable>N</replaceable>/bcache</filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:321
+#: storage_multitier-caching.xml:323
 #, no-c-format
 msgid "After both the cache and backing devices are registered, you need to attach the backing device to the related cache set to enable caching:"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:325
+#: storage_multitier-caching.xml:327
 #, no-c-format
-msgid "&prompt.user;echo <replaceable>CACHE_SET_UUID</replaceable> > /sys/block/bcache0/bcache/attach"
+msgid "&prompt.user;echo <replaceable>CACHE_SET_UUID</replaceable> &gt; /sys/block/bcache0/bcache/attach"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:326
+#: storage_multitier-caching.xml:328
 #, no-c-format
-msgid "where <replaceable>CACHE_SET_UUID</replaceable> is found in <filename>/sys/fs/bcache</filename>."
+msgid "where <replaceable>CACHE_SET_UUID</replaceable> is found in <filename>/sys/fs/bcache</filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:332
+#: storage_multitier-caching.xml:334
 #, no-c-format
 msgid "By default &bcache; uses a pass-through caching mode. To change it to for example write-back, run"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:336
+#: storage_multitier-caching.xml:338
 #, no-c-format
-msgid "&prompt.user;echo writeback > /sys/block/bcache0/bcache/cache_mode"
+msgid "&prompt.user;echo writeback &gt; /sys/block/bcache0/bcache/cache_mode"
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:342
+#: storage_multitier-caching.xml:344
 #, no-c-format
 msgid "&bcache; Configuration Using <systemitem>sysfs</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:343
+#: storage_multitier-caching.xml:345
 #, no-c-format
 msgid "&bcache; devices use the <systemitem>sysfs</systemitem> interface to store their runtime configuration values. This way you can change &bcache; backing and cache disks' behavior or see their usage statistics."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:348
+#: storage_multitier-caching.xml:350
 #, no-c-format
-msgid "For the complete list of &bcache; <systemitem>sysfs</systemitem> parameters, see the contents of the <filename>/usr/src/linux/Documentation/bcache.txt</filename> file, mainly the <literal>SYSFS - BACKING DEVICE</literal>, <literal>SYSFS - BACKING DEVICE STATS</literal>, and <literal>SYSFS - CACHE DEVICE</literal> sections."
+msgid "For the complete list of &bcache; <systemitem>sysfs</systemitem> parameters, see the contents of the <filename>/usr/src/linux/Documentation/bcache.txt</filename> file, mainly the <literal>SYSFS - BACKING DEVICE</literal> , <literal>SYSFS - BACKING DEVICE STATS</literal> , and <literal>SYSFS - CACHE DEVICE</literal> sections."
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:359
+#: storage_multitier-caching.xml:361
 #, no-c-format
 msgid "&lvmcache;"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:361
+#: storage_multitier-caching.xml:363
 #, no-c-format
-msgid "&lvmcache; is a caching mechanism consisting of logical volumes (LVs). It uses the <literal>dm-cache</literal> kernel driver and supports write-through (default) and write-back caching modes. &lvmcache; improves performance of a large and slow LV by dynamically migrating some of its data to a faster and smaller LV. For more information on LVM, see <xref linkend=\"part.lvm\"/>."
+msgid "&lvmcache; is a caching mechanism consisting of logical volumes (LVs). It uses the <literal>dm-cache</literal> kernel driver and supports write-through (default) and write-back caching modes. &lvmcache; improves performance of a large and slow LV by dynamically migrating some of its data to a faster and smaller LV. For more information on LVM, see <xref linkend=\"part.lvm\"/> ."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:370
+#: storage_multitier-caching.xml:372
 #, no-c-format
-msgid "LVM refers to the small, fast LV as a <emphasis>cache pool LV</emphasis>. The large, slow LV is called the <emphasis>origin LV</emphasis>. Because of requirements from dm-cache, LVM further splits the cache pool LV into two devices: the <emphasis>cache data LV</emphasis> and <emphasis>cache metadata LV</emphasis>. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored."
+msgid "LVM refers to the small, fast LV as a <emphasis>cache pool LV</emphasis> . The large, slow LV is called the <emphasis>origin LV</emphasis> . Because of requirements from dm-cache, LVM further splits the cache pool LV into two devices: the <emphasis>cache data LV</emphasis> and <emphasis>cache metadata LV</emphasis> . The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored."
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:381
+#: storage_multitier-caching.xml:383
 #, no-c-format
 msgid "Configuring &lvmcache;"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:382
+#: storage_multitier-caching.xml:384
 #, no-c-format
 msgid "This section describes steps to create and configure LVM based caching."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:387
+#: storage_multitier-caching.xml:389
 #, no-c-format
 msgid "<emphasis>Create the origin LV.</emphasis> Create a new LV or use an existing LV to become the origin LV:"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:391
+#: storage_multitier-caching.xml:393
 #, no-c-format
 msgid "&prompt.sudo;lvcreate -n <replaceable>ORIGIN_LV</replaceable> -L 100G vg <replaceable>/dev/SLOW_DEV</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:394
+#: storage_multitier-caching.xml:396
 #, no-c-format
 msgid "<emphasis>Create the cache data LV.</emphasis> This LV will hold data blocks from the origin LV. The size of this LV is the size of the cache and will be reported as the size of the cache pool LV."
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:399
+#: storage_multitier-caching.xml:401
 #, no-c-format
 msgid "&prompt.sudo;lvcreate -n <replaceable>CACHE_DATA_LV</replaceable> -L 10G vg <replaceable>/dev/FAST</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:402
+#: storage_multitier-caching.xml:404
 #, no-c-format
 msgid "<emphasis>Create the cache metadata LV.</emphasis> This LV will hold cache pool metadata. The size of this LV should be approximately 1000 times smaller than the cache data LV, with a minimum size of 8MB."
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:407
+#: storage_multitier-caching.xml:409
 #, no-c-format
 msgid "&prompt.sudo;lvcreate -n <replaceable>CACHE_METADATA_LV</replaceable> -L 12M vg <replaceable>/dev/FAST</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:408
+#: storage_multitier-caching.xml:410
 #, no-c-format
 msgid "List the volumes you have created so far:"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:411
+#: storage_multitier-caching.xml:413
 #, no-c-format
-msgid ""
-      "&prompt.sudo;lvs -a vg\n"
+msgid "&prompt.sudo;lvs -a vg\n"
       "LV                VG   Attr        LSize   Pool Origin\n"
       "cache_data_lv     vg   -wi-a-----  10.00g\n"
       "cache_metadata_lv vg   -wi-a-----  12.00m\n"
@@ -546,42 +543,40 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:414
+#: storage_multitier-caching.xml:420
 #, no-c-format
 msgid "<emphasis>Create a cache pool LV.</emphasis> Combine the data and metadata LVs into a cache pool LV. You can set the cache pool LV's behavior at the same time."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:419
+#: storage_multitier-caching.xml:425
 #, no-c-format
-msgid "<replaceable>CACHE_POOL_LV</replaceable> takes the name of <replaceable>CACHE_DATA_LV</replaceable>."
+msgid "<replaceable>CACHE_POOL_LV</replaceable> takes the name of <replaceable>CACHE_DATA_LV</replaceable> ."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:423
+#: storage_multitier-caching.xml:429
 #, no-c-format
-msgid "<replaceable>CACHE_DATA_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable>_cdata and becomes hidden."
+msgid "<replaceable>CACHE_DATA_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable> _cdata and becomes hidden."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:427
+#: storage_multitier-caching.xml:433
 #, no-c-format
-msgid "<replaceable>CACHE_META_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable>_cmeta and becomes hidden."
+msgid "<replaceable>CACHE_META_LV</replaceable> is renamed to <replaceable>CACHE_DATA_LV</replaceable> _cmeta and becomes hidden."
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:431
+#: storage_multitier-caching.xml:437
 #, no-c-format
-msgid ""
-      "&prompt.sudo;lvconvert --type cache-pool \\\n"
+msgid "&prompt.sudo;lvconvert --type cache-pool \\\n"
       " --poolmetadata vg/cache_metadata_lv vg/cache_data_lv"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:432
+#: storage_multitier-caching.xml:439
 #, no-c-format
-msgid ""
-      "&prompt.sudo;lvs -a vg\n"
+msgid "&prompt.sudo;lvs -a vg\n"
       "LV                     VG   Attr       LSize   Pool Origin\n"
       "cache_data_lv          vg   Cwi---C---  10.00g\n"
       "[cache_data_lv_cdata]  vg   Cwi-------  10.00g\n"
@@ -590,40 +585,39 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:435
+#: storage_multitier-caching.xml:447
 #, no-c-format
 msgid "<emphasis>Create a cache LV.</emphasis> Create a cache LV by linking the cache pool LV to the origin LV."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:439
+#: storage_multitier-caching.xml:451
 #, no-c-format
-msgid "The user accessible cache LV takes the name of the origin LV, while the origin LV becomes a hidden LV renamed to <replaceable>ORIGIN_LV</replaceable>_corig."
+msgid "The user accessible cache LV takes the name of the origin LV, while the origin LV becomes a hidden LV renamed to <replaceable>ORIGIN_LV</replaceable> _corig."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:444
+#: storage_multitier-caching.xml:456
 #, no-c-format
-msgid "CacheLV takes the name of <replaceable>ORIGIN_LV</replaceable>."
+msgid "CacheLV takes the name of <replaceable>ORIGIN_LV</replaceable> ."
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:447
+#: storage_multitier-caching.xml:459
 #, no-c-format
-msgid "<replaceable>ORIGIN_LV</replaceable> is renamed to <replaceable>ORIGIN_LV</replaceable>_corig and becomes hidden."
+msgid "<replaceable>ORIGIN_LV</replaceable> is renamed to <replaceable>ORIGIN_LV</replaceable> _corig and becomes hidden."
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:451
+#: storage_multitier-caching.xml:463
 #, no-c-format
 msgid "&prompt.sudo;lvconvert --type cache --cachepool vg/cache_data_lv vg/origin_lv"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:452
+#: storage_multitier-caching.xml:464
 #, no-c-format
-msgid ""
-      "&prompt.sudo;lvs -a vg\n"
+msgid "&prompt.sudo;lvs -a vg\n"
       "LV              VG   Attr       LSize   Pool   Origin\n"
       "cache_data_lv          vg   Cwi---C---  10.00g\n"
       "[cache_data_lv_cdata]  vg   Cwi-ao----  10.00g\n"
@@ -633,92 +627,92 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:458
+#: storage_multitier-caching.xml:476
 #, no-c-format
 msgid "Removing a Cache Pool"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:459
+#: storage_multitier-caching.xml:477
 #, no-c-format
 msgid "There are several ways to turn off the LV cache."
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:463
+#: storage_multitier-caching.xml:481
 #, no-c-format
 msgid "Detach a Cache Pool LV from a Cache LV"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:464
+#: storage_multitier-caching.xml:482
 #, no-c-format
 msgid "You can disconnect a cache pool LV from a cache LV, leaving an unused cache pool LV and an uncached origin LV. Data are written back from the cache pool to the origin LV when necessary."
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:469
+#: storage_multitier-caching.xml:487
 #, no-c-format
 msgid "&prompt.sudo;lvconvert --splitcache vg/origin_lv"
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:472
+#: storage_multitier-caching.xml:490
 #, no-c-format
 msgid "Removing a Cache Pool LV without Removing its Origin LV"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:473
+#: storage_multitier-caching.xml:491
 #, no-c-format
 msgid "This writes back data from the cache pool to the origin LV when necessary, then removes the cache pool LV, leaving the uncached origin LV."
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:477
+#: storage_multitier-caching.xml:495
 #, no-c-format
 msgid "&prompt.sudo;lvremove vg/cache_data_lv"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:478
+#: storage_multitier-caching.xml:496
 #, no-c-format
 msgid "An alternative command that also disconnects the cache pool from the cache LV, and deletes the cache pool:"
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:482
+#: storage_multitier-caching.xml:500
 #, no-c-format
 msgid "&prompt.sudo;lvconvert --uncache vg/origin_lv"
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:485
+#: storage_multitier-caching.xml:503
 #, no-c-format
 msgid "Removing Both the Origin LV and the Cache Pool LV"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:486
+#: storage_multitier-caching.xml:504
 #, no-c-format
 msgid "Removing a cache LV removes both the origin LV and the linked cache pool LV."
 msgstr ""
 
 #. Tag: screen
-#: storage_multitier-caching.xml:490
+#: storage_multitier-caching.xml:508
 #, no-c-format
 msgid "&prompt.sudo;lvremove vg/origin_lv"
 msgstr ""
 
 #. Tag: title
-#: storage_multitier-caching.xml:493
+#: storage_multitier-caching.xml:511
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: storage_multitier-caching.xml:494
+#: storage_multitier-caching.xml:512
 #, no-c-format
-msgid "You can find more &lvmcache; related topics, such as supported cache modes, redundant sub-logical volumes, cache policy, or converting existing LVs to cache types, in the &lvmcache; manual page (<command>man 7 lvmcache</command>)."
+msgid "You can find more &lvmcache; related topics, such as supported cache modes, redundant sub-logical volumes, cache policy, or converting existing LVs to cache types, in the &lvmcache; manual page ( <command>man 7 lvmcache</command> )."
 msgstr ""
 

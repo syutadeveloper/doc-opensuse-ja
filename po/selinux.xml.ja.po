@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,24 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. Tag: title
-#: selinux.xml:9 selinux.xml:479
-#, no-c-format
-msgid "Configuring &selnx;"
-msgstr ""
-
 #. Tag: para
 #: selinux.xml:15
 #, no-c-format
 msgid ""
 "In this chapter, you will learn how to set up and manage &selnx; on "
 "&productname;. The following topics are covered:"
-msgstr ""
-
-#. Tag: para
-#: selinux.xml:21
-#, no-c-format
-msgid "<para>Why Use &selnx;?</para>"
 msgstr ""
 
 #. Tag: para
@@ -48,16 +36,10 @@ msgstr ""
 msgid "Setting Up &selnx;"
 msgstr ""
 
-#. Tag: para
-#: selinux.xml:36
-#, no-c-format
-msgid "<para>Managing &selnx;</para>"
-msgstr ""
-
 #. Tag: title
 #: selinux.xml:42
 #, no-c-format
-msgid "<title>Why Use &selnx;?</title>"
+msgid "Why Use &selnx;?"
 msgstr ""
 
 #. Tag: para
@@ -84,22 +66,22 @@ msgid ""
 "is needed:"
 msgstr ""
 
-#. Tag: quote
-#: selinux.xml:63
+#. Tag: para
+#: selinux.xml:62
 #, no-c-format
 msgid ""
-"One morning, I found out that my server was hacked. The server was running a "
-"fully patched &slsa; installation. A firewall was configured on it and no "
-"unnecessary services were offered by this server. Further analysis revealed "
-"that the hacker had come in through a vulnerable PHP script that was a part "
-"of one of the Apache virtual hosts that were running on this server. The "
-"intruder had managed to get access to a shell, using the <systemitem class="
-"\"username\">wwwrun</systemitem> account that was used by the Apache Web "
-"server. As this <systemitem class=\"username\">wwwrun</systemitem> user, the "
-"intruder had created several scripts in the <filename>/var/tmp</filename> "
-"and the <filename>/tmp</filename> directories, which were a part of a botnet "
-"that was launching a Distributed Denial of Service attack against several "
-"servers."
+"<quote>One morning, I found out that my server was hacked. The server was "
+"running a fully patched &slsa; installation. A firewall was configured on it "
+"and no unnecessary services were offered by this server. Further analysis "
+"revealed that the hacker had come in through a vulnerable PHP script that "
+"was a part of one of the Apache virtual hosts that were running on this "
+"server. The intruder had managed to get access to a shell, using the "
+"<systemitem class=\"username\">wwwrun</systemitem> account that was used by "
+"the Apache Web server. As this <systemitem class=\"username\">wwwrun</"
+"systemitem> user, the intruder had created several scripts in the <filename>/"
+"var/tmp</filename> and the <filename>/tmp</filename> directories, which were "
+"a part of a botnet that was launching a Distributed Denial of Service attack "
+"against several servers.</quote>"
 msgstr ""
 
 #. Tag: para
@@ -133,17 +115,29 @@ msgid ""
 "or even the whole system."
 msgstr ""
 
-#. Tag: para
-#: selinux.xml:101
+#. Tag: #text
+#: selinux.xml:102
 #, no-c-format
 msgid ""
 "&selnx; was developed by the US National Security Agency (NSA), and since "
 "the beginning Red Hat has been heavily involved in its development. The "
-"first version of &selnx; was offered in the era of <trademark>Red Hat "
-"Enterprise Linux 4</trademark>, around the year 2006. In the beginning it "
-"offered support for essential services only, but over the years it has "
-"developed into a system that offers many rules that are collected in "
-"policies to offer protection to a broad range of services."
+"first version of &selnx; was offered in the era of"
+msgstr ""
+
+#. Tag: trademark
+#: selinux.xml:104
+#, no-c-format
+msgid "Red Hat Enterprise Linux 4"
+msgstr ""
+
+#. Tag: #text
+#: selinux.xml:109
+#, no-c-format
+msgid ""
+", around the year 2006. In the beginning it offered support for essential "
+"services only, but over the years it has developed into a system that offers "
+"many rules that are collected in policies to offer protection to a broad "
+"range of services."
 msgstr ""
 
 #. Tag: para
@@ -355,7 +349,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:243
+#: selinux.xml:263
 #, no-c-format
 msgid ""
 "The most important line in the security context is the context type. This is "
@@ -366,13 +360,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:252
+#: selinux.xml:272
 #, no-c-format
 msgid "allow user_t bin_t:file {read execute gettattr};"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:254
+#: selinux.xml:274
 #, no-c-format
 msgid ""
 "This example rule states that the user who has the context type <systemitem "
@@ -383,7 +377,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:262
+#: selinux.xml:282
 #, no-c-format
 msgid ""
 "The standard policy that you are going to use contains a huge amount of "
@@ -393,7 +387,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:269
+#: selinux.xml:289
 #, no-c-format
 msgid ""
 "When compiling the policy for your system, you will have a choice to either "
@@ -404,13 +398,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:278
+#: selinux.xml:298
 #, no-c-format
 msgid "Installing &selnx; Packages and Modifying &grub;"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:280
+#: selinux.xml:300
 #, no-c-format
 msgid ""
 "The easiest way to make sure that all &selnx; components are installed is by "
@@ -419,7 +413,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:288
+#: selinux.xml:308
 #, no-c-format
 msgid ""
 "Log in to your server as <systemitem class=\"username\">root</systemitem> "
@@ -427,7 +421,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:294
+#: selinux.xml:314
 #, no-c-format
 msgid ""
 "Select <menuchoice> <guimenu>Software</guimenu> <guimenu>Software "
@@ -435,27 +429,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:300
+#: selinux.xml:320
 #, no-c-format
 msgid ""
 "<menuchoice> <guimenu>Select View</guimenu> <guimenu>Patterns</guimenu> </"
-"menuchoice> and select the entire C<guimenu>/C++ Development</guimenu> "
+"menuchoice> and select the entire C <guimenu>/C++ Development</guimenu> "
 "category for installation."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:306
+#: selinux.xml:326
 #, no-c-format
 msgid ""
 "<menuchoice> <guimenu>Select View</guimenu> <guimenu>Search</guimenu> </"
-"menuchoice> and make sure that <guimenu>Search in Name</guimenu>, "
+"menuchoice> and make sure that <guimenu>Search in Name</guimenu> , "
 "<guimenu>Keywords</guimenu> and <guimenu>Summary</guimenu> are selected. Now "
 "enter the keyword <literal>selinux</literal> and click <guimenu>Search</"
-"guimenu>. You now see a list of packages."
+"guimenu> . You now see a list of packages."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:315
+#: selinux.xml:335
 #, no-c-format
 msgid ""
 "Make sure that all the packages you have found are selected and click "
@@ -463,66 +457,66 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:323
+#: selinux.xml:343
 #, no-c-format
 msgid "Selecting all &selnx; Packages in &yast;"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:334
+#: selinux.xml:354
 #, no-c-format
 msgid ""
 "After installing the &selnx; packages, you need to modify the &grub; boot "
 "loader. Do this from &yast;, select <menuchoice> <guimenu>System</guimenu> "
 "<guimenu>Boot Loader</guimenu> <guimenu>Kernel Parameters</guimenu></"
-"menuchoice>. Now add the following parameters to the <guimenu>Optional "
-"Kernel Command Line Parameters</guimenu>:"
+"menuchoice> . Now add the following parameters to the <guimenu>Optional "
+"Kernel Command Line Parameters</guimenu> :"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:342
+#: selinux.xml:362
 #, no-c-format
 msgid "security=selinux selinux=1 enforcing=0"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:344
+#: selinux.xml:364
 #, no-c-format
 msgid "These options are used for the following purposes:"
 msgstr ""
 
-#. Tag: literal
-#: selinux.xml:350
+#. Tag: term
+#: selinux.xml:370
 #, no-c-format
-msgid "security=selinux"
+msgid "<literal>security=selinux</literal>"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:353
+#: selinux.xml:373
 #, no-c-format
 msgid "This option tells the kernel to use &selnx; and not &aa;"
 msgstr ""
 
-#. Tag: literal
-#: selinux.xml:359
+#. Tag: term
+#: selinux.xml:379
 #, no-c-format
-msgid "selinux=1"
+msgid "<literal>selinux=1</literal>"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:362
+#: selinux.xml:382
 #, no-c-format
 msgid "This option switches on &selnx;"
 msgstr ""
 
-#. Tag: literal
-#: selinux.xml:368
+#. Tag: term
+#: selinux.xml:388
 #, no-c-format
-msgid "enforcing=0"
+msgid "<literal>enforcing=0</literal>"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:371
+#: selinux.xml:391
 #, no-c-format
 msgid ""
 "This option puts &selnx; in permissive mode. In this mode, &selnx; is fully "
@@ -530,11 +524,11 @@ msgid ""
 "Use this mode for configuring your system. To switch on &selnx; protection, "
 "when the system is fully operational, change the option to "
 "<literal>enforcing=1</literal> and add <literal>SELINUX=enforcing</literal> "
-"in <filename>/etc/selinux/config</filename>."
+"in <filename>/etc/selinux/config</filename> ."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:384
+#: selinux.xml:404
 #, no-c-format
 msgid ""
 "After installing the &selnx; packages and enabling the &selnx; &grub; boot "
@@ -542,32 +536,32 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:390
+#: selinux.xml:410
 #, no-c-format
 msgid "&selnx; Policy"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:392
+#: selinux.xml:412
 #, no-c-format
 msgid ""
 "The policy is an essential component of &selnx;. &productname; "
 "&productnumber; includes the <emphasis>minimum</emphasis> &selnx; reference "
-"policy in the package <package>selinux-policy-minimum</package>. The "
+"policy in the package <package>selinux-policy-minimum</package> . The "
 "examples in this chapter refer to this policy if not stated otherwise."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:400
+#: selinux.xml:420
 #, no-c-format
 msgid ""
 "To install a different policy, you need to download it from <link xlink:href="
 "\"https://build.opensuse.org/package/binaries/security:SELinux/selinux-"
-"policy?repository=SLE_12\"></link> and install:"
+"policy?repository=SLE_12\"/> and install:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:404
+#: selinux.xml:424
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper in selinux-policy-targeted-<replaceable>VERSION_NUMBER</"
@@ -575,20 +569,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:407
+#: selinux.xml:427
 #, no-c-format
 msgid ""
 "After installing the policy, you are ready to start file system labeling. Run"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:412
+#: selinux.xml:432
 #, no-c-format
 msgid "&prompt.sudo;restorecon -Rp /"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:414
+#: selinux.xml:434
 #, no-c-format
 msgid ""
 "to start the <command>/sbin/setfiles</command> command to label all files on "
@@ -602,13 +596,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:426
+#: selinux.xml:446
 #, no-c-format
 msgid "&prompt.sudo;semanage fcontext -a -t samba_share_t /etc/example_file"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:428
+#: selinux.xml:448
 #, no-c-format
 msgid ""
 "changes the file type from the default <literal>etc_t</literal> to "
@@ -617,31 +611,31 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:434
+#: selinux.xml:454
 #, no-c-format
 msgid "/etc/example_file    unconfined_u:object_r:samba_share_t:s0"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:436
+#: selinux.xml:456
 #, no-c-format
 msgid "Then run"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:440
+#: selinux.xml:460
 #, no-c-format
 msgid "&prompt.sudo;restorecon -v /etc/example_file"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:442
+#: selinux.xml:462
 #, no-c-format
 msgid "for the type change to take effect."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:446
+#: selinux.xml:466
 #, no-c-format
 msgid ""
 "Before doing this, make sure to read the rest of this chapter, so you fully "
@@ -651,41 +645,41 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:454
+#: selinux.xml:474
 #, no-c-format
 msgid "The User <systemitem class=\"username\">nobody</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:455
+#: selinux.xml:475
 #, no-c-format
 msgid ""
-"While using <command>semanage</command>, you may get a message that "
+"While using <command>semanage</command> , you may get a message that "
 "complains about the home directory of <systemitem class=\"username\">nobody</"
-"systemitem>. In this case, change the login shell of user <systemitem class="
-"\"username\">nobody</systemitem> to <filename>/sbin/nologin</filename>. Then "
-"the settings of <systemitem class=\"username\">nobody</systemitem> match the "
-"current policy settings."
+"systemitem> . In this case, change the login shell of user <systemitem class="
+"\"username\">nobody</systemitem> to <filename>/sbin/nologin</filename> . "
+"Then the settings of <systemitem class=\"username\">nobody</systemitem> "
+"match the current policy settings."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:466
+#: selinux.xml:486
 #, no-c-format
 msgid ""
 "After another reboot &selnx; should be operational. To verify this, use the "
-"command <command>sestatus -v</command>. It should give you an output similar "
-"to <xref linkend=\"ex.selnx.sestatus\" xrefstyle=\"select:label quotedtitle "
-"nopage\"/>."
+"command <command>sestatus -v</command> . It should give you an output "
+"similar to <xref linkend=\"ex.selnx.sestatus\" xrefstyle=\"select:label "
+"quotedtitle nopage\"/> ."
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:474
+#: selinux.xml:494
 #, no-c-format
 msgid "Verifying that &selnx; is functional"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:475
+#: selinux.xml:495
 #, no-c-format
 msgid ""
 "&prompt.sudo;sestatus -v\n"
@@ -720,8 +714,14 @@ msgid ""
 "object_r:ld_so_t"
 msgstr ""
 
+#. Tag: title
+#: selinux.xml:525
+#, no-c-format
+msgid "Configuring &selnx;"
+msgstr ""
+
 #. Tag: para
-#: selinux.xml:481
+#: selinux.xml:527
 #, no-c-format
 msgid ""
 "At this point you have a completely functional &selnx; system and it is time "
@@ -733,7 +733,7 @@ msgid ""
 "enforcing mode and find out if you can still use your server after doing so: "
 "check that the option <option>enforcing=1</option> is set in the &grub; "
 "configuration file, while <option>SELINUX=enforcing</option> is set in "
-"<filename>/etc/selinux/config</filename>. Reboot your server and see if it "
+"<filename>/etc/selinux/config</filename> . Reboot your server and see if it "
 "still comes up the way you expect it to. If it does, leave it like that and "
 "start modifying the server in a way that everything works as expected. "
 "However, you may not even be able to boot the server properly. In that case, "
@@ -742,7 +742,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:502
+#: selinux.xml:548
 #, no-c-format
 msgid ""
 "Before you start tuning your server, verify the &selnx; installation. You "
@@ -750,14 +750,8 @@ msgid ""
 "current mode, process, and file contexts. Next, run"
 msgstr ""
 
-#. Tag: screen
-#: selinux.xml:507 selinux.xml:821
-#, no-c-format
-msgid "&prompt.sudo;semanage boolean -l"
-msgstr ""
-
 #. Tag: para
-#: selinux.xml:508
+#: selinux.xml:554
 #, no-c-format
 msgid ""
 "which lists all Boolean switches that are available, and at the same time "
@@ -766,13 +760,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:515
+#: selinux.xml:561
 #, no-c-format
 msgid "Getting a List of Booleans and Verifying Policy Access"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:516
+#: selinux.xml:562
 #, no-c-format
 msgid ""
 "&prompt.sudo;semanage boolean -l\n"
@@ -793,19 +787,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:517
+#: selinux.xml:576
 #, no-c-format
 msgid "Another command that outputs useful information at this stage is"
 msgstr ""
 
-#. Tag: screen
-#: selinux.xml:520 selinux.xml:660
-#, no-c-format
-msgid "&prompt.sudo;semanage fcontext -l"
-msgstr ""
-
 #. Tag: para
-#: selinux.xml:521
+#: selinux.xml:580
 #, no-c-format
 msgid ""
 "It shows the default file context settings as provided by the policy (see "
@@ -814,13 +802,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:529
+#: selinux.xml:588
 #, no-c-format
 msgid "Getting File Context Information"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:530
+#: selinux.xml:589
 #, no-c-format
 msgid ""
 "&prompt.sudo;semanage fcontext -l\n"
@@ -851,13 +839,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:535
+#: selinux.xml:606
 #, no-c-format
-msgid "<title>Managing &selnx;</title>"
+msgid "Managing &selnx;"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:537
+#: selinux.xml:608
 #, no-c-format
 msgid ""
 "The base &selnx; configuration is now operational and it can now be "
@@ -873,13 +861,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:552
+#: selinux.xml:623
 #, no-c-format
 msgid "Viewing the Security Context"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:553
+#: selinux.xml:624
 #, no-c-format
 msgid ""
 "As already mentioned, files, directories, and ports can be labeled. Within "
@@ -893,13 +881,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:565
+#: selinux.xml:636
 #, no-c-format
 msgid "The default context for directories in the root directory"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:566
+#: selinux.xml:637
 #, no-c-format
 msgid ""
 "&prompt.sudo;ls -Z\n"
@@ -936,7 +924,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:568
+#: selinux.xml:669
 #, no-c-format
 msgid ""
 "In the listing above, you can see the complete context for all directories. "
@@ -952,7 +940,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:581
+#: selinux.xml:682
 #, no-c-format
 msgid ""
 "Security labels are not only associated with files, but also with other "
@@ -962,13 +950,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:589
+#: selinux.xml:690
 #, no-c-format
 msgid "Showing &selnx; settings for processes with <command>ps Zaux</command>"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:590
+#: selinux.xml:691
 #, no-c-format
 msgid ""
 "&prompt.sudo;ps Zaux\n"
@@ -1009,25 +997,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:595
+#: selinux.xml:712
 #, no-c-format
 msgid "Selecting the &selnx; Mode"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:596
+#: selinux.xml:713
 #, no-c-format
 msgid "In &selnx;, three different modes can be used:"
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:601
+#: selinux.xml:718
 #, no-c-format
 msgid "Enforcing:"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:603
+#: selinux.xml:720
 #, no-c-format
 msgid ""
 "This is the default mode. &selnx; protects your server according to the "
@@ -1035,13 +1023,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:611
+#: selinux.xml:728
 #, no-c-format
 msgid "Permissive:"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:613
+#: selinux.xml:730
 #, no-c-format
 msgid ""
 "This mode is useful for troubleshooting. If set to Permissive, &selnx; does "
@@ -1050,13 +1038,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:621
+#: selinux.xml:738
 #, no-c-format
 msgid "Disabled:"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:623
+#: selinux.xml:740
 #, no-c-format
 msgid ""
 "In this mode, &selnx; is switched off completely and no logging occurs. The "
@@ -1064,7 +1052,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:631
+#: selinux.xml:748
 #, no-c-format
 msgid ""
 "You have already read how you can set the current &selnx; mode from &grub; "
@@ -1072,13 +1060,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:638
+#: selinux.xml:755
 #, no-c-format
 msgid "Modifying &selnx; Context Types"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:639
+#: selinux.xml:756
 #, no-c-format
 msgid ""
 "An important part of the work of an administrator is setting context types "
@@ -1086,7 +1074,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:643
+#: selinux.xml:760
 #, no-c-format
 msgid ""
 "If a file is created within a specific directory, it inherits the context "
@@ -1096,7 +1084,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:649
+#: selinux.xml:766
 #, no-c-format
 msgid ""
 "To set the context type for files, you can use the <command>semanage "
@@ -1107,31 +1095,37 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:656
+#: selinux.xml:773
 #, no-c-format
 msgid ""
 "The challenge when working with <command>semanage fcontext</command> is to "
 "find out which context you actually need. You can use"
 msgstr ""
 
+#. Tag: screen
+#: selinux.xml:777
+#, no-c-format
+msgid "&prompt.sudo;semanage fcontext -l"
+msgstr ""
+
 #. Tag: para
-#: selinux.xml:661
+#: selinux.xml:778
 #, no-c-format
 msgid ""
 "to list all contexts in the policy, but it may be a bit hard to find out the "
 "actual context you need from that list as it is rather long (see <xref "
 "linkend=\"ex.selnx.semanage\" xrefstyle=\"select:label quotedtitle nopage\"/"
-">)."
+"> )."
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:668
+#: selinux.xml:785
 #, no-c-format
 msgid "Viewing Default File Contexts"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:669
+#: selinux.xml:786
 #, no-c-format
 msgid ""
 "&prompt.sudo;semanage fcontext -l | less\n"
@@ -1163,7 +1157,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:671
+#: selinux.xml:801
 #, no-c-format
 msgid ""
 "There are three ways to find out which context settings are available for "
@@ -1171,7 +1165,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:677
+#: selinux.xml:807
 #, no-c-format
 msgid ""
 "Install the service and look at the default context settings that are used. "
@@ -1179,45 +1173,45 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:683
+#: selinux.xml:813
 #, no-c-format
 msgid ""
 "Consult the man page for the specific service. Some services have a man page "
-"that ends in <literal>_selinux</literal>, which contains all the information "
-"you need to find the correct context settings."
+"that ends in <literal>_selinux</literal> , which contains all the "
+"information you need to find the correct context settings."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:688
+#: selinux.xml:818
 #, no-c-format
 msgid ""
 "When you have found the right context setting, apply it using "
-"<command>semanage fcontext</command>. This command takes <option>-t</option> "
-"context type as its first argument, followed by the name of the directory or "
-"file to which you want to apply the context settings. To apply the context "
-"to everything that already exists in the directory where you want to apply "
-"the context, you add the regular expression <literal>(/.*)?</literal> to the "
-"name of the directory. This means: optionally, match a slash followed by any "
-"character. The examples section of the <command>semanage</command> man page "
-"has some useful usage examples for <command>semanage</command>. For more "
-"information on regular expressions, see for example the tutorial at <link "
-"xlink:href=\"http://www.regular-expressions.info/\"></link>."
+"<command>semanage fcontext</command> . This command takes <option>-t</"
+"option> context type as its first argument, followed by the name of the "
+"directory or file to which you want to apply the context settings. To apply "
+"the context to everything that already exists in the directory where you "
+"want to apply the context, you add the regular expression <literal>(/.*)?</"
+"literal> to the name of the directory. This means: optionally, match a slash "
+"followed by any character. The examples section of the <command>semanage</"
+"command> man page has some useful usage examples for <command>semanage</"
+"command> . For more information on regular expressions, see for example the "
+"tutorial at <link xlink:href=\"http://www.regular-expressions.info/\"/> ."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:704
+#: selinux.xml:834
 #, no-c-format
 msgid "Display a list of all context types that are available on your system:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:707
+#: selinux.xml:837
 #, no-c-format
 msgid "&prompt.sudo;seinfo -t"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:708
+#: selinux.xml:838
 #, no-c-format
 msgid ""
 "Since the command by itself outputs an overwhelming amount of information, "
@@ -1226,36 +1220,36 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:718
+#: selinux.xml:848
 #, no-c-format
 msgid "Applying File Contexts"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:719
+#: selinux.xml:849
 #, no-c-format
 msgid ""
 "To help you apply the &selnx; context properly, the following procedure "
 "shows how to set a context using <command>semanage fcontext</command> and "
-"<command>restorecon</command>. You will notice that at first attempt, the "
+"<command>restorecon</command> . You will notice that at first attempt, the "
 "Web server with a non-default document root does not work. After changing "
 "the &selnx; context, it will:"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:727
+#: selinux.xml:857
 #, no-c-format
 msgid "Create the <filename>/web</filename> directory and then change to it:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:730
+#: selinux.xml:860
 #, no-c-format
 msgid "&prompt.sudo;mkdir /web  &amp;&amp; cd /web"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:733
+#: selinux.xml:863
 #, no-c-format
 msgid ""
 "Use a text editor to create the file <filename>/web/index.html</filename> "
@@ -1263,7 +1257,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:740
+#: selinux.xml:870
 #, no-c-format
 msgid ""
 "Open the file <filename>/etc/apache2/default-server.conf</filename> with an "
@@ -1272,63 +1266,94 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:747
+#: selinux.xml:877
 #, no-c-format
 msgid "Start the Apache Web server:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:750
+#: selinux.xml:880
 #, no-c-format
 msgid "&prompt.sudo;systemctl start apache2"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:753
+#: selinux.xml:883
 #, no-c-format
 msgid "Open a session to your local Web server:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:756
+#: selinux.xml:886
 #, no-c-format
 msgid "&prompt.user;w3m localhost"
 msgstr ""
 
-#. Tag: para
-#: selinux.xml:757
+#. Tag: #text
+#: selinux.xml:888
 #, no-c-format
-msgid ""
-"You will receive a <emphasis>Connection refused</emphasis> message. Press "
-"<keycap function=\"enter\"></keycap>, and then <command>q</command> to quit "
-"w3m."
+msgid "You will receive a"
+msgstr ""
+
+#. Tag: emphasis
+#: selinux.xml:888
+#, no-c-format
+msgid "Connection refused"
+msgstr ""
+
+#. Tag: command
+#: selinux.xml:889
+#, no-c-format
+msgid "q"
+msgstr ""
+
+#. Tag: #text
+#: selinux.xml:889
+#, no-c-format
+msgid "message. Press"
+msgstr ""
+
+#. Tag: #text
+#: selinux.xml:889
+#, no-c-format
+msgid ", and then"
+msgstr ""
+
+#. Tag: #text
+#: selinux.xml:891
+#, no-c-format
+msgid "to quit w3m."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:764
+#: selinux.xml:894
 #, no-c-format
 msgid ""
 "Find the current context type for the default Apache <literal>DocumentRoot</"
-"literal>, which is <filename>/srv/www/htdocs</filename>. It should be set to "
-"<filename>httpd_sys_content_t</filename>:"
+"literal> , which is <filename>/srv/www/htdocs</filename> . It should be set "
+"to <filename>httpd_sys_content_t</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:770
+#: selinux.xml:900
 #, no-c-format
 msgid "&prompt.sudo;ls -Z /srv/www"
 msgstr ""
 
-#. Tag: para
-#: selinux.xml:773
+#. Tag: #text
+#: selinux.xml:905
 #, no-c-format
-msgid ""
-"Set the new context in the policy and press <keycap function=\"enter\"></"
-"keycap>:"
+msgid "Set the new context in the policy and press"
+msgstr ""
+
+#. Tag: #text
+#: selinux.xml:906
+#, no-c-format
+msgid ":"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:777
+#: selinux.xml:907
 #, no-c-format
 msgid ""
 "&prompt.sudo;semanage fcontext -a -f \"\" -t httpd_sys_content_t '/web(/."
@@ -1336,34 +1361,34 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:780
+#: selinux.xml:910
 #, no-c-format
 msgid "Apply the new context type:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:783
+#: selinux.xml:913
 #, no-c-format
 msgid "&prompt.sudo;restorecon /web"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:786
+#: selinux.xml:916
 #, no-c-format
 msgid ""
-"Show the context of the files in the directory <filename>/web</filename>. "
+"Show the context of the files in the directory <filename>/web</filename> . "
 "You will see that the new context type has been set properly to the "
 "<filename>/web</filename> directory, but not to its contents."
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:792
+#: selinux.xml:922
 #, no-c-format
 msgid "&prompt.sudo;ls -Z /web"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:795
+#: selinux.xml:925
 #, no-c-format
 msgid ""
 "Apply the new context recursively to the <filename>/web</filename> "
@@ -1371,25 +1396,25 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:799
+#: selinux.xml:929
 #, no-c-format
 msgid "&prompt.sudo;restorecon -R /web"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:802
+#: selinux.xml:932
 #, no-c-format
 msgid "Restart the Web server:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:805
+#: selinux.xml:935
 #, no-c-format
 msgid "&prompt.sudo;systemctl restart apache2"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:806
+#: selinux.xml:936
 #, no-c-format
 msgid ""
 "You should now be able to access the contents of the <filename>/web</"
@@ -1397,13 +1422,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:815
+#: selinux.xml:945
 #, no-c-format
 msgid "Configuring &selnx; Policies"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:816
+#: selinux.xml:946
 #, no-c-format
 msgid ""
 "The easiest way to change the behavior of the policy is by working with "
@@ -1411,51 +1436,58 @@ msgid ""
 "in the policy. To find out which Booleans are available, run"
 msgstr ""
 
+#. Tag: screen
+#: selinux.xml:951
+#, no-c-format
+msgid "&prompt.sudo;semanage boolean -l"
+msgstr ""
+
 #. Tag: para
-#: selinux.xml:822
+#: selinux.xml:952
 #, no-c-format
 msgid ""
 "It will show a long list of Booleans, with a short description of what each "
 "of these Booleans will do for you. When you have found the Boolean you want "
-"to set, you can use <command>setsebool -P</command>, followed by the name of "
-"the Boolean that you want to change. It is important to use the <option>-P</"
-"option> option at all times when using <command>setsebool</command>. This "
-"option writes the setting to the policy file on disk, and this is the only "
-"way to make sure that the Boolean is applied automatically after a reboot."
+"to set, you can use <command>setsebool -P</command> , followed by the name "
+"of the Boolean that you want to change. It is important to use the <option>-"
+"P</option> option at all times when using <command>setsebool</command> . "
+"This option writes the setting to the policy file on disk, and this is the "
+"only way to make sure that the Boolean is applied automatically after a "
+"reboot."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:832
+#: selinux.xml:962
 #, no-c-format
 msgid "The procedure below gives an example of changing Boolean settings"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:837
+#: selinux.xml:967
 #, no-c-format
 msgid "List Booleans that are related to FTP servers."
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:839
+#: selinux.xml:969
 #, no-c-format
 msgid "&prompt.sudo;semanage boolean -l | grep ftp"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:842
+#: selinux.xml:972
 #, no-c-format
 msgid "Turn the Boolean off:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:845
+#: selinux.xml:975
 #, no-c-format
 msgid "&prompt.sudo;setsebool allow_ftpd_anon_write off"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:846
+#: selinux.xml:976
 #, no-c-format
 msgid ""
 "Note that it does not take much time to write the change. Then verify that "
@@ -1463,19 +1495,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:849
+#: selinux.xml:979
 #, no-c-format
 msgid "&prompt.sudo;semanage boolean -l|grep ftpd_anon"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:852
+#: selinux.xml:982
 #, no-c-format
 msgid "Reboot your server."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:857
+#: selinux.xml:987
 #, no-c-format
 msgid ""
 "Check again to see if the <literal>allow_ftpd_anon_write</literal> Boolean "
@@ -1484,25 +1516,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:864
+#: selinux.xml:994
 #, no-c-format
 msgid "Switch the Boolean and write the setting to the policy:"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:867
+#: selinux.xml:997
 #, no-c-format
 msgid "&prompt.sudo;setsebool -P allow_ftpd_anon_write"
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:873
+#: selinux.xml:1003
 #, no-c-format
 msgid "Working with &selnx; Modules"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:874
+#: selinux.xml:1004
 #, no-c-format
 msgid ""
 "By default, &selnx; uses a modular policy. This means that the policy that "
@@ -1516,7 +1548,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:885
+#: selinux.xml:1015
 #, no-c-format
 msgid ""
 "As an administrator, you can switch modules on or off. This can be useful if "
@@ -1529,25 +1561,25 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:894
+#: selinux.xml:1024
 #, no-c-format
 msgid "&prompt.sudo;semodule -d <replaceable>MODULENAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:895
+#: selinux.xml:1025
 #, no-c-format
 msgid "To switch it on again, you can use"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:898
+#: selinux.xml:1028
 #, no-c-format
 msgid "&prompt.sudo;semodule -e modulename"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:966
+#: selinux.xml:1111
 #, no-c-format
 msgid ""
 "As an administrator, you do not typically change the contents of the policy "
@@ -1558,7 +1590,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:973
+#: selinux.xml:1118
 #, no-c-format
 msgid ""
 "To change the contents of any of the policy module files, compile the "
@@ -1569,55 +1601,55 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:980
+#: selinux.xml:1125
 #, no-c-format
 msgid "&prompt.user;make -f /usr/share/selinux/devel/Makefile"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:981
+#: selinux.xml:1126
 #, no-c-format
 msgid ""
 "When <command>make</command> has completed, you can manually load the "
-"modules into the system, using <command>semodule -i</command>."
+"modules into the system, using <command>semodule -i</command> ."
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:988
+#: selinux.xml:1133
 #, no-c-format
 msgid "Troubleshooting"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:990
+#: selinux.xml:1135
 #, no-c-format
 msgid ""
 "By default, if &selnx; is the reason something is not working, a log message "
 "to this effect is sent to the <filename>/var/log/audit/audit.log</filename> "
 "file. That is, if the auditd service is running. If you see an empty "
-"<filename>/var/log/audit</filename>, start the auditd service using"
+"<filename>/var/log/audit</filename> , start the auditd service using"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:998
+#: selinux.xml:1143
 #, no-c-format
 msgid "&prompt.sudo;systemctl start auditd"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1000
+#: selinux.xml:1145
 #, no-c-format
 msgid "and enable it in the targets of your system, using"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1004
+#: selinux.xml:1149
 #, no-c-format
 msgid "&prompt.sudo;systemctl enable auditd"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1006
+#: selinux.xml:1151
 #, no-c-format
 msgid ""
 "In <xref linkend=\"ex.selnx.li.auditlog\" xrefstyle=\"select:label "
@@ -1626,13 +1658,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:1014
+#: selinux.xml:1159
 #, no-c-format
 msgid "Example Lines from <filename>/etc/audit/audit.log</filename>"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1015
+#: selinux.xml:1160
 #, no-c-format
 msgid ""
 "type=DAEMON_START msg=audit(1348173810.874:6248): auditd start, ver=1.7.7 "
@@ -1676,7 +1708,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1018
+#: selinux.xml:1172
 #, no-c-format
 msgid ""
 "At first look, the lines in <filename>audit.log</filename> are a bit hard to "
@@ -1686,13 +1718,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1027
+#: selinux.xml:1181
 #, no-c-format
-msgid "<literal>type=AVC</literal>:"
+msgid "<literal>type=AVC</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1029
+#: selinux.xml:1183
 #, no-c-format
 msgid ""
 "every &selnx;-related audit log line starts with the type identification "
@@ -1700,13 +1732,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1036
+#: selinux.xml:1190
 #, no-c-format
-msgid "<literal>msg=audit(1348173901.309:300)</literal>:"
+msgid "<literal>msg=audit(1348173901.309:300)</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1038
+#: selinux.xml:1192
 #, no-c-format
 msgid ""
 "This is the time stamp, which unfortunately is written in epoch time, the "
@@ -1716,7 +1748,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1044
+#: selinux.xml:1198
 #, no-c-format
 msgid ""
 "&prompt.user;date -d @1348173901\n"
@@ -1724,13 +1756,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1048
+#: selinux.xml:1203
 #, no-c-format
-msgid "<literal>avc: denied { append }</literal>:"
+msgid "<literal>avc: denied { append }</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1050
+#: selinux.xml:1205
 #, no-c-format
 msgid ""
 "the specific action that was denied. In this case the system has denied the "
@@ -1739,85 +1771,85 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1059
+#: selinux.xml:1214
 #, no-c-format
-msgid "<literal>for pid=1316</literal>:"
+msgid "<literal>for pid=1316</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1061
+#: selinux.xml:1216
 #, no-c-format
 msgid "the process ID of the command or process that initiated the action"
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1067
+#: selinux.xml:1222
 #, no-c-format
-msgid "<literal>comm=\"rsyslogd\"</literal>:"
+msgid "<literal>comm=\"rsyslogd\"</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1069
+#: selinux.xml:1224
 #, no-c-format
 msgid "the specific command that was associated with that PID"
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1075
+#: selinux.xml:1230
 #, no-c-format
-msgid "<literal>name=\"smartmontools\"</literal>:"
+msgid "<literal>name=\"smartmontools\"</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1077
+#: selinux.xml:1232
 #, no-c-format
 msgid "the name of the subject of the action"
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1083
+#: selinux.xml:1238
 #, no-c-format
-msgid "<literal>dev=sda6 ino=582296</literal>:"
+msgid "<literal>dev=sda6 ino=582296</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1085
+#: selinux.xml:1240
 #, no-c-format
 msgid "the block device and inode number of the file that was involved"
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1091
+#: selinux.xml:1246
 #, no-c-format
-msgid "<literal>scontext=system_u:system_r:syslogd_t</literal>:"
+msgid "<literal>scontext=system_u:system_r:syslogd_t</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1093
+#: selinux.xml:1248
 #, no-c-format
 msgid "the source context, which is the context of the initiator of the action"
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1100
+#: selinux.xml:1255
 #, no-c-format
-msgid "<literal>tclass=file</literal>:"
+msgid "<literal>tclass=file</literal> :"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1102
+#: selinux.xml:1257
 #, no-c-format
 msgid "a class identification of the subject"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1109
+#: selinux.xml:1264
 #, no-c-format
 msgid ""
 "Instead of interpreting the events in audit.log yourself, there is another "
 "approach. You can use the <command>audit2allow</command> command, which "
 "helps analyze the cryptic log messages in <filename>/var/log/audit/audit."
-"log</filename>. An audit2allow troubleshooting session always consists of "
+"log</filename> . An audit2allow troubleshooting session always consists of "
 "three different commands. First, you would use <command>audit2allow -w -a</"
 "command> to present the audit information in a more readable way. The "
 "<command>audit2allow -w -a</command> by default works on the audit.log file. "
@@ -1826,19 +1858,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1122
+#: selinux.xml:1277
 #, no-c-format
 msgid "&prompt.sudo;audit2allow -w -i <replaceable>FILENAME</replaceable>"
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:1125
+#: selinux.xml:1280
 #, no-c-format
 msgid "Analyzing Audit Messages"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1126
+#: selinux.xml:1281
 #, no-c-format
 msgid ""
 "&prompt.sudo;audit2allow -w -i testfile\n"
@@ -1850,31 +1882,31 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: selinux.xml:1131
+#: selinux.xml:1289
 #, no-c-format
 msgid "This was caused by:"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1133
+#: selinux.xml:1291
 #, no-c-format
 msgid "Missing type enforcement (TE) allow rule."
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1136
+#: selinux.xml:1294
 #, no-c-format
 msgid "To generate a loadable module to allow this access, run"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1139
+#: selinux.xml:1297
 #, no-c-format
 msgid "&prompt.sudo;audit2allow"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1144
+#: selinux.xml:1302
 #, no-c-format
 msgid ""
 "To find out which specific rule has denied access, you can use "
@@ -1885,13 +1917,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:1153
+#: selinux.xml:1311
 #, no-c-format
 msgid "Viewing Which Lines Deny Access"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1154
+#: selinux.xml:1312
 #, no-c-format
 msgid ""
 "&prompt.sudo;audit2allow -i testfile\n"
@@ -1900,7 +1932,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1157
+#: selinux.xml:1317
 #, no-c-format
 msgid ""
 "To create an &selnx; module with the name <literal>mymodule</literal> that "
@@ -1908,13 +1940,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1162
+#: selinux.xml:1322
 #, no-c-format
 msgid "&prompt.sudo;audit2allow -a -R -M mymodule"
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1164
+#: selinux.xml:1324
 #, no-c-format
 msgid ""
 "If you want to do this for all events that have been logged to the audit."
@@ -1924,13 +1956,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: selinux.xml:1172
+#: selinux.xml:1332
 #, no-c-format
 msgid "Creating a Policy Module Allowing an Action Previously Denied"
 msgstr ""
 
 #. Tag: screen
-#: selinux.xml:1173
+#: selinux.xml:1333
 #, no-c-format
 msgid ""
 "&prompt.sudo;audit2allow -i testfile -M example\n"
@@ -1941,11 +1973,11 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: selinux.xml:1176
+#: selinux.xml:1340
 #, no-c-format
 msgid ""
 "As indicated by the <command>audit2allow</command> command, you can now run "
 "this module by using the <command>semodule -i</command> command, followed by "
 "the name of the module that <command>audit2allow</command> has created for "
-"you (<filename>example.pp</filename> in the above example)."
+"you ( <filename>example.pp</filename> in the above example)."
 msgstr ""

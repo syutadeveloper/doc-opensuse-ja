@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -41,7 +41,7 @@ msgstr ""
 #. Tag: para
 #: docker_installation.xml:24
 #, no-c-format
-msgid "Starting with Docker 1.12 the container orchestration is now an integral part of the Docker engine. Even though this feature is available in &slsa; 12 SP1 and in &slsa; 12 SP2, it is not supported and is only a technical preview. Use Kubernetes for Docker container orchestration, for details refer to the <link xlink:href=\"http://kubernetes.io/docs/getting-started-guides/kubeadm/\">Kubernetes documentation</link>."
+msgid "Starting with Docker 1.12 the container orchestration is now an integral part of the Docker engine. Even though this feature is available in &slsa; 12 SP1 and in &slsa; 12 SP2, it is not supported and is only a technical preview. Use Kubernetes for Docker container orchestration, for details refer to the <link xlink:href=\"http://kubernetes.io/docs/getting-started-guides/kubeadm/\">Kubernetes documentation</link> ."
 msgstr ""
 
 #. Tag: title
@@ -53,7 +53,7 @@ msgstr ""
 #. Tag: para
 #: docker_installation.xml:41
 #, no-c-format
-msgid "Start &yast;, and select <menuchoice> <guimenu>Software</guimenu> <guimenu> Software Repositories</guimenu> </menuchoice>."
+msgid "Start &yast;, and select <menuchoice> <guimenu>Software</guimenu> <guimenu> Software Repositories</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: para
@@ -65,13 +65,13 @@ msgstr ""
 #. Tag: para
 #: docker_installation.xml:52
 #, no-c-format
-msgid "Select <guimenu>Extensions and Modules from Registration Server</guimenu> and click <guimenu>Next</guimenu>."
+msgid "Select <guimenu>Extensions and Modules from Registration Server</guimenu> and click <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: docker_installation.xml:58
 #, no-c-format
-msgid "From the list of available extensions and modules, select <guimenu>Container Module 12 x86_64</guimenu> and click <guimenu>Next</guimenu>."
+msgid "From the list of available extensions and modules, select <guimenu>Container Module 12 x86_64</guimenu> and click <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -152,10 +152,46 @@ msgstr ""
 msgid "This will automatically enable docker.socket in consequence."
 msgstr ""
 
-#. Tag: para
-#: docker_installation.xml:109
+#. Tag: #text
+#: docker_installation.xml:111
 #, no-c-format
-msgid "In case you will use Portus and an SSL secured registry, open the <filename>/etc/sysconfig/docker</filename> file. Search for the parameter <parameter>DOCKER_OPTS</parameter> and add <literal>--insecure-registry <replaceable>ADDRESS_OF_YOUR_REGISTRY</replaceable></literal>."
+msgid "In case you will use Portus and an SSL secured registry, open the"
+msgstr ""
+
+#. Tag: filename
+#: docker_installation.xml:111
+#, no-c-format
+msgid "/etc/sysconfig/docker"
+msgstr ""
+
+#. Tag: #text
+#: docker_installation.xml:112
+#, no-c-format
+msgid "file. Search for the parameter"
+msgstr ""
+
+#. Tag: parameter
+#: docker_installation.xml:112
+#, no-c-format
+msgid "DOCKER_OPTS"
+msgstr ""
+
+#. Tag: literal
+#: docker_installation.xml:112
+#, no-c-format
+msgid "--insecure-registry <replaceable>ADDRESS_OF_YOUR_REGISTRY</replaceable>"
+msgstr ""
+
+#. Tag: #text
+#: docker_installation.xml:112
+#, no-c-format
+msgid "and add"
+msgstr ""
+
+#. Tag: #text
+#: docker_installation.xml:114
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
@@ -221,7 +257,7 @@ msgstr ""
 #. Tag: para
 #: docker_installation.xml:161
 #, no-c-format
-msgid "This option cannot be changed when networking is handled by the Network Manager. In such cases the <filename>/etc/sysconfig/SuSEfirewall2</filename> file needs to be edited manually to ensure the <option>FW_ROUTE</option> flag is set to <option>yes</option>:"
+msgid "This option cannot be changed when networking is handled by the Network Manager. In such cases the <filename>/etc/sysconfig/SuSEfirewall2</filename> file needs to be edited manually to ensure the <option>FW_ROUTE</option> flag is set to <option>yes</option> :"
 msgstr ""
 
 #. Tag: screen
@@ -245,7 +281,7 @@ msgstr ""
 #. Tag: para
 #: docker_installation.xml:174
 #, no-c-format
-msgid "The first limitation is about iptables. &slea;&nbsp;12 machines cannot run Docker with the iptables support enabled. An update of the kernel is going to solve this issue. In the meantime the Docker package for Power has iptables support disabled via a dedicated directive inside of <filename>/etc/sysconfig/docker</filename>."
+msgid "The first limitation is about iptables. &slea;&nbsp;12 machines cannot run Docker with the iptables support enabled. An update of the kernel is going to solve this issue. In the meantime the Docker package for Power has iptables support disabled via a dedicated directive inside of <filename>/etc/sysconfig/docker</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -269,7 +305,7 @@ msgstr ""
 #. Tag: para
 #: docker_installation.xml:196
 #, no-c-format
-msgid "&slea;&nbsp;12 SP1 hosts are not affected by this limitation but, given they use the same &slea;&nbsp;12 package, they will have iptables support disabled. This can be changed by removing the <option>-iptables=false</option> setting inside of <filename>/etc/sysconfig/docker</filename>."
+msgid "&slea;&nbsp;12 SP1 hosts are not affected by this limitation but, given they use the same &slea;&nbsp;12 package, they will have iptables support disabled. This can be changed by removing the <option>-iptables=false</option> setting inside of <filename>/etc/sysconfig/docker</filename> ."
 msgstr ""
 
 #. Tag: para

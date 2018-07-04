@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -65,7 +65,7 @@ msgstr ""
 #: security_pam.xml:48
 #, no-c-format
 msgid ""
-"<emphasis>PAM modules</emphasis>, which are a set of shared libraries for a "
+"<emphasis>PAM modules</emphasis> , which are a set of shared libraries for a "
 "specific authentication mechanism."
 msgstr ""
 
@@ -82,7 +82,7 @@ msgid ""
 "A PAM-aware <emphasis>service</emphasis> which needs authentication by using "
 "a module stack or PAM modules. Usually a service is a familiar name of the "
 "corresponding application, like <command>login</command> or <command>su</"
-"command>. The service name <literal>other</literal> is a reserved word for "
+"command> . The service name <literal>other</literal> is a reserved word for "
 "default rules."
 msgstr ""
 
@@ -90,7 +90,7 @@ msgstr ""
 #: security_pam.xml:68
 #, no-c-format
 msgid ""
-"<emphasis>Module arguments</emphasis>, with which the execution of a single "
+"<emphasis>Module arguments</emphasis> , with which the execution of a single "
 "PAM module can be influenced."
 msgstr ""
 
@@ -120,7 +120,7 @@ msgstr ""
 #. Tag: term
 #: security_pam.xml:93
 #, no-c-format
-msgid "File based configuration (<filename>/etc/pam.conf</filename>)"
+msgid "File based configuration ( <filename>/etc/pam.conf</filename> )"
 msgstr ""
 
 #. Tag: para
@@ -128,14 +128,14 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The configuration of each service is stored in <filename>/etc/pam.conf</"
-"filename>. However, for maintenance and usability reasons, this "
+"filename> . However, for maintenance and usability reasons, this "
 "configuration scheme is not used in &productname;."
 msgstr ""
 
 #. Tag: term
 #: security_pam.xml:104
 #, no-c-format
-msgid "Directory based configuration (<filename>/etc/pam.d/</filename>)"
+msgid "Directory based configuration ( <filename>/etc/pam.d/</filename> )"
 msgstr ""
 
 #. Tag: para
@@ -167,19 +167,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:125
+#: security_pam.xml:126
 #, no-c-format
 msgid "The components have the following meaning:"
 msgstr ""
 
-#. Tag: replaceable
-#: security_pam.xml:131
+#. Tag: term
+#: security_pam.xml:132
 #, no-c-format
-msgid "TYPE"
+msgid "<replaceable>TYPE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:134
+#: security_pam.xml:135
 #, no-c-format
 msgid ""
 "Declares the type of the service. PAM modules are processed as stacks. "
@@ -189,14 +189,14 @@ msgid ""
 "different types of modules:"
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:143
+#. Tag: term
+#: security_pam.xml:144
 #, no-c-format
-msgid "auth"
+msgid "<literal>auth</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:146
+#: security_pam.xml:147
 #, no-c-format
 msgid ""
 "Check the user's authenticity, traditionally by querying a password. "
@@ -204,14 +204,14 @@ msgid ""
 "(for example, fingerprints or iris scan)."
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:155
+#. Tag: term
+#: security_pam.xml:156
 #, no-c-format
-msgid "account"
+msgid "<literal>account</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:158
+#: security_pam.xml:159
 #, no-c-format
 msgid ""
 "Modules of this type check if the user has general permission to use the "
@@ -219,28 +219,28 @@ msgid ""
 "that no one can log in with the user name of an expired account."
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:167
+#. Tag: term
+#: security_pam.xml:168
 #, no-c-format
-msgid "password"
+msgid "<literal>password</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:170
+#: security_pam.xml:171
 #, no-c-format
 msgid ""
 "The purpose of this type of module is to enable the change of an "
 "authentication token. Usually this is a password."
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:177
+#. Tag: term
+#: security_pam.xml:178
 #, no-c-format
-msgid "session"
+msgid "<literal>session</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:180
+#: security_pam.xml:181
 #, no-c-format
 msgid ""
 "Modules of this type are responsible for managing and configuring user "
@@ -249,28 +249,28 @@ msgid ""
 "directory, system limits, etc.)."
 msgstr ""
 
-#. Tag: replaceable
-#: security_pam.xml:192
+#. Tag: term
+#: security_pam.xml:193
 #, no-c-format
-msgid "CONTROL"
+msgid "<replaceable>CONTROL</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:195
+#: security_pam.xml:196
 #, no-c-format
 msgid ""
 "Indicates the behavior of a PAM module. Each module can have the following "
 "control flags:"
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:201
+#. Tag: term
+#: security_pam.xml:202
 #, no-c-format
-msgid "required"
+msgid "<literal>required</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:204
+#: security_pam.xml:205
 #, no-c-format
 msgid ""
 "A module with this flag must be successfully processed before the "
@@ -280,14 +280,14 @@ msgid ""
 "authentication attempt."
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:214
+#. Tag: term
+#: security_pam.xml:215
 #, no-c-format
-msgid "requisite"
+msgid "<literal>requisite</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:217
+#: security_pam.xml:218
 #, no-c-format
 msgid ""
 "Modules having this flag must also be processed successfully, in much the "
@@ -300,14 +300,14 @@ msgid ""
 "for a correct authentication."
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:231
+#. Tag: term
+#: security_pam.xml:232
 #, no-c-format
-msgid "sufficient"
+msgid "<literal>sufficient</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:234
+#: security_pam.xml:235
 #, no-c-format
 msgid ""
 "After a module with this flag has been successfully processed, the "
@@ -319,14 +319,14 @@ msgid ""
 "order."
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:247
+#. Tag: term
+#: security_pam.xml:248
 #, no-c-format
-msgid "optional"
+msgid "<literal>optional</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:250
+#: security_pam.xml:251
 #, no-c-format
 msgid ""
 "The failure or success of a module with this flag does not have any direct "
@@ -335,44 +335,44 @@ msgid ""
 "without taking any further action."
 msgstr ""
 
-#. Tag: literal
-#: security_pam.xml:259
+#. Tag: term
+#: security_pam.xml:260
 #, no-c-format
-msgid "include"
+msgid "<literal>include</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:262
+#: security_pam.xml:263
 #, no-c-format
 msgid ""
 "If this flag is given, the file specified as argument is inserted at this "
 "place."
 msgstr ""
 
-#. Tag: replaceable
-#: security_pam.xml:272
+#. Tag: term
+#: security_pam.xml:273
 #, no-c-format
-msgid "MODULE_PATH"
+msgid "<replaceable>MODULE_PATH</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:275
+#: security_pam.xml:276
 #, no-c-format
 msgid ""
 "Contains a full file name of a PAM module. It does not need to be specified "
 "explicitly, as long as the module is located in the default directory "
 "<filename>/lib/security</filename> (for all 64-bit platforms supported by "
-"&productnamereg;, the directory is <filename>/lib64/security</filename>)."
+"&productnamereg;, the directory is <filename>/lib64/security</filename> )."
 msgstr ""
 
-#. Tag: replaceable
-#: security_pam.xml:285
+#. Tag: term
+#: security_pam.xml:286
 #, no-c-format
-msgid "MODULE_ARGS"
+msgid "<replaceable>MODULE_ARGS</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:288
+#: security_pam.xml:289
 #, no-c-format
 msgid ""
 "Contains a space-separated list of options to influence the behavior of a "
@@ -381,34 +381,34 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:297
+#: security_pam.xml:298
 #, no-c-format
 msgid ""
 "In addition, there are global configuration files for PAM modules under "
-"<filename>/etc/security</filename>, which define the exact behavior of these "
-"modules (examples include <filename>pam_env.conf</filename> and "
-"<filename>time.conf</filename>). Every application that uses a PAM module "
+"<filename>/etc/security</filename> , which define the exact behavior of "
+"these modules (examples include <filename>pam_env.conf</filename> and "
+"<filename>time.conf</filename> ). Every application that uses a PAM module "
 "actually calls a set of PAM functions, which then process the information in "
 "the various configuration files and return the result to the requesting "
 "application."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:307
+#: security_pam.xml:308
 #, no-c-format
 msgid ""
 "To simplify the creation and maintenance of PAM modules, common default "
-"configuration files for the types <literal>auth</literal>, <literal>account</"
-"literal>, <literal>password</literal>, and <literal>session</literal> "
-"modules have been introduced. These are retrieved from every application's "
-"PAM configuration. Updates to the global PAM configuration modules in "
-"<filename>common-*</filename> are thus propagated across all PAM "
-"configuration files without requiring the administrator to update every "
-"single PAM configuration file."
+"configuration files for the types <literal>auth</literal> , "
+"<literal>account</literal> , <literal>password</literal> , and "
+"<literal>session</literal> modules have been introduced. These are retrieved "
+"from every application's PAM configuration. Updates to the global PAM "
+"configuration modules in <filename>common-*</filename> are thus propagated "
+"across all PAM configuration files without requiring the administrator to "
+"update every single PAM configuration file."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:318
+#: security_pam.xml:319
 #, no-c-format
 msgid ""
 "The global PAM configuration files are maintained using the <command>pam-"
@@ -419,13 +419,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:328
+#: security_pam.xml:329
 #, no-c-format
 msgid "64-Bit and 32-Bit Mixed Installations"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:329
+#: security_pam.xml:330
 #, no-c-format
 msgid ""
 "When using a 64-bit operating system, it is possible to also include a "
@@ -434,48 +434,79 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:337
+#: security_pam.xml:338
 #, no-c-format
 msgid "The PAM Configuration of sshd"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:339
+#: security_pam.xml:340
 #, no-c-format
 msgid "Consider the PAM configuration of sshd as an example:"
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:344
-#, no-c-format
-msgid "PAM Configuration for sshd (<filename>/etc/pam.d/sshd</filename>)"
-msgstr ""
-
-#. Tag: screen
 #: security_pam.xml:345
 #, no-c-format
-msgid ""
-"#%PAM-1.0 <co xml:id=\"co.security.pam.sshd.pam-line\"/>\n"
-"auth     requisite      pam_nologin.so                              <co xml:"
-"id=\"co.security.pam.sshd.pam_nologin\"/>\n"
-"auth     include        common-auth                                 <co xml:"
-"id=\"co.security.pam.sshd.common-auth\"/>\n"
-"account  requisite      pam_nologin.so                              <xref "
-"xrefstyle=\"select:nopage\" linkend=\"co.security.pam.sshd.pam_nologin\"/>\n"
-"account  include        common-account                              <xref "
-"xrefstyle=\"select:nopage\" linkend=\"co.security.pam.sshd.common-auth\"/>\n"
-"password include        common-password                             <xref "
-"linkend=\"co.security.pam.sshd.common-auth\" xrefstyle=\"select:nopage\"/>\n"
-"session  required       pam_loginuid.so                             <co xml:"
-"id=\"co.security.pam.sshd.pam_loginuid\"/>\n"
-"session  include        common-session                              <xref "
-"linkend=\"co.security.pam.sshd.common-auth\" xrefstyle=\"select:nopage\"/>\n"
-"session  optional       pam_lastlog.so   silent noupdate showfailed <co xml:"
-"id=\"co.security.pam.sshd.lastlog\"/>"
+msgid "PAM Configuration for sshd ( <filename>/etc/pam.d/sshd</filename> )"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:346
+#, no-c-format
+msgid "#%PAM-1.0"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:347
+#, no-c-format
+msgid "auth requisite pam_nologin.so"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:348
+#, no-c-format
+msgid "auth include common-auth"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:349
+#, no-c-format
+msgid "account requisite pam_nologin.so"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:350
+#, no-c-format
+msgid "account include common-account"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:351
+#, no-c-format
+msgid "password include common-password"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:352
+#, no-c-format
+msgid "session required pam_loginuid.so"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:353
+#, no-c-format
+msgid "session include common-session"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:354
+#, no-c-format
+msgid "session optional pam_lastlog.so silent noupdate showfailed"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:348
+#: security_pam.xml:357
 #, no-c-format
 msgid ""
 "Declares the version of this configuration file for PAM 1.0. This is merely "
@@ -483,7 +514,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:355
+#: security_pam.xml:364
 #, no-c-format
 msgid ""
 "Checks, if <filename>/etc/nologin</filename> exists. If it does, no user "
@@ -491,30 +522,30 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:362
+#: security_pam.xml:371
 #, no-c-format
 msgid ""
 "Refers to the configuration files of four module types: <filename>common-"
-"auth</filename>, <filename>common-account</filename>, <filename>common-"
-"password</filename>, and <filename>common-session</filename>. These four "
+"auth</filename> , <filename>common-account</filename> , <filename>common-"
+"password</filename> , and <filename>common-session</filename> . These four "
 "files hold the default configuration for each module type."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:371
+#: security_pam.xml:380
 #, no-c-format
 msgid ""
 "Sets the login uid process attribute for the process that was authenticated."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:377
+#: security_pam.xml:386
 #, no-c-format
 msgid "Displays information about the last login of a user."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:384
+#: security_pam.xml:393
 #, no-c-format
 msgid ""
 "By including the configuration files instead of adding each module "
@@ -528,50 +559,76 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:395
+#: security_pam.xml:404
 #, no-c-format
 msgid ""
-"The first include file (<filename>common-auth</filename>) calls three "
+"The first include file ( <filename>common-auth</filename> ) calls three "
 "modules of the <literal>auth</literal> type: <systemitem class=\"library"
-"\">pam_env.so</systemitem>, <systemitem class=\"library\">pam_gnome_keyring."
-"so</systemitem> and <systemitem class=\"library\">pam_unix.so</systemitem>. "
-"See <xref linkend=\"dat.pam.common-auth\"/>."
+"\">pam_env.so</systemitem> , <systemitem class=\"library\">pam_gnome_keyring."
+"so</systemitem> and <systemitem class=\"library\">pam_unix.so</systemitem> . "
+"See <xref linkend=\"dat.pam.common-auth\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:405
+#: security_pam.xml:414
 #, no-c-format
 msgid ""
 "Default Configuration for the <literal>auth</literal> Section "
-"(<filename>common-auth</filename>)"
+"( <filename>common-auth</filename> )"
 msgstr ""
 
-#. Tag: screen
-#: security_pam.xml:406
+#. Tag: #text
+#: security_pam.xml:415
+#, no-c-format
+msgid "auth required pam_env.so"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:416
+#, no-c-format
+msgid "auth optional pam_gnome_keyring.so"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:417
+#, no-c-format
+msgid "auth required pam_unix.so try_first_pass"
+msgstr ""
+
+#. Tag: systemitem
+#: security_pam.xml:423
+#, no-c-format
+msgid "pam_env.so"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:424
+#, no-c-format
+msgid "loads"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:426
 #, no-c-format
 msgid ""
-"auth  required  pam_env.so                   <co xml:id=\"co.security.pam."
-"sshd.pam_env\"/>\n"
-"auth  optional  pam_gnome_keyring.so         <co xml:id=\"co.security.pam."
-"sshd.gnome\"/>\n"
-"auth  required  pam_unix.so  try_first_pass <co xml:id=\"co.security.pam."
-"sshd.pam_unix\"/>"
+"to set the environment variables as specified in this file. It can be used "
+"to set the"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:427
+#, no-c-format
+msgid "variable to the correct value, because the"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:429
+#, no-c-format
+msgid "module knows about the location from which the login is taking place."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:411
-#, no-c-format
-msgid ""
-"<systemitem class=\"library\">pam_env.so</systemitem> loads <filename>/etc/"
-"security/pam_env.conf</filename> to set the environment variables as "
-"specified in this file. It can be used to set the <envar>DISPLAY</envar> "
-"variable to the correct value, because the <systemitem class=\"library"
-"\">pam_env</systemitem> module knows about the location from which the login "
-"is taking place."
-msgstr ""
-
-#. Tag: para
-#: security_pam.xml:421
+#: security_pam.xml:432
 #, no-c-format
 msgid ""
 "<systemitem class=\"library\">pam_gnome_keyring.so</systemitem> checks the "
@@ -579,16 +636,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:427
+#: security_pam.xml:438
 #, no-c-format
 msgid ""
 "<systemitem class=\"library\">pam_unix</systemitem> checks the user's login "
 "and password against <filename>/etc/passwd</filename> and <filename>/etc/"
-"shadow</filename>."
+"shadow</filename> ."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:435
+#: security_pam.xml:446
 #, no-c-format
 msgid ""
 "The whole stack of <literal>auth</literal> modules is processed before "
@@ -602,43 +659,43 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:447
+#: security_pam.xml:458
 #, no-c-format
 msgid ""
 "When all modules of the <literal>auth</literal> type have been successfully "
 "processed, another include statement is processed, in this case, that in "
-"<xref linkend=\"dat.pam.common-account\"/>. <filename>common-account</"
-"filename> contains only one module, <literal>pam_unix</literal>. If "
+"<xref linkend=\"dat.pam.common-account\"/> . <filename>common-account</"
+"filename> contains only one module, <literal>pam_unix</literal> . If "
 "<literal>pam_unix</literal> returns the result that the user exists, sshd "
 "receives a message announcing this success and the next stack of modules "
-"(<literal>password</literal>) is processed, shown in <xref linkend=\"dat.pam."
-"common-password\"/>."
+"( <literal>password</literal> ) is processed, shown in <xref linkend=\"dat."
+"pam.common-password\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:459
+#: security_pam.xml:470
 #, no-c-format
 msgid ""
 "Default Configuration for the <literal>account</literal> Section "
-"(<filename>common-account</filename>)"
+"( <filename>common-account</filename> )"
 msgstr ""
 
 #. Tag: screen
-#: security_pam.xml:460
+#: security_pam.xml:471
 #, no-c-format
 msgid "account  required  pam_unix.so  try_first_pass"
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:464
+#: security_pam.xml:475
 #, no-c-format
 msgid ""
 "Default Configuration for the <literal>password</literal> Section "
-"(<filename>common-password</filename>)"
+"( <filename>common-password</filename> )"
 msgstr ""
 
 #. Tag: screen
-#: security_pam.xml:465
+#: security_pam.xml:476
 #, no-c-format
 msgid ""
 "password  requisite  pam_cracklib.so\n"
@@ -647,43 +704,43 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:468
+#: security_pam.xml:481
 #, no-c-format
 msgid ""
 "Again, the PAM configuration of <systemitem class=\"daemon\">sshd</"
 "systemitem> involves only an include statement referring to the default "
 "configuration for <literal>password</literal> modules located in "
-"<filename>common-password</filename>. These modules must successfully be "
+"<filename>common-password</filename> . These modules must successfully be "
 "completed (control flags <literal>requisite</literal> and <literal>required</"
-"literal>) whenever the application requests the change of an authentication "
+"literal> ) whenever the application requests the change of an authentication "
 "token."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:479
+#: security_pam.xml:492
 #, no-c-format
 msgid ""
 "Changing a password or another authentication token requires a security "
 "check. This is achieved with the <filename>pam_cracklib</filename> module. "
 "The <filename>pam_unix</filename> module used afterward carries over any old "
-"and new passwords from <filename>pam_cracklib</filename>, so the user does "
+"and new passwords from <filename>pam_cracklib</filename> , so the user does "
 "not need to authenticate again after changing the password. This procedure "
 "makes it impossible to circumvent the checks carried out by "
-"<filename>pam_cracklib</filename>. Whenever the <literal>account</literal> "
+"<filename>pam_cracklib</filename> . Whenever the <literal>account</literal> "
 "or the <literal>auth</literal> type are configured to complain about expired "
 "passwords, the <literal>password</literal> modules should also be used."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:493
+#: security_pam.xml:506
 #, no-c-format
 msgid ""
 "Default Configuration for the <literal>session</literal> Section "
-"(<filename>common-session</filename>)"
+"( <filename>common-session</filename> )"
 msgstr ""
 
 #. Tag: screen
-#: security_pam.xml:494
+#: security_pam.xml:507
 #, no-c-format
 msgid ""
 "session  required  pam_limits.so\n"
@@ -696,14 +753,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:497
+#: security_pam.xml:515
 #, no-c-format
 msgid ""
 "As the final step, the modules of the <literal>session</literal> type "
 "(bundled in the <filename>common-session</filename> file) are called to "
 "configure the session according to the settings for the user in question. "
 "The <filename>pam_limits</filename> module loads the file <filename>/etc/"
-"security/limits.conf</filename>, which may define limits on the use of "
+"security/limits.conf</filename> , which may define limits on the use of "
 "certain system resources. The <filename>pam_unix</filename> module is "
 "processed again. The <filename>pam_umask</filename> module can be used to "
 "set the file mode creation mask. Since this module carries the "
@@ -714,29 +771,23 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:513
+#: security_pam.xml:531
 #, no-c-format
 msgid "Configuration of PAM Modules"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:515
+#: security_pam.xml:533
 #, no-c-format
 msgid ""
 "Some PAM modules are configurable. The configuration files are located in "
-"<filename>/etc/security</filename>. This section briefly describes the "
-"configuration files relevant to the sshd example&mdash;<filename>pam_env."
-"conf</filename> and <filename>limits.conf</filename>."
-msgstr ""
-
-#. Tag: title
-#: security_pam.xml:524 security_pam.xml:570
-#, no-c-format
-msgid "pam_env.conf"
+"<filename>/etc/security</filename> . This section briefly describes the "
+"configuration files relevant to the sshd example&mdash; <filename>pam_env."
+"conf</filename> and <filename>limits.conf</filename> ."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:525
+#: security_pam.xml:543
 #, no-c-format
 msgid ""
 "<filename>pam_env.conf</filename> can be used to define a standardized "
@@ -746,90 +797,167 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pam.xml:531
+#: security_pam.xml:549
 #, no-c-format
 msgid ""
 "<replaceable>VARIABLE</replaceable>  [DEFAULT=<replaceable>VALUE</"
 "replaceable>]  [OVERRIDE=<replaceable>VALUE</replaceable>]"
 msgstr ""
 
-#. Tag: replaceable
-#: security_pam.xml:534
+#. Tag: term
+#: security_pam.xml:552
 #, no-c-format
-msgid "VARIABLE"
+msgid "<replaceable>VARIABLE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:537
+#: security_pam.xml:555
 #, no-c-format
 msgid "Name of the environment variable to set."
 msgstr ""
 
-#. Tag: systemitem
-#: security_pam.xml:543
+#. Tag: term
+#: security_pam.xml:561
 #, no-c-format
-msgid "[DEFAULT=&lt;value&gt;]"
+msgid "<systemitem>[DEFAULT=&lt;value&gt;]</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:546
+#: security_pam.xml:564
 #, no-c-format
 msgid ""
 "Default <replaceable>VALUE</replaceable> the administrator wants to set."
 msgstr ""
 
-#. Tag: systemitem
-#: security_pam.xml:553
+#. Tag: term
+#: security_pam.xml:571
 #, no-c-format
-msgid "[OVERRIDE=&lt;value&gt;]"
+msgid "<systemitem>[OVERRIDE=&lt;value&gt;]</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:556
+#: security_pam.xml:574
 #, no-c-format
 msgid ""
-"Values that may be queried and set by <systemitem>pam_env</systemitem>, "
+"Values that may be queried and set by <systemitem>pam_env</systemitem> , "
 "overriding the default value."
 msgstr ""
 
-#. Tag: para
-#: security_pam.xml:563
+#. Tag: #text
+#: security_pam.xml:582
 #, no-c-format
-msgid ""
-"A typical example of how <systemitem>pam_env</systemitem> can be used is the "
-"adaptation of the <envar>DISPLAY</envar> variable, which is changed whenever "
-"a remote login takes place. This is shown in <xref linkend=\"dat.pam.pamenv"
-"\"/>."
+msgid "A typical example of how"
 msgstr ""
 
-#. Tag: screen
-#: security_pam.xml:571
+#. Tag: #text
+#: security_pam.xml:583
 #, no-c-format
-msgid ""
-"REMOTEHOST  DEFAULT=localhost          OVERRIDE=@{PAM_RHOST}\n"
-"DISPLAY     DEFAULT=${REMOTEHOST}:0.0  OVERRIDE=${DISPLAY}"
+msgid "can be used is the adaptation of the"
 msgstr ""
 
-#. Tag: para
-#: security_pam.xml:573
+#. Tag: #text
+#: security_pam.xml:585
 #, no-c-format
 msgid ""
-"The first line sets the value of the <envar>REMOTEHOST</envar> variable to "
-"<literal>localhost</literal>, which is used whenever <filename>pam_env</"
-"filename> cannot determine any other value. The <envar>DISPLAY</envar> "
-"variable in turn contains the value of <envar>REMOTEHOST</envar>. Find more "
-"information in the comments in <filename>/etc/security/pam_env.conf</"
-"filename>."
+"variable, which is changed whenever a remote login takes place. This is "
+"shown in"
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:586
+#: security_pam.xml:588
+#, no-c-format
+msgid "pam_env.conf"
+msgstr ""
+
+#. Tag: screen
+#: security_pam.xml:589
+#, no-c-format
+msgid ""
+"\n"
+"REMOTEHOST  DEFAULT=localhost          OVERRIDE=@{PAM_RHOST}\n"
+"DISPLAY     DEFAULT=${REMOTEHOST}:0.0  OVERRIDE=${DISPLAY}\n"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:595
+#, no-c-format
+msgid "The first line sets the value of the"
+msgstr ""
+
+#. Tag: literal
+#: security_pam.xml:596
+#, no-c-format
+msgid "localhost"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:596
+#, no-c-format
+msgid "variable to"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:597
+#, no-c-format
+msgid ", which is used whenever"
+msgstr ""
+
+#. Tag: filename
+#: security_pam.xml:597
+#, no-c-format
+msgid "pam_env"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:598
+#, no-c-format
+msgid "cannot determine any other value. The"
+msgstr ""
+
+#. Tag: envar
+#: security_pam.xml:598
+#, no-c-format
+msgid "DISPLAY"
+msgstr ""
+
+#. Tag: envar
+#: security_pam.xml:599
+#, no-c-format
+msgid "REMOTEHOST"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:599
+#, no-c-format
+msgid "variable in turn contains the value of"
+msgstr ""
+
+#. Tag: filename
+#: security_pam.xml:600
+#, no-c-format
+msgid "/etc/security/pam_env.conf"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:600
+#, no-c-format
+msgid ". Find more information in the comments in"
+msgstr ""
+
+#. Tag: #text
+#: security_pam.xml:601
+#, no-c-format
+msgid "."
+msgstr ""
+
+#. Tag: title
+#: security_pam.xml:607
 #, no-c-format
 msgid "pam_mount.conf.xml"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:587
+#: security_pam.xml:608
 #, no-c-format
 msgid ""
 "The purpose of <systemitem>pam_mount</systemitem> is to mount user home "
@@ -842,55 +970,55 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:596
+#: security_pam.xml:617
 #, no-c-format
 msgid ""
-"After installing <systemitem>pam_mount</systemitem>, a template for "
+"After installing <systemitem>pam_mount</systemitem> , a template for "
 "<filename>pam_mount.conf.xml</filename> is available in <filename>/etc/"
-"security</filename>. The description of the various elements can be found in "
-"the manual page <command>man 5 pam_mount.conf</command>."
+"security</filename> . The description of the various elements can be found "
+"in the manual page <command>man 5 pam_mount.conf</command> ."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:603
+#: security_pam.xml:624
 #, no-c-format
 msgid ""
 "A basic configuration of this feature can be done with &yast;. Select "
 "<menuchoice><guimenu>Network Settings</guimenu> <guimenu>Windows Domain "
 "Membership</guimenu> <guimenu>Expert Settings</guimenu></menuchoice> to add "
-"the file server; see <xref linkend=\"sec.samba.client.inst\"/>."
+"the file server; see <xref linkend=\"sec.samba.client.inst\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:612
+#: security_pam.xml:633
 #, no-c-format
 msgid "limits.conf"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:613
+#: security_pam.xml:634
 #, no-c-format
 msgid ""
 "System limits can be set on a user or group basis in <filename>limits.conf</"
-"filename>, which is read by the <systemitem>pam_limits</systemitem> module. "
+"filename> , which is read by the <systemitem>pam_limits</systemitem> module. "
 "The file allows you to set hard limits, which may not be exceeded, and soft "
 "limits, which may be exceeded temporarily. For more information about the "
 "syntax and the options, see the comments in <filename>/etc/security/limits."
-"conf</filename>."
+"conf</filename> ."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:625
+#: security_pam.xml:646
 #, no-c-format
 msgid "Configuring PAM Using pam-config"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:627
+#: security_pam.xml:648
 #, no-c-format
 msgid ""
 "The <command>pam-config</command> tool helps you configure the global PAM "
-"configuration files (<filename>/etc/pam.d/common-*</filename>) and several "
+"configuration files ( <filename>/etc/pam.d/common-*</filename> ) and several "
 "selected application configurations. For a list of supported modules, use "
 "the <command>pam-config --list-modules</command> command. Use the "
 "<command>pam-config</command> command to maintain your PAM configuration "
@@ -901,37 +1029,37 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:639
+#: security_pam.xml:660
 #, no-c-format
 msgid ""
 "A simple use case for <command>pam-config</command> involves the following:"
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:647
+#: security_pam.xml:668
 #, no-c-format
 msgid "Auto-generate a fresh Unix-style PAM configuration."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:648
+#: security_pam.xml:669
 #, no-c-format
 msgid ""
 "Let pam-config create the simplest possible setup which you can extend later "
 "on. The <command>pam-config --create</command> command creates a simple Unix "
 "authentication configuration. Pre-existing configuration files not "
 "maintained by pam-config are overwritten, but backup copies are kept as "
-"<literal>*.pam-config-backup</literal>."
+"<literal>*.pam-config-backup</literal> ."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:659
+#: security_pam.xml:680
 #, no-c-format
 msgid "Add a new authentication method."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:660
+#: security_pam.xml:681
 #, no-c-format
 msgid ""
 "Adding a new authentication method (for example, LDAP) to your stack of PAM "
@@ -941,30 +1069,30 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:670
+#: security_pam.xml:691
 #, no-c-format
 msgid "Add debugging for test purposes."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:671
+#: security_pam.xml:692
 #, no-c-format
 msgid ""
 "To make sure the new authentication procedure works as planned, turn on "
 "debugging for all PAM-related operations. The <command>pam-config --add --"
 "ldap-debug</command> turns on debugging for LDAP-related PAM operations. "
 "Find the debugging output in the &systemd; journal (see <xref linkend=\"cha."
-"journalctl\"/>)."
+"journalctl\"/> )."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:682
+#: security_pam.xml:703
 #, no-c-format
 msgid "Query your setup."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:683
+#: security_pam.xml:704
 #, no-c-format
 msgid ""
 "Before you finally apply your new PAM setup, check if it contains all the "
@@ -974,13 +1102,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:693
+#: security_pam.xml:714
 #, no-c-format
 msgid "Remove the debug options."
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:694
+#: security_pam.xml:715
 #, no-c-format
 msgid ""
 "Finally, remove the debug option from your setup when you are entirely "
@@ -991,22 +1119,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:705
+#: security_pam.xml:726
 #, no-c-format
 msgid ""
 "For more information on the <command>pam-config</command> command and the "
 "options available, refer to the manual page of <command>pam-config(8)</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:712
+#: security_pam.xml:733
 #, no-c-format
 msgid "Manually Configuring PAM"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:714
+#: security_pam.xml:735
 #, no-c-format
 msgid ""
 "If you prefer to manually create or maintain your PAM configuration files, "
@@ -1014,7 +1142,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:720
+#: security_pam.xml:741
 #, no-c-format
 msgid ""
 "When you create your PAM configuration files from scratch using the "
@@ -1030,30 +1158,30 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:733
+#: security_pam.xml:754
 #, no-c-format
 msgid "Include <filename>pam_systemd.so</filename> into Configuration"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:734
+#: security_pam.xml:755
 #, no-c-format
 msgid ""
 "If you are creating your own PAM configuration, make sure to include a "
-"<literal>session optional pam_systemd.so</literal>. Not including the "
+"<literal>session optional pam_systemd.so</literal> . Not including the "
 "<literal>pam_systemd.so</literal> can cause problems with &systemd; task "
 "limits. For details, refer to the man page of <literal>pam_systemd.so</"
-"literal>."
+"literal> ."
 msgstr ""
 
 #. Tag: title
-#: security_pam.xml:744
+#: security_pam.xml:765
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:746
+#: security_pam.xml:767
 #, no-c-format
 msgid ""
 "In the <filename>/usr/share/doc/packages/pam</filename> directory after "
@@ -1062,13 +1190,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pam.xml:754
+#: security_pam.xml:775
 #, no-c-format
 msgid "READMEs"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:756
+#: security_pam.xml:777
 #, no-c-format
 msgid ""
 "In the top level of this directory, there is the <filename>modules</"
@@ -1076,13 +1204,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pam.xml:764
+#: security_pam.xml:785
 #, no-c-format
 msgid "The Linux-PAM System Administrators' Guide"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:766
+#: security_pam.xml:787
 #, no-c-format
 msgid ""
 "This document comprises everything that the system administrator should know "
@@ -1091,13 +1219,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pam.xml:774
+#: security_pam.xml:795
 #, no-c-format
 msgid "The Linux-PAM Module Writers' Manual"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:776
+#: security_pam.xml:797
 #, no-c-format
 msgid ""
 "This document summarizes the topic from the developer's point of view, with "
@@ -1105,13 +1233,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pam.xml:783
+#: security_pam.xml:804
 #, no-c-format
 msgid "The Linux-PAM Application Developers' Guide"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:785
+#: security_pam.xml:806
 #, no-c-format
 msgid ""
 "This document comprises everything needed by an application developer who "
@@ -1119,13 +1247,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pam.xml:792
+#: security_pam.xml:813
 #, no-c-format
 msgid "The PAM Manual Pages"
 msgstr ""
 
 #. Tag: para
-#: security_pam.xml:794
+#: security_pam.xml:815
 #, no-c-format
 msgid ""
 "PAM in general and the individual modules come with manual pages that "

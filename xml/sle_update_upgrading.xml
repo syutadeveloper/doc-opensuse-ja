@@ -1,148 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE chapter [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
-<chapter version="5.0" xml:id="cha.upgrade-paths"
-  xmlns="http://docbook.org/ns/docbook"
-  xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title
->Upgrade Paths and Methods</title>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.upgrade-paths">
+ <title>Upgrade Paths and Methods</title>
  <info>
   <abstract>
-   <para
->&slereg; (&slea;) allows to upgrade an existing system to the new version, for example, going from &slea; 11 SP4 to the latest &slea; 12 service pack. No new installation is needed. Existing data, such as home and data directories and system configuration, is kept intact. You can update from a local CD or DVD drive or from a central network installation source. </para>
+   <para>
+    &slereg; (&slea;) allows to upgrade an existing system to the new version,
+    for example, going from &slea; 11 SP4 to the latest &slea; 12 service
+    pack. No new installation is needed. Existing data, such as home and data
+    directories and system configuration, is kept intact. You can update from a
+    local CD or DVD drive or from a central network installation source.
+   </para>
 
-   <para
->This chapter explains how to manually upgrade your &sle; system, be it by DVD, network, an automated process, or &susemgr;. </para>
+   <para>
+    This chapter explains how to manually upgrade your &sle; system, be it by
+    DVD, network, an automated process, or &susemgr;.
+   </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
-   <dm:translation
->yes</dm:translation>
+   <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
  <sect1 xml:id="sec.upgrade-paths.supported">
-  <title
->Supported Upgrade Paths to &slea; &productnumber;</title>
-  <para
->Before you perform any migration, read <xref linkend="cha.update-preparation"/>. </para>
+  <title>Supported Upgrade Paths to &slea; &productnumber;</title>
+  <para>
+   Before you perform any migration, read <xref linkend="cha.update-preparation"/>.
+  </para>
   <important>
-   <title
->Cross-architecture Upgrades Are Not Supported</title>
-   <para
->Cross-architecture upgrades, such as upgrading from a 32-bit version of &productname; to the 64-bit version, or upgrading from big endian to little endian are <emphasis
->not</emphasis
-> supported! </para>
-   <para
->Specifically, &slea; 11 on &ppc; (big endian) to &slea; &productnumber; on &ppc; (new: little endian!) is <emphasis
->not</emphasis
-> supported. </para>
-   <para
->Also, since &sle; &productnumber; is 64-bit only, upgrades from any 32-bit &sle; 11 systems to &sle; &productnumber; and later are <emphasis
->not</emphasis
-> supported. </para>
-   <para
->To make a cross-architecture upgrade, you need to perform a new installation. </para>
+   <title>Cross-architecture Upgrades Are Not Supported</title>
+   <para>
+    Cross-architecture upgrades, such as upgrading from a 32-bit version of
+    &productname; to the 64-bit version, or upgrading from big endian to little
+    endian are <emphasis>not</emphasis> supported!
+   </para>
+   <para>
+    Specifically, &slea; 11 on &ppc; (big endian) to &slea; &productnumber; on &ppc;
+    (new: little endian!) is <emphasis>not</emphasis> supported.
+   </para>
+   <para>
+    Also, since &sle; &productnumber; is 64-bit only, upgrades from any 32-bit &sle; 11
+    systems to &sle; &productnumber; and later are <emphasis>not</emphasis> supported.
+   </para>
+   <para>
+    To make a cross-architecture upgrade, you need to perform
+    a new installation.
+   </para>
   </important>
 
   <note>
-   <title
->Skipping Service Packs</title>
-   <para os="sles"
->Consecutively installing all Service Packs is the safest upgrade path. In some cases it is supported to skip 1 or 2 Service Packs when upgrading. However, we recommend to <emphasis
->not</emphasis
-> skip any Service Pack. </para>
-   <para os="sled"
->Skipping Service Packs on &sled; is not supported. You need to consecutively install all Service Packs. </para>
+   <title>Skipping Service Packs</title>
+   <para os="sles">
+    Consecutively installing all Service Packs is the safest upgrade path.
+    In some cases it is supported to skip 1 or 2 Service Packs when
+    upgrading. However, we recommend to <emphasis>not</emphasis> skip any
+    Service Pack.
+   </para>
+   <para os="sled">
+    Skipping Service Packs on &sled; is not supported. You need to
+    consecutively install all Service Packs.
+   </para>
   </note>
 
   <note>
-   <title
->Upgrading Major Releases</title>
-   <para
->We recommend to do a fresh install when upgrading to a new Major Release, for example from &sle; 11 to &sle; 12. </para>
+   <title>Upgrading Major Releases</title>
+   <para>
+    We recommend to do a fresh install when upgrading to a new Major Release,
+    for example from &sle; 11 to &sle; 12.
+   </para>
   </note>
 
   <variablelist os="sles">
    <varlistentry>
-    <term
->Upgrading from &sle; 10 (any Service Pack)</term>
+    <term>Upgrading from &sle; 10 (any Service Pack)</term>
     <listitem>
-     <para
->There is no supported direct migration path to &sle; &productnumber;. We recommend a fresh installation in this case. </para>
+     <para>
+      There is no supported direct migration path to &sle; &productnumber;. We recommend a
+      fresh installation in this case.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Upgrading from &sle; 11 GA / SP1 / SP2 / SP3</term>
+    <term>Upgrading from &sle; 11 GA / SP1 / SP2 / SP3</term>
     <listitem>
-     <para
->There is no supported direct migration path to &sle; &productnumber;. You need at least &slea; 11 SP4 before you can proceed to &slea; &productnumber;. </para>
-     <para
->If you cannot do a fresh install, first upgrade your installed &slea; 11 Service Pack to &slea; 11 SP4. These steps are described in the <link xlink:href="https://www.suse.com/documentation/sles11/"
->&sle; 11 Deployment Guide</link
->. </para>
+     <para>
+      There is no supported direct migration path to &sle; &productnumber;.
+      You need at least &slea; 11 SP4 before you can proceed to &slea;
+      &productnumber;.
+     </para>
+     <para>
+      If you cannot do a fresh install, first upgrade your installed &slea;
+      11 Service Pack to &slea; 11 SP4. These steps are described in the
+      <link xlink:href="https://www.suse.com/documentation/sles11/">&sle; 11
+      Deployment Guide</link>.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Upgrading from &sle; 11 SP4</term>
+    <term>Upgrading from &sle; 11 SP4</term>
     <listitem>
-     <para
->Upgrading from &slea; 11 SP4 is only supported via an offline upgrade. Refer to <xref linkend="sec.upgrade-paths.methods"/> for details. </para>
+     <para>
+      Upgrading from &slea; 11 SP4 is only supported via an offline upgrade.
+      Refer to <xref linkend="sec.upgrade-paths.methods"/> for details.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Upgrading from &sle; 12 GA / SP1 / SP2</term>
+    <term>Upgrading from &sle; 12 GA / SP1 / SP2</term>
     <listitem>
-     <para
->A direct upgrade from &slea; 12 GA / SP1 / SP2 to &slea; &productnumber; is not supported. You need to upgrade to &slea; 12 SP3 first. </para>
+     <para>
+      A direct upgrade from &slea; 12 GA / SP1 / SP2 to &slea; &productnumber;
+      is not supported. You need to upgrade to &slea; 12 SP3 first.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Upgrading from &sle; 12 SP3</term>
+    <term>Upgrading from &sle; 12 SP3</term>
     <listitem>
-     <para
->Upgrading from &sle; 12 SP3 is only supported via an offline upgrade. Refer to <xref linkend="sec.upgrade-paths.methods"/> for details. </para>
+     <para>
+      Upgrading from &sle; 12 SP3 is only supported via an offline upgrade.
+      Refer to <xref linkend="sec.upgrade-paths.methods"/> for details.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Migrating from &opensuse; Leap 15</term>
+    <term>Migrating from &opensuse; Leap 15</term>
     <listitem>
-     <para
->Migrating from &opensuse; Leap 15 is supported. See <xref linkend="sec.upgrade-online.opensuse_to_sle"/>. Only the server installation of Leap is supported for migration. </para>
+     <para>
+      Migrating from &opensuse; Leap 15 is supported. See
+      <xref linkend="sec.upgrade-online.opensuse_to_sle"/>. Only the
+      server installation of Leap is supported for migration.
+     </para>
     </listitem>
    </varlistentry>
   </variablelist>
 
   <variablelist os="sled">
    <varlistentry>
-    <term
->Upgrading from &sle; 12 SP2 and older</term>
+    <term>Upgrading from &sle; 12 SP2 and older</term>
     <listitem>
-     <para
->Upgrading from &sle; 12 SP2 and any older version is not supported. </para>
+     <para>
+      Upgrading from &sle; 12 SP2 and any older version is not supported.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Upgrading from &sle; 12 SP3</term>
+    <term>Upgrading from &sle; 12 SP3</term>
     <listitem>
-     <para
->Upgrading from &sle; 12 SP3 is only supported via an offline upgrade. Refer to <xref linkend="sec.upgrade-paths.methods"/> for details. </para>
+     <para>
+      Upgrading from &sle; 12 SP3 is only supported via an offline upgrade.
+      Refer to <xref linkend="sec.upgrade-paths.methods"/> for details.
+     </para>
     </listitem>
    </varlistentry>
   </variablelist>
 
 
   <figure xml:id="fig.upgrade-paths.paths-overview" os="sles">
-   <title
->Overview of Shortest Upgrade Paths</title>
+   <title>Overview of Shortest Upgrade Paths</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="upgrade-paths.svg" width="100%" format="SVG"/>
@@ -155,32 +171,44 @@
  </sect1>
 
  <sect1 xml:id="sec.upgrade-paths.methods">
-  <title
->Online and Offline Upgrade</title>
-  <para
->&suse; supports two different upgrade and migration methods. For more information about the terminology, see <xref linkend="sec.upgrade-background.terminology"/>. The methods are: </para>
+  <title>Online and Offline Upgrade</title>
+  <para>
+   &suse; supports two different upgrade and migration methods. For more
+   information about the terminology, see <xref linkend="sec.upgrade-background.terminology"/>.
+   The methods are:
+  </para>
 
   <variablelist>
    <varlistentry>
-    <term
->Online</term>
+    <term>Online</term>
     <listitem>
-     <para
->All upgrades that are executed from the running system itself are considered to be online. Examples: Connected through &scc;, &rmtool; (&rmt;), &susemgr; using Zypper or &yast;. </para>
-     <para
->For details, see <xref linkend="cha.upgrade-online"/>. </para>
-     <para
->When migrating between Service Packs of the same major release, we suggest following <xref linkend="sec.upgrade-online.yast"/> or <xref linkend="sec.upgrade-online.zypper"/>. </para>
+     <para>
+      All upgrades that are executed from the running system itself are considered
+      to be online. Examples: Connected through &scc;, &rmtool; (&rmt;), &susemgr;
+      using Zypper or &yast;.
+     </para>
+     <para>
+      For details, see <xref linkend="cha.upgrade-online"/>.
+     </para>
+     <para>
+      When migrating between Service Packs of the same major release,
+      we suggest following <xref linkend="sec.upgrade-online.yast"/>
+      or <xref linkend="sec.upgrade-online.zypper"/>.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term
->Offline</term>
+    <term>Offline</term>
     <listitem>
-     <para
->Upgrading offline implies that the operating system to be upgraded is not running. Instead, another operating system is booted, for example from the installation DVD or network, and performs the upgrade. </para>
-     <para
->For details, see <xref linkend="cha.upgrade-offline"/>. </para>
+     <para>
+      Upgrading offline implies that the operating system to be upgraded
+      is not running. Instead, another operating system is
+      booted, for example from the installation DVD or network, and
+      performs the upgrade.
+     </para>
+     <para>
+      For details, see <xref linkend="cha.upgrade-offline"/>.
+     </para>
     </listitem>
    </varlistentry>
   </variablelist>

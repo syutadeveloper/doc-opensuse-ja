@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,16 +20,16 @@ msgstr ""
 msgid "Configuring the Boot Loader with &yast;"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: grub2_yast_i.xml:12
+#. Tag: dm:translation
+#: grub2_yast_i.xml:14
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
 #: grub2_yast_i.xml:18
 #, no-c-format
-msgid "The easiest way to configure general options of the boot loader in your &productname; system is to use the &yast; module. In the &yastcc;, select <menuchoice> <guimenu>System</guimenu> <guimenu>Boot Loader</guimenu></menuchoice>. The module shows the current boot loader configuration of your system and allows you to make changes."
+msgid "The easiest way to configure general options of the boot loader in your &productname; system is to use the &yast; module. In the &yastcc;, select <menuchoice> <guimenu>System</guimenu> <guimenu>Boot Loader</guimenu></menuchoice> . The module shows the current boot loader configuration of your system and allows you to make changes."
 msgstr ""
 
 #. Tag: para
@@ -65,7 +65,7 @@ msgstr ""
 #. Tag: para
 #: grub2_yast_i.xml:54
 #, no-c-format
-msgid "To reinstall the boot loader, make sure to change a setting in &yast; and then change it back. For example, to reinstall GRUB2-EFI, select <guimenu>GRUB2</guimenu> first and then immediately switch back to <guimenu>GRUB2-EFI</guimenu>."
+msgid "To reinstall the boot loader, make sure to change a setting in &yast; and then change it back. For example, to reinstall GRUB2-EFI, select <guimenu>GRUB2</guimenu> first and then immediately switch back to <guimenu>GRUB2-EFI</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -83,7 +83,7 @@ msgstr ""
 #. Tag: para
 #: grub2_yast_i.xml:67
 #, no-c-format
-msgid "To use a boot loader other than the ones listed, select <guimenu>Do Not Install Any Boot Loader</guimenu>. Read the documentation of your boot loader carefully before choosing this option."
+msgid "To use a boot loader other than the ones listed, select <guimenu>Do Not Install Any Boot Loader</guimenu> . Read the documentation of your boot loader carefully before choosing this option."
 msgstr ""
 
 #. Tag: title
@@ -107,25 +107,25 @@ msgstr ""
 #. Tag: para
 #: grub2_yast_i.xml:86
 #, no-c-format
-msgid "Select the <guimenu>Boot Code Options</guimenu> tab and then choose one of the following options for <guimenu>Boot Loader Location</guimenu>:"
+msgid "Select the <guimenu>Boot Code Options</guimenu> tab and then choose one of the following options for <guimenu>Boot Loader Location</guimenu> :"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: grub2_yast_i.xml:92
 #, no-c-format
-msgid "Boot from Master Boot Record"
+msgid "<guimenu>Boot from Master Boot Record</guimenu>"
 msgstr ""
 
 #. Tag: para
 #: grub2_yast_i.xml:95
 #, no-c-format
-msgid "This installs the boot loader in the MBR of the disk containing the directory <filename>/boot</filename>. Usually this will be the disk mounted to <filename>/</filename>, but if <filename>/boot</filename> is mounted to a separate partition on a different disk, the MBR of that disk will be used."
+msgid "This installs the boot loader in the MBR of the disk containing the directory <filename>/boot</filename> . Usually this will be the disk mounted to <filename>/</filename> , but if <filename>/boot</filename> is mounted to a separate partition on a different disk, the MBR of that disk will be used."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: grub2_yast_i.xml:105
 #, no-c-format
-msgid "Boot from Root Partition"
+msgid "<guimenu>Boot from Root Partition</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -134,10 +134,10 @@ msgstr ""
 msgid "This installs the boot loader in the boot sector of the <filename>/</filename> partition."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: grub2_yast_i.xml:115
 #, no-c-format
-msgid "Custom Boot Partition"
+msgid "<guimenu>Custom Boot Partition</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -164,10 +164,10 @@ msgstr ""
 msgid "The <guimenu>Boot Code Options</guimenu> tab includes the following additional options:"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: grub2_yast_i.xml:148
 #, no-c-format
-msgid "Set Active Flag in Partition Table for Boot Partition"
+msgid "<guimenu>Set Active Flag in Partition Table for Boot Partition</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -176,10 +176,10 @@ msgstr ""
 msgid "Activates the partition that contains the <filename>/boot</filename> directory. For &power; systems it activates the PReP partition. Use this option on systems with old BIOS and/or legacy operating systems because they may fail to boot from a non-active partition. It is safe to leave this option active."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: grub2_yast_i.xml:163
 #, no-c-format
-msgid "Write Generic Boot Code to MBR"
+msgid "<guimenu>Write Generic Boot Code to MBR</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -188,213 +188,213 @@ msgstr ""
 msgid "If MBR contains a custom 'non-GRUB' code, this option replaces it with a generic, operating system independent code. If you deactivate this option, the system may become unbootable."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: term
 #: grub2_yast_i.xml:174
 #, no-c-format
-msgid "Enable Trusted Boot Support"
+msgid "<guimenu>Enable Trusted Boot Support</guimenu>"
 msgstr ""
 
 #. Tag: para
 #: grub2_yast_i.xml:177
 #, no-c-format
-msgid "Starts TrustedGRUB2 which supports trusted computing functionality (Trusted Platform Module (TPM)). For more information refer to <link xlink:href=\"https://github.com/Sirrix-AG/TrustedGRUB2\"></link>."
+msgid "Starts TrustedGRUB2 which supports trusted computing functionality (Trusted Platform Module (TPM)). For more information refer to <link xlink:href=\"https://github.com/Sirrix-AG/TrustedGRUB2\"/> ."
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:188
+#: grub2_yast_i.xml:189
 #, no-c-format
 msgid "Adjusting the Disk Order"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:189
+#: grub2_yast_i.xml:190
 #, no-c-format
-msgid "If your computer has more than one hard disk, you can specify the boot sequence of the disks. The first disk in the list is where &grub; will be installed in the case of booting from MBR. It is the disk where &productname; is installed by default. The rest of the list is a hint for &grub;'s device mapper (see <xref linkend=\"sec.grub2.map\"/>)."
+msgid "If your computer has more than one hard disk, you can specify the boot sequence of the disks. The first disk in the list is where &grub; will be installed in the case of booting from MBR. It is the disk where &productname; is installed by default. The rest of the list is a hint for &grub;'s device mapper (see <xref linkend=\"sec.grub2.map\"/> )."
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:197
+#: grub2_yast_i.xml:198
 #, no-c-format
 msgid "Unbootable System"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:198
+#: grub2_yast_i.xml:199
 #, no-c-format
 msgid "The default value is usually valid for almost all deployments. If you change the boot order of disks wrongly, the system may become unbootable on the next reboot. For example, if the first disk in the list is not part of the BIOS boot order, and the other disks in the list have empty MBRs."
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:206
+#: grub2_yast_i.xml:207
 #, no-c-format
 msgid "Setting the Disk Order"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:208
+#: grub2_yast_i.xml:209
 #, no-c-format
 msgid "Open the <guimenu>Boot Code Options</guimenu> tab."
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:213
+#: grub2_yast_i.xml:214
 #, no-c-format
-msgid "Click <guimenu>Edit Disk Boot Order</guimenu>."
+msgid "Click <guimenu>Edit Disk Boot Order</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:218
+#: grub2_yast_i.xml:219
 #, no-c-format
 msgid "If more than one disk is listed, select a disk and click <guimenu>Up</guimenu> or <guimenu>Down</guimenu> to reorder the displayed disks."
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:225
+#: grub2_yast_i.xml:226
 #, no-c-format
 msgid "Click <guimenu>OK</guimenu> two times to save the changes."
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:233
+#: grub2_yast_i.xml:234
 #, no-c-format
 msgid "Configuring Advanced Options"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:234
+#: grub2_yast_i.xml:235
 #, no-c-format
 msgid "Advanced boot parameters can be configured via the <guimenu>Boot Loader Options</guimenu> tab."
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:239
+#: grub2_yast_i.xml:240
 #, no-c-format
 msgid "<guimenu>Boot Loader Options</guimenu> Tab"
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:241
+#: grub2_yast_i.xml:242
 #, no-c-format
 msgid "Boot loader Options"
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:253
+#. Tag: term
+#: grub2_yast_i.xml:254
 #, no-c-format
-msgid "Boot Loader Time-Out"
+msgid "<guimenu>Boot Loader Time-Out</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:256
+#: grub2_yast_i.xml:257
 #, no-c-format
 msgid "Change the value of <guimenu>Time-Out in Seconds</guimenu> by typing in a new value and clicking the appropriate arrow key with your mouse."
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:263
+#. Tag: term
+#: grub2_yast_i.xml:264
 #, no-c-format
-msgid "Probe Foreign OS"
+msgid "<guimenu>Probe Foreign OS</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:266
+#: grub2_yast_i.xml:267
 #, no-c-format
 msgid "When selected, the boot loader searches for other systems like Windows or other Linux installations."
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:273
+#. Tag: term
+#: grub2_yast_i.xml:274
 #, no-c-format
-msgid "Hide Menu on Boot"
+msgid "<guimenu>Hide Menu on Boot</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:276
+#: grub2_yast_i.xml:277
 #, no-c-format
 msgid "Hides the boot menu and boots the default entry."
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:282
+#. Tag: term
+#: grub2_yast_i.xml:283
 #, no-c-format
-msgid "Adjusting the Default Boot Entry"
+msgid "<guimenu>Adjusting the Default Boot Entry</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:285
+#: grub2_yast_i.xml:286
 #, no-c-format
 msgid "Select the desired entry from the <quote>Default Boot Section</quote> list. Note that the <quote>&gt;</quote> sign in the boot entry name delimits the boot section and its subsection."
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:293
+#. Tag: term
+#: grub2_yast_i.xml:294
 #, no-c-format
-msgid "Protect Boot Loader with Password"
+msgid "<guimenu>Protect Boot Loader with Password</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:296
+#: grub2_yast_i.xml:297
 #, no-c-format
-msgid "Protects the boot loader and the system with an additional password. For more information, see <xref linkend=\"sec.grub2.password\"/>."
+msgid "Protects the boot loader and the system with an additional password. For more information, see <xref linkend=\"sec.grub2.password\"/> ."
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:305
+#: grub2_yast_i.xml:306
 #, no-c-format
 msgid "<guimenu>Kernel Parameters</guimenu> Tab"
 msgstr ""
 
 #. Tag: title
-#: grub2_yast_i.xml:307
+#: grub2_yast_i.xml:308
 #, no-c-format
 msgid "Kernel Parameters"
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:319
+#. Tag: term
+#: grub2_yast_i.xml:320
 #, no-c-format
-msgid "Console resolution"
+msgid "<guimenu>Console resolution</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:322
+#: grub2_yast_i.xml:323
 #, no-c-format
 msgid "The <guimenu>Console resolution</guimenu> option specifies the default screen resolution during the boot process."
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:329
+#. Tag: term
+#: grub2_yast_i.xml:330
 #, no-c-format
-msgid "Kernel Command Line Parameter"
+msgid "<guimenu>Kernel Command Line Parameter</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:332
+#: grub2_yast_i.xml:333
 #, no-c-format
-msgid "The optional kernel parameters are added at the end of the default parameters. For a list of all possible parameters, see <link xlink:href=\"http://en.opensuse.org/Linuxrc\"></link>."
+msgid "The optional kernel parameters are added at the end of the default parameters. For a list of all possible parameters, see <link xlink:href=\"http://en.opensuse.org/Linuxrc\"/> ."
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:340
+#. Tag: term
+#: grub2_yast_i.xml:341
 #, no-c-format
-msgid "Use graphical console"
+msgid "<guimenu>Use graphical console</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:343
+#: grub2_yast_i.xml:344
 #, no-c-format
 msgid "When checked, the boot menu appears on a graphical splash screen rather than in a text mode. The resolution of the boot screen can be then set from the <guimenu>Console resolution</guimenu> list, and graphical theme definition file can be specified with the <guimenu>Console theme</guimenu> file-chooser."
 msgstr ""
 
-#. Tag: guimenu
-#: grub2_yast_i.xml:353
+#. Tag: term
+#: grub2_yast_i.xml:354
 #, no-c-format
-msgid "Use Serial Console"
+msgid "<guimenu>Use Serial Console</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: grub2_yast_i.xml:356
+#: grub2_yast_i.xml:357
 #, no-c-format
-msgid "If your machine is controlled via a serial console, activate this option and specify which COM port to use at which speed. See <command>info grub</command> or <link xlink:href=\"http://www.gnu.org/software/grub/manual/grub.html#Serial-terminal\"></link>"
+msgid "If your machine is controlled via a serial console, activate this option and specify which COM port to use at which speed. See <command>info grub</command> or <link xlink:href=\"http://www.gnu.org/software/grub/manual/grub.html#Serial-terminal\"/>"
 msgstr ""
 

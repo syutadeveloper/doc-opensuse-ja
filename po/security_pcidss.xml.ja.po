@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,6 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: xml-stylesheet
+#: security_pcidss.xml:4
+#, no-c-format
+msgid ""
+"<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook50-profile.xsl\" "
+"type=\"text/xml\" title=\"Profiling step\"?>"
+msgstr ""
 
 #. Tag: title
 #: security_pcidss.xml:22
@@ -395,7 +403,7 @@ msgstr ""
 msgid ""
 "For example, to allow only outbound DNS requests over the interface "
 "<systemitem>eth0</systemitem> to server <systemitem class=\"ipaddress"
-"\">10.0.0.1</systemitem>, use:"
+"\">10.0.0.1</systemitem> , use:"
 msgstr ""
 
 #. Tag: screen
@@ -409,15 +417,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:304
+#: security_pcidss.xml:306
 #, no-c-format
 msgid ""
 "To block all other outbound traffic, see <xref linkend=\"vle.pcidss.deny-all"
-"\"/>."
+"\"/> ."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:311
+#: security_pcidss.xml:313
 #, no-c-format
 msgid ""
 "1.2.1.c Verify that all other inbound and outbound traffic is specifically "
@@ -425,7 +433,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:316
+#: security_pcidss.xml:318
 #, no-c-format
 msgid ""
 "Deny all outbound and inbound traffic for which no exceptions are defined as "
@@ -434,19 +442,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:322
+#: security_pcidss.xml:324
 #, no-c-format
 msgid "&firewalld; in &productname; by default blocks all inbound traffic."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:326
+#: security_pcidss.xml:328
 #, no-c-format
 msgid "To block all outbound traffic, manually add the following rules:"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:329
+#: security_pcidss.xml:331
 #, no-c-format
 msgid ""
 "&prompt.root;<command>firewall-cmd</command> --permanent --direct --add-rule "
@@ -461,15 +469,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:330
+#: security_pcidss.xml:336
 #, no-c-format
 msgid ""
 "In addition, inbound traffic can also be configured for certain services via "
-"the tcp wrapper configuration file <filename>/etc/hosts.deny</filename>."
+"the tcp wrapper configuration file <filename>/etc/hosts.deny</filename> ."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:335
+#: security_pcidss.xml:341
 #, no-c-format
 msgid ""
 "Most of the following tasks are about examine and verifying that the defined "
@@ -479,7 +487,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:344
+#: security_pcidss.xml:350
 #, no-c-format
 msgid ""
 "1.3.3 Implement anti-spoofing measures to detect and block forged source IP "
@@ -487,14 +495,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:349
+#: security_pcidss.xml:355
 #, no-c-format
 msgid ""
 "There are two ways to implement anti-spoofing measurements in &productnamex;:"
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:356
+#: security_pcidss.xml:362
 #, no-c-format
 msgid ""
 "<systemitem>iptables</systemitem> rules that only allow input from certain "
@@ -502,7 +510,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:357
+#: security_pcidss.xml:363
 #, no-c-format
 msgid ""
 "The used address space for communications can be clearly defined in the "
@@ -511,13 +519,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:367
+#: security_pcidss.xml:373
 #, no-c-format
 msgid "Linux Kernel Reverse Path Filtering"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:368
+#: security_pcidss.xml:374
 #, no-c-format
 msgid ""
 "This feature discards packet replies that do not go through the same "
@@ -526,36 +534,36 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:375
+#: security_pcidss.xml:381
 #, no-c-format
 msgid "&prompt.user;cat /proc/sys/net/ipv4/conf/all/rp_filter"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:376
+#: security_pcidss.xml:382
 #, no-c-format
-msgid "When enabled, this returns <literal>1</literal>."
+msgid "When enabled, this returns <literal>1</literal> ."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:385
+#: security_pcidss.xml:391
 #, no-c-format
 msgid ""
 "1.3.5 Permit only <quote>established</quote> connections into the network."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:390
+#: security_pcidss.xml:396
 #, no-c-format
 msgid ""
 "The &susefirewall; enables connection tracking via <literal>iptables</"
-"literal>. Connections to an interface that has been marked as external are "
+"literal> . Connections to an interface that has been marked as external are "
 "dropped by default. Only connections that associated with an established "
 "connection are allowed."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:396
+#: security_pcidss.xml:402
 #, no-c-format
 msgid ""
 "It is possible to define certain services that are allowed to connect to the "
@@ -564,7 +572,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:401
+#: security_pcidss.xml:407
 #, no-c-format
 msgid ""
 "Keep in mind that the first line of defense against malicious connections "
@@ -575,7 +583,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:412
+#: security_pcidss.xml:418
 #, no-c-format
 msgid ""
 "1.3.7 Do not disclose private IP addresses and routing information to "
@@ -583,7 +591,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:417
+#: security_pcidss.xml:423
 #, no-c-format
 msgid ""
 "A &productnamex; system can also act as a router to forward traffic from one "
@@ -596,7 +604,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:432
+#: security_pcidss.xml:438
 #, no-c-format
 msgid ""
 "Requirement 2: Do Not Use Vendor-Supplied Defaults for System Passwords and "
@@ -604,29 +612,30 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:433
+#: security_pcidss.xml:439
 #, no-c-format
 msgid ""
 "During the installation of &productnamex;, general system passwords are "
 "already set by the administrator. The setup also uses a password checker "
-"(<command>cracklib</command>) that identifies weak entries against a "
+"( <command>cracklib</command> ) that identifies weak entries against a "
 "dictionary. This means that the standard configuration already includes "
 "customer-defined security options for most services."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:440
+#: security_pcidss.xml:446
 #, no-c-format
 msgid ""
 "For more information about OS security, see <phrase os=\"sles;sled;osuse"
 "\"><xref linkend=\"book.security\"/> and <xref linkend=\"book.hardening\"/>."
 "</phrase> <phrase os=\"article\"><citetitle>&productnamex; Security Guide</"
 "citetitle> and <citetitle>&productnamex; Hardening Guide</citetitle>.</"
-"phrase>"
+"phrase> <!-- FIXME: These guides may become one soon. - sknorr, 2017-12-01 --"
+">"
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:450
+#: security_pcidss.xml:456
 #, no-c-format
 msgid ""
 "2.1 Always change vendor-supplied defaults and remove or disable unnecessary "
@@ -634,7 +643,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:455
+#: security_pcidss.xml:461
 #, no-c-format
 msgid ""
 "The configuration of any system service must be evaluated to meet the needed "
@@ -646,44 +655,44 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:463
+#: security_pcidss.xml:469
 #, no-c-format
 msgid "For example, the following security settings might be relevant:"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:468
+#: security_pcidss.xml:474
 #, no-c-format
 msgid ""
 "By default, the SNMP daemon only allows incoming requests to "
-"<systemitem>localhost</systemitem>. However, the default community string is "
-"named <literal>public</literal> and should be changed before accepting "
+"<systemitem>localhost</systemitem> . However, the default community string "
+"is named <literal>public</literal> and should be changed before accepting "
 "general inbound connections."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:476
+#: security_pcidss.xml:482
 #, no-c-format
 msgid ""
 "By default, certain insecure upstream settings of the <systemitem class="
 "\"daemon\">sshd</systemitem> daemon are listed and commented out inside the "
 "<systemitem class=\"daemon\">sshd</systemitem> configuration file <filename>/"
-"etc/ssh/sshd_config</filename>. For example, the insecure protocol version 1 "
-"and empty passwords (<literal>PermitEmptyPasswords no</literal>) are already "
-"disabled."
+"etc/ssh/sshd_config</filename> . For example, the insecure protocol version "
+"1 and empty passwords ( <literal>PermitEmptyPasswords no</literal> ) are "
+"already disabled."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:484
+#: security_pcidss.xml:490
 #, no-c-format
 msgid ""
 "To further increase SSH security, if applicable, deny direct <systemitem "
 "class=\"username\">root</systemitem> access by setting "
-"<literal>PermitRootLogin</literal> to <literal>no</literal>."
+"<literal>PermitRootLogin</literal> to <literal>no</literal> ."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:491
+#: security_pcidss.xml:497
 #, no-c-format
 msgid ""
 "Default settings can be customized by automating system installation with an "
@@ -691,45 +700,45 @@ msgid ""
 "automatically enabling an evaluated configuration. This setup procedure can "
 "also be automated with the &susemgr;. For more information, see the "
 "&susemgr; documentation at <link xlink:href=\"https://www.suse.com/"
-"documentation/suse-manager\"></link>."
+"documentation/suse-manager\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:499
+#: security_pcidss.xml:505
 #, no-c-format
 msgid ""
 "By default, &productnamex; does not create additional accounts apart from "
 "the <systemitem class=\"username\">root</systemitem> administrative user. "
-"There are system accounts defined in <filename>/etc/passwd</filename>, but "
+"There are system accounts defined in <filename>/etc/passwd</filename> , but "
 "they are not activated and therefore not directly reachable. This can be "
 "validated by checking the lines inside the <filename>/etc/shadow</filename> "
 "file."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:507
+#: security_pcidss.xml:513
 #, no-c-format
 msgid "In that file, the second column represents the defined password:"
-msgstr ""
-
-#. Tag: para
-#: security_pcidss.xml:512
-#, no-c-format
-msgid ""
-"An asterisk (<literal>*</literal>) means that a password was never defined "
-"and the account is therefore locked."
 msgstr ""
 
 #. Tag: para
 #: security_pcidss.xml:518
 #, no-c-format
 msgid ""
-"An exclamation mark (<literal>!</literal>) stands for a locked account and "
+"An asterisk ( <literal>*</literal> ) means that a password was never defined "
+"and the account is therefore locked."
+msgstr ""
+
+#. Tag: para
+#: security_pcidss.xml:524
+#, no-c-format
+msgid ""
+"An exclamation mark ( <literal>!</literal> ) stands for a locked account and "
 "can stand all by itself or in front of a password hash."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:527
+#: security_pcidss.xml:533
 #, no-c-format
 msgid ""
 "2.2 Develop configuration standards for all system components. Assure that "
@@ -738,7 +747,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:533
+#: security_pcidss.xml:539
 #, no-c-format
 msgid ""
 "As mentioned inside the &pcidssa; document, possible sources for industry-"
@@ -746,31 +755,31 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:539
+#: security_pcidss.xml:545
 #, no-c-format
 msgid "Center for Internet Security (CIS)"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:542
+#: security_pcidss.xml:548
 #, no-c-format
 msgid "International Organization for Standardization (ISO)"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:545
+#: security_pcidss.xml:551
 #, no-c-format
 msgid "SysAdmin Audit Network Security (SANS) Institute"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:548
+#: security_pcidss.xml:554
 #, no-c-format
 msgid "National Institute of Standards Technology (NIST)"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:551
+#: security_pcidss.xml:557
 #, no-c-format
 msgid ""
 "As the &pcidssa; requirements are not specified precisely, there is no "
@@ -779,11 +788,12 @@ msgid ""
 "specifications, including <phrase os=\"sles;sled;osuse\"><xref linkend="
 "\"book.security\"/> and <xref linkend=\"book.hardening\"/>.</phrase> <phrase "
 "os=\"article\"><citetitle>&productnamex; Security Guide</citetitle> and "
-"<citetitle>&productnamex; Hardening Guide</citetitle>.</phrase>"
+"<citetitle>&productnamex; Hardening Guide</citetitle>.</phrase> <!-- FIXME: "
+"These guides may become one soon. - sknorr, 2017-12-01 -->"
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:565
+#: security_pcidss.xml:571
 #, no-c-format
 msgid ""
 "2.2.1 Implement only one primary function per server to prevent functions "
@@ -793,7 +803,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:572
+#: security_pcidss.xml:578
 #, no-c-format
 msgid ""
 "To help separate services, use the variety of virtualization and "
@@ -802,7 +812,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:577
+#: security_pcidss.xml:583
 #, no-c-format
 msgid ""
 "You can also run &productnamex; on third-party virtualization servers like "
@@ -810,31 +820,31 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:581
+#: security_pcidss.xml:587
 #, no-c-format
 msgid "When using the options built in to &productnamex;, see:"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:586
+#: security_pcidss.xml:592
 #, no-c-format
 msgid ""
 "For information about virtualization, see <phrase os=\"sles;sled;osuse"
 "\"><xref linkend=\"book.virt\"/></phrase> <phrase os=\"article"
-"\"><citetitle>&productnamex; Virtualization Guide</citetitle></phrase>."
+"\"><citetitle>&productnamex; Virtualization Guide</citetitle></phrase> ."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:594
+#: security_pcidss.xml:600
 #, no-c-format
 msgid ""
 "For information about containerization, see <phrase os=\"sles;sled;osuse"
 "\"><xref linkend=\"book.sles.docker\"/></phrase> <phrase os=\"article"
-"\"><citetitle>&productnamex; Docker Guide</citetitle></phrase>."
+"\"><citetitle>&productnamex; Docker Guide</citetitle></phrase> ."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:605
+#: security_pcidss.xml:611
 #, no-c-format
 msgid ""
 "2.2.2 Enable only necessary services, protocols, daemons, etc., as required "
@@ -842,18 +852,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:610
+#: security_pcidss.xml:616
 #, no-c-format
 msgid ""
 "This is directly related to an item of requirement 1: To allow only services "
-"that are really needed and are using secure protocols and settings (<xref "
-"linkend=\"vle.pcidss.insecure-service\"/>). All parties involved must be "
+"that are really needed and are using secure protocols and settings ( <xref "
+"linkend=\"vle.pcidss.insecure-service\"/> ). All parties involved must be "
 "aware of the dangers of using insecure communication. Research, clearly "
 "document and communicate the risk of using insecure protocols and services."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:618
+#: security_pcidss.xml:624
 #, no-c-format
 msgid ""
 "Enable and disable system services using the following <command>systemctl</"
@@ -861,25 +871,25 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:624
+#: security_pcidss.xml:630
 #, no-c-format
 msgid "&prompt.user;systemctl status <replaceable>SERVICE</replaceable>"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:627
+#: security_pcidss.xml:633
 #, no-c-format
 msgid "&prompt.sudo;systemctl enable <replaceable>SERVICE</replaceable>"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:630
+#: security_pcidss.xml:636
 #, no-c-format
 msgid "&prompt.sudo;systemctl disable <replaceable>SERVICE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:633
+#: security_pcidss.xml:639
 #, no-c-format
 msgid ""
 "To list all available services that are installed on the system and see "
@@ -887,13 +897,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:637
+#: security_pcidss.xml:643
 #, no-c-format
 msgid "&prompt.user;systemctl list-unit-files --type=service"
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:641
+#: security_pcidss.xml:647
 #, no-c-format
 msgid ""
 "2.2.3.a Inspect configuration settings to verify that security features are "
@@ -901,7 +911,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:647
+#: security_pcidss.xml:653
 #, no-c-format
 msgid ""
 "To add an additional layer of security to insecure services, use VPN tunnels "
@@ -913,35 +923,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:655
+#: security_pcidss.xml:661
 #, no-c-format
 msgid ""
 "For additional security within &productnamex;, use &selnx; or &aa;. However, "
 "the setup of these frameworks is beyond the scope of this document:"
 msgstr ""
 
-#. Tag: para
-#: security_pcidss.xml:662 security_pcidss.xml:1085
-#, no-c-format
-msgid ""
-"For information about &selnx;, see <phrase os=\"sles;sled;osuse\"><xref "
-"linkend=\"cha.selinux\"/>.</phrase> <phrase os=\"article"
-"\"><citetitle>&productnamex; Security Guide, Chapter Configuring &selnx;</"
-"citetitle>.</phrase>"
-msgstr ""
-
-#. Tag: para
-#: security_pcidss.xml:670 security_pcidss.xml:1093
-#, no-c-format
-msgid ""
-"For information about &aa;, see <phrase os=\"sles;sled;osuse\"><xref linkend="
-"\"part.apparmor\"/>.</phrase> <phrase os=\"article"
-"\"><citetitle>&productnamex; Security Guide, Part Confining Privileges with "
-"&aa;</citetitle>.</phrase>"
-msgstr ""
-
 #. Tag: term
-#: security_pcidss.xml:681
+#: security_pcidss.xml:687
 #, no-c-format
 msgid ""
 "2.2.5.a Select a sample of system components and inspect the configurations "
@@ -950,7 +940,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:688
+#: security_pcidss.xml:694
 #, no-c-format
 msgid ""
 "The Linux kernel is the main system component. It consists of a core image "
@@ -961,7 +951,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:696
+#: security_pcidss.xml:702
 #, no-c-format
 msgid ""
 "The list of loaded kernel modules is usually quite long and includes modules "
@@ -970,11 +960,11 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:702
+#: security_pcidss.xml:708
 #, no-c-format
 msgid ""
 "To block modules from being loaded, configure them via the directory "
-"<filename>/etc/modprobe.d</filename>. For example, the kernel module "
+"<filename>/etc/modprobe.d</filename> . For example, the kernel module "
 "<literal>floppy</literal> is only necessary for systems that have a floppy "
 "drive. On systems that do not have a floppy drive, prevent the module from "
 "loading: Create a configuration file <filename>/etc/modprobe.d/00-disable-"
@@ -982,13 +972,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:711
+#: security_pcidss.xml:717
 #, no-c-format
 msgid "install floppy /bin/true"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:712
+#: security_pcidss.xml:718
 #, no-c-format
 msgid ""
 "The <literal>floppy</literal> module is usually loaded during the execution "
@@ -998,13 +988,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:718
+#: security_pcidss.xml:724
 #, no-c-format
 msgid "&prompt.sudo;mkinitrd"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:719
+#: security_pcidss.xml:725
 #, no-c-format
 msgid ""
 "It is harder to remove or restrict application functionality, as "
@@ -1015,7 +1005,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:729
+#: security_pcidss.xml:735
 #, no-c-format
 msgid ""
 "2.3 Encrypt all non-console administrative access using strong cryptography. "
@@ -1024,7 +1014,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:735
+#: security_pcidss.xml:741
 #, no-c-format
 msgid ""
 "Encrypt all administrative network access: SSH with appropriate "
@@ -1033,7 +1023,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:740
+#: security_pcidss.xml:746
 #, no-c-format
 msgid ""
 "Administrative access can also be granted via a Web site. In this case, the "
@@ -1042,13 +1032,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:751
+#: security_pcidss.xml:757
 #, no-c-format
 msgid "Requirement 3: Protect Stored Cardholder Data"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:752
+#: security_pcidss.xml:758
 #, no-c-format
 msgid ""
 "The section explains how to handle cardholder and authentication data "
@@ -1056,7 +1046,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:758
+#: security_pcidss.xml:764
 #, no-c-format
 msgid ""
 "<emphasis>Cardholder data</emphasis> includes information such as the "
@@ -1064,7 +1054,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:764
+#: security_pcidss.xml:770
 #, no-c-format
 msgid ""
 "<emphasis>Authentication data</emphasis> includes the Personal "
@@ -1072,7 +1062,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:770
+#: security_pcidss.xml:776
 #, no-c-format
 msgid ""
 "The main difference between cardholder data and authentication data is that "
@@ -1082,7 +1072,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:776
+#: security_pcidss.xml:782
 #, no-c-format
 msgid ""
 "The database design for storing cardholder data is beyond the scope of this "
@@ -1090,19 +1080,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:782
+#: security_pcidss.xml:788
 #, no-c-format
 msgid "The DBMS can use column-level encryption inside the database scheme."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:788
+#: security_pcidss.xml:794
 #, no-c-format
 msgid "Alternatively, the database files can be encrypted."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:793
+#: security_pcidss.xml:799
 #, no-c-format
 msgid ""
 "&productnamex; supports full-disk encryption, so that the whole database "
@@ -1112,7 +1102,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:803
+#: security_pcidss.xml:809
 #, no-c-format
 msgid ""
 "3.4.1.a If disk encryption is used, inspect the configuration and observe "
@@ -1123,7 +1113,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:812
+#: security_pcidss.xml:818
 #, no-c-format
 msgid ""
 "The guidance description of the &pcidssa; document says the following about "
@@ -1133,7 +1123,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:818
+#: security_pcidss.xml:824
 #, no-c-format
 msgid ""
 "From an administrator’s point of view, a block device encryption with the "
@@ -1142,7 +1132,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:824
+#: security_pcidss.xml:830
 #, no-c-format
 msgid ""
 "Therefore, access control can only be limited with the general ACL "
@@ -1152,7 +1142,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:831
+#: security_pcidss.xml:837
 #, no-c-format
 msgid ""
 "When using LUKS, this is usually fulfilled: The password needs to be entered "
@@ -1161,7 +1151,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:836
+#: security_pcidss.xml:842
 #, no-c-format
 msgid ""
 "LUKS in fully integrated into &productnamex; and can be used via &yast; to "
@@ -1169,7 +1159,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:843
+#: security_pcidss.xml:849
 #, no-c-format
 msgid ""
 "3.4.1.c Examine the configurations and observe the processes to verify that "
@@ -1177,17 +1167,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:848
+#: security_pcidss.xml:854
 #, no-c-format
 msgid ""
-"As described in <xref linkend=\"vle.pcidss.encrypt-disk\"/>, LUKS/dm-crypt "
+"As described in <xref linkend=\"vle.pcidss.encrypt-disk\"/> , LUKS/dm-crypt "
 "provides full-disk encryption that fulfills this requirement. Access to the "
 "stored data is only possible via a decryption password that must be entered "
 "when the disk is mounted."
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:859
+#: security_pcidss.xml:865
 #, no-c-format
 msgid ""
 "Requirement 4: Encrypt Transmission of Cardholder Data Across Open, Public "
@@ -1195,7 +1185,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:860
+#: security_pcidss.xml:866
 #, no-c-format
 msgid ""
 "Cardholder data must be encrypted during transmissions over insecure "
@@ -1205,7 +1195,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:868
+#: security_pcidss.xml:874
 #, no-c-format
 msgid ""
 "4.1 Use strong cryptography and security protocols (for example, TLS, IPSEC, "
@@ -1217,7 +1207,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:878
+#: security_pcidss.xml:884
 #, no-c-format
 msgid ""
 "Any connection that transmits sensitive information must be protected "
@@ -1225,7 +1215,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:882
+#: security_pcidss.xml:888
 #, no-c-format
 msgid ""
 "For incoming client requests, use the HTTPS protocol with a secure TLS "
@@ -1235,7 +1225,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:888
+#: security_pcidss.xml:894
 #, no-c-format
 msgid ""
 "&productnamex; comes with a set of services and tools that allow protected "
@@ -1245,7 +1235,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:894
+#: security_pcidss.xml:900
 #, no-c-format
 msgid ""
 "IPsec or other VPN technologies can be used for securing the connection "
@@ -1256,7 +1246,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:902
+#: security_pcidss.xml:908
 #, no-c-format
 msgid ""
 "In &productnamex;, this can be directly established with <phrase role="
@@ -1265,16 +1255,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:907
+#: security_pcidss.xml:913
 #, no-c-format
 msgid ""
 "To administrate the OS, use SSH. For information about configuring SSH to "
 "provide better security, see <xref linkend=\"sec.pcidss.requirement-1\"/> "
-"and <xref linkend=\"sec.pcidss.requirement-2\"/>."
+"and <xref linkend=\"sec.pcidss.requirement-2\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:918
+#: security_pcidss.xml:924
 #, no-c-format
 msgid ""
 "Requirement 5: Protect All Systems Against Malware and Regularly Update Anti-"
@@ -1282,7 +1272,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:919
+#: security_pcidss.xml:925
 #, no-c-format
 msgid ""
 "For &pcidssa; compliance, it is necessary to protect against malicious "
@@ -1292,7 +1282,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:926
+#: security_pcidss.xml:932
 #, no-c-format
 msgid ""
 "&clamav; has a limited set of scanning capabilities and limited performance "
@@ -1301,7 +1291,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:931
+#: security_pcidss.xml:937
 #, no-c-format
 msgid ""
 "On the other hand, &clamav; is shipped with &productnamex; and it can be "
@@ -1311,13 +1301,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:939
+#: security_pcidss.xml:945
 #, no-c-format
 msgid "Requirement 6: Develop and maintain secure systems and applications"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:940
+#: security_pcidss.xml:946
 #, no-c-format
 msgid ""
 "The major part of this requirement concerns in-house software development, "
@@ -1327,7 +1317,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:948
+#: security_pcidss.xml:954
 #, no-c-format
 msgid ""
 "The software package manager Zypper is a powerful instrument of "
@@ -1338,7 +1328,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:955
+#: security_pcidss.xml:961
 #, no-c-format
 msgid ""
 "<command>zypper</command> is part of any &productnamex; installation and has "
@@ -1346,7 +1336,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:959
+#: security_pcidss.xml:965
 #, no-c-format
 msgid ""
 "For information about Zypper, see <phrase os=\"sles;sled;osuse\"><xref "
@@ -1356,7 +1346,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:968
+#: security_pcidss.xml:974
 #, no-c-format
 msgid ""
 "For system management, &suse; provides &susemgr; that provides an efficient "
@@ -1367,15 +1357,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:976
+#: security_pcidss.xml:982
 #, no-c-format
 msgid ""
 "For information about &susemgr;, see <link xlink:href=\"https://www.suse.com/"
-"documentation/suse-manager/\"></link>."
+"documentation/suse-manager/\"/> ."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:984
+#: security_pcidss.xml:990
 #, no-c-format
 msgid ""
 "6.2.a Examine policies and procedures related to security patch installation "
@@ -1386,7 +1376,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:993
+#: security_pcidss.xml:999
 #, no-c-format
 msgid ""
 "To identify patches that need to be installed to secure your system, do the "
@@ -1394,54 +1384,54 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:997
+#: security_pcidss.xml:1003
 #, no-c-format
 msgid ""
 "First, refresh all software repositories, so you have up-to-date information:"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:1000
+#: security_pcidss.xml:1006
 #, no-c-format
 msgid "&prompt.sudo;zypper refresh"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1001
+#: security_pcidss.xml:1007
 #, no-c-format
 msgid "Then use the patch-related commands of Zypper:"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1006
+#: security_pcidss.xml:1012
 #, no-c-format
 msgid "Search for important security fixes that have not yet been installed:"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:1010
+#: security_pcidss.xml:1016
 #, no-c-format
 msgid ""
 "&prompt.user;zypper list-patches --category security --severity important"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1013
+#: security_pcidss.xml:1019
 #, no-c-format
 msgid ""
 "It is also possible to search for CVE or SUSE Bugzilla numbers. By default, "
 "only necessary patches are listed by this command. To also show patches that "
-"have already been installed, use the parameter <option>--all</option>:"
+"have already been installed, use the parameter <option>--all</option> :"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:1019
+#: security_pcidss.xml:1025
 #, no-c-format
 msgid "&prompt.user;zypper list-patches --all --cve=CVE-2016-4957"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1022
+#: security_pcidss.xml:1028
 #, no-c-format
 msgid ""
 "To list details of individual patches, use the <command>patch-info</command> "
@@ -1449,13 +1439,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:1026
+#: security_pcidss.xml:1032
 #, no-c-format
 msgid "&prompt.user;zypper patch-info SUSE-SLE-SERVER-12-SP1-2016-600"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1029
+#: security_pcidss.xml:1035
 #, no-c-format
 msgid ""
 "To install only important security patches, use the <command>patch</command> "
@@ -1463,21 +1453,21 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:1033
+#: security_pcidss.xml:1039
 #, no-c-format
 msgid "&prompt.sudo;zypper patch --category security --severity important"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1036
+#: security_pcidss.xml:1042
 #, no-c-format
 msgid ""
 "To perform updates automatically, the parameter <option>--non-interactive</"
-"option>, that is supported by all Zypper subcommands, is helpful."
+"option> , that is supported by all Zypper subcommands, is helpful."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1041
+#: security_pcidss.xml:1047
 #, no-c-format
 msgid ""
 "For more information about Zypper, see <phrase os=\"sles;sled;osuse\"><xref "
@@ -1487,14 +1477,14 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:1053
+#: security_pcidss.xml:1059
 #, no-c-format
 msgid ""
 "Requirement 7: Restrict access to cardholder data by business need to know"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1054
+#: security_pcidss.xml:1060
 #, no-c-format
 msgid ""
 "OS access control is a complex topic. Again, this &pcidssa; requirement is "
@@ -1505,7 +1495,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1063
+#: security_pcidss.xml:1069
 #, no-c-format
 msgid ""
 "Access can be controlled via specific users and groups of users using the "
@@ -1513,7 +1503,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1067
+#: security_pcidss.xml:1073
 #, no-c-format
 msgid ""
 "For information about managing permissions, see <phrase os=\"sles;sled;osuse"
@@ -1523,7 +1513,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1075
+#: security_pcidss.xml:1081
 #, no-c-format
 msgid ""
 "A more flexible mechanism for file systems are Access Control Lists (ACLs) "
@@ -1534,8 +1524,28 @@ msgid ""
 "targeted."
 msgstr ""
 
+#. Tag: para
+#: security_pcidss.xml:1091
+#, no-c-format
+msgid ""
+"For information about &selnx;, see <phrase os=\"sles;sled;osuse\"><xref "
+"linkend=\"cha.selinux\"/>.</phrase> <phrase os=\"article"
+"\"><citetitle>&productnamex; Security Guide, Chapter Configuring &selnx;</"
+"citetitle>.</phrase>"
+msgstr ""
+
+#. Tag: para
+#: security_pcidss.xml:1099
+#, no-c-format
+msgid ""
+"For information about &aa;, see <phrase os=\"sles;sled;osuse\"><xref linkend="
+"\"part.apparmor\"/>.</phrase> <phrase os=\"article"
+"\"><citetitle>&productnamex; Security Guide, Part Confining Privileges with "
+"&aa;</citetitle>.</phrase>"
+msgstr ""
+
 #. Tag: term
-#: security_pcidss.xml:1105
+#: security_pcidss.xml:1111
 #, no-c-format
 msgid ""
 "7.1.2 Restrict access to privileged user IDs to least privileges necessary "
@@ -1543,7 +1553,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1110
+#: security_pcidss.xml:1116
 #, no-c-format
 msgid ""
 "The standard Unix permissions allow setting Read, Write, and Execution flags "
@@ -1555,7 +1565,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1118
+#: security_pcidss.xml:1124
 #, no-c-format
 msgid ""
 "ACLs provide an extra level of restrictions. It is possible to set read-"
@@ -1564,20 +1574,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1123
+#: security_pcidss.xml:1129
 #, no-c-format
 msgid ""
 "The commands <command>getfacl</command> and <command>setfacl</command> (on "
-"&productnamex; shipped with the package <package>acl</package>) allow direct "
-"modification of file system resources. For example, to check and set ACL "
-"restrictions of the file <filename>/tmp/test.txt</filename> for the user "
+"&productnamex; shipped with the package <package>acl</package> ) allow "
+"direct modification of file system resources. For example, to check and set "
+"ACL restrictions of the file <filename>/tmp/test.txt</filename> for the user "
 "&exampleuserII;:"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:1130
+#: security_pcidss.xml:1136
 #, no-c-format
 msgid ""
+"\n"
 "&prompt.user;<command>getfacl /tmp/test.txt</command>\n"
 "# file: /tmp/test.txt\n"
 "# owner: &exampleuser_plain;\n"
@@ -1597,11 +1608,11 @@ msgid ""
 "user:&exampleuserII_plain;:r--\n"
 "group::r--\n"
 "mask::r--\n"
-"other::r--"
+"other::r--\n"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1131
+#: security_pcidss.xml:1157
 #, no-c-format
 msgid ""
 "Standard Unix permissions include the so-called Sticky Bit. This allows the "
@@ -1612,34 +1623,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1138
+#: security_pcidss.xml:1164
 #, no-c-format
 msgid ""
 "For a more gradual approach to explicitly allowing certain operations or "
 "behaviors to binaries, use extended capabilities. As an example for a "
 "command that uses extended capabilities by default, consider <command>ping</"
-"command> (from the package <package>iputils</package>)."
+"command> (from the package <package>iputils</package> )."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1144
+#: security_pcidss.xml:1170
 #, no-c-format
 msgid ""
 "<command>ping</command> sends ICMP IP packets over the network card. For "
 "this, it needs the <literal>CAP_NET_RAW</literal> capability to be Effective "
-"and Permitted (<literal>+ep</literal>):"
+"and Permitted ( <literal>+ep</literal> ):"
 msgstr ""
 
 #. Tag: screen
-#: security_pcidss.xml:1150
+#: security_pcidss.xml:1176
 #, no-c-format
 msgid ""
+"\n"
 "&prompt.root;<command>sudo getcap /usr/bin/ping</command>\n"
-"/usr/bin/ping = cap_net_raw+ep"
+"/usr/bin/ping = cap_net_raw+ep\n"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1151
+#: security_pcidss.xml:1180
 #, no-c-format
 msgid ""
 "Login access control to the system can be managed using Pluggable "
@@ -1649,7 +1661,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1158
+#: security_pcidss.xml:1187
 #, no-c-format
 msgid ""
 "For more information about managing permissions, see <phrase os=\"sles;sled;"
@@ -1659,7 +1671,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:1169
+#: security_pcidss.xml:1198
 #, no-c-format
 msgid ""
 "Requirement 8: <systemitem>Identify and authenticate access to system "
@@ -1667,7 +1679,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1170
+#: security_pcidss.xml:1199
 #, no-c-format
 msgid ""
 "Ideally, use a central database with user information and a unique "
@@ -1677,22 +1689,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1176
+#: security_pcidss.xml:1205
 #, no-c-format
 msgid ""
 "On a stand-alone server, unique identifiers are managed via the standard "
 "Linux user and group IDs. These are listed inside <filename>/etc/passwd</"
-"filename> and <filename>/etc/group</filename>."
+"filename> and <filename>/etc/group</filename> ."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:1183
+#: security_pcidss.xml:1212
 #, no-c-format
 msgid "8.1.4 Remove/disable inactive user accounts within 90 days."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1187
+#: security_pcidss.xml:1216
 #, no-c-format
 msgid ""
 "In this context, there are many advantages to using a centralized "
@@ -1700,13 +1712,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1193
+#: security_pcidss.xml:1222
 #, no-c-format
 msgid "It is easy to identify and automatically disable inactive accounts."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1198
+#: security_pcidss.xml:1227
 #, no-c-format
 msgid ""
 "User accounts only need to be disabled in one place. After their access is "
@@ -1715,7 +1727,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1205
+#: security_pcidss.xml:1234
 #, no-c-format
 msgid ""
 "However, if you are using local accounts, these can be checked for "
@@ -1726,15 +1738,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1212
+#: security_pcidss.xml:1241
 #, no-c-format
 msgid ""
 "To list the local accounts last login time use the command <command>lastlog</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:1219
+#: security_pcidss.xml:1248
 #, no-c-format
 msgid ""
 "8.1.6 Limit repeated access attempts by locking out the user ID after not "
@@ -1742,19 +1754,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1224
+#: security_pcidss.xml:1253
 #, no-c-format
 msgid ""
-"As stated in <xref linkend=\"vle.pcidss.disable-user\"/>, a centralized "
+"As stated in <xref linkend=\"vle.pcidss.disable-user\"/> , a centralized "
 "account infrastructure will have this capability. On &productnamex; systems, "
 "access attempts can be checked and limited with the <systemitem>pam_tally2</"
 "systemitem> PAM module. The module is executed during login time and checks "
 "the recorded failed attempts since the last successful login. To check and "
-"reset the account status, use the tool <command>pam_tally2</command>."
+"reset the account status, use the tool <command>pam_tally2</command> ."
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:1236
+#: security_pcidss.xml:1265
 #, no-c-format
 msgid ""
 "8.1.7 Set the lockout duration to a minimum of 30 minutes or until an "
@@ -1762,7 +1774,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1241
+#: security_pcidss.xml:1270
 #, no-c-format
 msgid ""
 "The PAM module <systemitem>pam_tally2</systemitem> described in <xref "
@@ -1774,7 +1786,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:1252
+#: security_pcidss.xml:1281
 #, no-c-format
 msgid ""
 "8.3.1 Incorporate multi-factor authentication for all non-console access "
@@ -1782,7 +1794,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1257
+#: security_pcidss.xml:1286
 #, no-c-format
 msgid ""
 "To authenticate users for administrative access with multiple factors, use "
@@ -1790,7 +1802,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1263
+#: security_pcidss.xml:1292
 #, no-c-format
 msgid ""
 "Use Pluggable Authentication Modules (PAM): This increases flexibility when "
@@ -1798,7 +1810,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1268
+#: security_pcidss.xml:1297
 #, no-c-format
 msgid ""
 "For third-party one-time password (OTP) products, there is usually also a "
@@ -1806,7 +1818,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1272
+#: security_pcidss.xml:1301
 #, no-c-format
 msgid ""
 "For information about PAM, see <phrase os=\"sles;sled;osuse\"><xref linkend="
@@ -1815,7 +1827,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1280
+#: security_pcidss.xml:1309
 #, no-c-format
 msgid ""
 "To add multi-factor authentication for SSH connections, mandate use of "
@@ -1823,7 +1835,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1284
+#: security_pcidss.xml:1313
 #, no-c-format
 msgid ""
 "To connect to a system, it is then necessary to prove possession of an "
@@ -1833,7 +1845,7 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: security_pcidss.xml:1295
+#: security_pcidss.xml:1324
 #, no-c-format
 msgid ""
 "8.3.2 Incorporate multi-factor authentication for all remote network access "
@@ -1842,19 +1854,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1302
+#: security_pcidss.xml:1331
 #, no-c-format
-msgid "For details, see <xref linkend=\"vle.pcidss.multi-factor-local\"/>."
+msgid "For details, see <xref linkend=\"vle.pcidss.multi-factor-local\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:1310
+#: security_pcidss.xml:1339
 #, no-c-format
 msgid "Requirement 9: Restrict physical access to cardholder data"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1311
+#: security_pcidss.xml:1340
 #, no-c-format
 msgid ""
 "Physical access to systems that are involved in processing cardholder data "
@@ -1864,7 +1876,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:1319
+#: security_pcidss.xml:1348
 #, no-c-format
 msgid ""
 "Requirement 10: Track and monitor all access to network resources and "
@@ -1872,7 +1884,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1320
+#: security_pcidss.xml:1349
 #, no-c-format
 msgid ""
 "To track user activities, it is important to have a synchronized time "
@@ -1885,17 +1897,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1330
+#: security_pcidss.xml:1359
 #, no-c-format
 msgid ""
 "A synchronized time reference makes it easier to correlate events inside "
 "recorded log files. This reference can include general system log entries "
 "collected by a central system log server or kernel audit messages by the "
-"daemon <systemitem class=\"daemon\">audit</systemitem>."
+"daemon <systemitem class=\"daemon\">audit</systemitem> ."
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1336
+#: security_pcidss.xml:1365
 #, no-c-format
 msgid ""
 "For information about auditing, see <phrase os=\"sles;sled;osuse\"><xref "
@@ -1905,7 +1917,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1342
+#: security_pcidss.xml:1371
 #, no-c-format
 msgid ""
 "All subsections of this requirement relevant to auditing can be complied "
@@ -1913,13 +1925,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:1348
+#: security_pcidss.xml:1377
 #, no-c-format
 msgid "Requirement 11: Regularly Test Security Systems and Processes"
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1349
+#: security_pcidss.xml:1378
 #, no-c-format
 msgid ""
 "Testing the discussed security mechanisms is also a key requirement for "
@@ -1930,7 +1942,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1356
+#: security_pcidss.xml:1385
 #, no-c-format
 msgid ""
 "To keep track of system integrity, &productnamex; comes with the Advanced "
@@ -1942,7 +1954,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1364
+#: security_pcidss.xml:1393
 #, no-c-format
 msgid ""
 "For more information about &aide;, see <phrase os=\"sles;sled;osuse\"><xref "
@@ -1952,7 +1964,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: security_pcidss.xml:1372
+#: security_pcidss.xml:1401
 #, no-c-format
 msgid ""
 "Requirement 12: Maintain a Policy That Addresses Information Security for "
@@ -1960,7 +1972,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1373
+#: security_pcidss.xml:1402
 #, no-c-format
 msgid ""
 "Any organization that handles valuable information should have general "
@@ -1969,7 +1981,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_pcidss.xml:1379
+#: security_pcidss.xml:1408
 #, no-c-format
 msgid ""
 "All security policies should also be evaluated regularly and adjusted to "

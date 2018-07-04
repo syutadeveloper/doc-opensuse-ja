@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Live Patching the Linux Kernel Using &kg;"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: kgraft.xml:17
+#. Tag: dm:translation
+#: kgraft.xml:19
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -247,9 +247,9 @@ msgstr ""
 msgid ""
 "If your &slsa; system is not yet registered, register it. Registration can "
 "be done during the system installation or later using the &yast; "
-"<guimenu>Product Registration</guimenu> module (<command>yast2 registration</"
-"command>). After registration, click <guimenu>Yes</guimenu> to see the list "
-"of available online updates."
+"<guimenu>Product Registration</guimenu> module ( <command>yast2 "
+"registration</command> ). After registration, click <guimenu>Yes</guimenu> "
+"to see the list of available online updates."
 msgstr ""
 
 #. Tag: para
@@ -258,8 +258,8 @@ msgstr ""
 msgid ""
 "If your &slsa; system is already registered, but &slea; Live Patching is not "
 "yet activated, open the &yast; <guimenu>Product Registration</guimenu> "
-"module (<command>yast2 registration</command>) and click <guimenu>Select "
-"Extensions</guimenu>."
+"module ( <command>yast2 registration</command> ) and click <guimenu>Select "
+"Extensions</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -267,13 +267,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Select <guimenu>SUSE Linux Enterprise Live Patching 12</guimenu> in the list "
-"of available extensions and click <guimenu>Next</guimenu>."
+"of available extensions and click <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: kgraft.xml:189
 #, no-c-format
-msgid "Confirm the license terms and click <guimenu>Next</guimenu>."
+msgid "Confirm the license terms and click <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -281,7 +281,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Enter the &slea; Live Patching registration code and click <guimenu>Next</"
-"guimenu>."
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -289,7 +289,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Check the <guimenu>Installation Summary</guimenu> and selected "
-"<guimenu>Patterns</guimenu>. The pattern <systemitem>Live Patching</"
+"<guimenu>Patterns</guimenu> . The pattern <systemitem>Live Patching</"
 "systemitem> should be selected for installation."
 msgstr ""
 
@@ -314,7 +314,7 @@ msgstr ""
 msgid ""
 "&slea; Live Patching updates are distributed in a form that allows using "
 "standard &slea; update stack for patch application. The initial live patch "
-"can be updated using <command>zypper patch</command>, &yast; Online Update "
+"can be updated using <command>zypper patch</command> , &yast; Online Update "
 "or equivalent method."
 msgstr ""
 
@@ -337,7 +337,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "To see the global status of patching, check the flag in <filename>/sys/"
-"kernel/kgraft/in_progress</filename>. The value <literal>1</literal> "
+"kernel/kgraft/in_progress</filename> . The value <literal>1</literal> "
 "signifies the existence of sleeping processes that still need to be woken "
 "(the patching is still in progress). The value <literal>0</literal> "
 "signifies that all processes are using solely the patched functions and "
@@ -368,7 +368,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Expiration dates of live patches can be accessed with <command>zypper "
-"lifecycle</command>. Make sure that the package <package>lifecycle-data-sle-"
+"lifecycle</command> . Make sure that the package <package>lifecycle-data-sle-"
 "live-patching</package> is installed."
 msgstr ""
 
@@ -391,11 +391,11 @@ msgid ""
 "apache2-utils                            Now\n"
 "\n"
 "\n"
-"*) See https://www.suse.com/lifecycle  for latest information"
+"*) See https://www.suse.com/lifecycle  for latest information\n"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:277
+#: kgraft.xml:292
 #, no-c-format
 msgid ""
 "When the expiration date of a patch is reached, no further live patches for "
@@ -404,25 +404,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: kgraft.xml:283
+#: kgraft.xml:298
 #, no-c-format
 msgid "Removing a &kg; Patch"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:285
+#: kgraft.xml:300
 #, no-c-format
 msgid "To remove a &kg; patch, use the following procedure:"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:298
+#: kgraft.xml:313
 #, no-c-format
 msgid "First remove the patch itself using Zypper:"
 msgstr ""
 
 #. Tag: screen
-#: kgraft.xml:301
+#: kgraft.xml:316
 #, no-c-format
 msgid ""
 "&prompt.sudo;zypper rm kgraft-patch-<replaceable>3_12_32-25-default</"
@@ -430,19 +430,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:304
+#: kgraft.xml:319
 #, no-c-format
 msgid "Then reboot the machine."
 msgstr ""
 
 #. Tag: title
-#: kgraft.xml:311
+#: kgraft.xml:326
 #, no-c-format
 msgid "Stuck Kernel Execution Threads"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:313
+#: kgraft.xml:328
 #, no-c-format
 msgid ""
 "Kernel threads need to be prepared to handle &kg;. Third-party software may "
@@ -451,58 +451,59 @@ msgid ""
 "indefinitely. As an emergency measure &kg; offers the possibility to force "
 "finishing of the patching process without waiting for all execution threads "
 "to cross the safety checkpoint. This can be achieved by writing <literal>0</"
-"literal> into <filename>/sys/kernel/kgraft/in_progress</filename>. Consult "
+"literal> into <filename>/sys/kernel/kgraft/in_progress</filename> . Consult "
 "&suse; support before performing this procedure."
 msgstr ""
 
 #. Tag: title
-#: kgraft.xml:342
+#: kgraft.xml:357
 #, no-c-format
 msgid "The <command>kgr</command> Tool"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:344
+#: kgraft.xml:359
 #, no-c-format
 msgid ""
 "Several &kg; management tasks can be simplified with the <command>kgr</"
 "command> tool. The available commands are:"
 msgstr ""
 
-#. Tag: command
-#: kgraft.xml:351
+#. Tag: term
+#: kgraft.xml:366
 #, no-c-format
-msgid "kgr status"
+msgid "<command>kgr status</command>"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:354
+#: kgraft.xml:369
 #, no-c-format
 msgid ""
-"Displays the overall status of &kg; patching (<literal>ready</literal> or "
-"<literal>in_progress</literal>)."
+"Displays the overall status of &kg; patching ( <literal>ready</literal> or "
+"<literal>in_progress</literal> ). <!--It takes the information from "
+"<filename>/sys/kernel/kgraft/in_progress</filename>.-->"
 msgstr ""
 
-#. Tag: command
-#: kgraft.xml:363
+#. Tag: term
+#: kgraft.xml:378
 #, no-c-format
-msgid "kgr patches"
+msgid "<command>kgr patches</command>"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:366
+#: kgraft.xml:381
 #, no-c-format
 msgid "Displays the list of loaded &kg; patches."
 msgstr ""
 
-#. Tag: command
-#: kgraft.xml:372
+#. Tag: term
+#: kgraft.xml:387
 #, no-c-format
-msgid "kgr blocking"
+msgid "<command>kgr blocking</command>"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:375
+#: kgraft.xml:390
 #, no-c-format
 msgid ""
 "Lists processes that are preventing &kg; patching from finishing. By default "
@@ -511,19 +512,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:397
+#: kgraft.xml:412
 #, no-c-format
-msgid "For detailed information, see <command>man kgr</command>."
+msgid "For detailed information, see <command>man kgr</command> ."
 msgstr ""
 
 #. Tag: title
-#: kgraft.xml:402
+#: kgraft.xml:417
 #, no-c-format
 msgid "Scope of &kg; Technology"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:404
+#: kgraft.xml:419
 #, no-c-format
 msgid ""
 "&kg; is based on replacing functions. Data structure alteration can be "
@@ -535,21 +536,24 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:413
+#: kgraft.xml:428
 #, no-c-format
 msgid ""
 "Because of the way &kg; works, support for third-party modules that are "
-"spawning kernel threads is limited."
+"spawning kernel threads is limited. <!--Sending SIGSTOP and SIGCONT signals "
+"to processes in D process state (uninterruptible sleep) does not make them "
+"to cross the kernel/user space boundary and does not have the intended "
+"effect.-->"
 msgstr ""
 
 #. Tag: title
-#: kgraft.xml:422
+#: kgraft.xml:437
 #, no-c-format
 msgid "Scope of &slea; Live Patching"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:424
+#: kgraft.xml:439
 #, no-c-format
 msgid ""
 "Fixes for SUSE Common Vulnerability Scoring System (CVSS; SUSE CVSS is based "
@@ -559,17 +563,17 @@ msgid ""
 "fixes fulfilling the above criteria. SUSE reserves the right to skip fixes "
 "where production of a kernel live patch is unviable because of technical "
 "reasons. For more information on CVSS, which is the base for the SUSE CVSS "
-"rating, see <link xlink:href=\"https://www.first.org/cvss/\"></link>."
+"rating, see <link xlink:href=\"https://www.first.org/cvss/\"/> ."
 msgstr ""
 
 #. Tag: title
-#: kgraft.xml:437
+#: kgraft.xml:452
 #, no-c-format
 msgid "Interaction with the Support Processes"
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:439
+#: kgraft.xml:454
 #, no-c-format
 msgid ""
 "While resolving a technical difficulty with &suse; support, you may receive "
@@ -578,7 +582,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:445
+#: kgraft.xml:460
 #, no-c-format
 msgid ""
 "&kg; PTFs complying with the conditions described in the previous section "
@@ -588,7 +592,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:452
+#: kgraft.xml:467
 #, no-c-format
 msgid ""
 "PTFs issued for the base kernel disrupt the live patching process. First, "
@@ -598,7 +602,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: kgraft.xml:459
+#: kgraft.xml:474
 #, no-c-format
 msgid ""
 "PTFs for other packages in &slea; Live Patching can be treated like regular "

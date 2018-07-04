@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Power Management"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: powermanagement.xml:21
+#. Tag: dm:translation
+#: powermanagement.xml:23
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -91,7 +91,8 @@ msgid ""
 "consumes very little power. The advantage of this state is the possibility "
 "of resuming work at the same point within a few seconds without having to "
 "boot and restart applications. This function corresponds to the ACPI state "
-"<literal>S3</literal>."
+"<literal>S3</literal> . <!-- The support of this state is still under "
+"development and therefore largely depends on the hardware. -->"
 msgstr ""
 
 #. Tag: term
@@ -110,12 +111,12 @@ msgid ""
 "takes about 30 to 90 seconds. The state prior to the suspend is restored. "
 "Some manufacturers offer useful hybrid variants of this mode, such as "
 "RediSafe in IBM Thinkpads. The corresponding ACPI state is <literal>S4</"
-"literal>. In Linux, suspend to disk is performed by kernel routines that are "
-"independent from ACPI."
+"literal> . In Linux, suspend to disk is performed by kernel routines that "
+"are independent from ACPI."
 msgstr ""
 
-#. Tag: listitem
-#: powermanagement.xml:86
+#. Tag: #text
+#: powermanagement.xml:87
 #, no-c-format
 msgid "&note.mkswap.swap;"
 msgstr ""
@@ -162,7 +163,7 @@ msgstr ""
 msgid ""
 "In connection with the CPU, energy can be saved in three different ways: "
 "frequency and voltage scaling (also known as <phrase role=\"productname"
-"\">PowerNow!</phrase> or <phrase role=\"productname\">Speedstep</phrase>), "
+"\">PowerNow!</phrase> or <phrase role=\"productname\">Speedstep</phrase> ), "
 "throttling and putting the processor to sleep (C-states). Depending on the "
 "operating mode of the computer, these methods can also be combined."
 msgstr ""
@@ -264,13 +265,7 @@ msgstr ""
 #: powermanagement.xml:190
 #, no-c-format
 msgid ""
-"For in-depth information, refer to <xref linkend=\"cha.tuning.power\"/>."
-msgstr ""
-
-#. Tag: title
-#: powermanagement.xml:196 powermanagement.xml:448
-#, no-c-format
-msgid "Troubleshooting"
+"For in-depth information, refer to <xref linkend=\"cha.tuning.power\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -367,10 +362,10 @@ msgid ""
 "command> <option>| grep -2i acpi</option> (or all messages, because the "
 "problem may not be caused by ACPI) after booting. If an error occurs while "
 "parsing an ACPI table, the most important table&mdash;the DSDT "
-"(<emphasis>Differentiated System Description Table</emphasis>)&mdash;can be "
-"replaced with an improved version. In this case, the faulty DSDT of the BIOS "
-"is ignored. The procedure is described in <xref linkend=\"sec.power-mgmt.faq"
-"\"/>."
+"( <emphasis>Differentiated System Description Table</emphasis> )&mdash;can "
+"be replaced with an improved version. In this case, the faulty DSDT of the "
+"BIOS is ignored. The procedure is described in <xref linkend=\"sec.power-"
+"mgmt.faq\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -393,34 +388,28 @@ msgid ""
 "adequate number of their customers use Linux."
 msgstr ""
 
-#. Tag: title
-#: powermanagement.xml:276 powermanagement.xml:469
-#, no-c-format
-msgid "For More Information"
-msgstr ""
-
 #. Tag: para
 #: powermanagement.xml:279
 #, no-c-format
 msgid ""
-"<link xlink:href=\"http://tldp.org/HOWTO/ACPI-HOWTO/\"></link> (detailed "
-"ACPI HOWTO, contains DSDT patches)"
+"<link xlink:href=\"http://tldp.org/HOWTO/ACPI-HOWTO/\"/> (detailed ACPI "
+"HOWTO, contains DSDT patches)"
 msgstr ""
 
 #. Tag: para
 #: powermanagement.xml:285
 #, no-c-format
 msgid ""
-"<link xlink:href=\"http://www.acpi.info\"></link> (Advanced Configuration "
-"&amp; Power Interface Specification)"
+"<link xlink:href=\"http://www.acpi.info\"/> (Advanced Configuration &amp; "
+"Power Interface Specification)"
 msgstr ""
 
 #. Tag: para
 #: powermanagement.xml:300
 #, no-c-format
 msgid ""
-"<link xlink:href=\"http://acpi.sourceforge.net/dsdt/index.php\"></link> "
-"(DSDT patches by Bruno Ducrot)"
+"<link xlink:href=\"http://acpi.sourceforge.net/dsdt/index.php\"/> (DSDT "
+"patches by Bruno Ducrot)"
 msgstr ""
 
 #. Tag: title
@@ -461,10 +450,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Internal power saving options of the hard disk can be controlled with the "
-"option <literal>-B</literal>. Select a value from <literal>0</literal> to "
+"option <literal>-B</literal> . Select a value from <literal>0</literal> to "
 "<literal>255</literal> for maximum saving to maximum throughput. The result "
 "depends on the hard disk used and is difficult to assess. To make a hard "
-"disk quieter, use the option <literal>-M</literal>. Select a value from "
+"disk quieter, use the option <literal>-M</literal> . Select a value from "
 "<literal>128</literal> to <literal>254</literal> for quiet to fast."
 msgstr ""
 
@@ -485,10 +474,10 @@ msgid ""
 "hard disk. The following variables are interesting:"
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: powermanagement.xml:359
 #, no-c-format
-msgid "/proc/sys/vm/dirty_writeback_centisecs"
+msgid "<filename>/proc/sys/vm/dirty_writeback_centisecs</filename>"
 msgstr ""
 
 #. Tag: para
@@ -499,10 +488,10 @@ msgid ""
 "second)."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: powermanagement.xml:369
 #, no-c-format
-msgid "/proc/sys/vm/dirty_expire_centisecs"
+msgid "<filename>/proc/sys/vm/dirty_expire_centisecs</filename>"
 msgstr ""
 
 #. Tag: para
@@ -510,13 +499,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Defines after which timeframe a dirty page should be written at latest. "
-"Default is <literal>3000</literal>, which means 30 seconds."
+"Default is <literal>3000</literal> , which means 30 seconds."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: powermanagement.xml:379
 #, no-c-format
-msgid "/proc/sys/vm/dirty_background_ratio"
+msgid "<filename>/proc/sys/vm/dirty_background_ratio</filename>"
 msgstr ""
 
 #. Tag: para
@@ -524,13 +513,13 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Maximum percentage of dirty pages until pdflush begins to write them. "
-"Default is <literal>5</literal>%."
+"Default is <literal>5</literal> %."
 msgstr ""
 
-#. Tag: filename
+#. Tag: term
 #: powermanagement.xml:389
 #, no-c-format
-msgid "/proc/sys/vm/dirty_ratio"
+msgid "<filename>/proc/sys/vm/dirty_ratio</filename>"
 msgstr ""
 
 #. Tag: para
@@ -561,10 +550,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Apart from these processes, journaling file systems, like <systemitem class="
-"\"filesystem\">Btrfs</systemitem>, <systemitem class=\"filesystem\">Ext3</"
-"systemitem>, <systemitem class=\"filesystem\">Ext4</systemitem> and others "
+"\"filesystem\">Btrfs</systemitem> , <systemitem class=\"filesystem\">Ext3</"
+"systemitem> , <systemitem class=\"filesystem\">Ext4</systemitem> and others "
 "write their metadata independently from <systemitem class=\"daemon"
-"\">pdflush</systemitem>, which also prevents the hard disk from spinning "
+"\">pdflush</systemitem> , which also prevents the hard disk from spinning "
 "down. <phrase os=\"sled;osuse\">To avoid this, a special kernel extension "
 "has been developed for mobile devices. To use the extension, install the "
 "<systemitem class=\"resource\">laptop-mode-tools</systemitem> package and "
@@ -587,16 +576,22 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In this connection, the mail daemon postfix uses the variable "
-"<systemitem>POSTFIX_LAPTOP</systemitem>. If this variable is set to "
-"<literal>yes</literal>, postfix accesses the hard disk far less frequently."
+"<systemitem>POSTFIX_LAPTOP</systemitem> . If this variable is set to "
+"<literal>yes</literal> , postfix accesses the hard disk far less frequently."
 msgstr ""
 
 #. Tag: para
 #: powermanagement.xml:441
 #, no-c-format
 msgid ""
-"In &productname; these technologies are controlled by <systemitem>laptop-"
-"mode-tools</systemitem>."
+"<!-- does not seem to exist on SLES --> In &productname; these technologies "
+"are controlled by <systemitem>laptop-mode-tools</systemitem> ."
+msgstr ""
+
+#. Tag: title
+#: powermanagement.xml:448
+#, no-c-format
+msgid "Troubleshooting"
 msgstr ""
 
 #. Tag: para
@@ -623,21 +618,27 @@ msgid ""
 "need a special kernel module or module option to activate CPU frequency "
 "control. If the <systemitem class=\"resource\">kernel-source</systemitem> "
 "package is installed, this information is available in <filename>/usr/src/"
-"linux/Documentation/cpu-freq/*</filename>."
+"linux/Documentation/cpu-freq/*</filename> ."
+msgstr ""
+
+#. Tag: title
+#: powermanagement.xml:469
+#, no-c-format
+msgid "For More Information"
 msgstr ""
 
 #. Tag: para
 #: powermanagement.xml:473
 #, no-c-format
 msgid ""
-"<link xlink:href=\"http://en.opensuse.org/SDB:Suspend_to_RAM\"></link>&mdash;"
-"How to get Suspend to RAM working"
+"<link xlink:href=\"http://en.opensuse.org/SDB:Suspend_to_RAM\"/> &mdash;How "
+"to get Suspend to RAM working"
 msgstr ""
 
 #. Tag: para
 #: powermanagement.xml:479
 #, no-c-format
 msgid ""
-"<link xlink:href=\"http://old-en.opensuse.org/Pm-utils\"></link>&mdash;How "
-"to modify the general suspend framework"
+"<link xlink:href=\"http://old-en.opensuse.org/Pm-utils\"/> &mdash;How to "
+"modify the general suspend framework"
 msgstr ""

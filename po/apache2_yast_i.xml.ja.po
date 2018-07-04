@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Configuring Apache with &yast;"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: apache2_yast_i.xml:11
+#. Tag: dm:translation
+#: apache2_yast_i.xml:13
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -34,13 +34,13 @@ msgstr ""
 msgid ""
 "To configure your Web server with &yast;, start &yast; and select "
 "<menuchoice> <guimenu>Network Services</guimenu> <guimenu>HTTP Server</"
-"guimenu> </menuchoice>. When starting the module for the first time, the "
+"guimenu> </menuchoice> . When starting the module for the first time, the "
 "<guimenu>HTTP Server Wizard</guimenu> starts, prompting you to make a few "
 "basic decisions concerning administration of the server. After having "
 "finished the wizard, the <guimenu>HTTP Server Configuration</guimenu> dialog "
 "starts each time you call the <guimenu>HTTP Server</guimenu> module. For "
 "more information, see <xref linkend=\"sec.apache2.configuration.yast."
-"server_configuration\"/>."
+"server_configuration\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -73,7 +73,8 @@ msgid ""
 "interfaces and their respective IP addresses. Ports from all three ranges "
 "(well-known ports, registered ports, and dynamic or private ports) that are "
 "not reserved by other services can be used. The default setting is to listen "
-"on all network interfaces (IP addresses) on port <systemitem>80</systemitem>."
+"on all network interfaces (IP addresses) on port <systemitem>80</"
+"systemitem> ."
 msgstr ""
 
 #. Tag: para
@@ -109,7 +110,7 @@ msgid ""
 "activation or deactivation of the script languages that the Web server "
 "should support. For the activation or deactivation of other modules, refer "
 "to <xref linkend=\"sec.apache2.configuration.yast.server_configuration."
-"modules\"/>. Click <guimenu>Next</guimenu> to advance to the next dialog."
+"modules\"/> . Click <guimenu>Next</guimenu> to advance to the next dialog."
 msgstr ""
 
 #. Tag: title
@@ -123,10 +124,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "This option pertains to the default Web server. As explained in <xref "
-"linkend=\"sec.apache2.configuration.manually.vhost\"/>, Apache can serve "
+"linkend=\"sec.apache2.configuration.manually.vhost\"/> , Apache can serve "
 "multiple virtual hosts from a single physical machine. The first declared "
 "virtual host in the configuration file is commonly called the "
-"<emphasis>default host</emphasis>. Each virtual host inherits the default "
+"<emphasis>default host</emphasis> . Each virtual host inherits the default "
 "host's configuration."
 msgstr ""
 
@@ -134,10 +135,10 @@ msgstr ""
 #: apache2_yast_i.xml:79
 #, no-c-format
 msgid ""
-"To edit the host settings (also called <emphasis>directives</emphasis>), "
+"To edit the host settings (also called <emphasis>directives</emphasis> ), "
 "select the appropriate entry in the table then click <guimenu>Edit</"
-"guimenu>. To add new directives, click <guimenu>Add</guimenu>. To delete a "
-"directive, select it and click <guimenu>Delete</guimenu>."
+"guimenu> . To add new directives, click <guimenu>Add</guimenu> . To delete a "
+"directive, select it and click <guimenu>Delete</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -152,10 +153,10 @@ msgstr ""
 msgid "Here is list of the default settings of the server:"
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: apache2_yast_i.xml:102
 #, no-c-format
-msgid "Document Root"
+msgid "<systemitem>Document Root</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -166,10 +167,10 @@ msgid ""
 "<filename>/srv/www/htdocs</filename> is the default location."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: apache2_yast_i.xml:112
 #, no-c-format
-msgid "Alias"
+msgid "<systemitem>Alias</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -191,10 +192,10 @@ msgid ""
 "Apache icons displayed in the directory index view."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: apache2_yast_i.xml:130
 #, no-c-format
-msgid "ScriptAlias"
+msgid "<systemitem>ScriptAlias</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -208,10 +209,10 @@ msgid ""
 "should be executed in that location."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: apache2_yast_i.xml:144
 #, no-c-format
-msgid "Directory"
+msgid "<systemitem>Directory</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -227,15 +228,15 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Access and display options for the directories <filename>/srv/www/htdocs</"
-"filename>, <filename>/usr/share/apache2/icons</filename> and <filename>/srv/"
+"filename> , <filename>/usr/share/apache2/icons</filename> and <filename>/srv/"
 "www/cgi-bin</filename> are configured here. It should not be necessary to "
 "change the defaults."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: apache2_yast_i.xml:162
 #, no-c-format
-msgid "Include"
+msgid "<systemitem>Include</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -248,14 +249,14 @@ msgid ""
 "configuration files that come with external modules. With this directive, "
 "all files in this directory ending in <filename>.conf</filename> are "
 "included. With the second directive, <filename>/etc/apache2/conf.d/apache2-"
-"manual.conf</filename>, the <filename>apache2-manual</filename> "
+"manual.conf</filename> , the <filename>apache2-manual</filename> "
 "configuration file is included."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: apache2_yast_i.xml:178
 #, no-c-format
-msgid "Server Name"
+msgid "<systemitem>Server Name</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -269,10 +270,10 @@ msgid ""
 "<quote>known</quote> under this name."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: apache2_yast_i.xml:191
 #, no-c-format
-msgid "Server Administrator E-Mail"
+msgid "<systemitem>Server Administrator E-Mail</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -302,7 +303,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "In this step, the wizard displays a list of already configured virtual hosts "
-"(see <xref linkend=\"sec.apache2.configuration.manually.vhost\"/>). If you "
+"(see <xref linkend=\"sec.apache2.configuration.manually.vhost\"/> ). If you "
 "have not made manual changes prior to starting the &yast; HTTP wizard, no "
 "virtual host is present."
 msgstr ""
@@ -313,11 +314,11 @@ msgstr ""
 msgid ""
 "To add a host, click <guimenu>Add</guimenu> to open a dialog in which to "
 "enter basic information about the host, such as <guimenu>Server Name</"
-"guimenu>, <guimenu>Server Contents Root</guimenu> (<systemitem>DocumentRoot</"
-"systemitem>), and the <guimenu>Administrator E-Mail</guimenu>. "
-"<guimenu>Server Resolution</guimenu> is used to determine how a host is "
-"identified (name based or IP based). Specify the name or IP address with "
-"<guimenu>Change Virtual Host ID</guimenu>"
+"guimenu> , <guimenu>Server Contents Root</guimenu> "
+"( <systemitem>DocumentRoot</systemitem> ), and the <guimenu>Administrator E-"
+"Mail</guimenu> . <guimenu>Server Resolution</guimenu> is used to determine "
+"how a host is identified (name based or IP based). Specify the name or IP "
+"address with <guimenu>Change Virtual Host ID</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -338,12 +339,12 @@ msgid ""
 "certificate as well. See <xref linkend=\"sec.apache2.ssl.configuration\"/> "
 "for details on SSL and certificates. With the <guimenu>Directory Index</"
 "guimenu> option, you can specify which file to display when the client "
-"requests a directory (by default, <filename>index.html</filename>). Add one "
+"requests a directory (by default, <filename>index.html</filename> ). Add one "
 "or more file names (space-separated) to change this. With <guimenu>Enable "
-"Public HTML</guimenu>, the content of the users public directories "
-"(<filename>~<replaceable>USER</replaceable>/public_html/</filename>) is made "
-"available on the server under <literal>http://www.&exampledomain;/"
-"~<replaceable>USER</replaceable></literal>."
+"Public HTML</guimenu> , the content of the users public directories "
+"( <filename>~<replaceable>USER</replaceable>/public_html/</filename> ) is "
+"made available on the server under <literal>http://www.&exampledomain;/"
+"~<replaceable>USER</replaceable></literal> ."
 msgstr ""
 
 #. Tag: title
@@ -378,7 +379,7 @@ msgid ""
 "something, click <guimenu>Back</guimenu> until you have reached the desired "
 "dialog. Clicking <guimenu>HTTP Server Expert Configuration</guimenu> opens "
 "the dialog described in <xref linkend=\"sec.apache2.configuration.yast."
-"server_configuration\"/>."
+"server_configuration\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -416,28 +417,28 @@ msgstr ""
 #: apache2_yast_i.xml:311
 #, no-c-format
 msgid ""
-"In <guimenu>HTTP Service</guimenu>, select whether Apache should be running "
-"(<guimenu>Enabled</guimenu>) or stopped (<guimenu>Disabled</guimenu>). In "
-"<guimenu>Listen on Ports</guimenu>, <guimenu>Add</guimenu>, <guimenu>Edit</"
-"guimenu>, or <guimenu>Delete</guimenu> addresses and ports on which the "
-"server should be available. The default is to listen on all interfaces on "
-"port <literal>80</literal>. You should always check <guimenu>Open Port In "
-"Firewall</guimenu>, because otherwise the Web server is not reachable from "
-"outside. Keeping the port closed is only useful in test situations where no "
-"external access to the Web server is necessary. If you have multiple network "
-"interfaces, click <guimenu>Firewall Details</guimenu> to specify on which "
-"interface(s) the port(s) should be opened."
+"In <guimenu>HTTP Service</guimenu> , select whether Apache should be running "
+"( <guimenu>Enabled</guimenu> ) or stopped ( <guimenu>Disabled</guimenu> ). "
+"In <guimenu>Listen on Ports</guimenu> , <guimenu>Add</guimenu> , "
+"<guimenu>Edit</guimenu> , or <guimenu>Delete</guimenu> addresses and ports "
+"on which the server should be available. The default is to listen on all "
+"interfaces on port <literal>80</literal> . You should always check "
+"<guimenu>Open Port In Firewall</guimenu> , because otherwise the Web server "
+"is not reachable from outside. Keeping the port closed is only useful in "
+"test situations where no external access to the Web server is necessary. If "
+"you have multiple network interfaces, click <guimenu>Firewall Details</"
+"guimenu> to specify on which interface(s) the port(s) should be opened."
 msgstr ""
 
 #. Tag: para
 #: apache2_yast_i.xml:325
 #, no-c-format
 msgid ""
-"With <guimenu>Log Files</guimenu>, watch either the access log file or the "
+"With <guimenu>Log Files</guimenu> , watch either the access log file or the "
 "error log file. This is useful if you want to test your configuration. The "
 "log file opens in a separate window from which you can also restart or "
 "reload the Web server. For details, see <xref linkend=\"sec.apache2."
-"start_stop\"/>. These commands are effective immediately and their log "
+"start_stop\"/> . These commands are effective immediately and their log "
 "messages are also displayed immediately."
 msgstr ""
 
@@ -458,9 +459,9 @@ msgstr ""
 #, no-c-format
 msgid ""
 "You can change the status (enabled or disabled) of Apache2 modules by "
-"clicking <guimenu>Toggle Status</guimenu>. Click <guimenu>Add Module</"
+"clicking <guimenu>Toggle Status</guimenu> . Click <guimenu>Add Module</"
 "guimenu> to add a new module that is already installed but not yet listed. "
-"Learn more about modules in <xref linkend=\"sec.apache2.modules\"/>."
+"Learn more about modules in <xref linkend=\"sec.apache2.modules\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -481,5 +482,5 @@ msgstr ""
 msgid ""
 "These dialogs are identical to the ones already described. Refer to <xref "
 "linkend=\"sec.apache2.configuration.yast.wizard.default_host\"/> and <xref "
-"linkend=\"sec.apache2.configuration.yast.wizard.virtual_hosts\"/>."
+"linkend=\"sec.apache2.configuration.yast.wizard.virtual_hosts\"/> ."
 msgstr ""

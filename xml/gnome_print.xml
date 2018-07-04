@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE chapter [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.gnome.print">
- <title
->Managing Printers</title>
+ <title>Managing Printers</title>
  <info>
-  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager"
-><dm:bugtracker
-></dm:bugtracker
-> <dm:translation
->yes</dm:translation
-> </dm:docmanager>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker/>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
  </info>
- <para
->&productnamereg; makes it easy to print your documents, whether your computer is connected directly to a printer or linked remotely on a network. This chapter describes how to set up printers in &productname; and manage print jobs. <remark
->taroth 2016-06-02: FIXME: check with SLED installed on bare-metal and a printer attached to it</remark>
+ <para>
+  &productnamereg; makes it easy to print your documents, whether your computer
+  is connected directly to a printer or linked remotely on a network. This
+  chapter describes how to set up printers in &productname; and manage print
+  jobs.
+  <remark>taroth 2016-06-02: FIXME: check with SLED installed on
+   bare-metal and a printer attached to it</remark>
  </para>
  <sect1 xml:id="sec.gnome.print.inst">
-  <title
->Installing a Printer</title>
+  <title>Installing a Printer</title>
 
 <!--taroth 2016-06-02: by default, the dialog shows the following message
    "Sorry! The system printing service does not seem to be available", despite
@@ -29,54 +27,56 @@
    however this is IMHO not appropriate for a desktop product, thus filed
    https://bugzilla.suse.com/show_bug.cgi?id=982800-->
 
-  <para
->Before you can install a printer, you need to know the <systemitem class="username"
->root</systemitem
-> password and have your printer information ready. Depending on how you connect the printer, you might also need the printer URI, TCP&sol;IP address or host, and the driver for the printer. A number of common printer drivers ship with &productname;. If you cannot find a driver for the printer, check the printer manufacturer's Web site. </para>
+  <para>
+   Before you can install a printer, you need to know the
+   <systemitem class="username">root</systemitem> password and have your
+   printer information ready. Depending on how you connect the printer, you
+   might also need the printer URI, TCP&sol;IP address or host, and the driver
+   for the printer. A number of common printer drivers ship with &productname;.
+   If you cannot find a driver for the printer, check the printer
+   manufacturer's Web site.
+  </para>
 
   <procedure>
    <step>
-    <para
->Make sure the CUPS printing service is available and automatically started at boot time: </para>
-    <screen
->&prompt.sudo;systemctl enable cups.service
+    <para>
+     <!--taroth 2016-06-10: http://bugzilla.suse.com/show_bug.cgi?id=982800-->
+     Make sure the CUPS printing service is available and automatically started
+     at boot time:
+    </para>
+    <screen>&prompt.sudo;systemctl enable cups.service
 &prompt.sudo;systemctl start cups.service</screen>
    </step>
    <step>
-    <para
->Start the printer configuration by right-clicking the desktop and choosing <guimenu
->Settings</guimenu
-> and then <menuchoice
-> <guimenu
->Devices</guimenu
-> <guimenu
->Printers</guimenu
-> </menuchoice
->. </para>
+    <para>
+     Start the printer configuration by right-clicking the desktop and
+     choosing <guimenu>Settings</guimenu> and then  <menuchoice>
+     <guimenu>Devices</guimenu> <guimenu>Printers</guimenu> </menuchoice>.
+    </para>
    </step>
    <step>
-    <para
->Click <guimenu
->Unlock</guimenu
-> in the upper right corner and enter the <systemitem class="username"
->root</systemitem
-> password. </para>
+    <para>
+     Click <guimenu>Unlock</guimenu> in the upper right corner and enter the
+     <systemitem class="username">root</systemitem> password.
+    </para>
    </step>
    <step>
-    <para
->Click <guimenu
->Add a Printer</guimenu
->. </para>
+    <para>
+     Click  <guimenu>Add a Printer</guimenu>.
+    </para>
    </step>
    <step>
-    <para
->If there are too many printers in the list, filter them by entering an IP address or a keyword into the search field in the lower part of the dialog. </para>
+    <para>
+     If there are too many printers in the list, filter them by entering an IP
+     address or a keyword into the search field in the lower part of the
+     dialog.
+    </para>
    </step>
    <step>
-    <para
->Select a printer from the list of available printers and click <guimenu
->Add</guimenu
->. </para>
+    <para>
+     Select a printer from the list of available printers and click
+     <guimenu>Add</guimenu>.
+    </para>
    </step>
 <!--    <step>
      <para>
@@ -84,9 +84,7 @@
      </para>
      <variablelist>
       <varlistentry>
-       <term
-><guimenu
->AppSocket/HP JetDirect</guimenu>
+       <term><guimenu>AppSocket/HP JetDirect</guimenu>
        </term>
        <listitem>
         <para>
@@ -95,9 +93,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
-><guimenu
->Internet Printing Protocol (ipp)</guimenu>
+       <term><guimenu>Internet Printing Protocol (ipp)</guimenu>
        </term>
        <listitem>
         <para>
@@ -108,9 +104,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
-><guimenu
->LPD/LPR Host or Printer</guimenu>
+       <term><guimenu>LPD/LPR Host or Printer</guimenu>
        </term>
        <listitem>
         <para>
@@ -120,9 +114,7 @@
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term
-><guimenu
->Windows Printer via SAMBA</guimenu>
+       <term><guimenu>Windows Printer via SAMBA</guimenu>
        </term>
        <listitem>
         <para>
@@ -140,52 +132,40 @@
     <step>
      <para>
       Specify the printer's information and click
-      <guimenu
->Forward</guimenu
->.
+      <guimenu>Forward</guimenu>.
      </para>
     </step>
     <step>
      <para>
       If applicable, select the printer driver for this printer, then click
-      <guimenu
->Apply</guimenu
->. You can also install a printer driver from a
-      disk (<guimenu
->Provide PPD file</guimenu
->), or visit the printer
-      manufacturer's Web site to download the latest driver (<guimenu
->Search
-      for a printer driver to download</guimenu
->).
+      <guimenu>Apply</guimenu>. You can also install a printer driver from a
+      disk (<guimenu>Provide PPD file</guimenu>), or visit the printer
+      manufacturer's Web site to download the latest driver (<guimenu>Search
+      for a printer driver to download</guimenu>).
      </para>
     </step>
     <step>
      <para>
       Specify desired options for the printer (such as a description or
       location) in the Properties dialog box and click
-      <guimenu
->Apply</guimenu
->.
+      <guimenu>Apply</guimenu>.
      </para>
     </step>
     <step>
      <para>
       Enter the &rootuser; password and click
-      <guimenu
->Authenticate</guimenu
->.
+      <guimenu>Authenticate</guimenu>.
      </para>
-    </step
->-->
+    </step>-->
   </procedure>
 
-  <para
->The installed printer appears in the Printers panel. You can now print to the printer from any application. </para>
+  <para>
+   The installed printer appears in the Printers panel. You can now print to
+   the printer from any application.
+  </para>
 
 <!--<sect2>
-   <title
->Installing a Local Printer</title>
+   <title>Installing a Local Printer</title>
    <procedure>
     <step>
      <para>
@@ -194,55 +174,32 @@
      </para>
      <para>
       The printer dialog should open. If it does not, click <menuchoice>
-      <guimenu
->Computer</guimenu
-> <guimenu
->Control Center</guimenu>
-      <guimenu
->Hardware</guimenu
-> <guimenu
->Printing</guimenu>
-      <guimenu
->New</guimenu
-> <guimenu
->Printer</guimenu
-> </menuchoice
-> to
+      <guimenu>Computer</guimenu> <guimenu>Control Center</guimenu>
+      <guimenu>Hardware</guimenu> <guimenu>Printing</guimenu>
+      <guimenu>New</guimenu> <guimenu>Printer</guimenu> </menuchoice> to
       open it.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu
->Local Printer</guimenu
-> and proceed with
-      <guimenu
->Forward</guimenu
->.
+      Click <guimenu>Local Printer</guimenu> and proceed with
+      <guimenu>Forward</guimenu>.
      </para>
     </step>
     <step>
      <para>
       Select the printer driver for this printer and click
-      <guimenu
->Apply</guimenu
->. You can also install a printer driver from a
-      disk (<guimenu
->Provide PPD file</guimenu
->) or visit the printer
-      manufacturer's Web site to download the latest driver (<guimenu
->Search
-      for a printer driver to download</guimenu
->).
+      <guimenu>Apply</guimenu>. You can also install a printer driver from a
+      disk (<guimenu>Provide PPD file</guimenu>) or visit the printer
+      manufacturer's Web site to download the latest driver (<guimenu>Search
+      for a printer driver to download</guimenu>).
      </para>
     </step>
     <step>
      <para>
       Specify desired options for the printer (such as a description or
       location) in the Properties dialog box, then click
-      <guimenu
->Close</guimenu
->.
+      <guimenu>Close</guimenu>.
      </para>
     </step>
     <step>
@@ -258,23 +215,14 @@
   </sect2>
  </sect1>
  <sect1>
-  <title
->Modifying Printer Settings</title>
+  <title>Modifying Printer Settings</title>
 
   <procedure>
    <step>
     <para>
-     Click <menuchoice
-> <guimenu
->Computer</guimenu
-> <guimenu
->Control
-     Center</guimenu
-> <guimenu
->Hardware</guimenu>
-     <guimenu
->Printing</guimenu
-> </menuchoice>
+     Click <menuchoice> <guimenu>Computer</guimenu> <guimenu>Control
+     Center</guimenu> <guimenu>Hardware</guimenu>
+     <guimenu>Printing</guimenu> </menuchoice>
     </para>
    </step>
    <step>
@@ -284,47 +232,31 @@
    </step>
    <step>
     <para>
-     Modify the properties and click <guimenu
->Close</guimenu
->.
+     Modify the properties and click <guimenu>Close</guimenu>.
     </para>
    </step>
   </procedure>
  </sect1>
  <sect1>
-  <title
->Canceling Print Jobs</title>
+  <title>Canceling Print Jobs</title>
 
   <procedure>
    <step>
     <para>
-     Click <menuchoice
-> <guimenu
->Computer</guimenu
-> <guimenu
->Control
-     Center</guimenu
-> <guimenu
->Hardware</guimenu>
-     <guimenu
->Printing</guimenu
-> </menuchoice
->.
+     Click <menuchoice> <guimenu>Computer</guimenu> <guimenu>Control
+     Center</guimenu> <guimenu>Hardware</guimenu>
+     <guimenu>Printing</guimenu> </menuchoice>.
     </para>
    </step>
    <step>
     <para>
-     Right-click the printer where you sent the job and click <guimenu
->View
-     Print Queue</guimenu
->.
+     Right-click the printer where you sent the job and click <guimenu>View
+     Print Queue</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Right-click the print job and click <guimenu
->Cancel</guimenu
->.
+     Right-click the print job and click <guimenu>Cancel</guimenu>.
     </para>
     <para>
      If the print job does not appear in the list, it may be printed
@@ -334,44 +266,27 @@
   </procedure>
  </sect1>
  <sect1>
-  <title
->Deleting a Printer</title>
+  <title>Deleting a Printer</title>
 
   <procedure>
    <step>
     <para>
-     Click <menuchoice
-> <guimenu
->Computer</guimenu
-> <guimenu
->Control
-     Center</guimenu
-> <guimenu
->Hardware</guimenu>
-     <guimenu
->Printing</guimenu
-> </menuchoice
->.
+     Click <menuchoice> <guimenu>Computer</guimenu> <guimenu>Control
+     Center</guimenu> <guimenu>Hardware</guimenu>
+     <guimenu>Printing</guimenu> </menuchoice>.
     </para>
    </step>
    <step>
     <para>
      Right-click the printer you want to delete and choose
-     <guimenu
->Delete</guimenu
->. Confirm with <guimenu
->OK</guimenu
->.
+     <guimenu>Delete</guimenu>. Confirm with <guimenu>OK</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Type the root password and click <guimenu
->Authenticate</guimenu
->.
+     Type the root password and click <guimenu>Authenticate</guimenu>.
     </para>
    </step>
-  </procedure
->-->
+  </procedure>-->
  </sect1>
 </chapter>

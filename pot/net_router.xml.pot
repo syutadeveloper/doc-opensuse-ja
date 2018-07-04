@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -20,10 +20,10 @@ msgstr ""
 msgid "Basic Router Setup"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: net_router.xml:13
+#. Tag: dm:translation
+#: net_router.xml:15
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -47,72 +47,69 @@ msgstr ""
 #. Tag: screen
 #: net_router.xml:39
 #, no-c-format
-msgid ""
-      "net.ipv4.conf.all.forwarding = 1\n"
+msgid "net.ipv4.conf.all.forwarding = 1\n"
       "net.ipv6.conf.all.forwarding = 1"
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:40
+#: net_router.xml:41
 #, no-c-format
 msgid "Then provide a static IPv4 and IPv6 IP setup for the interfaces. Enabling forwarding disables several mechanisms, for example IPv6 does not accept an IPv6 RA (router advertisement) anymore, which also prevents the creation of a default route."
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:48
+#: net_router.xml:49
 #, no-c-format
-msgid "In many situations (for example, when you can reach the same network via more than one interface, or when VPN usually is used and already on <quote>normal multi-home hosts</quote>), you must disable the IPv4 reverse path filter (this feature does not currently exist for IPv6):"
+msgid "In many situations (for example, when you can reach the same network via more than one interface, or when VPN usually is used and already on <quote>normal multi-home hosts</quote> ), you must disable the IPv4 reverse path filter (this feature does not currently exist for IPv6):"
 msgstr ""
 
 #. Tag: screen
-#: net_router.xml:54
+#: net_router.xml:55
 #, no-c-format
 msgid "net.ipv4.conf.all.rp_filter = 0"
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:55
+#: net_router.xml:56
 #, no-c-format
 msgid "You can also filter with firewall settings instead."
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:60
+#: net_router.xml:61
 #, no-c-format
 msgid "To accept an IPv6 RA (from the router on an external, uplink, or ISP interface) and create a default (or also a more specific) IPv6 route again, set:"
 msgstr ""
 
 #. Tag: screen
-#: net_router.xml:65
+#: net_router.xml:66
 #, no-c-format
-msgid ""
-      "net.ipv6.conf.${ifname}.accept_ra = 2\n"
+msgid "net.ipv6.conf.${ifname}.accept_ra = 2\n"
       "net.ipv6.conf.${ifname}.autoconf = 0"
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:66
+#: net_router.xml:68
 #, no-c-format
 msgid "(Note: <quote><literal>eth0.42</literal></quote> needs to be written as <literal>eth0/42</literal> in a dot-separated sysfs path.)"
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:73
+#: net_router.xml:75
 #, no-c-format
-msgid "More router behavior and forwarding dependencies are described in <link xlink:href=\"https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt\">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</link>."
+msgid "More router behavior and forwarding dependencies are described in <link xlink:href=\"https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt\">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</link> ."
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:79
+#: net_router.xml:81
 #, no-c-format
-msgid "To provide IPv6 on your internal (DMZ) interfaces, and announce yourself as an IPv6 router and <quote>autoconf networks</quote> to the clients, install and configure <systemitem class=\"daemon\">radvd</systemitem> in <filename>/etc/radvd.conf</filename>, for example:"
+msgid "To provide IPv6 on your internal (DMZ) interfaces, and announce yourself as an IPv6 router and <quote>autoconf networks</quote> to the clients, install and configure <systemitem class=\"daemon\">radvd</systemitem> in <filename>/etc/radvd.conf</filename> , for example:"
 msgstr ""
 
 #. Tag: screen
-#: net_router.xml:87
+#: net_router.xml:89
 #, no-c-format
-msgid ""
-      "interface eth0\n"
+msgid "interface eth0\n"
       "{\n"
       "    IgnoreIfMissing on;         # do not fail if interface missed\n"
       "\n"
@@ -133,16 +130,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_router.xml:89
+#: net_router.xml:108
 #, no-c-format
 msgid "Configure the firewall to masquerade traffic with NAT from the LAN into the WAN and to block inbound traffic on the WAN interface:"
 msgstr ""
 
 #. Tag: screen
-#: net_router.xml:93
+#: net_router.xml:112
 #, no-c-format
-msgid ""
-      "&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --change-interface=<replaceable>WAN_INTERFACE</replaceable>\n"
+msgid "&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --change-interface=<replaceable>WAN_INTERFACE</replaceable>\n"
       "&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --add-masquerade\n"
       "&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=internal --change-interface=<replaceable>LAN_INTERFACE</replaceable>\n"
       "&prompt.sudo;<command>firewall-cmd</command> --reload"

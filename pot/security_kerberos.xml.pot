@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -47,7 +47,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:45
 #, no-c-format
-msgid "Make sure that each network server also proves its identity. Otherwise an attacker might be able to impersonate the server and obtain sensitive information transmitted to the server. This concept is called <emphasis>mutual authentication</emphasis>, because the client authenticates to the server and vice versa."
+msgid "Make sure that each network server also proves its identity. Otherwise an attacker might be able to impersonate the server and obtain sensitive information transmitted to the server. This concept is called <emphasis>mutual authentication</emphasis> , because the client authenticates to the server and vice versa."
 msgstr ""
 
 #. Tag: para
@@ -137,13 +137,13 @@ msgstr ""
 #. Tag: title
 #: security_kerberos.xml:126
 #, no-c-format
-msgid "instance <emphasis>(optional)</emphasis>:"
+msgid "instance <emphasis>(optional)</emphasis> :"
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:127
 #, no-c-format
-msgid "Additional information characterizing the <emphasis>primary</emphasis>. This string is separated from the <emphasis>primary</emphasis> by a <literal>/</literal>."
+msgid "Additional information characterizing the <emphasis>primary</emphasis> . This string is separated from the <emphasis>primary</emphasis> by a <literal>/</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -197,7 +197,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:174
 #, no-c-format
-msgid "Almost all messages sent in a network can be eavesdropped, stolen, and resent. In the &krb; context, this would be most dangerous if an attacker manages to obtain your request for a service containing your ticket and authenticator. The attacker could then try to resend it (<emphasis>replay</emphasis>) to impersonate you. However, &krb; implements several mechanisms to deal with this problem."
+msgid "Almost all messages sent in a network can be eavesdropped, stolen, and resent. In the &krb; context, this would be most dangerous if an attacker manages to obtain your request for a service containing your ticket and authenticator. The attacker could then try to resend it ( <emphasis>replay</emphasis> ) to impersonate you. However, &krb; implements several mechanisms to deal with this problem."
 msgstr ""
 
 #. Tag: term
@@ -209,7 +209,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:187
 #, no-c-format
-msgid "<emphasis>Service</emphasis> is used to refer to a specific action to perform. The process behind this action is called a <emphasis>server</emphasis>."
+msgid "<emphasis>Service</emphasis> is used to refer to a specific action to perform. The process behind this action is called a <emphasis>server</emphasis> ."
 msgstr ""
 
 #. Tag: title
@@ -227,7 +227,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:206
 #, no-c-format
-msgid "To ensure &krb; is working correctly, run both the authentication and ticket-granting server on a dedicated machine. Make sure that only the administrator can access this machine physically and over the network. Reduce the (networking) services running on it to the absolute minimum&mdash;do not even run <systemitem class=\"daemon\">sshd</systemitem>."
+msgid "To ensure &krb; is working correctly, run both the authentication and ticket-granting server on a dedicated machine. Make sure that only the administrator can access this machine physically and over the network. Reduce the (networking) services running on it to the absolute minimum&mdash;do not even run <systemitem class=\"daemon\">sshd</systemitem> ."
 msgstr ""
 
 #. Tag: title
@@ -249,27 +249,9 @@ msgid "The names of both, the client and the ticket-granting server"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:235 security_kerberos.xml:290 security_kerberos.xml:383
-#, no-c-format
-msgid "The current time"
-msgstr ""
-
-#. Tag: para
 #: security_kerberos.xml:240
 #, no-c-format
 msgid "A lifetime assigned to this ticket"
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:245 security_kerberos.xml:285 security_kerberos.xml:388
-#, no-c-format
-msgid "The client's IP address"
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:250 security_kerberos.xml:393
-#, no-c-format
-msgid "The newly-generated session key"
 msgstr ""
 
 #. Tag: para
@@ -288,12 +270,6 @@ msgstr ""
 #: security_kerberos.xml:272
 #, no-c-format
 msgid "To request a service from any server in the network, the client application needs to prove its identity to the server. Therefore, the application generates an authenticator. An authenticator consists of the following components:"
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:280 security_kerberos.xml:373
-#, no-c-format
-msgid "The client's principal"
 msgstr ""
 
 #. Tag: para
@@ -335,7 +311,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:336
 #, no-c-format
-msgid "Tickets are designed to be used for one server at a time. Therefore, you need to get a new ticket each time you request another service. &krb; implements a mechanism to obtain tickets for individual servers. This service is called the <quote>ticket-granting service</quote>. The ticket-granting service is a service (like any other service mentioned before) and uses the same access protocols that have already been outlined. Any time an application needs a ticket that has not already been requested, it contacts the ticket-granting server. This request consists of the following components:"
+msgid "Tickets are designed to be used for one server at a time. Therefore, you need to get a new ticket each time you request another service. &krb; implements a mechanism to obtain tickets for individual servers. This service is called the <quote>ticket-granting service</quote> . The ticket-granting service is a service (like any other service mentioned before) and uses the same access protocols that have already been outlined. Any time an application needs a ticket that has not already been requested, it contacts the ticket-granting server. This request consists of the following components:"
 msgstr ""
 
 #. Tag: para
@@ -363,9 +339,33 @@ msgid "Like any other server, the ticket-granting server now checks the ticket-g
 msgstr ""
 
 #. Tag: para
+#: security_kerberos.xml:373
+#, no-c-format
+msgid "The client's principal"
+msgstr ""
+
+#. Tag: para
 #: security_kerberos.xml:378
 #, no-c-format
 msgid "The server's principal"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:383
+#, no-c-format
+msgid "The current time"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:388
+#, no-c-format
+msgid "The client's IP address"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:393
+#, no-c-format
+msgid "The newly-generated session key"
 msgstr ""
 
 #. Tag: para
@@ -389,55 +389,91 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:422
 #, no-c-format
-msgid "The automatic expiration of tickets can lead to a situation when a user's login session lasts longer than the maximum lifespan given to the ticket-granting ticket (a reasonable setting is 10 hours). However, the user can get a new ticket-granting ticket by running <command>kinit</command>. Enter the password again and &krb; obtains access to desired services without additional authentication. To get a list of all the tickets silently acquired for you by &krb;, run <command>klist</command>."
+msgid "The automatic expiration of tickets can lead to a situation when a user's login session lasts longer than the maximum lifespan given to the ticket-granting ticket (a reasonable setting is 10 hours). However, the user can get a new ticket-granting ticket by running <command>kinit</command> . Enter the password again and &krb; obtains access to desired services without additional authentication. To get a list of all the tickets silently acquired for you by &krb;, run <command>klist</command> ."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:432
 #, no-c-format
-msgid "Here is a short list of applications that use &krb; authentication. These applications can be found under <filename>/usr/lib/mit/bin</filename> or <filename>/usr/lib/mit/sbin</filename> after installing the package <systemitem>krb5-apps-clients</systemitem>. They all have the full functionality of their common Unix and Linux brothers plus the additional bonus of transparent authentication managed by &krb;:"
+msgid "Here is a short list of applications that use &krb; authentication. These applications can be found under <filename>/usr/lib/mit/bin</filename> or <filename>/usr/lib/mit/sbin</filename> after installing the package <systemitem>krb5-apps-clients</systemitem> . They all have the full functionality of their common Unix and Linux brothers plus the additional bonus of transparent authentication managed by &krb;:"
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:444
 #, no-c-format
-msgid "<command>telnet</command>, <systemitem class=\"daemon\">telnetd</systemitem>"
+msgid "<command>telnet</command> , <systemitem class=\"daemon\">telnetd</systemitem>"
 msgstr ""
 
-#. Tag: command
-#: security_kerberos.xml:451
+#. Tag: para
+#: security_kerberos.xml:450
 #, no-c-format
-msgid "rlogin"
+msgid "<command>rlogin</command>"
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:455
 #, no-c-format
-msgid "<command>rsh</command>, <command>rcp</command>, <systemitem class=\"daemon\">rshd</systemitem>"
+msgid "<command>rsh</command> , <command>rcp</command> , <systemitem class=\"daemon\">rshd</systemitem>"
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:461
 #, no-c-format
-msgid "<command>ftp</command>, <systemitem class=\"daemon\">ftpd</systemitem>"
+msgid "<command>ftp</command> , <systemitem class=\"daemon\">ftpd</systemitem>"
 msgstr ""
 
-#. Tag: command
-#: security_kerberos.xml:467
+#. Tag: para
+#: security_kerberos.xml:466
 #, no-c-format
 msgid "<command>ksu</command>"
 msgstr ""
 
-#. Tag: remark
-#: security_kerberos.xml:469
+#. Tag: #text
+#: security_kerberos.xml:477
 #, no-c-format
-msgid "Is ksu shipped on SLE still? cnf does not find it. - sknorr, 2017-12-15"
+msgid "You no longer need to enter your password for using these applications because &krb; has already proven your identity."
 msgstr ""
 
-#. Tag: para
-#: security_kerberos.xml:475
+#. Tag: #text
+#: security_kerberos.xml:478
 #, no-c-format
-msgid "You no longer need to enter your password for using these applications because &krb; has already proven your identity. <command>ssh</command>, if compiled with &krb; support, can even forward all the tickets acquired for one workstation to another one. If you use <command>ssh</command> to log in to another workstation, <command>ssh</command> makes sure that the encrypted contents of the tickets are adjusted to the new situation. Simply copying tickets between workstations is not sufficient because the ticket contains workstation-specific information (the IP address). XDM and GDM offer &krb; support, too. Read more about the &krb; network applications in <citetitle>Kerberos V5 UNIX User's Guide</citetitle> at <link xlink:href=\"http://web.mit.edu/kerberos\"></link>."
+msgid ", if compiled with &krb; support, can even forward all the tickets acquired for one workstation to another one. If you use"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:481
+#, no-c-format
+msgid "to log in to another workstation,"
+msgstr ""
+
+#. Tag: command
+#: security_kerberos.xml:481
+#, no-c-format
+msgid "ssh"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:485
+#, no-c-format
+msgid "makes sure that the encrypted contents of the tickets are adjusted to the new situation. Simply copying tickets between workstations is not sufficient because the ticket contains workstation-specific information (the IP address). XDM and GDM offer &krb; support, too. Read more about the &krb; network applications in"
+msgstr ""
+
+#. Tag: citetitle
+#: security_kerberos.xml:486
+#, no-c-format
+msgid "Kerberos V5 UNIX User's Guide"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:487
+#, no-c-format
+msgid "at"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:488
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: title
@@ -461,7 +497,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:505
 #, no-c-format
-msgid "Check your network setup and make sure it meets the minimum requirements outlined in <xref linkend=\"sec.security.kerberos.admin.top\"/>. Choose an appropriate realm for your &krb; setup, see <xref linkend=\"sec.security.kerberos.admin.realm\"/>. Carefully set up the machine that is to serve as the KDC and apply tight security, see <xref linkend=\"sec.security.kerberos.admin.kdc\"/>. Set up a reliable time source in your network to make sure all tickets contain valid time stamps, see <xref linkend=\"sec.security.kerberos.admin.time\"/>."
+msgid "Check your network setup and make sure it meets the minimum requirements outlined in <xref linkend=\"sec.security.kerberos.admin.top\"/> . Choose an appropriate realm for your &krb; setup, see <xref linkend=\"sec.security.kerberos.admin.realm\"/> . Carefully set up the machine that is to serve as the KDC and apply tight security, see <xref linkend=\"sec.security.kerberos.admin.kdc\"/> . Set up a reliable time source in your network to make sure all tickets contain valid time stamps, see <xref linkend=\"sec.security.kerberos.admin.time\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -473,7 +509,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:521
 #, no-c-format
-msgid "Configure the KDC and the clients, see <xref linkend=\"sec.security.kerberos.admin.instkdc\"/> and <xref linkend=\"sec.security.kerberos.admin.client\"/>. Enable remote administration for your &krb; service, so you do not need physical access to your KDC machine, see <xref linkend=\"sec.security.kerberos.admin.remote\"/>. Create service principals for every service in your realm, see <xref linkend=\"sec.security.kerberos.admin.hostprinc\"/>."
+msgid "Configure the KDC and the clients, see <xref linkend=\"sec.security.kerberos.admin.instkdc\"/> and <xref linkend=\"sec.security.kerberos.admin.client\"/> . Enable remote administration for your &krb; service, so you do not need physical access to your KDC machine, see <xref linkend=\"sec.security.kerberos.admin.remote\"/> . Create service principals for every service in your realm, see <xref linkend=\"sec.security.kerberos.admin.hostprinc\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -485,13 +521,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:536
 #, no-c-format
-msgid "Various services in your network can use &krb;. To add &krb; password-checking to applications using PAM, proceed as outlined in <xref linkend=\"sec.security.kerberos.admin.pam\"/>. To configure SSH or LDAP with &krb; authentication, proceed as outlined in <xref linkend=\"sec.security.kerberos.admin.sshd\"/> and <xref linkend=\"sec.security.kerberos.admin.ldap\"/>."
-msgstr ""
-
-#. Tag: title
-#: security_kerberos.xml:549 security_kerberos.xml:590
-#, no-c-format
-msgid "&krb; Network Topology"
+msgid "Various services in your network can use &krb;. To add &krb; password-checking to applications using PAM, proceed as outlined in <xref linkend=\"sec.security.kerberos.admin.pam\"/> . To configure SSH or LDAP with &krb; authentication, proceed as outlined in <xref linkend=\"sec.security.kerberos.admin.sshd\"/> and <xref linkend=\"sec.security.kerberos.admin.ldap\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -531,6 +561,12 @@ msgid "The following figure depicts a simple example network with only the minim
 msgstr ""
 
 #. Tag: title
+#: security_kerberos.xml:590
+#, no-c-format
+msgid "&krb; Network Topology"
+msgstr ""
+
+#. Tag: title
 #: security_kerberos.xml:601
 #, no-c-format
 msgid "Configuring Subnet Routing"
@@ -539,7 +575,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:602
 #, no-c-format
-msgid "For a setup similar to the one in <xref linkend=\"fig.netw.kerb\"/>, configure routing between the two subnets (&subnetImask; and &subnetIImask;). Refer to <xref linkend=\"sec.network.yast.change.route\"/> for more information on configuring routing with &yast;."
+msgid "For a setup similar to the one in <xref linkend=\"fig.netw.kerb\"/> , configure routing between the two subnets (&subnetImask; and &subnetIImask;). Refer to <xref linkend=\"sec.network.yast.change.route\"/> for more information on configuring routing with &yast;."
 msgstr ""
 
 #. Tag: title
@@ -551,19 +587,19 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:614
 #, no-c-format
-msgid "The domain of a &krb; installation is called a realm and is identified by a name, such as <literal>EXAMPLE.COM</literal> or simply <literal>ACCOUNTING</literal>. &krb; is case-sensitive, so <literal>example.com</literal> is actually a different realm than <literal>EXAMPLE.COM</literal>. Use the case you prefer. It is common practice, however, to use uppercase realm names."
+msgid "The domain of a &krb; installation is called a realm and is identified by a name, such as <literal>EXAMPLE.COM</literal> or simply <literal>ACCOUNTING</literal> . &krb; is case-sensitive, so <literal>example.com</literal> is actually a different realm than <literal>EXAMPLE.COM</literal> . Use the case you prefer. It is common practice, however, to use uppercase realm names."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:622
 #, no-c-format
-msgid "It is also a good idea to use your DNS domain name (or a subdomain, such as <literal>ACCOUNTING.EXAMPLE.COM</literal>). As shown below, your life as an administrator can be much easier if you configure your &krb; clients to locate the KDC and other &krb; services via DNS. To do so, it is helpful if your realm name is a subdomain of your DNS domain name."
+msgid "It is also a good idea to use your DNS domain name (or a subdomain, such as <literal>ACCOUNTING.EXAMPLE.COM</literal> ). As shown below, your life as an administrator can be much easier if you configure your &krb; clients to locate the KDC and other &krb; services via DNS. To do so, it is helpful if your realm name is a subdomain of your DNS domain name."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:629
 #, no-c-format
-msgid "Unlike the DNS name space, &krb; is not hierarchical. So if you have a realm named <literal>EXAMPLE.COM</literal> with two <quote>subrealms</quote> named <literal>DEVELOPMENT</literal> and <literal>ACCOUNTING</literal>, and these subordinate realms do not inherit principals from <literal>EXAMPLE.COM</literal>. Instead, you would have three separate realms, and you would need to configure cross-realm authentication for each realm, so that users from one realm to interact with servers or other users from another realm."
+msgid "Unlike the DNS name space, &krb; is not hierarchical. So if you have a realm named <literal>EXAMPLE.COM</literal> with two <quote>subrealms</quote> named <literal>DEVELOPMENT</literal> and <literal>ACCOUNTING</literal> , and these subordinate realms do not inherit principals from <literal>EXAMPLE.COM</literal> . Instead, you would have three separate realms, and you would need to configure cross-realm authentication for each realm, so that users from one realm to interact with servers or other users from another realm."
 msgstr ""
 
 #. Tag: para
@@ -605,7 +641,7 @@ msgstr ""
 #. Tag: para
 #: security_kerberos.xml:675
 #, no-c-format
-msgid "Install a minimal system first then check the list of installed packages and remove any unneeded packages. This includes servers, such as <systemitem class=\"daemon\">inetd</systemitem>, <systemitem class=\"daemon\">portmap</systemitem>, and CUPS, plus anything X-based. Even installing an SSH server should be considered a potential security risk."
+msgid "Install a minimal system first then check the list of installed packages and remove any unneeded packages. This includes servers, such as <systemitem class=\"daemon\">inetd</systemitem> , <systemitem class=\"daemon\">portmap</systemitem> , and CUPS, plus anything X-based. Even installing an SSH server should be considered a potential security risk."
 msgstr ""
 
 #. Tag: para
@@ -623,378 +659,384 @@ msgstr ""
 #. Tag: screen
 #: security_kerberos.xml:698
 #, no-c-format
-msgid ""
-      "passwd:         files\n"
+msgid "passwd:         files\n"
       "group:          files"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:699
+#: security_kerberos.xml:700
 #, no-c-format
-msgid "Edit the <filename>passwd</filename>, <filename>group</filename>, and <filename>shadow</filename> files in <filename>/etc</filename> and remove the lines that start with a <literal>+</literal> character (these are for NIS lookups)."
+msgid "Edit the <filename>passwd</filename> , <filename>group</filename> , and <filename>shadow</filename> files in <filename>/etc</filename> and remove the lines that start with a <literal>+</literal> character (these are for NIS lookups)."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:707
+#: security_kerberos.xml:708
 #, no-c-format
 msgid "Disable all user accounts except &rootuser;'s account by editing <filename>/etc/shadow</filename> and replacing the hashed passwords with <literal>*</literal> or <literal>!</literal> characters."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:717
+#: security_kerberos.xml:718
 #, no-c-format
 msgid "Configuring Time Synchronization"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:718
+#: security_kerberos.xml:719
 #, no-c-format
 msgid "To use &krb; successfully, make sure that all system clocks within your organization are synchronized within a certain range. This is important because &krb; protects against replayed credentials. An attacker might be able to observe &krb; credentials on the network and reuse them to attack the server. &krb; employs several defenses to prevent this. One of them is that it puts time stamps into its tickets. A server receiving a ticket with a time stamp that differs from the current time rejects the ticket."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:728
+#: security_kerberos.xml:729
 #, no-c-format
 msgid "&krb; allows a certain leeway when comparing time stamps. However, computer clocks can be very inaccurate in keeping time&mdash;it is not unheard of for PC clocks to lose or gain half an hour during a week. For this reason, configure all hosts on the network to synchronize their clocks with a central time source."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:735
+#: security_kerberos.xml:736
 #, no-c-format
-msgid "A simple way to do so is by installing an NTP time server on one machine and having all clients synchronize their clocks with this server. Do this by running an NTP daemon &chronyd; as a client on all these machines. The KDC itself needs to be synchronized to the common time source as well. Because running an NTP daemon on this machine would be a security risk, it is probably a good idea to do this by running <command>chronyd -q</command> via a cron job. To configure your machine as an NTP client, proceed as outlined in <xref linkend=\"sec.ntp.yast\"/>."
+msgid "A simple way to do so is by installing an NTP time server on one machine and having all clients synchronize their clocks with this server. Do this by running an NTP daemon &chronyd; as a client on all these machines. The KDC itself needs to be synchronized to the common time source as well. Because running an NTP daemon on this machine would be a security risk, it is probably a good idea to do this by running <command>chronyd -q</command> via a cron job. To configure your machine as an NTP client, proceed as outlined in <xref linkend=\"sec.ntp.yast\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:745
+#: security_kerberos.xml:746
 #, no-c-format
 msgid "A different way to secure the time service and still use the NTP daemon is to attach a hardware reference clock to a dedicated NTP server and an additional hardware reference clock to the KDC."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:750
+#: security_kerberos.xml:751
 #, no-c-format
-msgid "It is also possible to adjust the maximum deviation &krb; allows when checking time stamps. This value (called <emphasis>clock skew</emphasis>) can be set in the <filename>krb5.conf</filename> file as described in <xref linkend=\"sec.security.kerberos.admin.client.clockskew\"/>."
+msgid "It is also possible to adjust the maximum deviation &krb; allows when checking time stamps. This value (called <emphasis>clock skew</emphasis> ) can be set in the <filename>krb5.conf</filename> file as described in <xref linkend=\"sec.security.kerberos.admin.client.clockskew\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:760
+#: security_kerberos.xml:761
 #, no-c-format
 msgid "Configuring the KDC"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:761
+#: security_kerberos.xml:762
 #, no-c-format
 msgid "This section covers the initial configuration and installation of the KDC, including the creation of an administrative principal. This procedure consists of several steps:"
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:769
+#: security_kerberos.xml:770
 #, no-c-format
 msgid "Install the RPMs"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:770
+#: security_kerberos.xml:771
 #, no-c-format
-msgid "On a machine designated as the KDC, install the following software packages: <systemitem class=\"resource\">krb5</systemitem>, <systemitem class=\"resource\">krb5-server</systemitem> and <systemitem class=\"resource\">krb5-client</systemitem> packages."
+msgid "On a machine designated as the KDC, install the following software packages: <systemitem class=\"resource\">krb5</systemitem> , <systemitem class=\"resource\">krb5-server</systemitem> and <systemitem class=\"resource\">krb5-client</systemitem> packages."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:780
+#: security_kerberos.xml:781
 #, no-c-format
 msgid "Adjust the Configuration Files"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:781
+#: security_kerberos.xml:782
 #, no-c-format
 msgid "The <filename>/etc/krb5.conf</filename> and <filename>/var/lib/kerberos/krb5kdc/kdc.conf</filename> configuration files must be adjusted for your scenario. These files contain all information on the KDC."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:791
+#: security_kerberos.xml:792
 #, no-c-format
 msgid "Create the &krb; Database"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:792
+#: security_kerberos.xml:793
 #, no-c-format
 msgid "&krb; keeps a database of all principal identifiers and the secret keys of all principals that need to be authenticated. Refer to <xref linkend=\"sec.security.kerberos.admin.kdc.database\"/> for details."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:802
+#: security_kerberos.xml:803
 #, no-c-format
 msgid "Adjust the ACL Files: Add Administrators"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:803
+#: security_kerberos.xml:804
 #, no-c-format
-msgid "The &krb; database on the KDC can be managed remotely. To prevent unauthorized principals from tampering with the database, &krb; uses access control lists. You must explicitly enable remote access for the administrator principal to enable them to manage the database. The &krb; ACL file is located under <filename>/var/lib/kerberos/krb5kdc/kadm5.acl</filename>. Refer to <xref linkend=\"sec.security.kerberos.admin.remote\"/> for details."
+msgid "The &krb; database on the KDC can be managed remotely. To prevent unauthorized principals from tampering with the database, &krb; uses access control lists. You must explicitly enable remote access for the administrator principal to enable them to manage the database. The &krb; ACL file is located under <filename>/var/lib/kerberos/krb5kdc/kadm5.acl</filename> . Refer to <xref linkend=\"sec.security.kerberos.admin.remote\"/> for details."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:816
+#: security_kerberos.xml:817
 #, no-c-format
 msgid "Adjust the &krb; Database: Add Administrators"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:817
+#: security_kerberos.xml:818
 #, no-c-format
 msgid "You need at least one administrative principal to run and administer &krb;. This principal must be added before starting the KDC. Refer to <xref linkend=\"sec.security.kerberos.admin.kdc.princ\"/> for details."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:827
+#: security_kerberos.xml:828
 #, no-c-format
 msgid "Start the &krb; Daemon"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:828
+#: security_kerberos.xml:829
 #, no-c-format
 msgid "After the KDC software is installed and properly configured, start the &krb; daemon to provide &krb; service for your realm. Refer to <xref linkend=\"sec.security.kerberos.admin.kdc.start\"/> for details."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:838
+#: security_kerberos.xml:839
 #, no-c-format
 msgid "Create a Principal for Yourself"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:839
+#: security_kerberos.xml:840
 #, no-c-format
 msgid "You need a principal for yourself. Refer to <xref linkend=\"sec.security.kerberos.admin.kdc.princ\"/> for details."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:847
+#: security_kerberos.xml:848
 #, no-c-format
 msgid "Setting Up the Database"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:848
+#: security_kerberos.xml:849
 #, no-c-format
 msgid "Your next step is to initialize the database where &krb; keeps all information about principals. Set up the database master key, which is used to protect the database from accidental disclosure (in particular if it is backed up to tape). The master key is derived from a pass phrase and is stored in a file called the stash file. This is so you do not need to enter the password every time the KDC is restarted. Make sure that you choose a good pass phrase, such as a sentence from a book opened to a random page."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:858
+#: security_kerberos.xml:859
 #, no-c-format
-msgid "When you make tape backups of the &krb; database (<filename>/var/lib/kerberos/krb5kdc/principal</filename>), do not back up the stash file (which is in <filename>/var/lib/kerberos/krb5kdc/.k5.EXAMPLE.COM</filename>). Otherwise, everyone able to read the tape could also decrypt the database. Therefore, keep a copy of the pass phrase in a safe or some other secure location, because you will need it to restore your database from backup tape after a crash."
+msgid "When you make tape backups of the &krb; database ( <filename>/var/lib/kerberos/krb5kdc/principal</filename> ), do not back up the stash file (which is in <filename>/var/lib/kerberos/krb5kdc/.k5.EXAMPLE.COM</filename> ). Otherwise, everyone able to read the tape could also decrypt the database. Therefore, keep a copy of the pass phrase in a safe or some other secure location, because you will need it to restore your database from backup tape after a crash."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:868
+#: security_kerberos.xml:869
 #, no-c-format
 msgid "To create the stash file and the database, run:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:871
+#: security_kerberos.xml:872
 #, no-c-format
 msgid "&prompt.sudo;kdb5_util create -r EXAMPLE.COM -s"
 msgstr ""
 
-#. Tag: para
-#: security_kerberos.xml:872 security_kerberos.xml:906
+#. Tag: #text
+#: security_kerberos.xml:880
 #, no-c-format
-msgid "You will see the following output:"
+msgid "Initializing database '/var/lib/kerberos/krb5kdc/principal' for realm 'EXAMPLE.COM',master key name 'K/M@EXAMPLE.COM'You will be prompted for the database Master Password.It is important that you NOT FORGET this password.Enter KDC database master key:"
 msgstr ""
 
-#. Tag: screen
-#: security_kerberos.xml:875
+#. Tag: #text
+#: security_kerberos.xml:881
 #, no-c-format
-msgid ""
-      "Initializing database '/var/lib/kerberos/krb5kdc/principal' for realm 'EXAMPLE.COM',\n"
-      "master key name 'K/M@EXAMPLE.COM'\n"
-      "You will be prompted for the database Master Password.\n"
-      "It is important that you NOT FORGET this password.\n"
-      "Enter KDC database master key:  <co xml:id=\"co.kerb.kdb5.pass\"/>\n"
-      "Re-enter KDC database master key to verify:  <co xml:id=\"co.kerb.kdb5.pass.repeat\"/>"
+msgid "Re-enter KDC database master key to verify:"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:878
+#: security_kerberos.xml:885
 #, no-c-format
 msgid "Type the master password."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:883
+#: security_kerberos.xml:890
 #, no-c-format
 msgid "Type the password again."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:888
+#: security_kerberos.xml:895
 #, no-c-format
 msgid "To verify, use the list command:"
 msgstr ""
 
-#. Tag: screen
-#: security_kerberos.xml:891
+#. Tag: #text
+#: security_kerberos.xml:900
 #, no-c-format
-msgid ""
-      "&prompt.user;kadmin.local\n"
-      "\n"
-      "<prompt>kadmin&gt; </prompt>listprincs"
+msgid "listprincs"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:892
+#: security_kerberos.xml:901
 #, no-c-format
 msgid "You will see several principals in the database, which are for internal use by &krb;:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:896
+#: security_kerberos.xml:905
 #, no-c-format
-msgid ""
-      "K/M@EXAMPLE.COM\n"
+msgid "K/M@EXAMPLE.COM\n"
       "kadmin/admin@EXAMPLE.COM\n"
       "kadmin/changepw@EXAMPLE.COM\n"
       "krbtgt/EXAMPLE.COM@EXAMPLE.COM"
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:899
+#: security_kerberos.xml:911
 #, no-c-format
 msgid "Creating a Principal"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:900
+#: security_kerberos.xml:912
 #, no-c-format
 msgid "Create two &krb; principals for yourself: one normal principal for everyday work and one for administrative tasks relating to &krb;. Assuming your login name is &exampleuserIII;, proceed as follows:"
 msgstr ""
 
-#. Tag: screen
-#: security_kerberos.xml:905
+#. Tag: #text
+#: security_kerberos.xml:917
 #, no-c-format
-msgid ""
-      "&prompt.user;kadmin.local\n"
-      "\n"
-      "<prompt>kadmin&gt; </prompt>ank &exampleuserIII_plain;"
+msgid "&prompt.user;kadmin.local"
 msgstr ""
 
-#. Tag: screen
-#: security_kerberos.xml:909
+#. Tag: prompt
+#: security_kerberos.xml:919
 #, no-c-format
-msgid ""
-      "&exampleuserIII_plain;@EXAMPLE.COM's Password: <co xml:id=\"co.kerb.geeko.pass\"/>\n"
-      "Verifying password: <co xml:id=\"co.kerb.geeko.pass.repeat\"/>"
+msgid "kadmin&gt;"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:919
+#, no-c-format
+msgid "ank &exampleuserIII_plain;"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:912
+#: security_kerberos.xml:921
+#, no-c-format
+msgid "You will see the following output:"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:924
+#, no-c-format
+msgid "&exampleuserIII_plain;@EXAMPLE.COM's Password:"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:925
+#, no-c-format
+msgid "Verifying password:"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:929
 #, no-c-format
 msgid "Type &exampleuserIII;'s password."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:917
+#: security_kerberos.xml:934
 #, no-c-format
 msgid "Type &exampleuserIII;'s password again."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:922
+#: security_kerberos.xml:939
 #, no-c-format
-msgid "Next, create another principal named <literal>&exampleuserIII_plain;/admin</literal> by typing <command>ank</command> <option>&exampleuserIII_plain;/admin</option> at the <command>kadmin</command> prompt. The <literal>admin</literal> suffixed to your user name is a <emphasis>role</emphasis>. Later, use this role when administering the &krb; database. A user can have several roles for different purposes. Roles act like completely different accounts that have similar names."
+msgid "Next, create another principal named <literal>&exampleuserIII_plain;/admin</literal> by typing <command>ank</command> <option>&exampleuserIII_plain;/admin</option> at the <command>kadmin</command> prompt. The <literal>admin</literal> suffixed to your user name is a <emphasis>role</emphasis> . Later, use this role when administering the &krb; database. A user can have several roles for different purposes. Roles act like completely different accounts that have similar names."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:934
+#: security_kerberos.xml:951
 #, no-c-format
 msgid "Starting the KDC"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:935
+#: security_kerberos.xml:952
 #, no-c-format
 msgid "Start the KDC daemon and the kadmin daemon. To start the daemons manually, enter:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:939
+#: security_kerberos.xml:956
 #, no-c-format
-msgid ""
-      "&prompt.sudo;systemctl start krb5kdc\n"
+msgid "&prompt.sudo;systemctl start krb5kdc\n"
       "sudo systemctl start kadmind"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:940
+#: security_kerberos.xml:958
 #, no-c-format
-msgid "Also make sure that the services KDC (<systemitem>krb5kdc</systemitem>) and kadmind (<systemitem>kadmind</systemitem>) are started by default when the server machine is rebooted. Enable them by entering:"
+msgid "Also make sure that the services KDC ( <systemitem>krb5kdc</systemitem> ) and kadmind ( <systemitem>kadmind</systemitem> ) are started by default when the server machine is rebooted. Enable them by entering:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:945
+#: security_kerberos.xml:963
 #, no-c-format
 msgid "&prompt.sudo;systemctl enable krb5kdc kadmind"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:946
+#: security_kerberos.xml:964
 #, no-c-format
-msgid "or by using the &yast; <guimenu>&ycc_runlevel;</guimenu>."
+msgid "or by using the &yast; <guimenu>&ycc_runlevel;</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:953
+#: security_kerberos.xml:971
 #, no-c-format
 msgid "Configuring &krb; Clients"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:954
+#: security_kerberos.xml:972
 #, no-c-format
 msgid "When the supporting infrastructure is in place (DNS, NTP) and the KDC has been properly configured and started, configure the client machines. To configure a &krb; client, use one of the two manual approaches described below."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:962
+#: security_kerberos.xml:980
 #, no-c-format
 msgid "When configuring &krb;, there are two approaches you can take&mdash;static configuration in the <filename>/etc/krb5.conf</filename> file or dynamic configuration with DNS. With DNS configuration, &krb; applications try to locate the KDC services using DNS records. With static configuration, add the host names of your KDC server to <filename>krb5.conf</filename> (and update the file whenever you move the KDC or reconfigure your realm in other ways)."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:972
+#: security_kerberos.xml:990
 #, no-c-format
 msgid "DNS-based configuration is generally a lot more flexible and the amount of configuration work per machine is a lot less. However, it requires that your realm name is either the same as your DNS domain or a subdomain of it. Configuring &krb; via DNS also creates a security issue: an attacker can seriously disrupt your infrastructure through your DNS (by shooting down the name server, spoofing DNS records, etc.). However, this amounts to a denial of service at worst. A similar scenario applies to the static configuration case unless you enter IP addresses in <filename>krb5.conf</filename> instead of host names."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:985
+#: security_kerberos.xml:1003
 #, no-c-format
 msgid "Static Configuration"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:986
+#: security_kerberos.xml:1004
 #, no-c-format
-msgid "One way to configure &krb; is to edit <filename>/etc/krb5.conf</filename>. The file installed by default contains various sample entries. Erase all of these entries before starting. <filename>krb5.conf</filename> is made up of several sections (stanzas), each introduced by the section name in brackets like <literal>[this]</literal>."
+msgid "One way to configure &krb; is to edit <filename>/etc/krb5.conf</filename> . The file installed by default contains various sample entries. Erase all of these entries before starting. <filename>krb5.conf</filename> is made up of several sections (stanzas), each introduced by the section name in brackets like <literal>[this]</literal> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:994
+#: security_kerberos.xml:1012
 #, no-c-format
 msgid "To configure your &krb; clients, add the following stanza to <filename>krb5.conf</filename> (where <systemitem class=\"fqdomainname\">kdc.example.com</systemitem> is the host name of the KDC):"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1000
+#: security_kerberos.xml:1018
 #, no-c-format
-msgid ""
-      "[libdefaults]\n"
+msgid "[libdefaults]\n"
       "        default_realm = EXAMPLE.COM\n"
       "\n"
       "[realms]\n"
@@ -1005,185 +1047,182 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1001
+#: security_kerberos.xml:1026
 #, no-c-format
 msgid "The <literal>default_realm</literal> line sets the default realm for &krb; applications. If you have several realms, add additional statements to the <literal>[realms]</literal> section."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1006
+#: security_kerberos.xml:1031
 #, no-c-format
 msgid "Also add a statement to this file that tells applications how to map host names to a realm. For example, when connecting to a remote host, the &krb; library needs to know in which realm this host is located. This must be configured in the <literal>[domain_realms]</literal> section:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1013
+#: security_kerberos.xml:1038
 #, no-c-format
-msgid ""
-      "[domain_realm]\n"
+msgid "[domain_realm]\n"
       ".example.com = EXAMPLE.COM\n"
       "www.example.org = EXAMPLE.COM"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1014
+#: security_kerberos.xml:1041
 #, no-c-format
 msgid "This tells the library that all hosts in the <filename>example.com</filename> DNS domains are in the <filename>EXAMPLE.COM</filename> &krb; realm. In addition, one external host named <filename>www.example.org</filename> should also be considered a member of the <filename>EXAMPLE.COM</filename> realm."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1023
+#: security_kerberos.xml:1050
 #, no-c-format
 msgid "DNS-Based Configuration"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1024
+#: security_kerberos.xml:1051
 #, no-c-format
-msgid "DNS-based &krb; configuration makes heavy use of SRV records. See <emphasis>(RFC2052) A DNS RR for specifying the location of services</emphasis> at <link xlink:href=\"http://www.ietf.org\"></link>."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1029
-#, no-c-format
-msgid "The name of an SRV record, as far as &krb; is concerned, is always in the format <literal>_service._proto.realm</literal>, where realm is the &krb; realm. Domain names in DNS are case-insensitive, so case-sensitive &krb; realms would break when using this configuration method. <literal>_service</literal> is a service name (different names are used when trying to contact the KDC or the password service, for example). <literal>_proto</literal> can be either <literal>_udp</literal> or <literal>_tcp</literal>, but not all services support both protocols."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1040
-#, no-c-format
-msgid "The data portion of SRV resource records consists of a priority value, a weight, a port number, and a host name. The priority defines the order in which hosts should be tried (lower values indicate a higher priority). The weight value is there to support some sort of load balancing among servers of equal priority. You probably do not need any of this, so it is okay to set these to zero."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1048
-#, no-c-format
-msgid "MIT &krb; currently looks up the following names when looking for services:"
-msgstr ""
-
-#. Tag: term
-#: security_kerberos.xml:1054
-#, no-c-format
-msgid "_kerberos"
+msgid "DNS-based &krb; configuration makes heavy use of SRV records. See <emphasis>(RFC2052) A DNS RR for specifying the location of services</emphasis> at <link xlink:href=\"http://www.ietf.org\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:1056
 #, no-c-format
+msgid "The name of an SRV record, as far as &krb; is concerned, is always in the format <literal>_service._proto.realm</literal> , where realm is the &krb; realm. Domain names in DNS are case-insensitive, so case-sensitive &krb; realms would break when using this configuration method. <literal>_service</literal> is a service name (different names are used when trying to contact the KDC or the password service, for example). <literal>_proto</literal> can be either <literal>_udp</literal> or <literal>_tcp</literal> , but not all services support both protocols."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:1067
+#, no-c-format
+msgid "The data portion of SRV resource records consists of a priority value, a weight, a port number, and a host name. The priority defines the order in which hosts should be tried (lower values indicate a higher priority). The weight value is there to support some sort of load balancing among servers of equal priority. You probably do not need any of this, so it is okay to set these to zero."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:1075
+#, no-c-format
+msgid "MIT &krb; currently looks up the following names when looking for services:"
+msgstr ""
+
+#. Tag: term
+#: security_kerberos.xml:1081
+#, no-c-format
+msgid "_kerberos"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:1083
+#, no-c-format
 msgid "This defines the location of the KDC daemon (the authentication and ticket granting server). Typical records look like this:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1060
+#: security_kerberos.xml:1087
 #, no-c-format
-msgid ""
-      "_kerberos._udp.EXAMPLE.COM.  IN  SRV    0 0 88 kdc.example.com.\n"
+msgid "_kerberos._udp.EXAMPLE.COM.  IN  SRV    0 0 88 kdc.example.com.\n"
       "_kerberos._tcp.EXAMPLE.COM.  IN  SRV    0 0 88 kdc.example.com."
 msgstr ""
 
 #. Tag: term
-#: security_kerberos.xml:1064
+#: security_kerberos.xml:1092
 #, no-c-format
 msgid "_kerberos-adm"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1066
+#: security_kerberos.xml:1094
 #, no-c-format
 msgid "This describes the location of the remote administration service. Typical records look like this:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1070
+#: security_kerberos.xml:1098
 #, no-c-format
-msgid "_kerberos-adm._tcp.EXAMPLE.COM. IN  SRV    0 0 749 kdc.example.com."
+msgid "\n"
+      "_kerberos-adm._tcp.EXAMPLE.COM. IN  SRV    0 0 749 kdc.example.com."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1071
+#: security_kerberos.xml:1100
 #, no-c-format
 msgid "Because kadmind does not support UDP, there should be no <literal>_udp</literal> record."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1078
+#: security_kerberos.xml:1107
 #, no-c-format
-msgid "As with the static configuration file, there is a mechanism to inform clients that a specific host is in the <literal>EXAMPLE.COM</literal> realm, even if it is not part of the <literal>example.com</literal> DNS domain. This can be done by attaching a TXT record to <literal>_kerberos.host_name</literal>, as shown here:"
+msgid "As with the static configuration file, there is a mechanism to inform clients that a specific host is in the <literal>EXAMPLE.COM</literal> realm, even if it is not part of the <literal>example.com</literal> DNS domain. This can be done by attaching a TXT record to <literal>_kerberos.host_name</literal> , as shown here:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1085
+#: security_kerberos.xml:1114
 #, no-c-format
 msgid "_kerberos.www.example.org.  IN TXT \"EXAMPLE.COM\""
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1088
+#: security_kerberos.xml:1117
 #, no-c-format
 msgid "Adjusting the Clock Skew"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1089
+#: security_kerberos.xml:1118
 #, no-c-format
 msgid "The <emphasis>clock skew</emphasis> is the tolerance for accepting tickets with time stamps that do not exactly match the host's system clock. Usually, the clock skew is set to 300 seconds (five minutes). This means a ticket can have a time stamp somewhere between five minutes behind and five minutes ahead of the server's clock."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1096
+#: security_kerberos.xml:1125
 #, no-c-format
 msgid "When using NTP to synchronize all hosts, you can reduce this value to about one minute. The clock skew value can be set in <filename>/etc/krb5.conf</filename> like this:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1101
+#: security_kerberos.xml:1130
 #, no-c-format
-msgid ""
-      "[libdefaults]\n"
+msgid "[libdefaults]\n"
       "        clockskew = 60"
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1107
+#: security_kerberos.xml:1137
 #, no-c-format
 msgid "Configuring Remote &krb; Administration"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1108
+#: security_kerberos.xml:1138
 #, no-c-format
-msgid "To be able to add and remove principals from the &krb; database without accessing the KDC's console directly, tell the &krb; administration server which principals are allowed to do what by editing <filename>/var/lib/kerberos/krb5kdc/kadm5.acl</filename>. The ACL (access control list) file allows you to specify privileges with a precise degree of control. For details, refer to the manual page with <command>man</command> <option>8 kadmind</option>."
+msgid "To be able to add and remove principals from the &krb; database without accessing the KDC's console directly, tell the &krb; administration server which principals are allowed to do what by editing <filename>/var/lib/kerberos/krb5kdc/kadm5.acl</filename> . The ACL (access control list) file allows you to specify privileges with a precise degree of control. For details, refer to the manual page with <command>man</command> <option>8 kadmind</option> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1117
+#: security_kerberos.xml:1147
 #, no-c-format
 msgid "For now, grant yourself the privilege to administer the database by putting the following line into the file:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1121
+#: security_kerberos.xml:1151
 #, no-c-format
 msgid "&exampleuserIII_plain;/admin              *"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1122
+#: security_kerberos.xml:1152
 #, no-c-format
 msgid "Replace the user name &exampleuserIII; with your own. Restart <systemitem>kadmind</systemitem> for the change to take effect."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1126
+#: security_kerberos.xml:1156
 #, no-c-format
 msgid "You should now be able to perform &krb; administration tasks remotely using the kadmin tool. First, obtain a ticket for your admin role and use that ticket when connecting to the kadmin server:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1131
+#: security_kerberos.xml:1161
 #, no-c-format
-msgid ""
-      "&prompt.user;kadmin -p &exampleuserIII_plain;/admin\n"
+msgid "&prompt.user;kadmin -p &exampleuserIII_plain;/admin\n"
       "Authenticating as principal &exampleuserIII_plain;/admin@EXAMPLE.COM with password.\n"
       "Password for &exampleuserIII_plain;/admin@EXAMPLE.COM:\n"
       "kadmin:  getprivs\n"
@@ -1192,22 +1231,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1132
+#: security_kerberos.xml:1167
 #, no-c-format
 msgid "Using the <command>getprivs</command> command, verify which privileges you have. The list shown above is the full set of privileges."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1136
+#: security_kerberos.xml:1171
 #, no-c-format
 msgid "As an example, modify the principal &exampleuserIII;:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1139
+#: security_kerberos.xml:1174
 #, no-c-format
-msgid ""
-      "&prompt.user;kadmin -p &exampleuserIII_plain;/admin\n"
+msgid "&prompt.user;kadmin -p &exampleuserIII_plain;/admin\n"
       "Authenticating as principal &exampleuserIII_plain;/admin@EXAMPLE.COM with password.\n"
       "Password for &exampleuserIII_plain;/admin@EXAMPLE.COM:\n"
       "\n"
@@ -1250,142 +1288,141 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1140
+#: security_kerberos.xml:1214
 #, no-c-format
 msgid "This changes the maximum ticket life time to eight hours. For more information about the <command>kadmin</command> command and the options available, see the <systemitem>krb5-doc</systemitem> package or refer to the <command>man</command> <option>8 kadmin</option> manual page."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1149
+#: security_kerberos.xml:1223
 #, no-c-format
 msgid "Creating &krb; Service Principals"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1150
+#: security_kerberos.xml:1224
 #, no-c-format
-msgid "So far, only user credentials have been discussed. However, &krb;-compatible services usually need to authenticate themselves to the client user, too. Therefore, special service principals must be in the &krb; database for each service offered in the realm. For example, if &ldapname; offers an LDAP service, you need a service principal, <literal>ldap/&ldapname;@EXAMPLE.COM</literal>, to authenticate this service to all clients."
+msgid "So far, only user credentials have been discussed. However, &krb;-compatible services usually need to authenticate themselves to the client user, too. Therefore, special service principals must be in the &krb; database for each service offered in the realm. For example, if &ldapname; offers an LDAP service, you need a service principal, <literal>ldap/&ldapname;@EXAMPLE.COM</literal> , to authenticate this service to all clients."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1159
+#: security_kerberos.xml:1233
 #, no-c-format
-msgid "The naming convention for service principals is <literal><replaceable>SERVICE</replaceable>/<replaceable>HOSTNAME</replaceable>@<replaceable>REALM</replaceable></literal>, where <replaceable>HOSTNAME</replaceable> is the host's fully qualified host name."
+msgid "The naming convention for service principals is <literal><replaceable>SERVICE</replaceable>/<replaceable>HOSTNAME</replaceable>@<replaceable>REALM</replaceable></literal> , where <replaceable>HOSTNAME</replaceable> is the host's fully qualified host name."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1165
+#: security_kerberos.xml:1239
 #, no-c-format
 msgid "Valid service descriptors are:"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1173
+#: security_kerberos.xml:1247
 #, no-c-format
 msgid "Service Descriptor"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1178
+#: security_kerberos.xml:1252
 #, no-c-format
 msgid "Service"
 msgstr ""
 
-#. Tag: literal
-#: security_kerberos.xml:1188
+#. Tag: para
+#: security_kerberos.xml:1261
 #, no-c-format
-msgid "host"
+msgid "<literal>host</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1192
+#: security_kerberos.xml:1266
 #, no-c-format
 msgid "Telnet, RSH, SSH"
 msgstr ""
 
-#. Tag: literal
-#: security_kerberos.xml:1200
+#. Tag: para
+#: security_kerberos.xml:1273
 #, no-c-format
 msgid "<literal>nfs</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1204
+#: security_kerberos.xml:1278
 #, no-c-format
 msgid "NFSv4 (with &krb; support)"
 msgstr ""
 
-#. Tag: literal
-#: security_kerberos.xml:1212
+#. Tag: para
+#: security_kerberos.xml:1285
 #, no-c-format
-msgid "HTTP"
+msgid "<literal>HTTP</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1216
+#: security_kerberos.xml:1290
 #, no-c-format
 msgid "HTTP (with &krb; authentication)"
 msgstr ""
 
-#. Tag: literal
-#: security_kerberos.xml:1224
+#. Tag: para
+#: security_kerberos.xml:1297
 #, no-c-format
-msgid "imap"
+msgid "<literal>imap</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1228
+#: security_kerberos.xml:1302
 #, no-c-format
 msgid "IMAP"
 msgstr ""
 
-#. Tag: literal
-#: security_kerberos.xml:1236
+#. Tag: para
+#: security_kerberos.xml:1309
 #, no-c-format
 msgid "<literal>pop</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1240
+#: security_kerberos.xml:1314
 #, no-c-format
 msgid "POP3"
 msgstr ""
 
-#. Tag: literal
-#: security_kerberos.xml:1248
+#. Tag: para
+#: security_kerberos.xml:1321
 #, no-c-format
-msgid "ldap"
+msgid "<literal>ldap</literal>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1252
+#: security_kerberos.xml:1326
 #, no-c-format
 msgid "LDAP"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1260
+#: security_kerberos.xml:1334
 #, no-c-format
 msgid "Service principals are similar to user principals, but have significant differences. The main difference between a user principal and a service principal is that the key of the former is protected by a password. When a user obtains a ticket-granting ticket from the KDC, they needs to type their password, so &krb; can decrypt the ticket. It would be inconvenient for system administrators to obtain new tickets for the SSH daemon every eight hours or so."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1269
+#: security_kerberos.xml:1343
 #, no-c-format
-msgid "Instead, the key required to decrypt the initial ticket for the service principal is extracted by the administrator from the KDC only once and stored in a local file called the <emphasis>keytab</emphasis>. Services such as the SSH daemon read this key and use it to obtain new tickets automatically, when needed. The default keytab file resides in <filename>/etc/krb5.keytab</filename>."
+msgid "Instead, the key required to decrypt the initial ticket for the service principal is extracted by the administrator from the KDC only once and stored in a local file called the <emphasis>keytab</emphasis> . Services such as the SSH daemon read this key and use it to obtain new tickets automatically, when needed. The default keytab file resides in <filename>/etc/krb5.keytab</filename> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1277
+#: security_kerberos.xml:1351
 #, no-c-format
 msgid "To create a host service principal for <literal>&wsIname;</literal> enter the following commands during your kadmin session:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1281
+#: security_kerberos.xml:1355
 #, no-c-format
-msgid ""
-      "&prompt.user;kadmin -p &exampleuserIII_plain;/admin\n"
+msgid "&prompt.user;kadmin -p &exampleuserIII_plain;/admin\n"
       "Authenticating as principal &exampleuserIII_plain;/admin@EXAMPLE.COM with password.\n"
       "Password for &exampleuserIII_plain;/admin@EXAMPLE.COM:\n"
       "kadmin:  addprinc -randkey host/&wsIname;\n"
@@ -1395,22 +1432,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1282
+#: security_kerberos.xml:1362
 #, no-c-format
 msgid "Instead of setting a password for the new principal, the <option>-randkey</option> flag tells <command>kadmin</command> to generate a random key. This is used here because no user interaction is wanted for this principal. It is a server account for the machine."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1288
+#: security_kerberos.xml:1368
 #, no-c-format
-msgid "Finally, extract the key and store it in the local keytab file <filename>/etc/krb5.keytab</filename>. This file is owned by the superuser, so you must be <systemitem class=\"username\">root</systemitem> to execute the next command in the kadmin shell:"
+msgid "Finally, extract the key and store it in the local keytab file <filename>/etc/krb5.keytab</filename> . This file is owned by the superuser, so you must be <systemitem class=\"username\">root</systemitem> to execute the next command in the kadmin shell:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1294
+#: security_kerberos.xml:1374
 #, no-c-format
-msgid ""
-      "kadmin:  ktadd host/&wsIname;\n"
+msgid "kadmin:  ktadd host/&wsIname;\n"
       "Entry for principal host/&wsIname; with kvno 3, encryption type Triple\n"
       "DES cbc mode with HMAC/sha1 added to keytab WRFILE:/etc/krb5.keytab.\n"
       "Entry for principal host/&wsIname; with kvno 3, encryption type DES\n"
@@ -1419,88 +1455,87 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1295
+#: security_kerberos.xml:1380
 #, no-c-format
-msgid "When completed, make sure that you destroy the admin ticket obtained with kinit above with <command>kdestroy</command>."
+msgid "When completed, make sure that you destroy the admin ticket obtained with kinit above with <command>kdestroy</command> ."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1302
+#: security_kerberos.xml:1387
 #, no-c-format
 msgid "Enabling PAM Support for &krb;"
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1304
+#: security_kerberos.xml:1389
 #, no-c-format
 msgid "Incomplete Configuration Locks Users Out"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1305
+#: security_kerberos.xml:1390
 #, no-c-format
 msgid "An incomplete &krb; configuration may completely lock you out of your system, including the root user. To prevent this, add the <option>ignore_unknown_principals</option> directive to the <option>pam_krb5</option> module <emphasis>after</emphasis> you have added the <option>pam_krb5</option> module to the existing PAM configuration files as described below."
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1313
+#: security_kerberos.xml:1398
 #, no-c-format
 msgid "&prompt.sudo;<command>pam-config --add --krb5-ignore_unknown_principals</command>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1314
+#: security_kerberos.xml:1399
 #, no-c-format
 msgid "This will direct the <option>pam_krb5</option> module to ignore some errors that would otherwise cause the account phase to fail."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1319
+#: security_kerberos.xml:1404
 #, no-c-format
-msgid "&productnamereg; comes with a PAM module named <option>pam_krb5</option>, which supports &krb; login and password update. This module can be used by applications such as console login, <command>su</command>, and graphical login applications like GDM. That is, it can be used in all cases where the user enters a password and expects the authenticating application to obtain an initial &krb; ticket on their behalf. To configure PAM support for &krb;, use the following command:"
+msgid "&productnamereg; comes with a PAM module named <option>pam_krb5</option> , which supports &krb; login and password update. This module can be used by applications such as console login, <command>su</command> , and graphical login applications like GDM. That is, it can be used in all cases where the user enters a password and expects the authenticating application to obtain an initial &krb; ticket on their behalf. To configure PAM support for &krb;, use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1329
+#: security_kerberos.xml:1414
 #, no-c-format
 msgid "&prompt.sudo;<command>pam-config --add --krb5</command>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1330
+#: security_kerberos.xml:1415
 #, no-c-format
-msgid "The above command adds the <option>pam_krb5</option> module to the existing PAM configuration files and makes sure it is called in the right order. To make precise adjustments to the way in which <option>pam_krb5</option> is used, edit the file <filename>/etc/krb5.conf</filename> and add default applications to PAM. For details, refer to the manual page with <command>man 5 pam_krb5</command>."
+msgid "The above command adds the <option>pam_krb5</option> module to the existing PAM configuration files and makes sure it is called in the right order. To make precise adjustments to the way in which <option>pam_krb5</option> is used, edit the file <filename>/etc/krb5.conf</filename> and add default applications to PAM. For details, refer to the manual page with <command>man 5 pam_krb5</command> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1339
+#: security_kerberos.xml:1424
 #, no-c-format
 msgid "The <option>pam_krb5</option> module was specifically not designed for network services that accept &krb; tickets as part of user authentication. This is an entirely different matter, and is discussed below."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1349
+#: security_kerberos.xml:1434
 #, no-c-format
 msgid "Configuring SSH for &krb; Authentication"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1350
+#: security_kerberos.xml:1435
 #, no-c-format
 msgid "OpenSSH supports &krb; authentication in both protocol version&nbsp;1 and 2. In version&nbsp;1, there are special protocol messages to transmit &krb; tickets. Version&nbsp;2 does not use &krb; directly anymore, but relies on GSSAPI, the General Security Services API. This is a programming interface that is not specific to &krb;&mdash;it was designed to hide the peculiarities of the underlying authentication system, be it &krb;, a public-key authentication system like SPKM, or others. However, the included GSSAPI library only supports &krb;."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1361
+#: security_kerberos.xml:1446
 #, no-c-format
 msgid "To use sshd with &krb; authentication, edit <filename>/etc/ssh/sshd_config</filename> and set the following options:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1365
+#: security_kerberos.xml:1450
 #, no-c-format
-msgid ""
-      "# These are for protocol version 1\n"
+msgid "# These are for protocol version 1\n"
       "#\n"
       "# KerberosAuthentication yes\n"
       "# KerberosTicketCleanup yes\n"
@@ -1511,158 +1546,269 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1366
+#: security_kerberos.xml:1458
 #, no-c-format
-msgid "Then restart your SSH daemon using <command>sudo systemctl restart sshd</command>."
+msgid "Then restart your SSH daemon using <command>sudo systemctl restart sshd</command> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1370
+#: security_kerberos.xml:1462
 #, no-c-format
-msgid "To use &krb; authentication with protocol version 2, enable it on the client side as well. Do this either in the systemwide configuration file <filename>/etc/ssh/ssh_config</filename> or on a per-user level by editing <filename>~/.ssh/config</filename>. In both cases, add the option <literal>GSSAPIAuthentication yes</literal>."
+msgid "To use &krb; authentication with protocol version 2, enable it on the client side as well. Do this either in the systemwide configuration file <filename>/etc/ssh/ssh_config</filename> or on a per-user level by editing <filename>~/.ssh/config</filename> . In both cases, add the option <literal>GSSAPIAuthentication yes</literal> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1377
+#: security_kerberos.xml:1469
 #, no-c-format
 msgid "You should now be able to connect using &krb; authentication. Use <command>klist</command> to verify that you have a valid ticket, then connect to the SSH server. To force SSH protocol version 1, specify the <literal>-1</literal> option on the command line."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1384
+#: security_kerberos.xml:1476
 #, no-c-format
 msgid "Additional Information"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1385
+#: security_kerberos.xml:1477
 #, no-c-format
 msgid "The file <filename>/usr/share/doc/packages/openssh/README.kerberos</filename> discusses the interaction of OpenSSH and &krb; in more detail."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1393
+#: security_kerberos.xml:1485
 #, no-c-format
 msgid "Additional Directives for Protocol Version 2"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1394
+#: security_kerberos.xml:1486
 #, no-c-format
-msgid "The <literal>GSSAPIKeyExchange</literal> mechanism (RFC 4462) is supported. This directive specifies how host keys are exchanged. For more information, see the sshd_config manual page (<command>man sshd_config</command>)."
+msgid "The <literal>GSSAPIKeyExchange</literal> mechanism (RFC 4462) is supported. This directive specifies how host keys are exchanged. For more information, see the sshd_config manual page ( <command>man sshd_config</command> )."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1404
+#: security_kerberos.xml:1496
 #, no-c-format
 msgid "Using LDAP and &krb;"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1405
+#: security_kerberos.xml:1497
 #, no-c-format
 msgid "When using &krb;, one way to distribute the user information (such as user ID, groups, and home directory) in your local network is to use LDAP. This requires a strong authentication mechanism that prevents packet spoofing and other attacks. One solution is to use &krb; for LDAP communication, too."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1412
+#: security_kerberos.xml:1504
 #, no-c-format
 msgid "OpenLDAP implements most authentication flavors through SASL, the simple authentication session layer. SASL is a network protocol designed for authentication. The SASL implementation is cyrus-sasl, which supports several authentication flavors. &krb; authentication is performed through GSSAPI (General Security Services API). By default, the SASL plug-in for GSSAPI is not installed. Install the <systemitem>cyrus-sasl-gssapi</systemitem> with &yast;."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1421
+#: security_kerberos.xml:1513
 #, no-c-format
 msgid "To enable &krb; to bind to the OpenLDAP server, create a principal <literal>ldap/&ldapname;</literal> and add that to the keytab."
 msgstr ""
 
-#. Tag: para
-#: security_kerberos.xml:1425
+#. Tag: #text
+#: security_kerberos.xml:1519
 #, no-c-format
-msgid "By default, the LDAP server slapd runs as user and group <systemitem class=\"username\">ldap</systemitem>, while the keytab file is readable by <systemitem class=\"username\">root</systemitem> only. Therefore, either change the LDAP configuration so the server runs as <systemitem class=\"username\">root</systemitem> or make the keytab file readable by the group <systemitem class=\"username\">ldap</systemitem>. The latter is done automatically by the OpenLDAP start script (<filename>/usr/lib/openldap/start</filename>) if the keytab file has been specified in the <envar>OPENLDAP_KRB5_KEYTAB</envar> variable in <filename>/etc/sysconfig/openldap</filename> and the <envar>OPENLDAP_CHOWN_DIRS</envar> variable is set to <literal>yes</literal>, which is the default setting. If <envar>OPENLDAP_KRB5_KEYTAB</envar> is left empty, the default keytab under <filename>/etc/krb5.keytab</filename> is used and you must adjust the privileges yourself as described below."
+msgid "By default, the LDAP server slapd runs as user and group"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1520
+#, no-c-format
+msgid ", while the keytab file is readable by"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1522
+#, no-c-format
+msgid "only. Therefore, either change the LDAP configuration so the server runs as"
+msgstr ""
+
+#. Tag: systemitem
+#: security_kerberos.xml:1522
+#, no-c-format
+msgid "root"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1523
+#, no-c-format
+msgid "or make the keytab file readable by the group"
+msgstr ""
+
+#. Tag: systemitem
+#: security_kerberos.xml:1523
+#, no-c-format
+msgid "ldap"
+msgstr ""
+
+#. Tag: filename
+#: security_kerberos.xml:1525
+#, no-c-format
+msgid "/usr/lib/openldap/start"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1525
+#, no-c-format
+msgid ". The latter is done automatically by the OpenLDAP start script ("
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1526
+#, no-c-format
+msgid ") if the keytab file has been specified in the"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1527
+#, no-c-format
+msgid "variable in"
+msgstr ""
+
+#. Tag: filename
+#: security_kerberos.xml:1527
+#, no-c-format
+msgid "/etc/sysconfig/openldap"
+msgstr ""
+
+#. Tag: envar
+#: security_kerberos.xml:1528
+#, no-c-format
+msgid "OPENLDAP_CHOWN_DIRS"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1528
+#, no-c-format
+msgid "and the"
+msgstr ""
+
+#. Tag: literal
+#: security_kerberos.xml:1529
+#, no-c-format
+msgid "yes"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1529
+#, no-c-format
+msgid "variable is set to"
+msgstr ""
+
+#. Tag: envar
+#: security_kerberos.xml:1530
+#, no-c-format
+msgid "OPENLDAP_KRB5_KEYTAB"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1530
+#, no-c-format
+msgid ", which is the default setting. If"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1531
+#, no-c-format
+msgid "is left empty, the default keytab under"
+msgstr ""
+
+#. Tag: filename
+#: security_kerberos.xml:1531
+#, no-c-format
+msgid "/etc/krb5.keytab"
+msgstr ""
+
+#. Tag: #text
+#: security_kerberos.xml:1533
+#, no-c-format
+msgid "is used and you must adjust the privileges yourself as described below."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1442
+#: security_kerberos.xml:1534
 #, no-c-format
-msgid "To run slapd as &rootuser;, edit <filename>/etc/sysconfig/openldap</filename>. Disable the <systemitem>OPENLDAP_USER</systemitem> and <systemitem>OPENLDAP_GROUP</systemitem> variables by putting a comment character in front of them."
+msgid "To run slapd as &rootuser;, edit <filename>/etc/sysconfig/openldap</filename> . Disable the <systemitem>OPENLDAP_USER</systemitem> and <systemitem>OPENLDAP_GROUP</systemitem> variables by putting a comment character in front of them."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1449
+#: security_kerberos.xml:1541
 #, no-c-format
 msgid "To make the keytab file readable by group LDAP, execute"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1452
+#: security_kerberos.xml:1544
 #, no-c-format
-msgid ""
-      "&prompt.sudo;chgrp ldap /etc/krb5.keytab\n"
+msgid "&prompt.sudo;chgrp ldap /etc/krb5.keytab\n"
       "&prompt.sudo;chmod 640 /etc/krb5.keytab"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1453
+#: security_kerberos.xml:1546
 #, no-c-format
 msgid "A third (and maybe the best) solution is to tell OpenLDAP to use a special keytab file. To do this, start kadmin, and enter the following command after you have added the principal ldap/&ldapname;:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1458
+#: security_kerberos.xml:1551
 #, no-c-format
 msgid "&prompt.sudo;ktadd -k /etc/openldap/ldap.keytab ldap/&ldapname;@EXAMPLE.COM"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1459
+#: security_kerberos.xml:1552
 #, no-c-format
 msgid "Then in the shell run:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1462
+#: security_kerberos.xml:1555
 #, no-c-format
-msgid ""
-      "&prompt.sudo;chown ldap:ldap /etc/openldap/ldap.keytab\n"
+msgid "&prompt.sudo;chown ldap:ldap /etc/openldap/ldap.keytab\n"
       "&prompt.sudo;chmod 600 /etc/openldap/ldap.keytab"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1463
+#: security_kerberos.xml:1557
 #, no-c-format
-msgid "To tell OpenLDAP to use a different keytab file, change the following variable in <filename>/etc/sysconfig/openldap</filename>:"
+msgid "To tell OpenLDAP to use a different keytab file, change the following variable in <filename>/etc/sysconfig/openldap</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1467
+#: security_kerberos.xml:1561
 #, no-c-format
 msgid "OPENLDAP_KRB5_KEYTAB=\"/etc/openldap/ldap.keytab\""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1468
+#: security_kerberos.xml:1562
 #, no-c-format
-msgid "Finally, restart the LDAP server using <command>sudo systemctl restart slapd</command>."
+msgid "Finally, restart the LDAP server using <command>sudo systemctl restart slapd</command> ."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1471
+#: security_kerberos.xml:1565
 #, no-c-format
 msgid "Using &krb; Authentication with LDAP"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1472
+#: security_kerberos.xml:1566
 #, no-c-format
 msgid "You are now able to automatically use tools such as ldapsearch with &krb; authentication."
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1476
+#: security_kerberos.xml:1570
 #, no-c-format
-msgid ""
-      "&prompt.user;ldapsearch -b ou=people,dc=example,dc=com '(uid=&exampleuserIII_plain;)'\n"
+msgid "&prompt.user;ldapsearch -b ou=people,dc=example,dc=com '(uid=&exampleuserIII_plain;)'\n"
       "\n"
       "SASL/GSSAPI authentication started\n"
       "SASL SSF: 56\n"
@@ -1677,418 +1823,405 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1477
+#: security_kerberos.xml:1582
 #, no-c-format
 msgid "As you can see, <command>ldapsearch</command> prints a message that it started GSSAPI authentication. The next message is very cryptic, but it shows that the <emphasis>security strength factor</emphasis> (SSF for short) is 56 (The value 56 is somewhat arbitrary. Most likely it was chosen because this is the number of bits in a DES encryption key). This means that GSSAPI authentication was successful and that encryption is being used to protect integrity and provide confidentiality for the LDAP connection."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1487
+#: security_kerberos.xml:1592
 #, no-c-format
-msgid "In &krb;, authentication is always mutual. This means that not only have you authenticated yourself to the LDAP server, but also the LDAP server has authenticated itself to you. In particular, this means communication is with the desired LDAP server, rather than some bogus service set up by an attacker."
+msgid "In &krb;, authentication is always mutual. This means that not only have you authenticated yourself to the LDAP server, but also the LDAP server has authenticated itself to you. In particular, this means communication is with the desired LDAP server, rather than some bogus service set up by an attacker. <!-- ke: I think \"set up\" is fine here. -->"
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1497
+#: security_kerberos.xml:1602
 #, no-c-format
 msgid "&krb; Authentication and LDAP Access Control"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1543
+#: security_kerberos.xml:1652
 #, no-c-format
-msgid "There is one minor piece of the puzzle missing&mdash;how the LDAP server can find out that the &krb; user <literal>&exampleuser_plain;@EXAMPLE.COM</literal> corresponds to the LDAP distinguished name <literal>uid=&exampleuser_plain;,ou=people,dc=example,dc=com</literal>. This sort of mapping must be configured manually using the <literal>saslExpr</literal> directive. In this example, the \"authz-regexp\" change in LDIF would look as follows:"
+msgid "There is one minor piece of the puzzle missing&mdash;how the LDAP server can find out that the &krb; user <literal>&exampleuser_plain;@EXAMPLE.COM</literal> corresponds to the LDAP distinguished name <literal>uid=&exampleuser_plain;,ou=people,dc=example,dc=com</literal> . This sort of mapping must be configured manually using the <literal>saslExpr</literal> directive. In this example, the \"authz-regexp\" change in LDIF would look as follows:"
 msgstr ""
 
 #. Tag: screen
-#: security_kerberos.xml:1553
+#: security_kerberos.xml:1662
 #, no-c-format
-msgid ""
-      "dn: cn=config\n"
+msgid "dn: cn=config\n"
       "add: olcAuthzRegexp\n"
       "olcAuthzRegexp: uid=(.*),cn=GSSAPI,cn=auth uid=$1,ou=people,dc=example,dc=com"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1554
+#: security_kerberos.xml:1665
 #, no-c-format
 msgid "All these changes can be applied via <command>ldapmodify</command> on the command line."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1558
+#: security_kerberos.xml:1669
 #, no-c-format
-msgid "When SASL authenticates a user, OpenLDAP forms a distinguished name from the name given to it by SASL (such as &exampleuser;) and the name of the SASL flavor (<literal>GSSAPI</literal>). The result would be <literal>uid=&exampleuser_plain;,cn=GSSAPI,cn=auth</literal>."
+msgid "When SASL authenticates a user, OpenLDAP forms a distinguished name from the name given to it by SASL (such as &exampleuser;) and the name of the SASL flavor ( <literal>GSSAPI</literal> ). The result would be <literal>uid=&exampleuser_plain;,cn=GSSAPI,cn=auth</literal> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1565
+#: security_kerberos.xml:1676
 #, no-c-format
 msgid "If a <literal>authz-regexp</literal> has been configured, it checks the DN formed from the SASL information using the first argument as a regular expression. If this regular expression matches, the name is replaced with the second argument of the <literal>authz-regexp</literal> statement. The placeholder <literal>$1</literal> is replaced with the substring matched by the <literal>(.*)</literal> expression."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1574
+#: security_kerberos.xml:1685
 #, no-c-format
 msgid "More complicated match expressions are possible. If you have a more complicated directory structure or a schema in which the user name is not part of the DN, you can even use search expressions to map the SASL DN to the user DN."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1580
+#: security_kerberos.xml:1691
 #, no-c-format
 msgid "For more information, see the <literal>slapd-config</literal> man page."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1588
+#: security_kerberos.xml:1699
 #, no-c-format
 msgid "Setting up &krb; using <guimenu>LDAP and &krb; Client</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1589
+#: security_kerberos.xml:1700
 #, no-c-format
 msgid "&yast; includes the module <guimenu>LDAP and &krb; Client</guimenu> that helps define authentication scenarios involving either LDAP or &krb;."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1593
+#: security_kerberos.xml:1704
 #, no-c-format
-msgid "It can also be used to join &krb; and LDAP separately. However, in many such cases, using this module may not be the first choice, such as for joining &ad; (which uses a combination of LDAP and &krb;). For more information, see <xref linkend=\"sec.security.auth.yast.client\"/>."
+msgid "It can also be used to join &krb; and LDAP separately. However, in many such cases, using this module may not be the first choice, such as for joining &ad; (which uses a combination of LDAP and &krb;). For more information, see <xref linkend=\"sec.security.auth.yast.client\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1599
+#: security_kerberos.xml:1710
 #, no-c-format
-msgid "Start the module by selecting <menuchoice> <guimenu>Network Services</guimenu> <guimenu>LDAP and &krb; Client</guimenu> </menuchoice>."
+msgid "Start the module by selecting <menuchoice> <guimenu>Network Services</guimenu> <guimenu>LDAP and &krb; Client</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1605
+#: security_kerberos.xml:1716
 #, no-c-format
 msgid "<guimenu>LDAP and &krb; Client</guimenu> Window"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1616
+#: security_kerberos.xml:1727
 #, no-c-format
 msgid "To configure a &krb; client, follow the procedure below:"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1621
+#: security_kerberos.xml:1732
 #, no-c-format
-msgid "In the window <guimenu>LDAP and &krb; Client</guimenu>, click <guimenu>Change Settings</guimenu>."
+msgid "In the window <guimenu>LDAP and &krb; Client</guimenu> , click <guimenu>Change Settings</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1625
+#: security_kerberos.xml:1736
 #, no-c-format
-msgid "Choose the tab <guimenu>Authentication via Kerberos</guimenu>."
+msgid "Choose the tab <guimenu>Authentication via Kerberos</guimenu> ."
 msgstr ""
 
-#. Tag: phrase
-#: security_kerberos.xml:1637
+#. Tag: textobject
+#: security_kerberos.xml:1747
 #, no-c-format
-msgid "Tab <guimenu>Authentication via Kerberos</guimenu>"
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1643
-#, no-c-format
-msgid "Click <guimenu>Add Realm</guimenu>."
+msgid "<phrase>Tab <guimenu>Authentication via Kerberos</guimenu></phrase>"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1648
+#: security_kerberos.xml:1754
 #, no-c-format
-msgid "In the appearing dialog, specify the correct <guimenu>Realm name</guimenu>. Usually, the realm name is an uppercase version of the domain name. Additionally, you can specify the following:"
+msgid "Click <guimenu>Add Realm</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1655
+#: security_kerberos.xml:1759
 #, no-c-format
-msgid "To apply mappings from the realm name to the domain name, activate <guimenu>Map Domain Name to the Realm</guimenu> and/or <guimenu>Map Wildcard Domain Name to the Realm</guimenu>."
+msgid "In the appearing dialog, specify the correct <guimenu>Realm name</guimenu> . Usually, the realm name is an uppercase version of the domain name. Additionally, you can specify the following:"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1662
+#: security_kerberos.xml:1766
 #, no-c-format
-msgid "You can specify the <guimenu>Host Name of Administration Server</guimenu>, the <guimenu>Host Name of Master Key Distribution Server</guimenu> and additional <guimenu>Key Distribution Centers</guimenu>."
+msgid "To apply mappings from the realm name to the domain name, activate <guimenu>Map Domain Name to the Realm</guimenu> and/or <guimenu>Map Wildcard Domain Name to the Realm</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1667
+#: security_kerberos.xml:1773
+#, no-c-format
+msgid "You can specify the <guimenu>Host Name of Administration Server</guimenu> , the <guimenu>Host Name of Master Key Distribution Server</guimenu> and additional <guimenu>Key Distribution Centers</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:1778
 #, no-c-format
 msgid "All of these items are optional if they can be automatically discovered via the <literal>SRV</literal> and <literal>TXT</literal> records in DNS."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1674
+#: security_kerberos.xml:1785
 #, no-c-format
-msgid "To manually map Principals to local user names, use <guimenu>Custom Mappings of Principal Names to User Names</guimenu>."
+msgid "To manually map Principals to local user names, use <guimenu>Custom Mappings of Principal Names to User Names</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1678
+#: security_kerberos.xml:1789
 #, no-c-format
-msgid "You can also use <literal>auth_to_local</literal> rules to supply such mappings using <guimenu>Custom Rules for Mapping Principal Names to User Names</guimenu>. For more information about using such rules, see the official documentation at <link xlink:href=\"https://web.mit.edu/kerberos/krb5-current/doc/admin/conf_files/krb5_conf.html#realms\"></link>."
-msgstr ""
-
-#. Tag: remark
-#: security_kerberos.xml:1685
-#, no-c-format
-msgid "FIXME: Do I need to enter <literal>RULE:</literal> at the beginning too? - sknorr, 2017-06-06"
-msgstr ""
-
-#. Tag: remark
-#: security_kerberos.xml:1689
-#, no-c-format
-msgid "Not sure whether the post at https://community.hortonworks.com/articles/14463/auth-to-local-rules-syntax.html is worth linking to too. Probably too volatile. - sknorr, 2017-06-06"
+msgid "You can also use <literal>auth_to_local</literal> rules to supply such mappings using <guimenu>Custom Rules for Mapping Principal Names to User Names</guimenu> . For more information about using such rules, see the official documentation at <link xlink:href=\"https://web.mit.edu/kerberos/krb5-current/doc/admin/conf_files/krb5_conf.html#realms\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1696
+#: security_kerberos.xml:1807
 #, no-c-format
-msgid "Continue with <guimenu>OK</guimenu>."
+msgid "Continue with <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1701
+#: security_kerberos.xml:1812
 #, no-c-format
-msgid "To add more realms, repeat from <xref linkend=\"st.kerberos.realm.add\"/>."
+msgid "To add more realms, repeat from <xref linkend=\"st.kerberos.realm.add\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1706
+#: security_kerberos.xml:1817
 #, no-c-format
-msgid "Enable &krb; users logging in and creation of home directories by activating <guimenu>Allow Kerberos Users to Authenticate</guimenu> and <guimenu>Automatically Create Home Directory</guimenu>."
+msgid "Enable &krb; users logging in and creation of home directories by activating <guimenu>Allow Kerberos Users to Authenticate</guimenu> and <guimenu>Automatically Create Home Directory</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1714
+#: security_kerberos.xml:1825
 #, no-c-format
-msgid "If you left empty the optional text boxes in <xref linkend=\"st.kerberos.realm.configure\"/>, make sure to enable automatic discovery of realms and key distribution centers by activating <guimenu>Use DNS TXT Record to Discover Realms</guimenu> and <guimenu>Use DNS SRV Record to Discover KDC Servers</guimenu>."
+msgid "If you left empty the optional text boxes in <xref linkend=\"st.kerberos.realm.configure\"/> , make sure to enable automatic discovery of realms and key distribution centers by activating <guimenu>Use DNS TXT Record to Discover Realms</guimenu> and <guimenu>Use DNS SRV Record to Discover KDC Servers</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1723
+#: security_kerberos.xml:1834
 #, no-c-format
 msgid "You can additionally activate the following:"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1728
+#: security_kerberos.xml:1839
 #, no-c-format
-msgid "<guimenu>Allow Insecure Encryption (for Windows NT)</guimenu> allows the encryption types listed as weak at <link xlink:href=\"http://web.mit.edu/kerberos/krb5-current/doc/admin/conf_files/kdc_conf.html#encryption-types\"></link>."
+msgid "<guimenu>Allow Insecure Encryption (for Windows NT)</guimenu> allows the encryption types listed as weak at <link xlink:href=\"http://web.mit.edu/kerberos/krb5-current/doc/admin/conf_files/kdc_conf.html#encryption-types\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1735
+#: security_kerberos.xml:1846
 #, no-c-format
 msgid "<guimenu>Allow KDC on Other Networks to Issue Authentication Tickets</guimenu> allows forwarding of tickets."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1741
+#: security_kerberos.xml:1852
 #, no-c-format
 msgid "<guimenu>Allow Kerberos-Enabled Services to Take on The Identity Of a User</guimenu> allows the use of proxies between the computer of the user and the key distribution center."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1748
+#: security_kerberos.xml:1859
 #, no-c-format
 msgid "<guimenu>Issue Address-Less Tickets for Computers Behind NAT</guimenu> allows granting tickets to users behind networks using network address translation."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1757
+#: security_kerberos.xml:1868
 #, no-c-format
-msgid "To set up allowed encryption types and define the name of the keytab file which lists the names of principals and their encrypted keys, use the <guimenu>Extended Options</guimenu>."
+msgid "To set up allowed encryption types and define the name of the keytab file which lists the names of principals and their encrypted keys, use the <guimenu>Extended Options</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1764
+#: security_kerberos.xml:1875
 #, no-c-format
-msgid "Finish with <guimenu>OK</guimenu> and <guimenu>Finish</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1767
-#, no-c-format
-msgid "&yast; may now install extra packages."
-msgstr ""
-
-#. Tag: title
-#: security_kerberos.xml:1775
-#, no-c-format
-msgid "&krb; and NFS"
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1776
-#, no-c-format
-msgid "Most NFS servers can export filesystems using any combination of the default \"trust the network\" form of security known as <option>sec=sys</option>, and three different levels of &krb;-based security, <option>sec=krb5</option>, <option>sec=krb5i</option> and <option>sec=krb5p</option>. The <option>sec</option> option is set as a mount option on the client. Is it often the case that NFS service will first be configured and used with <option>sec=sys</option>, and then &krb; can be imposed afterwards. In this case it is likely that the server will be configured to support both <option>sec=sys</option> and one of the &krb; levels, and then after all clients have transitioned, the <option>sec=sys</option> support will be removed, thus achieving true security. The transition to &krb; should be fairly transparent if done in an orderly manner. However there is one subtle detail of NFS behavior that works differently when &krb; is used, and the implications of this need to be understand and possibly addressed. See <xref linkend=\"sec.security.kerberos.overview.group\"/>."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1795
-#, no-c-format
-msgid "The three &krb; levels indicate different levels of security. With more security comes a need for more processor power to encrypt and decrypt messages. Choosing the right balance is an important consideration that should go in to planning a roll-out of &krb; for NFS."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1802
-#, no-c-format
-msgid "<literal>krb5</literal> provides only authentication. The server can know who sent a request, and the client can know that the server did send a reply. No security is provided for the content of the request or reply so an attacker with physical network access could transform the request or reply, or both, in arbitrary ways to deceive either server or client. They cannot directly read or change any file that the authenticated user could not read or change, but almost anything is theoretically possible."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1813
-#, no-c-format
-msgid "<literal>krb5i</literal> adds integrity checks to all messages. With <literal>krb5i</literal>, an attacker cannot modify any request or reply, but they can view all the data exchanged, and so could discover the content of any file that is read."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1819
-#, no-c-format
-msgid "<literal>krb5p</literal> adds privacy to the protocol. As well as reliable authentication and integrity checking, messages are fully encrypted so an attacker can only know that messages were exchanged between client and server, and cannot extract other information directly from the message. Whether information can be extracted from message timing is a separate question that &krb; does not address."
-msgstr ""
-
-#. Tag: title
-#: security_kerberos.xml:1829
-#, no-c-format
-msgid "Group Membership"
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1830
-#, no-c-format
-msgid "The one behavioral difference between <option>sec=sys</option> and the various &krb; security levels that might be visible is related to group membership. In Unix and Linux, each filesystem access comes from a process which is owned by a particular user and has a particular group owner, and a number of supplemental groups. Access rights to files can vary based on the owner and the various groups."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1838
-#, no-c-format
-msgid "With <option>sec=sys</option>, the user-id, group-id, and a list of up to 16 supplemental groups are sent to the server in each request."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1843
-#, no-c-format
-msgid "If a user is a member of more that 16 supplemental groups, the extra groups are lost and some files may not be accessible over NFS that the user would normally expect to have access to. For this reason, most sites that use NFS find a way to limit all users to at most 16 supplemental groups."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1850
-#, no-c-format
-msgid "If the user runs the <command>newgrp</command> command or runs a set-group-id program, either of which can change the list of groups they are a member of, these changes take effect immediately and provide different accesses over NFS."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1856
-#, no-c-format
-msgid "With &krb;, group information is not sent in requests at all. Only the user is identified (using a &krb; \"Principal\"), and the server performs a lookup to determine the user ID and group list for that principal. This means that if the user is a member of more than 16 groups, all of these group memberships will be used in determining file access permissions. However it also means that if the user changes a group-id on the client in some way, the server will not notice the change and will not take that it into account in determining access rights."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1867
-#, no-c-format
-msgid "Is most cases, the improvement of having access to more groups brings a real benefit, and the loss of not being able to change groups is not noticed as it is not widely used. A site administrator considering the use of &krb; should be aware of the difference though and ensure that it will not actually cause problems."
-msgstr ""
-
-#. Tag: title
-#: security_kerberos.xml:1877
-#, no-c-format
-msgid "Performance and Scalability"
+msgid "Finish with <guimenu>OK</guimenu> and <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:1878
 #, no-c-format
-msgid "Using &krb; for security requires extra CPU power for encrypting and decrypting messages. How much extra CPU power is required and whether the difference is noticeable will vary with different hardware and different applications. If the server or client are already saturating the available CPU power, it is likely that a performance drop will be measurable when switching from sec=sys to &krb;. If there is spare CPU capacity available, it is quite possible that the transition will not result in any throughput change. The only way to be sure how much impact the use of &krb; will have is to test your load on your hardware."
+msgid "&yast; may now install extra packages."
+msgstr ""
+
+#. Tag: title
+#: security_kerberos.xml:1886
+#, no-c-format
+msgid "&krb; and NFS"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1890
+#: security_kerberos.xml:1887
 #, no-c-format
-msgid "The only configuration options that might reduce the load will also reduce the quality of the protection offered. <option>sec=krb5</option> should produce noticeably less load than <option>sec=krb5p</option> but, as discussed above, it doesn't produce very strong security. Similarly it is possible to adjust the list of ciphers that &krb; can choose from, and this might change the CPU requirement. However the defaults are carefully chosen and should not be changed without similar careful consideration."
-msgstr ""
-
-#. Tag: para
-#: security_kerberos.xml:1901
-#, no-c-format
-msgid "The other possible performance issue when configuring NFS to use &krb; involves availability of the &krb; authentication servers, known as the KDC or Key Distribution Center."
+msgid "Most NFS servers can export filesystems using any combination of the default \"trust the network\" form of security known as <option>sec=sys</option> , and three different levels of &krb;-based security, <option>sec=krb5</option> , <option>sec=krb5i</option> and <option>sec=krb5p</option> . The <option>sec</option> option is set as a mount option on the client. Is it often the case that NFS service will first be configured and used with <option>sec=sys</option> , and then &krb; can be imposed afterwards. In this case it is likely that the server will be configured to support both <option>sec=sys</option> and one of the &krb; levels, and then after all clients have transitioned, the <option>sec=sys</option> support will be removed, thus achieving true security. The transition to &krb; should be fairly transparent if done in an orderly manner. However there is one subtle detail of NFS behavior that works differently when &krb; is used, and the implications of this need to be understand and possibly addressed. See <xref linkend=\"sec.security.kerberos.overview.group\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:1906
 #, no-c-format
-msgid "The use of NFS adds load to such servers to the same degree that adding the use of &krb; for any other services adds some load. Every time a given user (&krb; principal) establishes a session with a service, for example by accessing files exported by a particular NFS server, the client needs to negotiate with the KDC. Once a session key has been negotiated, the client server can communicate without further help for many hours, depending on details of the &krb; configuration, particularly the <option>ticket_lifetime</option> setting."
+msgid "The three &krb; levels indicate different levels of security. With more security comes a need for more processor power to encrypt and decrypt messages. Choosing the right balance is an important consideration that should go in to planning a roll-out of &krb; for NFS."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1917
+#: security_kerberos.xml:1913
 #, no-c-format
-msgid "The concerns most likely to affect the provisioning of &krb; KDC servers are availability and peak usage."
+msgid "<literal>krb5</literal> provides only authentication. The server can know who sent a request, and the client can know that the server did send a reply. No security is provided for the content of the request or reply so an attacker with physical network access could transform the request or reply, or both, in arbitrary ways to deceive either server or client. They cannot directly read or change any file that the authenticated user could not read or change, but almost anything is theoretically possible."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1921
+#: security_kerberos.xml:1924
 #, no-c-format
-msgid "As with other core services such as DNS, LDAP or similar name-lookup services, having two servers that are reasonably \"close\" to every client provides good availability for modest resources. &krb; allows for multiple KDC servers with flexible models for database propagation, so distributing servers as needed around campuses, buildings, and even cabinets is fairly straight forward. The best mechanism to ensure each client finds a near-by &krb; server is to use split-horizon DNS with each building (or similar) getting different details from the DNS server. If this is not possible, then managing the <filename>/etc/krb5.conf</filename> file to be different at different locations is a suitable alternative."
+msgid "<literal>krb5i</literal> adds integrity checks to all messages. With <literal>krb5i</literal> , an attacker cannot modify any request or reply, but they can view all the data exchanged, and so could discover the content of any file that is read."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1935
+#: security_kerberos.xml:1930
 #, no-c-format
-msgid "As access to the &krb; KDC is infrequent, load is only likely to be a problem at peak times. If thousands of people all log in between 9:00 and 9:05, then the servers will receive many more requests-per-minute than they might in the middle of the night. The load on the &krb; server is likely to be more than that on an LDAP server, but not orders of magnitude more. A sensible guideline is to provision &krb; replicas in the same manner that you provision LDAP replicas, and then monitor performance to determine if demand ever exceeds capacity."
+msgid "<literal>krb5p</literal> adds privacy to the protocol. As well as reliable authentication and integrity checking, messages are fully encrypted so an attacker can only know that messages were exchanged between client and server, and cannot extract other information directly from the message. Whether information can be extracted from message timing is a separate question that &krb; does not address."
 msgstr ""
 
 #. Tag: title
-#: security_kerberos.xml:1948
+#: security_kerberos.xml:1940
 #, no-c-format
-msgid "Master KDC, Multiple Domains, and Trust Relationships"
+msgid "Group Membership"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:1941
+#, no-c-format
+msgid "The one behavioral difference between <option>sec=sys</option> and the various &krb; security levels that might be visible is related to group membership. In Unix and Linux, each filesystem access comes from a process which is owned by a particular user and has a particular group owner, and a number of supplemental groups. Access rights to files can vary based on the owner and the various groups."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:1949
 #, no-c-format
-msgid "One service of the &krb; KDC that is not easily distributed is the handling of updates, such as password changes and new user creation. These much happen at a single master KDC."
+msgid "With <option>sec=sys</option> , the user-id, group-id, and a list of up to 16 supplemental groups are sent to the server in each request."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:1954
 #, no-c-format
-msgid "These updates are not likely to happen with such frequency that any significant load will be generated, but availability could be an issue. It can be annoying if you want to create a new user or change a password, and the master KDC on the other side of the world is temporarily unavailable."
+msgid "If a user is a member of more that 16 supplemental groups, the extra groups are lost and some files may not be accessible over NFS that the user would normally expect to have access to. For this reason, most sites that use NFS find a way to limit all users to at most 16 supplemental groups."
 msgstr ""
 
 #. Tag: para
 #: security_kerberos.xml:1961
 #, no-c-format
-msgid "When an organization is geographically distributed and has a policy of handling administration tasks locally at each site, it can be beneficial to create multiple &krb; domains, one for each administrative center. Each domain would then have its own master KDC which would be geographically local. Users in one domain can still get access to resources in another domain by setting up trust relationships between domains."
+msgid "If the user runs the <command>newgrp</command> command or runs a set-group-id program, either of which can change the list of groups they are a member of, these changes take effect immediately and provide different accesses over NFS."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1970
+#: security_kerberos.xml:1967
 #, no-c-format
-msgid "The easiest arrangement for multiple domains is to have a global domain (e.g. EXAMPLE.COM) and various local domains (e.g. ASIA.EXAMPLE.COM, EUROPE.EXAMPLE.COM, etc). If the global domain is configured to trust each local domain, and each local domain is configured to trust the global domain, then fully transitive trust is available between any pair of domains, and any principal can establish a secure connection with any service. Ensuring appropriate access rights to resources, for example files, provided by that service will be dependent on the user name lookup service used, and the functionality of the NFS file server, and is beyond the scope of this document."
+msgid "With &krb;, group information is not sent in requests at all. Only the user is identified (using a &krb; \"Principal\"), and the server performs a lookup to determine the user ID and group list for that principal. This means that if the user is a member of more than 16 groups, all of these group memberships will be used in determining file access permissions. However it also means that if the user changes a group-id on the client in some way, the server will not notice the change and will not take that it into account in determining access rights."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:1978
+#, no-c-format
+msgid "Is most cases, the improvement of having access to more groups brings a real benefit, and the loss of not being able to change groups is not noticed as it is not widely used. A site administrator considering the use of &krb; should be aware of the difference though and ensure that it will not actually cause problems."
 msgstr ""
 
 #. Tag: title
 #: security_kerberos.xml:1988
 #, no-c-format
+msgid "Performance and Scalability"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:1989
+#, no-c-format
+msgid "Using &krb; for security requires extra CPU power for encrypting and decrypting messages. How much extra CPU power is required and whether the difference is noticeable will vary with different hardware and different applications. If the server or client are already saturating the available CPU power, it is likely that a performance drop will be measurable when switching from sec=sys to &krb;. If there is spare CPU capacity available, it is quite possible that the transition will not result in any throughput change. The only way to be sure how much impact the use of &krb; will have is to test your load on your hardware."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2001
+#, no-c-format
+msgid "The only configuration options that might reduce the load will also reduce the quality of the protection offered. <option>sec=krb5</option> should produce noticeably less load than <option>sec=krb5p</option> but, as discussed above, it doesn't produce very strong security. Similarly it is possible to adjust the list of ciphers that &krb; can choose from, and this might change the CPU requirement. However the defaults are carefully chosen and should not be changed without similar careful consideration."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2012
+#, no-c-format
+msgid "The other possible performance issue when configuring NFS to use &krb; involves availability of the &krb; authentication servers, known as the KDC or Key Distribution Center."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2017
+#, no-c-format
+msgid "The use of NFS adds load to such servers to the same degree that adding the use of &krb; for any other services adds some load. Every time a given user (&krb; principal) establishes a session with a service, for example by accessing files exported by a particular NFS server, the client needs to negotiate with the KDC. Once a session key has been negotiated, the client server can communicate without further help for many hours, depending on details of the &krb; configuration, particularly the <option>ticket_lifetime</option> setting."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2028
+#, no-c-format
+msgid "The concerns most likely to affect the provisioning of &krb; KDC servers are availability and peak usage."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2032
+#, no-c-format
+msgid "As with other core services such as DNS, LDAP or similar name-lookup services, having two servers that are reasonably \"close\" to every client provides good availability for modest resources. &krb; allows for multiple KDC servers with flexible models for database propagation, so distributing servers as needed around campuses, buildings, and even cabinets is fairly straight forward. The best mechanism to ensure each client finds a near-by &krb; server is to use split-horizon DNS with each building (or similar) getting different details from the DNS server. If this is not possible, then managing the <filename>/etc/krb5.conf</filename> file to be different at different locations is a suitable alternative."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2046
+#, no-c-format
+msgid "As access to the &krb; KDC is infrequent, load is only likely to be a problem at peak times. If thousands of people all log in between 9:00 and 9:05, then the servers will receive many more requests-per-minute than they might in the middle of the night. The load on the &krb; server is likely to be more than that on an LDAP server, but not orders of magnitude more. A sensible guideline is to provision &krb; replicas in the same manner that you provision LDAP replicas, and then monitor performance to determine if demand ever exceeds capacity."
+msgstr ""
+
+#. Tag: title
+#: security_kerberos.xml:2059
+#, no-c-format
+msgid "Master KDC, Multiple Domains, and Trust Relationships"
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2060
+#, no-c-format
+msgid "One service of the &krb; KDC that is not easily distributed is the handling of updates, such as password changes and new user creation. These much happen at a single master KDC."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2065
+#, no-c-format
+msgid "These updates are not likely to happen with such frequency that any significant load will be generated, but availability could be an issue. It can be annoying if you want to create a new user or change a password, and the master KDC on the other side of the world is temporarily unavailable."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2072
+#, no-c-format
+msgid "When an organization is geographically distributed and has a policy of handling administration tasks locally at each site, it can be beneficial to create multiple &krb; domains, one for each administrative center. Each domain would then have its own master KDC which would be geographically local. Users in one domain can still get access to resources in another domain by setting up trust relationships between domains."
+msgstr ""
+
+#. Tag: para
+#: security_kerberos.xml:2081
+#, no-c-format
+msgid "The easiest arrangement for multiple domains is to have a global domain (e.g. EXAMPLE.COM) and various local domains (e.g. ASIA.EXAMPLE.COM, EUROPE.EXAMPLE.COM, etc). If the global domain is configured to trust each local domain, and each local domain is configured to trust the global domain, then fully transitive trust is available between any pair of domains, and any principal can establish a secure connection with any service. Ensuring appropriate access rights to resources, for example files, provided by that service will be dependent on the user name lookup service used, and the functionality of the NFS file server, and is beyond the scope of this document."
+msgstr ""
+
+#. Tag: title
+#: security_kerberos.xml:2099
+#, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:1990
+#: security_kerberos.xml:2101
 #, no-c-format
-msgid "The official site of MIT &krb; is <link xlink:href=\"http://web.mit.edu/kerberos\"></link>. There, find links to any other relevant resource concerning &krb;, including &krb; installation, user, and administration guides."
+msgid "The official site of MIT &krb; is <link xlink:href=\"http://web.mit.edu/kerberos\"/> . There, find links to any other relevant resource concerning &krb;, including &krb; installation, user, and administration guides."
 msgstr ""
 
 #. Tag: para
-#: security_kerberos.xml:2008
+#: security_kerberos.xml:2119
 #, no-c-format
 msgid "The book <emphasis>Kerberos&mdash;A Network Authentication System</emphasis> by Brian Tung (ISBN 0-201-37924-4) offers extensive information."
 msgstr ""

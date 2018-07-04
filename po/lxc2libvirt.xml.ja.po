@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,19 +26,13 @@ msgstr ""
 #: lxc2libvirt.xml:16
 #, no-c-format
 msgid ""
-"Since <phrase os=\"sles;sled\">&sls; 12</phrase><phrase os=\"osuse"
-"\">&opensuse; Leap</phrase>, &lxc; is integrated into &libvirt; library. "
+"Since <phrase os=\"sles;sled\">&sls; 12</phrase> <phrase os=\"osuse"
+"\">&opensuse; Leap</phrase> , &lxc; is integrated into &libvirt; library. "
 "This decision has several advantages over using &lxc; as a separate "
 "solution&mdash;such as a unified approach with other virtualization "
 "solutions or independence on the kernel used. This chapter describes steps "
 "needed to migrate an existing &lxc; environment for use with the &libvirt; "
 "library."
-msgstr ""
-
-#. Tag: title
-#: lxc2libvirt.xml:25 lxc2libvirt.xml:34
-#, no-c-format
-msgid "Host Migration"
 msgstr ""
 
 #. Tag: para
@@ -50,11 +44,17 @@ msgid ""
 "as &vmguest;s in the &libvirt; environment."
 msgstr ""
 
+#. Tag: title
+#: lxc2libvirt.xml:34
+#, no-c-format
+msgid "Host Migration"
+msgstr ""
+
 #. Tag: para
 #: lxc2libvirt.xml:36
 #, no-c-format
 msgid ""
-"Upgrade the host to <phrase os=\"sles;sled\">&sls; 15</phrase><phrase os="
+"Upgrade the host to <phrase os=\"sles;sled\">&sls; 15</phrase> <phrase os="
 "\"osuse\">&opensuse; Leap 15</phrase> using the official DVD media."
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Create a &libvirt; XML configuration <filename>lxc_container.xml</filename> "
-"from the existing container <literal>lxc_container</literal>:"
+"from the existing container <literal>lxc_container</literal> :"
 msgstr ""
 
 #. Tag: screen
@@ -112,19 +112,20 @@ msgstr ""
 msgid "&prompt.sudo;virsh -c lxc:/// define lxc_container.xml"
 msgstr ""
 
-#. Tag: title
-#: lxc2libvirt.xml:81 lxc2libvirt.xml:91
-#, no-c-format
-msgid "Container Migration"
-msgstr ""
-
 #. Tag: para
 #: lxc2libvirt.xml:83
 #, no-c-format
 msgid ""
 "After the host is migrated, the &lxc; container in &libvirt; will not boot. "
-"It needs to be migrated to <phrase os=\"sles;sled\">&sls; 15</phrase><phrase "
-"os=\"osuse\">&opensuse; Leap 15</phrase> as well to get everything working."
+"It needs to be migrated to <phrase os=\"sles;sled\">&sls; 15</phrase> "
+"<phrase os=\"osuse\">&opensuse; Leap 15</phrase> as well to get everything "
+"working."
+msgstr ""
+
+#. Tag: title
+#: lxc2libvirt.xml:91
+#, no-c-format
+msgid "Container Migration"
 msgstr ""
 
 #. Tag: para
@@ -145,7 +146,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: lxc2libvirt.xml:101
+#: lxc2libvirt.xml:102
 #, no-c-format
 msgid ""
 "Add the DVD repository. Note that you need to replace the DVD device with "
@@ -153,21 +154,15 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: lxc2libvirt.xml:105
+#: lxc2libvirt.xml:106
 #, no-c-format
 msgid ""
 "&prompt.root;zypper --root $ROOTFS ar \\\n"
 "cd:///?devices=/dev/dvd SLES15-0"
 msgstr ""
 
-#. Tag: para
-#: lxc2libvirt.xml:108 lxc2libvirt.xml:116
-#, no-c-format
-msgid "Disable or remove previous repositories:"
-msgstr ""
-
 #. Tag: screen
-#: lxc2libvirt.xml:111
+#: lxc2libvirt.xml:113
 #, no-c-format
 msgid ""
 "&prompt.root;zypper --root $ROOTFS lr\n"
@@ -184,15 +179,21 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: lxc2libvirt.xml:113
+#: lxc2libvirt.xml:121
 #, no-c-format
 msgid ""
 "&prompt.root;zypper --root $ROOTFS ar \\\n"
 "cd:///?devices=/dev/dvd \"openSUSE 15\""
 msgstr ""
 
+#. Tag: para
+#: lxc2libvirt.xml:125
+#, no-c-format
+msgid "Disable or remove previous repositories:"
+msgstr ""
+
 #. Tag: screen
-#: lxc2libvirt.xml:119
+#: lxc2libvirt.xml:128
 #, no-c-format
 msgid ""
 "&prompt.root;zypper --root $ROOTFS lr\n"
@@ -209,19 +210,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: lxc2libvirt.xml:122
+#: lxc2libvirt.xml:137
 #, no-c-format
 msgid "Upgrade the container:"
 msgstr ""
 
 #. Tag: screen
-#: lxc2libvirt.xml:125
+#: lxc2libvirt.xml:140
 #, no-c-format
 msgid "&prompt.root;zypper --root $ROOTFS dup"
 msgstr ""
 
 #. Tag: para
-#: lxc2libvirt.xml:128
+#: lxc2libvirt.xml:143
 #, no-c-format
 msgid ""
 "Install the <emphasis>Minimal</emphasis> pattern to make sure everything "
@@ -229,19 +230,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: lxc2libvirt.xml:132
+#: lxc2libvirt.xml:147
 #, no-c-format
 msgid "&prompt.root;zypper --root $ROOTFS in -t pattern Minimal"
 msgstr ""
 
 #. Tag: title
-#: lxc2libvirt.xml:137
+#: lxc2libvirt.xml:152
 #, no-c-format
 msgid "Starting the Container"
 msgstr ""
 
 #. Tag: para
-#: lxc2libvirt.xml:139
+#: lxc2libvirt.xml:154
 #, no-c-format
 msgid ""
 "After the host and container migration is complete, the container can be "
@@ -249,13 +250,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: lxc2libvirt.xml:144
+#: lxc2libvirt.xml:159
 #, no-c-format
 msgid "&prompt.root;virsh -c lxc:/// start lxc_container"
 msgstr ""
 
 #. Tag: para
-#: lxc2libvirt.xml:146
+#: lxc2libvirt.xml:161
 #, no-c-format
 msgid ""
 "If you need to get a console to view the logging messages produced by the "
@@ -263,7 +264,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: lxc2libvirt.xml:151
+#: lxc2libvirt.xml:166
 #, no-c-format
 msgid "&prompt.root;virsh -c lxc:/// console lxc_container"
 msgstr ""

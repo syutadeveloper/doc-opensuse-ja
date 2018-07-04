@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Resizing File Systems"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: storage_fs-resizing.xml:11
+#. Tag: dm:translation
+#: storage_fs-resizing.xml:13
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -71,8 +71,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "After having manually resized partitions (for example by using "
-"<command>fdisk</command> or <command>parted</command>) or logical volumes "
-"(for example by using <command>lvresize</command>)."
+"<command>fdisk</command> or <command>parted</command> ) or logical volumes "
+"(for example by using <command>lvresize</command> )."
 msgstr ""
 
 #. Tag: para
@@ -170,29 +170,22 @@ msgstr ""
 msgid "Btrfs"
 msgstr ""
 
-#. Tag: command
-#: storage_fs-resizing.xml:126
+#. Tag: para
+#: storage_fs-resizing.xml:125
 #, no-c-format
-msgid "btrfs filesystem resize"
+msgid "<command>btrfs filesystem resize</command>"
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:130 storage_fs-resizing.xml:135
+#: storage_fs-resizing.xml:147
+#, no-c-format
+msgid "<command>xfs_growfs</command>"
+msgstr ""
+
+#. Tag: para
 #: storage_fs-resizing.xml:152
 #, no-c-format
 msgid "Online"
-msgstr ""
-
-#. Tag: para
-#: storage_fs-resizing.xml:142
-#, no-c-format
-msgid "<para>XFS</para>"
-msgstr ""
-
-#. Tag: command
-#: storage_fs-resizing.xml:148
-#, no-c-format
-msgid "xfs_growfs"
 msgstr ""
 
 #. Tag: para
@@ -207,27 +200,6 @@ msgstr ""
 msgid "Ext2"
 msgstr ""
 
-#. Tag: command
-#: storage_fs-resizing.xml:170 storage_fs-resizing.xml:192
-#: storage_fs-resizing.xml:214
-#, no-c-format
-msgid "resize2fs"
-msgstr ""
-
-#. Tag: para
-#: storage_fs-resizing.xml:174 storage_fs-resizing.xml:196
-#: storage_fs-resizing.xml:218
-#, no-c-format
-msgid "Online or offline"
-msgstr ""
-
-#. Tag: para
-#: storage_fs-resizing.xml:179 storage_fs-resizing.xml:201
-#: storage_fs-resizing.xml:223
-#, no-c-format
-msgid "Offline only"
-msgstr ""
-
 #. Tag: para
 #: storage_fs-resizing.xml:186
 #, no-c-format
@@ -238,6 +210,24 @@ msgstr ""
 #: storage_fs-resizing.xml:208
 #, no-c-format
 msgid "Ext4"
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:213
+#, no-c-format
+msgid "<command>resize2fs</command>"
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:218
+#, no-c-format
+msgid "Online or offline"
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:223
+#, no-c-format
+msgid "Offline only"
 msgstr ""
 
 #. Tag: title
@@ -263,22 +253,6 @@ msgid ""
 "satisfies the following conditions:"
 msgstr ""
 
-#. Tag: para
-#: storage_fs-resizing.xml:246 storage_fs-resizing.xml:268
-#, no-c-format
-msgid ""
-"The new size must be greater than the size of the existing data; otherwise, "
-"data loss occurs."
-msgstr ""
-
-#. Tag: para
-#: storage_fs-resizing.xml:252 storage_fs-resizing.xml:274
-#, no-c-format
-msgid ""
-"The new size must be equal to or less than the current device size because "
-"the file system size cannot extend beyond the space available."
-msgstr ""
-
 #. Tag: title
 #: storage_fs-resizing.xml:261
 #, no-c-format
@@ -294,6 +268,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
+#: storage_fs-resizing.xml:268
+#, no-c-format
+msgid ""
+"The new size must be greater than the size of the existing data; otherwise, "
+"data loss occurs."
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:274
+#, no-c-format
+msgid ""
+"The new size must be equal to or less than the current device size because "
+"the file system size cannot extend beyond the space available."
+msgstr ""
+
+#. Tag: para
 #: storage_fs-resizing.xml:280
 #, no-c-format
 msgid ""
@@ -305,7 +295,7 @@ msgstr ""
 #. Tag: title
 #: storage_fs-resizing.xml:286
 #, no-c-format
-msgid "<title>XFS</title>"
+msgid "XFS"
 msgstr ""
 
 #. Tag: para
@@ -330,19 +320,6 @@ msgid ""
 "filesystem resize</command> command when the file system is mounted. "
 "Increasing and decreasing the size are both supported while the file system "
 "is mounted."
-msgstr ""
-
-#. Tag: para
-#: storage_fs-resizing.xml:306 storage_fs-resizing.xml:370
-#: storage_fs-resizing.xml:414
-#, no-c-format
-msgid "Open a terminal console."
-msgstr ""
-
-#. Tag: para
-#: storage_fs-resizing.xml:311 storage_fs-resizing.xml:375
-#, no-c-format
-msgid "Make sure the file system you want to change is mounted."
 msgstr ""
 
 #. Tag: para
@@ -387,8 +364,9 @@ msgid ""
 "Replace <replaceable>SIZE</replaceable> with the desired size in bytes. You "
 "can also specify units on the value, such as 50000K (kilobytes), 250M "
 "(megabytes), or 2G (gigabytes). Alternatively, you can specify an increase "
-"or decrease to the current size by prefixing the value with a plus (<literal>"
-"+</literal>) or a minus (<literal>-</literal>) sign, respectively:"
+"or decrease to the current size by prefixing the value with a plus "
+"( <literal>+</literal> ) or a minus ( <literal>-</literal> ) sign, "
+"respectively:"
 msgstr ""
 
 #. Tag: screen
@@ -399,39 +377,14 @@ msgid ""
 "sudo btrfs filesystem resize -<replaceable>SIZE</replaceable> /mnt"
 msgstr ""
 
-#. Tag: para
-#: storage_fs-resizing.xml:346 storage_fs-resizing.xml:389
-#: storage_fs-resizing.xml:465
-#, no-c-format
-msgid "Check the effect of the resize on the mounted file system by entering"
-msgstr ""
-
-#. Tag: screen
-#: storage_fs-resizing.xml:349 storage_fs-resizing.xml:392
-#: storage_fs-resizing.xml:468
-#, no-c-format
-msgid "&prompt.user;df -h"
-msgstr ""
-
-#. Tag: para
-#: storage_fs-resizing.xml:350 storage_fs-resizing.xml:393
-#: storage_fs-resizing.xml:469
-#, no-c-format
-msgid ""
-"The Disk Free (<command>df</command>) command shows the total size of the "
-"disk, the number of blocks used, and the number of blocks available on the "
-"file system. The -h option prints sizes in human-readable format, such as "
-"1K, 234M, or 2G."
-msgstr ""
-
 #. Tag: title
-#: storage_fs-resizing.xml:360
+#: storage_fs-resizing.xml:361
 #, no-c-format
 msgid "Changing the Size of an XFS File System"
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:362
+#: storage_fs-resizing.xml:363
 #, no-c-format
 msgid ""
 "The size of an XFS file system can be increased by using the "
@@ -440,7 +393,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:380
+#: storage_fs-resizing.xml:376
+#, no-c-format
+msgid "Make sure the file system you want to change is mounted."
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:381
 #, no-c-format
 msgid ""
 "Increase the size of the file system using the <command>xfs_growfs</command> "
@@ -450,19 +409,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_fs-resizing.xml:386
+#: storage_fs-resizing.xml:387
 #, no-c-format
 msgid "&prompt.sudo;xfs_growfs -d /mnt"
 msgstr ""
 
 #. Tag: title
-#: storage_fs-resizing.xml:403
+#: storage_fs-resizing.xml:404
 #, no-c-format
 msgid "Changing the Size of an Ext2, Ext3, or Ext4 File System"
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:405
+#: storage_fs-resizing.xml:406
 #, no-c-format
 msgid ""
 "The size of Ext2, Ext3, and Ext4 file systems can be increased by using the "
@@ -472,33 +431,39 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:419
+#: storage_fs-resizing.xml:415
+#, no-c-format
+msgid "Open a terminal console."
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:420
 #, no-c-format
 msgid "If the file system size should be decreased, unmount it."
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:424
+#: storage_fs-resizing.xml:425
 #, no-c-format
 msgid "Change the size of the file system using one of the following methods:"
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:429
+#: storage_fs-resizing.xml:430
 #, no-c-format
 msgid ""
 "To extend the file system size to the maximum available size of the device "
-"called <filename>/dev/sda1</filename>, enter"
+"called <filename>/dev/sda1</filename> , enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_fs-resizing.xml:433
+#: storage_fs-resizing.xml:434
 #, no-c-format
 msgid "&prompt.sudo;resize2fs /dev/sda1"
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:434
+#: storage_fs-resizing.xml:435
 #, no-c-format
 msgid ""
 "If a size parameter is not specified, the size defaults to the size of the "
@@ -506,19 +471,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:440
+#: storage_fs-resizing.xml:441
 #, no-c-format
 msgid "To change the file system to a specific size, enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_fs-resizing.xml:443
+#: storage_fs-resizing.xml:444
 #, no-c-format
 msgid "&prompt.sudo;resize2fs /dev/sda1 <replaceable>SIZE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:444
+#: storage_fs-resizing.xml:445
 #, no-c-format
 msgid ""
 "The <replaceable>SIZE</replaceable> parameter specifies the requested new "
@@ -531,13 +496,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:455
+#: storage_fs-resizing.xml:456
 #, no-c-format
 msgid "Wait until the resizing is completed before continuing."
 msgstr ""
 
 #. Tag: para
-#: storage_fs-resizing.xml:460
+#: storage_fs-resizing.xml:461
 #, no-c-format
 msgid "If the file system is not mounted, mount it now."
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:466
+#, no-c-format
+msgid "Check the effect of the resize on the mounted file system by entering"
+msgstr ""
+
+#. Tag: screen
+#: storage_fs-resizing.xml:469
+#, no-c-format
+msgid "&prompt.user;df -h"
+msgstr ""
+
+#. Tag: para
+#: storage_fs-resizing.xml:470
+#, no-c-format
+msgid ""
+"The Disk Free ( <command>df</command> ) command shows the total size of the "
+"disk, the number of blocks used, and the number of blocks available on the "
+"file system. The -h option prints sizes in human-readable format, such as "
+"1K, 234M, or 2G."
 msgstr ""

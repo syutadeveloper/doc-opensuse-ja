@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -67,23 +67,11 @@ msgid ""
 "simplify the structure of new profiles."
 msgstr ""
 
-#. Tag: term
-#: apparmor_profiles.xml:46
-#, no-c-format
-msgid "<term>Abstractions</term>"
-msgstr ""
-
 #. Tag: para
 #: apparmor_profiles.xml:48
 #, no-c-format
 msgid ""
 "Abstractions are include statements grouped by common application tasks."
-msgstr ""
-
-#. Tag: term
-#: apparmor_profiles.xml:55
-#, no-c-format
-msgid "<term>Program Chunks</term>"
 msgstr ""
 
 #. Tag: para
@@ -105,9 +93,9 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Capability entries are profile entries for any of the POSIX.1e <link xlink:"
-"href=\"http://en.wikipedia.org/wiki/POSIX#POSIX.1\"></link> Linux "
-"capabilities allowing a fine-grained control over what a confined process is "
-"allowed to do through system calls that require privileges."
+"href=\"http://en.wikipedia.org/wiki/POSIX#POSIX.1\"/> Linux capabilities "
+"allowing a fine-grained control over what a confined process is allowed to "
+"do through system calls that require privileges."
 msgstr ""
 
 #. Tag: term
@@ -167,10 +155,10 @@ msgstr ""
 #, no-c-format
 msgid ""
 "For help determining the programs to profile, refer to <xref xrefstyle="
-"\"ChapTitleOnPage\" linkend=\"sec.apparmor.concept.determine\"/>. To start "
+"\"ChapTitleOnPage\" linkend=\"sec.apparmor.concept.determine\"/> . To start "
 "building &aa; profiles with &yast;, proceed to <xref linkend=\"cha.apparmor."
-"yast\"/>. To build profiles using the &aa; command line interface, proceed "
-"to <xref linkend=\"cha.apparmor.commandline\"/>."
+"yast\"/> . To build profiles using the &aa; command line interface, proceed "
+"to <xref linkend=\"cha.apparmor.commandline\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -178,7 +166,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "For more details about creating &aa; profiles, see <command>man 5 apparmor</"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: title
@@ -193,94 +181,141 @@ msgstr ""
 msgid ""
 "The easiest way of explaining what a profile consists of and how to create "
 "one is to show the details of a sample profile, in this case for a "
-"hypothetical application called <command>/usr/bin/foo</command>:"
+"hypothetical application called <command>/usr/bin/foo</command> :"
 msgstr ""
 
-#. Tag: screen
+#. Tag: #text
 #: apparmor_profiles.xml:130
 #, no-c-format
+msgid "#include &lt;tunables/global&gt;"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:133
+#, no-c-format
+msgid "# a comment naming the application to confine/usr/bin/foo"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:133
+#, no-c-format
+msgid "{"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:134
+#, no-c-format
+msgid "#include &lt;abstractions/base&gt;"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:136
+#, no-c-format
+msgid "capability setgid"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:137
+#, no-c-format
+msgid ", network inet tcp"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:139
+#, no-c-format
+msgid ", link /etc/sysconfig/foo -&gt; /etc/foo.conf,"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:141
+#, no-c-format
+msgid "/bin/mount ux, /dev/{,u}"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:148
+#, no-c-format
 msgid ""
-"#include &lt;tunables/global&gt;<co xml:id=\"co.apparmor.profiles.vardef\"/"
-">\n"
-"\n"
-"# a comment naming the application to confine\n"
-"/usr/bin/foo<co xml:id=\"co.apparmor.profiles.path\"/> {<co xml:id=\"co."
-"apparmor.profiles.brack\"/>\n"
-"   #include &lt;abstractions/base&gt;<co xml:id=\"co.apparmor.profiles.incl"
-"\"/>\n"
-"\n"
-"   capability setgid<co xml:id=\"co.apparmor.profiles.capent\"/>,\n"
-"   network inet tcp<co xml:id=\"co.apparmor.profiles.netd\"/>,\n"
-"\n"
-"   link /etc/sysconfig/foo -&gt; /etc/foo.conf,<co xml:id=\"co.apparmor."
-"profiles.lp\"/>\n"
-"   /bin/mount            ux,\n"
-"   /dev/{,u}<co xml:id=\"co.apparmor.profiles.ext\"/>random     r,\n"
-"   /etc/ld.so.cache      r,\n"
-"   /etc/foo/*            r,\n"
-"   /lib/ld-*.so*         mr,\n"
-"   /lib/lib*.so*         mr,\n"
-"   /proc/[0-9]**         r,\n"
-"   /usr/lib/**           mr,\n"
-"   /tmp/                 r,<co xml:id=\"co.apparmor.profiles.pathent\"/>\n"
-"   /tmp/foo.pid          wr,\n"
-"   /tmp/foo.*            lrw,\n"
-"   /@{HOME}<co xml:id=\"co.apparmor.profiles.variable\"/>/.foo_file   rw,\n"
-"   /@{HOME}/.foo_lock    kw,\n"
-"   owner<co xml:id=\"co.apparmor.profiles.owner\"/> /shared/foo/** rw,\n"
-"   /usr/bin/foobar       Cx,<co xml:id=\"co.apparmor.profiles.cx\"/>\n"
-"   /bin/**               Px -&gt; bin_generic,<co xml:id=\"co.apparmor."
-"profiles.named\"/>\n"
-"\n"
-"   # a comment about foo's local (children) profile for /usr/bin/foobar.\n"
-"\n"
-"   profile /usr/bin/foobar<co xml:id=\"co.apparmor.profiles.local\"/> {\n"
-"      /bin/bash          rmix,\n"
-"      /bin/cat           rmix,\n"
-"      /bin/more          rmix,\n"
-"      /var/log/foobar*   rwl,\n"
-"      /etc/foobar        r,\n"
-"   }\n"
-"\n"
-"  # foo's hat, bar.\n"
-"   ^bar<co xml:id=\"co.apparmor.profiles.hat\"/> {\n"
-"    /lib/ld-*.so*         mr,\n"
-"    /usr/bin/bar          px,\n"
-"    /var/spool/*          rwl,\n"
-"   }\n"
-"}"
+"random r, /etc/ld.so.cache r, /etc/foo/* r, /lib/ld-*.so* mr, /lib/lib*.so* "
+"mr, /proc/[0-9]** r, /usr/lib/** mr, /tmp/ r,"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:151
+#, no-c-format
+msgid "/tmp/foo.pid wr, /tmp/foo.* lrw, /@{HOME}"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:153
+#, no-c-format
+msgid "/.foo_file rw, /@{HOME}/.foo_lock kw, owner"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:154
+#, no-c-format
+msgid "/shared/foo/** rw, /usr/bin/foobar Cx,"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:155
+#, no-c-format
+msgid "/bin/** Px -&gt; bin_generic,"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:159
+#, no-c-format
+msgid ""
+"# a comment about foo's local (children) profile for /usr/bin/foobar. "
+"profile /usr/bin/foobar"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:168
+#, no-c-format
+msgid ""
+"{ /bin/bash rmix, /bin/cat rmix, /bin/more rmix, /var/log/foobar* rwl, /etc/"
+"foobar r, } # foo's hat, bar. ^bar"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:174
+#, no-c-format
+msgid "{ /lib/ld-*.so* mr, /usr/bin/bar px, /var/spool/* rwl, }}"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:134
+#: apparmor_profiles.xml:178
 #, no-c-format
 msgid "This loads a file containing variable definitions."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:139
+#: apparmor_profiles.xml:183
 #, no-c-format
 msgid "The normalized path to the program that is confined."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:144
+#: apparmor_profiles.xml:188
 #, no-c-format
 msgid ""
-"The curly braces (<literal>{}</literal>) serve as a container for include "
+"The curly braces ( <literal>{}</literal> ) serve as a container for include "
 "statements, subprofiles, path entries, capability entries, and network "
 "entries."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:151
+#: apparmor_profiles.xml:195
 #, no-c-format
 msgid ""
 "This directive pulls in components of &aa; profiles to simplify profiles."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:157
+#: apparmor_profiles.xml:201
 #, no-c-format
 msgid ""
 "Capability entry statements enable each of the 29 POSIX.1e draft "
@@ -288,16 +323,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:163
+#: apparmor_profiles.xml:207
 #, no-c-format
 msgid ""
 "A directive determining the kind of network access allowed to the "
 "application. For details, refer to <xref linkend=\"sec.apparmor.profiles.nac"
-"\"/>."
+"\"/> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:170
+#: apparmor_profiles.xml:214
 #, no-c-format
 msgid ""
 "A link pair rule specifying the source and the target of a link. See <xref "
@@ -305,15 +340,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:177
+#: apparmor_profiles.xml:221
 #, no-c-format
 msgid ""
-"The curly braces (<literal>{}</literal>) here allow for each of the listed "
+"The curly braces ( <literal>{}</literal> ) here allow for each of the listed "
 "possibilities, one of which is the empty string."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:183
+#: apparmor_profiles.xml:227
 #, no-c-format
 msgid ""
 "A path entry specifying what areas of the file system the program can "
@@ -324,11 +359,12 @@ msgid ""
 "whitespace of any kind (spaces or tabs) can precede the path name, but must "
 "separate the path name and the mode specifier. Spaces between the access "
 "mode and the trailing comma are optional. Find a comprehensive overview of "
-"the available access modes in <xref linkend=\"sec.apparmor.profiles.perm\"/>."
+"the available access modes in <xref linkend=\"sec.apparmor.profiles.perm\"/"
+"> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:197
+#: apparmor_profiles.xml:241
 #, no-c-format
 msgid ""
 "This variable expands to a value that can be changed without changing the "
@@ -336,7 +372,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:203
+#: apparmor_profiles.xml:247
 #, no-c-format
 msgid ""
 "An owner conditional rule, granting read and write permission on files owned "
@@ -345,16 +381,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:211
+#: apparmor_profiles.xml:255
 #, no-c-format
 msgid ""
 "This entry defines a transition to the local profile <literal>/usr/bin/"
-"foobar</literal>. Find a comprehensive overview of the available execute "
-"modes in <xref linkend=\"sec.apparmor.profiles.exec\"/>."
+"foobar</literal> . Find a comprehensive overview of the available execute "
+"modes in <xref linkend=\"sec.apparmor.profiles.exec\"/> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:219
+#: apparmor_profiles.xml:263
 #, no-c-format
 msgid ""
 "A named profile transition to the profile bin_generic located in the global "
@@ -362,7 +398,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:226
+#: apparmor_profiles.xml:270
 #, no-c-format
 msgid ""
 "The local profile <literal>/usr/bin/foobar</literal> is defined in this "
@@ -370,16 +406,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:232
+#: apparmor_profiles.xml:276
 #, no-c-format
 msgid ""
 "This section references a <quote>hat</quote> subprofile of the application. "
 "For more details on &aa;'s ChangeHat feature, refer to <xref linkend=\"cha."
-"apparmor.hat\"/>."
+"apparmor.hat\"/> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:240
+#: apparmor_profiles.xml:284
 #, no-c-format
 msgid ""
 "When a profile is created for a program, the program can access only the "
@@ -388,16 +424,16 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:247
+#: apparmor_profiles.xml:291
 #, no-c-format
 msgid "Example:"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:248
+#: apparmor_profiles.xml:292
 #, no-c-format
 msgid ""
-"To gain the capability <systemitem>CAP_CHOWN</systemitem>, the program must "
+"To gain the capability <systemitem>CAP_CHOWN</systemitem> , the program must "
 "have both access to <systemitem>CAP_CHOWN</systemitem> under conventional "
 "Linux access controls (typically, be a &rootuser;-owned process) and have "
 "the capability <systemitem>chown</systemitem> in its profile. Similarly, to "
@@ -407,13 +443,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:260
+#: apparmor_profiles.xml:304
 #, no-c-format
 msgid ""
 "Attempts to violate &aa; rules are recorded in <filename>/var/log/audit/"
 "audit.log</filename> if the <systemitem class=\"resource\">audit</"
 "systemitem> package is installed, or in <filename>/var/log/messages</"
-"filename>, or only in <systemitem>journalctl</systemitem> if no traditional "
+"filename> , or only in <systemitem>journalctl</systemitem> if no traditional "
 "syslog is installed. Often &aa; rules prevent an attack from working because "
 "necessary files are not accessible and, in all cases, &aa; confinement "
 "restricts the damage that the attacker can do to the set of files permitted "
@@ -421,31 +457,31 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:273
+#: apparmor_profiles.xml:317
 #, no-c-format
 msgid "Profile Types"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:275
+#: apparmor_profiles.xml:319
 #, no-c-format
 msgid ""
 "&aa; knows four different types of profiles: standard profiles, unattached "
 "profiles, local profiles and hats. Standard and unattached profiles are "
 "stand-alone profiles, each stored in a file under <filename>/etc/apparmor.d/"
-"</filename>. Local profiles and hats are children profiles embedded inside "
+"</filename> . Local profiles and hats are children profiles embedded inside "
 "of a parent profile used to provide tighter or alternate confinement for a "
 "subtask of an application."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:285
+#: apparmor_profiles.xml:329
 #, no-c-format
 msgid "Standard Profiles"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:286
+#: apparmor_profiles.xml:330
 #, no-c-format
 msgid ""
 "The default &aa; profile is attached to a program by its name, so a profile "
@@ -453,44 +489,44 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:290
+#: apparmor_profiles.xml:334
 #, no-c-format
 msgid ""
 "/usr/bin/foo {\n"
 "...\n"
-"}"
+"}\n"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:291
+#: apparmor_profiles.xml:338
 #, no-c-format
 msgid ""
 "This profile will be automatically used whenever an unconfined process "
-"executes <filename>/usr/bin/foo</filename>."
+"executes <filename>/usr/bin/foo</filename> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:298
+#: apparmor_profiles.xml:345
 #, no-c-format
 msgid "Unattached Profiles"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:299
+#: apparmor_profiles.xml:346
 #, no-c-format
 msgid ""
 "Unattached profiles do not reside in the file system namespace and therefore "
 "are not automatically attached to an application. The name of an unattached "
-"profile is preceded by the keyword <literal>profile</literal>. You can "
+"profile is preceded by the keyword <literal>profile</literal> . You can "
 "freely choose a profile name, except for the following limitations: the name "
 "must not begin with a <literal>:</literal> or <literal>.</literal> "
 "character. If it contains a whitespace, it must be quoted. If the name "
-"begins with a <literal>/</literal>, the profile is considered to be a "
+"begins with a <literal>/</literal> , the profile is considered to be a "
 "standard profile, so the following two profiles are identical:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:310
+#: apparmor_profiles.xml:357
 #, no-c-format
 msgid ""
 "profile /usr/bin/foo {\n"
@@ -502,35 +538,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:311
+#: apparmor_profiles.xml:363
 #, no-c-format
 msgid ""
 "Unattached profiles are never used automatically, nor can they be "
 "transitioned to through a <literal>Px</literal> rule. They need to be "
 "attached to a program by either using a named profile transition (see <xref "
-"linkend=\"sec.apparmor.profiles.exec.named\"/>) or with the "
+"linkend=\"sec.apparmor.profiles.exec.named\"/> ) or with the "
 "<literal>change_profile</literal> rule (see <xref linkend=\"sec.apparmor."
-"profiles.types.change\"/>)."
+"profiles.types.change\"/> )."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:319
+#: apparmor_profiles.xml:371
 #, no-c-format
 msgid ""
 "Unattached profiles are useful for specialized profiles for system utilities "
 "that generally should not be confined by a system-wide profile (for example, "
-"<literal>/bin/bash</literal>). They can also be used to set up roles or to "
+"<literal>/bin/bash</literal> ). They can also be used to set up roles or to "
 "confine a user."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:328
+#: apparmor_profiles.xml:380
 #, no-c-format
 msgid "Local Profiles"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:329
+#: apparmor_profiles.xml:381
 #, no-c-format
 msgid ""
 "Local profiles provide a convenient way to provide specialized confinement "
@@ -540,7 +576,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:336
+#: apparmor_profiles.xml:388
 #, no-c-format
 msgid ""
 "/parent/profile {\n"
@@ -552,22 +588,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:337
+#: apparmor_profiles.xml:394
 #, no-c-format
 msgid ""
 "To transition to a local profile, either use a <literal>cx</literal> rule "
-"(see <xref linkend=\"sec.apparmor.profiles.exec.cx\"/>) or a named profile "
-"transition (see <xref linkend=\"sec.apparmor.profiles.exec.named\"/>)."
+"(see <xref linkend=\"sec.apparmor.profiles.exec.cx\"/> ) or a named profile "
+"transition (see <xref linkend=\"sec.apparmor.profiles.exec.named\"/> )."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:346
+#: apparmor_profiles.xml:403
 #, no-c-format
 msgid "Hats"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:347
+#: apparmor_profiles.xml:404
 #, no-c-format
 msgid ""
 "&aa; \"hats\" are a local profiles with some additional restrictions and an "
@@ -577,30 +613,30 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:356
+#: apparmor_profiles.xml:413
 #, no-c-format
 msgid "Change rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:357
+#: apparmor_profiles.xml:414
 #, no-c-format
 msgid ""
 "&aa; provides <literal>change_hat</literal> and <literal>change_profile</"
 "literal> rules that control domain transitioning. <literal>change_hat</"
 "literal> are specified by defining hats in a profile, while "
 "<literal>change_profile</literal> rules refer to another profile and start "
-"with the keyword <literal>change_profile</literal>:"
+"with the keyword <literal>change_profile</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:365
+#: apparmor_profiles.xml:422
 #, no-c-format
 msgid "change_profile -&gt; /usr/bin/foobar,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:366
+#: apparmor_profiles.xml:423
 #, no-c-format
 msgid ""
 "Both <literal>change_hat</literal> and <literal>change_profile</literal> "
@@ -614,7 +650,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:376
+#: apparmor_profiles.xml:433
 #, no-c-format
 msgid ""
 "<literal>change_profile</literal> is best used in situations where an "
@@ -628,13 +664,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:386
+#: apparmor_profiles.xml:443
 #, no-c-format
 msgid ""
 "<literal>change_hat</literal> is best used in situations where an "
 "application runs a virtual machine or an interpreter that does not provide "
 "direct access to the applications resources (for example Apache's "
-"<literal>mod_php</literal>). Since <literal>change_hat</literal> stores the "
+"<literal>mod_php</literal> ). Since <literal>change_hat</literal> stores the "
 "return secret key in the application's memory the phase of reduced privilege "
 "should not have direct access to memory. It is also important that file "
 "access is properly separated, since the hat can restrict accesses to a file "
@@ -644,13 +680,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:401
+#: apparmor_profiles.xml:458
 #, no-c-format
 msgid "Safety of Domain Transitions"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:402
+#: apparmor_profiles.xml:459
 #, no-c-format
 msgid ""
 "The <literal>change_hat</literal> and <literal>change_profile</literal> "
@@ -660,13 +696,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:412
+#: apparmor_profiles.xml:469
 #, no-c-format
 msgid "Include Statements"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:414
+#: apparmor_profiles.xml:471
 #, no-c-format
 msgid ""
 "Include statements are directives that pull in components of other &aa; "
@@ -677,51 +713,51 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:422
+#: apparmor_profiles.xml:479
 #, no-c-format
 msgid ""
-"Include statements normally begin with a hash (<literal>#</literal>) sign. "
+"Include statements normally begin with a hash ( <literal>#</literal> ) sign. "
 "This is confusing because the same hash sign is used for comments inside "
 "profile files. Because of this, <literal>#include</literal> is treated as an "
-"include only if there is no preceding # (<literal>##include</literal> is a "
+"include only if there is no preceding # ( <literal>##include</literal> is a "
 "comment) and there is no whitespace between <literal>#</literal> and "
-"<literal>include</literal> (<literal># include</literal> is a comment)."
+"<literal>include</literal> ( <literal># include</literal> is a comment)."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:432
+#: apparmor_profiles.xml:489
 #, no-c-format
 msgid ""
 "You can also use <literal>include</literal> without the leading <literal>#</"
-"literal>."
+"literal> ."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:437
+#: apparmor_profiles.xml:494
 #, no-c-format
 msgid "include \"/etc/apparmor.d/abstractions/foo\""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:439
+#: apparmor_profiles.xml:496
 #, no-c-format
 msgid "is the same as using"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:443
+#: apparmor_profiles.xml:500
 #, no-c-format
 msgid "#include \"/etc/apparmor.d/abstractions/foo\""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:446
+#: apparmor_profiles.xml:503
 #, no-c-format
 msgid "No Trailing ','"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:447
+#: apparmor_profiles.xml:504
 #, no-c-format
 msgid ""
 "Note that because includes follow the C pre-processor syntax, they do not "
@@ -729,17 +765,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:453
+#: apparmor_profiles.xml:510
 #, no-c-format
 msgid ""
 "By slight changes in syntax, you can modify the behavior of "
-"<literal>include</literal>. If you use <literal>\"\"</literal> around the "
+"<literal>include</literal> . If you use <literal>\"\"</literal> around the "
 "including path, you instruct the parser to do an absolute or relative path "
 "lookup."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:460
+#: apparmor_profiles.xml:517
 #, no-c-format
 msgid ""
 "include \"/etc/apparmor.d/abstractions/foo\"   # absolute path\n"
@@ -748,7 +784,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:462
+#: apparmor_profiles.xml:520
 #, no-c-format
 msgid ""
 "Note that when using relative path includes, when the file is included, it "
@@ -757,80 +793,80 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:469
+#: apparmor_profiles.xml:527
 #, no-c-format
 msgid "include \"abstractions/foo\""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:471
+#: apparmor_profiles.xml:529
 #, no-c-format
 msgid ""
-"includes the file <filename>/etc/apparmor.d/abstractions/foo</filename>. If "
+"includes the file <filename>/etc/apparmor.d/abstractions/foo</filename> . If "
 "then there is"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:476
+#: apparmor_profiles.xml:534
 #, no-c-format
 msgid "include \"example\""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:478
+#: apparmor_profiles.xml:536
 #, no-c-format
 msgid ""
 "inside the <filename>/etc/apparmor.d/abstractions/foo</filename> file, it "
-"includes <filename>/etc/apparmor.d/abstractions/example</filename>."
+"includes <filename>/etc/apparmor.d/abstractions/example</filename> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:483
+#: apparmor_profiles.xml:541
 #, no-c-format
 msgid ""
 "The use of <literal>&lt;&gt;</literal> specifies to try the include path "
-"(specified by <option>-I</option>, defaults to the <filename>/etc/apparmor."
+"(specified by <option>-I</option> , defaults to the <filename>/etc/apparmor."
 "d</filename> directory) in an ordered way. So assuming the include path is"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:490
+#: apparmor_profiles.xml:548
 #, no-c-format
 msgid "-I /etc/apparmor.d/ -I /usr/share/apparmor/"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:492
+#: apparmor_profiles.xml:550
 #, no-c-format
 msgid "then the include statement"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:496
+#: apparmor_profiles.xml:554
 #, no-c-format
 msgid "include &lt;abstractions/foo&gt;"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:498
+#: apparmor_profiles.xml:556
 #, no-c-format
 msgid ""
-"will try <filename>/etc/apparmor.d/abstractions/foo</filename>, and if that "
+"will try <filename>/etc/apparmor.d/abstractions/foo</filename> , and if that "
 "file does not exist, the next try is <filename>/usr/share/apparmor/"
-"abstractions/foo</filename>."
+"abstractions/foo</filename> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:505
+#: apparmor_profiles.xml:563
 #, no-c-format
 msgid ""
 "The default include path can be overridden manually by passing <option>-I</"
-"option> to the <command>apparmor_parser</command>, or by setting the include "
-"paths in <filename>/etc/apparmor/parser.conf</filename>:"
+"option> to the <command>apparmor_parser</command> , or by setting the "
+"include paths in <filename>/etc/apparmor/parser.conf</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:511
+#: apparmor_profiles.xml:569
 #, no-c-format
 msgid ""
 "Include /usr/share/apparmor/\n"
@@ -838,7 +874,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:512
+#: apparmor_profiles.xml:571
 #, no-c-format
 msgid ""
 "Multiple entries are allowed, and they are taken in the same order as when "
@@ -847,7 +883,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:520
+#: apparmor_profiles.xml:579
 #, no-c-format
 msgid ""
 "If an include ends with '/', this is considered a directory include, and all "
@@ -855,7 +891,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:525
+#: apparmor_profiles.xml:584
 #, no-c-format
 msgid ""
 "To assist you in profiling your applications, &aa; provides three classes of "
@@ -863,13 +899,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:531
+#: apparmor_profiles.xml:590
 #, no-c-format
-msgid "<title>Abstractions</title>"
+msgid "Abstractions"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:532
+#: apparmor_profiles.xml:591
 #, no-c-format
 msgid ""
 "Abstractions are includes that are grouped by common application tasks. "
@@ -879,131 +915,147 @@ msgid ""
 "require one of these files usually also require other files listed in the "
 "abstraction file (depending on the local configuration and the specific "
 "requirements of the program). Find abstractions in <filename>/etc/apparmor.d/"
-"abstractions</filename>."
+"abstractions</filename> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:545
+#: apparmor_profiles.xml:604
 #, no-c-format
-msgid "<title>Program Chunks</title>"
+msgid "Program Chunks"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:546
+#: apparmor_profiles.xml:605
 #, no-c-format
 msgid ""
-"The program-chunks directory (<filename>/etc/apparmor.d/program-chunks</"
-"filename>) contains some chunks of profiles that are specific to program "
+"The program-chunks directory ( <filename>/etc/apparmor.d/program-chunks</"
+"filename> ) contains some chunks of profiles that are specific to program "
 "suites and not generally useful outside of the suite, thus are never "
-"suggested for use in profiles by the profile wizards (<command>aa-logprof</"
-"command> and <command>aa-genprof</command>). Currently, program chunks are "
+"suggested for use in profiles by the profile wizards ( <command>aa-logprof</"
+"command> and <command>aa-genprof</command> ). Currently, program chunks are "
 "only available for the postfix program suite."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:558
+#: apparmor_profiles.xml:617
 #, no-c-format
 msgid "Tunables"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:559
+#: apparmor_profiles.xml:618
 #, no-c-format
 msgid ""
-"The tunables directory (<filename>/etc/apparmor.d/tunables</filename>) "
+"The tunables directory ( <filename>/etc/apparmor.d/tunables</filename> ) "
 "contains global variable definitions. When used in a profile, these "
 "variables expand to a value that can be changed without changing the entire "
 "profile. Add all the tunables definitions that should be available to every "
-"profile to <filename>/etc/apparmor.d/tunables/global</filename>."
+"profile to <filename>/etc/apparmor.d/tunables/global</filename> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:570
+#: apparmor_profiles.xml:629
 #, no-c-format
 msgid "Capability Entries (POSIX.1e)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:572
+#: apparmor_profiles.xml:631
 #, no-c-format
 msgid ""
 "Capability rules are simply the word <literal>capability</literal> followed "
 "by the name of the POSIX.1e capability as defined in the "
 "<systemitem>capabilities(7)</systemitem> man page. You can list multiple "
 "capabilities in a single rule, or grant all implemented capabilities with "
-"the bare keyword <literal>capability</literal>."
+"the bare keyword <literal>capability</literal> ."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:580
+#: apparmor_profiles.xml:639
 #, no-c-format
 msgid ""
+"\n"
 "capability dac_override sys_admin,   # multiple capabilities\n"
-"capability,                          # grant all capabilities"
+"capability,                          # grant all capabilities\n"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:583
+#: apparmor_profiles.xml:645
 #, no-c-format
 msgid "Network Access Control"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:585
+#: apparmor_profiles.xml:647
 #, no-c-format
 msgid ""
 "&aa; allows mediation of network access based on the address type and "
 "family. The following illustrates the network access rule syntax:"
 msgstr ""
 
-#. Tag: screen
-#: apparmor_profiles.xml:590
+#. Tag: #text
+#: apparmor_profiles.xml:652
 #, no-c-format
-msgid ""
-"network [[&lt;domain&gt;<co xml:id=\"co.apparmor.profiles.nac.dom\"/>][&lt;"
-"type<co xml:id=\"co.apparmor.profiles.nac.type\"/>&gt;][&lt;protocol<co xml:"
-"id=\"co.apparmor.profiles.nac.proto\"/>&gt;]]"
+msgid "][&lt;type"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:652
+#, no-c-format
+msgid "&gt;]]"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:652
+#, no-c-format
+msgid "&gt;][&lt;protocol"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:652
+#, no-c-format
+msgid "network [[&lt;domain&gt;"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:594
+#: apparmor_profiles.xml:656
 #, no-c-format
 msgid ""
-"Supported domains: <literal>inet</literal>, <literal>ax25</literal>, "
-"<literal>ipx</literal>, <literal>appletalk</literal>, <literal>netrom</"
-"literal>, <literal>bridge</literal>, <literal>x25</literal>, <literal>inet6</"
-"literal>, <literal>rose</literal>, <literal>netbeui</literal>, "
-"<literal>security</literal>, <literal>key</literal>, <literal>packet</"
-"literal>, <literal>ash</literal>, <literal>econet</literal>, "
-"<literal>atmsvc</literal>, <literal>sna</literal>, <literal>pppox</literal>, "
-"<literal>wanpipe</literal>, <literal>bluetooth</literal>, <literal>unix</"
-"literal>, <literal>atmpvc</literal>,<literal>netlink</literal>, "
-"<literal>llc</literal>, <literal>can</literal>, <literal>tipc</literal>, "
-"<literal>iucv</literal>, <literal>rxrpc</literal>, <literal>isdn</literal>, "
-"<literal>phonet</literal>, <literal>ieee802154</literal>, <literal>caif</"
-"literal>, <literal>alg</literal>, <literal>nfc</literal>, <literal>vsock</"
-"literal>"
+"Supported domains: <literal>inet</literal> , <literal>ax25</literal> , "
+"<literal>ipx</literal> , <literal>appletalk</literal> , <literal>netrom</"
+"literal> , <literal>bridge</literal> , <literal>x25</literal> , "
+"<literal>inet6</literal> , <literal>rose</literal> , <literal>netbeui</"
+"literal> , <literal>security</literal> , <literal>key</literal> , "
+"<literal>packet</literal> , <literal>ash</literal> , <literal>econet</"
+"literal> , <literal>atmsvc</literal> , <literal>sna</literal> , "
+"<literal>pppox</literal> , <literal>wanpipe</literal> , <literal>bluetooth</"
+"literal> , <literal>unix</literal> , <literal>atmpvc</literal> , "
+"<literal>netlink</literal> , <literal>llc</literal> , <literal>can</"
+"literal> , <literal>tipc</literal> , <literal>iucv</literal> , "
+"<literal>rxrpc</literal> , <literal>isdn</literal> , <literal>phonet</"
+"literal> , <literal>ieee802154</literal> , <literal>caif</literal> , "
+"<literal>alg</literal> , <literal>nfc</literal> , <literal>vsock</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:616
+#: apparmor_profiles.xml:678
 #, no-c-format
 msgid ""
-"Supported types: <literal>stream</literal>, <literal>dgram</literal>, "
-"<literal>seqpacket</literal>, <literal>rdm</literal>, <literal>raw</"
-"literal>, <literal>packet</literal>"
+"Supported types: <literal>stream</literal> , <literal>dgram</literal> , "
+"<literal>seqpacket</literal> , <literal>rdm</literal> , <literal>raw</"
+"literal> , <literal>packet</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:623
+#: apparmor_profiles.xml:685
 #, no-c-format
 msgid ""
-"Supported protocols: <literal>tcp</literal>, <literal>udp</literal>, "
+"Supported protocols: <literal>tcp</literal> , <literal>udp</literal> , "
 "<literal>icmp</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:630
+#: apparmor_profiles.xml:692
 #, no-c-format
 msgid ""
 "The &aa; tools support only family and type specification. The &aa; module "
@@ -1014,7 +1066,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:638
+#: apparmor_profiles.xml:700
 #, no-c-format
 msgid ""
 "The following examples illustrate possible network-related rules to be used "
@@ -1022,20 +1074,44 @@ msgid ""
 "supported by the &aa; tools."
 msgstr ""
 
-#. Tag: screen
-#: apparmor_profiles.xml:644
+#. Tag: #text
+#: apparmor_profiles.xml:706
 #, no-c-format
-msgid ""
-"network<co xml:id=\"co.apparmor.profiles.nac.nw\"/>,\n"
-"network inet<co xml:id=\"co.apparmor.profiles.nac.inet\"/>,\n"
-"network inet6<co xml:id=\"co.apparmor.profiles.nac.inet6\"/>,\n"
-"network inet stream<co xml:id=\"co.apparmor.profiles.nac.istream\"/>,\n"
-"network inet tcp<co xml:id=\"co.apparmor.profiles.nac.itcp\"/>,\n"
-"network tcp<co xml:id=\"co.apparmor.profiles.nac.tcp\"/>,"
+msgid "network"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:707
+#, no-c-format
+msgid ",network inet"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:708
+#, no-c-format
+msgid ",network inet6"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:709
+#, no-c-format
+msgid ",network inet stream"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:710
+#, no-c-format
+msgid ",network inet tcp"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:711
+#, no-c-format
+msgid ",network tcp"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:648
+#: apparmor_profiles.xml:716
 #, no-c-format
 msgid ""
 "Allow all networking. No restrictions applied with regard to domain, type, "
@@ -1043,59 +1119,59 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:654
+#: apparmor_profiles.xml:722
 #, no-c-format
 msgid "Allow general use of IPv4 networking."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:659
+#: apparmor_profiles.xml:727
 #, no-c-format
 msgid "Allow general use of IPv6 networking."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:664
+#: apparmor_profiles.xml:732
 #, no-c-format
 msgid "Allow the use of IPv4 TCP networking."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:669
+#: apparmor_profiles.xml:737
 #, no-c-format
 msgid "Allow the use of IPv4 TCP networking, paraphrasing the rule above."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:674
+#: apparmor_profiles.xml:742
 #, no-c-format
 msgid "Allow the use of both IPv4 and IPv6 TCP networking."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:681
+#: apparmor_profiles.xml:749
 #, no-c-format
 msgid "Profile Names, Flags, Paths, and Globbing"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:683
+#: apparmor_profiles.xml:751
 #, no-c-format
 msgid ""
 "A profile is usually attached to a program by specifying a full path to the "
 "program's executable. For example in the case of a standard profile (see "
-"<xref linkend=\"sec.apparmor.profiles.types.attached\"/>), the profile is "
+"<xref linkend=\"sec.apparmor.profiles.types.attached\"/> ), the profile is "
 "defined by"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:690
+#: apparmor_profiles.xml:758
 #, no-c-format
 msgid "/usr/bin/foo { ... }"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:692
+#: apparmor_profiles.xml:760
 #, no-c-format
 msgid ""
 "The following sections describe several useful techniques that can be "
@@ -1104,7 +1180,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:698
+#: apparmor_profiles.xml:766
 #, no-c-format
 msgid ""
 "&aa; explicitly distinguishes directory path names from file path names. Use "
@@ -1112,76 +1188,76 @@ msgid ""
 "explicitly distinguished:"
 msgstr ""
 
-#. Tag: filename
-#: apparmor_profiles.xml:706
+#. Tag: term
+#: apparmor_profiles.xml:774
 #, no-c-format
-msgid "/some/random/example/* r"
+msgid "<filename>/some/random/example/* r</filename>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:709
+#: apparmor_profiles.xml:777
 #, no-c-format
 msgid ""
 "Allow read access to files in the <filename>/some/random/example</filename> "
 "directory."
 msgstr ""
 
-#. Tag: filename
-#: apparmor_profiles.xml:716
+#. Tag: term
+#: apparmor_profiles.xml:784
 #, no-c-format
-msgid "/some/random/example/ r"
+msgid "<filename>/some/random/example/ r</filename>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:719
+#: apparmor_profiles.xml:787
 #, no-c-format
 msgid "Allow read access to the directory only."
 msgstr ""
 
-#. Tag: filename
-#: apparmor_profiles.xml:725
+#. Tag: term
+#: apparmor_profiles.xml:793
 #, no-c-format
-msgid "/some/**/ r"
+msgid "<filename>/some/**/ r</filename>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:728
+#: apparmor_profiles.xml:796
 #, no-c-format
 msgid ""
 "Give read access to any directories below <filename>/some</filename> (but "
 "not /some/ itself)."
 msgstr ""
 
-#. Tag: filename
-#: apparmor_profiles.xml:735
+#. Tag: term
+#: apparmor_profiles.xml:803
 #, no-c-format
-msgid "/some/random/example/** r"
+msgid "<filename>/some/random/example/** r</filename>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:738
+#: apparmor_profiles.xml:806
 #, no-c-format
 msgid ""
 "Give read access to files and directories under <filename>/some/random/"
 "example</filename> (but not /some/random/example/ itself)."
 msgstr ""
 
-#. Tag: filename
-#: apparmor_profiles.xml:746
+#. Tag: term
+#: apparmor_profiles.xml:814
 #, no-c-format
-msgid "/some/random/example/**[^/] r"
+msgid "<filename>/some/random/example/**[^/] r</filename>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:749
+#: apparmor_profiles.xml:817
 #, no-c-format
 msgid ""
-"Give read access to files under <filename>/some/random/example</filename>. "
-"Explicitly exclude directories (<literal>[^/]</literal>)."
+"Give read access to files under <filename>/some/random/example</filename> . "
+"Explicitly exclude directories ( <literal>[^/]</literal> )."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:758
+#: apparmor_profiles.xml:826
 #, no-c-format
 msgid ""
 "Globbing (or regular expression matching) is when you modify the directory "
@@ -1190,129 +1266,129 @@ msgid ""
 "popular shells, such as csh, Bash, and zsh."
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:771
+#. Tag: para
+#: apparmor_profiles.xml:838
 #, no-c-format
 msgid "<literal>*</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:775
+#: apparmor_profiles.xml:843
 #, no-c-format
 msgid ""
-"Substitutes for any number of any characters, except <literal>/</literal>."
+"Substitutes for any number of any characters, except <literal>/</literal> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:779
+#: apparmor_profiles.xml:847
 #, no-c-format
 msgid "Example: An arbitrary number of file path elements."
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:787
+#. Tag: para
+#: apparmor_profiles.xml:854
 #, no-c-format
 msgid "<literal>**</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:791
+#: apparmor_profiles.xml:859
 #, no-c-format
 msgid ""
-"Substitutes for any number of characters, including <literal>/</literal>."
+"Substitutes for any number of characters, including <literal>/</literal> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:795
+#: apparmor_profiles.xml:863
 #, no-c-format
 msgid ""
 "Example: An arbitrary number of path elements, including entire directories."
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:804
+#. Tag: para
+#: apparmor_profiles.xml:871
 #, no-c-format
 msgid "<literal>?</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:808
+#: apparmor_profiles.xml:876
 #, no-c-format
-msgid "Substitutes for any single character, except <literal>/</literal>."
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:816
-#, no-c-format
-msgid "[abc]"
+msgid "Substitutes for any single character, except <literal>/</literal> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:820 apparmor_profiles.xml:839
+#: apparmor_profiles.xml:883
 #, no-c-format
-msgid ""
-"Substitutes for the single character <literal>a</literal>, <literal>b</"
-"literal>, or <literal>c</literal>."
+msgid "<literal>[abc]</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:824
+#: apparmor_profiles.xml:892
 #, no-c-format
 msgid ""
 "Example: a rule that matches <literal>/home[01]/*/.plan</literal> allows a "
 "program to access <filename>.plan</filename> files for users in both "
-"<filename>/home0</filename> and <filename>/home1</filename>."
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:835
-#, no-c-format
-msgid "[a-c]"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:848
-#, no-c-format
-msgid "{ab,cd}"
+"<filename>/home0</filename> and <filename>/home1</filename> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:852
+#: apparmor_profiles.xml:902
+#, no-c-format
+msgid "<literal>[a-c]</literal>"
+msgstr ""
+
+#. Tag: para
+#: apparmor_profiles.xml:907
+#, no-c-format
+msgid ""
+"Substitutes for the single character <literal>a</literal> , <literal>b</"
+"literal> , or <literal>c</literal> ."
+msgstr ""
+
+#. Tag: para
+#: apparmor_profiles.xml:915
+#, no-c-format
+msgid "<literal>{ab,cd}</literal>"
+msgstr ""
+
+#. Tag: para
+#: apparmor_profiles.xml:920
 #, no-c-format
 msgid ""
 "Expands to one rule to match <literal>ab</literal> and one rule to match "
-"<literal>cd</literal>."
+"<literal>cd</literal> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:856
+#: apparmor_profiles.xml:924
 #, no-c-format
 msgid ""
 "Example: a rule that matches <literal>/{usr,www}/pages/**</literal> grants "
 "access to Web pages in both <filename>/usr/pages</filename> and <filename>/"
-"www/pages</filename>."
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:866
-#, no-c-format
-msgid "[^a]"
+"www/pages</filename> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:870
+#: apparmor_profiles.xml:933
 #, no-c-format
-msgid "Substitutes for any character except <literal>a</literal>."
+msgid "<literal>[^a]</literal>"
+msgstr ""
+
+#. Tag: para
+#: apparmor_profiles.xml:938
+#, no-c-format
+msgid "Substitutes for any character except <literal>a</literal> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:880
+#: apparmor_profiles.xml:948
 #, no-c-format
 msgid "Profile Flags"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:881
+#: apparmor_profiles.xml:949
 #, no-c-format
 msgid ""
 "Profile flags control the behavior of the related profile. You can add "
@@ -1321,7 +1397,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:886
+#: apparmor_profiles.xml:954
 #, no-c-format
 msgid ""
 "/path/to/profiled/binary flags=(list_of_flags) {\n"
@@ -1330,7 +1406,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:887
+#: apparmor_profiles.xml:957
 #, no-c-format
 msgid ""
 "You can use multiple flags separated by a comma ',' or space ' '. There are "
@@ -1338,7 +1414,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:892
+#: apparmor_profiles.xml:962
 #, no-c-format
 msgid ""
 "<emphasis>Mode</emphasis> flag is <literal>complain</literal> (illegal "
@@ -1347,7 +1423,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:898
+#: apparmor_profiles.xml:968
 #, no-c-format
 msgid ""
 "A more flexible way of setting the whole profile into complain mode is to "
@@ -1356,13 +1432,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:903
+#: apparmor_profiles.xml:973
 #, no-c-format
 msgid "ln -s /etc/apparmor.d/bin.ping /etc/apparmor.d/force-complain/bin.ping"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:905
+#: apparmor_profiles.xml:975
 #, no-c-format
 msgid ""
 "<emphasis>Relative</emphasis> flags are <literal>chroot_relative</literal> "
@@ -1372,7 +1448,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:912
+#: apparmor_profiles.xml:982
 #, no-c-format
 msgid ""
 "<emphasis>Attach</emphasis> flags consist of two pairs of mutually exclusive "
@@ -1386,13 +1462,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:925
+#: apparmor_profiles.xml:995
 #, no-c-format
 msgid "Using Variables in Profiles"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:926
+#: apparmor_profiles.xml:996
 #, no-c-format
 msgid ""
 "&aa; allows to use variables holding paths in profiles. Use global variables "
@@ -1400,22 +1476,63 @@ msgid ""
 "paths."
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:931
+#. Tag: #text
+#: apparmor_profiles.xml:1007
 #, no-c-format
 msgid ""
 "A typical example of when global variables come in handy are network "
 "scenarios in which user home directories are mounted in different locations. "
 "Instead of rewriting paths to home directories in all affected profiles, you "
 "only need to change the value of a variable. Global variables are defined "
-"under <filename>/etc/apparmor.d/tunables</filename> and need to be made "
-"available via an include statement. Find the variable definitions for this "
-"use case (<envar>@{HOME}</envar> and <envar>@{HOMEDIRS}</envar>) in the "
-"<filename>/etc/apparmor.d/tunables/home</filename> file."
+"under"
+msgstr ""
+
+#. Tag: filename
+#: apparmor_profiles.xml:1007
+#, no-c-format
+msgid "/etc/apparmor.d/tunables"
+msgstr ""
+
+#. Tag: envar
+#: apparmor_profiles.xml:1009
+#, no-c-format
+msgid "@{HOME}"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1009
+#, no-c-format
+msgid ""
+"and need to be made available via an include statement. Find the variable "
+"definitions for this use case ("
+msgstr ""
+
+#. Tag: envar
+#: apparmor_profiles.xml:1009
+#, no-c-format
+msgid "@{HOMEDIRS}"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1010
+#, no-c-format
+msgid ") in the"
+msgstr ""
+
+#. Tag: filename
+#: apparmor_profiles.xml:1010
+#, no-c-format
+msgid "/etc/apparmor.d/tunables/home"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1011
+#, no-c-format
+msgid "file."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:942
+#: apparmor_profiles.xml:1012
 #, no-c-format
 msgid ""
 "Local variables are defined at the head of a profile. This is useful to "
@@ -1423,7 +1540,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:946
+#: apparmor_profiles.xml:1016
 #, no-c-format
 msgid ""
 "@{CHROOT_BASE}=/tmp/foo\n"
@@ -1437,7 +1554,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:947
+#: apparmor_profiles.xml:1024
 #, no-c-format
 msgid ""
 "In the following example, while @{HOMEDIRS} lists where all the user home "
@@ -1447,7 +1564,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:953
+#: apparmor_profiles.xml:1030
 #, no-c-format
 msgid ""
 "@{HOMEDIRS}=/home/\n"
@@ -1457,7 +1574,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:955
+#: apparmor_profiles.xml:1035
 #, no-c-format
 msgid ""
 "With the current &aa; tools, variables can only be used when manually "
@@ -1465,13 +1582,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:963
+#: apparmor_profiles.xml:1043
 #, no-c-format
 msgid "Pattern Matching"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:964
+#: apparmor_profiles.xml:1044
 #, no-c-format
 msgid ""
 "Profile names can contain globbing expressions allowing the profile to match "
@@ -1479,60 +1596,62 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:968
+#: apparmor_profiles.xml:1048
 #, no-c-format
 msgid ""
 "The following example is valid for systems where the <command>foo</command> "
 "binary resides either in <filename>/usr/bin</filename> or <filename>/bin</"
-"filename>."
+"filename> ."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:973
+#: apparmor_profiles.xml:1053
 #, no-c-format
 msgid "/{usr/,}bin/foo { ... }"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:974
+#: apparmor_profiles.xml:1054
 #, no-c-format
 msgid ""
 "In the following example, when matching against the executable <filename>/"
-"bin/foo</filename>, the <literal>/bin/foo</literal> profile is an exact "
-"match so it is chosen. For the executable <filename>/bin/fat</filename>, the "
-"profile <literal>/bin/foo</literal> does not match, and because the "
+"bin/foo</filename> , the <literal>/bin/foo</literal> profile is an exact "
+"match so it is chosen. For the executable <filename>/bin/fat</filename> , "
+"the profile <literal>/bin/foo</literal> does not match, and because the "
 "<literal>/bin/f*</literal> profile is more specific (less general) than "
-"<literal>/bin/**</literal>, the <literal>/bin/f*</literal> profile is chosen."
+"<literal>/bin/**</literal> , the <literal>/bin/f*</literal> profile is "
+"chosen."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:983
+#: apparmor_profiles.xml:1063
 #, no-c-format
 msgid ""
+"\n"
 "/bin/foo { ... }\n"
 "\n"
 "/bin/f*  { ... }\n"
 "\n"
-"/bin/**  { ... }"
+"/bin/**  { ... }\n"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:984
+#: apparmor_profiles.xml:1070
 #, no-c-format
 msgid ""
 "For more information on profile name globbing examples, see the man page of "
-"&aa;, <command>man 5 apparmor.d,</command>, section <literal>Globbing</"
-"literal>."
+"&aa;, <command>man 5 apparmor.d,</command> , section <literal>Globbing</"
+"literal> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:992
+#: apparmor_profiles.xml:1078
 #, no-c-format
 msgid "Namespaces"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:993
+#: apparmor_profiles.xml:1079
 #, no-c-format
 msgid ""
 "Namespaces are used to provide different profiles sets. Say one for the "
@@ -1540,17 +1659,17 @@ msgid ""
 "hierarchical&mdash;a namespace can see its children but a child cannot see "
 "its parent. Namespace names start with a colon <literal>:</literal> followed "
 "by an alphanumeric string, a trailing colon <literal>:</literal> and an "
-"optional double slash <literal>//</literal>, such as"
+"optional double slash <literal>//</literal> , such as"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1002
+#: apparmor_profiles.xml:1088
 #, no-c-format
 msgid ":childNameSpace://"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1003
+#: apparmor_profiles.xml:1089
 #, no-c-format
 msgid ""
 "Profiles loaded to a child namespace will be prefixed with their namespace "
@@ -1558,13 +1677,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1007
+#: apparmor_profiles.xml:1093
 #, no-c-format
 msgid ":childNameSpace://apache"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1008
+#: apparmor_profiles.xml:1094
 #, no-c-format
 msgid ""
 "Namespaces can be entered via the <literal>change_profile</literal> API, or "
@@ -1572,72 +1691,72 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1012
+#: apparmor_profiles.xml:1098
 #, no-c-format
 msgid "/path/to/executable px -&gt; :childNameSpace://apache"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1016
+#: apparmor_profiles.xml:1102
 #, no-c-format
 msgid "Profile Naming and Attachment Specification"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1017
+#: apparmor_profiles.xml:1103
 #, no-c-format
 msgid ""
 "Profiles can have a name, and an attachment specification. This allows for "
 "profiles with a logical name that can be more meaningful to users/"
 "administrators than a profile name that contains pattern matching (see <xref "
-"linkend=\"sec.apparmor.profiles.pattern_matching\"/>). For example, the "
+"linkend=\"sec.apparmor.profiles.pattern_matching\"/> ). For example, the "
 "default profile"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1024
+#: apparmor_profiles.xml:1110
 #, no-c-format
 msgid "/** { ... }"
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:1025 apparmor_profiles.xml:1033
-#, no-c-format
-msgid "can be named"
-msgstr ""
-
 #. Tag: screen
-#: apparmor_profiles.xml:1028
+#: apparmor_profiles.xml:1114
 #, no-c-format
 msgid "profile default /** { ... }"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1029
+#: apparmor_profiles.xml:1115
 #, no-c-format
 msgid "Also, a profile with pattern matching can be named. For example:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1032
+#: apparmor_profiles.xml:1118
 #, no-c-format
 msgid "/usr/lib/firefox-3.*/firefox-*bin { ... }"
 msgstr ""
 
+#. Tag: para
+#: apparmor_profiles.xml:1119
+#, no-c-format
+msgid "can be named"
+msgstr ""
+
 #. Tag: screen
-#: apparmor_profiles.xml:1036
+#: apparmor_profiles.xml:1122
 #, no-c-format
 msgid "profile firefox /usr/lib/firefox-3.*/firefox-*bin { ... }"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1040
+#: apparmor_profiles.xml:1126
 #, no-c-format
 msgid "Alias Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1041
+#: apparmor_profiles.xml:1127
 #, no-c-format
 msgid ""
 "Alias rules provide an alternative way to manipulate profile path mappings "
@@ -1648,39 +1767,39 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1048
+#: apparmor_profiles.xml:1134
 #, no-c-format
 msgid "alias /home/ -&gt; /usr/home/"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1049
+#: apparmor_profiles.xml:1135
 #, no-c-format
 msgid ""
 "All the rules that have a prefix match to <filename>/home/</filename> will "
-"provide access to <filename>/usr/home/</filename>. For example"
+"provide access to <filename>/usr/home/</filename> . For example"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1053
+#: apparmor_profiles.xml:1139
 #, no-c-format
 msgid "/home/username/** r,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1054
+#: apparmor_profiles.xml:1140
 #, no-c-format
 msgid "allows as well access to"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1057
+#: apparmor_profiles.xml:1143
 #, no-c-format
 msgid "/usr/home/username/** r,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1058
+#: apparmor_profiles.xml:1144
 #, no-c-format
 msgid ""
 "Aliases provide a quick way of remapping rules without the need to rewrite "
@@ -1690,7 +1809,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1064
+#: apparmor_profiles.xml:1150
 #, no-c-format
 msgid ""
 "With the <literal>alias</literal> rule, you can point to multiple targets at "
@@ -1698,7 +1817,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1068
+#: apparmor_profiles.xml:1154
 #, no-c-format
 msgid ""
 "alias /home/ -&gt; /usr/home/\n"
@@ -1706,7 +1825,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1070
+#: apparmor_profiles.xml:1157
 #, no-c-format
 msgid ""
 "With the current &aa; tools, alias rules can only be used when manually "
@@ -1714,107 +1833,108 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1076
+#: apparmor_profiles.xml:1163
 #, no-c-format
 msgid ""
 "Insert global alias definitions in the file <filename>/etc/apparmor.d/"
-"tunables/alias</filename>."
+"tunables/alias</filename> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1084
+#: apparmor_profiles.xml:1171
 #, no-c-format
 msgid "File Permission Access Modes"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1086
+#: apparmor_profiles.xml:1173
 #, no-c-format
 msgid ""
 "File permission access modes consist of combinations of the following modes:"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1097
+#. Tag: para
+#: apparmor_profiles.xml:1183
 #, no-c-format
 msgid "<literal>r</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1101
+#: apparmor_profiles.xml:1188
 #, no-c-format
 msgid "Read mode"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1109
+#. Tag: para
+#: apparmor_profiles.xml:1195
 #, no-c-format
 msgid "<literal>w</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1113
+#: apparmor_profiles.xml:1200
 #, no-c-format
-msgid "Write mode (mutually exclusive to <literal>a</literal>)"
+msgid "Write mode (mutually exclusive to <literal>a</literal> )"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1121
+#. Tag: para
+#: apparmor_profiles.xml:1207
 #, no-c-format
 msgid "<literal>a</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1125
+#: apparmor_profiles.xml:1212
 #, no-c-format
-msgid "Append mode (mutually exclusive to <literal>w</literal>)"
+msgid "Append mode (mutually exclusive to <literal>w</literal> )"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1133
+#. Tag: para
+#: apparmor_profiles.xml:1219
 #, no-c-format
 msgid "<literal>k</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1137
+#: apparmor_profiles.xml:1224
 #, no-c-format
 msgid "File locking mode"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1145
+#. Tag: para
+#: apparmor_profiles.xml:1231
 #, no-c-format
 msgid "<literal>l</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1149
+#: apparmor_profiles.xml:1236
 #, no-c-format
 msgid "Link mode"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1157
+#. Tag: para
+#: apparmor_profiles.xml:1243
 #, no-c-format
 msgid ""
-"link <replaceable>FILE</replaceable> -&gt; <replaceable>TARGET</replaceable>"
+"<literal>link <replaceable>FILE</replaceable> -&gt; <replaceable>TARGET</"
+"replaceable></literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1162
+#: apparmor_profiles.xml:1249
 #, no-c-format
 msgid "Link pair rule (cannot be combined with other access modes)"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1172
+#: apparmor_profiles.xml:1259
 #, no-c-format
 msgid "Read Mode (r)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1173
+#: apparmor_profiles.xml:1260
 #, no-c-format
 msgid ""
 "Allows the program to have read access to the resource. Read access is "
@@ -1823,13 +1943,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1181
+#: apparmor_profiles.xml:1268
 #, no-c-format
 msgid "Write Mode (w)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1182
+#: apparmor_profiles.xml:1269
 #, no-c-format
 msgid ""
 "Allows the program to have write access to the resource. Files must have "
@@ -1837,13 +1957,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1189
+#: apparmor_profiles.xml:1276
 #, no-c-format
 msgid "Append Mode (a)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1190
+#: apparmor_profiles.xml:1277
 #, no-c-format
 msgid ""
 "Allows a program to write to the end of a file. In contrast to the "
@@ -1857,13 +1977,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1204
+#: apparmor_profiles.xml:1291
 #, no-c-format
 msgid "File Locking Mode (k)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1205
+#: apparmor_profiles.xml:1292
 #, no-c-format
 msgid ""
 "The application can take file locks. Former versions of &aa; allowed files "
@@ -1874,13 +1994,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1215
+#: apparmor_profiles.xml:1302
 #, no-c-format
 msgid "Link Mode (l)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1216
+#: apparmor_profiles.xml:1303
 #, no-c-format
 msgid ""
 "The link mode mediates access to hard links. When a link is created, the "
@@ -1889,13 +2009,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1224
+#: apparmor_profiles.xml:1311
 #, no-c-format
 msgid "Link Pair"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1225
+#: apparmor_profiles.xml:1312
 #, no-c-format
 msgid ""
 "The link mode grants permission to link to arbitrary files, provided the "
@@ -1904,13 +2024,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1230
+#: apparmor_profiles.xml:1317
 #, no-c-format
 msgid "/srv/www/htdocs/index.html rl,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1231
+#: apparmor_profiles.xml:1318
 #, no-c-format
 msgid ""
 "By specifying origin and destination, the link pair rule provides greater "
@@ -1920,13 +2040,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1237
+#: apparmor_profiles.xml:1324
 #, no-c-format
 msgid "link /srv/www/htdocs/index.html -&gt; /var/www/index.html"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1238
+#: apparmor_profiles.xml:1325
 #, no-c-format
 msgid ""
 "To force the rule to require the test, the <literal>subset</literal> keyword "
@@ -1934,7 +2054,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1242
+#: apparmor_profiles.xml:1329
 #, no-c-format
 msgid ""
 "/var/www/index.html l,\n"
@@ -1942,7 +2062,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1244
+#: apparmor_profiles.xml:1332
 #, no-c-format
 msgid ""
 "Currently link pair rules are not supported by &yast; and the command line "
@@ -1951,83 +2071,84 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1254
+#: apparmor_profiles.xml:1342
 #, no-c-format
 msgid "Optional <literal>allow</literal> and <literal>file</literal> Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1255
+#: apparmor_profiles.xml:1343
 #, no-c-format
 msgid ""
 "The <literal>allow</literal> prefix is optional, and it is idiomatically "
 "implied if not specified and the <literal>deny</literal> (see <xref linkend="
-"\"sec.apparmor.profiles.perm.deny\"/>) keyword is not used."
+"\"sec.apparmor.profiles.perm.deny\"/> ) keyword is not used."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1260
+#: apparmor_profiles.xml:1348
 #, no-c-format
 msgid ""
+"\n"
 "allow file /example r,\n"
 "allow /example r,\n"
-"allow network,"
+"allow network,\n"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1261
+#: apparmor_profiles.xml:1353
 #, no-c-format
 msgid ""
 "You can also use the optional <literal>file</literal> keyword. If you omit "
 "it and there are no other rule types that start with a keyword, such as "
-"<literal>network</literal> or <literal>mount</literal>, it is automatically "
+"<literal>network</literal> or <literal>mount</literal> , it is automatically "
 "implied."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1267
+#: apparmor_profiles.xml:1359
 #, no-c-format
 msgid "file /example/rule r,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1268
+#: apparmor_profiles.xml:1360
 #, no-c-format
 msgid "is equivalent to"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1271
+#: apparmor_profiles.xml:1363
 #, no-c-format
 msgid "/example/rule r,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1272
+#: apparmor_profiles.xml:1364
 #, no-c-format
 msgid "The following rule grants access to all files:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1275
+#: apparmor_profiles.xml:1367
 #, no-c-format
 msgid "file,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1276
+#: apparmor_profiles.xml:1368
 #, no-c-format
 msgid "which is equal to"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1279
+#: apparmor_profiles.xml:1371
 #, no-c-format
 msgid "/** rwmlk,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1280
+#: apparmor_profiles.xml:1372
 #, no-c-format
 msgid ""
 "File rules can use leading or trailing permissions. The permissions should "
@@ -2037,23 +2158,24 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1286
+#: apparmor_profiles.xml:1378
 #, no-c-format
 msgid ""
+"\n"
 "/path rw,            # old style\n"
 "rw /path,            # leading permission\n"
 "file rw /path,       # with explicit 'file' keyword\n"
-"allow file rw /path, # optional 'allow' keyword added"
+"allow file rw /path, # optional 'allow' keyword added\n"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1290
+#: apparmor_profiles.xml:1387
 #, no-c-format
 msgid "Owner Conditional Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1291
+#: apparmor_profiles.xml:1388
 #, no-c-format
 msgid ""
 "The file rules can be extended so that they can be conditional upon the user "
@@ -2063,13 +2185,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1298
+#: apparmor_profiles.xml:1395
 #, no-c-format
 msgid "owner /home/*/** rw"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1299
+#: apparmor_profiles.xml:1396
 #, no-c-format
 msgid ""
 "When using file ownership conditions with link rules the ownership test is "
@@ -2078,13 +2200,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1305
+#: apparmor_profiles.xml:1402
 #, no-c-format
 msgid "Precedence of Regular File Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1306
+#: apparmor_profiles.xml:1403
 #, no-c-format
 msgid ""
 "Owner conditional rules are considered a subset of regular file rules. If a "
@@ -2093,7 +2215,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1311
+#: apparmor_profiles.xml:1408
 #, no-c-format
 msgid ""
 "/foo r,\n"
@@ -2101,7 +2223,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1312
+#: apparmor_profiles.xml:1410
 #, no-c-format
 msgid ""
 "The rules are merged&mdash;it results in <literal>r</literal> for everybody, "
@@ -2109,15 +2231,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1318
+#: apparmor_profiles.xml:1416
 #, no-c-format
 msgid ""
 "To address everybody <emphasis>but</emphasis> the owner of the file, use the "
-"keyword <literal>other</literal>."
+"keyword <literal>other</literal> ."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1322
+#: apparmor_profiles.xml:1420
 #, no-c-format
 msgid ""
 "owner /foo rw,\n"
@@ -2125,13 +2247,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1327
+#: apparmor_profiles.xml:1426
 #, no-c-format
 msgid "Deny Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1328
+#: apparmor_profiles.xml:1427
 #, no-c-format
 msgid ""
 "Deny rules can be used to annotate or quiet known rejects. The profile "
@@ -2142,7 +2264,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1336
+#: apparmor_profiles.xml:1435
 #, no-c-format
 msgid ""
 "It is also possible to use deny rules in combination with allow rules. This "
@@ -2154,7 +2276,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1344
+#: apparmor_profiles.xml:1443
 #, no-c-format
 msgid ""
 "deny /home/*/.ssh/** w,\n"
@@ -2162,7 +2284,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1345
+#: apparmor_profiles.xml:1445
 #, no-c-format
 msgid ""
 "The extensive use of deny rules is generally not encouraged, because it "
@@ -2175,34 +2297,34 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1358
+#: apparmor_profiles.xml:1458
 #, no-c-format
 msgid "Mount Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1359
+#: apparmor_profiles.xml:1459
 #, no-c-format
 msgid ""
 "&aa; can limit mount and unmount operations, including file system types and "
 "mount flags. The rule syntax is based on the <command>mount</command> "
-"command syntax and start with one of the keywords <literal>mount</literal>, "
-"<literal>remount</literal> or <literal>umount</literal>. Conditions are "
+"command syntax and start with one of the keywords <literal>mount</literal> , "
+"<literal>remount</literal> or <literal>umount</literal> . Conditions are "
 "optional and unspecified conditionals are assumed to match all entries. For "
 "example, not specifying a file system means that all file systems are "
 "matched."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1368
+#: apparmor_profiles.xml:1468
 #, no-c-format
 msgid ""
 "Conditionals can be specified by specifying conditionals with "
-"<literal>options=</literal> or <literal>options in</literal>."
+"<literal>options=</literal> or <literal>options in</literal> ."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1372
+#: apparmor_profiles.xml:1472
 #, no-c-format
 msgid ""
 "<literal>options=</literal> specifies conditionals that have to be met "
@@ -2210,33 +2332,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1376
+#: apparmor_profiles.xml:1476
 #, no-c-format
 msgid "mount options=ro /dev/foo -E /mnt/,"
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:1377 apparmor_profiles.xml:1390
-#: apparmor_profiles.xml:1403
-#, no-c-format
-msgid "matches"
-msgstr ""
-
 #. Tag: screen
-#: apparmor_profiles.xml:1380
+#: apparmor_profiles.xml:1480
 #, no-c-format
 msgid "&prompt.root;<command>mount -o ro /dev/foo /mnt</command>"
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:1381 apparmor_profiles.xml:1394
-#: apparmor_profiles.xml:1407
-#, no-c-format
-msgid "but does not match"
-msgstr ""
-
 #. Tag: screen
-#: apparmor_profiles.xml:1384
+#: apparmor_profiles.xml:1484
 #, no-c-format
 msgid ""
 "&prompt.root;<command>mount -o ro,atime /dev/foo /mnt</command>\n"
@@ -2244,7 +2352,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1385
+#: apparmor_profiles.xml:1486
 #, no-c-format
 msgid ""
 "<literal>options in</literal> requires that at least one of the listed mount "
@@ -2252,13 +2360,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1389
+#: apparmor_profiles.xml:1490
 #, no-c-format
-msgid "mount options in (ro,atime) /dev/foo -> /mnt/,"
+msgid "mount options in (ro,atime) /dev/foo -&gt; /mnt/,"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1393
+#: apparmor_profiles.xml:1494
 #, no-c-format
 msgid ""
 "&prompt.root;<command>mount -o ro /dev/foo /mnt</command>\n"
@@ -2267,7 +2375,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1397
+#: apparmor_profiles.xml:1500
 #, no-c-format
 msgid ""
 "&prompt.root;<command>mount -o ro,sync /dev/foo /mnt</command>\n"
@@ -2278,7 +2386,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1398
+#: apparmor_profiles.xml:1505
 #, no-c-format
 msgid ""
 "With multiple conditionals, the rule grants permission for each set of "
@@ -2286,27 +2394,39 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1402
+#: apparmor_profiles.xml:1509
 #, no-c-format
 msgid "mount options=ro options=atime"
 msgstr ""
 
+#. Tag: para
+#: apparmor_profiles.xml:1510
+#, no-c-format
+msgid "matches"
+msgstr ""
+
 #. Tag: screen
-#: apparmor_profiles.xml:1406
+#: apparmor_profiles.xml:1513
 #, no-c-format
 msgid ""
 "&prompt.root;<command>mount -o ro /dev/foo /mnt</command>\n"
 "&prompt.root;<command>mount -o atime /dev/foo /mnt</command>"
 msgstr ""
 
+#. Tag: para
+#: apparmor_profiles.xml:1515
+#, no-c-format
+msgid "but does not match"
+msgstr ""
+
 #. Tag: screen
-#: apparmor_profiles.xml:1410
+#: apparmor_profiles.xml:1518
 #, no-c-format
 msgid "&prompt.root;<command>mount -o ro,atime /dev/foo /mnt</command>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1411
+#: apparmor_profiles.xml:1519
 #, no-c-format
 msgid ""
 "Separate mount rules are distinct and the options do not accumulate. The "
@@ -2314,7 +2434,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1415
+#: apparmor_profiles.xml:1523
 #, no-c-format
 msgid ""
 "mount options=ro,\n"
@@ -2322,13 +2442,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1416
+#: apparmor_profiles.xml:1525
 #, no-c-format
 msgid "are not equivalent to"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1419
+#: apparmor_profiles.xml:1528
 #, no-c-format
 msgid ""
 "mount options=(ro,atime),\n"
@@ -2336,7 +2456,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1420
+#: apparmor_profiles.xml:1530
 #, no-c-format
 msgid ""
 "The following rule allows mounting <filename>/dev/foo</filename> on "
@@ -2346,19 +2466,20 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1427
+#: apparmor_profiles.xml:1537
 #, no-c-format
-msgid "mount options=(ro, atime) options in (nodev, user) /dev/foo -> /mnt/,"
+msgid ""
+"mount options=(ro, atime) options in (nodev, user) /dev/foo -&gt; /mnt/,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1428
+#: apparmor_profiles.xml:1538
 #, no-c-format
 msgid "allows"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1431
+#: apparmor_profiles.xml:1541
 #, no-c-format
 msgid ""
 "&prompt.root;<command>mount -o ro,atime /dev/foo /mnt</command>\n"
@@ -2368,19 +2489,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1435
+#: apparmor_profiles.xml:1548
 #, no-c-format
 msgid "Pivot Root Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1436
+#: apparmor_profiles.xml:1549
 #, no-c-format
 msgid "&aa; can limit changing the root file system. The syntax is"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1439
+#: apparmor_profiles.xml:1552
 #, no-c-format
 msgid ""
 "pivot_root [oldroot=<replaceable>OLD_ROOT</replaceable>] "
@@ -2388,7 +2509,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1440
+#: apparmor_profiles.xml:1553
 #, no-c-format
 msgid ""
 "The paths specified in 'pivot_root' rules must end with '/' since they are "
@@ -2396,7 +2517,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1444
+#: apparmor_profiles.xml:1557
 #, no-c-format
 msgid ""
 "# Allow any pivot\n"
@@ -2415,17 +2536,17 @@ msgid ""
 "\n"
 "# Allow pivoting to /mnt/root/, putting the old root directory at\n"
 "# /mnt/root/old/ and transition to the /mnt/root/sbin/init profile\n"
-"pivot_root oldroot=/mnt/root/old/ /mnt/root/ -> /mnt/root/sbin/init,"
+"pivot_root oldroot=/mnt/root/old/ /mnt/root/ -&gt; /mnt/root/sbin/init,"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1448
+#: apparmor_profiles.xml:1577
 #, no-c-format
 msgid "PTrace Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1449
+#: apparmor_profiles.xml:1578
 #, no-c-format
 msgid ""
 "&aa; supports limiting ptrace system calls. ptrace rules are accumulated so "
@@ -2435,7 +2556,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1455
+#: apparmor_profiles.xml:1584
 #, no-c-format
 msgid ""
 "The <literal>trace</literal> and <literal>tracedby</literal> permissions "
@@ -2445,7 +2566,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1461
+#: apparmor_profiles.xml:1590
 #, no-c-format
 msgid ""
 "For a ptrace operation to be allowed, the tracing and the traced process "
@@ -2455,13 +2576,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1467
+#: apparmor_profiles.xml:1596
 #, no-c-format
 msgid "Example AppArmor PTrace rules:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1470
+#: apparmor_profiles.xml:1599
 #, no-c-format
 msgid ""
 "# Allow all PTrace access\n"
@@ -2481,13 +2602,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1474
+#: apparmor_profiles.xml:1616
 #, no-c-format
 msgid "Signal Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1475
+#: apparmor_profiles.xml:1617
 #, no-c-format
 msgid ""
 "&aa; supports limiting inter-process signals. AppArmor signal rules are "
@@ -2497,20 +2618,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1481
+#: apparmor_profiles.xml:1623
 #, no-c-format
 msgid ""
 "The sending and the receiving process must both have the correct permissions."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1485
+#: apparmor_profiles.xml:1627
 #, no-c-format
 msgid "Example signal rules:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1488
+#: apparmor_profiles.xml:1630
 #, no-c-format
 msgid ""
 "# Allow all signal access\n"
@@ -2537,88 +2658,88 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1492
+#: apparmor_profiles.xml:1654
 #, no-c-format
 msgid "Execute Modes"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1494
+#: apparmor_profiles.xml:1656
 #, no-c-format
 msgid ""
 "Execute modes, also named profile transitions, consist of the following "
 "modes:"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1505
+#. Tag: para
+#: apparmor_profiles.xml:1666
 #, no-c-format
 msgid "<literal>Px</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1509
+#: apparmor_profiles.xml:1671
 #, no-c-format
 msgid "Discrete profile execute mode"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1517
+#. Tag: para
+#: apparmor_profiles.xml:1678
 #, no-c-format
 msgid "<literal>Cx</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1521
+#: apparmor_profiles.xml:1683
 #, no-c-format
 msgid "Discrete local profile execute mode"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1529
+#. Tag: para
+#: apparmor_profiles.xml:1690
 #, no-c-format
 msgid "<literal>Ux</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1533
+#: apparmor_profiles.xml:1695
 #, no-c-format
 msgid "Unconfined execute mode"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1541
+#. Tag: para
+#: apparmor_profiles.xml:1702
 #, no-c-format
 msgid "<literal>ix</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1545
+#: apparmor_profiles.xml:1707
 #, no-c-format
 msgid "Inherit execute mode"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1553
+#. Tag: para
+#: apparmor_profiles.xml:1714
 #, no-c-format
 msgid "<literal>m</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1557
+#: apparmor_profiles.xml:1719
 #, no-c-format
 msgid ""
 "Allow <literal>PROT_EXEC</literal> with <command>mmap(2)</command> calls"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1568
+#: apparmor_profiles.xml:1730
 #, no-c-format
 msgid "Discrete Profile Execute Mode (Px)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1569
+#: apparmor_profiles.xml:1731
 #, no-c-format
 msgid ""
 "This mode requires that a discrete security profile is defined for a "
@@ -2627,37 +2748,37 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1574
+#: apparmor_profiles.xml:1736
 #, no-c-format
 msgid ""
-"Incompatible with <literal>Ux</literal>, <literal>ux</literal>, <literal>px</"
-"literal>, and <literal>ix</literal>."
+"Incompatible with <literal>Ux</literal> , <literal>ux</literal> , "
+"<literal>px</literal> , and <literal>ix</literal> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1581
+#: apparmor_profiles.xml:1743
 #, no-c-format
 msgid "Discrete Local Profile Execute Mode (Cx)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1582
+#: apparmor_profiles.xml:1744
 #, no-c-format
 msgid ""
-"As <literal>Px</literal>, but instead of searching the global profile set, "
+"As <literal>Px</literal> , but instead of searching the global profile set, "
 "<literal>Cx</literal> only searches the local profiles of the current "
 "profile. This profile transition provides a way for an application to have "
 "alternate profiles for helper applications."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1589
+#: apparmor_profiles.xml:1751
 #, no-c-format
 msgid "Limitations of the Discrete Local Profile Execute Mode (Cx)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1590
+#: apparmor_profiles.xml:1752
 #, no-c-format
 msgid ""
 "Currently, Cx transitions are limited to top level profiles and cannot be "
@@ -2666,22 +2787,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1596
+#: apparmor_profiles.xml:1758
 #, no-c-format
 msgid ""
-"Incompatible with <literal>Ux</literal>, <literal>ux</literal>, <literal>Px</"
-"literal>, <literal>px</literal>, <literal>cx</literal>, and <literal>ix</"
-"literal>."
+"Incompatible with <literal>Ux</literal> , <literal>ux</literal> , "
+"<literal>Px</literal> , <literal>px</literal> , <literal>cx</literal> , and "
+"<literal>ix</literal> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1604
+#: apparmor_profiles.xml:1766
 #, no-c-format
 msgid "Unconfined Execute Mode (Ux)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1605
+#: apparmor_profiles.xml:1767
 #, no-c-format
 msgid ""
 "Allows the program to execute the resource without any &aa; profile applied "
@@ -2696,50 +2817,87 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1616
+#: apparmor_profiles.xml:1778
 #, no-c-format
 msgid ""
-"This mode is incompatible with <literal>ux</literal>, <literal>px</literal>, "
-"<literal>Px</literal>, and <literal>ix</literal>."
+"This mode is incompatible with <literal>ux</literal> , <literal>px</"
+"literal> , <literal>Px</literal> , and <literal>ix</literal> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1623
+#: apparmor_profiles.xml:1785
 #, no-c-format
 msgid "Unsafe Exec Modes"
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:1624
+#. Tag: literal
+#: apparmor_profiles.xml:1787
 #, no-c-format
-msgid ""
-"Use the lowercase versions of exec modes&mdash;<literal>px</literal>, "
-"<literal>cx</literal>, <literal>ux</literal>&mdash;only in very special "
-"cases. They do not scrub the environment of variables such as "
-"<envar>LD_PRELOAD</envar>. As a result, the calling domain may have an undue "
-"amount of influence over the called resource. Use these modes only if the "
-"child absolutely <emphasis>must</emphasis> be run unconfined and "
-"<envar>LD_PRELOAD</envar> must be used. Any profile using such modes "
-"provides negligible security. Use at your own risk."
+msgid "px"
 msgstr ""
 
-#. Tag: remark
-#: apparmor_profiles.xml:1634
+#. Tag: #text
+#: apparmor_profiles.xml:1787
+#, no-c-format
+msgid "Use the lowercase versions of exec modes&mdash;"
+msgstr ""
+
+#. Tag: literal
+#: apparmor_profiles.xml:1788
+#, no-c-format
+msgid "ux"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1788
 #, no-c-format
 msgid ""
-"jsegitz 2014-07-15: if the child absolutely needs to use the environment of "
-"the calling process. (running unconfined isn't the important part here, you "
-"can you px and not run unconfined)"
+"&mdash;only in very special cases. They do not scrub the environment of "
+"variables such as"
+msgstr ""
+
+#. Tag: literal
+#: apparmor_profiles.xml:1788
+#, no-c-format
+msgid "cx"
+msgstr ""
+
+#. Tag: emphasis
+#: apparmor_profiles.xml:1792
+#, no-c-format
+msgid "must"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1792
+#, no-c-format
+msgid ""
+". As a result, the calling domain may have an undue amount of influence over "
+"the called resource. Use these modes only if the child absolutely"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1793
+#, no-c-format
+msgid "be run unconfined and"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1795
+#, no-c-format
+msgid ""
+"must be used. Any profile using such modes provides negligible security. Use "
+"at your own risk."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1639
+#: apparmor_profiles.xml:1801
 #, no-c-format
 msgid "Inherit Execute Mode (ix)"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1640
+#: apparmor_profiles.xml:1802
 #, no-c-format
 msgid ""
 "<literal>ix</literal> prevents the normal &aa; domain transition on "
@@ -2748,7 +2906,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1646
+#: apparmor_profiles.xml:1808
 #, no-c-format
 msgid ""
 "This mode is useful when a confined program needs to call another confined "
@@ -2759,42 +2917,104 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1653
+#: apparmor_profiles.xml:1815
 #, no-c-format
 msgid ""
-"Incompatible with <literal>cx</literal>, <literal>ux</literal>, and "
-"<literal>px</literal>. Implies <literal>m</literal>."
+"Incompatible with <literal>cx</literal> , <literal>ux</literal> , and "
+"<literal>px</literal> . Implies <literal>m</literal> ."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1660
+#: apparmor_profiles.xml:1822
 #, no-c-format
 msgid "Allow Executable Mapping (m)"
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:1661
+#. Tag: #text
+#: apparmor_profiles.xml:1825
+#, no-c-format
+msgid "This mode allows a file to be mapped into memory using"
+msgstr ""
+
+#. Tag: envar
+#: apparmor_profiles.xml:1825
+#, no-c-format
+msgid "PROT_EXEC"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1825
+#, no-c-format
+msgid "'s"
+msgstr ""
+
+#. Tag: command
+#: apparmor_profiles.xml:1825
+#, no-c-format
+msgid "mmap(2)"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1828
 #, no-c-format
 msgid ""
-"This mode allows a file to be mapped into memory using <command>mmap(2)</"
-"command>'s <envar>PROT_EXEC</envar> flag. This flag marks the pages "
-"executable. It is used on some architectures to provide non executable data "
-"pages, which can complicate exploit attempts. &aa; uses this mode to limit "
-"which files a well-behaved program (or all programs on architectures that "
-"enforce non executable memory access controls) may use as libraries, to "
-"limit the effect of invalid <option>-L</option> flags given to "
-"<command>ld(1)</command> and <envar>LD_PRELOAD</envar>, "
-"<envar>LD_LIBRARY_PATH</envar>, given to <command>ld.so(8)</command>."
+"flag. This flag marks the pages executable. It is used on some architectures "
+"to provide non executable data pages, which can complicate exploit attempts. "
+"&aa; uses this mode to limit which files a well-behaved program (or all "
+"programs on architectures that enforce non executable memory access "
+"controls) may use as libraries, to limit the effect of invalid"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1831
+#, no-c-format
+msgid "flags given to"
+msgstr ""
+
+#. Tag: command
+#: apparmor_profiles.xml:1831
+#, no-c-format
+msgid "ld(1)"
+msgstr ""
+
+#. Tag: option
+#: apparmor_profiles.xml:1831
+#, no-c-format
+msgid "-L"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1832
+#, no-c-format
+msgid "and"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1833
+#, no-c-format
+msgid ", given to"
+msgstr ""
+
+#. Tag: command
+#: apparmor_profiles.xml:1833
+#, no-c-format
+msgid "ld.so(8)"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:1834
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1676
+#: apparmor_profiles.xml:1838
 #, no-c-format
 msgid "Named Profile Transitions"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1677
+#: apparmor_profiles.xml:1839
 #, no-c-format
 msgid ""
 "By default, the <literal>px</literal> and <literal>cx</literal> (and their "
@@ -2803,13 +3023,13 @@ msgid ""
 "to be transitioned to. This is useful if multiple binaries need to share a "
 "single profile, or if they need to use a different profile than their name "
 "would specify. Named profile transitions can be used with <literal>cx</"
-"literal>, <literal>Cx</literal>, <literal>px</literal> and <literal>Px</"
-"literal>. Currently there is a limit of twelve named profile transitions per "
-"profile."
+"literal> , <literal>Cx</literal> , <literal>px</literal> and <literal>Px</"
+"literal> . Currently there is a limit of twelve named profile transitions "
+"per profile."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1689
+#: apparmor_profiles.xml:1851
 #, no-c-format
 msgid ""
 "Named profile transitions use <literal>-&gt;</literal> to indicate the name "
@@ -2817,7 +3037,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1693
+#: apparmor_profiles.xml:1855
 #, no-c-format
 msgid ""
 "/usr/bin/foo\n"
@@ -2830,27 +3050,27 @@ msgid ""
 "  {\n"
 "    ...\n"
 "  }\n"
-"}"
+"}\n"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1695
+#: apparmor_profiles.xml:1868
 #, no-c-format
 msgid "Difference Between Normal and Named Transitions"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1696
+#: apparmor_profiles.xml:1869
 #, no-c-format
 msgid ""
 "When used with globbing, normal transitions provide a <quote>one to many</"
-"quote> relationship&mdash;<literal>/bin/** px</literal> will transition to "
-"<filename>/bin/ping</filename>, <filename>/bin/cat</filename>, etc, "
+"quote> relationship&mdash; <literal>/bin/** px</literal> will transition to "
+"<filename>/bin/ping</filename> , <filename>/bin/cat</filename> , etc, "
 "depending on the program being run."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1702
+#: apparmor_profiles.xml:1875
 #, no-c-format
 msgid ""
 "Named transitions provide a <quote>many to one</quote> relationship&mdash;"
@@ -2859,93 +3079,95 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1707
+#: apparmor_profiles.xml:1880
 #, no-c-format
 msgid ""
 "Named profile transitions show up in the log as having the mode <literal>Nx</"
-"literal>. The name of the profile to be changed to is listed in the "
+"literal> . The name of the profile to be changed to is listed in the "
 "<literal>name2</literal> field."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1716
+#: apparmor_profiles.xml:1889
 #, no-c-format
 msgid "Fallback Modes for Profile Transitions"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1717
+#: apparmor_profiles.xml:1890
 #, no-c-format
 msgid ""
 "The <literal>px</literal> and <literal>cx</literal> transitions specify a "
 "hard dependency&mdash;if the specified profile does not exist, the exec will "
 "fail. With the inheritance fallback, the execution will succeed but inherit "
 "the current profile. To specify inheritance fallback, <literal>ix</literal> "
-"is combined with <literal>cx</literal>, <literal>Cx</literal>, <literal>px</"
-"literal> and <literal>Px</literal> into the modes <literal>cix</literal>, "
-"<literal>Cix</literal>, <literal>pix</literal> and <literal>Pix</literal>."
+"is combined with <literal>cx</literal> , <literal>Cx</literal> , "
+"<literal>px</literal> and <literal>Px</literal> into the modes <literal>cix</"
+"literal> , <literal>Cix</literal> , <literal>pix</literal> and <literal>Pix</"
+"literal> ."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1727
+#: apparmor_profiles.xml:1900
 #, no-c-format
 msgid "/path Cix -&gt; profile_name,"
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:1728 apparmor_profiles.xml:1743
-#, no-c-format
-msgid "<para>or</para>"
-msgstr ""
-
 #. Tag: screen
-#: apparmor_profiles.xml:1731
+#: apparmor_profiles.xml:1904
 #, no-c-format
 msgid "Cix /path -&gt; profile_name,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1732 apparmor_profiles.xml:1747
-#, no-c-format
-msgid "where <literal>-&gt; profile_name</literal> is optional."
-msgstr ""
-
-#. Tag: para
-#: apparmor_profiles.xml:1735
+#: apparmor_profiles.xml:1908
 #, no-c-format
 msgid ""
 "The same applies if you add the unconfined <literal>ux</literal> mode, where "
-"the resulting modes are <literal>cux</literal>, <literal>CUx</literal>, "
-"<literal>pux</literal> and <literal>PUx</literal>. These modes allow falling "
-"back to <quote>unconfined</quote> when the specified profile is not found."
+"the resulting modes are <literal>cux</literal> , <literal>CUx</literal> , "
+"<literal>pux</literal> and <literal>PUx</literal> . These modes allow "
+"falling back to <quote>unconfined</quote> when the specified profile is not "
+"found."
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1742
+#: apparmor_profiles.xml:1915
 #, no-c-format
 msgid "/path PUx -&gt; profile_name,"
 msgstr ""
 
+#. Tag: para
+#: apparmor_profiles.xml:1916
+#, no-c-format
+msgid "or"
+msgstr ""
+
 #. Tag: screen
-#: apparmor_profiles.xml:1746
+#: apparmor_profiles.xml:1919
 #, no-c-format
 msgid "PUx /path -&gt; profile_name,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1750
+#: apparmor_profiles.xml:1920
+#, no-c-format
+msgid "where <literal>-&gt; profile_name</literal> is optional."
+msgstr ""
+
+#. Tag: para
+#: apparmor_profiles.xml:1923
 #, no-c-format
 msgid "The fallback modes can be used with named profile transitions, too."
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1756
+#: apparmor_profiles.xml:1929
 #, no-c-format
 msgid "Variable Settings in Execution Modes"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1757
+#: apparmor_profiles.xml:1930
 #, no-c-format
 msgid ""
 "When choosing one of the Px, Cx or Ux execution modes, take into account "
@@ -2956,139 +3178,139 @@ msgid ""
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1767
+#: apparmor_profiles.xml:1940
 #, no-c-format
 msgid "GCONV_PATH"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1772
+#: apparmor_profiles.xml:1945
 #, no-c-format
 msgid "GETCONF_DIR"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1777
+#: apparmor_profiles.xml:1950
 #, no-c-format
 msgid "HOSTALIASES"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1782
+#: apparmor_profiles.xml:1955
 #, no-c-format
 msgid "LD_AUDIT"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1787
+#: apparmor_profiles.xml:1960
 #, no-c-format
 msgid "LD_DEBUG"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1792
+#: apparmor_profiles.xml:1965
 #, no-c-format
 msgid "LD_DEBUG_OUTPUT"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1797
+#: apparmor_profiles.xml:1970
 #, no-c-format
 msgid "LD_DYNAMIC_WEAK"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1802
+#: apparmor_profiles.xml:1975
 #, no-c-format
 msgid "LD_LIBRARY_PATH"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1807
+#: apparmor_profiles.xml:1980
 #, no-c-format
 msgid "LD_ORIGIN_PATH"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1812
+#: apparmor_profiles.xml:1985
 #, no-c-format
 msgid "LD_PRELOAD"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1817
+#: apparmor_profiles.xml:1990
 #, no-c-format
 msgid "LD_PROFILE"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1822
+#: apparmor_profiles.xml:1995
 #, no-c-format
 msgid "LD_SHOW_AUXV"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1827
+#: apparmor_profiles.xml:2000
 #, no-c-format
 msgid "LD_USE_LOAD_BIAS"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1832
+#: apparmor_profiles.xml:2005
 #, no-c-format
 msgid "LOCALDOMAIN"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1837
+#: apparmor_profiles.xml:2010
 #, no-c-format
 msgid "LOCPATH"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1842
+#: apparmor_profiles.xml:2015
 #, no-c-format
 msgid "MALLOC_TRACE"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1847
+#: apparmor_profiles.xml:2020
 #, no-c-format
 msgid "NLSPATH"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1852
+#: apparmor_profiles.xml:2025
 #, no-c-format
 msgid "RESOLV_HOST_CONF"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1857
+#: apparmor_profiles.xml:2030
 #, no-c-format
 msgid "RES_OPTIONS"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1862
+#: apparmor_profiles.xml:2035
 #, no-c-format
 msgid "TMPDIR"
 msgstr ""
 
 #. Tag: envar
-#: apparmor_profiles.xml:1867
+#: apparmor_profiles.xml:2040
 #, no-c-format
 msgid "TZDIR"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1874
+#: apparmor_profiles.xml:2047
 #, no-c-format
 msgid "<literal>safe</literal> and <literal>unsafe</literal> Keywords"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1875
+#: apparmor_profiles.xml:2048
 #, no-c-format
 msgid ""
 "You can use the <literal>safe</literal> and <literal>unsafe</literal> "
@@ -3097,19 +3319,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1880
+#: apparmor_profiles.xml:2053
 #, no-c-format
 msgid "/example_rule Px,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1881
+#: apparmor_profiles.xml:2054
 #, no-c-format
 msgid "is the same as any of the following"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1884
+#: apparmor_profiles.xml:2057
 #, no-c-format
 msgid ""
 "safe /example_rule px,\n"
@@ -3119,25 +3341,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1885
+#: apparmor_profiles.xml:2061
 #, no-c-format
 msgid "and the rule"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1888
+#: apparmor_profiles.xml:2064
 #, no-c-format
 msgid "/example_rule px,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1889
+#: apparmor_profiles.xml:2065
 #, no-c-format
 msgid "is the same as any of"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1892
+#: apparmor_profiles.xml:2068
 #, no-c-format
 msgid ""
 "unsafe /example_rule px,\n"
@@ -3147,40 +3369,40 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1893
+#: apparmor_profiles.xml:2072
 #, no-c-format
 msgid ""
-"The <literal>safe</literal>/<literal>unsafe</literal> keywords are mutually "
-"exclusive and can be used in a file rule after the <literal>owner</literal> "
-"keyword, so the order of rule keywords is"
+"The <literal>safe</literal> / <literal>unsafe</literal> keywords are "
+"mutually exclusive and can be used in a file rule after the <literal>owner</"
+"literal> keyword, so the order of rule keywords is"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1898
+#: apparmor_profiles.xml:2077
 #, no-c-format
 msgid "[audit] [deny] [owner] [safe|unsafe] file_rule"
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:1902
+#: apparmor_profiles.xml:2081
 #, no-c-format
 msgid "Resource Limit Control"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1904
+#: apparmor_profiles.xml:2083
 #, no-c-format
 msgid ""
 "&aa; can set and control an application's resource limits (rlimits, also "
 "known as ulimits). By default, &aa; does not control application's rlimits, "
 "and it will only control those limits specified in the confining profile. "
 "For more information about resource limits, refer to the "
-"<systemitem>setrlimit(2)</systemitem>, <systemitem>ulimit(1)</systemitem>, "
+"<systemitem>setrlimit(2)</systemitem> , <systemitem>ulimit(1)</systemitem> , "
 "or <systemitem>ulimit(3)</systemitem> man pages."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1914
+#: apparmor_profiles.xml:2093
 #, no-c-format
 msgid ""
 "&aa; leverages the system's rlimits and as such does not provide an "
@@ -3190,7 +3412,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1921
+#: apparmor_profiles.xml:2100
 #, no-c-format
 msgid ""
 "The values will be inherited by the children of a process and will remain "
@@ -3200,7 +3422,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1928
+#: apparmor_profiles.xml:2107
 #, no-c-format
 msgid ""
 "&aa;'s rlimit rules will also provide mediation of setting an application's "
@@ -3212,7 +3434,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1937
+#: apparmor_profiles.xml:2116
 #, no-c-format
 msgid ""
 "&aa;'s rlimit control does not affect an application's soft limits beyond "
@@ -3220,13 +3442,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1943
+#: apparmor_profiles.xml:2122
 #, no-c-format
 msgid "&aa;'s hard limit rules have the general form of:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1947
+#: apparmor_profiles.xml:2126
 #, no-c-format
 msgid ""
 "set rlimit <replaceable>RESOURCE</replaceable> &lt;= <replaceable>value</"
@@ -3234,36 +3456,36 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1949
+#: apparmor_profiles.xml:2128
 #, no-c-format
 msgid ""
 "where <replaceable>RESOURCE</replaceable> and <replaceable>VALUE</"
 "replaceable> are to be replaced with the following values:"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1957
+#. Tag: term
+#: apparmor_profiles.xml:2136
 #, no-c-format
 msgid "<literal>cpu</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1960
+#: apparmor_profiles.xml:2139
 #, no-c-format
 msgid "CPU time limit in seconds."
 msgstr ""
 
 #. Tag: term
-#: apparmor_profiles.xml:1966
+#: apparmor_profiles.xml:2145
 #, no-c-format
 msgid ""
-"<literal>fsize</literal>, <literal>data</literal>, <literal>stack</literal>, "
-"<literal>core</literal>, <literal>rss</literal>, <literal>as</literal>, "
-"<literal>memlock</literal>, <literal>msgqueue</literal>"
+"<literal>fsize</literal> , <literal>data</literal> , <literal>stack</"
+"literal> , <literal>core</literal> , <literal>rss</literal> , <literal>as</"
+"literal> , <literal>memlock</literal> , <literal>msgqueue</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1971
+#: apparmor_profiles.xml:2150
 #, no-c-format
 msgid ""
 "a number in bytes, or a number with a suffix where the suffix can be K/KB "
@@ -3271,52 +3493,90 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:1975
+#: apparmor_profiles.xml:2154
 #, no-c-format
 msgid "rlimit data &lt;= 100M,"
 msgstr ""
 
-#. Tag: term
-#: apparmor_profiles.xml:1979
+#. Tag: literal
+#: apparmor_profiles.xml:2158
 #, no-c-format
-msgid ""
-"<literal>fsize</literal>, <literal>nofile</literal>, <literal>locks</"
-"literal>, <literal>sigpending</literal>, <literal>nproc</"
-"literal><superscript>*</superscript>, <literal>rtprio</literal>"
+msgid "locks"
+msgstr ""
+
+#. Tag: literal
+#: apparmor_profiles.xml:2158
+#, no-c-format
+msgid "nofile"
+msgstr ""
+
+#. Tag: literal
+#: apparmor_profiles.xml:2158
+#, no-c-format
+msgid "fsize"
+msgstr ""
+
+#. Tag: literal
+#: apparmor_profiles.xml:2159
+#, no-c-format
+msgid "nproc"
+msgstr ""
+
+#. Tag: literal
+#: apparmor_profiles.xml:2159
+#, no-c-format
+msgid "sigpending"
+msgstr ""
+
+#. Tag: literal
+#: apparmor_profiles.xml:2160
+#, no-c-format
+msgid "rtprio"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:2160
+#, no-c-format
+msgid ","
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1984
+#: apparmor_profiles.xml:2163
 #, no-c-format
 msgid "a number greater or equal to 0"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1990
+#. Tag: term
+#: apparmor_profiles.xml:2169
 #, no-c-format
-msgid "nice"
+msgid "<literal>nice</literal>"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:1993
+#: apparmor_profiles.xml:2172
 #, no-c-format
 msgid "a value between -20 and 19"
 msgstr ""
 
-#. Tag: para
-#: apparmor_profiles.xml:2000
+#. Tag: superscript
+#: apparmor_profiles.xml:2180
+#, no-c-format
+msgid "*"
+msgstr ""
+
+#. Tag: #text
+#: apparmor_profiles.xml:2186
 #, no-c-format
 msgid ""
-"<superscript>*</superscript>The nproc rlimit is handled different than all "
-"the other rlimits. Instead of indicating the standard process rlimit it "
-"controls the maximum number of processes that can be running under the "
-"profile at any time. When the limit is exceeded the creation of new "
-"processes under the profile will fail until the number of currently running "
-"processes is reduced."
+"The nproc rlimit is handled different than all the other rlimits. Instead of "
+"indicating the standard process rlimit it controls the maximum number of "
+"processes that can be running under the profile at any time. When the limit "
+"is exceeded the creation of new processes under the profile will fail until "
+"the number of currently running processes is reduced."
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:2010
+#: apparmor_profiles.xml:2189
 #, no-c-format
 msgid ""
 "Currently the tools cannot be used to add rlimit rules to profiles. The only "
@@ -3327,13 +3587,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: apparmor_profiles.xml:2020
+#: apparmor_profiles.xml:2199
 #, no-c-format
 msgid "Auditing Rules"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:2022
+#: apparmor_profiles.xml:2201
 #, no-c-format
 msgid ""
 "&aa; provides the ability to audit given rules so that when they are matched "
@@ -3343,13 +3603,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:2029
+#: apparmor_profiles.xml:2208
 #, no-c-format
 msgid "audit /etc/foo/*        rw,"
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:2031
+#: apparmor_profiles.xml:2210
 #, no-c-format
 msgid ""
 "If it is desirable to audit only a given permission the rule can be split "
@@ -3358,7 +3618,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:2037
+#: apparmor_profiles.xml:2216
 #, no-c-format
 msgid ""
 "audit /etc/foo/*  w,\n"
@@ -3366,7 +3626,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:2040
+#: apparmor_profiles.xml:2220
 #, no-c-format
 msgid ""
 "Audit messages are not generated for every read or write of a file but only "
@@ -3374,16 +3634,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apparmor_profiles.xml:2046
+#: apparmor_profiles.xml:2226
 #, no-c-format
 msgid ""
-"Audit control can be combined with <literal>owner</literal>/<literal>other</"
-"literal> conditional file rules to provide auditing when users access files "
-"they own/do not own:"
+"Audit control can be combined with <literal>owner</literal> / "
+"<literal>other</literal> conditional file rules to provide auditing when "
+"users access files they own/do not own:"
 msgstr ""
 
 #. Tag: screen
-#: apparmor_profiles.xml:2052
+#: apparmor_profiles.xml:2232
 #, no-c-format
 msgid ""
 "audit owner /home/*/.ssh/**       rw,\n"

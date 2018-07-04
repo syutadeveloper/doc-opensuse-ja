@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -74,12 +74,6 @@ msgstr ""
 msgid "Through &nautilus;, users can access their Windows user data and can edit, create, and delete files and directories on the Windows server. Users can access their data without having to enter their password multiple times."
 msgstr ""
 
-#. Tag: term
-#: security_ad_support.xml:102
-#, no-c-format
-msgid "<term>Offline Authentication</term>"
-msgstr ""
-
 #. Tag: para
 #: security_ad_support.xml:104
 #, no-c-format
@@ -104,16 +98,22 @@ msgstr ""
 msgid "Single-Sign-On through Kerberized Applications"
 msgstr ""
 
-#. Tag: remark
-#: security_ad_support.xml:126
+#. Tag: #text
+#: security_ad_support.xml:128
 #, no-c-format
-msgid "sknorr, 2014-08-27: \"kerberized\"? can we avoid that?"
+msgid "Many desktop applications are Kerberos-enabled ("
 msgstr ""
 
-#. Tag: para
-#: security_ad_support.xml:126
+#. Tag: emphasis
+#: security_ad_support.xml:128
 #, no-c-format
-msgid "Many desktop applications are Kerberos-enabled (<emphasis>kerberized</emphasis>), which means they can transparently handle authentication for the user without the need for password reentry at Web servers, proxies, groupware applications, or other locations."
+msgid "kerberized"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:132
+#, no-c-format
+msgid "), which means they can transparently handle authentication for the user without the need for password reentry at Web servers, proxies, groupware applications, or other locations."
 msgstr ""
 
 #. Tag: title
@@ -131,13 +131,13 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:145
 #, no-c-format
-msgid "However, Unix attributes can still be managed manually when <guimenu>Advanced Options</guimenu> are enabled in the <emphasis>Active Directory Users and Computers</emphasis> MMC snap-in. For more information, see <link xlink:href=\"https://blogs.technet.microsoft.com/activedirectoryua/2016/02/09/identity-management-for-unix-idmu-is-deprecated-in-windows-server/\"></link>."
+msgid "However, Unix attributes can still be managed manually when <guimenu>Advanced Options</guimenu> are enabled in the <emphasis>Active Directory Users and Computers</emphasis> MMC snap-in. For more information, see <link xlink:href=\"https://blogs.technet.microsoft.com/activedirectoryua/2016/02/09/identity-management-for-unix-idmu-is-deprecated-in-windows-server/\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:152
 #, no-c-format
-msgid "Alternatively, use the method described in <xref linkend=\"pro.security.ad.join.sssd\"/> to complete attributes on the client side (in particular, see <xref linkend=\"st.security.sssd_home_dir\"/>)."
+msgid "Alternatively, use the method described in <xref linkend=\"pro.security.ad.join.sssd\"/> to complete attributes on the client side (in particular, see <xref linkend=\"st.security.sssd_home_dir\"/> )."
 msgstr ""
 
 #. Tag: para
@@ -173,7 +173,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:186
 #, no-c-format
-msgid "LDAP is a protocol optimized for managing directory information. A Windows domain controller with &ad; can use the LDAP protocol to exchange directory information with the clients. To learn more about LDAP in general and about the open source port of it, OpenLDAP, refer to <xref linkend=\"cha.security.ldap\"/>."
+msgid "LDAP is a protocol optimized for managing directory information. A Windows domain controller with &ad; can use the LDAP protocol to exchange directory information with the clients. To learn more about LDAP in general and about the open source port of it, OpenLDAP, refer to <xref linkend=\"cha.security.ldap\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -185,7 +185,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:198
 #, no-c-format
-msgid "Kerberos is a third-party trusted authentication service. All its clients trust Kerberos's authorization of another client's identity, enabling kerberized single-sign-on (SSO) solutions. Windows supports a Kerberos implementation, making Kerberos SSO possible even with Linux clients. To learn more about Kerberos in Linux, refer to <xref linkend=\"cha.security.kerberos\"/>."
+msgid "Kerberos is a third-party trusted authentication service. All its clients trust Kerberos's authorization of another client's identity, enabling kerberized single-sign-on (SSO) solutions. Windows supports a Kerberos implementation, making Kerberos SSO possible even with Linux clients. To learn more about Kerberos in Linux, refer to <xref linkend=\"cha.security.kerberos\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -215,13 +215,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:233
 #, no-c-format
-msgid "To authenticate users, the <systemitem class=\"resource\">pam_sss</systemitem> module for PAM is used. The creation of user homes for the &ad; users on the Linux client is handled by <filename>pam_mkhomedir</filename>."
-msgstr ""
-
-#. Tag: para
-#: security_ad_support.xml:239 security_ad_support.xml:270
-#, no-c-format
-msgid "For more information about PAM, see <xref linkend=\"cha.pam\"/>."
+msgid "To authenticate users, the <systemitem class=\"resource\">pam_sss</systemitem> module for PAM is used. The creation of user homes for the &ad; users on the Linux client is handled by <filename>pam_mkhomedir</filename> ."
 msgstr ""
 
 #. Tag: term
@@ -245,13 +239,19 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:264
 #, no-c-format
-msgid "To authenticate users, the <systemitem class=\"resource\">pam_winbind</systemitem> module for PAM is used. The creation of user homes for the &ad; users on the Linux client is handled by <filename>pam_mkhomedir</filename>."
+msgid "To authenticate users, the <systemitem class=\"resource\">pam_winbind</systemitem> module for PAM is used. The creation of user homes for the &ad; users on the Linux client is handled by <filename>pam_mkhomedir</filename> ."
+msgstr ""
+
+#. Tag: para
+#: security_ad_support.xml:270
+#, no-c-format
+msgid "For more information about PAM, see <xref linkend=\"cha.pam\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:275
 #, no-c-format
-msgid "highlights the most prominent components of Winbind-based &ad; authentication."
+msgid "<xref linkend=\"fig.ad.schema\"/> highlights the most prominent components of Winbind-based &ad; authentication."
 msgstr ""
 
 #. Tag: title
@@ -323,13 +323,13 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:359
 #, no-c-format
-msgid "User authentication is mediated by several PAM modules as described in <xref linkend=\"sec.security.ad.background\"/>. If there are errors, the error codes are translated into user-readable error messages that PAM gives at login through any of the supported methods (GDM, console, and SSH):"
+msgid "User authentication is mediated by several PAM modules as described in <xref linkend=\"sec.security.ad.background\"/> . If there are errors, the error codes are translated into user-readable error messages that PAM gives at login through any of the supported methods (GDM, console, and SSH):"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: security_ad_support.xml:368
 #, no-c-format
-msgid "Password has expired"
+msgid "<literal>Password has expired</literal>"
 msgstr ""
 
 #. Tag: para
@@ -338,10 +338,10 @@ msgstr ""
 msgid "The user sees a message stating that the password has expired and needs to be changed. The system prompts for a new password and informs the user if the new password does not comply with corporate password policies (for example the password is too short, too simple, or already in the history). If a user's password change fails, the reason is shown and a new password prompt is given."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: security_ad_support.xml:382
 #, no-c-format
-msgid "Account disabled"
+msgid "<literal>Account disabled</literal>"
 msgstr ""
 
 #. Tag: para
@@ -350,10 +350,10 @@ msgstr ""
 msgid "The user sees an error message stating that the account has been disabled and to contact the system administrator."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: security_ad_support.xml:392
 #, no-c-format
-msgid "Account locked out"
+msgid "<literal>Account locked out</literal>"
 msgstr ""
 
 #. Tag: para
@@ -362,10 +362,10 @@ msgstr ""
 msgid "The user sees an error message stating that the account has been locked and to contact the system administrator."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: security_ad_support.xml:402
 #, no-c-format
-msgid "Password has to be changed"
+msgid "<literal>Password has to be changed</literal>"
 msgstr ""
 
 #. Tag: para
@@ -374,10 +374,10 @@ msgstr ""
 msgid "The user can log in but receives a warning that the password needs to be changed soon. This warning is sent three days before that password expires. After expiration, the user cannot log in."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: security_ad_support.xml:413
 #, no-c-format
-msgid "Invalid workstation"
+msgid "<literal>Invalid workstation</literal>"
 msgstr ""
 
 #. Tag: para
@@ -386,10 +386,10 @@ msgstr ""
 msgid "When a user is restricted to specific workstations and the current &productname; machine is not among them, a message appears that this user cannot log in from this workstation."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: security_ad_support.xml:424
 #, no-c-format
-msgid "Invalid logon hours"
+msgid "<literal>Invalid logon hours</literal>"
 msgstr ""
 
 #. Tag: para
@@ -398,10 +398,10 @@ msgstr ""
 msgid "When a user is only allowed to log in during working hours and tries to log in outside working hours, a message informs the user that logging in is not possible at that time."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: security_ad_support.xml:435
 #, no-c-format
-msgid "Account expired"
+msgid "<literal>Account expired</literal>"
 msgstr ""
 
 #. Tag: para
@@ -419,7 +419,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:452
 #, no-c-format
-msgid "&productname; supports local home directories for &ad; users. If configured through &yast; as described in <xref linkend=\"sec.security.ad.config\"/>, user home directories are created when a Windows/&ad; user first logs in to the Linux client. These home directories look and feel identical to standard Linux user home directories and work independently of the &ad; Domain Controller."
+msgid "&productname; supports local home directories for &ad; users. If configured through &yast; as described in <xref linkend=\"sec.security.ad.config\"/> , user home directories are created when a Windows/&ad; user first logs in to the Linux client. These home directories look and feel identical to standard Linux user home directories and work independently of the &ad; Domain Controller."
 msgstr ""
 
 #. Tag: para
@@ -461,7 +461,7 @@ msgstr ""
 #. Tag: term
 #: security_ad_support.xml:506
 #, no-c-format
-msgid "<term>DNS</term>"
+msgid "DNS"
 msgstr ""
 
 #. Tag: para
@@ -473,13 +473,13 @@ msgstr ""
 #. Tag: term
 #: security_ad_support.xml:516
 #, no-c-format
-msgid "<term>NTP</term>"
+msgid "NTP"
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:518
 #, no-c-format
-msgid "To succeed with Kerberos authentication, the client must have its time set accurately. It is highly recommended to use a central NTP time server for this purpose (this can be also the NTP server running on your &ad; domain controller). If the clock skew between your Linux host and the domain controller exceeds a certain limit, Kerberos authentication fails and the client is logged in using the weaker NTLM (NT LAN Manager) authentication. For more details about using &ad; for time synchronization, see <xref linkend=\"proc.ad.join\"/>."
+msgid "To succeed with Kerberos authentication, the client must have its time set accurately. It is highly recommended to use a central NTP time server for this purpose (this can be also the NTP server running on your &ad; domain controller). If the clock skew between your Linux host and the domain controller exceeds a certain limit, Kerberos authentication fails and the client is logged in using the weaker NTLM (NT LAN Manager) authentication. For more details about using &ad; for time synchronization, see <xref linkend=\"proc.ad.join\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -494,16 +494,82 @@ msgstr ""
 msgid "To browse your network neighborhood, either disable the firewall entirely or mark the interface used for browsing as part of the internal zone."
 msgstr ""
 
-#. Tag: remark
-#: security_ad_support.xml:540
+#. Tag: #text
+#: security_ad_support.xml:542
 #, no-c-format
-msgid "sknorr, 2014-08-26: Should better be a procedure."
+msgid "To change the firewall settings on your client, log in as &rootuser; and start the &yast; firewall module. Select"
 msgstr ""
 
-#. Tag: para
-#: security_ad_support.xml:540
+#. Tag: guimenu
+#: security_ad_support.xml:543
 #, no-c-format
-msgid "To change the firewall settings on your client, log in as &rootuser; and start the &yast; firewall module. Select <guimenu>Interfaces</guimenu>. Select your network interface from the list of interfaces and click <guimenu>Change</guimenu>. Select <guimenu>Internal Zone</guimenu> and apply your settings with <guimenu>OK</guimenu>. Leave the firewall settings with <menuchoice> <guimenu>Next</guimenu> <guimenu>Finish</guimenu> </menuchoice>. To disable the firewall, check the <guimenu>Disable Firewall Automatic Starting</guimenu> option, and leave the firewall module with <menuchoice> <guimenu>Next</guimenu> <guimenu>Finish</guimenu> </menuchoice>."
+msgid "Interfaces"
+msgstr ""
+
+#. Tag: guimenu
+#: security_ad_support.xml:544
+#, no-c-format
+msgid "Change"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:544
+#, no-c-format
+msgid ". Select your network interface from the list of interfaces and click"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:545
+#, no-c-format
+msgid ". Select"
+msgstr ""
+
+#. Tag: guimenu
+#: security_ad_support.xml:545
+#, no-c-format
+msgid "Internal Zone"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:546
+#, no-c-format
+msgid ". Leave the firewall settings with"
+msgstr ""
+
+#. Tag: guimenu
+#: security_ad_support.xml:546
+#, no-c-format
+msgid "OK"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:546
+#, no-c-format
+msgid "and apply your settings with"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:548
+#, no-c-format
+msgid ". To disable the firewall, check the"
+msgstr ""
+
+#. Tag: guimenu
+#: security_ad_support.xml:548
+#, no-c-format
+msgid "Disable Firewall Automatic Starting"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:550
+#, no-c-format
+msgid "option, and leave the firewall module with"
+msgstr ""
+
+#. Tag: menuchoice
+#: security_ad_support.xml:550
+#, no-c-format
+msgid "<guimenu>Next</guimenu> <guimenu>Finish</guimenu>"
 msgstr ""
 
 #. Tag: term
@@ -548,52 +614,16 @@ msgstr ""
 msgid "Identification Providers"
 msgstr ""
 
-#. Tag: guimenu
-#: security_ad_support.xml:596 security_ad_support.xml:636
-#, no-c-format
-msgid "Delegate to third-party software library"
-msgstr ""
-
 #. Tag: para
 #: security_ad_support.xml:597
 #, no-c-format
 msgid "Support for legacy NSS providers via a proxy."
 msgstr ""
 
-#. Tag: guimenu
-#: security_ad_support.xml:604 security_ad_support.xml:644
-#, no-c-format
-msgid "FreeIPA"
-msgstr ""
-
-#. Tag: para
-#: security_ad_support.xml:605 security_ad_support.xml:645
-#, no-c-format
-msgid "FreeIPA and Red Hat Enterprise Identity Management provider."
-msgstr ""
-
-#. Tag: guimenu
-#: security_ad_support.xml:612 security_ad_support.xml:660
-#, no-c-format
-msgid "Generic directory service (LDAP)"
-msgstr ""
-
 #. Tag: para
 #: security_ad_support.xml:613
 #, no-c-format
-msgid "An LDAP provider. For more information about configuring LDAP, see <command>man 5 sssd-ldap</command>."
-msgstr ""
-
-#. Tag: guimenu
-#: security_ad_support.xml:621 security_ad_support.xml:668
-#, no-c-format
-msgid "Local SSSD file database"
-msgstr ""
-
-#. Tag: para
-#: security_ad_support.xml:622 security_ad_support.xml:669
-#, no-c-format
-msgid "An SSSD-internal provider for local users."
+msgid "An LDAP provider. For more information about configuring LDAP, see <command>man 5 sssd-ldap</command> ."
 msgstr ""
 
 #. Tag: term
@@ -602,16 +632,34 @@ msgstr ""
 msgid "Authentication Providers"
 msgstr ""
 
+#. Tag: title
+#: security_ad_support.xml:636
+#, no-c-format
+msgid "<guimenu>Delegate to third-party software library</guimenu>"
+msgstr ""
+
 #. Tag: para
 #: security_ad_support.xml:637
 #, no-c-format
 msgid "Relay authentication to another PAM target via a proxy."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: title
+#: security_ad_support.xml:644
+#, no-c-format
+msgid "<guimenu>FreeIPA</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: security_ad_support.xml:645
+#, no-c-format
+msgid "FreeIPA and Red Hat Enterprise Identity Management provider."
+msgstr ""
+
+#. Tag: title
 #: security_ad_support.xml:652
 #, no-c-format
-msgid "Generic Kerberos service"
+msgid "<guimenu>Generic Kerberos service</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -620,16 +668,34 @@ msgstr ""
 msgid "An LDAP provider."
 msgstr ""
 
+#. Tag: title
+#: security_ad_support.xml:660
+#, no-c-format
+msgid "<guimenu>Generic directory service (LDAP)</guimenu>"
+msgstr ""
+
 #. Tag: para
 #: security_ad_support.xml:661
 #, no-c-format
 msgid "Kerberos authentication."
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: title
+#: security_ad_support.xml:668
+#, no-c-format
+msgid "<guimenu>Local SSSD file database</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: security_ad_support.xml:669
+#, no-c-format
+msgid "An SSSD-internal provider for local users."
+msgstr ""
+
+#. Tag: title
 #: security_ad_support.xml:676
 #, no-c-format
-msgid "This domain does not provide authentication service"
+msgid "<guimenu>This domain does not provide authentication service</guimenu>"
 msgstr ""
 
 #. Tag: para
@@ -665,25 +731,25 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:709
 #, no-c-format
-msgid "In &yast;, click <guimenu>Network Settings</guimenu>."
+msgid "In &yast;, click <guimenu>Network Settings</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:714
 #, no-c-format
-msgid "Select <guimenu>Hostname/DNS</guimenu>, then enter the IP address of the &ad; Domain Controller into the text box <guimenu>Name Server 1</guimenu>."
+msgid "Select <guimenu>Hostname/DNS</guimenu> , then enter the IP address of the &ad; Domain Controller into the text box <guimenu>Name Server 1</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:719
 #, no-c-format
-msgid "Save the setting with <guimenu>OK</guimenu>."
+msgid "Save the setting with <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:726
 #, no-c-format
-msgid "From the &yast; main window, start the module <guimenu>User Logon Management</guimenu>."
+msgid "From the &yast; main window, start the module <guimenu>User Logon Management</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -698,16 +764,16 @@ msgstr ""
 msgid "Main Window of <guimenu>User Logon Management</guimenu>"
 msgstr ""
 
-#. Tag: phrase
-#: security_ad_support.xml:744
+#. Tag: textobject
+#: security_ad_support.xml:743
 #, no-c-format
-msgid "Overview window showing the computer name, IP address, and its authentication setting."
+msgid "<phrase> Overview window showing the computer name, IP address, and its authentication setting. </phrase>"
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:753
 #, no-c-format
-msgid "To start editing, click <guimenu>Change Settings</guimenu>."
+msgid "To start editing, click <guimenu>Change Settings</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -719,25 +785,19 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:763
 #, no-c-format
-msgid "Click <guimenu>Join Domain</guimenu>."
+msgid "Click <guimenu>Join Domain</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:768
 #, no-c-format
-msgid "In the appearing dialog, specify the correct <guimenu>Domain name</guimenu>. Then specify the services to use for identity data and authentication: Select <guimenu>Microsoft Active Directory</guimenu> for both."
+msgid "In the appearing dialog, specify the correct <guimenu>Domain name</guimenu> . Then specify the services to use for identity data and authentication: Select <guimenu>Microsoft Active Directory</guimenu> for both."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:774
 #, no-c-format
 msgid "Ensure that <guimenu>Enable the domain</guimenu> is activated."
-msgstr ""
-
-#. Tag: para
-#: security_ad_support.xml:777 security_ad_support.xml:971
-#, no-c-format
-msgid "Click <guimenu>OK</guimenu>."
 msgstr ""
 
 #. Tag: para
@@ -752,22 +812,28 @@ msgstr ""
 msgid "If the Local Host Name Does Not Match the Host Name Set on the Domain Controller"
 msgstr ""
 
-#. Tag: remark
-#: security_ad_support.xml:794
+#. Tag: #text
+#: security_ad_support.xml:800
 #, no-c-format
-msgid "FIXME: Do we need \"hostname\" or \"hostname -f\" in the following? As much as I saw from the UI of AD Administrative Center, it identified computers by their simple host name only. - sknorr, 2016-09-14"
+msgid "Find out if the host name of your computer matches what the name your computer is known as to the &ad; Domain Controller. In a terminal, run the command"
 msgstr ""
 
-#. Tag: para
-#: security_ad_support.xml:798
+#. Tag: command
+#: security_ad_support.xml:801
 #, no-c-format
-msgid "Find out if the host name of your computer matches what the name your computer is known as to the &ad; Domain Controller. In a terminal, run the command <command>hostname</command>, then compare its output to the configuration of the &ad; Domain Controller."
+msgid "hostname"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:802
+#, no-c-format
+msgid ", then compare its output to the configuration of the &ad; Domain Controller."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:805
 #, no-c-format
-msgid "If the values differ, specify the host name from the &ad; configuration under <guimenu>AD hostname</guimenu>. Otherwise, leave the appropriate text box empty."
+msgid "If the values differ, specify the host name from the &ad; configuration under <guimenu>AD hostname</guimenu> . Otherwise, leave the appropriate text box empty."
 msgstr ""
 
 #. Tag: title
@@ -782,16 +848,10 @@ msgstr ""
 msgid "Specify the <guimenu>Host names of Active Directory servers</guimenu> that you want to use. If there are multiple Domain Controllers, separate their host names with commas."
 msgstr ""
 
-#. Tag: remark
-#: security_ad_support.xml:822
-#, no-c-format
-msgid "Cache Credentials for Offline Use -> might be helpful for identity data but probably not possible or good for authentication. Right? Treat Users and Groups As Case Sensitive - use case? Read All Entities from Backend Database -- hguo mentioned this, and enabled it but mentioned it was not exactly necessary. - sknorr, 2016-09-14"
-msgstr ""
-
 #. Tag: para
 #: security_ad_support.xml:831
 #, no-c-format
-msgid "To continue, click <guimenu>OK</guimenu>."
+msgid "To continue, click <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -803,25 +863,25 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:841
 #, no-c-format
-msgid "If everything is correct, the following dialog should now show that it has discovered an <guimenu>Active Directory Server</guimenu> but that you are <guimenu>Not yet enrolled</guimenu>."
+msgid "If everything is correct, the following dialog should now show that it has discovered an <guimenu>Active Directory Server</guimenu> but that you are <guimenu>Not yet enrolled</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:846
 #, no-c-format
-msgid "In the dialog, specify the <guimenu>Username</guimenu> and <guimenu>Password</guimenu> of the &ad; administrator account (usually <literal>Administrator</literal>)."
+msgid "In the dialog, specify the <guimenu>Username</guimenu> and <guimenu>Password</guimenu> of the &ad; administrator account (usually <literal>Administrator</literal> )."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:851
 #, no-c-format
-msgid "To make sure that the current domain is enabled for Samba, activate <guimenu>Overwrite Samba configuration to work with this AD</guimenu>."
+msgid "To make sure that the current domain is enabled for Samba, activate <guimenu>Overwrite Samba configuration to work with this AD</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:855
 #, no-c-format
-msgid "To enroll, click <guimenu>OK</guimenu>."
+msgid "To enroll, click <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -833,13 +893,13 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:875
 #, no-c-format
-msgid "You should now see a message confirming that you have enrolled successfully. Finish with <guimenu>OK</guimenu>."
+msgid "You should now see a message confirming that you have enrolled successfully. Finish with <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:883
 #, no-c-format
-msgid "After enrolling, configure the client using the window <guimenu>Manage Domain User Logon</guimenu>."
+msgid "After enrolling, configure the client using the window <guimenu>Manage Domain User Logon</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -848,40 +908,46 @@ msgstr ""
 msgid "Configuration Window of <guimenu>User Logon Management</guimenu>"
 msgstr ""
 
+#. Tag: textobject
+#: security_ad_support.xml:896
+#, no-c-format
+msgid "<phrase/>"
+msgstr ""
+
 #. Tag: para
 #: security_ad_support.xml:903
 #, no-c-format
-msgid "To allow logging in to the computer using login data provided by &ad;, activate <guimenu>Allow Domain User Logon</guimenu>."
+msgid "To allow logging in to the computer using login data provided by &ad;, activate <guimenu>Allow Domain User Logon</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:909
 #, no-c-format
-msgid "Optionally, under <guimenu>Enable domain data source</guimenu>, activate additional data sources such as information on which users are allowed to use <command>sudo</command> or which network drives are available."
+msgid "Optionally, under <guimenu>Enable domain data source</guimenu> , activate additional data sources such as information on which users are allowed to use <command>sudo</command> or which network drives are available."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:917
 #, no-c-format
-msgid "To allow &ad; users to have home directories, activate <guimenu>Create Home Directories</guimenu>. The path for home directories can be set in multiple ways&mdash;on the client, on the server, or both ways:"
+msgid "To allow &ad; users to have home directories, activate <guimenu>Create Home Directories</guimenu> . The path for home directories can be set in multiple ways&mdash;on the client, on the server, or both ways:"
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:925
 #, no-c-format
-msgid "To configure the home directory paths on the Domain Controller, set an appropriate value for the attribute <literal>UnixHomeDirectory</literal> for each user. Additionally, make sure that this attribute replicated to the global catalog. For information on achieving that under Windows, see <link xlink:href=\"https://support.microsoft.com/en-us/kb/248717\"></link>."
+msgid "To configure the home directory paths on the Domain Controller, set an appropriate value for the attribute <literal>UnixHomeDirectory</literal> for each user. Additionally, make sure that this attribute replicated to the global catalog. For information on achieving that under Windows, see <link xlink:href=\"https://support.microsoft.com/en-us/kb/248717\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:935
 #, no-c-format
-msgid "To configure home directory paths on the client in such a way that precedence will be given to the path set on the domain controller, use the option <literal>fallback_homedir</literal>."
+msgid "To configure home directory paths on the client in such a way that precedence will be given to the path set on the domain controller, use the option <literal>fallback_homedir</literal> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:942
 #, no-c-format
-msgid "To configure home directory paths on the client in such a way that the client setting will override the server setting, use <literal>override_homedir</literal>."
+msgid "To configure home directory paths on the client in such a way that the client setting will override the server setting, use <literal>override_homedir</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -893,19 +959,85 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:954
 #, no-c-format
-msgid "From the side bar, select <menuchoice><guimenu>Service Options</guimenu> <guimenu>Name switch</guimenu></menuchoice>, then click <guimenu>Extended Options</guimenu>. From that window, select either <literal>fallback_homedir</literal> or <literal>override_homedir</literal>, then click <guimenu>Add</guimenu>."
+msgid "From the side bar, select <menuchoice><guimenu>Service Options</guimenu> <guimenu>Name switch</guimenu></menuchoice> , then click <guimenu>Extended Options</guimenu> . From that window, select either <literal>fallback_homedir</literal> or <literal>override_homedir</literal> , then click <guimenu>Add</guimenu> ."
+msgstr ""
+
+#. Tag: filename
+#: security_ad_support.xml:964
+#, no-c-format
+msgid "/home/ <replaceable>USER_NAME</replaceable>"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:964
+#, no-c-format
+msgid "Specify a value. To have home directories follow the format"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:965
+#, no-c-format
+msgid ", use"
+msgstr ""
+
+#. Tag: literal
+#: security_ad_support.xml:965
+#, no-c-format
+msgid "/home/%u"
+msgstr ""
+
+#. Tag: command
+#: security_ad_support.xml:967
+#, no-c-format
+msgid "man 5 sssd.conf"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:967
+#, no-c-format
+msgid "("
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:967
+#, no-c-format
+msgid ". For more information about possible variables, see the man page"
+msgstr ""
+
+#. Tag: literal
+#: security_ad_support.xml:967
+#, no-c-format
+msgid "sssd.conf"
+msgstr ""
+
+#. Tag: citetitle
+#: security_ad_support.xml:969
+#, no-c-format
+msgid "override_homedir"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:969
+#, no-c-format
+msgid "), section"
+msgstr ""
+
+#. Tag: #text
+#: security_ad_support.xml:970
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: para
-#: security_ad_support.xml:962
+#: security_ad_support.xml:971
 #, no-c-format
-msgid "Specify a value. To have home directories follow the format <filename>/home/<replaceable>USER_NAME</replaceable></filename>, use <literal>/home/%u</literal>. For more information about possible variables, see the man page <literal>sssd.conf</literal> (<command>man 5 sssd.conf</command>), section <citetitle>override_homedir</citetitle>."
+msgid "Click <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:978
 #, no-c-format
-msgid "Save the changes by clicking <guimenu>OK</guimenu>. Then make sure that the values displayed now are correct. To leave the dialog, click <guimenu>Cancel</guimenu>."
+msgid "Save the changes by clicking <guimenu>OK</guimenu> . Then make sure that the values displayed now are correct. To leave the dialog, click <guimenu>Cancel</guimenu> ."
 msgstr ""
 
 #. Tag: title
@@ -935,13 +1067,13 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1008
 #, no-c-format
-msgid "Start <menuchoice> <guimenu>Network Services</guimenu> <guimenu>Windows Domain Membership</guimenu> </menuchoice>."
+msgid "Start <menuchoice> <guimenu>Network Services</guimenu> <guimenu>Windows Domain Membership</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:1014
 #, no-c-format
-msgid "Enter the domain to join at <guimenu>Domain or Workgroup</guimenu> in the <guimenu>Windows Domain Membership</guimenu> screen (see <xref linkend=\"fig.ad.smbclient\"/>). If the DNS settings on your host are properly integrated with the Windows DNS server, enter the &ad; domain name in its DNS format (<literal>mydomain.mycompany.com</literal>). If you enter the short name of your domain (also known as the pre&ndash;Windows 2000 domain name), &yast; must rely on NetBIOS name resolution instead of DNS to find the correct domain controller."
+msgid "Enter the domain to join at <guimenu>Domain or Workgroup</guimenu> in the <guimenu>Windows Domain Membership</guimenu> screen (see <xref linkend=\"fig.ad.smbclient\"/> ). If the DNS settings on your host are properly integrated with the Windows DNS server, enter the &ad; domain name in its DNS format ( <literal>mydomain.mycompany.com</literal> ). If you enter the short name of your domain (also known as the pre&ndash;Windows 2000 domain name), &yast; must rely on NetBIOS name resolution instead of DNS to find the correct domain controller. <!-- 2010-02-05, toba: cannot find the Browse button in SLES 11 SP1, commenting out... To select from a list of available domains instead, use <guimenu>Browse</guimenu> to list the NetBIOS domains then select the desired domain. -->"
 msgstr ""
 
 #. Tag: title
@@ -953,13 +1085,13 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1046
 #, no-c-format
-msgid "To use the SMB source for Linux authentication, activate <guimenu>Also Use SMB Information for Linux Authentication</guimenu>."
+msgid "To use the SMB source for Linux authentication, activate <guimenu>Also Use SMB Information for Linux Authentication</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:1052
 #, no-c-format
-msgid "To automatically create a local home directory for &ad; users on the Linux machine, activate <guimenu>Create Home Directory on Login</guimenu>."
+msgid "To automatically create a local home directory for &ad; users on the Linux machine, activate <guimenu>Create Home Directory on Login</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -971,7 +1103,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1066
 #, no-c-format
-msgid "To change the UID and GID ranges for the Samba users and groups, select <guimenu>Expert Settings</guimenu>. Let DHCP retrieve the WINS server only if you need it. This is the case when some machines are resolved only by the WINS system."
+msgid "To change the UID and GID ranges for the Samba users and groups, select <guimenu>Expert Settings</guimenu> . Let DHCP retrieve the WINS server only if you need it. This is the case when some machines are resolved only by the WINS system."
 msgstr ""
 
 #. Tag: para
@@ -989,7 +1121,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1089
 #, no-c-format
-msgid "Provide the password for the Windows administrator on the &ad; server and click <guimenu>OK</guimenu> (see <xref linkend=\"fig.ad.join1\"/>)."
+msgid "Provide the password for the Windows administrator on the &ad; server and click <guimenu>OK</guimenu> (see <xref linkend=\"fig.ad.join1\"/> )."
 msgstr ""
 
 #. Tag: title
@@ -1013,7 +1145,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1114
 #, no-c-format
-msgid "Joining a domain may not succeed if the domain name ends with <literal>.local</literal>. Names ending in <literal>.local</literal> cause conflicts with Multicast DNS (MDNS) where <literal>.local</literal> is reserved for link-local host names."
+msgid "Joining a domain may not succeed if the domain name ends with <literal>.local</literal> . Names ending in <literal>.local</literal> cause conflicts with Multicast DNS (MDNS) where <literal>.local</literal> is reserved for link-local host names."
 msgstr ""
 
 #. Tag: title
@@ -1025,7 +1157,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1124
 #, no-c-format
-msgid "Only a domain administrator account, such as <literal>Administrator</literal>, can join &productname; into Active Directory."
+msgid "Only a domain administrator account, such as <literal>Administrator</literal> , can join &productname; into Active Directory."
 msgstr ""
 
 #. Tag: title
@@ -1067,7 +1199,7 @@ msgstr ""
 #. Tag: title
 #: security_ad_support.xml:1164
 #, no-c-format
-msgid "<title>Offline Authentication</title>"
+msgid "Offline Authentication"
 msgstr ""
 
 #. Tag: para
@@ -1079,7 +1211,7 @@ msgstr ""
 #. Tag: title
 #: security_ad_support.xml:1173
 #, no-c-format
-msgid "<title>GDM</title>"
+msgid "GDM"
 msgstr ""
 
 #. Tag: para
@@ -1091,13 +1223,13 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1180
 #, no-c-format
-msgid "Click <guimenu>Not listed</guimenu>."
+msgid "Click <guimenu>Not listed</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:1185
 #, no-c-format
-msgid "In the text box <guimenu>Username</guimenu>, enter the domain name and the Windows user name in this form: <literal><replaceable>DOMAIN_NAME</replaceable>\\<replaceable>USER_NAME</replaceable></literal>."
+msgid "In the text box <guimenu>Username</guimenu> , enter the domain name and the Windows user name in this form: <literal><replaceable>DOMAIN_NAME</replaceable>\\<replaceable>USER_NAME</replaceable></literal> ."
 msgstr ""
 
 #. Tag: para
@@ -1211,7 +1343,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1287
 #, no-c-format
-msgid "To change your Windows password, you can use the standard Linux utility, <command>passwd</command>, instead of having to manipulate this data on the server. To change your Windows password, proceed as follows:"
+msgid "To change your Windows password, you can use the standard Linux utility, <command>passwd</command> , instead of having to manipulate this data on the server. To change your Windows password, proceed as follows:"
 msgstr ""
 
 #. Tag: para
@@ -1223,7 +1355,7 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1300
 #, no-c-format
-msgid "Enter <literal>passwd</literal>."
+msgid "Enter <literal>passwd</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -1259,13 +1391,13 @@ msgstr ""
 #. Tag: para
 #: security_ad_support.xml:1336
 #, no-c-format
-msgid "Select <guimenu>Control Center</guimenu>."
+msgid "Select <guimenu>Control Center</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ad_support.xml:1341
 #, no-c-format
-msgid "From the <guimenu>Personal</guimenu> section, select <menuchoice><guimenu>About Me</guimenu> <guimenu>Change Password</guimenu></menuchoice>."
+msgid "From the <guimenu>Personal</guimenu> section, select <menuchoice><guimenu>About Me</guimenu> <guimenu>Change Password</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -54,7 +54,7 @@ msgid ""
 "and throttling the CPU (T-states). The following sections give a short "
 "introduction to each approach and its significance for power savings. "
 "Detailed specifications can be found at <link xlink:href=\"http://www.acpi."
-"info/spec.htm\"></link>."
+"info/spec.htm\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -68,7 +68,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Modern processors have several power saving modes called <literal>C-states</"
-"literal>. They reflect the capability of an idle processor to turn off "
+"literal> . They reflect the capability of an idle processor to turn off "
 "unused components to save power."
 msgstr ""
 
@@ -81,12 +81,12 @@ msgid ""
 "the C number, the deeper the CPU sleep mode: more components are shut down "
 "to save power. Deeper sleep states can save large amounts of energy. Their "
 "downside is that they introduce latency. This means, it takes more time for "
-"the CPU to go back to <literal>C0</literal>. Depending on workload (threads "
+"the CPU to go back to <literal>C0</literal> . Depending on workload (threads "
 "waking up, triggering CPU usage and then going back to sleep again for a "
 "short period of time) and hardware (for example, interrupt activity of a "
 "network device), disabling the deepest sleep states can significantly "
 "increase overall performance. For details on how to do so, refer to <xref "
-"linkend=\"sec.tuning.power.tools.cpupower.idle-info\"/>."
+"linkend=\"sec.tuning.power.tools.cpupower.idle-info\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -101,7 +101,9 @@ msgstr ""
 #. Tag: para
 #: tuning_power.xml:80
 #, no-c-format
-msgid "gives an overview of the most common C-states."
+msgid ""
+"<xref linkend=\"tab.tuning.power.cstates\"/> gives an overview of the most "
+"common C-states."
 msgstr ""
 
 #. Tag: title
@@ -125,7 +127,7 @@ msgstr ""
 #. Tag: para
 #: tuning_power.xml:104
 #, no-c-format
-msgid "<para>C0</para>"
+msgid "C0"
 msgstr ""
 
 #. Tag: para
@@ -137,7 +139,7 @@ msgstr ""
 #. Tag: para
 #: tuning_power.xml:116
 #, no-c-format
-msgid "<para>C1</para>"
+msgid "C1"
 msgstr ""
 
 #. Tag: para
@@ -151,7 +153,7 @@ msgstr ""
 #. Tag: para
 #: tuning_power.xml:129
 #, no-c-format
-msgid "<para>C2</para>"
+msgid "C2"
 msgstr ""
 
 #. Tag: para
@@ -166,7 +168,7 @@ msgstr ""
 #. Tag: para
 #: tuning_power.xml:143
 #, no-c-format
-msgid "<para>C3</para>"
+msgid "C3"
 msgstr ""
 
 #. Tag: para
@@ -201,7 +203,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "While a processor operates (in C0 state), it can be in one of several CPU "
-"performance states <literal>(P-states)</literal>. Whereas C-states are idle "
+"performance states <literal>(P-states)</literal> . Whereas C-states are idle "
 "states (all but C0), <literal>P-states</literal> are operational states that "
 "relate to CPU frequency and voltage."
 msgstr ""
@@ -214,14 +216,14 @@ msgid ""
 "processor runs. The number of P-states is processor-specific and the "
 "implementation differs across the various types. However, <literal>P0</"
 "literal> is always the highest-performance state (except for <xref linkend="
-"\"sec.tuning.cpu.power.turbo\"/>). Higher P-state numbers represent slower "
+"\"sec.tuning.cpu.power.turbo\"/> ). Higher P-state numbers represent slower "
 "processor speeds and lower power consumption. For example, a processor in "
 "<literal>P3</literal> state runs more slowly and uses less power than a "
 "processor running in the <literal>P1</literal> state. To operate at any P-"
 "state, the processor must be in the <literal>C0</literal> state, which means "
 "that it is working and not idling. The CPU P-states are also defined in the "
-"ACPI specification, see <link xlink:href=\"http://www.acpi.info/spec.htm\"></"
-"link>."
+"ACPI specification, see <link xlink:href=\"http://www.acpi.info/spec.htm\"/"
+"> ."
 msgstr ""
 
 #. Tag: para
@@ -252,7 +254,7 @@ msgstr ""
 msgid ""
 "However, the conditions under which a CPU core can use turbo frequencies are "
 "architecture-specific. Learn how to evaluate the efficiency of those new "
-"features in <xref linkend=\"sec.tuning.power.tools.cpupower\"/>."
+"features in <xref linkend=\"sec.tuning.power.tools.cpupower\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -297,7 +299,7 @@ msgstr ""
 #. Tag: para
 #: tuning_power.xml:276
 #, no-c-format
-msgid "See also <xref linkend=\"sec.tuning.power.options.p-states\"/>."
+msgid "See also <xref linkend=\"sec.tuning.power.options.p-states\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -400,10 +402,10 @@ msgstr ""
 msgid ""
 "After installing the <systemitem class=\"resource\">cpupower</systemitem> "
 "package, view the available <command>cpupower</command> subcommands with "
-"<command>cpupower&nbsp;--help</command>. Access the general man page with "
-"<command>man&nbsp;cpupower</command>, and the man pages of the subcommands "
+"<command>cpupower&nbsp;--help</command> . Access the general man page with "
+"<command>man&nbsp;cpupower</command> , and the man pages of the subcommands "
 "with <command>man&nbsp;cpupower-<replaceable>SUBCOMMAND</replaceable></"
-"command>."
+"command> ."
 msgstr ""
 
 #. Tag: title
@@ -454,21 +456,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:398
+#: tuning_power.xml:416
 #, no-c-format
 msgid ""
 "To get the current values for all CPUs, use <command>cpupower&nbsp;-c&nbsp;"
-"all&nbsp;frequency-info</command>."
+"all&nbsp;frequency-info</command> ."
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:404
+#: tuning_power.xml:422
 #, no-c-format
 msgid "Viewing Kernel Idle Statistics with <command>cpupower</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:405
+#: tuning_power.xml:423
 #, no-c-format
 msgid ""
 "The <command>idle-info</command> subcommand shows the statistics of the "
@@ -477,13 +479,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:411
+#: tuning_power.xml:429
 #, no-c-format
 msgid "Example Output of <command>cpupower idle-info</command>"
 msgstr ""
 
 #. Tag: screen
-#: tuning_power.xml:412
+#: tuning_power.xml:430
 #, no-c-format
 msgid ""
 "&prompt.root;cpupower idle-info\n"
@@ -526,59 +528,59 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:414
+#: tuning_power.xml:468
 #, no-c-format
 msgid ""
 "After finding out which processor idle states are supported with "
-"<command>cpupower idle-info</command>, individual states can be disabled "
+"<command>cpupower idle-info</command> , individual states can be disabled "
 "using the <command>cpupower idle-set</command> command. Typically one wants "
 "to disable the deepest sleep state, for example:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_power.xml:420
+#: tuning_power.xml:474
 #, no-c-format
 msgid "&prompt.root;cpupower idle-set -d 5"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:422
+#: tuning_power.xml:476
 #, no-c-format
 msgid ""
 "Or, for disabling all CPUs with latencies equal to or higher than "
-"<literal>80</literal>:"
+"<literal>80</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: tuning_power.xml:423
+#: tuning_power.xml:477
 #, no-c-format
 msgid "&prompt.root;cpupower idle-set -D 80"
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:433
+#: tuning_power.xml:487
 #, no-c-format
 msgid ""
 "Monitoring Kernel and Hardware Statistics with <command>cpupower</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:434
+#: tuning_power.xml:488
 #, no-c-format
 msgid ""
 "Use the <command>monitor</command> subcommand to report processor topology, "
 "and monitor frequency and idle power state statistics over a certain period "
 "of time. The default interval is <literal>1</literal> second, but it can be "
-"changed with the <option>-i</option>. Independent processor sleep states and "
-"frequency counters are implemented in the tool&mdash;some retrieved from "
+"changed with the <option>-i</option> . Independent processor sleep states "
+"and frequency counters are implemented in the tool&mdash;some retrieved from "
 "kernel statistics, others reading out hardware registers. The available "
 "monitors depend on the underlying hardware and the system. List them with "
-"<command>cpupower&nbsp;monitor&nbsp;-l</command>. For a description of the "
+"<command>cpupower&nbsp;monitor&nbsp;-l</command> . For a description of the "
 "individual monitors, refer to the cpupower-monitor man page."
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:446
+#: tuning_power.xml:500
 #, no-c-format
 msgid ""
 "The <command>monitor</command> subcommand allows you to execute performance "
@@ -587,47 +589,48 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_power.xml:451
+#: tuning_power.xml:505
 #, no-c-format
 msgid "<command>cpupower</command> <option>monitor</option> db_test.sh"
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:453
+#: tuning_power.xml:507
 #, no-c-format
 msgid "Example <command>cpupower monitor</command> Output"
 msgstr ""
 
-#. Tag: screen
-#: tuning_power.xml:454
+#. Tag: #text
+#: tuning_power.xml:508
+#, no-c-format
+msgid "&prompt.root;cpupower monitor|Mperf || Idle_Stats"
+msgstr ""
+
+#. Tag: #text
+#: tuning_power.xml:510
 #, no-c-format
 msgid ""
-"&prompt.root;cpupower monitor\n"
-"|Mperf                   || Idle_Stats\n"
-" <co xml:id=\"co.cpupower.mon.mperf\"/>&nbsp;                        <co xml:"
-"id=\"co.cpupower.mon.idle\"/>&nbsp;\n"
-"CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3\n"
-"   0|  3.71| 96.29|  2833||  0.00|  0.00|  0.02| 96.32\n"
-"   1| 100.0| -0.00|  2833||  0.00|  0.00|  0.00|  0.00\n"
-"   2|  9.06| 90.94|  1983||  0.00|  7.69|  6.98| 76.45\n"
-"   3|  7.43| 92.57|  2039||  0.00|  2.60| 12.62| 77.52"
+"&nbsp;CPU | C0 | Cx | Freq || POLL | C1 | C2 | C3 0| 3.71| 96.29| 2833|| "
+"0.00| 0.00| 0.02| 96.32 1| 100.0| -0.00| 2833|| 0.00| 0.00| 0.00| 0.00 2| "
+"9.06| 90.94| 1983|| 0.00| 7.69| 6.98| 76.45 3| 7.43| 92.57| 2039|| 0.00| "
+"2.60| 12.62| 77.52"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:457
+#: tuning_power.xml:519
 #, no-c-format
 msgid ""
 "Mperf shows the average frequency of a CPU, including boost frequencies, "
 "over time. Additionally, it shows the percentage of time the CPU has been "
-"active (<literal>C0</literal>) or in any sleep state (<literal>Cx</"
-"literal>). As the turbo states are managed by the BIOS, it is impossible to "
+"active ( <literal>C0</literal> ) or in any sleep state ( <literal>Cx</"
+"literal> ). As the turbo states are managed by the BIOS, it is impossible to "
 "get the frequency values at a given instant. On modern processors with turbo "
 "features the Mperf monitor is the only way to find out about the frequency a "
 "certain CPU has been running in."
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:469
+#: tuning_power.xml:531
 #, no-c-format
 msgid ""
 "Idle_Stats shows the statistics of the cpuidle kernel subsystem. The kernel "
@@ -637,7 +640,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:477
+#: tuning_power.xml:539
 #, no-c-format
 msgid ""
 "Apart from the (general) monitors in the example above, other architecture-"
@@ -646,7 +649,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:484
+#: tuning_power.xml:546
 #, no-c-format
 msgid ""
 "By comparing the values of the individual monitors, you can find "
@@ -660,13 +663,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:497
+#: tuning_power.xml:559
 #, no-c-format
 msgid "Modifying Current Settings with <command>cpupower</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:498
+#: tuning_power.xml:560
 #, no-c-format
 msgid ""
 "You can use <command>cpupower&nbsp;frequency-set</command> command as "
@@ -677,17 +680,17 @@ msgid ""
 "to use a consistent policy across all processors without adjusting the "
 "settings for each processor individually. For more details and the available "
 "options, see the man page <literal>cpupower-frequency-set</literal> or run "
-"<command>cpupower&nbsp;frequency-set</command> <option>--help</option>."
+"<command>cpupower&nbsp;frequency-set</command> <option>--help</option> ."
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:516
+#: tuning_power.xml:578
 #, no-c-format
 msgid "Monitoring Power Consumption with &powertop;"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:517
+#: tuning_power.xml:579
 #, no-c-format
 msgid ""
 "You can monitor system power consumption with &powertop;. It helps you to "
@@ -700,17 +703,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:526
+#: tuning_power.xml:588
 #, no-c-format
 msgid ""
 "The SDK is a module for &sle; and is available via an online channel from "
 "the &scc;. Alternatively, go to <link xlink:href=\"http://download.suse.com/"
-"\"></link>, search for <literal>&sle; Software Development Kit</literal> and "
+"\"/> , search for <literal>&sle; Software Development Kit</literal> and "
 "download it from there. Refer to <xref linkend=\"cha.add-ons\"/> for details."
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:532
+#: tuning_power.xml:595
 #, no-c-format
 msgid ""
 "&powertop; combines various sources of information (analysis of programs, "
@@ -721,60 +724,81 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:540
+#: tuning_power.xml:603
 #, no-c-format
 msgid "Example &powertop; Output"
 msgstr ""
 
-#. Tag: screen
-#: tuning_power.xml:541
+#. Tag: #text
+#: tuning_power.xml:605
+#, no-c-format
+msgid "Cn Avg residency P-states (frequencies)"
+msgstr ""
+
+#. Tag: #text
+#: tuning_power.xml:605
+#, no-c-format
+msgid "&nbsp;"
+msgstr ""
+
+#. Tag: #text
+#: tuning_power.xml:612
 #, no-c-format
 msgid ""
-"Cn               Avg  residency       P-states   (frequencies)\n"
-"<co xml:id=\"co.powertop.cstates\"/>&nbsp;                <co xml:id=\"co."
-"powertop.avg\"/>&nbsp;     <co xml:id=\"co.powertop.residency\"/"
-">&nbsp;             <co xml:id=\"co.powertop.pstates\"/>&nbsp;           <co "
-"xml:id=\"co.powertop.freq\"/>\n"
-"C0 (cpu running)        (11.6%)       2.00 Ghz       0.1%\n"
-"polling         0.0ms   ( 0.0%)       2.00 Ghz       0.0%\n"
-"C1              4.4ms   (57.3%)       1.87 Ghz       0.0%\n"
-"C2             10.0ms   (31.1%)       1064 Mhz      99.9%\n"
-"\n"
-"\n"
-"Wakeups-from-idle per second : 11.2     interval: 5.0s <co xml:id=\"co."
-"powertop.wakeups\"/>\n"
-"no ACPI power usage estimate available <co xml:id=\"co.powertop.power\"/>\n"
-"<?dbsuse-fo font-size=\"0.7em\"?>\n"
-"Top causes for wakeups: <co xml:id=\"co.powertop.culprits\"/>\n"
-"96.2% (826.0)       &lt;interrupt&gt; : extra timer interrupt\n"
-" 0.9% (  8.0)     &lt;kernel core&gt; : usb_hcd_poll_rh_status "
-"(rh_timer_func)\n"
-" 0.3% (  2.4)       &lt;interrupt&gt; : megasas\n"
-" 0.2% (  2.0)     &lt;kernel core&gt; : clocksource_watchdog "
-"(clocksource_watchdog)\n"
-" 0.2% (  1.6)       &lt;interrupt&gt; : eth1-TxRx-0\n"
-" 0.1% (  1.0)       &lt;interrupt&gt; : eth1-TxRx-4\n"
-"\n"
-"[...]\n"
-"\n"
-"Suggestion: <co xml:id=\"co.powertop.suggestions\"/> Enable SATA ALPM link "
-"power management via:\n"
-"echo min_power &gt; /sys/class/scsi_host/host0/link_power_management_policy\n"
-"or press the S key."
+"C0 (cpu running) (11.6%) 2.00 Ghz 0.1%polling 0.0ms ( 0.0%) 2.00 Ghz 0.0%C1 "
+"4.4ms (57.3%) 1.87 Ghz 0.0%C2 10.0ms (31.1%) 1064 Mhz 99.9%Wakeups-from-idle "
+"per second : 11.2 interval: 5.0s"
+msgstr ""
+
+#. Tag: #text
+#: tuning_power.xml:613
+#, no-c-format
+msgid "no ACPI power usage estimate available"
+msgstr ""
+
+#. Tag: dbsuse-fo
+#: tuning_power.xml:614
+#, no-c-format
+msgid "<?dbsuse-fo font-size=\"0.7em\"?>"
+msgstr ""
+
+#. Tag: #text
+#: tuning_power.xml:615
+#, no-c-format
+msgid "Top causes for wakeups:"
+msgstr ""
+
+#. Tag: #text
+#: tuning_power.xml:616
+#, no-c-format
+msgid ""
+"96.2% (826.0) &lt;interrupt&gt; : extra timer interrupt 0.9% ( 8.0) &lt;"
+"kernel core&gt; : usb_hcd_poll_rh_status (rh_timer_func) 0.3% ( 2.4) &lt;"
+"interrupt&gt; : megasas 0.2% ( 2.0) &lt;kernel core&gt; : "
+"clocksource_watchdog (clocksource_watchdog) 0.2% ( 1.6) &lt;interrupt&gt; : "
+"eth1-TxRx-0 0.1% ( 1.0) &lt;interrupt&gt; : eth1-TxRx-4[...]Suggestion:"
+msgstr ""
+
+#. Tag: #text
+#: tuning_power.xml:626
+#, no-c-format
+msgid ""
+"Enable SATA ALPM link power management via:echo min_power &gt; /sys/class/"
+"scsi_host/host0/link_power_management_policyor press the S key."
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:544
+#: tuning_power.xml:630
 #, no-c-format
 msgid ""
 "The column shows the C-states. When working, the CPU is in state <literal>0</"
-"literal>, when resting it is in some state greater than <literal>0</"
-"literal>, depending on which C-states are available and how deep the CPU is "
+"literal> , when resting it is in some state greater than <literal>0</"
+"literal> , depending on which C-states are available and how deep the CPU is "
 "sleeping."
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:552
+#: tuning_power.xml:638
 #, no-c-format
 msgid ""
 "The column shows average time in milliseconds spent in the particular C-"
@@ -782,7 +806,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:558
+#: tuning_power.xml:644
 #, no-c-format
 msgid ""
 "The column shows the percentages of time spent in various C-states. For "
@@ -792,7 +816,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:566
+#: tuning_power.xml:652
 #, no-c-format
 msgid ""
 "The column shows the frequencies the processor and kernel driver support on "
@@ -800,7 +824,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:572
+#: tuning_power.xml:658
 #, no-c-format
 msgid ""
 "The column shows the amount of time the CPU cores stayed in different "
@@ -808,7 +832,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:578
+#: tuning_power.xml:664
 #, no-c-format
 msgid ""
 "Shows how often the CPU is awoken per second (number of interrupts). The "
@@ -818,7 +842,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:587
+#: tuning_power.xml:673
 #, no-c-format
 msgid ""
 "When running &powertop; on a laptop, this line displays the ACPI information "
@@ -827,7 +851,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:595
+#: tuning_power.xml:681
 #, no-c-format
 msgid ""
 "Shows what is causing the system to be more active than needed. &powertop; "
@@ -835,39 +859,39 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:602
+#: tuning_power.xml:688
 #, no-c-format
 msgid "Suggestions on how to improve power usage for this machine."
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:608
+#: tuning_power.xml:694
 #, no-c-format
 msgid ""
 "For more information, refer to the &powertop; project page at <link xlink:"
-"href=\"https://01.org/powertop\"></link>."
+"href=\"https://01.org/powertop\"/> ."
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:615
+#: tuning_power.xml:701
 #, no-c-format
 msgid "Special Tuning Options"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:617
+#: tuning_power.xml:703
 #, no-c-format
 msgid "The following sections highlight important settings."
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:622
+#: tuning_power.xml:708
 #, no-c-format
 msgid "Tuning Options for P-States"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:623
+#: tuning_power.xml:709
 #, no-c-format
 msgid ""
 "The &cpufreq; subsystem offers several tuning options for P-states: You can "
@@ -876,7 +900,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:629
+#: tuning_power.xml:715
 #, no-c-format
 msgid ""
 "To switch to another governor at runtime, use <command>cpupower&nbsp;"
@@ -886,13 +910,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_power.xml:635
+#: tuning_power.xml:721
 #, no-c-format
 msgid "&prompt.root;cpupower frequency-set -g performance"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:636
+#: tuning_power.xml:722
 #, no-c-format
 msgid ""
 "To set values for the minimum or maximum CPU frequency the governor may "
@@ -901,25 +925,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:731
+#: tuning_power.xml:817
 #, no-c-format
 msgid "Troubleshooting"
 msgstr ""
 
 #. Tag: term
-#: tuning_power.xml:735
+#: tuning_power.xml:821
 #, no-c-format
 msgid "BIOS options enabled?"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:737
+#: tuning_power.xml:823
 #, no-c-format
 msgid "To use C-states or P-states, check your BIOS options:"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:742
+#: tuning_power.xml:828
 #, no-c-format
 msgid ""
 "To use C-states, make sure to enable <literal>CPU C State</literal> or "
@@ -927,7 +951,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:748
+#: tuning_power.xml:834
 #, no-c-format
 msgid ""
 "To use P-states and the &cpufreq; governors, make sure to enable "
@@ -935,7 +959,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:754
+#: tuning_power.xml:840
 #, no-c-format
 msgid ""
 "Even if P-states and C-states are available, it is possible that the "
@@ -948,7 +972,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:767
+#: tuning_power.xml:853
 #, no-c-format
 msgid ""
 "In case of a CPU upgrade, make sure to upgrade your BIOS, too. The BIOS "
@@ -957,22 +981,22 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: tuning_power.xml:775
+#: tuning_power.xml:861
 #, no-c-format
 msgid "Log file information?"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:777
+#: tuning_power.xml:863
 #, no-c-format
 msgid ""
-"Check the &systemd; journal (see <xref linkend=\"cha.journalctl\"/>) for any "
-"output regarding the &cpufreq; subsystem. Only severe errors are reported "
-"there."
+"Check the &systemd; journal (see <xref linkend=\"cha.journalctl\"/> ) for "
+"any output regarding the &cpufreq; subsystem. Only severe errors are "
+"reported there."
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:782
+#: tuning_power.xml:868
 #, no-c-format
 msgid ""
 "If you suspect problems with the &cpufreq; subsystem on your machine, you "
@@ -982,13 +1006,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_power.xml:788
+#: tuning_power.xml:874
 #, no-c-format
 msgid "&prompt.root;echo 7 &gt; /sys/module/cpufreq/parameters/debug"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:789
+#: tuning_power.xml:875
 #, no-c-format
 msgid ""
 "This will cause &cpufreq; to log more information to <command>dmesg</"
@@ -998,25 +1022,31 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_power.xml:802
+#: tuning_power.xml:888
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:804
+#: tuning_power.xml:890
 #, no-c-format
 msgid ""
 "Platforms with a Baseboard Management Controller (BMC) may have additional "
 "power management configuration options accessible via the service processor. "
 "These configurations are vendor specific and therefore not subject of this "
-"guide. For more information, refer to the manuals provided by your vendor."
+"guide. For more information, refer to the manuals provided by your vendor. "
+"<!-- For example, <citetitle>HP ProLiant Server Power Management on SUSE "
+"Linux Enterprise Server 11&mdash;Integration Note </citetitle> provides "
+"detailed information how the HP platform specific power management features "
+"interact with the Linux kernel. The paper is available from <link xlink:href="
+"\"http://h18004.www1.hp.com/products/servers/technology/whitepapers/os-"
+"techwp.html\"/>. -->"
 msgstr ""
 
 #. Tag: para
-#: tuning_power.xml:815
+#: tuning_power.xml:902
 #, no-c-format
 msgid ""
 "For more information about &powertop;, refer to <link xlink:href="
-"\"https://01.org/powertop\"></link>."
+"\"https://01.org/powertop\"/> ."
 msgstr ""

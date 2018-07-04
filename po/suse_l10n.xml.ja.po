@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,10 +22,10 @@ msgstr ""
 msgid "Language and Country-Specific Settings"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: suse_l10n.xml:12
+#. Tag: dm:translation
+#: suse_l10n.xml:14
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -33,8 +33,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "The system is, to a very large extent, internationalized and can be modified "
-"for local needs. Internationalization (<emphasis>I18N</emphasis>) allows "
-"specific localization (<emphasis>L10N</emphasis>). The abbreviations I18N "
+"for local needs. Internationalization ( <emphasis>I18N</emphasis> ) allows "
+"specific localization ( <emphasis>L10N</emphasis> ). The abbreviations I18N "
 "and L10N are derived from the first and last letters of the words and, in "
 "between, the number of letters omitted."
 msgstr ""
@@ -44,12 +44,12 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Settings are made with <systemitem>LC_</systemitem> variables defined in the "
-"file <filename>/etc/sysconfig/language</filename>. This refers not only to "
-"<emphasis>native language support</emphasis>, but also to the categories "
+"file <filename>/etc/sysconfig/language</filename> . This refers not only to "
+"<emphasis>native language support</emphasis> , but also to the categories "
 "<emphasis>Messages</emphasis> (Language), <emphasis>Character Set</"
-"emphasis>, <emphasis>Sort Order</emphasis>, <emphasis>Time and Date</"
-"emphasis>, <emphasis>Numbers</emphasis> and <emphasis>Money</emphasis>. Each "
-"of these categories can be defined directly with its own variable or "
+"emphasis> , <emphasis>Sort Order</emphasis> , <emphasis>Time and Date</"
+"emphasis> , <emphasis>Numbers</emphasis> and <emphasis>Money</emphasis> . "
+"Each of these categories can be defined directly with its own variable or "
 "indirectly with a master variable in the file <filename>language</filename> "
 "(see the <command>locale</command> man page)."
 msgstr ""
@@ -58,10 +58,10 @@ msgstr ""
 #: suse_l10n.xml:40
 #, no-c-format
 msgid ""
-"<systemitem>RC_LC_MESSAGES</systemitem>, <systemitem>RC_LC_CTYPE</"
-"systemitem>, <systemitem>RC_LC_COLLATE</systemitem>, <systemitem>RC_LC_TIME</"
-"systemitem>, <systemitem>RC_LC_NUMERIC</systemitem>, "
-"<systemitem>RC_LC_MONETARY</systemitem>"
+"<systemitem>RC_LC_MESSAGES</systemitem> , <systemitem>RC_LC_CTYPE</"
+"systemitem> , <systemitem>RC_LC_COLLATE</systemitem> , "
+"<systemitem>RC_LC_TIME</systemitem> , <systemitem>RC_LC_NUMERIC</"
+"systemitem> , <systemitem>RC_LC_MONETARY</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -71,13 +71,13 @@ msgid ""
 "These variables are passed to the shell without the <systemitem>RC_</"
 "systemitem> prefix and represent the listed categories. The shell profiles "
 "concerned are listed below. The current setting can be shown with the "
-"command <command>locale</command>."
+"command <command>locale</command> ."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: suse_l10n.xml:57
 #, no-c-format
-msgid "RC_LC_ALL"
+msgid "<systemitem>RC_LC_ALL</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -88,10 +88,10 @@ msgid ""
 "mentioned."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: suse_l10n.xml:67
 #, no-c-format
-msgid "RC_LANG"
+msgid "<systemitem>RC_LANG</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -103,10 +103,10 @@ msgid ""
 "to enter their own values."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: suse_l10n.xml:78
 #, no-c-format
-msgid "ROOT_USES_LANG"
+msgid "<systemitem>ROOT_USES_LANG</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -114,7 +114,7 @@ msgstr ""
 #, no-c-format
 msgid ""
 "A <literal>yes</literal> or <literal>no</literal> variable. If set to "
-"<literal>no</literal>, <systemitem class=\"username\">root</systemitem> "
+"<literal>no</literal> , <systemitem class=\"username\">root</systemitem> "
 "always works in the POSIX environment."
 msgstr ""
 
@@ -131,62 +131,65 @@ msgstr ""
 #: suse_l10n.xml:96
 #, no-c-format
 msgid ""
-"LANG=&lt;language&gt;[[_&lt;COUNTRY&gt;].&lt;Encoding&gt;[@&lt;Modifier&gt;]]"
+"\n"
+"  LANG=&lt;language&gt;[[_&lt;COUNTRY&gt;].&lt;Encoding&gt;[@&lt;"
+"Modifier&gt;]]\n"
 msgstr ""
 
 #. Tag: title
-#: suse_l10n.xml:99
+#: suse_l10n.xml:101
 #, no-c-format
 msgid "Some Examples"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:100
+#: suse_l10n.xml:102
 #, no-c-format
 msgid ""
 "You should always set the language and country codes together. Language "
 "settings follow the standard ISO&nbsp;639 available at <link xlink:href="
-"\"http://www.evertype.com/standards/iso639/iso639-en.html\"></link> and "
-"<link xlink:href=\"http://www.loc.gov/standards/iso639-2/\"></link>. Country "
-"codes are listed in ISO&nbsp;3166, see <link xlink:href=\"http://en."
-"wikipedia.org/wiki/ISO_3166\"></link>."
+"\"http://www.evertype.com/standards/iso639/iso639-en.html\"/> and <link "
+"xlink:href=\"http://www.loc.gov/standards/iso639-2/\"/> . Country codes are "
+"listed in ISO&nbsp;3166, see <link xlink:href=\"http://en.wikipedia.org/wiki/"
+"ISO_3166\"/> . <!--taroth 2013-02-06: the following URL now redirects to a "
+"generic site on which the ISO standard can be bought, but not really be "
+"accessed--> <!--<ulink url=\"http://www.din.de/gremien/nas/nabd/iso3166ma/"
+"codlstp1/en_listp1.html\"/>.-->"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:111
+#: suse_l10n.xml:113
 #, no-c-format
 msgid ""
 "It only makes sense to set values for which usable description files can be "
-"found in <filename>/usr/lib/locale</filename>. Additional description files "
+"found in <filename>/usr/lib/locale</filename> . Additional description files "
 "can be created from the files in <filename>/usr/share/i18n</filename> using "
-"the command <command>localedef</command>. The description files are part of "
+"the command <command>localedef</command> . The description files are part of "
 "the <systemitem>glibc-i18ndata</systemitem> package. A description file for "
 "<literal>en_US.UTF-8</literal> (for English and United States) can be "
 "created with:"
 msgstr ""
 
-#. Tag: remark
-#: suse_l10n.xml:130
+#. Tag: screen
+#: suse_l10n.xml:134
 #, no-c-format
 msgid ""
-"Change the description file in the previous para and the following screen to "
-"something appropriate for your language."
+"\n"
+"localedef -i en_US -f UTF-8 en_US.UTF-8\n"
 msgstr ""
 
-#. Tag: screen
-#: suse_l10n.xml:132
+#. Tag: term
+#: suse_l10n.xml:139
 #, no-c-format
-msgid "localedef -i en_US -f UTF-8 en_US.UTF-8"
-msgstr ""
-
-#. Tag: systemitem
-#: suse_l10n.xml:142
-#, no-c-format
-msgid "LANG=en_US.UTF-8"
+msgid ""
+"<!--Use for:German: <systemitem>LANG=de_DE.UTF-8</systemitem>French: "
+"<systemitem>LANG=fr_FR.UTF-8</systemitem>Italian: <systemitem>LANG=it_IT."
+"UTF-8</systemitem>Spanish: <systemitem>LANG=es_ES.UTF-8</systemitem>--> "
+"<systemitem>LANG=en_US.UTF-8</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:145
+#: suse_l10n.xml:149
 #, no-c-format
 msgid ""
 "This is the default setting if American English is selected during "
@@ -194,32 +197,37 @@ msgid ""
 "still with UTF-8 as the character encoding."
 msgstr ""
 
-#. Tag: systemitem
-#: suse_l10n.xml:159
+#. Tag: term
+#: suse_l10n.xml:157
 #, no-c-format
-msgid "LANG=en_US.ISO-8859-1"
+msgid ""
+"<!--For German use: <systemitem>LANG=de_DE.ISO-8859-1</systemitem>French: "
+"<systemitem>LANG=fr_FR.ISO-8859-1</systemitem>Italian: "
+"<systemitem>LANG=it_IT.ISO-8859-1</systemitem>Spanish: "
+"<systemitem>LANG=es_ES.ISO-8859-1</systemitem>--> <systemitem>LANG=en_US."
+"ISO-8859-1</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:162
+#: suse_l10n.xml:166
 #, no-c-format
 msgid ""
 "This sets the language to English, country to United States and the "
-"character set to <literal>ISO-8859-1</literal>. This character set does not "
+"character set to <literal>ISO-8859-1</literal> . This character set does not "
 "support the Euro sign, but it can be useful sometimes for programs that have "
-"not been updated to support <literal>UTF-8</literal>. The string defining "
-"the charset (<literal>ISO-8859-1</literal> in this case) is then evaluated "
+"not been updated to support <literal>UTF-8</literal> . The string defining "
+"the charset ( <literal>ISO-8859-1</literal> in this case) is then evaluated "
 "by programs like Emacs."
 msgstr ""
 
-#. Tag: systemitem
-#: suse_l10n.xml:179
+#. Tag: term
+#: suse_l10n.xml:183
 #, no-c-format
-msgid "LANG=en_IE@euro"
+msgid "<systemitem>LANG=en_IE@euro</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:182
+#: suse_l10n.xml:186
 #, no-c-format
 msgid ""
 "The above example explicitly includes the Euro sign in a language setting. "
@@ -228,7 +236,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:191
+#: suse_l10n.xml:195
 #, no-c-format
 msgid ""
 "Changes to <filename>/etc/sysconfig/language</filename> are activated by the "
@@ -236,25 +244,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:197
+#: suse_l10n.xml:201
 #, no-c-format
 msgid ""
 "For the Bash: <filename>/etc/profile</filename> reads <filename>/etc/profile."
 "d/lang.sh</filename> which, in turn, analyzes <filename>/etc/sysconfig/"
-"language</filename>."
+"language</filename> ."
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:204
+#: suse_l10n.xml:208
 #, no-c-format
 msgid ""
 "For tcsh: At login, <filename>/etc/csh.login</filename> reads <filename>/etc/"
 "profile.d/lang.csh</filename> which, in turn, analyzes <filename>/etc/"
-"sysconfig/language</filename>."
+"sysconfig/language</filename> ."
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:211
+#: suse_l10n.xml:215
 #, no-c-format
 msgid ""
 "This ensures that any changes to <filename>/etc/sysconfig/language</"
@@ -263,7 +271,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:217
+#: suse_l10n.xml:221
 #, no-c-format
 msgid ""
 "Users can override the system defaults by editing their <filename>~/.bashrc</"
@@ -274,169 +282,165 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: suse_l10n.xml:227
+#: suse_l10n.xml:231
 #, no-c-format
 msgid "Locale Settings in <filename>~/.i18n</filename>"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:228
+#: suse_l10n.xml:232
 #, no-c-format
 msgid ""
 "If you are not satisfied with locale system defaults, change the settings in "
 "<filename>~/.i18n</filename> according to the Bash scripting syntax. Entries "
 "in <filename>~/.i18n</filename> override system defaults from <filename>/etc/"
-"sysconfig/language</filename>. Use the same variable names but without the "
+"sysconfig/language</filename> . Use the same variable names but without the "
 "<literal>RC_</literal> namespace prefixes. For example, use <literal>LANG</"
-"literal> instead of <literal>RC_LANG</literal>:"
+"literal> instead of <literal>RC_LANG</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: suse_l10n.xml:236
+#: suse_l10n.xml:240
 #, no-c-format
 msgid ""
 "LANG=cs_CZ.UTF-8\n"
-"LC_COLLATE=C"
+"LC_COLLATE=C\n"
 msgstr ""
 
 #. Tag: title
-#: suse_l10n.xml:240
+#: suse_l10n.xml:246
 #, no-c-format
 msgid "Settings for Language Support"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:241
+#: suse_l10n.xml:247
 #, no-c-format
 msgid ""
 "Files in the category <emphasis>Messages</emphasis> are, as a rule, only "
 "stored in the corresponding language directory (like <filename>en</"
-"filename>) to have a fallback. If you set <systemitem>LANG</systemitem> to "
+"filename> ) to have a fallback. If you set <systemitem>LANG</systemitem> to "
 "<literal>en_US</literal> and the message file in <filename>/usr/share/locale/"
 "en_US/LC_MESSAGES</filename> does not exist, it falls back to <filename>/usr/"
-"share/locale/en/LC_MESSAGES</filename>."
+"share/locale/en/LC_MESSAGES</filename> ."
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:250
+#: suse_l10n.xml:256
 #, no-c-format
 msgid ""
 "A fallback chain can also be defined, for example, for Breton to French or "
 "for Galician to Spanish to Portuguese:"
 msgstr ""
 
-#. Tag: systemitem
-#: suse_l10n.xml:255
-#, no-c-format
-msgid "LANGUAGE=\"br_FR:fr_FR\""
-msgstr ""
-
-#. Tag: systemitem
-#: suse_l10n.xml:258
-#, no-c-format
-msgid "LANGUAGE=\"gl_ES:es_ES:pt_PT\""
-msgstr ""
-
 #. Tag: para
 #: suse_l10n.xml:260
 #, no-c-format
+msgid "<systemitem>LANGUAGE=\"br_FR:fr_FR\"</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: suse_l10n.xml:263
+#, no-c-format
+msgid "<systemitem>LANGUAGE=\"gl_ES:es_ES:pt_PT\"</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: suse_l10n.xml:266
+#, no-c-format
 msgid ""
 "If desired, use the Norwegian variants Nynorsk and Bokmål instead (with "
-"additional fallback to <literal>no</literal>):"
-msgstr ""
-
-#. Tag: systemitem
-#: suse_l10n.xml:265
-#, no-c-format
-msgid "LANG=\"nn_NO\""
-msgstr ""
-
-#. Tag: systemitem
-#: suse_l10n.xml:268
-#, no-c-format
-msgid "LANGUAGE=\"nn_NO:nb_NO:no\""
+"additional fallback to <literal>no</literal> ):"
 msgstr ""
 
 #. Tag: para
 #: suse_l10n.xml:270
 #, no-c-format
-msgid "<para>or</para>"
+msgid "<systemitem>LANG=\"nn_NO\"</systemitem>"
 msgstr ""
 
-#. Tag: systemitem
-#: suse_l10n.xml:274
+#. Tag: para
+#: suse_l10n.xml:273
 #, no-c-format
-msgid "LANG=\"nb_NO\""
+msgid "<systemitem>LANGUAGE=\"nn_NO:nb_NO:no\"</systemitem>"
 msgstr ""
 
-#. Tag: systemitem
-#: suse_l10n.xml:277
+#. Tag: para
+#: suse_l10n.xml:276
 #, no-c-format
-msgid "LANGUAGE=\"nb_NO:nn_NO:no\""
+msgid "or"
 msgstr ""
 
 #. Tag: para
 #: suse_l10n.xml:279
+#, no-c-format
+msgid "<systemitem>LANG=\"nb_NO\"</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: suse_l10n.xml:282
+#, no-c-format
+msgid "<systemitem>LANGUAGE=\"nb_NO:nn_NO:no\"</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: suse_l10n.xml:285
 #, no-c-format
 msgid ""
 "Note that in Norwegian, <systemitem>LC_TIME</systemitem> is also treated "
 "differently."
 msgstr ""
 
-#. Tag: remark
-#: suse_l10n.xml:283
-#, no-c-format
-msgid ""
-"The following example does not make sense for 'en'; that's why I use 'de' as "
-"an example here. -ke-"
-msgstr ""
-
 #. Tag: para
-#: suse_l10n.xml:286
+#: suse_l10n.xml:292
 #, no-c-format
 msgid ""
 "One problem that can arise is a separator used to delimit groups of digits "
 "not being recognized properly. This occurs if <systemitem>LANG</systemitem> "
-"is set to only a two-letter language code like <literal>de</literal>, but "
+"is set to only a two-letter language code like <literal>de</literal> , but "
 "the definition file glibc uses is located in <filename>/usr/share/lib/de_DE/"
-"LC_NUMERIC</filename>. Thus <systemitem>LC_NUMERIC</systemitem> must be set "
+"LC_NUMERIC</filename> . Thus <systemitem>LC_NUMERIC</systemitem> must be set "
 "to <literal>de_DE</literal> to make the separator definition visible to the "
 "system."
 msgstr ""
 
 #. Tag: title
-#: suse_l10n.xml:298
+#: suse_l10n.xml:304
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: suse_l10n.xml:301
+#: suse_l10n.xml:307
 #, no-c-format
 msgid ""
-"<emphasis>The GNU C Library Reference Manual</emphasis>, Chapter "
-"<quote>Locales and Internationalization</quote>. It is included in "
-"<systemitem>glibc-info</systemitem>.<phrase os=\"sles;sled\"> The package is "
-"available from the &sle; SDK. The SDK is a module for &sle; and is available "
-"via an online channel from the &scc;. Alternatively, go to <link xlink:href="
-"\"http://download.suse.com/\"></link>, search for <literal>&sle; Software "
-"Development Kit</literal> and download it from there. Refer to <xref linkend="
-"\"cha.add-ons\"/> for details.</phrase>"
-msgstr ""
-
-#. Tag: para
-#: suse_l10n.xml:312
-#, no-c-format
-msgid ""
-"Markus Kuhn, <emphasis>UTF-8 and Unicode FAQ for Unix/Linux</emphasis>, "
-"currently at <link xlink:href=\"http://www.cl.cam.ac.uk/~mgk25/unicode.html"
-"\"></link>."
+"<emphasis>The GNU C Library Reference Manual</emphasis> , Chapter "
+"<quote>Locales and Internationalization</quote> . It is included in "
+"<systemitem>glibc-info</systemitem> . <phrase os=\"sles;sled\"> The package "
+"is available from the &sle; SDK. The SDK is a module for &sle; and is "
+"available via an online channel from the &scc;. Alternatively, go to <link "
+"xlink:href=\"http://download.suse.com/\"/>, search for <literal>&sle; "
+"Software Development Kit</literal> and download it from there. Refer to "
+"<xref linkend=\"cha.add-ons\"/> for details.</phrase>"
 msgstr ""
 
 #. Tag: para
 #: suse_l10n.xml:319
 #, no-c-format
 msgid ""
-"<emphasis>Unicode-HOWTO</emphasis> by Bruno Haible, available at <link xlink:"
-"href=\"http://tldp.org/HOWTO/Unicode-HOWTO-1.html\"></link>."
+"Markus Kuhn, <emphasis>UTF-8 and Unicode FAQ for Unix/Linux</emphasis> , "
+"currently at <link xlink:href=\"http://www.cl.cam.ac.uk/~mgk25/unicode.html"
+"\"/> ."
+msgstr ""
+
+#. Tag: para
+#: suse_l10n.xml:326
+#, no-c-format
+msgid ""
+"<emphasis>Unicode-HOWTO</emphasis> by Bruno Haible, available at <!--taroth "
+"2011-07-26: package does not seem to exist any more (not on usual or SDK "
+"media), theferore pointing to the online version now <filename>/usr/share/"
+"doc/howto/en/txt/Unicode-HOWTO.gz</filename> (package <systemitem>howto</"
+"systemitem>).--> <link xlink:href=\"http://tldp.org/HOWTO/Unicode-HOWTO-1."
+"html\"/> ."
 msgstr ""

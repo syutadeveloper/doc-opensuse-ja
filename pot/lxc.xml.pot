@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -32,16 +32,10 @@ msgstr ""
 msgid "A container is a kind of <quote>virtual machine</quote> that can be started, stopped, frozen, or cloned (to name but a few tasks). To set up an &lxc; container, you first need to create a root file system containing the guest distribution:"
 msgstr ""
 
-#. Tag: title
-#: lxc.xml:55 lxc.xml:110
-#, no-c-format
-msgid "Creating a Root File System"
-msgstr ""
-
 #. Tag: para
 #: lxc.xml:56
 #, no-c-format
-msgid "There is currently no GUI to create a root file system. You will thus need to open a terminal and use <command>virt-create-rootfs</command> as root to populate the new root file system. In the following steps, the new &rootuser; file system will be created in <replaceable>/path/to/rootfs</replaceable>."
+msgid "There is currently no GUI to create a root file system. You will thus need to open a terminal and use <command>virt-create-rootfs</command> as root to populate the new root file system. In the following steps, the new &rootuser; file system will be created in <replaceable>/path/to/rootfs</replaceable> ."
 msgstr ""
 
 #. Tag: title
@@ -83,7 +77,7 @@ msgstr ""
 #. Tag: para
 #: lxc.xml:84
 #, no-c-format
-msgid "Change the password for user &rootuser; with <command>passwd</command>."
+msgid "Change the password for user &rootuser; with <command>passwd</command> ."
 msgstr ""
 
 #. Tag: para
@@ -113,13 +107,19 @@ msgstr ""
 #. Tag: para
 #: lxc.xml:103
 #, no-c-format
-msgid "Leave the chroot environment with <command>exit</command>."
+msgid "Leave the chroot environment with <command>exit</command> ."
+msgstr ""
+
+#. Tag: title
+#: lxc.xml:110
+#, no-c-format
+msgid "Creating a Root File System"
 msgstr ""
 
 #. Tag: para
 #: lxc.xml:111
 #, no-c-format
-msgid "There is currently no GUI to create a root file system. You will thus need to open a terminal and use <command>zypper</command> as user &rootuser; to populate the new root file system. In the following steps, the new &rootuser; file system will be created in <replaceable>/PATH/TO/ROOTFS</replaceable>."
+msgid "There is currently no GUI to create a root file system. You will thus need to open a terminal and use <command>zypper</command> as user &rootuser; to populate the new root file system. In the following steps, the new &rootuser; file system will be created in <replaceable>/PATH/TO/ROOTFS</replaceable> ."
 msgstr ""
 
 #. Tag: para
@@ -131,350 +131,381 @@ msgstr ""
 #. Tag: screen
 #: lxc.xml:123
 #, no-c-format
-msgid ""
-      "&prompt.root;zypper --root <replaceable>/PATH/TO/ROOTFS</replaceable> ar http://download.opensuse.org/distribution/leap/42.3/repo/oss/ OSS\n"
+msgid "&prompt.root;zypper --root <replaceable>/PATH/TO/ROOTFS</replaceable> ar http://download.opensuse.org/distribution/leap/42.3/repo/oss/ OSS\n"
       "&prompt.root;zypper --root <replaceable>/PATH/TO/ROOTFS</replaceable> ar http://download.opensuse.org/update/leap/42.3/oss/ Update-OSS"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:126
+#: lxc.xml:127
 #, no-c-format
 msgid "Refresh the repositories:"
 msgstr ""
 
 #. Tag: screen
-#: lxc.xml:129
+#: lxc.xml:130
 #, no-c-format
 msgid "&prompt.root;zypper --root <replaceable>/PATH/TO/ROOTFS</replaceable> ref"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:132
+#: lxc.xml:133
 #, no-c-format
 msgid "Install a minimal system:"
 msgstr ""
 
 #. Tag: screen
-#: lxc.xml:135
+#: lxc.xml:136
 #, no-c-format
 msgid "&prompt.root;zypper --root <replaceable>/PATH/TO/ROOTFS</replaceable> in -t pattern minimal_base"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:138
+#: lxc.xml:139
 #, no-c-format
 msgid "Set the &rootuser; password:"
 msgstr ""
 
 #. Tag: screen
-#: lxc.xml:141
+#: lxc.xml:142
 #, no-c-format
-msgid ""
-      "&prompt.root;echo \"ttyS0\" >><replaceable>/PATH/TO/ROOTFS</replaceable>/etc/securetty\n"
+msgid "&prompt.root;echo \"ttyS0\" &gt;&gt;<replaceable>/PATH/TO/ROOTFS</replaceable>/etc/securetty\n"
       "&prompt.root;echo \"root:YOURPASSWD\" | chpasswd -R <replaceable>/PATH/TO/ROOTFS</replaceable>"
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:146
+#: lxc.xml:148
 #, no-c-format
 msgid "Defining the Container"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:148 lxc.xml:324
+#: lxc.xml:172
 #, no-c-format
-msgid "Start &vmm;."
+msgid "Activate <guimenu>Operating system container</guimenu> and click <guimenu>Forward</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:153 lxc.xml:329
+#: lxc.xml:178
 #, no-c-format
-msgid "If not already present, add a local LXC connection by clicking <menuchoice><guimenu>File</guimenu> <guimenu>Add Connection</guimenu></menuchoice>."
+msgid "Type the path to the root file system from <xref os=\"sles;sled\" linkend=\"pro.lxc.create-rootfs\"/> <xref os=\"osuse\" linkend=\"pro.lxc.create-rootfs.osuse\"/> and click the <guimenu>Forward</guimenu> button."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:158 lxc.xml:334
-#, no-c-format
-msgid "Select <guimenu>LXC (Linux Containers)</guimenu> as the hypervisor and click <guimenu>Connect</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:164 lxc.xml:340
-#, no-c-format
-msgid "Select the <guimenu>localhost (LXC)</guimenu> connection and click <guimenu>File</guimenu> <guimenu>New Virtual Machine</guimenu> menu."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:170
-#, no-c-format
-msgid "Activate <guimenu>Operating system container</guimenu> and click <guimenu>Forward</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:176
-#, no-c-format
-msgid "Type the path to the root file system from <xref os=\"sles;sled\" linkend=\"pro.lxc.create-rootfs\"/><xref os=\"osuse\" linkend=\"pro.lxc.create-rootfs.osuse\"/> and click the <guimenu>Forward</guimenu> button."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:184
+#: lxc.xml:186
 #, no-c-format
 msgid "Choose the maximum amount of memory and CPUs to allocate to the container. Then click the <guimenu>Forward</guimenu> button."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:190 lxc.xml:363
+#: lxc.xml:196
 #, no-c-format
-msgid "Type in a name for the container. This name will be used for all <command>virsh</command> commands on the container."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:194
-#, no-c-format
-msgid "Click <guimenu>Advanced options</guimenu>. Select the network to connect the container to and click the <guimenu>Finish</guimenu> button: the container will then be created and started. A console will also be automatically opened."
+msgid "Click <guimenu>Advanced options</guimenu> . Select the network to connect the container to and click the <guimenu>Finish</guimenu> button: the container will then be created and started. A console will also be automatically opened."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:204
+#: lxc.xml:206
 #, no-c-format
 msgid "Configuring IP Addresses for Network Interfaces"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:205
+#: lxc.xml:207
 #, no-c-format
 msgid "Network devices and hostdev devices with network capabilities can be provided with one or more IP addresses to set on the network device in the guest. However, some hypervisors or network device types will simply ignore them or only use the first one."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:212 lxc.xml:391
-#, no-c-format
-msgid "Edit the container XML configuration using virsh:"
-msgstr ""
-
-#. Tag: screen
-#: lxc.xml:215 lxc.xml:394
-#, no-c-format
-msgid "&prompt.user;virsh -c lxc:/// edit <replaceable>MYCONTAINER</replaceable>"
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:218
+#: lxc.xml:220
 #, no-c-format
 msgid "The following example shows how to set one ore multiple IP addresses:"
 msgstr ""
 
-#. Tag: screen
-#: lxc.xml:221
-#, no-c-format
-msgid ""
-      "[...]\n"
-      "&lt;devices>\n"
-      " &lt;interface type='network'>\n"
-      "  &lt;source network='default'/>\n"
-      "  &lt;target dev='vnet0'/>\n"
-      "  &lt;ip address='192.168.122.5' prefix='24'/>\n"
-      "  &lt;ip address='192.168.122.5' prefix='24' peer<co xml:id=\"co.lxc.netw.peer\"/>='10.0.0.10'/>\n"
-      "   &lt;route family<co xml:id=\"co.lxc.netw.family\"/>='ipv4' address<co xml:id=\"co.lxc.netw.addr\"/>='192.168.122.0' prefix<co xml:id=\"co.lxc.netw.prefix\"/>='24'\n"
-      "          gateway<co xml:id=\"co.lxc.netw.gateway\"/>='192.168.122.1'/>\n"
-      "   &lt;route family<xref linkend=\"co.lxc.netw.family\" xrefstyle=\"select:label\"/>='ipv4' address<xref\n"
-      "   linkend=\"co.lxc.netw.addr\" xrefstyle=\"select:label\"/>='192.168.122.8' gateway<xref\n"
-      "    linkend=\"co.lxc.netw.gateway\" xrefstyle=\"select:label\"/>='192.168.122.1'/>\n"
-      " &lt;/interface>\n"
-      " [...]\n"
-      " &lt;hostdev mode='capabilities' type='net'>\n"
-      "  &lt;source>\n"
-      "   &lt;interface>eth0&lt;/interface>\n"
-      "  &lt;/source>\n"
-      "  &lt;ip address='192.168.122.6' prefix='24'/>\n"
-      "  &lt;route family='ipv4' address='192.168.122.0' prefix='24' gateway='192.168.122.1'/>\n"
-      "  &lt;route family='ipv4' address='192.168.122.8' gateway='192.168.122.1'/>\n"
-      " &lt;/hostdev>\n"
-      "&lt;/devices>\n"
-      "[...]"
-msgstr ""
-
-#. Tag: para
+#. Tag: #text
 #: lxc.xml:224
 #, no-c-format
-msgid "Optional attribute. Holds the IP address of the other end of a point-to-point network device."
+msgid "[...]&lt;devices&gt; &lt;interface type='network'&gt; &lt;source network='default'/&gt; &lt;target dev='vnet0'/&gt; &lt;ip address='192.168.122.5' prefix='24'/&gt; &lt;ip address='192.168.122.5' prefix='24' peer"
 msgstr ""
 
-#. Tag: para
+#. Tag: #text
 #: lxc.xml:230
 #, no-c-format
-msgid "Can be set to either <literal>ipv4</literal> or <literal>ipv6</literal>."
+msgid "='192.168.122.0' prefix"
 msgstr ""
 
-#. Tag: para
+#. Tag: #text
+#: lxc.xml:230
+#, no-c-format
+msgid "='10.0.0.10'/&gt; &lt;route family"
+msgstr ""
+
+#. Tag: #text
+#: lxc.xml:231
+#, no-c-format
+msgid "='24' gateway"
+msgstr ""
+
+#. Tag: #text
+#: lxc.xml:232
+#, no-c-format
+msgid "='192.168.122.1'/&gt; &lt;route family"
+msgstr ""
+
+#. Tag: #text
+#: lxc.xml:232
+#, no-c-format
+msgid "='ipv4' address"
+msgstr ""
+
+#. Tag: #text
+#: lxc.xml:233
+#, no-c-format
+msgid "='192.168.122.8' gateway"
+msgstr ""
+
+#. Tag: #text
 #: lxc.xml:235
 #, no-c-format
-msgid "Contains the IP address."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:240
-#, no-c-format
-msgid "Optional parameter (will be automatically set if not specified). Defines the number of 1 bits in the netmask. For IPv4, the default prefix is determined according to the network <quote>class</quote> (<literal>A</literal>, <literal>B</literal>, or <literal>C</literal>). For IPv6, the default prefix is <literal>64</literal>."
+msgid "='192.168.122.1'/&gt; &lt;/interface&gt; [...] &lt;hostdev mode='capabilities' type='net'&gt; &lt;source&gt; &lt;interface&gt;eth0&lt;/interface&gt; &lt;/source&gt; &lt;ip address='192.168.122.6' prefix='24'/&gt; &lt;route family='ipv4' address='192.168.122.0' prefix='24' gateway='192.168.122.1'/&gt; &lt;route family='ipv4' address='192.168.122.8' gateway='192.168.122.1'/&gt; &lt;/hostdev&gt;&lt;/devices&gt;[...]"
 msgstr ""
 
 #. Tag: para
 #: lxc.xml:249
 #, no-c-format
+msgid "Optional attribute. Holds the IP address of the other end of a point-to-point network device."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:255
+#, no-c-format
+msgid "Can be set to either <literal>ipv4</literal> or <literal>ipv6</literal> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:260
+#, no-c-format
+msgid "Contains the IP address."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:265
+#, no-c-format
+msgid "Optional parameter (will be automatically set if not specified). Defines the number of 1 bits in the netmask. For IPv4, the default prefix is determined according to the network <quote>class</quote> ( <literal>A</literal> , <literal>B</literal> , or <literal>C</literal> ). For IPv6, the default prefix is <literal>64</literal> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:274
+#, no-c-format
 msgid "If you do not specify a default gateway in the XML file, none will be set."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:256
+#: lxc.xml:281
 #, no-c-format
 msgid "You can also add route elements to define IP routes to add in the guest. This is used by the LXC driver."
 msgstr ""
 
-#. Tag: screen
-#: lxc.xml:260
+#. Tag: #text
+#: lxc.xml:286
 #, no-c-format
-msgid ""
-      "[...]\n"
-      "&lt;devices>\n"
-      " &lt;interface type<co xml:id=\"co.lxc.netw.ethernet\"/>='ethernet'>\n"
-      "  &lt;source/><co xml:id=\"co.lxc.netw.source\"/>\n"
-      "   &lt;ip address<co xml:id=\"co.lxc.netw.ip1\"/>='192.168.123.1' prefix='24'/>\n"
-      "   &lt;ip address<co xml:id=\"co.lxc.netw.ip2\"/>='10.0.0.10' prefix='24' peer='192.168.122.5'/>\n"
-      "   &lt;route<co xml:id=\"co.lxc.netw.route\"/> family='ipv4' address='192.168.42.0' prefix='24'\n"
-      "            gateway='192.168.123.4'/>\n"
-      "  &lt;source/>\n"
-      "  [...]\n"
-      " &lt;/interface>\n"
-      " [...]\n"
-      "&lt;/devices>\n"
-      "[...]"
+msgid "[...]&lt;devices&gt; &lt;interface type"
 msgstr ""
 
-#. Tag: para
-#: lxc.xml:263
+#. Tag: #text
+#: lxc.xml:288
 #, no-c-format
-msgid "Network devices of type <literal>ethernet</literal> can optionally be provided with one or multiple IP addresses (<xref linkend=\"co.lxc.netw.ip1\" xrefstyle=\"select:label\"/>, <xref linkend=\"co.lxc.netw.ip2\" xrefstyle=\"select:label\"/>) and with one or multiple routes (<xref linkend=\"co.lxc.netw.route\" xrefstyle=\"select:label\"/>) to set on the host side of the network device."
+msgid "='ethernet'&gt; &lt;source/&gt;"
 msgstr ""
 
-#. Tag: para
-#: lxc.xml:271
-#, no-c-format
-msgid "These are configured as subelements of the <literal>source</literal> element (<xref linkend=\"co.lxc.netw.source\"/>) of the interface. They have the same attributes as the similarly named elements used to configure the guest side of the interface (see the step above)."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:279
-#, no-c-format
-msgid "First IP address for the network device of type <literal>ethernet</literal>."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:284
-#, no-c-format
-msgid "Second IP address for the network device of type <literal>ethernet</literal>."
-msgstr ""
-
-#. Tag: para
+#. Tag: #text
 #: lxc.xml:289
+#, no-c-format
+msgid "&lt;ip address"
+msgstr ""
+
+#. Tag: #text
+#: lxc.xml:290
+#, no-c-format
+msgid "='192.168.123.1' prefix='24'/&gt; &lt;ip address"
+msgstr ""
+
+#. Tag: #text
+#: lxc.xml:291
+#, no-c-format
+msgid "='10.0.0.10' prefix='24' peer='192.168.122.5'/&gt; &lt;route"
+msgstr ""
+
+#. Tag: #text
+#: lxc.xml:293
+#, no-c-format
+msgid "family='ipv4' address='192.168.42.0' prefix='24' gateway='192.168.123.4'/&gt; &lt;source/&gt; [...] &lt;/interface&gt; [...]&lt;/devices&gt;[...]"
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:301
+#, no-c-format
+msgid "Network devices of type <literal>ethernet</literal> can optionally be provided with one or multiple IP addresses ( <xref linkend=\"co.lxc.netw.ip1\" xrefstyle=\"select:label\"/> , <xref linkend=\"co.lxc.netw.ip2\" xrefstyle=\"select:label\"/> ) and with one or multiple routes ( <xref linkend=\"co.lxc.netw.route\" xrefstyle=\"select:label\"/> ) to set on the host side of the network device."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:309
+#, no-c-format
+msgid "These are configured as subelements of the <literal>source</literal> element ( <xref linkend=\"co.lxc.netw.source\"/> ) of the interface. They have the same attributes as the similarly named elements used to configure the guest side of the interface (see the step above)."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:317
+#, no-c-format
+msgid "First IP address for the network device of type <literal>ethernet</literal> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:322
+#, no-c-format
+msgid "Second IP address for the network device of type <literal>ethernet</literal> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:327
 #, no-c-format
 msgid "Route to set on the host side of the network device."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:294
+#: lxc.xml:332
 #, no-c-format
-msgid "Find further details about the attributes of this element at <link xlink:href=\"http://libvirt.org/formatnetwork.html#elementsStaticroute\"></link>."
+msgid "Find further details about the attributes of this element at <link xlink:href=\"http://libvirt.org/formatnetwork.html#elementsStaticroute\"/> ."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:299
+#: lxc.xml:338
 #, no-c-format
 msgid "Save the changes and exit the editor."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:305
+#: lxc.xml:344
 #, no-c-format
 msgid "Container Network"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:306
+#: lxc.xml:345
 #, no-c-format
 msgid "To configure the container network, edit the <filename>/etc/sysconfig/network/ifcfg-*</filename> files."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:313
+#: lxc.xml:352
 #, no-c-format
 msgid "Setting Up &lxc; Application Containers"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:315
+#: lxc.xml:354
 #, no-c-format
 msgid "Libvirt also allows to run single applications instead of full blown Linux distributions in containers. In this example, <command>bash</command> will be started in its own container."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:322
+#: lxc.xml:361
 #, no-c-format
 msgid "Defining an Application Container Using &yast;"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:346
+#: lxc.xml:363
 #, no-c-format
-msgid "Activate <guimenu>Application container</guimenu> and click <guimenu>Forward</guimenu>."
+msgid "Start &vmm;."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:350
+#: lxc.xml:368
 #, no-c-format
-msgid "Set the path to the application to be launched. As an example, the field is filled with <command>/bin/sh</command>, which is fine to create a first container. Click <guimenu>Forward</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:357
-#, no-c-format
-msgid "Choose the maximum amount of memory and CPUs to allocate to the container. Click <guimenu>Forward</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:367
-#, no-c-format
-msgid "Click <guimenu>Advanced options</guimenu>. Select the network to connect the container to and click <guimenu>Finish</guimenu>. The container will be created and started. A console will be opened automatically."
+msgid "If not already present, add a local LXC connection by clicking <menuchoice><guimenu>File</guimenu> <guimenu>Add Connection</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
 #: lxc.xml:373
 #, no-c-format
+msgid "Select <guimenu>LXC (Linux Containers)</guimenu> as the hypervisor and click <guimenu>Connect</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:379
+#, no-c-format
+msgid "Select the <guimenu>localhost (LXC)</guimenu> connection and click <guimenu>File</guimenu> <guimenu>New Virtual Machine</guimenu> menu."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:385
+#, no-c-format
+msgid "Activate <guimenu>Application container</guimenu> and click <guimenu>Forward</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:389
+#, no-c-format
+msgid "Set the path to the application to be launched. As an example, the field is filled with <command>/bin/sh</command> , which is fine to create a first container. Click <guimenu>Forward</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:396
+#, no-c-format
+msgid "Choose the maximum amount of memory and CPUs to allocate to the container. Click <guimenu>Forward</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:402
+#, no-c-format
+msgid "Type in a name for the container. This name will be used for all <command>virsh</command> commands on the container."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:406
+#, no-c-format
+msgid "Click <guimenu>Advanced options</guimenu> . Select the network to connect the container to and click <guimenu>Finish</guimenu> . The container will be created and started. A console will be opened automatically."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:412
+#, no-c-format
 msgid "Note that the container will be destroyed after the application has finished running."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:381
+#: lxc.xml:420
 #, no-c-format
 msgid "Securing a Container Using &aa;"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:383
+#: lxc.xml:422
 #, no-c-format
 msgid "By default, containers are not secured using &aa; or &selnx;. There is no graphical user interface to change the security model for a libvirt domain, but <command>virsh</command> will help."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:397
+#: lxc.xml:430
+#, no-c-format
+msgid "Edit the container XML configuration using virsh:"
+msgstr ""
+
+#. Tag: screen
+#: lxc.xml:433
+#, no-c-format
+msgid "&prompt.user;virsh -c lxc:/// edit <replaceable>MYCONTAINER</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:436
 #, no-c-format
 msgid "Add the following to the XML configuration, save it and exit the editor."
 msgstr ""
 
 #. Tag: screen
-#: lxc.xml:401
+#: lxc.xml:440
 #, no-c-format
-msgid ""
-      "&lt;domain&gt;\n"
+msgid "&lt;domain&gt;\n"
       "    ...\n"
       "    &lt;seclabel type=\"dynamic\" model=\"apparmor\"/&gt;\n"
       "    ...\n"
@@ -482,136 +513,142 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:404
+#: lxc.xml:447
 #, no-c-format
 msgid "With this configuration, an &aa; profile for the container will be created in the <filename>/etc/apparmor.d/libvirt</filename> directory. The default profile only allows the minimum applications to run in the container. This can be changed by modifying the <filename>libvirt-<replaceable>CONTAINER-uuid</replaceable></filename> file: this file is not overwritten by libvirt."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:416
+#: lxc.xml:459
 #, no-c-format
 msgid "Differences Between the libvirt LXC Driver and LXC"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:418
+#: lxc.xml:461
 #, no-c-format
-msgid "<phrase os=\"sles;sled\">&sls; 11 SP3 was</phrase><phrase os=\"osuse\">&opensuse; versions prior to Leap were</phrase> shipping LXC, while <phrase os=\"sles;sled\">&sls; 12</phrase><phrase os=\"osuse\">&opensuse; Leap</phrase> comes with the libvirt LXC driver, sometimes named libvirt-lxc to avoid confusion. The containers are not managed or configured in the same way in these tools. Here is a non-exhaustive list of differences."
+msgid "<phrase os=\"sles;sled\">&sls; 11 SP3 was</phrase> <phrase os=\"osuse\">&opensuse; versions prior to Leap were</phrase> shipping LXC, while <phrase os=\"sles;sled\">&sls; 12</phrase> <phrase os=\"osuse\">&opensuse; Leap</phrase> comes with the libvirt LXC driver, sometimes named libvirt-lxc to avoid confusion. The containers are not managed or configured in the same way in these tools. Here is a non-exhaustive list of differences."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:427
+#: lxc.xml:470
 #, no-c-format
 msgid "The main difference is that domain configuration in libvirt is an XML file, while LXC configuration is a properties file. Most of the LXC properties can be mapped to the domain XML. The properties that cannot be migrated are:"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:435
+#: lxc.xml:478
 #, no-c-format
-msgid "<emphasis>lxc.network.script.up</emphasis>: this script can be implemented using the <filename>/etc/libvirt/hooks/network</filename> libvirt hook, though the script will need to be adapted."
+msgid "<emphasis>lxc.network.script.up</emphasis> : this script can be implemented using the <filename>/etc/libvirt/hooks/network</filename> libvirt hook, though the script will need to be adapted."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:442
+#: lxc.xml:485
 #, no-c-format
-msgid "<emphasis>lxc.network.ipv*</emphasis>: libvirt cannot set the container network configuration from the domain configuration."
+msgid "<emphasis>lxc.network.ipv*</emphasis> : libvirt cannot set the container network configuration from the domain configuration."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:448
+#: lxc.xml:491
 #, no-c-format
-msgid "<emphasis>lxc.network.name</emphasis>: libvirt cannot set the container network card name."
+msgid "<emphasis>lxc.network.name</emphasis> : libvirt cannot set the container network card name."
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:454
+#: lxc.xml:497
 #, no-c-format
-msgid "<emphasis>lxc.devttydir</emphasis>: libvirt does not allow changing the location of the console devices."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:460
-#, no-c-format
-msgid "<emphasis>lxc.console</emphasis>: there is currently no way to log the output of the console into a file on the host for libvirt LXC containers."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:467
-#, no-c-format
-msgid "<emphasis>lxc.pivotdir</emphasis>: libvirt does not allow to fine-tune the directory used for the <command>pivot_root</command>. <filename>/.olroot</filename> is used."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:474
-#, no-c-format
-msgid "<emphasis>lxc.rootfs.mount</emphasis>: libvirt does not allow to fine-tune this."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:481
-#, no-c-format
-msgid "&lxc; VLAN networks automatically create the VLAN interface on the host and then move it into the guest namespace. libvirt-lxc configuration can mention a VLAN tag ID only for &ovs; tap devices or PCI pass-through of SR-IOV VF. The conversion tool actually needs the user to manually create the VLAN interface on the host side."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:489
-#, no-c-format
-msgid "&lxc; rootfs can also be an image file, but LXC brute-forces the mount to try to detect the proper file system format. libvirt-lxc can mount image files of several formats, but the 'auto' value for the format parameter is explicitly not supported. This means that the generated configuration will need to be tweaked by the user to get a proper match in that case."
-msgstr ""
-
-#. Tag: para
-#: lxc.xml:498
-#, no-c-format
-msgid "&lxc; can support any cgroup configuration, even future ones, while libvirt domain configuration, needs to map each of them."
+msgid "<emphasis>lxc.devttydir</emphasis> : libvirt does not allow changing the location of the console devices."
 msgstr ""
 
 #. Tag: para
 #: lxc.xml:503
 #, no-c-format
+msgid "<emphasis>lxc.console</emphasis> : there is currently no way to log the output of the console into a file on the host for libvirt LXC containers."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:510
+#, no-c-format
+msgid "<emphasis>lxc.pivotdir</emphasis> : libvirt does not allow to fine-tune the directory used for the <command>pivot_root</command> . <filename>/.olroot</filename> is used."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:517
+#, no-c-format
+msgid "<emphasis>lxc.rootfs.mount</emphasis> : libvirt does not allow to fine-tune this."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:524
+#, no-c-format
+msgid "&lxc; VLAN networks automatically create the VLAN interface on the host and then move it into the guest namespace. libvirt-lxc configuration can mention a VLAN tag ID only for &ovs; tap devices or PCI pass-through of SR-IOV VF. The conversion tool actually needs the user to manually create the VLAN interface on the host side."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:532
+#, no-c-format
+msgid "&lxc; rootfs can also be an image file, but LXC brute-forces the mount to try to detect the proper file system format. libvirt-lxc can mount image files of several formats, but the 'auto' value for the format parameter is explicitly not supported. This means that the generated configuration will need to be tweaked by the user to get a proper match in that case."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:541
+#, no-c-format
+msgid "&lxc; can support any cgroup configuration, even future ones, while libvirt domain configuration, needs to map each of them."
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:546
+#, no-c-format
 msgid "&lxc; can mount block devices in the rootfs, but it cannot mount raw partition files: the file needs to be manually attached to a loop device. On the other hand libvirt-lxc can mount block devices, but also partition files of any format."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:511
+#: lxc.xml:554
 #, no-c-format
 msgid "Sharing Namespaces Across Containers"
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:512
+#: lxc.xml:555
 #, no-c-format
 msgid "Like Docker, libvirt allows you to inherit the namespace from containers or processes to share the network namespace. The following example shows how to share required namespaces."
 msgstr ""
 
 #. Tag: screen
-#: lxc.xml:517
+#: lxc.xml:560
 #, no-c-format
-msgid ""
-      "&lt;domain type='lxc' xmlns:lxc='http://libvirt.org/schemas/domain/lxc/1.0'>\n"
+msgid "&lt;domain type='lxc' xmlns:lxc='http://libvirt.org/schemas/domain/lxc/1.0'&gt;\n"
       " [...]\n"
-      " &lt;lxc:namespace>\n"
-      "  &lt;lxc:sharenet type='netns' value='red'/>\n"
-      "  &lt;lxc:shareuts type='name' value='<replaceable>CONTAINER_1</replaceable>'/>\n"
-      "  &lt;lxc:shareipc type='pid' value='<replaceable>12345</replaceable>'/>\n"
-      " &lt;/lxc:namespace>\n"
-      " &lt;/domain>"
+      " &lt;lxc:namespace&gt;\n"
+      "  &lt;lxc:sharenet type='netns' value='red'/&gt;\n"
+      "  &lt;lxc:shareuts type='name' value='<replaceable>CONTAINER_1</replaceable>'/&gt;\n"
+      "  &lt;lxc:shareipc type='pid' value='<replaceable>12345</replaceable>'/&gt;\n"
+      " &lt;/lxc:namespace&gt;\n"
+      " &lt;/domain&gt;\n"
+      ""
 msgstr ""
 
 #. Tag: para
-#: lxc.xml:518
+#: lxc.xml:569
 #, no-c-format
-msgid "The <option>netns</option> option is specific to <literal>sharenet</literal>. Use it to use an existing network namespace (instead of creating a new network namespace for the container). In this case, the <option>privnet</option> option will be ignored."
+msgid "The <option>netns</option> option is specific to <literal>sharenet</literal> . Use it to use an existing network namespace (instead of creating a new network namespace for the container). In this case, the <option>privnet</option> option will be ignored."
 msgstr ""
 
 #. Tag: title
-#: lxc.xml:527
+#: lxc.xml:578
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: term
-#: lxc.xml:531
+#: lxc.xml:582
 #, no-c-format
 msgid "&lxc; Container Driver"
+msgstr ""
+
+#. Tag: para
+#: lxc.xml:584
+#, no-c-format
+msgid "<link xlink:href=\"http://libvirt.org/drvlxc.html\"/>"
 msgstr ""
 

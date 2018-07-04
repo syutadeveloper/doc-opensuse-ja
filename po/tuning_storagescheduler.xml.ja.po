@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid ""
 "I/O scheduling controls how input/output operations will be submitted to "
 "storage. &productname; offers various I/O algorithms&mdash;called "
-"<literal>elevators</literal>&mdash;suiting different workloads. Elevators "
+"<literal>elevators</literal> &mdash;suiting different workloads. Elevators "
 "can help to reduce seek operations and can prioritize I/O requests."
 msgstr ""
 
@@ -80,8 +80,8 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Replace <replaceable>SCHEDULER</replaceable> with one of the values "
-"<option>cfq</option>, <option>noop</option>, or <option>deadline</option>. "
-"See <xref linkend=\"cha.tuning.io.schedulers\"/> for details."
+"<option>cfq</option> , <option>noop</option> , or <option>deadline</"
+"option> . See <xref linkend=\"cha.tuning.io.schedulers\"/> for details."
 msgstr ""
 
 #. Tag: para
@@ -104,14 +104,14 @@ msgstr ""
 #: tuning_storagescheduler.xml:63
 #, no-c-format
 msgid ""
-"Here, <replaceable>SCHEDULER</replaceable> is one of <option>cfq</option>, "
-"<option>noop</option>, or <option>deadline</option>. <replaceable>DEVICE</"
-"replaceable> is the block device (<systemitem>sda</systemitem> for example). "
-"Note that this change will not persist during reboot. For permanent I/O "
-"scheduler change for a particular device either place the command switching "
-"the I/O scheduler into init scripts or add appropriate udev rule into "
-"<filename>/lib/udev/rules.d/</filename>. See <filename>/lib/udev/rules.d/60-"
-"ssd-scheduler.rules</filename> for an example of such tuning."
+"Here, <replaceable>SCHEDULER</replaceable> is one of <option>cfq</option> , "
+"<option>noop</option> , or <option>deadline</option> . <replaceable>DEVICE</"
+"replaceable> is the block device ( <systemitem>sda</systemitem> for "
+"example). Note that this change will not persist during reboot. For "
+"permanent I/O scheduler change for a particular device either place the "
+"command switching the I/O scheduler into init scripts or add appropriate "
+"udev rule into <filename>/lib/udev/rules.d/</filename> . See <filename>/lib/"
+"udev/rules.d/60-ssd-scheduler.rules</filename> for an example of such tuning."
 msgstr ""
 
 #. Tag: title
@@ -178,24 +178,24 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:108
+#: tuning_storagescheduler.xml:109
 #, no-c-format
 msgid ""
 "This file can also contain the string <literal>none</literal> meaning that I/"
 "O scheduling does not happen for this device. This is usually because the "
 "device uses multi-queue queuing mechanism (refer to <xref linkend=\"cha."
-"tuning.io.scsimq\"/>)."
+"tuning.io.scsimq\"/> )."
 msgstr ""
 
 #. Tag: title
-#: tuning_storagescheduler.xml:116
+#: tuning_storagescheduler.xml:117
 #, no-c-format
 msgid ""
 "<systemitem class=\"resource\">CFQ</systemitem> (Completely Fair Queuing)"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:117
+#: tuning_storagescheduler.xml:118
 #, no-c-format
 msgid ""
 "<systemitem class=\"resource\">CFQ</systemitem> is a fairness-oriented "
@@ -204,19 +204,20 @@ msgid ""
 "way each thread gets a fair share of I/O throughput. It also allows "
 "assigning tasks I/O priorities which are taken into account during "
 "scheduling decisions (see <xref linkend=\"cha.tuning.resources.disk.ionice\"/"
-">). The <systemitem class=\"resource\">CFQ</systemitem> scheduler has the "
+"> ). The <systemitem class=\"resource\">CFQ</systemitem> scheduler has the "
 "following tunable parameters:"
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:130
+#. Tag: term
+#: tuning_storagescheduler.xml:131
 #, no-c-format
 msgid ""
-"/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/slice_idle_us"
+"<filename> /sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/"
+"slice_idle_us </filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:135
+#: tuning_storagescheduler.xml:136
 #, no-c-format
 msgid ""
 "When a task has no more I/O to submit in its time slice, the I/O scheduler "
@@ -231,7 +232,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:149
+#: tuning_storagescheduler.xml:150
 #, no-c-format
 msgid ""
 "For media where locality does not play a big role (SSDs, SANs with lots of "
@@ -240,71 +241,77 @@ msgid ""
 "can improve the throughput considerably."
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:156
+#. Tag: term
+#: tuning_storagescheduler.xml:157
 #, no-c-format
-msgid "/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/quantum"
+msgid ""
+"<filename> /sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/"
+"quantum </filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:161
+#: tuning_storagescheduler.xml:162
 #, no-c-format
 msgid ""
 "This option limits the maximum number of requests that are being processed "
-"at once by the device. The default value is <literal>4</literal>. For a "
+"at once by the device. The default value is <literal>4</literal> . For a "
 "storage with several disks, this setting can unnecessarily limit parallel "
 "processing of requests. Therefore, increasing the value can improve "
 "performance. However, it can also cause latency of certain I/O operations to "
 "increase because more requests are buffered inside the storage. When "
 "changing this value, you can also consider tuning <filename>/sys/block/"
 "<replaceable>DEVICE</replaceable>/queue/iosched/slice_async_rq</filename> "
-"(the default value is <literal>2</literal>). This limits the maximum number "
+"(the default value is <literal>2</literal> ). This limits the maximum number "
 "of asynchronous requests&mdash;usually write requests&mdash;that are "
 "submitted in one time slice."
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:178
+#. Tag: term
+#: tuning_storagescheduler.xml:179
 #, no-c-format
-msgid "/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/low_latency"
+msgid ""
+"<filename>/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/"
+"low_latency</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:181
+#: tuning_storagescheduler.xml:182
 #, no-c-format
 msgid ""
 "When enabled (which is the default on &productname;) the scheduler may "
 "dynamically adjust the length of the time slice by aiming to meet a tuning "
-"parameter called the <literal>target_latency</literal>. Time slices are "
+"parameter called the <literal>target_latency</literal> . Time slices are "
 "recomputed to meet this <literal>target_latency</literal> and ensure that "
 "processes get fair access within a bounded length of time."
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:192
+#. Tag: term
+#: tuning_storagescheduler.xml:193
 #, no-c-format
 msgid ""
-"/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/target_latency"
+"<filename>/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/"
+"target_latency</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:195
+#: tuning_storagescheduler.xml:196
 #, no-c-format
 msgid ""
 "Contains an estimated latency time for the <systemitem class=\"resource"
-"\">CFQ</systemitem>. <systemitem class=\"resource\">CFQ</systemitem> will "
+"\">CFQ</systemitem> . <systemitem class=\"resource\">CFQ</systemitem> will "
 "use it to calculate the time slice used for every task."
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:204
+#. Tag: term
+#: tuning_storagescheduler.xml:205
 #, no-c-format
 msgid ""
-"/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/group_idle_us"
+"<filename>/sys/block/<replaceable>DEVICE</replaceable>/queue/iosched/"
+"group_idle_us</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:206
+#: tuning_storagescheduler.xml:207
 #, no-c-format
 msgid ""
 "To avoid starving of blkio cgroups doing dependent I/O, CFQ waits a bit "
@@ -319,7 +326,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_storagescheduler.xml:222
+#: tuning_storagescheduler.xml:223
 #, no-c-format
 msgid ""
 "Increasing individual thread throughput using <systemitem class=\"resource"
@@ -327,18 +334,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:223
+#: tuning_storagescheduler.xml:224
 #, no-c-format
 msgid ""
 "In &productname; &productnumber;, the <literal>low_latency</literal> tuning "
 "parameter is enabled by default to ensure that processes get fair access "
 "within a bounded length of time. (Note that this parameter was not enabled "
-"in versions prior to <phrase os=\"sles;sled\">&sle; 12</phrase><phrase os="
-"\"osuse\">&opensuse; Leap</phrase>.)"
+"in versions prior to <phrase os=\"sles;sled\">&sle; 12</phrase> <phrase os="
+"\"osuse\">&opensuse; Leap</phrase> .)"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:230
+#: tuning_storagescheduler.xml:231
 #, no-c-format
 msgid ""
 "This is usually preferred in a server scenario where processes are executing "
@@ -348,7 +355,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:238
+#: tuning_storagescheduler.xml:239
 #, no-c-format
 msgid ""
 "If the performance metric of interest is the peak performance of a single "
@@ -356,7 +363,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:244
+#: tuning_storagescheduler.xml:245
 #, no-c-format
 msgid ""
 "If a workload must complete as quickly as possible and there are multiple "
@@ -366,31 +373,31 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:252
+#: tuning_storagescheduler.xml:253
 #, no-c-format
 msgid ""
 "To address this, there are two options&mdash;increase "
-"<literal>target_latency</literal> or disable <literal>low_latency</literal>. "
-"As with all tuning parameters it is important to verify your workload "
-"behaves as expected before and after the tuning modification. Take careful "
-"note of whether your workload depends on individual process peak performance "
-"or scales better with fairness. It should also be noted that the performance "
-"will depend on the underlying storage and the correct tuning option for one "
-"installation may not be universally true."
+"<literal>target_latency</literal> or disable <literal>low_latency</"
+"literal> . As with all tuning parameters it is important to verify your "
+"workload behaves as expected before and after the tuning modification. Take "
+"careful note of whether your workload depends on individual process peak "
+"performance or scales better with fairness. It should also be noted that the "
+"performance will depend on the underlying storage and the correct tuning "
+"option for one installation may not be universally true."
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:263
+#: tuning_storagescheduler.xml:264
 #, no-c-format
 msgid ""
 "Find below an example that does not control when I/O starts but is simple "
 "enough to demonstrate the point. 32 processes are writing a small amount of "
 "data to disk in parallel. Using the &productname; default (enabling "
-"<literal>low_latency</literal>), the result looks as follows:"
+"<literal>low_latency</literal> ), the result looks as follows:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_storagescheduler.xml:270
+#: tuning_storagescheduler.xml:271
 #, no-c-format
 msgid ""
 "&prompt.root;echo 1 &gt; /sys/block/sda/queue/iosched/low_latency\n"
@@ -434,16 +441,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:271
+#: tuning_storagescheduler.xml:309
 #, no-c-format
 msgid ""
 "Note that each process completes in similar times. This is the <systemitem "
 "class=\"resource\">CFQ</systemitem> scheduler meeting its "
-"<literal>target_latency</literal>: Each process has fair access to storage."
+"<literal>target_latency</literal> : Each process has fair access to storage."
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:277
+#: tuning_storagescheduler.xml:315
 #, no-c-format
 msgid ""
 "Note that the earlier processes complete somewhat faster. This happens "
@@ -452,13 +459,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:282
+#: tuning_storagescheduler.xml:320
 #, no-c-format
 msgid "This is what happens when low_latency is disabled:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_storagescheduler.xml:285
+#: tuning_storagescheduler.xml:323
 #, no-c-format
 msgid ""
 "&prompt.root;echo 0 &gt; /sys/block/sda/queue/iosched/low_latency\n"
@@ -502,7 +509,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:286
+#: tuning_storagescheduler.xml:361
 #, no-c-format
 msgid ""
 "Note that the time processes take to complete is spread much wider as "
@@ -514,7 +521,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:295
+#: tuning_storagescheduler.xml:370
 #, no-c-format
 msgid ""
 "It is important to emphasize that neither tuning option is inherently better "
@@ -522,14 +529,14 @@ msgid ""
 "to understand the requirements of your workload and tune accordingly."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_storagescheduler.xml:305
+#. Tag: title
+#: tuning_storagescheduler.xml:380
 #, no-c-format
-msgid "NOOP"
+msgid "<systemitem class=\"resource\">NOOP</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:306
+#: tuning_storagescheduler.xml:381
 #, no-c-format
 msgid ""
 "A trivial scheduler that only passes down the I/O that comes to it. Useful "
@@ -538,7 +545,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:311
+#: tuning_storagescheduler.xml:386
 #, no-c-format
 msgid ""
 "This scheduler is recommended for setups with devices that do I/O scheduling "
@@ -550,7 +557,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:319
+#: tuning_storagescheduler.xml:394
 #, no-c-format
 msgid ""
 "For similar reasons, this scheduler is also recommended for use within "
@@ -558,7 +565,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:323
+#: tuning_storagescheduler.xml:398
 #, no-c-format
 msgid ""
 "The <systemitem class=\"resource\">NOOP</systemitem> scheduler can be useful "
@@ -569,14 +576,14 @@ msgid ""
 "increase performance."
 msgstr ""
 
-#. Tag: systemitem
-#: tuning_storagescheduler.xml:335
+#. Tag: title
+#: tuning_storagescheduler.xml:410
 #, no-c-format
-msgid "DEADLINE"
+msgid "<systemitem class=\"resource\">DEADLINE</systemitem>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:336
+#: tuning_storagescheduler.xml:411
 #, no-c-format
 msgid ""
 "<systemitem class=\"resource\">DEADLINE</systemitem> is a latency-oriented I/"
@@ -591,7 +598,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:347
+#: tuning_storagescheduler.xml:422
 #, no-c-format
 msgid ""
 "This scheduler can provide a superior throughput over the <systemitem class="
@@ -602,16 +609,16 @@ msgid ""
 "systemitem> scheduler has the following tunable parameters:"
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:358
+#. Tag: term
+#: tuning_storagescheduler.xml:433
 #, no-c-format
 msgid ""
-"/sys/block/<replaceable>&lt;device&gt;</replaceable>/queue/iosched/"
-"writes_starved"
+"<filename>/sys/block/<replaceable>&lt;device&gt;</replaceable>/queue/iosched/"
+"writes_starved</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:361
+#: tuning_storagescheduler.xml:436
 #, no-c-format
 msgid ""
 "Controls how many reads can be sent to disk before it is possible to send "
@@ -619,32 +626,32 @@ msgid ""
 "are carried out for one write operation."
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:369
+#. Tag: term
+#: tuning_storagescheduler.xml:444
 #, no-c-format
 msgid ""
-"/sys/block/<replaceable>&lt;device&gt;</replaceable>/queue/iosched/"
-"read_expire"
+"<filename>/sys/block/<replaceable>&lt;device&gt;</replaceable>/queue/iosched/"
+"read_expire</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:372
+#: tuning_storagescheduler.xml:447
 #, no-c-format
 msgid ""
 "Sets the deadline (current time plus the read_expire value) for read "
 "operations in milliseconds. The default is 500."
 msgstr ""
 
-#. Tag: filename
-#: tuning_storagescheduler.xml:379
+#. Tag: term
+#: tuning_storagescheduler.xml:454
 #, no-c-format
 msgid ""
-"/sys/block/<replaceable>&lt;device&gt;</replaceable>/queue/iosched/"
-"write_expire"
+"<filename>/sys/block/<replaceable>&lt;device&gt;</replaceable>/queue/iosched/"
+"write_expire</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:382
+#: tuning_storagescheduler.xml:457
 #, no-c-format
 msgid ""
 "<filename>/sys/block/<replaceable>&lt;device&gt;</replaceable>/queue/iosched/"
@@ -653,19 +660,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_storagescheduler.xml:393
+#: tuning_storagescheduler.xml:468
 #, no-c-format
 msgid "I/O Barrier Tuning"
 msgstr ""
 
-#. Tag: remark
-#: tuning_storagescheduler.xml:396
-#, no-c-format
-msgid "sknorr, 2014-07-24: This might need updating to include Btrfs."
-msgstr ""
-
-#. Tag: para
-#: tuning_storagescheduler.xml:396
+#. Tag: #text
+#: tuning_storagescheduler.xml:478
 #, no-c-format
 msgid ""
 "Most file systems (such as XFS, Ext3, or Ext4) send write barriers to disk "
@@ -676,7 +677,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:405
+#: tuning_storagescheduler.xml:480
 #, no-c-format
 msgid ""
 "Sending write barriers can be disabled using the <option>nobarrier</option> "
@@ -684,13 +685,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_storagescheduler.xml:411
+#: tuning_storagescheduler.xml:486
 #, no-c-format
 msgid "Disabling Barriers Can Lead to Data Loss"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:412
+#: tuning_storagescheduler.xml:487
 #, no-c-format
 msgid ""
 "Disabling barriers when disks cannot guarantee caches are properly written "
@@ -699,13 +700,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_storagescheduler.xml:421
+#: tuning_storagescheduler.xml:496
 #, no-c-format
 msgid "Enable blk-mq I/O Path for SCSI by Default"
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:423
+#: tuning_storagescheduler.xml:498
 #, no-c-format
 msgid ""
 "Block multiqueue (blk-mq) is a multi-queue block I/O queuing mechanism. Blk-"
@@ -718,7 +719,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:433
+#: tuning_storagescheduler.xml:508
 #, no-c-format
 msgid ""
 "Currently blk-mq has no I/O scheduling support (no CFQ, no deadline I/O "
@@ -728,11 +729,11 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_storagescheduler.xml:440
+#: tuning_storagescheduler.xml:515
 #, no-c-format
 msgid ""
 "If you have fast SCSI devices (for example, SSDs) instead of SCSI hard disks "
 "attached to your system, consider switching to blk-mq for SCSI. This is done "
 "using the kernel command line option <literal>scsi_mod.use_blk_mq=1</"
-"literal>."
+"literal> ."
 msgstr ""

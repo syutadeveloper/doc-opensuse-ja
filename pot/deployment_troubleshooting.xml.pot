@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -26,22 +26,22 @@ msgstr ""
 msgid "This section highlights some typical problems you may run into during installation and offers possible solutions or workarounds."
 msgstr ""
 
-#. Tag: dm:docmanager
-#: deployment_troubleshooting.xml:20
+#. Tag: dm:translation
+#: deployment_troubleshooting.xml:22
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
-msgstr ""
-
-#. Tag: title
-#: deployment_troubleshooting.xml:27 deployment_troubleshooting.xml:42
-#, no-c-format
-msgid "Checking Media"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
 #: deployment_troubleshooting.xml:28
 #, no-c-format
-msgid "If you encounter any problems using the &productname; installation media, check the integrity of your installation media. Boot from the media and choose <guimenu>Check Installation Media</guimenu> from the boot menu. In a running system, start &yast; and choose <menuchoice> <guimenu>Software</guimenu> <guimenu>Media Check</guimenu> </menuchoice>. To check the &productname; medium, insert it into the drive and click <guimenu>Start Check</guimenu> in the <guimenu>Media Check</guimenu> screen of &yast;. This may take several minutes. If errors are detected, do not use this medium for installation. Media problems may occur when having burned the medium yourself. Burning the media at a low speed (4x) helps to avoid problems."
+msgid "If you encounter any problems using the &productname; installation media, check the integrity of your installation media. Boot from the media and choose <guimenu>Check Installation Media</guimenu> from the boot menu. In a running system, start &yast; and choose <menuchoice> <guimenu>Software</guimenu> <guimenu>Media Check</guimenu> </menuchoice> . To check the &productname; medium, insert it into the drive and click <guimenu>Start Check</guimenu> in the <guimenu>Media Check</guimenu> screen of &yast;. This may take several minutes. If errors are detected, do not use this medium for installation. Media problems may occur when having burned the medium yourself. Burning the media at a low speed (4x) helps to avoid problems."
+msgstr ""
+
+#. Tag: title
+#: deployment_troubleshooting.xml:42
+#, no-c-format
+msgid "Checking Media"
 msgstr ""
 
 #. Tag: title
@@ -92,6 +92,18 @@ msgstr ""
 msgid "You can use a USB flash drive if your machine lacks a DVD drive and network connection. <phrase os=\"sles;sled\">For details, see:</phrase>"
 msgstr ""
 
+#. Tag: para
+#: deployment_troubleshooting.xml:97
+#, no-c-format
+msgid "<xref linkend=\"sec.x86.media.boot\"/>"
+msgstr ""
+
+#. Tag: para
+#: deployment_troubleshooting.xml:100
+#, no-c-format
+msgid "<xref linkend=\"sec.aarch64.media.boot\"/>"
+msgstr ""
+
 #. Tag: title
 #: deployment_troubleshooting.xml:109
 #, no-c-format
@@ -104,10 +116,28 @@ msgstr ""
 msgid "One reason a machine does not boot the installation media can be an incorrect boot sequence setting in BIOS. The BIOS boot sequence must have DVD drive set as the first entry for booting. Otherwise the machine would try to boot from another medium, typically the hard disk. Guidance for changing the BIOS boot sequence can be found in the documentation provided with your mainboard, or in the following paragraphs."
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:118
+#. Tag: #text
+#: deployment_troubleshooting.xml:122
 #, no-c-format
-msgid "The BIOS is the software that enables the very basic functions of a computer. Motherboard vendors provide a BIOS specifically made for their hardware. Normally, the BIOS setup can only be accessed at a specific time&mdash;when the machine is booting. During this initialization phase, the machine performs several diagnostic hardware tests. One of them is a memory check, indicated by a memory counter. When the counter appears, look for a line, usually below the counter or somewhere at the bottom, mentioning the key to press to access the BIOS setup. Usually the key to press is one of <keycap function=\"delete\"></keycap>, <keycap>F1</keycap>, or <keycap function=\"escape\"></keycap>. Press this key until the BIOS setup screen appears."
+msgid "The BIOS is the software that enables the very basic functions of a computer. Motherboard vendors provide a BIOS specifically made for their hardware. Normally, the BIOS setup can only be accessed at a specific time&mdash;when the machine is booting. During this initialization phase, the machine performs several diagnostic hardware tests. One of them is a memory check, indicated by a memory counter. When the counter appears, look for a line, usually below the counter or somewhere at the bottom, mentioning the key to press to access the BIOS setup. Usually the key to press is one of"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:127
+#, no-c-format
+msgid ","
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:128
+#, no-c-format
+msgid ", or"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:130
+#, no-c-format
+msgid ". Press this key until the BIOS setup screen appears."
 msgstr ""
 
 #. Tag: title
@@ -122,22 +152,112 @@ msgstr ""
 msgid "Enter the BIOS using the proper key as announced by the boot routines and wait for the BIOS screen to appear."
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:140
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:141
 #, no-c-format
-msgid "To change the boot sequence in an AWARD BIOS, look for the <guimenu>BIOS FEATURES SETUP</guimenu> entry. Other manufacturers may have a different name for this, such as <guimenu>ADVANCED CMOS SETUP</guimenu>. When you have found the entry, select it and confirm with <keycap function=\"enter\"></keycap>."
+msgid "BIOS FEATURES SETUP"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:149
+#. Tag: #text
+#: deployment_troubleshooting.xml:141
 #, no-c-format
-msgid "In the screen that opens, look for a subentry called <guimenu>BOOT SEQUENCE</guimenu> or <guimenu>BOOT ORDER</guimenu>. Change the settings by pressing <keycap function=\"pageup\"></keycap> or <keycap function=\"pagedown\"></keycap> until the DVD drive is listed first."
+msgid "To change the boot sequence in an AWARD BIOS, look for the"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:157
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:143
 #, no-c-format
-msgid "Leave the BIOS setup screen by pressing <keycap function=\"escape\"></keycap>. To save the changes, select <guimenu>SAVE &amp; EXIT SETUP</guimenu>, or press <keycap>F10</keycap>. To confirm that your settings should be saved, press <keycap>Y</keycap>."
+msgid "ADVANCED CMOS SETUP"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:143
+#, no-c-format
+msgid "entry. Other manufacturers may have a different name for this, such as"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:145
+#, no-c-format
+msgid ". When you have found the entry, select it and confirm with"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:150
+#, no-c-format
+msgid "In the screen that opens, look for a subentry called"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:150
+#, no-c-format
+msgid "BOOT SEQUENCE"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:151
+#, no-c-format
+msgid "BOOT ORDER"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:152
+#, no-c-format
+msgid "or"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:152
+#, no-c-format
+msgid ". Change the settings by pressing"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:154
+#, no-c-format
+msgid "until the DVD drive is listed first."
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:158
+#, no-c-format
+msgid "Leave the BIOS setup screen by pressing"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:159
+#, no-c-format
+msgid "SAVE &amp; EXIT SETUP"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:159
+#, no-c-format
+msgid ". To save the changes, select"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:160
+#, no-c-format
+msgid ", or press"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_troubleshooting.xml:160
+#, no-c-format
+msgid "F10"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:161
+#, no-c-format
+msgid ". To confirm that your settings should be saved, press"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_troubleshooting.xml:161
+#, no-c-format
+msgid "Y"
 msgstr ""
 
 #. Tag: title
@@ -146,16 +266,22 @@ msgstr ""
 msgid "Changing the Boot Sequence in an SCSI BIOS (Adaptec Host Adapter)"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:168
+#. Tag: #text
+#: deployment_troubleshooting.xml:169
 #, no-c-format
-msgid "Open the setup by pressing <keycombo> <keycap function=\"control\"></keycap> <keycap>A</keycap> </keycombo>."
+msgid "Open the setup by pressing"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_troubleshooting.xml:170
+#, no-c-format
+msgid "A"
 msgstr ""
 
 #. Tag: para
 #: deployment_troubleshooting.xml:174
 #, no-c-format
-msgid "Select <guimenu>Disk Utilities</guimenu>. The connected hardware components are now displayed."
+msgid "Select <guimenu>Disk Utilities</guimenu> . The connected hardware components are now displayed."
 msgstr ""
 
 #. Tag: para
@@ -164,28 +290,64 @@ msgstr ""
 msgid "Make note of the SCSI ID of your DVD drive."
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:183
+#. Tag: #text
+#: deployment_troubleshooting.xml:184
 #, no-c-format
-msgid "Exit the menu with <keycap function=\"escape\"></keycap>."
+msgid "Exit the menu with"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:188
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:189
 #, no-c-format
-msgid "Open <guimenu>Configure Adapter Settings</guimenu>. Under <guimenu>Additional Options</guimenu>, select <guimenu>Boot Device Options</guimenu> and press <keycap function=\"enter\"></keycap>."
+msgid "Configure Adapter Settings"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:195
+#. Tag: #text
+#: deployment_troubleshooting.xml:189
 #, no-c-format
-msgid "Enter the ID of the DVD drive and press <keycap function=\"enter\"></keycap> again."
+msgid "Open"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:200
+#. Tag: #text
+#: deployment_troubleshooting.xml:190
 #, no-c-format
-msgid "Press <keycap function=\"escape\"></keycap> twice to return to the start screen of the SCSI BIOS."
+msgid ", select"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:190
+#, no-c-format
+msgid "Additional Options"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:190
+#, no-c-format
+msgid "Boot Device Options"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:190
+#, no-c-format
+msgid ". Under"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:196
+#, no-c-format
+msgid "Enter the ID of the DVD drive and press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:197
+#, no-c-format
+msgid "again."
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:203
+#, no-c-format
+msgid "twice to return to the start screen of the SCSI BIOS."
 msgstr ""
 
 #. Tag: para
@@ -224,22 +386,58 @@ msgstr ""
 msgid "If your system fails to install using the standard <guimenu>Installation</guimenu> mode from the first installation boot screen, try the following:"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:244
+#. Tag: #text
+#: deployment_troubleshooting.xml:246
 #, no-c-format
-msgid "With the DVD still in the drive, reboot the machine with <keycombo> <keycap function=\"control\"></keycap> <keycap function=\"alt\"></keycap> <keycap function=\"delete\"></keycap> </keycombo> or using the hardware reset button."
+msgid "With the DVD still in the drive, reboot the machine with"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:252
+#. Tag: #text
+#: deployment_troubleshooting.xml:249
 #, no-c-format
-msgid "When the boot screen appears, press <keycap>F5</keycap>, use the arrow keys of your keyboard to navigate to <guimenu>No ACPI</guimenu> and press <keycap function=\"enter\"></keycap> to launch the boot and installation process. This option disables the support for ACPI power management techniques."
+msgid "or using the hardware reset button."
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:253
+#, no-c-format
+msgid "When the boot screen appears, press"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_troubleshooting.xml:253
+#, no-c-format
+msgid "F5"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:254
+#, no-c-format
+msgid ", use the arrow keys of your keyboard to navigate to"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:254
+#, no-c-format
+msgid "No ACPI"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:255
+#, no-c-format
+msgid "and press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:257
+#, no-c-format
+msgid "to launch the boot and installation process. This option disables the support for ACPI power management techniques."
 msgstr ""
 
 #. Tag: para
 #: deployment_troubleshooting.xml:260
 #, no-c-format
-msgid "Proceed with the installation as described in <xref linkend=\"cha.install\"/>."
+msgid "Proceed with the installation as described in <xref linkend=\"cha.install\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -251,7 +449,7 @@ msgstr ""
 #. Tag: para
 #: deployment_troubleshooting.xml:270
 #, no-c-format
-msgid "If both of these options fail, use the boot parameters prompt to pass any additional parameters needed to support this type of hardware to the installation kernel. For more information about the parameters available as boot parameters, refer to the kernel documentation located in <filename>/usr/src/linux/Documentation/kernel-parameters.txt</filename>."
+msgid "If both of these options fail, use the boot parameters prompt to pass any additional parameters needed to support this type of hardware to the installation kernel. For more information about the parameters available as boot parameters, refer to the kernel documentation located in <filename>/usr/src/linux/Documentation/kernel-parameters.txt</filename> ."
 msgstr ""
 
 #. Tag: title
@@ -272,10 +470,10 @@ msgstr ""
 msgid "There are other ACPI-related kernel parameters that can be entered at the boot prompt prior to booting for installation:"
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:290
 #, no-c-format
-msgid "acpi=off"
+msgid "<systemitem>acpi=off</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -284,22 +482,22 @@ msgstr ""
 msgid "This parameter disables the complete ACPI subsystem on your computer. This may be useful if your computer cannot handle ACPI or if you think ACPI in your computer causes trouble."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:301
 #, no-c-format
-msgid "acpi=force"
+msgid "<systemitem>acpi=force</systemitem>"
 msgstr ""
 
 #. Tag: para
 #: deployment_troubleshooting.xml:304
 #, no-c-format
-msgid "Always enable ACPI even if your computer has an old BIOS dated before the year 2000. This parameter also enables ACPI if it is set in addition to <systemitem>acpi=off</systemitem>."
+msgid "Always enable ACPI even if your computer has an old BIOS dated before the year 2000. This parameter also enables ACPI if it is set in addition to <systemitem>acpi=off</systemitem> ."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:312
 #, no-c-format
-msgid "acpi=noirq"
+msgid "<systemitem>acpi=noirq</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -308,10 +506,10 @@ msgstr ""
 msgid "Do not use ACPI for IRQ routing."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:321
 #, no-c-format
-msgid "acpi=ht"
+msgid "<systemitem>acpi=ht</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -320,10 +518,10 @@ msgstr ""
 msgid "Run only enough ACPI to enable hyper-threading."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:330
 #, no-c-format
-msgid "acpi=strict"
+msgid "<systemitem>acpi=strict</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -332,10 +530,10 @@ msgstr ""
 msgid "Be less tolerant of platforms that are not strictly ACPI specification compliant."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:340
 #, no-c-format
-msgid "pci=noacpi"
+msgid "<systemitem>pci=noacpi</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -344,10 +542,10 @@ msgstr ""
 msgid "Disable PCI IRQ routing of the new ACPI system."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:349
 #, no-c-format
-msgid "pnpacpi=off"
+msgid "<systemitem>pnpacpi=off</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -356,10 +554,10 @@ msgstr ""
 msgid "This option is for serial or parallel problems when your BIOS setup contains wrong interrupts or ports."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:359
 #, no-c-format
-msgid "notsc"
+msgid "<systemitem>notsc</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -368,10 +566,10 @@ msgstr ""
 msgid "Disable the time stamp counter. This option can be used to work around timing problems on your systems. It is a recent feature, so if you see regressions on your machine, especially time related or even total hangs, this option is worth a try."
 msgstr ""
 
-#. Tag: systemitem
+#. Tag: term
 #: deployment_troubleshooting.xml:371
 #, no-c-format
-msgid "nohz=off"
+msgid "<systemitem>nohz=off</systemitem>"
 msgstr ""
 
 #. Tag: para
@@ -401,7 +599,7 @@ msgstr ""
 #. Tag: para
 #: deployment_troubleshooting.xml:396
 #, no-c-format
-msgid "After you insert the medium into your drive and reboot your machine, the installation screen comes up, but after you select <guimenu>Installation</guimenu>, the graphical installer does not start."
+msgid "After you insert the medium into your drive and reboot your machine, the installation screen comes up, but after you select <guimenu>Installation</guimenu> , the graphical installer does not start."
 msgstr ""
 
 #. Tag: para
@@ -434,22 +632,10 @@ msgstr ""
 msgid "Change Screen Resolution for Installation"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:424 deployment_troubleshooting.xml:444 deployment_troubleshooting.xml:463
+#. Tag: #text
+#: deployment_troubleshooting.xml:432
 #, no-c-format
-msgid "Boot for installation."
-msgstr ""
-
-#. Tag: para
-#: deployment_troubleshooting.xml:429
-#, no-c-format
-msgid "Press <keycap>F3</keycap> to open a menu from which to select a lower resolution for installation purposes."
-msgstr ""
-
-#. Tag: para
-#: deployment_troubleshooting.xml:435 deployment_troubleshooting.xml:454
-#, no-c-format
-msgid "Select <guimenu>Installation</guimenu> and proceed with the installation as described in <xref linkend=\"cha.install\"/>."
+msgid "to open a menu from which to select a lower resolution for installation purposes."
 msgstr ""
 
 #. Tag: title
@@ -458,16 +644,40 @@ msgstr ""
 msgid "Installation in Text Mode"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:449
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:450
 #, no-c-format
-msgid "Press <keycap>F3</keycap> and select <guimenu>Text Mode</guimenu>."
+msgid "Text Mode"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:450
+#, no-c-format
+msgid "and select"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:450
+#, no-c-format
+msgid "Press"
+msgstr ""
+
+#. Tag: para
+#: deployment_troubleshooting.xml:454
+#, no-c-format
+msgid "Select <guimenu>Installation</guimenu> and proceed with the installation as described in <xref linkend=\"cha.install\"/> ."
 msgstr ""
 
 #. Tag: title
 #: deployment_troubleshooting.xml:461
 #, no-c-format
 msgid "VNC Installation"
+msgstr ""
+
+#. Tag: para
+#: deployment_troubleshooting.xml:463
+#, no-c-format
+msgid "Boot for installation."
 msgstr ""
 
 #. Tag: para
@@ -488,10 +698,28 @@ msgstr ""
 msgid "Replace <replaceable>SOME_PASSWORD</replaceable> with the password to use for VNC installation."
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:478
+#. Tag: #text
+#: deployment_troubleshooting.xml:479
 #, no-c-format
-msgid "Select <guimenu>Installation</guimenu> then press <keycap function=\"enter\"></keycap> to start the installation."
+msgid "Select"
+msgstr ""
+
+#. Tag: guimenu
+#: deployment_troubleshooting.xml:479
+#, no-c-format
+msgid "Installation"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:480
+#, no-c-format
+msgid "then press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:481
+#, no-c-format
+msgid "to start the installation."
 msgstr ""
 
 #. Tag: para
@@ -500,10 +728,16 @@ msgstr ""
 msgid "Instead of starting right into the graphical installation routine, the system continues to run in a text mode. The system then halts, displaying a message containing the IP address and port number at which the installer can be reached via a browser interface or a VNC viewer application."
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:490
+#. Tag: #text
+#: deployment_troubleshooting.xml:493
 #, no-c-format
-msgid "If using a browser to access the installer, launch the browser and enter the address information provided by the installation routines on the future &productname; machine and press <keycap function=\"enter\"></keycap>:"
+msgid "If using a browser to access the installer, launch the browser and enter the address information provided by the installation routines on the future &productname; machine and press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:494
+#, no-c-format
+msgid ":"
 msgstr ""
 
 #. Tag: screen
@@ -515,7 +749,7 @@ msgstr ""
 #. Tag: para
 #: deployment_troubleshooting.xml:496
 #, no-c-format
-msgid "A dialog opens in the browser window prompting you for the VNC password. Enter it and proceed with the installation as described in <xref linkend=\"cha.install\"/>."
+msgid "A dialog opens in the browser window prompting you for the VNC password. Enter it and proceed with the installation as described in <xref linkend=\"cha.install\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -560,10 +794,16 @@ msgstr ""
 msgid "Boot Options"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:534
+#. Tag: #text
+#: deployment_troubleshooting.xml:539
 #, no-c-format
-msgid "Unlike the graphical interface, the different boot parameters cannot be selected using the cursor keys of your keyboard. The boot menu of the text mode boot screen offers some keywords to enter at the boot prompt. These keywords map to the options offered in the graphical version. Enter your choice and press <keycap function=\"enter\"></keycap> to launch the boot process."
+msgid "Unlike the graphical interface, the different boot parameters cannot be selected using the cursor keys of your keyboard. The boot menu of the text mode boot screen offers some keywords to enter at the boot prompt. These keywords map to the options offered in the graphical version. Enter your choice and press"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:541
+#, no-c-format
+msgid "to launch the boot process."
 msgstr ""
 
 #. Tag: term
@@ -572,10 +812,16 @@ msgstr ""
 msgid "Custom Boot Options"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:547
+#. Tag: #text
+#: deployment_troubleshooting.xml:550
 #, no-c-format
-msgid "After selecting a boot parameter, enter the appropriate keyword at the boot prompt or enter some custom boot parameters as described in <xref linkend=\"sec.installation_troubleshooting.noboot\"/>. To launch the installation process, press <keycap function=\"enter\"></keycap>."
+msgid "After selecting a boot parameter, enter the appropriate keyword at the boot prompt or enter some custom boot parameters as described in"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:551
+#, no-c-format
+msgid ". To launch the installation process, press"
 msgstr ""
 
 #. Tag: term
@@ -584,10 +830,46 @@ msgstr ""
 msgid "Screen Resolutions"
 msgstr ""
 
-#. Tag: para
-#: deployment_troubleshooting.xml:558
+#. Tag: keycap
+#: deployment_troubleshooting.xml:559
 #, no-c-format
-msgid "Use the function keys (<keycap>F1</keycap> ... <keycap>F12</keycap>) to determine the screen resolution for installation. If you need to boot in text mode, choose <keycap>F3</keycap>."
+msgid "F1"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:559
+#, no-c-format
+msgid "Use the function keys ("
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:560
+#, no-c-format
+msgid "..."
+msgstr ""
+
+#. Tag: keycap
+#: deployment_troubleshooting.xml:560
+#, no-c-format
+msgid "F12"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:562
+#, no-c-format
+msgid ") to determine the screen resolution for installation. If you need to boot in text mode, choose"
+msgstr ""
+
+#. Tag: keycap
+#: deployment_troubleshooting.xml:562
+#, no-c-format
+msgid "F3"
+msgstr ""
+
+#. Tag: #text
+#: deployment_troubleshooting.xml:563
+#, no-c-format
+msgid "."
 msgstr ""
 
 #. Tag: title
@@ -599,6 +881,6 @@ msgstr ""
 #. Tag: para
 #: deployment_troubleshooting.xml:570
 #, no-c-format
-msgid "For more information about log files that are created during installation, see <xref linkend=\"sec.admsupport.install\"/>."
+msgid "For more information about log files that are created during installation, see <xref linkend=\"sec.admsupport.install\"/> ."
 msgstr ""
 

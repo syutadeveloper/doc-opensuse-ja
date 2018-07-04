@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE chapter [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
-
-<chapter xmlns="http://docbook.org/ns/docbook"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-         xml:id="cha.libvirt.overview">
- <title
->Starting and Stopping &libvirtd;</title>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.libvirt.overview">
+ <title>Starting and Stopping &libvirtd;</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker>
@@ -18,10 +11,15 @@
   </dm:docmanager>
  </info>
 
- <para
->The communication between the virtualization solutions (&kvm;, &xen;, &lxc;) and the libvirt API is managed by the daemon &libvirtd;. It needs to run on the &vmhost;. libvirt client applications such as virt-manager, possibly running on a remote machine, communicate with &libvirtd; running on the &vmhost;, which services the request using native hypervisor APIs. Use the following commands to start and stop &libvirtd; or check its status: </para>
- <screen
->&prompt.sudo;systemctl start libvirtd
+ <para>
+  The communication between the virtualization solutions (&kvm;, &xen;, &lxc;)
+  and the libvirt API is managed by the daemon &libvirtd;. It needs to run
+  on the &vmhost;. libvirt client applications such as virt-manager, possibly
+  running on a remote machine, communicate with &libvirtd; running on the
+  &vmhost;, which services the request using native hypervisor APIs. Use the
+  following commands to start and stop &libvirtd; or check its status:
+ </para>
+ <screen>&prompt.sudo;systemctl start libvirtd
 
 &prompt.sudo;systemctl status libvirtd
 libvirtd.service - Virtualization daemon
@@ -35,55 +33,39 @@ Active: active (running) since Mon 2014-05-12 08:49:40 EDT; 2s ago
 [...]
 Active: inactive (dead) since Mon 2014-05-12 08:51:11 EDT; 4s ago
 [...]</screen>
- <para
->To automatically start &libvirtd; at boot time, either activate it using the &yast; <guimenu
->&ycc_runlevel;</guimenu
-> module or by entering the following command: </para>
- <screen
->&prompt.sudo;systemctl enable libvirtd</screen>
+ <para>
+  To automatically start &libvirtd; at boot time, either activate it using the
+  &yast; <guimenu>&ycc_runlevel;</guimenu> module or by entering the following
+  command:
+ </para>
+ <screen>&prompt.sudo;systemctl enable libvirtd</screen>
 
  <important>
-  <title
->Conflicting Services: <systemitem class="daemon"
->libvirtd</systemitem
-> and <systemitem class="daemon"
->xendomains</systemitem
-></title>
-  <para
->If <systemitem class="daemon"
->libvirtd</systemitem
-> fails to start, check if the service <systemitem class="daemon"
->xendomains</systemitem
-> is loaded: </para>
-  <screen
->&prompt.user;systemctl is-active xendomains
+  <title>Conflicting Services: <systemitem class="daemon">libvirtd</systemitem>
+  and <systemitem class="daemon">xendomains</systemitem></title>
+  <para>
+   If <systemitem class="daemon">libvirtd</systemitem> fails to start,
+   check if the service <systemitem class="daemon">xendomains</systemitem> is
+   loaded:
+  </para>
+  <screen>&prompt.user;systemctl is-active xendomains
 active</screen>
-  <para
->If the command returns <literal
->active</literal
->, you need to stop <systemitem class="daemon"
->xendomains</systemitem
-> before you can start the <systemitem class="daemon"
->libvirtd</systemitem
-> daemon. If you want <systemitem class="daemon"
->libvirtd</systemitem
-> to also start after rebooting, additionally prevent <systemitem class="daemon"
->xendomains</systemitem
-> from starting automatically. Disable the service: </para>
-  <screen
->&prompt.sudo;systemctl stop xendomains
+  <para>
+   If the command returns <literal>active</literal>, you need to stop
+   <systemitem class="daemon">xendomains</systemitem> before you can
+   start the <systemitem class="daemon">libvirtd</systemitem> daemon. If
+   you want <systemitem class="daemon">libvirtd</systemitem> to also start
+   after rebooting, additionally prevent <systemitem class="daemon">xendomains</systemitem> from starting automatically. Disable
+   the service:
+  </para>
+  <screen>&prompt.sudo;systemctl stop xendomains
 &prompt.sudo;systemctl disable xendomains
 &prompt.sudo;systemctl start libvirtd</screen>
-  <para
-><systemitem class="daemon"
->xendomains</systemitem
-> and <systemitem class="daemon"
->libvirtd</systemitem
-> provide the same service and when used in parallel may interfere with one another. As an example, <systemitem class="daemon"
->xendomains</systemitem
-> may attempt to start a domU already started by <systemitem class="daemon"
->libvirtd</systemitem
->. </para>
+  <para>
+   <systemitem class="daemon">xendomains</systemitem> and <systemitem class="daemon">libvirtd</systemitem> provide the same service and when used
+   in parallel may interfere with one another. As an example, <systemitem class="daemon">xendomains</systemitem> may attempt to start a domU already
+   started by <systemitem class="daemon">libvirtd</systemitem>.
+  </para>
  </important>
 
 

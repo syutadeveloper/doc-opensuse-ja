@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -23,7 +23,7 @@ msgstr ""
 #. Tag: para
 #: xm_vs_xl_xen2libvirt.xml:17
 #, no-c-format
-msgid "<command>xen2libvirt</command> is a command line tool to import legacy &xen; domain configuration into the &libvirt; virtualization library (see The Virtualization book for more information on &libvirt;). xen2libvirt provides an easy way to import domains managed by the deprecated <command>xm</command>/xend tool stack into the new &libvirt;/libxl tool stack. Several domains can be imported at once using its <option>--recursive mode</option>"
+msgid "<command>xen2libvirt</command> is a command line tool to import legacy &xen; domain configuration into the &libvirt; virtualization library (see The Virtualization book for more information on &libvirt;). xen2libvirt provides an easy way to import domains managed by the deprecated <command>xm</command> /xend tool stack into the new &libvirt;/libxl tool stack. Several domains can be imported at once using its <option>--recursive mode</option>"
 msgstr ""
 
 #. Tag: para
@@ -59,7 +59,7 @@ msgstr ""
 #. Tag: term
 #: xm_vs_xl_xen2libvirt.xml:46
 #, no-c-format
-msgid "<option>-h</option>, <option>--help</option>"
+msgid "<option>-h</option> , <option>--help</option>"
 msgstr ""
 
 #. Tag: para
@@ -71,7 +71,7 @@ msgstr ""
 #. Tag: term
 #: xm_vs_xl_xen2libvirt.xml:55
 #, no-c-format
-msgid "<option>-c</option>, <option>--convert-only</option>"
+msgid "<option>-c</option> , <option>--convert-only</option>"
 msgstr ""
 
 #. Tag: para
@@ -83,7 +83,7 @@ msgstr ""
 #. Tag: term
 #: xm_vs_xl_xen2libvirt.xml:65
 #, no-c-format
-msgid "<option>-r</option>, <option>--recursive</option>"
+msgid "<option>-r</option> , <option>--recursive</option>"
 msgstr ""
 
 #. Tag: para
@@ -95,19 +95,19 @@ msgstr ""
 #. Tag: term
 #: xm_vs_xl_xen2libvirt.xml:75
 #, no-c-format
-msgid "<option>-f</option>, <option>--format</option>"
+msgid "<option>-f</option> , <option>--format</option>"
 msgstr ""
 
 #. Tag: para
 #: xm_vs_xl_xen2libvirt.xml:78
 #, no-c-format
-msgid "Specifies the format of the source domain configuration. Can be either <literal>xm</literal>, or <literal>sexpr</literal> (S-expression format)."
+msgid "Specifies the format of the source domain configuration. Can be either <literal>xm</literal> , or <literal>sexpr</literal> (S-expression format)."
 msgstr ""
 
 #. Tag: term
 #: xm_vs_xl_xen2libvirt.xml:86
 #, no-c-format
-msgid "<option>-v</option>, <option>--verbose</option>"
+msgid "<option>-v</option> , <option>--verbose</option>"
 msgstr ""
 
 #. Tag: para
@@ -125,14 +125,13 @@ msgstr ""
 #. Tag: para
 #: xm_vs_xl_xen2libvirt.xml:98
 #, no-c-format
-msgid "Suppose you have a &xen; domain managed with <command>xm</command> with the following configuration saved in <filename>/etc/xen/sle12.xm</filename>:"
+msgid "Suppose you have a &xen; domain managed with <command>xm</command> with the following configuration saved in <filename>/etc/xen/sle12.xm</filename> :"
 msgstr ""
 
 #. Tag: screen
 #: xm_vs_xl_xen2libvirt.xml:103
 #, no-c-format
-msgid ""
-      "kernel = \"/boot/vmlinuz-2.6-xenU\"\n"
+msgid "kernel = \"/boot/vmlinuz-2.6-xenU\"\n"
       "  memory = 128\n"
       "  name = \"SLE12\"\n"
       "  root = \"/dev/hda1 ro\"\n"
@@ -140,16 +139,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xm_vs_xl_xen2libvirt.xml:104
+#: xm_vs_xl_xen2libvirt.xml:108
 #, no-c-format
 msgid "Convert it to &libvirt; XML without importing it, and look at its content:"
 msgstr ""
 
 #. Tag: screen
-#: xm_vs_xl_xen2libvirt.xml:108
+#: xm_vs_xl_xen2libvirt.xml:112
 #, no-c-format
-msgid ""
-      "&prompt.sudo;xen2libvirt -f xm -c /etc/xen/sle12.xm &gt; /etc/libvirt/qemu/sles12.xml\n"
+msgid "&prompt.sudo;xen2libvirt -f xm -c /etc/xen/sle12.xm &gt; /etc/libvirt/qemu/sles12.xml\n"
       "  # cat /etc/libvirt/qemu/sles12.xml\n"
       "  &lt;domain type='xen'&gt;\n"
       "  &lt;name&gt;SLE12&lt;/name&gt;\n"
@@ -179,13 +177,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: xm_vs_xl_xen2libvirt.xml:109
+#: xm_vs_xl_xen2libvirt.xml:139
 #, no-c-format
-msgid "To import the domain into &libvirt;, you can either run the same <command>xen2libvirt</command> command without the <option>-c</option> option, or use the exported file <filename>/etc/libvirt/qemu/sles12.xml</filename> and define a new &xen; domain using <command>virsh</command>:"
+msgid "To import the domain into &libvirt;, you can either run the same <command>xen2libvirt</command> command without the <option>-c</option> option, or use the exported file <filename>/etc/libvirt/qemu/sles12.xml</filename> and define a new &xen; domain using <command>virsh</command> :"
 msgstr ""
 
 #. Tag: screen
-#: xm_vs_xl_xen2libvirt.xml:116
+#: xm_vs_xl_xen2libvirt.xml:146
 #, no-c-format
 msgid "&prompt.sudo;virsh define /etc/libvirt/qemu/sles12.xml"
 msgstr ""

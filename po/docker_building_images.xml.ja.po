@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid ""
 "For creating your custom image you need a base docker image of &slsa;. You "
 "can use any of the pre-built &slsa; images that you can obtain as described "
-"in <xref linkend=\"Customizing_Pre-build_Images\"/>."
+"in <xref linkend=\"Customizing_Pre-build_Images\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -71,7 +71,7 @@ msgstr ""
 msgid ""
 "For more information about <literal>docker build</literal> options, see the "
 "<link xlink:href=\"https://docs.docker.com/engine/reference/commandline/"
-"build/\">official Docker documentation</link>."
+"build/\">official Docker documentation</link> ."
 msgstr ""
 
 #. Tag: title
@@ -86,7 +86,7 @@ msgstr ""
 msgid ""
 "You may want to write a dockerfile for your own application that should be "
 "run inside a docker container. For a procedure refer to <xref linkend="
-"\"docker.dockerizing.application\"/>."
+"\"docker.dockerizing.application\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -150,7 +150,7 @@ msgstr ""
 msgid ""
 "After successful activation, <literal>sle2docker</literal> will display the "
 "name of the docker image. You can customize the docker image as described in "
-"<xref linkend=\"Customizing_Pre-build_Images\"/>."
+"<xref linkend=\"Customizing_Pre-build_Images\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -171,7 +171,7 @@ msgid ""
 "Docker container. The service obtains the list of repositories available for "
 "the product used by the Docker image. You can also directly declare "
 "extensions in your <filename>Dockerfile</filename> (for details refer to "
-"<xref linkend=\"sec.docker.sle_images.customizing_the_images.extensions\"/>."
+"<xref linkend=\"sec.docker.sle_images.customizing_the_images.extensions\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -219,10 +219,10 @@ msgstr ""
 msgid ""
 "It will automatically add all the repositories to your container. For each "
 "repository added to the system a new file will be created under <command>/"
-"etc/zypp/repos.d</command>. The URLs of these repositories include an access "
-"token that automatically expires after 12 hours. To renew the token call the "
-"<command>zypper ref -s</command> command. It is secure to commit these files "
-"to a Docker image."
+"etc/zypp/repos.d</command> . The URLs of these repositories include an "
+"access token that automatically expires after 12 hours. To renew the token "
+"call the <command>zypper ref -s</command> command. It is secure to commit "
+"these files to a Docker image."
 msgstr ""
 
 #. Tag: para
@@ -243,12 +243,12 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Now you can create a custom Docker image by using a <literal>Dockerfile</"
-"literal>. If you want to create a custom &slea;&nbsp;12 image, please refer "
-"to <xref linkend=\"sec.docker.sle_images.customizing_the_images.sles12\"/>. "
+"literal> . If you want to create a custom &slea;&nbsp;12 image, please refer "
+"to <xref linkend=\"sec.docker.sle_images.customizing_the_images.sles12\"/> . "
 "If you want to create a custom &slea;&nbsp;11 SP3 Docker image, please refer "
 "to <xref linkend=\"sec.docker.sle_images.customizing_the_images.sles11sp3\"/"
-">. In case you would like to move your application to a Docker container, "
-"please refer to <xref linkend=\"docker.dockerizing.application\"/>."
+"> . In case you would like to move your application to a Docker container, "
+"please refer to <xref linkend=\"docker.dockerizing.application\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -275,16 +275,8 @@ msgid ""
 "RUN zypper -n in vim"
 msgstr ""
 
-#. Tag: para
-#: docker_building_images.xml:178 docker_building_images.xml:192
-#, no-c-format
-msgid ""
-"When the Docker host machine is registered against an internal &rmt; server, "
-"the Docker image requires the SSL certificate used by &rmt;:"
-msgstr ""
-
 #. Tag: screen
-#: docker_building_images.xml:182
+#: docker_building_images.xml:185
 #, no-c-format
 msgid ""
 "FROM suse/sles12sp3:latest\n"
@@ -298,13 +290,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: docker_building_images.xml:186
+#: docker_building_images.xml:196
 #, no-c-format
 msgid "Creating a Custom &slea;&nbsp;11 SP3 Image"
 msgstr ""
 
 #. Tag: para
-#: docker_building_images.xml:187
+#: docker_building_images.xml:197
 #, no-c-format
 msgid ""
 "The following Docker file creates a simple Docker image based on &slea;"
@@ -312,7 +304,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: docker_building_images.xml:191
+#: docker_building_images.xml:201
 #, no-c-format
 msgid ""
 "FROM suse/sles11sp3:latest\n"
@@ -321,8 +313,16 @@ msgid ""
 "RUN zypper -n in vim"
 msgstr ""
 
+#. Tag: para
+#: docker_building_images.xml:205
+#, no-c-format
+msgid ""
+"When the Docker host machine is registered against an internal &rmt; server, "
+"the Docker image requires the SSL certificate used by &rmt;:"
+msgstr ""
+
 #. Tag: screen
-#: docker_building_images.xml:196
+#: docker_building_images.xml:209
 #, no-c-format
 msgid ""
 "FROM suse/sles11sp4:latest\n"
@@ -336,13 +336,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: docker_building_images.xml:200
+#: docker_building_images.xml:220
 #, no-c-format
 msgid "Adding &slea; Extensions and Modules to Images"
 msgstr ""
 
 #. Tag: para
-#: docker_building_images.xml:201
+#: docker_building_images.xml:221
 #, no-c-format
 msgid ""
 "You may have subscriptions to SLE extensions or modules that you would like "
@@ -351,19 +351,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: docker_building_images.xml:207
+#: docker_building_images.xml:227
 #, no-c-format
 msgid "Adding Extension and Modules"
 msgstr ""
 
 #. Tag: para
-#: docker_building_images.xml:209
+#: docker_building_images.xml:229
 #, no-c-format
-msgid "Add the following into your <filename>Dockerfile</filename>:"
+msgid "Add the following into your <filename>Dockerfile</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: docker_building_images.xml:212
+#: docker_building_images.xml:232
 #, no-c-format
 msgid ""
 "ADD *.repo /etc/zypp/repos.d/\n"
@@ -372,10 +372,10 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: docker_building_images.xml:215
+#: docker_building_images.xml:237
 #, no-c-format
 msgid ""
 "Copy all <filename>.service</filename> and <filename>.repo</filename> files "
 "that you will use into the directory where you will build the Docker image "
-"from the <filename>Dockerfile</filename>."
+"from the <filename>Dockerfile</filename> ."
 msgstr ""

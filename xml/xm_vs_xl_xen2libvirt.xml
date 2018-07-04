@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE sect1 [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
-
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="xen.xen2libvirt">
- <title
->Import &xen; Domain Configuration into &libvirt;</title>
+ <title>Import &xen; Domain Configuration into &libvirt;</title>
 
  <info>
       <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -15,126 +11,102 @@
           </dm:bugtracker>
       </dm:docmanager>
     </info>
-    <para
-><command
->xen2libvirt</command
-> is a command line tool to import legacy &xen; domain configuration into the &libvirt; virtualization library (see The Virtualization book for more information on &libvirt;). xen2libvirt provides an easy way to import domains managed by the deprecated <command
->xm</command
->/xend tool stack into the new &libvirt;/libxl tool stack. Several domains can be imported at once using its <option
->--recursive mode</option
-> </para>
+    <para>
+  <command>xen2libvirt</command> is a command line tool to import legacy
+  &xen; domain configuration into the &libvirt; virtualization library
+  (see The Virtualization book for more information on &libvirt;).
+  xen2libvirt provides an easy way to import domains managed by the
+  deprecated <command>xm</command>/xend tool stack into the new
+  &libvirt;/libxl tool stack. Several domains can be imported at once
+  using its <option>--recursive mode</option>
+ </para>
 
- <para
-><command
->xen2libvirt</command
-> is included in the <systemitem
->xen-tools</systemitem
-> package. If needed, install it with </para>
+ <para>
+  <command>xen2libvirt</command> is included in the
+  <systemitem>xen-tools</systemitem> package. If needed, install it with
+ </para>
 
-<screen
->&prompt.sudo;zypper install xen-tools</screen>
+<screen>&prompt.sudo;zypper install xen-tools</screen>
 
- <para
-><command
->xen2libvirt</command
-> general syntax is </para>
+ <para>
+  <command>xen2libvirt</command> general syntax is
+ </para>
 
-<screen
->xen2libvirt &lt;options&gt; <replaceable>/path/to/domain/config</replaceable></screen>
+<screen>xen2libvirt &lt;options&gt; <replaceable>/path/to/domain/config</replaceable></screen>
 
- <para
->where <option
->options</option
-> can be: </para>
+ <para>
+  where <option>options</option> can be:
+ </para>
 
  <variablelist>
   <varlistentry>
-   <term
-><option
->-h</option
->, <option
->--help</option
-> </term>
+   <term><option>-h</option>, <option>--help</option>
+   </term>
    <listitem>
-    <para
->Prints short information about <command
->xen2libvirt</command
-> usage. </para>
+    <para>
+     Prints short information about <command>xen2libvirt</command> usage.
+    </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term
-><option
->-c</option
->, <option
->--convert-only</option
-> </term>
+   <term><option>-c</option>, <option>--convert-only</option>
+   </term>
    <listitem>
-    <para
->Converts the domain configuration to the &libvirt; XML format, but does not do the import to &libvirt;. </para>
+    <para>
+     Converts the domain configuration to the &libvirt; XML format, but
+     does not do the import to &libvirt;.
+    </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term
-><option
->-r</option
->, <option
->--recursive</option
-> </term>
+   <term><option>-r</option>, <option>--recursive</option>
+   </term>
    <listitem>
-    <para
->Converts and/or imports all domains configuration recursively, starting at the specified path. </para>
+    <para>
+     Converts and/or imports all domains configuration recursively, starting
+     at the specified path.
+    </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term
-><option
->-f</option
->, <option
->--format</option
-> </term>
+   <term><option>-f</option>, <option>--format</option>
+   </term>
    <listitem>
-    <para
->Specifies the format of the source domain configuration. Can be either <literal
->xm</literal
->, or <literal
->sexpr</literal
-> (S-expression format). </para>
+    <para>
+     Specifies the format of the source domain configuration. Can be either
+     <literal>xm</literal>, or <literal>sexpr</literal> (S-expression
+     format).
+    </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term
-><option
->-v</option
->, <option
->--verbose</option
-> </term>
+   <term><option>-v</option>, <option>--verbose</option>
+   </term>
    <listitem>
-    <para
->Prints more detailed information about the import process. </para>
+    <para>
+     Prints more detailed information about the import process.
+    </para>
    </listitem>
   </varlistentry>
  </variablelist>
 
  <example>
-  <title
->Converting &xen; Domain Configuration to &libvirt;</title>
-  <para
->Suppose you have a &xen; domain managed with <command
->xm</command
-> with the following configuration saved in <filename
->/etc/xen/sle12.xm</filename
->: </para>
-<screen
->kernel = "/boot/vmlinuz-2.6-xenU"
+  <title>Converting &xen; Domain Configuration to &libvirt;</title>
+  <para>
+   Suppose you have a &xen; domain managed with <command>xm</command>
+   with the following configuration saved in
+   <filename>/etc/xen/sle12.xm</filename>:
+  </para>
+<screen>kernel = "/boot/vmlinuz-2.6-xenU"
   memory = 128
   name = "SLE12"
   root = "/dev/hda1 ro"
   disk = [ "file:/var/xen/sle12.img,hda1,w" ]</screen>
-  <para
->Convert it to &libvirt; XML without importing it, and look at its content: </para>
-<screen
->&prompt.sudo;xen2libvirt -f xm -c /etc/xen/sle12.xm &gt; /etc/libvirt/qemu/sles12.xml
+  <para>
+   Convert it to &libvirt; XML without importing it, and look at its
+   content:
+  </para>
+<screen>&prompt.sudo;xen2libvirt -f xm -c /etc/xen/sle12.xm &gt; /etc/libvirt/qemu/sles12.xml
   # cat /etc/libvirt/qemu/sles12.xml
   &lt;domain type='xen'&gt;
   &lt;name&gt;SLE12&lt;/name&gt;
@@ -161,17 +133,13 @@
   &lt;/console&gt;
   &lt;/devices&gt;
   &lt;/domain&gt;</screen>
-  <para
->To import the domain into &libvirt;, you can either run the same <command
->xen2libvirt</command
-> command without the <option
->-c</option
-> option, or use the exported file <filename
->/etc/libvirt/qemu/sles12.xml</filename
-> and define a new &xen; domain using <command
->virsh</command
->: </para>
-<screen
->&prompt.sudo;virsh define /etc/libvirt/qemu/sles12.xml</screen>
+  <para>
+   To import the domain into &libvirt;, you can either run the same
+   <command>xen2libvirt</command> command without the <option>-c</option>
+   option, or use the exported file
+   <filename>/etc/libvirt/qemu/sles12.xml</filename> and define a new
+   &xen; domain using <command>virsh</command>:
+  </para>
+<screen>&prompt.sudo;virsh define /etc/libvirt/qemu/sles12.xml</screen>
  </example>
 </sect1>

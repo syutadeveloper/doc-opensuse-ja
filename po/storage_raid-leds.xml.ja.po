@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -22,31 +22,58 @@ msgstr ""
 msgid "Storage Enclosure LED Utilities for MD Software RAIDs"
 msgstr ""
 
-#. Tag: remark
-#: storage_raid-leds.xml:13
+#. Tag: #text
+#: storage_raid-leds.xml:14
 #, no-c-format
-msgid "Fate #313626 Update Enclosure LED Utilities"
+msgid "Storage enclosure LED Monitoring utility ("
 msgstr ""
 
-#. Tag: para
-#: storage_raid-leds.xml:13
+#. Tag: #text
+#: storage_raid-leds.xml:15
+#, no-c-format
+msgid ") and LED Control ("
+msgstr ""
+
+#. Tag: systemitem
+#: storage_raid-leds.xml:19
+#, no-c-format
+msgid "ledmon"
+msgstr ""
+
+#. Tag: #text
+#: storage_raid-leds.xml:19
 #, no-c-format
 msgid ""
-"Storage enclosure LED Monitoring utility (<command>ledmon</command>) and LED "
-"Control (<command>ledctl</command>) utility are Linux user space "
-"applications that use a broad range of interfaces and protocols to control "
-"storage enclosure LEDs. The primary usage is to visualize the status of "
-"Linux MD software RAID devices created with the mdadm utility. The "
-"<systemitem class=\"daemon\">ledmon</systemitem> daemon monitors the status "
-"of the drive array and updates the status of the drive LEDs. The "
-"<command>ledctl</command> utility allows you to set LED patterns for "
-"specified devices."
+") utility are Linux user space applications that use a broad range of "
+"interfaces and protocols to control storage enclosure LEDs. The primary "
+"usage is to visualize the status of Linux MD software RAID devices created "
+"with the mdadm utility. The"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: storage_raid-leds.xml:25
+#. Tag: command
+#: storage_raid-leds.xml:21
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "ledctl"
+msgstr ""
+
+#. Tag: #text
+#: storage_raid-leds.xml:21
+#, no-c-format
+msgid ""
+"daemon monitors the status of the drive array and updates the status of the "
+"drive LEDs. The"
+msgstr ""
+
+#. Tag: #text
+#: storage_raid-leds.xml:23
+#, no-c-format
+msgid "utility allows you to set LED patterns for specified devices."
+msgstr ""
+
+#. Tag: dm:translation
+#: storage_raid-leds.xml:27
+#, no-c-format
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -146,7 +173,7 @@ msgstr ""
 #. Tag: para
 #: storage_raid-leds.xml:92
 #, no-c-format
-msgid "To start <systemitem class=\"daemon\">ledmon</systemitem>, enter"
+msgid "To start <systemitem class=\"daemon\">ledmon</systemitem> , enter"
 msgstr ""
 
 #. Tag: screen
@@ -155,28 +182,10 @@ msgstr ""
 msgid "&prompt.sudo;ledmon [options]"
 msgstr ""
 
-#. Tag: para
-#: storage_raid-leds.xml:98 storage_raid-leds.xml:230
-#, no-c-format
-msgid "where [options] is one or more of the following:"
-msgstr ""
-
 #. Tag: title
 #: storage_raid-leds.xml:103
 #, no-c-format
 msgid "Options for <systemitem class=\"daemon\">ledmon</systemitem>"
-msgstr ""
-
-#. Tag: option
-#: storage_raid-leds.xml:105 storage_raid-leds.xml:236
-#, no-c-format
-msgid "-c <replaceable>PATH</replaceable>"
-msgstr ""
-
-#. Tag: option
-#: storage_raid-leds.xml:107 storage_raid-leds.xml:238
-#, no-c-format
-msgid "--confg=<replaceable>PATH</replaceable>"
 msgstr ""
 
 #. Tag: para
@@ -198,42 +207,22 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: storage_raid-leds.xml:123 storage_raid-leds.xml:248
+#: storage_raid-leds.xml:135
 #, no-c-format
-msgid "-l <replaceable>PATH</replaceable>"
+msgid "<option>-t <replaceable>SECONDS</replaceable></option>"
 msgstr ""
 
 #. Tag: term
-#: storage_raid-leds.xml:125 storage_raid-leds.xml:250
-#, no-c-format
-msgid "--log=<replaceable>PATH</replaceable>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:128 storage_raid-leds.xml:253
-#, no-c-format
-msgid ""
-"Sets a path to local log file. If this user-defined file is specified, the "
-"global log file <filename>/var/log/ledmon.log</filename> is not used."
-msgstr ""
-
-#. Tag: option
-#: storage_raid-leds.xml:135
-#, no-c-format
-msgid "-t <replaceable>SECONDS</replaceable>"
-msgstr ""
-
-#. Tag: option
 #: storage_raid-leds.xml:137
 #, no-c-format
-msgid "--interval=<replaceable>SECONDS</replaceable>"
+msgid "<option>--interval=<replaceable>SECONDS</replaceable></option>"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:140
 #, no-c-format
 msgid ""
-"Sets the time interval between scans of <filename>sysfs</filename>. The "
+"Sets the time interval between scans of <filename>sysfs</filename> . The "
 "value is given in seconds. The minimum is 5 seconds. The maximum is not "
 "specified."
 msgstr ""
@@ -242,9 +231,9 @@ msgstr ""
 #: storage_raid-leds.xml:148
 #, no-c-format
 msgid ""
-"<option>--quiet</option>, <option>--error</option>, <option>--warning</"
-"option>, <option>--info</option>, <option>--debug</option>, <option>--all</"
-"option>"
+"<option>--quiet</option> , <option>--error</option> , <option>--warning</"
+"option> , <option>--info</option> , <option>--debug</option> , <option>--"
+"all</option>"
 msgstr ""
 
 #. Tag: para
@@ -256,36 +245,6 @@ msgid ""
 "option for no logging. Use the <option>--all</option> option to log "
 "everything. If you specify more than one verbose option, the last option in "
 "the command applies."
-msgstr ""
-
-#. Tag: option
-#: storage_raid-leds.xml:163 storage_raid-leds.xml:271
-#, no-c-format
-msgid "<option>-h</option>"
-msgstr ""
-
-#. Tag: option
-#: storage_raid-leds.xml:165 storage_raid-leds.xml:273
-#, no-c-format
-msgid "--help"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:168 storage_raid-leds.xml:276
-#, no-c-format
-msgid "Prints the command information to the console, then exits."
-msgstr ""
-
-#. Tag: option
-#: storage_raid-leds.xml:174 storage_raid-leds.xml:282
-#, no-c-format
-msgid "<option>-v</option>"
-msgstr ""
-
-#. Tag: option
-#: storage_raid-leds.xml:176 storage_raid-leds.xml:284
-#, no-c-format
-msgid "--version"
 msgstr ""
 
 #. Tag: para
@@ -321,7 +280,7 @@ msgstr ""
 #: storage_raid-leds.xml:199
 #, no-c-format
 msgid ""
-"The Enclosure LED Application (<command>ledctl</command>) is a user space "
+"The Enclosure LED Application ( <command>ledctl</command> ) is a user space "
 "application that controls LEDs associated with each slot in a storage "
 "enclosure or a drive bay. The <command>ledctl</command> application is a "
 "part of Intel Enclosure LED Utilities."
@@ -352,7 +311,7 @@ msgstr ""
 #. Tag: para
 #: storage_raid-leds.xml:224
 #, no-c-format
-msgid "To start <command>ledctl</command>, enter"
+msgid "To start <command>ledctl</command> , enter"
 msgstr ""
 
 #. Tag: screen
@@ -364,6 +323,24 @@ msgid ""
 msgstr ""
 
 #. Tag: para
+#: storage_raid-leds.xml:230
+#, no-c-format
+msgid "where [options] is one or more of the following:"
+msgstr ""
+
+#. Tag: term
+#: storage_raid-leds.xml:236
+#, no-c-format
+msgid "<option>-c <replaceable>PATH</replaceable></option>"
+msgstr ""
+
+#. Tag: term
+#: storage_raid-leds.xml:238
+#, no-c-format
+msgid "<option>--confg=<replaceable>PATH</replaceable></option>"
+msgstr ""
+
+#. Tag: para
 #: storage_raid-leds.xml:241
 #, no-c-format
 msgid ""
@@ -371,10 +348,30 @@ msgid ""
 "global configuration file and user configuration file have no effect."
 msgstr ""
 
-#. Tag: option
+#. Tag: term
+#: storage_raid-leds.xml:248
+#, no-c-format
+msgid "-l <replaceable>PATH</replaceable>"
+msgstr ""
+
+#. Tag: term
+#: storage_raid-leds.xml:250
+#, no-c-format
+msgid "--log= <replaceable>PATH</replaceable>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:253
+#, no-c-format
+msgid ""
+"Sets a path to local log file. If this user-defined file is specified, the "
+"global log file <filename>/var/log/ledmon.log</filename> is not used."
+msgstr ""
+
+#. Tag: term
 #: storage_raid-leds.xml:260
 #, no-c-format
-msgid "--quiet"
+msgid "<option>--quiet</option>"
 msgstr ""
 
 #. Tag: para
@@ -384,6 +381,36 @@ msgid ""
 "Turns off all messages sent to <filename>stdout</filename> or "
 "<filename>stderr</filename> out. The messages are still logged to local file "
 "and the <filename>syslog</filename> facility."
+msgstr ""
+
+#. Tag: term
+#: storage_raid-leds.xml:271
+#, no-c-format
+msgid "<option>-h</option>"
+msgstr ""
+
+#. Tag: term
+#: storage_raid-leds.xml:273
+#, no-c-format
+msgid "<option>--help</option>"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:276
+#, no-c-format
+msgid "Prints the command information to the console, then exits."
+msgstr ""
+
+#. Tag: term
+#: storage_raid-leds.xml:282
+#, no-c-format
+msgid "<option>-v</option>"
+msgstr ""
+
+#. Tag: term
+#: storage_raid-leds.xml:284
+#, no-c-format
+msgid "<option>--version</option>"
 msgstr ""
 
 #. Tag: para
@@ -409,7 +436,7 @@ msgid ""
 "specification."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:304
 #, no-c-format
 msgid "<literal>locate</literal>"
@@ -423,7 +450,7 @@ msgid ""
 "slots. This state is used to identify a slot or drive."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:314
 #, no-c-format
 msgid "<literal>locate_off</literal>"
@@ -437,7 +464,7 @@ msgid ""
 "slots."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:324
 #, no-c-format
 msgid "<literal>normal</literal>"
@@ -451,7 +478,7 @@ msgid ""
 "specified devices."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:334
 #, no-c-format
 msgid "<literal>off</literal>"
@@ -465,13 +492,13 @@ msgid ""
 "devices."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:344
 #, no-c-format
 msgid "<literal>ica</literal>"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:346
 #, no-c-format
 msgid "<literal>degraded</literal>"
@@ -483,13 +510,13 @@ msgstr ""
 msgid "Visualizes the <literal>In a Critical Array</literal> pattern."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:355
 #, no-c-format
 msgid "<literal>rebuild</literal>"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:357
 #, no-c-format
 msgid "<literal>rebuild_p</literal>"
@@ -503,13 +530,13 @@ msgid ""
 "rebuild states for compatibility and legacy reasons."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:367
 #, no-c-format
 msgid "<literal>ifa</literal>"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:369
 #, no-c-format
 msgid "<literal>failed_array</literal>"
@@ -521,7 +548,7 @@ msgstr ""
 msgid "Visualizes the <literal>In a Failed Array</literal> pattern."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:378
 #, no-c-format
 msgid "<literal>hotspare</literal>"
@@ -533,7 +560,7 @@ msgstr ""
 msgid "Visualizes the <literal>Hotspare</literal> pattern."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:387
 #, no-c-format
 msgid "<literal>pfa</literal>"
@@ -545,13 +572,13 @@ msgstr ""
 msgid "Visualizes the <literal>Predicted Failure Analysis</literal> pattern."
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:396
 #, no-c-format
 msgid "<literal>failure</literal>"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:398
 #, no-c-format
 msgid "<literal>disk_failed</literal>"
@@ -575,7 +602,7 @@ msgstr ""
 msgid "SES-2 R/R ABORT"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:415
 #, no-c-format
 msgid "<literal>ses_rebuild</literal>"
@@ -587,7 +614,7 @@ msgstr ""
 msgid "SES-2 REBUILD/REMAP"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:424
 #, no-c-format
 msgid "<literal>ses_ifa</literal>"
@@ -599,7 +626,7 @@ msgstr ""
 msgid "SES-2 IN FAILED ARRAY"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:433
 #, no-c-format
 msgid "<literal>ses_ica</literal>"
@@ -611,10 +638,10 @@ msgstr ""
 msgid "SES-2 IN CRITICAL ARRAY"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:442
 #, no-c-format
-msgid "ses_cons_check"
+msgid "<literal>ses_cons_check</literal>"
 msgstr ""
 
 #. Tag: para
@@ -623,7 +650,7 @@ msgstr ""
 msgid "SES-2 CONS CHECK"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:451
 #, no-c-format
 msgid "<literal>ses_hotspare</literal>"
@@ -635,7 +662,7 @@ msgstr ""
 msgid "SES-2 HOTSPARE"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:460
 #, no-c-format
 msgid "<literal>ses_rsvd_dev</literal>"
@@ -647,7 +674,7 @@ msgstr ""
 msgid "SES-2 RSVD DEVICE"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:469
 #, no-c-format
 msgid "<literal>ses_ok</literal>"
@@ -659,7 +686,7 @@ msgstr ""
 msgid "SES-2 OK"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:478
 #, no-c-format
 msgid "<literal>ses_ident</literal>"
@@ -671,10 +698,10 @@ msgstr ""
 msgid "SES-2 IDENT"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:487
 #, no-c-format
-msgid "ses_rm"
+msgid "<literal>ses_rm</literal>"
 msgstr ""
 
 #. Tag: para
@@ -683,10 +710,10 @@ msgstr ""
 msgid "SES-2 REMOVE"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:496
 #, no-c-format
-msgid "ses_insert"
+msgid "<literal>ses_insert</literal>"
 msgstr ""
 
 #. Tag: para
@@ -695,10 +722,10 @@ msgstr ""
 msgid "SES-2 INSERT"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:505
 #, no-c-format
-msgid "ses_missing"
+msgid "<literal>ses_missing</literal>"
 msgstr ""
 
 #. Tag: para
@@ -707,10 +734,10 @@ msgstr ""
 msgid "SES-2 MISSING"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:514
 #, no-c-format
-msgid "ses_dnr"
+msgid "<literal>ses_dnr</literal>"
 msgstr ""
 
 #. Tag: para
@@ -719,10 +746,10 @@ msgstr ""
 msgid "SES-2 DO NOT REMOVE"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:523
 #, no-c-format
-msgid "ses_active"
+msgid "<literal>ses_active</literal>"
 msgstr ""
 
 #. Tag: para
@@ -731,10 +758,10 @@ msgstr ""
 msgid "SES-2 ACTIVE"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:532
 #, no-c-format
-msgid "ses_enable_bb"
+msgid "<literal>ses_enable_bb</literal>"
 msgstr ""
 
 #. Tag: para
@@ -743,10 +770,10 @@ msgstr ""
 msgid "SES-2 ENABLE BYP B"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:541
 #, no-c-format
-msgid "ses_enable_ba"
+msgid "<literal>ses_enable_ba</literal>"
 msgstr ""
 
 #. Tag: para
@@ -755,10 +782,10 @@ msgstr ""
 msgid "SES-2 ENABLE BYP A"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:550
 #, no-c-format
-msgid "ses_devoff"
+msgid "<literal>ses_devoff</literal>"
 msgstr ""
 
 #. Tag: para
@@ -767,7 +794,7 @@ msgstr ""
 msgid "SES-2 DEVICE OFF"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: storage_raid-leds.xml:559
 #, no-c-format
 msgid "<literal>ses_fault</literal>"
@@ -809,133 +836,133 @@ msgstr ""
 #. Tag: para
 #: storage_raid-leds.xml:595
 #, no-c-format
-msgid "<para>locate</para>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:600 storage_raid-leds.xml:612
-#, no-c-format
-msgid "<para>ses_ident</para>"
+msgid "locate"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:607
 #, no-c-format
-msgid "<para>locate_off</para>"
+msgid "locate_off"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:612
+#, no-c-format
+msgid "ses_ident"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:619
 #, no-c-format
-msgid "<para>normal</para>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:624 storage_raid-leds.xml:636
-#, no-c-format
-msgid "<para>ses_ok</para>"
+msgid "normal"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:631
 #, no-c-format
-msgid "<para>off</para>"
+msgid "off"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:636
+#, no-c-format
+msgid "ses_ok"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:643
 #, no-c-format
-msgid "<para>ica</para>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:648 storage_raid-leds.xml:660
-#, no-c-format
-msgid "<para>ses_ica</para>"
+msgid "ica"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:655
 #, no-c-format
-msgid "<para>degraded</para>"
+msgid "degraded"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:660
+#, no-c-format
+msgid "ses_ica"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:667
 #, no-c-format
-msgid "<para>rebuild</para>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:672 storage_raid-leds.xml:684
-#, no-c-format
-msgid "<para>ses_rebuild</para>"
+msgid "rebuild"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:679
 #, no-c-format
-msgid "<para>rebuild_p</para>"
+msgid "rebuild_p"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:684
+#, no-c-format
+msgid "ses_rebuild"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:691
 #, no-c-format
-msgid "<para>ifa</para>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:696 storage_raid-leds.xml:708
-#, no-c-format
-msgid "<para>ses_ifa</para>"
+msgid "ifa"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:703
 #, no-c-format
-msgid "<para>failed_array</para>"
+msgid "failed_array"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:708
+#, no-c-format
+msgid "ses_ifa"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:715
 #, no-c-format
-msgid "<para>hotspare</para>"
+msgid "hotspare"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:720
 #, no-c-format
-msgid "<para>ses_hotspare</para>"
+msgid "ses_hotspare"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:727
 #, no-c-format
-msgid "<para>pfa</para>"
+msgid "pfa"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:732
 #, no-c-format
-msgid "<para>ses_rsvd_dev</para>"
+msgid "ses_rsvd_dev"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:739
 #, no-c-format
-msgid "<para>failure</para>"
-msgstr ""
-
-#. Tag: para
-#: storage_raid-leds.xml:744 storage_raid-leds.xml:756
-#, no-c-format
-msgid "<para>ses_fault</para>"
+msgid "failure"
 msgstr ""
 
 #. Tag: para
 #: storage_raid-leds.xml:751
 #, no-c-format
-msgid "<para>disk_failed</para>"
+msgid "disk_failed"
+msgstr ""
+
+#. Tag: para
+#: storage_raid-leds.xml:756
+#, no-c-format
+msgid "ses_fault"
 msgstr ""
 
 #. Tag: title
@@ -972,7 +999,7 @@ msgid ""
 "If you specify multiple patterns in the same command, the device list for "
 "each pattern can use the same or different format. For examples that show "
 "the two list formats, see <xref linkend=\"sec.raid_leds.ledctl.examples\" "
-"xrefstyle=\"SectTitleOnPage\"/>."
+"xrefstyle=\"SectTitleOnPage\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -1067,33 +1094,39 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_raid-leds.xml:831
+#: storage_raid-leds.xml:832
 #, no-c-format
 msgid "Additional Information"
 msgstr ""
 
 #. Tag: para
-#: storage_raid-leds.xml:833
+#: storage_raid-leds.xml:834
 #, no-c-format
 msgid ""
 "See the following resources for details about the LED patterns and "
 "monitoring tools:"
 msgstr ""
 
-#. Tag: link
+#. Tag: para
 #: storage_raid-leds.xml:841
 #, no-c-format
-msgid "LEDMON open source project on Sourceforge.net"
+msgid ""
+"<link xlink:href=\"http://sourceforge.net/projects/ledmon/\">LEDMON open "
+"source project on Sourceforge.net</link>"
 msgstr ""
 
-#. Tag: link
+#. Tag: para
 #: storage_raid-leds.xml:847
 #, no-c-format
-msgid "SGPIO specification SFF-8485"
+msgid ""
+"<link xlink:href=\"https://ftp.seagate.com/sff/SFF-8485.PDF\">SGPIO "
+"specification SFF-8485</link>"
 msgstr ""
 
-#. Tag: link
+#. Tag: para
 #: storage_raid-leds.xml:853
 #, no-c-format
-msgid "IBPI specification SFF-8489"
+msgid ""
+"<link xlink:href=\"https://ftp.seagate.com/sff/SFF-8489.PDF\">IBPI "
+"specification SFF-8489</link>"
 msgstr ""

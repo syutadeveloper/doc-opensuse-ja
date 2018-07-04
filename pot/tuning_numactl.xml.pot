@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -77,7 +77,7 @@ msgstr ""
 #. Tag: para
 #: tuning_numactl.xml:75
 #, no-c-format
-msgid "Static configuration has been the recommended way of tuning workloads on NUMA hardware for some time. To do this, memory policies can be set with <command>numactl</command>, <command>taskset</command> or <command>cpusets</command>. NUMA-aware applications can use special APIs. In cases where the static policies have already been created, automatic NUMA balancing should be disabled as the data access should already be local."
+msgid "Static configuration has been the recommended way of tuning workloads on NUMA hardware for some time. To do this, memory policies can be set with <command>numactl</command> , <command>taskset</command> or <command>cpusets</command> . NUMA-aware applications can use special APIs. In cases where the static policies have already been created, automatic NUMA balancing should be disabled as the data access should already be local."
 msgstr ""
 
 #. Tag: para
@@ -89,8 +89,7 @@ msgstr ""
 #. Tag: screen
 #: tuning_numactl.xml:95
 #, no-c-format
-msgid ""
-      "&prompt.user;numactl --hardware\n"
+msgid "&prompt.user;numactl --hardware\n"
       "available: 4 nodes (0-3)\n"
       "node 0 cpus: 0 4 8 12 16 20 24 28 32 36 40 44\n"
       "node 0 size: 16068 MB\n"
@@ -113,142 +112,153 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:97
+#: tuning_numactl.xml:116
 #, no-c-format
-msgid "Automatic NUMA balancing can be enabled or disabled for the current session by writing <literal>1</literal> or <literal>0</literal> to <filename>/proc/sys/kernel/numa_balancing</filename> which will enable or disable the feature respectively. To permanently enable or disable it, use the kernel command line option <literal>numa_balancing=[enable|disable]</literal>."
+msgid "Automatic NUMA balancing can be enabled or disabled for the current session by writing <literal>1</literal> or <literal>0</literal> to <filename>/proc/sys/kernel/numa_balancing</filename> which will enable or disable the feature respectively. To permanently enable or disable it, use the kernel command line option <literal>numa_balancing=[enable|disable]</literal> ."
+msgstr ""
+
+#. Tag: #text
+#: tuning_numactl.xml:128
+#, no-c-format
+msgid "If Automatic NUMA Balancing is enabled, the task scanner behavior can be configured."
+msgstr ""
+
+#. Tag: #text
+#: tuning_numactl.xml:132
+#, no-c-format
+msgid "The task scanner balances the overhead of Automatic NUMA Balancing with the amount of time it takes to identify the best placement of data."
+msgstr ""
+
+#. Tag: term
+#: tuning_numactl.xml:136
+#, no-c-format
+msgid "<literal>numa_balancing_scan_delay_ms</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:106
-#, no-c-format
-msgid "If Automatic NUMA Balancing is enabled, the task scanner behavior can be configured. <remark>sknorr, 2014-08-21: \"balancing the balancer\": unfortunate choice of words</remark> The task scanner balances the overhead of Automatic NUMA Balancing with the amount of time it takes to identify the best placement of data."
-msgstr ""
-
-#. Tag: literal
-#: tuning_numactl.xml:117
-#, no-c-format
-msgid "numa_balancing_scan_delay_ms"
-msgstr ""
-
-#. Tag: para
-#: tuning_numactl.xml:120
+#: tuning_numactl.xml:139
 #, no-c-format
 msgid "The amount of CPU time a thread must consume before its data is scanned. This prevents creating overhead because of short-lived processes."
 msgstr ""
 
 #. Tag: term
-#: tuning_numactl.xml:128
+#: tuning_numactl.xml:147
 #, no-c-format
 msgid "<literal>numa_balancing_scan_period_min_ms</literal> and <literal>numa_balancing_scan_period_max_ms</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:132
+#: tuning_numactl.xml:151
 #, no-c-format
 msgid "Controls how frequently a task's data is scanned. Depending on the locality of the faults the scan rate will increase or decrease. These settings control the min and max scan rates."
 msgstr ""
 
-#. Tag: literal
-#: tuning_numactl.xml:140
+#. Tag: term
+#: tuning_numactl.xml:159
 #, no-c-format
-msgid "numa_balancing_scan_size_mb"
+msgid "<literal>numa_balancing_scan_size_mb</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:143
+#: tuning_numactl.xml:162
 #, no-c-format
 msgid "Controls how much address space is scanned when the task scanner is active."
 msgstr ""
 
 #. Tag: title
-#: tuning_numactl.xml:152
+#: tuning_numactl.xml:171
 #, no-c-format
 msgid "Monitoring"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:154
+#: tuning_numactl.xml:173
 #, no-c-format
-msgid "The most important task is to assign metrics to your workload and measure the performance with Automatic NUMA Balancing enabled and disabled to measure the impact. Profiling tools can be used to monitor local and remote memory accesses if the CPU supports such monitoring. Automatic NUMA Balancing activity can be monitored via the following parameters in <filename>/proc/vmstat</filename>:"
+msgid "The most important task is to assign metrics to your workload and measure the performance with Automatic NUMA Balancing enabled and disabled to measure the impact. Profiling tools can be used to monitor local and remote memory accesses if the CPU supports such monitoring. Automatic NUMA Balancing activity can be monitored via the following parameters in <filename>/proc/vmstat</filename> :"
 msgstr ""
 
-#. Tag: literal
-#: tuning_numactl.xml:165
+#. Tag: term
+#: tuning_numactl.xml:184
 #, no-c-format
-msgid "numa_pte_updates"
+msgid "<literal>numa_pte_updates</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:168
+#: tuning_numactl.xml:187
 #, no-c-format
 msgid "The amount of base pages that were marked for NUMA hinting faults."
 msgstr ""
 
-#. Tag: literal
-#: tuning_numactl.xml:174
+#. Tag: term
+#: tuning_numactl.xml:193
 #, no-c-format
-msgid "numa_huge_pte_updates"
+msgid "<literal>numa_huge_pte_updates</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:177
+#: tuning_numactl.xml:196
 #, no-c-format
 msgid "The amount of transparent huge pages that were marked for NUMA hinting faults. In combination with <literal>numa_pte_updates</literal> the total address space that was marked can be calculated."
 msgstr ""
 
-#. Tag: literal
-#: tuning_numactl.xml:185
+#. Tag: term
+#: tuning_numactl.xml:204
 #, no-c-format
-msgid "numa_hint_faults"
+msgid "<literal>numa_hint_faults</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:188
+#: tuning_numactl.xml:207
 #, no-c-format
 msgid "Records how many NUMA hinting faults were trapped."
 msgstr ""
 
-#. Tag: literal
-#: tuning_numactl.xml:194
+#. Tag: term
+#: tuning_numactl.xml:213
 #, no-c-format
-msgid "numa_hint_faults_local"
+msgid "<literal>numa_hint_faults_local</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:197
+#: tuning_numactl.xml:216
 #, no-c-format
-msgid "Shows how many of the hinting faults were to local nodes. In combination with <literal>numa_hint_faults</literal>, the percentage of local versus remote faults can be calculated. A high percentage of local hinting faults indicates that the workload is closer to being converged."
+msgid "Shows how many of the hinting faults were to local nodes. In combination with <literal>numa_hint_faults</literal> , the percentage of local versus remote faults can be calculated. A high percentage of local hinting faults indicates that the workload is closer to being converged."
 msgstr ""
 
-#. Tag: literal
-#: tuning_numactl.xml:207
+#. Tag: term
+#: tuning_numactl.xml:226
 #, no-c-format
-msgid "numa_pages_migrated"
+msgid "<literal>numa_pages_migrated</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:210
+#: tuning_numactl.xml:229
 #, no-c-format
 msgid "Records how many pages were migrated because they were misplaced. As migration is a copying operation, it contributes the largest part of the overhead created by NUMA balancing."
 msgstr ""
 
 #. Tag: title
-#: tuning_numactl.xml:220
+#: tuning_numactl.xml:239
 #, no-c-format
 msgid "Impact"
 msgstr ""
 
-#. Tag: para
-#: tuning_numactl.xml:222
+#. Tag: #text
+#: tuning_numactl.xml:244
 #, no-c-format
-msgid "The following illustrates a simple test case of a 4-node NUMA machine running the SpecJBB 2005 <remark>sknorr, 2014-08-21: \"benchmark\"(?)</remark> using a single instance of the JVM with no static tuning around memory policies. Note, however, that the impact for each workload will vary and that this example is based on a pre-release version of &productname; 12."
+msgid "The following illustrates a simple test case of a 4-node NUMA machine running the SpecJBB 2005"
+msgstr ""
+
+#. Tag: #text
+#: tuning_numactl.xml:247
+#, no-c-format
+msgid "using a single instance of the JVM with no static tuning around memory policies. Note, however, that the impact for each workload will vary and that this example is based on a pre-release version of &productname; 12."
 msgstr ""
 
 #. Tag: screen
-#: tuning_numactl.xml:232
+#: tuning_numactl.xml:251
 #, no-c-format
-msgid ""
-      "Balancing disabled      Balancing enabled\n"
+msgid "            Balancing disabled      Balancing enabled\n"
       "TPut 1      26629.00 (  0.00%)     26507.00 ( -0.46%)\n"
       "TPut 2      55841.00 (  0.00%)     53592.00 ( -4.03%)\n"
       "TPut 3      86078.00 (  0.00%)     86443.00 (  0.42%)\n"
@@ -308,7 +318,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_numactl.xml:234
+#: tuning_numactl.xml:309
 #, no-c-format
 msgid "Automatic NUMA Balancing simplifies tuning workloads for high performance on NUMA machines. Where possible, it is still recommended to statically tune the workload to partition it within each node. However, in all other cases, automatic NUMA balancing should boost performance."
 msgstr ""

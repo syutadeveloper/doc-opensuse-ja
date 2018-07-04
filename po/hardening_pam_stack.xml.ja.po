@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,6 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: xml-stylesheet
+#: hardening_pam_stack.xml:4
+#, no-c-format
+msgid ""
+"<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook50-profile.xsl\" "
+"type=\"text/xml\" title=\"Profiling step\"?>"
+msgstr ""
 
 #. Tag: title
 #: hardening_pam_stack.xml:15
@@ -95,18 +103,10 @@ msgstr ""
 msgid "Sample rules/constraints for password enforcement"
 msgstr ""
 
-#. Tag: systemitem
-#: hardening_pam_stack.xml:68 hardening_pam_stack.xml:85
-#: hardening_pam_stack.xml:102 hardening_pam_stack.xml:119
-#: hardening_pam_stack.xml:136
+#. Tag: para
+#: hardening_pam_stack.xml:72
 #, no-c-format
-msgid "pam_cracklib.so"
-msgstr ""
-
-#. Tag: literal
-#: hardening_pam_stack.xml:73
-#, no-c-format
-msgid "minlen=8"
+msgid "<literal>minlen=8</literal>"
 msgstr ""
 
 #. Tag: para
@@ -115,10 +115,10 @@ msgstr ""
 msgid "Minimum length of password is 8"
 msgstr ""
 
-#. Tag: literal
-#: hardening_pam_stack.xml:90
+#. Tag: para
+#: hardening_pam_stack.xml:89
 #, no-c-format
-msgid "lcredit=-1"
+msgid "<literal>lcredit=-1</literal>"
 msgstr ""
 
 #. Tag: para
@@ -127,10 +127,10 @@ msgstr ""
 msgid "Minimum number of lowercase letters is 1"
 msgstr ""
 
-#. Tag: literal
-#: hardening_pam_stack.xml:107
+#. Tag: para
+#: hardening_pam_stack.xml:106
 #, no-c-format
-msgid "ucredit=-1"
+msgid "<literal>ucredit=-1</literal>"
 msgstr ""
 
 #. Tag: para
@@ -139,10 +139,10 @@ msgstr ""
 msgid "Minimum number of uppercase letters is 1"
 msgstr ""
 
-#. Tag: literal
-#: hardening_pam_stack.xml:124
+#. Tag: para
+#: hardening_pam_stack.xml:123
 #, no-c-format
-msgid "dcredit=-1"
+msgid "<literal>dcredit=-1</literal>"
 msgstr ""
 
 #. Tag: para
@@ -151,10 +151,16 @@ msgstr ""
 msgid "Minimum number of digits is 1"
 msgstr ""
 
-#. Tag: literal
-#: hardening_pam_stack.xml:141
+#. Tag: para
+#: hardening_pam_stack.xml:135
 #, no-c-format
-msgid "ocredit=-1"
+msgid "<systemitem class=\"library\">pam_cracklib.so</systemitem>"
+msgstr ""
+
+#. Tag: para
+#: hardening_pam_stack.xml:140
+#, no-c-format
+msgid "<literal>ocredit=-1</literal>"
 msgstr ""
 
 #. Tag: para
@@ -182,7 +188,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:160
+#: hardening_pam_stack.xml:162
 #, no-c-format
 msgid ""
 "Now verify that the new password restrictions work for new passwords. Simply "
@@ -192,13 +198,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: hardening_pam_stack.xml:170
+#: hardening_pam_stack.xml:172
 #, no-c-format
 msgid "Restricting Use of Previous Passwords"
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:171
+#: hardening_pam_stack.xml:173
 #, no-c-format
 msgid ""
 "The pam_pwhistory module can be used to configure the number of previous "
@@ -208,17 +214,17 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:177
+#: hardening_pam_stack.xml:179
 #, no-c-format
 msgid "&prompt.sudo;pam-config -a --pwhistory --pwhistory-remember=26"
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:178
+#: hardening_pam_stack.xml:180
 #, no-c-format
 msgid ""
 "Recall that in the section <xref linkend=\"sec.sec_prot.general.pw_aging\"/> "
-"we set <literal>PASS_MIN_DAYS</literal> to <literal>7</literal>, which "
+"we set <literal>PASS_MIN_DAYS</literal> to <literal>7</literal> , which "
 "specifies the minimum number of days allowed between password changes. "
 "Therefore, if <systemitem>pam_unix</systemitem> is configured to remember "
 "<literal>26</literal> passwords, then the previously used passwords cannot "
@@ -226,16 +232,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:187
+#: hardening_pam_stack.xml:189
 #, no-c-format
 msgid ""
-"The PAM configuration (<filename>/etc/pam.d/common-auth</filename>) "
+"The PAM configuration ( <filename>/etc/pam.d/common-auth</filename> ) "
 "resulting from the <command>pam-config</command> command looks like the "
 "following:"
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:192
+#: hardening_pam_stack.xml:194
 #, no-c-format
 msgid ""
 "auth      required   pam_env.so\n"
@@ -252,22 +258,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:194
+#: hardening_pam_stack.xml:205
 #, no-c-format
 msgid ""
 "Editing the PAM configuration files directly is not recommended. Use the "
 "<command>pam-config</command> command as shown above to fine-tune PAM. For "
-"more information see <command>man 8 pam-config</command>."
+"more information see <command>man 8 pam-config</command> ."
 msgstr ""
 
 #. Tag: title
-#: hardening_pam_stack.xml:203
+#: hardening_pam_stack.xml:214
 #, no-c-format
 msgid "Locking User Accounts After Too Many Login Failures"
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:204
+#: hardening_pam_stack.xml:215
 #, no-c-format
 msgid ""
 "It is not generally recommend that a host automatically locks system and "
@@ -277,7 +283,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:211
+#: hardening_pam_stack.xml:222
 #, no-c-format
 msgid ""
 "&prompt.root;su oracle -c id\n"
@@ -285,19 +291,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:213
+#: hardening_pam_stack.xml:225
 #, no-c-format
 msgid ""
 "This could be an easy target for a denial of service attack. The following "
 "example shows how to lock only individual user accounts after too many "
 "failed su or login attempts. Add the following line to the service files "
 "(such as <filename>/etc/pam.d/su</filename> or <filename>/etc/pam.d/login</"
-"filename>) that you want to configure (but not to <filename>/etc/pam.d/"
-"common-auth</filename>!):"
+"filename> ) that you want to configure (but not to <filename>/etc/pam.d/"
+"common-auth</filename> !):"
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:222
+#: hardening_pam_stack.xml:235
 #, no-c-format
 msgid ""
 "auth      required     pam_tally2.so deny=5 unlock_time=1200\n"
@@ -305,17 +311,17 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:223
+#: hardening_pam_stack.xml:237
 #, no-c-format
 msgid ""
 "The line counts failed login and failed su attempts for all user accounts "
 "except the root account. The accounts will be automatically unlocked after "
 "1200 seconds. The default location for attempted accesses is recorded in "
-"<filename>/var/log/tallylog</filename>."
+"<filename>/var/log/tallylog</filename> ."
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:231
+#: hardening_pam_stack.xml:245
 #, no-c-format
 msgid ""
 "If the user is authenticated and the login process continues on call to "
@@ -323,7 +329,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:235
+#: hardening_pam_stack.xml:249
 #, no-c-format
 msgid ""
 "It is also possible to add the <literal>lock_time=<replaceable>N</"
@@ -341,7 +347,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:254
+#: hardening_pam_stack.xml:268
 #, no-c-format
 msgid ""
 "To exempt system and shared accounts from the <literal>deny=<replaceable>N</"
@@ -353,7 +359,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:264
+#: hardening_pam_stack.xml:278
 #, no-c-format
 msgid ""
 "&prompt.root;pam_tally2 -u oracle\n"
@@ -362,7 +368,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:265
+#: hardening_pam_stack.xml:281
 #, no-c-format
 msgid ""
 "To instruct the module to activate the <literal>deny=<replaceable>N</"
@@ -370,13 +376,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:270
+#: hardening_pam_stack.xml:286
 #, no-c-format
 msgid "pam_tally2 -u oracle deny=n"
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:271
+#: hardening_pam_stack.xml:287
 #, no-c-format
 msgid ""
 "By default, the maximum number of login failures for each account is set to "
@@ -386,29 +392,29 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:277
+#: hardening_pam_stack.xml:293
 #, no-c-format
 msgid "pam_tally2"
 msgstr ""
 
 #. Tag: para
-#: hardening_pam_stack.xml:278
+#: hardening_pam_stack.xml:294
 #, no-c-format
 msgid ""
 "Test these changes thoroughly on your system using <command>ssh</command> "
-"and <command>su</command>, and make sure the &rootuser; id does not get "
+"and <command>su</command> , and make sure the &rootuser; id does not get "
 "locked! To lock or unlock accounts manually, run one of the following "
 "commands:"
 msgstr ""
 
 #. Tag: term
-#: hardening_pam_stack.xml:286
+#: hardening_pam_stack.xml:302
 #, no-c-format
 msgid "Locking"
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:288
+#: hardening_pam_stack.xml:304
 #, no-c-format
 msgid ""
 "passwd -l <replaceable>USER</replaceable>\n"
@@ -416,13 +422,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: hardening_pam_stack.xml:292
+#: hardening_pam_stack.xml:309
 #, no-c-format
 msgid "Unlocking"
 msgstr ""
 
 #. Tag: screen
-#: hardening_pam_stack.xml:294
+#: hardening_pam_stack.xml:311
 #, no-c-format
 msgid ""
 "passwd -u <replaceable>USER</replaceable>\n"

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE chapter [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.kvm.managing.clock">
- <title
->&vmguest; Clock Settings</title>
+ <title>&vmguest; Clock Settings</title>
  <info>
   <abstract>
    <para>
@@ -17,13 +14,11 @@
    </para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
-   <dm:bugtracker
-></dm:bugtracker>
+   <dm:bugtracker/>
   </dm:docmanager>
  </info>
  <tip>
-  <title
->Timekeeping on the &vmhost;</title>
+  <title>Timekeeping on the &vmhost;</title>
   <para>
    It is strongly recommended to ensure the &vmhost; keeps the correct time as
    well, for example, by using NTP (see <xref linkend="cha.ntp"/> for more
@@ -31,30 +26,20 @@
   </para>
  </tip>
  <sect1 xml:id="sec.kvm.managing.clock.kvm">
-  <title
->&kvm;: Using <systemitem
->kvm_clock</systemitem
-></title>
+  <title>&kvm;: Using <systemitem>kvm_clock</systemitem></title>
 
   <para>
    &kvm; provides a paravirtualized clock which is supported via the
-   <systemitem
->kvm_clock</systemitem
-> driver. It is strongly recommended to use
-   <systemitem
->kvm_clock</systemitem
->.
+   <systemitem>kvm_clock</systemitem> driver. It is strongly recommended to use
+   <systemitem>kvm_clock</systemitem>.
   </para>
 
   <para>
    Use the following command inside a &vmguest; running Linux to check whether
-   the driver <systemitem
->kvm_clock</systemitem
-> has been loaded:
+   the driver <systemitem>kvm_clock</systemitem> has been loaded:
   </para>
 
-<screen
->&prompt.sudo;dmesg | grep kvm-clock
+<screen>&prompt.sudo;dmesg | grep kvm-clock
 [    0.000000] kvm-clock: cpu 0, msr 0:7d3a81, boot clock
 [    0.000000] kvm-clock: cpu 0, msr 0:1206a81, primary cpu clock
 [    0.012000] kvm-clock: cpu 1, msr 0:1306a81, secondary cpu clock
@@ -62,75 +47,48 @@
 
   <para>
    To check which clock source is currently used, run the following command in
-   the &vmguest;. It should output <literal
->kvm-clock</literal
->:
+   the &vmguest;. It should output <literal>kvm-clock</literal>:
   </para>
 
-<screen
->&prompt.user;cat /sys/devices/system/clocksource/clocksource0/current_clocksource</screen>
+<screen>&prompt.user;cat /sys/devices/system/clocksource/clocksource0/current_clocksource</screen>
 
   <important>
-   <title
-><literal
->kvm-clock</literal
-> and NTP</title>
+   <title><literal>kvm-clock</literal> and NTP</title>
 <!-- bsc#994806 -->
    <para>
-    When using <literal
->kvm-clock</literal
->, it is recommended to use NTP in
+    When using <literal>kvm-clock</literal>, it is recommended to use NTP in
     the &vmguest;, as well. Using NTP on the &vmhost; is also recommended.
    </para>
   </important>
 
   <sect2 xml:id="sec.kvm.managing.clock.other">
-   <title
->Other Timekeeping Methods</title>
+   <title>Other Timekeeping Methods</title>
    <para>
-    The paravirtualized <literal
->kvm-clock</literal
-> is currently not for
-    Windows* operating systems. For Windows*, use the <literal
->Windows Time
-    Service Tools</literal
-> for time synchronization (see
-    <link xlink:href="http://technet.microsoft.com/en-us/library/cc773263link8WS.10%29.aspx"
-></%3>
+    The paravirtualized <literal>kvm-clock</literal> is currently not for
+    Windows* operating systems. For Windows*, use the <literal>Windows Time
+    Service Tools</literal> for time synchronization (see
+    <link xlink:href="http://technet.microsoft.com/en-us/library/cc773263%28WS.10%29.aspx"/>
     for more information).
    </para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.xen.guests.suse.time">
-  <title
->&xen; Virtual Machine Clock Settings</title>
+  <title>&xen; Virtual Machine Clock Settings</title>
 
   <para>
    With &xen; 4, the independent wallclock setting
-   <filename
->/proc/sys/xen/independent_wallclock</filename
-> used for time
+   <filename>/proc/sys/xen/independent_wallclock</filename> used for time
    synchronization between &xen; host and guest was removed. A new
-   configuration option <option
->tsc_mode</option
-> was introduced. It specifies
-   a method of utilizing the <emphasis
->timestamp counter</emphasis
-> to
+   configuration option <option>tsc_mode</option> was introduced. It specifies
+   a method of utilizing the <emphasis>timestamp counter</emphasis> to
    synchronize the guest time with the &xen; server. Its default value '0'
    handles the vast majority of hardware and software environments.
   </para>
 
   <para>
-   For more details on <option
->tsc_mode</option
->, see the
-   <literal
->xen-tscmode</literal
-> manual page (<command
->man 7
-   xen-tscmode</command
->).
+   For more details on <option>tsc_mode</option>, see the
+   <literal>xen-tscmode</literal> manual page (<command>man 7
+   xen-tscmode</command>).
   </para>
  </sect1>
 </chapter>

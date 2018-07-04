@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:16+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,8 +20,8 @@ msgstr ""
 #: ay_12_migrate_15.xml:11
 #, no-c-format
 msgid ""
-"Main differences between &productname; <phrase os=\"sles;sled\">12</"
-"phrase><phrase os=\"osuse\">42.3</phrase> and 15 profiles"
+"Main differences between &productname; <phrase os=\"sles;sled\">12</phrase> "
+"<phrase os=\"osuse\">42.3</phrase> and 15 profiles"
 msgstr ""
 
 #. Tag: para
@@ -30,9 +30,9 @@ msgstr ""
 msgid ""
 "Significant changes in &productname; 15, like the new modules concept or "
 "replacing &susefirewall; with &firewalld;, required changes in &ay;. If you "
-"want to reuse existing &productname; <phrase os=\"sles;sled\">12</"
-"phrase><phrase os=\"osuse\">42.3</phrase> a profiles with &productname; 15, "
-"you need to adjust them as documented here."
+"want to reuse existing &productname; <phrase os=\"sles;sled\">12</phrase> "
+"<phrase os=\"osuse\">42.3</phrase> a profiles with &productname; 15, you "
+"need to adjust them as documented here."
 msgstr ""
 
 #. Tag: title
@@ -41,14 +41,19 @@ msgstr ""
 msgid "Product selection"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:29
+#. Tag: #text
+#: ay_12_migrate_15.xml:30
 #, no-c-format
 msgid ""
 "Starting with &productname; 15, all products are distributed using a single "
 "installation medium. Therefore you need to choose which product to install "
-"by using the <tag class=\"element\">product</tag> tag. In the following "
-"example &sled; is the chosen product:"
+"by using the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:33
+#, no-c-format
+msgid "tag. In the following example &sled; is the chosen product:"
 msgstr ""
 
 #. Tag: screen
@@ -63,7 +68,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:38
+#: ay_12_migrate_15.xml:42
 #, no-c-format
 msgid ""
 "In special cases, the medium may contain only one product. If so there is "
@@ -71,53 +76,58 @@ msgid ""
 "the only available product automatically."
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:43
+#. Tag: #text
+#: ay_12_migrate_15.xml:48
+#, no-c-format
+msgid "For backward compatibility with profiles created for pre-"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:50
 #, no-c-format
 msgid ""
-"For backward compatibility with profiles created for pre-<phrase os=\"sles;"
-"sled\">&slea;</phrase><phrase os=\"osuse\">Leap</phrase> 15 products, &ay; "
-"implements a heuristic that selects products automatically. This heuristic "
-"will be used when the profile does not contain a <tag class=\"element"
-"\">product</tag> element. This heuristic is based on the package and pattern "
-"selection in the profile. However, whenever possible, avoid using this "
-"mechanism and adapt old profiles to use explicit product selection."
+"15 products, &ay; implements a heuristic that selects products "
+"automatically. This heuristic will be used when the profile does not contain "
+"a"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:56
+#, no-c-format
+msgid ""
+"element. This heuristic is based on the package and pattern selection in the "
+"profile. However, whenever possible, avoid using this mechanism and adapt "
+"old profiles to use explicit product selection."
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:53
+#: ay_12_migrate_15.xml:57
 #, no-c-format
 msgid ""
 "If the product selection fails, an error is shown and the installation will "
 "not be continued."
 msgstr ""
 
-#. Tag: title
-#: ay_12_migrate_15.xml:60 ay_12_migrate_15.xml:915
-#, no-c-format
-msgid "Software"
-msgstr ""
-
 #. Tag: para
-#: ay_12_migrate_15.xml:62
+#: ay_12_migrate_15.xml:66
 #, no-c-format
 msgid ""
 "The &productname; 15 installation medium only contains a very minimal set of "
 "packages to install. This minimal set only provides an installation "
 "environment and does not include any server applications or advanced tools. "
 "Additional software repositories, providing more packages are offered as "
-"<quote>modules</quote> or <quote>extensions</quote>. They are provided via "
+"<quote>modules</quote> or <quote>extensions</quote> . They are provided via "
 "two alternatives:"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:73
+#: ay_12_migrate_15.xml:77
 #, no-c-format
 msgid "via a registration server (the &scc; or a local SMT/&rmt; proxy)"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:78
+#: ay_12_migrate_15.xml:82
 #, no-c-format
 msgid ""
 "via the &allmodules; ISO containing all modules and extensions. Using this "
@@ -127,13 +137,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:88
+#: ay_12_migrate_15.xml:92
 #, no-c-format
 msgid "Maintenance Updates"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:89
+#: ay_12_migrate_15.xml:93
 #, no-c-format
 msgid ""
 "Only using the registration server will grant the access to all maintenance "
@@ -142,41 +152,113 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:97
+#: ay_12_migrate_15.xml:101
 #, no-c-format
 msgid "Adding Modules or Extensions Using the Registration Server"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:98
+#. Tag: #text
+#: ay_12_migrate_15.xml:103
 #, no-c-format
-msgid ""
-"To add a module or extension from the registration server, use the <tag "
-"class=\"element\">addons</tag> tag for each module/extension in the "
-"suse_register section. Extensions require an additional registration code "
-"which can be specified with the <tag class=\"element\">reg_code</tag> tag."
+msgid "To add a module or extension from the registration server, use the"
 msgstr ""
 
-#. Tag: para
+#. Tag: tag
 #: ay_12_migrate_15.xml:104
+#, no-c-format
+msgid "addons"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:106
+#, no-c-format
+msgid "reg_code"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:106
+#, no-c-format
+msgid ""
+"tag for each module/extension in the suse_register section. Extensions "
+"require an additional registration code which can be specified with the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:107
+#, no-c-format
+msgid "tag."
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:111
+#, no-c-format
+msgid "version"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:111
+#, no-c-format
+msgid "name"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:111
+#, no-c-format
+msgid ","
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:111
 #, no-c-format
 msgid ""
 "The following XML code adds the Basesystem and Server Applications modules "
-"and the Live Patching extension. To get the respective values for the tags "
-"<tag class=\"element\">name</tag>, <tag class=\"element\">version</tag>, and "
-"<tag class=\"element\">arch</tag>, run the command <command>SUSEConnect --"
-"list-extensions</command> on a system that already has <phrase os=\"sles;sled"
-"\">&slea;</phrase> 15 installed."
+"and the Live Patching extension. To get the respective values for the tags"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:112
+#, no-c-format
+msgid ", and"
+msgstr ""
+
+#. Tag: command
+#: ay_12_migrate_15.xml:112
+#, no-c-format
+msgid "SUSEConnect --list-extensions"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:112
+#, no-c-format
+msgid ", run the command"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:112
+#, no-c-format
+msgid "arch"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:113
+#, no-c-format
+msgid "on a system that already has"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:115
+#, no-c-format
+msgid "15 installed."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:113
+#: ay_12_migrate_15.xml:117
 #, no-c-format
 msgid "Adding Modules and Extensions (online)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:114
+#: ay_12_migrate_15.xml:118
 #, no-c-format
 msgid ""
 "&lt;suse_register&gt;\n"
@@ -203,20 +285,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:116
+#: ay_12_migrate_15.xml:139
 #, no-c-format
 msgid ""
 "Refer to <xref linkend=\"CreateProfile.Register\"/> for more information."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:123
+#: ay_12_migrate_15.xml:146
 #, no-c-format
 msgid "Adding Modules or Extensions Using the &allmodules; ISO"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:124
+#: ay_12_migrate_15.xml:147
 #, no-c-format
 msgid ""
 "To add a module or extension using the &allmodules; ISO create entries in "
@@ -225,13 +307,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:131
+#: ay_12_migrate_15.xml:154
 #, no-c-format
 msgid "Adding Modules and Extensions (offline)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:132
+#: ay_12_migrate_15.xml:155
 #, no-c-format
 msgid ""
 "&lt;add-on&gt;\n"
@@ -246,68 +328,81 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:136
+#: ay_12_migrate_15.xml:167
 #, no-c-format
 msgid "Product Name Matching"
 msgstr ""
 
-#. Tag: remark
-#: ay_12_migrate_15.xml:138
+#. Tag: #text
+#: ay_12_migrate_15.xml:173
+#, no-c-format
+msgid "The"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:173
+#, no-c-format
+msgid "product"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:175
 #, no-c-format
 msgid ""
-"2018-03-22 - fs: How to know which values to specify for &lt;product&gt; and "
-"&lt;product_dir&gt;"
+"tag must match the internal product name contained in the repository. If the "
+"product name does not match at installation &ay; will report an error."
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:141
-#, no-c-format
-msgid ""
-"The <tag class=\"element\">product</tag> tag must match the internal product "
-"name contained in the repository. If the product name does not match at "
-"installation &ay; will report an error."
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:146
+#: ay_12_migrate_15.xml:177
 #, no-c-format
 msgid ""
 "If you have multiple physical DVD drives you can select a specific device "
 "using <literal>devices</literal> parameter in the URL, for example "
-"<literal>dvd:///?devices=/dev/sr1</literal>."
+"<literal>dvd:///?devices=/dev/sr1</literal> ."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:155
+#: ay_12_migrate_15.xml:186
 #, no-c-format
-msgid ">Using &allmodules; Medium from a Local Server"
+msgid "&gt;Using &allmodules; Medium from a Local Server"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:156
+#. Tag: #text
+#: ay_12_migrate_15.xml:189
 #, no-c-format
 msgid ""
 "You can share the DVD content on the local network via a NFS, FTP or HTTP "
-"server. In that case replace the URL in the <tag class=\"element"
-"\">media_url</tag> tag so it points to root of the medium on the server, for "
-"example:"
+"server. In that case replace the URL in the"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:190
+#, no-c-format
+msgid "media_url"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:192
+#, no-c-format
+msgid "tag so it points to root of the medium on the server, for example:"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:162
+#: ay_12_migrate_15.xml:193
 #, no-c-format
 msgid ""
 "&lt;media_url&gt;ftp://ftp.example.com/sle_15_packages/&lt;/media_url&gt;"
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:167
+#: ay_12_migrate_15.xml:198
 #, no-c-format
 msgid "Renamed Software Patterns"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:168
+#: ay_12_migrate_15.xml:199
 #, no-c-format
 msgid ""
 "Software patterns have also changed in &productname; 15. Some patterns have "
@@ -315,102 +410,102 @@ msgid ""
 msgstr ""
 
 #. Tag: entry
-#: ay_12_migrate_15.xml:178
+#: ay_12_migrate_15.xml:209
 #, no-c-format
 msgid ""
-"Old <phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse\">Leap</"
-"phrase> <phrase os=\"sles;sled\">12</phrase><phrase os=\"osuse\">42.3</"
+"Old <phrase os=\"sles;sled\">&slea;</phrase> <phrase os=\"osuse\">Leap</"
+"phrase> <phrase os=\"sles;sled\">12</phrase> <phrase os=\"osuse\">42.3</"
 "phrase> Pattern"
 msgstr ""
 
 #. Tag: entry
-#: ay_12_migrate_15.xml:182
+#: ay_12_migrate_15.xml:213
 #, no-c-format
 msgid ""
-"New <phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse\">Leap</"
+"New <phrase os=\"sles;sled\">&slea;</phrase> <phrase os=\"osuse\">Leap</"
 "phrase> 15 Pattern"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:190
+#: ay_12_migrate_15.xml:221
 #, no-c-format
 msgid "Basis-Devel"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:195 ay_12_migrate_15.xml:243
-#, no-c-format
-msgid "devel_basis"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:202
+#: ay_12_migrate_15.xml:233
 #, no-c-format
 msgid "gnome-basic"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:207
+#: ay_12_migrate_15.xml:238
 #, no-c-format
 msgid "gnome_basic"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:214
+#: ay_12_migrate_15.xml:245
 #, no-c-format
 msgid "Minimal"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:219
+#: ay_12_migrate_15.xml:250
 #, no-c-format
 msgid "enhanced_base"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:226
+#: ay_12_migrate_15.xml:257
 #, no-c-format
 msgid "printing"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:231
+#: ay_12_migrate_15.xml:262
 #, no-c-format
 msgid "print_server"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:238
+#: ay_12_migrate_15.xml:269
 #, no-c-format
 msgid "SDK-C-C++"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:250
+#: ay_12_migrate_15.xml:274
+#, no-c-format
+msgid "devel_basis"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:281
 #, no-c-format
 msgid "SDK-Doc"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:255
+#: ay_12_migrate_15.xml:286
 #, no-c-format
 msgid "technical_writing"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:262
+#: ay_12_migrate_15.xml:293
 #, no-c-format
 msgid "SDK-YaST"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:267
+#: ay_12_migrate_15.xml:298
 #, no-c-format
 msgid "devel_yast"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:275
+#: ay_12_migrate_15.xml:306
 #, no-c-format
 msgid ""
 "Please, check carefully if all required packages are available in the "
@@ -420,13 +515,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:282
+#: ay_12_migrate_15.xml:313
 #, no-c-format
 msgid "Notes"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:284
+#: ay_12_migrate_15.xml:315
 #, no-c-format
 msgid ""
 "The pattern renames in the table above are not 1:1 replacements, the content "
@@ -434,17 +529,28 @@ msgid ""
 "different pattern or even removed from &productname; 15."
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:291
+#. Tag: tag
+#: ay_12_migrate_15.xml:324
+#, no-c-format
+msgid "packages"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:324
 #, no-c-format
 msgid ""
 "Check that the required packages are still included in the used patterns, "
-"optionally use the <tag class=\"element\">packages</tag> tag to specify "
-"additional packages."
+"optionally use the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:326
+#, no-c-format
+msgid "tag to specify additional packages."
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:298
+#: ay_12_migrate_15.xml:329
 #, no-c-format
 msgid ""
 "The list above might be incomplete, some products have not been released for "
@@ -452,13 +558,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:307
+#: ay_12_migrate_15.xml:338
 #, no-c-format
 msgid "Registration of Module and Extension Dependencies"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:309
+#: ay_12_migrate_15.xml:340
 #, no-c-format
 msgid ""
 "Since &productname; 15 &ay; automatically reorders the extensions according "
@@ -467,7 +573,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:315
+#: ay_12_migrate_15.xml:346
 #, no-c-format
 msgid ""
 "Also &ay; automatically adds the depending modules even though they are "
@@ -478,7 +584,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:322
+#: ay_12_migrate_15.xml:353
 #, no-c-format
 msgid ""
 "You can list the available extensions and modules in a registered system "
@@ -486,17 +592,17 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:329
+#: ay_12_migrate_15.xml:360
 #, no-c-format
 msgid "Partitioning"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:331
+#: ay_12_migrate_15.xml:362
 #, no-c-format
 msgid ""
 "The partitioning back-end previously used by &yast;, <systemitem class="
-"\"library\">libstorage</systemitem>, has been replaced by <systemitem class="
+"\"library\">libstorage</systemitem> , has been replaced by <systemitem class="
 "\"library\">libstorage-ng</systemitem> that is designed to allow new "
 "capabilities that were not possible before. Despite of the back-end change, "
 "the &ay;, we managed not to change the XML syntax for profiles. However, "
@@ -505,29 +611,46 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:342
+#: ay_12_migrate_15.xml:373
 #, no-c-format
 msgid "GPT Becomes the Default Partition Type on &x86-64;"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:343
+#. Tag: #text
+#: ay_12_migrate_15.xml:375
 #, no-c-format
 msgid ""
 "On &x86-64; systems, GPT is now the preferred partition type. However, if "
 "you would like to retain the old behavior, you could explicitly indicate "
-"this in the profile setting the <tag class=\"element\">disklabel</tag> "
-"element to <literal>msdos</literal>."
+"this in the profile setting the"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:377
+#, no-c-format
+msgid "disklabel"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:378
+#, no-c-format
+msgid "element to"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:378
+#, no-c-format
+msgid "msdos"
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:352
+#: ay_12_migrate_15.xml:383
 #, no-c-format
 msgid "Setting Partition Numbers"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:353
+#: ay_12_migrate_15.xml:384
 #, no-c-format
 msgid ""
 "&ay; will no longer support forcing partition numbers, as it might not work "
@@ -535,56 +658,122 @@ msgid ""
 "so partition numbers are less relevant."
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:358
+#. Tag: #text
+#: ay_12_migrate_15.xml:390
+#, no-c-format
+msgid "However, the"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:390
+#, no-c-format
+msgid "partition_nr"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:391
 #, no-c-format
 msgid ""
-"However, the <tag class=\"element\">partition_nr</tag> tag is still "
-"available in order to specify a partition to be reused. Refer to <xref "
-"linkend=\"ay.partition_configuration\"/> for more information."
+"tag is still available in order to specify a partition to be reused. Refer to"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:393
+#, no-c-format
+msgid "for more information."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:366
+#: ay_12_migrate_15.xml:397
 #, no-c-format
 msgid "Forcing primary partitions"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:367
+#. Tag: #text
+#: ay_12_migrate_15.xml:399
+#, no-c-format
+msgid "It is still possible to force a partition as"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:400
+#, no-c-format
+msgid "(only on MS-DOS partition tables) setting the"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:400
+#, no-c-format
+msgid "primary_type"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:401
+#, no-c-format
+msgid ". However, any other value, like"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:401
+#, no-c-format
+msgid "primary"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:401
+#, no-c-format
+msgid "logical"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:403
 #, no-c-format
 msgid ""
-"It is still possible to force a partition as <literal>primary</literal> "
-"(only on MS-DOS partition tables) setting the <tag class=\"element"
-"\">primary_type</tag> to <literal>primary</literal>. However, any other "
-"value, like <literal>logical</literal>, will be ignored by AutoYaST, which "
-"will automatically determine the partition type."
+", will be ignored by AutoYaST, which will automatically determine the "
+"partition type."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:376
+#: ay_12_migrate_15.xml:407
 #, no-c-format
 msgid "Btrfs: Default Subvolume Name"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:377
+#. Tag: #text
+#: ay_12_migrate_15.xml:412
 #, no-c-format
 msgid ""
 "The new storage layer allows the user to set different default subvolumes "
 "(or none at all) for every Btrfs file system. As shown in the example below, "
-"a prefix name can be specified for each partition using the <tag class="
-"\"element\">subvolumes_prefix</tag> tag:"
+"a prefix name can be specified for each partition using the"
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:385
+#: ay_12_migrate_15.xml:416
 #, no-c-format
 msgid "Specifying the Btrfs Default Subvolume Name"
 msgstr ""
 
+#. Tag: #text
+#: ay_12_migrate_15.xml:426
+#, no-c-format
+msgid "To omit the subvolume prefix, set the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:428
+#, no-c-format
+msgid "tag:"
+msgstr ""
+
+#. Tag: title
+#: ay_12_migrate_15.xml:431
+#, no-c-format
+msgid "Disabling Btrfs Subvolumes"
+msgstr ""
+
 #. Tag: screen
-#: ay_12_migrate_15.xml:386 ay_12_migrate_15.xml:396
+#: ay_12_migrate_15.xml:432
 #, no-c-format
 msgid ""
 "<![CDATA[<partition>\n"
@@ -595,47 +784,80 @@ msgid ""
 "</partition>]]>"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:389
+#. Tag: #text
+#: ay_12_migrate_15.xml:441
 #, no-c-format
-msgid ""
-"To omit the subvolume prefix, set the <tag class=\"element"
-"\">subvolumes_prefix</tag> tag:"
+msgid "As a consequence of the new behaviour, the old"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:442
+#, no-c-format
+msgid "btrfs_set_default_subvolume_name"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:444
+#, no-c-format
+msgid "tag is not needed and, therefore, it is not supported anymore."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:395
-#, no-c-format
-msgid "Disabling Btrfs Subvolumes"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:399
-#, no-c-format
-msgid ""
-"As a consequence of the new behaviour, the old <tag class=\"element"
-"\">btrfs_set_default_subvolume_name</tag> tag is not needed and, therefore, "
-"it is not supported anymore."
-msgstr ""
-
-#. Tag: title
-#: ay_12_migrate_15.xml:407
+#: ay_12_migrate_15.xml:448
 #, no-c-format
 msgid "Btrfs: Disabling Subvolumes"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:408
+#. Tag: tag
+#: ay_12_migrate_15.xml:450
 #, no-c-format
-msgid ""
-"Btrfs subvolumes can be disabled by setting the <tag class=\"element"
-"\">create_subvolumes</tag> to <literal>false</literal>. To skip the default "
-"<literal>@</literal> subvolume, specify <tag class=\"element"
-"\">subvolumes_prefix</tag>."
+msgid "create_subvolumes"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:450
+#, no-c-format
+msgid "Btrfs subvolumes can be disabled by setting the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:451
+#, no-c-format
+msgid ". To skip the default"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:451
+#, no-c-format
+msgid "@"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:451
+#, no-c-format
+msgid "false"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:451
+#, no-c-format
+msgid "to"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:452
+#, no-c-format
+msgid "subvolumes_prefix"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:452
+#, no-c-format
+msgid "subvolume, specify"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:414
+#: ay_12_migrate_15.xml:455
 #, no-c-format
 msgid ""
 "&lt;partition&gt;\n"
@@ -646,14 +868,14 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:418
+#: ay_12_migrate_15.xml:462
 #, no-c-format
 msgid ""
 "Reading an Existing <filename>/etc/fstab</filename> is no Longer Supported"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:421
+#: ay_12_migrate_15.xml:465
 #, no-c-format
 msgid ""
 "On &productname; 15 the ability to read an existing <filename>/etc/fstab</"
@@ -662,28 +884,39 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:429
+#: ay_12_migrate_15.xml:473
 #, no-c-format
 msgid "Setting for Aligning Partitions has been Dropped"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:432
+#. Tag: tag
+#: ay_12_migrate_15.xml:478
+#, no-c-format
+msgid "partition_alignment"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:478
+#, no-c-format
+msgid "As cylinders have become obsolete, the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:479
 #, no-c-format
 msgid ""
-"As cylinders have become obsolete, the <tag class=\"element"
-"\">partition_alignment</tag>> tag makes no sense and it is no longer "
-"available. &ay; will always try to align partitions in an optimal way."
+"&gt; tag makes no sense and it is no longer available. &ay; will always try "
+"to align partitions in an optimal way."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:442
+#: ay_12_migrate_15.xml:486
 #, no-c-format
 msgid "Firewall configuration"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:443
+#: ay_12_migrate_15.xml:487
 #, no-c-format
 msgid ""
 "In &productname; 15, &susefirewall; has been replaced by &firewalld; as the "
@@ -692,136 +925,124 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:449
+#: ay_12_migrate_15.xml:493
 #, no-c-format
 msgid ""
 "Old profiles will continue working, but the supported configuration will be "
 "very limited. It is recommended to updated profiles for <phrase os=\"sles;"
-"sled\">&slea;</phrase><phrase os=\"osuse\">Leap</phrase> 15 as outlined "
-"below. If keeping <phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse"
-"\">Leap</phrase> <phrase os=\"sles;sled\">12</phrase><phrase os=\"osuse"
+"sled\">&slea;</phrase> <phrase os=\"osuse\">Leap</phrase> 15 as outlined "
+"below. If keeping <phrase os=\"sles;sled\">&slea;</phrase> <phrase os=\"osuse"
+"\">Leap</phrase> <phrase os=\"sles;sled\">12</phrase> <phrase os=\"osuse"
 "\">42.3</phrase> profiles we recommend to check the final configuration to "
 "avoid an unexpected behavior or network security threats."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:460
+#: ay_12_migrate_15.xml:504
 #, no-c-format
 msgid ""
-"&ay; Firewall Configuration in <phrase os=\"sles;sled\">&slea;</"
-"phrase><phrase os=\"osuse\">Leap</phrase> 15: Backwards Compatibility"
+"&ay; Firewall Configuration in <phrase os=\"sles;sled\">&slea;</phrase> "
+"<phrase os=\"osuse\">Leap</phrase> 15: Backwards Compatibility"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:468
+#: ay_12_migrate_15.xml:512
 #, no-c-format
 msgid "Supported (but deprecated)"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:469
+#: ay_12_migrate_15.xml:513
 #, no-c-format
 msgid "Unsupported"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:476
+#: ay_12_migrate_15.xml:520
 #, no-c-format
 msgid "FW_CONFIGURATIONS_\\{DMZ, EXT, INT}"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:481
+#: ay_12_migrate_15.xml:525
 #, no-c-format
 msgid "FW_ALLOW_FW_BROADCAST_\\{DMZ, EXT, INT}"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:488
+#: ay_12_migrate_15.xml:532
 #, no-c-format
 msgid "FW_DEV_\\{DMZ, EXT, INT}"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:493
+#: ay_12_migrate_15.xml:537
 #, no-c-format
 msgid "FW_IGNORE_FW_BROADCAST_\\{DMZ, EXT, INT}"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:500
+#: ay_12_migrate_15.xml:544
 #, no-c-format
 msgid "FW_LOG_DROP_ALL"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:505
+#: ay_12_migrate_15.xml:549
 #, no-c-format
 msgid "FW_IPSECT_TRUST"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:512
+#: ay_12_migrate_15.xml:556
 #, no-c-format
 msgid "FW_LOG_DROP_CRIT"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:517
+#: ay_12_migrate_15.xml:561
 #, no-c-format
 msgid "FW_LOAD_MODULES"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:524
-#, no-c-format
-msgid "FW_MASQUERADE"
-msgstr ""
-
-#. Tag: tag
-#: ay_12_migrate_15.xml:529
+#: ay_12_migrate_15.xml:573
 #, no-c-format
 msgid "FW_LOG_ACCEPT_ALL"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:536
+#: ay_12_migrate_15.xml:580
 #, no-c-format
 msgid "FW_SERVICES_\\{DMZ, INT, EXT}_\\{TCP, UDP, IP}"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:541
+#: ay_12_migrate_15.xml:585
 #, no-c-format
 msgid "FW_LOG_ACCEPT_CRIT"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:551
-#, no-c-format
-msgid "FW_PROTECT_FROM_INT"
-msgstr ""
-
-#. Tag: tag
-#: ay_12_migrate_15.xml:561
+#: ay_12_migrate_15.xml:605
 #, no-c-format
 msgid "FW_ROUTE"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:571
+#: ay_12_migrate_15.xml:615
 #, no-c-format
 msgid "FW_SERVICES_\\{DMZ, EXT, INT}_RPC"
 msgstr ""
 
 #. Tag: tag
-#: ay_12_migrate_15.xml:581
+#: ay_12_migrate_15.xml:625
 #, no-c-format
 msgid "FW_SERVICES_ACCEPT_RELATED_\\{DMZ, EXT, INT}"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:589
+#: ay_12_migrate_15.xml:633
 #, no-c-format
 msgid ""
 "Configuration options from &susefirewall; that are no longer available, "
@@ -833,24 +1054,24 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:599
+#: ay_12_migrate_15.xml:643
 #, no-c-format
 msgid "Enabling and Starting the Firewall"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:600
+#: ay_12_migrate_15.xml:644
 #, no-c-format
 msgid ""
 "Enabling and starting the &systemd; service for &firewalld; is done with the "
-"same syntax as in <phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse"
-"\">Leap</phrase> <phrase os=\"sles;sled\">12</phrase><phrase os=\"osuse"
-"\">42.3</phrase>. This is the only part of the firewall configuration syntax "
-"in &ay; that has not changed:"
+"same syntax as in <phrase os=\"sles;sled\">&slea;</phrase> <phrase os=\"osuse"
+"\">Leap</phrase> <phrase os=\"sles;sled\">12</phrase> <phrase os=\"osuse"
+"\">42.3</phrase> . This is the only part of the firewall configuration "
+"syntax in &ay; that has not changed:"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:607
+#: ay_12_migrate_15.xml:651
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -861,22 +1082,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:610
+#: ay_12_migrate_15.xml:658
 #, no-c-format
 msgid ""
 "The following examples will show how to convert deprecated (but still "
-"supported) profiles to the <phrase os=\"sles;sled\">&slea;</phrase><phrase "
+"supported) profiles to the <phrase os=\"sles;sled\">&slea;</phrase> <phrase "
 "os=\"osuse\">Leap</phrase> 15 syntax:"
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:617
+#: ay_12_migrate_15.xml:665
 #, no-c-format
 msgid "Assigning Interfaces to Zones"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:618
+#: ay_12_migrate_15.xml:666
 #, no-c-format
 msgid ""
 "Both, &susefirewall; and &firewalld; are zone-based, but have a different "
@@ -885,129 +1106,138 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:625
+#: ay_12_migrate_15.xml:673
 #, no-c-format
 msgid "Mapping of &susefirewall; and &firewalld; Zones"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:631
+#: ay_12_migrate_15.xml:679
 #, no-c-format
 msgid ""
-"&firewalld; (<phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse"
+"&firewalld; ( <phrase os=\"sles;sled\">&slea;</phrase> <phrase os=\"osuse"
 "\">Leap</phrase> 15)"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:633
-#, no-c-format
-msgid ""
-"&susefirewall; (<phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse"
-"\">Leap</phrase> <phrase os=\"sles;sled\">12</phrase><phrase os=\"osuse"
-"\">42.3</phrase>)"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:641
-#, no-c-format
-msgid "<para>dmz</para>"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:642
-#, no-c-format
-msgid "<para>DMZ</para>"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:645
-#, no-c-format
-msgid "external"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:647
-#, no-c-format
-msgid ""
-"EXT with <tag class=\"element\">FW_MASQUERADE</tag> set to <literal>yes</"
-"literal>"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:654
-#, no-c-format
-msgid "public"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:656
-#, no-c-format
-msgid ""
-"EXT with <tag class=\"element\">FW_MASQUERADE</tag> set to <literal>no</"
-"literal>"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:663
-#, no-c-format
-msgid "internal"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:665
-#, no-c-format
-msgid ""
-"INT with <tag class=\"element\">FW_PROTECT_FROM_INT</tag> set to "
-"<literal>yes</literal>"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:672
-#, no-c-format
-msgid "trusted"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:674
-#, no-c-format
-msgid ""
-"INT with <tag class=\"element\">FW_PROTECT_FROM_INT</tag> set to "
-"<literal>no</literal>"
 msgstr ""
 
 #. Tag: para
 #: ay_12_migrate_15.xml:681
 #, no-c-format
-msgid "block"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:682 ay_12_migrate_15.xml:686 ay_12_migrate_15.xml:690
-#: ay_12_migrate_15.xml:694
-#, no-c-format
-msgid "<para>N/A</para>"
-msgstr ""
-
-#. Tag: para
-#: ay_12_migrate_15.xml:685
-#, no-c-format
-msgid "drop"
+msgid ""
+"&susefirewall; ( <phrase os=\"sles;sled\">&slea;</phrase> <phrase os=\"osuse"
+"\">Leap</phrase> <phrase os=\"sles;sled\">12</phrase> <phrase os=\"osuse"
+"\">42.3</phrase> )"
 msgstr ""
 
 #. Tag: para
 #: ay_12_migrate_15.xml:689
 #, no-c-format
-msgid "home"
+msgid "dmz"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:690
+#, no-c-format
+msgid "DMZ"
 msgstr ""
 
 #. Tag: para
 #: ay_12_migrate_15.xml:693
 #, no-c-format
+msgid "external"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:702
+#, no-c-format
+msgid "public"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:705
+#, no-c-format
+msgid "EXT with"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:705
+#, no-c-format
+msgid "FW_MASQUERADE"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:711
+#, no-c-format
+msgid "internal"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:715
+#, no-c-format
+msgid "yes"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:720
+#, no-c-format
+msgid "trusted"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:723
+#, no-c-format
+msgid "FW_PROTECT_FROM_INT"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:723
+#, no-c-format
+msgid "INT with"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:724
+#, no-c-format
+msgid "no"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:724
+#, no-c-format
+msgid "set to"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:729
+#, no-c-format
+msgid "block"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:733
+#, no-c-format
+msgid "drop"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:737
+#, no-c-format
+msgid "home"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:741
+#, no-c-format
 msgid "work"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:699
+#: ay_12_migrate_15.xml:742
+#, no-c-format
+msgid "N/A"
+msgstr ""
+
+#. Tag: para
+#: ay_12_migrate_15.xml:747
 #, no-c-format
 msgid ""
 "In &susefirewall; the default zone is the external one (EXT) but also allows "
@@ -1016,29 +1246,29 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:706
+#: ay_12_migrate_15.xml:754
 #, no-c-format
 msgid "Default Configuration"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:708
+#: ay_12_migrate_15.xml:756
 #, no-c-format
 msgid ""
 "The following two examples show the default configuration that is applied "
-"for the interfaces <systemitem>eth0</systemitem>, <systemitem>eth1</"
-"systemitem>, <systemitem>wlan0</systemitem> and <systemitem>wlan1</"
-"systemitem>."
+"for the interfaces <systemitem>eth0</systemitem> , <systemitem>eth1</"
+"systemitem> , <systemitem>wlan0</systemitem> and <systemitem>wlan1</"
+"systemitem> ."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:716
+#: ay_12_migrate_15.xml:764
 #, no-c-format
 msgid "Assigning Zones: Default Configuration (Deprecated Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:717
+#: ay_12_migrate_15.xml:765
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1049,15 +1279,15 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:721
+#: ay_12_migrate_15.xml:773
 #, no-c-format
 msgid ""
-"Assigning Zones: Default Configuration (<phrase os=\"sles;sled\">&slea;</"
-"phrase><phrase os=\"osuse\">Leap</phrase> 15 Syntax)"
+"Assigning Zones: Default Configuration ( <phrase os=\"sles;sled\">&slea;</"
+"phrase> <phrase os=\"osuse\">Leap</phrase> 15 Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:724
+#: ay_12_migrate_15.xml:776
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1086,29 +1316,29 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:729
+#: ay_12_migrate_15.xml:803
 #, no-c-format
 msgid "Masquerading and Protecting Internal Zones"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:731
+#: ay_12_migrate_15.xml:805
 #, no-c-format
 msgid ""
 "The following two examples show how to configure the interfaces "
-"<systemitem>eth0</systemitem>, <systemitem>eth1</systemitem>, "
+"<systemitem>eth0</systemitem> , <systemitem>eth1</systemitem> , "
 "<systemitem>wlan0</systemitem> and <systemitem>wlan1</systemitem> with "
 "masquerading and protected internal zones"
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:738
+#: ay_12_migrate_15.xml:812
 #, no-c-format
 msgid "Masquerading and Protecting Internal Zones (Deprecated Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:741
+#: ay_12_migrate_15.xml:815
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1121,15 +1351,15 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:745
+#: ay_12_migrate_15.xml:825
 #, no-c-format
 msgid ""
-"Masquerading and Protecting Internal Zones (<phrase os=\"sles;sled\">&slea;</"
-"phrase><phrase os=\"osuse\">Leap</phrase> 15 Syntax)"
+"Masquerading and Protecting Internal Zones ( <phrase os=\"sles;sled\">&slea;"
+"</phrase> <phrase os=\"osuse\">Leap</phrase> 15 Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:750
+#: ay_12_migrate_15.xml:830
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1158,43 +1388,127 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:755
+#: ay_12_migrate_15.xml:857
 #, no-c-format
 msgid "Opening ports"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:756
+#. Tag: #text
+#: ay_12_migrate_15.xml:859
 #, no-c-format
-msgid ""
-"In &susefirewall; the <tag class=\"element\">FW_SERVICES_\\{DMZ,EXT,INT}_"
-"\\{TCP,UDP,IP,RPC}</tag> tags were used to open ports in different zones."
+msgid "In &susefirewall; the"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:761
+#. Tag: tag
+#: ay_12_migrate_15.xml:860
 #, no-c-format
-msgid ""
-"For <literal>TCP</literal> or <literal>UDP</literal>, &susefirewall; "
-"supported a port number or range, or a service name from <filename>/etc/"
-"services </filename> with a single tag for the respective zone and service. "
-"For IP services a port number or range, or a protocol name from <filename>/"
-"etc protocols</filename> could be specified with <tag class=\"element"
-"\">FW_SERVICES_<replaceable>ZONE</replaceable>_IP</tag>."
+msgid "FW_SERVICES_\\{DMZ,EXT,INT}_\\{TCP,UDP,IP,RPC}"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:770
+#. Tag: #text
+#: ay_12_migrate_15.xml:862
+#, no-c-format
+msgid "tags were used to open ports in different zones."
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:864
+#, no-c-format
+msgid "UDP"
+msgstr ""
+
+#. Tag: literal
+#: ay_12_migrate_15.xml:864
+#, no-c-format
+msgid "TCP"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:864
+#, no-c-format
+msgid "For"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:864
+#, no-c-format
+msgid "or"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:864
+#, no-c-format
+msgid ""
+", &susefirewall; supported a port number or range, or a service name from"
+msgstr ""
+
+#. Tag: filename
+#: ay_12_migrate_15.xml:866
+#, no-c-format
+msgid "/etc/services"
+msgstr ""
+
+#. Tag: filename
+#: ay_12_migrate_15.xml:868
+#, no-c-format
+msgid "/etc protocols"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:868
+#, no-c-format
+msgid ""
+"with a single tag for the respective zone and service. For IP services a "
+"port number or range, or a protocol name from"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:869
+#, no-c-format
+msgid "could be specified with"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:870
+#, no-c-format
+msgid "FW_SERVICES_ <replaceable>ZONE</replaceable> _IP"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:871
+#, no-c-format
+msgid "."
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:873
 #, no-c-format
 msgid ""
 "For &firewalld; each port, port range, service requires a separate entry in "
-"the <tag class=\"element\">port</tag> section for the respective zone. IP "
-"services need separate entries in the <tag class=\"element\">protocol</tag> "
-"section."
+"the"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:874
+#, no-c-format
+msgid "port"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:875
+#, no-c-format
+msgid "protocol"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:875
+#, no-c-format
+msgid ""
+"section for the respective zone. IP services need separate entries in the"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:776
+#: ay_12_migrate_15.xml:878
 #, no-c-format
 msgid ""
 "RPC services, which were supported by &susefirewall; are no longer supported "
@@ -1202,13 +1516,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:781
+#: ay_12_migrate_15.xml:883
 #, no-c-format
 msgid "Opening Ports (Deprecated Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:784
+#: ay_12_migrate_15.xml:886
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1220,15 +1534,15 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:787
+#: ay_12_migrate_15.xml:894
 #, no-c-format
 msgid ""
-"Opening Ports (<phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse"
+"Opening Ports ( <phrase os=\"sles;sled\">&slea;</phrase> <phrase os=\"osuse"
 "\">Leap</phrase> 15 Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:791
+#: ay_12_migrate_15.xml:898
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1259,28 +1573,39 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:796
+#: ay_12_migrate_15.xml:927
 #, no-c-format
 msgid "Opening &firewalld; services"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:797
+#. Tag: #text
+#: ay_12_migrate_15.xml:929
 #, no-c-format
 msgid ""
 "For opening a combination of ports and/or protocols &susefirewall; provides "
-"the <tag class=\"element\">FW_CONFIGURATIONS_\\{EXT, DMZ, INT}</tag> tag "
-"which are equivalent to services in &firewalld;."
+"the"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:930
+#, no-c-format
+msgid "FW_CONFIGURATIONS_\\{EXT, DMZ, INT}"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:931
+#, no-c-format
+msgid "tag which are equivalent to services in &firewalld;."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:803
+#: ay_12_migrate_15.xml:934
 #, no-c-format
 msgid "Opening Services (Deprecated Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:806
+#: ay_12_migrate_15.xml:937
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1291,15 +1616,15 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:809
+#: ay_12_migrate_15.xml:943
 #, no-c-format
 msgid ""
-"Opening Services (<phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse"
-"\">Leap</phrase> 15 Syntax)"
+"Opening Services ( <phrase os=\"sles;sled\">&slea;</phrase> <phrase os="
+"\"osuse\">Leap</phrase> 15 Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:812
+#: ay_12_migrate_15.xml:946
 #, no-c-format
 msgid ""
 "<![CDATA[<firewall>\n"
@@ -1324,75 +1649,117 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:814
+#: ay_12_migrate_15.xml:966
 #, no-c-format
 msgid "The services definition can be added via packages in both cases:"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:819
+#: ay_12_migrate_15.xml:971
 #, no-c-format
 msgid ""
 "&susefirewall; Service Definitions: <link xlink:href=\"https://en.opensuse."
-"org/SuSEfirewall2/Service_Definitions_Added_via_Packages\"></link>"
+"org/SuSEfirewall2/Service_Definitions_Added_via_Packages\"/>"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:824
+#: ay_12_migrate_15.xml:977
 #, no-c-format
 msgid ""
 "&firewalld; RPM Packaging <link xlink:href=\"https://en.opensuse.org/"
-"firewalld/RPM_Packaging\"></link>"
+"firewalld/RPM_Packaging\"/>"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:827
+#: ay_12_migrate_15.xml:980
 #, no-c-format
 msgid ""
 "&firewalld; already provides support for the majority of important services "
-"in <filename>/usr/lib/firewalld/services</filename>. Check this directory "
+"in <filename>/usr/lib/firewalld/services</filename> . Check this directory "
 "for an existing configuration before defining a new one."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:837
+#: ay_12_migrate_15.xml:990
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
-#. Tag: link
-#: ay_12_migrate_15.xml:842
+#. Tag: para
+#: ay_12_migrate_15.xml:993
 #, no-c-format
-msgid "&susefirewall;/&ay; Documentation for &slea; 12"
+msgid ""
+"<link xlink:href=\"https://www.suse.com/documentation/sles-12/book_autoyast/"
+"data/createprofile_firewall.html\">&susefirewall;/&ay; Documentation for "
+"&slea; 12</link>"
 msgstr ""
 
-#. Tag: link
-#: ay_12_migrate_15.xml:848
+#. Tag: para
+#: ay_12_migrate_15.xml:1000
 #, no-c-format
-msgid "Official &firewalld; Documentation"
+msgid ""
+"<link xlink:href=\"http://www.firewalld.org/documentation/\">Official "
+"&firewalld; Documentation</link>"
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:857
+#: ay_12_migrate_15.xml:1010
 #, no-c-format
 msgid "NTP Configuration"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:859
+#. Tag: #text
+#: ay_12_migrate_15.xml:1013
+#, no-c-format
+msgid "The time server synchronization daemon"
+msgstr ""
+
+#. Tag: systemitem
+#: ay_12_migrate_15.xml:1014
+#, no-c-format
+msgid "ntpd"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1015
+#, no-c-format
+msgid "has been replaced with the more modern daemon"
+msgstr ""
+
+#. Tag: systemitem
+#: ay_12_migrate_15.xml:1015
+#, no-c-format
+msgid "chrony"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1016
 #, no-c-format
 msgid ""
-"The time server synchronization daemon <systemitem class=\"daemon\">ntpd</"
-"systemitem> has been replaced with the more modern daemon <systemitem class="
-"\"daemon\">chrony</systemitem>. Therefore the configuration syntax for the "
-"time-keeping daemon in &ay; has changed. &ay; profiles from <phrase os="
-"\"sles;sled\">&slea;</phrase><phrase os=\"osuse\">Leap</phrase> <phrase os="
-"\"sles;sled\">12</phrase><phrase os=\"osuse\">42.3</phrase> that contain a "
-"section with <tag class=\"element\">ntp:client</tag> need to be updated."
+". Therefore the configuration syntax for the time-keeping daemon in &ay; has "
+"changed. &ay; profiles from"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1019
+#, no-c-format
+msgid "that contain a section with"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:1020
+#, no-c-format
+msgid "ntp:client"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1021
+#, no-c-format
+msgid "need to be updated."
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:870
+#: ay_12_migrate_15.xml:1023
 #, no-c-format
 msgid ""
 "Instead of containing low level configuration options, NTP is now configured "
@@ -1401,15 +1768,15 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:877
+#: ay_12_migrate_15.xml:1030
 #, no-c-format
 msgid ""
-"NTP configuration (<phrase os=\"sles;sled\">&slea;</phrase><phrase os=\"osuse"
-"\">Leap</phrase> 15 Syntax)"
+"NTP configuration ( <phrase os=\"sles;sled\">&slea;</phrase> <phrase os="
+"\"osuse\">Leap</phrase> 15 Syntax)"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:881
+#: ay_12_migrate_15.xml:1034
 #, no-c-format
 msgid ""
 "<![CDATA[<ntp-client>\n"
@@ -1426,89 +1793,166 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:886
+#: ay_12_migrate_15.xml:1049
 #, no-c-format
 msgid "&ay; Packages are Needed for 2nd Stage"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:888
+#: ay_12_migrate_15.xml:1051
 #, no-c-format
 msgid ""
 "A regular installation is performed in single stage, while an installation "
 "performed via &ay; needs two stages in most of the cases. In order to "
 "perform the second stage of the installation &ay; requires a few additional "
 "packages, for example <package>autoyast2-installation</package> and "
-"<package>autoyast2</package>. If these are missing, a warning will be shown."
+"<package>autoyast2</package> . If these are missing, a warning will be shown."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:899
+#: ay_12_migrate_15.xml:1062
 #, no-c-format
 msgid "The CA Management Module has been Dropped"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:901
+#. Tag: #text
+#: ay_12_migrate_15.xml:1065
+#, no-c-format
+msgid "The module for CA Management ("
+msgstr ""
+
+#. Tag: package
+#: ay_12_migrate_15.xml:1065
+#, no-c-format
+msgid "yast2-ca-management"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1066
 #, no-c-format
 msgid ""
-"The module for CA Management (<package>yast2-ca-management</package>>) has "
-"been removed from &productname; 15, and for the time being there is no "
-"replacement available. In case you are reusing a <phrase os=\"sles;sled"
-"\">&slea;</phrase><phrase os=\"osuse\">Leap</phrase> <phrase os=\"sles;sled"
-"\">12</phrase><phrase os=\"osuse\">42.3</phrase> profile, make sure it does "
-"not contain a <tag class=\"element\">ca_mgm</tag> section."
+"&gt;) has been removed from &productname; 15, and for the time being there "
+"is no replacement available. In case you are reusing a"
+msgstr ""
+
+#. Tag: phrase
+#: ay_12_migrate_15.xml:1068
+#, no-c-format
+msgid "&slea;"
+msgstr ""
+
+#. Tag: phrase
+#: ay_12_migrate_15.xml:1069
+#, no-c-format
+msgid "Leap"
+msgstr ""
+
+#. Tag: phrase
+#: ay_12_migrate_15.xml:1069
+#, no-c-format
+msgid "12"
+msgstr ""
+
+#. Tag: phrase
+#: ay_12_migrate_15.xml:1070
+#, no-c-format
+msgid "42.3"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1070
+#, no-c-format
+msgid "profile, make sure it does not contain a"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:1071
+#, no-c-format
+msgid "ca_mgm"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1072
+#, no-c-format
+msgid "section."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:913
+#: ay_12_migrate_15.xml:1076
 #, no-c-format
 msgid "Upgrade"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:916
+#. Tag: title
+#: ay_12_migrate_15.xml:1078
 #, no-c-format
-msgid ""
-"<phrase os=\"sles;sled\">&slea; 12</phrase><phrase os=\"osuse\">Leap 42.3</"
-"phrase> has two modes of evaluating which packages need to be upgraded. In "
-"&productname; &productnumber;, upgrades are always determined by the "
-"dependency solver, equivalent to using <command>zypper dup</command>."
+msgid "Software"
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:923
+#: ay_12_migrate_15.xml:1079
 #, no-c-format
 msgid ""
-"This makes the option <tag class=\"element\">only_installed_packages</tag> "
-"in the software section obsolete."
+"<phrase os=\"sles;sled\">&slea; 12</phrase> <phrase os=\"osuse\">Leap 42.3</"
+"phrase> has two modes of evaluating which packages need to be upgraded. In "
+"&productname; &productnumber;, upgrades are always determined by the "
+"dependency solver, equivalent to using <command>zypper dup</command> ."
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1087
+#, no-c-format
+msgid "This makes the option"
+msgstr ""
+
+#. Tag: tag
+#: ay_12_migrate_15.xml:1088
+#, no-c-format
+msgid "only_installed_packages"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1090
+#, no-c-format
+msgid "in the software section obsolete."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:931
+#: ay_12_migrate_15.xml:1094
 #, no-c-format
 msgid "Registration"
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:932
+#. Tag: tag
+#: ay_12_migrate_15.xml:1100
+#, no-c-format
+msgid "add-on"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1100
 #, no-c-format
 msgid ""
 "When upgrading a registered system, all old repositories are removed. This "
 "is done to avoid possible conflicts between the new and old repositories and "
 "to cleanup the repositories for the dropped products. If you need to keep "
-"custom repositories, add them again using the <tag class=\"element\">add-on</"
-"tag> option."
+"custom repositories, add them again using the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1101
+#, no-c-format
+msgid "option."
 msgstr ""
 
 #. Tag: title
-#: ay_12_migrate_15.xml:940
+#: ay_12_migrate_15.xml:1103
 #, no-c-format
 msgid "Minimal Registration Configuration for Upgrade"
 msgstr ""
 
 #. Tag: screen
-#: ay_12_migrate_15.xml:943
+#: ay_12_migrate_15.xml:1106
 #, no-c-format
 msgid ""
 "<![CDATA[<suse_register>\n"
@@ -1517,7 +1961,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: ay_12_migrate_15.xml:945
+#: ay_12_migrate_15.xml:1110
 #, no-c-format
 msgid ""
 "If the registration server returns more than one possible migration target, "
@@ -1525,11 +1969,22 @@ msgid ""
 "different migration target."
 msgstr ""
 
-#. Tag: para
-#: ay_12_migrate_15.xml:950
+#. Tag: tag
+#: ay_12_migrate_15.xml:1117
+#, no-c-format
+msgid "suse_register"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1117
 #, no-c-format
 msgid ""
 "After upgrading a not registered system or skipping registration upgrade by "
-"ommitting the <tag class=\"element\">suse_register</tag> option, you might "
-"need to adjust the repository setup manually."
+"ommitting the"
+msgstr ""
+
+#. Tag: #text
+#: ay_12_migrate_15.xml:1119
+#, no-c-format
+msgid "option, you might need to adjust the repository setup manually."
 msgstr ""

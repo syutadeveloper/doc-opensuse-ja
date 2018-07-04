@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:18+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Tag: title
-#: storage_lvm.xml:66
+#: storage_lvm.xml:74
 #, no-c-format
 msgid "LVM Configuration"
 msgstr ""
 
-#. Tag: dm:docmanager
-#: storage_lvm.xml:68
+#. Tag: dm:translation
+#: storage_lvm.xml:78
 #, no-c-format
-msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
+msgid "yes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:73
+#: storage_lvm.xml:81
 #, no-c-format
 msgid ""
 "This chapter describes the principles behind Logical Volume Manager (LVM) "
@@ -40,13 +40,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:83
+#: storage_lvm.xml:91
 #, no-c-format
 msgid "Risks"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:84
+#: storage_lvm.xml:92
 #, no-c-format
 msgid ""
 "Using LVM might be associated with increased risk, such as data loss. Risks "
@@ -56,13 +56,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:92
+#: storage_lvm.xml:100
 #, no-c-format
 msgid "Understanding the Logical Volume Manager"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:94
+#: storage_lvm.xml:102
 #, no-c-format
 msgid ""
 "LVM enables flexible distribution of hard disk space over several physical "
@@ -80,11 +80,12 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:109
+#: storage_lvm.xml:117
 #, no-c-format
 msgid ""
-"compares physical partitioning (left) with LVM segmentation (right). On the "
-"left side, one single disk has been divided into three physical partitions "
+"<xref linkend=\"fig.lvm.explain\" xrefstyle=\"FigureXRef\"/> compares "
+"physical partitioning (left) with LVM segmentation (right). On the left "
+"side, one single disk has been divided into three physical partitions "
 "(PART), each with a mount point (MP) assigned so that the operating system "
 "can access them. On the right side, two disks have been divided into two and "
 "three physical partitions each. Two LVM volume groups (VG&nbsp;1 and "
@@ -94,18 +95,18 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:122
+#: storage_lvm.xml:130
 #, no-c-format
 msgid "Physical Partitioning versus LVM"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:133
+#: storage_lvm.xml:141
 #, no-c-format
 msgid ""
 "In LVM, the physical disk partitions that are incorporated in a volume group "
 "are called physical volumes (PVs). Within the volume groups in <xref linkend="
-"\"fig.lvm.explain\" xrefstyle=\"FigureXRef\"/>, four logical volumes "
+"\"fig.lvm.explain\" xrefstyle=\"FigureXRef\"/> , four logical volumes "
 "(LV&nbsp;1 through LV&nbsp;4) have been defined, which can be used by the "
 "operating system via the associated mount points (MP). The border between "
 "different logical volumes need not be aligned with any partition border. See "
@@ -113,28 +114,28 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:143
+#: storage_lvm.xml:151
 #, no-c-format
 msgid "LVM features:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:149
+#: storage_lvm.xml:157
 #, no-c-format
 msgid ""
 "Several hard disks or partitions can be combined in a large logical volume."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:155
+#: storage_lvm.xml:163
 #, no-c-format
 msgid ""
 "Provided the configuration is suitable, an LV (such as <filename>/usr</"
-"filename>) can be enlarged when the free space is exhausted."
+"filename> ) can be enlarged when the free space is exhausted."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:162
+#: storage_lvm.xml:170
 #, no-c-format
 msgid ""
 "Using LVM, it is possible to add hard disks or LVs in a running system. "
@@ -142,7 +143,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:169
+#: storage_lvm.xml:177
 #, no-c-format
 msgid ""
 "It is possible to activate a <emphasis>striping mode</emphasis> that "
@@ -152,7 +153,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:177
+#: storage_lvm.xml:185
 #, no-c-format
 msgid ""
 "The snapshot feature enables consistent backups (especially for servers) in "
@@ -160,17 +161,17 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:185
+#: storage_lvm.xml:193
 #, no-c-format
 msgid "LVM and RAID"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:186
+#: storage_lvm.xml:194
 #, no-c-format
 msgid ""
 "Even though LVM also supports RAID of&nbsp;0/1/4/5/6&nbsp;levels, we "
-"recommend to use MD RAID (see <xref linkend=\"cha.raid\"/>). However, LVM "
+"recommend to use MD RAID (see <xref linkend=\"cha.raid\"/> ). However, LVM "
 "works fine with RAID&nbsp;0 and 1, as RAID&nbsp;0 is similar to common "
 "logical volume management (individual logical blocks are mapped onto blocks "
 "on the physical devices). LVM used on top of RAID&nbsp;1 can keep track of "
@@ -182,13 +183,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:202
+#: storage_lvm.xml:210
 #, no-c-format
 msgid "&zseries;: LVM Root File System"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:203
+#: storage_lvm.xml:211
 #, no-c-format
 msgid ""
 "If you configure the system with a root file system on LVM or software RAID "
@@ -199,7 +200,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:212
+#: storage_lvm.xml:220
 #, no-c-format
 msgid ""
 "With these features, using LVM already makes sense for heavily used home PCs "
@@ -211,23 +212,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:234
+#: storage_lvm.xml:242
 #, no-c-format
 msgid ""
 "You can manage new or existing LVM storage objects by using the &yast; "
 "Partitioner. Instructions and further information about configuring LVM are "
 "available in the official <link xlink:href=\"http://tldp.org/HOWTO/LVM-HOWTO/"
-"\"><citetitle>LVM HOWTO</citetitle></link>."
+"\"><citetitle>LVM HOWTO</citetitle></link> ."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:244
+#: storage_lvm.xml:252
 #, no-c-format
 msgid "Creating Volume Groups"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:246
+#: storage_lvm.xml:254
 #, no-c-format
 msgid ""
 "An LVM volume group (VG) organizes the Linux LVM partitions into a logical "
@@ -238,7 +239,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:253
+#: storage_lvm.xml:261
 #, no-c-format
 msgid ""
 "To use an entire disk, it must not contain any partitions. When using "
@@ -247,14 +248,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:262 storage_lvm.xml:479 storage_lvm.xml:876
-#: storage_lvm.xml:972 storage_lvm.xml:1061
-#, no-c-format
-msgid "Launch &yast; and open the <guimenu>Partitioner</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:267
+#: storage_lvm.xml:275
 #, no-c-format
 msgid ""
 "In case you need to reconfigure your existing partitioning setup, proceed as "
@@ -264,13 +258,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:274
+#: storage_lvm.xml:282
 #, no-c-format
 msgid "Physical Volumes on Unpartitioned Disks"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:275
+#: storage_lvm.xml:283
 #, no-c-format
 msgid ""
 "You can use an unpartitioned disk as a physical volume (PV) if that disk is "
@@ -279,7 +273,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:280
+#: storage_lvm.xml:288
 #, no-c-format
 msgid ""
 "As unpartitioned disks appear as <emphasis>unused</emphasis> at the system "
@@ -287,7 +281,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:287
+#: storage_lvm.xml:295
 #, no-c-format
 msgid ""
 "To use an entire hard disk that already contains partitions, delete all "
@@ -295,46 +289,46 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:293
+#: storage_lvm.xml:301
 #, no-c-format
 msgid "To use a partition that is currently mounted, unmount it."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:309
+#: storage_lvm.xml:317
 #, no-c-format
-msgid "In the left panel, select <guimenu>Volume Management</guimenu>."
+msgid "In the left panel, select <guimenu>Volume Management</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:312
+#: storage_lvm.xml:320
 #, no-c-format
 msgid "A list of existing Volume Groups opens in the right panel."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:317
+#: storage_lvm.xml:325
 #, no-c-format
 msgid ""
 "At the lower left of the Volume Management page, click "
 "<menuchoice><guimenu>Add</guimenu> <guimenu>Volume Group</guimenu></"
-"menuchoice>."
+"menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:334
+#: storage_lvm.xml:342
 #, no-c-format
 msgid "Define the volume group as follows:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:339
+#: storage_lvm.xml:347
 #, no-c-format
-msgid "Specify the <guimenu>Volume Group Name</guimenu>."
+msgid "Specify the <guimenu>Volume Group Name</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:342
+#: storage_lvm.xml:350
 #, no-c-format
 msgid ""
 "If you are creating a volume group at install time, the name "
@@ -343,13 +337,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:349
+#: storage_lvm.xml:357
 #, no-c-format
-msgid "Specify the <guimenu>Physical Extent Size</guimenu>."
+msgid "Specify the <guimenu>Physical Extent Size</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:352
+#: storage_lvm.xml:360
 #, no-c-format
 msgid ""
 "The <guimenu>Physical Extent Size</guimenu> defines the size of a physical "
@@ -359,7 +353,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:358
+#: storage_lvm.xml:366
 #, no-c-format
 msgid ""
 "In LVM1, a 4 MB physical extent allowed a maximum LV size of 256 GB because "
@@ -370,13 +364,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:366
+#: storage_lvm.xml:374
 #, no-c-format
 msgid "Physical Extent Sizes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:367
+#: storage_lvm.xml:375
 #, no-c-format
 msgid ""
 "Different physical extent sizes should not be mixed in a single VG. The "
@@ -384,7 +378,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:374
+#: storage_lvm.xml:382
 #, no-c-format
 msgid ""
 "In the <guimenu>Available Physical Volumes</guimenu> list, select the Linux "
@@ -394,50 +388,44 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:382 storage_lvm.xml:569 storage_lvm.xml:932
-#, no-c-format
-msgid "Click <guimenu>Finish</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:385
+#: storage_lvm.xml:393
 #, no-c-format
 msgid "The new group appears in the <guimenu>Volume Groups</guimenu> list."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:392
+#: storage_lvm.xml:400
 #, no-c-format
 msgid ""
-"On the Volume Management page, click <guimenu>Next</guimenu>, verify that "
-"the new volume group is listed, then click <guimenu>Finish</guimenu>."
+"On the Volume Management page, click <guimenu>Next</guimenu> , verify that "
+"the new volume group is listed, then click <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:398
+#: storage_lvm.xml:406
 #, no-c-format
 msgid ""
 "To check which physical devices are part of the volume group, open the "
 "&yast; Partitioner at any time in the running system and click <menuchoice> "
 "<guimenu>Volume Management</guimenu> <guimenu>Edit</guimenu> "
-"<guimenu>Physical Devices</guimenu></menuchoice>. Leave this screen with "
-"<guimenu>Abort</guimenu>."
+"<guimenu>Physical Devices</guimenu></menuchoice> . Leave this screen with "
+"<guimenu>Abort</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:406
+#: storage_lvm.xml:414
 #, no-c-format
 msgid "Physical Volumes in the Volume Group Named DATA"
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:420
+#: storage_lvm.xml:428
 #, no-c-format
 msgid "Creating Logical Volumes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:422
+#: storage_lvm.xml:430
 #, no-c-format
 msgid ""
 "A logical volume provides a pool of space similar to what a hard disk does. "
@@ -446,7 +434,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:428
+#: storage_lvm.xml:436
 #, no-c-format
 msgid ""
 "Use The &yast; Partitioner to create logical volumes from an existing volume "
@@ -459,152 +447,120 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:441
+#: storage_lvm.xml:449
 #, no-c-format
 msgid "Normal volume:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:442
+#: storage_lvm.xml:450
 #, no-c-format
 msgid "(Default) The volume’s space is allocated immediately."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:449
+#: storage_lvm.xml:457
 #, no-c-format
 msgid "Thin pool:"
 msgstr ""
 
-#. Tag: para
-#: storage_lvm.xml:450 storage_lvm.xml:605
-#, no-c-format
-msgid ""
-"The logical volume is a pool of space that is reserved for use with thin "
-"volumes. The thin volumes can allocate their needed space from it on demand."
-msgstr ""
-
 #. Tag: title
-#: storage_lvm.xml:459
+#: storage_lvm.xml:467
 #, no-c-format
 msgid "Thin volume:"
 msgstr ""
 
-#. Tag: para
-#: storage_lvm.xml:460 storage_lvm.xml:616
-#, no-c-format
-msgid ""
-"The volume is created as a sparse volume. The volume allocates needed space "
-"on demand from a thin pool."
-msgstr ""
-
 #. Tag: title
-#: storage_lvm.xml:468
+#: storage_lvm.xml:476
 #, no-c-format
 msgid "Mirrored volume:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:469
+#: storage_lvm.xml:477
 #, no-c-format
 msgid "The volume is created with a defined count of mirrors."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:477
+#: storage_lvm.xml:485
 #, no-c-format
 msgid "Setting Up a Logical Volume"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:484 storage_lvm.xml:881 storage_lvm.xml:977
-#, no-c-format
-msgid ""
-"In the left panel, select <guimenu>Volume Management</guimenu>. A list of "
-"existing Volume Groups opens in the right panel."
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:490
+#: storage_lvm.xml:498
 #, no-c-format
 msgid ""
 "Select the volume group in which you want to create the volume and choose "
 "<menuchoice> <guimenu>Add</guimenu> <guimenu>Logical Volume</guimenu> </"
-"menuchoice>."
+"menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:497
+#: storage_lvm.xml:505
 #, no-c-format
 msgid ""
 "Provide a <guimenu>Name</guimenu> for the volume and choose <guimenu>Normal "
 "Volume</guimenu> (refer to <xref linkend=\"sec.lvm.lv.thin\"/> for setting "
-"up thinly provisioned volumes). Proceed with <guimenu>Next</guimenu>."
+"up thinly provisioned volumes). Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:515
+#: storage_lvm.xml:523
 #, no-c-format
 msgid "Specify the size of the volume and whether to use multiple stripes."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:518
+#: storage_lvm.xml:526
 #, no-c-format
 msgid ""
 "Using a striped volume, the data will be distributed among several physical "
 "volumes. If these physical volumes reside on different hard disks, this "
 "generally results in a better reading and writing performance (like "
 "RAID&nbsp;0). The maximum number of available stripes is equal to the number "
-"of physical volumes. The default (<literal>1</literal> is to not use "
+"of physical volumes. The default ( <literal>1</literal> is to not use "
 "multiple stripes."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:538
+#: storage_lvm.xml:546
 #, no-c-format
 msgid ""
 "Choose a <guimenu>Role</guimenu> for the volume. Your choice here only "
 "affects the default values for the upcoming dialog. They can be changed in "
 "the next step. If in doubt, choose <guimenu>Raw Volume (Unformatted)</"
-"guimenu>."
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:556
+#: storage_lvm.xml:564
 #, no-c-format
 msgid ""
-"Under <guimenu>Formatting Options</guimenu>, select <guimenu>Format "
-"Partition</guimenu>, then select the <guimenu>File system</guimenu>. The "
+"Under <guimenu>Formatting Options</guimenu> , select <guimenu>Format "
+"Partition</guimenu> , then select the <guimenu>File system</guimenu> . The "
 "content of the <guimenu>Options</guimenu> menu depends on the file system. "
 "Usually there is no need to change the defaults."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:562
+#: storage_lvm.xml:570
 #, no-c-format
 msgid ""
-"Under <guimenu>Mounting Options</guimenu>, select <guimenu>Mount partition</"
-"guimenu>, then select the mount point. Click <guimenu>Fstab Options</"
+"Under <guimenu>Mounting Options</guimenu> , select <guimenu>Mount partition</"
+"guimenu> , then select the mount point. Click <guimenu>Fstab Options</"
 "guimenu> to add special mounting options for the volume."
 msgstr ""
 
-#. Tag: para
-#: storage_lvm.xml:574 storage_lvm.xml:937
-#, no-c-format
-msgid ""
-"Click <guimenu>Next</guimenu>, verify that the changes are listed, then "
-"click <guimenu>Finish</guimenu>."
-msgstr ""
-
 #. Tag: title
-#: storage_lvm.xml:582
+#: storage_lvm.xml:590
 #, no-c-format
 msgid "Thinly Provisioned Logical Volumes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:583
+#: storage_lvm.xml:591
 #, no-c-format
 msgid ""
 "An LVM logical volume can optionally be thinly provisioned. Thin "
@@ -619,35 +575,51 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:594
+#: storage_lvm.xml:602
 #, no-c-format
 msgid ""
 "To set up a thinly provisioned logical volume, proceed as described in <xref "
-"linkend=\"pro.lvm.lv\"/>. When it comes to choosing the volume type, do not "
-"choose <guimenu>Normal Volume</guimenu>, but rather <guimenu>Thin Volume</"
-"guimenu> or <guimenu>Thin Pool</guimenu>."
+"linkend=\"pro.lvm.lv\"/> . When it comes to choosing the volume type, do not "
+"choose <guimenu>Normal Volume</guimenu> , but rather <guimenu>Thin Volume</"
+"guimenu> or <guimenu>Thin Pool</guimenu> ."
 msgstr ""
 
-#. Tag: guimenu
-#: storage_lvm.xml:602
+#. Tag: term
+#: storage_lvm.xml:610
 #, no-c-format
-msgid "Thin pool"
+msgid "<guimenu>Thin pool</guimenu>"
 msgstr ""
 
-#. Tag: guimenu
+#. Tag: para
 #: storage_lvm.xml:613
 #, no-c-format
-msgid "Thin volume"
+msgid ""
+"The logical volume is a pool of space that is reserved for use with thin "
+"volumes. The thin volumes can allocate their needed space from it on demand."
+msgstr ""
+
+#. Tag: term
+#: storage_lvm.xml:621
+#, no-c-format
+msgid "<guimenu>Thin volume</guimenu>"
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:624
+#, no-c-format
+msgid ""
+"The volume is created as a sparse volume. The volume allocates needed space "
+"on demand from a thin pool."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:624
+#: storage_lvm.xml:632
 #, no-c-format
 msgid "Thinly Provisioned Volumes in a Cluster"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:625
+#: storage_lvm.xml:633
 #, no-c-format
 msgid ""
 "To use thinly provisioned volumes in a cluster, the thin pool and the thin "
@@ -657,13 +629,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:635
+#: storage_lvm.xml:643
 #, no-c-format
 msgid "Creating Mirrored Volumes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:636
+#: storage_lvm.xml:644
 #, no-c-format
 msgid ""
 "A logical volume can be created with several mirrors. LVM ensures that data "
@@ -678,7 +650,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:647
+#: storage_lvm.xml:655
 #, no-c-format
 msgid ""
 "Currently there are two types of mirror implementation available: \"normal"
@@ -687,7 +659,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:652
+#: storage_lvm.xml:660
 #, no-c-format
 msgid ""
 "After you create mirrored logical volumes, you can perform standard "
@@ -696,28 +668,28 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:658
+#: storage_lvm.xml:666
 #, no-c-format
 msgid "Setting Up Mirrored Non-raid Logical Volumes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:659
+#: storage_lvm.xml:667
 #, no-c-format
 msgid ""
 "To create a mirrored volume use the <command>lvcreate</command> command. The "
 "following example creates a 500 GB logical volume with two mirrors called "
-"<emphasis>lv1</emphasis> which uses a volume group <emphasis>vg1</emphasis>."
+"<emphasis>lv1</emphasis> which uses a volume group <emphasis>vg1</emphasis> ."
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:665
+#: storage_lvm.xml:673
 #, no-c-format
 msgid "&prompt.sudo;lvcreate -L 500G -m 2 -n lv1 vg1"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:666
+#: storage_lvm.xml:674
 #, no-c-format
 msgid ""
 "Such a logical volume is a linear volume (without striping) that provides "
@@ -727,7 +699,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:672
+#: storage_lvm.xml:680
 #, no-c-format
 msgid ""
 "The logical volume is divided into regions of the 512 KB default size. If "
@@ -738,13 +710,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:681
+#: storage_lvm.xml:689
 #, no-c-format
 msgid "Setting Up <literal>raid1</literal> Logical Volumes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:682
+#: storage_lvm.xml:690
 #, no-c-format
 msgid ""
 "As LVM supports RAID you can implement mirroring by using RAID1. Such "
@@ -753,7 +725,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:689
+#: storage_lvm.xml:697
 #, no-c-format
 msgid ""
 "LVM maintains a fully redundant bitmap area for each mirror image, which "
@@ -761,26 +733,26 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:695
+#: storage_lvm.xml:703
 #, no-c-format
 msgid ""
 "Mirror images can be temporarily split from the array and then merged back."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:701
+#: storage_lvm.xml:709
 #, no-c-format
 msgid "The array can handle transient failures."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:706
+#: storage_lvm.xml:714
 #, no-c-format
 msgid "The LVM RAID 1 implementation supports snapshots."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:711
+#: storage_lvm.xml:719
 #, no-c-format
 msgid ""
 "On the other hand, this type of mirroring implementation does not enable to "
@@ -788,46 +760,46 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:715
+#: storage_lvm.xml:723
 #, no-c-format
 msgid "To create a mirror volume by using RAID, issue the command"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:718
+#: storage_lvm.xml:726
 #, no-c-format
 msgid "&prompt.sudo;lvcreate --type raid1 -m 1 -L 1G -n lv1 vg1"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:719
+#: storage_lvm.xml:727
 #, no-c-format
 msgid "where the options/parameters have the following meanings:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:724
+#: storage_lvm.xml:732
 #, no-c-format
 msgid ""
-"<literal>--type</literal> - you need to specify <literal>raid1</literal>, "
+"<literal>--type</literal> - you need to specify <literal>raid1</literal> , "
 "otherwise the command uses the implicit segment type <literal>mirror</"
 "literal> and creates a non-raid mirror."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:731
+#: storage_lvm.xml:739
 #, no-c-format
 msgid "<literal>-m</literal> - specifies the count of mirrors."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:736
+#: storage_lvm.xml:744
 #, no-c-format
 msgid "<literal>-L</literal> - specifies the size of the logical volume."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:741
+#: storage_lvm.xml:749
 #, no-c-format
 msgid ""
 "<literal>-n</literal> - by using this option you specify a name of the "
@@ -835,7 +807,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:747
+#: storage_lvm.xml:755
 #, no-c-format
 msgid ""
 "<literal>vg1</literal> - is a name of the volume group used by the logical "
@@ -843,7 +815,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:753
+#: storage_lvm.xml:761
 #, no-c-format
 msgid ""
 "LVM creates a logical volume of one extent size for each data volume in the "
@@ -852,7 +824,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:758
+#: storage_lvm.xml:766
 #, no-c-format
 msgid ""
 "After you create a RAID logical volume, you can use the volume in the same "
@@ -860,52 +832,77 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:771
+#: storage_lvm.xml:779
 #, no-c-format
 msgid "Automatically Activating Non-Root LVM Volume Groups"
 msgstr ""
 
-#. Tag: para
-#: storage_lvm.xml:773
+#. Tag: literal
+#: storage_lvm.xml:783
+#, no-c-format
+msgid "/etc/lvm/lvm.conf"
+msgstr ""
+
+#. Tag: #text
+#: storage_lvm.xml:783
+#, no-c-format
+msgid "Activation behavior for non-root LVM volume groups is controlled in the"
+msgstr ""
+
+#. Tag: #text
+#: storage_lvm.xml:784
+#, no-c-format
+msgid "file and by the"
+msgstr ""
+
+#. Tag: #text
+#: storage_lvm.xml:788
 #, no-c-format
 msgid ""
-"Activation behavior for non-root LVM volume groups is controlled in the "
-"<literal>/etc/lvm/lvm.conf</literal> file and by the "
-"<parameter>auto_activation_volume_list</parameter> parameter. By default, "
-"the parameter is empty and all volumes are activated. To activate only some "
-"volume groups, add the names in quotes and separate them with commas, for "
-"example:"
+"parameter. By default, the parameter is empty and all volumes are activated. "
+"To activate only some volume groups, add the names in quotes and separate "
+"them with commas, for example:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:782
+#: storage_lvm.xml:790
 #, no-c-format
 msgid ""
 "auto_activation_volume_list = [ \"vg1\", \"vg2/lvol1\", \"@tag1\", \"@*\" ]"
 msgstr ""
 
-#. Tag: para
-#: storage_lvm.xml:784
+#. Tag: parameter
+#: storage_lvm.xml:794
 #, no-c-format
-msgid ""
-"If you have defined a list in the <parameter>auto_activation_volume_list</"
-"parameter> parameter, the following will happen:"
+msgid "auto_activation_volume_list"
+msgstr ""
+
+#. Tag: #text
+#: storage_lvm.xml:794
+#, no-c-format
+msgid "If you have defined a list in the"
+msgstr ""
+
+#. Tag: #text
+#: storage_lvm.xml:796
+#, no-c-format
+msgid "parameter, the following will happen:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:802
+#: storage_lvm.xml:810
 #, no-c-format
 msgid "Each logical volume is first checked against this list."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:807
+#: storage_lvm.xml:815
 #, no-c-format
 msgid "If it does not match, the logical volume will not be activated."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:813
+#: storage_lvm.xml:821
 #, no-c-format
 msgid ""
 "By default, non-root LVM volume groups are automatically activated on system "
@@ -914,23 +911,23 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:854
+#: storage_lvm.xml:870
 #, no-c-format
 msgid "Resizing an Existing Volume Group"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:856
+#: storage_lvm.xml:872
 #, no-c-format
 msgid ""
 "The space provided by a volume group can be expanded at any time in the "
 "running system without service interruption by adding physical volumes. This "
 "will allow you to add logical volumes to the group or to expand the size of "
-"existing volumes as described in <xref linkend=\"sec.lvm.lv_resize\"/>."
+"existing volumes as described in <xref linkend=\"sec.lvm.lv_resize\"/> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:864
+#: storage_lvm.xml:880
 #, no-c-format
 msgid ""
 "It is also possible to reduce the size of the volume group by removing "
@@ -941,7 +938,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:872
+#: storage_lvm.xml:888
 #, no-c-format
 msgid ""
 "&prompt.sudo;pvs -o vg_name,lv_name,pv_name,seg_pe_ranges\n"
@@ -957,27 +954,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:887
+#: storage_lvm.xml:912
 #, no-c-format
 msgid ""
 "Select the volume group you want to change, then click <guimenu>Resize</"
-"guimenu>."
+"guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:903
+#: storage_lvm.xml:928
 #, no-c-format
 msgid "Do one of the following:"
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:909
+#: storage_lvm.xml:934
 #, no-c-format
 msgid "Add:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:910
+#: storage_lvm.xml:935
 #, no-c-format
 msgid ""
 "Expand the size of the volume group by moving one or more physical volumes "
@@ -986,13 +983,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:920
+#: storage_lvm.xml:945
 #, no-c-format
 msgid "Remove:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:921
+#: storage_lvm.xml:946
 #, no-c-format
 msgid ""
 "Reduce the size of the volume group by moving one or more physical volumes "
@@ -1000,14 +997,28 @@ msgid ""
 "to the <guimenu>Available Physical Volumes</guimenu> list."
 msgstr ""
 
+#. Tag: para
+#: storage_lvm.xml:957
+#, no-c-format
+msgid "Click <guimenu>Finish</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:962
+#, no-c-format
+msgid ""
+"Click <guimenu>Next</guimenu> , verify that the changes are listed, then "
+"click <guimenu>Finish</guimenu> ."
+msgstr ""
+
 #. Tag: title
-#: storage_lvm.xml:945
+#: storage_lvm.xml:970
 #, no-c-format
 msgid "Resizing a Logical Volume"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:947
+#: storage_lvm.xml:972
 #, no-c-format
 msgid ""
 "In case there is unused free space available in the volume group, you can "
@@ -1017,13 +1028,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:955
+#: storage_lvm.xml:980
 #, no-c-format
 msgid "<quote>Online</quote> Resizing"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:956
+#: storage_lvm.xml:981
 #, no-c-format
 msgid ""
 "When reducing the size of a volume, &yast; automatically resizes its file "
@@ -1034,7 +1045,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:963
+#: storage_lvm.xml:988
 #, no-c-format
 msgid ""
 "Shrinking the file system online is only supported by Btrfs. To shrink the "
@@ -1043,27 +1054,35 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:983
+#: storage_lvm.xml:1002
 #, no-c-format
 msgid ""
-"Select the logical volume you want to change, then click <guimenu>Resize</"
-"guimenu>."
+"In the left panel, select <guimenu>Volume Management</guimenu> . A list of "
+"existing Volume Groups opens in the right panel."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:999
+#: storage_lvm.xml:1008
+#, no-c-format
+msgid ""
+"Select the logical volume you want to change, then click <guimenu>Resize</"
+"guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:1024
 #, no-c-format
 msgid "Set the intended size by using one of the following options:"
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1005
+#: storage_lvm.xml:1030
 #, no-c-format
 msgid "Maximum Size"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1006
+#: storage_lvm.xml:1031
 #, no-c-format
 msgid ""
 "Expand the size of the logical volume to use all space left in the volume "
@@ -1071,13 +1090,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1014
+#: storage_lvm.xml:1039
 #, no-c-format
 msgid "Minimum Size"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1015
+#: storage_lvm.xml:1040
 #, no-c-format
 msgid ""
 "Reduce the size of the logical volume to the size occupied by the data and "
@@ -1085,48 +1104,48 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1023
+#: storage_lvm.xml:1048
 #, no-c-format
 msgid "Custom Size"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1024
+#: storage_lvm.xml:1049
 #, no-c-format
 msgid ""
 "Specify the new size for the volume. The value must be within the range of "
 "the minimum and maximum values listed above. Use K, M, G, T for Kilobytes, "
-"Megabytes, Gigabytes and Terabytes (for example <literal>20G</literal>)."
+"Megabytes, Gigabytes and Terabytes (for example <literal>20G</literal> )."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1035
+#: storage_lvm.xml:1060
 #, no-c-format
-msgid "Click <guimenu>OK</guimenu>."
+msgid "Click <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1040
+#: storage_lvm.xml:1065
 #, no-c-format
 msgid ""
-"Click <guimenu>Next</guimenu>, verify that the change is listed, then click "
-"<guimenu>Finish</guimenu>."
+"Click <guimenu>Next</guimenu> , verify that the change is listed, then click "
+"<guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1048
+#: storage_lvm.xml:1073
 #, no-c-format
 msgid "Deleting a Volume Group or a Logical Volume"
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1051
+#: storage_lvm.xml:1076
 #, no-c-format
 msgid "Data Loss"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1052
+#: storage_lvm.xml:1077
 #, no-c-format
 msgid ""
 "Deleting a volume group destroys all of the data in each of its member "
@@ -1134,46 +1153,52 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1066
+#: storage_lvm.xml:1086
+#, no-c-format
+msgid "Launch &yast; and open the <guimenu>Partitioner</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:1091
 #, no-c-format
 msgid ""
-"In the left panel, select <guimenu>Volume Management</guimenu>. A list of "
+"In the left panel, select <guimenu>Volume Management</guimenu> . A list of "
 "existing volume groups opens in the right panel."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1072
+#: storage_lvm.xml:1097
 #, no-c-format
 msgid ""
 "Select the volume group or the logical volume you want to remove and click "
-"<guimenu>Delete</guimenu>."
+"<guimenu>Delete</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1078
+#: storage_lvm.xml:1103
 #, no-c-format
 msgid ""
 "Depending on your choice warning dialogs are shown. Confirm them with "
-"<guimenu>Yes</guimenu>."
+"<guimenu>Yes</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1084
+#: storage_lvm.xml:1109
 #, no-c-format
 msgid ""
-"Click <guimenu>Next</guimenu>, verify that the deleted volume group is "
+"Click <guimenu>Next</guimenu> , verify that the deleted volume group is "
 "listed (deletion is indicated by a red colored font), then click "
-"<guimenu>Finish</guimenu>."
+"<guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1093
+#: storage_lvm.xml:1118
 #, no-c-format
 msgid "Using LVM Commands"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1095
+#: storage_lvm.xml:1120
 #, no-c-format
 msgid ""
 "For information about using LVM commands, see the man pages for the commands "
@@ -1184,68 +1209,68 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1104
+#: storage_lvm.xml:1129
 #, no-c-format
 msgid "LVM Commands"
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1106
+#. Tag: term
+#: storage_lvm.xml:1131
 #, no-c-format
-msgid "pvcreate <replaceable>DEVICE</replaceable>"
+msgid "<command>pvcreate <replaceable>DEVICE</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1108
+#: storage_lvm.xml:1133
 #, no-c-format
 msgid ""
-"Initializes a device (such as <filename>/dev/sdb1</filename>) for use by LVM "
-"as a physical volume. If there is any file system on the specified device, a "
-"warning appears. Bear in mind that <command>pvcreate</command> checks for "
-"existing file systems only if <command>blkid</command> is installed (which "
-"is done by default). If <command>blkid</command> is not available, "
-"<command>pvcreate</command> will not produce any warning and you may lose "
-"your file system without any warning."
+"Initializes a device (such as <filename>/dev/sdb1</filename> ) for use by "
+"LVM as a physical volume. If there is any file system on the specified "
+"device, a warning appears. Bear in mind that <command>pvcreate</command> "
+"checks for existing file systems only if <command>blkid</command> is "
+"installed (which is done by default). If <command>blkid</command> is not "
+"available, <command>pvcreate</command> will not produce any warning and you "
+"may lose your file system without any warning."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1120
+#. Tag: term
+#: storage_lvm.xml:1145
 #, no-c-format
-msgid "pvdisplay <replaceable>DEVICE</replaceable>"
+msgid "<command>pvdisplay <replaceable>DEVICE</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1122
+#: storage_lvm.xml:1147
 #, no-c-format
 msgid ""
 "Displays information about the LVM physical volume, such as whether it is "
 "currently being used in a logical volume."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1130
+#. Tag: term
+#: storage_lvm.xml:1154
 #, no-c-format
 msgid ""
-"vgcreate -c y <replaceable>VG_NAME</replaceable> <replaceable>DEV1</"
-"replaceable> [<replaceable>DEV2</replaceable>...]"
+"<command>vgcreate -c y <replaceable>VG_NAME</replaceable> <replaceable>DEV1</"
+"replaceable> [<replaceable>DEV2</replaceable>...]</command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1133
+#: storage_lvm.xml:1158
 #, no-c-format
 msgid "Creates a clustered volume group with one or more specified devices."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1140
+#. Tag: term
+#: storage_lvm.xml:1164
 #, no-c-format
 msgid ""
-"vgcreate --activationmode <replaceable>ACTIVATION_MODE</replaceable> "
-"<replaceable>VG_NAME</replaceable>"
+"<command>vgcreate --activationmode <replaceable>ACTIVATION_MODE</"
+"replaceable> <replaceable>VG_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1143
+#: storage_lvm.xml:1168
 #, no-c-format
 msgid ""
 "Configures the mode of volume group activation. You can specify one of the "
@@ -1253,7 +1278,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1149
+#: storage_lvm.xml:1174
 #, no-c-format
 msgid ""
 "<literal>complete</literal> - only the logical volumes that are not affected "
@@ -1262,16 +1287,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1156 storage_lvm.xml:1294
-#, no-c-format
-msgid ""
-"<literal>degraded</literal> - is the default activation mode. If there is a "
-"sufficient level of redundancy to activate a logical volume, the logical "
-"volume can be activated even though some physical volumes are missing."
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:1164
+#: storage_lvm.xml:1189
 #, no-c-format
 msgid ""
 "<literal>partial</literal> - the LVM tries to activate the volume group even "
@@ -1280,147 +1296,151 @@ msgid ""
 "cannot be activated and is handled as an error target."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1176
-#, no-c-format
-msgid "vgchange -a [ey|n] <replaceable>VG_NAME</replaceable>"
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:1179
+#. Tag: term
+#: storage_lvm.xml:1200
 #, no-c-format
 msgid ""
-"Activates (<literal>-a ey</literal>) or deactivates (<literal>-a n</"
-"literal>) a volume group and its logical volumes for input/output."
+"<command>vgchange -a [ey|n] <replaceable>VG_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1183
+#: storage_lvm.xml:1204
+#, no-c-format
+msgid ""
+"Activates ( <literal>-a ey</literal> ) or deactivates ( <literal>-a n</"
+"literal> ) a volume group and its logical volumes for input/output."
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:1208
 #, no-c-format
 msgid ""
 "When activating a volume in a cluster, ensure that you use the <literal>ey</"
 "literal> option. This option is used by default in the load script."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1191
+#. Tag: term
+#: storage_lvm.xml:1216
 #, no-c-format
-msgid "vgremove <replaceable>VG_NAME</replaceable>"
+msgid "<command>vgremove <replaceable>VG_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1193
+#: storage_lvm.xml:1218
 #, no-c-format
 msgid ""
 "Removes a volume group. Before using this command, remove the logical "
 "volumes, then deactivate the volume group."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1201
+#. Tag: term
+#: storage_lvm.xml:1225
 #, no-c-format
-msgid "vgdisplay <replaceable>VG_NAME</replaceable>"
+msgid "<command>vgdisplay <replaceable>VG_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1204
+#: storage_lvm.xml:1229
 #, no-c-format
 msgid "Displays information about a specified volume group."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1207
+#: storage_lvm.xml:1232
 #, no-c-format
 msgid "To find the total physical extent of a volume group, enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1210
+#: storage_lvm.xml:1235
 #, no-c-format
 msgid ""
 "&prompt.user;vgdisplay <replaceable>VG_NAME</replaceable> | grep \"Total PE\""
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1215
+#. Tag: term
+#: storage_lvm.xml:1239
 #, no-c-format
 msgid ""
-"lvcreate -L <replaceable>SIZE</replaceable> -n <replaceable>LV_NAME</"
-"replaceable> <replaceable>VG_NAME</replaceable>"
+"<command>lvcreate -L <replaceable>SIZE</replaceable> -n "
+"<replaceable>LV_NAME</replaceable> <replaceable>VG_NAME</replaceable></"
+"command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1220
+#: storage_lvm.xml:1245
 #, no-c-format
 msgid "Creates a logical volume of the specified size."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1227
+#. Tag: term
+#: storage_lvm.xml:1251
 #, no-c-format
 msgid ""
-"lvcreate -L <replaceable>SIZE</replaceable> --thinpool "
-"<replaceable>POOL_NAME</replaceable> <replaceable>VG_NAME</replaceable>"
+"<command>lvcreate -L <replaceable>SIZE</replaceable> --thinpool "
+"<replaceable>POOL_NAME</replaceable> <replaceable>VG_NAME</replaceable></"
+"command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1232
+#: storage_lvm.xml:1257
 #, no-c-format
 msgid ""
 "Creates a thin pool named <literal>myPool</literal> of the specified size "
-"from the volume group <replaceable>VG_NAME</replaceable>."
+"from the volume group <replaceable>VG_NAME</replaceable> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1236
+#: storage_lvm.xml:1261
 #, no-c-format
 msgid ""
 "The following example creates a thin pool with a size of 5 GB from the "
-"volume group <literal>LOCAL</literal>:"
+"volume group <literal>LOCAL</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1240
+#: storage_lvm.xml:1265
 #, no-c-format
 msgid "&prompt.sudo;lvcreate -L 5G --thinpool myPool LOCAL"
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1245
+#. Tag: term
+#: storage_lvm.xml:1269
 #, no-c-format
 msgid ""
-"lvcreate -T <replaceable>VG_NAME</replaceable>/<replaceable>POOL_NAME</"
-"replaceable> -V <replaceable>SIZE</replaceable> -n <replaceable>LV_NAME</"
-"replaceable>"
+"<command>lvcreate -T <replaceable>VG_NAME</replaceable>/"
+"<replaceable>POOL_NAME</replaceable> -V <replaceable>SIZE</replaceable> -n "
+"<replaceable>LV_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1251
+#: storage_lvm.xml:1276
 #, no-c-format
 msgid ""
 "Creates a thin logical volume within the pool <replaceable>POOL_NAME</"
-"replaceable>. The following example creates a 1GB thin volume named "
+"replaceable> . The following example creates a 1GB thin volume named "
 "<literal>myThin1</literal> from the pool <literal>myPool</literal> on the "
-"volume group <literal>LOCAL</literal>:"
+"volume group <literal>LOCAL</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1257
+#: storage_lvm.xml:1282
 #, no-c-format
 msgid "&prompt.sudo;lvcreate -T LOCAL/myPool -V 1G -n myThin1"
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1262
+#. Tag: term
+#: storage_lvm.xml:1286
 #, no-c-format
 msgid ""
-"lvcreate -T <replaceable>VG_NAME</replaceable>/<replaceable>POOL_NAME</"
-"replaceable> -V <replaceable>SIZE</replaceable> -L <replaceable>SIZE</"
-"replaceable> -n <replaceable>LV_NAME</replaceable>"
+"<command>lvcreate -T <replaceable>VG_NAME</replaceable>/"
+"<replaceable>POOL_NAME</replaceable> -V <replaceable>SIZE</replaceable> -L "
+"<replaceable>SIZE</replaceable> -n <replaceable>LV_NAME</replaceable></"
+"command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1268
+#: storage_lvm.xml:1293
 #, no-c-format
 msgid ""
 "It is also possible to combine thin pool and thin logical volume creation in "
@@ -1428,21 +1448,21 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1272
+#: storage_lvm.xml:1297
 #, no-c-format
 msgid "&prompt.sudo;lvcreate -T LOCAL/myPool -V 1G -L 5G -n myThin1"
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1277
+#. Tag: term
+#: storage_lvm.xml:1301
 #, no-c-format
 msgid ""
-"lvcreate --activationmode <replaceable>ACTIVATION_MODE</replaceable> "
-"<replaceable>LV_NAME</replaceable>"
+"<command>lvcreate --activationmode <replaceable>ACTIVATION_MODE</"
+"replaceable> <replaceable>LV_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1282
+#: storage_lvm.xml:1307
 #, no-c-format
 msgid ""
 "Configures the mode of logical volume activation. You can specify one of the "
@@ -1450,7 +1470,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1288
+#: storage_lvm.xml:1313
 #, no-c-format
 msgid ""
 "<literal>complete</literal> - the logical volume can be activated only if "
@@ -1458,7 +1478,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1302
+#: storage_lvm.xml:1319
+#, no-c-format
+msgid ""
+"<literal>degraded</literal> - is the default activation mode. If there is a "
+"sufficient level of redundancy to activate a logical volume, the logical "
+"volume can be activated even though some physical volumes are missing."
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:1327
 #, no-c-format
 msgid ""
 "<literal>partial</literal> - the LVM tries to activate the volume even "
@@ -1468,7 +1497,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1311
+#: storage_lvm.xml:1336
 #, no-c-format
 msgid ""
 "You can specify the activation mode also in <filename>/etc/lvm/lvm.conf</"
@@ -1476,99 +1505,103 @@ msgid ""
 "<literal>activation_mode</literal> configuration option."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1321
+#. Tag: term
+#: storage_lvm.xml:1345
 #, no-c-format
 msgid ""
-"lvcreate -s [-L <replaceable>SIZE</replaceable>] -n "
+"<command>lvcreate -s [-L <replaceable>SIZE</replaceable>] -n "
 "<replaceable>SNAP_VOLUME</replaceable> <replaceable>SOURCE_VOLUME_PATH</"
-"replaceable> <replaceable>VG_NAME</replaceable>"
+"replaceable> <replaceable>VG_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1327
+#: storage_lvm.xml:1352
 #, no-c-format
 msgid ""
 "Creates a snapshot volume for the specified logical volume. If the size "
-"option (<option>-L</option> or <option>--size</option>) is not included, the "
-"snapshot is created as a thin snapshot."
+"option ( <option>-L</option> or <option>--size</option> ) is not included, "
+"the snapshot is created as a thin snapshot."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1336
+#. Tag: term
+#: storage_lvm.xml:1360
 #, no-c-format
 msgid ""
-"lvremove /dev/<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</"
-"replaceable>"
+"<command>lvremove /dev/<replaceable>VG_NAME</replaceable>/"
+"<replaceable>LV_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1340
+#: storage_lvm.xml:1365
 #, no-c-format
 msgid "Removes a logical volume."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1343
+#: storage_lvm.xml:1368
 #, no-c-format
 msgid ""
 "Before using this command, close the logical volume by unmounting it with "
 "the <command>umount</command> command."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1351
+#. Tag: term
+#: storage_lvm.xml:1375
 #, no-c-format
-msgid "lvremove <replaceable>SNAP_VOLUME_PATH</replaceable>"
+msgid "<command>lvremove <replaceable>SNAP_VOLUME_PATH</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1354
+#: storage_lvm.xml:1379
 #, no-c-format
 msgid "Removes a snapshot volume."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1361
+#. Tag: term
+#: storage_lvm.xml:1385
 #, no-c-format
-msgid "lvconvert --merge <replaceable>SNAP_VOLUME_PATH</replaceable>"
+msgid ""
+"<command>lvconvert --merge <replaceable>SNAP_VOLUME_PATH</replaceable></"
+"command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1365
+#: storage_lvm.xml:1390
 #, no-c-format
 msgid "Reverts the logical volume to the version of the snapshot."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1372
+#. Tag: term
+#: storage_lvm.xml:1396
 #, no-c-format
 msgid ""
-"vgextend <replaceable>VG_NAME</replaceable> <replaceable>DEVICE</replaceable>"
+"<command>vgextend <replaceable>VG_NAME</replaceable> <replaceable>DEVICE</"
+"replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1376
+#: storage_lvm.xml:1401
 #, no-c-format
 msgid ""
 "Adds the specified device (physical volume) to an existing volume group."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1384
+#. Tag: term
+#: storage_lvm.xml:1408
 #, no-c-format
 msgid ""
-"vgreduce <replaceable>VG_NAME</replaceable> <replaceable>DEVICE</replaceable>"
+"<command>vgreduce <replaceable>VG_NAME</replaceable> <replaceable>DEVICE</"
+"replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1388
+#: storage_lvm.xml:1413
 #, no-c-format
 msgid "Removes a specified physical volume from an existing volume group."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1391
+#: storage_lvm.xml:1416
 #, no-c-format
 msgid ""
 "Ensure that the physical volume is not currently being used by a logical "
@@ -1576,16 +1609,17 @@ msgid ""
 "the <command>pvmove</command> command."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1400
+#. Tag: term
+#: storage_lvm.xml:1424
 #, no-c-format
 msgid ""
-"lvextend -L <replaceable>SIZE</replaceable> /dev/<replaceable>VG_NAME</"
-"replaceable>/<replaceable>LV_NAME</replaceable>"
+"<command>lvextend -L <replaceable>SIZE</replaceable> /dev/"
+"<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</replaceable></"
+"command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1404
+#: storage_lvm.xml:1429
 #, no-c-format
 msgid ""
 "Extends the size of a specified logical volume. Afterward, you must also "
@@ -1593,22 +1627,23 @@ msgid ""
 "<xref linkend=\"cha.resize_fs\"/> for details."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1413
+#. Tag: term
+#: storage_lvm.xml:1437
 #, no-c-format
 msgid ""
-"lvreduce -L <replaceable>SIZE</replaceable> /dev/<replaceable>VG_NAME</"
-"replaceable>/<replaceable>LV_NAME</replaceable>"
+"<command>lvreduce -L <replaceable>SIZE</replaceable> /dev/"
+"<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</replaceable></"
+"command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1417
+#: storage_lvm.xml:1442
 #, no-c-format
 msgid "Reduces the size of a specified logical volume."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1420
+#: storage_lvm.xml:1445
 #, no-c-format
 msgid ""
 "Ensure that you reduce the size of the file system first before shrinking "
@@ -1616,17 +1651,17 @@ msgid ""
 "\"/> for details."
 msgstr ""
 
-#. Tag: command
-#: storage_lvm.xml:1429
+#. Tag: term
+#: storage_lvm.xml:1453
 #, no-c-format
 msgid ""
-"lvrename /dev/<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</"
-"replaceable> /dev/<replaceable>VG_NAME</replaceable>/"
-"<replaceable>NEW_LV_NAME</replaceable>"
+"<command>lvrename /dev/<replaceable>VG_NAME</replaceable>/"
+"<replaceable>LV_NAME</replaceable> /dev/<replaceable>VG_NAME</replaceable>/"
+"<replaceable>NEW_LV_NAME</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1434
+#: storage_lvm.xml:1459
 #, no-c-format
 msgid ""
 "Renames an existing LVM logical volume. It does not change the volume group "
@@ -1634,13 +1669,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1443
+#: storage_lvm.xml:1468
 #, no-c-format
 msgid "Bypassing udev on Volume Creation"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1444
+#: storage_lvm.xml:1469
 #, no-c-format
 msgid ""
 "In case you want to manage LV device nodes and symbolic links by using LVM "
@@ -1649,38 +1684,50 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1451
+#: storage_lvm.xml:1476
 #, no-c-format
 msgid ""
 "Configure <literal>activation/udev_rules = 0</literal> and "
 "<literal>activation/udev_sync = 0</literal> in <filename>/etc/lvm/lvm.conf</"
-"filename>."
+"filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1456
+#: storage_lvm.xml:1481
 #, no-c-format
 msgid ""
 "Note that specifying <option>--nodevsync</option> with the "
 "<command>lvcreate</command> command has the same effect as "
-"<literal>activation/udev_sync = 0</literal>; setting <literal>activation/"
+"<literal>activation/udev_sync = 0</literal> ; setting <literal>activation/"
 "udev_rules = 0</literal> is still required."
 msgstr ""
 
-#. Tag: para
-#: storage_lvm.xml:1464
+#. Tag: #text
+#: storage_lvm.xml:1490
 #, no-c-format
-msgid "Setting the environment variable <envar>DM_DISABLE_UDEV</envar>:"
+msgid "Setting the environment variable"
+msgstr ""
+
+#. Tag: envar
+#: storage_lvm.xml:1490
+#, no-c-format
+msgid "DM_DISABLE_UDEV"
+msgstr ""
+
+#. Tag: #text
+#: storage_lvm.xml:1491
+#, no-c-format
+msgid ":"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1467
+#: storage_lvm.xml:1492
 #, no-c-format
 msgid "export DM_DISABLE_UDEV=1"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1468
+#: storage_lvm.xml:1493
 #, no-c-format
 msgid ""
 "This will also disable notifications from udev. In addition, all udev "
@@ -1688,23 +1735,23 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1478
+#: storage_lvm.xml:1503
 #, no-c-format
 msgid "Resizing a Logical Volume with Commands"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1479
+#: storage_lvm.xml:1504
 #, no-c-format
 msgid ""
-"The <command>lvresize</command>, <command>lvextend</command>, and "
+"The <command>lvresize</command> , <command>lvextend</command> , and "
 "<command>lvreduce</command> commands are used to resize logical volumes. See "
 "the man pages for each of these commands for syntax and options information. "
 "To extend an LV there must be enough unallocated space available on the VG."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1486
+#: storage_lvm.xml:1511
 #, no-c-format
 msgid ""
 "The recommended way to grow or shrink a logical volume is to use the &yast; "
@@ -1713,7 +1760,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1491
+#: storage_lvm.xml:1516
 #, no-c-format
 msgid ""
 "LVs can be extended or shrunk manually while they are being used, but this "
@@ -1721,17 +1768,17 @@ msgid ""
 "does not automatically modify the size of file systems in the volume. You "
 "must use a different command to grow the file system afterward. For "
 "information about resizing file systems, see <xref linkend=\"cha.resize_fs\" "
-"xrefstyle=\"ChapTitleOnPage\"/>."
+"xrefstyle=\"ChapTitleOnPage\"/> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1499
+#: storage_lvm.xml:1524
 #, no-c-format
 msgid "Ensure that you use the right sequence when manually resizing an LV:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1504
+#: storage_lvm.xml:1529
 #, no-c-format
 msgid ""
 "If you extend an LV, you must extend the LV before you attempt to grow the "
@@ -1739,7 +1786,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1510
+#: storage_lvm.xml:1535
 #, no-c-format
 msgid ""
 "If you shrink an LV, you must shrink the file system before you attempt to "
@@ -1747,19 +1794,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1516
+#: storage_lvm.xml:1541
 #, no-c-format
 msgid "To extend the size of a logical volume:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1521 storage_lvm.xml:1570 storage_lvm.xml:1653
-#, no-c-format
-msgid "Open a terminal console."
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:1526
+#: storage_lvm.xml:1551
 #, no-c-format
 msgid ""
 "If the logical volume contains an Ext2 or Ext4 file system, which do not "
@@ -1769,7 +1810,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1534
+#: storage_lvm.xml:1559
 #, no-c-format
 msgid ""
 "At the terminal console prompt, enter the following command to grow the size "
@@ -1777,7 +1818,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1538
+#: storage_lvm.xml:1563
 #, no-c-format
 msgid ""
 "&prompt.sudo;lvextend -L +<replaceable>SIZE</replaceable> /dev/"
@@ -1785,38 +1826,30 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1539
+#: storage_lvm.xml:1564
 #, no-c-format
 msgid ""
-"For <replaceable>SIZE</replaceable>, specify the amount of space you want to "
-"add to the logical volume, such as 10 GB. Replace <filename>/dev/"
+"For <replaceable>SIZE</replaceable> , specify the amount of space you want "
+"to add to the logical volume, such as 10 GB. Replace <filename>/dev/"
 "<replaceable>VG_NAME</replaceable>/<replaceable>LV_NAME</replaceable></"
 "filename> with the Linux path to the logical volume, such as <filename>/dev/"
-"LOCAL/DATA</filename>. For example:"
+"LOCAL/DATA</filename> . For example:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1546
+#: storage_lvm.xml:1571
 #, no-c-format
 msgid "&prompt.sudo;lvextend -L +10GB /dev/vg1/v1<replaceable/>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1549 storage_lvm.xml:1583
-#, no-c-format
-msgid ""
-"Adjust the size of the file system. See <xref linkend=\"cha.resize_fs\"/> "
-"for details."
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:1555
+#: storage_lvm.xml:1580
 #, no-c-format
 msgid "In case you have dismounted the file system, mount it again."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1560
+#: storage_lvm.xml:1585
 #, no-c-format
 msgid ""
 "For example, to extend an LV with a (mounted and active) Btrfs on it by 10 "
@@ -1824,7 +1857,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1564
+#: storage_lvm.xml:1589
 #, no-c-format
 msgid ""
 "&prompt.sudo;lvextend −L +10G /dev/LOCAL/DATA\n"
@@ -1832,13 +1865,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1565
+#: storage_lvm.xml:1591
 #, no-c-format
 msgid "To shrink the size of a logical volume:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1575
+#: storage_lvm.xml:1601
 #, no-c-format
 msgid ""
 "If the logical volume does not contain a Btrfs file system, dismount it. In "
@@ -1848,7 +1881,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1589
+#: storage_lvm.xml:1609
+#, no-c-format
+msgid ""
+"Adjust the size of the file system. See <xref linkend=\"cha.resize_fs\"/> "
+"for details."
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:1615
 #, no-c-format
 msgid ""
 "At the terminal console prompt, enter the following command to shrink the "
@@ -1856,7 +1897,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1593
+#: storage_lvm.xml:1619
 #, no-c-format
 msgid ""
 "&prompt.sudo;lvreduce /dev/<replaceable>VG_NAME</replaceable>/"
@@ -1864,19 +1905,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1596
+#: storage_lvm.xml:1622
 #, no-c-format
 msgid "In case you have unmounted the file system, mount it again."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1601
+#: storage_lvm.xml:1627
 #, no-c-format
 msgid "For example, to shrink an LV with a Btrfs on it by 5 GB:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1604
+#: storage_lvm.xml:1630
 #, no-c-format
 msgid ""
 "&prompt.sudo;btrfs filesystem resize -size 5G /dev/LOCAL/DATA\n"
@@ -1884,17 +1925,17 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1606
+#: storage_lvm.xml:1633
 #, no-c-format
 msgid "Resizing the Volume and the File System with a Single Command"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1609
+#: storage_lvm.xml:1636
 #, no-c-format
 msgid ""
-"Starting with &productname; 12 SP1, <command>lvextend</command>, "
-"<command>lvresize</command>, and <command>lvreduce</command> support the "
+"Starting with &productname; 12 SP1, <command>lvextend</command> , "
+"<command>lvresize</command> , and <command>lvreduce</command> support the "
 "option <option>--resizefs</option> which will not only change the size of "
 "the volume, but will also resize the file system. Therefore the examples for "
 "<command>lvextend</command> and <command>lvreduce</command> shown above can "
@@ -1902,7 +1943,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1617
+#: storage_lvm.xml:1644
 #, no-c-format
 msgid ""
 "&prompt.sudo;lvextend --resizefs −L +10G /dev/LOCAL/DATA\n"
@@ -1910,7 +1951,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1618
+#: storage_lvm.xml:1646
 #, no-c-format
 msgid ""
 "Note that the <option>--resizefs</option> is supported for the following "
@@ -1920,7 +1961,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1628
+#: storage_lvm.xml:1656
 #, no-c-format
 msgid ""
 "Dynamic Aggregation of LVM Metadata via <systemitem class=\"daemon"
@@ -1928,7 +1969,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1629
+#: storage_lvm.xml:1657
 #, no-c-format
 msgid ""
 "Most LVM commands require an accurate view of the LVM metadata stored on the "
@@ -1940,7 +1981,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1637
+#: storage_lvm.xml:1665
 #, no-c-format
 msgid ""
 "Dynamic aggregation of LVM metadata via <systemitem class=\"daemon"
@@ -1953,7 +1994,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1647
+#: storage_lvm.xml:1675
 #, no-c-format
 msgid ""
 "This feature is enabled by default. In case it is disabled on your system, "
@@ -1961,51 +2002,57 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1658
+#: storage_lvm.xml:1681
+#, no-c-format
+msgid "Open a terminal console."
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:1686
 #, no-c-format
 msgid "Stop the <systemitem class=\"daemon\">lvmetad</systemitem> daemon:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1661
+#: storage_lvm.xml:1689
 #, no-c-format
 msgid "&prompt.sudo;systemctl stop lvm2-lvmetad"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1664
+#: storage_lvm.xml:1692
 #, no-c-format
 msgid ""
 "Edit <filename>/etc/lvm/lvm.conf</filename> and set <literal>use_lvmetad</"
-"literal> to <literal>1</literal>:"
+"literal> to <literal>1</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1668
+#: storage_lvm.xml:1696
 #, no-c-format
 msgid "use_lvmetad = 1"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1671
+#: storage_lvm.xml:1699
 #, no-c-format
 msgid "Restart the <systemitem class=\"daemon\">lvmetad</systemitem> daemon:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1674
+#: storage_lvm.xml:1702
 #, no-c-format
 msgid "&prompt.sudo;systemctl start lvm2-lvmetad"
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1680
+#: storage_lvm.xml:1708
 #, no-c-format
 msgid "Using LVM Cache Volumes"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1681
+#: storage_lvm.xml:1709
 #, no-c-format
 msgid ""
 "LVM supports the use of fast block devices (such as an SSD device) as write-"
@@ -2015,7 +2062,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1687
+#: storage_lvm.xml:1715
 #, no-c-format
 msgid ""
 "To set up LVM caching, you need to create two logical volumes on the caching "
@@ -2027,19 +2074,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1696
+#: storage_lvm.xml:1724
 #, no-c-format
 msgid "Setting up a Cached Logical Volume"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1698
+#: storage_lvm.xml:1726
 #, no-c-format
 msgid "Create the original volume (on a slow device) if not already existing."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1703
+#: storage_lvm.xml:1731
 #, no-c-format
 msgid ""
 "Add the physical volume (from a fast device) to the same volume group the "
@@ -2048,7 +2095,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1710
+#: storage_lvm.xml:1738
 #, no-c-format
 msgid ""
 "Create the cache metadata volume. The size should be 1/1000 of the size of "
@@ -2056,14 +2103,14 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1716
+#: storage_lvm.xml:1744
 #, no-c-format
 msgid ""
 "Combine the cache data volume and metadata volume into a cache pool volume:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1720
+#: storage_lvm.xml:1748
 #, no-c-format
 msgid ""
 "&prompt.sudo;lvconvert --type cache-pool --poolmetadata "
@@ -2072,13 +2119,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1723
+#: storage_lvm.xml:1751
 #, no-c-format
 msgid "Attach the cache pool to the original volume:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1726
+#: storage_lvm.xml:1754
 #, no-c-format
 msgid ""
 "&prompt.sudo;lvconvert --type cache --cachepool <replaceable>VOLUME_GROUP/"
@@ -2087,19 +2134,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1729
+#: storage_lvm.xml:1757
 #, no-c-format
 msgid "For more information on LVM caching, see the lvmcache(7) man page."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1735
+#: storage_lvm.xml:1763
 #, no-c-format
 msgid "Tagging LVM2 Storage Objects"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1737
+#: storage_lvm.xml:1765
 #, no-c-format
 msgid ""
 "A tag is an unordered keyword or term assigned to the metadata of a storage "
@@ -2109,13 +2156,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1745
+#: storage_lvm.xml:1773
 #, no-c-format
 msgid "Using LVM2 Tags"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1746
+#: storage_lvm.xml:1774
 #, no-c-format
 msgid ""
 "After you tag the LVM2 storage objects, you can use the tags in commands to "
@@ -2123,7 +2170,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1752
+#: storage_lvm.xml:1780
 #, no-c-format
 msgid ""
 "Select LVM objects for processing according to the presence or absence of "
@@ -2131,7 +2178,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1758
+#: storage_lvm.xml:1786
 #, no-c-format
 msgid ""
 "Use tags in the configuration file to control which volume groups and "
@@ -2139,7 +2186,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1764
+#: storage_lvm.xml:1792
 #, no-c-format
 msgid ""
 "Override settings in a global configuration file by specifying tags in the "
@@ -2147,7 +2194,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1770
+#: storage_lvm.xml:1798
 #, no-c-format
 msgid ""
 "A tag can be used in place of any command line LVM object reference that "
@@ -2155,19 +2202,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1776
+#: storage_lvm.xml:1804
 #, no-c-format
 msgid "a list of objects"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1781
+#: storage_lvm.xml:1809
 #, no-c-format
 msgid "a single object as long as the tag expands to a single object"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1786
+#: storage_lvm.xml:1814
 #, no-c-format
 msgid ""
 "Replacing the object name with a tag is not supported everywhere yet. After "
@@ -2177,34 +2224,34 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1792
+#: storage_lvm.xml:1820
 #, no-c-format
 msgid ""
 "Wherever there might be ambiguity of argument type, you must prefix a tag "
 "with the commercial at sign (@) character, such as <literal>@mytag</"
-"literal>. Elsewhere, using the <quote>@</quote> prefix is optional."
+"literal> . Elsewhere, using the <quote>@</quote> prefix is optional."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1801
+#: storage_lvm.xml:1829
 #, no-c-format
 msgid "Requirements for Creating LVM2 Tags"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1802
+#: storage_lvm.xml:1830
 #, no-c-format
 msgid "Consider the following requirements when using tags with LVM:"
 msgstr ""
 
 #. Tag: term
-#: storage_lvm.xml:1807
+#: storage_lvm.xml:1835
 #, no-c-format
 msgid "Supported Characters"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1809
+#: storage_lvm.xml:1837
 #, no-c-format
 msgid ""
 "An LVM tag word can contain the ASCII uppercase characters A to Z, lowercase "
@@ -2214,13 +2261,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: storage_lvm.xml:1818
+#: storage_lvm.xml:1846
 #, no-c-format
 msgid "Supported Storage Objects"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1820
+#: storage_lvm.xml:1848
 #, no-c-format
 msgid ""
 "You can tag LVM2 physical volumes, volume groups, logical volumes, and "
@@ -2230,65 +2277,65 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1827
+#: storage_lvm.xml:1855
 #, no-c-format
 msgid ""
 "LVM1 objects cannot be tagged because the disk format does not support it."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1837
+#: storage_lvm.xml:1865
 #, no-c-format
 msgid "Command Line Tag Syntax"
 msgstr ""
 
 #. Tag: term
-#: storage_lvm.xml:1840
+#: storage_lvm.xml:1868
 #, no-c-format
-msgid "<option>--addtag</option><replaceable>TAG_INFO</replaceable>"
+msgid "<option>--addtag</option> <replaceable>TAG_INFO</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1843
+#: storage_lvm.xml:1871
 #, no-c-format
 msgid ""
-"Add a tag to (or <emphasis>tag</emphasis>) an LVM2 storage object. Example:"
+"Add a tag to (or <emphasis>tag</emphasis> ) an LVM2 storage object. Example:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1847
+#: storage_lvm.xml:1875
 #, no-c-format
 msgid "&prompt.sudo;vgchange --addtag @db1 vg1"
 msgstr ""
 
 #. Tag: term
-#: storage_lvm.xml:1851
+#: storage_lvm.xml:1879
 #, no-c-format
-msgid "<option>--deltag</option><replaceable>TAG_INFO</replaceable>"
+msgid "<option>--deltag</option> <replaceable>TAG_INFO</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1854
+#: storage_lvm.xml:1882
 #, no-c-format
 msgid ""
-"Remove a tag from (or <emphasis>untag</emphasis>) an LVM2 storage object. "
+"Remove a tag from (or <emphasis>untag</emphasis> ) an LVM2 storage object. "
 "Example:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1858
+#: storage_lvm.xml:1886
 #, no-c-format
 msgid "&prompt.sudo;vgchange --deltag @db1 vg1"
 msgstr ""
 
 #. Tag: term
-#: storage_lvm.xml:1862
+#: storage_lvm.xml:1890
 #, no-c-format
-msgid "<option>--tag</option><replaceable>TAG_INFO</replaceable>"
+msgid "<option>--tag</option> <replaceable>TAG_INFO</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1865
+#: storage_lvm.xml:1893
 #, no-c-format
 msgid ""
 "Specify the tag to use to narrow the list of volume groups or logical "
@@ -2296,7 +2343,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1869
+#: storage_lvm.xml:1897
 #, no-c-format
 msgid ""
 "Enter the following to activate the volume if it has a tag that matches the "
@@ -2304,32 +2351,32 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1873
+#: storage_lvm.xml:1901
 #, no-c-format
 msgid "&prompt.sudo;lvchange -ay --tag @db1 vg1/vol2"
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1880
+#: storage_lvm.xml:1908
 #, no-c-format
 msgid "Configuration File Syntax"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1881
+#: storage_lvm.xml:1909
 #, no-c-format
 msgid ""
 "The following sections show example configurations for certain use cases."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1885
+#: storage_lvm.xml:1913
 #, no-c-format
 msgid "Enabling Host Name Tags in the <filename>lvm.conf</filename> File"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1886
+#: storage_lvm.xml:1914
 #, no-c-format
 msgid ""
 "Add the following code to the <filename>/etc/lvm/lvm.conf</filename> file to "
@@ -2338,7 +2385,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1892
+#: storage_lvm.xml:1920
 #, no-c-format
 msgid ""
 "tags {\n"
@@ -2348,23 +2395,23 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1893
+#: storage_lvm.xml:1924
 #, no-c-format
 msgid ""
 "You place the activation code in the <filename>/etc/lvm/lvm_&lt;"
 "<replaceable>HOSTNAME</replaceable>&gt;.conf</filename> file on the host. "
 "See <xref linkend=\"sec.lvm.tagging.configuration.activate\" xrefstyle="
-"\"HeadingOnPage\"/>."
+"\"HeadingOnPage\"/> ."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1901
+#: storage_lvm.xml:1932
 #, no-c-format
 msgid "Defining Tags for Host Names in the lvm.conf File"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1902
+#: storage_lvm.xml:1933
 #, no-c-format
 msgid ""
 "tags {\n"
@@ -2380,13 +2427,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1905
+#: storage_lvm.xml:1945
 #, no-c-format
 msgid "Defining Activation"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1906
+#: storage_lvm.xml:1946
 #, no-c-format
 msgid ""
 "You can modify the <filename>/etc/lvm/lvm.conf</filename> file to activate "
@@ -2394,22 +2441,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1910
+#: storage_lvm.xml:1950
 #, no-c-format
 msgid "In a text editor, add the following code to the file:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1913
+#: storage_lvm.xml:1953
 #, no-c-format
 msgid ""
-"activation {\n"
+"  activation {\n"
 "      volume_list = [ \"vg1/lvol0\", \"@database\" ]\n"
 "  }"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1914
+#: storage_lvm.xml:1956
 #, no-c-format
 msgid ""
 "Replace <literal>@database</literal> with your tag. Use <literal>\"@*\"</"
@@ -2417,18 +2464,18 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1918
+#: storage_lvm.xml:1960
 #, no-c-format
 msgid ""
-"The activation command matches against <replaceable>VGNAME</replaceable>, "
-"<replaceable>VGNAME/LVNAME</replaceable>, or @<replaceable>TAG</replaceable> "
-"set in the metadata of volume groups and logical volumes. A volume group or "
-"logical volume is activated only if a metadata tag matches. The default if "
-"there is no match, is not to activate."
+"The activation command matches against <replaceable>VGNAME</replaceable> , "
+"<replaceable>VGNAME/LVNAME</replaceable> , or @ <replaceable>TAG</"
+"replaceable> set in the metadata of volume groups and logical volumes. A "
+"volume group or logical volume is activated only if a metadata tag matches. "
+"The default if there is no match, is not to activate."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1926
+#: storage_lvm.xml:1968
 #, no-c-format
 msgid ""
 "If <literal>volume_list</literal> is not present and tags are defined on the "
@@ -2437,7 +2484,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1931
+#: storage_lvm.xml:1973
 #, no-c-format
 msgid ""
 "If <literal>volume_list</literal> is defined, but empty, and no tags are "
@@ -2445,7 +2492,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1935
+#: storage_lvm.xml:1977
 #, no-c-format
 msgid ""
 "If volume_list is undefined, it imposes no limits on LV activation (all are "
@@ -2453,36 +2500,37 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1941
+#: storage_lvm.xml:1983
 #, no-c-format
 msgid "Defining Activation in Multiple Host Name Configuration Files"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1942
+#: storage_lvm.xml:1984
 #, no-c-format
 msgid ""
-"You can use the activation code in a host’s configuration file (<filename>/"
-"etc/lvm/lvm_&lt;<replaceable>HOST_TAG</replaceable>&gt;.conf</filename>) "
+"You can use the activation code in a host’s configuration file ( <filename>/"
+"etc/lvm/lvm_&lt;<replaceable>HOST_TAG</replaceable>&gt;.conf</filename> ) "
 "when host tags are enabled in the <filename>lvm.conf</filename> file. For "
 "example, a server has two configuration files in the <filename>/etc/lvm/</"
 "filename> directory:"
 msgstr ""
 
-#. Tag: filename
-#: storage_lvm.xml:1950
+#. Tag: member
+#: storage_lvm.xml:1992
 #, no-c-format
-msgid "lvm.conf"
+msgid "<filename>lvm.conf</filename>"
 msgstr ""
 
-#. Tag: filename
-#: storage_lvm.xml:1952
+#. Tag: member
+#: storage_lvm.xml:1994
 #, no-c-format
-msgid "lvm_&lt;<replaceable>HOST_TAG</replaceable>&gt;.conf"
+msgid ""
+"<filename>lvm_&lt;<replaceable>HOST_TAG</replaceable>&gt;.conf</filename>"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1955
+#: storage_lvm.xml:1997
 #, no-c-format
 msgid ""
 "At start-up, load the <filename>/etc/lvm/lvm.conf</filename> file, and "
@@ -2490,21 +2538,21 @@ msgid ""
 "loads the related <filename>/etc/lvm/lvm_&lt;<replaceable>HOST_TAG</"
 "replaceable>&gt;.conf</filename> file. When it searches for a specific "
 "configuration file entry, it searches the host tag file first, then the "
-"<filename>lvm.conf </filename>file, and stops at the first match. Within the "
-"<filename>lvm_&lt;<replaceable>HOST_TAG</replaceable>&gt;.conf</filename> "
-"file, use the reverse order that tags were set in. This allows the file for "
-"the last tag set to be searched first. New tags set in the host tag file "
-"will trigger additional configuration file loads."
+"<filename>lvm.conf </filename> file, and stops at the first match. Within "
+"the <filename>lvm_&lt;<replaceable>HOST_TAG</replaceable>&gt;.conf</"
+"filename> file, use the reverse order that tags were set in. This allows the "
+"file for the last tag set to be searched first. New tags set in the host tag "
+"file will trigger additional configuration file loads."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:1972
+#: storage_lvm.xml:2014
 #, no-c-format
 msgid "Using Tags for a Simple Activation Control in a Cluster"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1973
+#: storage_lvm.xml:2015
 #, no-c-format
 msgid ""
 "You can set up a simple host name activation control by enabling the "
@@ -2514,7 +2562,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1981
+#: storage_lvm.xml:2023
 #, no-c-format
 msgid ""
 "In a text editor, add the following code to the <filename>/etc/lvm/lvm.conf</"
@@ -2522,7 +2570,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1985
+#: storage_lvm.xml:2027
 #, no-c-format
 msgid ""
 "tags {\n"
@@ -2531,46 +2579,46 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1988
+#: storage_lvm.xml:2032
 #, no-c-format
 msgid "Replicate the file to all hosts in the cluster."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:1993
+#: storage_lvm.xml:2037
 #, no-c-format
 msgid ""
 "From any machine in the cluster, add <literal>db1</literal> to the list of "
-"machines that activate <filename>vg1/lvol2</filename>:"
+"machines that activate <filename>vg1/lvol2</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:1997
+#: storage_lvm.xml:2041
 #, no-c-format
 msgid "&prompt.sudo;lvchange --addtag @db1 vg1/lvol2"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2000
+#: storage_lvm.xml:2044
 #, no-c-format
 msgid ""
 "On the <filename>db1</filename> server, enter the following to activate it:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:2004
+#: storage_lvm.xml:2048
 #, no-c-format
 msgid "&prompt.sudo;lvchange -ay vg1/vol2"
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:2010
+#: storage_lvm.xml:2054
 #, no-c-format
 msgid "Using Tags to Activate On Preferred Hosts in a Cluster"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2011
+#: storage_lvm.xml:2055
 #, no-c-format
 msgid ""
 "The examples in this section demonstrate two methods to accomplish the "
@@ -2578,39 +2626,39 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2017
+#: storage_lvm.xml:2061
 #, no-c-format
 msgid ""
 "Activate volume group <filename>vg1</filename> only on the database hosts "
-"<filename>db1</filename> and <filename>db2</filename>."
+"<filename>db1</filename> and <filename>db2</filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2023
+#: storage_lvm.xml:2067
 #, no-c-format
 msgid ""
 "Activate volume group <filename>vg2</filename> only on the file server host "
-"<filename>fs1</filename>."
+"<filename>fs1</filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2029
+#: storage_lvm.xml:2073
 #, no-c-format
 msgid ""
 "Activate nothing initially on the file server backup host <filename>fsb1</"
-"filename>, but be prepared for it to take over from the file server host "
-"<filename>fs1</filename>."
+"filename> , but be prepared for it to take over from the file server host "
+"<filename>fs1</filename> ."
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:2037
+#: storage_lvm.xml:2081
 #, no-c-format
 msgid ""
 "Option 1: Centralized Admin and Static Configuration Replicated Between Hosts"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2038
+#: storage_lvm.xml:2082
 #, no-c-format
 msgid ""
 "In the following solution, the single configuration file is replicated among "
@@ -2618,44 +2666,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2044 storage_lvm.xml:2091
+#: storage_lvm.xml:2102
 #, no-c-format
 msgid ""
-"Add the <literal>@database</literal> tag to the metadata of volume group "
-"<filename>vg1</filename>. In a terminal console, enter"
+"In a text editor, modify the <filename> /etc/lvm/lvm.conf</filename> file "
+"with the following code to define the <literal>@database</literal> , "
+"<literal>@fileserver</literal> , <literal>@fileserverbackup</literal> tags."
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:2048 storage_lvm.xml:2095
-#, no-c-format
-msgid "&prompt.sudo;vgchange --addtag @database vg1"
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:2051 storage_lvm.xml:2098
-#, no-c-format
-msgid ""
-"Add the <literal>@fileserver</literal> tag to the metadata of volume group "
-"<filename>vg2</filename>. In a terminal console, enter"
-msgstr ""
-
-#. Tag: screen
-#: storage_lvm.xml:2055 storage_lvm.xml:2102
-#, no-c-format
-msgid "&prompt.sudo;vgchange --addtag @fileserver vg2"
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:2058
-#, no-c-format
-msgid ""
-"In a text editor, modify the<filename> /etc/lvm/lvm.conf</filename> file "
-"with the following code to define the <literal>@database</literal>, "
-"<literal>@fileserver</literal>, <literal>@fileserverbackup</literal> tags."
-msgstr ""
-
-#. Tag: screen
-#: storage_lvm.xml:2064
+#: storage_lvm.xml:2108
 #, no-c-format
 msgid ""
 "tags {\n"
@@ -2677,16 +2697,16 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2067
+#: storage_lvm.xml:2126
 #, no-c-format
 msgid ""
-"Replicate the modified<filename> /etc/lvm/lvm.conf</filename> file to the "
-"four hosts: <filename>db1</filename>, <filename>db2</filename>, "
-"<filename>fs1</filename>, and <filename>fsb1</filename>."
+"Replicate the modified <filename> /etc/lvm/lvm.conf</filename> file to the "
+"four hosts: <filename>db1</filename> , <filename>db2</filename> , "
+"<filename>fs1</filename> , and <filename>fsb1</filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2074
+#: storage_lvm.xml:2133
 #, no-c-format
 msgid ""
 "If the file server host goes down, <filename>vg2</filename> can be brought "
@@ -2695,7 +2715,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:2079
+#: storage_lvm.xml:2138
 #, no-c-format
 msgid ""
 "&prompt.sudo;vgchange --addtag @fileserverbackup vg2\n"
@@ -2703,13 +2723,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_lvm.xml:2084
+#: storage_lvm.xml:2144
 #, no-c-format
 msgid "Option 2: Localized Admin and Configuration"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2085
+#: storage_lvm.xml:2145
 #, no-c-format
 msgid ""
 "In the following solution, each host holds locally the information about "
@@ -2717,13 +2737,41 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2105
+#: storage_lvm.xml:2151
+#, no-c-format
+msgid ""
+"Add the <literal>@database</literal> tag to the metadata of volume group "
+"<filename>vg1</filename> . In a terminal console, enter"
+msgstr ""
+
+#. Tag: screen
+#: storage_lvm.xml:2155
+#, no-c-format
+msgid "&prompt.sudo;vgchange --addtag @database vg1"
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:2158
+#, no-c-format
+msgid ""
+"Add the <literal>@fileserver</literal> tag to the metadata of volume group "
+"<filename>vg2</filename> . In a terminal console, enter"
+msgstr ""
+
+#. Tag: screen
+#: storage_lvm.xml:2162
+#, no-c-format
+msgid "&prompt.sudo;vgchange --addtag @fileserver vg2"
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:2165
 #, no-c-format
 msgid "Enable host tags in the <filename>/etc/lvm/lvm.conf</filename> file:"
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2110
+#: storage_lvm.xml:2170
 #, no-c-format
 msgid ""
 "In a text editor, modify the <filename>/etc/lvm/lvm.conf</filename> file "
@@ -2731,7 +2779,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:2114
+#: storage_lvm.xml:2174
 #, no-c-format
 msgid ""
 "tags {\n"
@@ -2740,25 +2788,34 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2117
+#: storage_lvm.xml:2179
 #, no-c-format
 msgid ""
 "Replicate the modified <filename>/etc/lvm/lvm.conf</filename> file to the "
-"four hosts: <filename>db1</filename>, <filename>db2</filename>, "
-"<filename>fs1</filename>, and <filename>fsb1</filename>."
+"four hosts: <filename>db1</filename> , <filename>db2</filename> , "
+"<filename>fs1</filename> , and <filename>fsb1</filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2126
+#: storage_lvm.xml:2188
 #, no-c-format
 msgid ""
-"On host <filename>db1</filename>, create an activation configuration file "
-"for the database host <filename>db1</filename>. In a text editor, create "
+"On host <filename>db1</filename> , create an activation configuration file "
+"for the database host <filename>db1</filename> . In a text editor, create "
 "<filename>/etc/lvm/lvm_db1.conf</filename> file and add the following code:"
 msgstr ""
 
+#. Tag: para
+#: storage_lvm.xml:2199
+#, no-c-format
+msgid ""
+"On host <filename>db2</filename> , create an activation configuration file "
+"for the database host <filename>db2</filename> . In a text editor, create "
+"<filename>/etc/lvm/lvm_db2.conf</filename> file and add the following code:"
+msgstr ""
+
 #. Tag: screen
-#: storage_lvm.xml:2132 storage_lvm.xml:2141
+#: storage_lvm.xml:2205
 #, no-c-format
 msgid ""
 "activation {\n"
@@ -2767,25 +2824,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2135
-#, no-c-format
-msgid ""
-"On host <filename>db2</filename>, create an activation configuration file "
-"for the database host <filename>db2</filename>. In a text editor, create "
-"<filename>/etc/lvm/lvm_db2.conf</filename> file and add the following code:"
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:2144
+#: storage_lvm.xml:2210
 #, no-c-format
 msgid ""
 "On host fs1, create an activation configuration file for the file server "
-"host <filename>fs1</filename>. In a text editor, create <filename>/etc/lvm/"
+"host <filename>fs1</filename> . In a text editor, create <filename>/etc/lvm/"
 "lvm_fs1.conf</filename> file and add the following code:"
 msgstr ""
 
+#. Tag: para
+#: storage_lvm.xml:2221
+#, no-c-format
+msgid ""
+"If the file server host <filename>fs1</filename> goes down, to bring up a "
+"spare file server host fsb1 as a file server:"
+msgstr ""
+
+#. Tag: para
+#: storage_lvm.xml:2227
+#, no-c-format
+msgid ""
+"On host <filename>fsb1</filename> , create an activation configuration file "
+"for the host <filename>fsb1</filename> . In a text editor, create <filename>/"
+"etc/lvm/lvm_fsb1.conf</filename> file and add the following code:"
+msgstr ""
+
 #. Tag: screen
-#: storage_lvm.xml:2150 storage_lvm.xml:2165
+#: storage_lvm.xml:2233
 #, no-c-format
 msgid ""
 "activation {\n"
@@ -2794,30 +2859,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_lvm.xml:2153
-#, no-c-format
-msgid ""
-"If the file server host <filename>fs1</filename> goes down, to bring up a "
-"spare file server host fsb1 as a file server:"
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:2159
-#, no-c-format
-msgid ""
-"On host <filename>fsb1</filename>, create an activation configuration file "
-"for the host <filename>fsb1</filename>. In a text editor, create <filename>/"
-"etc/lvm/lvm_fsb1.conf</filename> file and add the following code:"
-msgstr ""
-
-#. Tag: para
-#: storage_lvm.xml:2168
+#: storage_lvm.xml:2238
 #, no-c-format
 msgid "In a terminal console, enter one of the following commands:"
 msgstr ""
 
 #. Tag: screen
-#: storage_lvm.xml:2171
+#: storage_lvm.xml:2241
 #, no-c-format
 msgid ""
 "&prompt.sudo;vgchange -ay vg2\n"

@@ -5,13 +5,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2018-06-28 08:17+0000\n"
+"Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
@@ -44,12 +44,6 @@ msgstr ""
 msgid "A directory in this context is a type of database optimized for quick and effective reading and searching:"
 msgstr ""
 
-#. Tag: remark
-#: security_ldap.xml:44
-#, no-c-format
-msgid "2011-02-18 - fs: the number is limited? and why limit reads?"
-msgstr ""
-
 #. Tag: para
 #: security_ldap.xml:47
 #, no-c-format
@@ -59,7 +53,7 @@ msgstr ""
 #. Tag: para
 #: security_ldap.xml:56
 #, no-c-format
-msgid "When static data is administered, updates of the existing data sets are very rare. When working with dynamic data, especially when data sets like bank accounts or accounting are concerned, the consistency of the data is of primary importance. If an amount should be subtracted from one place to be added to another, both operations must happen concurrently, within one <emphasis>transaction</emphasis>, to ensure balance over the data stock. Traditional relational databases usually have a very strong focus on data consistency, such as the referential integrity support of transactions. Conversely, short-term inconsistencies are usually acceptable in LDAP directories. LDAP directories often do not have the same strong consistency requirements as relational databases."
+msgid "When static data is administered, updates of the existing data sets are very rare. When working with dynamic data, especially when data sets like bank accounts or accounting are concerned, the consistency of the data is of primary importance. If an amount should be subtracted from one place to be added to another, both operations must happen concurrently, within one <emphasis>transaction</emphasis> , to ensure balance over the data stock. Traditional relational databases usually have a very strong focus on data consistency, such as the referential integrity support of transactions. Conversely, short-term inconsistencies are usually acceptable in LDAP directories. LDAP directories often do not have the same strong consistency requirements as relational databases."
 msgstr ""
 
 #. Tag: para
@@ -74,16 +68,106 @@ msgstr ""
 msgid "LDAP versus NIS"
 msgstr ""
 
-#. Tag: remark
-#: security_ldap.xml:80
+#. Tag: filename
+#: security_ldap.xml:86
 #, no-c-format
-msgid "2007-05-29 - jjaeger: this still necessary? Why not discard the NIS part altogether and merge the use cases for LDAP with the intro?"
+msgid "group"
 msgstr ""
 
-#. Tag: para
-#: security_ldap.xml:83
+#. Tag: #text
+#: security_ldap.xml:86
 #, no-c-format
-msgid "Unix system administrators traditionally use NIS (Network Information Service) for name resolution and data distribution in a network. The configuration data contained in the files <filename>group</filename>, <filename>hosts</filename>, <filename>mail</filename>, <filename>netgroup</filename>, <filename>networks</filename>, <filename>passwd</filename>, <filename>printcap</filename>, <filename>protocols</filename>, <filename>rpc</filename>, and <filename>services</filename> in the <filename>/etc</filename> directory is distributed to clients all over the network. These files can be maintained without major effort because they are simple text files. The handling of larger amounts of data, however, becomes increasingly difficult because of nonexistent structuring. <remark>sknorr, 2014-08-26: \"nonexistent structuring\" sounds a bit complicated.</remark> NIS is only designed for Unix platforms, and is not suitable as a centralized data administration tool in heterogeneous networks."
+msgid "Unix system administrators traditionally use NIS (Network Information Service) for name resolution and data distribution in a network. The configuration data contained in the files"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:87
+#, no-c-format
+msgid "mail"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:87
+#, no-c-format
+msgid "hosts"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:88
+#, no-c-format
+msgid "netgroup"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:88
+#, no-c-format
+msgid "networks"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:89
+#, no-c-format
+msgid "printcap"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:89
+#, no-c-format
+msgid "passwd"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:90
+#, no-c-format
+msgid "rpc"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:90
+#, no-c-format
+msgid ","
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:90
+#, no-c-format
+msgid "protocols"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:91
+#, no-c-format
+msgid ", and"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:91
+#, no-c-format
+msgid "services"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:91
+#, no-c-format
+msgid "in the"
+msgstr ""
+
+#. Tag: filename
+#: security_ldap.xml:91
+#, no-c-format
+msgid "/etc"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:96
+#, no-c-format
+msgid "directory is distributed to clients all over the network. These files can be maintained without major effort because they are simple text files. The handling of larger amounts of data, however, becomes increasingly difficult because of nonexistent structuring."
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:100
+#, no-c-format
+msgid "NIS is only designed for Unix platforms, and is not suitable as a centralized data administration tool in heterogeneous networks."
 msgstr ""
 
 #. Tag: para
@@ -143,7 +227,7 @@ msgstr ""
 #. Tag: para
 #: security_ldap.xml:154
 #, no-c-format
-msgid "To get background knowledge on how an LDAP server works and how the data is stored, it is vital to understand the way the data is organized on the server and how this structure enables LDAP to provide fast access to the data. To successfully operate an LDAP setup, you also need to be familiar with some basic LDAP terminology. This section introduces the basic layout of an LDAP directory tree and provides the basic terminology used with regard to LDAP. Skip this introductory section if you already have some LDAP background knowledge and only want to learn how to set up an LDAP environment in &productname;.<phrase os=\"sles;osuse\"> Read on at <xref linkend=\"sec.security.ldap.slapd\"/>.</phrase>"
+msgid "To get background knowledge on how an LDAP server works and how the data is stored, it is vital to understand the way the data is organized on the server and how this structure enables LDAP to provide fast access to the data. To successfully operate an LDAP setup, you also need to be familiar with some basic LDAP terminology. This section introduces the basic layout of an LDAP directory tree and provides the basic terminology used with regard to LDAP. Skip this introductory section if you already have some LDAP background knowledge and only want to learn how to set up an LDAP environment in &productname;. <phrase os=\"sles;osuse\"> Read on at<!-- <xref linkend=\"sec.security.ldap.yast\"/> or --> <xref linkend=\"sec.security.ldap.slapd\"/>.</phrase>"
 msgstr ""
 
 #. Tag: para
@@ -155,7 +239,7 @@ msgstr ""
 #. Tag: para
 #: security_ldap.xml:223
 #, no-c-format
-msgid "The relations within an LDAP directory tree become more evident in the following example, shown in <xref linkend=\"fig.ldap.tree\"/>."
+msgid "The relations within an LDAP directory tree become more evident in the following example, shown in <xref linkend=\"fig.ldap.tree\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -167,19 +251,19 @@ msgstr ""
 #. Tag: para
 #: security_ldap.xml:240
 #, no-c-format
-msgid "The complete diagram is a fictional directory information tree. The entries on three levels are depicted. Each entry corresponds to one box in the image. The complete, valid <emphasis>distinguished name</emphasis> for the fictional employee <systemitem class=\"username\">Geeko Linux</systemitem>, in this case, is <literal>cn=Geeko Linux,ou=doc,dc=example,dc=com</literal>. It is composed by adding the RDN <literal>cn=Geeko Linux</literal> to the DN of the preceding entry <literal>ou=doc,dc=example,dc=com</literal>."
+msgid "The complete diagram is a fictional directory information tree. The entries on three levels are depicted. Each entry corresponds to one box in the image. The complete, valid <emphasis>distinguished name</emphasis> for the fictional employee <systemitem class=\"username\">Geeko Linux</systemitem> , in this case, is <literal>cn=Geeko Linux,ou=doc,dc=example,dc=com</literal> . It is composed by adding the RDN <literal>cn=Geeko Linux</literal> to the DN of the preceding entry <literal>ou=doc,dc=example,dc=com</literal> ."
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:253
 #, no-c-format
-msgid "The types of objects that can be stored in the DIT are globally determined following a <emphasis>Schema</emphasis>. The type of an object is determined by the <emphasis>object class</emphasis>. The object class determines what attributes the relevant object must or can be assigned. The Schema, therefore, must contain definitions of all object classes and attributes used in the desired application scenario. There are a few common Schemas (see RFC 2252 and 2256). The LDAP RFC defines a few commonly used Schemas (see for example, RFC4519). Additionally, Schemas are available for many other use cases (for example, Samba or NIS replacement). It is, however, possible to create custom Schemas or to use multiple Schemas complementing each other (if this is required by the environment in which the LDAP server should operate)."
+msgid "The types of objects that can be stored in the DIT are globally determined following a <emphasis>Schema</emphasis> . The type of an object is determined by the <emphasis>object class</emphasis> . The object class determines what attributes the relevant object must or can be assigned. The Schema, therefore, must contain definitions of all object classes and attributes used in the desired application scenario. There are a few common Schemas (see RFC 2252 and 2256). The LDAP RFC defines a few commonly used Schemas (see for example, RFC4519). Additionally, Schemas are available for many other use cases (for example, Samba or NIS replacement). It is, however, possible to create custom Schemas or to use multiple Schemas complementing each other (if this is required by the environment in which the LDAP server should operate)."
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:268
 #, no-c-format
-msgid "offers a small overview of the object classes from <filename>core.schema</filename> and <filename>inetorgperson.schema</filename> used in the example, including required attributes (Req. Attr.) and valid attribute values."
+msgid "<xref linkend=\"tab.ldap.schema\"/> offers a small overview of the object classes from <filename>core.schema</filename> and <filename>inetorgperson.schema</filename> used in the example, including required attributes (Req. Attr.) and valid attribute values. <!-- intro abbrev \"Req. Attr.\" too shorten the table header -->"
 msgstr ""
 
 #. Tag: title
@@ -212,10 +296,10 @@ msgstr ""
 msgid "Req. Attr."
 msgstr ""
 
-#. Tag: literal
-#: security_ldap.xml:311
+#. Tag: para
+#: security_ldap.xml:310
 #, no-c-format
-msgid "dcObject"
+msgid "<literal>dcObject</literal>"
 msgstr ""
 
 #. Tag: para
@@ -233,13 +317,13 @@ msgstr ""
 #. Tag: para
 #: security_ldap.xml:325
 #, no-c-format
-msgid "<para>dc</para>"
+msgid "dc"
 msgstr ""
 
-#. Tag: literal
-#: security_ldap.xml:333
+#. Tag: para
+#: security_ldap.xml:332
 #, no-c-format
-msgid "organizationalUnit"
+msgid "<literal>organizationalUnit</literal>"
 msgstr ""
 
 #. Tag: para
@@ -251,19 +335,19 @@ msgstr ""
 #. Tag: para
 #: security_ldap.xml:342
 #, no-c-format
-msgid "<para>doc</para>"
+msgid "doc"
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:347
 #, no-c-format
-msgid "<para>ou</para>"
+msgid "ou"
 msgstr ""
 
-#. Tag: literal
-#: security_ldap.xml:355
+#. Tag: para
+#: security_ldap.xml:354
 #, no-c-format
-msgid "inetOrgPerson"
+msgid "<literal>inetOrgPerson</literal>"
 msgstr ""
 
 #. Tag: para
@@ -287,7 +371,7 @@ msgstr ""
 #. Tag: para
 #: security_ldap.xml:379
 #, no-c-format
-msgid "shows an excerpt from a Schema directive with explanations."
+msgid "<xref linkend=\"aus.ldap.schema.help\"/> shows an excerpt from a Schema directive with explanations."
 msgstr ""
 
 #. Tag: title
@@ -296,412 +380,436 @@ msgstr ""
 msgid "Excerpt from schema.core"
 msgstr ""
 
-#. Tag: screen
+#. Tag: #text
 #: security_ldap.xml:386
 #, no-c-format
-msgid ""
-      "attributetype (2.5.4.11 NAME ( 'ou' 'organizationalUnitName') <co xml:id=\"co.ldap.schema.core.att_type\"/>\n"
-      "       DESC 'RFC2256: organizational unit this object belongs to' <co xml:id=\"co.ldap.schema.core.desc\"/>\n"
-      "       SUP name ) <co xml:id=\"co.ldap.schema.core.sup\"/>\n"
-      "\n"
-      "objectclass ( 2.5.6.5 NAME 'organizationalUnit' <co xml:id=\"co.ldap.schema.core.oc\"/>\n"
-      "       DESC 'RFC2256: an organizational unit' <co xml:id=\"co.ldap.schema.core.desc.oc\"/>\n"
-      "       SUP top STRUCTURAL <co xml:id=\"co.ldap.schema.core.sup.oc\"/>\n"
-      "       MUST ou <co xml:id=\"co.ldap.schema.core.must.oc\"/>\n"
-      "MAY (userPassword $ searchGuide $ seeAlso $ businessCategory <co xml:id=\"co.ldap.schema.core.may.oc\"/>\n"
-      "  $ x121Address $ registeredAddress $ destinationIndicator\n"
-      "  $ preferredDeliveryMethod $ telexNumber\n"
-      "  $ teletexTerminalIdentifier $ telephoneNumber\n"
-      "  $ internationaliSDNNumber $ facsimileTelephoneNumber\n"
-      "  $ street $ postOfficeBox $ postalCode $ postalAddress\n"
-      "  $ physicalDeliveryOfficeName\n"
-      "  $ st $ l $ description) )\n"
-      "  ..."
+msgid "attributetype (2.5.4.11 NAME ( 'ou' 'organizationalUnitName')"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:387
+#, no-c-format
+msgid "DESC 'RFC2256: organizational unit this object belongs to'"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:388
+#, no-c-format
+msgid "SUP name )"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:390
+#, no-c-format
+msgid "objectclass ( 2.5.6.5 NAME 'organizationalUnit'"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:391
+#, no-c-format
+msgid "DESC 'RFC2256: an organizational unit'"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:392
+#, no-c-format
+msgid "SUP top STRUCTURAL"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:393
+#, no-c-format
+msgid "MUST ou"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:394
+#, no-c-format
+msgid "MAY (userPassword $ searchGuide $ seeAlso $ businessCategory"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:402
+#, no-c-format
+msgid "$ x121Address $ registeredAddress $ destinationIndicator $ preferredDeliveryMethod $ telexNumber $ teletexTerminalIdentifier $ telephoneNumber $ internationaliSDNNumber $ facsimileTelephoneNumber $ street $ postOfficeBox $ postalCode $ postalAddress $ physicalDeliveryOfficeName $ st $ l $ description) ) ..."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:389
+#: security_ldap.xml:405
 #, no-c-format
 msgid "The attribute type <literal>organizationalUnitName</literal> and the corresponding object class <literal>organizationalUnit</literal> serve as an example here."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:397
+#: security_ldap.xml:413
 #, no-c-format
-msgid "The name of the attribute, its unique OID (<emphasis>object identifier</emphasis>) (numerical), and the abbreviation of the attribute."
+msgid "The name of the attribute, its unique OID ( <emphasis>object identifier</emphasis> ) (numerical), and the abbreviation of the attribute."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:404
+#: security_ldap.xml:420
 #, no-c-format
-msgid "A brief description of the attribute with <literal>DESC</literal>. The corresponding RFC, on which the definition is based, is also mentioned here."
+msgid "A brief description of the attribute with <literal>DESC</literal> . The corresponding RFC, on which the definition is based, is also mentioned here."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:411
+#: security_ldap.xml:427
 #, no-c-format
 msgid "<literal>SUP</literal> indicates a superordinate attribute type to which this attribute belongs."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:417
+#: security_ldap.xml:433
 #, no-c-format
 msgid "The definition of the object class <literal>organizationalUnit</literal> begins&mdash;the same as in the definition of the attribute&mdash;with an OID and the name of the object class."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:425
+#: security_ldap.xml:441
 #, no-c-format
 msgid "A brief description of the object class."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:430
+#: security_ldap.xml:446
 #, no-c-format
 msgid "The <literal>SUP top</literal> entry indicates that this object class is not subordinate to another object class."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:436
+#: security_ldap.xml:452
 #, no-c-format
-msgid "With <literal>MUST</literal> list all attribute types that must be used with an object of the type <literal>organizationalUnit</literal>."
+msgid "With <literal>MUST</literal> list all attribute types that must be used with an object of the type <literal>organizationalUnit</literal> ."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:443
+#: security_ldap.xml:459
 #, no-c-format
 msgid "With <literal>MAY</literal> list all attribute types that are permitted with this object class."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:450
+#: security_ldap.xml:466
 #, no-c-format
-msgid "A very good introduction to the use of Schemas can be found in the OpenLDAP documentation (<systemitem>openldap2-doc</systemitem>). When installed, find it in <filename>/usr/share/doc/packages/openldap2/adminguide/guide.html</filename>."
+msgid "A very good introduction to the use of Schemas can be found in the OpenLDAP documentation ( <systemitem>openldap2-doc</systemitem> ). When installed, find it in <filename>/usr/share/doc/packages/openldap2/adminguide/guide.html</filename> ."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:459
+#: security_ldap.xml:475
 #, no-c-format
 msgid "Configuring an LDAP Client with &yast;"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:460
+#: security_ldap.xml:476
 #, no-c-format
 msgid "&yast; includes the module <guimenu>LDAP and Kerberos Client</guimenu> that helps define authentication scenarios involving either LDAP or Kerberos."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:464
+#: security_ldap.xml:480
 #, no-c-format
-msgid "It can also be used to join Kerberos and LDAP separately. However, in many such cases, using this module may not be the first choice, such as for joining &ad; (which uses a combination of LDAP and Kerberos). For more information, see <xref linkend=\"sec.security.auth.yast.client\"/>."
+msgid "It can also be used to join Kerberos and LDAP separately. However, in many such cases, using this module may not be the first choice, such as for joining &ad; (which uses a combination of LDAP and Kerberos). For more information, see <xref linkend=\"sec.security.auth.yast.client\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:470
+#: security_ldap.xml:486
 #, no-c-format
-msgid "Start the module by selecting <menuchoice> <guimenu>Network Services</guimenu> <guimenu>LDAP and Kerberos Client</guimenu> </menuchoice>."
+msgid "Start the module by selecting <menuchoice> <guimenu>Network Services</guimenu> <guimenu>LDAP and Kerberos Client</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:476
+#: security_ldap.xml:492
 #, no-c-format
 msgid "<guimenu>LDAP and Kerberos Client</guimenu> Window"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:487
+#: security_ldap.xml:503
 #, no-c-format
 msgid "To configure an LDAP client, follow the procedure below:"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:492
+#: security_ldap.xml:508
 #, no-c-format
-msgid "In the window <guimenu>LDAP and Kerberos Client</guimenu>, click <guimenu>Change Settings</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:496
-#, no-c-format
-msgid "Make sure that the tab <guimenu>Use a Directory as Identity Provider (LDAP)</guimenu> is chosen."
+msgid "In the window <guimenu>LDAP and Kerberos Client</guimenu> , click <guimenu>Change Settings</guimenu> ."
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:512
 #, no-c-format
-msgid "Specify one or more LDAP server URLs, host names, or IP addresses under <guimenu>Enter LDAP server locations</guimenu>. When specifying multiple addresses, separate them with spaces."
+msgid "Make sure that the tab <guimenu>Use a Directory as Identity Provider (LDAP)</guimenu> is chosen."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:519
+#: security_ldap.xml:528
 #, no-c-format
-msgid "Specify the appropriate LDAP distinguished name (DN) under <guimenu>DN of Search Base</guimenu>. For example, a valid entry could be <literal>dc=example,dc=com</literal>."
+msgid "Specify one or more LDAP server URLs, host names, or IP addresses under <guimenu>Enter LDAP server locations</guimenu> . When specifying multiple addresses, separate them with spaces."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:526
+#: security_ldap.xml:535
 #, no-c-format
-msgid "If your LDAP server supports TLS encryption, choose the appropriate security option under <guimenu>Secure LDAP Connection</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:530
-#, no-c-format
-msgid "To first ask the server whether it supports TLS encryption and be able to downgrade to an unencrypted connection if it does not, use <guimenu>Secure Communication via StartTLS</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:537
-#, no-c-format
-msgid "Activate other options as necessary:"
+msgid "Specify the appropriate LDAP distinguished name (DN) under <guimenu>DN of Search Base</guimenu> . For example, a valid entry could be <literal>dc=example,dc=com</literal> ."
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:542
 #, no-c-format
+msgid "If your LDAP server supports TLS encryption, choose the appropriate security option under <guimenu>Secure LDAP Connection</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:546
+#, no-c-format
+msgid "To first ask the server whether it supports TLS encryption and be able to downgrade to an unencrypted connection if it does not, use <guimenu>Secure Communication via StartTLS</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:553
+#, no-c-format
+msgid "Activate other options as necessary:"
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:558
+#, no-c-format
 msgid "You can <guimenu>Allow users to authenticate via LDAP</guimenu> and <guimenu>Automatically Create Home Directories</guimenu> on the local computer for them."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:549
+#: security_ldap.xml:565
 #, no-c-format
 msgid "Use <guimenu>Cache LDAP Entries For Faster Response</guimenu> to cache LDAP entries locally. However, this bears the danger that entries can be slightly out of date."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:556
+#: security_ldap.xml:572
 #, no-c-format
-msgid "Specify the types of data that should be used from the LDAP source, such as <guimenu>Users</guimenu> and <guimenu>Groups</guimenu>, <guimenu>Super-User Commands</guimenu>, and <guimenu>Network Disk Locations</guimenu> (network-shared drives that can be automatically mounted on request)."
+msgid "Specify the types of data that should be used from the LDAP source, such as <guimenu>Users</guimenu> and <guimenu>Groups</guimenu> , <guimenu>Super-User Commands</guimenu> , and <guimenu>Network Disk Locations</guimenu> (network-shared drives that can be automatically mounted on request)."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:566
+#: security_ldap.xml:582
 #, no-c-format
-msgid "Specify the distinguished name (DN) and password of the user under whose name you want to bind to the LDAP directory in <guimenu>DN of Bind User</guimenu> and <guimenu>Password of the Bind User</guimenu>."
+msgid "Specify the distinguished name (DN) and password of the user under whose name you want to bind to the LDAP directory in <guimenu>DN of Bind User</guimenu> and <guimenu>Password of the Bind User</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:571
+#: security_ldap.xml:587
 #, no-c-format
 msgid "Otherwise, if the server supports it, you can also leave both text boxes empty to bind anonymously to the server."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:576
+#: security_ldap.xml:592
 #, no-c-format
 msgid "Authentication Without Encryption"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:577
+#: security_ldap.xml:593
 #, no-c-format
 msgid "When using authentication without enabling transport encryption using TLS or StartTLS, the password will be transmitted in the clear."
-msgstr ""
-
-#. Tag: remark
-#: security_ldap.xml:581
-#, no-c-format
-msgid "Is the YaST dialog compatible with SASL in any way? - sknorr, 2017-03-01"
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:588
-#, no-c-format
-msgid "Under <guimenu>Extended Options</guimenu>, you can additionally configure timeouts for BIND operations."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:594
-#, no-c-format
-msgid "To check whether the LDAP connection works, click <guimenu>Test Connection</guimenu>."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:600
-#, no-c-format
-msgid "To leave the dialog, click <guimenu>OK</guimenu>. Then wait for the setup to complete."
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:604
 #, no-c-format
-msgid "Finally, click <guimenu>Finish</guimenu>."
+msgid "Under <guimenu>Extended Options</guimenu> , you can additionally configure timeouts for BIND operations."
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:610
+#, no-c-format
+msgid "To check whether the LDAP connection works, click <guimenu>Test Connection</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:616
+#, no-c-format
+msgid "To leave the dialog, click <guimenu>OK</guimenu> . Then wait for the setup to complete."
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:620
+#, no-c-format
+msgid "Finally, click <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:612
+#: security_ldap.xml:628
 #, no-c-format
 msgid "Configuring LDAP Users and Groups in &yast;"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:614
+#: security_ldap.xml:630
 #, no-c-format
 msgid "The actual registration of user and group data differs only slightly from the procedure when not using LDAP. The following instructions relate to the administration of users. The procedure for administering groups is analogous."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:623
+#: security_ldap.xml:639
 #, no-c-format
-msgid "Access the &yast; user administration with <menuchoice> <guimenu>Security and Users</guimenu><guimenu>User and Group Management</guimenu></menuchoice>."
+msgid "Access the &yast; user administration with <menuchoice> <guimenu>Security and Users</guimenu><guimenu>User and Group Management</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:630
+#: security_ldap.xml:646
 #, no-c-format
 msgid "Use <guimenu>Set Filter</guimenu> to limit the view of users to the LDAP users and enter the password for Root DN."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:636
+#: security_ldap.xml:652
 #, no-c-format
 msgid "Click <guimenu>Add</guimenu> to enter the user configuration. A dialog with four tabs opens:"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:642
+#: security_ldap.xml:658
 #, no-c-format
 msgid "Specify the user's name, login name, and password in the <guimenu>User Data</guimenu> tab."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:648
-#, no-c-format
-msgid "Check the <guimenu>Details</guimenu> tab for the group membership, login shell, and home directory of the new user. If necessary, change the default to values that better suit your needs."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:659
-#, no-c-format
-msgid "Modify or accept the default <guimenu>Password Settings</guimenu>."
-msgstr ""
-
-#. Tag: para
 #: security_ldap.xml:664
 #, no-c-format
-msgid "Enter the <guimenu>Plug-Ins</guimenu> tab, select the LDAP plug-in, and click <guimenu>Launch</guimenu> to configure additional LDAP attributes assigned to the new user."
+msgid "Check the <guimenu>Details</guimenu> tab for the group membership, login shell, and home directory of the new user. If necessary, change the default to values that better suit your needs. <!-- The default values (as well as those of the password settings) can be defined with the procedure described in <xref linkend=\"sec.security.auth.yast.client.conf.mod\"/>.-->"
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:675
 #, no-c-format
+msgid "Modify or accept the default <guimenu>Password Settings</guimenu> ."
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:680
+#, no-c-format
+msgid "Enter the <guimenu>Plug-Ins</guimenu> tab, select the LDAP plug-in, and click <guimenu>Launch</guimenu> to configure additional LDAP attributes assigned to the new user. <!-- (see <xref linkend=\"fig.ldap.y2.adset\"/>).-->"
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:691
+#, no-c-format
 msgid "Click <guimenu>OK</guimenu> to apply your settings and leave the user configuration."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:696
+#: security_ldap.xml:712
 #, no-c-format
-msgid "The initial input form of user administration offers <guimenu>LDAP Options</guimenu>. This allows you to apply LDAP search filters to the set of available users. Alternatively open the module for configuring LDAP users and groups by selecting <guimenu>LDAP User and Group Configuration</guimenu>."
+msgid "The initial input form of user administration offers <guimenu>LDAP Options</guimenu> . This allows you to apply LDAP search filters to the set of available users. Alternatively open the module for configuring LDAP users and groups by selecting <guimenu>LDAP User and Group Configuration</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:706
+#: security_ldap.xml:722
 #, no-c-format
 msgid "Manually Configuring an LDAP Server"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:718
+#: security_ldap.xml:734
 #, no-c-format
-msgid "&yast; uses OpenLDAP's dynamic configuration database (<systemitem>back-config</systemitem>) to store the LDAP server's configuration. For details about the dynamic configuration back-end, see the <systemitem>slapd-config(5)</systemitem> man page or the OpenLDAP Software 2.4 Administrator's Guide located at <filename>/usr/share/doc/packages/openldap2/guide/admin/guide.html</filename> on your system if the <systemitem>openldap2</systemitem> package is installed."
+msgid "&yast; uses OpenLDAP's dynamic configuration database ( <systemitem>back-config</systemitem> ) to store the LDAP server's configuration. For details about the dynamic configuration back-end, see the <systemitem>slapd-config(5)</systemitem> man page or the OpenLDAP Software 2.4 Administrator's Guide located at <filename>/usr/share/doc/packages/openldap2/guide/admin/guide.html</filename> on your system if the <systemitem>openldap2</systemitem> package is installed."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:730
+#: security_ldap.xml:746
 #, no-c-format
 msgid "Upgrading an Old OpenLDAP Installation"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:731
+#: security_ldap.xml:747
 #, no-c-format
-msgid "&yast; does not use <filename>/etc/openldap/slapd.conf</filename> to store the OpenLDAP configuration anymore. In case of a system upgrade, a copy of the original <filename>/etc/openldap/slapd.conf</filename> file will get created as <filename>/etc/openldap/slapd.conf.YaSTsave</filename>."
+msgid "&yast; does not use <filename>/etc/openldap/slapd.conf</filename> to store the OpenLDAP configuration anymore. In case of a system upgrade, a copy of the original <filename>/etc/openldap/slapd.conf</filename> file will get created as <filename>/etc/openldap/slapd.conf.YaSTsave</filename> ."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:740
+#: security_ldap.xml:756
 #, no-c-format
 msgid "To conveniently access the configuration back-end, you use SASL external authentication. For example, the following <command>ldapsearch</command> command executed as &rootuser; can show the complete <command>slapd</command> configuration:"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:747
+#: security_ldap.xml:763
 #, no-c-format
 msgid "&prompt.user;ldapsearch -Y external -H ldapi:/// -b cn=config"
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:751
+#: security_ldap.xml:767
 #, no-c-format
 msgid "LDAP Server Is Part of the Authentication Server"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:752
+#: security_ldap.xml:768
 #, no-c-format
-msgid "Basic LDAP Server initialization and configuration can be done within the Authentication Server &yast; module. For more information, see <xref linkend=\"sec.security.auth.yast\"/>."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:1157
-#, no-c-format
-msgid "When the LDAP server is fully configured and all desired entries have been made according to the pattern described in <xref linkend=\"sec.security.ldap.data\"/>, start the LDAP server as &rootuser; by entering <command>sudo systemctl start slapd</command>. To stop the server manually, enter the command <command>sudo systemctl stop slapd</command>. Query the status of the running LDAP server with <command>sudo systemctl status slapd</command>."
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:1167
-#, no-c-format
-msgid "Use the &yast; <guimenu>&ycc_runlevel;</guimenu>, described in <xref linkend=\"sec.boot.runlevel.edit\"/>, to have the server started and stopped automatically on system bootup and shutdown. You can also create the corresponding links to the start and stop scripts with the <command>systemctl</command> commands as described in <xref linkend=\"sec.boot.systemd.basics.services\"/>."
-msgstr ""
-
-#. Tag: title
-#: security_ldap.xml:1179
-#, no-c-format
-msgid "Manually Administering LDAP Data"
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:1181
-#, no-c-format
-msgid "OpenLDAP offers a series of tools for the administration of data in the LDAP directory. The four most important tools for adding to, deleting from, searching through and modifying the data stock are explained in this section."
-msgstr ""
-
-#. Tag: title
-#: security_ldap.xml:1189
-#, no-c-format
-msgid "Inserting Data into an LDAP Directory"
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:1190
-#, no-c-format
-msgid "Once your LDAP server is correctly configured (it features appropriate entries for <literal>suffix</literal>, <literal>directory</literal>, <literal>rootdn</literal>, <literal>rootpw</literal> and <literal>index</literal>), proceed to entering records. OpenLDAP offers the <command>ldapadd</command> command for this task. If possible, add the objects to the database in bundles (for practical reasons). LDAP can process the LDIF format (LDAP data interchange format) for this. An LDIF file is a simple text file that can contain an arbitrary number of attribute and value pairs. The LDIF file for creating a rough framework for the example in <xref linkend=\"fig.ldap.tree\"/> would look like the one in <xref linkend=\"dat.ldap.ldif\"/>."
-msgstr ""
-
-#. Tag: title
-#: security_ldap.xml:1211
-#, no-c-format
-msgid "Encoding of LDIF Files"
+msgid "Basic LDAP Server initialization and configuration can be done within the Authentication Server &yast; module. For more information, see <xref linkend=\"sec.security.auth.yast\"/> ."
 msgstr ""
 
 #. Tag: para
 #: security_ldap.xml:1212
 #, no-c-format
-msgid "LDAP works with UTF-8 (Unicode). Umlauts must be encoded correctly. Otherwise, avoid umlauts and other special characters or use <command>iconv</command> to convert the input to UTF-8."
+msgid "When the LDAP server is fully configured and all desired entries have been made according to the pattern described in <xref linkend=\"sec.security.ldap.data\"/> , start the LDAP server as &rootuser; by entering <command>sudo systemctl start slapd</command> . To stop the server manually, enter the command <command>sudo systemctl stop slapd</command> . Query the status of the running LDAP server with <command>sudo systemctl status slapd</command> ."
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:1222
+#, no-c-format
+msgid "Use the &yast; <guimenu>&ycc_runlevel;</guimenu> , described in <xref linkend=\"sec.boot.runlevel.edit\"/> , to have the server started and stopped automatically on system bootup and shutdown. You can also create the corresponding links to the start and stop scripts with the <command>systemctl</command> commands as described in <xref linkend=\"sec.boot.systemd.basics.services\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1220
+#: security_ldap.xml:1234
+#, no-c-format
+msgid "Manually Administering LDAP Data"
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:1236
+#, no-c-format
+msgid "OpenLDAP offers a series of tools for the administration of data in the LDAP directory. The four most important tools for adding to, deleting from, searching through and modifying the data stock are explained in this section."
+msgstr ""
+
+#. Tag: title
+#: security_ldap.xml:1244
+#, no-c-format
+msgid "Inserting Data into an LDAP Directory"
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:1245
+#, no-c-format
+msgid "Once your LDAP server <!--in <filename>/etc/openldap/slapd.conf</filename>--> is correctly configured (it features appropriate entries for <literal>suffix</literal> , <literal>directory</literal> , <literal>rootdn</literal> , <literal>rootpw</literal> and <literal>index</literal> ), proceed to entering records. OpenLDAP offers the <command>ldapadd</command> command for this task. If possible, add the objects to the database in bundles (for practical reasons). LDAP can process the LDIF format (LDAP data interchange format) for this. An LDIF file is a simple text file that can contain an arbitrary number of attribute and value pairs. <!-- Refer to the Schema files declared in <filename>slapd.conf</filename> for the available object classes and attributes.--> The LDIF file for creating a rough framework for the example in <xref linkend=\"fig.ldap.tree\"/> would look like the one in <xref linkend=\"dat.ldap.ldif\"/> ."
+msgstr ""
+
+#. Tag: title
+#: security_ldap.xml:1266
+#, no-c-format
+msgid "Encoding of LDIF Files"
+msgstr ""
+
+#. Tag: para
+#: security_ldap.xml:1267
+#, no-c-format
+msgid "<!-- UTF-8 is the default since ages now...--> LDAP works with UTF-8 (Unicode). Umlauts must be encoded correctly. Otherwise, avoid umlauts and other special characters or use <command>iconv</command> to convert the input to UTF-8."
+msgstr ""
+
+#. Tag: title
+#: security_ldap.xml:1275
 #, no-c-format
 msgid "An LDIF File"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1221
+#: security_ldap.xml:1276
 #, no-c-format
-msgid ""
-      "# The Organization\n"
+msgid "# The Organization\n"
       "dn: dc=example,dc=com\n"
       "objectClass: dcObject\n"
       "objectClass: organization\n"
@@ -724,34 +832,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1223
+#: security_ldap.xml:1297
 #, no-c-format
 msgid "Save the file with the <filename>.ldif</filename> suffix then pass it to the server with the following command:"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1227
+#: security_ldap.xml:1301
 #, no-c-format
 msgid "&prompt.user;ldapadd -x -D <replaceable>DN_OF_THE_ADMINISTRATOR</replaceable> -W -f <replaceable>FILE</replaceable>.ldif"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1228
+#: security_ldap.xml:1302
 #, no-c-format
-msgid "<literal>-x</literal> switches off the authentication with SASL in this case. <literal>-D</literal> declares the user that calls the operation. The valid DN of the administrator is entered here, as it has been configured in <filename>slapd.conf</filename>. In the current example, this is <literal>cn=Administrator,dc=example,dc=com</literal>. <literal>-W</literal> circumvents entering the password on the command line (in clear text) and activates a separate password prompt. The <literal>-f</literal> option passes the file name. See the details of running <command>ldapadd</command> in <xref linkend=\"aus.ldap.addentry\"/>."
+msgid "<literal>-x</literal> switches off the authentication with SASL in this case. <literal>-D</literal> declares the user that calls the operation. The valid DN of the administrator is entered here, as it has been configured in <filename>slapd.conf</filename> . In the current example, this is <literal>cn=Administrator,dc=example,dc=com</literal> . <literal>-W</literal> circumvents entering the password on the command line (in clear text) and activates a separate password prompt. <!-- This password was previously determined in <filename>slapd.conf</filename> with <literal>rootpw</literal>. --> The <literal>-f</literal> option passes the file name. See the details of running <command>ldapadd</command> in <xref linkend=\"aus.ldap.addentry\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1244
+#: security_ldap.xml:1318
 #, no-c-format
 msgid "ldapadd with example.ldif"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1245
+#: security_ldap.xml:1319
 #, no-c-format
-msgid ""
-      "&prompt.user;ldapadd -x -D cn=Administrator,dc=example,dc=com -W -f example.ldif\n"
+msgid "&prompt.user;ldapadd -x -D cn=Administrator,dc=example,dc=com -W -f example.ldif\n"
       "\n"
       "Enter LDAP password:\n"
       "adding new entry \"dc=example,dc=com\"\n"
@@ -761,22 +868,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1247
+#: security_ldap.xml:1327
 #, no-c-format
 msgid "The user data of individuals can be prepared in separate LDIF files. <xref linkend=\"aus.ldap.addtux\"/> adds <systemitem class=\"username\">Tux</systemitem> to the new LDAP directory."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1253
+#: security_ldap.xml:1333
 #, no-c-format
 msgid "LDIF Data for Tux"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1254
+#: security_ldap.xml:1334
 #, no-c-format
-msgid ""
-      "# coworker Tux\n"
+msgid "# coworker Tux\n"
       "dn: cn=Tux Linux,ou=devel,dc=example,dc=com\n"
       "objectClass: inetOrgPerson\n"
       "cn: Tux Linux\n"
@@ -788,34 +894,33 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1256
+#: security_ldap.xml:1344
 #, no-c-format
 msgid "An LDIF file can contain an arbitrary number of objects. It is possible to pass directory branches (entirely or in part) to the server in one go, as shown in the example of individual objects. If it is necessary to modify some data relatively often, a fine subdivision of single objects is recommended."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1266
+#: security_ldap.xml:1354
 #, no-c-format
 msgid "Modifying Data in the LDAP Directory"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1267
+#: security_ldap.xml:1355
 #, no-c-format
-msgid "The tool <command>ldapmodify</command> is provided for modifying the data stock. The easiest way to do this is to modify the corresponding LDIF file and pass the modified file to the LDAP server. To change the telephone number of colleague Tux from <literal>+49 1234 567-8</literal> to <literal>+49 1234 567-10</literal>, edit the LDIF file like in <xref linkend=\"aus.ldap.ldif.tux\"/>."
+msgid "The tool <command>ldapmodify</command> is provided for modifying the data stock. The easiest way to do this is to modify the corresponding LDIF file and pass the modified file to the LDAP server. To change the telephone number of colleague Tux from <literal>+49 1234 567-8</literal> to <literal>+49 1234 567-10</literal> , edit the LDIF file like in <xref linkend=\"aus.ldap.ldif.tux\"/> ."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1276
+#: security_ldap.xml:1364
 #, no-c-format
 msgid "Modified LDIF File tux.ldif"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1277
+#: security_ldap.xml:1365
 #, no-c-format
-msgid ""
-      "# coworker Tux\n"
+msgid "# coworker Tux\n"
       "dn: cn=Tux Linux,ou=devel,dc=example,dc=com\n"
       "changetype: modify\n"
       "replace: telephoneNumber\n"
@@ -823,189 +928,198 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1279
+#: security_ldap.xml:1371
 #, no-c-format
 msgid "Import the modified file into the LDAP directory with the following command:"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1283
+#: security_ldap.xml:1375
 #, no-c-format
 msgid "&prompt.user;ldapmodify -x -D cn=Administrator,dc=example,dc=com -W -f tux.ldif"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1284
+#: security_ldap.xml:1376
 #, no-c-format
 msgid "Alternatively, pass the attributes to change directly to <command>ldapmodify</command> as follows:"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1290
+#: security_ldap.xml:1382
 #, no-c-format
 msgid "Start <command>ldapmodify</command> and enter your password:"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1293
+#: security_ldap.xml:1385
 #, no-c-format
-msgid ""
-      "&prompt.user;ldapmodify -x -D cn=Administrator,dc=example,dc=com -W\n"
+msgid "&prompt.user;ldapmodify -x -D cn=Administrator,dc=example,dc=com -W\n"
       "Enter LDAP password:"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1296
+#: security_ldap.xml:1389
 #, no-c-format
 msgid "Enter the changes while carefully complying with the syntax in the order presented below:"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1300
+#: security_ldap.xml:1393
 #, no-c-format
-msgid ""
-      "dn: cn=Tux Linux,ou=devel,dc=example,dc=com\n"
+msgid "dn: cn=Tux Linux,ou=devel,dc=example,dc=com\n"
       "changetype: modify\n"
       "replace: telephoneNumber\n"
       "telephoneNumber: +49 1234 567-10"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1303
+#: security_ldap.xml:1399
 #, no-c-format
 msgid "For more information about <command>ldapmodify</command> and its syntax, see the <command>ldapmodify</command> man page."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1310
+#: security_ldap.xml:1406
 #, no-c-format
 msgid "Searching or Reading Data from an LDAP Directory"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1311
+#: security_ldap.xml:1407
 #, no-c-format
-msgid "OpenLDAP provides, with <command>ldapsearch</command>, a command line tool for searching data within an LDAP directory and reading data from it. This is a simple query:"
+msgid "OpenLDAP provides, with <command>ldapsearch</command> , a command line tool for searching data within an LDAP directory and reading data from it. This is a simple query:"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1316
+#: security_ldap.xml:1412
 #, no-c-format
 msgid "&prompt.user;ldapsearch -x -b dc=example,dc=com \"(objectClass=*)\""
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1317
+#: security_ldap.xml:1413
 #, no-c-format
-msgid "The <option>-b</option> option determines the search base (the section of the tree within which the search should be performed). In the current case, this is <literal>dc=example,dc=com</literal>. To perform a more finely-grained search in specific subsections of the LDAP directory (for example, only within the <literal>devel</literal> department), pass this section to <command>ldapsearch</command> with <option>-b</option>. <option>-x</option> requests activation of simple authentication. <literal>(objectClass=*)</literal> declares that all objects contained in the directory should be read. This command option can be used after the creation of a new directory tree to verify that all entries have been recorded correctly and the server responds as desired. For more information about the use of <command>ldapsearch</command>, see the <systemitem>ldapsearch(1)</systemitem> man page."
+msgid "The <option>-b</option> option determines the search base (the section of the tree within which the search should be performed). In the current case, this is <literal>dc=example,dc=com</literal> . To perform a more finely-grained search in specific subsections of the LDAP directory (for example, only within the <literal>devel</literal> department), pass this section to <command>ldapsearch</command> with <option>-b</option> . <option>-x</option> requests activation of simple authentication. <literal>(objectClass=*)</literal> declares that all objects contained in the directory should be read. This command option can be used after the creation of a new directory tree to verify that all entries have been recorded correctly and the server responds as desired. For more information about the use of <command>ldapsearch</command> , see the <systemitem>ldapsearch(1)</systemitem> man page."
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1335
+#: security_ldap.xml:1431
 #, no-c-format
 msgid "Deleting Data from an LDAP Directory"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1336
+#: security_ldap.xml:1432
 #, no-c-format
-msgid "Delete unwanted entries with <command>ldapdelete</command>. The syntax is similar to that of the other commands. To delete, for example, the complete entry for <literal>Tux Linux</literal>, issue the following command:"
+msgid "Delete unwanted entries with <command>ldapdelete</command> . The syntax is similar to that of the other commands. To delete, for example, the complete entry for <literal>Tux Linux</literal> , issue the following command:"
 msgstr ""
 
 #. Tag: screen
-#: security_ldap.xml:1342
+#: security_ldap.xml:1438
 #, no-c-format
-msgid ""
-      "&prompt.user;ldapdelete -x -D cn=Administrator,dc=example,dc=com -W cn=Tux \\\n"
+msgid "&prompt.user;ldapdelete -x -D cn=Administrator,dc=example,dc=com -W cn=Tux \\\n"
       "Linux,ou=devel,dc=example,dc=com"
 msgstr ""
 
 #. Tag: title
-#: security_ldap.xml:1346
+#: security_ldap.xml:1443
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1348
+#: security_ldap.xml:1445
 #, no-c-format
-msgid "More complex subjects (like SASL configuration or establishment of a replicating LDAP server that distributes the workload among multiple slaves) were omitted from this chapter. Find detailed information about both subjects in the <emphasis>OpenLDAP 2.4 Administrator's Guide</emphasis>&mdash;see at <xref linkend=\"list.ldap.info.adminguide\"/>."
+msgid "More complex subjects (like SASL configuration or establishment of a replicating LDAP server that distributes the workload among multiple slaves) were omitted from this chapter. Find detailed information about both subjects in the <emphasis>OpenLDAP 2.4 Administrator's Guide</emphasis> &mdash;see at <xref linkend=\"list.ldap.info.adminguide\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1357
+#: security_ldap.xml:1454
 #, no-c-format
 msgid "The Web site of the OpenLDAP project offers exhaustive documentation for beginner and advanced LDAP users:"
 msgstr ""
 
 #. Tag: term
-#: security_ldap.xml:1364
+#: security_ldap.xml:1461
 #, no-c-format
 msgid "OpenLDAP Faq-O-Matic"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1366
+#: security_ldap.xml:1463
 #, no-c-format
-msgid "A detailed question and answer collection applying to the installation, configuration, and use of OpenLDAP. Find it at <link xlink:href=\"http://www.openldap.org/faq/data/cache/1.html\"></link>."
+msgid "A detailed question and answer collection applying to the installation, configuration, and use of OpenLDAP. Find it at <link xlink:href=\"http://www.openldap.org/faq/data/cache/1.html\"/> ."
 msgstr ""
 
 #. Tag: term
-#: security_ldap.xml:1374
+#: security_ldap.xml:1471
 #, no-c-format
 msgid "Quick Start Guide"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1376
+#: security_ldap.xml:1473
 #, no-c-format
-msgid "Brief step-by-step instructions for installing your first LDAP server. Find it at <link xlink:href=\"http://www.openldap.org/doc/admin24/quickstart.html\"></link> or on an installed system in Section 2 of <filename>/usr/share/doc/packages/openldap2/guide/admin/guide.html</filename>."
+msgid "Brief step-by-step instructions for installing your first LDAP server. Find it at <link xlink:href=\"http://www.openldap.org/doc/admin24/quickstart.html\"/> or on an installed system in Section 2 of <filename>/usr/share/doc/packages/openldap2/guide/admin/guide.html</filename> ."
 msgstr ""
 
 #. Tag: term
-#: security_ldap.xml:1386
+#: security_ldap.xml:1483
 #, no-c-format
 msgid "OpenLDAP 2.4 Administrator's Guide"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1388
+#: security_ldap.xml:1485
 #, no-c-format
-msgid "A detailed introduction to all important aspects of LDAP configuration, including access controls and encryption. See <link xlink:href=\"http://www.openldap.org/doc/admin24/\"></link> or, on an installed system, <filename>/usr/share/doc/packages/openldap2/guide/admin/guide.html</filename>."
+msgid "A detailed introduction to all important aspects of LDAP configuration, including access controls and encryption. See <link xlink:href=\"http://www.openldap.org/doc/admin24/\"/> or, on an installed system, <filename>/usr/share/doc/packages/openldap2/guide/admin/guide.html</filename> ."
 msgstr ""
 
 #. Tag: term
-#: security_ldap.xml:1398
+#: security_ldap.xml:1495
 #, no-c-format
 msgid "Understanding LDAP"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1400
+#: security_ldap.xml:1497
 #, no-c-format
-msgid "A detailed general introduction to the basic principles of LDAP: <link xlink:href=\"http://www.redbooks.ibm.com/redbooks/pdfs/sg244986.pdf\"></link>."
+msgid "A detailed general introduction to the basic principles of LDAP: <link xlink:href=\"http://www.redbooks.ibm.com/redbooks/pdfs/sg244986.pdf\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1408
+#: security_ldap.xml:1505
 #, no-c-format
 msgid "Printed literature about LDAP:"
 msgstr ""
 
-#. Tag: para
-#: security_ldap.xml:1414
+#. Tag: citetitle
+#: security_ldap.xml:1512
 #, no-c-format
-msgid "<citetitle>LDAP System Administration</citetitle> by Gerald Carter (ISBN 1-56592-491-6)"
+msgid "LDAP System Administration"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:1514
+#, no-c-format
+msgid "by Gerald Carter (ISBN 1-56592-491-6)"
+msgstr ""
+
+#. Tag: citetitle
+#: security_ldap.xml:1518
+#, no-c-format
+msgid "Understanding and Deploying LDAP Directory Services"
+msgstr ""
+
+#. Tag: #text
+#: security_ldap.xml:1520
+#, no-c-format
+msgid "by Howes, Smith, and Good (ISBN 0-672-32316-8)"
 msgstr ""
 
 #. Tag: para
-#: security_ldap.xml:1420
-#, no-c-format
-msgid "<citetitle>Understanding and Deploying LDAP Directory Services</citetitle> by Howes, Smith, and Good (ISBN 0-672-32316-8)"
-msgstr ""
-
-#. Tag: para
-#: security_ldap.xml:1427
+#: security_ldap.xml:1524
 #, no-c-format
 msgid "The ultimate reference material for the subject of LDAP are the corresponding RFCs (request for comments), 2251 to 2256."
 msgstr ""

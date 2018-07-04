@@ -2,39 +2,28 @@
 <?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
  type="text/xml"
  title="Profiling step"?>
-<!DOCTYPE book
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE book [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
-
 <!-- ##################################################################### -->
 <!-- Security Guide                                                        -->
 <!-- ##################################################################### -->
 <?provo dirname="security/"?>
-<book version="5.0" xml:lang="en" xml:id="book.security"
-  xmlns="http://docbook.org/ns/docbook"
-  xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:xlink="http://www.w3.org/1999/xlink">
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en" xml:id="book.security">
   <info>
-      <title
->&secguide;</title>
-      <productname
->&productname;</productname>
-      <productnumber
->&productnumber;</productnumber>
+      <title>&secguide;</title>
+      <productname>&productname;</productname>
+      <productnumber>&productnumber;</productnumber>
       <date>
         <?dbtimestamp format="B d, Y"?>
       </date>
       <xi:include href="common_copyright_gfdl.xml"/>
       <abstract>
-        <para
->&abstract_security; </para>
+        <para> &abstract_security; </para>
       </abstract>
       <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
         <dm:bugtracker>
-          <dm:assignee
->fs@suse.com</dm:assignee>
+          <dm:assignee>fs@suse.com</dm:assignee>
         </dm:bugtracker>
       </dm:docmanager>
     </info>
@@ -42,8 +31,7 @@
  <xi:include href="security_preface.xml"/>
 
  <part xml:id="part.auth">
-  <title
->Authentication</title>
+  <title>Authentication</title>
   <xi:include href="security_pam.xml"/>
   <xi:include href="security_nis.xml"/>
   <xi:include href="security_auth.xml"/>
@@ -53,8 +41,7 @@
  </part>
 
  <part xml:id="part.local_security">
-  <title
->Local Security</title>
+  <title>Local Security</title>
   <xi:include href="security_yast2_security.xml"/>
   <xi:include href="security_policy_kit.xml"/>
   <xi:include href="security_acls.xml"/>
@@ -67,8 +54,7 @@
  </part>
 
  <part xml:id="part.network_security">
-  <title
->Network Security</title>
+  <title>Network Security</title>
   <info/>
   <xi:include href="security_xforwarding.xml"/>
   <xi:include href="security_ssh.xml"/>
@@ -78,8 +64,7 @@
  </part>
 
  <part xml:id="part.apparmor">
-  <title
->Confining Privileges with &aa;</title>
+  <title>Confining Privileges with &aa;</title>
   <xi:include href="apparmor_intro.xml"/>
   <xi:include href="apparmor_start.xml"/>
   <xi:include href="apparmor_whatimmunize.xml"/>
@@ -95,15 +80,13 @@
  </part>
 
  <part xml:id="part.selinux" os="sles;osuse">
-  <title
->SELinux</title>
+  <title>SELinux</title>
   <info/>
   <xi:include href="selinux.xml"/>
  </part>
 
  <part xml:id="part.audit">
-  <title
->&auditguide;</title>
+  <title>&auditguide;</title>
   <info/>
   <xi:include href="audit_components.xml"/>
   <xi:include href="audit_setup.xml"/>

@@ -1,87 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
+<!DOCTYPE sect1 [
+<!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.network.router">
- <title
->Basic Router Setup</title>
+ <title>Basic Router Setup</title>
 
 <!-- 2015-09-28, ke: based on fate#317121, converted to DB -->
 
  <info>
-  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager"
-><dm:bugtracker
-></dm:bugtracker
-> <dm:translation
->yes</dm:translation
-> </dm:docmanager>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker/>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
  </info>
 
- <para
->A router is a networking device that delivers and receives data (network packets) to or from more than one network back and forth. You often use a router to connect your local network to the remote network (Internet) or to connect local network segments. With &productname; you can build a router with features such as NAT (Network Address Translation) or advanced firewalling. </para>
+ <para>
+  A router is a networking device that delivers and receives data (network
+  packets) to or from more than one network back and forth. You often use a
+  router to connect your local network to the remote network (Internet) or to
+  connect local network segments. With &productname; you can build a router with
+  features such as NAT (Network Address Translation) or advanced firewalling.
+ </para>
 
 <!-- ============================================================ -->
 
- <para
->The following are basic steps to turn &productname; into a router. </para>
+ <para>
+  The following are basic steps to turn &productname; into a router.
+ </para>
 
  <procedure>
   <step>
-   <para
->Enable forwarding, for example in <filename
->/etc/sysctl.d/50-router.conf</filename
-> </para>
-<screen
->net.ipv4.conf.all.forwarding = 1
+   <para>
+    Enable forwarding, for example in
+    <filename>/etc/sysctl.d/50-router.conf</filename>
+   </para>
+<screen>net.ipv4.conf.all.forwarding = 1
 net.ipv6.conf.all.forwarding = 1</screen>
-   <para
->Then provide a static IPv4 and IPv6 IP setup for the interfaces. Enabling forwarding disables several mechanisms, for example IPv6 does not accept an IPv6 RA (router advertisement) anymore, which also prevents the creation of a default route. </para>
+   <para>
+    Then provide a static IPv4 and IPv6 IP setup for the interfaces. Enabling
+    forwarding disables several mechanisms, for example IPv6 does not accept an
+    IPv6 RA (router advertisement) anymore, which also prevents the creation of
+    a default route.
+   </para>
   </step>
   <step>
-   <para
->In many situations (for example, when you can reach the same network via more than one interface, or when VPN usually is used and already on <quote
->normal multi-home hosts</quote
->), you must disable the IPv4 reverse path filter (this feature does not currently exist for IPv6): </para>
-<screen
->net.ipv4.conf.all.rp_filter = 0</screen>
-   <para
->You can also filter with firewall settings instead. </para>
+   <para>
+    In many situations (for example, when you can reach the same network
+    via more than one interface, or when VPN usually is used and already
+    on <quote>normal multi-home hosts</quote>), you must disable the IPv4
+    reverse path filter (this feature does not currently exist for IPv6):
+   </para>
+<screen>net.ipv4.conf.all.rp_filter = 0</screen>
+   <para>
+    You can also filter with firewall settings instead.
+   </para>
   </step>
   <step>
-   <para
->To accept an IPv6 RA (from the router on an external, uplink, or ISP interface) and create a default (or also a more specific) IPv6 route again, set: </para>
-<screen
->net.ipv6.conf.${ifname}.accept_ra = 2
+   <para>
+    To accept an IPv6 RA (from the router on an external, uplink, or ISP
+    interface) and create a default (or also a more specific) IPv6 route again,
+    set:
+   </para>
+<screen>net.ipv6.conf.${ifname}.accept_ra = 2
 net.ipv6.conf.${ifname}.autoconf = 0</screen>
-   <para
->(Note: <quote
-><literal
->eth0.42</literal
-></quote
-> needs to be written as <literal
->eth0/42</literal
-> in a dot-separated sysfs path.) </para>
+   <para>
+    (Note: <quote><literal>eth0.42</literal></quote> needs to be written as
+    <literal>eth0/42</literal> in a dot-separated sysfs path.)
+   </para>
   </step>
  </procedure>
 
- <para
->More router behavior and forwarding dependencies are described in <link xlink:href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt"
->https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</link
->. </para>
+ <para>
+  More router behavior and forwarding dependencies are described in
+  <link xlink:href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</link>.
+ </para>
 
- <para
->To provide IPv6 on your internal (DMZ) interfaces, and announce yourself as an IPv6 router and <quote
->autoconf networks</quote
-> to the clients, install and configure <systemitem class="daemon"
->radvd</systemitem
-> in <filename
->/etc/radvd.conf</filename
->, for example: </para>
+ <para>
+  To provide IPv6 on your internal (DMZ) interfaces, and announce yourself as
+  an IPv6 router and <quote>autoconf networks</quote> to the clients, install
+  and configure <systemitem class="daemon">radvd</systemitem> in
+  <filename>/etc/radvd.conf</filename>, for example:
+ </para>
 
-<screen
->interface eth0
+<screen>interface eth0
 {
     IgnoreIfMissing on;         # do not fail if interface missed
 
@@ -100,10 +101,11 @@ net.ipv6.conf.${ifname}.autoconf = 0</screen>
     }
 }</screen>
 
- <para
->Configure the firewall to masquerade traffic with NAT from the LAN into the WAN and to block inbound traffic on the WAN interface: </para>
-<screen
->&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --change-interface=<replaceable>WAN_INTERFACE</replaceable>
+ <para>
+  Configure the firewall to masquerade traffic with NAT from the LAN
+  into the WAN and to block inbound traffic on the WAN interface:
+ </para>
+<screen>&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --change-interface=<replaceable>WAN_INTERFACE</replaceable>
 &prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --add-masquerade
 &prompt.sudo;<command>firewall-cmd</command> --permanent --zone=internal --change-interface=<replaceable>LAN_INTERFACE</replaceable>
 &prompt.sudo;<command>firewall-cmd</command> --reload</screen>
