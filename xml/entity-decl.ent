@@ -1,0 +1,848 @@
+<!-- ...................................................................... -->
+<!-- General Entities                                                       -->
+<!-- ...................................................................... -->
+
+
+<!-- Use exampleuser in text
+     Use exampleuser_plain in screen, command, option and prompt -->
+
+
+<!ENTITY exampleuser_plain    "tux">
+<!ENTITY exampleuser    "<systemitem xmlns='http://docbook.org/ns/docbook' class='username'>&exampleuser_plain;</systemitem>">
+
+<!ENTITY exampleuserII_plain    "wilber">
+<!ENTITY exampleuserII  "<systemitem xmlns='http://docbook.org/ns/docbook' class='username'>&exampleuserII_plain;</systemitem>">
+
+<!ENTITY exampleuserIII_plain    "geeko">
+<!ENTITY exampleuserIII "<systemitem xmlns='http://docbook.org/ns/docbook' class='username'>exampleuserIII_plain</systemitem>">
+
+<!ENTITY exampleuserfull    "Tux Linux">
+<!-- Do not use Gimp as the last name, what with negative connotations etc.
+     Instead use "fox," even though Wilber is not a fox: http://gimp-savvy.com/ABOUT/index.html -->
+<!ENTITY exampleuserIIfull  "Wilber Fox">
+<!ENTITY exampleuserIIIfull "Suzanne Geeko">
+
+<!ENTITY examplegroup_plain   "users">
+<!ENTITY examplegroup   "<systemitem xmlns='http://docbook.org/ns/docbook' class='groupname'>users</systemitem>">
+
+<!-- #######################################################################-->
+<!--             Obsolete entities. Do not use.                             -->
+<!--      See network-decl.ent for Network related entities                 -->
+
+<!ENTITY exampledomainip      "192.168.0">
+<!ENTITY exampledomain1ip     "192.168.1">
+<!ENTITY exampledomain2ip     "192.168.2">
+<!-- ipv6 equivalent to 192.168.2.10 -->
+<!ENTITY exampledomain2ipv6   "2002:c0a8:20a::">
+<!ENTITY exampleserver        "sun">
+<!ENTITY exampleserverip      "&exampledomainip;.20">
+<!ENTITY exampleserverfq      "&exampleserver;.&exampledomain;">
+<!ENTITY exampleclient        "earth">
+<!ENTITY exampleclientip      "&exampledomainip;.1">
+<!ENTITY exampleclientfq      "&exampleclient;.&exampledomain;">
+<!ENTITY exampleclientppp     "ppp&exampleclient;">
+<!ENTITY exampleclientslip    "sl&exampleclient;">
+<!ENTITY exampleclientuucp    "uu&exampleclient;">
+<!ENTITY exampleclientII      "venus">
+<!ENTITY exampleclientIIppp   "ppp&exampleclientII;">
+<!ENTITY exampleclientIIslip  "sl&exampleclientII;">
+<!ENTITY exampleclientIIuucp  "uu&exampleclientII;">
+
+<!ENTITY rootuser       "<systemitem xmlns='http://docbook.org/ns/docbook' class='username'>root</systemitem>">
+<!ENTITY grub           "GRUB 2">
+<!ENTITY grub-efi       "GRUB 2 for EFI">
+<!ENTITY gnome          "GNOME">
+
+<!ENTITY suse           "SUSE">
+<!ENTITY suselinux      "&suse; Linux">
+<!ENTITY susestudio     "&suse; Studio">
+<!ENTITY studioexpress  "&susestudio; Express">
+<!ENTITY xgeneric       "X Window System">
+<!ENTITY xvendor        "X.Org">
+<!ENTITY yast           "YaST">
+<!ENTITY yastcc         "<guimenu xmlns='http://docbook.org/ns/docbook'>&yast; コントロールセンター</guimenu>">
+<!ENTITY ay             "AutoYaST">
+<!ENTITY nm             "NetworkManager">
+<!ENTITY yelp           "Help">
+<!-- deprecated - use &libo; instead -->
+<!ENTITY ooo            "&libo;">
+<!ENTITY libo           "LibreOffice">
+<!ENTITY aide           "AIDE">
+<!ENTITY ovs            "<phrase role='productname' xmlns='http://docbook.org/ns/docbook'>Open vSwitch</phrase>">
+<!ENTITY netteam        "ネットワークチーミング">
+<!ENTITY sap            "SAP">
+
+
+<!-- ============================================================= -->
+<!--                    Books                                      -->
+<!-- ============================================================= -->
+
+<!ENTITY ayguide        "<citetitle xmlns='http://docbook.org/ns/docbook'>&ay; ガイド</citetitle>">
+<!ENTITY deploy         "<citetitle xmlns='http://docbook.org/ns/docbook'>配置ガイド</citetitle>">
+<!ENTITY gnomeuser      "<citetitle xmlns='http://docbook.org/ns/docbook'>&gnome; ユーザガイド</citetitle>">
+<!ENTITY instquick      "<citetitle xmlns='http://docbook.org/ns/docbook'>インストールクイックスタート</citetitle>">
+<!ENTITY gnomequick     "<citetitle xmlns='http://docbook.org/ns/docbook'>&gnome; クイックスタート</citetitle>">
+<!ENTITY admin          "<citetitle xmlns='http://docbook.org/ns/docbook'>管理者ガイド</citetitle>">
+<!ENTITY reference      "<citetitle xmlns='http://docbook.org/ns/docbook'>リファレンス</citetitle>">
+<!ENTITY startup        "<citetitle xmlns='http://docbook.org/ns/docbook'>スタートアップ</citetitle>">
+<!ENTITY storage_guide  "<citetitle xmlns='http://docbook.org/ns/docbook'>ストレージ管理ガイド</citetitle>">
+<!ENTITY haguide        "<citetitle xmlns='http://docbook.org/ns/docbook'>管理者ガイド</citetitle>">
+<!ENTITY virtual        "<citetitle xmlns='http://docbook.org/ns/docbook'>仮想化ガイド</citetitle>">
+<!ENTITY auditguide     "<citetitle xmlns='http://docbook.org/ns/docbook'>Linux 監査フレームワーク</citetitle>">
+<!ENTITY tuning         "<citetitle xmlns='http://docbook.org/ns/docbook'>システム分析とチューニングガイド</citetitle>">
+<!ENTITY secguide       "<citetitle xmlns='http://docbook.org/ns/docbook'>セキュリティガイド</citetitle>">
+<!ENTITY rmtguide       "<citetitle xmlns='http://docbook.org/ns/docbook'>リポジトリ管理ツールガイド</citetitle>">
+
+<!-- ============================================================= -->
+<!--                    Platforms                                  -->
+<!-- ============================================================= -->
+
+<!ENTITY x86           "x86">
+<!ENTITY amd64         "AMD64">
+<!ENTITY zseries       "IBM&nbsp;Z">
+<!ENTITY ipseries      "POWER">
+<!ENTITY ppc           "POWER">
+<!ENTITY power         "POWER">
+<!ENTITY intel64       "Intel&nbsp;64">
+<!ENTITY x86-64        "&amd64;/&intel64;">
+<!ENTITY arm           "ARM">
+<!ENTITY aarch64       "AArch64">
+<!ENTITY arm64         "&arm;&nbsp;&aarch64;">
+
+<!-- ============================================================= -->
+<!--                    Technologies                               -->
+<!-- ============================================================= -->
+
+<!ENTITY nvme           "NVMe">
+<!ENTITY nvmeof         "NVMe over Fabric">
+<!ENTITY fcnvme         "FC-NVMe">
+<!ENTITY dmmpio         "DM-Multipathing">
+<!ENTITY mpio           "マルチパス I/O">
+
+<!-- ============================================================= -->
+<!--                    Products                                   -->
+<!-- ============================================================= -->
+
+<!-- please change product to anything that makes sense in your current release -->
+
+<!ENTITY github.url   "https://github.com/SUSE/doc-sle">
+
+<!ENTITY opensuse      "openSUSE">
+<!ENTITY opensusereg   "openSUSE&reg;">
+<!ENTITY leanos        "インストーラ">
+<!ENTITY allmodules    "SLE-15-Packages">
+<!ENTITY sle           "SUSE Linux Enterprise">
+<!ENTITY slea          "SLE">
+<!ENTITY slereg        "SUSE&reg; Linux Enterprise">
+<!ENTITY slert         "&sle; Real Time">
+<!ENTITY slerta        "&slea; RT">
+<!ENTITY slertreg      "&slereg; Real Time">
+<!ENTITY sls           "SUSE Linux Enterprise Server">
+<!ENTITY slsa          "SLES">
+<!ENTITY slsreg        "SUSE&reg; Linux Enterprise Server">
+<!ENTITY sled          "SUSE Linux Enterprise Desktop">
+<!ENTITY sleda         "SLED">
+<!ENTITY sledreg       "SUSE&reg; Linux Enterprise Desktop">
+<!ENTITY sles4sapa     "&slsa; for &sap;">
+<!ENTITY sles4sap      "&sls; for &sap; Applications">
+<!ENTITY s4sa          "&sles4sapa;">
+<!ENTITY s4s           "&sles4sap;">
+<!ENTITY sles4sapreg   "&slsreg; for &sap; Applications">
+<!ENTITY slehpc        "&sle; High Performance Computing">
+<!ENTITY slehpcreg     "&slereg; High Performance Computing">
+<!ENTITY productname   "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase os='osuse'>&opensuse; Leap</phrase><phrase os='sles'>&sls;</phrase><phrase os='sled'>&sled;</phrase></phrase>">
+<!ENTITY productnamereg "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase os='osuse'>&opensusereg; Leap</phrase><phrase os='sles'>&slsreg;</phrase><phrase os='sled'>&sledreg;</phrase></phrase>">
+<!ENTITY productnameshort "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase os='osuse'>&opensuse; Leap</phrase><phrase os='sles'>&slsa;</phrase><phrase os='sled'>&sleda;</phrase></phrase>">
+<!ENTITY product-ga    "15">
+<!ENTITY product-sp    "GA">
+<!ENTITY productnumber "<phrase xmlns='http://docbook.org/ns/docbook' role='productnumber'><phrase os='osuse'>15.0</phrase><phrase os='sles;sled'>&product-ga;</phrase></phrase>">
+<!ENTITY sdk           "SUSE Software Development Kit">
+<!ENTITY hasi          "High Availability Extension">
+<!ENTITY susemgr       "&suse; Manager">
+<!ENTITY scc           "&suse; Customer Center">
+<!ENTITY sccreg        "&suse;&reg; Customer Center">
+<!ENTITY sccurl        "https://scc.suse.com/">
+<!ENTITY ncc           "&scc;">
+<!ENTITY obs           "Open Build Service">
+<!ENTITY osbs          "openSUSE Build Service">
+<!ENTITY obsa          "OBS">
+<!ENTITY rhel          "Red Hat Enterprise Linux">
+<!ENTITY hageo         "GEO Clustering for &sle; &hasi;">
+<!ENTITY kg            "kGraft">
+<!ENTITY ad            "Active Directory">
+<!ENTITY ada           "AD">
+<!ENTITY krb           "Kerberos">
+<!ENTITY soliddriver   "SUSE SolidDriver">
+
+<!-- ============================================================= -->
+<!--                    Applications                               -->
+<!-- ============================================================= -->
+
+<!ENTITY nautilus      "&gnome; Files">
+<!ENTITY musicplayer   "Banshee">
+<!ENTITY aa            "<phrase xmlns='http://docbook.org/ns/docbook'>AppArmor</phrase>">
+<!ENTITY aareg         "<phrase xmlns='http://docbook.org/ns/docbook'>AppArmor&reg;</phrase>">
+<!ENTITY xenstore      "XenStore">
+<!ENTITY rmtool        "リポジトリミラーリングツール">
+<!ENTITY smtool        "&rmtool;">
+<!ENTITY rmt           "RMT">
+<!ENTITY smt           "&rmt;">
+<!ENTITY lxc           "LXC">
+<!ENTITY docker        "Docker">
+<!ENTITY xen           "Xen">
+<!ENTITY xenreg        "Xen&reg;">
+<!ENTITY kvm           "KVM">
+<!ENTITY vmware        "VMware">
+<!ENTITY esx           "&vmware; ESX">
+<!ENTITY ms            "Microsoft">
+<!ENTITY hyperv        "&ms; Hyper-V">
+<!ENTITY vmhost        "VM Host Server">
+<!ENTITY vmguest       "VM Guest">
+<!ENTITY dom0          "Dom0">
+<!ENTITY lvmcache      "<systemitem xmlns='http://docbook.org/ns/docbook' class='resource'>lvmcache</systemitem>">
+<!ENTITY bcache        "<systemitem xmlns='http://docbook.org/ns/docbook' class='resource'>bcache</systemitem>">
+<!ENTITY libvirt       "<systemitem xmlns='http://docbook.org/ns/docbook' class='library'>libvirt</systemitem>">
+<!ENTITY libvirtd      "<systemitem xmlns='http://docbook.org/ns/docbook' class='daemon'>libvirtd</systemitem>">
+<!ENTITY vmm           "Virtual Machine Manager">
+<!ENTITY qemu          "QEMU">
+<!ENTITY qemusystemarch "<command xmlns='http://docbook.org/ns/docbook'>qemu-system-<replaceable>ARCH</replaceable></command>">
+<!ENTITY sudo          "<command xmlns='http://docbook.org/ns/docbook'>sudo</command>">
+<!ENTITY pk            "PolKit">
+<!ENTITY susefirewall  "SuSEfirewall2">
+<!ENTITY suseconnect   "SUSEConnect">
+
+<!-- Not sure if the following is useful, but given that most Linux
+     commands are lowercased and SuSEfirewall2 is just an outlier it might
+     make sense to define this additionally... -->
+<!ENTITY susefirewallfiles  "SuSEfirewall2">
+<!ENTITY pciback       "PCI Pass-Through">
+<!ENTITY usbback       "USB Pass-Through">
+<!ENTITY vgaback       "VGA Pass-Through">
+<!ENTITY selnx         "SELinux">
+<!ENTITY postgresql    "PostgreSQL">
+<!ENTITY mariadb       "MariaDB">
+<!ENTITY mysql         "&mariadb;">
+<!ENTITY jeos          "JeOS"><!-- Just enough OS -->
+<!ENTITY stap          "SystemTap">
+<!ENTITY oprof         "OProfile">
+<!ENTITY cpufreq       "CPUfreq">
+<!ENTITY powertop      "powerTOP">
+<!ENTITY gpg           "GPG"> <!-- or GnuGP -->
+<!ENTITY clamav        "ClamAV">
+<!-- oddities -->
+<!ENTITY thrdmrk       "*">
+<!ENTITY kexec          "Kexec">
+<!ENTITY kdump          "Kdump">
+<!ENTITY kprobes        "Kprobes">
+<!ENTITY powerlinux    "PowerLinux">
+<!ENTITY powerkvm      "PowerKVM">
+
+<!ENTITY pcidss        "Payment Card Industry Data Security Standard">
+<!ENTITY pcidssa       "PCI-DSS">
+
+<!-- daemons -->
+<!ENTITY systemd       "<systemitem xmlns='http://docbook.org/ns/docbook' class='daemon'>systemd</systemitem>">
+<!ENTITY crond         "<systemitem xmlns='http://docbook.org/ns/docbook' class='daemon'>cron</systemitem>">
+<!ENTITY oprofd        "<systemitem xmlns='http://docbook.org/ns/docbook' class='daemon'>oprofile</systemitem>">
+<!ENTITY firewalld        "<systemitem xmlns='http://docbook.org/ns/docbook' class='daemon'>firewalld</systemitem>">
+
+
+
+<!-- ============================================================= -->
+<!--                    yast desktop entities                      -->
+<!-- ============================================================= -->
+
+<!ENTITY ycc_runlevel    "サービスマネージャ">
+
+<!-- ============================================================= -->
+<!--                    Miscellaneous                              -->
+<!-- ============================================================= -->
+<!ENTITY kiwi            "KIWI">
+<!ENTITY ptp             "Precision Time Protocol">
+<!ENTITY ntp             "Network Time Protocol">
+<!ENTITY chrony          "<systemitem xmlns='http://docbook.org/ns/docbook' class='resource'>chrony</systemitem>">
+<!ENTITY chronyd         "<systemitem xmlns='http://docbook.org/ns/docbook' class='daemon'>chronyd</systemitem>">
+<!ENTITY chronyc         "<command xmlns='http://docbook.org/ns/docbook'>chronyc</command>">
+
+<!-- ============================================================= -->
+<!--                    Prompts                              -->
+<!-- ============================================================= -->
+
+<!ENTITY prompt.root     "<prompt role='root' xmlns='http://docbook.org/ns/docbook'>root # </prompt>">
+<!ENTITY prompt.user     "<prompt xmlns='http://docbook.org/ns/docbook'>&exampleuser_plain; &gt; </prompt>">
+<!ENTITY prompt.user2    "<prompt xmlns='http://docbook.org/ns/docbook'>&exampleuserII_plain; &gt; </prompt>">
+<!ENTITY prompt.sudo     "<prompt xmlns='http://docbook.org/ns/docbook'>&exampleuser_plain; &gt; </prompt><command xmlns='http://docbook.org/ns/docbook'>sudo</command> ">
+<!ENTITY prompt.nvmetcli "<prompt xmlns='http://docbook.org/ns/docbook'>(nvmetcli)&gt; </prompt>">
+
+<!-- ============================================================= -->
+<!--                    Book Abstracts                             -->
+<!-- ============================================================= -->
+
+<!ENTITY abstract_admin "インストール済みのシステムに対して、メンテナンスや監視、カスタマイズなどの
+     システム管理作業に関する説明を記述しています。">
+<!ENTITY abstract_autoyast "&ay; は &productname; を無人で一括導入するためのシステムです。
+     &ay; のプロファイルには、インストールや設定に関するデータが含まれています。
+     本マニュアルでは、自動インストールに関わる基本手順を説明しています。具体的には
+     準備とインストール、設定までの分野を説明しています。">
+<!ENTITY abstract_deployment "単一もしくは複数のシステムへのインストール方法のほか、
+     配置のインフラストラクチャに対する製品固有の機能の使い方を説明しています。
+     ローカルでのインストールのほか、ネットワークインストールサーバを利用した
+     一括導入など、遠隔からの制御や高度なカスタマイズ、自動インストール技術に
+     関する説明を行なっています。">
+<!ENTITY abstract_upgrade "本書では、 &productname; のアップグレードや更新に関する
+     説明を記述しています。インストール DVD からのアップクレーどのほか、
+     ネットワーク経由での起動やシステムを実行したままの状態からのアップグレードなどを
+     説明しています。">
+<!ENTITY abstract_osuse_startup "このマニュアルには、 &productnamereg; に関する
+     はじめの一歩に関わる説明が記載されています。インストールの方法や使い方、
+     システムの楽しみ方など、様々な説明が用意されています。">    
+<!ENTITY abstract_gnomeuser "&productname; における &gnome; デスクトップに関する
+     説明を記載しています。デスクトップの使い方や設定方法のほか、主な作業の
+     やり方なども説明しています。主に &gnome; を既定のデスクトップとして効率的に
+     使用したい、エンドユーザ向けのマニュアルです。">
+<!ENTITY abstract_hardening "Deals with the particulars of installing and
+     setting up a secure &sls;, and additional post-installation processes
+     required to further secure and harden that installation. Supports the
+     administrator with security-related choices and decisions.">
+<!ENTITY abstract_installquick "このクイックスタートガイドでは、
+     &productnamereg; &productnumber; のインストールについて、順を追って説明しています。">
+<!ENTITY abstract_security "システムセキュリティに関する基本的なコンセプトを説明しています。
+     ローカル環境でのセキュリティのほか、ネットワーク環境下におけるセキュリティについても
+     記述しています。また、 &aa; のようなセキュリティソフトウエアに関する説明や、
+     セキュリティ関連のイベントを収集することのできる、監査システムについても
+     説明しています。">
+<!ENTITY abstract_storage "Provides information about how to manage storage
+    devices on a &sls;.">
+<!ENTITY abstract_tuning "問題点の抽出からそれらの解決、そして最適化までを取り扱う
+     管理者向けのガイドです。モニタリングツールを利用することで、お使いのシステムに
+     対する調査と最適化を行なうほか、資源を効率的に管理する方法についても説明して
+     います。また、よく発生しうる問題点やその解決方法、そして追加のヘルプや
+     ドキュメンテーション資源についても説明しています。">
+<!ENTITY abstract_virtualization "一般的な仮想化技術の説明と、仮想化に対する
+    統合インターフェイスである libvirt の紹介、そして各種のハイパーバイザに
+    対する詳細な説明を行なっています。">
+<!ENTITY abstract_smt "An administrator's guide to &smtool;&mdash;a proxy system
+   for &scc; with repository and registration targets. Learn how to install and
+   configure a local &smt; server, mirror and manage repositories, manage client machines, and configure clients to use &smt;.">
+<!ENTITY note.mkswap.swap '<note xmlns="http://docbook.org/ns/docbook">
+  <title><command>mkswap</command> でフォーマットした場合のスワップパーティションの UUID 更新について</title>
+  <para><command>mkswap</command> でのフォーマットは、できる限り避けておくことをお勧めします。
+     <command>mkswap</command> でフォーマットし直してしまうと、スワップパーティションの
+     UUID が変更されてしまうためです。その代わりに、 &yast; を利用してフォーマットし直す
+     (&yast; では、 UUID が変更されても <filename>/etc/fstab</filename> を自動的に
+     更新します) か、 <command>mkswap</command> コマンド実行後に手作業で
+     <filename>/etc/fstab</filename> を更新してください。
+  </para>
+</note>'>
+
+<!ENTITY extension_module_selection '<para xmlns="http://docbook.org/ns/docbook">
+      The following modules and extensions are available for &productname;:
+     </para>
+     <variablelist xmlns="http://docbook.org/ns/docbook">
+      <varlistentry>
+       <term>Basesystem Module</term>
+       <listitem>
+        <para>
+         This module adds a basic system on top of the &leanos;. It is required
+         by all other modules and extensions. The scope of an installation that
+         only contains the base system is comparable to the installation
+         pattern <citetitle>minimal system</citetitle> of previous &productname;
+         versions. This module is selected for installation by default and
+         should not be deselected.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> None
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>Containers Module</term>
+       <listitem>
+        <para>
+         Contains support and tools for containers.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry>
+       <term>Desktop Applications Module</term>
+       <listitem>
+        <para>
+         Adds a graphical user interface and essential desktop applications
+	 to the system.
+	 <phrase os="sled">This module is selected for installation by
+         default; deselcting it is not recommended.</phrase>
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry>
+       <term>Development Tools Module</term>
+       <listitem>
+        <para>
+         Contains compilers (including <package>gcc</package>) and libraries
+         required for compiling and debugging applications.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Desktop Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>Legacy Module</term>
+       <listitem>
+        <para>
+         Contains packages that were available in previous versions of
+         &productname;, but have been discontinued in &slsa;
+         &productnumber;. This module is recommended when migrating from a
+         previous &slsa; version.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Server Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>Public Cloud Module</term>
+       <listitem>
+        <para>
+         Contains all tools required to create images for deploying
+         &productname; in cloud environments such as the Amazon Web Services
+         (AWS), Microsoft Azure, Google Compute Platform, or the &suse;
+         OpenStack Cloud.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Server Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>Server Applications Module</term>
+       <listitem>
+        <para>
+         Adds server functionality by providing network services such as DHCP
+         server, name server, or Web server. <phrase os="sles">This module is
+	 selected for installation by default; deselcting it is not
+	 recommended.</phrase>
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry>
+       <term>&suse; Cloud Application Platform Tools Module</term>
+       <listitem>
+        <para>
+         Adds tools allowing you to interact with a &suse; Cloud Application
+         Platform product.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry>
+       <term>&suse; Package Hub</term>
+       <listitem>
+        <para>
+	 Provides access to packages for &productname; maintained by the
+	 &opensuse; community. These packages are delivered without L3 support
+         and do not interfere with the supportability of &productname;. For
+	 more information refer to <link
+	 xmlns:xlink="http://www.w3.org/1999/xlink"
+         xlink:href="https://packagehub.suse.com/"/>.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>Web and Scripting Module</term>
+       <listitem>
+        <para>
+         Contains packages intended for a running Web server.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Server Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>&suse; Enterprise Storage</term>
+       <listitem>
+        <para>
+         Adds support for distributed storage with Ceph to &productname;.
+	 Requires a separate license key.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Server Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>&sle; &hasi;</term>
+       <listitem>
+        <para>
+         Adds clustering support for mission critical setups to &productname;.
+	 This extension requires a separate license key.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Server Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>&sle; Live Patching</term>
+       <listitem>
+        <para>
+         Adds support for performing critical patching without having to shut
+	 down the system. This extension requires a separate license key.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Server Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sles">
+       <term>&sle; Workstation Extension</term>
+       <listitem>
+        <para>
+         Extends the functionality of &productname; with packages from &sled;,
+         like additional desktop applications (office suite, email client,
+         graphical editor, etc.) and libraries. It allows to combine both
+         products to create a fully featured workstation. This extension
+	 requires a separate license key.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Desktop Applications
+        </para>
+       </listitem>
+      </varlistentry>
+      <varlistentry os="sled">
+       <term>&sle; Workstation Extension</term>
+       <listitem>
+        <para>
+         Contains additional desktop tools such as an office suite or
+         multimedia software such as music and video players. This extension
+         is included in the &productname; subscription and is selected for
+         installation by default; deselcting it is not recommended.
+        </para>
+        <para>
+         <emphasis>Dependencies:</emphasis> Basesystem, Desktop Applications
+        </para>
+       </listitem>
+      </varlistentry>
+     </variablelist>
+     <para xmlns="http://docbook.org/ns/docbook">
+      Some modules depend on the installation of other
+      modules. Therefore, when selecting a module, other modules may be
+      selected automatically to fulfill dependencies.
+     </para>
+     <para xmlns="http://docbook.org/ns/docbook">
+      Depending on the product, the registration server can mark modules and
+      extensions as recommended. Recommended modules and extensions are
+      preselected for registration and installation. To avoid installing
+      these recommendations, deselect them manually.
+     </para>
+     <para xmlns="http://docbook.org/ns/docbook">
+      Select the modules and extension you would like to install and proceed
+      with <guimenu>Next</guimenu>. In case you have chosen one or more
+      extensions, you will be prompted to provide the respective registration
+      codes. Depending on your choice, it may also be necessary to accept
+      additional license agreements.
+     </para>'>
+
+<!ENTITY extension_module_selection_offline '<para xmlns="http://docbook.org/ns/docbook">
+      The &allmodules; ISO images contains extensions and modules for all &sle;
+      products. Make sure to only select modules and extensions listed below,
+      otherwise you will end up with a system that may fail to install and is not
+      covered by &suse; support.
+    </para>
+    <variablelist xmlns="http://docbook.org/ns/docbook">
+     <varlistentry os="sles">
+      <term>Product</term>
+      <listitem>
+       <para>
+        Selecting a product is mandatory. Choose
+        <guimenu>SLES 15 15-0</guimenu>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry os="sled">
+      <term>Product</term>
+      <listitem>
+       <para>
+        Selecting a product is mandatory.
+        Choose <guimenu>SLED 15 15-0</guimenu>.
+       </para>
+      </listitem>
+     </varlistentry>
+     <varlistentry>
+      <term>Modules</term>
+      <listitem>
+       <para>
+        Modules extend the functionality of &productname; and
+        are free of charge. Installing the <guimenu>Basesystem-Module
+        15-0</guimenu> is required. It is also recommended to install the
+        <guimenu os="sles">Server-Applications-Module 15-0</guimenu><guimenu
+        os="sled">Desktop-Applications-Module 15-0</guimenu>.
+       </para>
+       <para>
+        Note that most modules depend on other modules. These dependencies
+        cannot be resolved automatically here. Make sure to manually solve the
+        dependencies, otherwise the installation will fail later on. Refer to
+        the following list for details.
+       </para>
+       <formalpara>
+        <title><guimenu>Basesystem-Module 15-0</guimenu></title>
+        <para>
+         This module adds a basic system on top of the &leanos;. It is required
+         by all other modules and extensions. The scope of an installation that
+         only contains the base system is comparable to the installation
+         pattern <citetitle>minimal system</citetitle> of previous &productname;
+         versions. <emphasis>Dependencies:</emphasis> None
+        </para>
+       </formalpara>
+       <formalpara os="sles">
+        <title><guimenu>Containers-Module 15-0</guimenu></title>
+        <para>
+         Contains support and tools for
+         containers. <emphasis>Dependencies:</emphasis> Basesystem
+        </para>
+       </formalpara>
+       <formalpara>
+        <title><guimenu>Desktop-Applications-Module 15-0</guimenu></title>
+        <para>
+         Adds a graphical user interface and essential desktop
+         applications to the system. <emphasis>Dependencies:</emphasis>
+	 Basesystem
+        </para>
+       </formalpara>
+       <formalpara>
+        <title><guimenu>Development-Tools-Module 15-0</guimenu></title>
+        <para>
+         Contains compilers (including <package>gcc</package>) and libraries
+         required for compiling and debugging applications.
+        </para>
+       </formalpara>
+       <formalpara os="sles">
+        <title><guimenu>Legacy-Module 15-0</guimenu></title>
+        <para>
+         Contains packages that were available in previous versions of
+         &productname;, but have been discontinued in &slsa;
+         &productnumber;. This module is recommended when migrating from a
+         previous &slsa; version. <emphasis>Dependencies:</emphasis>
+         Basesystem, Server Applications
+        </para>
+       </formalpara>
+       <formalpara os="sles">
+        <title><guimenu>Public-Cloud-Module 15-0</guimenu></title>
+        <para>
+         Contains all tools required to create images for deploying
+         &productname; in cloud environments such as the Amazon Web Services
+         (AWS), Microsoft Azure, Google Compute Platform, or the &suse;
+         OpenStack Cloud. <emphasis>Dependencies:</emphasis> Basesystem, Server
+         Applications
+        </para>
+       </formalpara>
+       <formalpara os="sles">
+        <title><guimenu>Server-Applications-Module 15-0</guimenu></title>
+        <para>
+         Adds server functionality by providing network services such as DHCP
+         server, name server, or Web server. <emphasis>Dependencies:</emphasis>
+         Basesystem
+        </para>
+       </formalpara>
+       <formalpara os="sles">
+        <title><guimenu>Web-Scripting-Module 15-0</guimenu></title>
+        <para>
+         Contains packages intended for a running
+         Web server. <emphasis>Dependencies:</emphasis> Basesystem, Server
+         Applications
+        </para>
+       </formalpara>
+      </listitem>
+     </varlistentry>
+     <varlistentry os="sles">
+      <term>Extensions</term>
+      <listitem>
+       <para>
+        Choosing an extension is optional. Extensions add further core
+        functionality to &productname; and require a registration code which is
+        liable for costs.
+       </para>
+       <para>
+        Note that extensions depend on modules. These dependencies cannot be
+        resolved automatically here. Make sure to manually solve the
+        dependencies, otherwise the installation will fail later on. Refer to
+        the following list for details.
+       </para>
+       <formalpara>
+        <title>&sle; &hasi; (<guimenu>SLEHA15 15-0</guimenu>)</title>
+        <para>
+         Adds clustering support for mission critical setups to
+         &productname;. Choose <guimenu>SLEHA15 15-0</guimenu> to install
+         it. <emphasis>Dependencies:</emphasis> Basesystem, Server Applications
+        </para>
+       </formalpara>
+       <formalpara>
+        <title>
+         &sle; Workstation Extension (<guimenu>SLEWE15 15-0</guimenu>).
+        </title>
+        <para>
+         Extends the functionality of &productname; with packages from &sled;,
+         like additional desktop applications (office suite, email client,
+         graphical editor, etc.) and libraries. It allows to combine both
+         products to create a fully featured workstation. Choose
+         <guimenu>SLEWE15 15-0</guimenu> to install
+         it. <emphasis>Dependencies:</emphasis> Basesystem, Desktop
+         Applications
+        </para>
+       </formalpara>
+      </listitem>
+     </varlistentry>
+     <varlistentry os="sled">
+      <term>&sle; Workstation Extension (<guimenu>SLEWE15 15-0</guimenu>)</term>
+      <listitem>
+       <para>
+        Contains additional desktop tools such as an office suite or
+        multimedia software such as music and video players. The &sle;
+        Workstation Extension for &sled; is free of charge and does nor require
+        an additional registration code. Installing <guimenu>SLEWE15
+        15-0</guimenu> is recommended.
+       </para>
+      </listitem>
+     </varlistentry>
+    </variablelist>
+
+    <warning os="sles" xmlns="http://docbook.org/ns/docbook">
+     <title>Forbidden Selections</title>
+     <para>
+      Do <emphasis>not</emphasis> install any of the following selections on
+      &productname;, otherwise you will end up with a system that may fail to
+      install and is not covered by &suse; support.
+     </para>
+     <itemizedlist spacing="compact">
+      <listitem>
+       <para>
+        <guimenu>HPC-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SAP-Applications-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SLE-15-HPC 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SLE-15-SAP 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SLED15 15-0</guimenu>
+       </para>
+      </listitem>
+     </itemizedlist>
+    </warning>
+    <warning os="sled" xmlns="http://docbook.org/ns/docbook">
+     <title>Forbidden Selections</title>
+     <para>
+      Do <emphasis>not</emphasis> install any of the following selections on
+      &productname;, otherwise you will end up with a system that may fail to
+      install and is not covered by &suse; support.
+     </para>
+     <itemizedlist spacing="compact">
+      <listitem>
+       <para>
+        <guimenu>Containers-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>HPC-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>Legacy-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>Live-Patching 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>Public-Cloud-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SAP-Applications-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SLE-15-HPC 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SLE-15-SAP 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SLEHA15 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>SLES15 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>Server-Applications-Module 15-0</guimenu>
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        <guimenu>Web-Scripting-Module 15-0</guimenu>
+       </para>
+      </listitem>
+     </itemizedlist>
+    </warning>
+    <para xmlns="http://docbook.org/ns/docbook">
+     When you have finished selecting modules and extensions, proceed with
+     <guimenu>Next</guimenu>.
+    </para>'>
+
+<!-- Additional Entities                                           -->
+<!ENTITY euro            "&#x20AC;">
+
+
+<!ENTITY % network-entities SYSTEM "network-decl.ent">
+%network-entities;
+
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/dbcentx.mod">
+  %dbcent;
+
+<!--                             End of file                       -->
+<!-- ............................................................. -->
+
