@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<fop version="1.0">
+<renderers>
+<renderer mime="application/pdf"> 
+
+<!--
+    Apache FOPを使用してPDFを作成する際、日本語用に選択されるフォントが
+    正しくない問題があるための回避策。
+
+    makeコマンドを使用する場合は、
+    make FOP_CONFIG_FILE="fop-suse-ja.xml" color-pdf
+    のように、dapsコマンドを使用する場合は
+    envfileで指定する環境設定ファイル内に
+    FOPOPTIONS="-c $(dirname $BASH_SOURCE)/fop-suse-ja.xml"
+    などを追加して実行してください。
+
+    なお、IPAGothic, IPAPGothic, IPAGothic_BoldItalic の各パッケージが
+    必要です (IPAGothic_BoldItalic パッケージは同じリポジトリ内にあります)
+-->
+<!--
+    This is a workaround for Apache FOP; when creating PDFs with FOP,
+    Japanese characters cannot render properly.
+
+    If you use "make", run as follows:
+    make FOP_CONFIG_FILE="fop-suse-ja.xml" color-pdf
+    If you use daps, add this line to the environment file (DC-*, ENV-*):
+    FOPOPTIONS="-c $(dirname $BASH_SOURCE)/fop-suse-ja.xml"
+
+    IPAGothic, IPAPGothic, IPAGothic_BoldItalic packages required.
+    (IPAGothic_BoldItalic is provided at the same repository.)
+-->
+<fonts>
+ <font embed-url="/usr/share/fonts/truetype/ipagp.ttf" kerning="yes">
+   <font-triplet name="LiberationSans" style="normal" weight="normal"/>
+   <font-triplet name="suse_sans" style="normal" weight="normal"/>
+   <font-triplet name="serif" style="normal" weight="normal"/>
+   <font-triplet name="sans-serif" style="normal" weight="normal"/>
+   <font-triplet name="Dingbats" style="normal" weight="normal"/>
+   <font-triplet name="Serif" style="normal" weight="normal"/>
+   <font-triplet name="SansSerif" style="normal" weight="normal"/>
+ </font>
+ <font embed-url="/usr/share/fonts/truetype/ipagp_b.ttf" kerning="yes">
+   <font-triplet name="LiberationSans" style="normal" weight="bold"/>
+   <font-triplet name="suse_sans" style="normal" weight="bold"/>
+   <font-triplet name="serif" style="normal" weight="bold"/>
+   <font-triplet name="sans-serif" style="normal" weight="bold"/>
+   <font-triplet name="Dingbats" style="normal" weight="bold"/>
+   <font-triplet name="Serif" style="normal" weight="bold"/>
+   <font-triplet name="SansSerif" style="normal" weight="bold"/>
+ </font>
+ <font embed-url="/usr/share/fonts/truetype/ipagp_i.ttf" kerning="yes">
+   <font-triplet name="LiberationSans" style="italic" weight="normal"/>
+   <font-triplet name="suse_sans" style="italic" weight="normal"/>
+   <font-triplet name="serif" style="italic" weight="normal"/>
+   <font-triplet name="sans-serif" style="italic" weight="normal"/>
+   <font-triplet name="Dingbats" style="italic" weight="normal"/>
+   <font-triplet name="Serif" style="italic" weight="normal"/>
+   <font-triplet name="SansSerif" style="italic" weight="normal"/>
+
+   <font-triplet name="LiberationSans" style="oblique" weight="normal"/>
+   <font-triplet name="suse_sans" style="oblique" weight="normal"/>
+   <font-triplet name="serif" style="oblique" weight="normal"/>
+   <font-triplet name="sans-serif" style="oblique" weight="normal"/>
+   <font-triplet name="Dingbats" style="oblique" weight="normal"/>
+   <font-triplet name="Serif" style="oblique" weight="normal"/>
+   <font-triplet name="SansSerif" style="oblique" weight="normal"/>
+ </font>
+ <font embed-url="/usr/share/fonts/truetype/ipagp_bi.ttf" kerning="yes">
+   <font-triplet name="LiberationSans" style="italic" weight="bold"/>
+   <font-triplet name="suse_sans" style="italic" weight="bold"/>
+   <font-triplet name="serif" style="italic" weight="bold"/>
+   <font-triplet name="sans-serif" style="italic" weight="bold"/>
+   <font-triplet name="Dingbats" style="italic" weight="bold"/>
+   <font-triplet name="Serif" style="italic" weight="bold"/>
+   <font-triplet name="SansSerif" style="italic" weight="bold"/>
+
+   <font-triplet name="LiberationSans" style="oblique" weight="bold"/>
+   <font-triplet name="suse_sans" style="oblique" weight="bold"/>
+   <font-triplet name="serif" style="oblique" weight="bold"/>
+   <font-triplet name="sans-serif" style="oblique" weight="bold"/>
+   <font-triplet name="Dingbats" style="oblique" weight="bold"/>
+   <font-triplet name="Serif" style="oblique" weight="bold"/>
+   <font-triplet name="SansSerif" style="oblique" weight="bold"/>
+ </font>
+ <font embed-url="/usr/share/fonts/truetype/ipag.ttf" kerning="yes">
+   <font-triplet name="FreeMono" style="normal" weight="normal"/>
+   <font-triplet name="suse.mono" style="normal" weight="normal"/>
+ </font>
+ <font embed-url="/usr/share/fonts/truetype/ipag_b.ttf" kerning="yes">
+   <font-triplet name="FreeMono" style="normal" weight="bold"/>
+   <font-triplet name="suse.mono" style="normal" weight="bold"/>
+ </font>
+ <font embed-url="/usr/share/fonts/truetype/ipag_i.ttf" kerning="yes">
+   <font-triplet name="FreeMono" style="italic" weight="normal"/>
+   <font-triplet name="suse.mono" style="italic" weight="normal"/>
+
+   <font-triplet name="FreeMono" style="oblique" weight="normal"/>
+   <font-triplet name="suse.mono" style="oblique" weight="normal"/>
+ </font>
+ <font embed-url="/usr/share/fonts/truetype/ipag_bi.ttf" kerning="yes">
+   <font-triplet name="FreeMono" style="italic" weight="bold"/>
+   <font-triplet name="suse.mono" style="italic" weight="bold"/>
+
+   <font-triplet name="FreeMono" style="oblique" weight="bold"/>
+   <font-triplet name="suse.mono" style="oblique" weight="bold"/>
+ </font>
+</fonts>
+</renderer>
+</renderers>
+</fop>
