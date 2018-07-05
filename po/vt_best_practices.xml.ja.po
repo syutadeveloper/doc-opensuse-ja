@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,14 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. Tag: xml-stylesheet
-#: vt_best_practices.xml:4
-#, no-c-format
-msgid ""
-"<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook50-profile.xsl\" "
-"type=\"text/xml\" title=\"Profiling step\"?>"
-msgstr ""
 
 #. Tag: suse-quickstart
 #: vt_best_practices.xml:11
@@ -435,28 +427,15 @@ msgstr ""
 msgid "Start your &vmguest; and check on the host whether it uses hugepages:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:370
 #, no-c-format
-msgid "&prompt.user;cat /proc/meminfo | grep HugePages_HugePages_Total:"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:372
-#, no-c-format
-msgid "512HugePages_Free:"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:373
-#, no-c-format
-msgid "92HugePages_Rsvd:"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:374
-#, no-c-format
-msgid "0HugePages_Surp:"
+msgid ""
+"&prompt.user;cat /proc/meminfo | grep HugePages_\n"
+"HugePages_Total:<co xml:id=\"co.hp.total\"/>     512\n"
+"HugePages_Free:<co xml:id=\"co.hp.free\"/>       92\n"
+"HugePages_Rsvd:<co xml:id=\"co.hp.rsvd\"/>        0\n"
+"HugePages_Surp:<co xml:id=\"co.hp.surp\"/>        0"
 msgstr ""
 
 #. Tag: para
@@ -877,40 +856,17 @@ msgid ""
 "&vmguest;'s configuration file:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:658
 #, no-c-format
-msgid "unit='KiB'&gt;20971520"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:658
-#, no-c-format
-msgid "&lt;/maxMemory&gt; &lt;memory"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:658
-#, no-c-format
-msgid "&lt;maxMemory"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:658
-#, no-c-format
-msgid "slots='16'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:659
-#, no-c-format
-msgid "unit='KiB'&gt;1048576&lt;/memory&gt;&lt;currentMemory"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:660
-#, no-c-format
-msgid "unit='KiB'&gt;1048576&lt;/currentMemory&gt;"
+msgid ""
+"&lt;maxMemory<co xml:id=\"co.mem.hot.max\"/> slots='16'<co xml:id=\"co.mem."
+"hot.slots\"/> unit='KiB'&gt;20971520<co xml:id=\"co.mem.hot.size\"/>&lt;/"
+"maxMemory&gt;\n"
+"  &lt;memory<co xml:id=\"co.mem.hot.mem\"/> unit='KiB'&gt;1048576&lt;/"
+"memory&gt;\n"
+"&lt;currentMemory<co xml:id=\"co.mem.hot.curr\"/> unit='KiB'&gt;1048576&lt;/"
+"currentMemory&gt;"
 msgstr ""
 
 #. Tag: para
@@ -1116,34 +1072,18 @@ msgid ""
 "because the host can terminate the domain if the value is too low."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:796
 #, no-c-format
-msgid "&lt;memtune&gt;"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:797
-#, no-c-format
-msgid "&lt;hard_limit unit='G'&gt;1&lt;/hard_limit&gt;"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:798
-#, no-c-format
-msgid "&lt;soft_limit unit='M'&gt;128&lt;/soft_limit&gt;"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:799
-#, no-c-format
-msgid "&lt;swap_hard_limit unit='G'&gt;2&lt;/swap_hard_limit&gt;"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:800
-#, no-c-format
-msgid "&lt;/memtune&gt;"
+msgid ""
+"&lt;memtune&gt;<co xml:id=\"co.mem.1\"/>\n"
+"  &lt;hard_limit unit='G'&gt;1&lt;/hard_limit&gt;<co xml:id=\"co.mem.hard\"/"
+">\n"
+"  &lt;soft_limit unit='M'&gt;128&lt;/soft_limit&gt;<co xml:id=\"co.mem.soft"
+"\"/>\n"
+"  &lt;swap_hard_limit unit='G'&gt;2&lt;/swap_hard_limit&gt;<co xml:id=\"co."
+"mem.swap\"/>\n"
+"&lt;/memtune&gt;"
 msgstr ""
 
 #. Tag: para
@@ -1350,31 +1290,16 @@ msgstr ""
 msgid "I/O Virtualization"
 msgstr ""
 
-#. Tag: #text
-#: vt_best_practices.xml:921
+#. Tag: para
+#: vt_best_practices.xml:920
 #, no-c-format
 msgid ""
 "&suse; products support various I/O virtualization technologies. The "
 "following table lists advantages and disadvantages of each technology. For "
-"more information about I/O in virtualization refer to the"
-msgstr ""
-
-#. Tag: link
-#: vt_best_practices.xml:924
-#, no-c-format
-msgid "I/O in Virtualization"
-msgstr ""
-
-#. Tag: citetitle
-#: vt_best_practices.xml:925
-#, no-c-format
-msgid "&productname; &productnumber; Virtualization Guide"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:925
-#, no-c-format
-msgid "chapter in the"
+"more information about I/O in virtualization refer to the <link xlink:href="
+"\"https://www.suse.com/documentation/sles-12/book_virt/data/sec_vt_io.html"
+"\">I/O in Virtualization</link> chapter in the <citetitle>&productname; "
+"&productnumber; Virtualization Guide</citetitle> ."
 msgstr ""
 
 #. Tag: title
@@ -1636,58 +1561,15 @@ msgid ""
 "frozen if there is any instance of hanging."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:1237
 #, no-c-format
-msgid ",sync"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid "nfs"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid ",wsize=8192"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid "/mnt/images"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid ",hard"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid "nfs_server:/exported/vm_images"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid "rw"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid ", rsize=8192"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1237
-#, no-c-format
-msgid "0 0"
+msgid ""
+"nfs_server:/exported/vm_images<co xml:id=\"co.nfs.server\"/> /mnt/images<co "
+"xml:id=\"co.nfs.mnt\"/> nfs<co xml:id=\"co.nfs.nfs\"/> rw<co xml:id=\"co.nfs."
+"rw\"/>,hard<co xml:id=\"co.nfs.hard\"/>,sync<co xml:id=\"co.nfs.sync\"/>, "
+"rsize=8192<co xml:id=\"co.nfs.rsize\"/>,wsize=8192<co xml:id=\"co.nfs.wsize"
+"\"/> 0 0"
 msgstr ""
 
 #. Tag: para
@@ -1772,60 +1654,15 @@ msgid ""
 "6401066    198          0          0"
 msgstr ""
 
-#. Tag: #text
-#: vt_best_practices.xml:1299
-#, no-c-format
-msgid "If the"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1301
+#. Tag: para
+#: vt_best_practices.xml:1298
 #, no-c-format
 msgid ""
-"is equal to 0, everything is fine. Otherwise, the client needs to "
-"retransmit, so increase the"
-msgstr ""
-
-#. Tag: envar
-#: vt_best_practices.xml:1301
-#, no-c-format
-msgid "USE_KERNEL_NFSD_NUMBER"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1302
-#, no-c-format
-msgid "variable in"
-msgstr ""
-
-#. Tag: filename
-#: vt_best_practices.xml:1302
-#, no-c-format
-msgid "/etc/sysconfig/nfs"
-msgstr ""
-
-#. Tag: literal
-#: vt_best_practices.xml:1303
-#, no-c-format
-msgid "retrans"
-msgstr ""
-
-#. Tag: literal
-#: vt_best_practices.xml:1303
-#, no-c-format
-msgid "0"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1303
-#, no-c-format
-msgid "is equal to"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1303
-#, no-c-format
-msgid ", and adjust accordingly until"
+"If the <literal>retrans</literal> is equal to 0, everything is fine. "
+"Otherwise, the client needs to retransmit, so increase the "
+"<envar>USE_KERNEL_NFSD_NUMBER</envar> variable in <filename>/etc/sysconfig/"
+"nfs</filename> , and adjust accordingly until <literal>retrans</literal> is "
+"equal to <literal>0</literal> ."
 msgstr ""
 
 #. Tag: title
@@ -2280,35 +2117,18 @@ msgid ""
 "the thresholds for scan delays and the number of pages scanned:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:1583
 #, no-c-format
 msgid ""
-"&prompt.user;&sudo; sysctl -a | grep numa_balancingkernel.numa_balancing = 1"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1585
-#, no-c-format
-msgid "kernel.numa_balancing_scan_delay_ms = 1000"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1586
-#, no-c-format
-msgid "kernel.numa_balancing_scan_period_max_ms = 60000"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1587
-#, no-c-format
-msgid "kernel.numa_balancing_scan_period_min_ms = 1000"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1588
-#, no-c-format
-msgid "kernel.numa_balancing_scan_size_mb = 256"
+"&prompt.user;&sudo; sysctl -a | grep numa_balancing\n"
+"kernel.numa_balancing = 1<co xml:id=\"co.numa.balancing\"/>\n"
+"kernel.numa_balancing_scan_delay_ms = 1000<co xml:id=\"co.numa.delay\"/>\n"
+"kernel.numa_balancing_scan_period_max_ms = 60000<co xml:id=\"co.numa.pmax\"/"
+">\n"
+"kernel.numa_balancing_scan_period_min_ms = 1000<co xml:id=\"co.numa.pmin\"/"
+">\n"
+"kernel.numa_balancing_scan_size_mb = 256<co xml:id=\"co.numa.size\"/>"
 msgstr ""
 
 #. Tag: para
@@ -2505,47 +2325,21 @@ msgid ""
 "<literal>numa</literal> element in the XML configuration:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:1710
 #, no-c-format
-msgid "&lt;cpu&gt;... &lt;numa&gt; &lt;cell"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1713
-#, no-c-format
 msgid ""
-"memory='512000' unit='KiB'/&gt; &lt;cell id='1' cpus='2-3' memory='256000'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1713
-#, no-c-format
-msgid "id='0'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1713
-#, no-c-format
-msgid "cpus='0-1'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1715
-#, no-c-format
-msgid "memAccess='shared'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1715
-#, no-c-format
-msgid "unit='KiB'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1716
-#, no-c-format
-msgid "/&gt; &lt;/numa&gt; ...&lt;/cpu&gt;"
+"&lt;cpu&gt;\n"
+"...\n"
+"  &lt;numa&gt;\n"
+"    &lt;cell<co xml:id=\"co.numa.cell\"/> id='0'<co xml:id=\"co.numa.id\"/> "
+"cpus='0-1'<co xml:id=\"co.numa.cpus\"/> memory='512000' unit='KiB'/&gt;\n"
+"    &lt;cell id='1' cpus='2-3' memory='256000'<co xml:id=\"co.numa.mem\"/>\n"
+"    unit='KiB'<co xml:id=\"co.numa.unit\"/> memAccess='shared'<co xml:id="
+"\"co.numa.memaccess\"/>/&gt;\n"
+"  &lt;/numa&gt;\n"
+"  ...\n"
+"&lt;/cpu&gt;"
 msgstr ""
 
 #. Tag: para
@@ -2631,42 +2425,18 @@ msgid ""
 "alloc_libvirt.non-vnuma\"/> for how to configure non-vNUMA &vmguest;s."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:1780
 #, no-c-format
-msgid "&lt;numatune&gt; &lt;memory mode=\"strict\""
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1781
-#, no-c-format
-msgid "/&gt; &lt;memnode"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1781
-#, no-c-format
-msgid "nodeset=\"1-4,^3\""
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1782
-#, no-c-format
 msgid ""
-"mode=\"strict\" nodeset=\"1\"/&gt; &lt;memnode cellid=\"2\" placement="
-"\"strict\""
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1782
-#, no-c-format
-msgid "cellid=\"0\""
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:1783
-#, no-c-format
-msgid "mode=\"preferred\" nodeset=\"2\"/&gt;&lt;/numatune&gt;"
+"&lt;numatune&gt;\n"
+"    &lt;memory mode=\"strict\"<co xml:id=\"co.numat.mode\"/> nodeset=\"1-4,"
+"^3\"<co xml:id=\"co.numat.nodeset\"/>/&gt;\n"
+"    &lt;memnode<co xml:id=\"co.numat.memnode\"/> cellid=\"0\"<co xml:id=\"co."
+"numat.cellid\"/> mode=\"strict\" nodeset=\"1\"/&gt;\n"
+"    &lt;memnode cellid=\"2\" placement=\"strict\"<co xml:id=\"co.numat."
+"placement\"/> mode=\"preferred\" nodeset=\"2\"/&gt;\n"
+"&lt;/numatune&gt;"
 msgstr ""
 
 #. Tag: para
@@ -3084,34 +2854,15 @@ msgstr ""
 msgid "To create an overlay image:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:2093
 #, no-c-format
-msgid ",backing_fmt=raw"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2093
-#, no-c-format
-msgid "&prompt.root;qemu-img create -o"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2093
-#, no-c-format
-msgid "backing_file=vmguest.raw"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2094
-#, no-c-format
-msgid "qcow2 vmguest.cow"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2094
-#, no-c-format
-msgid "\\ -f"
+msgid ""
+"&prompt.root;qemu-img create -o<co xml:id=\"co.1.minoro\"/"
+">backing_file=vmguest.raw<co xml:id=\"co.1.backingfile\"/>,"
+"backing_fmt=raw<co xml:id=\"co.1.backingfmt\"/>\\\n"
+"     -f<co xml:id=\"co.1.minorf\"/> qcow2 vmguest.cow<co xml:id=\"co.1."
+"imagename\"/>"
 msgstr ""
 
 #. Tag: para
@@ -3162,30 +2913,15 @@ msgid ""
 "and then use the <command>qemu-img</command> <option>rebase</option> option."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:2132
 #, no-c-format
 msgid ""
-"&prompt.root;ln -sf /var/lib/images/vmguest.raw /var/lib/images/SLE12/"
-"vmguest.raw&prompt.root;qemu-img rebase"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2133
-#, no-c-format
-msgid "-b"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2133
-#, no-c-format
-msgid "-u"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2133
-#, no-c-format
-msgid "/var/lib/images/vmguest.raw /var/lib/images/SLE12/vmguest.cow"
+"&prompt.root;ln -sf /var/lib/images/vmguest.raw  /var/lib/images/SLE12/"
+"vmguest.raw\n"
+"&prompt.root;qemu-img rebase<co xml:id=\"co.2.rebase\"/>-u<co xml:id=\"co.2."
+"unsafe\"/> -b<co xml:id=\"co.2.minorb\"/> /var/lib/images/vmguest.raw /var/"
+"lib/images/SLE12/vmguest.cow<co xml:id=\"co.2.image\"/>"
 msgstr ""
 
 #. Tag: para
@@ -3424,22 +3160,13 @@ msgstr ""
 msgid "Check the image's partitions with <command>kpartx</command> :"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:2341
 #, no-c-format
-msgid "&prompt.root;kpartx -a"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2341
-#, no-c-format
-msgid "-v"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2342
-#, no-c-format
-msgid "/dev/loop1add map loop1p1 (254:1): 0 29358080 linear /dev/loop1 2048"
+msgid ""
+"&prompt.root;kpartx -a<co xml:id=\"co.kpartx.a\"/> -v<co xml:id=\"co.kpartx.v"
+"\"/> /dev/loop1\n"
+"add map loop1p1 (254:1): 0 29358080 linear /dev/loop1 2048"
 msgstr ""
 
 #. Tag: para
@@ -3561,22 +3288,12 @@ msgid ""
 "device:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:2419
 #, no-c-format
-msgid "SLE12.qcow2"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2419
-#, no-c-format
-msgid "&prompt.root;qemu-nbd -c"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2419
-#, no-c-format
-msgid "/dev/nbd0"
+msgid ""
+"&prompt.root;qemu-nbd -c<co xml:id=\"co.qemunbd.minusc\"/> /dev/nbd0<co xml:"
+"id=\"co.qemunbd.device\"/> SLE12.qcow2<co xml:id=\"co.qemunbd.image\"/>"
 msgstr ""
 
 #. Tag: para
@@ -3910,100 +3627,28 @@ msgstr ""
 msgid "File System Sharing"
 msgstr ""
 
-#. Tag: #text
-#: vt_best_practices.xml:2641
+#. Tag: para
+#: vt_best_practices.xml:2640
 #, no-c-format
-msgid "You can access a host directory in the &vmguest; using the"
+msgid ""
+"You can access a host directory in the &vmguest; using the <tag class="
+"\"element\">filesystem</tag> element. In the following example we will share "
+"the <filename>/data/shared</filename> directory and mount it in the "
+"&vmguest;. Note that the <tag class=\"attribute\">accessmode</tag> parameter "
+"only works with <tag class=\"attribute\">type='mount'</tag> for the &qemu;/"
+"&kvm; drive (most other values for <tag class=\"attribute\">type</tag> are "
+"exclusively used for the LXC driver)."
 msgstr ""
 
-#. Tag: tag
-#: vt_best_practices.xml:2642
-#, no-c-format
-msgid "filesystem"
-msgstr ""
-
-#. Tag: filename
-#: vt_best_practices.xml:2643
-#, no-c-format
-msgid "/data/shared"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2643
-#, no-c-format
-msgid "element. In the following example we will share the"
-msgstr ""
-
-#. Tag: tag
-#: vt_best_practices.xml:2644
-#, no-c-format
-msgid "accessmode"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2644
-#, no-c-format
-msgid "directory and mount it in the &vmguest;. Note that the"
-msgstr ""
-
-#. Tag: tag
-#: vt_best_practices.xml:2645
-#, no-c-format
-msgid "type='mount'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2645
-#, no-c-format
-msgid "parameter only works with"
-msgstr ""
-
-#. Tag: tag
-#: vt_best_practices.xml:2646
-#, no-c-format
-msgid "type"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2646
-#, no-c-format
-msgid "for the &qemu;/&kvm; drive (most other values for"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2648
-#, no-c-format
-msgid "are exclusively used for the LXC driver)."
-msgstr ""
-
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:2649
 #, no-c-format
-msgid "accessmode='mapped'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2649
-#, no-c-format
-msgid "&gt; &lt;source dir='/data/shared'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2649
-#, no-c-format
-msgid "&lt;filesystem type='mount'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2650
-#, no-c-format
-msgid "&gt; &lt;target dir='shared'"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2651
-#, no-c-format
-msgid "/&gt;&lt;/filesystem&gt;"
+msgid ""
+"&lt;filesystem type='mount'<co xml:id=\"co.fs.mount\"/> "
+"accessmode='mapped'<co xml:id=\"co.fs.mode\"/>&gt;\n"
+"   &lt;source dir='/data/shared'<co xml:id=\"co.fs.sourcedir\"/>&gt;\n"
+"   &lt;target dir='shared'<co xml:id=\"co.fs.targetdir\"/>/&gt;\n"
+"&lt;/filesystem&gt;"
 msgstr ""
 
 #. Tag: para
@@ -4094,52 +3739,14 @@ msgstr ""
 msgid "<literal>virtio blk</literal>"
 msgstr ""
 
-#. Tag: literal
-#: vt_best_practices.xml:2717
+#. Tag: para
+#: vt_best_practices.xml:2716
 #, no-c-format
-msgid "virtio_blk"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2718
-#, no-c-format
-msgid "is the virtio block device for disk. To use the"
-msgstr ""
-
-#. Tag: literal
-#: vt_best_practices.xml:2718
-#, no-c-format
-msgid "virtio blk"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2719
-#, no-c-format
-msgid "driver for a block device, specify the"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2719
-#, no-c-format
-msgid "attribute in the"
-msgstr ""
-
-#. Tag: tag
-#: vt_best_practices.xml:2719
-#, no-c-format
-msgid "bus='virtio'"
-msgstr ""
-
-#. Tag: tag
-#: vt_best_practices.xml:2720
-#, no-c-format
-msgid "disk"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:2721
-#, no-c-format
-msgid "definition:"
+msgid ""
+"<literal>virtio_blk</literal> is the virtio block device for disk. To use "
+"the <literal>virtio blk</literal> driver for a block device, specify the "
+"<tag class=\"attribute\">bus='virtio'</tag> attribute in the <tag class="
+"\"element\">disk</tag> definition:"
 msgstr ""
 
 #. Tag: screen
@@ -4768,19 +4375,15 @@ msgid ""
 "&lt;/features&gt;"
 msgstr ""
 
-#. Tag: #text
-#: vt_best_practices.xml:3101
+#. Tag: para
+#: vt_best_practices.xml:3100
 #, no-c-format
 msgid ""
 "If ACPI was enabled during a Windows Server&thrdmrk; guest installation, it "
 "is not sufficient to turn it on in the &vmguest; configuration only. For "
-"more information, see"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3105
-#, no-c-format
-msgid "."
+"more information, see <link xlink:href=\"https://support.microsoft.com/en-us/"
+"kb/309283\"/> . <remark>FIXME: URL is for XP and Server 2003. Is there "
+"something newer? - sknorr, 2017-06-07</remark>"
 msgstr ""
 
 #. Tag: para
@@ -4889,22 +4492,12 @@ msgid ""
 "&vmguest; from the XML file."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:3163
 #, no-c-format
-msgid "SLE12.xml"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3163
-#, no-c-format
-msgid "qemu-argv"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3163
-#, no-c-format
-msgid "&prompt.user;virsh domxml-to-native"
+msgid ""
+"&prompt.user;virsh domxml-to-native<co xml:id=\"co.domxml.native\"/> qemu-"
+"argv<co xml:id=\"co.domxml.argv\"/> SLE12.xml<co xml:id=\"co.domxml.file\"/>"
 msgstr ""
 
 #. Tag: para
@@ -5352,24 +4945,14 @@ msgstr ""
 msgid "Format the disk image:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:3842
 #, no-c-format
-msgid "&prompt.root;modprobe nbd"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3843
-#, no-c-format
 msgid ""
+"&prompt.root;modprobe nbd<co xml:id=\"co.vsmkfs.modprobe\"/>\n"
 "&prompt.root;/usr/bin/qemu-nbd --format qcow2 -n -c /dev/nbd0 $PWD/test-base."
-"qcow2"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3844
-#, no-c-format
-msgid "&prompt.root;mkfs.ext3 /dev/nbd0"
+"qcow2<co xml:id=\"co.vsmkfs.qemu-nbd\"/>\n"
+"&prompt.root;mkfs.ext3 /dev/nbd0<co xml:id=\"co.vsmkfs.do\"/>"
 msgstr ""
 
 #. Tag: para
@@ -5413,24 +4996,18 @@ msgstr ""
 msgid "Now populate the newly formatted image:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:3879
 #, no-c-format
-msgid "&prompt.root;guestmount -a base.qcow2 -m /dev/sda:/ /mnt"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3882
-#, no-c-format
 msgid ""
-"&prompt.root;zypper --root /mnt ar cd:///?devices=/dev/dvd SLES12_DVD&prompt."
-"root;zypper --root /mnt in -t pattern Minimal"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3885
-#, no-c-format
-msgid "&prompt.root;guestunmount /mnt"
+"&prompt.root;guestmount -a base.qcow2 -m /dev/sda:/ /mnt<co xml:id=\"co.vsfs."
+"mount\"/>\n"
+"\n"
+"&prompt.root;zypper --root /mnt ar cd:///?devices=/dev/dvd SLES12_DVD\n"
+"&prompt.root;zypper --root /mnt in -t pattern Minimal<co xml:id=\"co.vsfs."
+"install\"/>\n"
+"\n"
+"&prompt.root;guestunmount /mnt<co xml:id=\"co.vsfs.unmount\"/>"
 msgstr ""
 
 #. Tag: para
@@ -5479,52 +5056,19 @@ msgid ""
 "command can be run as &rootuser; or as an unprivileged user."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: vt_best_practices.xml:3921
 #, no-c-format
-msgid "&prompt.root;virt-sandbox -n"
-msgstr ""
-
-#. Tag: replaceable
-#: vt_best_practices.xml:3921
-#, no-c-format
-msgid "NAME"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3922
-#, no-c-format
-msgid "\\ -m host-image:/=$PWD/rootfs.qcow2 \\"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3923
-#, no-c-format
-msgid "-m host-bind:/srv/www=/guests/www \\"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3925
-#, no-c-format
-msgid "-m ram:/tmp=100MiB \\ -m ram:/run=100MiB \\"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3926
-#, no-c-format
-msgid "-N source=default,address=192.168.122.12/24 \\"
-msgstr ""
-
-#. Tag: #text
-#: vt_best_practices.xml:3928
-#, no-c-format
-msgid "-- \\"
-msgstr ""
-
-#. Tag: replaceable
-#: vt_best_practices.xml:3928
-#, no-c-format
-msgid "/bin/sh"
+msgid ""
+"&prompt.root;virt-sandbox -n <replaceable>NAME</replaceable> \\\n"
+"     -m host-image:/=$PWD/rootfs.qcow2 \\ <co xml:id=\"co.vs.rootfs\"/>\n"
+"     -m host-bind:/srv/www=/guests/www \\ <co xml:id=\"co.vs.bind\"/>\n"
+"     -m ram:/tmp=100MiB \\\n"
+"     -m ram:/run=100MiB \\ <co xml:id=\"co.vs.tmpfs\"/>\n"
+"     -N source=default,address=192.168.122.12/24 \\ <co xml:id=\"co.vs.net\"/"
+">\n"
+"     -- \\\n"
+"     <replaceable>/bin/sh</replaceable>"
 msgstr ""
 
 #. Tag: para
@@ -5757,18 +5301,18 @@ msgid ""
 "required\t modules.\t"
 msgstr ""
 
+#. Tag: title
+#: vt_best_practices.xml:4069
+#, no-c-format
+msgid "Find your Kernel version"
+msgstr ""
+
 #. Tag: para
 #: vt_best_practices.xml:4069
 #, no-c-format
 msgid ""
 "Use the <command>uname -r</command> command to get the current version used "
 "on your system."
-msgstr ""
-
-#. Tag: title
-#: vt_best_practices.xml:4069
-#, no-c-format
-msgid "Find your Kernel version"
 msgstr ""
 
 #. Tag: para

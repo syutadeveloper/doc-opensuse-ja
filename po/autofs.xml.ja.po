@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -96,35 +96,33 @@ msgid ""
 "default one for &productname;:"
 msgstr ""
 
-#. Tag: #text
-#: autofs.xml:64
+#. Tag: screen
+#: autofs.xml:60
 #, no-c-format
 msgid ""
-"## Sample auto.master file# This is an automounter map and it has the "
-"following format# key [ -mount-options-separated-by-comma ] location# For "
-"details of the format look at autofs(5)."
-msgstr ""
-
-#. Tag: #text
-#: autofs.xml:66
-#, no-c-format
-msgid "##/misc /etc/auto.misc"
-msgstr ""
-
-#. Tag: #text
-#: autofs.xml:69
-#, no-c-format
-msgid "#/net -hosts## Include /etc/auto.master.d/*.autofs"
-msgstr ""
-
-#. Tag: #text
-#: autofs.xml:81
-#, no-c-format
-msgid ""
-"##+dir:/etc/auto.master.d## Include central master map if it can be found "
-"using# nsswitch sources.## Note that if there are entries for /net or /misc "
-"(as# above) in the included master map any keys that are the# same will not "
-"be seen as the first read key seen takes# precedence.#+auto.master"
+"#\n"
+"# Sample auto.master file\n"
+"# This is an automounter map and it has the following format\n"
+"# key [ -mount-options-separated-by-comma ] location\n"
+"# For details of the format look at autofs(5).<co xml:id=\"co.autofs.manpage"
+"\"/>\n"
+"#\n"
+"#/misc  /etc/auto.misc<co xml:id=\"co.autofs.map\"/>\n"
+"#/net -hosts\n"
+"#\n"
+"# Include /etc/auto.master.d/*.autofs<co xml:id=\"co.autofs.include\"/>\n"
+"#\n"
+"#+dir:/etc/auto.master.d\n"
+"#\n"
+"# Include central master map if it can be found using\n"
+"# nsswitch sources.\n"
+"#\n"
+"# Note that if there are entries for /net or /misc (as\n"
+"# above) in the included master map any keys that are the\n"
+"# same will not be seen as the first read key seen takes\n"
+"# precedence.\n"
+"#\n"
+"+auto.master<co xml:id=\"co.autofs.plus\"/>"
 msgstr ""
 
 #. Tag: para

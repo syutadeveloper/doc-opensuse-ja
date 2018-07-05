@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -136,22 +136,13 @@ msgstr ""
 msgid "Adding Basic Audit Configuration Parameters"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_scenarios.xml:95
 #, no-c-format
-msgid "-D"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:96
-#, no-c-format
-msgid "-b 8192"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:97
-#, no-c-format
-msgid "-f 2"
+msgid ""
+"-D<co xml:id=\"co.auctld\"/>\n"
+"-b 8192<co xml:id=\"co.auctlb\"/>\n"
+"-f 2<co xml:id=\"co.auctlf\"/>"
 msgstr ""
 
 #. Tag: para
@@ -243,25 +234,21 @@ msgid ""
 "file access, add watches for each file to monitor."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_scenarios.xml:168
 #, no-c-format
-msgid "-w /var/log/audit/"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:176
-#, no-c-format
 msgid ""
-"-w /var/log/audit/audit.log-w /var/log/audit/audit_log.1-w /var/log/audit/"
-"audit_log.2-w /var/log/audit/audit_log.3-w /var/log/audit/audit_log.4-w /etc/"
-"audit/auditd.conf -p wa"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:178
-#, no-c-format
-msgid "-w /etc/audit/audit.rules -p wa-w /etc/libaudit.conf -p wa"
+"-w /var/log/audit/ <co xml:id=\"co.auctllog\"/>\n"
+"-w /var/log/audit/audit.log\n"
+"\n"
+"-w /var/log/audit/audit_log.1\n"
+"-w /var/log/audit/audit_log.2\n"
+"-w /var/log/audit/audit_log.3\n"
+"-w /var/log/audit/audit_log.4\n"
+"\n"
+"-w /etc/audit/auditd.conf -p wa<co xml:id=\"co.auctlconf\"/>\n"
+"-w /etc/audit/audit.rules -p wa\n"
+"-w /etc/libaudit.conf -p wa"
 msgstr ""
 
 #. Tag: para
@@ -311,53 +298,31 @@ msgid ""
 "details on how to tweak the relevant settings."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_scenarios.xml:221
 #, no-c-format
 msgid ""
 "-a entry,always -S chmod -S fchmod -S chown -S chown32 -S fchown -S fchown32 "
-"-S lchown -S lchown32"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:223
-#, no-c-format
-msgid ""
+"-S lchown -S lchown32<co xml:id=\"co.auctlfso\"/>\n"
+"\n"
 "-a entry,always -S creat -S open -S truncate -S truncate64 -S ftruncate -S "
-"ftruncate64"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:225
-#, no-c-format
-msgid "-a entry,always -S mkdir -S rmdir"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:227
-#, no-c-format
-msgid "-a entry,always -S unlink -S rename -S link -S symlink"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:229
-#, no-c-format
-msgid "-a entry,always -S setxattr"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:236
-#, no-c-format
-msgid ""
-"-a entry,always -S lsetxattr-a entry,always -S fsetxattr-a entry,always -S "
-"removexattr-a entry,always -S lremovexattr-a entry,always -S fremovexattr-a "
-"entry,always -S mknod"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:238
-#, no-c-format
-msgid "-a entry,always -S mount -S umount -S umount2"
+"ftruncate64<co xml:id=\"co.auctlmod\"/>\n"
+"\n"
+"-a entry,always -S mkdir -S rmdir<co xml:id=\"co.auctlfsdir\"/>\n"
+"\n"
+"-a entry,always -S unlink -S rename -S link -S symlink<co xml:id=\"co."
+"auctlfsmov\"/>\n"
+"\n"
+"-a entry,always -S setxattr<co xml:id=\"co.auctlfsea\"/>\n"
+"-a entry,always -S lsetxattr\n"
+"-a entry,always -S fsetxattr\n"
+"-a entry,always -S removexattr\n"
+"-a entry,always -S lremovexattr\n"
+"-a entry,always -S fremovexattr\n"
+"\n"
+"-a entry,always -S mknod<co xml:id=\"co.auctlfssf\"/>\n"
+"\n"
+"-a entry,always -S mount -S umount -S umount2<co xml:id=\"co.auctlfsfso\"/>"
 msgstr ""
 
 #. Tag: para
@@ -451,57 +416,63 @@ msgid ""
 "other configuration files related to secure authentication and communication."
 msgstr ""
 
-#. Tag: #text
-#: audit_scenarios.xml:329
+#. Tag: screen
+#: audit_scenarios.xml:314
 #, no-c-format
 msgid ""
-"-w /var/spool/atspool-w /etc/at.allow-w /etc/at.deny-w /etc/cron.allow -p wa-"
-"w /etc/cron.deny -p wa-w /etc/cron.d/ -p wa-w /etc/cron.daily/ -p wa-w /etc/"
-"cron.hourly/ -p wa-w /etc/cron.monthly/ -p wa-w /etc/cron.weekly/ -p wa-w /"
-"etc/crontab -p wa-w /var/spool/cron/root"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:338
-#, no-c-format
-msgid ""
-"-w /etc/group -p wa-w /etc/passwd -p wa-w /etc/shadow-w /etc/login.defs -p "
-"wa-w /etc/securetty-w /var/log/lastlog"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:348
-#, no-c-format
-msgid ""
-"-w /etc/hosts -p wa-w /etc/sysconfig/w /etc/init.d/w /etc/ld.so.conf -p waw /"
-"etc/localtime -p waw /etc/sysctl.conf -p waw /etc/modprobe.d/w /etc/modprobe."
-"conf.local -p waw /etc/modprobe.conf -p wa"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:350
-#, no-c-format
-msgid "w /etc/pam.d/"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:354
-#, no-c-format
-msgid "-w /etc/aliases -p wa-w /etc/postfix/ -p wa"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:363
-#, no-c-format
-msgid ""
-"-w /etc/ssh/sshd_config-w /etc/stunnel/stunnel.conf-w /etc/stunnel/stunnel."
-"pem-w /etc/vsftpd.ftpusers-w /etc/vsftpd.conf"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:366
-#, no-c-format
-msgid "-a exit,always -S sethostname-w /etc/issue -p wa-w /etc/issue.net -p wa"
+"<co xml:id=\"co.audit.at\"/>\n"
+"-w /var/spool/atspool\n"
+"-w /etc/at.allow\n"
+"-w /etc/at.deny\n"
+"\n"
+"-w /etc/cron.allow -p wa\n"
+"-w /etc/cron.deny -p wa\n"
+"-w /etc/cron.d/ -p wa\n"
+"-w /etc/cron.daily/ -p wa\n"
+"-w /etc/cron.hourly/ -p wa\n"
+"-w /etc/cron.monthly/ -p wa\n"
+"-w /etc/cron.weekly/ -p wa\n"
+"-w /etc/crontab -p wa\n"
+"-w /var/spool/cron/root\n"
+"\n"
+"<co xml:id=\"co.audit.security\"/>\n"
+"-w /etc/group -p wa\n"
+"-w /etc/passwd -p wa\n"
+"-w /etc/shadow\n"
+"\n"
+"-w /etc/login.defs -p wa\n"
+"-w /etc/securetty\n"
+"-w /var/log/lastlog\n"
+"\n"
+"<co xml:id=\"co.audit.nw\"/>\n"
+"-w /etc/hosts -p wa\n"
+"-w /etc/sysconfig/\n"
+"w /etc/init.d/\n"
+"w /etc/ld.so.conf -p wa\n"
+"w /etc/localtime -p wa\n"
+"w /etc/sysctl.conf -p wa\n"
+"w /etc/modprobe.d/\n"
+"w /etc/modprobe.conf.local -p wa\n"
+"w /etc/modprobe.conf -p wa\n"
+"<co xml:id=\"co.audit.pam\"/>\n"
+"w /etc/pam.d/\n"
+"<co xml:id=\"co.audit.pfix\"/>\n"
+"-w /etc/aliases -p wa\n"
+"-w /etc/postfix/ -p wa\n"
+"\n"
+"<co xml:id=\"co.audit.ssh\"/>\n"
+"-w /etc/ssh/sshd_config\n"
+"\n"
+"-w /etc/stunnel/stunnel.conf\n"
+"-w /etc/stunnel/stunnel.pem\n"
+"\n"
+"-w /etc/vsftpd.ftpusers\n"
+"-w /etc/vsftpd.conf\n"
+"\n"
+"<co xml:id=\"co.audit.misc\"/>\n"
+"-a exit,always -S sethostname\n"
+"-w /etc/issue -p wa\n"
+"-w /etc/issue.net -p wa"
 msgstr ""
 
 #. Tag: para
@@ -594,22 +565,18 @@ msgid ""
 "manipulate the system time."
 msgstr ""
 
-#. Tag: #text
-#: audit_scenarios.xml:450
+#. Tag: screen
+#: audit_scenarios.xml:447
 #, no-c-format
-msgid "-a entry,always -S clone -S fork -S vfork"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:453
-#, no-c-format
-msgid "-a entry,always -S umask"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:454
-#, no-c-format
-msgid "-a entry,always -S adjtimex -S settimeofday"
+msgid ""
+"<co xml:id=\"co.audit.attrib\"/>\n"
+"-a entry,always -S clone -S fork -S vfork\n"
+"\n"
+"<co xml:id=\"co.audit.umask\"/>\n"
+"-a entry,always -S umask\n"
+"\n"
+"<co xml:id=\"co.audit.time\"/>\n"
+"-a entry,always -S adjtimex -S settimeofday"
 msgstr ""
 
 #. Tag: para
@@ -683,22 +650,13 @@ msgid ""
 "possible arguments to the access system call."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_scenarios.xml:514
 #, no-c-format
-msgid "-a entry,always -S access -F a1=4"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:515
-#, no-c-format
-msgid "-a entry,always -S access -F a1=6"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:516
-#, no-c-format
-msgid "-a entry,always -S access -F a1=7"
+msgid ""
+"-a entry,always -S access -F a1=4<co xml:id=\"co.audit.accessr\"/>\n"
+"-a entry,always -S access -F a1=6<co xml:id=\"co.audit.accessrw\"/>\n"
+"-a entry,always -S access -F a1=7<co xml:id=\"co.audit.accessrwx\"/>"
 msgstr ""
 
 #. Tag: para
@@ -748,24 +706,18 @@ msgid ""
 "a0=<replaceable>SYSCALL_NUMBER</replaceable></option> ."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_scenarios.xml:560
 #, no-c-format
-msgid "-a entry,always -S socketcall -F a0=1 -F a1=10"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:564
-#, no-c-format
 msgid ""
-"## Use this line on x86_64, ia64 instead#-a entry,always -S socket -F a0=10-"
-"a entry,always -S socketcall -F a0=5"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:566
-#, no-c-format
-msgid "## Use this line on x86_64, ia64 instead#-a entry, always -S accept"
+"-a entry,always -S socketcall -F a0=1 -F a1=10<co xml:id=\"co.audit."
+"socket1\"/>\n"
+"## Use this line on x86_64, ia64 instead\n"
+"#-a entry,always -S socket -F a0=10\n"
+"\n"
+"-a entry,always -S socketcall -F a0=5<co xml:id=\"co.audit.socket2\"/>\n"
+"## Use this line on x86_64, ia64 instead\n"
+"#-a entry, always -S accept"
 msgstr ""
 
 #. Tag: para
@@ -806,33 +758,42 @@ msgid ""
 "filename> for possible argument values."
 msgstr ""
 
-#. Tag: #text
-#: audit_scenarios.xml:616
+#. Tag: screen
+#: audit_scenarios.xml:607
 #, no-c-format
 msgid ""
-"## msgctl-a entry,always -S ipc -F a0=14## msgget-a entry,always -S ipc -F "
-"a0=13## Use these lines on x86_64, ia64 instead#-a entry,always -S msgctl#-a "
-"entry,always -S msgget"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:631
-#, no-c-format
-msgid ""
-"## semctl-a entry,always -S ipc -F a0=3## semget-a entry,always -S ipc -F "
-"a0=2## semop-a entry,always -S ipc -F a0=1## semtimedop-a entry,always -S "
-"ipc -F a0=4## Use these lines on x86_64, ia64 instead#-a entry,always -S "
-"semctl#-a entry,always -S semget#-a entry,always -S semop#-a entry,always -S "
-"semtimedop"
-msgstr ""
-
-#. Tag: #text
-#: audit_scenarios.xml:638
-#, no-c-format
-msgid ""
-"## shmctl-a entry,always -S ipc -F a0=24## shmget-a entry,always -S ipc -F "
-"a0=23## Use these lines on x86_64, ia64 instead#-a entry,always -S shmctl#-a "
-"entry,always -S shmget"
+"<co xml:id=\"co.audit.mqueue\"/>\n"
+"## msgctl\n"
+"-a entry,always -S ipc -F a0=14\n"
+"## msgget\n"
+"-a entry,always -S ipc -F a0=13\n"
+"## Use these lines on x86_64, ia64 instead\n"
+"#-a entry,always -S msgctl\n"
+"#-a entry,always -S msgget\n"
+"\n"
+"<co xml:id=\"co.audit.semaph\"/>\n"
+"## semctl\n"
+"-a entry,always -S ipc -F a0=3\n"
+"## semget\n"
+"-a entry,always -S ipc -F a0=2\n"
+"## semop\n"
+"-a entry,always -S ipc -F a0=1\n"
+"## semtimedop\n"
+"-a entry,always -S ipc -F a0=4\n"
+"## Use these lines on x86_64, ia64 instead\n"
+"#-a entry,always -S semctl\n"
+"#-a entry,always -S semget\n"
+"#-a entry,always -S semop\n"
+"#-a entry,always -S semtimedop\n"
+"\n"
+"<co xml:id=\"co.audit.sharedmem\"/>\n"
+"## shmctl\n"
+"-a entry,always -S ipc -F a0=24\n"
+"## shmget\n"
+"-a entry,always -S ipc -F a0=23\n"
+"## Use these lines on x86_64, ia64 instead\n"
+"#-a entry,always -S shmctl\n"
+"#-a entry,always -S shmget"
 msgstr ""
 
 #. Tag: para

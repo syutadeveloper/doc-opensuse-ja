@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -120,25 +120,15 @@ msgstr ""
 msgid "Single-Sign-On through Kerberized Applications"
 msgstr ""
 
-#. Tag: #text
-#: security_ad_support.xml:128
-#, no-c-format
-msgid "Many desktop applications are Kerberos-enabled ("
-msgstr ""
-
-#. Tag: emphasis
-#: security_ad_support.xml:128
-#, no-c-format
-msgid "kerberized"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:132
+#. Tag: para
+#: security_ad_support.xml:125
 #, no-c-format
 msgid ""
-"), which means they can transparently handle authentication for the user "
-"without the need for password reentry at Web servers, proxies, groupware "
-"applications, or other locations."
+"<remark>sknorr, 2014-08-27: \"kerberized\"? can we avoid that?</remark> Many "
+"desktop applications are Kerberos-enabled ( <emphasis>kerberized</"
+"emphasis> ), which means they can transparently handle authentication for "
+"the user without the need for password reentry at Web servers, proxies, "
+"groupware applications, or other locations."
 msgstr ""
 
 #. Tag: title
@@ -670,84 +660,20 @@ msgid ""
 "mark the interface used for browsing as part of the internal zone."
 msgstr ""
 
-#. Tag: #text
-#: security_ad_support.xml:542
+#. Tag: para
+#: security_ad_support.xml:539
 #, no-c-format
 msgid ""
-"To change the firewall settings on your client, log in as &rootuser; and "
-"start the &yast; firewall module. Select"
-msgstr ""
-
-#. Tag: guimenu
-#: security_ad_support.xml:543
-#, no-c-format
-msgid "Interfaces"
-msgstr ""
-
-#. Tag: guimenu
-#: security_ad_support.xml:544
-#, no-c-format
-msgid "Change"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:544
-#, no-c-format
-msgid ". Select your network interface from the list of interfaces and click"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:545
-#, no-c-format
-msgid ". Select"
-msgstr ""
-
-#. Tag: guimenu
-#: security_ad_support.xml:545
-#, no-c-format
-msgid "Internal Zone"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:546
-#, no-c-format
-msgid ". Leave the firewall settings with"
-msgstr ""
-
-#. Tag: guimenu
-#: security_ad_support.xml:546
-#, no-c-format
-msgid "OK"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:546
-#, no-c-format
-msgid "and apply your settings with"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:548
-#, no-c-format
-msgid ". To disable the firewall, check the"
-msgstr ""
-
-#. Tag: guimenu
-#: security_ad_support.xml:548
-#, no-c-format
-msgid "Disable Firewall Automatic Starting"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:550
-#, no-c-format
-msgid "option, and leave the firewall module with"
-msgstr ""
-
-#. Tag: menuchoice
-#: security_ad_support.xml:550
-#, no-c-format
-msgid "<guimenu>Next</guimenu> <guimenu>Finish</guimenu>"
+"<remark>sknorr, 2014-08-26: Should better be a procedure.</remark> To change "
+"the firewall settings on your client, log in as &rootuser; and start the "
+"&yast; firewall module. Select <guimenu>Interfaces</guimenu> . Select your "
+"network interface from the list of interfaces and click <guimenu>Change</"
+"guimenu> . Select <guimenu>Internal Zone</guimenu> and apply your settings "
+"with <guimenu>OK</guimenu> . Leave the firewall settings with <menuchoice> "
+"<guimenu>Next</guimenu> <guimenu>Finish</guimenu> </menuchoice> . To disable "
+"the firewall, check the <guimenu>Disable Firewall Automatic Starting</"
+"guimenu> option, and leave the firewall module with <menuchoice> "
+"<guimenu>Next</guimenu> <guimenu>Finish</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: term
@@ -1018,26 +944,17 @@ msgid ""
 "Controller"
 msgstr ""
 
-#. Tag: #text
-#: security_ad_support.xml:800
+#. Tag: para
+#: security_ad_support.xml:793
 #, no-c-format
 msgid ""
+"<remark> FIXME: Do we need \"hostname\" or \"hostname -f\" in the following? "
+"As much as I saw from the UI of AD Administrative Center, it identified "
+"computers by their simple host name only. - sknorr, 2016-09-14 </remark> "
 "Find out if the host name of your computer matches what the name your "
 "computer is known as to the &ad; Domain Controller. In a terminal, run the "
-"command"
-msgstr ""
-
-#. Tag: command
-#: security_ad_support.xml:801
-#, no-c-format
-msgid "hostname"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:802
-#, no-c-format
-msgid ""
-", then compare its output to the configuration of the &ad; Domain Controller."
+"command <command>hostname</command> , then compare its output to the "
+"configuration of the &ad; Domain Controller."
 msgstr ""
 
 #. Tag: para
@@ -1220,70 +1137,15 @@ msgid ""
 "then click <guimenu>Add</guimenu> ."
 msgstr ""
 
-#. Tag: filename
-#: security_ad_support.xml:964
+#. Tag: para
+#: security_ad_support.xml:962
 #, no-c-format
-msgid "/home/ <replaceable>USER_NAME</replaceable>"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:964
-#, no-c-format
-msgid "Specify a value. To have home directories follow the format"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:965
-#, no-c-format
-msgid ", use"
-msgstr ""
-
-#. Tag: literal
-#: security_ad_support.xml:965
-#, no-c-format
-msgid "/home/%u"
-msgstr ""
-
-#. Tag: command
-#: security_ad_support.xml:967
-#, no-c-format
-msgid "man 5 sssd.conf"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:967
-#, no-c-format
-msgid "("
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:967
-#, no-c-format
-msgid ". For more information about possible variables, see the man page"
-msgstr ""
-
-#. Tag: literal
-#: security_ad_support.xml:967
-#, no-c-format
-msgid "sssd.conf"
-msgstr ""
-
-#. Tag: citetitle
-#: security_ad_support.xml:969
-#, no-c-format
-msgid "override_homedir"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:969
-#, no-c-format
-msgid "), section"
-msgstr ""
-
-#. Tag: #text
-#: security_ad_support.xml:970
-#, no-c-format
-msgid "."
+msgid ""
+"Specify a value. To have home directories follow the format <filename>/home/"
+"<replaceable>USER_NAME</replaceable></filename> , use <literal>/home/%u</"
+"literal> . For more information about possible variables, see the man page "
+"<literal>sssd.conf</literal> ( <command>man 5 sssd.conf</command> ), section "
+"<citetitle>override_homedir</citetitle> ."
 msgstr ""
 
 #. Tag: para

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -614,28 +614,10 @@ msgstr ""
 msgid "Automatically Activating Non-Root LVM Volume Groups"
 msgstr ""
 
-#. Tag: literal
-#: storage_lvm.xml:783
+#. Tag: para
+#: storage_lvm.xml:781
 #, no-c-format
-msgid "/etc/lvm/lvm.conf"
-msgstr ""
-
-#. Tag: #text
-#: storage_lvm.xml:783
-#, no-c-format
-msgid "Activation behavior for non-root LVM volume groups is controlled in the"
-msgstr ""
-
-#. Tag: #text
-#: storage_lvm.xml:784
-#, no-c-format
-msgid "file and by the"
-msgstr ""
-
-#. Tag: #text
-#: storage_lvm.xml:788
-#, no-c-format
-msgid "parameter. By default, the parameter is empty and all volumes are activated. To activate only some volume groups, add the names in quotes and separate them with commas, for example:"
+msgid "Activation behavior for non-root LVM volume groups is controlled in the <literal>/etc/lvm/lvm.conf</literal> file and by the <parameter>auto_activation_volume_list</parameter> parameter. By default, the parameter is empty and all volumes are activated. To activate only some volume groups, add the names in quotes and separate them with commas, for example:"
 msgstr ""
 
 #. Tag: screen
@@ -644,22 +626,10 @@ msgstr ""
 msgid "auto_activation_volume_list = [ \"vg1\", \"vg2/lvol1\", \"@tag1\", \"@*\" ]"
 msgstr ""
 
-#. Tag: parameter
-#: storage_lvm.xml:794
+#. Tag: para
+#: storage_lvm.xml:792
 #, no-c-format
-msgid "auto_activation_volume_list"
-msgstr ""
-
-#. Tag: #text
-#: storage_lvm.xml:794
-#, no-c-format
-msgid "If you have defined a list in the"
-msgstr ""
-
-#. Tag: #text
-#: storage_lvm.xml:796
-#, no-c-format
-msgid "parameter, the following will happen:"
+msgid "If you have defined a list in the <parameter>auto_activation_volume_list</parameter> parameter, the following will happen: <!-- # If auto_activation_volume_list is defined, each LV that is to be # activated with the autoactivation option (-\\-activate ay/-a ay) # is first checked against the list. If it does not match, the LV # is not activated. This list is checked as well as volume_list. # # \"vgname\" and \"vgname/lvname\" are matched exactly. # \"@tag\" matches any tag set in the LV or VG. # \"@*\" matches if any tag defined on the host is also set in the LV or VG # # auto_activation_volume_list = [ \"vg1\", \"vg2/lvol1\", \"@tag1\", \"@*\" ] -->"
 msgstr ""
 
 #. Tag: para
@@ -1295,22 +1265,10 @@ msgstr ""
 msgid "Note that specifying <option>--nodevsync</option> with the <command>lvcreate</command> command has the same effect as <literal>activation/udev_sync = 0</literal> ; setting <literal>activation/udev_rules = 0</literal> is still required."
 msgstr ""
 
-#. Tag: #text
-#: storage_lvm.xml:1490
+#. Tag: para
+#: storage_lvm.xml:1489
 #, no-c-format
-msgid "Setting the environment variable"
-msgstr ""
-
-#. Tag: envar
-#: storage_lvm.xml:1490
-#, no-c-format
-msgid "DM_DISABLE_UDEV"
-msgstr ""
-
-#. Tag: #text
-#: storage_lvm.xml:1491
-#, no-c-format
-msgid ":"
+msgid "Setting the environment variable <envar>DM_DISABLE_UDEV</envar> :"
 msgstr ""
 
 #. Tag: screen

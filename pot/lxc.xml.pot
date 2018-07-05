@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -220,52 +220,31 @@ msgstr ""
 msgid "The following example shows how to set one ore multiple IP addresses:"
 msgstr ""
 
-#. Tag: #text
-#: lxc.xml:224
+#. Tag: screen
+#: lxc.xml:223
 #, no-c-format
-msgid "[...]&lt;devices&gt; &lt;interface type='network'&gt; &lt;source network='default'/&gt; &lt;target dev='vnet0'/&gt; &lt;ip address='192.168.122.5' prefix='24'/&gt; &lt;ip address='192.168.122.5' prefix='24' peer"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:230
-#, no-c-format
-msgid "='192.168.122.0' prefix"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:230
-#, no-c-format
-msgid "='10.0.0.10'/&gt; &lt;route family"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:231
-#, no-c-format
-msgid "='24' gateway"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:232
-#, no-c-format
-msgid "='192.168.122.1'/&gt; &lt;route family"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:232
-#, no-c-format
-msgid "='ipv4' address"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:233
-#, no-c-format
-msgid "='192.168.122.8' gateway"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:235
-#, no-c-format
-msgid "='192.168.122.1'/&gt; &lt;/interface&gt; [...] &lt;hostdev mode='capabilities' type='net'&gt; &lt;source&gt; &lt;interface&gt;eth0&lt;/interface&gt; &lt;/source&gt; &lt;ip address='192.168.122.6' prefix='24'/&gt; &lt;route family='ipv4' address='192.168.122.0' prefix='24' gateway='192.168.122.1'/&gt; &lt;route family='ipv4' address='192.168.122.8' gateway='192.168.122.1'/&gt; &lt;/hostdev&gt;&lt;/devices&gt;[...]"
+msgid "[...]\n"
+      "&lt;devices&gt;\n"
+      " &lt;interface type='network'&gt;\n"
+      "  &lt;source network='default'/&gt;\n"
+      "  &lt;target dev='vnet0'/&gt;\n"
+      "  &lt;ip address='192.168.122.5' prefix='24'/&gt;\n"
+      "  &lt;ip address='192.168.122.5' prefix='24' peer<co xml:id=\"co.lxc.netw.peer\"/>='10.0.0.10'/&gt;\n"
+      "   &lt;route family<co xml:id=\"co.lxc.netw.family\"/>='ipv4' address<co xml:id=\"co.lxc.netw.addr\"/>='192.168.122.0' prefix<co xml:id=\"co.lxc.netw.prefix\"/>='24'\n"
+      "          gateway<co xml:id=\"co.lxc.netw.gateway\"/>='192.168.122.1'/&gt;\n"
+      "   &lt;route family<xref linkend=\"co.lxc.netw.family\" xrefstyle=\"select:label\"/>='ipv4' address<xref linkend=\"co.lxc.netw.addr\" xrefstyle=\"select:label\"/>='192.168.122.8' gateway<xref linkend=\"co.lxc.netw.gateway\" xrefstyle=\"select:label\"/>='192.168.122.1'/&gt;\n"
+      " &lt;/interface&gt;\n"
+      " [...]\n"
+      " &lt;hostdev mode='capabilities' type='net'&gt;\n"
+      "  &lt;source&gt;\n"
+      "   &lt;interface&gt;eth0&lt;/interface&gt;\n"
+      "  &lt;/source&gt;\n"
+      "  &lt;ip address='192.168.122.6' prefix='24'/&gt;\n"
+      "  &lt;route family='ipv4' address='192.168.122.0' prefix='24' gateway='192.168.122.1'/&gt;\n"
+      "  &lt;route family='ipv4' address='192.168.122.8' gateway='192.168.122.1'/&gt;\n"
+      " &lt;/hostdev&gt;\n"
+      "&lt;/devices&gt;\n"
+      "[...]"
 msgstr ""
 
 #. Tag: para
@@ -304,40 +283,23 @@ msgstr ""
 msgid "You can also add route elements to define IP routes to add in the guest. This is used by the LXC driver."
 msgstr ""
 
-#. Tag: #text
-#: lxc.xml:286
+#. Tag: screen
+#: lxc.xml:285
 #, no-c-format
-msgid "[...]&lt;devices&gt; &lt;interface type"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:288
-#, no-c-format
-msgid "='ethernet'&gt; &lt;source/&gt;"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:289
-#, no-c-format
-msgid "&lt;ip address"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:290
-#, no-c-format
-msgid "='192.168.123.1' prefix='24'/&gt; &lt;ip address"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:291
-#, no-c-format
-msgid "='10.0.0.10' prefix='24' peer='192.168.122.5'/&gt; &lt;route"
-msgstr ""
-
-#. Tag: #text
-#: lxc.xml:293
-#, no-c-format
-msgid "family='ipv4' address='192.168.42.0' prefix='24' gateway='192.168.123.4'/&gt; &lt;source/&gt; [...] &lt;/interface&gt; [...]&lt;/devices&gt;[...]"
+msgid "[...]\n"
+      "&lt;devices&gt;\n"
+      " &lt;interface type<co xml:id=\"co.lxc.netw.ethernet\"/>='ethernet'&gt;\n"
+      "  &lt;source/&gt;<co xml:id=\"co.lxc.netw.source\"/>\n"
+      "   &lt;ip address<co xml:id=\"co.lxc.netw.ip1\"/>='192.168.123.1' prefix='24'/&gt;\n"
+      "   &lt;ip address<co xml:id=\"co.lxc.netw.ip2\"/>='10.0.0.10' prefix='24' peer='192.168.122.5'/&gt;\n"
+      "   &lt;route<co xml:id=\"co.lxc.netw.route\"/> family='ipv4' address='192.168.42.0' prefix='24'\n"
+      "            gateway='192.168.123.4'/&gt;\n"
+      "  &lt;source/&gt;\n"
+      "  [...]\n"
+      " &lt;/interface&gt;\n"
+      " [...]\n"
+      "&lt;/devices&gt;\n"
+      "[...]"
 msgstr ""
 
 #. Tag: para

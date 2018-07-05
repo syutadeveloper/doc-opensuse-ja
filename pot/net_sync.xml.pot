@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -339,16 +339,15 @@ msgstr ""
 msgid "In the main configuration file <filename>/etc/rsyncd.conf</filename> , add the following lines:"
 msgstr ""
 
-#. Tag: #text
-#: net_sync.xml:281
+#. Tag: screen
+#: net_sync.xml:277
 #, no-c-format
-msgid "# rsyncd.conf main configuration filelog file = /var/log/rsync.logpid file = /var/lock/rsync.lock&amp;merge /etc/rsyncd.d"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:282
-#, no-c-format
-msgid "&amp;include /etc/rsyncd.d"
+msgid "# rsyncd.conf main configuration file\n"
+      "log file = /var/log/rsync.log\n"
+      "pid file = /var/lock/rsync.lock\n"
+      "\n"
+      "&amp;merge /etc/rsyncd.d <co xml:id=\"co.rsync.conf.merge\"/>\n"
+      "&amp;include /etc/rsyncd.d <co xml:id=\"co.rsync.conf.include\"/>"
 msgstr ""
 
 #. Tag: para
@@ -369,46 +368,17 @@ msgstr ""
 msgid "Create your module (your backup target) in the file <filename>/etc/rsyncd.d/backup.conf</filename> with the following lines:"
 msgstr ""
 
-#. Tag: #text
-#: net_sync.xml:305
+#. Tag: screen
+#: net_sync.xml:304
 #, no-c-format
-msgid "# backup.conf: backup module[backup]"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:306
-#, no-c-format
-msgid "uid = &exampleuser_plain;"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:307
-#, no-c-format
-msgid "gid = users"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:308
-#, no-c-format
-msgid "path = /var/backup"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:309
-#, no-c-format
-msgid "auth users = &exampleuser_plain;"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:310
-#, no-c-format
-msgid "secrets file = /etc/rsyncd.secrets"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:311
-#, no-c-format
-msgid "comment = Our backup target"
+msgid "# backup.conf: backup module\n"
+      "[backup] <co xml:id=\"co.rsync.conf.target\"/>\n"
+      "   uid = &exampleuser_plain; <co xml:id=\"co.rsync.conf.uid-gid\"/>\n"
+      "   gid = users <xref linkend=\"co.rsync.conf.uid-gid\"/>\n"
+      "   path = /var/backup <co xml:id=\"co.rsync.conf.path\"/>\n"
+      "   auth users = &exampleuser_plain;  <co xml:id=\"co.rsync.conf.authusers\"/>\n"
+      "   secrets file = /etc/rsyncd.secrets <co xml:id=\"co.rsync.conf.secretfiles\"/>\n"
+      "   comment = Our backup target"
 msgstr ""
 
 #. Tag: para
@@ -593,27 +563,9 @@ msgstr ""
 msgid "Rear"
 msgstr ""
 
-#. Tag: #text
-#: net_sync.xml:453
+#. Tag: para
+#: net_sync.xml:452
 #, no-c-format
-msgid "A disaster recovery framework, see the"
-msgstr ""
-
-#. Tag: citetitle
-#: net_sync.xml:453
-#, no-c-format
-msgid "Administration Guide"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:454
-#, no-c-format
-msgid "of the &sle; &hasi;"
-msgstr ""
-
-#. Tag: #text
-#: net_sync.xml:457
-#, no-c-format
-msgid "."
+msgid "A disaster recovery framework, see the <citetitle>Administration Guide</citetitle> of the &sle; &hasi; <link xlink:href=\"https://www.suse.com/documentation/sle-ha-12/\"/> ."
 msgstr ""
 

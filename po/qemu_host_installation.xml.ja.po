@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -801,34 +801,16 @@ msgstr ""
 msgid "Exporting Host's File System with VirtFS"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_host_installation.xml:541
 #, no-c-format
-msgid "&prompt.sudo;qemu-system-x86_64 [...] \\-fsdev local,id=exp1"
-msgstr ""
-
-#. Tag: #text
-#: qemu_host_installation.xml:542
-#, no-c-format
-msgid ",path=/tmp/"
-msgstr ""
-
-#. Tag: #text
-#: qemu_host_installation.xml:542
-#, no-c-format
-msgid ",security_model=mapped"
-msgstr ""
-
-#. Tag: #text
-#: qemu_host_installation.xml:543
-#, no-c-format
-msgid ",mount_tag=v_tmp"
-msgstr ""
-
-#. Tag: #text
-#: qemu_host_installation.xml:543
-#, no-c-format
-msgid "\\-device virtio-9p-pci,fsdev=exp1"
+msgid ""
+"&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+"-fsdev local,id=exp1<co xml:id=\"co.virtfs.host.id\"/>,path=/tmp/<co xml:id="
+"\"co.virtfs.host.path\"/>,security_model=mapped<co xml:id=\"co.virtfs.host."
+"sec_model\"/> \\\n"
+"-device virtio-9p-pci,fsdev=exp1<co xml:id=\"co.virtfs.host.fsdev\"/>,"
+"mount_tag=v_tmp<co xml:id=\"co.virtfs.host.mnt_tag\"/>"
 msgstr ""
 
 #. Tag: para

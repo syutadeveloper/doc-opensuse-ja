@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -206,10 +206,10 @@ msgstr ""
 msgid "Failover from one network device to another in case one of the devices should fail."
 msgstr ""
 
-#. Tag: #text
-#: net_teaming.xml:180
+#. Tag: para
+#: net_teaming.xml:178
 #, no-c-format
-msgid "Currently, there is no &yast; module to support creating a teaming device. You need to configure &netteam; manually. The general procedure is shown below which can be applied for all your &netteam; configurations:"
+msgid "<remark>toms 2016-06-21: FATE#320947 for Teaming in/with YaST</remark> Currently, there is no &yast; module to support creating a teaming device. You need to configure &netteam; manually. The general procedure is shown below which can be applied for all your &netteam; configurations:"
 msgstr ""
 
 #. Tag: title
@@ -404,34 +404,25 @@ msgstr ""
 msgid "Configuration for Load Balancing with &netteam;"
 msgstr ""
 
-#. Tag: #text
-#: net_teaming.xml:320
+#. Tag: screen
+#: net_teaming.xml:318
 #, no-c-format
-msgid "IPADDRESS=\"&exampledomain1ip;.1/24\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:321
-#, no-c-format
-msgid "IPADDR6=\"fd00:deca:fbad:50::1/64\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:323
-#, no-c-format
-msgid "TEAM_RUNNER=\"loadbalance\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:328
-#, no-c-format
-msgid "TEAM_LB_TX_HASH=\"ipv4,ipv6,eth,vlan\"TEAM_LB_TX_BALANCER_NAME=\"basic\"TEAM_LB_TX_BALANCER_INTERVAL=\"100\"TEAM_PORT_DEVICE_0=\"eth0\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:331
-#, no-c-format
-msgid "TEAM_LW_NAME=\"ethtool\""
+msgid "STARTMODE=auto <co xml:id=\"co.team.lb.startmode\"/>\n"
+      "BOOTPROTO=static <co xml:id=\"co.team.lb.boot-and-ip\"/>\n"
+      "IPADDRESS=\"&exampledomain1ip;.1/24\" <xref linkend=\"co.team.lb.boot-and-ip\"/>\n"
+      "IPADDR6=\"fd00:deca:fbad:50::1/64\" <xref linkend=\"co.team.lb.boot-and-ip\"/>\n"
+      "\n"
+      "TEAM_RUNNER=\"loadbalance\" <co xml:id=\"co.team.lb.loadbalance\"/>\n"
+      "TEAM_LB_TX_HASH=\"ipv4,ipv6,eth,vlan\"\n"
+      "TEAM_LB_TX_BALANCER_NAME=\"basic\"\n"
+      "TEAM_LB_TX_BALANCER_INTERVAL=\"100\"\n"
+      "\n"
+      "TEAM_PORT_DEVICE_0=\"eth0\" <co xml:id=\"co.team.lb.dev\"/>\n"
+      "TEAM_PORT_DEVICE_1=\"eth1\" <xref linkend=\"co.team.lb.dev\"/>\n"
+      "\n"
+      "TEAM_LW_NAME=\"ethtool\" <co xml:id=\"co.team.lb.name\"/>\n"
+      "TEAM_LW_ETHTOOL_DELAY_UP=\"10\" <co xml:id=\"co.team.lb.ethtool.delay\"/>\n"
+      "TEAM_LW_ETHTOOL_DELAY_DOWN=\"10\" <xref linkend=\"co.team.lb.ethtool.delay\"/>"
 msgstr ""
 
 #. Tag: para
@@ -446,22 +437,16 @@ msgstr ""
 msgid "Sets a static IP address (here <systemitem class=\"ipaddress\">&exampledomain1ip;.1</systemitem> for IPv4 and <systemitem class=\"ipaddress\">fd00:deca:fbad:50::1</systemitem> for IPv6)."
 msgstr ""
 
-#. Tag: literal
-#: net_teaming.xml:369
+#. Tag: para
+#: net_teaming.xml:368
 #, no-c-format
-msgid "loadbalance"
+msgid "Sets <varname>TEAM_RUNNER</varname> to <literal>loadbalance</literal> to activate the load balancing mode."
 msgstr ""
 
-#. Tag: #text
-#: net_teaming.xml:371
+#. Tag: para
+#: net_teaming.xml:386
 #, no-c-format
-msgid "to activate the load balancing mode."
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:390
-#, no-c-format
-msgid "variable). The &netteam; device is considered to be up only if the replies are received."
+msgid "If you need a higher confidence in the connection, use the <literal>arp_ping</literal> option. This sends pings to an arbitrary host (configured in the <varname>TEAM_LW_ARP_PING_TARGET_HOST</varname> variable). The &netteam; device is considered to be up only if the replies are received."
 msgstr ""
 
 #. Tag: title
@@ -488,64 +473,21 @@ msgstr ""
 msgid "Configuration for DHCP &netteam; Device"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: net_teaming.xml:418
 #, no-c-format
-msgid "STARTMODE=auto"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:419
-#, no-c-format
-msgid "BOOTPROTO=static"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:420
-#, no-c-format
-msgid "IPADDR=\"&exampledomain1ip;.2/24\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:421
-#, no-c-format
-msgid "IPADDR6=\"fd00:deca:fbad:50::2/64\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:423
-#, no-c-format
-msgid "TEAM_RUNNER=activebackup"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:424
-#, no-c-format
-msgid "TEAM_PORT_DEVICE_0=\"eth0\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:425
-#, no-c-format
-msgid "TEAM_PORT_DEVICE_1=\"eth1\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:427
-#, no-c-format
-msgid "TEAM_LW_NAME=ethtool"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:428
-#, no-c-format
-msgid "TEAM_LW_ETHTOOL_DELAY_UP=\"10\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:429
-#, no-c-format
-msgid "TEAM_LW_ETHTOOL_DELAY_DOWN=\"10\""
+msgid "STARTMODE=auto <co xml:id=\"co.team.failover.startmode\"/>\n"
+      "BOOTPROTO=static <co xml:id=\"co.team.failover.boot-and-ip\"/>\n"
+      "IPADDR=\"&exampledomain1ip;.2/24\" <xref linkend=\"co.team.failover.boot-and-ip\"/>\n"
+      "IPADDR6=\"fd00:deca:fbad:50::2/64\" <xref linkend=\"co.team.failover.boot-and-ip\"/>\n"
+      "\n"
+      "TEAM_RUNNER=activebackup <co xml:id=\"co.team.failover.activebackup\"/>\n"
+      "TEAM_PORT_DEVICE_0=\"eth0\" <co xml:id=\"co.team.failover.dev\"/>\n"
+      "TEAM_PORT_DEVICE_1=\"eth1\" <xref linkend=\"co.team.failover.dev\"/>\n"
+      "\n"
+      "TEAM_LW_NAME=ethtool <co xml:id=\"co.team.failover.name\"/>\n"
+      "TEAM_LW_ETHTOOL_DELAY_UP=\"10\" <co xml:id=\"co.team.failover.ethtool.delay\"/>\n"
+      "TEAM_LW_ETHTOOL_DELAY_DOWN=\"10\" <xref linkend=\"co.team.failover.ethtool.delay\"/>"
 msgstr ""
 
 #. Tag: para
@@ -554,22 +496,10 @@ msgstr ""
 msgid "Controls the start of the teaming device. The value of <literal>auto</literal> means the interface will be set up when the network service is available and will be started automatically on every reboot."
 msgstr ""
 
-#. Tag: varname
-#: net_teaming.xml:441
+#. Tag: para
+#: net_teaming.xml:439
 #, no-c-format
-msgid "STARTMODE"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:441
-#, no-c-format
-msgid "In case you need to control the device yourself (and prevent it from starting automatically), set"
-msgstr ""
-
-#. Tag: literal
-#: net_teaming.xml:442
-#, no-c-format
-msgid "manual"
+msgid "In case you need to control the device yourself (and prevent it from starting automatically), set <varname>STARTMODE</varname> to <literal>manual</literal> ."
 msgstr ""
 
 #. Tag: para
@@ -578,64 +508,16 @@ msgstr ""
 msgid "Sets a static IP address (here <systemitem class=\"ipaddress\">&exampledomain1ip;.2</systemitem> for IPv4 and <systemitem class=\"ipaddress\">fd00:deca:fbad:50::2</systemitem> for IPv6)."
 msgstr ""
 
-#. Tag: #text
-#: net_teaming.xml:455
+#. Tag: para
+#: net_teaming.xml:454
 #, no-c-format
-msgid "If the &netteam; device should use a dynamic IP address, set"
+msgid "If the &netteam; device should use a dynamic IP address, set <literal>BOOTPROTO=\"dhcp\"</literal> and remove (or comment) the line with <varname>IPADDRESS</varname> and <varname>IPADDR6</varname> ."
 msgstr ""
 
-#. Tag: literal
-#: net_teaming.xml:456
+#. Tag: para
+#: net_teaming.xml:461
 #, no-c-format
-msgid "BOOTPROTO=\"dhcp\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:457
-#, no-c-format
-msgid "and remove (or comment) the line with"
-msgstr ""
-
-#. Tag: varname
-#: net_teaming.xml:457
-#, no-c-format
-msgid "IPADDRESS"
-msgstr ""
-
-#. Tag: varname
-#: net_teaming.xml:457
-#, no-c-format
-msgid "IPADDR6"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:457
-#, no-c-format
-msgid "and"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:462
-#, no-c-format
-msgid "Sets"
-msgstr ""
-
-#. Tag: literal
-#: net_teaming.xml:462
-#, no-c-format
-msgid "activebackup"
-msgstr ""
-
-#. Tag: varname
-#: net_teaming.xml:462
-#, no-c-format
-msgid "TEAM_RUNNER"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:464
-#, no-c-format
-msgid "to activate the failover mode."
+msgid "Sets <varname>TEAM_RUNNER</varname> to <literal>activebackup</literal> to activate the failover mode."
 msgstr ""
 
 #. Tag: para
@@ -650,34 +532,10 @@ msgstr ""
 msgid "Defines a link watcher to monitor the state of subordinate devices. The default value <literal>ethtool</literal> checks only if the device is up and accessible. This makes this check fast enough. However, it does not check if the device can really send or receive packets."
 msgstr ""
 
-#. Tag: literal
-#: net_teaming.xml:481
+#. Tag: para
+#: net_teaming.xml:479
 #, no-c-format
-msgid "arp_ping"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:481
-#, no-c-format
-msgid "If you need a higher confidence in the connection, use the"
-msgstr ""
-
-#. Tag: varname
-#: net_teaming.xml:482
-#, no-c-format
-msgid "TEAM_LW_ARP_PING_TARGET_HOST"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:482
-#, no-c-format
-msgid "option. This sends pings to an arbitrary host (configured in the"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:483
-#, no-c-format
-msgid "variable). Only if the replies are received, the &netteam; device is considered to be up."
+msgid "If you need a higher confidence in the connection, use the <literal>arp_ping</literal> option. This sends pings to an arbitrary host (configured in the <varname>TEAM_LW_ARP_PING_TARGET_HOST</varname> variable). Only if the replies are received, the &netteam; device is considered to be up."
 msgstr ""
 
 #. Tag: para
@@ -740,40 +598,21 @@ msgstr ""
 msgid "In <filename>/etc/sysconfig/network</filename> create a file <filename>ifcfg-vlan0</filename> with the following content:"
 msgstr ""
 
-#. Tag: #text
-#: net_teaming.xml:553
+#. Tag: screen
+#: net_teaming.xml:552
 #, no-c-format
-msgid "STARTMODE=\"auto\"BOOTPROTO=\"static\""
+msgid "STARTMODE=\"auto\"\n"
+      "BOOTPROTO=\"static\" <co xml:id=\"co.team.vlan.bootproto\"/>\n"
+      "IPADDR='&subnetI;0.1/24' <co xml:id=\"co.team.vlan.ipaddr\"/>\n"
+      "ETHERDEVICE=\"team0\" <co xml:id=\"co.team.vlan.etherdevice\"/>\n"
+      "VLAN_ID=\"0\" <co xml:id=\"co.team.vlan.vlan_id\"/>\n"
+      "VLAN='yes'"
 msgstr ""
 
-#. Tag: #text
-#: net_teaming.xml:554
+#. Tag: para
+#: net_teaming.xml:560
 #, no-c-format
-msgid "IPADDR='&subnetI;0.1/24'"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:555
-#, no-c-format
-msgid "ETHERDEVICE=\"team0\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:556
-#, no-c-format
-msgid "VLAN_ID=\"0\""
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:557
-#, no-c-format
-msgid "VLAN='yes'"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:561
-#, no-c-format
-msgid "Defines a fixed IP address, specified in"
+msgid "Defines a fixed IP address, specified in <varname>IPADDR</varname> ."
 msgstr ""
 
 #. Tag: para
@@ -788,46 +627,10 @@ msgstr ""
 msgid "Contains the real interface to use for the VLAN interface, here our team device ( <systemitem>team0</systemitem> )."
 msgstr ""
 
-#. Tag: #text
-#: net_teaming.xml:578
+#. Tag: para
+#: net_teaming.xml:576
 #, no-c-format
-msgid "Specifies a unique ID for the VLAN. Preferably, the file name and the"
-msgstr ""
-
-#. Tag: filename
-#: net_teaming.xml:579
-#, no-c-format
-msgid "ifcfg-vlan <replaceable>VLAN_ID</replaceable>"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:579
-#, no-c-format
-msgid "corresponds to the name"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:580
-#, no-c-format
-msgid "is"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:580
-#, no-c-format
-msgid ". In our case"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:581
-#, no-c-format
-msgid "which leads to the file name"
-msgstr ""
-
-#. Tag: filename
-#: net_teaming.xml:581
-#, no-c-format
-msgid "ifcfg-vlan0"
+msgid "Specifies a unique ID for the VLAN. Preferably, the file name and the <varname>VLAN_ID</varname> corresponds to the name <filename>ifcfg-vlan<replaceable>VLAN_ID</replaceable></filename> . In our case <varname>VLAN_ID</varname> is <literal>0</literal> which leads to the file name <filename>ifcfg-vlan0</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -836,58 +639,16 @@ msgstr ""
 msgid "Copy the file <filename>/etc/sysconfig/network/ifcfg-vlan0</filename> to <filename>/etc/sysconfig/network/ifcfg-vlan1</filename> and change the following values:"
 msgstr ""
 
-#. Tag: varname
-#: net_teaming.xml:600
+#. Tag: para
+#: net_teaming.xml:599
 #, no-c-format
-msgid "IPADDR"
+msgid "<varname>IPADDR</varname> from <systemitem class=\"ipaddress\">&subnetI;0.1/24</systemitem> to <systemitem class=\"ipaddress\">&subnetII;0.1/24</systemitem> ."
 msgstr ""
 
-#. Tag: systemitem
-#: net_teaming.xml:601
+#. Tag: para
+#: net_teaming.xml:605
 #, no-c-format
-msgid "&subnetI;0.1/24"
-msgstr ""
-
-#. Tag: systemitem
-#: net_teaming.xml:602
-#, no-c-format
-msgid "&subnetII;0.1/24"
-msgstr ""
-
-#. Tag: literal
-#: net_teaming.xml:606
-#, no-c-format
-msgid "0"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:606
-#, no-c-format
-msgid "from"
-msgstr ""
-
-#. Tag: varname
-#: net_teaming.xml:606
-#, no-c-format
-msgid "VLAN_ID"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:607
-#, no-c-format
-msgid "to"
-msgstr ""
-
-#. Tag: literal
-#: net_teaming.xml:607
-#, no-c-format
-msgid "1"
-msgstr ""
-
-#. Tag: #text
-#: net_teaming.xml:608
-#, no-c-format
-msgid "."
+msgid "<varname>VLAN_ID</varname> from <literal>0</literal> to <literal>1</literal> ."
 msgstr ""
 
 #. Tag: para

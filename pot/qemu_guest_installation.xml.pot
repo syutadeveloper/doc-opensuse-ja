@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -62,28 +62,10 @@ msgstr ""
 msgid "Create a hard disk with <command>qemu-img</command> ."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_guest_installation.xml:52
 #, no-c-format
-msgid "8G"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:52
-#, no-c-format
-msgid "/images/sles/hda"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:52
-#, no-c-format
-msgid "&prompt.user;qemu-img create"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:52
-#, no-c-format
-msgid "-f raw"
+msgid "&prompt.user;qemu-img create<co xml:id=\"co.qemu-img.create\"/> -f raw<co xml:id=\"co.qemu-img.format\"/> /images/sles/hda<co xml:id=\"co.qemu-img.path\"/> 8G<co xml:id=\"co.qemu-img.size\"/>"
 msgstr ""
 
 #. Tag: para
@@ -116,64 +98,15 @@ msgstr ""
 msgid "After at least one hard disk image is created, you can set up a virtual machine with <command>qemu-system-ARCH</command> that will boot into the installation system:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_guest_installation.xml:87
 #, no-c-format
-msgid "-machine accel=kvm -M pc"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:87
-#, no-c-format
-msgid "-m 768"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:87
-#, no-c-format
-msgid "&prompt.root;qemu-system-x86_64 -name \"sles\""
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:88
-#, no-c-format
-msgid "-boot d"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:88
-#, no-c-format
-msgid "\\-smp 2"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:89
-#, no-c-format
-msgid "\\-drive file=/images/sles/hda,if=virtio,index=0,media=disk,format=raw"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:90
-#, no-c-format
-msgid "\\-drive file=/isos/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso,index=1,media=cdrom"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:91
-#, no-c-format
-msgid "\\-net nic,model=virtio,macaddr=52:54:00:05:11:11"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:92
-#, no-c-format
-msgid "-net user \\-vga cirrus"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:92
-#, no-c-format
-msgid "-balloon virtio"
+msgid "&prompt.root;qemu-system-x86_64 -name \"sles\"<co xml:id=\"co.qemu-kvn.name\"/>-machine accel=kvm -M pc<co xml:id=\"co.qemu-kvm.type\"/> -m 768<co xml:id=\"co.qemu-kvm.memory\"/> \\\n"
+      "-smp 2<co xml:id=\"co.qemu-kvm.cpu\"/> -boot d<co xml:id=\"co.qemu-kvm.boot\"/> \\\n"
+      "-drive file=/images/sles/hda,if=virtio,index=0,media=disk,format=raw<co xml:id=\"co.qemu-kvm.hdd\"/> \\\n"
+      "-drive file=/isos/SLES-11-SP3-DVD-x86_64-GM-DVD1.iso,index=1,media=cdrom<co xml:id=\"co.qemu-kvm.cdrom\"/> \\\n"
+      "-net nic,model=virtio,macaddr=52:54:00:05:11:11<co xml:id=\"co.qemu-kvm.nic\"/> -net user \\\n"
+      "-vga cirrus<co xml:id=\"co.qemu-kvm.gfx\"/> -balloon virtio<co xml:id=\"co.qemu-kvm.balloon\"/>"
 msgstr ""
 
 #. Tag: para
@@ -445,16 +378,10 @@ msgstr ""
 msgid "Use <command>qemu-img create</command> to create a new disk image for your &vmguest; operating system. The command uses the following syntax:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_guest_installation.xml:317
 #, no-c-format
-msgid "size"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:317
-#, no-c-format
-msgid "&prompt.user;qemu-img create -f fmt"
+msgid "&prompt.user;qemu-img create -f fmt<co xml:id=\"co.qemu_img.create.f\"/> -o options<co xml:id=\"co.qemu_img.create.o\"/> fname<co xml:id=\"co.qemu_img.create.filename\"/> size<co xml:id=\"co.qemu_img.create.size\"/>"
 msgstr ""
 
 #. Tag: para
@@ -546,34 +473,10 @@ msgstr ""
 msgid "Use <command>qemu-img convert</command> to convert disk images to another format. To get a complete list of image formats supported by &qemu;, run <command>qemu-img</command> <option>-h</option> and look at the last line of the output. The command uses the following syntax:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_guest_installation.xml:396
 #, no-c-format
-msgid "-O out_fmt"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:396
-#, no-c-format
-msgid "-f fmt"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:396
-#, no-c-format
-msgid "-o options"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:396
-#, no-c-format
-msgid "&prompt.user;qemu-img convert -c"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:396
-#, no-c-format
-msgid "out_fname"
+msgid "&prompt.user;qemu-img convert -c<co xml:id=\"co.qemu_img.convert.c\"/> -f fmt<co xml:id=\"co.qemu_img.convert.fmt\"/> -O out_fmt<co xml:id=\"co.qemu_img.convert.ofmt\"/> -o options<co xml:id=\"co.qemu_img.convert.o\"/> fname<co xml:id=\"co.qemu_img.convert.fname\"/> out_fname<co xml:id=\"co.qemu_img.convert.ofname\"/>"
 msgstr ""
 
 #. Tag: para
@@ -651,16 +554,10 @@ msgstr ""
 msgid "Use <command>qemu-img check</command> to check the existing disk image for errors. Not all disk image formats support this feature. The command uses the following syntax:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_guest_installation.xml:464
 #, no-c-format
-msgid "fname"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:464
-#, no-c-format
-msgid "&prompt.user;qemu-img check -f fmt"
+msgid "&prompt.user;qemu-img check -f fmt<co xml:id=\"co.qemu_img.check.fmt\"/> fname<co xml:id=\"co.qemu_img.check.fname\"/>"
 msgstr ""
 
 #. Tag: para
@@ -999,40 +896,16 @@ msgstr ""
 msgid "Use <command>qemu-img snapshot -l</command> <replaceable>DISK_IMAGE</replaceable> to view a list of all existing snapshots saved in the <literal>disk_image</literal> image. You can get the list even while the &vmguest; is running."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_guest_installation.xml:722
 #, no-c-format
-msgid "&prompt.user;qemu-img snapshot -l /images/sles.qcow2Snapshot list:ID"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:724
-#, no-c-format
-msgid "TAG"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:724
-#, no-c-format
-msgid "VM SIZE"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:724
-#, no-c-format
-msgid "DATE"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:724
-#, no-c-format
-msgid "VM CLOCK"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:728
-#, no-c-format
-msgid "1 booting 4.4M 2013-11-22 10:51:10 00:00:20.4762 booted 184M 2013-11-22 10:53:03 00:02:05.3943 logged_in 273M 2013-11-22 11:00:25 00:04:34.8434 ff_and_term_running 372M 2013-11-22 11:12:27 00:08:44.965"
+msgid "&prompt.user;qemu-img snapshot -l /images/sles.qcow2\n"
+      "Snapshot list:\n"
+      "ID<co xml:id=\"co.qemu_img.snapshot.l.id\"/>       TAG<co xml:id=\"co.qemu_img.snapshot.l.tag\"/>               VM SIZE<co xml:id=\"co.qemu_img.snapshot.l.size\"/>        DATE<co xml:id=\"co.qemu_img.snapshot.l.date\"/>          VM CLOCK<co xml:id=\"co.qemu_img.snapshot.l.clock\"/>\n"
+      "1         booting                4.4M 2013-11-22 10:51:10   00:00:20.476\n"
+      "2         booted                 184M 2013-11-22 10:53:03   00:02:05.394\n"
+      "3         logged_in              273M 2013-11-22 11:00:25   00:04:34.843\n"
+      "4         ff_and_term_running    372M 2013-11-22 11:12:27   00:08:44.965"
 msgstr ""
 
 #. Tag: para
@@ -1351,22 +1224,19 @@ msgstr ""
 msgid "Find the <emphasis>sector size</emphasis> and the starting <emphasis>sector number</emphasis> of the partition you want to mount."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_guest_installation.xml:980
 #, no-c-format
-msgid "&prompt.user;fdisk -lu /dev/loop0Disk /dev/loop0: 4294 MB, 4294967296 bytes255 heads, 63 sectors/track, 522 cylinders, total 8388608 sectorsUnits = sectors of 1 * 512 = 512"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:989
-#, no-c-format
-msgid "bytesDisk identifier: 0x000ceca8 Device Boot Start End Blocks Id System/dev/loop0p1 63 1542239 771088+ 82 Linux swap/dev/loop0p2 * 1542240"
-msgstr ""
-
-#. Tag: #text
-#: qemu_guest_installation.xml:989
-#, no-c-format
-msgid "8385929 3421845 83 Linux"
+msgid "&prompt.user;fdisk -lu /dev/loop0\n"
+      "\n"
+      "Disk /dev/loop0: 4294 MB, 4294967296 bytes\n"
+      "255 heads, 63 sectors/track, 522 cylinders, total 8388608 sectors\n"
+      "Units = sectors of 1 * 512 = 512<co xml:id=\"co.qemu_img.loopback.sector_size\"/> bytes\n"
+      "Disk identifier: 0x000ceca8\n"
+      "\n"
+      "       Device Boot      Start         End      Blocks   Id  System\n"
+      "/dev/loop0p1              63     1542239      771088+  82  Linux swap\n"
+      "/dev/loop0p2   *     1542240<co xml:id=\"co.qemu_img.loopback.sector_start\"/>    8385929     3421845   83  Linux"
 msgstr ""
 
 #. Tag: para

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -140,22 +140,10 @@ msgstr ""
 msgid "Opening a graphical console to a &vmguest; lets you interact with the machine like a physical host via a VNC connection. If accessing the VNC server requires authentication, you are prompted to enter a user name (if applicable) and a password."
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:108
+#. Tag: para
+#: libvirt_managing.xml:107
 #, no-c-format
-msgid "When you click into the VNC console, the cursor is"
-msgstr ""
-
-#. Tag: quote
-#: libvirt_managing.xml:108
-#, no-c-format
-msgid "grabbed"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:110
-#, no-c-format
-msgid "and cannot be used outside the console anymore. To release it, press"
+msgid "When you click into the VNC console, the cursor is <quote>grabbed</quote> and cannot be used outside the console anymore. To release it, press <keycombo> <keycap function=\"alt\"/> <keycap function=\"control\"/> </keycombo> ."
 msgstr ""
 
 #. Tag: title
@@ -170,58 +158,10 @@ msgstr ""
 msgid "To prevent the console from grabbing the cursor and to enable seamless cursor movement, add a tablet input device to the &vmguest;. See <xref linkend=\"sec.libvirt.config.tablet\"/> for more information."
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:122
+#. Tag: para
+#: libvirt_managing.xml:121
 #, no-c-format
-msgid "Certain key combinations such as"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:124
-#, no-c-format
-msgid "are interpreted by the host system and are not passed to the &vmguest;. To pass such key combinations to a &vmguest;, open the"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:127
-#, no-c-format
-msgid "menu from the VNC window and choose the desired key combination entry. The"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:127
-#, no-c-format
-msgid "menu is only available when using &vmm; and"
-msgstr ""
-
-#. Tag: guimenu
-#: libvirt_managing.xml:127
-#, no-c-format
-msgid "Send Key"
-msgstr ""
-
-#. Tag: command
-#: libvirt_managing.xml:128
-#, no-c-format
-msgid "virt-viewer"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:128
-#, no-c-format
-msgid ". With &vmm;, you can alternatively use the"
-msgstr ""
-
-#. Tag: quote
-#: libvirt_managing.xml:129
-#, no-c-format
-msgid "sticky key"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:130
-#, no-c-format
-msgid "feature as explained in"
+msgid "Certain key combinations such as <keycombo> <keycap function=\"control\"/> <keycap function=\"alt\"/> <keycap function=\"delete\"/> </keycombo> are interpreted by the host system and are not passed to the &vmguest;. To pass such key combinations to a &vmguest;, open the <guimenu>Send Key</guimenu> menu from the VNC window and choose the desired key combination entry. The <guimenu>Send Key</guimenu> menu is only available when using &vmm; and <command>virt-viewer</command> . With &vmm;, you can alternatively use the <quote>sticky key</quote> feature as explained in <xref linkend=\"tip.libvirt.inst.vmm.sticky\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -1077,22 +1017,11 @@ msgstr ""
 msgid "To take an internal snapshot of a &vmguest;, both live and offline, use the <literal>snapshot-create-as</literal> command as follows:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: libvirt_managing.xml:824
 #, no-c-format
-msgid "&prompt.user;virsh snapshot-create-as --domain admin_server"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:824
-#, no-c-format
-msgid "--name \"Snapshot 1\""
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:825
-#, no-c-format
-msgid "\\--description \"First snapshot\""
+msgid "&prompt.user;virsh snapshot-create-as --domain admin_server<co xml:id=\"virsh.snapshot.add.domain\"/> --name \"Snapshot 1\"<co xml:id=\"virsh.snapshot.add.name\"/> \\\n"
+      "--description \"First snapshot\"<co xml:id=\"virsh.snapshot.add.description\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1181,34 +1110,10 @@ msgid "&prompt.user;virsh snapshot-create-as --domain admin_server --name \\\n"
       " --diskspec vda,snapshot=external,file=/path/to/snapshot_file"
 msgstr ""
 
-#. Tag: citetitle
-#: libvirt_managing.xml:882
+#. Tag: para
+#: libvirt_managing.xml:881
 #, no-c-format
-msgid "SNAPSHOT COMMANDS"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:882
-#, no-c-format
-msgid "Refer to the"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:883
-#, no-c-format
-msgid "section in"
-msgstr ""
-
-#. Tag: command
-#: libvirt_managing.xml:883
-#, no-c-format
-msgid "man 1 virsh"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:884
-#, no-c-format
-msgid "for more details."
+msgid "Refer to the <citetitle>SNAPSHOT COMMANDS</citetitle> section in <command>man 1 virsh</command> for more details."
 msgstr ""
 
 #. Tag: title
@@ -1814,10 +1719,11 @@ msgstr ""
 msgid "The following commands assume that you are in the interactive shell of <command>virsh</command> which can also be reached by using the command <command>virsh</command> without any arguments. Then the pool can be set to start automatically at host boot (autostart option):"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1377
+#. Tag: screen
+#: libvirt_managing.xml:1376
 #, no-c-format
-msgid "pool-autostart VMPool VM marked as autostarted"
+msgid "<prompt>virsh # </prompt>pool-autostart VM\n"
+      "Pool VM marked as autostarted"
 msgstr ""
 
 #. Tag: para
@@ -1826,10 +1732,11 @@ msgstr ""
 msgid "If you want to disable the autostart:"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1382
+#. Tag: screen
+#: libvirt_managing.xml:1381
 #, no-c-format
-msgid "pool-autostart VM --disablePool VM unmarked as autostarted"
+msgid "<prompt>virsh # </prompt>pool-autostart VM --disable\n"
+      "Pool VM unmarked as autostarted"
 msgstr ""
 
 #. Tag: para
@@ -1838,16 +1745,24 @@ msgstr ""
 msgid "Check if the pool is present:"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1392
+#. Tag: screen
+#: libvirt_managing.xml:1386
 #, no-c-format
-msgid "pool-list --all Name State Autostart------------------------------------------- default active yes VM active yes"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:1400
-#, no-c-format
-msgid "pool-info VMName: VMUUID: 42efe1b3-7eaa-4e24-a06a-ba7c9ee29741State: runningPersistent: yesAutostart: yesCapacity: 2,68 TiBAllocation: 2,38 TiBAvailable: 306,05 GiB"
+msgid "<prompt>virsh # </prompt>pool-list --all\n"
+      " Name                 State      Autostart\n"
+      "-------------------------------------------\n"
+      " default              active     yes\n"
+      " VM                   active     yes\n"
+      "\n"
+      "<prompt>virsh # </prompt>pool-info VM\n"
+      "Name:           VM\n"
+      "UUID:           42efe1b3-7eaa-4e24-a06a-ba7c9ee29741\n"
+      "State:          running\n"
+      "Persistent:     yes\n"
+      "Autostart:      yes\n"
+      "Capacity:       2,68 TiB\n"
+      "Allocation:     2,38 TiB\n"
+      "Available:      306,05 GiB"
 msgstr ""
 
 #. Tag: title
@@ -1874,16 +1789,11 @@ msgstr ""
 msgid "The pool has been defined&mdash;now we need a volume which will contain the disk image:"
 msgstr ""
 
-#. Tag: prompt
+#. Tag: screen
 #: libvirt_managing.xml:1415
 #, no-c-format
-msgid "virsh #"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:1416
-#, no-c-format
-msgid "vol-create-as VM sled12.qcow12 8G --format qcow2Vol sled12.qcow12 created"
+msgid "<prompt>virsh # </prompt>vol-create-as VM sled12.qcow12 8G --format qcow2\n"
+      "Vol sled12.qcow12 created"
 msgstr ""
 
 #. Tag: para
@@ -2054,82 +1964,34 @@ msgstr ""
 msgid "By default the output is sorted by ID. Use the following key combinations to change the sort field:"
 msgstr ""
 
-#. Tag: keycap
+#. Tag: member
 #: libvirt_managing.xml:1558
 #, no-c-format
-msgid "P"
+msgid "<keycombo><keycap function=\"shift\"/><keycap>P</keycap></keycombo> : CPU usage"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1560
-#, no-c-format
-msgid ": CPU usage"
-msgstr ""
-
-#. Tag: keycap
+#. Tag: member
 #: libvirt_managing.xml:1561
 #, no-c-format
-msgid "M"
+msgid "<keycombo><keycap function=\"shift\"/><keycap>M</keycap></keycombo> : Total memory allocated by the guest"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1563
-#, no-c-format
-msgid ": Total memory allocated by the guest"
-msgstr ""
-
-#. Tag: keycap
+#. Tag: member
 #: libvirt_managing.xml:1564
 #, no-c-format
-msgid "T"
+msgid "<keycombo><keycap function=\"shift\"/><keycap>T</keycap></keycombo> : Time"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1565
-#, no-c-format
-msgid ": Time"
-msgstr ""
-
-#. Tag: keycap
+#. Tag: member
 #: libvirt_managing.xml:1566
 #, no-c-format
-msgid "I"
+msgid "<keycombo><keycap function=\"shift\"/><keycap>I</keycap></keycombo> : ID"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1567
+#. Tag: para
+#: libvirt_managing.xml:1569
 #, no-c-format
-msgid ": ID"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:1570
-#, no-c-format
-msgid "To use any other field for sorting, press"
-msgstr ""
-
-#. Tag: keycap
-#: libvirt_managing.xml:1572
-#, no-c-format
-msgid "F"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:1573
-#, no-c-format
-msgid "and select a field from the list. To toggle the sort order, use"
-msgstr ""
-
-#. Tag: keycap
-#: libvirt_managing.xml:1575
-#, no-c-format
-msgid "R"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:1576
-#, no-c-format
-msgid "."
+msgid "To use any other field for sorting, press <keycombo> <keycap function=\"shift\"/> <keycap>F</keycap> </keycombo> and select a field from the list. To toggle the sort order, use <keycombo> <keycap function=\"shift\"/> <keycap>R</keycap> </keycombo> ."
 msgstr ""
 
 #. Tag: para
@@ -2138,52 +2000,28 @@ msgstr ""
 msgid "<command>virt-top</command> also supports different views on the &vmguest;s data, which can be changed on-the-fly by pressing the following keys:"
 msgstr ""
 
-#. Tag: keycap
+#. Tag: member
 #: libvirt_managing.xml:1582
 #, no-c-format
-msgid "0"
+msgid "<keycap>0</keycap> : default view"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_managing.xml:1582
-#, no-c-format
-msgid ": default view"
-msgstr ""
-
-#. Tag: #text
+#. Tag: member
 #: libvirt_managing.xml:1583
 #, no-c-format
-msgid ": show physical CPUs"
+msgid "<keycap>1</keycap> : show physical CPUs"
 msgstr ""
 
-#. Tag: keycap
-#: libvirt_managing.xml:1583
-#, no-c-format
-msgid "1"
-msgstr ""
-
-#. Tag: #text
+#. Tag: member
 #: libvirt_managing.xml:1584
 #, no-c-format
-msgid ": show network interfaces"
+msgid "<keycap>2</keycap> : show network interfaces"
 msgstr ""
 
-#. Tag: keycap
-#: libvirt_managing.xml:1584
-#, no-c-format
-msgid "2"
-msgstr ""
-
-#. Tag: keycap
+#. Tag: member
 #: libvirt_managing.xml:1585
 #, no-c-format
-msgid "3"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_managing.xml:1585
-#, no-c-format
-msgid ": show virtual disks"
+msgid "<keycap>3</keycap> : show virtual disks"
 msgstr ""
 
 #. Tag: para

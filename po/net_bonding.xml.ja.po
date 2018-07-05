@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -370,70 +370,19 @@ msgid ""
 "KERNEL==\"eth*\", NAME=\"eth0\""
 msgstr ""
 
-#. Tag: systemitem
-#: net_bonding.xml:267
-#, no-c-format
-msgid "network.service"
-msgstr ""
-
-#. Tag: #text
-#: net_bonding.xml:267
-#, no-c-format
-msgid "At boot time, the systemd"
-msgstr ""
-
-#. Tag: #text
-#: net_bonding.xml:270
+#. Tag: para
+#: net_bonding.xml:266
 #, no-c-format
 msgid ""
-"does not wait for the hotplug slaves, but for the bond to become ready, "
-"which requires at least one available slave. When one of the slave "
-"interfaces gets removed (unbind from NIC driver,"
-msgstr ""
-
-#. Tag: command
-#: net_bonding.xml:270
-#, no-c-format
-msgid "rmmod"
-msgstr ""
-
-#. Tag: systemitem
-#: net_bonding.xml:273
-#, no-c-format
-msgid "udev"
-msgstr ""
-
-#. Tag: #text
-#: net_bonding.xml:273
-#, no-c-format
-msgid ""
-"of the NIC driver or true PCI hotplug remove) from the system, the kernel "
-"removes it from the bond automatically. When a new card is added to the "
-"system (replacement of the hardware in the slot),"
-msgstr ""
-
-#. Tag: command
-#: net_bonding.xml:275
-#, no-c-format
-msgid "ifup"
-msgstr ""
-
-#. Tag: #text
-#: net_bonding.xml:275
-#, no-c-format
-msgid ""
-"renames it using the bus-based persistent name rule to the name of the "
-"slave, and calls"
-msgstr ""
-
-#. Tag: #text
-#: net_bonding.xml:275
-#, no-c-format
-msgid "for it. The"
-msgstr ""
-
-#. Tag: #text
-#: net_bonding.xml:277
-#, no-c-format
-msgid "call automatically joins it into the bond."
+"At boot time, the systemd <systemitem>network.service</systemitem> does not "
+"wait for the hotplug slaves, but for the bond to become ready, which "
+"requires at least one available slave. When one of the slave interfaces gets "
+"removed (unbind from NIC driver, <command>rmmod</command> of the NIC driver "
+"or true PCI hotplug remove) from the system, the kernel removes it from the "
+"bond automatically. When a new card is added to the system (replacement of "
+"the hardware in the slot), <systemitem>udev</systemitem> renames it using "
+"the bus-based persistent name rule to the name of the slave, and calls "
+"<command>ifup</command> for it. The <command>ifup</command> call "
+"automatically joins it into the bond. <remark> ke: I think this can stay "
+"that way for now. </remark>"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -174,6 +174,16 @@ msgstr ""
 #: apache2.xml:113
 #, no-c-format
 msgid "&prompt.sudo;systemctl enable apache2"
+msgstr ""
+
+#. Tag: para
+#: apache2.xml:114
+#, no-c-format
+msgid ""
+"<remark>taroth 2014-02-11: commenting the following procedure as it is "
+"unsure how to enable a service for certain targets with YaST Services "
+"Manager, filed bnc# 863333 for it UPDATE tbazant 2015-08-20: still not "
+"clear, leaving commented out </remark>"
 msgstr ""
 
 #. Tag: para
@@ -1216,82 +1226,18 @@ msgid ""
 "command>"
 msgstr ""
 
-#. Tag: systemitem
-#: apache2.xml:903
+#. Tag: para
+#: apache2.xml:901
 #, no-c-format
-msgid "mod_status"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:903
-#, no-c-format
-msgid "Dumps a short or full status screen, respectively. Requires the module"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:904
-#, no-c-format
-msgid "to be enabled and a text-based browser (such as"
-msgstr ""
-
-#. Tag: command
-#: apache2.xml:904
-#, no-c-format
-msgid "links"
-msgstr ""
-
-#. Tag: command
-#: apache2.xml:905
-#, no-c-format
-msgid "w3m"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:905
-#, no-c-format
-msgid "or"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:906
-#, no-c-format
-msgid ") to be installed."
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:911
-#, no-c-format
-msgid "In addition to that,"
-msgstr ""
-
-#. Tag: literal
-#: apache2.xml:911
-#, no-c-format
-msgid "status"
-msgstr ""
-
-#. Tag: systemitem
-#: apache2.xml:912
-#, no-c-format
-msgid "APACHE_SERVER_FLAGS"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:912
-#, no-c-format
-msgid "must be added to"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:913
-#, no-c-format
-msgid "in the file"
-msgstr ""
-
-#. Tag: filename
-#: apache2.xml:913
-#, no-c-format
-msgid "/etc/sysconfig/apache2"
+msgid ""
+"Dumps a short or full status screen, respectively. Requires the module "
+"<systemitem>mod_status</systemitem> to be enabled and a text-based browser "
+"(such as <command>links</command> or <command>w3m</command> ) to be "
+"installed. <remark> FIXME: Not sure about whether the following bit has "
+"changed since SLE 11 and rcapache2. - sknorr, 2017-06-07 </remark> In "
+"addition to that, <literal>status</literal> must be added to "
+"<systemitem>APACHE_SERVER_FLAGS</systemitem> in the file <filename>/etc/"
+"sysconfig/apache2</filename> ."
 msgstr ""
 
 #. Tag: title
@@ -1548,28 +1494,13 @@ msgid ""
 "authorization)."
 msgstr ""
 
-#. Tag: citetitle
-#: apache2.xml:1139
+#. Tag: para
+#: apache2.xml:1137
 #, no-c-format
-msgid "Authentication HOWTO"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1139
-#, no-c-format
-msgid "More information about this topic is available in the"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1140
-#, no-c-format
-msgid "at"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1141
-#, no-c-format
-msgid "."
+msgid ""
+"More information about this topic is available in the "
+"<citetitle>Authentication HOWTO</citetitle> at <link xlink:href=\"http://"
+"httpd.apache.org/docs/2.4/howto/auth.html\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -2252,34 +2183,18 @@ msgstr ""
 msgid "VirtualHost CGI Configuration"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: apache2.xml:1630
 #, no-c-format
-msgid "ScriptAlias /cgi-bin/ \"/srv/www/&wwwname;/cgi-bin/\""
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1632
-#, no-c-format
-msgid "&lt;Directory \"/srv/www/&wwwname;/cgi-bin/\"&gt; Options +ExecCGI"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1634
-#, no-c-format
-msgid "AddHandler cgi-script .cgi .pl"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1635
-#, no-c-format
-msgid "Require all granted"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1636
-#, no-c-format
-msgid "&lt;/Directory&gt;"
+msgid ""
+"ScriptAlias /cgi-bin/ \"/srv/www/&wwwname;/cgi-bin/\"<co xml:id=\"co.apache2."
+"cgi.script_alias\"/>\n"
+"\n"
+"&lt;Directory \"/srv/www/&wwwname;/cgi-bin/\"&gt;\n"
+" Options +ExecCGI<co xml:id=\"co.apache2.cgi.options\"/>\n"
+" AddHandler cgi-script .cgi .pl<co xml:id=\"co.apache2.cgi.handler\"/>\n"
+" Require all granted<co xml:id=\"co.apache2.cgi.order\"/>\n"
+"&lt;/Directory&gt;"
 msgstr ""
 
 #. Tag: para
@@ -2624,81 +2539,41 @@ msgid ""
 "will need it in the future."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: apache2.xml:1875
 #, no-c-format
 msgid ""
-"&prompt.sudo;openssl req -new &gt; new.cert.csrGenerating a 1024 bit RSA "
-"private key..++++++.........++++++writing new private key to 'privkey."
-"pem'Enter PEM pass phrase:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1881
-#, no-c-format
-msgid "Verifying - Enter PEM pass phrase:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1890
-#, no-c-format
-msgid ""
-"-----You are about to be asked to enter information that will be "
-"incorporatedinto your certificate request.What you are about to enter is "
-"what is called a Distinguished Name or a DN.There are quite a few fields but "
-"you can leave some blankFor some fields there will be a default value,If you "
-"enter '.', the field will be left blank.-----Country Name (2 letter code) "
-"[AU]:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1891
-#, no-c-format
-msgid "State or Province Name (full name) [Some-State]:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1892
-#, no-c-format
-msgid "Locality Name (eg, city) []:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1893
-#, no-c-format
-msgid "Organization Name (eg, company) [Internet Widgits Pty Ltd]:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1894
-#, no-c-format
-msgid "Organizational Unit Name (eg, section) []:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1895
-#, no-c-format
-msgid "Common Name (for example server FQDN, or YOUR name) []:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1896
-#, no-c-format
-msgid "Email Address []:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1900
-#, no-c-format
-msgid ""
-"Please enter the following 'extra' attributesto be sent with your "
-"certificate requestA challenge password []:"
-msgstr ""
-
-#. Tag: #text
-#: apache2.xml:1901
-#, no-c-format
-msgid "An optional company name []:"
+"&prompt.sudo;openssl req -new &gt; new.cert.csr\n"
+"Generating a 1024 bit RSA private key\n"
+"..++++++\n"
+".........++++++\n"
+"writing new private key to 'privkey.pem'\n"
+"Enter PEM pass phrase:<co xml:id=\"co.ssl.self.pass1\"/>\n"
+"Verifying - Enter PEM pass phrase:<co xml:id=\"co.ssl.self.pass2\"/>\n"
+"-----\n"
+"You are about to be asked to enter information that will be incorporated\n"
+"into your certificate request.\n"
+"What you are about to enter is what is called a Distinguished Name or a DN.\n"
+"There are quite a few fields but you can leave some blank\n"
+"For some fields there will be a default value,\n"
+"If you enter '.', the field will be left blank.\n"
+"-----\n"
+"Country Name (2 letter code) [AU]:<co xml:id=\"co.ssl.self.country\"/>\n"
+"State or Province Name (full name) [Some-State]:<co xml:id=\"co.ssl.self."
+"state\"/>\n"
+"Locality Name (eg, city) []:<co xml:id=\"co.ssl.self.city\"/>\n"
+"Organization Name (eg, company) [Internet Widgits Pty Ltd]:<co xml:id=\"co."
+"ssl.self.org\"/>\n"
+"Organizational Unit Name (eg, section) []:<co xml:id=\"co.ssl.self.uname\"/"
+">\n"
+"Common Name (for example server FQDN, or YOUR name) []:<co xml:id=\"co.ssl."
+"self.cname\"/>\n"
+"Email Address []:<co xml:id=\"co.ssl.self.email\"/>\n"
+"\n"
+"Please enter the following 'extra' attributes\n"
+"to be sent with your certificate request\n"
+"A challenge password []:<co xml:id=\"co.ssl.self.challenge\"/>\n"
+"An optional company name []:<co xml:id=\"co.ssl.self.optional\"/>"
 msgstr ""
 
 #. Tag: para

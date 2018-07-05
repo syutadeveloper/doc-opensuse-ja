@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -134,22 +134,10 @@ msgstr ""
 msgid "To find the most appropriate server from which to request objects, a cache sends an ICP request to all sibling proxies. The sibling proxies answer these requests via ICP responses. If the object was detected, they use the code <literal>HIT</literal> , if not, they use <literal>MISS</literal> ."
 msgstr ""
 
-#. Tag: #text
-#: net_proxy.xml:127
+#. Tag: para
+#: net_proxy.xml:126
 #, no-c-format
-msgid "If multiple"
-msgstr ""
-
-#. Tag: literal
-#: net_proxy.xml:127
-#, no-c-format
-msgid "HIT"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:131
-#, no-c-format
-msgid "responses were found, the proxy server decides from which server to download, depending on factors such as which cache sent the fastest answer or which one is closer. If no satisfactory responses are received, the request is sent to the parent cache."
+msgid "If multiple <literal>HIT</literal> responses were found, the proxy server decides from which server to download, depending on factors such as which cache sent the fastest answer or which one is closer. If no satisfactory responses are received, the request is sent to the parent cache. <remark>Is timestamp a factor? - sknorr, 2016-06-24</remark>"
 msgstr ""
 
 #. Tag: title
@@ -170,10 +158,10 @@ msgstr ""
 msgid "Caching Internet Objects"
 msgstr ""
 
-#. Tag: #text
-#: net_proxy.xml:150
+#. Tag: para
+#: net_proxy.xml:146
 #, no-c-format
-msgid "Many objects available in the network are not static, such as dynamically generated pages and TLS/SSL-encrypted content. Objects like these are not cached because they change each time they are accessed."
+msgid "Many objects available in the network are not static, such as dynamically generated pages and TLS/SSL-encrypted content. Objects like these are not cached because they change each time they are accessed. <remark>Squid can now decrypt TLS traffic with plugins. Not sure whether that is then stored or not. Also, not sure how/whether to get this information in here. - sknorr, 2016-06-24 </remark>"
 msgstr ""
 
 #. Tag: para
@@ -416,40 +404,33 @@ msgstr ""
 msgid "A Request With <command>squidclient</command>"
 msgstr ""
 
-#. Tag: command
+#. Tag: screen
 #: net_proxy.xml:389
 #, no-c-format
-msgid "squidclient http://www.example.org"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:389
-#, no-c-format
-msgid "&prompt.user;"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:401
-#, no-c-format
-msgid "HTTP/1.1 200 OKCache-Control: max-age=604800Content-Type: text/htmlDate: Fri, 22 Jun 2016 12:00:00 GMTExpires: Fri, 29 Jun 2016 12:00:00 GMTLast-Modified: Fri, 09 Aug 2013 23:54:35 GMTServer: ECS (iad/182A)Vary: Accept-EncodingX-Cache: HITx-ec-custom-error: 1Content-Length: 1270X-Cache: MISS from moon"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:403
-#, no-c-format
-msgid "X-Cache-Lookup: MISS from moon:3128Via: 1.1 moon (squid/3.5.16)"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:406
-#, no-c-format
-msgid "Connection: close"
-msgstr ""
-
-#. Tag: #cdata-section
-#: net_proxy.xml:406
-#, no-c-format
-msgid "<![CDATA[<!doctype html><html><head> <title>Example Domain</title>[...]</body></html>]]>"
+msgid "&prompt.user;<command>squidclient http://www.example.org</command>\n"
+      "HTTP/1.1 200 OK\n"
+      "Cache-Control: max-age=604800\n"
+      "Content-Type: text/html\n"
+      "Date: Fri, 22 Jun 2016 12:00:00 GMT\n"
+      "Expires: Fri, 29 Jun 2016 12:00:00 GMT\n"
+      "Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT\n"
+      "Server: ECS (iad/182A)\n"
+      "Vary: Accept-Encoding\n"
+      "X-Cache: HIT\n"
+      "x-ec-custom-error: 1\n"
+      "Content-Length: 1270\n"
+      "X-Cache: MISS from moon<co xml:id=\"co.squid.miss\"/>\n"
+      "X-Cache-Lookup: MISS from moon:3128\n"
+      "Via: 1.1 moon (squid/3.5.16)<co xml:id=\"co.squid.via\"/>\n"
+      "Connection: close\n"
+      "\n"
+      "<![CDATA[<!doctype html>\n"
+      "<html>\n"
+      "<head>\n"
+      "    <title>Example Domain</title>\n"
+      "[...]\n"
+      "</body>\n"
+      "</html>]]>"
 msgstr ""
 
 #. Tag: para
@@ -632,52 +613,10 @@ msgstr ""
 msgid "Dynamic DNS"
 msgstr ""
 
-#. Tag: filename
-#: net_proxy.xml:558
+#. Tag: para
+#: net_proxy.xml:555
 #, no-c-format
-msgid "/etc/resolv.conf"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:558
-#, no-c-format
-msgid "Normally, with dynamic DNS, the DNS server is set by the provider during the establishment of the Internet connection and the local"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:560
-#, no-c-format
-msgid "file is adjusted automatically. This behavior is controlled in the"
-msgstr ""
-
-#. Tag: filename
-#: net_proxy.xml:560
-#, no-c-format
-msgid "/etc/sysconfig/network/config"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:561
-#, no-c-format
-msgid "file with the"
-msgstr ""
-
-#. Tag: constant
-#: net_proxy.xml:562
-#, no-c-format
-msgid "\"\""
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:562
-#, no-c-format
-msgid "sysconfig variable. Set"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:563
-#, no-c-format
-msgid "with the &yast; sysconfig editor."
+msgid "Normally, with dynamic DNS, the DNS server is set by the provider during the establishment of the Internet connection and the local <filename>/etc/resolv.conf</filename> file is adjusted automatically. This behavior is controlled in the <filename>/etc/sysconfig/network/config</filename> file with the <constant>NETCONFIG_DNS_POLICY</constant> sysconfig variable. Set <constant>NETCONFIG_DNS_POLICY</constant> to <constant>\"\"</constant> with the &yast; sysconfig editor."
 msgstr ""
 
 #. Tag: para
@@ -686,58 +625,10 @@ msgstr ""
 msgid "Then, add the local DNS server in the <filename>/etc/resolv.conf</filename> file with the IP address <systemitem class=\"ipaddress\">127.0.0.1</systemitem> for <systemitem class=\"domainname\">localhost</systemitem> . This way, Squid can always find the local name server when it starts."
 msgstr ""
 
-#. Tag: #text
-#: net_proxy.xml:575
+#. Tag: para
+#: net_proxy.xml:573
 #, no-c-format
-msgid "To make the provider's name server accessible, specify it in the configuration file"
-msgstr ""
-
-#. Tag: filename
-#: net_proxy.xml:575
-#, no-c-format
-msgid "/etc/named.conf"
-msgstr ""
-
-#. Tag: systemitem
-#: net_proxy.xml:576
-#, no-c-format
-msgid "forwarders"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:576
-#, no-c-format
-msgid "under"
-msgstr ""
-
-#. Tag: constant
-#: net_proxy.xml:579
-#, no-c-format
-msgid "NETCONFIG_DNS_POLICY"
-msgstr ""
-
-#. Tag: constant
-#: net_proxy.xml:579
-#, no-c-format
-msgid "auto"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:579
-#, no-c-format
-msgid "to"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:579
-#, no-c-format
-msgid "along with its IP address. With dynamic DNS, this can be achieved automatically when establishing the connection by setting the sysconfig variable"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:580
-#, no-c-format
-msgid "."
+msgid "To make the provider's name server accessible, specify it in the configuration file <filename>/etc/named.conf</filename> under <systemitem>forwarders</systemitem> along with its IP address. With dynamic DNS, this can be achieved automatically when establishing the connection by setting the sysconfig variable <constant>NETCONFIG_DNS_POLICY</constant> to <constant>auto</constant> ."
 msgstr ""
 
 #. Tag: term
@@ -884,28 +775,10 @@ msgstr ""
 msgid "All Squid proxy server settings are made in the <filename>/etc/squid/squid.conf</filename> file. To start Squid for the first time, no changes are necessary in this file, but external clients are initially denied access. The proxy is available for <systemitem class=\"domainname\">localhost</systemitem> . The default port is <option>3128</option> . The preinstalled configuration file <filename>/etc/squid/squid.conf</filename> provides detailed information about the options and many examples."
 msgstr ""
 
-#. Tag: #text
-#: net_proxy.xml:694
+#. Tag: para
+#: net_proxy.xml:692
 #, no-c-format
-msgid "Many entries are commented and therefore begin with the comment character"
-msgstr ""
-
-#. Tag: literal
-#: net_proxy.xml:694
-#, no-c-format
-msgid "#"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:696
-#, no-c-format
-msgid ". The relevant specifications can be found at the end of the line."
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:702
-#, no-c-format
-msgid "The given values usually correlate with the default values, so removing the comment signs without changing any of the parameters usually has no effect. If possible, leave the commented lines as they are and insert the options along with the modified values in the line below. This way, the default values may easily be recovered and compared with the changes."
+msgid "Many entries are commented and therefore begin with the comment character <literal>#</literal> . The relevant specifications can be found at the end of the line. <remark>FIXME: Where is that not the case? - sknorr, 2016-06-05</remark> The given values usually correlate with the default values, so removing the comment signs without changing any of the parameters usually has no effect. If possible, leave the commented lines as they are and insert the options along with the modified values in the line below. This way, the default values may easily be recovered and compared with the changes."
 msgstr ""
 
 #. Tag: title
@@ -1256,28 +1129,15 @@ msgstr ""
 msgid "Defining ACL Rules"
 msgstr ""
 
-#. Tag: #text
-#: net_proxy.xml:1033
+#. Tag: screen
+#: net_proxy.xml:1032
 #, no-c-format
-msgid "acl mysurfers srcdomain .example.com"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:1034
-#, no-c-format
-msgid "acl teachers src 192.168.1.0/255.255.255.0"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:1035
-#, no-c-format
-msgid "acl students src 192.168.7.0-192.168.9.0/255.255.255.0"
-msgstr ""
-
-#. Tag: #text
-#: net_proxy.xml:1036
-#, no-c-format
-msgid "acl lunch time MTWHF 12:00-15:00"
+msgid "\n"
+      "acl mysurfers srcdomain .example.com <co xml:id=\"co.squid.school.surfer\"/>\n"
+      "acl teachers src 192.168.1.0/255.255.255.0 <co xml:id=\"co.squid.school.teacher\"/>\n"
+      "acl students src 192.168.7.0-192.168.9.0/255.255.255.0 <co xml:id=\"co.squid.school.student\"/>\n"
+      "acl lunch time MTWHF 12:00-15:00 <co xml:id=\"co.squid.school.time\"/>\n"
+      ""
 msgstr ""
 
 #. Tag: para

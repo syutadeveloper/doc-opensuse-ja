@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -529,53 +529,29 @@ msgid ""
 "guests to talk directly to each other."
 msgstr ""
 
-#. Tag: #text
-#: libvirt_networking.xml:428
-#, no-c-format
-msgid "&lt;network&gt;&lt;name&gt;vnet_nated&lt;/name&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_networking.xml:430
-#, no-c-format
-msgid "&lt;bridge name=\"virbr1\" /&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_networking.xml:431
-#, no-c-format
-msgid "&lt;forward mode=\"nat\"/&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_networking.xml:432
-#, no-c-format
-msgid "&lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\"&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_networking.xml:433
+#. Tag: screen
+#: libvirt_networking.xml:427
 #, no-c-format
 msgid ""
-"&lt;dhcp&gt; &lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" /&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_networking.xml:435
-#, no-c-format
-msgid ""
-"&lt;host mac=\"52:54:00:c7:92:da\" name=\"host1.testing.com\" \\ ip="
-"\"192.168.1.23.101\" /&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_networking.xml:437
-#, no-c-format
-msgid ""
-"&lt;host mac=\"52:54:00:c7:92:db\" name=\"host2.testing.com\" \\ ip="
-"\"192.168.1.23.102\" /&gt; &lt;host mac=\"52:54:00:c7:92:dc\" name=\"host3."
-"testing.com\" \\ ip=\"192.168.1.23.103\" /&gt; &lt;/dhcp&gt; &lt;/ip&gt;&lt;/"
-"network&gt;"
+"\n"
+"&lt;network&gt;\n"
+"&lt;name&gt;vnet_nated&lt;/name&gt;<co xml:id=\"vnet.xml.name\"/>\n"
+"&lt;bridge name=\"virbr1\" /&gt;<co xml:id=\"vnet.xml.bridge\"/>\n"
+" &lt;forward mode=\"nat\"/&gt;<co xml:id=\"vnet.xml.forward\"/>\n"
+" &lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\"&gt;<co xml:id="
+"\"vnet.xml.ip\"/>\n"
+"  &lt;dhcp&gt;\n"
+"   &lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" /&gt;<co xml:id="
+"\"vnet.xml.dhcp\"/>\n"
+"   &lt;host mac=\"52:54:00:c7:92:da\" name=\"host1.testing.com\" \\\n"
+"    ip=\"192.168.1.23.101\" /&gt;<co xml:id=\"vnet.xml.dhcp_host\"/>\n"
+"   &lt;host mac=\"52:54:00:c7:92:db\" name=\"host2.testing.com\" \\\n"
+"    ip=\"192.168.1.23.102\" /&gt;\n"
+"   &lt;host mac=\"52:54:00:c7:92:dc\" name=\"host3.testing.com\" \\\n"
+"    ip=\"192.168.1.23.103\" /&gt;\n"
+"  &lt;/dhcp&gt;\n"
+" &lt;/ip&gt;\n"
+"&lt;/network&gt;\n"
 msgstr ""
 
 #. Tag: para
@@ -657,21 +633,22 @@ msgid ""
 "the routing tables of the router on the &vmhost; network."
 msgstr ""
 
-#. Tag: #text
-#: libvirt_networking.xml:513
+#. Tag: screen
+#: libvirt_networking.xml:512
 #, no-c-format
 msgid ""
-"&lt;network&gt; &lt;name&gt;vnet_routed&lt;/name&gt; &lt;bridge name="
-"\"virbr1\" /&gt; &lt;forward mode=\"route\" dev=\"eth1\"/&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_networking.xml:517
-#, no-c-format
-msgid ""
-"&lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\"&gt; &lt;dhcp&gt; "
-"&lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" /&gt; &lt;/"
-"dhcp&gt; &lt;/ip&gt;&lt;/network&gt;"
+"\n"
+"&lt;network&gt;\n"
+" &lt;name&gt;vnet_routed&lt;/name&gt;\n"
+" &lt;bridge name=\"virbr1\" /&gt;\n"
+" &lt;forward mode=\"route\" dev=\"eth1\"/&gt;<co xml:id=\"vnet.xml.route\"/"
+">\n"
+" &lt;ip address=\"192.168.122.1\" netmask=\"255.255.255.0\"&gt;\n"
+"  &lt;dhcp&gt;\n"
+"   &lt;range start=\"192.168.122.2\" end=\"192.168.122.254\" /&gt;\n"
+"  &lt;/dhcp&gt;\n"
+" &lt;/ip&gt;\n"
+"&lt;/network&gt;\n"
 msgstr ""
 
 #. Tag: para

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -428,52 +428,10 @@ msgstr ""
 msgid "<command>ksu</command>"
 msgstr ""
 
-#. Tag: #text
-#: security_kerberos.xml:477
+#. Tag: para
+#: security_kerberos.xml:475
 #, no-c-format
-msgid "You no longer need to enter your password for using these applications because &krb; has already proven your identity."
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:478
-#, no-c-format
-msgid ", if compiled with &krb; support, can even forward all the tickets acquired for one workstation to another one. If you use"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:481
-#, no-c-format
-msgid "to log in to another workstation,"
-msgstr ""
-
-#. Tag: command
-#: security_kerberos.xml:481
-#, no-c-format
-msgid "ssh"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:485
-#, no-c-format
-msgid "makes sure that the encrypted contents of the tickets are adjusted to the new situation. Simply copying tickets between workstations is not sufficient because the ticket contains workstation-specific information (the IP address). XDM and GDM offer &krb; support, too. Read more about the &krb; network applications in"
-msgstr ""
-
-#. Tag: citetitle
-#: security_kerberos.xml:486
-#, no-c-format
-msgid "Kerberos V5 UNIX User's Guide"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:487
-#, no-c-format
-msgid "at"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:488
-#, no-c-format
-msgid "."
+msgid "You no longer need to enter your password for using these applications because &krb; has already proven your identity. <command>ssh</command> , if compiled with &krb; support, can even forward all the tickets acquired for one workstation to another one. If you use <command>ssh</command> to log in to another workstation, <command>ssh</command> makes sure that the encrypted contents of the tickets are adjusted to the new situation. Simply copying tickets between workstations is not sufficient because the ticket contains workstation-specific information (the IP address). XDM and GDM offer &krb; support, too. Read more about the &krb; network applications in <citetitle>Kerberos V5 UNIX User's Guide</citetitle> at <link xlink:href=\"http://web.mit.edu/kerberos\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -837,16 +795,16 @@ msgstr ""
 msgid "&prompt.sudo;kdb5_util create -r EXAMPLE.COM -s"
 msgstr ""
 
-#. Tag: #text
-#: security_kerberos.xml:880
+#. Tag: screen
+#: security_kerberos.xml:876
 #, no-c-format
-msgid "Initializing database '/var/lib/kerberos/krb5kdc/principal' for realm 'EXAMPLE.COM',master key name 'K/M@EXAMPLE.COM'You will be prompted for the database Master Password.It is important that you NOT FORGET this password.Enter KDC database master key:"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:881
-#, no-c-format
-msgid "Re-enter KDC database master key to verify:"
+msgid "Initializing database '/var/lib/kerberos/krb5kdc/principal' for realm 'EXAMPLE.COM',\n"
+      "master key name 'K/M@EXAMPLE.COM'\n"
+      "You will be prompted for the database Master Password.\n"
+      "It is important that you NOT FORGET this password.\n"
+      "Enter KDC database master key:  <co xml:id=\"co.kerb.kdb5.pass\"/>\n"
+      "Re-enter KDC database master key to verify:  <co xml:id=\"co.kerb.kdb5.pass.repeat\"/>\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -867,10 +825,12 @@ msgstr ""
 msgid "To verify, use the list command:"
 msgstr ""
 
-#. Tag: #text
-#: security_kerberos.xml:900
+#. Tag: screen
+#: security_kerberos.xml:898
 #, no-c-format
-msgid "listprincs"
+msgid "&prompt.user;kadmin.local\n"
+      "\n"
+      "<prompt>kadmin&gt; </prompt>listprincs"
 msgstr ""
 
 #. Tag: para
@@ -900,22 +860,13 @@ msgstr ""
 msgid "Create two &krb; principals for yourself: one normal principal for everyday work and one for administrative tasks relating to &krb;. Assuming your login name is &exampleuserIII;, proceed as follows:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_kerberos.xml:917
 #, no-c-format
-msgid "&prompt.user;kadmin.local"
-msgstr ""
-
-#. Tag: prompt
-#: security_kerberos.xml:919
-#, no-c-format
-msgid "kadmin&gt;"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:919
-#, no-c-format
-msgid "ank &exampleuserIII_plain;"
+msgid "&prompt.user;kadmin.local\n"
+      "\n"
+      "<prompt>kadmin&gt; </prompt>ank &exampleuserIII_plain;\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -924,16 +875,12 @@ msgstr ""
 msgid "You will see the following output:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_kerberos.xml:924
 #, no-c-format
-msgid "&exampleuserIII_plain;@EXAMPLE.COM's Password:"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:925
-#, no-c-format
-msgid "Verifying password:"
+msgid "&exampleuserIII_plain;@EXAMPLE.COM's Password: <co xml:id=\"co.kerb.geeko.pass\"/>\n"
+      "Verifying password: <co xml:id=\"co.kerb.geeko.pass.repeat\"/>\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -1611,124 +1558,10 @@ msgstr ""
 msgid "To enable &krb; to bind to the OpenLDAP server, create a principal <literal>ldap/&ldapname;</literal> and add that to the keytab."
 msgstr ""
 
-#. Tag: #text
-#: security_kerberos.xml:1519
+#. Tag: para
+#: security_kerberos.xml:1517
 #, no-c-format
-msgid "By default, the LDAP server slapd runs as user and group"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1520
-#, no-c-format
-msgid ", while the keytab file is readable by"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1522
-#, no-c-format
-msgid "only. Therefore, either change the LDAP configuration so the server runs as"
-msgstr ""
-
-#. Tag: systemitem
-#: security_kerberos.xml:1522
-#, no-c-format
-msgid "root"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1523
-#, no-c-format
-msgid "or make the keytab file readable by the group"
-msgstr ""
-
-#. Tag: systemitem
-#: security_kerberos.xml:1523
-#, no-c-format
-msgid "ldap"
-msgstr ""
-
-#. Tag: filename
-#: security_kerberos.xml:1525
-#, no-c-format
-msgid "/usr/lib/openldap/start"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1525
-#, no-c-format
-msgid ". The latter is done automatically by the OpenLDAP start script ("
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1526
-#, no-c-format
-msgid ") if the keytab file has been specified in the"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1527
-#, no-c-format
-msgid "variable in"
-msgstr ""
-
-#. Tag: filename
-#: security_kerberos.xml:1527
-#, no-c-format
-msgid "/etc/sysconfig/openldap"
-msgstr ""
-
-#. Tag: envar
-#: security_kerberos.xml:1528
-#, no-c-format
-msgid "OPENLDAP_CHOWN_DIRS"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1528
-#, no-c-format
-msgid "and the"
-msgstr ""
-
-#. Tag: literal
-#: security_kerberos.xml:1529
-#, no-c-format
-msgid "yes"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1529
-#, no-c-format
-msgid "variable is set to"
-msgstr ""
-
-#. Tag: envar
-#: security_kerberos.xml:1530
-#, no-c-format
-msgid "OPENLDAP_KRB5_KEYTAB"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1530
-#, no-c-format
-msgid ", which is the default setting. If"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1531
-#, no-c-format
-msgid "is left empty, the default keytab under"
-msgstr ""
-
-#. Tag: filename
-#: security_kerberos.xml:1531
-#, no-c-format
-msgid "/etc/krb5.keytab"
-msgstr ""
-
-#. Tag: #text
-#: security_kerberos.xml:1533
-#, no-c-format
-msgid "is used and you must adjust the privileges yourself as described below."
+msgid "By default, the LDAP server slapd runs as user and group <systemitem class=\"username\">ldap</systemitem> , while the keytab file is readable by <systemitem class=\"username\">root</systemitem> only. Therefore, either change the LDAP configuration so the server runs as <systemitem class=\"username\">root</systemitem> or make the keytab file readable by the group <systemitem class=\"username\">ldap</systemitem> . The latter is done automatically by the OpenLDAP start script ( <filename>/usr/lib/openldap/start</filename> ) if the keytab file has been specified in the <envar>OPENLDAP_KRB5_KEYTAB</envar> variable in <filename>/etc/sysconfig/openldap</filename> and the <envar>OPENLDAP_CHOWN_DIRS</envar> variable is set to <literal>yes</literal> , which is the default setting. If <envar>OPENLDAP_KRB5_KEYTAB</envar> is left empty, the default keytab under <filename>/etc/krb5.keytab</filename> is used and you must adjust the privileges yourself as described below."
 msgstr ""
 
 #. Tag: para

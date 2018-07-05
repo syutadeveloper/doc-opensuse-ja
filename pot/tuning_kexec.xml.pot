@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -242,58 +242,16 @@ msgstr ""
 msgid "Significance of <literal>Low</literal> and <literal>High</literal> Values"
 msgstr ""
 
-#. Tag: #text
-#: tuning_kexec.xml:234
+#. Tag: para
+#: tuning_kexec.xml:233
 #, no-c-format
-msgid "On &x86-64; computers, the"
+msgid "On &x86-64; computers, the <literal>High</literal> value stands for the memory reservation for all available memory. The <literal>Low</literal> value stands for the memory reservation in the DMA32 zone, that is, all the memory up to the 4 GB mark. <remark> Petr Tesarik says in bsc#948565 that High means \"all memory\". This is not completely true in SLE 12 SP1 RC1, but fixed for SLE 12 SP1 RC2. - sknorr, 2015-10-05 </remark>"
 msgstr ""
 
-#. Tag: #text
-#: tuning_kexec.xml:236
+#. Tag: para
+#: tuning_kexec.xml:244
 #, no-c-format
-msgid "value stands for the memory reservation for all available memory. The"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:238
-#, no-c-format
-msgid "value stands for the memory reservation in the DMA32 zone, that is, all the memory up to the 4 GB mark."
-msgstr ""
-
-#. Tag: literal
-#: tuning_kexec.xml:250
-#, no-c-format
-msgid "High"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:250
-#, no-c-format
-msgid "If the computer has less than 4 GB of RAM, the"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:251
-#, no-c-format
-msgid "memory reservation is allocated and the"
-msgstr ""
-
-#. Tag: literal
-#: tuning_kexec.xml:252
-#, no-c-format
-msgid "Low"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:252
-#, no-c-format
-msgid "memory reservation is ignored. If the computer has more than 4 GB of RAM, the"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:254
-#, no-c-format
-msgid "memory reservation is allocated additionally."
+msgid "<remark>The following is confusing, but probably true ( https://bugzilla.suse.com/show_bug.cgi?id=948565#c6 ). - sknorr, 2015-10-05 </remark> If the computer has less than 4 GB of RAM, the <literal>High</literal> memory reservation is allocated and the <literal>Low</literal> memory reservation is ignored. If the computer has more than 4 GB of RAM, the <literal>Low</literal> memory reservation is allocated additionally."
 msgstr ""
 
 #. Tag: para
@@ -603,34 +561,10 @@ msgstr ""
 msgid "When you run <command>cio_ignore -u -k</command> , the blacklist will become active and replace any existing blacklist immediately. Unused devices are not being purged, so they still appear in the channel subsystem. But adding new channel devices (via CP ATTACH under z/VM or dynamic I/O configuration change in LPAR) will treat them as blacklisted. To prevent this, preserve the original setting by running <command>sudo cio_ignore -l</command> first and reverting to that state after running <command>cio_ignore -u -k</command> . As an alternative, add the generated stanza to the regular kernel boot parameters."
 msgstr ""
 
-#. Tag: #text
-#: tuning_kexec.xml:518
+#. Tag: para
+#: tuning_kexec.xml:517
 #, no-c-format
-msgid "Now add the"
-msgstr ""
-
-#. Tag: option
-#: tuning_kexec.xml:518
-#, no-c-format
-msgid "cio_ignore"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:519
-#, no-c-format
-msgid "kernel parameter with the stanza from above to"
-msgstr ""
-
-#. Tag: envar
-#: tuning_kexec.xml:519
-#, no-c-format
-msgid "KDUMP_CMDLINE_APPEND"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:521
-#, no-c-format
-msgid ", for example:"
+msgid "Now add the <option>cio_ignore</option> kernel parameter with the stanza from above to <envar>KDUMP_CMDLINE_APPEND</envar> in <filename>/etc/sysconfig/kdump</filename> , for example:"
 msgstr ""
 
 #. Tag: screen
@@ -927,22 +861,10 @@ msgstr ""
 msgid "Static IP Configuration for &kdump;"
 msgstr ""
 
-#. Tag: #text
-#: tuning_kexec.xml:753
+#. Tag: para
+#: tuning_kexec.xml:752
 #, no-c-format
-msgid "In case &kdump; is configured to use a static IP configuration from a network device, you need to add the network configuration to the"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:756
-#, no-c-format
-msgid "variable in"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:757
-#, no-c-format
-msgid "."
+msgid "In case &kdump; is configured to use a static IP configuration from a network device, you need to add the network configuration to the <envar>KDUMP_COMMANDLINE_APPEND</envar> variable in <filename>/etc/sysconfig/kdump</filename> ."
 msgstr ""
 
 #. Tag: title
@@ -991,34 +913,10 @@ msgid "KDUMP_CPUS=1\n"
       "KDUMP_NET_TIMEOUT=30"
 msgstr ""
 
-#. Tag: #text
-#: tuning_kexec.xml:793
+#. Tag: para
+#: tuning_kexec.xml:792
 #, no-c-format
-msgid "Using this configuration, &kdump; fails to reach the network when trying to write the dump to the FTP server. To solve this issue, add the network configuration to"
-msgstr ""
-
-#. Tag: envar
-#: tuning_kexec.xml:795
-#, no-c-format
-msgid "KDUMP_COMMANDLINE_APPEND"
-msgstr ""
-
-#. Tag: filename
-#: tuning_kexec.xml:796
-#, no-c-format
-msgid "/etc/sysconfig/kdump"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:796
-#, no-c-format
-msgid "in"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:798
-#, no-c-format
-msgid ". The general pattern for this looks like the following:"
+msgid "Using this configuration, &kdump; fails to reach the network when trying to write the dump to the FTP server. To solve this issue, add the network configuration to <envar>KDUMP_COMMANDLINE_APPEND</envar> in <filename>/etc/sysconfig/kdump</filename> . The general pattern for this looks like the following:"
 msgstr ""
 
 #. Tag: screen
@@ -1177,16 +1075,10 @@ msgstr ""
 msgid "&prompt.root;<command>ssh-keygen</command> -f <replaceable>~/.ssh/kdump_key</replaceable>"
 msgstr ""
 
-#. Tag: #text
-#: tuning_kexec.xml:946
+#. Tag: para
+#: tuning_kexec.xml:945
 #, no-c-format
-msgid "Press"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:948
-#, no-c-format
-msgid "when prompted for passphrase (that is, do not use any passphrase)."
+msgid "Press <keycap function=\"enter\"/> when prompted for passphrase (that is, do not use any passphrase)."
 msgstr ""
 
 #. Tag: para
@@ -1472,40 +1364,54 @@ msgstr ""
 msgid "Regardless of the computer on which you analyze the dump, the crash utility will produce output similar to this:"
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: screen
 #: tuning_kexec.xml:1196
 #, no-c-format
-msgid "/boot/vmlinux-2.6.32.8-0.1-default.gz"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:1196
-#, no-c-format
-msgid "&prompt.user;"
-msgstr ""
-
-#. Tag: command
-#: tuning_kexec.xml:1196
-#, no-c-format
-msgid "crash"
-msgstr ""
-
-#. Tag: replaceable
-#: tuning_kexec.xml:1197
-#, no-c-format
-msgid "/var/crash/2010-04-23-11\\:17/vmcore"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:1197
-#, no-c-format
-msgid "\\"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:1217
-#, no-c-format
-msgid "crash 4.0-7.6Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008 Red Hat, Inc.Copyright (C) 2004, 2005, 2006 IBM CorporationCopyright (C) 1999-2006 Hewlett-Packard CoCopyright (C) 2005, 2006 Fujitsu LimitedCopyright (C) 2006, 2007 VA Linux Systems Japan K.K.Copyright (C) 2005 NEC CorporationCopyright (C) 1999, 2002, 2007 Silicon Graphics, Inc.Copyright (C) 1999, 2000, 2001, 2002 Mission Critical Linux, Inc.This program is free software, covered by the GNU General Public License,and you are welcome to change it and/or distribute copies of it undercertain conditions. Enter \"help copying\" to see the conditions.This program has absolutely no warranty. Enter \"help warranty\" for details.GNU gdb 6.1Copyright 2004 Free Software Foundation, Inc.GDB is free software, covered by the GNU General Public License, and you arewelcome to change it and/or distribute copies of it under certain conditions.Type \"show copying\" to see the conditions.There is absolutely no warranty for GDB. Type \"show warranty\" for details.This GDB was configured as \"x86_64-unknown-linux-gnu\"... KERNEL: /boot/vmlinux-2.6.32.8-0.1-default.gz DEBUGINFO: /usr/lib/debug/boot/vmlinux-2.6.32.8-0.1-default.debug DUMPFILE: /var/crash/2009-04-23-11:17/vmcore CPUS: 2 DATE: Thu Apr 23 13:17:01 2010 UPTIME: 00:10:41LOAD AVERAGE: 0.01, 0.09, 0.09 TASKS: 42 NODENAME: eros RELEASE: 2.6.32.8-0.1-default VERSION: #1 SMP 2010-03-31 14:50:44 +0200 MACHINE: x86_64 (2999 Mhz) MEMORY: 1 GB PANIC: \"SysRq : Trigger a crashdump\" PID: 9446 COMMAND: \"bash\" TASK: ffff88003a57c3c0 [THREAD_INFO: ffff880037168000] CPU: 1 STATE: TASK_RUNNING (SYSRQ)"
+msgid "&prompt.user;<command>crash</command> <replaceable>/boot/vmlinux-2.6.32.8-0.1-default.gz</replaceable> \\\n"
+      "<replaceable>/var/crash/2010-04-23-11\\:17/vmcore</replaceable>\n"
+      "\n"
+      "crash 4.0-7.6\n"
+      "Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008  Red Hat, Inc.\n"
+      "Copyright (C) 2004, 2005, 2006  IBM Corporation\n"
+      "Copyright (C) 1999-2006  Hewlett-Packard Co\n"
+      "Copyright (C) 2005, 2006  Fujitsu Limited\n"
+      "Copyright (C) 2006, 2007  VA Linux Systems Japan K.K.\n"
+      "Copyright (C) 2005  NEC Corporation\n"
+      "Copyright (C) 1999, 2002, 2007  Silicon Graphics, Inc.\n"
+      "Copyright (C) 1999, 2000, 2001, 2002  Mission Critical Linux, Inc.\n"
+      "This program is free software, covered by the GNU General Public License,\n"
+      "and you are welcome to change it and/or distribute copies of it under\n"
+      "certain conditions.  Enter \"help copying\" to see the conditions.\n"
+      "This program has absolutely no warranty.  Enter \"help warranty\" for details.\n"
+      "\n"
+      "GNU gdb 6.1\n"
+      "Copyright 2004 Free Software Foundation, Inc.\n"
+      "GDB is free software, covered by the GNU General Public License, and you are\n"
+      "welcome to change it and/or distribute copies of it under certain conditions.\n"
+      "Type \"show copying\" to see the conditions.\n"
+      "There is absolutely no warranty for GDB.  Type \"show warranty\" for details.\n"
+      "This GDB was configured as \"x86_64-unknown-linux-gnu\"...\n"
+      "\n"
+      "      KERNEL: /boot/vmlinux-2.6.32.8-0.1-default.gz\n"
+      "   DEBUGINFO: /usr/lib/debug/boot/vmlinux-2.6.32.8-0.1-default.debug\n"
+      "    DUMPFILE: /var/crash/2009-04-23-11:17/vmcore\n"
+      "        CPUS: 2\n"
+      "        DATE: Thu Apr 23 13:17:01 2010\n"
+      "      UPTIME: 00:10:41\n"
+      "LOAD AVERAGE: 0.01, 0.09, 0.09\n"
+      "       TASKS: 42\n"
+      "    NODENAME: eros\n"
+      "     RELEASE: 2.6.32.8-0.1-default\n"
+      "     VERSION: #1 SMP 2010-03-31 14:50:44 +0200\n"
+      "     MACHINE: x86_64  (2999 Mhz)\n"
+      "      MEMORY: 1 GB\n"
+      "       PANIC: \"SysRq : Trigger a crashdump\"\n"
+      "         PID: 9446\n"
+      "     COMMAND: \"bash\"\n"
+      "        TASK: ffff88003a57c3c0  [THREAD_INFO: ffff880037168000]\n"
+      "         CPU: 1\n"
+      "       STATE: TASK_RUNNING (SYSRQ)\n"
+      "<prompt>crash&gt; </prompt>"
 msgstr ""
 
 #. Tag: para
@@ -1520,22 +1426,28 @@ msgstr ""
 msgid "The <command>crash</command> utility builds upon GDB and provides many additional commands. If you enter <command>bt</command> without any parameters, the backtrace of the task running at the moment of the crash is printed:"
 msgstr ""
 
-#. Tag: command
-#: tuning_kexec.xml:1255
+#. Tag: screen
+#: tuning_kexec.xml:1254
 #, no-c-format
-msgid "bt"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:1264
-#, no-c-format
-msgid "PID: 9446 TASK: ffff88003a57c3c0 CPU: 1 COMMAND: \"bash\" #0 [ffff880037169db0] crash_kexec at ffffffff80268fd6 #1 [ffff880037169e80] __handle_sysrq at ffffffff803d50ed #2 [ffff880037169ec0] write_sysrq_trigger at ffffffff802f6fc5 #3 [ffff880037169ed0] proc_reg_write at ffffffff802f068b #4 [ffff880037169f10] vfs_write at ffffffff802b1aba #5 [ffff880037169f40] sys_write at ffffffff802b1c1f #6 [ffff880037169f80] system_call_fastpath at ffffffff8020bfbb RIP: 00007fa958991f60 RSP: 00007fff61330390 RFLAGS: 00010246 RAX: 0000000000000001 RBX: ffffffff8020bfbb RCX: 0000000000000001 RDX: 0000000000000002 RSI: 00007fa959284000 RDI: 0000000000000001 RBP: 0000000000000002 R8: 00007fa9592516f0 R9: 00007fa958c209c0 R10: 00007fa958c209c0 R11: 0000000000000246 R12: 00007fa958c1f780 R13: 00007fa959284000 R14: 0000000000000002 R15: 00000000595569d0 ORIG_RAX: 0000000000000001 CS: 0033 SS: 002b"
-msgstr ""
-
-#. Tag: prompt
-#: tuning_kexec.xml:1271
-#, no-c-format
-msgid "crash&gt;"
+msgid "\n"
+      "<prompt>crash&gt; </prompt><command>bt</command>\n"
+      "PID: 9446   TASK: ffff88003a57c3c0  CPU: 1   COMMAND: \"bash\"\n"
+      " #0 [ffff880037169db0] crash_kexec at ffffffff80268fd6\n"
+      " #1 [ffff880037169e80] __handle_sysrq at ffffffff803d50ed\n"
+      " #2 [ffff880037169ec0] write_sysrq_trigger at ffffffff802f6fc5\n"
+      " #3 [ffff880037169ed0] proc_reg_write at ffffffff802f068b\n"
+      " #4 [ffff880037169f10] vfs_write at ffffffff802b1aba\n"
+      " #5 [ffff880037169f40] sys_write at ffffffff802b1c1f\n"
+      " #6 [ffff880037169f80] system_call_fastpath at ffffffff8020bfbb\n"
+      "    RIP: 00007fa958991f60  RSP: 00007fff61330390  RFLAGS: 00010246\n"
+      "    RAX: 0000000000000001  RBX: ffffffff8020bfbb  RCX: 0000000000000001\n"
+      "    RDX: 0000000000000002  RSI: 00007fa959284000  RDI: 0000000000000001\n"
+      "    RBP: 0000000000000002   R8: 00007fa9592516f0   R9: 00007fa958c209c0\n"
+      "    R10: 00007fa958c209c0  R11: 0000000000000246  R12: 00007fa958c1f780\n"
+      "    R13: 00007fa959284000  R14: 0000000000000002  R15: 00000000595569d0\n"
+      "    ORIG_RAX: 0000000000000001  CS: 0033  SS: 002b\n"
+      "<prompt>crash&gt; </prompt>\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -1676,21 +1588,9 @@ msgstr ""
 msgid "If you prefer to use Python instead, you should install Pykdump. This package helps you control GDB through Python scripts and can be downloaded from <link xlink:href=\"http://sf.net/projects/pykdump\"/> ."
 msgstr ""
 
-#. Tag: #text
-#: tuning_kexec.xml:1457
+#. Tag: para
+#: tuning_kexec.xml:1455
 #, no-c-format
-msgid "A very comprehensive overview of the Linux kernel internals is given in"
-msgstr ""
-
-#. Tag: citetitle
-#: tuning_kexec.xml:1457
-#, no-c-format
-msgid "Understanding the Linux Kernel"
-msgstr ""
-
-#. Tag: #text
-#: tuning_kexec.xml:1459
-#, no-c-format
-msgid "by Daniel P. Bovet and Marco Cesati (ISBN 978-0-596-00565-8)."
+msgid "A very comprehensive overview of the Linux kernel internals is given in <citetitle>Understanding the Linux Kernel</citetitle> by Daniel P. Bovet and Marco Cesati (ISBN 978-0-596-00565-8)."
 msgstr ""
 

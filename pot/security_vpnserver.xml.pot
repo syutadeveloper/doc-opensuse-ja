@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -819,76 +819,39 @@ msgstr ""
 msgid "VPN Server Configuration File"
 msgstr ""
 
-#. Tag: #text
-#: security_vpnserver.xml:969
+#. Tag: screen
+#: security_vpnserver.xml:968
 #, no-c-format
-msgid "# /etc/openvpn/server.confport 1194"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:971
-#, no-c-format
-msgid "dev tun0"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:973
-#, no-c-format
-msgid "# Security"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:979
-#, no-c-format
-msgid "ca vpn_ca.pemcert server_crt.pemkey server_key.pem# ns-cert-type server"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:980
-#, no-c-format
-msgid "remote-cert-tls client"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:981
-#, no-c-format
-msgid "dh server/dh2048.pem"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:983
-#, no-c-format
-msgid "server &subnetI;.0 255.255.255.0"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:984
-#, no-c-format
-msgid "ifconfig-pool-persist /var/run/openvpn/ipp.txt"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:990
-#, no-c-format
-msgid "user nobodygroup nobody# Other configuration"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:995
-#, no-c-format
-msgid "keepalive 10 120comp-lzopersist-keypersist-tun# status /var/log/openvpn-status.tun0.log"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:996
-#, no-c-format
-msgid "# log-append /var/log/openvpn-server.log"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:997
-#, no-c-format
-msgid "verb 4"
+msgid "# /etc/openvpn/server.conf\n"
+      "port 1194 <co xml:id=\"co.vpn.servconfig.port\"/>\n"
+      "proto udp <co xml:id=\"co.vpn.servconfig.proto\"/>\n"
+      "dev tun0 <co xml:id=\"co.vpn.servconfig.dev\"/>\n"
+      "\n"
+      "# Security <co xml:id=\"co.vpn.servconfig.security\"/>\n"
+      "<!--taroth 2014-12-19: fix for https://bugzilla.suse.com/show_bug.cgi?id=910132 -->\n"
+      "ca    vpn_ca.pem\n"
+      "cert  server_crt.pem\n"
+      "key   server_key.pem\n"
+      "\n"
+      "# ns-cert-type server <!-- Check with mt -->\n"
+      "remote-cert-tls client <co xml:id=\"co.vpn.servconfig.remote-cert-tls\"/>\n"
+      "dh   server/dh2048.pem <co xml:id=\"co.vpn.servconfig.dh\"/>\n"
+      "\n"
+      "server &subnetI;.0 255.255.255.0 <co xml:id=\"co.vpn.servconfig.server\"/>\n"
+      "ifconfig-pool-persist /var/run/openvpn/ipp.txt <co xml:id=\"co.vpn.servconfig.pool\"/>\n"
+      "\n"
+      "# Privileges <co xml:id=\"co.vpn.serverconf.privilege\"/>\n"
+      "user nobody\n"
+      "group nobody\n"
+      "\n"
+      "# Other configuration <co xml:id=\"co.vpn.servconfig.misc\"/>\n"
+      "keepalive 10 120\n"
+      "comp-lzo\n"
+      "persist-key\n"
+      "persist-tun\n"
+      "# status      /var/log/openvpn-status.tun0.log <co xml:id=\"co.vpn.serverconfig.status\"/>\n"
+      "# log-append  /var/log/openvpn-server.log <co xml:id=\"co.vpn.serverconfig.log-append\"/>\n"
+      "verb 4"
 msgstr ""
 
 #. Tag: para
@@ -1005,64 +968,31 @@ msgstr ""
 msgid "VPN Client Configuration File"
 msgstr ""
 
-#. Tag: #text
-#: security_vpnserver.xml:1122
+#. Tag: screen
+#: security_vpnserver.xml:1121
 #, no-c-format
-msgid "# /etc/openvpn/client.confclient"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1123
-#, no-c-format
-msgid "dev tun"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1124
-#, no-c-format
-msgid "proto udp"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1125
-#, no-c-format
-msgid "1194"
-msgstr ""
-
-#. Tag: replaceable
-#: security_vpnserver.xml:1125
-#, no-c-format
-msgid "IP_OR_HOST_NAME"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1125
-#, no-c-format
-msgid "remote"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1129
-#, no-c-format
-msgid "resolv-retry infinitenobindremote-cert-tls server"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1131
-#, no-c-format
-msgid "# Privileges"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1139
-#, no-c-format
-msgid "user nobodygroup nobody# Try to preserve some state across restarts.persist-keypersist-tun# Security"
-msgstr ""
-
-#. Tag: #text
-#: security_vpnserver.xml:1142
-#, no-c-format
-msgid "pkcs12 client1.p12comp-lzo"
+msgid "# /etc/openvpn/client.conf\n"
+      "client <co xml:id=\"co.vpn.clientconf.client\"/>\n"
+      "dev tun <co xml:id=\"co.vpn.clientconf.dev\"/>\n"
+      "proto udp <co xml:id=\"co.vpn.clientconf.proto\"/>\n"
+      "remote <replaceable>IP_OR_HOST_NAME</replaceable> 1194 <co xml:id=\"co.vpn.clientconf.remote\"/>\n"
+      "resolv-retry infinite\n"
+      "nobind\n"
+      "\n"
+      "remote-cert-tls server <co xml:id=\"co.vpn.clientconf.remote-cert-tls\"/>\n"
+      "\n"
+      "# Privileges <co xml:id=\"co.vpn.clientconf.privileges\"/>\n"
+      "user nobody\n"
+      "group nobody\n"
+      "\n"
+      "# Try to preserve some state across restarts.\n"
+      "persist-key\n"
+      "persist-tun\n"
+      "\n"
+      "# Security <co xml:id=\"co.vpn.clientconf.security\"/>\n"
+      "pkcs12 client1.p12\n"
+      "\n"
+      "comp-lzo <co xml:id=\"co.vpn.clientconf.compr\"/>"
 msgstr ""
 
 #. Tag: para

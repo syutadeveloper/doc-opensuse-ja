@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -333,58 +333,18 @@ msgstr ""
 msgid "PAM Configuration for sshd ( <filename>/etc/pam.d/sshd</filename> )"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_pam.xml:346
 #, no-c-format
-msgid "#%PAM-1.0"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:347
-#, no-c-format
-msgid "auth requisite pam_nologin.so"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:348
-#, no-c-format
-msgid "auth include common-auth"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:349
-#, no-c-format
-msgid "account requisite pam_nologin.so"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:350
-#, no-c-format
-msgid "account include common-account"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:351
-#, no-c-format
-msgid "password include common-password"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:352
-#, no-c-format
-msgid "session required pam_loginuid.so"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:353
-#, no-c-format
-msgid "session include common-session"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:354
-#, no-c-format
-msgid "session optional pam_lastlog.so silent noupdate showfailed"
+msgid "#%PAM-1.0 <co xml:id=\"co.security.pam.sshd.pam-line\"/>\n"
+      "auth     requisite      pam_nologin.so                              <co xml:id=\"co.security.pam.sshd.pam_nologin\"/>\n"
+      "auth     include        common-auth                                 <co xml:id=\"co.security.pam.sshd.common-auth\"/>\n"
+      "account  requisite      pam_nologin.so                              <xref xrefstyle=\"select:nopage\" linkend=\"co.security.pam.sshd.pam_nologin\"/>\n"
+      "account  include        common-account                              <xref xrefstyle=\"select:nopage\" linkend=\"co.security.pam.sshd.common-auth\"/>\n"
+      "password include        common-password                             <xref linkend=\"co.security.pam.sshd.common-auth\" xrefstyle=\"select:nopage\"/>\n"
+      "session  required       pam_loginuid.so                             <co xml:id=\"co.security.pam.sshd.pam_loginuid\"/>\n"
+      "session  include        common-session                              <xref linkend=\"co.security.pam.sshd.common-auth\" xrefstyle=\"select:nopage\"/>\n"
+      "session  optional       pam_lastlog.so   silent noupdate showfailed <co xml:id=\"co.security.pam.sshd.lastlog\"/>"
 msgstr ""
 
 #. Tag: para
@@ -435,52 +395,18 @@ msgstr ""
 msgid "Default Configuration for the <literal>auth</literal> Section ( <filename>common-auth</filename> )"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_pam.xml:415
 #, no-c-format
-msgid "auth required pam_env.so"
+msgid "auth  required  pam_env.so                   <co xml:id=\"co.security.pam.sshd.pam_env\"/>\n"
+      "auth  optional  pam_gnome_keyring.so         <co xml:id=\"co.security.pam.sshd.gnome\"/>\n"
+      "auth  required  pam_unix.so  try_first_pass <co xml:id=\"co.security.pam.sshd.pam_unix\"/>"
 msgstr ""
 
-#. Tag: #text
-#: security_pam.xml:416
+#. Tag: para
+#: security_pam.xml:422
 #, no-c-format
-msgid "auth optional pam_gnome_keyring.so"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:417
-#, no-c-format
-msgid "auth required pam_unix.so try_first_pass"
-msgstr ""
-
-#. Tag: systemitem
-#: security_pam.xml:423
-#, no-c-format
-msgid "pam_env.so"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:424
-#, no-c-format
-msgid "loads"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:426
-#, no-c-format
-msgid "to set the environment variables as specified in this file. It can be used to set the"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:427
-#, no-c-format
-msgid "variable to the correct value, because the"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:429
-#, no-c-format
-msgid "module knows about the location from which the login is taking place."
+msgid "<systemitem class=\"library\">pam_env.so</systemitem> loads <filename>/etc/security/pam_env.conf</filename> to set the environment variables as specified in this file. It can be used to set the <envar>DISPLAY</envar> variable to the correct value, because the <systemitem class=\"library\">pam_env</systemitem> module knows about the location from which the login is taking place."
 msgstr ""
 
 #. Tag: para
@@ -628,22 +554,10 @@ msgstr ""
 msgid "Values that may be queried and set by <systemitem>pam_env</systemitem> , overriding the default value."
 msgstr ""
 
-#. Tag: #text
-#: security_pam.xml:582
+#. Tag: para
+#: security_pam.xml:581
 #, no-c-format
-msgid "A typical example of how"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:583
-#, no-c-format
-msgid "can be used is the adaptation of the"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:585
-#, no-c-format
-msgid "variable, which is changed whenever a remote login takes place. This is shown in"
+msgid "A typical example of how <systemitem>pam_env</systemitem> can be used is the adaptation of the <envar>DISPLAY</envar> variable, which is changed whenever a remote login takes place. This is shown in <xref linkend=\"dat.pam.pamenv\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -661,76 +575,10 @@ msgid "\n"
       ""
 msgstr ""
 
-#. Tag: #text
-#: security_pam.xml:595
+#. Tag: para
+#: security_pam.xml:594
 #, no-c-format
-msgid "The first line sets the value of the"
-msgstr ""
-
-#. Tag: literal
-#: security_pam.xml:596
-#, no-c-format
-msgid "localhost"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:596
-#, no-c-format
-msgid "variable to"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:597
-#, no-c-format
-msgid ", which is used whenever"
-msgstr ""
-
-#. Tag: filename
-#: security_pam.xml:597
-#, no-c-format
-msgid "pam_env"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:598
-#, no-c-format
-msgid "cannot determine any other value. The"
-msgstr ""
-
-#. Tag: envar
-#: security_pam.xml:598
-#, no-c-format
-msgid "DISPLAY"
-msgstr ""
-
-#. Tag: envar
-#: security_pam.xml:599
-#, no-c-format
-msgid "REMOTEHOST"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:599
-#, no-c-format
-msgid "variable in turn contains the value of"
-msgstr ""
-
-#. Tag: filename
-#: security_pam.xml:600
-#, no-c-format
-msgid "/etc/security/pam_env.conf"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:600
-#, no-c-format
-msgid ". Find more information in the comments in"
-msgstr ""
-
-#. Tag: #text
-#: security_pam.xml:601
-#, no-c-format
-msgid "."
+msgid "The first line sets the value of the <envar>REMOTEHOST</envar> variable to <literal>localhost</literal> , which is used whenever <filename>pam_env</filename> cannot determine any other value. The <envar>DISPLAY</envar> variable in turn contains the value of <envar>REMOTEHOST</envar> . Find more information in the comments in <filename>/etc/security/pam_env.conf</filename> ."
 msgstr ""
 
 #. Tag: title

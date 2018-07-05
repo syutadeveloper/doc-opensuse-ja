@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -456,59 +456,16 @@ msgid ""
 "/etc/cron.weekly/*\n"
 msgstr ""
 
-#. Tag: command
-#: apparmor_whatimmunize.xml:404
-#, no-c-format
-msgid "crontab"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:404
-#, no-c-format
-msgid "The"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:405
+#. Tag: para
+#: apparmor_whatimmunize.xml:401
 #, no-c-format
 msgid ""
-"command lists/edits the current user's crontab. To manipulate &rootuser;'s"
-msgstr ""
-
-#. Tag: systemitem
-#: apparmor_whatimmunize.xml:406
-#, no-c-format
-msgid "cron"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:407
-#, no-c-format
-msgid "jobs, first become &rootuser;, and then edit the tasks with"
-msgstr ""
-
-#. Tag: command
-#: apparmor_whatimmunize.xml:407
-#, no-c-format
-msgid "crontab -e"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:408
-#, no-c-format
-msgid "or list them with"
-msgstr ""
-
-#. Tag: command
-#: apparmor_whatimmunize.xml:408
-#, no-c-format
-msgid "crontab -l"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:409
-#, no-c-format
-msgid "."
+"<remark>sknorr, 2014-08-26: To have gone in a circle, go in a circle. Iow: "
+"the definition of (a) crontab is not very clear here.</remark> The "
+"<command>crontab</command> command lists/edits the current user's crontab. "
+"To manipulate &rootuser;'s <systemitem class=\"daemon\">cron</systemitem> "
+"jobs, first become &rootuser;, and then edit the tasks with <command>crontab "
+"-e</command> or list them with <command>crontab -l</command> ."
 msgstr ""
 
 #. Tag: title
@@ -556,34 +513,23 @@ msgstr ""
 msgid "Below is a sample <command>aa-unconfined</command> output:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: apparmor_whatimmunize.xml:451
-#, no-c-format
-msgid "3702"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:451
-#, no-c-format
-msgid "/usr/sbin/sshd"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:452
-#, no-c-format
-msgid "confined by '/usr/sbin/sshd"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:459
 #, no-c-format
 msgid ""
-"(enforce)'4040 /usr/sbin/smbd confined by '/usr/sbin/smbd (enforce)'4373 /"
-"usr/lib/postfix/master confined by '/usr/lib/postfix/master (enforce)'4505 /"
-"usr/sbin/httpd2-prefork confined by '/usr/sbin/httpd2-prefork (enforce)'646 /"
-"usr/lib/wicked/bin/wickedd-dhcp4 not confined647 /usr/lib/wicked/bin/wickedd-"
-"dhcp6 not confined5592 /usr/bin/ssh not confined7146 /usr/sbin/cupsd "
-"confined by '/usr/sbin/cupsd (complain)'"
+"3702<co xml:id=\"co.apparmor.concept.network.id\"/> /usr/sbin/sshd<co xml:id="
+"\"co.apparmor.concept.network.string\"/> confined\n"
+"   by '/usr/sbin/sshd<co xml:id=\"co.apparmor.concept.network.confine\"/> "
+"(enforce)'\n"
+"4040 /usr/sbin/smbd confined by '/usr/sbin/smbd (enforce)'\n"
+"4373 /usr/lib/postfix/master confined by '/usr/lib/postfix/master "
+"(enforce)'\n"
+"4505 /usr/sbin/httpd2-prefork confined by '/usr/sbin/httpd2-prefork "
+"(enforce)'\n"
+"646 /usr/lib/wicked/bin/wickedd-dhcp4 not confined\n"
+"647 /usr/lib/wicked/bin/wickedd-dhcp6 not confined\n"
+"5592 /usr/bin/ssh not confined\n"
+"7146 /usr/sbin/cupsd confined by '/usr/sbin/cupsd (complain)'"
 msgstr ""
 
 #. Tag: para
@@ -658,26 +604,16 @@ msgid ""
 "whether each of these programs needs an &aa; profile."
 msgstr ""
 
-#. Tag: email
-#: apparmor_whatimmunize.xml:522
-#, no-c-format
-msgid "apparmor@lists.ubuntu.com"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:522
-#, no-c-format
-msgid "If you have new or modified profiles, you can submit them to the"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_whatimmunize.xml:523
+#. Tag: para
+#: apparmor_whatimmunize.xml:520
 #, no-c-format
 msgid ""
-"mailing list along with a use case for the application behavior that you "
-"exercised. The &aa; team reviews and may submit the work into &productname;. "
-"We cannot guarantee that every profile will be included, but we make a "
-"sincere effort to include as much as possible."
+"If you have new or modified profiles, you can submit them to the "
+"<email>apparmor@lists.ubuntu.com</email> mailing list along with a use case "
+"for the application behavior that you exercised. The &aa; team reviews and "
+"may submit the work into &productname;. We cannot guarantee that every "
+"profile will be included, but we make a sincere effort to include as much as "
+"possible."
 msgstr ""
 
 #. Tag: title

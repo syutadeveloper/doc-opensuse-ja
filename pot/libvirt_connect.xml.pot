@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -230,22 +230,12 @@ msgstr ""
 msgid "&prompt.sudo;usermod --append --groups libvirt &exampleuser_plain;"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: libvirt_connect.xml:202
 #, no-c-format
-msgid "unix_sock_group = \"libvirt\""
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:203
-#, no-c-format
-msgid "unix_sock_rw_perms = \"0770\""
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:204
-#, no-c-format
-msgid "auth_unix_rw = \"none\""
+msgid "unix_sock_group = \"libvirt\"<co xml:id=\"co.libvirt.connect.ssh.group\"/>\n"
+      "unix_sock_rw_perms = \"0770\"<co xml:id=\"co.libvirt.connect.ssh.perms\"/>\n"
+      "auth_unix_rw = \"none\"<co xml:id=\"co.libvirt.connect.ssh.enable\"/>"
 msgstr ""
 
 #. Tag: para
@@ -669,46 +659,10 @@ msgstr ""
 msgid "vnc_listen = \"0.0.0.0\""
 msgstr ""
 
-#. Tag: #text
-#: libvirt_connect.xml:585
+#. Tag: para
+#: libvirt_connect.xml:584
 #, no-c-format
-msgid "Open the &vmguest;'s XML configuration file in an editor. Replace"
-msgstr ""
-
-#. Tag: replaceable
-#: libvirt_connect.xml:586
-#, no-c-format
-msgid "VM_NAME"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:587
-#, no-c-format
-msgid "in the following example with the name of the &vmguest;. The editor that is used defaults to"
-msgstr ""
-
-#. Tag: envar
-#: libvirt_connect.xml:588
-#, no-c-format
-msgid "$EDITOR"
-msgstr ""
-
-#. Tag: command
-#: libvirt_connect.xml:589
-#, no-c-format
-msgid "vi"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:589
-#, no-c-format
-msgid ". If that variable is not set,"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:590
-#, no-c-format
-msgid "is used."
+msgid "Open the &vmguest;'s XML configuration file in an editor. Replace <replaceable>VM_NAME</replaceable> in the following example with the name of the &vmguest;. The editor that is used defaults to <envar>$EDITOR</envar> . If that variable is not set, <command>vi</command> is used."
 msgstr ""
 
 #. Tag: screen
@@ -771,40 +725,10 @@ msgstr ""
 msgid "To connect to a hypervisor with &libvirt;, you need to specify a uniform resource identifier (URI). This URI is needed with <command>virsh</command> and <command>virt-viewer</command> (except when working as &rootuser; on the &vmhost;) and is optional for the &vmm;. Although the latter can be called with a connection parameter (for example, <command>virt-manager -c qemu:///system</command> ), it also offers a graphical interface to create connection URIs. See <xref linkend=\"sec.libvirt.connect.connecting.vmm\"/> for details."
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: screen
 #: libvirt_connect.xml:650
 #, no-c-format
-msgid "HYPERVISOR"
-msgstr ""
-
-#. Tag: replaceable
-#: libvirt_connect.xml:650
-#, no-c-format
-msgid "+PROTOCOL"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:650
-#, no-c-format
-msgid "://"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:650
-#, no-c-format
-msgid "/"
-msgstr ""
-
-#. Tag: replaceable
-#: libvirt_connect.xml:650
-#, no-c-format
-msgid "USER@REMOTE"
-msgstr ""
-
-#. Tag: replaceable
-#: libvirt_connect.xml:650
-#, no-c-format
-msgid "CONNECTION_TYPE"
+msgid "<replaceable>HYPERVISOR</replaceable><co xml:id=\"co.libvirt.connect.hyperv\"/><replaceable>+PROTOCOL</replaceable><co xml:id=\"co.libvirt.connect.protocol\"/>://<replaceable>USER@REMOTE</replaceable><co xml:id=\"co.libvirt.connect.remote\"/>/<replaceable>CONNECTION_TYPE</replaceable><co xml:id=\"co.libvirt.connect.type\"/>"
 msgstr ""
 
 #. Tag: para
@@ -819,22 +743,10 @@ msgstr ""
 msgid "When connecting to a remote host, specify the protocol here. It can be one of: <option>ssh</option> (connection via SSH tunnel), <option>tcp</option> (TCP connection with SASL/Kerberos authentication), <option>tls</option> (TLS/SSL encrypted connection with authentication via x509 certificates)."
 msgstr ""
 
-#. Tag: envar
-#: libvirt_connect.xml:674
+#. Tag: para
+#: libvirt_connect.xml:671
 #, no-c-format
-msgid "$USER"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:674
-#, no-c-format
-msgid "When connecting to a remote host, specify the user name and the remote host name. If no user name is specified, the user name that has called the command ("
-msgstr ""
-
-#. Tag: #text
-#: libvirt_connect.xml:677
-#, no-c-format
-msgid ") is used. See below for more information. For TLS connections, the host name needs to be specified exactly as in the x509 certificate."
+msgid "When connecting to a remote host, specify the user name and the remote host name. If no user name is specified, the user name that has called the command ( <envar>$USER</envar> ) is used. See below for more information. For TLS connections, the host name needs to be specified exactly as in the x509 certificate."
 msgstr ""
 
 #. Tag: para

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -38,70 +38,10 @@ msgstr ""
 msgid "Accessing Monitor Console"
 msgstr ""
 
-#. Tag: #text
-#: qemu_monitor.xml:34
+#. Tag: para
+#: qemu_monitor.xml:33
 #, no-c-format
-msgid "You can access the monitor console from &qemu; window either by a keyboard shortcut&mdash;press"
-msgstr ""
-
-#. Tag: keycap
-#: qemu_monitor.xml:36
-#, no-c-format
-msgid "2"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:37
-#, no-c-format
-msgid "(to return to &qemu;, press"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:38
-#, no-c-format
-msgid ")&mdash;or alternatively by clicking"
-msgstr ""
-
-#. Tag: keycap
-#: qemu_monitor.xml:38
-#, no-c-format
-msgid "1"
-msgstr ""
-
-#. Tag: guimenu
-#: qemu_monitor.xml:39
-#, no-c-format
-msgid "View"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:39
-#, no-c-format
-msgid "in the &qemu; GUI window, then"
-msgstr ""
-
-#. Tag: guimenu
-#: qemu_monitor.xml:40
-#, no-c-format
-msgid "compatmonitor0"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:41
-#, no-c-format
-msgid ". The most convenient way is to show the &qemu; window tabs with"
-msgstr ""
-
-#. Tag: menuchoice
-#: qemu_monitor.xml:42
-#, no-c-format
-msgid "<guimenu>View</guimenu> <guimenu>Show Tabs</guimenu>"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:46
-#, no-c-format
-msgid ". Then you can easily switch between the guest screen, monitor screen, and the output of the serial and parallel console."
+msgid "You can access the monitor console from &qemu; window either by a keyboard shortcut&mdash;press <keycombo><keycap function=\"control\"/> <keycap function=\"alt\"/><keycap>2</keycap></keycombo> (to return to &qemu;, press <keycombo><keycap function=\"control\"/> <keycap function=\"alt\"/><keycap>1</keycap></keycombo> )&mdash;or alternatively by clicking <guimenu>View</guimenu> in the &qemu; GUI window, then <guimenu>compatmonitor0</guimenu> . The most convenient way is to show the &qemu; window tabs with <menuchoice><guimenu>View</guimenu> <guimenu>Show Tabs</guimenu></menuchoice> . Then you can easily switch between the guest screen, monitor screen, and the output of the serial and parallel console."
 msgstr ""
 
 #. Tag: para
@@ -681,28 +621,14 @@ msgstr ""
 msgid "To change removable media (like CD-ROMs), use the <command>change</command> <replaceable>DEVICE</replaceable> command. The name of the removable media can be determined using the <command>info block</command> command:"
 msgstr ""
 
-#. Tag: command
-#: qemu_monitor.xml:493
+#. Tag: screen
+#: qemu_monitor.xml:492
 #, no-c-format
-msgid "info block"
-msgstr ""
-
-#. Tag: command
-#: qemu_monitor.xml:495
-#, no-c-format
-msgid "change ide1-cd0 /path/to/image"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:495
-#, no-c-format
-msgid "ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device"
-msgstr ""
-
-#. Tag: prompt
-#: qemu_monitor.xml:495
-#, no-c-format
-msgid "(qemu)"
+msgid "\n"
+      "<prompt>(qemu) </prompt><command>info block</command>\n"
+      "ide1-cd0: type=cdrom removable=1 locked=0 file=/dev/sr0 ro=1 drv=host_device\n"
+      "<prompt>(qemu) </prompt><command>change ide1-cd0 /path/to/image</command>\n"
+      "     "
 msgstr ""
 
 #. Tag: title
@@ -711,28 +637,10 @@ msgstr ""
 msgid "Controlling Keyboard and Mouse"
 msgstr ""
 
-#. Tag: #text
-#: qemu_monitor.xml:504
+#. Tag: para
+#: qemu_monitor.xml:501
 #, no-c-format
-msgid "It is possible to use the monitor console to emulate keyboard and mouse input if necessary. For example, if your graphical user interface intercepts some key combinations at low level (such as"
-msgstr ""
-
-#. Tag: keycap
-#: qemu_monitor.xml:505
-#, no-c-format
-msgid "F1"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:506
-#, no-c-format
-msgid "in X Window), you can still enter them using the"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:508
-#, no-c-format
-msgid ":"
+msgid "It is possible to use the monitor console to emulate keyboard and mouse input if necessary. For example, if your graphical user interface intercepts some key combinations at low level (such as <keycombo><keycap function=\"control\"/><keycap function=\"alt\"/><keycap>F1</keycap></keycombo> in X Window), you can still enter them using the <command>sendkey</command> <replaceable>KEYS</replaceable> :"
 msgstr ""
 
 #. Tag: screen
@@ -741,40 +649,10 @@ msgstr ""
 msgid "sendkey ctrl-alt-f1"
 msgstr ""
 
-#. Tag: #text
-#: qemu_monitor.xml:513
+#. Tag: para
+#: qemu_monitor.xml:512
 #, no-c-format
-msgid "To list the key names used in the"
-msgstr ""
-
-#. Tag: replaceable
-#: qemu_monitor.xml:513
-#, no-c-format
-msgid "KEYS"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:514
-#, no-c-format
-msgid "and press"
-msgstr ""
-
-#. Tag: command
-#: qemu_monitor.xml:514
-#, no-c-format
-msgid "sendkey"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:514
-#, no-c-format
-msgid "option, enter"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:515
-#, no-c-format
-msgid "."
+msgid "To list the key names used in the <replaceable>KEYS</replaceable> option, enter <command>sendkey</command> and press <keycap function=\"tab\"/> ."
 msgstr ""
 
 #. Tag: para
@@ -1023,40 +901,16 @@ msgstr ""
 msgid "Prints information about available snapshots."
 msgstr ""
 
-#. Tag: #text
-#: qemu_monitor.xml:747
+#. Tag: screen
+#: qemu_monitor.xml:745
 #, no-c-format
-msgid "(qemu) info snapshotsSnapshot list:ID"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:747
-#, no-c-format
-msgid "VM SIZE"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:747
-#, no-c-format
-msgid "TAG"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:747
-#, no-c-format
-msgid "DATE"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:747
-#, no-c-format
-msgid "VM CLOCK"
-msgstr ""
-
-#. Tag: #text
-#: qemu_monitor.xml:751
-#, no-c-format
-msgid "1 booting 4.4M 2013-11-22 10:51:10 00:00:20.4762 booted 184M 2013-11-22 10:53:03 00:02:05.3943 logged_in 273M 2013-11-22 11:00:25 00:04:34.8434 ff_and_term_running 372M 2013-11-22 11:12:27 00:08:44.965"
+msgid "(qemu) info snapshots\n"
+      "Snapshot list:\n"
+      "ID<co xml:id=\"co.qemu_monitor.snapshot.l.id\"/>      TAG<co xml:id=\"co.qemu_monitor.snapshot.l.tag\"/>                 VM SIZE<co xml:id=\"co.qemu_monitor.snapshot.l.size\"/>   DATE<co xml:id=\"co.qemu_monitor.snapshot.l.date\"/>          VM CLOCK<co xml:id=\"co.qemu_monitor.snapshot.l.clock\"/>\n"
+      "1         booting                4.4M 2013-11-22 10:51:10   00:00:20.476\n"
+      "2         booted                 184M 2013-11-22 10:53:03   00:02:05.394\n"
+      "3         logged_in              273M 2013-11-22 11:00:25   00:04:34.843\n"
+      "4         ff_and_term_running    372M 2013-11-22 11:12:27   00:08:44.965"
 msgstr ""
 
 #. Tag: para

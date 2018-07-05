@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1918,26 +1918,16 @@ msgid ""
 "and whether the LUNs are correctly assigned to the server."
 msgstr ""
 
-#. Tag: citetitle
-#: storage_multipath.xml:1185
-#, no-c-format
-msgid "TID 3955167: Troubleshooting SCSI (LUN) Scanning Issues"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:1185
+#. Tag: para
+#: storage_multipath.xml:1181
 #, no-c-format
 msgid ""
 "If the LUNs are seen by the HBA driver, but there are no corresponding block "
 "devices, additional kernel parameters are needed to change the SCSI device "
 "scanning behavior, such as to indicate that LUNs are not numbered "
-"consecutively. For information, see"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:1186
-#, no-c-format
-msgid "in the &suse; Knowledgebase at"
+"consecutively. For information, see <citetitle>TID 3955167: Troubleshooting "
+"SCSI (LUN) Scanning Issues</citetitle> in the &suse; Knowledgebase at <link "
+"xlink:href=\"https://www.suse.com/support/kb/doc.php?id=3955167\"/> ."
 msgstr ""
 
 #. Tag: title
@@ -4713,37 +4703,15 @@ msgstr ""
 msgid "Click <guimenu>Next</guimenu> to continue with the installation."
 msgstr ""
 
-#. Tag: #text
-#: storage_multipath.xml:3518
+#. Tag: para
+#: storage_multipath.xml:3517
 #, no-c-format
 msgid ""
 "After all settings are done and the installation is finished, &yast; starts "
 "to write the boot loader information, and displays a countdown to restart "
-"the system. Stop the counter by clicking the"
-msgstr ""
-
-#. Tag: guimenu
-#: storage_multipath.xml:3521
-#, no-c-format
-msgid "Stop"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:3522
-#, no-c-format
-msgid "button and press"
-msgstr ""
-
-#. Tag: keycap
-#: storage_multipath.xml:3522
-#, no-c-format
-msgid "F5"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:3524
-#, no-c-format
-msgid "to access a console."
+"the system. Stop the counter by clicking the <guimenu>Stop</guimenu> button "
+"and press <keycombo><keycap function=\"control\"/><keycap function=\"alt\"/"
+"><keycap>F5</keycap></keycombo> to access a console."
 msgstr ""
 
 #. Tag: para
@@ -4821,18 +4789,14 @@ msgstr ""
 msgid "Active path:"
 msgstr ""
 
-#. Tag: #text
-#: storage_multipath.xml:3569
+#. Tag: para
+#: storage_multipath.xml:3567
 #, no-c-format
 msgid ""
 "No action is needed. Skip all remaining steps and return to the &yast; "
-"graphical environment by pressing"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:3572
-#, no-c-format
-msgid "and continue with the installation."
+"graphical environment by pressing <keycombo><keycap function=\"control\"/"
+"><keycap function=\"alt\"/><keycap>F7</keycap></keycombo> and continue with "
+"the installation."
 msgstr ""
 
 #. Tag: title
@@ -4938,16 +4902,13 @@ msgid ""
 "umount /mnt"
 msgstr ""
 
-#. Tag: #text
-#: storage_multipath.xml:3642
+#. Tag: para
+#: storage_multipath.xml:3641
 #, no-c-format
-msgid "Return to the &yast; graphical environment by pressing"
-msgstr ""
-
-#. Tag: keycap
-#: storage_multipath.xml:3643
-#, no-c-format
-msgid "F7"
+msgid ""
+"Return to the &yast; graphical environment by pressing <keycombo><keycap "
+"function=\"control\"/><keycap function=\"alt\"/><keycap>F7</keycap></"
+"keycombo> ."
 msgstr ""
 
 #. Tag: para
@@ -4992,52 +4953,15 @@ msgstr ""
 msgid "force_drivers+=\"dm-multipath\""
 msgstr ""
 
-#. Tag: #text
-#: storage_multipath.xml:3682
+#. Tag: para
+#: storage_multipath.xml:3678
 #, no-c-format
-msgid "For &zseries;, before running"
-msgstr ""
-
-#. Tag: command
-#: storage_multipath.xml:3682
-#, no-c-format
-msgid "dracut"
-msgstr ""
-
-#. Tag: filename
-#: storage_multipath.xml:3683
-#, no-c-format
-msgid "/etc/zipl.conf"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:3683
-#, no-c-format
-msgid ", edit the"
-msgstr ""
-
-#. Tag: filename
-#: storage_multipath.xml:3684
-#, no-c-format
-msgid "zipl.conf"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:3684
-#, no-c-format
-msgid "file to change the by-path information in"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:3685
-#, no-c-format
-msgid "with the same by-id information that was used in"
-msgstr ""
-
-#. Tag: filename
-#: storage_multipath.xml:3685
-#, no-c-format
-msgid "/etc/fstab"
+msgid ""
+"<remark condition=\"clarity\"> 2014-09-05 - fs: Check if the following is "
+"still true </remark> For &zseries;, before running <command>dracut</"
+"command> , edit the <filename>/etc/zipl.conf</filename> file to change the "
+"by-path information in <filename>zipl.conf</filename> with the same by-id "
+"information that was used in <filename>/etc/fstab</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -6612,49 +6536,15 @@ msgid ""
 "replaced."
 msgstr ""
 
-#. Tag: #text
-#: storage_multipath.xml:4701
-#, no-c-format
-msgid "Add the required driver(s) to the variable"
-msgstr ""
-
-#. Tag: envar
-#: storage_multipath.xml:4701
-#, no-c-format
-msgid "force_drivers"
-msgstr ""
-
-#. Tag: filename
-#: storage_multipath.xml:4702
-#, no-c-format
-msgid "/etc/dracut.conf.d/01-dist.conf"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:4702
-#, no-c-format
-msgid "in the file"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:4704
+#. Tag: para
+#: storage_multipath.xml:4700
 #, no-c-format
 msgid ""
-". For example, if your system contains a RAID controller accessed by the"
-msgstr ""
-
-#. Tag: filename
-#: storage_multipath.xml:4704
-#, no-c-format
-msgid "hpsa"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:4707
-#, no-c-format
-msgid ""
-"driver and multipathed devices connected to a QLogic controller accessed by "
-"the driver qla23xx, this entry would look like:"
+"Add the required driver(s) to the variable <envar>force_drivers</envar> in "
+"the file <filename>/etc/dracut.conf.d/01-dist.conf</filename> . For example, "
+"if your system contains a RAID controller accessed by the <filename>hpsa</"
+"filename> driver and multipathed devices connected to a QLogic controller "
+"accessed by the driver qla23xx, this entry would look like:"
 msgstr ""
 
 #. Tag: screen
@@ -6686,22 +6576,12 @@ msgid ""
 "fstab</filename> ."
 msgstr ""
 
-#. Tag: #text
-#: storage_multipath.xml:4726
+#. Tag: para
+#: storage_multipath.xml:4725
 #, no-c-format
-msgid "Exit the emergency shell and reboot the server by pressing"
-msgstr ""
-
-#. Tag: keycap
-#: storage_multipath.xml:4727
-#, no-c-format
-msgid "D"
-msgstr ""
-
-#. Tag: #text
-#: storage_multipath.xml:4728
-#, no-c-format
-msgid "."
+msgid ""
+"Exit the emergency shell and reboot the server by pressing <keycombo> "
+"<keycap function=\"control\"/> <keycap>D</keycap> </keycombo> ."
 msgstr ""
 
 #. Tag: title

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -146,100 +146,54 @@ msgstr ""
 msgid "The easiest way of explaining what a profile consists of and how to create one is to show the details of a sample profile, in this case for a hypothetical application called <command>/usr/bin/foo</command> :"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: apparmor_profiles.xml:130
 #, no-c-format
-msgid "#include &lt;tunables/global&gt;"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:133
-#, no-c-format
-msgid "# a comment naming the application to confine/usr/bin/foo"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:133
-#, no-c-format
-msgid "{"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:134
-#, no-c-format
-msgid "#include &lt;abstractions/base&gt;"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:136
-#, no-c-format
-msgid "capability setgid"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:137
-#, no-c-format
-msgid ", network inet tcp"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:139
-#, no-c-format
-msgid ", link /etc/sysconfig/foo -&gt; /etc/foo.conf,"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:141
-#, no-c-format
-msgid "/bin/mount ux, /dev/{,u}"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:148
-#, no-c-format
-msgid "random r, /etc/ld.so.cache r, /etc/foo/* r, /lib/ld-*.so* mr, /lib/lib*.so* mr, /proc/[0-9]** r, /usr/lib/** mr, /tmp/ r,"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:151
-#, no-c-format
-msgid "/tmp/foo.pid wr, /tmp/foo.* lrw, /@{HOME}"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:153
-#, no-c-format
-msgid "/.foo_file rw, /@{HOME}/.foo_lock kw, owner"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:154
-#, no-c-format
-msgid "/shared/foo/** rw, /usr/bin/foobar Cx,"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:155
-#, no-c-format
-msgid "/bin/** Px -&gt; bin_generic,"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:159
-#, no-c-format
-msgid "# a comment about foo's local (children) profile for /usr/bin/foobar. profile /usr/bin/foobar"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:168
-#, no-c-format
-msgid "{ /bin/bash rmix, /bin/cat rmix, /bin/more rmix, /var/log/foobar* rwl, /etc/foobar r, } # foo's hat, bar. ^bar"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:174
-#, no-c-format
-msgid "{ /lib/ld-*.so* mr, /usr/bin/bar px, /var/spool/* rwl, }}"
+msgid "#include &lt;tunables/global&gt;<co xml:id=\"co.apparmor.profiles.vardef\"/>\n"
+      "\n"
+      "# a comment naming the application to confine\n"
+      "/usr/bin/foo<co xml:id=\"co.apparmor.profiles.path\"/> {<co xml:id=\"co.apparmor.profiles.brack\"/>\n"
+      "   #include &lt;abstractions/base&gt;<co xml:id=\"co.apparmor.profiles.incl\"/>\n"
+      "\n"
+      "   capability setgid<co xml:id=\"co.apparmor.profiles.capent\"/>,\n"
+      "   network inet tcp<co xml:id=\"co.apparmor.profiles.netd\"/>,\n"
+      "\n"
+      "   link /etc/sysconfig/foo -&gt; /etc/foo.conf,<co xml:id=\"co.apparmor.profiles.lp\"/>\n"
+      "   /bin/mount            ux,\n"
+      "   /dev/{,u}<co xml:id=\"co.apparmor.profiles.ext\"/>random     r,\n"
+      "   /etc/ld.so.cache      r,\n"
+      "   /etc/foo/*            r,\n"
+      "   /lib/ld-*.so*         mr,\n"
+      "   /lib/lib*.so*         mr,\n"
+      "   /proc/[0-9]**         r,\n"
+      "   /usr/lib/**           mr,\n"
+      "   /tmp/                 r,<co xml:id=\"co.apparmor.profiles.pathent\"/>\n"
+      "   /tmp/foo.pid          wr,\n"
+      "   /tmp/foo.*            lrw,\n"
+      "   /@{HOME}<co xml:id=\"co.apparmor.profiles.variable\"/>/.foo_file   rw,\n"
+      "   /@{HOME}/.foo_lock    kw,\n"
+      "   owner<co xml:id=\"co.apparmor.profiles.owner\"/> /shared/foo/** rw,\n"
+      "   /usr/bin/foobar       Cx,<co xml:id=\"co.apparmor.profiles.cx\"/>\n"
+      "   /bin/**               Px -&gt; bin_generic,<co xml:id=\"co.apparmor.profiles.named\"/>\n"
+      "\n"
+      "   # a comment about foo's local (children) profile for /usr/bin/foobar.\n"
+      "\n"
+      "   profile /usr/bin/foobar<co xml:id=\"co.apparmor.profiles.local\"/> {\n"
+      "      /bin/bash          rmix,\n"
+      "      /bin/cat           rmix,\n"
+      "      /bin/more          rmix,\n"
+      "      /var/log/foobar*   rwl,\n"
+      "      /etc/foobar        r,\n"
+      "   }\n"
+      "\n"
+      "  # foo's hat, bar.\n"
+      "   ^bar<co xml:id=\"co.apparmor.profiles.hat\"/> {\n"
+      "    /lib/ld-*.so*         mr,\n"
+      "    /usr/bin/bar          px,\n"
+      "    /var/spool/*          rwl,\n"
+      "   }\n"
+      "}\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -746,28 +700,10 @@ msgstr ""
 msgid "&aa; allows mediation of network access based on the address type and family. The following illustrates the network access rule syntax:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: apparmor_profiles.xml:652
 #, no-c-format
-msgid "][&lt;type"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:652
-#, no-c-format
-msgid "&gt;]]"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:652
-#, no-c-format
-msgid "&gt;][&lt;protocol"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:652
-#, no-c-format
-msgid "network [[&lt;domain&gt;"
+msgid "network [[&lt;domain&gt;<co xml:id=\"co.apparmor.profiles.nac.dom\"/>][&lt;type<co xml:id=\"co.apparmor.profiles.nac.type\"/>&gt;][&lt;protocol<co xml:id=\"co.apparmor.profiles.nac.proto\"/>&gt;]]"
 msgstr ""
 
 #. Tag: para
@@ -800,40 +736,16 @@ msgstr ""
 msgid "The following examples illustrate possible network-related rules to be used in &aa; profiles. Note that the syntax of the last two are not currently supported by the &aa; tools."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: apparmor_profiles.xml:706
 #, no-c-format
-msgid "network"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:707
-#, no-c-format
-msgid ",network inet"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:708
-#, no-c-format
-msgid ",network inet6"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:709
-#, no-c-format
-msgid ",network inet stream"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:710
-#, no-c-format
-msgid ",network inet tcp"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:711
-#, no-c-format
-msgid ",network tcp"
+msgid "network<co xml:id=\"co.apparmor.profiles.nac.nw\"/>,\n"
+      "network inet<co xml:id=\"co.apparmor.profiles.nac.inet\"/>,\n"
+      "network inet6<co xml:id=\"co.apparmor.profiles.nac.inet6\"/>,\n"
+      "network inet stream<co xml:id=\"co.apparmor.profiles.nac.istream\"/>,\n"
+      "network inet tcp<co xml:id=\"co.apparmor.profiles.nac.itcp\"/>,\n"
+      "network tcp<co xml:id=\"co.apparmor.profiles.nac.tcp\"/>,\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -1138,52 +1050,10 @@ msgstr ""
 msgid "&aa; allows to use variables holding paths in profiles. Use global variables to make your profiles portable and local variables to create shortcuts for paths."
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles.xml:1007
+#. Tag: para
+#: apparmor_profiles.xml:1001
 #, no-c-format
-msgid "A typical example of when global variables come in handy are network scenarios in which user home directories are mounted in different locations. Instead of rewriting paths to home directories in all affected profiles, you only need to change the value of a variable. Global variables are defined under"
-msgstr ""
-
-#. Tag: filename
-#: apparmor_profiles.xml:1007
-#, no-c-format
-msgid "/etc/apparmor.d/tunables"
-msgstr ""
-
-#. Tag: envar
-#: apparmor_profiles.xml:1009
-#, no-c-format
-msgid "@{HOME}"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1009
-#, no-c-format
-msgid "and need to be made available via an include statement. Find the variable definitions for this use case ("
-msgstr ""
-
-#. Tag: envar
-#: apparmor_profiles.xml:1009
-#, no-c-format
-msgid "@{HOMEDIRS}"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1010
-#, no-c-format
-msgid ") in the"
-msgstr ""
-
-#. Tag: filename
-#: apparmor_profiles.xml:1010
-#, no-c-format
-msgid "/etc/apparmor.d/tunables/home"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1011
-#, no-c-format
-msgid "file."
+msgid "A typical example of when global variables come in handy are network scenarios in which user home directories are mounted in different locations. Instead of rewriting paths to home directories in all affected profiles, you only need to change the value of a variable. Global variables are defined under <filename>/etc/apparmor.d/tunables</filename> and need to be made available via an include statement. Find the variable definitions for this use case ( <envar>@{HOME}</envar> and <envar>@{HOMEDIRS}</envar> ) in the <filename>/etc/apparmor.d/tunables/home</filename> file."
 msgstr ""
 
 #. Tag: para
@@ -2262,58 +2132,10 @@ msgstr ""
 msgid "Unsafe Exec Modes"
 msgstr ""
 
-#. Tag: literal
-#: apparmor_profiles.xml:1787
+#. Tag: para
+#: apparmor_profiles.xml:1786
 #, no-c-format
-msgid "px"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1787
-#, no-c-format
-msgid "Use the lowercase versions of exec modes&mdash;"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:1788
-#, no-c-format
-msgid "ux"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1788
-#, no-c-format
-msgid "&mdash;only in very special cases. They do not scrub the environment of variables such as"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:1788
-#, no-c-format
-msgid "cx"
-msgstr ""
-
-#. Tag: emphasis
-#: apparmor_profiles.xml:1792
-#, no-c-format
-msgid "must"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1792
-#, no-c-format
-msgid ". As a result, the calling domain may have an undue amount of influence over the called resource. Use these modes only if the child absolutely"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1793
-#, no-c-format
-msgid "be run unconfined and"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1795
-#, no-c-format
-msgid "must be used. Any profile using such modes provides negligible security. Use at your own risk."
+msgid "Use the lowercase versions of exec modes&mdash; <literal>px</literal> , <literal>cx</literal> , <literal>ux</literal> &mdash;only in very special cases. They do not scrub the environment of variables such as <envar>LD_PRELOAD</envar> . As a result, the calling domain may have an undue amount of influence over the called resource. Use these modes only if the child absolutely <emphasis>must</emphasis> be run unconfined and <envar>LD_PRELOAD</envar> must be used. Any profile using such modes provides negligible security. Use at your own risk."
 msgstr ""
 
 #. Tag: title
@@ -2346,76 +2168,10 @@ msgstr ""
 msgid "Allow Executable Mapping (m)"
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles.xml:1825
+#. Tag: para
+#: apparmor_profiles.xml:1823
 #, no-c-format
-msgid "This mode allows a file to be mapped into memory using"
-msgstr ""
-
-#. Tag: envar
-#: apparmor_profiles.xml:1825
-#, no-c-format
-msgid "PROT_EXEC"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1825
-#, no-c-format
-msgid "'s"
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles.xml:1825
-#, no-c-format
-msgid "mmap(2)"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1828
-#, no-c-format
-msgid "flag. This flag marks the pages executable. It is used on some architectures to provide non executable data pages, which can complicate exploit attempts. &aa; uses this mode to limit which files a well-behaved program (or all programs on architectures that enforce non executable memory access controls) may use as libraries, to limit the effect of invalid"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1831
-#, no-c-format
-msgid "flags given to"
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles.xml:1831
-#, no-c-format
-msgid "ld(1)"
-msgstr ""
-
-#. Tag: option
-#: apparmor_profiles.xml:1831
-#, no-c-format
-msgid "-L"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1832
-#, no-c-format
-msgid "and"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1833
-#, no-c-format
-msgid ", given to"
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles.xml:1833
-#, no-c-format
-msgid "ld.so(8)"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:1834
-#, no-c-format
-msgid "."
+msgid "This mode allows a file to be mapped into memory using <command>mmap(2)</command> 's <envar>PROT_EXEC</envar> flag. This flag marks the pages executable. It is used on some architectures to provide non executable data pages, which can complicate exploit attempts. &aa; uses this mode to limit which files a well-behaved program (or all programs on architectures that enforce non executable memory access controls) may use as libraries, to limit the effect of invalid <option>-L</option> flags given to <command>ld(1)</command> and <envar>LD_PRELOAD</envar> , <envar>LD_LIBRARY_PATH</envar> , given to <command>ld.so(8)</command> ."
 msgstr ""
 
 #. Tag: title
@@ -2549,130 +2305,130 @@ msgstr ""
 msgid "When choosing one of the Px, Cx or Ux execution modes, take into account that the following environment variables are removed from the environment before the child process inherits it. As a consequence, applications or processes relying on any of these variables do not work anymore if the profile applied to them carries Px, Cx or Ux flags:"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1940
+#. Tag: para
+#: apparmor_profiles.xml:1939
 #, no-c-format
-msgid "GCONV_PATH"
+msgid "<envar>GCONV_PATH</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1945
+#. Tag: para
+#: apparmor_profiles.xml:1944
 #, no-c-format
-msgid "GETCONF_DIR"
+msgid "<envar>GETCONF_DIR</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1950
+#. Tag: para
+#: apparmor_profiles.xml:1949
 #, no-c-format
-msgid "HOSTALIASES"
+msgid "<envar>HOSTALIASES</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1955
+#. Tag: para
+#: apparmor_profiles.xml:1954
 #, no-c-format
-msgid "LD_AUDIT"
+msgid "<envar>LD_AUDIT</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1960
+#. Tag: para
+#: apparmor_profiles.xml:1959
 #, no-c-format
-msgid "LD_DEBUG"
+msgid "<envar>LD_DEBUG</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1965
+#. Tag: para
+#: apparmor_profiles.xml:1964
 #, no-c-format
-msgid "LD_DEBUG_OUTPUT"
+msgid "<envar>LD_DEBUG_OUTPUT</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1970
+#. Tag: para
+#: apparmor_profiles.xml:1969
 #, no-c-format
-msgid "LD_DYNAMIC_WEAK"
+msgid "<envar>LD_DYNAMIC_WEAK</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1975
+#. Tag: para
+#: apparmor_profiles.xml:1974
 #, no-c-format
-msgid "LD_LIBRARY_PATH"
+msgid "<envar>LD_LIBRARY_PATH</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1980
+#. Tag: para
+#: apparmor_profiles.xml:1979
 #, no-c-format
-msgid "LD_ORIGIN_PATH"
+msgid "<envar>LD_ORIGIN_PATH</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1985
+#. Tag: para
+#: apparmor_profiles.xml:1984
 #, no-c-format
-msgid "LD_PRELOAD"
+msgid "<envar>LD_PRELOAD</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1990
+#. Tag: para
+#: apparmor_profiles.xml:1989
 #, no-c-format
-msgid "LD_PROFILE"
+msgid "<envar>LD_PROFILE</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:1995
+#. Tag: para
+#: apparmor_profiles.xml:1994
 #, no-c-format
-msgid "LD_SHOW_AUXV"
+msgid "<envar>LD_SHOW_AUXV</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2000
+#. Tag: para
+#: apparmor_profiles.xml:1999
 #, no-c-format
-msgid "LD_USE_LOAD_BIAS"
+msgid "<envar>LD_USE_LOAD_BIAS</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2005
+#. Tag: para
+#: apparmor_profiles.xml:2004
 #, no-c-format
-msgid "LOCALDOMAIN"
+msgid "<envar>LOCALDOMAIN</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2010
+#. Tag: para
+#: apparmor_profiles.xml:2009
 #, no-c-format
-msgid "LOCPATH"
+msgid "<envar>LOCPATH</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2015
+#. Tag: para
+#: apparmor_profiles.xml:2014
 #, no-c-format
-msgid "MALLOC_TRACE"
+msgid "<envar>MALLOC_TRACE</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2020
+#. Tag: para
+#: apparmor_profiles.xml:2019
 #, no-c-format
-msgid "NLSPATH"
+msgid "<envar>NLSPATH</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2025
+#. Tag: para
+#: apparmor_profiles.xml:2024
 #, no-c-format
-msgid "RESOLV_HOST_CONF"
+msgid "<envar>RESOLV_HOST_CONF</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2030
+#. Tag: para
+#: apparmor_profiles.xml:2029
 #, no-c-format
-msgid "RES_OPTIONS"
+msgid "<envar>RES_OPTIONS</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2035
+#. Tag: para
+#: apparmor_profiles.xml:2034
 #, no-c-format
-msgid "TMPDIR"
+msgid "<envar>TMPDIR</envar>"
 msgstr ""
 
-#. Tag: envar
-#: apparmor_profiles.xml:2040
+#. Tag: para
+#: apparmor_profiles.xml:2039
 #, no-c-format
-msgid "TZDIR"
+msgid "<envar>TZDIR</envar>"
 msgstr ""
 
 #. Tag: title
@@ -2831,46 +2587,10 @@ msgstr ""
 msgid "rlimit data &lt;= 100M,"
 msgstr ""
 
-#. Tag: literal
+#. Tag: term
 #: apparmor_profiles.xml:2158
 #, no-c-format
-msgid "locks"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:2158
-#, no-c-format
-msgid "nofile"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:2158
-#, no-c-format
-msgid "fsize"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:2159
-#, no-c-format
-msgid "nproc"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:2159
-#, no-c-format
-msgid "sigpending"
-msgstr ""
-
-#. Tag: literal
-#: apparmor_profiles.xml:2160
-#, no-c-format
-msgid "rtprio"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:2160
-#, no-c-format
-msgid ","
+msgid "<literal>fsize</literal> , <literal>nofile</literal> , <literal>locks</literal> , <literal>sigpending</literal> , <literal>nproc</literal> <superscript>*</superscript> , <literal>rtprio</literal>"
 msgstr ""
 
 #. Tag: para
@@ -2891,16 +2611,10 @@ msgstr ""
 msgid "a value between -20 and 19"
 msgstr ""
 
-#. Tag: superscript
-#: apparmor_profiles.xml:2180
+#. Tag: para
+#: apparmor_profiles.xml:2179
 #, no-c-format
-msgid "*"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles.xml:2186
-#, no-c-format
-msgid "The nproc rlimit is handled different than all the other rlimits. Instead of indicating the standard process rlimit it controls the maximum number of processes that can be running under the profile at any time. When the limit is exceeded the creation of new processes under the profile will fail until the number of currently running processes is reduced."
+msgid "<superscript>*</superscript> The nproc rlimit is handled different than all the other rlimits. Instead of indicating the standard process rlimit it controls the maximum number of processes that can be running under the profile at any time. When the limit is exceeded the creation of new processes under the profile will fail until the number of currently running processes is reduced."
 msgstr ""
 
 #. Tag: para

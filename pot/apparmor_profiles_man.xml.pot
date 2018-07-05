@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -140,28 +140,10 @@ msgstr ""
 msgid "<command>sudo systemctl reload apparmor</command>"
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles_man.xml:120
+#. Tag: para
+#: apparmor_profiles_man.xml:119
 #, no-c-format
-msgid "Causes the &aa; module to re-scan the profiles in"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:122
-#, no-c-format
-msgid "without unconfining running"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:127
-#, no-c-format
-msgid "processes. Freshly created profiles are enforced and recently deleted ones are removed from the"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:129
-#, no-c-format
-msgid "directory."
+msgid "Causes the &aa; module to re-scan the profiles in <filename>/etc/apparmor.d</filename> without unconfining running <remark>sknorr, 2014-08-26: \"unconfining\"? Sounds terrible. Would \"freeing\" be an option? tbazant, 2014-09-08: No, it's a used term, related to 'unconfined' state </remark> processes. Freshly created profiles are enforced and recently deleted ones are removed from the <filename>/etc/apparmor.d</filename> directory."
 msgstr ""
 
 #. Tag: title
@@ -729,70 +711,10 @@ msgstr ""
 msgid "&prompt.sudo;aa-complain /etc/apparmor.d/sbin.<replaceable>PROGRAM1</replaceable>"
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles_man.xml:717
+#. Tag: para
+#: apparmor_profiles_man.xml:714
 #, no-c-format
-msgid "Each of the above commands activates the complain mode for the profiles or programs listed. If the program name does not include its entire path,"
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles_man.xml:717
-#, no-c-format
-msgid "aa-complain"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:718
-#, no-c-format
-msgid "for the program. For example,"
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles_man.xml:718
-#, no-c-format
-msgid "aa-complain /usr/sbin/*"
-msgstr ""
-
-#. Tag: filename
-#: apparmor_profiles_man.xml:720
-#, no-c-format
-msgid "/usr/sbin"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:720
-#, no-c-format
-msgid "finds profiles associated with all of the programs in"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:721
-#, no-c-format
-msgid "and puts them into complain mode."
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles_man.xml:721
-#, no-c-format
-msgid "aa-complain /etc/apparmor.d/*"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:722
-#, no-c-format
-msgid "puts all of the profiles in"
-msgstr ""
-
-#. Tag: filename
-#: apparmor_profiles_man.xml:722
-#, no-c-format
-msgid "/etc/apparmor.d"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:723
-#, no-c-format
-msgid "into complain mode."
+msgid "Each of the above commands activates the complain mode for the profiles or programs listed. If the program name does not include its entire path, <command>aa-complain</command> searches <envar>$PATH</envar> for the program. For example, <command>aa-complain /usr/sbin/*</command> finds profiles associated with all of the programs in <filename>/usr/sbin</filename> and puts them into complain mode. <command>aa-complain /etc/apparmor.d/*</command> puts all of the profiles in <filename>/etc/apparmor.d</filename> into complain mode."
 msgstr ""
 
 #. Tag: title
@@ -915,34 +837,10 @@ msgstr ""
 msgid "If you do not enter the program or profile names, you are prompted to enter one. <replaceable>/path/to/profiles</replaceable> overrides the default location of <filename>/etc/apparmor.d</filename> ."
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles_man.xml:828
+#. Tag: para
+#: apparmor_profiles_man.xml:825
 #, no-c-format
-msgid "The argument can be either a list of programs or a list of profiles. If the program name does not include its entire path,"
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles_man.xml:828
-#, no-c-format
-msgid "aa-enforce"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:828
-#, no-c-format
-msgid "searches"
-msgstr ""
-
-#. Tag: envar
-#: apparmor_profiles_man.xml:828
-#, no-c-format
-msgid "$PATH"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:830
-#, no-c-format
-msgid "for the program."
+msgid "The argument can be either a list of programs or a list of profiles. If the program name does not include its entire path, <command>aa-enforce</command> searches <envar>$PATH</envar> for the program."
 msgstr ""
 
 #. Tag: title
@@ -1102,40 +1000,16 @@ msgstr ""
 msgid "Select from the following options that are available in the <command>aa-genprof</command> terminal window after you have executed the program function:"
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles_man.xml:962
+#. Tag: para
+#: apparmor_profiles_man.xml:961
 #, no-c-format
-msgid "runs"
+msgid "<keycap>S</keycap> runs <command>aa-genprof</command> on the system log from where it was marked when <command>aa-genprof</command> was started and reloads the profile. If system events exist in the log, &aa; parses the learning mode log files. This generates a series of questions that you must answer to guide <command>aa-genprof</command> in generating the security profile."
 msgstr ""
 
-#. Tag: keycap
-#: apparmor_profiles_man.xml:962
+#. Tag: para
+#: apparmor_profiles_man.xml:971
 #, no-c-format
-msgid "S"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:963
-#, no-c-format
-msgid "on the system log from where it was marked when"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:965
-#, no-c-format
-msgid "was started and reloads the profile. If system events exist in the log, &aa; parses the learning mode log files. This generates a series of questions that you must answer to guide"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:968
-#, no-c-format
-msgid "in generating the security profile."
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:973
-#, no-c-format
-msgid "exits the tool."
+msgid "<keycap>F</keycap> exits the tool."
 msgstr ""
 
 #. Tag: para
@@ -1266,22 +1140,10 @@ msgstr ""
 msgid "mmap (m)"
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles_man.xml:1103
+#. Tag: para
+#: apparmor_profiles_man.xml:1100
 #, no-c-format
-msgid "This permission denotes that the program running under the profile can access the resource using the mmap system call with the flag"
-msgstr ""
-
-#. Tag: envar
-#: apparmor_profiles_man.xml:1103
-#, no-c-format
-msgid "PROT_EXEC"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1106
-#, no-c-format
-msgid ". This means that the data mapped in it can be executed. You are prompted to include this permission if it is requested during a profiling run."
+msgid "This permission denotes that the program running under the profile can access the resource using the mmap system call with the flag <envar>PROT_EXEC</envar> . This means that the data mapped in it can be executed. You are prompted to include this permission if it is requested during a profiling run."
 msgstr ""
 
 #. Tag: para
@@ -1466,112 +1328,28 @@ msgid "Profile: /usr/bin/opera\n"
       "[(V)iew Profile] / (U)se Profile / (C)reate New Profile / Abo(r)t / (F)inish"
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles_man.xml:1369
+#. Tag: para
+#: apparmor_profiles_man.xml:1368
 #, no-c-format
-msgid "To use this profile, press"
+msgid "To use this profile, press <keycap>U</keycap> ( <guimenu>Use Profile</guimenu> ) and follow the profile generation procedure outlined above."
 msgstr ""
 
-#. Tag: keycap
-#: apparmor_profiles_man.xml:1369
+#. Tag: para
+#: apparmor_profiles_man.xml:1373
 #, no-c-format
-msgid "U"
+msgid "To examine the profile before activating it, press <keycap>V</keycap> ( <guimenu>View Profile</guimenu> )."
 msgstr ""
 
-#. Tag: guimenu
-#: apparmor_profiles_man.xml:1370
+#. Tag: para
+#: apparmor_profiles_man.xml:1377
 #, no-c-format
-msgid "Use Profile"
+msgid "To ignore the existing profile, press <keycap>C</keycap> ( <guimenu>Create New Profile</guimenu> ) and follow the profile generation procedure outlined above to create the profile from scratch."
 msgstr ""
 
-#. Tag: #text
-#: apparmor_profiles_man.xml:1372
+#. Tag: para
+#: apparmor_profiles_man.xml:1385
 #, no-c-format
-msgid ") and follow the profile generation procedure outlined above."
-msgstr ""
-
-#. Tag: keycap
-#: apparmor_profiles_man.xml:1375
-#, no-c-format
-msgid "V"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1375
-#, no-c-format
-msgid "To examine the profile before activating it, press"
-msgstr ""
-
-#. Tag: guimenu
-#: apparmor_profiles_man.xml:1375
-#, no-c-format
-msgid "View Profile"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1376
-#, no-c-format
-msgid ")."
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1378
-#, no-c-format
-msgid "To ignore the existing profile, press"
-msgstr ""
-
-#. Tag: keycap
-#: apparmor_profiles_man.xml:1378
-#, no-c-format
-msgid "C"
-msgstr ""
-
-#. Tag: guimenu
-#: apparmor_profiles_man.xml:1379
-#, no-c-format
-msgid "Create New Profile"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1382
-#, no-c-format
-msgid ") and follow the profile generation procedure outlined above to create the profile from scratch."
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1386
-#, no-c-format
-msgid "by pressing"
-msgstr ""
-
-#. Tag: command
-#: apparmor_profiles_man.xml:1386
-#, no-c-format
-msgid "aa-genprof"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1386
-#, no-c-format
-msgid "Leave"
-msgstr ""
-
-#. Tag: keycap
-#: apparmor_profiles_man.xml:1386
-#, no-c-format
-msgid "F"
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1387
-#, no-c-format
-msgid "("
-msgstr ""
-
-#. Tag: #text
-#: apparmor_profiles_man.xml:1388
-#, no-c-format
-msgid ") when you are done and save your changes."
+msgid "Leave <command>aa-genprof</command> by pressing <keycap>F</keycap> ( <guimenu>Finish</guimenu> ) when you are done and save your changes."
 msgstr ""
 
 #. Tag: title
@@ -1714,10 +1492,10 @@ msgstr ""
 msgid "Select one of the following responses:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: term
 #: apparmor_profiles_man.xml:1527
 #, no-c-format
-msgid "Select"
+msgid "Select <keycap function=\"enter\"/>"
 msgstr ""
 
 #. Tag: para

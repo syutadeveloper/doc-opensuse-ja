@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -190,10 +190,10 @@ msgstr ""
 msgid "Creating a Supportconfig Archive with &yast;"
 msgstr ""
 
-#. Tag: #text
-#: adm_support.xml:213
+#. Tag: para
+#: adm_support.xml:212
 #, no-c-format
-msgid "To use &yast; to gather your system information, proceed as follows:"
+msgid "To use &yast; to gather your system information, proceed as follows: <remark>2008-11-20 toms: YaST asks the user to open a URL as root(!). This happens when the users clicks on \"Open\" (Open Support Center/ This will start a browser with Support Center Portal). I do not think we should describe this and only *use* the above URL as a normal user for security reasons.</remark>"
 msgstr ""
 
 #. Tag: para
@@ -382,76 +382,35 @@ msgstr ""
 msgid "Wether you run <command>supportconfig</command> through &yast; or directly, the script gives you a summary of what it did."
 msgstr ""
 
-#. Tag: #text
-#: adm_support.xml:420
+#. Tag: screen
+#: adm_support.xml:419
 #, no-c-format
-msgid "Support Utilities - Supportconfig Script Version: 3.0-98"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:421
-#, no-c-format
-msgid "Script Date: 2017 06 01"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:424
-#, no-c-format
-msgid "[...]Gathering system information Data Directory: /var/log/nts_d251_180201_1525"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:426
-#, no-c-format
-msgid "Basic Server Health Check... Done"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:427
-#, no-c-format
-msgid "RPM Database... Done"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:428
-#, no-c-format
-msgid "Basic Environment... Done"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:429
-#, no-c-format
-msgid "System Modules... Done"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:431
-#, no-c-format
-msgid "[...] File System List... Skipped"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:433
-#, no-c-format
-msgid "[...] Command History... Excluded"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:435
-#, no-c-format
-msgid "[...] Supportconfig Plugins: 1"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:441
-#, no-c-format
-msgid "Plugin: pstree... Done[...]Creating Tar Ball==[ DONE ]=================================================================== Log file tar ball: /var/log/nts_d251_180201_1525.tbz"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:444
-#, no-c-format
-msgid "Log file size: 732K Log file md5sum: bf23e0e15e9382c49f92cbce46000d8b============================================================================="
+msgid "                     Support Utilities - Supportconfig\n"
+      "                          Script Version: 3.0-98 <!--<co xml:id=\"co.admsupport.script.version\"/>-->\n"
+      "                          Script Date: 2017 06 01<!-- <xref linkend=\"co.admsupport.script.version\"/>-->\n"
+      "[...]\n"
+      "Gathering system information\n"
+      "  Data Directory:    /var/log/nts_d251_180201_1525 <co xml:id=\"co.admsupport.script.datadir\"/>\n"
+      "\n"
+      "  Basic Server Health Check...                 Done <co xml:id=\"co.admsupport.script.done\"/>\n"
+      "  RPM Database...                              Done <xref linkend=\"co.admsupport.script.done\"/>\n"
+      "  Basic Environment...                         Done <xref linkend=\"co.admsupport.script.done\"/>\n"
+      "  System Modules...                            Done <xref linkend=\"co.admsupport.script.done\"/>\n"
+      "[...]\n"
+      "  File System List...                          Skipped <co xml:id=\"co.admsupport.script.skipped\"/>\n"
+      "[...]\n"
+      "  Command History...                           Excluded <co xml:id=\"co.admsupport.script.excluded\"/>\n"
+      "[...]\n"
+      "  Supportconfig Plugins:                       1 <co xml:id=\"co.admsupport.script.plugin\"/>\n"
+      "    Plugin: pstree...                          Done\n"
+      "[...]\n"
+      "Creating Tar Ball\n"
+      "\n"
+      "==[ DONE ]===================================================================\n"
+      "  Log file tar ball: /var/log/nts_d251_180201_1525.tbz <co xml:id=\"co.admsupport.script.archive\"/>\n"
+      "  Log file size:     732K\n"
+      "  Log file md5sum:   bf23e0e15e9382c49f92cbce46000d8b\n"
+      "============================================================================="
 msgstr ""
 
 #. Tag: para
@@ -1649,22 +1608,10 @@ msgstr ""
 msgid "&yast; automatically proposes an upload server. If you want to modify it, refer to <xref linkend=\"sec.admsupport.supportconfig.upload\"/> for details of which upload servers are available."
 msgstr ""
 
-#. Tag: guimenu
-#: adm_support.xml:1018
+#. Tag: para
+#: adm_support.xml:1011
 #, no-c-format
-msgid "Next"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:1018
-#, no-c-format
-msgid "Proceed with"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:1019
-#, no-c-format
-msgid "."
+msgid "<remark>taroth 2014-04-11: this does not make sense to me - why does the YaST module *not* ask for the SR number now? and lets you continue after specifying an upload target (but no RC or customer info)? I would expect it to *check* if an SR has been entered and otherwise show an error message - filed http://bugzilla.suse.com/show_bug.cgi?id=880943 for this, unfortunately it was rejected for technical reasons</remark> Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -1859,28 +1806,10 @@ msgstr ""
 msgid "<command>sudo scatool</command> <option>-c</option>"
 msgstr ""
 
-#. Tag: command
-#: adm_support.xml:1227
+#. Tag: para
+#: adm_support.xml:1226
 #, no-c-format
-msgid "scatool"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:1227
-#, no-c-format
-msgid "Starts the interactive console for"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:1228
-#, no-c-format
-msgid ". Press"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:1229
-#, no-c-format
-msgid "twice to see the available commands."
+msgid "Starts the interactive console for <command>scatool</command> . Press <keycap function=\"tab\"/> twice to see the available commands."
 msgstr ""
 
 #. Tag: para
@@ -2527,6 +2456,12 @@ msgstr ""
 msgid "ARCHIVE_MODE=0"
 msgstr ""
 
+#. Tag: para
+#: adm_support.xml:1804
+#, no-c-format
+msgid "to"
+msgstr ""
+
 #. Tag: screen
 #: adm_support.xml:1807
 #, no-c-format
@@ -3019,64 +2954,10 @@ msgstr ""
 msgid "While general supportability is important, situations can occur where loading an unsupported module is required. For example, for testing or debugging purposes, or if your hardware vendor provides a hotfix."
 msgstr ""
 
-#. Tag: #text
-#: adm_support.xml:2234
+#. Tag: para
+#: adm_support.xml:2232
 #, no-c-format
-msgid "To override the default, edit"
-msgstr ""
-
-#. Tag: filename
-#: adm_support.xml:2234
-#, no-c-format
-msgid "/etc/modprobe.d/10-unsupported-modules.conf"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:2236
-#, no-c-format
-msgid "and change the value of the variable"
-msgstr ""
-
-#. Tag: varname
-#: adm_support.xml:2236
-#, no-c-format
-msgid "allow_unsupported_modules"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:2236
-#, no-c-format
-msgid "to"
-msgstr ""
-
-#. Tag: literal
-#: adm_support.xml:2236
-#, no-c-format
-msgid "1"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:2238
-#, no-c-format
-msgid ". If an unsupported module is needed in the initrd, do not forget to run"
-msgstr ""
-
-#. Tag: command
-#: adm_support.xml:2238
-#, no-c-format
-msgid "dracut"
-msgstr ""
-
-#. Tag: option
-#: adm_support.xml:2238
-#, no-c-format
-msgid "-f"
-msgstr ""
-
-#. Tag: #text
-#: adm_support.xml:2239
-#, no-c-format
-msgid "to update the initrd."
+msgid "To override the default, edit <filename>/etc/modprobe.d/10-unsupported-modules.conf</filename> and change the value of the variable <varname>allow_unsupported_modules</varname> to <literal>1</literal> . If an unsupported module is needed in the initrd, do not forget to run <command>dracut</command> <option>-f</option> to update the initrd."
 msgstr ""
 
 #. Tag: para
@@ -3173,5 +3054,11 @@ msgstr ""
 #: adm_support.xml:2344
 #, no-c-format
 msgid "<link xlink:href=\"http://www.suse.com/communities/conversations/creating-a-central-supportconfig-repository/\"/> &mdash;Creating a Central Supportconfig Repository."
+msgstr ""
+
+#. Tag: para
+#: adm_support.xml:2348
+#, no-c-format
+msgid "<remark>taroth 2014-04-25: jrecord, should we still refer to the three articles above? </remark>"
 msgstr ""
 

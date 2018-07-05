@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -272,22 +272,12 @@ msgstr ""
 msgid "A Shell Script Printing a Text"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: adm_shell.xml:282
 #, no-c-format
-msgid "#!/bin/sh"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:283
-#, no-c-format
-msgid "# Output the following line:"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:284
-#, no-c-format
-msgid "echo \"Hello World\""
+msgid "#!/bin/sh <co xml:id=\"co.adm.shell.shebang\"/>\n"
+      "# Output the following line: <co xml:id=\"co.adm.shell.comment\"/>\n"
+      "echo \"Hello World\" <co xml:id=\"co.adm.shell.echo\"/>"
 msgstr ""
 
 #. Tag: para
@@ -320,40 +310,10 @@ msgstr ""
 msgid "Every script should contain a Shebang line (as in the example above). If the line is missing, you need to call the interpreter manually."
 msgstr ""
 
-#. Tag: #text
-#: adm_shell.xml:324
+#. Tag: para
+#: adm_shell.xml:321
 #, no-c-format
-msgid "You can save the script wherever you want. However, it is a good idea to save it in a directory where the shell can find it. The search path in a shell is determined by the environment variable"
-msgstr ""
-
-#. Tag: filename
-#: adm_shell.xml:326
-#, no-c-format
-msgid "/usr/bin"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:326
-#, no-c-format
-msgid ". Usually a normal user does not have write access to"
-msgstr ""
-
-#. Tag: filename
-#: adm_shell.xml:327
-#, no-c-format
-msgid "~/bin/"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:327
-#, no-c-format
-msgid ". Therefore it is recommended to save your scripts in the users' directory"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:328
-#, no-c-format
-msgid ". The above example gets the name"
+msgid "You can save the script wherever you want. However, it is a good idea to save it in a directory where the shell can find it. The search path in a shell is determined by the environment variable <envar>PATH</envar> . Usually a normal user does not have write access to <filename>/usr/bin</filename> . Therefore it is recommended to save your scripts in the users' directory <filename>~/bin/</filename> . The above example gets the name <filename>hello.sh</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -392,22 +352,10 @@ msgstr ""
 msgid "Everywhere"
 msgstr ""
 
-#. Tag: #text
-#: adm_shell.xml:359
+#. Tag: para
+#: adm_shell.xml:358
 #, no-c-format
-msgid "If the"
-msgstr ""
-
-#. Tag: command
-#: adm_shell.xml:361
-#, no-c-format
-msgid "hello.sh"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:361
-#, no-c-format
-msgid "environment variable contains the directory where the script is located, you can execute the script with"
+msgid "If the <envar>PATH</envar> environment variable contains the directory where the script is located, you can execute the script with <command>hello.sh</command> ."
 msgstr ""
 
 #. Tag: title
@@ -668,10 +616,10 @@ msgstr ""
 msgid "Useful Environment Variables"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:550
+#. Tag: para
+#: adm_shell.xml:549
 #, no-c-format
-msgid "HOME"
+msgid "<envar>HOME</envar>"
 msgstr ""
 
 #. Tag: para
@@ -680,10 +628,10 @@ msgstr ""
 msgid "the home directory of the current user"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:562
+#. Tag: para
+#: adm_shell.xml:561
 #, no-c-format
-msgid "HOST"
+msgid "<envar>HOST</envar>"
 msgstr ""
 
 #. Tag: para
@@ -692,10 +640,10 @@ msgstr ""
 msgid "the current host name"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:574
+#. Tag: para
+#: adm_shell.xml:573
 #, no-c-format
-msgid "LANG"
+msgid "<envar>LANG</envar>"
 msgstr ""
 
 #. Tag: para
@@ -704,10 +652,10 @@ msgstr ""
 msgid "when a tool is localized, it uses the language from this environment variable. English can also be set to <literal>C</literal>"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:587
+#. Tag: para
+#: adm_shell.xml:586
 #, no-c-format
-msgid "PATH"
+msgid "<envar>PATH</envar>"
 msgstr ""
 
 #. Tag: para
@@ -716,10 +664,10 @@ msgstr ""
 msgid "the search path of the shell, a list of directories separated by colon"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:599
+#. Tag: para
+#: adm_shell.xml:598
 #, no-c-format
-msgid "PS1"
+msgid "<envar>PS1</envar>"
 msgstr ""
 
 #. Tag: para
@@ -728,10 +676,10 @@ msgstr ""
 msgid "specifies the normal prompt printed before each command"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:611
+#. Tag: para
+#: adm_shell.xml:610
 #, no-c-format
-msgid "PS2"
+msgid "<envar>PS2</envar>"
 msgstr ""
 
 #. Tag: para
@@ -740,10 +688,10 @@ msgstr ""
 msgid "specifies the secondary prompt printed when you execute a multi-line command"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:624
+#. Tag: para
+#: adm_shell.xml:623
 #, no-c-format
-msgid "PWD"
+msgid "<envar>PWD</envar>"
 msgstr ""
 
 #. Tag: para
@@ -752,10 +700,10 @@ msgstr ""
 msgid "current working directory"
 msgstr ""
 
-#. Tag: envar
-#: adm_shell.xml:636
+#. Tag: para
+#: adm_shell.xml:635
 #, no-c-format
-msgid "USER"
+msgid "<envar>USER</envar>"
 msgstr ""
 
 #. Tag: para
@@ -782,46 +730,10 @@ msgstr ""
 msgid "&prompt.user;foo.sh \"Tux Penguin\" 2000"
 msgstr ""
 
-#. Tag: #text
-#: adm_shell.xml:664
+#. Tag: para
+#: adm_shell.xml:662
 #, no-c-format
-msgid "To access all the arguments which are passed to your script, you need positional parameters. These are"
-msgstr ""
-
-#. Tag: envar
-#: adm_shell.xml:664
-#, no-c-format
-msgid "$1"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:665
-#, no-c-format
-msgid "for the first argument,"
-msgstr ""
-
-#. Tag: envar
-#: adm_shell.xml:665
-#, no-c-format
-msgid "$2"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:666
-#, no-c-format
-msgid "for the second, and so on. You can have up to nine parameters. To get the script name, use"
-msgstr ""
-
-#. Tag: envar
-#: adm_shell.xml:666
-#, no-c-format
-msgid "$0"
-msgstr ""
-
-#. Tag: #text
-#: adm_shell.xml:667
-#, no-c-format
-msgid "."
+msgid "To access all the arguments which are passed to your script, you need positional parameters. These are <envar>$1</envar> for the first argument, <envar>$2</envar> for the second, and so on. You can have up to nine parameters. To get the script name, use <envar>$0</envar> ."
 msgstr ""
 
 #. Tag: para

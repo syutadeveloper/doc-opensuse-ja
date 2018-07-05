@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -31,41 +31,23 @@ msgid ""
 "other subsystems."
 msgstr ""
 
-#. Tag: quote
-#: tuning_memory.xml:65
-#, no-c-format
-msgid "VM"
-msgstr ""
-
-#. Tag: #text
-#: tuning_memory.xml:65
+#. Tag: para
+#: tuning_memory.xml:57
 #, no-c-format
 msgid ""
-"The memory management subsystem, also called the virtual memory manager, "
-"will subsequently be called"
-msgstr ""
-
-#. Tag: #text
-#: tuning_memory.xml:71
-#, no-c-format
-msgid ""
-". The role of the VM is to manage the allocation of physical memory (RAM) "
-"for the entire kernel and user programs. It is also responsible for "
-"providing a virtual memory environment for user processes (managed via POSIX "
-"APIs with Linux extensions). Finally, the VM is responsible for freeing up "
-"RAM when there is a shortage, either by trimming caches or swapping out"
-msgstr ""
-
-#. Tag: quote
-#: tuning_memory.xml:71
-#, no-c-format
-msgid "anonymous"
-msgstr ""
-
-#. Tag: #text
-#: tuning_memory.xml:72
-#, no-c-format
-msgid "memory."
+"<remark>sknorr, 2014-08-21: Using VM for \"virtual memory manager\" is "
+"really dangerous - everyone knows that VM means \"virtual machine\" and half "
+"of the people reading this chapter might skip this prargraph and be "
+"completely confused. At least use VMM or shorten \"memory management "
+"subsystem\" to \"memory subsystem\", the latter of which I think should be "
+"short enough. </remark> The memory management subsystem, also called the "
+"virtual memory manager, will subsequently be called <quote>VM</quote> . The "
+"role of the VM is to manage the allocation of physical memory (RAM) for the "
+"entire kernel and user programs. It is also responsible for providing a "
+"virtual memory environment for user processes (managed via POSIX APIs with "
+"Linux extensions). Finally, the VM is responsible for freeing up RAM when "
+"there is a shortage, either by trimming caches or swapping out "
+"<quote>anonymous</quote> memory."
 msgstr ""
 
 #. Tag: para

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -410,28 +410,13 @@ msgid ""
 "following command to import the data:"
 msgstr ""
 
-#. Tag: replaceable
+#. Tag: screen
 #: deployment_prep_zseries_prep_i.xml:279
 #, no-c-format
-msgid "PATH"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:279
-#, no-c-format
-msgid "&prompt.sudo;cobbler import --path="
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:279
-#, no-c-format
-msgid "--name="
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:279
-#, no-c-format
-msgid "--arch=s390x"
+msgid ""
+"&prompt.sudo;cobbler import --path=<replaceable>PATH</replaceable><co xml:id="
+"\"co.cobbler.import.path\"/> --name=<replaceable>IDENTIFIER</replaceable><co "
+"xml:id=\"co.cobbler.import.dirname\"/> --arch=s390x"
 msgstr ""
 
 #. Tag: para
@@ -467,46 +452,22 @@ msgid ""
 "server to add &productname; for &zseries;:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: deployment_prep_zseries_prep_i.xml:305
 #, no-c-format
-msgid "&prompt.sudo;cobbler distro add --arch=s390 --breed=suse --name=\""
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:306
-#, no-c-format
-msgid "\\ --os-version=sles12"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:307
-#, no-c-format
-msgid "/boot/s390x/initrd"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:307
-#, no-c-format
-msgid "\\ --initrd=/srv/www/cobbler/ks_mirror/"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:308
-#, no-c-format
-msgid "\\ --kernel=/srv/www/cobbler/ks_mirror/"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:308
-#, no-c-format
-msgid "/boot/s390x/linux"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:309
-#, no-c-format
-msgid "\\ --kopts=\"install=http://cobbler.&exampledomain;/cobbler/ks_mirror/"
+msgid ""
+"&prompt.sudo;cobbler distro add --arch=s390 --breed=suse --name="
+"\"<replaceable>IDENTIFIER</replaceable>\"<co xml:id=\"co.cobbler.add."
+"identifier\"/> \\\n"
+"  --os-version=sles12<co xml:id=\"co.cobbler.add.os\"/> \\\n"
+"  --initrd=/srv/www/cobbler/ks_mirror/<replaceable>IDENTIFIER</replaceable>/"
+"boot/s390x/initrd<co xml:id=\"co.cobbler.add.initrd\"/> \\\n"
+"  --kernel=/srv/www/cobbler/ks_mirror/<replaceable>IDENTIFIER</replaceable>/"
+"boot/s390x/linux<co xml:id=\"co.cobbler.add.kernel\"/> \\\n"
+"  --kopts=\"install=http://cobbler.&exampledomain;/cobbler/ks_mirror/"
+"<replaceable>IDENTIFIER</replaceable>\"<co xml:id=\"co.cobbler.add.server\"/"
+">\n"
+"    "
 msgstr ""
 
 #. Tag: para
@@ -565,40 +526,17 @@ msgid ""
 "following command to make a few required adjustments:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: deployment_prep_zseries_prep_i.xml:356
 #, no-c-format
-msgid "&prompt.sudo;cobbler distro edit \\--name="
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:357
-#, no-c-format
-msgid "--ksmeta=\"\""
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:357
-#, no-c-format
-msgid "--os-version=sles10"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:358
-#, no-c-format
-msgid "--kopts=\"install=http://cobbler.example.com/cobbler/ks_mirror/"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:358
-#, no-c-format
-msgid "\""
-msgstr ""
-
-#. Tag: replaceable
-#: deployment_prep_zseries_prep_i.xml:358
-#, no-c-format
-msgid "IDENTIFIER"
+msgid ""
+"&prompt.sudo;cobbler distro edit \\\n"
+"--name=<replaceable>IDENTIFIER</replaceable><co xml:id=\"co.cobbler.profile."
+"name\"/> --os-version=sles10<co xml:id=\"co.cobbler.profile.os\"/> --ksmeta="
+"\"\"<co xml:id=\"co.cobbler.profile.meta\"/>\n"
+"--kopts=\"install=http://cobbler.example.com/cobbler/ks_mirror/"
+"<replaceable>IDENTIFIER</replaceable>\"<co xml:id=\"co.cobbler.profile.opts"
+"\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1072,58 +1010,14 @@ msgid ""
 "the Linux installation."
 msgstr ""
 
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:719
+#. Tag: para
+#: deployment_prep_zseries_prep_i.xml:717
 #, no-c-format
-msgid "Now add (as the user"
-msgstr ""
-
-#. Tag: systemitem
-#: deployment_prep_zseries_prep_i.xml:719
-#, no-c-format
-msgid "MAINT"
-msgstr ""
-
-#. Tag: command
-#: deployment_prep_zseries_prep_i.xml:720
-#, no-c-format
-msgid "DIRM FOR LINUX1 ADD"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:720
-#, no-c-format
-msgid ") the guest to the user directory with"
-msgstr ""
-
-#. Tag: literal
-#: deployment_prep_zseries_prep_i.xml:721
-#, no-c-format
-msgid "LINUX1"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:721
-#, no-c-format
-msgid ". Enter the name of the guest ("
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:721
-#, no-c-format
-msgid ") and press"
-msgstr ""
-
-#. Tag: keycap
-#: deployment_prep_zseries_prep_i.xml:721
-#, no-c-format
-msgid "F5"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:723
-#, no-c-format
-msgid ". Set up the environment of the user with:"
+msgid ""
+"Now add (as the user <systemitem class=\"username\">MAINT</systemitem> ) the "
+"guest to the user directory with <command>DIRM FOR LINUX1 ADD</command> . "
+"Enter the name of the guest ( <literal>LINUX1</literal> ) and press "
+"<keycap>F5</keycap> . Set up the environment of the user with:"
 msgstr ""
 
 #. Tag: screen
@@ -1625,34 +1519,14 @@ msgid ""
 "server:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: deployment_prep_zseries_prep_i.xml:1044
 #, no-c-format
-msgid "--netboot-enabled 1"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:1044
-#, no-c-format
-msgid "--profile"
-msgstr ""
-
-#. Tag: replaceable
-#: deployment_prep_zseries_prep_i.xml:1044
-#, no-c-format
-msgid "ID"
-msgstr ""
-
-#. Tag: replaceable
-#: deployment_prep_zseries_prep_i.xml:1044
-#, no-c-format
-msgid "PROFILENAME"
-msgstr ""
-
-#. Tag: #text
-#: deployment_prep_zseries_prep_i.xml:1044
-#, no-c-format
-msgid "&prompt.sudo;cobbler system edit --name"
+msgid ""
+"&prompt.sudo;cobbler system edit --name <replaceable>ID</replaceable><co xml:"
+"id=\"co.cobbler.sysedit.id\"/> --netboot-enabled 1<co xml:id=\"co.cobbler."
+"sysedit.netboot\"/> --profile <replaceable>PROFILENAME</replaceable><co xml:"
+"id=\"co.cobbler.sysedit.profile\"/>"
 msgstr ""
 
 #. Tag: para

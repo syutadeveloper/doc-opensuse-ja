@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -68,106 +68,10 @@ msgstr ""
 msgid "LDAP versus NIS"
 msgstr ""
 
-#. Tag: filename
-#: security_ldap.xml:86
+#. Tag: para
+#: security_ldap.xml:83
 #, no-c-format
-msgid "group"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:86
-#, no-c-format
-msgid "Unix system administrators traditionally use NIS (Network Information Service) for name resolution and data distribution in a network. The configuration data contained in the files"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:87
-#, no-c-format
-msgid "mail"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:87
-#, no-c-format
-msgid "hosts"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:88
-#, no-c-format
-msgid "netgroup"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:88
-#, no-c-format
-msgid "networks"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:89
-#, no-c-format
-msgid "printcap"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:89
-#, no-c-format
-msgid "passwd"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:90
-#, no-c-format
-msgid "rpc"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:90
-#, no-c-format
-msgid ","
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:90
-#, no-c-format
-msgid "protocols"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:91
-#, no-c-format
-msgid ", and"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:91
-#, no-c-format
-msgid "services"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:91
-#, no-c-format
-msgid "in the"
-msgstr ""
-
-#. Tag: filename
-#: security_ldap.xml:91
-#, no-c-format
-msgid "/etc"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:96
-#, no-c-format
-msgid "directory is distributed to clients all over the network. These files can be maintained without major effort because they are simple text files. The handling of larger amounts of data, however, becomes increasingly difficult because of nonexistent structuring."
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:100
-#, no-c-format
-msgid "NIS is only designed for Unix platforms, and is not suitable as a centralized data administration tool in heterogeneous networks."
+msgid "Unix system administrators traditionally use NIS (Network Information Service) for name resolution and data distribution in a network. The configuration data contained in the files <filename>group</filename> , <filename>hosts</filename> , <filename>mail</filename> , <filename>netgroup</filename> , <filename>networks</filename> , <filename>passwd</filename> , <filename>printcap</filename> , <filename>protocols</filename> , <filename>rpc</filename> , and <filename>services</filename> in the <filename>/etc</filename> directory is distributed to clients all over the network. These files can be maintained without major effort because they are simple text files. The handling of larger amounts of data, however, becomes increasingly difficult because of nonexistent structuring. <remark>sknorr, 2014-08-26: \"nonexistent structuring\" sounds a bit complicated.</remark> NIS is only designed for Unix platforms, and is not suitable as a centralized data administration tool in heterogeneous networks."
 msgstr ""
 
 #. Tag: para
@@ -380,58 +284,26 @@ msgstr ""
 msgid "Excerpt from schema.core"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_ldap.xml:386
 #, no-c-format
-msgid "attributetype (2.5.4.11 NAME ( 'ou' 'organizationalUnitName')"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:387
-#, no-c-format
-msgid "DESC 'RFC2256: organizational unit this object belongs to'"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:388
-#, no-c-format
-msgid "SUP name )"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:390
-#, no-c-format
-msgid "objectclass ( 2.5.6.5 NAME 'organizationalUnit'"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:391
-#, no-c-format
-msgid "DESC 'RFC2256: an organizational unit'"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:392
-#, no-c-format
-msgid "SUP top STRUCTURAL"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:393
-#, no-c-format
-msgid "MUST ou"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:394
-#, no-c-format
-msgid "MAY (userPassword $ searchGuide $ seeAlso $ businessCategory"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:402
-#, no-c-format
-msgid "$ x121Address $ registeredAddress $ destinationIndicator $ preferredDeliveryMethod $ telexNumber $ teletexTerminalIdentifier $ telephoneNumber $ internationaliSDNNumber $ facsimileTelephoneNumber $ street $ postOfficeBox $ postalCode $ postalAddress $ physicalDeliveryOfficeName $ st $ l $ description) ) ..."
+msgid "attributetype (2.5.4.11 NAME ( 'ou' 'organizationalUnitName') <co xml:id=\"co.ldap.schema.core.att_type\"/>\n"
+      "       DESC 'RFC2256: organizational unit this object belongs to' <co xml:id=\"co.ldap.schema.core.desc\"/>\n"
+      "       SUP name ) <co xml:id=\"co.ldap.schema.core.sup\"/>\n"
+      "\n"
+      "objectclass ( 2.5.6.5 NAME 'organizationalUnit' <co xml:id=\"co.ldap.schema.core.oc\"/>\n"
+      "       DESC 'RFC2256: an organizational unit' <co xml:id=\"co.ldap.schema.core.desc.oc\"/>\n"
+      "       SUP top STRUCTURAL <co xml:id=\"co.ldap.schema.core.sup.oc\"/>\n"
+      "       MUST ou <co xml:id=\"co.ldap.schema.core.must.oc\"/>\n"
+      "MAY (userPassword $ searchGuide $ seeAlso $ businessCategory <co xml:id=\"co.ldap.schema.core.may.oc\"/>\n"
+      "  $ x121Address $ registeredAddress $ destinationIndicator\n"
+      "  $ preferredDeliveryMethod $ telexNumber\n"
+      "  $ teletexTerminalIdentifier $ telephoneNumber\n"
+      "  $ internationaliSDNNumber $ facsimileTelephoneNumber\n"
+      "  $ street $ postOfficeBox $ postalCode $ postalAddress\n"
+      "  $ physicalDeliveryOfficeName\n"
+      "  $ st $ l $ description) )\n"
+      "  ..."
 msgstr ""
 
 #. Tag: para
@@ -1094,28 +966,16 @@ msgstr ""
 msgid "Printed literature about LDAP:"
 msgstr ""
 
-#. Tag: citetitle
-#: security_ldap.xml:1512
+#. Tag: para
+#: security_ldap.xml:1511
 #, no-c-format
-msgid "LDAP System Administration"
+msgid "<citetitle>LDAP System Administration</citetitle> by Gerald Carter (ISBN 1-56592-491-6)"
 msgstr ""
 
-#. Tag: #text
-#: security_ldap.xml:1514
+#. Tag: para
+#: security_ldap.xml:1517
 #, no-c-format
-msgid "by Gerald Carter (ISBN 1-56592-491-6)"
-msgstr ""
-
-#. Tag: citetitle
-#: security_ldap.xml:1518
-#, no-c-format
-msgid "Understanding and Deploying LDAP Directory Services"
-msgstr ""
-
-#. Tag: #text
-#: security_ldap.xml:1520
-#, no-c-format
-msgid "by Howes, Smith, and Good (ISBN 0-672-32316-8)"
+msgid "<citetitle>Understanding and Deploying LDAP Directory Services</citetitle> by Howes, Smith, and Good (ISBN 0-672-32316-8)"
 msgstr ""
 
 #. Tag: para

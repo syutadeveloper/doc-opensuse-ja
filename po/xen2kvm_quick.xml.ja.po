@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,14 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. Tag: xml-stylesheet
-#: xen2kvm_quick.xml:4
-#, no-c-format
-msgid ""
-"<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook50-profile.xsl\" "
-"type=\"text/xml\" title=\"Profiling step\"?>"
-msgstr ""
 
 #. Tag: provo
 #: xen2kvm_quick.xml:11
@@ -48,16 +40,16 @@ msgstr ""
 msgid "&productnumber;"
 msgstr ""
 
-#. Tag: date
-#: xen2kvm_quick.xml:18
-#, no-c-format
-msgid "<?dbtimestamp format=\"B d, Y\"?>"
-msgstr ""
-
 #. Tag: productname
 #: xen2kvm_quick.xml:18
 #, no-c-format
 msgid "&productname;"
+msgstr ""
+
+#. Tag: date
+#: xen2kvm_quick.xml:18
+#, no-c-format
+msgid "<?dbtimestamp format=\"B d, Y\"?>"
 msgstr ""
 
 #. Tag: para
@@ -392,6 +384,12 @@ msgid ""
 "parameter for more information."
 msgstr ""
 
+#. Tag: term
+#: xen2kvm_quick.xml:241
+#, no-c-format
+msgid "storage_pool"
+msgstr ""
+
 #. Tag: para
 #: xen2kvm_quick.xml:243
 #, no-c-format
@@ -521,34 +519,16 @@ msgid ""
 "existing disks and convert them in place."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: xen2kvm_quick.xml:335
 #, no-c-format
-msgid "&prompt.root;virt-v2v sles12_xen.xml"
-msgstr ""
-
-#. Tag: replaceable
-#: xen2kvm_quick.xml:336
-#, no-c-format
-msgid "LIBVIRTXML"
-msgstr ""
-
-#. Tag: replaceable
-#: xen2kvm_quick.xml:337
-#, no-c-format
-msgid "remote_host.example.com:/exported_dir"
-msgstr ""
-
-#. Tag: replaceable
-#: xen2kvm_quick.xml:338
-#, no-c-format
-msgid "br0"
-msgstr ""
-
-#. Tag: #text
-#: xen2kvm_quick.xml:338
-#, no-c-format
-msgid "\\--bridge"
+msgid ""
+"&prompt.root;virt-v2v sles12_xen.xml<co xml:id=\"v2v.xml\"/> \\\n"
+"-i <replaceable>LIBVIRTXML</replaceable><co xml:id=\"v2v.method\"/> \\\n"
+"-os <replaceable>remote_host.example.com:/exported_dir</replaceable><co xml:"
+"id=\"v2v.pool\"/> \\\n"
+"--bridge <replaceable>br0</replaceable><co xml:id=\"v2v.bridge\"/> \\\n"
+"-on <replaceable>sles12_kvm</replaceable><co xml:id=\"v2v.name\"/>"
 msgstr ""
 
 #. Tag: para
@@ -630,70 +610,17 @@ msgstr ""
 msgid "Run <command>virt-v2v</command> to convert to &kvm; virtual machine:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: xen2kvm_quick.xml:405
 #, no-c-format
-msgid "&prompt.root;virt-v2v sles12_xen"
-msgstr ""
-
-#. Tag: #text
-#: xen2kvm_quick.xml:406
-#, no-c-format
-msgid "\\-i"
-msgstr ""
-
-#. Tag: replaceable
-#: xen2kvm_quick.xml:406
-#, no-c-format
-msgid "libvirt"
-msgstr ""
-
-#. Tag: replaceable
-#: xen2kvm_quick.xml:407
-#, no-c-format
-msgid "storage_pool"
-msgstr ""
-
-#. Tag: #text
-#: xen2kvm_quick.xml:407
-#, no-c-format
-msgid "\\-os"
-msgstr ""
-
-#. Tag: replaceable
-#: xen2kvm_quick.xml:408
-#, no-c-format
-msgid "eth0"
-msgstr ""
-
-#. Tag: #text
-#: xen2kvm_quick.xml:408
-#, no-c-format
-msgid "\\--network"
-msgstr ""
-
-#. Tag: #text
-#: xen2kvm_quick.xml:409
-#, no-c-format
-msgid "\\-of qcow2"
-msgstr ""
-
-#. Tag: #text
-#: xen2kvm_quick.xml:410
-#, no-c-format
-msgid "\\-oa sparce"
-msgstr ""
-
-#. Tag: #text
-#: xen2kvm_quick.xml:411
-#, no-c-format
-msgid "\\-on"
-msgstr ""
-
-#. Tag: replaceable
-#: xen2kvm_quick.xml:411
-#, no-c-format
-msgid "sles12_kvm"
+msgid ""
+"&prompt.root;virt-v2v sles12_xen<co xml:id=\"v2v.domain\"/> \\\n"
+"-i <replaceable>libvirt</replaceable><co xml:id=\"v2v.method1\"/> \\\n"
+"-os <replaceable>storage_pool</replaceable><co xml:id=\"v2v.pool1\"/> \\\n"
+"--network <replaceable>eth0</replaceable><co xml:id=\"v2v.net\"/> \\\n"
+"-of qcow2<co xml:id=\"v2v.qcow\"/> \\\n"
+"-oa sparce<co xml:id=\"v2v.sparse\"/> \\\n"
+"-on <replaceable>sles12_kvm</replaceable>"
 msgstr ""
 
 #. Tag: para

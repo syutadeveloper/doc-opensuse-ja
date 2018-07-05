@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -518,70 +518,10 @@ msgstr ""
 msgid "Designed for machines administrated centrally <phrase os=\"sles\">. It is active by default.</phrase>"
 msgstr ""
 
-#. Tag: #text
-#: security_policy_kit.xml:414
+#. Tag: para
+#: security_policy_kit.xml:412
 #, no-c-format
-msgid "To switch between the two sets of default privileges, adjust the value of"
-msgstr ""
-
-#. Tag: varname
-#: security_policy_kit.xml:414
-#, no-c-format
-msgid "POLKIT_DEFAULT_PRIVS"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:415
-#, no-c-format
-msgid "or"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:415
-#, no-c-format
-msgid "to either"
-msgstr ""
-
-#. Tag: literal
-#: security_policy_kit.xml:415
-#, no-c-format
-msgid "restrictive"
-msgstr ""
-
-#. Tag: literal
-#: security_policy_kit.xml:415
-#, no-c-format
-msgid "standard"
-msgstr ""
-
-#. Tag: filename
-#: security_policy_kit.xml:416
-#, no-c-format
-msgid "/etc/sysconfig/security"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:416
-#, no-c-format
-msgid "in"
-msgstr ""
-
-#. Tag: command
-#: security_policy_kit.xml:417
-#, no-c-format
-msgid "set_polkit_default_privs"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:417
-#, no-c-format
-msgid ". Then run the command"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:417
-#, no-c-format
-msgid "as &rootuser;."
+msgid "To switch between the two sets of default privileges, adjust the value of <varname>POLKIT_DEFAULT_PRIVS</varname> to either <literal>restrictive</literal> or <literal>standard</literal> in <filename>/etc/sysconfig/security</filename> . Then run the command <command>set_polkit_default_privs</command> as &rootuser;."
 msgstr ""
 
 #. Tag: para
@@ -689,40 +629,30 @@ msgstr ""
 msgid "The file <filename>/usr/share/polkit-1/actions/org.opensuse.policykit.gparted.policy</filename> contains the following content:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_policy_kit.xml:514
 #, no-c-format
-msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;!DOCTYPE policyconfig PUBLIC \"-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN\" \"http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd\"&gt;&lt;policyconfig&gt;"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:520
-#, no-c-format
-msgid "&lt;action id=\"org.opensuse.policykit.gparted\"&gt;"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:521
-#, no-c-format
-msgid "&lt;message&gt;Authentication is required to run the GParted Partition Editor&lt;/message&gt; &lt;icon_name&gt;gparted&lt;/icon_name&gt; &lt;defaults&gt;"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:524
-#, no-c-format
-msgid "&lt;allow_any&gt;auth_admin&lt;/allow_any&gt; &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt; &lt; allow_active&gt;auth_admin&lt;/allow_active&gt; &lt;/defaults&gt; &lt;annotate"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:529
-#, no-c-format
-msgid "key=\"org.freedesktop.policykit.exec.path\"&gt;/usr/sbin/gparted&lt;/annotate&gt; &lt;annotate"
-msgstr ""
-
-#. Tag: #text
-#: security_policy_kit.xml:531
-#, no-c-format
-msgid "key=\"org.freedesktop.policykit.exec.allow_gui\"&gt;true&lt;/annotate&gt; &lt;/action&gt;&lt;/policyconfig&gt;"
+msgid "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n"
+      "&lt;!DOCTYPE policyconfig PUBLIC\n"
+      " \"-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN\"\n"
+      " \"http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd\"&gt;\n"
+      "&lt;policyconfig&gt; <co xml:id=\"co.polkit.actions.policyconfig\"/>\n"
+      "\n"
+      "  &lt;action id=\"org.opensuse.policykit.gparted\"&gt; <co xml:id=\"co.polkit.actions.action\"/>\n"
+      "    &lt;message&gt;Authentication is required to run the GParted Partition Editor&lt;/message&gt;\n"
+      "    &lt;icon_name&gt;gparted&lt;/icon_name&gt;\n"
+      "    &lt;defaults&gt; <co xml:id=\"co.polkit.actions.defaults\"/>\n"
+      "      &lt;allow_any&gt;auth_admin&lt;/allow_any&gt;\n"
+      "      &lt;allow_inactive&gt;auth_admin&lt;/allow_inactive&gt;\n"
+      "     &lt; allow_active&gt;auth_admin&lt;/allow_active&gt;\n"
+      "    &lt;/defaults&gt;\n"
+      "    &lt;annotate <co xml:id=\"co.polkit.actions.annotate\"/>\n"
+      "      key=\"org.freedesktop.policykit.exec.path\"&gt;/usr/sbin/gparted&lt;/annotate&gt;\n"
+      "    &lt;annotate <xref linkend=\"co.polkit.actions.annotate\"/>\n"
+      "      key=\"org.freedesktop.policykit.exec.allow_gui\"&gt;true&lt;/annotate&gt;\n"
+      "  &lt;/action&gt;\n"
+      "\n"
+      "&lt;/policyconfig&gt;"
 msgstr ""
 
 #. Tag: para

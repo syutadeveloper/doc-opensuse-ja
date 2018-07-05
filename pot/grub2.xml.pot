@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -284,34 +284,10 @@ msgstr ""
 msgid "<literal>GRUB_HIDDEN_TIMEOUT</literal>"
 msgstr ""
 
-#. Tag: #text
-#: grub2.xml:267
+#. Tag: para
+#: grub2.xml:263
 #, no-c-format
-msgid "Waits the specified number of seconds for the user to press a key. During the period no menu is shown unless the user presses a key. If no key is pressed during the time specified, the control is passed to"
-msgstr ""
-
-#. Tag: literal
-#: grub2.xml:267
-#, no-c-format
-msgid "GRUB_TIMEOUT"
-msgstr ""
-
-#. Tag: literal
-#: grub2.xml:268
-#, no-c-format
-msgid "GRUB_HIDDEN_TIMEOUT=0"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:269
-#, no-c-format
-msgid "first checks whether"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:271
-#, no-c-format
-msgid "is pressed and shows the boot menu if yes, otherwise immediately boots the default menu entry. This is the default when only one bootable OS is identified by &grub;."
+msgid "Waits the specified number of seconds for the user to press a key. During the period no menu is shown unless the user presses a key. If no key is pressed during the time specified, the control is passed to <literal>GRUB_TIMEOUT</literal> . <literal>GRUB_HIDDEN_TIMEOUT=0</literal> first checks whether <keycap function=\"shift\"/> is pressed and shows the boot menu if yes, otherwise immediately boots the default menu entry. This is the default when only one bootable OS is identified by &grub;."
 msgstr ""
 
 #. Tag: term
@@ -440,40 +416,10 @@ msgstr ""
 msgid "<literal>GRUB_GFXMODE</literal>"
 msgstr ""
 
-#. Tag: literal
-#: grub2.xml:392
+#. Tag: para
+#: grub2.xml:391
 #, no-c-format
-msgid "gfxterm"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:392
-#, no-c-format
-msgid "The resolution used for the"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:394
-#, no-c-format
-msgid "graphical terminal. Note that you can only use modes supported by your graphics card (VBE). The default is ‘auto’, which tries to select a preferred resolution. You can display the screen resolutions available to &grub; by typing"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:396
-#, no-c-format
-msgid "in the &grub; command line. The command line is accessed by typing"
-msgstr ""
-
-#. Tag: command
-#: grub2.xml:396
-#, no-c-format
-msgid "videoinfo"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:397
-#, no-c-format
-msgid "when the &grub; boot menu screen is displayed."
+msgid "The resolution used for the <literal>gfxterm</literal> graphical terminal. Note that you can only use modes supported by your graphics card (VBE). The default is ‘auto’, which tries to select a preferred resolution. You can display the screen resolutions available to &grub; by typing <command>videoinfo</command> in the &grub; command line. The command line is accessed by typing <keycap>C</keycap> when the &grub; boot menu screen is displayed."
 msgstr ""
 
 #. Tag: para
@@ -694,10 +640,10 @@ msgstr ""
 msgid "In the graphical boot menu, select the entry you want to edit with the arrow keys."
 msgstr ""
 
-#. Tag: #text
-#: grub2.xml:599
+#. Tag: para
+#: grub2.xml:597
 #, no-c-format
-msgid "to open the text-based editor."
+msgid "Press <keycap>E</keycap> to open the text-based editor."
 msgstr ""
 
 #. Tag: para
@@ -724,40 +670,16 @@ msgstr ""
 msgid "Add space-separated parameters to the end of the line starting with <literal>linux</literal> or <literal>linuxefi</literal> to edit the kernel parameters. A complete list of parameters is available at <link xlink:href=\"http://en.opensuse.org/Linuxrc\"/> ."
 msgstr ""
 
-#. Tag: #text
-#: grub2.xml:631
+#. Tag: para
+#: grub2.xml:629
 #, no-c-format
-msgid "Or edit the general options to change for example the kernel version. The"
+msgid "Or edit the general options to change for example the kernel version. The <keycap function=\"tab\"/> key suggests all possible completions."
 msgstr ""
 
-#. Tag: #text
-#: grub2.xml:632
+#. Tag: para
+#: grub2.xml:637
 #, no-c-format
-msgid "key suggests all possible completions."
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:638
-#, no-c-format
-msgid "Press"
-msgstr ""
-
-#. Tag: keycap
-#: grub2.xml:638
-#, no-c-format
-msgid "F10"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:639
-#, no-c-format
-msgid "to boot the system with the changes you made or press"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:640
-#, no-c-format
-msgid "to discard your edits and return to the &grub; menu."
+msgid "Press <keycap>F10</keycap> to boot the system with the changes you made or press <keycap function=\"escape\"/> to discard your edits and return to the &grub; menu."
 msgstr ""
 
 #. Tag: para
@@ -903,22 +825,10 @@ msgstr ""
 msgid "Interactivity"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:751
+#. Tag: para
+#: grub2.xml:748
 #, no-c-format
-msgid "_"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:751
-#, no-c-format
-msgid "Interactivity is strongly limited. Typing often does not result in visual feedback. To see where the cursor is, type an underscore ("
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:752
-#, no-c-format
-msgid ")."
+msgid "Interactivity is strongly limited. Typing often does not result in visual feedback. To see where the cursor is, type an underscore ( <keycap>_</keycap> )."
 msgstr ""
 
 #. Tag: title
@@ -939,22 +849,10 @@ msgstr ""
 msgid "Cursor Movement"
 msgstr ""
 
-#. Tag: quote
-#: grub2.xml:766
+#. Tag: para
+#: grub2.xml:765
 #, no-c-format
-msgid "Traditional"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:767
-#, no-c-format
-msgid "cursor movement is not possible."
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:770
-#, no-c-format
-msgid "and the cursor keys do not work. To move the cursor, use the key combinations listed in"
+msgid "<quote>Traditional</quote> cursor movement is not possible. <keycap function=\"alt\"/> , <keycap function=\"meta\"/> , <keycap function=\"control\"/> and the cursor keys do not work. To move the cursor, use the key combinations listed in <xref linkend=\"sec.grub2.zseries.keys\"/> ."
 msgstr ""
 
 #. Tag: term
@@ -963,40 +861,10 @@ msgstr ""
 msgid "Caret"
 msgstr ""
 
-#. Tag: #text
-#: grub2.xml:778
+#. Tag: para
+#: grub2.xml:777
 #, no-c-format
-msgid "The caret ("
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:779
-#, no-c-format
-msgid ") is used as a control character. To type a literal"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:780
-#, no-c-format
-msgid "followed by a letter, type"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:781
-#, no-c-format
-msgid ","
-msgstr ""
-
-#. Tag: replaceable
-#: grub2.xml:781
-#, no-c-format
-msgid "LETTER"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:782
-#, no-c-format
-msgid "."
+msgid "The caret ( <keycap>^</keycap> ) is used as a control character. To type a literal <keycap>^</keycap> followed by a letter, type <keycap>^</keycap> , <keycap>^</keycap> , <replaceable>LETTER</replaceable> ."
 msgstr ""
 
 #. Tag: term
@@ -1005,22 +873,10 @@ msgstr ""
 msgid "Enter"
 msgstr ""
 
-#. Tag: #text
-#: grub2.xml:789
+#. Tag: para
+#: grub2.xml:788
 #, no-c-format
-msgid "The"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:790
-#, no-c-format
-msgid "key does not work, use"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:791
-#, no-c-format
-msgid "instead."
+msgid "The <keycap function=\"enter\"/> key does not work, use <keycombo><keycap>^</keycap> <keycap>J</keycap></keycombo> instead."
 msgstr ""
 
 #. Tag: title
@@ -1036,6 +892,12 @@ msgid "Common Substitutes:"
 msgstr ""
 
 #. Tag: para
+#: grub2.xml:809
+#, no-c-format
+msgid "<keycombo><keycap>^</keycap> <keycap>J</keycap></keycombo>"
+msgstr ""
+
+#. Tag: para
 #: grub2.xml:814
 #, no-c-format
 msgid "engage ( <quote>Enter</quote> )"
@@ -1047,10 +909,10 @@ msgstr ""
 msgid "abort, return to previous <quote>state</quote>"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:834
+#. Tag: para
+#: grub2.xml:833
 #, no-c-format
-msgid "I"
+msgid "<keycombo><keycap>^</keycap><keycap>I</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1089,10 +951,10 @@ msgstr ""
 msgid "next entry"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:899
+#. Tag: para
+#: grub2.xml:898
 #, no-c-format
-msgid "G"
+msgid "<keycombo><keycap>^</keycap><keycap>G</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1107,28 +969,28 @@ msgstr ""
 msgid "next page"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:929
+#. Tag: para
+#: grub2.xml:927
 #, no-c-format
-msgid "J"
+msgid "boot selected entry or enter submenu (same as <keycombo><keycap>^</keycap><keycap>J</keycap></keycombo> )"
 msgstr ""
 
-#. Tag: #text
-#: grub2.xml:929
+#. Tag: para
+#: grub2.xml:935
 #, no-c-format
-msgid "boot selected entry or enter submenu (same as"
-msgstr ""
-
-#. Tag: #text
-#: grub2.xml:930
-#, no-c-format
-msgid ")"
+msgid "<keycombo><keycap>E</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
 #: grub2.xml:940
 #, no-c-format
 msgid "edit selected entry"
+msgstr ""
+
+#. Tag: para
+#: grub2.xml:947
+#, no-c-format
+msgid "<keycombo><keycap>C</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1149,10 +1011,10 @@ msgstr ""
 msgid "next line"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1085
+#. Tag: para
+#: grub2.xml:1084
 #, no-c-format
-msgid "O"
+msgid "<keycombo><keycap>^</keycap><keycap>O</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1161,10 +1023,10 @@ msgstr ""
 msgid "open line"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1097
+#. Tag: para
+#: grub2.xml:1096
 #, no-c-format
-msgid "L"
+msgid "<keycombo><keycap>^</keycap><keycap>L</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1173,10 +1035,10 @@ msgstr ""
 msgid "refresh screen"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1109
+#. Tag: para
+#: grub2.xml:1108
 #, no-c-format
-msgid "X"
+msgid "<keycombo><keycap>^</keycap><keycap>X</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1185,10 +1047,10 @@ msgstr ""
 msgid "boot entry"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1121
+#. Tag: para
+#: grub2.xml:1120
 #, no-c-format
-msgid "C"
+msgid "<keycombo><keycap>^</keycap><keycap>C</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1203,10 +1065,10 @@ msgstr ""
 msgid "Keys Available in Command Line Mode:"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1138
+#. Tag: para
+#: grub2.xml:1137
 #, no-c-format
-msgid "P"
+msgid "<keycombo><keycap>^</keycap><keycap>P</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1215,10 +1077,10 @@ msgstr ""
 msgid "previous command"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1150
+#. Tag: para
+#: grub2.xml:1149
 #, no-c-format
-msgid "N"
+msgid "<keycombo><keycap>^</keycap><keycap>N</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1227,10 +1089,10 @@ msgstr ""
 msgid "next command from history"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1162
+#. Tag: para
+#: grub2.xml:1161
 #, no-c-format
-msgid "A"
+msgid "<keycombo><keycap>^</keycap><keycap>A</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1239,10 +1101,10 @@ msgstr ""
 msgid "beginning of line"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1174
+#. Tag: para
+#: grub2.xml:1173
 #, no-c-format
-msgid "E"
+msgid "<keycombo><keycap>^</keycap><keycap>E</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1251,10 +1113,10 @@ msgstr ""
 msgid "end of line"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1186
+#. Tag: para
+#: grub2.xml:1185
 #, no-c-format
-msgid "B"
+msgid "<keycombo><keycap>^</keycap><keycap>B</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1263,10 +1125,10 @@ msgstr ""
 msgid "backward char"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1198
+#. Tag: para
+#: grub2.xml:1197
 #, no-c-format
-msgid "F"
+msgid "<keycombo><keycap>^</keycap><keycap>F</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1275,10 +1137,10 @@ msgstr ""
 msgid "forward char"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1210
+#. Tag: para
+#: grub2.xml:1209
 #, no-c-format
-msgid "H"
+msgid "<keycombo><keycap>^</keycap><keycap>H</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1287,10 +1149,10 @@ msgstr ""
 msgid "backspace"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1222
+#. Tag: para
+#: grub2.xml:1221
 #, no-c-format
-msgid "D"
+msgid "<keycombo><keycap>^</keycap><keycap>D</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1299,10 +1161,10 @@ msgstr ""
 msgid "delete"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1234
+#. Tag: para
+#: grub2.xml:1233
 #, no-c-format
-msgid "K"
+msgid "<keycombo><keycap>^</keycap><keycap>K</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1311,10 +1173,10 @@ msgstr ""
 msgid "kill line"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1246
+#. Tag: para
+#: grub2.xml:1245
 #, no-c-format
-msgid "U"
+msgid "<keycombo><keycap>^</keycap><keycap>U</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para
@@ -1323,16 +1185,10 @@ msgstr ""
 msgid "discard line"
 msgstr ""
 
-#. Tag: keycap
-#: grub2.xml:1258
+#. Tag: para
+#: grub2.xml:1257
 #, no-c-format
-msgid "Y"
-msgstr ""
-
-#. Tag: keycap
-#: grub2.xml:1258
-#, no-c-format
-msgid "^"
+msgid "<keycombo><keycap>^</keycap><keycap>Y</keycap></keycombo>"
 msgstr ""
 
 #. Tag: para

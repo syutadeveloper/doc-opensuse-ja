@@ -6,19 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. Tag: xml-stylesheet
-#: hardening.xml:4
-#, no-c-format
-msgid "<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook50-profile.xsl\" type=\"text/xml\" title=\"Profiling step\"?>"
-msgstr ""
 
 #. Tag: provo
 #: hardening.xml:11
@@ -32,28 +26,28 @@ msgstr ""
 msgid "fs@suse.com"
 msgstr ""
 
-#. Tag: productname
-#: hardening.xml:22
-#, no-c-format
-msgid "&productname;"
-msgstr ""
-
 #. Tag: title
 #: hardening.xml:22
 #, no-c-format
 msgid "Security and Hardening Guide"
 msgstr ""
 
-#. Tag: productnumber
-#: hardening.xml:23
+#. Tag: productname
+#: hardening.xml:22
 #, no-c-format
-msgid "&productnumber;"
+msgid "&productname;"
 msgstr ""
 
 #. Tag: date
 #: hardening.xml:23
 #, no-c-format
 msgid "<?dbtimestamp format=\"B d, Y\"?>"
+msgstr ""
+
+#. Tag: productnumber
+#: hardening.xml:23
+#, no-c-format
+msgid "&productnumber;"
 msgstr ""
 
 #. Tag: para
@@ -956,34 +950,10 @@ msgstr ""
 msgid "Security via the Boot Loaders"
 msgstr ""
 
-#. Tag: #text
-#: hardening.xml:1021
+#. Tag: para
+#: hardening.xml:1020
 #, no-c-format
-msgid "The Linux boot loader &grub;, which is used by default in &productname;, can have a boot passwords set. It also provides a password feature, so that only administrators can start the interactive operations (for example editing menu entries and entering the command line interface). If a password is specified, &grub; will disallow any interactive control until you press the key"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:1026
-#, no-c-format
-msgid "and"
-msgstr ""
-
-#. Tag: keycap
-#: hardening.xml:1026
-#, no-c-format
-msgid "E"
-msgstr ""
-
-#. Tag: keycap
-#: hardening.xml:1026
-#, no-c-format
-msgid "C"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:1028
-#, no-c-format
-msgid "and enter a correct password."
+msgid "The Linux boot loader &grub;, which is used by default in &productname;, can have a boot passwords set. It also provides a password feature, so that only administrators can start the interactive operations (for example editing menu entries and entering the command line interface). If a password is specified, &grub; will disallow any interactive control until you press the key <keycap>C</keycap> and <keycap>E</keycap> and enter a correct password."
 msgstr ""
 
 #. Tag: para
@@ -1040,46 +1010,10 @@ msgstr ""
 msgid "SECCHK_USER=\"firewall\" # exchange firewall is an admin user's account name"
 msgstr ""
 
-#. Tag: #text
-#: hardening.xml:1090
+#. Tag: para
+#: hardening.xml:1089
 #, no-c-format
-msgid "Also note that the"
-msgstr ""
-
-#. Tag: envar
-#: hardening.xml:1090
-#, no-c-format
-msgid "START_SECCHK"
-msgstr ""
-
-#. Tag: filename
-#: hardening.xml:1091
-#, no-c-format
-msgid "/etc/sysconfig/seccheck"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:1091
-#, no-c-format
-msgid "variable from"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:1093
-#, no-c-format
-msgid "controls whether the security check will be run from cron. (It is ignored if you call"
-msgstr ""
-
-#. Tag: command
-#: hardening.xml:1093
-#, no-c-format
-msgid "security-control"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:1094
-#, no-c-format
-msgid "manually.)"
+msgid "Also note that the <envar>START_SECCHK</envar> variable from <filename>/etc/sysconfig/seccheck</filename> controls whether the security check will be run from cron. (It is ignored if you call <command>security-control</command> manually.)"
 msgstr ""
 
 #. Tag: para
@@ -1130,16 +1064,10 @@ msgstr ""
 msgid "user root checks"
 msgstr ""
 
-#. Tag: envar
-#: hardening.xml:1148
+#. Tag: para
+#: hardening.xml:1147
 #, no-c-format
-msgid "PATH"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:1148
-#, no-c-format
-msgid "secure umask and"
+msgid "secure umask and <envar>PATH</envar>"
 msgstr ""
 
 #. Tag: para
@@ -1856,6 +1784,12 @@ msgstr ""
 msgid "net.ipv4.conf.all.accept_redirects = 0"
 msgstr ""
 
+#. Tag: para
+#: hardening.xml:1844
+#, no-c-format
+msgid "or"
+msgstr ""
+
 #. Tag: screen
 #: hardening.xml:1847
 #, no-c-format
@@ -2113,34 +2047,10 @@ msgstr ""
 msgid "Filter access to <filename>/dev/mem</filename> (default in &productname; 12)"
 msgstr ""
 
-#. Tag: #text
-#: hardening.xml:2029
+#. Tag: para
+#: hardening.xml:2026
 #, no-c-format
-msgid "hosts an image of the system's main memory, including kernel and user space memory. Allowing unfiltered access to this information is dangerous and therefore the kernel on &productname; has been compiled with"
-msgstr ""
-
-#. Tag: envar
-#: hardening.xml:2030
-#, no-c-format
-msgid "CONFIG_STRICT_DEVMEM"
-msgstr ""
-
-#. Tag: filename
-#: hardening.xml:2031
-#, no-c-format
-msgid "/dev/mem"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:2031
-#, no-c-format
-msgid "enabled. This setting restricts user space access to"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:2033
-#, no-c-format
-msgid "to memory mapped peripherals."
+msgid "<filename>/dev/mem</filename> hosts an image of the system's main memory, including kernel and user space memory. Allowing unfiltered access to this information is dangerous and therefore the kernel on &productname; has been compiled with <envar>CONFIG_STRICT_DEVMEM</envar> enabled. This setting restricts user space access to <filename>/dev/mem</filename> to memory mapped peripherals."
 msgstr ""
 
 #. Tag: title
@@ -3058,34 +2968,10 @@ msgstr ""
 msgid "Since <command>/bin/cat</command> is run on the server side, its output needs to be redirected to the local file."
 msgstr ""
 
-#. Tag: command
-#: hardening.xml:2854
+#. Tag: para
+#: hardening.xml:2853
 #, no-c-format
-msgid "/bin/cat"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:2854
-#, no-c-format
-msgid "Another approach is to replace the"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:2856
-#, no-c-format
-msgid "(referenced above) with your own script that checks the passed SSH commands by reading the environment variable"
-msgstr ""
-
-#. Tag: envar
-#: hardening.xml:2856
-#, no-c-format
-msgid "$SSH_ORIGINAL_COMMAND"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:2858
-#, no-c-format
-msgid ". For example:"
+msgid "Another approach is to replace the <command>/bin/cat</command> (referenced above) with your own script that checks the passed SSH commands by reading the environment variable <envar>$SSH_ORIGINAL_COMMAND</envar> . For example:"
 msgstr ""
 
 #. Tag: screen
@@ -3955,70 +3841,10 @@ msgid "&prompt.root;su – oracle\n"
       "63536"
 msgstr ""
 
-#. Tag: literal
-#: hardening.xml:3629
+#. Tag: para
+#: hardening.xml:3627
 #, no-c-format
-msgid "ulimit -n 63536"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:3629
-#, no-c-format
-msgid "Making this permanent requires the addition of the setting,"
-msgstr ""
-
-#. Tag: filename
-#: hardening.xml:3630
-#, no-c-format
-msgid "~/.bashrc"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:3630
-#, no-c-format
-msgid ", (again, for Bash) to the users profile ("
-msgstr ""
-
-#. Tag: filename
-#: hardening.xml:3631
-#, no-c-format
-msgid "~/.profile"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:3631
-#, no-c-format
-msgid "or"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:3632
-#, no-c-format
-msgid "file) which is the user start-up file for the Bash shell on &productname; (to verify your shell run: echo"
-msgstr ""
-
-#. Tag: envar
-#: hardening.xml:3633
-#, no-c-format
-msgid "$SHELL"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:3634
-#, no-c-format
-msgid "). To do this you could simply type (or copy/paste – if you are reading this on the system) the following commands for the Bash shell of the user"
-msgstr ""
-
-#. Tag: literal
-#: hardening.xml:3635
-#, no-c-format
-msgid "oracle"
-msgstr ""
-
-#. Tag: #text
-#: hardening.xml:3636
-#, no-c-format
-msgid ":"
+msgid "Making this permanent requires the addition of the setting, <literal>ulimit -n 63536</literal> , (again, for Bash) to the users profile ( <filename>~/.bashrc</filename> or <filename>~/.profile</filename> file) which is the user start-up file for the Bash shell on &productname; (to verify your shell run: echo <envar>$SHELL</envar> ). To do this you could simply type (or copy/paste – if you are reading this on the system) the following commands for the Bash shell of the user <literal>oracle</literal> :"
 msgstr ""
 
 #. Tag: screen

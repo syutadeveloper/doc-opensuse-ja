@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -338,58 +338,10 @@ msgstr ""
 msgid "&slea;&nbsp;12 uses the Btrfs file system by default, which leads Docker to use the <systemitem class=\"resource\">btrfs</systemitem> driver."
 msgstr ""
 
-#. Tag: envar
-#: docker_overview.xml:330
+#. Tag: para
+#: docker_overview.xml:328
 #, no-c-format
-msgid "DOCKER_OPTS"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:330
-#, no-c-format
-msgid "It is possible to specify which driver to use by changing the value of the"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:331
-#, no-c-format
-msgid "variable defined inside of the"
-msgstr ""
-
-#. Tag: filename
-#: docker_overview.xml:331
-#, no-c-format
-msgid "/etc/sysconfig/docker"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:332
-#, no-c-format
-msgid "file. This can be done either manually or using &yast; by browsing to"
-msgstr ""
-
-#. Tag: menuchoice
-#: docker_overview.xml:332
-#, no-c-format
-msgid "<guimenu>System</guimenu> <guimenu>/etc/sysconfig Editor</guimenu> <guimenu>System</guimenu> <guimenu>Management</guimenu> <guimenu>DOCKER_OPTS</guimenu>"
-msgstr ""
-
-#. Tag: systemitem
-#: docker_overview.xml:336
-#, no-c-format
-msgid "-s storage_driver"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:336
-#, no-c-format
-msgid "menu and entering the"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:337
-#, no-c-format
-msgid "string."
+msgid "It is possible to specify which driver to use by changing the value of the <envar>DOCKER_OPTS</envar> variable defined inside of the <filename>/etc/sysconfig/docker</filename> file. This can be done either manually or using &yast; by browsing to <menuchoice> <guimenu>System</guimenu> <guimenu>/etc/sysconfig Editor</guimenu> <guimenu>System</guimenu> <guimenu>Management</guimenu> <guimenu>DOCKER_OPTS</guimenu> </menuchoice> menu and entering the <systemitem class=\"library\">-s storage_driver</systemitem> string."
 msgstr ""
 
 #. Tag: para
@@ -416,45 +368,9 @@ msgstr ""
 msgid "It is recommended to have <filename>/var/lib/docker</filename> mounted on a separate partition or volume to not affect the Docker host operating system in case of a file system corruption."
 msgstr ""
 
-#. Tag: #text
-#: docker_overview.xml:357
+#. Tag: para
+#: docker_overview.xml:355
 #, no-c-format
-msgid "In case you choose the Btrfs file system for"
-msgstr ""
-
-#. Tag: filename
-#: docker_overview.xml:359
-#, no-c-format
-msgid "/var/lib/docker"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:359
-#, no-c-format
-msgid ", it is strongly recommended to create a subvolume for it. This ensures that the directory is excluded from file system snapshots. If not excluding"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:363
-#, no-c-format
-msgid "from snapshots, the file system will likely run out of disk space soon after you start deploying containers. What's more, a rollback to a previous snapshot will also reset the Docker database and images. Refer to"
-msgstr ""
-
-#. Tag: citetitle
-#: docker_overview.xml:363
-#, no-c-format
-msgid "Creating and Mounting New Subvolumes"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:364
-#, no-c-format
-msgid "at"
-msgstr ""
-
-#. Tag: #text
-#: docker_overview.xml:367
-#, no-c-format
-msgid "for details."
+msgid "In case you choose the Btrfs file system for <filename>/var/lib/docker</filename> , it is strongly recommended to create a subvolume for it. This ensures that the directory is excluded from file system snapshots. If not excluding <filename>/var/lib/docker</filename> from snapshots, the file system will likely run out of disk space soon after you start deploying containers. What's more, a rollback to a previous snapshot will also reset the Docker database and images. Refer to <citetitle>Creating and Mounting New Subvolumes</citetitle> at <link xlink:href=\"https://www.suse.com/documentation/sles-12/book_sle_admin/data/sec_snapper_setup.html\"/> for details."
 msgstr ""
 

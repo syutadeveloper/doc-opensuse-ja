@@ -9,11 +9,14 @@ use utf8;
 my @SkipNodes =
   ( "option", "replaceable", "command", "emphasis", "package",
   "literal", "quote", "filename", "link", "systemitem", "xref",
-  "menuchoice", "guimenu", "phrase" );
+  "menuchoice", "guimenu", "phrase", "remark", "envar", "keycombo",
+  "keycap", "co", "prompt", "varname", "citetitle", "tag", "superscript",
+  "constant", "email", "trademark", "productname", "productnumber", "uri",
+  "parameter", );
 my @literalNodes =
   ( "screen" );
 my @ignoreNodes =
-  ( "#comment", "remark" );
+  ( "#comment", "remark", "xml-stylesheet" );
 my $dummyParaStart =
   "<para xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:xi=\"http://www.w3.org/2001/XInclude\">";
 my $dummyParaEnd = "</para>";

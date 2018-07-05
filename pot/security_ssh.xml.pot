@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -88,46 +88,10 @@ msgstr ""
 msgid "Starting X Applications on a Remote Host"
 msgstr ""
 
-#. Tag: #text
-#: security_ssh.xml:92
+#. Tag: para
+#: security_ssh.xml:90
 #, no-c-format
-msgid "with the"
-msgstr ""
-
-#. Tag: option
-#: security_ssh.xml:92
-#, no-c-format
-msgid "-X"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:92
-#, no-c-format
-msgid "SSH also simplifies the use of remote X applications. If you run"
-msgstr ""
-
-#. Tag: command
-#: security_ssh.xml:92
-#, no-c-format
-msgid "ssh"
-msgstr ""
-
-#. Tag: envar
-#: security_ssh.xml:93
-#, no-c-format
-msgid "DISPLAY"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:93
-#, no-c-format
-msgid "option, the"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:97
-#, no-c-format
-msgid "variable is automatically set on the remote machine and all X output is exported to the local machine over the existing SSH connection. At the same time, X applications started remotely cannot be intercepted by unauthorized individuals."
+msgid "SSH also simplifies the use of remote X applications. If you run <command>ssh</command> with the <option>-X</option> option, the <envar>DISPLAY</envar> variable is automatically set on the remote machine and all X output is exported to the local machine over the existing SSH connection. At the same time, X applications started remotely cannot be intercepted by unauthorized individuals."
 msgstr ""
 
 #. Tag: title
@@ -160,16 +124,11 @@ msgstr ""
 msgid "<command>scp</command> copies files to or from a remote machine. If the user name on &wsI; is different than the user name on &exampleserver;, specify the latter using the <option><replaceable>USER_NAME</replaceable>@host</option> format. If the file should be copied into a directory other than the remote user's home directory, specify it as &exampleserver;: <replaceable>DIRECTORY</replaceable> . The following examples show how to copy a file from a local to a remote machine and vice versa."
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_ssh.xml:133
 #, no-c-format
-msgid "&prompt.user;scp ~/MyLetter.tex &exampleuser_plain;@&exampleserver;:/tmp"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:134
-#, no-c-format
-msgid "&prompt.user;scp &exampleuser_plain;@&exampleserver;:/tmp/MyLetter.tex ~"
+msgid "&prompt.user;scp ~/MyLetter.tex &exampleuser_plain;@&exampleserver;:/tmp <co xml:id=\"co.scp.local.remote\"/>\n"
+      "&prompt.user;scp &exampleuser_plain;@&exampleserver;:/tmp/MyLetter.tex ~ <co xml:id=\"co.scp.remote.local\"/>"
 msgstr ""
 
 #. Tag: para
@@ -581,28 +540,10 @@ msgstr ""
 msgid "To generate a key with default parameters (RSA, 2048 bits), enter the command <command>ssh-keygen</command> ."
 msgstr ""
 
-#. Tag: filename
-#: security_ssh.xml:565
+#. Tag: para
+#: security_ssh.xml:563
 #, no-c-format
-msgid "~/.ssh/id_rsa"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:565
-#, no-c-format
-msgid "Accept the default location to store the key ("
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:566
-#, no-c-format
-msgid ") by pressing"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:568
-#, no-c-format
-msgid "(strongly recommended) or enter an alternative location."
+msgid "Accept the default location to store the key ( <filename>~/.ssh/id_rsa</filename> ) by pressing <keycap function=\"enter\"/> (strongly recommended) or enter an alternative location."
 msgstr ""
 
 #. Tag: para
@@ -635,46 +576,17 @@ msgstr ""
 msgid "To copy a public SSH key to <filename>~/.ssh/authorized_keys</filename> of a user on a remote machine, use the command <command>ssh-copy-id</command> . To copy your personal key stored under <filename>~/.ssh/id_rsa.pub</filename> you may use the short form. To copy DSA keys or keys of other users, you need to specify the path:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: security_ssh.xml:600
 #, no-c-format
-msgid "&prompt.user;"
-msgstr ""
-
-#. Tag: prompt
-#: security_ssh.xml:600
-#, no-c-format
-msgid "~/.ssh/id_rsa.pub"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:601
-#, no-c-format
-msgid "ssh-copy-id -i &exampleuser_plain;@&exampleserver;&prompt.user;"
-msgstr ""
-
-#. Tag: prompt
-#: security_ssh.xml:603
-#, no-c-format
-msgid "~/.ssh/id_dsa.pub"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:604
-#, no-c-format
-msgid "ssh-copy-id -i ~/.ssh/id_dsa.pub &exampleuser_plain;@&exampleserver;&prompt.user;"
-msgstr ""
-
-#. Tag: prompt
-#: security_ssh.xml:606
-#, no-c-format
-msgid "~notme/.ssh/id_rsa.pub"
-msgstr ""
-
-#. Tag: #text
-#: security_ssh.xml:607
-#, no-c-format
-msgid "ssh-copy-id -i ~notme/.ssh/id_rsa.pub &exampleuser_plain;@&exampleserver;"
+msgid "&prompt.user;<prompt>~/.ssh/id_rsa.pub</prompt>\n"
+      "ssh-copy-id -i &exampleuser_plain;@&exampleserver;\n"
+      "\n"
+      "&prompt.user;<prompt>~/.ssh/id_dsa.pub</prompt>\n"
+      "ssh-copy-id -i ~/.ssh/id_dsa.pub  &exampleuser_plain;@&exampleserver;\n"
+      "\n"
+      "&prompt.user;<prompt>~notme/.ssh/id_rsa.pub</prompt>\n"
+      "ssh-copy-id -i ~notme/.ssh/id_rsa.pub  &exampleuser_plain;@&exampleserver;"
 msgstr ""
 
 #. Tag: para

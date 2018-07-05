@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:13+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1221,28 +1221,14 @@ msgstr ""
 msgid "Example Audit Rules&mdash;Audit System Parameters"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_components.xml:1058
 #, no-c-format
-msgid "-b 1000"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1059
-#, no-c-format
-msgid "-f 1"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1060
-#, no-c-format
-msgid "-r 10"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1061
-#, no-c-format
-msgid "-e 1"
+msgid ""
+"-b 1000<co xml:id=\"co.aurules.b\"/>\n"
+"-f 1<co xml:id=\"co.aurules.f\"/>\n"
+"-r 10<co xml:id=\"co.aurules.r\"/>\n"
+"-e 1<co xml:id=\"co.aurules.e\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1291,22 +1277,13 @@ msgstr ""
 msgid "Example Audit Rules&mdash;File System Auditing"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_components.xml:1099
 #, no-c-format
-msgid "-w /etc/shadow"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1100
-#, no-c-format
-msgid "-w /etc -p rx"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1101
-#, no-c-format
-msgid "-w /etc/passwd -k fk_passwd -p rwxa"
+msgid ""
+"-w /etc/shadow<co xml:id=\"co.aurules.fs\"/>\n"
+"-w /etc -p rx<co xml:id=\"co.aurules.fsmode\"/>\n"
+"-w /etc/passwd -k fk_passwd -p rwxa<co xml:id=\"co.aurules.fskey\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1363,40 +1340,17 @@ msgstr ""
 msgid "Example Audit Rules&mdash;System Call Auditing"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_components.xml:1148
 #, no-c-format
-msgid "-a exit,always -S mkdir"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1149
-#, no-c-format
-msgid "-a exit,always -S access -F a1=4"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1150
-#, no-c-format
-msgid "-a exit,always -S ipc -F a0=2"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1151
-#, no-c-format
-msgid "-a exit,always -S open -F success!=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1152
-#, no-c-format
-msgid "-a task,always -F auid=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1153
-#, no-c-format
-msgid "-a task,always -F uid=0 -F auid=501 -F gid=wheel"
+msgid ""
+"-a exit,always -S mkdir<co xml:id=\"co.aurules.scalladd\"/>\n"
+"-a exit,always -S access -F a1=4<co xml:id=\"co.aurules.scallfilter\"/>\n"
+"-a exit,always -S ipc -F a0=2<co xml:id=\"co.aurules.scallipc\"/>\n"
+"-a exit,always -S open -F success!=0<co xml:id=\"co.aurules.scalls\"/>\n"
+"-a task,always -F auid=0<co xml:id=\"co.aurules.scalltask\"/>\n"
+"-a task,always -F uid=0 -F auid=501 -F gid=wheel<co xml:id=\"co.aurules."
+"scallsu\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1491,22 +1445,13 @@ msgstr ""
 msgid "Deleting Audit Rules and Events"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_components.xml:1230
 #, no-c-format
-msgid "-D"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1231
-#, no-c-format
-msgid "-d exit,always -S mkdir"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1232
-#, no-c-format
-msgid "-W /etc"
+msgid ""
+"-D<co xml:id=\"co.aurules.d\"/>\n"
+"-d exit,always -S mkdir<co xml:id=\"co.aurules.scalldel\"/>\n"
+"-W /etc<co xml:id=\"co.aurules.fsdel\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1762,114 +1707,19 @@ msgstr ""
 msgid "a0=62fb60 a1=8000 a2=31 a3=0"
 msgstr ""
 
-#. Tag: literal
-#: audit_components.xml:1419
-#, no-c-format
-msgid "a0"
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1420
-#, no-c-format
-msgid "8000"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1420
-#, no-c-format
-msgid "is the start address of the passed path name."
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1420
-#, no-c-format
-msgid "is the flags."
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1420
-#, no-c-format
-msgid "a1"
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1421
-#, no-c-format
-msgid "100000"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1421
-#, no-c-format
-msgid "in hex notation translates to"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1422
-#, no-c-format
-msgid "in octal notation, which in turn translates to"
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1422
-#, no-c-format
-msgid "O_LARGEFILE"
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1423
-#, no-c-format
-msgid "a2"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1423
-#, no-c-format
-msgid "."
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1424
-#, no-c-format
-msgid "is the mode, which, because"
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1424
-#, no-c-format
-msgid "O_CREAT"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1425
-#, no-c-format
-msgid "was not specified, is unused."
-msgstr ""
-
-#. Tag: literal
-#: audit_components.xml:1426
-#, no-c-format
-msgid "a3"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1426
-#, no-c-format
-msgid "is not passed by the"
-msgstr ""
-
-#. Tag: command
-#: audit_components.xml:1426
-#, no-c-format
-msgid "open"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1429
+#. Tag: para
+#: audit_components.xml:1418
 #, no-c-format
 msgid ""
-"system call. Check the manual page of the relevant system call to find out "
-"which arguments are used with it."
+"<literal>a0</literal> is the start address of the passed path name. "
+"<literal>a1</literal> is the flags. <literal>8000</literal> in hex notation "
+"translates to <literal>100000</literal> in octal notation, which in turn "
+"translates to <literal>O_LARGEFILE</literal> . <literal>a2</literal> is the "
+"mode, which, because <literal>O_CREAT</literal> was not specified, is "
+"unused. <remark>jsegitz 2014-07-22: a2 is 31, not unused</remark> "
+"<literal>a3</literal> is not passed by the <command>open</command> system "
+"call. Check the manual page of the relevant system call to find out which "
+"arguments are used with it."
 msgstr ""
 
 #. Tag: term
@@ -2195,68 +2045,40 @@ msgstr ""
 msgid "An Advanced Audit Event&mdash;Login via SSH"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: audit_components.xml:1677
 #, no-c-format
-msgid "type=USER_AUTH msg=audit(1234877011.791:7731): user pid=26127 uid=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1679
-#, no-c-format
 msgid ""
+"type=USER_AUTH msg=audit(1234877011.791:7731): user pid=26127 uid=0 <co xml:"
+"id=\"co.audit.sshd.auth\"/>\n"
 "auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct=\"root\" exe="
-"\"/usr/sbin/sshd\"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh "
-"res=success)'type=USER_ACCT msg=audit(1234877011.795:7732): user pid=26127 "
-"uid=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1682
-#, no-c-format
-msgid ""
+"\"/usr/sbin/sshd\"\n"
+"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh res=success)'\n"
+"type=USER_ACCT msg=audit(1234877011.795:7732): user pid=26127 uid=0 <co xml:"
+"id=\"co.audit.sshd.acct\"/>\n"
 "auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct=\"root\" exe=\"/"
-"usr/sbin/sshd\"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh "
-"res=success)'type=CRED_ACQ msg=audit(1234877011.799:7733): user pid=26125 "
-"uid=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1685
-#, no-c-format
-msgid ""
+"usr/sbin/sshd\"\n"
+"(hostname=&wsIname;, addr=&wsIip;, terminal=ssh res=success)'\n"
+"type=CRED_ACQ msg=audit(1234877011.799:7733): user pid=26125 uid=0 <co xml:"
+"id=\"co.audit.sshd.acq\"/>\n"
 "auid=4294967295 ses=4294967295 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/"
-"sbin/sshd\"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 "
-"res=success)'type=LOGIN msg=audit(1234877011.799:7734): login pid=26125 "
-"uid=0old auid=4294967295 new auid=0 old ses=4294967295 new "
-"ses=1172type=USER_START msg=audit(1234877011.799:7735): user pid=26125 uid=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1690
-#, no-c-format
-msgid ""
+"sbin/sshd\"\n"
+"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'\n"
+"type=LOGIN msg=audit(1234877011.799:7734): login pid=26125 uid=0\n"
+"old auid=4294967295 new auid=0 old ses=4294967295 new ses=1172\n"
+"type=USER_START msg=audit(1234877011.799:7735): user pid=26125 uid=0 <co xml:"
+"id=\"co.audit.sshd.start\"/>\n"
 "auid=0 ses=1172 msg='op=PAM:session_open acct=\"root\" exe=\"/usr/sbin/sshd"
-"\"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 "
-"res=success)'type=USER_LOGIN msg=audit(1234877011.823:7736): user pid=26128 "
-"uid=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1693
-#, no-c-format
-msgid ""
-"auid=0 ses=1172 msg='uid=0: exe=\"/usr/sbin/sshd\"(hostname=&wsIname;, "
-"addr=&wsIip;, terminal=/dev/pts/0 res=success)'type=CRED_REFR "
-"msg=audit(1234877011.828:7737): user pid=26128 uid=0"
-msgstr ""
-
-#. Tag: #text
-#: audit_components.xml:1696
-#, no-c-format
-msgid ""
-"auid=0 ses=1172 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/sshd"
-"\"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'"
+"\"\n"
+"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'\n"
+"type=USER_LOGIN msg=audit(1234877011.823:7736): user pid=26128 uid=0 <co xml:"
+"id=\"co.audit.sshd.login\"/>\n"
+"auid=0 ses=1172 msg='uid=0: exe=\"/usr/sbin/sshd\"\n"
+"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'\n"
+"type=CRED_REFR msg=audit(1234877011.828:7737): user pid=26128 uid=0 <co xml:"
+"id=\"co.audit.sshd.refr\"/>\n"
+"auid=0 ses=1172 msg='op=PAM:setcred acct=\"root\" exe=\"/usr/sbin/sshd\"\n"
+"(hostname=&wsIname;, addr=&wsIip;, terminal=/dev/pts/0 res=success)'"
 msgstr ""
 
 #. Tag: para

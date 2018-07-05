@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-03 11:04+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,14 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. Tag: xml-stylesheet
-#: update-alternatives.xml:5
-#, no-c-format
-msgid ""
-"<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook51-profile.xsl\" "
-"type=\"text/xml\" title=\"Profiling step\"?>"
-msgstr ""
 
 #. Tag: title
 #: update-alternatives.xml:17
@@ -261,22 +253,14 @@ msgstr ""
 msgid "&AS; of the <command>java</command> Command"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: update-alternatives.xml:170
 #, no-c-format
-msgid "/usr/bin/java"
-msgstr ""
-
-#. Tag: #text
-#: update-alternatives.xml:171
-#, no-c-format
-msgid "-&gt; /etc/alternatives/java"
-msgstr ""
-
-#. Tag: #text
-#: update-alternatives.xml:172
-#, no-c-format
-msgid "-&gt; /usr/lib64/jvm/jre-1.8.0-openjdk/bin/java"
+msgid ""
+"/usr/bin/java <co xml:id=\"co.ua.java.name\"/>\n"
+" -&gt; /etc/alternatives/java <co xml:id=\"co.ua.java.symbolic-link\"/>\n"
+"     -&gt; /usr/lib64/jvm/jre-1.8.0-openjdk/bin/java <co xml:id=\"co.ua.java."
+"alternatives\"/>"
 msgstr ""
 
 #. Tag: para
@@ -598,40 +582,23 @@ msgstr ""
 msgid "Run <command>update-alternatives</command> for both scripts:"
 msgstr ""
 
-#. Tag: #text
-#: update-alternatives.xml:400
+#. Tag: screen
+#: update-alternatives.xml:397
 #, no-c-format
-msgid "\\ /usr/local/bin/foo-2"
-msgstr ""
-
-#. Tag: #text
-#: update-alternatives.xml:401
-#, no-c-format
-msgid "\\ 200"
-msgstr ""
-
-#. Tag: #text
-#: update-alternatives.xml:402
-#, no-c-format
-msgid "&prompt.sudo;update-alternatives --install \\ /usr/local/bin/foo"
-msgstr ""
-
-#. Tag: #text
-#: update-alternatives.xml:404
-#, no-c-format
-msgid "\\ foo"
-msgstr ""
-
-#. Tag: #text
-#: update-alternatives.xml:405
-#, no-c-format
-msgid "\\ /usr/local/bin/foo-3"
-msgstr ""
-
-#. Tag: #text
-#: update-alternatives.xml:406
-#, no-c-format
-msgid "\\ 300"
+msgid ""
+"&prompt.sudo;update-alternatives --install \\\n"
+"   /usr/local/bin/foo <co xml:id=\"co.ua.ua-install.usr-local-bin-foo\"/>\\\n"
+"   foo <co xml:id=\"co.ua.ua-install.foo\"/>\\\n"
+"   /usr/local/bin/foo-2 <co xml:id=\"co.ua.ua-install.usr-local-bin-foo.path"
+"\"/>\\\n"
+"   200 <co xml:id=\"co.ua.ua-install.prio\"/>\n"
+"&prompt.sudo;update-alternatives --install \\\n"
+"   /usr/local/bin/foo <xref linkend=\"co.ua.ua-install.usr-local-bin-foo\"/>"
+"\\\n"
+"   foo <xref linkend=\"co.ua.ua-install.foo\"/>\\\n"
+"   /usr/local/bin/foo-3 <xref linkend=\"co.ua.ua-install.usr-local-bin-foo."
+"path\"/>\\\n"
+"   300 <xref linkend=\"co.ua.ua-install.prio\"/>"
 msgstr ""
 
 #. Tag: para

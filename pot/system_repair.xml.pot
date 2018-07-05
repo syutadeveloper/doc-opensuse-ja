@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -104,40 +104,10 @@ msgstr ""
 msgid "Reboot the system."
 msgstr ""
 
-#. Tag: #text
-#: system_repair.xml:88
+#. Tag: para
+#: system_repair.xml:87
 #, no-c-format
-msgid "At the boot screen, press"
-msgstr ""
-
-#. Tag: keycap
-#: system_repair.xml:88
-#, no-c-format
-msgid "F4"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:89
-#, no-c-format
-msgid "and choose"
-msgstr ""
-
-#. Tag: guimenu
-#: system_repair.xml:89
-#, no-c-format
-msgid "DVD-ROM"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:89
-#, no-c-format
-msgid ". Then choose"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:91
-#, no-c-format
-msgid "from the main menu."
+msgid "At the boot screen, press <keycap>F4</keycap> and choose <guimenu>DVD-ROM</guimenu> . Then choose <guimenu>Rescue System</guimenu> from the main menu."
 msgstr ""
 
 #. Tag: para
@@ -158,10 +128,10 @@ msgstr ""
 msgid "Boot the system using <quote>Wake on LAN</quote> <phrase os=\"sles;sled\">, as described in <xref linkend=\"sec.deployment.prep_boot.wol\"/></phrase> ."
 msgstr ""
 
-#. Tag: #text
-#: system_repair.xml:136
+#. Tag: para
+#: system_repair.xml:133
 #, no-c-format
-msgid "When you have entered the rescue system, you can use the virtual consoles that can be reached with"
+msgid "When you have entered the rescue system, you can use the virtual consoles that can be reached with <keycombo><keycap function=\"alt\"/><keycap>F1</keycap></keycombo> to <keycombo><keycap function=\"alt\"/><keycap>F6</keycap></keycombo> ."
 msgstr ""
 
 #. Tag: para
@@ -388,34 +358,10 @@ msgstr ""
 msgid "Although you have full access to the files and applications of the installed system, there are some limitations. The kernel that is running is the one that was booted with the rescue system, not with the change root environment. It only supports essential hardware and it is not possible to add kernel modules from the installed system unless the kernel versions are identical. Always check the version of the currently running (rescue) kernel with <command>uname -r</command> and then find out if a matching subdirectory exists in the <filename>/lib/modules</filename> directory in the change root environment. If yes, you can use the installed modules, otherwise you need to supply their correct versions on other media, such as a flash disk. Most often the rescue kernel version differs from the installed one &mdash; then you cannot simply access a sound card, for example. It is also not possible to start a graphical user interface."
 msgstr ""
 
-#. Tag: #text
-#: system_repair.xml:315
+#. Tag: para
+#: system_repair.xml:314
 #, no-c-format
-msgid "Also note that you leave the"
-msgstr ""
-
-#. Tag: quote
-#: system_repair.xml:315
-#, no-c-format
-msgid "change root"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:317
-#, no-c-format
-msgid "environment when you switch the console with"
-msgstr ""
-
-#. Tag: keycap
-#: system_repair.xml:317
-#, no-c-format
-msgid "F1"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:318
-#, no-c-format
-msgid "to"
+msgid "Also note that you leave the <quote>change root</quote> environment when you switch the console with <keycombo><keycap function=\"alt\"/><keycap>F1</keycap></keycombo> to <keycombo><keycap function=\"alt\"/><keycap>F6</keycap></keycombo> ."
 msgstr ""
 
 #. Tag: title
@@ -570,58 +516,16 @@ msgstr ""
 msgid "Boot from the &productname; installation media."
 msgstr ""
 
-#. Tag: #text
-#: system_repair.xml:444
+#. Tag: para
+#: system_repair.xml:442
 #, no-c-format
-msgid "If you are recovering after a faulty kernel update, skip this step. If you need to use a driver update disk (DUD), press"
+msgid "If you are recovering after a faulty kernel update, skip this step. If you need to use a driver update disk (DUD), press <keycap>F6</keycap> to load the driver update after the boot menu appears, and choose the path or URL to the driver update and confirm with <guimenu>Yes</guimenu> ."
 msgstr ""
 
-#. Tag: keycap
-#: system_repair.xml:444
+#. Tag: para
+#: system_repair.xml:450
 #, no-c-format
-msgid "F6"
-msgstr ""
-
-#. Tag: guimenu
-#: system_repair.xml:446
-#, no-c-format
-msgid "Yes"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:446
-#, no-c-format
-msgid "to load the driver update after the boot menu appears, and choose the path or URL to the driver update and confirm with"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:447
-#, no-c-format
-msgid "."
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:451
-#, no-c-format
-msgid "Choose"
-msgstr ""
-
-#. Tag: guimenu
-#: system_repair.xml:451
-#, no-c-format
-msgid "Rescue System"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:452
-#, no-c-format
-msgid "from the boot menu and press"
-msgstr ""
-
-#. Tag: #text
-#: system_repair.xml:454
-#, no-c-format
-msgid ". If you chose to use DUD, you will be asked to specify where the driver update is stored."
+msgid "Choose <guimenu>Rescue System</guimenu> from the boot menu and press <keycap function=\"enter\"/> . If you chose to use DUD, you will be asked to specify where the driver update is stored."
 msgstr ""
 
 #. Tag: para

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -335,42 +335,15 @@ msgid ""
 "no-pager</option> option to turn off paging mode."
 msgstr ""
 
-#. Tag: #text
-#: systemd.xml:248
+#. Tag: para
+#: systemd.xml:246
 #, no-c-format
 msgid ""
 "systemd also supports bash-completion, allowing you to enter the first "
-"letters of a subcommand and then press"
-msgstr ""
-
-#. Tag: systemitem
-#: systemd.xml:250
-#, no-c-format
-msgid "bash"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:250
-#, no-c-format
-msgid "to automatically complete it. This feature is only available in the"
-msgstr ""
-
-#. Tag: systemitem
-#: systemd.xml:251
-#, no-c-format
-msgid "bash-completion"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:251
-#, no-c-format
-msgid "shell and requires the installation of the package"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:252
-#, no-c-format
-msgid "."
+"letters of a subcommand and then press <keycap function=\"tab\"/> to "
+"automatically complete it. This feature is only available in the "
+"<systemitem>bash</systemitem> shell and requires the installation of the "
+"package <systemitem class=\"resource\">bash-completion</systemitem> ."
 msgstr ""
 
 #. Tag: title
@@ -1630,76 +1603,26 @@ msgid ""
 "file name extension <filename>.service</filename> :"
 msgstr ""
 
-#. Tag: #text
-#: systemd.xml:1289
+#. Tag: screen
+#: systemd.xml:1288
 #, no-c-format
-msgid "[Unit]Description="
-msgstr ""
-
-#. Tag: replaceable
-#: systemd.xml:1289
-#, no-c-format
-msgid "DESCRIPTION"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:1293
-#, no-c-format
-msgid "After=network.target[Service]User="
-msgstr ""
-
-#. Tag: replaceable
-#: systemd.xml:1293
-#, no-c-format
-msgid "USER"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:1294
-#, no-c-format
-msgid "Type=forking"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:1295
-#, no-c-format
-msgid "PIDFile="
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:1296
-#, no-c-format
-msgid "ExecStart="
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:1297
-#, no-c-format
-msgid "startExecStop="
-msgstr ""
-
-#. Tag: replaceable
-#: systemd.xml:1297
-#, no-c-format
-msgid "PATH TO INIT SCRIPT"
-msgstr ""
-
-#. Tag: replaceable
-#: systemd.xml:1298
-#, no-c-format
-msgid "PATH TO PID FILE"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:1298
-#, no-c-format
-msgid "stopExecStopPost=/usr/bin/rm -f"
-msgstr ""
-
-#. Tag: #text
-#: systemd.xml:1301
-#, no-c-format
-msgid "[Install]WantedBy=multi-user.target"
+msgid ""
+"[Unit]\n"
+"Description=<replaceable>DESCRIPTION</replaceable>\n"
+"After=network.target\n"
+"\n"
+"[Service]\n"
+"User=<replaceable>USER</replaceable>\n"
+"Type=forking<co xml:id=\"co.service_wrapper.type\"/>\n"
+"PIDFile=<replaceable>PATH TO PID FILE</replaceable><xref linkend=\"co."
+"service_wrapper.type\" xrefstyle=\"select:label nopage\"/>\n"
+"ExecStart=<replaceable>PATH TO INIT SCRIPT</replaceable> start\n"
+"ExecStop=<replaceable>PATH TO INIT SCRIPT</replaceable> stop\n"
+"ExecStopPost=/usr/bin/rm -f <replaceable>PATH TO PID FILE</replaceable><xref "
+"linkend=\"co.service_wrapper.type\" xrefstyle=\"select:label nopage\"/>\n"
+"\n"
+"[Install]\n"
+"WantedBy=multi-user.target<co xml:id=\"co.service_wrapper.target\"/>"
 msgstr ""
 
 #. Tag: para

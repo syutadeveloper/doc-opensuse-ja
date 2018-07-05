@@ -6,19 +6,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/x-po; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. Tag: xml-stylesheet
-#: ay_bigfile.xml:4
-#, no-c-format
-msgid "<?xml-stylesheet href=\"urn:x-suse:xslt:profiling:docbook50-profile.xsl\" type=\"text/xml\" title=\"Profiling step\"?>"
-msgstr ""
 
 #. Tag: dm:assignee
 #: ay_bigfile.xml:17
@@ -498,34 +492,10 @@ msgstr ""
 msgid "Furthermore, using a CMS guarantees the validity of the resulting control file and its direct use for starting automated installation."
 msgstr ""
 
-#. Tag: systemitem
-#: ay_bigfile.xml:497
+#. Tag: para
+#: ay_bigfile.xml:495
 #, no-c-format
-msgid "autoyast2"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:497
-#, no-c-format
-msgid "Make sure the configuration system is installed (package"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:498
-#, no-c-format
-msgid ") and call it using the &yast; control center or as root with the following command (make sure the"
-msgstr ""
-
-#. Tag: envar
-#: ay_bigfile.xml:499
-#, no-c-format
-msgid "DISPLAY"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:501
-#, no-c-format
-msgid "variable is set correctly to start the graphical user interface instead of the text-based one):"
+msgid "Make sure the configuration system is installed (package <systemitem class=\"resource\">autoyast2</systemitem> ) and call it using the &yast; control center or as root with the following command (make sure the <envar>DISPLAY</envar> variable is set correctly to start the graphical user interface instead of the text-based one):"
 msgstr ""
 
 #. Tag: screen
@@ -778,10 +748,10 @@ msgstr ""
 msgid "Drivers May Need a Reboot"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:785
+#. Tag: para
+#: ay_bigfile.xml:781
 #, no-c-format
-msgid "Some drivers, for example the proprietary drivers for Nvidia and ATI graphics cards, need a reboot and will not work properly when using kexec. Therefore the default on &productname; products is to always do a proper reboot."
+msgid "<remark>2013-03-18 - fs: bnc #802387</remark> Some drivers, for example the proprietary drivers for Nvidia and ATI graphics cards, need a reboot and will not work properly when using kexec. Therefore the default on &productname; products is to always do a proper reboot."
 msgstr ""
 
 #. Tag: para
@@ -1040,46 +1010,10 @@ msgstr ""
 msgid "Alternatively, you can specify the boot parameter <literal>self_update</literal> on the kernel command line."
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:1072
+#. Tag: para
+#: ay_bigfile.xml:1071
 #, no-c-format
-msgid "The URL can contain a variable"
-msgstr ""
-
-#. Tag: envar
-#: ay_bigfile.xml:1072
-#, no-c-format
-msgid "$arch"
-msgstr ""
-
-#. Tag: literal
-#: ay_bigfile.xml:1074
-#, no-c-format
-msgid "s390x"
-msgstr ""
-
-#. Tag: literal
-#: ay_bigfile.xml:1074
-#, no-c-format
-msgid "x86_64"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:1074
-#, no-c-format
-msgid ","
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:1074
-#, no-c-format
-msgid "that will be replaced by the system's architecture, such as"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:1075
-#, no-c-format
-msgid ", etc."
+msgid "The URL can contain a variable <envar>$arch</envar> that will be replaced by the system's architecture, such as <literal>x86_64</literal> , <literal>s390x</literal> , etc."
 msgstr ""
 
 #. Tag: para
@@ -2912,22 +2846,10 @@ msgid "&lt;subvolumes config:type=\"list\"&gt;\n"
       "&lt;/subvolumes&gt;"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:2795
+#. Tag: para
+#: ay_bigfile.xml:2794
 #, no-c-format
-msgid "If no"
-msgstr ""
-
-#. Tag: tag
-#: ay_bigfile.xml:2795
-#, no-c-format
-msgid "subvolumes"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:2796
-#, no-c-format
-msgid "section has been defined for a partition description, &ay; will create a predefined set of subvolumes for the given mount point."
+msgid "If no <tag>subvolumes</tag> section has been defined for a partition description, &ay; will create a predefined set of subvolumes for the given mount point."
 msgstr ""
 
 #. Tag: para
@@ -3781,10 +3703,10 @@ msgstr ""
 msgid "Such scenarios require certain knowledge about the target systems and hard disks. Depending on the scenario, you might need to know the exact partition table of the target hard disk with partition ids, sizes and numbers. With this data you can tell &ay; to keep certain partitions, format others and create new partitions if needed."
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:3579
+#. Tag: para
+#: ay_bigfile.xml:3575
 #, no-c-format
-msgid "The following example will keep partitions 1, 2 and 5 and delete partition 6 to create two new partitions. All remaining partitions will only be formatted."
+msgid "The following example will keep partitions 1, 2 and 5 and delete partition 6 to create two new partitions. All remaining partitions will only be formatted. <remark>emap 2011-11-05: Not the best example for the scenarios two paras up with coexisting operating systems or data partitions. Who'd want to format those?</remark>"
 msgstr ""
 
 #. Tag: screen
@@ -4675,16 +4597,10 @@ msgstr ""
 msgid "Product Selection"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:4541
+#. Tag: para
+#: ay_bigfile.xml:4540
 #, no-c-format
-msgid "Starting with &slea; 15, all products are distributed using one medium. You need to choose which product to install. To do so explicitly, use the"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:4544
-#, no-c-format
-msgid "option."
+msgid "Starting with &slea; 15, all products are distributed using one medium. You need to choose which product to install. To do so explicitly, use the <tag>product</tag> option."
 msgstr ""
 
 #. Tag: title
@@ -4710,22 +4626,10 @@ msgstr ""
 msgid "In special cases, the medium might contain only one product. If so, you do not need to select a product explicitly as described above. &ay; will select the only available product automatically."
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:4560
+#. Tag: para
+#: ay_bigfile.xml:4559
 #, no-c-format
-msgid "For backward compatibility with profiles created for pre-&slea; 15 products, &ay; implements a heuristic that selects products automatically. This heuristic will be used when the profile does not contain a"
-msgstr ""
-
-#. Tag: tag
-#: ay_bigfile.xml:4563
-#, no-c-format
-msgid "product"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:4567
-#, no-c-format
-msgid "element. This heuristic is based on the package and pattern selection in the profile. However, whenever possible avoid using this mechanism and adapt old profiles to use explicit product selection."
+msgid "For backward compatibility with profiles created for pre-&slea; 15 products, &ay; implements a heuristic that selects products automatically. This heuristic will be used when the profile does not contain a <tag>product</tag> element. This heuristic is based on the package and pattern selection in the profile. However, whenever possible avoid using this mechanism and adapt old profiles to use explicit product selection."
 msgstr ""
 
 #. Tag: title
@@ -6243,10 +6147,10 @@ msgstr ""
 msgid "List of allowed hosts to query the NIS server"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:6202
+#. Tag: para
+#: ay_bigfile.xml:6196
 #, no-c-format
-msgid "A host address will be allowed if network is equal to the bitwise AND of the host's address and the netmask."
+msgid "<remark>Dublin proofreader 2016-09-06: This does not make sense in the context of the sentence, however I am not sure of the intended meaning. Please revise.</remark> A host address will be allowed if network is equal to the bitwise AND of the host's address and the netmask."
 msgstr ""
 
 #. Tag: para
@@ -6976,40 +6880,22 @@ msgstr ""
 msgid "Network configuration: NTP Client"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:6964
+#. Tag: screen
+#: ay_bigfile.xml:6963
 #, no-c-format
-msgid "&lt;ntp-client&gt;&lt;ntp_policy&gt;auto&lt;/ntp_policy&gt;"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:6966
-#, no-c-format
-msgid "&lt;ntp_servers config:type=\"list\"&gt; &lt;ntp_server&gt; &lt;address&gt;cz.pool.ntp.org&lt;/address&gt;"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:6969
-#, no-c-format
-msgid "&lt;iburst config:type=\"boolean\"&gt;false&lt;/iburst&gt;"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:6970
-#, no-c-format
-msgid "&lt;offline config:type=\"boolean\"&gt;true&lt;/offline&gt;"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:6971
-#, no-c-format
-msgid "&lt;/ntp_server&gt; &lt;/ntp_servers&gt; &lt;ntp_sync&gt;15&lt;/ntp_sync&gt;"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:6974
-#, no-c-format
-msgid "&lt;/ntp-client&gt;"
+msgid "\n"
+      "&lt;ntp-client&gt;\n"
+      "&lt;ntp_policy&gt;auto&lt;/ntp_policy&gt;<co xml:id=\"co.ay.ntp.policy\"/>\n"
+      " &lt;ntp_servers config:type=\"list\"&gt;\n"
+      "  &lt;ntp_server&gt;\n"
+      "   &lt;address&gt;cz.pool.ntp.org&lt;/address&gt;<co xml:id=\"co.ay.ntp.address\"/>\n"
+      "   &lt;iburst config:type=\"boolean\"&gt;false&lt;/iburst&gt;<co xml:id=\"co.ay.ntp.iburst\"/>\n"
+      "   &lt;offline config:type=\"boolean\"&gt;true&lt;/offline&gt;<co xml:id=\"co.ay.ntp.offline\"/>\n"
+      "  &lt;/ntp_server&gt;\n"
+      " &lt;/ntp_servers&gt;\n"
+      " &lt;ntp_sync&gt;15&lt;/ntp_sync&gt;<co xml:id=\"co.ay.ntp.sync\"/>\n"
+      "&lt;/ntp-client&gt;\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -7151,16 +7037,352 @@ msgstr ""
 msgid "HTTP Server Configuration"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:7120
+#. Tag: screen
+#: ay_bigfile.xml:7119
 #, no-c-format
-msgid "&lt;http-server&gt; &lt;Listen config:type=\"list\"&gt; &lt;listentry&gt; &lt;ADDRESS/&gt; &lt;PORT&gt;80&lt;/PORT&gt; &lt;/listentry&gt; &lt;/Listen&gt; &lt;hosts config:type=\"list\"&gt; &lt;hosts_entry&gt; &lt;KEY&gt;main&lt;/KEY&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;DocumentRoot&lt;/KEY&gt; &lt;OVERHEAD&gt; # # Global configuration that will be applicable for all # virtual hosts, unless deleted here or overriden elsewhere. # &lt;/OVERHEAD&gt; &lt;VALUE&gt;\"/srv/www/htdocs\"&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;OVERHEAD&gt; # # Configure the DocumentRoot # &lt;/OVERHEAD&gt; &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;\"/srv/www/htdocs\"&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Options&lt;/KEY&gt; &lt;OVERHEAD&gt; # Possible values for the Options directive are \"None\", \"All\", # or any combination of: # Indexes Includes FollowSymLinks SymLinksifOwnerMatch # ExecCGI MultiViews # # Note that \"MultiViews\" must be named *explicitly* # --- \"Options All\" # does not give it to you. # # The Options directive is both complicated and important. # Please see # http://httpd.apache.org/docs/2.4/mod/core.html#options # for more information. &lt;/OVERHEAD&gt; &lt;VALUE&gt;None&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;AllowOverride&lt;/KEY&gt; &lt;OVERHEAD&gt; # AllowOverride controls what directives may be placed in # .htaccess files. It can be \"All\", \"None\", or any combination # of the keywords: # Options FileInfo AuthConfig Limit &lt;/OVERHEAD&gt; &lt;VALUE&gt;None&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;OVERHEAD&gt; # Controls who can get stuff from this server. &lt;/OVERHEAD&gt; &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;!mod_access_compat.c&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Require&lt;/KEY&gt; &lt;VALUE&gt;all granted&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;mod_access_compat.c&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Order&lt;/KEY&gt; &lt;VALUE&gt;allow,deny&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;Allow&lt;/KEY&gt; &lt;VALUE&gt;from all&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;Alias&lt;/KEY&gt; &lt;OVERHEAD&gt; # Aliases: aliases can be added as needed (with no limit). # The format is Alias fakename realname # # Note that if you include a trailing / on fakename then the # server will require it to be present in the URL. So \"/icons\" # is not aliased in this example, only \"/icons/\". If the fakename # is slash-terminated, then the realname must also be slash # terminated, and if the fakename omits the trailing slash, the # realname must also omit it. # We include the /icons/ alias for FancyIndexed directory listings. # If you do not use FancyIndexing, you may comment this out. # &lt;/OVERHEAD&gt; &lt;VALUE&gt;/icons/ \"/usr/share/apache2/icons/\"&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;OVERHEAD&gt; &lt;/OVERHEAD&gt; &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;\"/usr/share/apache2/icons\"&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Options&lt;/KEY&gt; &lt;VALUE&gt;Indexes MultiViews&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;AllowOverride&lt;/KEY&gt; &lt;VALUE&gt;None&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;!mod_access_compat.c&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Require&lt;/KEY&gt; &lt;VALUE&gt;all granted&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;mod_access_compat.c&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Order&lt;/KEY&gt; &lt;VALUE&gt;allow,deny&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;Allow&lt;/KEY&gt; &lt;VALUE&gt;from all&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;ScriptAlias&lt;/KEY&gt; &lt;OVERHEAD&gt; # ScriptAlias: This controls which directories contain server # scripts. ScriptAliases are essentially the same as Aliases, # except that documents in the realname directory are treated # as applications and run by the server when requested rather # than as documents sent to the client. # The same rules about trailing \"/\" apply to ScriptAlias # directives as to Alias. # &lt;/OVERHEAD&gt; &lt;VALUE&gt;/cgi-bin/ \"/srv/www/cgi-bin/\"&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;OVERHEAD&gt; # \"/srv/www/cgi-bin\" should be changed to wherever your # ScriptAliased CGI directory exists, if you have that configured. # &lt;/OVERHEAD&gt; &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;\"/srv/www/cgi-bin\"&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;AllowOverride&lt;/KEY&gt; &lt;VALUE&gt;None&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;Options&lt;/KEY&gt; &lt;VALUE&gt;+ExecCGI -Includes&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;!mod_access_compat.c&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Require&lt;/KEY&gt; &lt;VALUE&gt;all granted&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;mod_access_compat.c&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;Order&lt;/KEY&gt; &lt;VALUE&gt;allow,deny&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;Allow&lt;/KEY&gt; &lt;VALUE&gt;from all&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;OVERHEAD&gt; # UserDir: The name of the directory that is appended onto a # user's home directory if a ~user request is received. # To disable it, simply remove userdir from the list of modules # in APACHE_MODULES in /etc/sysconfig/apache2. # &lt;/OVERHEAD&gt; &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;mod_userdir.c&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;UserDir&lt;/KEY&gt; &lt;OVERHEAD&gt; # Note that the name of the user directory (\"public_html\") # cannot simply be changed here, since it is a compile time # setting. The apache package would have to be rebuilt. # You could work around by deleting /usr/sbin/suexec, but # then all scripts from the directories would be executed # with the UID of the webserver. &lt;/OVERHEAD&gt; &lt;VALUE&gt;public_html&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;Include&lt;/KEY&gt; &lt;OVERHEAD&gt; # The actual configuration of the directory is in # /etc/apache2/mod_userdir.conf. &lt;/OVERHEAD&gt; &lt;VALUE&gt;/etc/apache2/mod_userdir.conf&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;IncludeOptional&lt;/KEY&gt; &lt;OVERHEAD&gt; # Include all *.conf files from /etc/apache2/conf.d/. # # This is mostly meant as a place for other RPM packages to drop # in their configuration snippet. # #"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:7377
-#, no-c-format
-msgid "# You can comment this out here if you want those bits include # only in a certain virtual host, but not here. &lt;/OVERHEAD&gt; &lt;VALUE&gt;/etc/apache2/conf.d/*.conf&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;IncludeOptional&lt;/KEY&gt; &lt;OVERHEAD&gt; # The manual... if it is installed ('?' means it will not complain) &lt;/OVERHEAD&gt; &lt;VALUE&gt;/etc/apache2/conf.d/apache2-manual?conf&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;ServerName&lt;/KEY&gt; &lt;VALUE&gt;linux-wtyj&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;ServerAdmin&lt;/KEY&gt; &lt;OVERHEAD&gt; &lt;/OVERHEAD&gt; &lt;VALUE&gt;root@linux-wtyj&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;NameVirtualHost&lt;/KEY&gt; &lt;VALUE&gt;192.168.43.2&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/hosts_entry&gt; &lt;hosts_entry&gt; &lt;KEY&gt;192.168.43.2/secondserver.suse.de&lt;/KEY&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;DocumentRoot&lt;/KEY&gt; &lt;VALUE&gt;/srv/www/htdocs&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;ServerName&lt;/KEY&gt; &lt;VALUE&gt;secondserver.suse.de&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;ServerAdmin&lt;/KEY&gt; &lt;VALUE&gt;second_server@suse.de&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;_SECTION&lt;/KEY&gt; &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt; &lt;SECTIONPARAM&gt;/srv/www/htdocs&lt;/SECTIONPARAM&gt; &lt;VALUE config:type=\"list\"&gt; &lt;listentry&gt; &lt;KEY&gt;AllowOverride&lt;/KEY&gt; &lt;VALUE&gt;None&lt;/VALUE&gt; &lt;/listentry&gt; &lt;listentry&gt; &lt;KEY&gt;Require&lt;/KEY&gt; &lt;VALUE&gt;all granted&lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/listentry&gt; &lt;/VALUE&gt; &lt;/hosts_entry&gt; &lt;/hosts&gt; &lt;modules config:type=\"list\"&gt; &lt;module_entry&gt; &lt;change&gt;enable&lt;/change&gt; &lt;name&gt;socache_shmcb&lt;/name&gt; &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt; &lt;/module_entry&gt; &lt;module_entry&gt; &lt;change&gt;enable&lt;/change&gt; &lt;name&gt;reqtimeout&lt;/name&gt; &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt; &lt;/module_entry&gt; &lt;module_entry&gt; &lt;change&gt;enable&lt;/change&gt; &lt;name&gt;authn_core&lt;/name&gt; &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt; &lt;/module_entry&gt; &lt;module_entry&gt; &lt;change&gt;enable&lt;/change&gt; &lt;name&gt;authz_core&lt;/name&gt; &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt; &lt;/module_entry&gt; &lt;/modules&gt; &lt;service config:type=\"boolean\"&gt;true&lt;/service&gt; &lt;version&gt;2.9&lt;/version&gt; &lt;/http-server&gt;"
+msgid "\n"
+      "  &lt;http-server&gt;\n"
+      "    &lt;Listen config:type=\"list\"&gt;\n"
+      "      &lt;listentry&gt;\n"
+      "        &lt;ADDRESS/&gt;\n"
+      "        &lt;PORT&gt;80&lt;/PORT&gt;\n"
+      "      &lt;/listentry&gt;\n"
+      "    &lt;/Listen&gt;\n"
+      "    &lt;hosts config:type=\"list\"&gt;\n"
+      "      &lt;hosts_entry&gt;\n"
+      "        &lt;KEY&gt;main&lt;/KEY&gt;\n"
+      "        &lt;VALUE config:type=\"list\"&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;DocumentRoot&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            #\n"
+      "            # Global configuration that will be applicable for all\n"
+      "            # virtual hosts, unless deleted here or overriden elsewhere.\n"
+      "            #\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;VALUE&gt;\"/srv/www/htdocs\"&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            #\n"
+      "            # Configure the DocumentRoot\n"
+      "            #\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt;\n"
+      "            &lt;SECTIONPARAM&gt;\"/srv/www/htdocs\"&lt;/SECTIONPARAM&gt;\n"
+      "            &lt;VALUE config:type=\"list\"&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;Options&lt;/KEY&gt;\n"
+      "                &lt;OVERHEAD&gt;\n"
+      "                # Possible values for the Options directive are \"None\", \"All\",\n"
+      "                # or any combination of:\n"
+      "                #   Indexes Includes FollowSymLinks SymLinksifOwnerMatch\n"
+      "                #   ExecCGI MultiViews\n"
+      "                #\n"
+      "                # Note that \"MultiViews\" must be named *explicitly*\n"
+      "                # --- \"Options All\"\n"
+      "                # does not give it to you.\n"
+      "                #\n"
+      "                # The Options directive is both complicated and important.\n"
+      "                #  Please see\n"
+      "                #  http://httpd.apache.org/docs/2.4/mod/core.html#options\n"
+      "                # for more information.\n"
+      "                &lt;/OVERHEAD&gt;\n"
+      "                &lt;VALUE&gt;None&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;AllowOverride&lt;/KEY&gt;\n"
+      "                &lt;OVERHEAD&gt;\n"
+      "                # AllowOverride controls what directives may be placed in\n"
+      "                # .htaccess files. It can be \"All\", \"None\", or any combination\n"
+      "                # of the keywords:\n"
+      "                #   Options FileInfo AuthConfig Limit\n"
+      "                &lt;/OVERHEAD&gt;\n"
+      "                &lt;VALUE&gt;None&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "                &lt;OVERHEAD&gt;\n"
+      "                # Controls who can get stuff from this server.\n"
+      "                &lt;/OVERHEAD&gt;\n"
+      "                &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt;\n"
+      "                &lt;SECTIONPARAM&gt;!mod_access_compat.c&lt;/SECTIONPARAM&gt;\n"
+      "                &lt;VALUE config:type=\"list\"&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Require&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;all granted&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                &lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "                &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt;\n"
+      "                &lt;SECTIONPARAM&gt;mod_access_compat.c&lt;/SECTIONPARAM&gt;\n"
+      "                &lt;VALUE config:type=\"list\"&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Order&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;allow,deny&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Allow&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;from all&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                &lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "            &lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;Alias&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            # Aliases: aliases can be added as needed (with no limit).\n"
+      "            # The format is Alias fakename realname\n"
+      "            #\n"
+      "            # Note that if you include a trailing / on fakename then the\n"
+      "            # server will require it to be present in the URL.  So \"/icons\"\n"
+      "            # is not aliased in this example, only \"/icons/\".  If the fakename\n"
+      "            # is slash-terminated, then the realname must also be slash\n"
+      "            # terminated, and if the fakename omits the trailing slash, the\n"
+      "            # realname must also omit it.\n"
+      "            # We include the /icons/ alias for FancyIndexed directory listings.\n"
+      "            # If you do not use FancyIndexing, you may comment this out.\n"
+      "            #\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;VALUE&gt;/icons/ \"/usr/share/apache2/icons/\"&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt;\n"
+      "            &lt;SECTIONPARAM&gt;\"/usr/share/apache2/icons\"&lt;/SECTIONPARAM&gt;\n"
+      "            &lt;VALUE config:type=\"list\"&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;Options&lt;/KEY&gt;\n"
+      "                &lt;VALUE&gt;Indexes MultiViews&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;AllowOverride&lt;/KEY&gt;\n"
+      "                &lt;VALUE&gt;None&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "                &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt;\n"
+      "                &lt;SECTIONPARAM&gt;!mod_access_compat.c&lt;/SECTIONPARAM&gt;\n"
+      "                &lt;VALUE config:type=\"list\"&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Require&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;all granted&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                &lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "                &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt;\n"
+      "                &lt;SECTIONPARAM&gt;mod_access_compat.c&lt;/SECTIONPARAM&gt;\n"
+      "                &lt;VALUE config:type=\"list\"&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Order&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;allow,deny&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Allow&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;from all&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                &lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "            &lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;ScriptAlias&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            # ScriptAlias: This controls which directories contain server\n"
+      "            # scripts. ScriptAliases are essentially the same as Aliases,\n"
+      "            # except that documents in the realname directory are treated\n"
+      "            # as applications and run by the server when requested rather\n"
+      "            # than as documents sent to the client.\n"
+      "            # The same rules about trailing \"/\" apply to ScriptAlias\n"
+      "            # directives as to Alias.\n"
+      "            #\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;VALUE&gt;/cgi-bin/ \"/srv/www/cgi-bin/\"&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            # \"/srv/www/cgi-bin\" should be changed to wherever your\n"
+      "            # ScriptAliased CGI directory exists, if you have that configured.\n"
+      "            #\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt;\n"
+      "            &lt;SECTIONPARAM&gt;\"/srv/www/cgi-bin\"&lt;/SECTIONPARAM&gt;\n"
+      "            &lt;VALUE config:type=\"list\"&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;AllowOverride&lt;/KEY&gt;\n"
+      "                &lt;VALUE&gt;None&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;Options&lt;/KEY&gt;\n"
+      "                &lt;VALUE&gt;+ExecCGI -Includes&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "                &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt;\n"
+      "                &lt;SECTIONPARAM&gt;!mod_access_compat.c&lt;/SECTIONPARAM&gt;\n"
+      "                &lt;VALUE config:type=\"list\"&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Require&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;all granted&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                &lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "                &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt;\n"
+      "                &lt;SECTIONPARAM&gt;mod_access_compat.c&lt;/SECTIONPARAM&gt;\n"
+      "                &lt;VALUE config:type=\"list\"&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Order&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;allow,deny&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                  &lt;listentry&gt;\n"
+      "                    &lt;KEY&gt;Allow&lt;/KEY&gt;\n"
+      "                    &lt;VALUE&gt;from all&lt;/VALUE&gt;\n"
+      "                  &lt;/listentry&gt;\n"
+      "                &lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "            &lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            # UserDir: The name of the directory that is appended onto a\n"
+      "            # user's home directory if a ~user request is received.\n"
+      "            # To disable it, simply remove userdir from the list of modules\n"
+      "            # in APACHE_MODULES in /etc/sysconfig/apache2.\n"
+      "            #\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;SECTIONNAME&gt;IfModule&lt;/SECTIONNAME&gt;\n"
+      "            &lt;SECTIONPARAM&gt;mod_userdir.c&lt;/SECTIONPARAM&gt;\n"
+      "            &lt;VALUE config:type=\"list\"&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;UserDir&lt;/KEY&gt;\n"
+      "                &lt;OVERHEAD&gt;\n"
+      "                # Note that the name of the user directory (\"public_html\")\n"
+      "                # cannot simply be changed here, since it is a compile time\n"
+      "                # setting. The apache package would have to be rebuilt.\n"
+      "                # You could work around by deleting /usr/sbin/suexec, but\n"
+      "                # then all scripts from the directories would be executed\n"
+      "                # with the UID of the webserver.\n"
+      "                &lt;/OVERHEAD&gt;\n"
+      "                &lt;VALUE&gt;public_html&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;Include&lt;/KEY&gt;\n"
+      "                &lt;OVERHEAD&gt;\n"
+      "                # The actual configuration of the directory is in\n"
+      "                # /etc/apache2/mod_userdir.conf.\n"
+      "                &lt;/OVERHEAD&gt;\n"
+      "                &lt;VALUE&gt;/etc/apache2/mod_userdir.conf&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "            &lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;IncludeOptional&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            # Include all *.conf files from /etc/apache2/conf.d/.\n"
+      "            #\n"
+      "            # This is mostly meant as a place for other RPM packages to drop\n"
+      "            # in their configuration snippet.\n"
+      "            #\n"
+      "            # <remark>The following wording is not grammatically correct, however I am not sure of the intended meaning. Please revise.</remark>\n"
+      "            # You can comment this out here if you want those bits include\n"
+      "            # only in a certain virtual host, but not here.\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;VALUE&gt;/etc/apache2/conf.d/*.conf&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;IncludeOptional&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            # The manual... if it is installed ('?' means it will not complain)\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;VALUE&gt;/etc/apache2/conf.d/apache2-manual?conf&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;ServerName&lt;/KEY&gt;\n"
+      "            &lt;VALUE&gt;linux-wtyj&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;ServerAdmin&lt;/KEY&gt;\n"
+      "            &lt;OVERHEAD&gt;\n"
+      "            &lt;/OVERHEAD&gt;\n"
+      "            &lt;VALUE&gt;root@linux-wtyj&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;NameVirtualHost&lt;/KEY&gt;\n"
+      "            &lt;VALUE&gt;192.168.43.2&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "        &lt;/VALUE&gt;\n"
+      "      &lt;/hosts_entry&gt;\n"
+      "      &lt;hosts_entry&gt;\n"
+      "        &lt;KEY&gt;192.168.43.2/secondserver.suse.de&lt;/KEY&gt;\n"
+      "        &lt;VALUE config:type=\"list\"&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;DocumentRoot&lt;/KEY&gt;\n"
+      "            &lt;VALUE&gt;/srv/www/htdocs&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;ServerName&lt;/KEY&gt;\n"
+      "            &lt;VALUE&gt;secondserver.suse.de&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;ServerAdmin&lt;/KEY&gt;\n"
+      "            &lt;VALUE&gt;second_server@suse.de&lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "          &lt;listentry&gt;\n"
+      "            &lt;KEY&gt;_SECTION&lt;/KEY&gt;\n"
+      "            &lt;SECTIONNAME&gt;Directory&lt;/SECTIONNAME&gt;\n"
+      "            &lt;SECTIONPARAM&gt;/srv/www/htdocs&lt;/SECTIONPARAM&gt;\n"
+      "            &lt;VALUE config:type=\"list\"&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;AllowOverride&lt;/KEY&gt;\n"
+      "                &lt;VALUE&gt;None&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "              &lt;listentry&gt;\n"
+      "                &lt;KEY&gt;Require&lt;/KEY&gt;\n"
+      "                &lt;VALUE&gt;all granted&lt;/VALUE&gt;\n"
+      "              &lt;/listentry&gt;\n"
+      "            &lt;/VALUE&gt;\n"
+      "          &lt;/listentry&gt;\n"
+      "        &lt;/VALUE&gt;\n"
+      "      &lt;/hosts_entry&gt;\n"
+      "    &lt;/hosts&gt;\n"
+      "    &lt;modules config:type=\"list\"&gt;\n"
+      "      &lt;module_entry&gt;\n"
+      "        &lt;change&gt;enable&lt;/change&gt;\n"
+      "        &lt;name&gt;socache_shmcb&lt;/name&gt;\n"
+      "        &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt;\n"
+      "      &lt;/module_entry&gt;\n"
+      "      &lt;module_entry&gt;\n"
+      "        &lt;change&gt;enable&lt;/change&gt;\n"
+      "        &lt;name&gt;reqtimeout&lt;/name&gt;\n"
+      "        &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt;\n"
+      "      &lt;/module_entry&gt;\n"
+      "      &lt;module_entry&gt;\n"
+      "        &lt;change&gt;enable&lt;/change&gt;\n"
+      "        &lt;name&gt;authn_core&lt;/name&gt;\n"
+      "        &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt;\n"
+      "      &lt;/module_entry&gt;\n"
+      "      &lt;module_entry&gt;\n"
+      "        &lt;change&gt;enable&lt;/change&gt;\n"
+      "        &lt;name&gt;authz_core&lt;/name&gt;\n"
+      "        &lt;userdefined config:type=\"boolean\"&gt;true&lt;/userdefined&gt;\n"
+      "      &lt;/module_entry&gt;\n"
+      "    &lt;/modules&gt;\n"
+      "    &lt;service config:type=\"boolean\"&gt;true&lt;/service&gt;\n"
+      "    &lt;version&gt;2.9&lt;/version&gt;\n"
+      "  &lt;/http-server&gt;\n"
+      ""
 msgstr ""
 
 #. Tag: para
@@ -8464,28 +8686,16 @@ msgstr ""
 msgid "Use the security resource, to change various boot settings."
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:8924
+#. Tag: term
+#: ay_bigfile.xml:8923
 #, no-c-format
-msgid "How to interpret"
+msgid "How to interpret <keycombo><keycap function=\"control\"/><keycap function=\"alt\"/><keycap function=\"delete\"/></keycombo> ?"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:8925
+#. Tag: para
+#: ay_bigfile.xml:8927
 #, no-c-format
-msgid "?"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:8929
-#, no-c-format
-msgid "When someone at the console has pressed the"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:8933
-#, no-c-format
-msgid "key combination, the system usually reboots. Sometimes it is desirable to ignore this event, for example, when the system serves as both workstation and server."
+msgid "When someone at the console has pressed the <keycombo><keycap function=\"control\"/> <keycap function=\"alt\"/> <keycap function=\"delete\"/></keycombo> key combination, the system usually reboots. Sometimes it is desirable to ignore this event, for example, when the system serves as both workstation and server."
 msgstr ""
 
 #. Tag: term
@@ -8886,22 +9096,10 @@ msgstr ""
 msgid "Specifying a user ID ( <literal>uid</literal> )"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:9327
+#. Tag: para
+#: ay_bigfile.xml:9325
 #, no-c-format
-msgid "Each user on a Linux system has got a numeric user ID. You can either specify such a user ID within the &ay; control file manually by using"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:9329
-#, no-c-format
-msgid ", or let the system automatically choose a user ID by not using"
-msgstr ""
-
-#. Tag: tag
-#: ay_bigfile.xml:9329
-#, no-c-format
-msgid "uid"
+msgid "Each user on a Linux system has got a numeric user ID. You can either specify such a user ID within the &ay; control file manually by using <tag class=\"element\">uid</tag> , or let the system automatically choose a user ID by not using <tag class=\"element\">uid</tag> ."
 msgstr ""
 
 #. Tag: para
@@ -10051,34 +10249,10 @@ msgstr ""
 msgid "<literal>network_needed</literal>"
 msgstr ""
 
-#. Tag: literal
-#: ay_bigfile.xml:10631
+#. Tag: para
+#: ay_bigfile.xml:10628
 #, no-c-format
-msgid "false"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:10631
-#, no-c-format
-msgid "If set to"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:10632
-#, no-c-format
-msgid "the script will run after the &yast; modules like the user configuration and everything else are done. The network is configured but not up and running yet. With this value set to"
-msgstr ""
-
-#. Tag: literal
-#: ay_bigfile.xml:10634
-#, no-c-format
-msgid "true"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:10635
-#, no-c-format
-msgid ", the script runs before all &yast; modules are configured. So there is no local user and no network is configured but the installation network is still up and running (if you did a network installation)."
+msgid "<remark>FIXME: double check that. I'm very unsure if this is correct</remark> If set to <literal>false</literal> the script will run after the &yast; modules like the user configuration and everything else are done. The network is configured but not up and running yet. With this value set to <literal>true</literal> , the script runs before all &yast; modules are configured. So there is no local user and no network is configured but the installation network is still up and running (if you did a network installation)."
 msgstr ""
 
 #. Tag: screen
@@ -10999,22 +11173,10 @@ msgstr ""
 msgid "<literal>environment</literal>"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:11609
+#. Tag: para
+#: ay_bigfile.xml:11606
 #, no-c-format
-msgid "A boolean that passes the value of the answer to the question as an environment variable to the script. The variable is named"
-msgstr ""
-
-#. Tag: envar
-#: ay_bigfile.xml:11609
-#, no-c-format
-msgid "VAL"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:11610
-#, no-c-format
-msgid "."
+msgid "A boolean that passes the value of the answer to the question as an environment variable to the script. The variable is named <envar>VAL</envar> ."
 msgstr ""
 
 #. Tag: screen
@@ -13948,16 +14110,10 @@ msgstr ""
 msgid "In the example above, the file <filename>Software.xml</filename> must be placed in the subdirectory <filename>classes/TrainingRoom/</filename> It will be fetched from the same place the &ay; control file and rules were fetched from."
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:14887
+#. Tag: para
+#: ay_bigfile.xml:14884
 #, no-c-format
-msgid "If you have multiple control files and those control files share parts, better use classes for common parts."
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:14890
-#, no-c-format
-msgid "You can also use XIncludes."
+msgid "If you have multiple control files and those control files share parts, better use classes for common parts. <!--You just need to change the class and all profiles using that class are fixed too.--> <remark>emap 2011-11-07: Sentence does not make sense.</remark> You can also use XIncludes."
 msgstr ""
 
 #. Tag: para
@@ -13978,10 +14134,10 @@ msgstr ""
 msgid "Description:"
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:14911
+#. Tag: para
+#: ay_bigfile.xml:14909
 #, no-c-format
-msgid "Order: order (or priority) of the class in the stack of migration"
+msgid "Order: order (or priority) of the class in the stack of migration <remark>emap 2011-11-07: What migration?</remark>"
 msgstr ""
 
 #. Tag: title
@@ -14020,10 +14176,10 @@ msgstr ""
 msgid "group: classes describing a department or a group within a site or a location."
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:14979
+#. Tag: para
+#: ay_bigfile.xml:14970
 #, no-c-format
-msgid "A file saved in a class directory can have the same syntax and format as a regular control file but represents a subset of the configuration. For example, to create a new control file for a computer with a specific network interface, you only need the control file resource that controls the configuration of the network. Having multiple network types, you can merge the one needed for a special type of hardware with other class files and create a new control file which suits the system being installed."
+msgid "A file saved in a class directory can have the same syntax and format as a regular control file but represents a subset of the configuration. For example, to create a new control file for a computer with a specific network interface, you only need the control file resource that controls the configuration of the network. Having multiple network types, you can merge the one needed for a special type of hardware with other class files and create a new control file which suits the system being installed. <remark>emap 2011-11-07: Not very clear.</remark>"
 msgstr ""
 
 #. Tag: title
@@ -14107,34 +14263,10 @@ msgid "&lt;partitioning config:type=\"list\"&gt;\n"
       "&lt;/partitioning&gt;"
 msgstr ""
 
-#. Tag: literal
-#: ay_bigfile.xml:15055
+#. Tag: para
+#: ay_bigfile.xml:15051
 #, no-c-format
-msgid "size"
-msgstr ""
-
-#. Tag: literal
-#: ay_bigfile.xml:15055
-#, no-c-format
-msgid "mount"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:15055
-#, no-c-format
-msgid "or"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:15055
-#, no-c-format
-msgid "You might expect the control file to contain 3 partitions. This is not the case. You will end up with two partitions and the first partition is a mix up of the swap and the root partition. Settings configured in both partitions, like"
-msgstr ""
-
-#. Tag: #text
-#: ay_bigfile.xml:15058
-#, no-c-format
-msgid ", will be used from the second file. Settings that only exist in the first or second partition, will be copied to the merged partition too."
+msgid "You might expect the control file to contain 3 partitions. This is not the case. You will end up with two partitions and the first partition is a mix up of the swap and the root partition. Settings configured in both partitions, like <literal>mount</literal> or <literal>size</literal> , will be used from the second file. Settings that only exist in the first or second partition, will be copied to the merged partition too. <remark>emap 2011-11-07: A little confusing, why not put the merged file here.</remark>"
 msgstr ""
 
 #. Tag: para
@@ -14382,6 +14514,12 @@ msgstr ""
 msgid "Invoking the Auto-Installation Process"
 msgstr ""
 
+#. Tag: para
+#: ay_bigfile.xml:15278
+#, no-c-format
+msgid "<remark role=\"fixme\">Add a short description</remark>"
+msgstr ""
+
 #. Tag: title
 #: ay_bigfile.xml:15283
 #, no-c-format
@@ -14568,10 +14706,10 @@ msgstr ""
 msgid "The traditional linuxrc configuration file ( <filename>info</filename> ) has the function of giving the client enough information about the installation server and the location of the sources. Usually, this file is not required; but it is needed in special network environments where DHCP and BOOTP are not used or when special kernel modules need to be loaded."
 msgstr ""
 
-#. Tag: #text
-#: ay_bigfile.xml:15561
+#. Tag: para
+#: ay_bigfile.xml:15556
 #, no-c-format
-msgid "All linuxrc keywords can be passed to linuxrc using the kernel command line. The command line can also be set when creating network bootable images or it can be passed to the kernel using a specially configured DHCP server in combination with Etherboot or PXE."
+msgid "All linuxrc keywords can be passed to linuxrc using the kernel command line. The command line can also be set when creating network bootable images or it can be passed to the kernel using a specially configured DHCP server in combination with Etherboot or PXE. <remark>emap 2011-11-07:Obscure paragraph. What is set in the command line? And what is the 'it' that can be passed to the kernel? Probably not the command line itself.</remark>"
 msgstr ""
 
 #. Tag: para

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -38,16 +38,10 @@ msgstr ""
 msgid "The <command>qemu-system-ARCH</command> command uses the following syntax:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_running_vms_qemukvm.xml:33
 #, no-c-format
-msgid "qemu-system-ARCH options"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:33
-#, no-c-format
-msgid "disk_img"
+msgid "qemu-system-ARCH options<co xml:id=\"co.qemu.running.basic.opts\"/> disk_img<co xml:id=\"co.qemu.running.basic.img\"/>"
 msgstr ""
 
 #. Tag: para
@@ -248,22 +242,10 @@ msgstr ""
 msgid "Specifies how many CPUs will be emulated. &qemu; supports up to 255 CPUs on the PC platform (up to 64 with KVM acceleration used). This option also takes other CPU-related parameters, such as number of <emphasis>sockets</emphasis> , number of <emphasis>cores</emphasis> per socket, or number of <emphasis>threads</emphasis> per core."
 msgstr ""
 
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:217
+#. Tag: para
+#: qemu_running_vms_qemukvm.xml:215
 #, no-c-format
-msgid "The following is an example of a working"
-msgstr ""
-
-#. Tag: command
-#: qemu_running_vms_qemukvm.xml:217
-#, no-c-format
-msgid "qemu-system-ARCH"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:218
-#, no-c-format
-msgid "command line:"
+msgid "The following is an example of a working <command>qemu-system-ARCH</command> command line: <remark>cwickert 2017-09-01 calling qemu like this will yield a warning: <quote> Image format was not specified for 'sles12sp2.raw' and probing guessed raw. Automatically detecting the format is dangerous for raw images, write operations on block 0 will be restricted. Specify the 'raw' format explicitly to remove the restrictions. </quote> To avoid this, we should specify the image format like this: \"-drive format=raw,file=/images/sles.raw\" This however needs to be done consistently throughout the guide, therefor I'm not changing this for now. </remark>"
 msgstr ""
 
 #. Tag: screen
@@ -996,40 +978,10 @@ msgstr ""
 msgid "Disables &qemu;'s graphical output. The emulated serial port is redirected to the console."
 msgstr ""
 
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:833
+#. Tag: para
+#: qemu_running_vms_qemukvm.xml:832
 #, no-c-format
-msgid "After starting the virtual machine with"
-msgstr ""
-
-#. Tag: literal
-#: qemu_running_vms_qemukvm.xml:833
-#, no-c-format
-msgid "-nographic"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:835
-#, no-c-format
-msgid ", press"
-msgstr ""
-
-#. Tag: keycap
-#: qemu_running_vms_qemukvm.xml:835
-#, no-c-format
-msgid "A"
-msgstr ""
-
-#. Tag: keycap
-#: qemu_running_vms_qemukvm.xml:836
-#, no-c-format
-msgid "H"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:838
-#, no-c-format
-msgid "in the virtual console to view the list of other useful shortcuts, for example, to toggle between the console and the &qemu; monitor."
+msgid "After starting the virtual machine with <literal>-nographic</literal> , press <keycombo><keycap function=\"control\"/><keycap>A</keycap></keycombo> <keycap>H</keycap> in the virtual console to view the list of other useful shortcuts, for example, to toggle between the console and the &qemu; monitor."
 msgstr ""
 
 #. Tag: screen
@@ -1092,64 +1044,10 @@ msgstr ""
 msgid "<literal>-alt-grab</literal> , <literal>-ctrl-grab</literal>"
 msgstr ""
 
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:889
+#. Tag: para
+#: qemu_running_vms_qemukvm.xml:888
 #, no-c-format
-msgid "By default, the &qemu; window releases the"
-msgstr ""
-
-#. Tag: quote
-#: qemu_running_vms_qemukvm.xml:889
-#, no-c-format
-msgid "captured"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:891
-#, no-c-format
-msgid "mouse after pressing"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:893
-#, no-c-format
-msgid ". You can change the key combination to either"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:895
-#, no-c-format
-msgid "("
-msgstr ""
-
-#. Tag: literal
-#: qemu_running_vms_qemukvm.xml:895
-#, no-c-format
-msgid "-alt-grab"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:896
-#, no-c-format
-msgid "key ("
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:896
-#, no-c-format
-msgid "), or the right"
-msgstr ""
-
-#. Tag: literal
-#: qemu_running_vms_qemukvm.xml:896
-#, no-c-format
-msgid "-ctrl-grab"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:897
-#, no-c-format
-msgid ")."
+msgid "By default, the &qemu; window releases the <quote>captured</quote> mouse after pressing <keycombo><keycap function=\"control\"/><keycap function=\"alt\"/></keycombo> . You can change the key combination to either <keycombo><keycap function=\"control\"/><keycap function=\"alt\"/><keycap function=\"shift\"/></keycombo> ( <literal>-alt-grab</literal> ), or the right <keycap function=\"control\"/> key ( <literal>-ctrl-grab</literal> )."
 msgstr ""
 
 #. Tag: title
@@ -1594,34 +1492,13 @@ msgstr ""
 msgid "Use <literal>-netdev</literal> together with the related <option>-device</option> option to add a new emulated network card:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_running_vms_qemukvm.xml:1257
 #, no-c-format
-msgid "&prompt.sudo;qemu-system-x86_64 [...] \\-netdev tap"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1259
-#, no-c-format
-msgid ",id=hostnet0 \\-device virtio-net-pci"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1259
-#, no-c-format
-msgid ",netdev=hostnet0,vlan=1"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1260
-#, no-c-format
-msgid ",name=ncard1"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1260
-#, no-c-format
-msgid ",\\macaddr=&wsIVmac;"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+      "-netdev tap<co xml:id=\"co.qemu.running.networking.nic.tap\"/>,id=hostnet0 \\\n"
+      "-device virtio-net-pci<co xml:id=\"co.qemu.running.networking.nic.drv\"/>,netdev=hostnet0,vlan=1<co xml:id=\"co.qemu.running.networking.nic.vlan\"/>,\\\n"
+      "macaddr=&wsIVmac;<co xml:id=\"co.qemu.running.networking.nic.mac\"/>,name=ncard1"
 msgstr ""
 
 #. Tag: para
@@ -1725,28 +1602,12 @@ msgstr ""
 msgid "Restricted User-mode Networking"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_running_vms_qemukvm.xml:1346
 #, no-c-format
-msgid "&prompt.sudo;qemu-system-x86_64 [...] \\-netdev user"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1348
-#, no-c-format
-msgid ",restrict=yes"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1348
-#, no-c-format
-msgid ",id=hostnet0 \\-device virtio-net-pci,netdev=hostnet0,vlan=1"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1348
-#, no-c-format
-msgid ",name=user_net1"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+      "-netdev user<co xml:id=\"co.usermode.user\"/>,id=hostnet0 \\\n"
+      "-device virtio-net-pci,netdev=hostnet0,vlan=1<co xml:id=\"co.usermode.vlan\"/>,name=user_net1<co xml:id=\"co.usermode.name\"/>,restrict=yes<co xml:id=\"co.usermode.restrict\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1779,28 +1640,13 @@ msgstr ""
 msgid "User-mode Networking with Custom IP Range"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_running_vms_qemukvm.xml:1376
 #, no-c-format
-msgid "&prompt.sudo;qemu-system-x86_64 [...] \\-netdev user,id=hostnet0 \\-device virtio-net-pci,netdev=hostnet0,net=10.2.0.0/8"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1378
-#, no-c-format
-msgid ",host=10.2.0.6"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1379
-#, no-c-format
-msgid ",\\dhcpstart=10.2.0.20"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1379
-#, no-c-format
-msgid ",hostname=tux_kvm_guest"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+      "-netdev user,id=hostnet0 \\\n"
+      "-device virtio-net-pci,netdev=hostnet0,net=10.2.0.0/8<co xml:id=\"co.usermode.net\"/>,host=10.2.0.6<co xml:id=\"co.usermode.host\"/>,\\\n"
+      "dhcpstart=10.2.0.20<co xml:id=\"co.usermode.dhcpstart\"/>,hostname=tux_kvm_guest<co xml:id=\"co.usermode.hostname\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1833,16 +1679,13 @@ msgstr ""
 msgid "User-mode Networking with Network-boot and TFTP"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: qemu_running_vms_qemukvm.xml:1409
 #, no-c-format
-msgid "&prompt.sudo;qemu-system-x86_64 [...] \\-netdev user,id=hostnet0 \\-device virtio-net-pci,netdev=hostnet0,tftp=/images/tftp_dir"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1412
-#, no-c-format
-msgid ",\\bootfile=/images/boot/pxelinux.0"
+msgid "&prompt.sudo;qemu-system-x86_64 [...] \\\n"
+      "-netdev user,id=hostnet0 \\\n"
+      "-device virtio-net-pci,netdev=hostnet0,tftp=/images/tftp_dir<co xml:id=\"co.usermode.tftp\"/>,\\\n"
+      "bootfile=/images/boot/pxelinux.0<co xml:id=\"co.usermode.bootfile\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1976,64 +1819,25 @@ msgstr ""
 msgid "To manage a network bridge, you need to have the <package>tunctl</package> package installed."
 msgstr ""
 
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1525
+#. Tag: screen
+#: qemu_running_vms_qemukvm.xml:1523
 #, no-c-format
-msgid "#!/bin/bashbridge=br0"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1526
-#, no-c-format
-msgid "tap=$(sudo tunctl -u $(whoami) -b)"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1527
-#, no-c-format
-msgid "sudo ip link set $tap up"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1528
-#, no-c-format
-msgid "sleep 1s"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1531
-#, no-c-format
-msgid "sudo ip link add name $bridge type bridgesudo ip link set $bridge upsudo ip link set $tap master $bridge"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1534
-#, no-c-format
-msgid "qemu-system-x86_64 -machine accel=kvm -m 512 -hda /images/sles_base.raw \\ -netdev tap,id=hostnet0 \\ -device virtio-net-pci,netdev=hostnet0,vlan=0,macaddr=&wsIVmac;,\\ ifname=$tap"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1535
-#, no-c-format
-msgid ",script=no"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1536
-#, no-c-format
-msgid ",downscript=nosudo ip link set $tap nomaster"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1537
-#, no-c-format
-msgid "sudo ip link set $tap down"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1538
-#, no-c-format
-msgid "sudo tunctl -d $tap"
+msgid "\n"
+      "#!/bin/bash\n"
+      "bridge=br0<co xml:id=\"co.qemu.net.bridge.br\"/>\n"
+      "tap=$(sudo tunctl -u $(whoami) -b)<co xml:id=\"co.qemu.net.bridge.tap\"/>\n"
+      "sudo ip link set $tap up<co xml:id=\"co.qemu.net.bridge.up\"/>\n"
+      "sleep 1s<co xml:id=\"co.qemu.net.bridge.sleep\"/>\n"
+      "sudo ip link add name $bridge type bridge\n"
+      "sudo ip link set $bridge up\n"
+      "sudo ip link set $tap master $bridge<co xml:id=\"co.qemu.net.bridge.br3\"/>\n"
+      "qemu-system-x86_64 -machine accel=kvm -m 512 -hda /images/sles_base.raw \\\n"
+      " -netdev tap,id=hostnet0 \\\n"
+      " -device virtio-net-pci,netdev=hostnet0,vlan=0,macaddr=&wsIVmac;,\\\n"
+      " ifname=$tap<co xml:id=\"co.qemu.net.bridge.ifname\"/>,script=no<co xml:id=\"co.qemu.net.bridge.script\"/>,downscript=no\n"
+      "sudo ip link set $tap nomaster<co xml:id=\"co.qemu.net.bridge.delif\"/>\n"
+      "sudo ip link set $tap down<co xml:id=\"co.qemu.net.bridge.linkdown\"/>\n"
+      "sudo tunctl -d $tap<co xml:id=\"co.qemu.net.bridge.deltap\"/>"
 msgstr ""
 
 #. Tag: para
@@ -2160,28 +1964,10 @@ msgstr ""
 msgid "Viewing a &vmguest; with&nbsp;VNC"
 msgstr ""
 
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1659
+#. Tag: para
+#: qemu_running_vms_qemukvm.xml:1658
 #, no-c-format
-msgid "By default &qemu; uses a GTK (a cross-platform toolkit library) window to display the graphical output of a &vmguest;."
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1666
-#, no-c-format
-msgid "With the"
-msgstr ""
-
-#. Tag: #text
-#: qemu_running_vms_qemukvm.xml:1666
-#, no-c-format
-msgid "option specified, you can make &qemu; listen on a specified VNC display and redirect its graphical output to the VNC session."
-msgstr ""
-
-#. Tag: literal
-#: qemu_running_vms_qemukvm.xml:1666
-#, no-c-format
-msgid "-vnc"
+msgid "By default &qemu; uses a GTK (a cross-platform toolkit library) window to display the graphical output of a &vmguest;. <remark condition=\"clarity\"> 2014-08-06 - fs: feedback from brogers: We should explain the \"display xxx\" command line syntax to present the various display options before diving into the vnc details. </remark> With the <literal>-vnc</literal> option specified, you can make &qemu; listen on a specified VNC display and redirect its graphical output to the VNC session."
 msgstr ""
 
 #. Tag: para

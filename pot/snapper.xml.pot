@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -18,6 +18,12 @@ msgstr ""
 #: snapper.xml:12
 #, no-c-format
 msgid "System Recovery and Snapshot Management with Snapper"
+msgstr ""
+
+#. Tag: dm:translation
+#: snapper.xml:16
+#, no-c-format
+msgid "yes"
 msgstr ""
 
 #. Tag: para
@@ -284,10 +290,10 @@ msgstr ""
 msgid "Enabling:"
 msgstr ""
 
-#. Tag: literal
-#: snapper.xml:256
+#. Tag: para
+#: snapper.xml:255
 #, no-c-format
-msgid "yes"
+msgid "Set <envar>USE_SNAPPER</envar> to <literal>yes</literal> in <filename>/etc/sysconfig/yast2</filename> ."
 msgstr ""
 
 #. Tag: title
@@ -296,46 +302,10 @@ msgstr ""
 msgid "Disabling:"
 msgstr ""
 
-#. Tag: #text
-#: snapper.xml:263
+#. Tag: para
+#: snapper.xml:262
 #, no-c-format
-msgid "to"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:263
-#, no-c-format
-msgid "Set"
-msgstr ""
-
-#. Tag: envar
-#: snapper.xml:263
-#, no-c-format
-msgid "USE_SNAPPER"
-msgstr ""
-
-#. Tag: literal
-#: snapper.xml:263
-#, no-c-format
-msgid "no"
-msgstr ""
-
-#. Tag: filename
-#: snapper.xml:264
-#, no-c-format
-msgid "/etc/sysconfig/yast2"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:264
-#, no-c-format
-msgid "in"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:265
-#, no-c-format
-msgid "."
+msgid "Set <envar>USE_SNAPPER</envar> to <literal>no</literal> in <filename>/etc/sysconfig/yast2</filename> ."
 msgstr ""
 
 #. Tag: para
@@ -356,34 +326,20 @@ msgstr ""
 msgid "Taking snapshot pairs upon installing packages with &yast; or Zypper is handled by the <systemitem class=\"resource\">snapper-zypp-plugin</systemitem> . An XML configuration file, <filename>/etc/snapper/zypp-plugin.conf</filename> defines, when to make snapshots. By default the file looks like the following:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: snapper.xml:284
 #, no-c-format
-msgid "1 &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt; 2 &lt;snapper-zypp-plugin-conf&gt; 3 &lt;solvables&gt; 4 &lt;solvable match=\"w\""
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:287
-#, no-c-format
-msgid "important=\"true\""
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:287
-#, no-c-format
-msgid "&gt;kernel-*"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:287
-#, no-c-format
-msgid "&lt;/solvable&gt; 5 &lt;solvable match=\"w\" important=\"true\"&gt;dracut&lt;/solvable&gt; 6 &lt;solvable match=\"w\" important=\"true\"&gt;glibc&lt;/solvable&gt; 7 &lt;solvable match=\"w\" important=\"true\"&gt;systemd*&lt;/solvable&gt; 8 &lt;solvable match=\"w\" important=\"true\"&gt;udev&lt;/solvable&gt; 9 &lt;solvable match=\"w\"&gt;*&lt;/solvable&gt;"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:293
-#, no-c-format
-msgid "10 &lt;/solvables&gt;11 &lt;/snapper-zypp-plugin-conf&gt;"
+msgid " 1 &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;\n"
+      " 2 &lt;snapper-zypp-plugin-conf&gt;\n"
+      " 3  &lt;solvables&gt;\n"
+      " 4   &lt;solvable match=\"w\"<co xml:id=\"zypp-conf.match\"/> important=\"true\"<co xml:id=\"zypp-conf.important\"/>&gt;kernel-*<co xml:id=\"zypp-conf.kernel\"/>&lt;/solvable&gt;\n"
+      " 5   &lt;solvable match=\"w\" important=\"true\"&gt;dracut&lt;/solvable&gt;\n"
+      " 6   &lt;solvable match=\"w\" important=\"true\"&gt;glibc&lt;/solvable&gt;\n"
+      " 7   &lt;solvable match=\"w\" important=\"true\"&gt;systemd*&lt;/solvable&gt;\n"
+      " 8   &lt;solvable match=\"w\" important=\"true\"&gt;udev&lt;/solvable&gt;\n"
+      " 9   &lt;solvable match=\"w\"&gt;*&lt;/solvable&gt;<co xml:id=\"zypp-conf.packages\"/>\n"
+      "10  &lt;/solvables&gt;\n"
+      "11 &lt;/snapper-zypp-plugin-conf&gt;"
 msgstr ""
 
 #. Tag: para
@@ -1188,40 +1144,10 @@ msgstr ""
 msgid "Accessing and Identifying Snapshot Boot Entries"
 msgstr ""
 
-#. Tag: guimenu
-#: snapper.xml:1061
+#. Tag: para
+#: snapper.xml:1060
 #, no-c-format
-msgid "Start Bootloader from a read-only snapshot"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1061
-#, no-c-format
-msgid "To boot from a snapshot, reboot your machine and choose"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1064
-#, no-c-format
-msgid ". A screen listing all bootable snapshots opens. The most recent snapshot is listed first, the oldest last. Use the keys"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1065
-#, no-c-format
-msgid "and"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1065
-#, no-c-format
-msgid "to navigate and press"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1069
-#, no-c-format
-msgid "to activate the selected snapshot. Activating a snapshot from the boot menu does not reboot the machine immediately, but rather opens the boot loader of the selected snapshot."
+msgid "To boot from a snapshot, reboot your machine and choose <guimenu>Start Bootloader from a read-only snapshot</guimenu> . A screen listing all bootable snapshots opens. The most recent snapshot is listed first, the oldest last. Use the keys <keycap function=\"down\"/> and <keycap function=\"up\"/> to navigate and press <keycap function=\"enter\"/> to activate the selected snapshot. Activating a snapshot from the boot menu does not reboot the machine immediately, but rather opens the boot loader of the selected snapshot."
 msgstr ""
 
 #. Tag: title
@@ -1236,64 +1162,10 @@ msgstr ""
 msgid "Each snapshot entry in the boot loader follows a naming scheme which makes it possible to identify it easily:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: snapper.xml:1085
 #, no-c-format
-msgid "[*]"
-msgstr ""
-
-#. Tag: replaceable
-#: snapper.xml:1085
-#, no-c-format
-msgid "DESCRIPTION"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1085
-#, no-c-format
-msgid ","
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1085
-#, no-c-format
-msgid ")"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1085
-#, no-c-format
-msgid "T"
-msgstr ""
-
-#. Tag: replaceable
-#: snapper.xml:1085
-#, no-c-format
-msgid "TIME"
-msgstr ""
-
-#. Tag: replaceable
-#: snapper.xml:1085
-#, no-c-format
-msgid "DATE"
-msgstr ""
-
-#. Tag: replaceable
-#: snapper.xml:1085
-#, no-c-format
-msgid "OS"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1085
-#, no-c-format
-msgid "("
-msgstr ""
-
-#. Tag: replaceable
-#: snapper.xml:1085
-#, no-c-format
-msgid "KERNEL"
+msgid "[*]<co xml:id=\"snapper.boot.important\"/><replaceable>OS</replaceable><co xml:id=\"snapper.boot.os\"/> (<replaceable>KERNEL</replaceable><co xml:id=\"snapper.boot.kernel\"/>,<replaceable>DATE</replaceable><co xml:id=\"snapper.boot.date\"/>T<replaceable>TIME</replaceable><co xml:id=\"snapper.boot.time\"/>,<replaceable>DESCRIPTION</replaceable><co xml:id=\"snapper.boot.description\"/>)"
 msgstr ""
 
 #. Tag: para
@@ -1519,16 +1391,10 @@ msgstr ""
 msgid "To create a new Snapper configuration, run <command>snapper create-config</command> :"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: snapper.xml:1298
 #, no-c-format
-msgid "create-config /srv/www"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1298
-#, no-c-format
-msgid "&prompt.sudo;snapper -c www-data"
+msgid "&prompt.sudo;snapper -c www-data<co xml:id=\"snapper.create.name\"/> create-config /srv/www<co xml:id=\"snapper.create.volume\"/>"
 msgstr ""
 
 #. Tag: para
@@ -1866,52 +1732,10 @@ msgstr ""
 msgid "The configuration file is created under <filename>/etc/snapper/configs/<replaceable>CONFIG</replaceable></filename> , where CONFIG is the value you specified with <option>-c/--config</option> in the previous step (for example <filename>/etc/snapper/configs/web_data</filename> ). Adjust it according to your needs; see <xref linkend=\"sec.snapper.config.modify\"/> for details."
 msgstr ""
 
-#. Tag: envar
-#: snapper.xml:1592
+#. Tag: para
+#: snapper.xml:1591
 #, no-c-format
-msgid "ALLOW_USERS"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1592
-#, no-c-format
-msgid "Set values for"
-msgstr ""
-
-#. Tag: envar
-#: snapper.xml:1593
-#, no-c-format
-msgid "ALLOW_GROUPS"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1593
-#, no-c-format
-msgid "and/or"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1595
-#, no-c-format
-msgid "to grant permissions to users and/or groups, respectively. Multiple entries need to be separated by"
-msgstr ""
-
-#. Tag: systemitem
-#: snapper.xml:1596
-#, no-c-format
-msgid "www_admin"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1596
-#, no-c-format
-msgid ". To grant permissions to the user"
-msgstr ""
-
-#. Tag: #text
-#: snapper.xml:1597
-#, no-c-format
-msgid "for example, run:"
+msgid "Set values for <envar>ALLOW_USERS</envar> and/or <envar>ALLOW_GROUPS</envar> to grant permissions to users and/or groups, respectively. Multiple entries need to be separated by <keycap function=\"space\"/> . To grant permissions to the user <systemitem class=\"username\">www_admin</systemitem> for example, run:"
 msgstr ""
 
 #. Tag: screen

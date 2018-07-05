@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -600,20 +600,20 @@ msgstr ""
 msgid "Example <command>cpupower monitor</command> Output"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: tuning_power.xml:508
 #, no-c-format
-msgid "&prompt.root;cpupower monitor|Mperf || Idle_Stats"
-msgstr ""
-
-#. Tag: #text
-#: tuning_power.xml:510
-#, no-c-format
 msgid ""
-"&nbsp;CPU | C0 | Cx | Freq || POLL | C1 | C2 | C3 0| 3.71| 96.29| 2833|| "
-"0.00| 0.00| 0.02| 96.32 1| 100.0| -0.00| 2833|| 0.00| 0.00| 0.00| 0.00 2| "
-"9.06| 90.94| 1983|| 0.00| 7.69| 6.98| 76.45 3| 7.43| 92.57| 2039|| 0.00| "
-"2.60| 12.62| 77.52"
+"&prompt.root;cpupower monitor\n"
+"|Mperf                   || Idle_Stats\n"
+" <co xml:id=\"co.cpupower.mon.mperf\"/>&nbsp;                        <co xml:"
+"id=\"co.cpupower.mon.idle\"/>&nbsp;\n"
+"CPU | C0   | Cx   | Freq || POLL | C1   | C2   | C3\n"
+"   0|  3.71| 96.29|  2833||  0.00|  0.00|  0.02| 96.32\n"
+"   1| 100.0| -0.00|  2833||  0.00|  0.00|  0.00|  0.00\n"
+"   2|  9.06| 90.94|  1983||  0.00|  7.69|  6.98| 76.45\n"
+"   3|  7.43| 92.57|  2039||  0.00|  2.60| 12.62| 77.52\n"
+"     "
 msgstr ""
 
 #. Tag: para
@@ -729,62 +729,41 @@ msgstr ""
 msgid "Example &powertop; Output"
 msgstr ""
 
-#. Tag: #text
-#: tuning_power.xml:605
-#, no-c-format
-msgid "Cn Avg residency P-states (frequencies)"
-msgstr ""
-
-#. Tag: #text
-#: tuning_power.xml:605
-#, no-c-format
-msgid "&nbsp;"
-msgstr ""
-
-#. Tag: #text
-#: tuning_power.xml:612
+#. Tag: screen
+#: tuning_power.xml:604
 #, no-c-format
 msgid ""
-"C0 (cpu running) (11.6%) 2.00 Ghz 0.1%polling 0.0ms ( 0.0%) 2.00 Ghz 0.0%C1 "
-"4.4ms (57.3%) 1.87 Ghz 0.0%C2 10.0ms (31.1%) 1064 Mhz 99.9%Wakeups-from-idle "
-"per second : 11.2 interval: 5.0s"
-msgstr ""
-
-#. Tag: #text
-#: tuning_power.xml:613
-#, no-c-format
-msgid "no ACPI power usage estimate available"
-msgstr ""
-
-#. Tag: dbsuse-fo
-#: tuning_power.xml:614
-#, no-c-format
-msgid "<?dbsuse-fo font-size=\"0.7em\"?>"
-msgstr ""
-
-#. Tag: #text
-#: tuning_power.xml:615
-#, no-c-format
-msgid "Top causes for wakeups:"
-msgstr ""
-
-#. Tag: #text
-#: tuning_power.xml:616
-#, no-c-format
-msgid ""
-"96.2% (826.0) &lt;interrupt&gt; : extra timer interrupt 0.9% ( 8.0) &lt;"
-"kernel core&gt; : usb_hcd_poll_rh_status (rh_timer_func) 0.3% ( 2.4) &lt;"
-"interrupt&gt; : megasas 0.2% ( 2.0) &lt;kernel core&gt; : "
-"clocksource_watchdog (clocksource_watchdog) 0.2% ( 1.6) &lt;interrupt&gt; : "
-"eth1-TxRx-0 0.1% ( 1.0) &lt;interrupt&gt; : eth1-TxRx-4[...]Suggestion:"
-msgstr ""
-
-#. Tag: #text
-#: tuning_power.xml:626
-#, no-c-format
-msgid ""
-"Enable SATA ALPM link power management via:echo min_power &gt; /sys/class/"
-"scsi_host/host0/link_power_management_policyor press the S key."
+"Cn               Avg  residency       P-states   (frequencies)\n"
+"<co xml:id=\"co.powertop.cstates\"/>&nbsp;                <co xml:id=\"co."
+"powertop.avg\"/>&nbsp;     <co xml:id=\"co.powertop.residency\"/"
+">&nbsp;             <co xml:id=\"co.powertop.pstates\"/>&nbsp;           <co "
+"xml:id=\"co.powertop.freq\"/>\n"
+"C0 (cpu running)        (11.6%)       2.00 Ghz       0.1%\n"
+"polling         0.0ms   ( 0.0%)       2.00 Ghz       0.0%\n"
+"C1              4.4ms   (57.3%)       1.87 Ghz       0.0%\n"
+"C2             10.0ms   (31.1%)       1064 Mhz      99.9%\n"
+"\n"
+"\n"
+"Wakeups-from-idle per second : 11.2     interval: 5.0s <co xml:id=\"co."
+"powertop.wakeups\"/>\n"
+"no ACPI power usage estimate available <co xml:id=\"co.powertop.power\"/>\n"
+"<?dbsuse-fo font-size=\"0.7em\"?>\n"
+"Top causes for wakeups: <co xml:id=\"co.powertop.culprits\"/>\n"
+"96.2% (826.0)       &lt;interrupt&gt; : extra timer interrupt\n"
+" 0.9% (  8.0)     &lt;kernel core&gt; : usb_hcd_poll_rh_status "
+"(rh_timer_func)\n"
+" 0.3% (  2.4)       &lt;interrupt&gt; : megasas\n"
+" 0.2% (  2.0)     &lt;kernel core&gt; : clocksource_watchdog "
+"(clocksource_watchdog)\n"
+" 0.2% (  1.6)       &lt;interrupt&gt; : eth1-TxRx-0\n"
+" 0.1% (  1.0)       &lt;interrupt&gt; : eth1-TxRx-4\n"
+"\n"
+"[...]\n"
+"\n"
+"Suggestion: <co xml:id=\"co.powertop.suggestions\"/> Enable SATA ALPM link "
+"power management via:\n"
+"echo min_power &gt; /sys/class/scsi_host/host0/link_power_management_policy\n"
+"or press the S key."
 msgstr ""
 
 #. Tag: para

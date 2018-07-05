@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-07-05 01:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -494,16 +494,10 @@ msgstr ""
 msgid "Enabling Seamless and Synchronized Mouse Pointer Movement"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_configuration.xml:563
+#. Tag: para
+#: libvirt_configuration.xml:562
 #, no-c-format
-msgid "When you click within a &vmguest;'s console with the mouse, the pointer is captured by the console window and cannot be used outside the console unless it is explicitly released (by pressing"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:568
-#, no-c-format
-msgid "). To prevent the console from grabbing the key and to enable seamless pointer movement between host and guest instead, add a tablet to the &vmguest;."
+msgid "When you click within a &vmguest;'s console with the mouse, the pointer is captured by the console window and cannot be used outside the console unless it is explicitly released (by pressing <keycombo> <keycap function=\"alt\"/> <keycap function=\"control\"/> </keycombo> ). To prevent the console from grabbing the key and to enable seamless pointer movement between host and guest instead, add a tablet to the &vmguest;."
 msgstr ""
 
 #. Tag: para
@@ -710,58 +704,10 @@ msgstr ""
 msgid "Changing the Machine Type with <command>virsh</command>"
 msgstr ""
 
-#. Tag: command
-#: libvirt_configuration.xml:824
+#. Tag: para
+#: libvirt_configuration.xml:823
 #, no-c-format
-msgid "virt-install"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:824
-#, no-c-format
-msgid "By default, when installing with the"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:824
-#, no-c-format
-msgid "tool, the machine type for &vmguest; is"
-msgstr ""
-
-#. Tag: emphasis
-#: libvirt_configuration.xml:825
-#, no-c-format
-msgid "pc-i440fx"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:826
-#, no-c-format
-msgid ". The machine type is stored in the &vmguest;'s xml configuration file in"
-msgstr ""
-
-#. Tag: filename
-#: libvirt_configuration.xml:827
-#, no-c-format
-msgid "/etc/libvirt/qemu/"
-msgstr ""
-
-#. Tag: tag
-#: libvirt_configuration.xml:827
-#, no-c-format
-msgid "type"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:827
-#, no-c-format
-msgid "in the tag"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:828
-#, no-c-format
-msgid ":"
+msgid "By default, when installing with the <command>virt-install</command> tool, the machine type for &vmguest; is <emphasis>pc-i440fx</emphasis> . The machine type is stored in the &vmguest;'s xml configuration file in <filename>/etc/libvirt/qemu/</filename> in the tag <tag>type</tag> :"
 msgstr ""
 
 #. Tag: screen
@@ -803,22 +749,10 @@ msgstr ""
 msgid "&prompt.sudo;virsh edit sles11"
 msgstr ""
 
-#. Tag: #text
-#: libvirt_configuration.xml:861
+#. Tag: para
+#: libvirt_configuration.xml:859
 #, no-c-format
-msgid "Change the value of the"
-msgstr ""
-
-#. Tag: tag
-#: libvirt_configuration.xml:861
-#, no-c-format
-msgid "machine"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:863
-#, no-c-format
-msgid "attribute:"
+msgid "Change the value of the <tag class=\"attribute\">machine</tag> attribute:"
 msgstr ""
 
 #. Tag: screen
@@ -1672,22 +1606,14 @@ msgstr ""
 msgid "Create a temporary XML file (for example <filename>/tmp/vf-interface.xml</filename> containing the data necessary to add a VF network device to an existing &vmguest;. The minimal content of the file needs to look like the following:"
 msgstr ""
 
-#. Tag: #text
+#. Tag: screen
 #: libvirt_configuration.xml:1594
 #, no-c-format
-msgid "&lt;interface type='hostdev'&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:1595
-#, no-c-format
-msgid "&lt;source&gt; &lt;address type='pci' domain='0' bus='11' slot='16' function='0'2/&gt;"
-msgstr ""
-
-#. Tag: #text
-#: libvirt_configuration.xml:1597
-#, no-c-format
-msgid "&lt;/source&gt;&lt;/interface&gt;"
+msgid "&lt;interface type='hostdev'&gt;<co xml:id=\"sriov.iface\"/>\n"
+      " &lt;source&gt;\n"
+      "  &lt;address type='pci' domain='0' bus='11' slot='16' function='0'2/&gt;<co xml:id=\"sriov.data\"/>\n"
+      " &lt;/source&gt;\n"
+      "&lt;/interface&gt;"
 msgstr ""
 
 #. Tag: para
