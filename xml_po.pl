@@ -300,6 +300,8 @@ __EOF__
   # XML out
   my $dest = $d->toString(2);
   $dest =~ s/__XML_PO__&amp;/&/g;
+  # tweak; XML::LibXML removes entity reference??
+  $dest =~ s/<!ENTITY % (.*) SYSTEM (.*)>/<!ENTITY % $1 SYSTEM $2>\n%$1;/;
   print $dest;
 }
 
