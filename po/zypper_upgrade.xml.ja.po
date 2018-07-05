@@ -1,26 +1,29 @@
+# translation of zypper_upgrade.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: zypper_upgrade.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:15+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-05 11:34+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: zypper_upgrade.xml:11
 #, no-c-format
 msgid "Distribution Upgrade with Zypper"
-msgstr ""
+msgstr "zypper を利用したディストリビューションのアップグレード"
 
 #. Tag: para
 #: zypper_upgrade.xml:17
@@ -30,6 +33,9 @@ msgid ""
 "the next version of the distribution. Most importantly, you can initiate the "
 "system upgrade process from within the running system."
 msgstr ""
+"<command>zypper</command> コマンドラインユーティリティを利用することで、"
+"お使いのシステムを次のバージョンにアップグレードすることができます。それだけではなく、"
+" <command>zypper</command> ではシステムを実行しながらアップグレードを行なうことができます。"
 
 #. Tag: para
 #: zypper_upgrade.xml:22
@@ -38,12 +44,14 @@ msgid ""
 "This feature is attractive for advanced users who want to run remote "
 "upgrades or upgrades on many similarly configured systems."
 msgstr ""
+"このような機能は、リモートからのアップグレードを行ないたい高度なユーザや、"
+"似たような設定のシステムを多数管理しているようなユーザにとって、便利な仕組みとなります。"
 
 #. Tag: title
 #: zypper_upgrade.xml:27
 #, no-c-format
 msgid "Preparing the Upgrade with Zypper"
-msgstr ""
+msgstr "zypper を利用したアップグレードの準備"
 
 #. Tag: para
 #: zypper_upgrade.xml:28
@@ -52,6 +60,8 @@ msgid ""
 "To avoid unexpected errors during the upgrade process using <command>zypper</"
 "command> , minimize risky constellations."
 msgstr ""
+"<command>zypper</command> を利用してアップグレード処理を行なう場合、不用意なエラーを"
+"発生されないようにするため、リスクの原因をできる限り取り除いておくことをお勧めします。"
 
 #. Tag: para
 #: zypper_upgrade.xml:34
@@ -60,6 +70,8 @@ msgid ""
 "Quit as many applications and stop unneeded services as possible and log out "
 "all regular users."
 msgstr ""
+"可能な限り多くのアプリケーションや不要なサービスを停止もしくは終了させるほか、"
+"全ての一般ユーザをログアウトさせてください。"
 
 #. Tag: para
 #: zypper_upgrade.xml:40
@@ -71,18 +83,23 @@ msgid ""
 "edit their version string to match the version number of the distribution of "
 "the upgraded now running system."
 msgstr ""
+"アップグレードを開始する前には、あらかじめサードパーティ製のリポジトリを無効化するか、"
+"既定のシステムリポジトリが提供するパッケージが正しくインストールされるよう、"
+"サードパーティ製のリポジトリの優先順位を下げてください。アップグレード終了後に"
+"再度これらのリポジトリを有効化し、ディストリビューションのバージョンにあわせて"
+"リポジトリの URL を変更し、必要なソフトウエアをインストールしてください。"
 
 #. Tag: title
 #: zypper_upgrade.xml:51
 #, no-c-format
 msgid "The Upgrade Procedure"
-msgstr ""
+msgstr "アップグレード作業"
 
 #. Tag: title
 #: zypper_upgrade.xml:53
 #, no-c-format
 msgid "Check Your System Backup"
-msgstr ""
+msgstr "システムバックアップの確認"
 
 #. Tag: para
 #: zypper_upgrade.xml:54
@@ -92,6 +109,10 @@ msgid ""
 "backup is up-to-date and restorable. This is especially important because "
 "you need to enter many of the following steps manually."
 msgstr ""
+"アップグレードの処理を始める前に、まずはシステムバックアップが正しく採取され、"
+"かつ最新の状態で復元可能であることをご確認ください。下記の手順では、様々な"
+"手作業が発生するため、誤ってシステムを壊してしまう危険性もはらんでいます。"
+"そのため、バックアップは非常に重要です。"
 
 #. Tag: para
 #: zypper_upgrade.xml:60
@@ -102,6 +123,9 @@ msgid ""
 "<command>zypper in</command> . In the following text, the short variants are "
 "used."
 msgstr ""
+"<command>zypper</command> プログラムでは、長いコマンド名と短いコマンド名の両方に"
+"対応しています。たとえば <command>zypper install</command> は <command>zypper in</command> "
+"と短くすることができます。下記の文章では、短いほうのコマンドで記述しています。"
 
 #. Tag: para
 #: zypper_upgrade.xml:68
@@ -110,6 +134,8 @@ msgid ""
 "Run the online update to make sure the software management stack is up-to-"
 "date. For more information, see <xref linkend=\"cha.onlineupdate.you\"/> ."
 msgstr ""
+"オンライン更新を実行して、ソフトウエア管理スタックが最新の状態になっていることを"
+"ご確認ください。詳しくは <xref linkend=\"cha.onlineupdate.you\"/> をお読みください。"
 
 #. Tag: para
 #: zypper_upgrade.xml:75
@@ -121,18 +147,24 @@ msgid ""
 "\"/> ). The name of the repositories used in the following steps may vary "
 "depending on your customizations."
 msgstr ""
+"更新に利用したいリポジトリを設定します。このリポジトリの設定は、間違えることなく"
+"正しく設定することが重要です。リポジトリは &yast; (詳しくは <xref linkend=\"sec.yast-software."
+"instsource\"/> をお読みください) のほか、 <command>zypper</command> でも"
+"設定することができます (詳しくは <xref linkend=\"sec.zypper\"/> をお読みください) 。"
+"なお、下記の手順内で説明しているリポジトリの名前は、ご利用の環境で自由に"
+"カスタマイズできるものですので、実際のものとは異なる場合があります。"
 
 #. Tag: para
 #: zypper_upgrade.xml:83
 #, no-c-format
 msgid "To view your current repositories enter:"
-msgstr ""
+msgstr "現在設定されているリポジトリを一覧表示するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: zypper_upgrade.xml:86
 #, no-c-format
 msgid "&prompt.user;zypper lr -u"
-msgstr ""
+msgstr "&prompt.user;zypper lr -u"
 
 #. Tag: para
 #: zypper_upgrade.xml:89
@@ -143,6 +175,10 @@ msgid ""
 "15.0<literal>leap/</literal></phrase> . Add the new repositories with "
 "commands such as:"
 msgstr ""
+"<phrase os=\"sles;sled\">11-SP2 から 11-SP3</phrase> <phrase os=\"osuse\">42.3 から "
+"15.0<literal>leap/</literal></phrase> などのように、システムに設定されて"
+"いるリポジトリのバージョン番号を新しくします。新しいリポジトリは、下記のように"
+"することで追加できます:"
 
 #. Tag: screen
 #: zypper_upgrade.xml:95
@@ -156,6 +192,13 @@ msgid ""
 "Update</replaceable>\n"
 "      "
 msgstr ""
+"\n"
+"server=<replaceable>http://download.example.org</replaceable>\n"
+"&prompt.sudo;zypper ar $server/distribution/11-SP3/repo/oss/ "
+"<replaceable>SLE-11-SP3</replaceable>\n"
+"&prompt.sudo;zypper ar $server/update/11-SP3/ <replaceable>SLE-11-SP3-"
+"Update</replaceable>\n"
+"      "
 
 #. Tag: screen
 #: zypper_upgrade.xml:100
@@ -169,12 +212,19 @@ msgid ""
 "Update</replaceable>\n"
 "      "
 msgstr ""
+"\n"
+"server=<replaceable>http://download.example.org</replaceable>\n"
+"&prompt.sudo;zypper ar $server/distribution/leap/15.0/repo/oss/ "
+"<replaceable>Leap-15-OSS</replaceable>\n"
+"&prompt.sudo;zypper ar $server/update/leap/15.0/oss/ <replaceable>Leap-15-"
+"Update</replaceable>\n"
+"      "
 
 #. Tag: para
 #: zypper_upgrade.xml:105
 #, no-c-format
 msgid "And remove the old repositories:"
-msgstr ""
+msgstr "あとは古いリポジトリを削除します:"
 
 #. Tag: screen
 #: zypper_upgrade.xml:108
@@ -185,6 +235,10 @@ msgid ""
 "zypper rr <replaceable>SLE-11-Update</replaceable>\n"
 "      "
 msgstr ""
+"\n"
+"zypper rr <replaceable>SLE-11-SP2</replaceable>\n"
+"zypper rr <replaceable>SLE-11-Update</replaceable>\n"
+"      "
 
 #. Tag: screen
 #: zypper_upgrade.xml:112
@@ -195,6 +249,10 @@ msgid ""
 "zypper rr <replaceable>Leap-42.3-Update</replaceable>\n"
 "      "
 msgstr ""
+"\n"
+"zypper rr <replaceable>Leap-42.3-OSS</replaceable>\n"
+"zypper rr <replaceable>Leap-42.3-Update</replaceable>\n"
+"      "
 
 #. Tag: para
 #: zypper_upgrade.xml:116
@@ -203,6 +261,8 @@ msgid ""
 "If necessary, repeat these steps for other repositories to ensure a clean "
 "upgrade path for all your packages."
 msgstr ""
+"また、必要であれば上記の手順を繰り返して、お使いの全てのパッケージが正しく"
+"アップグレードされるよう、不要なリポジトリも削除します。"
 
 #. Tag: para
 #: zypper_upgrade.xml:122
@@ -213,24 +273,29 @@ msgid ""
 "repositories only (replace <replaceable>REPO-ALIAS</replaceable> with the "
 "name of the repository you want to disable):"
 msgstr ""
+"後述の <command>zypper dup</command> は既定のリポジトリでのみ正しく動作することを"
+"保証している仕組みであることから、サードパーティ製のリポジトリや &obs; の"
+"リポジトリを無効化する必要があります。下記のようなコマンドを実行して、"
+"不要なリポジトリを無効化してください (<replaceable>リポジトリの別名</replaceable> "
+"を無効化したいリポジトリの名前で置き換えます):"
 
 #. Tag: screen
 #: zypper_upgrade.xml:128
 #, no-c-format
 msgid "&prompt.sudo;zypper mr -d <replaceable>REPO-ALIAS</replaceable>"
-msgstr ""
+msgstr "&prompt.sudo;zypper mr -d <replaceable>リポジトリの別名</replaceable>"
 
 #. Tag: para
 #: zypper_upgrade.xml:129
 #, no-c-format
 msgid "Alternatively, you can lower the priority of these repositories."
-msgstr ""
+msgstr "無効化する代わりに、これらのリポジトリの優先順位を下げてもかまいません。"
 
 #. Tag: title
 #: zypper_upgrade.xml:133
 #, no-c-format
 msgid "Handling of Unresolved Dependencies"
-msgstr ""
+msgstr "未解決の依存関係の処理"
 
 #. Tag: para
 #: zypper_upgrade.xml:134
@@ -240,6 +305,9 @@ msgid ""
 "dependencies, but it keeps packages of disabled repositories as long as "
 "their dependencies are satisfied."
 msgstr ""
+"後述の <command>zypper dup</command> コマンドを実行すると、未解決のままになっている"
+"依存関係が存在する場合、関連するパッケージは全て削除されます。なお、依存関係に"
+"問題がなければ、リポジトリを無効化してもパッケージが削除されることはありません。"
 
 #. Tag: para
 #: zypper_upgrade.xml:140
@@ -253,18 +321,26 @@ msgid ""
 "orphaned. Such packages get uninstalled if their dependencies cannot be "
 "satisfied. If they can be satisfied, such packages stay installed."
 msgstr ""
+"<command>zypper dup</command> を実行すると、インストール済みの全てのパッケージ"
+"を、利用可能なリポジトリ内にあるものと入れ替えて、新しくします。このとき、"
+"バージョン番号やアーキテクチャに関する考慮は行なわれません。なお、パッケージの"
+"ベンダ (製造元) については、 <option>--no-allow-vendor-change</option> を"
+"指定することで、変更されないようにすることができます。また、リポジトリ内に"
+"存在しないパッケージについては、孤立したパッケージであるものと見なされます。"
+"孤立したパッケージは、依存関係を満たすことができない場合は削除され、"
+"依存関係を満たすことができる場合はそのまま保持されます (インストールされたままになります) 。"
 
 #. Tag: para
 #: zypper_upgrade.xml:152
 #, no-c-format
 msgid "Once done, check your repository configuration with:"
-msgstr ""
+msgstr "完了したら、下記のコマンドを実行してリポジトリの一覧を確認します:"
 
 #. Tag: screen
 #: zypper_upgrade.xml:155
 #, no-c-format
 msgid "&prompt.user;zypper lr -d"
-msgstr ""
+msgstr "&prompt.user;zypper lr -d"
 
 #. Tag: para
 #: zypper_upgrade.xml:160
@@ -273,6 +349,8 @@ msgid ""
 "Refresh local metadata and repository contents with <command>zypper ref</"
 "command> ."
 msgstr ""
+"続いて <command>zypper ref</command> を実行して、メタデータとリポジトリの"
+"コンテンツ情報を更新します。"
 
 #. Tag: para
 #: zypper_upgrade.xml:166
@@ -281,6 +359,8 @@ msgid ""
 "Update Zypper and the package management itself with <command>zypper patch --"
 "updatestack-only</command> ."
 msgstr ""
+"まずは <command>zypper patch --updatestack-only</command> を実行して、"
+" zypper とパッケージ管理システム自身を更新します。"
 
 #. Tag: para
 #: zypper_upgrade.xml:172
@@ -290,9 +370,13 @@ msgid ""
 "are asked to confirm the license of &productname; and of some packages&mdash;"
 "depending on the set of installed packages."
 msgstr ""
+"あとは残りのパッケージを <command>zypper dup</command> で更新して、ディストリビューション"
+"全体をアップグレードします。なお、 &productname; とその他のパッケージについて、"
+"ライセンス確認メッセージが表示されます。"
 
 #. Tag: para
 #: zypper_upgrade.xml:179
 #, no-c-format
 msgid "Reboot the system with <command>shutdown -r now</command> ."
-msgstr ""
+msgstr "最後に <command>shutdown -r now</command> コマンドでシステムを再起動します。"
+

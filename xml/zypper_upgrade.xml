@@ -3,176 +3,92 @@
 <!ENTITY % entities SYSTEM "entity-decl.ent">
 ]>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.update.zypper">
- <title>Distribution Upgrade with Zypper</title>
+ <title>zypper を利用したディストリビューションのアップグレード</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
   </dm:docmanager>
  </info>
- <para>
-  With the <command>zypper</command> command line utility you can upgrade to
-  the next version of the distribution. Most importantly, you can initiate
-  the system upgrade process from within the running system.
- </para>
- <para>
-  This feature is attractive for advanced users who want to run remote
-  upgrades or upgrades on many similarly configured systems.
- </para>
+ <para><command>zypper</command> コマンドラインユーティリティを利用することで、お使いのシステムを次のバージョンにアップグレードすることができます。それだけではなく、 <command>zypper</command> ではシステムを実行しながらアップグレードを行なうことができます。</para>
+ <para>このような機能は、リモートからのアップグレードを行ないたい高度なユーザや、似たような設定のシステムを多数管理しているようなユーザにとって、便利な仕組みとなります。</para>
  <sect3 xml:id="sec.update.zypper.prep">
-  <title>Preparing the Upgrade with Zypper</title>
-  <para>
-   To avoid unexpected errors during the upgrade process using
-   <command>zypper</command>, minimize risky constellations.
-  </para>
+  <title>zypper を利用したアップグレードの準備</title>
+  <para><command>zypper</command> を利用してアップグレード処理を行なう場合、不用意なエラーを発生されないようにするため、リスクの原因をできる限り取り除いておくことをお勧めします。</para>
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     Quit as many applications and stop unneeded services as possible and
-     log out all regular users.
-    </para>
+    <para>可能な限り多くのアプリケーションや不要なサービスを停止もしくは終了させるほか、全ての一般ユーザをログアウトさせてください。</para>
    </listitem>
    <listitem>
-    <para>
-     Disable third party repositories before starting the upgrade, or lower
-     the priority of these repositories to make sure packages from the
-     default system repositories will get preference. Enable them again
-     after the upgrade and edit their version string to match the version
-     number of the distribution of the upgraded now running system.
-    </para>
+    <para>アップグレードを開始する前には、あらかじめサードパーティ製のリポジトリを無効化するか、既定のシステムリポジトリが提供するパッケージが正しくインストールされるよう、サードパーティ製のリポジトリの優先順位を下げてください。アップグレード終了後に再度これらのリポジトリを有効化し、ディストリビューションのバージョンにあわせてリポジトリの URL を変更し、必要なソフトウエアをインストールしてください。</para>
    </listitem>
   </itemizedlist>
  </sect3>
  <sect3 xml:id="sec.update.zypper.proc">
-  <title>The Upgrade Procedure</title>
+  <title>アップグレード作業</title>
   <warning>
-   <title>Check Your System Backup</title>
-   <para>
-    Before actually starting the upgrade procedure, check that your system
-    backup is up-to-date and restorable. This is especially important
-    because you need to enter many of the following steps manually.
-   </para>
+   <title>システムバックアップの確認</title>
+   <para>アップグレードの処理を始める前に、まずはシステムバックアップが正しく採取され、かつ最新の状態で復元可能であることをご確認ください。下記の手順では、様々な手作業が発生するため、誤ってシステムを壊してしまう危険性もはらんでいます。そのため、バックアップは非常に重要です。</para>
   </warning>
-  <para>
-   The program <command>zypper</command> supports long and short command
-   names. For example, you can abbreviate <command>zypper install</command>
-   as <command>zypper in</command>. In the following text, the short
-   variants are used.
-  </para>
+  <para><command>zypper</command> プログラムでは、長いコマンド名と短いコマンド名の両方に対応しています。たとえば <command>zypper install</command> は <command>zypper in</command> と短くすることができます。下記の文章では、短いほうのコマンドで記述しています。</para>
   <procedure>
    <step>
-    <para>
-     Run the online update to make sure the software management stack is
-     up-to-date. For more information, see
-     <xref linkend="cha.onlineupdate.you"/>.
-    </para>
+    <para>オンライン更新を実行して、ソフトウエア管理スタックが最新の状態になっていることをご確認ください。詳しくは <xref linkend="cha.onlineupdate.you"/> をお読みください。</para>
    </step>
    <step>
-    <para>
-     Configure the repositories you want to use as update sources. Getting
-     this right is crucial. Either use &yast; (see
-     <xref linkend="sec.yast-software.instsource"/>) or <command>zypper</command>
-     (see <xref linkend="sec.zypper"/>).
-     The name of the repositories used in the following steps may vary
-     depending on your customizations.
-    </para>
-    <para>
-     To view your current repositories enter:
-    </para>
+    <para>更新に利用したいリポジトリを設定します。このリポジトリの設定は、間違えることなく正しく設定することが重要です。リポジトリは &yast; (詳しくは <xref linkend="sec.yast-software.instsource"/> をお読みください) のほか、 <command>zypper</command> でも設定することができます (詳しくは <xref linkend="sec.zypper"/> をお読みください) 。なお、下記の手順内で説明しているリポジトリの名前は、ご利用の環境で自由にカスタマイズできるものですので、実際のものとは異なる場合があります。</para>
+    <para>現在設定されているリポジトリを一覧表示するには、下記のコマンドを実行します:</para>
 <screen>&prompt.user;zypper lr -u</screen>
     <substeps performance="required">
      <step>
-      <para>
-       Increase the version number of the system repositories from <phrase os="sles;sled">11-SP2 to 11-SP3</phrase> <phrase os="osuse">42.3 to
-       15.0<literal>leap/</literal></phrase>. Add the new repositories with
-       commands such as:
-      </para>
-<screen os="sles;sled">
+      <para><phrase os="sles;sled">11-SP2 から 11-SP3</phrase> <phrase os="osuse">42.3 から 15.0<literal>leap/</literal></phrase> などのように、システムに設定されているリポジトリのバージョン番号を新しくします。新しいリポジトリは、下記のようにすることで追加できます:</para>
+<screen>
 server=<replaceable>http://download.example.org</replaceable>
 &prompt.sudo;zypper ar $server/distribution/11-SP3/repo/oss/ <replaceable>SLE-11-SP3</replaceable>
 &prompt.sudo;zypper ar $server/update/11-SP3/ <replaceable>SLE-11-SP3-Update</replaceable>
       </screen>
-<screen os="osuse">
+<screen>
 server=<replaceable>http://download.example.org</replaceable>
 &prompt.sudo;zypper ar $server/distribution/leap/15.0/repo/oss/ <replaceable>Leap-15-OSS</replaceable>
 &prompt.sudo;zypper ar $server/update/leap/15.0/oss/ <replaceable>Leap-15-Update</replaceable>
       </screen>
-      <para>
-       And remove the old repositories:
-      </para>
-<screen os="sles;sled">
+      <para>あとは古いリポジトリを削除します:</para>
+<screen>
 zypper rr <replaceable>SLE-11-SP2</replaceable>
 zypper rr <replaceable>SLE-11-Update</replaceable>
       </screen>
-<screen os="osuse">
+<screen>
 zypper rr <replaceable>Leap-42.3-OSS</replaceable>
 zypper rr <replaceable>Leap-42.3-Update</replaceable>
       </screen>
-      <para>
-       If necessary, repeat these steps for other repositories to ensure a
-       clean upgrade path for all your packages.
-      </para>
+      <para>また、必要であれば上記の手順を繰り返して、お使いの全てのパッケージが正しくアップグレードされるよう、不要なリポジトリも削除します。</para>
      </step>
      <step>
-      <para>
-       Disable third party repositories or other &obs; repositories, because
-       <command>zypper dup</command> is guaranteed to work with the default
-       repositories only (replace <replaceable>REPO-ALIAS</replaceable> with
-       the name of the repository you want to disable):
-      </para>
-<screen>&prompt.sudo;zypper mr -d <replaceable>REPO-ALIAS</replaceable></screen>
-      <para>
-       Alternatively, you can lower the priority of these repositories.
-      </para>
+      <para>後述の <command>zypper dup</command> は既定のリポジトリでのみ正しく動作することを保証している仕組みであることから、サードパーティ製のリポジトリや &obs; のリポジトリを無効化する必要があります。下記のようなコマンドを実行して、不要なリポジトリを無効化してください (<replaceable>リポジトリの別名</replaceable> を無効化したいリポジトリの名前で置き換えます):</para>
+<screen>&prompt.sudo;zypper mr -d <replaceable>リポジトリの別名</replaceable></screen>
+      <para>無効化する代わりに、これらのリポジトリの優先順位を下げてもかまいません。</para>
       <note>
-       <title>Handling of Unresolved Dependencies</title>
-       <para>
-        <command>zypper dup</command> will remove all packages having
-        unresolved dependencies, but it keeps packages of disabled
-        repositories as long as their dependencies are satisfied.
-       </para>
+       <title>未解決の依存関係の処理</title>
+       <para>後述の <command>zypper dup</command> コマンドを実行すると、未解決のままになっている依存関係が存在する場合、関連するパッケージは全て削除されます。なお、依存関係に問題がなければ、リポジトリを無効化してもパッケージが削除されることはありません。</para>
       </note>
-      <para>
-       <command>zypper dup</command> ensures that all installed packages come
-       from one of the available repositories. It does not consider the version
-       or architecture, but prevents changing the vendor of the installed
-       packages by default, using the <option>--no-allow-vendor-change</option>
-       option. Packages that are no longer available in the repositories are
-       considered orphaned. Such packages get uninstalled if their dependencies
-       cannot be satisfied. If they can be satisfied, such packages stay
-       installed.
-      </para>
+      <para><command>zypper dup</command> を実行すると、インストール済みの全てのパッケージを、利用可能なリポジトリ内にあるものと入れ替えて、新しくします。このとき、バージョン番号やアーキテクチャに関する考慮は行なわれません。なお、パッケージのベンダ (製造元) については、 <option>--no-allow-vendor-change</option> を指定することで、変更されないようにすることができます。また、リポジトリ内に存在しないパッケージについては、孤立したパッケージであるものと見なされます。孤立したパッケージは、依存関係を満たすことができない場合は削除され、依存関係を満たすことができる場合はそのまま保持されます (インストールされたままになります) 。</para>
      </step>
      <step>
-      <para>
-       Once done, check your repository configuration with:
-      </para>
+      <para>完了したら、下記のコマンドを実行してリポジトリの一覧を確認します:</para>
 <screen>&prompt.user;zypper lr -d</screen>
      </step>
     </substeps>
    </step>
    <step>
-    <para>
-     Refresh local metadata and repository contents with <command>zypper
-     ref</command>.
-    </para>
+    <para>続いて <command>zypper ref</command> を実行して、メタデータとリポジトリのコンテンツ情報を更新します。</para>
    </step>
    <step>
-    <para>
-     Update Zypper and the package management itself with <command>zypper
-      patch --updatestack-only</command>.
-    </para>
+    <para>まずは <command>zypper patch --updatestack-only</command> を実行して、 zypper とパッケージ管理システム自身を更新します。</para>
    </step>
    <step>
-    <para>
-     Run the actual distribution upgrade with <command>zypper dup</command>.
-     You are asked to confirm the license of &productname; and of some
-     packages&mdash;depending on the set of installed packages.
-    </para>
+    <para>あとは残りのパッケージを <command>zypper dup</command> で更新して、ディストリビューション全体をアップグレードします。なお、 &productname; とその他のパッケージについて、ライセンス確認メッセージが表示されます。</para>
    </step>
    <step>
-    <para>
-     Reboot the system with <command>shutdown -r now</command>.
-    </para>
+    <para>最後に <command>shutdown -r now</command> コマンドでシステムを再起動します。</para>
    </step>
   </procedure>
  </sect3>
