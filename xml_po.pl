@@ -16,7 +16,7 @@ my @SkipNodes =
 my @literalNodes =
   ( "screen" );
 my @ignoreNodes =
-  ( "#comment", "remark", "xml-stylesheet" );
+  ( "#comment", "remark", "xml-stylesheet", "suse-quickstart" );
 my $dummyParaStart =
   "<para xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:xi=\"http://www.w3.org/2001/XInclude\">";
 my $dummyParaEnd = "</para>";
