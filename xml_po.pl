@@ -137,7 +137,7 @@ sub ProcessNode {
     if (length($srctext) > 0) {
       $result{$srctext}{"nodeName"} = $node->nodeName;
       $result{$srctext}{"lineNumber"} = $node->line_number();
-      $result{$srctext}{"ref"} = \$node;
+      push(@{$result{$srctext}{"ref"}}, \$node);
     }
   } else {
     foreach my $child (@children) {
@@ -283,16 +283,18 @@ __EOF__
           $msgstr =~ s/\\n/\n/g;
         }
 
-        my $newNode = ${$result{$r}{"ref"}}->getOwner->createElement($result{$r}{"nodeName"});
-        my $chunk = $parser->parse_balanced_chunk(
-          #dummy <para> in order to resolve XML namespace
-          $dummyParaStart . $msgstr . $dummyParaEnd);
-        for my $c (($chunk->childNodes)[0]->childNodes) {
-          $newNode->addChild($c);
-        }
+        for my $oldNode (@{$result{$r}{"ref"}}) {
+          my $newNode = $$oldNode->getOwner->createElement($result{$r}{"nodeName"});
+          my $chunk = $parser->parse_balanced_chunk(
+            #dummy <para> in order to resolve XML namespace
+            $dummyParaStart . $msgstr . $dummyParaEnd);
+          for my $c (($chunk->childNodes)[0]->childNodes) {
+            $newNode->addChild($c);
+          }
 
-        my $parentNode = ${$result{$r}{"ref"}}->parentNode;
-        $parentNode->replaceChild($newNode, ${$result{$r}{"ref"}});
+          my $parentNode = $$oldNode->parentNode;
+          $parentNode->replaceChild($newNode, $$oldNode);
+        }
       }
     }
   }
