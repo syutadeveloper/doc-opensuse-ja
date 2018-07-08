@@ -1,26 +1,29 @@
+# translation of deployment_boot_parameters.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: deployment_boot_parameters.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-08 17:30+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:11
 #, no-c-format
 msgid "Boot Parameters"
-msgstr ""
+msgstr "起動パラメータ"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:14
@@ -30,12 +33,15 @@ msgid ""
 "choosing the source of the installation data or setting the network "
 "configuration."
 msgstr ""
+"&productname; では、起動時にパラメータを指定することができます。"
+"起動時のパラメータでは、インストールデータの存在場所の指定や、"
+"ネットワークの設定値などを指定することができます。"
 
 #. Tag: dm:translation
 #: deployment_boot_parameters.xml:23
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:27
@@ -47,6 +53,12 @@ msgid ""
 "automated setups, the boot parameters can be provided with <filename>initrd</"
 "filename> or an <filename>info</filename> file."
 msgstr ""
+"起動時のパラメータを適切に設定することで、インストール作業をより簡単に"
+"行なうことができるようになります。多くのパラメータは起動後の linuxrc で"
+"設定することができますが、起動時に設定してしまったほうがより簡単にできます。"
+"また、手順を自動化するような場合でも、 <filename>initrd</"
+"filename> や <filename>info</filename> ファイルに対して起動時の"
+"パラメータを指定することができます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:34
@@ -58,12 +70,17 @@ msgid ""
 "&kvm; or &xen; hypervisor, follow the instructions for the &amd64;/&intel64; "
 "architecture."
 msgstr ""
+"インストールシステムの起動は、お使いのハードウエアアーキテクチャによって"
+"異なる方式で行なわれます。特に PC (&amd64;/&intel64;) とメインフレームでは、"
+"大きく異なります。 &kvm; や &xen; のハイパーバイザを利用して &productname; "
+"を &vmguest; としてインストールするような場合は、 &amd64;/&intel64; アーキテクチャの"
+"手順に従ってください。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:42
 #, no-c-format
 msgid "Boot Options and Boot Parameters"
-msgstr ""
+msgstr "起動オプションと起動パラメータについて"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:43
@@ -73,12 +90,15 @@ msgid ""
 "emphasis> are often used interchangeably. In this documentation, we mostly "
 "use the term <emphasis>Boot Parameters</emphasis> ."
 msgstr ""
+"<emphasis>起動パラメータ</emphasis> と <emphasis>起動オプション</emphasis> は、"
+"しばしば同じ意味で用いられる用語です。本文書内では、 <emphasis>起動パラメータ</emphasis> "
+"の用語を用いて説明しています。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:50
 #, no-c-format
 msgid "Using the Default Boot Parameters"
-msgstr ""
+msgstr "既定の起動パラメータの使用"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:51
@@ -88,6 +108,8 @@ msgid ""
 "> . Generally, selecting <guimenu>Installation</guimenu> starts the "
 "installation boot process."
 msgstr ""
+"起動パラメータについては、 <xref linkend=\"cha.install\"/> に詳細な説明が書かれています。"
+"通常は <guimenu>インストール</guimenu> を選択するだけで、インストールシステムを起動することができます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:56
@@ -98,6 +120,10 @@ msgid ""
 "information about troubleshooting the installation process, refer to <xref "
 "linkend=\"cha.installation_troubleshooting\"/> ."
 msgstr ""
+"何らかの問題が発生した場合は、 <guimenu>インストール&mdash;ACPI 無効</guimenu> "
+"もしくは <guimenu>インストール&mdash;安全設定</guimenu> をお使いください。"
+"インストール作業時のトラブルシューティングについて、詳しくは <xref "
+"linkend=\"cha.installation_troubleshooting\"/> をお読みください。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:62
@@ -111,12 +137,18 @@ msgid ""
 "description of the available function keys is available in <xref linkend="
 "\"sec.boot_parameters.screen\"/> ."
 msgstr ""
+"また、画面の最下部にあるメニューバーでは、いくつかの高度な機能を提供しています。"
+"それぞれはファンクションキー (<keycap>F1</keycap> ... <keycap>F12</keycap>) に"
+"対応しているため、起動パラメータの書式 (<xref linkend=\"cha.boot_parameters\"/>) "
+"を知らなくても、ある程度の設定を行なうことができるようになっています。"
+"それぞれのファンクションキーの機能について、詳しくは <xref linkend="
+"\"sec.boot_parameters.screen\"/> をお読みください。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:75
 #, no-c-format
 msgid "PC (&amd64;/&intel64;/&arm64;)"
-msgstr ""
+msgstr "PC (&amd64;/&intel64;/&arm64;)"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:76
@@ -125,12 +157,14 @@ msgid ""
 "This section describes changing the boot parameters for &amd64;, &intel64;, "
 "and &arm64;."
 msgstr ""
+"本章では、それぞれ &amd64;, &intel64;, &arm64; に対する起動パラメータの変更"
+"方法を説明しています。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:81
 #, no-c-format
 msgid "The Boot Screen on Machines Equipped with Traditional BIOS"
-msgstr ""
+msgstr "従来型の BIOS が搭載されたマシンの起動画面"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:82
@@ -142,6 +176,12 @@ msgid ""
 "of the other options with the arrow keys and press <keycap function=\"enter"
 "\"/> to boot it. The relevant options are:"
 msgstr ""
+"起動画面ではインストール処理に対するいくつかのオプションが用意されています。"
+"<guimenu>ハードディスクからの起動</guimenu> は既定で選択されていますが、これは"
+"インストール後も CD/DVD をドライブに入れたままにしていることがよくあるため、"
+"インストール済みのシステムを起動するための選択肢です。矢印 (カーソル) キーを"
+"利用していずれかの選択肢を選んで、 <keycap function=\"enter\"/> を押すと"
+"起動することができます。選択肢は下記のとおりです:"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:118
@@ -151,6 +191,9 @@ msgid ""
 "information, see <xref linkend=\"sec.trouble.data.recover.rescue\"/> . "
 "<phrase os=\"sled;osuse\"> This option is not available on live CDs.</phrase>"
 msgstr ""
+"グラフィカルユーザインターフェイスの無い、最小限の Linux システムを起動します。"
+"詳しくは <xref linkend=\"sec.trouble.data.recover.rescue\"/> "
+"をお読みください。 <phrase os=\"sled;osuse\"> なお、このオプションはライブ CD の場合は利用できません。</phrase>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:144
@@ -164,6 +207,14 @@ msgid ""
 "installation routine aborts. Replace the broken medium and restart the "
 "installation process."
 msgstr ""
+"このオプションは、 ISO ファイルをダウンロードしてメディアを作成した場合に"
+"のみ表示される項目です。 ISO ファイルをダウンロードしてメディアを作成した"
+"場合、インストールメディアが正しく書き込まれていないと、後続のインストール"
+"作業中にエラーが発生してしまうことがあるためです。このオプションを選択すると、"
+"メディアが正しく書き込まれているかどうかを自動的にチェックし、問題がなければ"
+"通常のインストール処理を開始します。メディアが正しく書き込まれていない場合は、"
+"インストール処理が始まらず、エラーメッセージが表示されます。メディアを"
+"作成し直して、再度お試しください。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:156
@@ -172,6 +223,8 @@ msgid ""
 "<menuchoice><guimenu>More</guimenu> <guimenu>Memory Test</guimenu></"
 "menuchoice>"
 msgstr ""
+"<menuchoice><guimenu>詳細</guimenu> <guimenu>メモリテスト</guimenu></"
+"menuchoice>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:160
@@ -182,18 +235,22 @@ msgid ""
 "installation_troubleshooting.noboot\"/> . <phrase os=\"sled\"> This option "
 "is not available on the live CDs.</phrase>"
 msgstr ""
+"お使いのシステムに搭載されたメモリを、繰り返し読み書きします。テストを"
+"終了するには、システムを再起動してください。詳しくは <xref linkend=\"sec."
+"installation_troubleshooting.noboot\"/> をお読みください。 "
+"<phrase os=\"sled;osuse\"> なお、このオプションはライブ CD の場合は利用できません。</phrase>"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:170
 #, no-c-format
 msgid "The Boot Screen on Machines with a Traditional BIOS"
-msgstr ""
+msgstr "従来型の BIOS が搭載されたマシンの起動画面"
 
 #. Tag: textobject
 #: deployment_boot_parameters.xml:172
 #, no-c-format
 msgid "<phrase>The Boot Screen on Machines with a Traditional BIOS</phrase>"
-msgstr ""
+msgstr "<phrase>従来型の BIOS が搭載されたマシンの起動画面</phrase>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:182
@@ -203,12 +260,15 @@ msgid ""
 "language, screen resolution, installation source or to add an additional "
 "driver from your hardware vendor:"
 msgstr ""
+"言語や画面の解像度、インストール元やハードウエア製造元が提供する"
+"追加のドライバを設定するには、画面の最下部に表示されたファンクションキーを"
+"使用します:"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:189
 #, no-c-format
 msgid "<keycap>F1</keycap> <guimenu>Help</guimenu>"
-msgstr ""
+msgstr "<keycap>F1</keycap> <guimenu>ヘルプ</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:192
@@ -218,12 +278,16 @@ msgid ""
 "the arrow keys to navigate, <keycap function=\"enter\"/> to follow a link, "
 "and <keycap function=\"escape\"/> to leave the help screen."
 msgstr ""
+"その時点での画面に合わせてヘルプを表示することができる、状況依存のヘルプ機能です。"
+"矢印 (カーソル) キーでウインドウ内を移動することができ、 <keycap function=\"enter\"/> "
+"でリンクをたどることができます。なお、 <keycap function=\"escape\"/> を押すと"
+"ヘルプを終了することができます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:200
 #, no-c-format
 msgid "<keycap>F2</keycap> <guimenu>Language</guimenu>"
-msgstr ""
+msgstr "<keycap>F2</keycap> <guimenu>言語</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:203
@@ -232,12 +296,14 @@ msgid ""
 "Select the display language and a corresponding keyboard layout for the "
 "installation. The default language is English (US)."
 msgstr ""
+"インストール時に使用する表示言語とキーボードレイアウトを設定します。"
+"既定の言語は English (US) (アメリカ英語) です。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:210
 #, no-c-format
 msgid "<keycap>F3</keycap> <guimenu>Video Mode</guimenu>"
-msgstr ""
+msgstr "<keycap>F3</keycap> <guimenu>ビデオモード</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:213
@@ -251,12 +317,20 @@ msgid ""
 "for the video resolution. Choose <guimenu>Text Mode</guimenu> if the "
 "graphical installation causes problems."
 msgstr ""
+"インストール時に使用するビデオの解像度を指定します。"
+"<guimenu>既定</guimenu> を選択すると、ビデオ解像度を KMS "
+"( <quote>Kernel Mode Setting (カーネルモード設定)</quote> ) で自動選択します。"
+"いずれの選択肢でもうまく動作しない場合は、 <guimenu>KMS 無し</guimenu> "
+"を選択し、起動オプションの欄に <literal>vga=ask</literal> と入力してください。"
+"これにより、ビデオ解像度をより細かく指定することができます。また、グラフィカル"
+"な画面ではうまく動作しない場合は、 <guimenu>テキストモード</guimenu> を"
+"選択してください。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:225
 #, no-c-format
 msgid "<keycap>F4</keycap> <guimenu>Source</guimenu>"
-msgstr ""
+msgstr "<keycap>F4</keycap> <guimenu>ソース</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:228
@@ -269,12 +343,19 @@ msgid ""
 "\"sles;sled\">Find information about setting up an installation server with "
 "SLP at <xref linkend=\"cha.deployment.instserver\"/>.</phrase>"
 msgstr ""
+"通常は、接続されたインストールメディアからインストールを行ないます。"
+"ここでは、 FTP や NFS サーバなど、他のインストール元 (ソース) を利用する"
+"設定を行なうことができます。 SLP サーバが配置されたネットワーク内で"
+"インストールを行なう場合は、このオプション内に SLP サーバが"
+"表示されます。 <phrase os=\"sles;sled\">インストールサーバの設定方法に"
+"について、詳しくは <xref linkend=\"cha.deployment.instserver\"/> "
+"をお読みください。</phrase>"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:242
 #, no-c-format
 msgid "<keycap>F5</keycap> <guimenu>Kernel</guimenu>"
-msgstr ""
+msgstr "<keycap>F5</keycap> <guimenu>カーネル</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:245
@@ -289,6 +370,15 @@ msgid ""
 "Settings</guimenu> boots the system with the DMA mode (for CD/DVD-ROM "
 "drives) and power management functions disabled."
 msgstr ""
+"通常のインストールではどうしてもインストールができない場合、このメニューを"
+"利用することで問題のある機能を無効化し、問題を回避することができます。"
+"お使いのハードウエアが ACPI (Advanced Configuration and Power Interface) "
+"に対応していない場合は、 ACPI を無効化するために <guimenu>ACPI 無し</guimenu> "
+"を選択してください。また、 <guimenu>ローカル APIC 無し</guimenu> を選択すると、"
+"お使いのハードウエアによっては発生する可能性のある APIC (Advanced Programmable Interrupt "
+"Controllers) の問題を回避することができます。また、 <guimenu>セーフ"
+"モード</guimenu> を選択すると、 DMA モード (CD/DVD-ROM ドライブ向け) 無しで"
+"起動するほか、電源管理機能についても無効化して起動します。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:256
@@ -300,12 +390,16 @@ msgid ""
 "the command line ( <guimenu>Boot Options</guimenu> ) to enter or change "
 "kernel parameters."
 msgstr ""
+"よく分からない場合は、まず <guimenu>インストール&mdash;ACPI 無し</guimenu> または"
+" <guimenu>インストール&mdash;セーフモード</guimenu> を選択してください。"
+"知識のあるユーザであれば、コマンドライン (<guimenu>起動オプション</guimenu>) "
+"を使用してカーネルのパラメータを入力もしくは変更することができます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:266
 #, no-c-format
 msgid "<keycap>F6</keycap> <guimenu>Driver</guimenu>"
-msgstr ""
+msgstr "<keycap>F6</keycap> <guimenu>ドライバ</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:269
@@ -317,12 +411,17 @@ msgid ""
 "<guimenu>Yes</guimenu> , you are prompted to insert the update disk at the "
 "appropriate point in the installation process."
 msgstr ""
+"このキーを押すことで、 &productname; に対するドライバ更新を設定することが"
+"できるようになります。 <guimenu>ファイル</guimenu> または <guimenu>URL</guimenu> "
+"を選択すると、インストールシステムが始まる前にドライバを直接読み込むことが"
+"できます。また、 <guimenu>はい</guimenu> を選択すると、インストール処理中の"
+"適切な段階で、ドライバディスクを挿入するように求められます。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:278
 #, no-c-format
 msgid "Getting Driver Update Disks"
-msgstr ""
+msgstr "ドライバ更新ディスクの取得"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:279
@@ -332,12 +431,15 @@ msgid ""
 "suse.com/\"/> . These drivers have been created via the &suse; SolidDriver "
 "Program."
 msgstr ""
+"&sle; に対するドライバ更新は、 <link xlink:href=\"http://drivers.suse.com/\"/> "
+"で提供されています。これらのドライバは、 &suse; SolidDriver Program で"
+"策せ手されているものです。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:290
 #, no-c-format
 msgid "The Boot Screen on Machines Equipped with UEFI"
-msgstr ""
+msgstr "UEFI が搭載されたマシンの起動画面"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:291
@@ -349,6 +451,11 @@ msgid ""
 "prevents booting malicious code by only allowing signed boot loaders to be "
 "executed. See <xref linkend=\"cha.uefi\"/> for more information."
 msgstr ""
+"UEFI (Unified Extensible Firmware Interface) は新しい工業規格で、"
+"従来の BIOS を置き換えて拡張する目的で作られているものです。最新の UEFI "
+"実装には <quote>Secure Boot</quote> という拡張が含まれ、正しい署名の"
+"あるブートローダのみを実行許可することで、悪意のあるコードの実行を"
+"防止する仕組みです。詳しくは <xref linkend=\"cha.uefi\"/> をお読みください。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:298
@@ -361,12 +468,18 @@ msgid ""
 "implementations behave the same and are called <literal>&grub;</literal> in "
 "the following."
 msgstr ""
+"従来型の BIOS を搭載したマシンを起動する際に使用するブートマネージャ &grub; は、 UEFI への"
+"対応が用意されていません。そのため、 &grub; は &grub-efi; に置き換える必要が"
+"あります。 Secure Boot が有効化されている場合、 &yast; はそれを自動的に検知し、"
+" &grub-efi; をインストールするように選択します。管理や利用という側面では、"
+"いずれのブートマネージャとも同じ見た目であるため、以降の記述では"
+" <literal>&grub;</literal> として説明します。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:307
 #, no-c-format
 msgid "Using Additional Drivers with Secure Boot"
-msgstr ""
+msgstr "Secure Boot 環境での追加ドライバの使用について"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:308
@@ -376,13 +489,15 @@ msgid ""
 "not shipped with &productname;. This is also true of drivers shipped via "
 "SolidDriver, because their signing key is not trusted by default."
 msgstr ""
+"Secure Boot が有効化されている環境にインストールする場合、 &productname; に"
+"同梱されているもの以外のドライバを読み込むことができません。既定では署名鍵が"
+"信頼されていないため、 SolidDriver についても同じことが言えます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:314
 #, no-c-format
-msgid ""
-"To load drivers not shipped with &productname;, do either of the following:"
-msgstr ""
+msgid "To load drivers not shipped with &productname;, do either of the following:"
+msgstr "&productname; に同梱されていないドライバを読み込みたい場合は、下記のいずれかを実施します:"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:320
@@ -391,6 +506,8 @@ msgid ""
 "Before the installation, add the needed keys to the firmware database via "
 "firmware/system management tools."
 msgstr ""
+"インストールを行なう前に、あらかじめファームウエアやシステム管理ツールを利用して"
+"必要な鍵をファームウエアデータベースに読み込んでおきます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:326
@@ -399,12 +516,14 @@ msgid ""
 "Use a bootable ISO that will enroll the needed keys in the MOK list on the "
 "first boot."
 msgstr ""
+"初回の起動時に、起動可能な ISO ファイルを利用して必要な鍵を MOK 内に取り込む"
+"ようにします。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:332
 #, no-c-format
 msgid "For more information, see <xref linkend=\"sec.uefi.secboot\"/> ."
-msgstr ""
+msgstr "詳しくは <xref linkend=\"sec.uefi.secboot\"/> をお読みください。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:336
@@ -414,12 +533,15 @@ msgid ""
 "Change the selected option with the arrow keys and press <keycap function="
 "\"enter\"/> to boot it. The relevant options are:"
 msgstr ""
+"起動画面では、インストール処理に対する様々なオプションを表示しています。"
+"矢印 (カーソル) キーを利用してオプションを選択して、 <keycap function="
+"\"enter\"/> を押して起動してください。選択肢は下記のとおりです:"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:343
 #, no-c-format
 msgid "<guimenu>Installation</guimenu>"
-msgstr ""
+msgstr "<guimenu>インストール</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:346
@@ -430,12 +552,16 @@ msgid ""
 "kernel\"/> for boot parameters that disable potentially problematic "
 "functions."
 msgstr ""
+"通常のインストールモードです。全ての新しいハードウエアが有効化されます。"
+"インストールがうまくいかない場合は、問題のあるハードウエア機能を無効化するため、"
+"<xref linkend=\"vle.boot_parameters.screen.kernel\"/> に従って起動パラメータを"
+"設定してください。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:355
 #, no-c-format
 msgid "<guimenu>Upgrade</guimenu>"
-msgstr ""
+msgstr "<guimenu>アップグレード</guimenu>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:358
@@ -445,6 +571,9 @@ msgid ""
 "\" linkend=\"cha.upgrade-paths\"/> <xref os=\"osuse\" linkend=\"cha.update."
 "osuse\"/> ."
 msgstr ""
+"システムのアップグレード処理を行ないます。詳しくは <xref os=\"sles;sled"
+"\" linkend=\"cha.upgrade-paths\"/> <xref os=\"osuse\" linkend=\"cha.update."
+"osuse\"/> をお読みください。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:366
@@ -453,6 +582,8 @@ msgid ""
 "<menuchoice><guimenu>More</guimenu> <guimenu>Rescue System</guimenu></"
 "menuchoice>"
 msgstr ""
+"<menuchoice><guimenu>詳細</guimenu> <guimenu>シスキューシステム</guimenu></"
+"menuchoice>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:370
@@ -462,6 +593,9 @@ msgid ""
 "information, see <xref linkend=\"sec.trouble.data.recover.rescue\"/> . "
 "<phrase os=\"sled;osuse\"> This option is not available on Live CDs.</phrase>"
 msgstr ""
+"グラフィカルユーザインターフェイスの無い、最小限の Linux システムを起動します。"
+"詳しくは <xref linkend=\"sec.trouble.data.recover.rescue\"/> "
+"をお読みください。 <phrase os=\"sled;osuse\"> なお、このオプションはライブ CD の場合は利用できません。</phrase>"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:379
@@ -470,6 +604,8 @@ msgid ""
 "<menuchoice><guimenu>More</guimenu> <guimenu>Boot Linux System</guimenu></"
 "menuchoice>"
 msgstr ""
+"<menuchoice><guimenu>詳細</guimenu> <guimenu>Linux システムの起動</guimenu></"
+"menuchoice>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:384
@@ -478,6 +614,8 @@ msgid ""
 "Boot a Linux system that is already installed. You will be asked from which "
 "partition to boot the system."
 msgstr ""
+"既にインストールされている Linux システムを起動します。どのパーティションに"
+"ある Linux を起動するのか、選択を求められます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:391
@@ -486,6 +624,8 @@ msgid ""
 "<menuchoice><guimenu>More</guimenu> <guimenu>Check Installation Media</"
 "guimenu></menuchoice>"
 msgstr ""
+"<menuchoice><guimenu>詳細</guimenu> <guimenu>インストールメディアの検証</"
+"guimenu></menuchoice>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:396
@@ -498,18 +638,25 @@ msgid ""
 "normal installation routine starts. If a corrupt media is detected, the "
 "installation routine aborts."
 msgstr ""
+"このオプションは、 ISO ファイルをダウンロードしてメディアを作成した場合に"
+"のみ表示される項目です。 ISO ファイルをダウンロードしてメディアを作成した"
+"場合、インストールメディアが正しく書き込まれていないと、後続のインストール"
+"作業中にエラーが発生してしまうことがあるためです。このオプションを選択すると、"
+"メディアが正しく書き込まれているかどうかを自動的にチェックし、問題がなければ"
+"通常のインストール処理を開始します。メディアが正しく書き込まれていない場合は、"
+"インストール処理が始まらず、エラーメッセージが表示されます。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:408
 #, no-c-format
 msgid "The Boot Screen on Machines with UEFI"
-msgstr ""
+msgstr "UEFI が搭載されたマシンの起動画面"
 
 #. Tag: textobject
 #: deployment_boot_parameters.xml:410
 #, no-c-format
 msgid "<phrase>The Boot Screen on Machines with UEFI</phrase>"
-msgstr ""
+msgstr "<phrase>UEFI が搭載されたマシンの起動画面</phrase>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:420
@@ -525,6 +672,18 @@ msgid ""
 "available now). The <guimenu>Installation</guimenu> entry will look similar "
 "to the following:"
 msgstr ""
+"&productname; で &grub-efi; を使用する場合、起動パラメータを設定するための"
+"起動プロンプトやファンクションキーは利用できません。既定ではアメリカ英語で"
+"起動するほか、インストール元 (ソース) は起動時に使用したメディアそのものを"
+"指定したものと見なされます。また、ネットワーク関連のパラメータについては、"
+" DHCP を利用して行なうものとされます。これらの既定値を変更したり、起動"
+"パラメータに何らかの設定を行ないたい場合は、対応する起動項目を編集する必要が"
+"あります。起動項目を編集するには、矢印 (カーソル) キーでハイライト表示を"
+"移動してから <keycap>E</keycap> を押してください。するとエディタが起動します"
+"ので、ここから必要な設定を行なってください。なお、この時点ではキーボードは"
+"英語モードになっているほか、ヒントも英語でのみ提供されていますので、"
+"あらかじめご了承ください。たとえば <guimenu>インストール</guimenu> の項目で"
+"編集を行なうと、下記のような表示になります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:431
@@ -538,6 +697,13 @@ msgid ""
 "   echo 'Loading initial ramdisk ...'\n"
 "   initrdefi /boot/x86_64/loader/initrd"
 msgstr ""
+"setparams 'Installation'\n"
+"\n"
+"   set gfxpayload=keep\n"
+"   echo 'Loading kernel ...'\n"
+"   linuxefi /boot/x86_64/loader/linux splash=silent\n"
+"   echo 'Loading initial ramdisk ...'\n"
+"   initrdefi /boot/x86_64/loader/initrd"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:438
@@ -550,30 +716,37 @@ msgid ""
 "complete list of parameters is available at <link xlink:href=\"http://en."
 "opensuse.org/Linuxrc\"/> ."
 msgstr ""
+"起動パラメータは、 <literal>linuxefi</literal> で始まる行の末尾に"
+"スペース区切りで入力します。編集が終わりましたら、 <keycap>F10</"
+"keycap> を押すと、編集後の設定で起動を行なうことができます。また、"
+"シリアルコンソール経由でアクセスしているような場合は、"
+" <keycombo><keycap function=\"escape\"/> <keycap>0</keycap></keycombo>"
+"を押してください。なお、起動パラメータの完全な一覧は、 "
+"<link xlink:href=\"http://ja.opensuse.org/Linuxrc\"/> に書かれています。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:449
 #, no-c-format
 msgid "List of Important Boot Parameters"
-msgstr ""
+msgstr "主要な起動パラメータの一覧"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:450
 #, no-c-format
 msgid "This section contains a selection of important boot parameters."
-msgstr ""
+msgstr "本章では、主な起動パラメータについて説明しています。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:454
 #, no-c-format
 msgid "General Boot Parameters"
-msgstr ""
+msgstr "一般的な起動パラメータ"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:458
 #, no-c-format
 msgid "<option>autoyast=</option> <replaceable>URL</replaceable>"
-msgstr ""
+msgstr "<option>autoyast=</option> <replaceable>URL</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:461
@@ -582,12 +755,15 @@ msgid ""
 "The <envar>autoyast</envar> parameter specifies the location of the "
 "<filename>autoinst.xml</filename> control file for automatic installation."
 msgstr ""
+"<envar>autoyast</envar> パラメータは自動インストールを行ないたい場合に"
+"指定するパラメータで、 <filename>autoinst.xml</filename> 制御ファイルの"
+"場所を指定します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:469
 #, no-c-format
 msgid "<option>manual=&lt;0|1&gt;</option>"
-msgstr ""
+msgstr "<option>manual=&lt;0|1&gt;</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:471
@@ -599,18 +775,23 @@ msgid ""
 "no questions asked. Setting <envar>autoyast</envar> implies setting "
 "<envar>manual</envar> to <literal>0</literal> ."
 msgstr ""
+"<envar>manual</envar> パラメータは、既定値しか存在しないパラメータについても、"
+"ユーザに対して確認するかどうかを指定します。 <literal>0</literal> を指定すると、"
+"全ての値を自動的に受け付けます。なお、 <envar>autoyast</envar> パラメータを"
+"設定すると、 <envar>manual</envar> に対しても <literal>0</literal> が"
+"暗黙のうちに設定されます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:482
 #, no-c-format
 msgid "<option>Info=</option> <replaceable>URL</replaceable>"
-msgstr ""
+msgstr "<option>Info=</option> <replaceable>URL</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:485
 #, no-c-format
 msgid "Specifies a location for a file from which to read additional options."
-msgstr ""
+msgstr "追加のオプションを読み込むべきファイルの場所を指定します。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:488
@@ -625,18 +806,26 @@ msgid ""
 "> ). Also other linuxrc specific options such as for debugging need to be "
 "specified in the parmfile to be effective."
 msgstr ""
+"このパラメータは、 10 行 (z/VM の場合、 1 行あたり 80 文字) という制限を"
+"克服するためのものです。 info ファイルについて、詳しくは "
+"<xref linkend=\"invoking_autoinst.linuxrc\"/> をお読みください。 info ファイルは、"
+"通常の &zseries; ではネットワーク経由でアクセスするのみのものであるため、"
+"ネットワークの設定については、このファイルに記述することができません"
+" (これらのオプションは <xref linkend=\"sec.boot_parameters.list.network\"/> で"
+"説明しています) 。デバッグ用のオプションなど、 linuxrc で通常の起動パラメータと"
+"して指定するものであれば、問題なく動作します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:502
 #, no-c-format
 msgid "<option>upgrade=&lt;0|1&gt;</option>"
-msgstr ""
+msgstr "<option>upgrade=&lt;0|1&gt;</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:504
 #, no-c-format
 msgid "To upgrade &productname;, specify <option>Upgrade=1</option> ."
-msgstr ""
+msgstr "&productname; をアップグレードするには、 <option>Upgrade=1</option> を指定してください。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:505
@@ -645,18 +834,21 @@ msgid ""
 "A custom parmfile is required for upgrading an existing installation of "
 "&sle;. Without this parameter, the installation provides no upgrade option."
 msgstr ""
+"既存の &sle; インストールをアップグレードするには、独自のパラメータファイルが"
+"必要となります。このパラメータを設定しないと、インストールシステムは"
+"アップグレードオプションを提供しません。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:513
 #, no-c-format
 msgid "<option>dud=</option> <replaceable>URL</replaceable>"
-msgstr ""
+msgstr "<option>dud=</option> <replaceable>URL</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:515
 #, no-c-format
 msgid "Load driver updates from <replaceable>URL</replaceable> ."
-msgstr ""
+msgstr "<replaceable>URL</replaceable> で指定した場所からドライバ更新を読み込みます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:518
@@ -667,12 +859,16 @@ msgid ""
 "drivers from a URL. When <literal>dud=1</literal> you will be asked for the "
 "URL during boot."
 msgstr ""
+"<literal>dud=ftp://ftp.example.com/ドライバのパス</literal> や "
+"<literal>dud=http://www.example.com/ドライバのパス</literal> のように"
+"指定して、ドライバの読み込み元を指定してください。なお、 <literal>dud=1</literal> "
+"と指定すると、起動処理中に URL の入力を求められます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:527
 #, no-c-format
 msgid "<option>language=</option> <replaceable>LANGUAGE</replaceable>"
-msgstr ""
+msgstr "<option>language=</option> <replaceable>言語コード</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:529
@@ -684,54 +880,59 @@ msgid ""
 "literal> , <literal>pt_PT</literal> , <literal>ru_RU</literal> , "
 "<literal>zh_CN</literal> , and <literal>zh_TW</literal> ."
 msgstr ""
+"インストール時に使用する言語を設定します。主な言語コードは下記のとおりです: "
+"<literal>cs_CZ</literal> , <literal>de_DE</literal> , <literal>es_ES</literal> , "
+"<literal>fr_FR</literal> , <literal>ja_JP</literal> , <literal>pt_BR</"
+"literal> , <literal>pt_PT</literal> , <literal>ru_RU</literal> , "
+"<literal>zh_CN</literal> , <literal>zh_TW</literal> "
 
 #. Tag: term
 #: deployment_boot_parameters.xml:540
 #, no-c-format
 msgid "<option>acpi=off</option>"
-msgstr ""
+msgstr "<option>acpi=off</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:542
 #, no-c-format
 msgid "Disable ACPI support."
-msgstr ""
+msgstr "ACPI サポートを無効化します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:548
 #, no-c-format
 msgid "<option>noapic</option>"
-msgstr ""
+msgstr "<option>noapic</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:550
 #, no-c-format
 msgid "No logical APIC."
-msgstr ""
+msgstr "ローカル APIC を無効化します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:556
 #, no-c-format
 msgid "<option>nomodeset</option>"
-msgstr ""
+msgstr "<option>nomodeset</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:558
 #, no-c-format
 msgid "Disable KMS."
-msgstr ""
+msgstr "KMS を無効化します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:564
 #, no-c-format
 msgid "<option>textmode=1</option>"
-msgstr ""
+msgstr "<option>textmode=1</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:566
 #, no-c-format
 msgid "Start installer in text mode."
-msgstr ""
+msgstr "テキストモードでインストールシステムを起動します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:572
@@ -740,6 +941,8 @@ msgid ""
 "<option>console=</option> <replaceable>SERIAL_DEVICE</replaceable> [, "
 "<replaceable>MODE</replaceable> ]"
 msgstr ""
+"<option>console=</option> <replaceable>シリアルデバイス</replaceable> [, "
+"<replaceable>モード</replaceable> ]"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:574
@@ -753,12 +956,19 @@ msgid ""
 "output on your monitor, try setting <literal>console=tty1</literal> . It is "
 "possible to define multiple devices."
 msgstr ""
+"<replaceable>シリアルデバイス</replaceable> には、シリアルデバイスや"
+"パラレルデバイス (例: <literal>ttyS0</literal>) のほか、仮想端末 (例: "
+"<literal>tty1</literal>) を指定することができます。また、 <replaceable>モード</replaceable> "
+"にはボーレートとパリティ、ストップビットの各設定を入力します (例: <literal>9600n8</literal>) 。"
+"モード設定の既定値は、メインボードのファームウエア側の設定で決まります。"
+"なお、モニタに何も表示されない場合は、 <literal>console=tty1</literal> "
+"を指定してみてください。また、複数のデバイスを指定することもできます。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:591
 #, no-c-format
 msgid "Configuring the Network Interface"
-msgstr ""
+msgstr "ネットワークインターフェイスの設定"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:592
@@ -769,6 +979,10 @@ msgid ""
 "installed system by following the instructions given in <xref linkend=\"sec."
 "network.manconf\"/> ."
 msgstr ""
+"本章で説明している設定は、いずれもインストール時に使用するネットワーク"
+"インターフェイスにのみ適用されるものです。インストール済みのシステムで"
+"ネットワークを設定する方法については、 <xref linkend=\"sec."
+"network.manconf\"/> をお読みください。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:599
@@ -778,12 +992,15 @@ msgid ""
 "installation. To force the network to be configured, use the "
 "<literal>netsetup</literal> parameter."
 msgstr ""
+"ネットワークは、インストール時に必要な場合にのみ設定されます。"
+"必要の可否にかかわらずネットワークを設定するには、"
+" <literal>netsetup</literal> パラメータをお使いください。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:606
 #, no-c-format
 msgid "<option>netsetup=<replaceable>VALUE</replaceable></option>"
-msgstr ""
+msgstr "<option>netsetup=<replaceable>値</replaceable></option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:608
@@ -796,6 +1013,12 @@ msgid ""
 "netmask,gateway,nameserver</literal> the installer asks for the network "
 "settings during boot."
 msgstr ""
+"<literal>netsetup=dhcp</literal> を指定すると、 DHCP での設定を強制します。"
+"<literal>hostip</literal> , <literal>gateway</literal>, <literal>nameserver</literal> "
+"の各起動パラメータを指定してネットワークを設定したい場合は、"
+" <literal>netsetup=-dhcp</literal> を指定してください。 <literal>netsetup=hostip,"
+"netmask,gateway,nameserver</literal> と指定すると、起動時にインストール"
+"システム側でネットワークの設定を尋ねます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:620
@@ -804,6 +1027,8 @@ msgid ""
 "<option> ifcfg=<replaceable>INTERFACE</replaceable>[.<replaceable>VLAN</"
 "replaceable>]=<replaceable>SETTINGS</replaceable> </option>"
 msgstr ""
+"<option> ifcfg=<replaceable>インターフェイス名</replaceable>[.<replaceable>VLAN</"
+"replaceable>]=<replaceable>設定</replaceable> </option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:624
@@ -814,6 +1039,10 @@ msgid ""
 "interfaces that start with <literal>eth</literal> . It is also possible to "
 "use MAC addresses as values."
 msgstr ""
+"<replaceable>インターフェイス名</replaceable> の箇所に <literal>*</literal> "
+"を指定すると、該当する全てのインターフェイスを設定します。たとえば <literal>eth*</literal> "
+"のように指定すると、 <literal>eth</literal> で始まる全てのインターフェイスが"
+"設定されます。なお、インターフェイスは MAC アドレスで指定することもできます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:630
@@ -821,7 +1050,7 @@ msgstr ""
 msgid ""
 "Optionally, a VLAN can be set behind the interface name, separated by a "
 "period."
-msgstr ""
+msgstr "インターフェイス名に続いてピリオドを置くと、続けて VLAN を指定することもできます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:634
@@ -832,6 +1061,10 @@ msgid ""
 "static parameters. With static parameters, only the first matching interface "
 "will be configured. The syntax for the static configuration is:"
 msgstr ""
+"<replaceable>設定</replaceable> で <literal>dhcp</literal> を指定すると、"
+"該当する全てのインターフェイスを DHCP 経由で設定使用とします。固定の"
+"アドレスを指定した場合は、該当する最初のインターフェイスのみを設定します。"
+"固定のアドレス設定の書式は下記のとおりです:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:640
@@ -841,6 +1074,9 @@ msgid ""
 "replaceable>,<replaceable>NAMESERVERS</replaceable>,<replaceable>DOMAINS</"
 "replaceable>\""
 msgstr ""
+"ifcfg=*=\"<replaceable>IPアドレスとネットマスク</replaceable>,<replaceable>ゲートウエイ</"
+"replaceable>,<replaceable>ネームサーバ</replaceable>,<replaceable>ドメイン</"
+"replaceable>\""
 
 #. Tag: para
 #: deployment_boot_parameters.xml:641
@@ -852,6 +1088,12 @@ msgid ""
 "literal> . The quotes are only needed when using space character separated "
 "lists. Example with two name servers:"
 msgstr ""
+"それぞれの項目はカンマで区切ります。また、 1 つの項目内に複数の値を"
+"設定する場合は、それぞれをスペースで区切ります。なお、 <replaceable>IPアドレスと"
+"ネットマスク</replaceable> は <emphasis>CIDR 表記</emphasis> で指定します。"
+"たとえば <literal>10.0.0.1/24</literal> のようになります。引用符は"
+"スペース区切りの箇所でスペースそのものを指定したい場合に使用します。たとえば"
+"ネームサーバを 2 つ指定したい場合は、下記のようになります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:648
@@ -861,18 +1103,21 @@ msgid ""
 "replaceable>,<replaceable>10.0.0.1 10.0.0.2</replaceable>,"
 "<replaceable>example.com</replaceable>\""
 msgstr ""
+"ifcfg=*=\"<replaceable>10.0.0.10/24</replaceable>,<replaceable>10.0.0.1</"
+"replaceable>,<replaceable>10.0.0.1 10.0.0.2</replaceable>,"
+"<replaceable>example.com</replaceable>\""
 
 #. Tag: term
 #: deployment_boot_parameters.xml:652
 #, no-c-format
 msgid "<option>hostname=host.&exampledomain;</option>"
-msgstr ""
+msgstr "<option>hostname=host.&exampledomain;</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:655
 #, no-c-format
 msgid "Enter the fully qualified host name."
-msgstr ""
+msgstr "完全修飾ドメイン名 (FQDN) を指定します。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:664
@@ -881,12 +1126,14 @@ msgid ""
 "Domain search path for DNS. Allows you to use short host names instead of "
 "fully qualified ones."
 msgstr ""
+"DNS でのドメイン検索パスを指定します。これにより、完全修飾ドメイン名 (FQDN) "
+"を指定せずに、ホスト名だけで指定できるようになります。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:671
 #, no-c-format
 msgid "<option>hostip=&exampledomain1ip;.2[/24]</option>"
-msgstr ""
+msgstr "<option>hostip=&exampledomain1ip;.2[/24]</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:674
@@ -897,12 +1144,15 @@ msgid ""
 "This setting is only evaluated if the network is required during the "
 "installation."
 msgstr ""
+"設定したいインターフェイスの IP アドレスを指定します。 IP アドレスには"
+"サブネットマスクを指定することもできます (例: <literal>hostip=&exampledomain1ip;.2/24</literal>) 。"
+"この設定は、インストール時にネットワークが必要な場合にのみ解釈されます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:683
 #, no-c-format
 msgid "<option>gateway=&exampledomain1ip;.3</option>"
-msgstr ""
+msgstr "<option>gateway=&exampledomain1ip;.3</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:686
@@ -911,12 +1161,14 @@ msgid ""
 "Specify the gateway to use. This setting is only evaluated if the network is "
 "required during the installation."
 msgstr ""
+"使用するゲートウエイを指定します。"
+"この設定は、インストール時にネットワークが必要な場合にのみ解釈されます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:693
 #, no-c-format
 msgid "<option>nameserver=&exampledomain1ip;.4</option>"
-msgstr ""
+msgstr "<option>nameserver=&exampledomain1ip;.4</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:696
@@ -925,12 +1177,14 @@ msgid ""
 "Specify the DNS server in charge. This setting is only evaluated if the "
 "network is required during the installation."
 msgstr ""
+"使用する DNS サーバを指定します。"
+"この設定は、インストール時にネットワークが必要な場合にのみ解釈されます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:703
 #, no-c-format
 msgid "<option>domain=&exampledomain;</option>"
-msgstr ""
+msgstr "<option>domain=&exampledomain;</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:706
@@ -939,12 +1193,14 @@ msgid ""
 "Domain search path. This setting is only evaluated if the network is "
 "required during the installation."
 msgstr ""
+"ドメイン検索パスを指定します。"
+"この設定は、インストール時にネットワークが必要な場合にのみ解釈されます。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:716
 #, no-c-format
 msgid "Specifying the Installation Source"
-msgstr ""
+msgstr "インストール元の指定"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:717
@@ -953,12 +1209,14 @@ msgid ""
 "If you are not using the DVD for installation, specify an alternative "
 "installation source."
 msgstr ""
+"インストール用のメディアとして DVD 以外のメディアをお使いの場合は、"
+"代替となるインストール元 (ソース) を指定することができます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:723
 #, no-c-format
 msgid "<option>install=SOURCE</option>"
-msgstr ""
+msgstr "<option>install=SOURCE</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:726
@@ -972,12 +1230,19 @@ msgid ""
 "platforms. For example &zseries; does not support <literal>cd</literal> and "
 "<literal>hd</literal> ."
 msgstr ""
+"使用するインストール元 (ソース) の場所を指定します。利用可能なプロトコルは"
+"下記のとおりです: <literal>cd</literal> , <literal>hd</literal> , "
+"<literal>slp</literal> , <literal>nfs</literal> , <literal>smb</literal> "
+"(Samba/CIFS), <literal>ftp</literal> , <literal>tftp</literal> , "
+"<literal>http</literal> , <literal>https</literal> 。なお、全てのプラットフォームで"
+"全てのソースが利用できるというわけではありません。たとえば &zseries; では、"
+" <literal>cd</literal> と <literal>hd</literal> は使用できません。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:735
 #, no-c-format
 msgid "The default option is <literal>cd</literal> ."
-msgstr ""
+msgstr "既定値は <literal>cd</literal> です。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:738
@@ -988,6 +1253,11 @@ msgid ""
 "These parameters are optional and anonymous or guest login is assumed if "
 "they are not given. Example:"
 msgstr ""
+"<literal>ftp</literal> , <literal>tftp</literal>, <literal>smb</literal> "
+"のいずれかの場合、 URL の一部としてユーザ名とパスワードを設定することができます。"
+"これらのパラメータは必要な場合にのみ設定すべきもので、何も指定しない場合は"
+"匿名もしくはゲストでログインすることになります。ユーザ名とパスワードは、"
+"下記のようにして指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:744
@@ -997,6 +1267,9 @@ msgid ""
 "replaceable>@<replaceable>SERVER</replaceable>/<replaceable>DIRECTORY</"
 "replaceable>/DVD1/"
 msgstr ""
+"install=ftp://<replaceable>ユーザ名</replaceable>:<replaceable>パスワード</"
+"replaceable>@<replaceable>サーバ</replaceable>/<replaceable>ディレクトリ</"
+"replaceable>/DVD1/"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:745
@@ -1006,6 +1279,10 @@ msgid ""
 "URL. If the certificate cannot be verified, use the <literal>sslcerts=0</"
 "literal> boot parameter to disable certificate checking."
 msgstr ""
+"通信を暗号化したい場合は、 <literal>https</literal> をお使いください。"
+"また、使用する証明書が一般的な証明書でない場合は、 <literal>sslcerts=0</"
+"literal> を起動パラメータに追加することで、証明書チェックを無効化する"
+"こともできます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:751
@@ -1014,6 +1291,8 @@ msgid ""
 "In case of a Samba or CIFS installation, you can also specify the domain "
 "that should be used:"
 msgstr ""
+"Samba/CIFS を利用してインストールする場合は、下記のようにしてドメインを"
+"指定することができます:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:755
@@ -1023,6 +1302,9 @@ msgid ""
 "replaceable>:<replaceable>PASSWORD</replaceable>@<replaceable>SERVER</"
 "replaceable>/<replaceable>DIRECTORY</replaceable>/DVD1/"
 msgstr ""
+"install=smb://<replaceable>ドメインまたはワークグループ</replaceable>;<replaceable>ユーザ名</"
+"replaceable>:<replaceable>パスワード</replaceable>@<replaceable>サーバ</"
+"replaceable>/<replaceable>ディレクトリ</replaceable>/DVD1/"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:756
@@ -1031,6 +1313,8 @@ msgid ""
 "To use <literal>cd</literal> , <literal>hd</literal> or <literal>slp</"
 "literal> , set them as the following example:"
 msgstr ""
+"<literal>cd</literal> , <literal>hd</literal> , <literal>slp</"
+"literal> の場合は、下記のようにして指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:760
@@ -1040,12 +1324,15 @@ msgid ""
 "install=hd:/?device=<replaceable>sda/PATH_TO_ISO</replaceable>\n"
 "install=slp:/"
 msgstr ""
+"install=cd:/\n"
+"install=hd:/?device=<replaceable>sda/ISOへのパス</replaceable>\n"
+"install=slp:/"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:768
 #, no-c-format
 msgid "Specifying Remote Access"
-msgstr ""
+msgstr "リモートアクセスの設定"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:769
@@ -1056,12 +1343,16 @@ msgid ""
 "\"sles;sled\">For information about how to use the parameters listed in this "
 "section, see <xref linkend=\"cha.remote_installation\"/>.</phrase>"
 msgstr ""
+"リモートコントロールの方法は SSH, VNC, リモート X サーバなどがありますが、"
+"いずれか 1 つのみを指定することができます。 <phrase os="
+"\"sles;sled\">本章に書かれているパラメータの使用方法について、詳しくは"
+"<xref linkend=\"cha.remote_installation\"/> をお読みください。</phrase>"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:777
 #, no-c-format
 msgid "<option>display_ip=</option> <replaceable>IP_ADDRESS</replaceable>"
-msgstr ""
+msgstr "<option>display_ip=</option> <replaceable>IP_ADDRESS</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:779
@@ -1070,12 +1361,14 @@ msgid ""
 "<envar>Display_IP</envar> causes the installing system to try to connect to "
 "an X server at the given address."
 msgstr ""
+"<envar>Display_IP</envar> パラメータを指定すると、指定したアドレスにある"
+" X サーバに接続して、インストールシステムを起動しようとします。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:784
 #, no-c-format
 msgid "X Authentication Mechanism"
-msgstr ""
+msgstr "X 認証機構"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:785
@@ -1085,60 +1378,63 @@ msgid ""
 "authentication mechanism based on host names. This mechanism is disabled on "
 "current &productname; versions. Installation with SSH or VNC is preferred."
 msgstr ""
+"X Window System を利用した直接インストールは、ホスト名をベースにした原始的な"
+"認証機構に依存しています。この仕組みは現在の &productname; バージョンでは"
+"無効化されています。 SSH もしくは VNC によるインストールをご利用ください。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:795
 #, no-c-format
 msgid "<option>vnc=1</option>"
-msgstr ""
+msgstr "<option>vnc=1</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:797
 #, no-c-format
 msgid "Enables a VNC server during the installation."
-msgstr ""
+msgstr "インストール時に VNC サーバを起動します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:803
 #, no-c-format
 msgid "<option>vncpassword=</option> <replaceable>PASSWORD</replaceable>"
-msgstr ""
+msgstr "<option>vncpassword=</option> <replaceable>PASSWORD</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:805
 #, no-c-format
 msgid "Sets the password for the VNC server."
-msgstr ""
+msgstr "VNC サーバに接続する際のパスワードを設定します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:811
 #, no-c-format
 msgid "<option>ssh=1</option>"
-msgstr ""
+msgstr "<option>ssh=1</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:813
 #, no-c-format
 msgid "<envar>ssh</envar> enables SSH installation."
-msgstr ""
+msgstr "<envar>ssh</envar> を指定すると、 SSH 経由でのインストールを行ないます。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:819
 #, no-c-format
 msgid "<option>ssh.password=</option> <replaceable>PASSWORD</replaceable>"
-msgstr ""
+msgstr "<option>ssh.password=</option> <replaceable>パスワード</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:821
 #, no-c-format
 msgid "Specifies an SSH password for the root user during installation."
-msgstr ""
+msgstr "インストール時に root ユーザに対して設定する SSH のパスワードを指定します。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:831
 #, no-c-format
 msgid "Advanced Setups"
-msgstr ""
+msgstr "高度な設定"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:832
@@ -1149,12 +1445,16 @@ msgid ""
 "set up these services during installation. The same applies if you need IPv6 "
 "support during the installation."
 msgstr ""
+"インストール時にローカルの &rmt; や <systemitem>supportconfig</"
+"systemitem> サーバにアクセスするには、起動パラメータに値を設定して、"
+"これらのサービスを設定する必要があります。インストール時に IPv6 サポート"
+"を必要とする場合も同様です。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:840
 #, no-c-format
 msgid "Providing Data to Access an &rmt; Server"
-msgstr ""
+msgstr "&rmt; サーバにアクセスするためのデータ指定"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:841
@@ -1167,12 +1467,18 @@ msgid ""
 "path to the server's certificate if the certificate was not issued by a "
 "certificate authority."
 msgstr ""
+"既定では、 &productname; に対する更新は &scc; 経由で配布されます。お使いの"
+"ネットワーク環境内に &rmt; サーバが存在していて、ローカルの更新元として"
+"提供されている場合、クライアント側ではサーバの URL を設定する必要が"
+"あります。また、クライアントとサーバとの間は HTTPS プロトコルを利用して"
+"機密を保持した通信を行ないますので、サーバ側に設定されている証明書が"
+"一般的な証明機関が発行したものではない場合、サーバの証明書のパスを指定する必要もあります。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:850
 #, no-c-format
 msgid "Non-Interactive Installation Only"
-msgstr ""
+msgstr "非対話型インストールの場合のみ"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:851
@@ -1183,12 +1489,16 @@ msgid ""
 "be provided during the installation (see <xref linkend=\"sec.yast_install."
 "scc_registration\"/> for details)."
 msgstr ""
+"&rmt; サーバにアクセスするためのパラメータ設定は、非対話型のインストール"
+"時にのみ必要な設定です。対話型のインストールを行なう場合は、インストール"
+"中にそれらの情報を入力することができます (詳しくは <xref linkend=\"sec.yast_install."
+"scc_registration\"/> をお読みください) 。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:860
 #, no-c-format
 msgid "<option>regurl</option>"
-msgstr ""
+msgstr "<option>regurl</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:862
@@ -1199,12 +1509,16 @@ msgid ""
 "replaceable> needs to be a fully qualified host name of the &rmt; server. "
 "Example:"
 msgstr ""
+"&rmt; サーバの URL を指定します。この URL は固定の書式で、 <literal>https://"
+"<replaceable>FQN</replaceable>/center/regsvc/</literal> と入力します。なお、"
+" <replaceable>FQN</replaceable> には、 &rmt; サーバの完全修飾ホスト名を"
+"入力します。たとえば下記のようになります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:868
 #, no-c-format
 msgid "regurl=https://smt.&exampledomain;/center/regsvc/"
-msgstr ""
+msgstr "regurl=https://smt.&exampledomain;/center/regsvc/"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:869
@@ -1214,12 +1528,14 @@ msgid ""
 "not been specified correctly, the registration of the update source will "
 "fail."
 msgstr ""
+"入力した値が正しいかどうかをご確認ください。 <literal>regurl</literal> が"
+"正しく設定されていないと、更新元を設定するための登録処理が失敗します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:877
 #, no-c-format
 msgid "<option>regcert</option>"
-msgstr ""
+msgstr "<option>regcert</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:879
@@ -1227,13 +1543,13 @@ msgstr ""
 msgid ""
 "Location of the &rmt; server's certificate. Specify one of the following "
 "locations:"
-msgstr ""
+msgstr "&rmt; サーバの証明書の場所を指定します。下記のいずれかの方式で指定してください:"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:885
 #, no-c-format
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:887
@@ -1244,36 +1560,41 @@ msgid ""
 "<literal>http://<replaceable>FQN</replaceable>/smt.crt</literal> with "
 "<literal>FQN</literal> being the name of the &rmt; server. Example:"
 msgstr ""
+"証明書をダウンロードすることのできるリモートの場所 ((HTTP, HTTPS, FTP のいずれか) "
+"を指定します。 regcert が指定されていない場合、 &rmt; サーバの"
+" <literal>FQN</literal> 設定から、"
+" <literal>http://<replaceable>FQN</replaceable>/smt.crt</literal> という"
+" URL を自動生成してアクセスします。たとえば下記のようになります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:893
 #, no-c-format
 msgid "regcert=http://rmt.&exampledomain;/smt-ca.crt"
-msgstr ""
+msgstr "regcert=http://rmt.&exampledomain;/smt-ca.crt"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:897
 #, no-c-format
 msgid "local path"
-msgstr ""
+msgstr "ローカルパス"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:899
 #, no-c-format
 msgid "Absolute path to the certificate on the local machine. Example:"
-msgstr ""
+msgstr "ローカルマシン内での証明書の絶対パスを指定します。たとえば下記のようになります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:902
 #, no-c-format
 msgid "regcert=/data/inst/smt/smt-ca.cert"
-msgstr ""
+msgstr "regcert=/data/inst/smt/smt-ca.cert"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:906
 #, no-c-format
 msgid "Interactive"
-msgstr ""
+msgstr "対話型"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:908
@@ -1283,18 +1604,21 @@ msgid ""
 "where you can specify the path to the certificate. Do not use this option "
 "with &ay;. Example"
 msgstr ""
+"<literal>ask</literal> を指定すると、どのパスから証明書を取り込むのか、"
+"インストール時に尋ねるようになります。 &ay; をお使いの場合は、指定しては"
+"なりません。たとえば下記のようになります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:913
 #, no-c-format
 msgid "regcert=ask"
-msgstr ""
+msgstr "regcert=ask"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:917
 #, no-c-format
 msgid "Deactivate certificate installation"
-msgstr ""
+msgstr "証明書インストールの無効化"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:919
@@ -1304,12 +1628,15 @@ msgid ""
 "on product, or if you are using a certificate issued by an official "
 "certificate authority. For example:"
 msgstr ""
+"証明書をアドオン製品でインストールする場合や、一般的な証明機関が発行した"
+"証明書を使用する場合は、 <literal>done</literal> を指定します。たとえば"
+"下記のようになります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:924
 #, no-c-format
 msgid "regcert=done"
-msgstr ""
+msgstr "regcert=done"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:933
@@ -1317,7 +1644,7 @@ msgstr ""
 msgid ""
 "Configuring an Alternative Data Server for <systemitem>supportconfig</"
 "systemitem>"
-msgstr ""
+msgstr "<systemitem>supportconfig</systemitem> に対する代替データサーバの設定"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:934
@@ -1329,12 +1656,17 @@ msgid ""
 "available on your network, you need to set the server's URL on the client. "
 "This information needs to be entered at the boot prompt."
 msgstr ""
+"supportconfig (詳しくは <xref linkend=\"cha.adm.support\"/> をお読みください) "
+"が収集するデータは、既定では &ncc; 宛に送信されます。このデータをローカルの"
+"サーバに送信することもできます。ネットワーク内にそのようなサーバが存在する場合、"
+"クライアント側ではサーバの URL を指定する必要があります。なお、この情報は"
+"起動プロンプト内に入力する必要があります。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:942
 #, no-c-format
 msgid "<literal>supporturl</literal>"
-msgstr ""
+msgstr "<literal>supporturl</literal>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:943
@@ -1346,18 +1678,23 @@ msgid ""
 "server and <replaceable>Path</replaceable> is the location on the server. "
 "For example:"
 msgstr ""
+"サーバの URL を指定します。書式は <literal>http://<replaceable>FQN</"
+"replaceable>/<replaceable>パス</replaceable>/</literal> の形式で、"
+"それぞれ <replaceable>FQN</replaceable> にはサーバの完全修飾ドメイン名を、"
+" <replaceable>パス</replaceable> にはサーバ内での場所を指定します。"
+"たとえば下記のようになります:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:951
 #, no-c-format
 msgid "supporturl=http://support.&exampledomain;/supportconfig/data/"
-msgstr ""
+msgstr "supporturl=http://support.&exampledomain;/supportconfig/data/"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:954
 #, no-c-format
 msgid "Using IPv6 for the Installation"
-msgstr ""
+msgstr "インストール時の IPv6 の使用"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:955
@@ -1367,36 +1704,39 @@ msgid ""
 "enable IPv6 during installation, enter one of the following parameters at "
 "the boot prompt:"
 msgstr ""
+"既定では、お使いのマシンに IPv4 ネットワークアドレスだけを割り当てる"
+"ようになっています。インストール時に IPv6 の接続が必要な場合は、起動"
+"プロンプトで下記のパラメータのいずれかを指定してください:"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:962
 #, no-c-format
 msgid "Accept IPv4 and IPv6"
-msgstr ""
+msgstr "IPv4 と IPv6 の両方を受け付ける"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:964
 #, no-c-format
 msgid "ipv6=1"
-msgstr ""
+msgstr "ipv6=1"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:968
 #, no-c-format
 msgid "Accept IPv6 only"
-msgstr ""
+msgstr "IPv6 のみを受け付ける"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:970
 #, no-c-format
 msgid "ipv6only=1"
-msgstr ""
+msgstr "ipv6only=1"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:976
 #, no-c-format
 msgid "Using a Proxy for the Installation"
-msgstr ""
+msgstr "インストール時のプロキシサーバの使用"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:977
@@ -1406,6 +1746,9 @@ msgid ""
 "sites, registration during installation is only possible when configuring a "
 "proxy server."
 msgstr ""
+"リモートの Web サイトにアクセスするにあたって、プロキシサーバの使用が"
+"義務づけられている環境の場合、インストール時に登録処理を行なうには、プロキシ"
+"サーバの設定が必須となります。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:982
@@ -1416,6 +1759,10 @@ msgid ""
 "guimenu> dialog. Alternatively provide the kernel parameter <literal>proxy</"
 "literal> at the boot prompt:"
 msgstr ""
+"インストール時にプロキシサーバを使用するには、起動画面で <keycap>F4</keycap> "
+"を押して、 <guimenu>HTTP プロキシ</guimenu> ダイアログ内で必要なパラメータを"
+"設定してください。これ以外にも、起動プロンプトでカーネルパラメータ"
+" <literal>proxy</literal> を指定してもかまいません:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:988
@@ -1424,6 +1771,8 @@ msgid ""
 "l&gt;proxy=http://<replaceable>USER</replaceable>:<replaceable>PASSWORD</"
 "replaceable>@proxy.example.com:<replaceable>PORT</replaceable>"
 msgstr ""
+"l&gt;proxy=http://<replaceable>ユーザ名</replaceable>:<replaceable>パスワード</"
+"replaceable>@proxy.example.com:<replaceable>ポート番号</replaceable>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:989
@@ -1434,12 +1783,16 @@ msgid ""
 "following data is sufficient: <literal>http://proxy.example.com:"
 "<replaceable>PORT</replaceable></literal> ."
 msgstr ""
+"<replaceable>ユーザ名</replaceable> と <replaceable>パスワード</replaceable>"
+"の指定は任意です。サーバ側で匿名アクセスが許可されている場合は、これらは"
+"省略して <literal>http://proxy.example.com:<replaceable>ポート番号</replaceable></literal> "
+"のような指定でかまいません。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:997
 #, no-c-format
 msgid "Enabling &selnx; Support"
-msgstr ""
+msgstr "&selnx; サポートの有効化"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:998
@@ -1449,18 +1802,21 @@ msgid ""
 "after the installation has been finished without having to reboot. Use the "
 "following parameters:"
 msgstr ""
+"インストールの開始時点から &selnx; を有効化すると、インストール後に"
+"再起動を行なわずに完了することができるようになります。具体的には、"
+"下記のパラメータを指定してください:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1003
 #, no-c-format
 msgid "security=selinux selinux=1"
-msgstr ""
+msgstr "security=selinux selinux=1"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:1006
 #, no-c-format
 msgid "Enabling the Installer Self-Update"
-msgstr ""
+msgstr "インストールシステムの自己更新の有効化"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1007
@@ -1471,6 +1827,10 @@ msgid ""
 "discovered after release. The <literal>self_update</literal> parameter can "
 "be used to modify the behavior of this feature."
 msgstr ""
+"インストールや更新の際、 <xref linkend=\"sec.yast_install.self_update\"/> "
+"で説明しているとおり、 &yast; は自分自身を更新してリリース後に判明した"
+"潜在的な問題を回避することができます。 <literal>self_update</literal> "
+"パラメータでは、この機能の動作に関する設定を変更することができます。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1013
@@ -1479,30 +1839,32 @@ msgid ""
 "To enable the installer self-update, set the parameter to <literal>1</"
 "literal> :"
 msgstr ""
+"インストールシステムの自己更新を有効にするには、このパラメータを"
+" <literal>1</literal> にします:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1017
 #, no-c-format
 msgid "self_update=1"
-msgstr ""
+msgstr "self_update=1"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1018
 #, no-c-format
 msgid "To use a user-defined repository, specify a URL:"
-msgstr ""
+msgstr "ユーザ定義のリポジトリを使用する場合は、下記のように URL を指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1021
 #, no-c-format
 msgid "self_update=https://updates.example.com/"
-msgstr ""
+msgstr "self_update=https://updates.example.com/"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:1024
 #, no-c-format
 msgid "Scale User Interface for High DPI"
-msgstr ""
+msgstr "高 DPI 環境でのユーザインターフェイスの縮尺設定について"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1025
@@ -1512,18 +1874,22 @@ msgid ""
 "<literal>QT_AUTO_SCREEN_SCALE_FACTOR</literal> . This scales font and user "
 "interface elements to the screen DPI."
 msgstr ""
+"お使いのモニタが非常に高い DPI 値のものである場合は、起動パラメータに"
+" <literal>QT_AUTO_SCREEN_SCALE_FACTOR</literal> を追加してください。"
+"これにより、実際の DPI に合わせてフォントとユーザインターフェイスが"
+"調整されます。"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1030
 #, no-c-format
 msgid "QT_AUTO_SCREEN_SCALE_FACTOR=1"
-msgstr ""
+msgstr "QT_AUTO_SCREEN_SCALE_FACTOR=1"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:1034
 #, no-c-format
 msgid "&zseries;"
-msgstr ""
+msgstr "&zseries;"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1035
@@ -1538,12 +1904,21 @@ msgid ""
 "cannot be entered on screen, but must be specified in a parmfile (see <xref "
 "linkend=\"sec.appdendix.parm\"/> )."
 msgstr ""
+"&zseries; プラットフォームでは、システムは <xref linkend=\"sec.prep.ipling\"/> "
+"で説明している流れで起動処理 (IPL, Initial Program Load) を行ないます。"
+"また、これらのシステムでは、 &productname; に用意されているスプラッシュスクリーンを"
+"表示することができません。また、インストール時にはカーネルと initrd 、そして"
+"パラメータファイルをそれぞれ手作業で指定する必要があります。 &yast; は"
+"インストールシステムとの間を VNC, X, SSH のいずれかを介して接続すると、"
+"インストール画面を表示することができます。いずれの場合であっても、パラメータ"
+"ファイル内でそれらを指定しなければなりません (詳しくは <xref "
+"linkend=\"sec.appdendix.parm\"/> をお読みください) 。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:1047
 #, no-c-format
 msgid "<option>InstNetDev=osa</option>"
-msgstr ""
+msgstr "<option>InstNetDev=osa</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1050
@@ -1554,6 +1929,10 @@ msgid ""
 "literal> , and <literal>iucv</literal> (CTC, ESCON, and IUCV are no longer "
 "officially supported)."
 msgstr ""
+"設定したいインターフェイスの種類を指定します。指定可能な値は <literal>osa</"
+"literal> , <literal>hsi</literal> , <literal>ctc</literal> , <literal>escon</"
+"literal> , <literal>iucv</literal> のいずれかです (CTC, ESCON, IUCV は、いずれも"
+"公式にはサポートされていません) 。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1056
@@ -1562,6 +1941,8 @@ msgid ""
 "For the interfaces of type <literal>hsi</literal> and <literal>osa</"
 "literal> , specify an appropriate netmask and an optional broadcast address:"
 msgstr ""
+"<literal>hsi</literal> と <literal>osa</literal> のインターフェイスの場合は、"
+"対応するネットマスクのほか、必要であればブロードキャストアドレスを指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1061
@@ -1570,6 +1951,8 @@ msgid ""
 "Netmask=255.255.255.0\n"
 "Broadcast=192.168.255.255"
 msgstr ""
+"Netmask=255.255.255.0\n"
+"Broadcast=192.168.255.255"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1063
@@ -1579,18 +1962,21 @@ msgid ""
 "literal> , and <literal>iucv</literal> (CTC, ESCON, and IUCV are no longer "
 "officially supported), enter the IP address of the peer:"
 msgstr ""
+"<literal>ctc</literal> , <literal>escon</literal> , <literal>iucv</literal> "
+"のインターフェイス (CTC, ESCON, IUCV は、いずれも公式にはサポート"
+"されていません) の場合は、対向の IP アドレスを指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1069
 #, no-c-format
 msgid "Pointopoint=192.168.55.20"
-msgstr ""
+msgstr "Pointopoint=192.168.55.20"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:1073
 #, no-c-format
 msgid "<option>OsaInterface=&lt;lcs|qdio&gt;</option>"
-msgstr ""
+msgstr "<option>OsaInterface=&lt;lcs|qdio&gt;</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1076
@@ -1599,12 +1985,14 @@ msgid ""
 "For <literal>osa</literal> network devices, specify the host interface "
 "( <literal>qdio</literal> or <literal>lcs</literal> )."
 msgstr ""
+"<literal>osa</literal> ネットワークデバイスの場合は、ホストインターフェイス"
+"を指定します ( <literal>qdio</literal> もしくは <literal>lcs</literal> ) 。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:1083
 #, no-c-format
 msgid "<option>Layer2=&lt;0|1&gt;</option>"
-msgstr ""
+msgstr "<option>Layer2=&lt;0|1&gt;</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1086
@@ -1614,12 +2002,15 @@ msgid ""
 "specify whether to enable ( <literal>1</literal> ) or disable ( <literal>0</"
 "literal> ) OSI Layer 2 support."
 msgstr ""
+"<literal>osa</literal> QDIO Ethernet および <literal>hsi</literal> デバイスの場合は、"
+" OSI レイヤ 2 サポートを有効化する ( <literal>1</literal> ) か無効化する ( <literal>0</"
+"literal> ) かを指定します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:1094
 #, no-c-format
 msgid "<option>OSAHWAddr=02:00:65:00:01:09</option>"
-msgstr ""
+msgstr "<option>OSAHWAddr=02:00:65:00:01:09</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1097
@@ -1629,12 +2020,15 @@ msgid ""
 "specify a MAC address manually or state <literal>OSAHWADDR= </literal> (with "
 "trailing white space) for the system default."
 msgstr ""
+"<literal>osa</literal> QDIO Ethernet デバイスでレイヤ 2 を有効化した場合は、"
+" MAC アドレスを手作業で指定するか、もしくは <literal>OSAHWADDR= </literal> "
+"(必ず後ろに空白を入れます) でシステムの既定値を使用します。"
 
 #. Tag: term
 #: deployment_boot_parameters.xml:1105
 #, no-c-format
 msgid "<option>PortNo=&lt;0|1&gt;</option>"
-msgstr ""
+msgstr "<option>PortNo=&lt;0|1&gt;</option>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1108
@@ -1643,12 +2037,14 @@ msgid ""
 "For <literal>osa</literal> network devices, specify the port number "
 "(provided the device supports this feature). The default value is 0."
 msgstr ""
+"<literal>osa</literal> ネットワークデバイスの場合は、ポート番号"
+" (デバイスがこの機能に対応している場合) を指定します。既定値は 0 です。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1115
 #, no-c-format
 msgid "Each of the interfaces requires certain setup options:"
-msgstr ""
+msgstr "それぞれのインターフェイスには、それぞれの設定オプションを指定する必要があります:"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1120
@@ -1657,6 +2053,8 @@ msgid ""
 "Interfaces <literal>ctc</literal> and <literal>escon</literal> (CTC and "
 "ESCON are no longer officially supported):"
 msgstr ""
+"<literal>ctc</literal> と <literal>escon</literal> (CTC と ESCON は、"
+"いずれも公式にはサポートしていません) の場合:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1124
@@ -1665,6 +2063,8 @@ msgid ""
 "ReadChannel=0.0.0600\n"
 "WriteChannel=0.0.0601"
 msgstr ""
+"ReadChannel=0.0.0600\n"
+"WriteChannel=0.0.0601"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1126
@@ -1673,6 +2073,8 @@ msgid ""
 "<envar>ReadChannel</envar> specifies the READ channel to use. "
 "<envar>WriteChannel</envar> specifies the WRITE channel."
 msgstr ""
+"<envar>ReadChannel</envar> では、使用する READ チャンネルを指定します。"
+"<envar>WriteChannel</envar> specifies the WRITE チャンネルを指定します。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1132
@@ -1681,24 +2083,26 @@ msgid ""
 "For the <literal>ctc</literal> interface (no longer officially supported), "
 "specify the protocol that should be used for this interface:"
 msgstr ""
+"<literal>ctc</literal> インターフェイスの場合 (公式にはサポートしていません) 、"
+"このインターフェイスで利用するプロトコルを指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1136
 #, no-c-format
 msgid "CTCProtocol=&lt;0/1/2&gt;"
-msgstr ""
+msgstr "CTCProtocol=&lt;0/1/2&gt;"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1137
 #, no-c-format
 msgid "Valid entries would be:"
-msgstr ""
+msgstr "設定可能な値は下記のとおりです:"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1145
 #, no-c-format
 msgid "<literal>0</literal>"
-msgstr ""
+msgstr "<literal>0</literal>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1150
@@ -1707,30 +2111,32 @@ msgid ""
 "Compatibility mode, also for non-Linux peers other than OS/390 and z/OS "
 "(this is the default mode)"
 msgstr ""
+"互換モードと呼ばれ、 OS/390 や z/OS などを除く非 Linux 対向でも"
+"使用します (これが既定値です)"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1158
 #, no-c-format
 msgid "<literal>1</literal>"
-msgstr ""
+msgstr "<literal>1</literal>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1163
 #, no-c-format
 msgid "Extended mode"
-msgstr ""
+msgstr "拡張モード"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1170
 #, no-c-format
 msgid "<literal>2</literal>"
-msgstr ""
+msgstr "<literal>2</literal>"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1175
 #, no-c-format
 msgid "Compatibility mode with OS/390 and z/OS"
-msgstr ""
+msgstr "OS/390 および z/OS での互換モード"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1185
@@ -1739,12 +2145,14 @@ msgid ""
 "Network device type <literal>osa</literal> with interface <literal>lcs</"
 "literal> :"
 msgstr ""
+"インターフェイスが <literal>lcs</literal> である <literal>osa</literal> "
+"ネットワークデバイスの場合は、下記のように指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1189
 #, no-c-format
 msgid "ReadChannel=0.0.0124"
-msgstr ""
+msgstr "ReadChannel=0.0.0124"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1190
@@ -1755,24 +2163,27 @@ msgid ""
 "<envar>ReadChannel</envar> . <envar>Portnumber</envar> is used to specify "
 "the relative port."
 msgstr ""
+"<envar>ReadChannel</envar> は、このセットアップで使用するチャンネル番号を指定します。"
+"2 つめのポート番号は、 <envar>ReadChannel</envar> から 1 つ後ろのものを使用します。"
+" <envar>Portnumber</envar> は相対ポートを指定する場合に使用します。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1198
 #, no-c-format
 msgid "Interface <literal>iucv</literal> :"
-msgstr ""
+msgstr "インターフェイス <literal>iucv</literal> の場合:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1201
 #, no-c-format
 msgid "IUCVPeer=PEER"
-msgstr ""
+msgstr "IUCVPeer=PEER"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1202
 #, no-c-format
 msgid "Enter the name of the peer machine."
-msgstr ""
+msgstr "対向マシンの名前を指定します。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1207
@@ -1781,6 +2192,8 @@ msgid ""
 "Network device type <literal>osa</literal> with interface <literal>qdio</"
 "literal> for OSA-Express Gigabit Ethernet:"
 msgstr ""
+"インターフェイスが <literal>qdio</literal> (OSA-Express Gigabit Ethernet) "
+"である <literal>osa</literal> ネットワークデバイスの場合は、下記のように指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1211
@@ -1790,6 +2203,9 @@ msgid ""
 "WriteChannel=0.0.0701\n"
 "DataChannel=0.0.0702"
 msgstr ""
+"ReadChannel=0.0.0700\n"
+"WriteChannel=0.0.0701\n"
+"DataChannel=0.0.0702"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1214
@@ -1800,12 +2216,16 @@ msgid ""
 "<envar>DataChannel</envar> specifies the DATA channel. Make sure that the "
 "READ channel carries an even device number."
 msgstr ""
+"<envar>ReadChannel</envar> には READ チャンネルの番号を指定します。"
+"<envar>WriteChannel</envar> には WRITE チャンネルの番号を指定します。"
+"<envar>DataChannel</envar> には DATA チャンネルの番号を指定します。"
+"ただし、 READ チャンネルは偶数の番号でなければなりません。"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1222
 #, no-c-format
 msgid "Interface <literal>hsi</literal> for HiperSockets and VM guest LANs:"
-msgstr ""
+msgstr "HiperSockets や VM ゲスト LAN などの <literal>hsi</literal> インターフェイスの場合は、下記のように指定します:"
 
 #. Tag: screen
 #: deployment_boot_parameters.xml:1225
@@ -1815,6 +2235,9 @@ msgid ""
 "WriteChannel=0.0.0801\n"
 "DataChannel=0.0.0802"
 msgstr ""
+"ReadChannel=0.0.0800\n"
+"WriteChannel=0.0.0801\n"
+"DataChannel=0.0.0802"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1228
@@ -1824,12 +2247,15 @@ msgid ""
 "channel. For <envar>WriteChannel</envar> and <envar>DataChannel</envar> , "
 "enter the WRITE and DATA channel numbers."
 msgstr ""
+"<envar>ReadChannel</envar> には READ チャンネルで使用する適切な番号を指定します。"
+"<envar>WriteChannel</envar> と <envar>DataChannel</envar> には、それぞれ"
+"WRITE や DATA で使用するチャンネル番号を指定します。"
 
 #. Tag: title
 #: deployment_boot_parameters.xml:1237
 #, no-c-format
 msgid "More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: deployment_boot_parameters.xml:1238
@@ -1839,3 +2265,6 @@ msgid ""
 "at <link xlink:href=\"https://en.opensuse.org/SDB:Linuxrc#Parameter_Reference"
 "\"/> ."
 msgstr ""
+"起動パラメータについて、詳しくは &opensuse; Wiki <link xlink:href=\"https://ja.opensuse.org/SDB:Linuxrc"
+"\"/> をお読みください。"
+
