@@ -76,7 +76,7 @@
    <figure>
     <title>従来型の BIOS が搭載されたマシンの起動画面</title>
     <mediaobject>
-     <textobject><phrase>従来型の BIOS が搭載されたマシンの起動画面</phrase></textobject>
+     <textobject role="description"><phrase>従来型の BIOS が搭載されたマシンの起動画面</phrase></textobject>
      <imageobject os="sles;sled">
       <imagedata fileref="install_boot.png" width="75%"/>
      </imageobject>
@@ -184,7 +184,7 @@
    <figure>
     <title>UEFI が搭載されたマシンの起動画面</title>
     <mediaobject>
-     <textobject><phrase>UEFI が搭載されたマシンの起動画面</phrase></textobject>
+     <textobject role="description"><phrase>UEFI が搭載されたマシンの起動画面</phrase></textobject>
      <imageobject os="sles;sled">
       <imagedata fileref="install_boot_uefi.png" width="75%"/>
      </imageobject>
@@ -227,14 +227,14 @@
      <term><option>Info=</option> <replaceable>URL</replaceable></term>
      <listitem>
       <para>追加のオプションを読み込むべきファイルの場所を指定します。</para>
-      <para>このパラメータは、 10 行 (z/VM の場合、 1 行あたり 80 文字) という制限を克服するためのものです。 info ファイルについて、詳しくは <xref linkend="invoking_autoinst.linuxrc"/> をお読みください。 info ファイルは、通常の &zseries; ではネットワーク経由でアクセスするのみのものであるため、ネットワークの設定については、このファイルに記述することができません (これらのオプションは <xref linkend="sec.boot_parameters.list.network"/> で説明しています) 。デバッグ用のオプションなど、 linuxrc で通常の起動パラメータとして指定するものであれば、問題なく動作します。</para>
+      <para arch="zseries" os="sles">このパラメータは、 10 行 (z/VM の場合、 1 行あたり 80 文字) という制限を克服するためのものです。 info ファイルについて、詳しくは <xref linkend="invoking_autoinst.linuxrc"/> をお読みください。 info ファイルは、通常の &zseries; ではネットワーク経由でアクセスするのみのものであるため、ネットワークの設定については、このファイルに記述することができません (これらのオプションは <xref linkend="sec.boot_parameters.list.network"/> で説明しています) 。デバッグ用のオプションなど、 linuxrc で通常の起動パラメータとして指定するものであれば、問題なく動作します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term><option>upgrade=&lt;0|1&gt;</option></term>
      <listitem>
       <para>&productname; をアップグレードするには、 <option>Upgrade=1</option> を指定してください。</para>
-      <para>既存の &sle; インストールをアップグレードするには、独自のパラメータファイルが必要となります。このパラメータを設定しないと、インストールシステムはアップグレードオプションを提供しません。</para>
+      <para os="sles" arch="zseries">既存の &sle; インストールをアップグレードするには、独自のパラメータファイルが必要となります。このパラメータを設定しないと、インストールシステムはアップグレードオプションを提供しません。</para>
      </listitem>
     </varlistentry>
     <varlistentry>

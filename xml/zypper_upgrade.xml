@@ -42,22 +42,22 @@
     <substeps performance="required">
      <step>
       <para><phrase os="sles;sled">11-SP2 から 11-SP3</phrase> <phrase os="osuse">42.3 から 15.0<literal>leap/</literal></phrase> などのように、システムに設定されているリポジトリのバージョン番号を新しくします。新しいリポジトリは、下記のようにすることで追加できます:</para>
-<screen>
+<screen os="sles;sled">
 server=<replaceable>http://download.example.org</replaceable>
 &prompt.sudo;zypper ar $server/distribution/11-SP3/repo/oss/ <replaceable>SLE-11-SP3</replaceable>
 &prompt.sudo;zypper ar $server/update/11-SP3/ <replaceable>SLE-11-SP3-Update</replaceable>
       </screen>
-<screen>
+<screen os="osuse">
 server=<replaceable>http://download.example.org</replaceable>
 &prompt.sudo;zypper ar $server/distribution/leap/15.0/repo/oss/ <replaceable>Leap-15-OSS</replaceable>
 &prompt.sudo;zypper ar $server/update/leap/15.0/oss/ <replaceable>Leap-15-Update</replaceable>
       </screen>
       <para>あとは古いリポジトリを削除します:</para>
-<screen>
+<screen os="sles;sled">
 zypper rr <replaceable>SLE-11-SP2</replaceable>
 zypper rr <replaceable>SLE-11-Update</replaceable>
       </screen>
-<screen>
+<screen os="osuse">
 zypper rr <replaceable>Leap-42.3-OSS</replaceable>
 zypper rr <replaceable>Leap-42.3-Update</replaceable>
       </screen>

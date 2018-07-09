@@ -262,7 +262,7 @@ sudo zypper remove <replaceable>パッケージ名</replaceable></screen>
      <term>必要な修正の一覧表示</term>
      <listitem>
       <para>必要な全ての修正 (お使いのシステムに適用可能で、まだインストールされていないもの) を一覧表示するには、 <command>list-patches</command> コマンドを使用します:</para>
-<screen><?dbsuse-fo font-size="0.70em"?>&prompt.user;zypper list-patches
+<screen os="sles;sled"><?dbsuse-fo font-size="0.70em"?>&prompt.user;zypper list-patches
 リポジトリのデータを読み込んでいます...
 インストール済みのパッケージを読み込んでいます...
 
@@ -270,7 +270,7 @@ sudo zypper remove <replaceable>パッケージ名</replaceable></screen>
 ----------------------------------+-------------------+-------------+-----------+--------+------+----------------------------------------------------
 openSUSE-Leap-15.0-Update         | openSUSE-2018-473 | recommended | low       | ---    | 必要 | Recommended update for timezone, timezone-java
 </screen>
-<screen><?dbsuse-fo font-size="0.70em"?>&prompt.user;zypper list-patches
+<screen os="osuse"><?dbsuse-fo font-size="0.70em"?>&prompt.user;zypper list-patches
 リポジトリのデータを読み込んでいます...
 インストール済みのパッケージを読み込んでいます...
 
@@ -491,13 +491,13 @@ systemctl status sshd</screen>
   <para>出力は、たとえば下記のようになります:</para>
   <example xml:id="ex.zypper.repos">
    <title>Zypper&mdash;既知のリポジトリの一覧表示</title>
-<screen><?dbsuse-fo font-size="0.60em"?>&prompt.user;zypper repos
+<screen os="sles;sled"><?dbsuse-fo font-size="0.60em"?>&prompt.user;zypper repos
 # | 別名         | 名前          | 有効   | 更新
 --+--------------+---------------+--------+-------------+-------
 1 | SLEHA-12-GEO | SLEHA-12-GEO  | はい    | いいえ
 2 | SLEHA-12     | SLEHA-12      | はい    | いいえ
 3 | SLES12       | SLES12        | はい    | いいえ</screen>
-<screen><?dbsuse-fo font-size="0.60em"?>&prompt.user;zypper repos
+<screen os="osuse"><?dbsuse-fo font-size="0.60em"?>&prompt.user;zypper repos
 # | 別名                      | 名前                              | 有効   | GPGチェック | 更新
 --+---------------------------+-----------------------------------+--------+-------------+-------
 1 | repo-non-oss              | openSUSE-Leap-15.0-Non-Oss        | はい   | (r ) はい   | はい
@@ -529,9 +529,9 @@ systemctl status sshd</screen>
   <sect3 xml:id="sec.zypper.instrepo.rm">
    <title>リポジトリの削除</title>
    <para>一覧からリポジトリを削除するには、 <command>zypper removerepo</command> で削除したいリポジトリの別名または番号を指定します。たとえば <xref linkend="ex.zypper.repos"/> の状態から <literal os="sles;sled">SLEHA-12-GEO</literal><literal os="osuse">repo-update-non-oss</literal>リポジトリを削除するには、下記のいずれかのコマンドを実行します:</para>
-<screen>&prompt.sudo;zypper removerepo 1
+<screen os="sles;sled">&prompt.sudo;zypper removerepo 1
 &prompt.sudo;zypper removerepo "SLEHA-12-GEO"</screen>
-<screen>&prompt.sudo;zypper removerepo 4
+<screen os="osuse">&prompt.sudo;zypper removerepo 4
 &prompt.sudo;zypper removerepo "repo-update-non-oss"</screen>
   </sect3>
   <sect3 xml:id="sec.zypper.instrepo.mofify">
