@@ -135,9 +135,12 @@ sub ProcessNode {
    $srctext =~ s/^ *(.*?) *$/$1/;
 
     if (length($srctext) > 0) {
-      $result{$srctext}{"nodeName"} = $node->nodeName;
-      $result{$srctext}{"lineNumber"} = $node->line_number();
-      push(@{$result{$srctext}{"ref"}}, \$node);
+      # because bare node (i.e. without having any enclosing node) cannot be replaced...
+      if (substr($node->nodeName, 0, 1) ne "#") {
+        $result{$srctext}{"nodeName"} = $node->nodeName;
+        $result{$srctext}{"lineNumber"} = $node->line_number();
+        push(@{$result{$srctext}{"ref"}}, \$node);
+      }
     }
   } else {
     foreach my $child (@children) {
