@@ -288,6 +288,14 @@ __EOF__
 
         for my $oldNode (@{$result{$r}{"ref"}}) {
           my $newNode = $$oldNode->getOwner->createElement($result{$r}{"nodeName"});
+
+          # copy attributes
+          if ($$oldNode->hasAttributes) {
+            for my $oldAttribute ($$oldNode->attributes) {
+              $newNode->setAttribute($oldAttribute->nodeName, $oldAttribute->value);
+            }
+          }
+
           my $chunk = $parser->parse_balanced_chunk(
             #dummy <para> in order to resolve XML namespace
             $dummyParaStart . $msgstr . $dummyParaEnd);
