@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-07-09 09:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -59,7 +59,7 @@ msgstr ""
 #. Tag: para
 #: security_cryptofs.xml:52
 #, no-c-format
-msgid "To quickly encrypt one or several files, you can use the GPG tool. See <xref linkend=\"sec.security.cryptofs.gpg\"/> for more information."
+msgid "To quickly encrypt one or more files, you can use the GPG tool. See <xref linkend=\"sec.security.cryptofs.gpg\"/> for more information."
 msgstr ""
 
 #. Tag: title
@@ -233,13 +233,13 @@ msgstr ""
 #. Tag: para
 #: security_cryptofs.xml:219
 #, no-c-format
-msgid "To set up an encrypted virtual disk, you need to create an empty file first. This file is called loop file and is going to contain the encrypted data. In the terminal, switch to the desired directory and run the <command>touch <replaceable>LOOP_FILE</replaceable></command> command (where <replaceable>LOOP_FILE</replaceable> is the desired name, for example: <filename>secret</filename> ). We recommend to create an empty directory that will act as a mount point for the encrypted virtual disk. To do this, use the <command>mkdir <replaceable>MOUNT_DIR</replaceable></command> command (replace <replaceable>MOUNT_DIR</replaceable> with the actual path and directory name, for example <filename>~/my_docs</filename> ). <replaceable>LOOP_FILE</replaceable> must reside outside of <replaceable>MOUNT_DIR</replaceable> ."
+msgid "To set up an encrypted virtual disk, you need to create an empty file first. This file is called a loop file and is going to contain the encrypted data. In the terminal, switch to the desired directory and run the <command>touch <replaceable>LOOP_FILE</replaceable></command> command (where <replaceable>LOOP_FILE</replaceable> is the desired name, for example: <filename>secret</filename> ). We recommend to create an empty directory that will act as a mount point for the encrypted virtual disk. To do this, use the <command>mkdir <replaceable>MOUNT_DIR</replaceable></command> command (replace <replaceable>MOUNT_DIR</replaceable> with the actual path and directory name, for example <filename>~/my_docs</filename> ). <replaceable>LOOP_FILE</replaceable> must reside outside of <replaceable>MOUNT_DIR</replaceable> ."
 msgstr ""
 
 #. Tag: para
 #: security_cryptofs.xml:235
 #, no-c-format
-msgid "To set up an encrypted virtual disk, launch &yast;, switch to the <guimenu>System</guimenu> section, and start Partitioner. Switch to the <guimenu>Crypt Files</guimenu> section and press <guimenu>Add Crypt File</guimenu> . Enter the path to the created loop file ( <replaceable>LOOP_FILE</replaceable> ) into the <guimenu>Path Name of Loop File</guimenu> field. Enable the <guimenu>Create Loop File</guimenu> option, specify the desired size, and press <guimenu>Next</guimenu> . In the <guimenu>Mount Point</guimenu> field, enter the path to the directory that serves as a mount point ( <replaceable>MOUNT_DIR</replaceable> , in this example, it is <filename>~/my_docs</filename> ). Make sure that the <guimenu>Encrypt Device</guimenu> option is enabled and press <guimenu>Next</guimenu> . Provide the desired password and press <guimenu>Finish</guimenu> ."
+msgid "To set up an encrypted virtual disk, launch &yast;, switch to the <guimenu>System</guimenu> section, and start the Partitioner. Switch to the <guimenu>Crypt Files</guimenu> section and press <guimenu>Add Crypt File</guimenu> . Enter the path to the created loop file ( <replaceable>LOOP_FILE</replaceable> ) into the <guimenu>Path Name of Loop File</guimenu> field. Enable the <guimenu>Create Loop File</guimenu> option, specify the desired size, and press <guimenu>Next</guimenu> . In the <guimenu>Mount Point</guimenu> field, enter the path to the directory that serves as a mount point ( <replaceable>MOUNT_DIR</replaceable> , in this example it is <filename>~/my_docs</filename> ). Make sure that the <guimenu>Encrypt Device</guimenu> option is enabled and press <guimenu>Next</guimenu> . Provide the desired password and press <guimenu>Finish</guimenu> ."
 msgstr ""
 
 #. Tag: para
@@ -283,7 +283,7 @@ msgstr ""
 #. Tag: para
 #: security_cryptofs.xml:287
 #, no-c-format
-msgid "In the commands above, the <replaceable>FILE</replaceable> refers to the path to the loop file, <replaceable>NAME</replaceable> is a user-defined name, and <replaceable>DIR</replaceable> is the path to the mount point. For example:"
+msgid "In the commands above, <replaceable>FILE</replaceable> refers to the path to the loop file, <replaceable>NAME</replaceable> is a user-defined name, and <replaceable>DIR</replaceable> is the path to the mount point. For example:"
 msgstr ""
 
 #. Tag: screen
@@ -359,6 +359,6 @@ msgstr ""
 #. Tag: para
 #: security_cryptofs.xml:338
 #, no-c-format
-msgid "Keep that the encrypted file can be only decrypted using the same key that was used for encryption. If you want to share an encrypted file with another person, you have to use that person's public key to encrypt the file."
+msgid "Keep in mind that the encrypted file can be only decrypted using the same key that was used for encryption. If you want to share an encrypted file with another person, you have to use that person's public key to encrypt the file."
 msgstr ""
 

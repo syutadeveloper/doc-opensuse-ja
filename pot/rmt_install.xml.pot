@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-07-09 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -17,344 +17,134 @@ msgstr ""
 #. Tag: title
 #: rmt_install.xml:10
 #, no-c-format
-msgid "&rmt; Installation"
+msgid "&rmt; Installation and Configuration"
 msgstr ""
 
 #. Tag: para
-#: rmt_install.xml:11
+#: rmt_install.xml:12
 #, no-c-format
-msgid "&rmt; is included in &sls; starting with version 12 SP1. To install it, start &sls; installation, and click <guimenu>Software</guimenu> on the <guimenu>Installation Settings</guimenu> screen. Select the <guimenu>Subscription Management Tool</guimenu> pattern on the <guimenu>Software Selection and System Tasks</guimenu> screen, then click <guimenu>OK</guimenu> ."
+msgid "Install &rmt; directly during the installation of &productname; or install it on a running system. After the packages are installed, use &yast; to do an initial configuration."
 msgstr ""
 
 #. Tag: title
+#: rmt_install.xml:19
+#, no-c-format
+msgid "Installation During System Installation"
+msgstr ""
+
+#. Tag: para
 #: rmt_install.xml:20
+#, no-c-format
+msgid "&rmt; is included in &sls; starting with version 15. To install it during installation, select the <package>rmt-server</package> package. The package selection is available in the <emphasis>Installation Settings</emphasis> step of the installation when click <emphasis>Software</emphasis> ."
+msgstr ""
+
+#. Tag: title
+#: rmt_install.xml:28
 #, no-c-format
 msgid "&rmt; Pattern"
 msgstr ""
 
-#. Tag: title
-#: rmt_install.xml:31
-#, no-c-format
-msgid "Installing &rmt; on an Existing System"
-msgstr ""
-
 #. Tag: para
-#: rmt_install.xml:32
-#, no-c-format
-msgid "To install &rmt; on the existing &sls; system, run <menuchoice><guimenu>&yast;</guimenu><guimenu>Software</guimenu><guimenu>Software Management</guimenu></menuchoice> , select <menuchoice><guimenu>View</guimenu><guimenu>Patterns</guimenu></menuchoice> and select the <guimenu>&rmt;</guimenu> pattern there."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:40
+#: rmt_install.xml:38
 #, no-c-format
 msgid "It is recommended to check for available &rmt; updates immediately after installing &sls; using the <command>zypper patch</command> command. &suse; continuously releases maintenance updates for &rmt;, and newer packages are likely to be available."
 msgstr ""
 
-#. Tag: para
-#: rmt_install.xml:46
+#. Tag: title
+#: rmt_install.xml:47
 #, no-c-format
-msgid "After the system is installed and updated, perform an initial &rmt; configuration using <menuchoice><guimenu>&yast;</guimenu><guimenu>Network Services</guimenu><guimenu>&rmt; Configuration Wizard</guimenu></menuchoice> ."
+msgid "Installation on Existing System"
+msgstr ""
+
+#. Tag: para
+#: rmt_install.xml:48
+#, no-c-format
+msgid "To install &rmt; on a running &productname; installation, use <command>zypper</command> :"
+msgstr ""
+
+#. Tag: screen
+#: rmt_install.xml:52
+#, no-c-format
+msgid "&prompt.sudo;<command>zypper in rmt-server</command>"
 msgstr ""
 
 #. Tag: title
-#: rmt_install.xml:55
-#, no-c-format
-msgid "Install smt-client"
-msgstr ""
-
-#. Tag: para
 #: rmt_install.xml:56
 #, no-c-format
-msgid "The <literal>smt-client</literal> package needs to be installed on clients connected to the &rmt; server. The package requires no configuration, and it can be installed using the <command>sudo zypper in smt-client</command> command."
+msgid "&rmt; Configuration with &yast;"
 msgstr ""
 
-#. Tag: title
-#: rmt_install.xml:66
+#. Tag: para
+#: rmt_install.xml:57
 #, no-c-format
-msgid "&rmt; Configuration Wizard"
+msgid "Configure &rmt; with &yast; as described in the following procedure. It is assumed that this procedure is executed on a newly installed system."
+msgstr ""
+
+#. Tag: para
+#: rmt_install.xml:64
+#, no-c-format
+msgid "Start &yast; with the <literal>rmt</literal> module."
+msgstr ""
+
+#. Tag: screen
+#: rmt_install.xml:67
+#, no-c-format
+msgid "&prompt.sudo;<command>yast2 rmt</command>"
 msgstr ""
 
 #. Tag: para
 #: rmt_install.xml:68
 #, no-c-format
-msgid "The two-step <guimenu>&rmt; Configuration Wizard</guimenu> helps you configure &rmt; after &sls; installation is finished. You can change the configuration later using the &yast; &rmt; Server Configuration module&mdash;see <xref linkend=\"smt.server\"/> ."
+msgid "Alternatively, start &yast; and manually select <menuchoice> <guimenu>Network Services</guimenu> <guimenu>RMT Configuration</guimenu> </menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_install.xml:77
+#: rmt_install.xml:75
 #, no-c-format
-msgid "The <guimenu>Enable Subscription Management Tool service (&rmt;)</guimenu> option is enabled by default. Toggle it only if you want to disable the &rmt; product."
+msgid "Enter your organization credentials. To retrieve your credentials, refer to <xref linkend=\"sec.rmt_mirroring.credentials\"/> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_install.xml:82
+#: rmt_install.xml:81
 #, no-c-format
-msgid "If the firewall is enabled, enable <guimenu>Open Port in Firewall</guimenu> to allow access to the &rmt; service from remote computers."
+msgid "Enter credentials for the &mariadb; database. The database user you enter will be created. Then select <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_install.xml:87
+#: rmt_install.xml:85
 #, no-c-format
-msgid "Enter your &scc; organization credentials in <guimenu>User</guimenu> and <guimenu>Password</guimenu> . If you do not know your &scc; credentials, refer to <xref linkend=\"smt.mirroring.getcredentials\"/> . Test the entered credentials using the <guimenu>Test</guimenu> button. &rmt; will connect to the Customer Center server using the provided credentials and download testing data."
+msgid "If a password for the &mariadb; <literal>root</literal> user is already set, you are required to enter it. If no password is set for <literal>root</literal> , you are asked to enter a new one."
 msgstr ""
 
 #. Tag: para
-#: rmt_install.xml:95
+#: rmt_install.xml:92
 #, no-c-format
-msgid "Enter the e-mail address you used for the &scc; registration into <guimenu>SCC E-mail Used for Registration</guimenu> ."
+msgid "Enter a common name for the SSL certificates. The common name should usually be the domain name of the server. Alternative common names can also be entered, for example the IP address."
 msgstr ""
 
 #. Tag: para
 #: rmt_install.xml:97
 #, no-c-format
-msgid "<guimenu>Your &rmt; Server URL</guimenu> should contain the URL of the &rmt; server being configured. It is populated automatically."
+msgid "When all common names are entered, select <guimenu>Next</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_install.xml:101
+#: rmt_install.xml:102
 #, no-c-format
-msgid "Click <guimenu>Next</guimenu> to continue to the second configuration step."
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:106
-#, no-c-format
-msgid "&rmt; Wizard"
+msgid "To view a final summary, again select <guimenu>Next</guimenu> . Then select <guimenu>Finish</guimenu> to close &yast;. &yast; then enables and starts all &systemd; services and timers."
 msgstr ""
 
 #. Tag: para
-#: rmt_install.xml:118
+#: rmt_install.xml:110
 #, no-c-format
-msgid "For security reasons, &rmt; requires a separate user to connect to the database. In the <guimenu>Database Password for smt User</guimenu> screen, set the database password for this user."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:123
-#, no-c-format
-msgid "Enter all e-mail addresses for receiving &rmt; reports using the <guimenu>Add</guimenu> button. Use the <guimenu>Edit</guimenu> and <guimenu>Delete</guimenu> buttons to modify and delete the existing addresses. When you have done that, click <guimenu>Next</guimenu> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:131
-#, no-c-format
-msgid "If the current database root password is empty, you will be prompted to specify it."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:136
-#, no-c-format
-msgid "By default, &rmt; is set to communicate with the client hosts via a secure protocol. For this, the server needs to have a server SSL certificate. The wizard displays a warning if the certificate does not exist. You can create a certificate using the <guimenu>Run CA Management</guimenu> button. Refer to <xref linkend=\"sec.security.yast_ca.module\"/> for detailed information on managing certificates with &yast;."
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:146
-#, no-c-format
-msgid "Missing Server Certificate"
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:160
-#, no-c-format
-msgid "Upgrading from Previous Versions of &rmt;"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:162
-#, no-c-format
-msgid "This section provides information on upgrading &rmt; from the previous versions."
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:166
-#, no-c-format
-msgid "Upgrade from Versions Prior to 11 SP3"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:167
-#, no-c-format
-msgid "<remark condition=\"clarity\"> 2018-02-13 - fs: Is an update from SLE 11 SP4 supported? How? </remark> A direct upgrade path from SMT to &rmt; prior to version 11 SP4 is not supported. You need to do the following:"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:175
-#, no-c-format
-msgid "Upgrade the operating system to &sls; 11 SP4 as described in <link xlink:href=\"https://www.suse.com/documentation/sles11/book_sle_deployment/data/cha.upgrade-paths.html\"/>"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:181
-#, no-c-format
-msgid "At the same time upgrade SMT to version 11 SP4 as described in <link xlink:href=\"https://www.suse.com/documentation/smt11/book_yep/data/smt_installation_upgrade.html\"/> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:187
-#, no-c-format
-msgid "Follow the steps described in <xref linkend=\"smt.installation.upgrade.latest\"/> ."
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:194
-#, no-c-format
-msgid "Upgrade from &rmt; 12 SP3"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:195
-#, no-c-format
-msgid "Upgrade from &rmt; 12 SP3 is performed automatically during the &sls; upgrade and requires no additional manual steps. For more information on &sls; upgrade, see <xref linkend=\"cha.upgrade-paths\"/> ."
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:201
-#, no-c-format
-msgid "Upgrade from &rmt; 11 SP4"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:202
-#, no-c-format
-msgid "To upgrade &rmt; from version 11 SP4 to 12 SP3, follow the steps below."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:207
-#, no-c-format
-msgid "If you have not already done so, migrate from Novell Customer Center to &scc; as described in <xref linkend=\"smt.installation.upgrade.scc\"/> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:214
-#, no-c-format
-msgid "Back up and migrate the database. See the general procedure in <xref linkend=\"sec.update-preparation.sle11.mariadb\"/> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:218
-#, no-c-format
-msgid "Upgrade to &sls; 12 SP3 as described in <xref linkend=\"cha.upgrade-paths\"/> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:224
-#, no-c-format
-msgid "Look if the new <filename>/etc/my.cnf.rpmnew</filename> exists and update it with any custom changes you need. Then copy it over the existing <filename>/etc/my.cnf</filename> :"
+msgid "If you have a firewall enabled, allow access to ports 80 and 443. When using the default zone <literal>public</literal> , execute the following commands:"
 msgstr ""
 
 #. Tag: screen
-#: rmt_install.xml:227
+#: rmt_install.xml:115
 #, no-c-format
-msgid "&prompt.sudo;cp /etc/my.cnf.rpmnew /etc/my.cnf"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:230
-#, no-c-format
-msgid "Enable the <systemitem>smt</systemitem> target to start at the system boot:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_install.xml:232
-#, no-c-format
-msgid "&prompt.sudo;systemctl enable smt.target"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:233
-#, no-c-format
-msgid "Start it immediately, if necessary:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_install.xml:236
-#, no-c-format
-msgid "&prompt.sudo;systemctl start smt.target"
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:240
-#, no-c-format
-msgid "Migration to &scc; on SMT 11 SP4"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:241
-#, no-c-format
-msgid "Before upgrading to &sls; 12, you need to switch the registration center on &sls; 11. SMT now registers with &scc; instead of Novell Customer Center. You can do this either via a &yast; module or command line tools."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:247
-#, no-c-format
-msgid "Before performing the switch between customer centers, make sure that the target customer center serves all products that are registered with &rmt;. Both &yast; and the command line tools perform a check to find out whether all products can be served with the new registration server."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:254
-#, no-c-format
-msgid "To perform the migration to &scc; via command line, use the following command:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_install.xml:257
-#, no-c-format
-msgid "&prompt.sudo;smt ncc-scc-migration"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:258
-#, no-c-format
-msgid "The migration itself takes time, and during the migration process the &rmt; server may not be able to serve clients that are already registered."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:263
-#, no-c-format
-msgid "The migration process itself changes the registration server and the proper type of API in the configuration files. No further (configuration) changes are needed on the &rmt;."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:268
-#, no-c-format
-msgid "To migrate from Novell Customer Center to &scc; via &yast;, use the &yast; smt-server module."
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:272
-#, no-c-format
-msgid "When migration has been completed, it is necessary to synchronize &rmt; with the customer center. It is recommended to ensure that the repositories are up to date. This can be done using the following commands:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_install.xml:276
-#, no-c-format
-msgid "\n"
-      "   smt sync\n"
-      "   smt mirror\n"
-      "  "
-msgstr ""
-
-#. Tag: title
-#: rmt_install.xml:284
-#, no-c-format
-msgid "Enabling SLP Announcements"
-msgstr ""
-
-#. Tag: para
-#: rmt_install.xml:286
-#, no-c-format
-msgid "&rmt; includes the SLP service description file ( <filename>/etc/slp.reg.d/smt.reg</filename> ). To enable SLP announcements of the &rmt; service, open respective ports in your firewall and enable the SLP service:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_install.xml:293
-#, no-c-format
-msgid "\n"
-      "sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \"427\"\n"
-      "sysconf_addword /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_UDP \"427\"\n"
-      "systemctl enable slpd.service\n"
-      "systemctl start slpd.service\n"
-      "  "
+msgid "&prompt.sudo;<command>firewall-cmd --zone=public --add-port=80/tcp --permanent</command>\n"
+      "&prompt.sudo;<command>firewall-cmd --zone=public --add-port=443/tcp --permanent</command>\n"
+      "&prompt.sudo;<command>firewall-cmd --reload</command>"
 msgstr ""
 

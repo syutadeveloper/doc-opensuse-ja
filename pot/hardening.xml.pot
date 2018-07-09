@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-07-09 09:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -563,13 +563,13 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:598
 #, no-c-format
-msgid "Packages generally do not impose any security risk to the system, if they do <emphasis>not</emphasis> contain:"
+msgid "Packages generally do not impose any security risk to the system if they do <emphasis>not</emphasis> contain:"
 msgstr ""
 
 #. Tag: para
 #: hardening.xml:604
 #, no-c-format
-msgid "setuid- or setgid bits on any of the installed files"
+msgid "setuid or setgid bits on any of the installed files"
 msgstr ""
 
 #. Tag: para
@@ -911,7 +911,7 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:981
 #, no-c-format
-msgid "Most BIOS implementations can be configured to prevent unauthorized users from manipulating system and boot settings. This is typically done by setting a BIOS admin or boot password. The admin password only needs to be entered for changing the system configuration but the boot password will be required during every normal boot. For most use cases it is enough to set an admin password and restrict booting to the builtin hard disk. This way an attacker will not be able to simply boot a Linux live CD or USB thumb drive, for example. Although this does not provide a high level of security (a BIOS can be reset, removed or modified – assuming case access), it can be another deterrent."
+msgid "Most BIOS implementations can be configured to prevent unauthorized users from manipulating system and boot settings. This is typically done by setting a BIOS admin or boot password. The admin password only needs to be entered for changing the system configuration but the boot password will be required during every normal boot. For most use cases it is enough to set an admin password and restrict booting to the built-in hard disk. This way an attacker will not be able to simply boot a Linux live CD or USB thumb drive, for example. Although this does not provide a high level of security (a BIOS can be reset, removed or modified – assuming case access), it can be another deterrent."
 msgstr ""
 
 #. Tag: para
@@ -923,7 +923,7 @@ msgstr ""
 #. Tag: title
 #: hardening.xml:1001
 #, no-c-format
-msgid "Booting when a BIOS Boot Password is Set"
+msgid "Booting when a BIOS Boot Password Is Set"
 msgstr ""
 
 #. Tag: para
@@ -941,7 +941,7 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:1010
 #, no-c-format
-msgid "Once a system is setup the first time, the BIOS admin password will not be required often. Don't forget the password or you will need to clear the BIOS memory via hardware manipulation to get access again."
+msgid "Once a system is set up for the first time, the BIOS admin password will not be required often. Don't forget the password or you will need to clear the BIOS memory via hardware manipulation to get access again."
 msgstr ""
 
 #. Tag: title
@@ -1577,7 +1577,7 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:1630
 #, no-c-format
-msgid "Even in the absence of any known security breach, a regular inspection of differences of important configuration files in backups can help finding security issues (maybe even accidental misconfigurations). This approach is best suited for files and environments where the content doesn't change too frequently."
+msgid "Even in the absence of any known security breach, a regular inspection of differences among important configuration files in backups can help with finding security issues (maybe even accidental misconfigurations). This approach is best suited for files and environments where the content doesn't change too frequently."
 msgstr ""
 
 #. Tag: title
@@ -1607,13 +1607,13 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:1665
 #, no-c-format
-msgid "<literal>nodev</literal> : prevents character or block special devices to be usable."
+msgid "<literal>nodev</literal> : prevents character or block special devices from being usable."
 msgstr ""
 
 #. Tag: para
 #: hardening.xml:1671
 #, no-c-format
-msgid "<literal>nosuid</literal> : prevents the <literal>set-user-ID</literal> or <literal>set-group-ID</literal> bits to be effective."
+msgid "<literal>nosuid</literal> : prevents the <literal>set-user-ID</literal> or <literal>set-group-ID</literal> bits from being effective."
 msgstr ""
 
 #. Tag: para
@@ -2140,7 +2140,7 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:2127
 #, no-c-format
-msgid "The programs/protocols of FTP, <command>telnet</command> , and <command>rlogin</command> ( <command>rsh</command> ) are vulnerable to eavesdropping, which is one of the main reasons secure alternatives such as <command>ssh</command> , <command>scp</command> or <command>sftp</command> should be used instead. It is highly recommended not to run these insecure services. Because of the high risk, this guide does not cover these services (other than vsftp). It would also be a good idea (and part of our guidance, see next section) not to have FTP and Telnet server RPMs installed on the system. Note that the EAL 4+ evaluation had vsftp installed. The <quote>vs</quote> stands for <quote>very secure</quote> &mdash;which is a differentiator here when compared to normal FTP."
+msgid "The programs/protocols of FTP, <command>telnet</command> , and <command>rlogin</command> ( <command>rsh</command> ) are vulnerable to eavesdropping, which is one of the main reasons secure alternatives such as <command>ssh</command> , <command>scp</command> or <command>sftp</command> should be used instead. It is highly recommended not to run these insecure services. Because of the high risk, this guide does not cover these services (other than vsftp). It would also be a good idea (and part of our guidance, see next section) not to have FTP and Telnet server RPMs installed on the system. Note that the EAL 4+ evaluation had vsftp installed. The <quote>vs</quote> stands for <quote>very secure</quote> , which is a differentiator here when compared to normal FTP."
 msgstr ""
 
 #. Tag: title
@@ -2218,7 +2218,7 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:2213
 #, no-c-format
-msgid "To retrieve details about a particular package run:"
+msgid "To retrieve details about a particular package, run:"
 msgstr ""
 
 #. Tag: screen
@@ -2488,13 +2488,13 @@ msgstr ""
 #. Tag: screen
 #: hardening.xml:2479
 #, no-c-format
-msgid "&prompt.root;netstat -ntulp"
+msgid "&prompt.root;ss -tulpn"
 msgstr ""
 
 #. Tag: para
 #: hardening.xml:2481
 #, no-c-format
-msgid "Be aware that <command>netstat</command> output can be wider than a default terminal screen. If the screen is too narrow, the options described above will likely cause the output to wrap and be less legible."
+msgid "Be aware that <command>ss</command> output can be wider than a default terminal screen. If the screen is too narrow, the options described above will likely cause the output to wrap and be less legible."
 msgstr ""
 
 #. Tag: para
@@ -2506,17 +2506,18 @@ msgstr ""
 #. Tag: screen
 #: hardening.xml:2491
 #, no-c-format
-msgid "Proto Recv-Q Send-Q Local            Foreign         State   PID/Program\n"
-      "                    Address          Address                 name\n"
-      "tcp   0      0      *:69             *.*             LISTEN  2328/tftpd\n"
-      "tcp   0      0      127.0.0.1:25     *.*             LISTEN  2360/sendmail:acce\n"
-      "tcp   0      0      *:22             *.*             LISTEN  2317/sshd"
+msgid "Netid  State  Recv-Q Send-Q Local Address:Port  Peer Address:Port\n"
+      "udp    UNCONN 0      0        0.0.0.0%eth0:68         0.0.0.0:*   users:((\"wickedd-dhcp4\",pid=541,fd=8))\n"
+      "tcp    LISTEN 0      128           0.0.0.0:22         0.0.0.0:*   users:((\"sshd\",pid=1562,fd=3))\n"
+      "tcp    LISTEN 0      100         127.0.0.1:25         0.0.0.0:*   users:((\"master\",pid=1701,fd=13))\n"
+      "tcp    LISTEN 0      128              [::]:22            [::]:*   users:((\"sshd\",pid=1562,fd=4))\n"
+      "tcp    LISTEN 0      100             [::1]:25            [::]:*   users:((\"master\",pid=1701,fd=14))"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2497
+#: hardening.xml:2498
 #, no-c-format
-msgid "From the output above you can see that three TCP-based services are running and listening: tftpd, sendmail, and sshd. Sendmail should not be configured to listen for incoming network connections unless the server running it is a designated as a mail or relay server. Running a port scan from another server can confirm that, but make sure to obtain proper permissions to scan/probe a machine on a production network."
+msgid "From the output above you can see that 2 TCP-based and 1 UDP-based services are running and listening: master, sshd, and wickedd. Not required services should be stopped. Use port scans from other machines for confirmation. But make sure to obtain proper permissions to scan a machine on a production network."
 msgstr ""
 
 #. Tag: para
@@ -2548,7 +2549,7 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:2527
 #, no-c-format
-msgid "Note that running the <command>nmap</command> command will only scan certain well-known ports by default. If you want to scan all ports you need to specify <command>-p 1-65535</command> . Doing this will slow down the scan considerably. Especially for UDP scans the use of an asynchronous scanner such as masscan <link xlink:href=\"https://software.opensuse.org/package/masscan\"/> is recommended."
+msgid "Note that running the <command>nmap</command> command will only scan certain well-known ports by default. If you want to scan all ports you need to specify <command>-p 1-65535</command> . Doing this will slow down the scan considerably. Especially for UDP scans the use of an asynchronous scanner such as masscan ( <link xlink:href=\"https://software.opensuse.org/package/masscan\"/> ) is recommended."
 msgstr ""
 
 #. Tag: screen
@@ -2571,29 +2572,29 @@ msgstr ""
 #. Tag: para
 #: hardening.xml:2550
 #, no-c-format
-msgid "If you want to scan UDP specify the ports with a <command>U:</command> prefix: <command>masscan <replaceable>REMOTE_HOST</replaceable>/32 -p U:1-65535</command>"
+msgid "If you want to scan UDP, specify the ports with a <command>U:</command> prefix: <command>masscan <replaceable>REMOTE_HOST</replaceable>/32 -p U:1-65535</command> ."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2555
+#: hardening.xml:2556
 #, no-c-format
-msgid "The results of the scans can vary widely and might not show all listening network sockets depending on the status of the firewall."
+msgid "The results of the scans can vary widely and might not show all listening network sockets, depending on the status of the firewall."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2561
+#: hardening.xml:2562
 #, no-c-format
 msgid "From the first sample run above, you see that the <systemitem class=\"daemon\">tftpd</systemitem> daemon is listening on port auth (port 69) for <literal>IDENT</literal> . You can also see that sendmail is not listening for remote incoming network connections."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2568
+#: hardening.xml:2569
 #, no-c-format
 msgid "Another method to list all of the TCP and UDP sockets to which programs are listening (on a host) is to use the <command>lsof</command> command – which lists open files:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2574
+#: hardening.xml:2575
 #, no-c-format
 msgid "&prompt.root;lsof -i -n | egrep 'COMMAND|LISTEN|UDP'\n"
       "COMMAND  PID   USER   FD   TYPE    DEVICE SIZE/OFF NODE NAME\n"
@@ -2603,184 +2604,184 @@ msgid "&prompt.root;lsof -i -n | egrep 'COMMAND|LISTEN|UDP'\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2580
+#: hardening.xml:2581
 #, no-c-format
 msgid "You should always check the results you get from a command run on a machine with an external scan."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2587
+#: hardening.xml:2588
 #, no-c-format
 msgid "Securing Postfix"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2589
+#: hardening.xml:2590
 #, no-c-format
 msgid "Postfix is a replacement for Sendmail and has several security advantages over Sendmail. Postfix is the default mail system in &productname; and consists of several small programs that each perform their own small task&mdash;most of these programs run in a chroot jail. This is one of the reasons Postfix is recommended over Sendmail."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2597
+#: hardening.xml:2598
 #, no-c-format
 msgid "Linux servers that are not dedicated mail or relay servers should not accept external e-mails. However, it is important for production servers to send local e-mails to a relay server&mdash;some security setups (for example the seccheck scripts) can be configured to send e-mails to someone other than &rootuser;, even off the local system."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2605
+#: hardening.xml:2606
 #, no-c-format
 msgid "Verify the following parameters in <filename>/etc/postfix/main.cf</filename> are set to ensure that Postfix accepts only local e-mails for delivery (look toward the bottom of the file as the top portion is mostly commented-out example entries and explanations):"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2613
+#: hardening.xml:2614
 #, no-c-format
 msgid "mydestination = $myhostname, localhost.$mydomain, localhost\n"
       "inet_interfaces = localhost"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2616
+#: hardening.xml:2617
 #, no-c-format
 msgid "The <literal>mydestination</literal> parameter lists all domains to receive e-mails for. The <literal>inet_interfaces</literal> parameter specifies the network to listen on. After reconfiguring Postfix, a restart of the mail system is necessary:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2623
+#: hardening.xml:2624
 #, no-c-format
 msgid "&prompt.root;systemctl restart postfix"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2625
+#: hardening.xml:2626
 #, no-c-format
 msgid "Verify that Postfix is not listening for network requests (incoming) by running one of these commands from another host:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2630
+#: hardening.xml:2631
 #, no-c-format
 msgid "nmap -sT -p 25 <replaceable>REMOTE_HOST</replaceable>\n"
       "telnet &lt;remote_host&gt; 25"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2634
+#: hardening.xml:2635
 #, no-c-format
 msgid "Running these commands on the local host will provide inaccurate results because Postfix is supposed to accept connections from the local node. Use an external host for correct results."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2642
+#: hardening.xml:2643
 #, no-c-format
 msgid "File Systems: Securing NFS"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2644
+#: hardening.xml:2645
 #, no-c-format
 msgid "NFS (Network File System) allows servers to share files over a network. But like all network services using NFS involves risks."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2649
+#: hardening.xml:2650
 #, no-c-format
 msgid "Here are some basic rules:"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2655
+#: hardening.xml:2656
 #, no-c-format
 msgid "NFS should not be enabled if not needed."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2660
+#: hardening.xml:2661
 #, no-c-format
 msgid "If NFS is truly needed, use a TCP wrapper to restrict remote access."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2665
+#: hardening.xml:2666
 #, no-c-format
 msgid "Ensure to export only to those hosts that really need access."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2670
+#: hardening.xml:2671
 #, no-c-format
 msgid "Use a fully qualified domain name to diminish any spoofing attempts."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2675
+#: hardening.xml:2676
 #, no-c-format
 msgid "Export only as read-only whenever possible."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2680
+#: hardening.xml:2681
 #, no-c-format
 msgid "Use NFS only over TCP."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2686
+#: hardening.xml:2687
 #, no-c-format
 msgid "If you do not have shared directories to export, then ensure that the NFS service is <emphasis>not</emphasis> enabled nor running on the system:"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2691
+#: hardening.xml:2692
 #, no-c-format
 msgid "Check the NFS service status:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2695
+#: hardening.xml:2696
 #, no-c-format
 msgid "&prompt.root;systemctl status nfsserver"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2697
+#: hardening.xml:2698
 #, no-c-format
 msgid "Check the current targets:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2701
+#: hardening.xml:2702
 #, no-c-format
 msgid "&prompt.root;ls /etc/systemd/system/*.wants/nfsserver.service"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2704
+#: hardening.xml:2705
 #, no-c-format
 msgid "Enabling and Starting NFS Server"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2705
+#: hardening.xml:2706
 #, no-c-format
 msgid "If NFS must be used, it can be activated using the following commands on &productname; or more simply and securely with the &yast; plug-in (ncurses). Access it directly from command line with <command>yast nfs_server</command> or <command>yast nfs_client</command> – or manually:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2712
+#: hardening.xml:2713
 #, no-c-format
 msgid "&prompt.root;systemctl enable nfs\n"
       "systemctl start nfs"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2714
+#: hardening.xml:2715
 #, no-c-format
 msgid "Portmapper information:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2717
+#: hardening.xml:2718
 #, no-c-format
 msgid "&prompt.root;rpcinfo -p <replaceable>SERVERNAME</replaceable>\n"
       "   program vers proto   port\n"
@@ -2799,80 +2800,80 @@ msgid "&prompt.root;rpcinfo -p <replaceable>SERVERNAME</replaceable>\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2731
+#: hardening.xml:2732
 #, no-c-format
 msgid "If you run it from an \"untrusted\" server or network, you should get the following output:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2735
+#: hardening.xml:2736
 #, no-c-format
 msgid "&prompt.root;rpcinfo -p <replaceable>SERVERNAME</replaceable>\n"
       "No remote programs registered."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2740
+#: hardening.xml:2741
 #, no-c-format
 msgid "Exporting NFS"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2741
+#: hardening.xml:2742
 #, no-c-format
 msgid "To allow a client access to a file system or directory, the <filename>/etc/exports</filename> file serves as the access control list. To give the network \"network.&exampledomain;\" read-only access to <filename>/pub</filename> , the entries in <filename>/etc/exports</filename> would look like as follows:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2748
+#: hardening.xml:2749
 #, no-c-format
 msgid "/pub *.network.&exampledomain;(ro,sync)"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2749
+#: hardening.xml:2750
 #, no-c-format
 msgid "It is very important <emphasis>not</emphasis> to give write access to NFS clients if not absolutely needed! Entries in <filename>/etc/exports</filename> are exported read-only ( <option>ro</option> option) by default. To allow servers <systemitem class=\"systemname\">sles-ha1</systemitem> , <systemitem class=\"systemname\">sles-ha2</systemitem> and <systemitem class=\"systemname\">sles-ha3</systemitem> read-write access to the <filename>/data/MYSQL</filename> directory, the entries in <filename>/etc/exports</filename> would look like as follows:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2760
+#: hardening.xml:2761
 #, no-c-format
 msgid "/data/MYSQL sles-ha1.&exampledomain;(rw,sync) sles-ha2.&exampledomain;(rw,sync) sles-ha3.&exampledomain;(rw,sync)"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2761
+#: hardening.xml:2762
 #, no-c-format
 msgid "Note that the options <emphasis>must not</emphasis> be separated from the host names or networks with whitespace(s). Also, fully qualified domain names should <emphasis>always</emphasis> be used to diminish spoofing attempts. All entries in <filename>/etc/exports</filename> are exported with the <option>root_squash</option> option ( <quote>root squashing</quote> ) by default. This means that a root user on a client machine does not have root privileges (root access) to files on exported NFS. It is not recommended to turn <quote>root squashing</quote> off using the <option>no_root_squash</option> option! After you have made all your entries in <filename>/etc/exports</filename> , you can export all file systems/directories using the following command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2774
+#: hardening.xml:2775
 #, no-c-format
 msgid "&prompt.root;exportfs -a"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2775
+#: hardening.xml:2776
 #, no-c-format
 msgid "To unexport all shared file systems/directories, run:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2778
+#: hardening.xml:2779
 #, no-c-format
 msgid "&prompt.root;exportfs -ua"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2779
+#: hardening.xml:2780
 #, no-c-format
 msgid "To see all shared file systems/directories, run:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2782
+#: hardening.xml:2783
 #, no-c-format
 msgid "&prompt.root;showmount -e localhost\n"
       "Export list for localhost:\n"
@@ -2882,100 +2883,100 @@ msgid "&prompt.root;showmount -e localhost\n"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2790
+#: hardening.xml:2791
 #, no-c-format
 msgid "Using NFS over TCP"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2791
+#: hardening.xml:2792
 #, no-c-format
 msgid "If you need NFS, it is recommended to use NFS only over TCP since NFS over UDP is not secure. All 2.4 and later kernels support NFS over TCP on the client side. Server support for TCP appeared in later 2.4 kernels and beyond. To mount a shared directory using NFS over TCP, it is necessary to use the <option>proto=tcp</option> mount option:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2798
+#: hardening.xml:2799
 #, no-c-format
 msgid "&prompt.root;mount -o proto=tcp <replaceable>SERVERNAME</replaceable>:/pub /usr/local/pub\n"
       "    "
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2800
+#: hardening.xml:2801
 #, no-c-format
 msgid "Verify that the target directory, in this case <filename>/usr/local/pub</filename> , exists on the client:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2804
+#: hardening.xml:2805
 #, no-c-format
 msgid "&prompt.root;mount [...] <replaceable>SERVERNAME</replaceable>:/pub on\n"
       "/usr/local/pub type nfs (rw,proto=tcp,addr=&nfsip;)"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2806
+#: hardening.xml:2807
 #, no-c-format
 msgid "To have the shared directory mounted on the client at boot time, use the <filename>/etc/fstab</filename> file. For the above example, the <filename>/etc/fstab</filename> entry could look like this:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2811
+#: hardening.xml:2812
 #, no-c-format
 msgid "<replaceable>SERVERNAME</replaceable>:/pub /usr/local/pub nfs rsize=8192,wsize=8192,timeo=14,intr,tcp 0 0\n"
       "    "
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2816
+#: hardening.xml:2817
 #, no-c-format
 msgid "Copying Files Using SSH Without Providing Login Prompts"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2818
+#: hardening.xml:2819
 #, no-c-format
 msgid "This example is needed in some cases to enable files to be copied over the network using SSH without providing an interactive login prompt. This allows trusted hosts to be set up&mdash;an example of federation."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2824
+#: hardening.xml:2825
 #, no-c-format
 msgid "SSH can allow a forced command using the <quote>command</quote> option. Using this option it is possible to disable scp (secure copy) and enforce every passed <command>ssh</command> command to be ignored. On the server side where you want to retrieve the file from, add the following entry to the beginning of the SSH key in the <filename>~/.ssh/authorized_keys</filename> file (the <filename>~</filename> represents a particular users home directory – &rootuser;'s home directory is <filename>/root</filename> – other users typically reside in <filename>/home/<replaceable>USERNAME</replaceable></filename> ):"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2837
+#: hardening.xml:2838
 #, no-c-format
 msgid "command=\"/bin/cat ~/&lt;file_name&gt;\" ssh-rsa AAAAB3N...{etc}"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2839
+#: hardening.xml:2840
 #, no-c-format
 msgid "To copy now the file from the remote server, run the following command:"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2843
+#: hardening.xml:2844
 #, no-c-format
 msgid "ssh <replaceable>USER</replaceable> @ <replaceable>SERVERNAME</replaceable> <replaceable>LOCAL_FILE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2848
+#: hardening.xml:2849
 #, no-c-format
 msgid "Since <command>/bin/cat</command> is run on the server side, its output needs to be redirected to the local file."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2853
+#: hardening.xml:2854
 #, no-c-format
 msgid "Another approach is to replace the <command>/bin/cat</command> (referenced above) with your own script that checks the passed SSH commands by reading the environment variable <envar>$SSH_ORIGINAL_COMMAND</envar> . For example:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2860
+#: hardening.xml:2861
 #, no-c-format
 msgid "#!/bin/ksh\n"
       " if [[ $SSH_ORIGINAL_COMMAND = \"File1\" ||\n"
@@ -2989,104 +2990,104 @@ msgid "#!/bin/ksh\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2870
+#: hardening.xml:2871
 #, no-c-format
 msgid "So you replace the <command>/bin/cat</command> portion with the script name in <filename>~/.ssh/authorized_keys</filename> , and run the following command to copy <filename>Foo1</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2876
+#: hardening.xml:2877
 #, no-c-format
 msgid "&prompt.user;ssh <replaceable>USER</replaceable>@<replaceable>SERVERNAME</replaceable> Foo1 &gt; <replaceable>LOCAL_FILE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2878
+#: hardening.xml:2879
 #, no-c-format
 msgid "To copy <filename>Foo 2</filename> , run:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2882
+#: hardening.xml:2883
 #, no-c-format
 msgid "&prompt.user;ssh <replaceable>USER</replaceable>@<replaceable>SERVERNAME</replaceable> Foo2 &gt; <replaceable>LOCAL_FILE</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2884
+#: hardening.xml:2885
 #, no-c-format
 msgid "With the modifications above, every other variety of passed parameters will return errors."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2890
+#: hardening.xml:2891
 #, no-c-format
 msgid "Checking File Permissions and Ownership"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2892
+#: hardening.xml:2893
 #, no-c-format
 msgid "The following sections deal with some ways the default permissions and file settings can be modified to enhance the security of a host. It is important to note that the use of the default &productname; utilities like <command>seccheck</command> - can be run to lock down and improve the general file security and user environment. However, it is beneficial to understand how to modify these things."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2901
+#: hardening.xml:2902
 #, no-c-format
 msgid "&productname; hosts include 3 defaults settings for file permissions: <filename>permissions.easy</filename> , <filename>permissions.secure</filename> , and <filename>permissions.paranoid</filename> , all located in the <filename>/etc</filename> directory. The purpose of these files is to define special permissions, such as world-writable directories or, for files, the setuser ID bit (programs with the setuser ID bit set do not run with the permissions of the user that has launched it, but with the permissions of the file owner, usually &rootuser;)."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2913
+#: hardening.xml:2914
 #, no-c-format
 msgid "Administrators can use the file <filename>/etc/permissions.local</filename> to add their own settings. The easiest way to implement one of the default permission rule-sets above is to use the <guimenu>Local Security</guimenu> module in &yast;."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2920
+#: hardening.xml:2921
 #, no-c-format
 msgid "Each of the following topics will be modified by a selected rule-set, but the information is important to understand on its own."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2926
+#: hardening.xml:2927
 #, no-c-format
 msgid "Default umask"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2928
+#: hardening.xml:2929
 #, no-c-format
 msgid "The <command>umask</command> (user file-creation mode mask) command is a shell built-in command which determines the default file permissions for newly created files and directories. This can be overwritten by system calls but many programs and utilities use <command>umask</command> . By default, <command>umask</command> is set to <literal>022</literal> . You can modify this globally by changing the value in <filename>/etc/profile</filename> or for each user in the startup files of the shell."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2938
+#: hardening.xml:2939
 #, no-c-format
 msgid "To determine the active umask, use the <command>umask</command> command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2943
+#: hardening.xml:2944
 #, no-c-format
 msgid "&prompt.user;umask\n"
       "022"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2946
+#: hardening.xml:2947
 #, no-c-format
-msgid "The umask is subtracted from the access mode <literal>777</literal> if at least on bit is set."
+msgid "The umask is subtracted from the access mode <literal>777</literal> if at least one bit is set."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2951
+#: hardening.xml:2952
 #, no-c-format
 msgid "With the default umask you see the behavior most users expect to see on a Linux system."
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2955
+#: hardening.xml:2956
 #, no-c-format
 msgid "\n"
       "&prompt.user;touch a\n"
@@ -3099,13 +3100,13 @@ msgid "\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2964
+#: hardening.xml:2965
 #, no-c-format
-msgid "You can specify arbitrary umask values, depending on you needs."
+msgid "You can specify arbitrary umask values, depending on your needs."
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2967
+#: hardening.xml:2968
 #, no-c-format
 msgid "\n"
       "&prompt.user;umask 111\n"
@@ -3119,13 +3120,13 @@ msgid "\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2977
+#: hardening.xml:2978
 #, no-c-format
 msgid "Based on your thread model you can use a stricter umask like <literal>037</literal> to prevent accidential data leakage."
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:2981
+#: hardening.xml:2982
 #, no-c-format
 msgid "\n"
       "&prompt.user;umask 037\n"
@@ -3139,171 +3140,171 @@ msgid "\n"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:2993
+#: hardening.xml:2994
 #, no-c-format
 msgid "SUID/SGID Files"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:2995
+#: hardening.xml:2996
 #, no-c-format
 msgid "When the SUID (set user ID) or SGID (set group ID) bits are set on an executable, it executes with the UID or GID of the owner of the executable rather than that of the person executing it. This means that, for example, all executables that have the SUID bit set and are owned by &rootuser; are executed with the UID of &rootuser;. A good example is the <command>passwd</command> command that allows ordinary users to update the password field in the <filename>/etc/shadow</filename> file which is owned by &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3005
+#: hardening.xml:3006
 #, no-c-format
 msgid "But SUID/SGID bits can be misused when the executable has a security hole. Therefore, you should search the entire system for SUID/SGID executables and document it. To search the entire system for SUID or SGID files, you can run the following command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3012
+#: hardening.xml:3013
 #, no-c-format
 msgid "&prompt.root;find /bin /boot /etc /home /lib /lib64 /opt /root /sbin /srv /tmp /usr /var -type f -perm '/6000' -ls"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3019
+#: hardening.xml:3021
 #, no-c-format
 msgid "&suse; only sets the SUID/SGID bit on binary if it is really necessary. Ensure that code developers do not set SUID/SGID bits on their programs if it is not an absolute requirement. Very often you can use workarounds like removing the executable bit for world/others. However, a better approach is to change the design of the software or use capabilities."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3028
+#: hardening.xml:3030
 #, no-c-format
 msgid "&productname; supports file capabilities to allow more fine grained privileges to be given to programs rather than the full power of &rootuser;:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3033
+#: hardening.xml:3035
 #, no-c-format
 msgid "&prompt.root;getcap -v /usr/bin/ping\n"
       "      /usr/bin/ping = cap_new_raw+eip"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3036
+#: hardening.xml:3038
 #, no-c-format
-msgid "The previous command only grants the CAP_NET_RAW capability to whoever executes <command>ping</command> . In case of vulnerabilities inside <command>ping</command> , an attacker can gain at most this capability in contrast to full &rootuser;. Whenever possible, file capabilities should be chosen in favor of the SUID bit. But this only applies when the binary is suid to &rootuser; not to other users such as <literal>news</literal> , <literal>lp</literal> and alike."
+msgid "The previous command only grants the CAP_NET_RAW capability to whoever executes <command>ping</command> . In case of vulnerabilities inside <command>ping</command> , an attacker can gain at most this capability in contrast with full &rootuser;. Whenever possible, file capabilities should be chosen in favor of the SUID bit. But this only applies when the binary is suid to &rootuser;, not to other users such as <literal>news</literal> , <literal>lp</literal> and similar."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3048
+#: hardening.xml:3050
 #, no-c-format
 msgid "World-Writable Files"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3050
+#: hardening.xml:3052
 #, no-c-format
 msgid "World-writable files are a security risk since they can be modified by any user on the system. Additionally, world-writable directories allow anyone to add or delete files. To locate world-writable files and directories, you can use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3057
+#: hardening.xml:3059
 #, no-c-format
 msgid "&prompt.root;find /bin /boot /etc /home /lib /lib64 /opt /root /sbin /srv /tmp /usr /var -type f -perm -2 ! -type l -ls"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3063
+#: hardening.xml:3066
 #, no-c-format
 msgid "The <option>! -type l</option> parameter skips all symbolic links since symbolic links are always world-writable. However, this is not a problem as long as the target of the link is not world-writable, which is checked by the above find command."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3070
+#: hardening.xml:3073
 #, no-c-format
 msgid "World-writable directories with the sticky bit such as the <filename>/tmp</filename> directory do not allow anyone except the owner of a file to delete or rename it in this directory. The sticky bit makes files stick to the user who created it and it prevents other users from deleting and renaming the files. Therefore, depending on the purpose of the directory, world-writable directories with sticky are usually not an issue. An example is the <filename>/tmp</filename> directory:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3080
+#: hardening.xml:3083
 #, no-c-format
 msgid "&prompt.user;ls -ld /tmp\n"
       "drwxrwxrwt 18 root root 16384 Dec 23 22:20 /tmp"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3083
+#: hardening.xml:3086
 #, no-c-format
 msgid "The <literal>t</literal> mode bit in the output denotes the sticky bit."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3089
+#: hardening.xml:3092
 #, no-c-format
 msgid "Orphaned or Unowned Files"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3091
+#: hardening.xml:3094
 #, no-c-format
 msgid "Files not owned by any user or group might not necessarily be a security problem in itself. However, unowned files could pose a security problem in the future. For example, if a new user is created and the new users happens to get the same UID as the unowned files have, then this new user will automatically become the owner of these files."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3099
+#: hardening.xml:3102
 #, no-c-format
 msgid "To locate files not owned by any user or group, use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3103
+#: hardening.xml:3106
 #, no-c-format
 msgid "&prompt.root;find /bin /boot /etc /home /lib /lib64 /opt /root /sbin /srv /tmp /usr /var -nouser -o -nogroup"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3105
+#: hardening.xml:3108
 #, no-c-format
-msgid "You might need to extend the list of directories that are searched if you have a different filesystem structure."
+msgid "You might need to extend the list of directories that are searched if you have a different file system structure."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3109
+#: hardening.xml:3113
 #, no-c-format
-msgid "A different problem are files that were not installed via the packaging system and therefor don't receive updates. You can check for such files with the following command:"
+msgid "A different problem is files that were not installed via the packaging system and therefore don't receive updates. You can check for such files with the following command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3115
+#: hardening.xml:3119
 #, no-c-format
 msgid "&prompt.user;find /bin /lib /lib64 /usr -path /usr/local -prune -o -type f -a -exec /bin/sh -c \"rpm -qf {} &amp;&gt; /dev/null || echo {}\" \\;"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3117
+#: hardening.xml:3121
 #, no-c-format
-msgid "Run this command as an untrusted user (for example nobody) since crafted filenames might lead to command execution. This shouldn't be a problem since these directories should only be writeable by &rootuser;, but it's still a good security precaution."
+msgid "Run this command as an untrusted user (for example nobody) since crafted file names might lead to command execution. This shouldn't be a problem since these directories should only be writeable by &rootuser;, but it's still a good security precaution."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3123
+#: hardening.xml:3128
 #, no-c-format
-msgid "This will show you all files under <filename>/bin</filename> , <filename>/lib</filename> , <filename>/lib64</filename> and <filename>/usr</filename> (with the exception of files in <filename>/usr/local</filename> ) that are not tracked by the package manager. These files might not represent a security issue, but you should be aware what is not tracked and take the necessary precautions to keep these files up to date."
+msgid "This will show you all files under <filename>/bin</filename> , <filename>/lib</filename> , <filename>/lib64</filename> and <filename>/usr</filename> (with the exception of files in <filename>/usr/local</filename> ) that are not tracked by the package manager. These files might not represent a security issue, but you should be aware of what is not tracked and take the necessary precautions to keep these files up to date."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3135
+#: hardening.xml:3140
 #, no-c-format
 msgid "Restricting Access to Removable Media"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3139
+#: hardening.xml:3144
 #, no-c-format
 msgid "In some environments it is required to restrict access to removable media such as USB storage or optical devices. The tools coming with the <systemitem>udisks2</systemitem> package help with such a configuration."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3147
+#: hardening.xml:3152
 #, no-c-format
 msgid "Create a rules file <filename>/etc/polkit-1/rules.d/01-restrict-removable-media.rules</filename> similar to the following:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3152
+#: hardening.xml:3157
 #, no-c-format
 msgid "// Allow users in group 'mmedia_all' to mount/unmount all type of drives\n"
       "// Allow users in group 'mmedia_removable' to mount/umount USB storage drives\n"
@@ -3328,309 +3329,309 @@ msgid "// Allow users in group 'mmedia_all' to mount/unmount all type of drives\
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3173
+#: hardening.xml:3178
 #, no-c-format
 msgid "Naming of the Rules File"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3174
+#: hardening.xml:3179
 #, no-c-format
 msgid "Rules files are processed in alphabetical order. Functions are called in the order they were added until one of the functions returns a value. Hence, to add an authorization rule that is processed before other rules, put it in a file in /etc/polkit-1/rules.d with a name that sorts before other rules files, for example <filename>01-restrict-removable-media.rules</filename> . Each function should return a value from <literal>polkit.Result</literal> ."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3183
+#: hardening.xml:3188
 #, no-c-format
 msgid "<!-- http://doccomments.provo.novell.com/comments/29432 --> The name of a rules file must start with a digit, otherwise it will be ignored."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3191
+#: hardening.xml:3196
 #, no-c-format
 msgid "Restart <systemitem>udisks2</systemitem> :"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3194
+#: hardening.xml:3199
 #, no-c-format
 msgid "&prompt.root;systemctl restart udisks2"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3197
+#: hardening.xml:3202
 #, no-c-format
 msgid "Restart <systemitem>polkit</systemitem>"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3200
+#: hardening.xml:3205
 #, no-c-format
 msgid "&prompt.root;systemctl restart polkit"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3203
+#: hardening.xml:3208
 #, no-c-format
 msgid "In &yast;, click <menuchoice><guimenu>Security and Users</guimenu><guimenu>User and Group Management</guimenu><guimenu>Groups</guimenu></menuchoice> to create the three groups <literal>mmedia_all</literal> , <literal>mmedia_optical</literal> , and <literal>mmedia_removable</literal> . Then add the users to these groups as wanted."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3217
+#: hardening.xml:3222
 #, no-c-format
 msgid "Various Account Checks"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3222
+#: hardening.xml:3227
 #, no-c-format
 msgid "Unlocked Accounts"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3223
+#: hardening.xml:3228
 #, no-c-format
 msgid "It is important that all system and vendor accounts that are not used for logins are locked. To get a list of unlocked accounts on your system, you can check for accounts that do <emphasis>not</emphasis> have an encrypted password string starting with <literal>!</literal> or <literal>*</literal> in the <filename>/etc/shadow</filename> file. If you lock an account using <command>passwd</command> <option>-l</option> , it will put a <literal>!!</literal> in front of the encrypted password, effectively disabling the password. If you lock an account using <command>usermod</command> <option>-L</option> , it will put a <literal>!</literal> in front of the encrypted password. Many system and shared accounts are usually locked by default by having a <literal>*</literal> or <literal>!!</literal> in the password field which renders the encrypted password into an invalid string. Hence, to get a list of all unlocked (encryptable) accounts, run ( <command>egrep</command> is used to allow use of regular-expressions):"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3240
+#: hardening.xml:3245
 #, no-c-format
 msgid "&prompt.root;egrep -v ':\\*|:\\!' /etc/shadow | awk -F: '{print $1}'"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3241
+#: hardening.xml:3246
 #, no-c-format
 msgid "Also make sure all accounts have a <literal>x</literal> in the password field in <filename>/etc/passwd</filename> . The following command lists all accounts that do not have a <literal>x</literal> in the password field:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3247
+#: hardening.xml:3252
 #, no-c-format
 msgid "&prompt.root;grep -v ':x:' /etc/passwd"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3248
+#: hardening.xml:3253
 #, no-c-format
 msgid "An <literal>x</literal> in the password fields means that the password has been shadowed, for example the encrypted password needs to be looked up in the <filename>/etc/shadow</filename> file. If the password field in <filename>/etc/passwd</filename> is empty, then the system will not look up the shadow file and it will not prompt the user for a password at the login prompt."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3259
+#: hardening.xml:3264
 #, no-c-format
 msgid "Unused Accounts"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3260
+#: hardening.xml:3265
 #, no-c-format
 msgid "All system or vendor accounts that are not being used by users, applications, by the system or by daemons should be removed from the system. You can use the following command to find out if there are any files owned by a specific account:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3266
+#: hardening.xml:3271
 #, no-c-format
 msgid "&prompt.root;find / -path /proc -prune -o -user <replaceable>ACCOUNT</replaceable> -ls"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3267
+#: hardening.xml:3272
 #, no-c-format
 msgid "The <option>-prune</option> option in this example is used to skip the /proc file system. If you are sure that an account can be deleted, you can remove the account using the following command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3272
+#: hardening.xml:3277
 #, no-c-format
 msgid "&prompt.root;userdel -r <replaceable>ACCOUNT</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3273
+#: hardening.xml:3278
 #, no-c-format
 msgid "Without the <option>-r</option> option <command>userdel</command> will not delete the user's home directory and mail spool ( <filename>/var/spool/mail/<replaceable>USER</replaceable></filename> ). Note that many system accounts have no home directory."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3282
+#: hardening.xml:3287
 #, no-c-format
 msgid "Enabling Password Aging"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3284
+#: hardening.xml:3289
 #, no-c-format
 msgid "Password expirations are a general best practice&mdash;but might need to be excluded for some system and shared accounts (for example Oracle, etc.). Expiring password on those accounts could lead to system outages if the application account expires."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3291
+#: hardening.xml:3296
 #, no-c-format
 msgid "Typically a corporate policy should be developed that dictates rules/procedures regarding password changes for system and shared accounts. However, normal user account passwords should expire automatically. The following example shows how password expiration can be set up for individual user accounts."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3299
+#: hardening.xml:3304
 #, no-c-format
 msgid "The following files and parameters in the table can be used when a new account is created with the <command>useradd</command> command. Settings such as these are stored for each user account in the <filename>/etc/shadow</filename> file. If using the &yast; tool ( <guimenu>User and Group Management</guimenu> ) to add users, the settings are available on a per-user basis. Here are the various settings&mdash;some of which can also be system-wide (for example modification of <filename>/etc/login.defs</filename> and <filename>/etc/default/useradd</filename> ):"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3321
+#: hardening.xml:3326
 #, no-c-format
 msgid "<literal>PASS_MAX_DAYS</literal>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3326
+#: hardening.xml:3331
 #, no-c-format
 msgid "Maximum number of days a password is valid."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3338
+#: hardening.xml:3343
 #, no-c-format
 msgid "<literal>PASS_MIN_DAYS</literal>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3343
+#: hardening.xml:3348
 #, no-c-format
 msgid "Minimum number of days before a user can change the password since the last change."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3351
+#: hardening.xml:3356
 #, no-c-format
 msgid "<filename>/etc/login.defs</filename>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3356
+#: hardening.xml:3361
 #, no-c-format
 msgid "<literal>PASS_WARN_AGE</literal>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3361
+#: hardening.xml:3366
 #, no-c-format
 msgid "Number of days when the password change reminder starts."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3373
+#: hardening.xml:3378
 #, no-c-format
 msgid "<literal>INACTIVE</literal>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3378
+#: hardening.xml:3383
 #, no-c-format
 msgid "Number of days after password expiration that account is disabled."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3385
+#: hardening.xml:3390
 #, no-c-format
 msgid "<filename>/etc/default/useradd</filename>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3390
+#: hardening.xml:3395
 #, no-c-format
 msgid "<literal>EXPIRE</literal>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3395
+#: hardening.xml:3400
 #, no-c-format
 msgid "Account expiration date in the format YYYY-MM-DD."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3405
+#: hardening.xml:3410
 #, no-c-format
 msgid "Users created prior to these modifications will not be affected."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3410
+#: hardening.xml:3415
 #, no-c-format
 msgid "Ensure that the above parameters are changed in the <filename>/etc/login.defs</filename> and <filename>/etc/default/useradd</filename> files. Review of the <filename>/etc/shadow</filename> file will show how these settings get stored after adding a user."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3418
+#: hardening.xml:3423
 #, no-c-format
 msgid "To create a new user account, execute the following command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3422
+#: hardening.xml:3427
 #, no-c-format
 msgid "&prompt.root;useradd -c \"<replaceable>TEST_USER</replaceable>\" -g <replaceable>USERS</replaceable> <replaceable>TEST</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3424
+#: hardening.xml:3429
 #, no-c-format
 msgid "The <option>-g</option> option specifies the primary group for this account:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3429
+#: hardening.xml:3434
 #, no-c-format
 msgid "&prompt.root;id <replaceable>TEST</replaceable>\n"
       "uid=509(test) gid=100(users) groups=100(users)"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3432
+#: hardening.xml:3437
 #, no-c-format
 msgid "The settings in <filename>/etc/login.defs</filename> and <filename>/etc/default/useradd</filename> are recorded for the test user in the <filename>/etc/shadow</filename> file as follows:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3438
+#: hardening.xml:3443
 #, no-c-format
 msgid "&prompt.root;grep <replaceable>TEST</replaceable> /etc/shadow\n"
       "test:!!:12742:7:60:7:14::"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3441
+#: hardening.xml:3446
 #, no-c-format
 msgid "Password aging can be modified at any time by use of the <command>chage</command> command. To disable password aging for system and shared accounts, you can run the following <command>chage</command> command:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3448
+#: hardening.xml:3453
 #, no-c-format
 msgid "&prompt.root;chage -M -1 <replaceable>SYSTEM_ACCOUNT_NAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3450
+#: hardening.xml:3455
 #, no-c-format
 msgid "To get password expiration information:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3454
+#: hardening.xml:3459
 #, no-c-format
 msgid "&prompt.root;chage -l <replaceable>SYSTEM_ACCOUNT_NAME</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3456
+#: hardening.xml:3461
 #, no-c-format
 msgid "For example:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3460
+#: hardening.xml:3465
 #, no-c-format
 msgid "&prompt.root;chage -l <replaceable>TEST</replaceable>\n"
       "Minimum: 7\n"
@@ -3644,91 +3645,91 @@ msgid "&prompt.root;chage -l <replaceable>TEST</replaceable>\n"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3471
+#: hardening.xml:3476
 #, no-c-format
 msgid "Stronger Password Enforcement"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3473
+#: hardening.xml:3478
 #, no-c-format
 msgid "On an audited system it is important to restrict people from using simple passwords that can be cracked too easily. Writing down complex passwords is all right as long as they are stored securely. Some will argue that strong passwords protect you against dictionary attacks and those type of attacks can be defeated by locking accounts after a few failed attempts. However, this is not always an option. If set up like this, locking system accounts could bring down your applications and systems which would be nothing short of a denial of service attack – another issue."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3484
+#: hardening.xml:3489
 #, no-c-format
 msgid "At any rate, it is important to practice effective password management safety. Most companies require that passwords have at the very least a number, one lowercase letter, and one uppercase letter. Policies vary, but maintaining a balance between password strength/complexity and management is sometimes difficult."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3494
+#: hardening.xml:3499
 #, no-c-format
 msgid "Preventing Accidental Denial of Service"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3496
+#: hardening.xml:3501
 #, no-c-format
 msgid "Linux allows you to set limits on the amount of system resources that users and groups can consume. This is also very handy if bugs in programs cause them to use up too much resources (for example memory leaks), slow down the machine, or even render the system unusable. Incorrect settings can allow programs to use too many resources which may make the server unresponsive to new connections or even local logins (for example if a program uses up all available file handles on the host). This can also be a security concern if someone is allowed to consume all system resources and therefore cause a denial of service attack – either unplanned or worse, planned. Setting resource limits for users and groups may be an effective way to protect systems, depending on the environment."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3511
+#: hardening.xml:3516
 #, no-c-format
 msgid "Example for Restricting System Resources"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3512
+#: hardening.xml:3517
 #, no-c-format
 msgid "The following example demonstrates the practical usage of setting or restricting system resource consumption for an Oracle user account. For a list of system resource settings, see <filename>/etc/security/limits.conf</filename> or <command>man limits.conf</command> ."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3519
+#: hardening.xml:3524
 #, no-c-format
 msgid "Most shells like Bash provide control over various resources (for example the maximum allowable number of open file descriptors or the maximum number of processes) that are available on a per/user basis. To examine all current limits in the shell execute:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3525
+#: hardening.xml:3530
 #, no-c-format
 msgid "&prompt.root;ulimit -a"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3526
+#: hardening.xml:3531
 #, no-c-format
 msgid "For more information on <command>ulimit</command> for the Bash shell, examine the Bash man pages."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3531
+#: hardening.xml:3536
 #, no-c-format
 msgid "Setting Limits for SSH Sessions"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3532
+#: hardening.xml:3537
 #, no-c-format
 msgid "Setting \"hard\" and \"soft\" limits might not behave as expected when using an SSH session. To see valid behavior it may be necessary to login as root and then su to the id with limits (for example, <literal>oracle</literal> in these examples). Resource limits should also work assuming the application has been started automatically during the boot process. It may be necessary to set <option>UsePrivilegeSeparation</option> in <filename>/etc/ssh/sshd_config</filename> to \"no\" and restart the SSH daemon ( <command>systemctl restart sshd</command> ) if it seems that the changes to resource limits are not working (via SSH). However this is not generally recommended – as it weakens a systems security."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3547
+#: hardening.xml:3552
 #, no-c-format
 msgid "Disabling Password Logins via <command>ssh</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3548
+#: hardening.xml:3553
 #, no-c-format
 msgid "You can add some extra security to your server by disabling password authentication for SSH. Remember that you need to have SSH keys configured, otherwise you cannot access the server. To disable password login, add the following lines to <filename>/etc/ssh/sshd_config</filename> :"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3555
+#: hardening.xml:3560
 #, no-c-format
 msgid "UseLogin no\n"
       "UsePAM no\n"
@@ -3737,87 +3738,87 @@ msgid "UseLogin no\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3560
+#: hardening.xml:3565
 #, no-c-format
 msgid "In this example, a change to the number of file handles or open files that the user <literal>oracle</literal> can use is made by editing <filename>/etc/security/limits.conf</filename> as &rootuser; making the following changes:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3566
+#: hardening.xml:3571
 #, no-c-format
 msgid "oracle           soft    nofile          4096\n"
       "oracle           hard    nofile          63536"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3568
+#: hardening.xml:3573
 #, no-c-format
 msgid "The soft limit in the first line defines the limit on the number of file handles (open files) that the <systemitem class=\"username\">oracle</systemitem> user will have after login. If the user sees error messages about running out of file handles, then the user can increase the number of file handles like in this example up to the hard limit (in this example 63536) by executing:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3576
+#: hardening.xml:3581
 #, no-c-format
 msgid "&prompt.root;ulimit -n 63536"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3577
+#: hardening.xml:3582
 #, no-c-format
 msgid "You can set the soft and hard limits higher if necessary."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3581
+#: hardening.xml:3586
 #, no-c-format
 msgid "It is important to be judicious with the usage of ulimits. Allowing a \"hard\" limit for <quote>nofile</quote> for a user that equals the kernel limit ( <filename>/proc/sys/fs/file-max</filename> ) is very bad! If the user consumes all the available file handles, the system cannot initiate new logins as accessing (opening) PAM modules which are required for performing a login will not be possible."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3590
+#: hardening.xml:3595
 #, no-c-format
 msgid "You also need to ensure that <literal>pam_limits</literal> is either configured globally in <filename>/etc/pam.d/common-auth</filename> , or for individual services like SSH, su, login, and telnet in:"
 msgstr ""
 
 #. Tag: member
-#: hardening.xml:3596
+#: hardening.xml:3601
 #, no-c-format
 msgid "<filename>/etc/pam.d/sshd</filename> (for SSH)"
 msgstr ""
 
 #. Tag: member
-#: hardening.xml:3597
+#: hardening.xml:3602
 #, no-c-format
 msgid "<filename>/etc/pam.d/su</filename> (for su)"
 msgstr ""
 
 #. Tag: member
-#: hardening.xml:3598
+#: hardening.xml:3603
 #, no-c-format
 msgid "<filename>/etc/pam.d/login</filename> (local logins and telnet)"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3600
+#: hardening.xml:3605
 #, no-c-format
 msgid "If you do not want to enable it for all logins, there is a specific PAM module that will read the <filename>/etc/security/limits.conf</filename> file. Entries in pam configuration directives will have entries like:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3605
+#: hardening.xml:3610
 #, no-c-format
 msgid "session     required      /lib/security/pam_limits.so\n"
       "session     required      /lib/security/pam_unix.so"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3607
+#: hardening.xml:3612
 #, no-c-format
 msgid "It is important to note that changes are not immediate and require a new login session:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3611
+#: hardening.xml:3616
 #, no-c-format
 msgid "&prompt.root;su – oracle\n"
       "&prompt.user;ulimit -n\n"
@@ -3825,13 +3826,13 @@ msgid "&prompt.root;su – oracle\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3614
+#: hardening.xml:3619
 #, no-c-format
 msgid "Note that these examples are specific to the Bash shell - <command>ulimit</command> options are different for other shells. The default limit for the user <literal>oracle</literal> is <literal>4096</literal> . To increase the number of file handles the user <literal>oracle</literal> can use to <literal>63536</literal> , do:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3621
+#: hardening.xml:3626
 #, no-c-format
 msgid "&prompt.root;su – oracle\n"
       "&prompt.user;ulimit -n\n"
@@ -3842,13 +3843,13 @@ msgid "&prompt.root;su – oracle\n"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3627
+#: hardening.xml:3632
 #, no-c-format
 msgid "Making this permanent requires the addition of the setting, <literal>ulimit -n 63536</literal> , (again, for Bash) to the users profile ( <filename>~/.bashrc</filename> or <filename>~/.profile</filename> file) which is the user start-up file for the Bash shell on &productname; (to verify your shell run: echo <envar>$SHELL</envar> ). To do this you could simply type (or copy/paste – if you are reading this on the system) the following commands for the Bash shell of the user <literal>oracle</literal> :"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3637
+#: hardening.xml:3642
 #, no-c-format
 msgid "&prompt.root;su - oracle\n"
       "&prompt.user;cat &gt;&gt; ~oracle/.bash_profile &lt;&lt; EOF\n"
@@ -3857,49 +3858,49 @@ msgid "&prompt.root;su - oracle\n"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3644
+#: hardening.xml:3649
 #, no-c-format
 msgid "Displaying Login Banners"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3646
+#: hardening.xml:3651
 #, no-c-format
 msgid "It is often necessary to place a banner on login screens on all servers for legal/audit policy reasons or to give security instructions to users."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3652
+#: hardening.xml:3657
 #, no-c-format
 msgid "If you want to print a login banner <emphasis>after</emphasis> a user logs in on a text based terminal for example using SSH or on a local console, you can leverage the file <filename>/etc/motd</filename> (motd = message of the day). The file exists by default on &productname;, but it is empty. Simply add content to the file that is applicable/required by the organization."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3662
+#: hardening.xml:3667
 #, no-c-format
 msgid "Banner Length"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3663
+#: hardening.xml:3668
 #, no-c-format
 msgid "Try to keep the login banner content to a single terminal page (or less), as it will scroll the screen if it does not fit, making it more difficult to read."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3670
+#: hardening.xml:3675
 #, no-c-format
-msgid "You can also have a login banner printed <emphasis>before</emphasis> a user logs in on a text based terminal. For local console logins you can edit the <filename>/etc/issue</filename> file which will cause the banner to the displayed before the login prompt. For logins via SSH you can edit the <quote>Banner</quote> parameter in the <filename>/etc/ssh/sshd_config</filename> file which will then appropriately display the banner text before the SSH login prompt."
+msgid "You can also have a login banner printed <emphasis>before</emphasis> a user logs in on a text based terminal. For local console logins you can edit the <filename>/etc/issue</filename> file, which will cause the banner to be displayed before the login prompt. For logins via SSH you can edit the <quote>Banner</quote> parameter in the <filename>/etc/ssh/sshd_config</filename> file, which will then appropriately display the banner text before the SSH login prompt."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3680
+#: hardening.xml:3685
 #, no-c-format
-msgid "For graphical logins via GDM, you can follow <link xlink:href=\"https://help.gnome.org/admin/system-admin-guide/stable/login-banner.html.en\"> the GNOME admin guide</link> to setup a login banner. Furthermore you can make the following changes to require a user to acknowledge the legal banner by selecting <guimenu>Yes</guimenu> or <guimenu>No</guimenu> . Edit the <filename>/etc/gdm/Xsession</filename> file and add the following lines at the <emphasis>beginning</emphasis> of the script:"
+msgid "For graphical logins via GDM, you can follow <link xlink:href=\"https://help.gnome.org/admin/system-admin-guide/stable/login-banner.html.en\"> the GNOME admin guide</link> to set up a login banner. Furthermore you can make the following changes to require a user to acknowledge the legal banner by selecting <guimenu>Yes</guimenu> or <guimenu>No</guimenu> . Edit the <filename>/etc/gdm/Xsession</filename> file and add the following lines at the <emphasis>beginning</emphasis> of the script:"
 msgstr ""
 
 #. Tag: screen
-#: hardening.xml:3690
+#: hardening.xml:3695
 #, no-c-format
 msgid "if ! /usr/bin/gdialog --yesno '\\n<replaceable>This system is classified...</replaceable>\\n' 10 10; then\n"
       "    /usr/bin/gdialog --infobox 'Aborting login'\n"
@@ -3908,169 +3909,169 @@ msgid "if ! /usr/bin/gdialog --yesno '\\n<replaceable>This system is classified.
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3695
+#: hardening.xml:3700
 #, no-c-format
 msgid "The text <replaceable>This system is classified...</replaceable> needs to be replaced with the desired banner text. It is important to note that this dialog will not prevent a login from progressing. For more information about GDM scripting, refer to the <link xlink:href=\"https://help.gnome.org/admin/gdm/stable/configuration.html.en#scripting\"> GDM Admin Manual</link> ."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3706
+#: hardening.xml:3711
 #, no-c-format
 msgid "Miscellaneous"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3711
+#: hardening.xml:3716
 #, no-c-format
 msgid "Host-Based Linux Monitoring and Intrusion Detection"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3712
+#: hardening.xml:3717
 #, no-c-format
 msgid "Before you place a host into production or even on a network, consider the use of a system integrity checker, like <command>seccheck</command> (already discussed in <xref linkend=\"sec.sec_prot.general.seccheck\"/> ), so in case of unauthorized changes, notifications will be issued. Also consider the use of an intrusion detection environment, like AIDE, the Advanced Intrusion Detection Environment."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3720
+#: hardening.xml:3725
 #, no-c-format
 msgid "AIDE is a GPL licensed and open source intrusion detection system. It could be considered a system fingerprinting mechanism. AIDE works by creating a database containing information about the files on your system. The database is created from rules laid out in the configuration file aide.conf. When AIDE is run, this database is referenced to check for changes (or created for the first time). Assuming a comparison check is being run, any changes not permitted by the configuration file are reported."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3730
+#: hardening.xml:3735
 #, no-c-format
 msgid "By leveraging AIDE&mdash;storing a copy of the host's database in a secure location&mdash;and comparing it (on a scheduled basis or as part of a forensic effort), system integrity/insurance can be a matter of heuristics and procedure. If an intruder compromises your system, the comparison effort will enable an administrator or security officer to know what has changed on the host. The initial database should be created as a final step&mdash; <emphasis>before</emphasis> a system gets deployed into production."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3740
+#: hardening.xml:3745
 #, no-c-format
 msgid "It is outside the scope of this article to cover Linux Monitoring and detailed Intrusion Detection systems (IDS) or solutions, however there is a plethora of information about configuring AIDE or other solutions and many informative articles on the Web."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3749
+#: hardening.xml:3754
 #, no-c-format
 msgid "Connect Accounting Utilities"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3750
+#: hardening.xml:3755
 #, no-c-format
 msgid "Here is a list of commands you can use to get data about user logins:"
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3754
+#: hardening.xml:3759
 #, no-c-format
 msgid "<command>who</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3755
+#: hardening.xml:3760
 #, no-c-format
 msgid "Lists currently logged in users."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3760
+#: hardening.xml:3765
 #, no-c-format
 msgid "<command>w</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3761
+#: hardening.xml:3766
 #, no-c-format
 msgid "Shows who is logged in and what they are doing."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3766
+#: hardening.xml:3771
 #, no-c-format
 msgid "<command>last</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3767
+#: hardening.xml:3772
 #, no-c-format
 msgid "Shows a list of last logged in users, including login time, logout time, login IP address, etc."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3773
+#: hardening.xml:3778
 #, no-c-format
 msgid "<command>lastb</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3774
+#: hardening.xml:3779
 #, no-c-format
 msgid "Same as <command>last</command> , except that by default it shows <filename>/var/log/btmp</filename> , which contains all the bad login attempts."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3781
+#: hardening.xml:3786
 #, no-c-format
 msgid "<command>lastlog</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3782
+#: hardening.xml:3787
 #, no-c-format
 msgid "This command reports data maintained in <filename>/var/log/lastlog</filename> , which is a record of the last time a user logged in."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3789
+#: hardening.xml:3794
 #, no-c-format
 msgid "<command>ac</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3790
+#: hardening.xml:3795
 #, no-c-format
 msgid "Available after installing the <systemitem>acct</systemitem> package. Prints the connect time in hours on a per-user basis or daily basis, etc. This command reads <filename>/var/log/wtmp</filename> ."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3797
+#: hardening.xml:3802
 #, no-c-format
 msgid "<command>dump-utmp</command>"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3798
+#: hardening.xml:3803
 #, no-c-format
 msgid "Converts raw data from /var/run/utmp or <filename>/var/log/wtmp</filename> into ASCII-parseable format."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3803
+#: hardening.xml:3808
 #, no-c-format
 msgid "Also check the <filename>/var/log/messages</filename> file, or the output of <command>journalctl</command> if no logging facility is running. See <xref linkend=\"cha.journalctl\"/> for more information on the &systemd; journal."
 msgstr ""
 
 #. Tag: title
-#: hardening.xml:3812
+#: hardening.xml:3817
 #, no-c-format
 msgid "Other"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3813
+#: hardening.xml:3818
 #, no-c-format
 msgid "Finally, the following items are relevant to the system security as well, and misconfiguration can cause many problems – and should be reviewed:"
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3819
+#: hardening.xml:3824
 #, no-c-format
 msgid "Resolver ( <filename>/etc/hosts</filename> , <filename>/etc/resolv.conf</filename> , <filename>/etc/nsswitch.conf</filename> )."
 msgstr ""
 
 #. Tag: para
-#: hardening.xml:3826
+#: hardening.xml:3831
 #, no-c-format
 msgid "NTP configuration ( <filename>/etc/chrony.conf</filename> )."
 msgstr ""

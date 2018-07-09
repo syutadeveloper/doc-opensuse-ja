@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-07-09 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -1828,89 +1828,89 @@ msgstr ""
 #. Tag: para
 #: storage_filesystems.xml:1785
 #, no-c-format
-msgid "Approximately 1024. The actual number depends on the length of the device number strings. It is a compile-time variable within multipath-tools, which can be raised if this limit poses a problem."
+msgid "Approximately 1024. The actual number depends on the length of the device number strings for each multipath device. It is a compile-time variable within multipath-tools, which can be raised if this limit poses a problem."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1794
+#: storage_filesystems.xml:1795
 #, no-c-format
 msgid "Maximum size per block device"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1799
+#: storage_filesystems.xml:1800
 #, no-c-format
 msgid "Up to 8 EiB."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1809
+#: storage_filesystems.xml:1810
 #, no-c-format
 msgid "Troubleshooting File Systems"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1811
+#: storage_filesystems.xml:1812
 #, no-c-format
 msgid "This section describes some known issues and possible solutions for file systems."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1817
+#: storage_filesystems.xml:1818
 #, no-c-format
 msgid "Btrfs Error: No space is left on device"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1818
+#: storage_filesystems.xml:1819
 #, no-c-format
 msgid "The root ( <filename>/</filename> ) partition using the Btrfs file system stops accepting data. You receive the error <quote><literal>No space left on device</literal></quote> ."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1823
+#: storage_filesystems.xml:1824
 #, no-c-format
 msgid "See the following sections for information about possible causes and prevention of this issue."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1828
+#: storage_filesystems.xml:1829
 #, no-c-format
 msgid "Disk Space Consumed by Snapper Snapshots"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1829
+#: storage_filesystems.xml:1830
 #, no-c-format
 msgid "If Snapper is running for the Btrfs file system, the <quote><literal>No space left on device</literal></quote> problem is typically caused by having too much data stored as snapshots on your system."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1834
+#: storage_filesystems.xml:1835
 #, no-c-format
 msgid "You can remove some snapshots from Snapper, however, the snapshots are not deleted immediately and might not free up as much space as you need."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1838
+#: storage_filesystems.xml:1839
 #, no-c-format
 msgid "To delete files from Snapper:"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1843
+#: storage_filesystems.xml:1844
 #, no-c-format
 msgid "Open a terminal console."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1848
+#: storage_filesystems.xml:1849
 #, no-c-format
 msgid "At the command prompt, enter <command>btrfs filesystem show</command> , for example:"
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1852
+#: storage_filesystems.xml:1853
 #, no-c-format
 msgid "&prompt.sudo;btrfs filesystem show\n"
       "Label: none uuid: 40123456-cb2c-4678-8b3d-d014d1c78c78\n"
@@ -1919,169 +1919,205 @@ msgid "&prompt.sudo;btrfs filesystem show\n"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1858
+#: storage_filesystems.xml:1859
 #, no-c-format
 msgid "Enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1861
+#: storage_filesystems.xml:1862
 #, no-c-format
 msgid "&prompt.sudo;btrfs fi balance start <replaceable>MOUNTPOINT</replaceable> -dusage=5"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1862
+#: storage_filesystems.xml:1863
 #, no-c-format
 msgid "This command attempts to relocate data in empty or near-empty data chunks, allowing the space to be reclaimed and reassigned to metadata. This can take a while (many hours for 1 TB) although the system is otherwise usable during this time."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1870
+#: storage_filesystems.xml:1871
 #, no-c-format
 msgid "List the snapshots in Snapper. Enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1873
+#: storage_filesystems.xml:1874
 #, no-c-format
 msgid "&prompt.sudo;snapper -c root list"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1876
+#: storage_filesystems.xml:1877
 #, no-c-format
 msgid "Delete one or more snapshots from Snapper. Enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1879
+#: storage_filesystems.xml:1880
 #, no-c-format
 msgid "&prompt.sudo;snapper -c root delete <replaceable>SNAPSHOT_NUMBER(S)</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1880
+#: storage_filesystems.xml:1881
 #, no-c-format
 msgid "Ensure that you delete the oldest snapshots first. The older a snapshot is, the more disk space it occupies."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1886
+#: storage_filesystems.xml:1887
 #, no-c-format
 msgid "To help prevent this problem, you can change the Snapper cleanup algorithms. See <xref linkend=\"sec.snapper.manage.metadata.cleanup\"/> for details. The configuration values controlling snapshot cleanup are <envar>EMPTY_*</envar> , <envar>NUMBER_*</envar> , and <envar>TIMELINE_*</envar> ."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1893
+#: storage_filesystems.xml:1894
 #, no-c-format
 msgid "If you use Snapper with Btrfs on the file system disk, it is advisable to reserve twice the amount of disk space than the standard storage proposal. The &yast; Partitioner automatically proposes twice the standard disk space in the Btrfs storage proposal for the root file system."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1901
+#: storage_filesystems.xml:1902
 #, no-c-format
 msgid "Disk Space Consumed by Log, Crash, and Cache Files"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1902
+#: storage_filesystems.xml:1903
 #, no-c-format
 msgid "If the system disk is filling up with data, you can try deleting files from <filename>/var/log</filename> , <filename>/var/crash</filename> , <filename>/var/lib/systemd/coredump</filename> and <filename>/var/cache</filename> ."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1908
+#: storage_filesystems.xml:1909
 #, no-c-format
 msgid "The Btrfs &rootuser; file system subvolumes <filename>/var/log</filename> , <filename>/var/crash</filename> and <filename>/var/cache</filename> can use all of the available disk space during normal operation, and cause a system malfunction. To help avoid this situation, &productname; offers Btrfs quota support for subvolumes. See <xref linkend=\"sec.filesystems.major.btrfs.quota\"/> for details."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1916
+#: storage_filesystems.xml:1917
 #, no-c-format
 msgid "On test and development machines, especially if you have frequent crashes of applications, you may also want to have a look at <filename>/var/lib/systemd/coredump</filename> where the coredumps are stored."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1926
+#: storage_filesystems.xml:1927
 #, no-c-format
 msgid "Freeing Unused File System Blocks"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1927
+#: storage_filesystems.xml:1928
 #, no-c-format
 msgid "On solid-state drives (SSDs) and thinly provisioned volumes it is useful to trim blocks not in use by the file system. &productname; fully supports <literal>unmap</literal> or <literal>trim</literal> operations on all file systems supporting these methods."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1933
+#: storage_filesystems.xml:1934
 #, no-c-format
 msgid "The recommended way to trim a supported file system (except Btrfs) on &productname; is to run <command>/sbin/wiper.sh</command> . Make sure to read <filename>/usr/share/doc/packages/hdparm/README.wiper</filename> before running this script. For most desktop and server systems the sufficient trimming frequency is once a week. Mounting a file system with <option>-o discard</option> comes with a performance penalty and may negatively affect the lifetime of SSDs and is not recommended."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1943
+#: storage_filesystems.xml:1944
 #, no-c-format
 msgid "Do Not Use <command>wiper.sh</command> on Btrfs"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1944
+#: storage_filesystems.xml:1945
 #, no-c-format
 msgid "The <command>wiper.sh</command> script trims read-write mounted Ext4 and XFS file systems, read-only mounted/unmounted Ext2, Ext3, Ext4, and XFS file systems. Do <emphasis>not</emphasis> use <command>wiper.sh</command> on the Btrfs file system as it may damage your data. Instead, use <command>/usr/share/btrfsmaintenance/btrfs-trim.sh</command> which is part of the <systemitem class=\"resource\">btrfsmaintenance</systemitem> package."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1957
+#: storage_filesystems.xml:1958
 #, no-c-format
-msgid "Additional Information"
+msgid "No Defragmentation on SSDs"
 msgstr ""
 
 #. Tag: para
 #: storage_filesystems.xml:1959
 #, no-c-format
-msgid "Each of the file system projects described above maintains its own home page on which to find mailing list information, further documentation, and FAQs:"
+msgid "Linux file systems contain mechanisms to avoid data fragmentation and usually it is not necessary to defragment. However, there are use cases, where data fragmentation cannot be avoided and where defragmenting the hard disk significantly improves the performance."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1966
+#: storage_filesystems.xml:1965
 #, no-c-format
-msgid "The Btrfs Wiki on Kernel.org: <link xlink:href=\"https://btrfs.wiki.kernel.org/\"/>"
+msgid "This only applies to conventional hard disks. On solid state disks (SSDs) which use flash memory to store data, the firmware provides an algorithm that determines to which chips the data is written. Data is usually spread all over the device. Therefore defragmenting an SSD does not have the desired effect and will reduce the lifespan of an SSD by writing unnecessary data."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1972
+#: storage_filesystems.xml:1973
 #, no-c-format
-msgid "E2fsprogs: Ext2/3/4 File System Utilities: <link xlink:href=\"http://e2fsprogs.sourceforge.net/\"/>"
+msgid "For the reasons mentioned above, &suse; explicitly recommends <emphasis>not</emphasis> to defragment SSDs. Some vendors also warn about defragmenting solid state disks. This includes, but it is not limited to the following:"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1978
+#: storage_filesystems.xml:1981
 #, no-c-format
-msgid "Introducing Ext3: <link xlink:href=\"http://www.ibm.com/developerworks/linux/library/l-fs7/\"/>"
+msgid "HPE 3PAR StoreServ All-Flash"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1984
+#: storage_filesystems.xml:1986
 #, no-c-format
-msgid "XFS: A High-Performance Journaling File System: <link xlink:href=\"http://oss.sgi.com/projects/xfs/\"/>"
+msgid "HPE 3PAR StoreServ Converged Flash"
 msgstr ""
 
-#. Tag: para
-#: storage_filesystems.xml:1990
+#. Tag: title
+#: storage_filesystems.xml:1995
 #, no-c-format
-msgid "The OCFS2 Project: <link xlink:href=\"http://oss.oracle.com/projects/ocfs2/\"/>"
+msgid "Additional Information"
 msgstr ""
 
 #. Tag: para
 #: storage_filesystems.xml:1997
 #, no-c-format
-msgid "A comprehensive multi-part tutorial about Linux file systems can be found at IBM&nbsp;developerWorks in the <citetitle>Advanced File System Implementor’s Guide</citetitle> ( <link xlink:href=\"https://www.ibm.com/developerworks/linux/library/l-fs/\"/> )."
+msgid "Each of the file system projects described above maintains its own home page on which to find mailing list information, further documentation, and FAQs:"
 msgstr ""
 
 #. Tag: para
 #: storage_filesystems.xml:2004
+#, no-c-format
+msgid "The Btrfs Wiki on Kernel.org: <link xlink:href=\"https://btrfs.wiki.kernel.org/\"/>"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:2010
+#, no-c-format
+msgid "E2fsprogs: Ext2/3/4 File System Utilities: <link xlink:href=\"http://e2fsprogs.sourceforge.net/\"/>"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:2016
+#, no-c-format
+msgid "Introducing Ext3: <link xlink:href=\"http://www.ibm.com/developerworks/linux/library/l-fs7/\"/>"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:2022
+#, no-c-format
+msgid "XFS: A High-Performance Journaling File System: <link xlink:href=\"http://oss.sgi.com/projects/xfs/\"/>"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:2028
+#, no-c-format
+msgid "The OCFS2 Project: <link xlink:href=\"http://oss.oracle.com/projects/ocfs2/\"/>"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:2035
+#, no-c-format
+msgid "A comprehensive multi-part tutorial about Linux file systems can be found at IBM&nbsp;developerWorks in the <citetitle>Advanced File System Implementor’s Guide</citetitle> ( <link xlink:href=\"https://www.ibm.com/developerworks/linux/library/l-fs/\"/> )."
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:2042
 #, no-c-format
 msgid "An in-depth comparison of file systems (not only Linux file systems) is available from the Wikipedia project in Comparison of File Systems ( <link xlink:href=\"http://en.wikipedia.org/wiki/Comparison_of_file_systems#Comparison\"/> )."
 msgstr ""

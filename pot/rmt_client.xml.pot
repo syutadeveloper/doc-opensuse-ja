@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-07-09 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -23,763 +23,270 @@ msgstr ""
 #. Tag: para
 #: rmt_client.xml:12
 #, no-c-format
-msgid "Any machine running &sle; 12 or newer can be configured to register against &rmt; and download software updates from there, instead of communicating directly with &scc; or Novell Customer Center."
+msgid "Any machine running &sle; 12 or newer can be configured to register against &rmt; and download software updates from there, instead of communicating directly with the &scc;."
 msgstr ""
 
 #. Tag: para
 #: rmt_client.xml:17
 #, no-c-format
-msgid "If your network includes an &rmt; server to provide a local update source, you need to equip the client with the server's URL. As client and server communicate via the HTTPS protocol during registration, you also need to make sure the client trusts the server's certificate. In case you set up your &rmt; server to use the default server certificate, the CA certificate will be available on the &rmt; server at <literal>http://<replaceable>FQDN</replaceable>/smt.crt</literal> ."
+msgid "To configure clients to use the &rmt; server, use one of the following methods:"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:26
+#: rmt_client.xml:23
 #, no-c-format
-msgid "If the certificate is not issued by a well-trusted authority, it will be downloaded automatically from &rmt;. In this case, the client displays the new certificate details (its fingerprint), and you need to accept the certificate."
+msgid "Provide the required information with boot parameters. See <xref linkend=\"sec.rmt_client.parameters\"/> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:32
+#: rmt_client.xml:29
 #, no-c-format
-msgid "There are several ways to provide the registration information and to configure the client machine to use &rmt;:"
+msgid "Configure the clients using an &ay; profile. See <xref linkend=\"sec.rmt_client.autoyast\"/> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:38
+#: rmt_client.xml:35
 #, no-c-format
-msgid "Provide the required information via kernel parameters at boot time ( <xref linkend=\"smt.client.parameters\"/> )."
+msgid "Use the <command>crmt-client-setup</command> command. See <xref linkend=\"sec.rmt_client.clientsetupscript\"/> )."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:44
+#: rmt_client.xml:41
 #, no-c-format
-msgid "Configure the clients using an &ay; profile ( <xref linkend=\"smt.client.autoyast\"/> )."
+msgid "Use the &yast; registration module during installation or later. See <xref linkend=\"sec.rmt_client.yast\"/> ."
+msgstr ""
+
+#. Tag: title
+#: rmt_client.xml:49
+#, no-c-format
+msgid "CA Certificate"
 msgstr ""
 
 #. Tag: para
 #: rmt_client.xml:50
 #, no-c-format
-msgid "Use the <command>clientSetup4SMT.sh</command> script ( <xref linkend=\"smt.client.clientsetupscript\"/> ). This script can be run on a client to make it register against a specified &rmt; server."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:57
-#, no-c-format
-msgid "You can set the &rmt; server URL with the &yast; registration module during installation ( <xref linkend=\"smt.client.yast\"/> )."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:64
-#, no-c-format
-msgid "These methods are described in the following sections."
+msgid "If you need the CA certificate of the &rmt; server find it at <filename>/usr/share/rmt/ssl/rmt-ca.crt</filename> and <literal>https://<replaceable>RMT_SERVER</replaceable>/rmt.crt</literal> ."
 msgstr ""
 
 #. Tag: title
-#: rmt_client.xml:69
+#: rmt_client.xml:59
 #, no-c-format
-msgid "Using linuxrc Parameters to Access an &rmt; Server"
+msgid "Configuring Clients with Boot Parameters"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:71
+#: rmt_client.xml:60
 #, no-c-format
 msgid "Any client can be configured to use &rmt; by providing the <literal>regurl</literal> parameter during machine boot."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:76
+#: rmt_client.xml:64
 #, no-c-format
-msgid "The parameter needs to be entered as <literal>regurl=<replaceable>SMT_SERVER_URL</replaceable></literal> . The URL needs to be in the following format: <literal>https://<replaceable>FQDN</replaceable>/connect/</literal> with <replaceable>FQDN</replaceable> being the fully qualified host name of the &rmt; server. It must be identical to the FQDN of the server certificate used on the &rmt; server. Example:"
+msgid "The parameter needs to be entered as <literal>regurl=<replaceable>SMT_SERVER_URL</replaceable></literal> . The URL needs to be in the following format: <literal>https://<replaceable>FQDN</replaceable></literal> with <replaceable>FQDN</replaceable> being the fully qualified host name of the &rmt; server. It must be identical to the FQDN of the server certificate used on the &rmt; server. Example:"
 msgstr ""
 
 #. Tag: screen
-#: rmt_client.xml:86
+#: rmt_client.xml:73
 #, no-c-format
-msgid "regurl=https://smt.&exampledomain;/connect/"
+msgid "regurl=https://smt.&exampledomain;"
 msgstr ""
 
 #. Tag: title
-#: rmt_client.xml:89
+#: rmt_client.xml:75
 #, no-c-format
 msgid "Beware of Typing Errors"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:90
+#: rmt_client.xml:76
 #, no-c-format
 msgid "Make sure the values you enter are correct. If <literal>regurl</literal> has not been specified correctly, the registration of the update source will fail."
 msgstr ""
 
 #. Tag: title
-#: rmt_client.xml:98
+#: rmt_client.xml:83
 #, no-c-format
 msgid "Change of &rmt; Server Certificate"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:99
+#: rmt_client.xml:84
 #, no-c-format
 msgid "If the &rmt; server gets a new certificate from an untrusted CA, the clients need to retrieve the new CA certificate file. &yast; displays a dialog for importing a new certificate. If you confirm importing the new certificate, the old one is replaced with the new one."
 msgstr ""
 
 #. Tag: title
-#: rmt_client.xml:108
+#: rmt_client.xml:94
 #, no-c-format
 msgid "Configuring Clients with &ay; Profile"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:110
+#: rmt_client.xml:95
 #, no-c-format
 msgid "Clients can be configured to register with &rmt; server via &ay; profile. For general information about creating &ay; profiles and preparing automatic installation, refer to the <emphasis>&ay; Guide</emphasis> . In this section, only &rmt; specific configuration is described."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:117
+#: rmt_client.xml:101
 #, no-c-format
 msgid "To configure &rmt; specific data using &ay;, follow the steps for the relevant version of &rmt; client."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:124
+#: rmt_client.xml:107
 #, no-c-format
 msgid "As &rootuser;, start &yast; and select <menuchoice> <guimenu>Miscellaneous</guimenu> <guimenu>Autoinstallation</guimenu> </menuchoice> to start the graphical &ay; front-end."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:129
+#: rmt_client.xml:112
 #, no-c-format
 msgid "From a command line, you can start the graphical &ay; front-end with the <command>yast2 autoyast</command> command."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:135
+#: rmt_client.xml:118
 #, no-c-format
 msgid "Open an existing profile using <menuchoice> <guimenu>File</guimenu> <guimenu>Open</guimenu> </menuchoice> , create a profile based on the current system's configuration using <menuchoice> <guimenu>Tools</guimenu> <guimenu>Create Reference Profile</guimenu> </menuchoice> , or work with an empty profile."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:144
+#: rmt_client.xml:127
 #, no-c-format
 msgid "Select <menuchoice> <guimenu>Software</guimenu> <guimenu>Product Registration</guimenu> </menuchoice> . An overview of the current configuration is shown."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:151
+#: rmt_client.xml:134
 #, no-c-format
 msgid "Click <guimenu>Edit</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:156
+#: rmt_client.xml:139
 #, no-c-format
 msgid "Check <guimenu>Register the Product</guimenu> , set the URL of the &rmt; server in <guimenu>Use Specific Server URL Instead of the Default</guimenu> , and you can set the <guimenu>Optional SSL Server Certificate URL</guimenu> . The possible values for the server URL are the same as for the kernel parameter <literal>regurl</literal> . For the SSL certificate location, you can use either HTTP or HTTPS based URLs."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:166
+#: rmt_client.xml:149
 #, no-c-format
 msgid "Perform all other configuration needed for the systems to be deployed, then click <guimenu>Finish</guimenu> to return to the main screen."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:172
+#: rmt_client.xml:155
 #, no-c-format
 msgid "Select <menuchoice> <guimenu>File</guimenu> <guimenu>Save As</guimenu> </menuchoice> and enter a file name for the profile, such as <filename>autoinst.xml</filename> ."
 msgstr ""
 
 #. Tag: title
+#: rmt_client.xml:166
+#, no-c-format
+msgid "Configuring Clients with <command>rmt-client-setup</command>"
+msgstr ""
+
+#. Tag: para
+#: rmt_client.xml:167
+#, no-c-format
+msgid "The <command>/usr/share/rmt/public/tools/rmt-client-setup</command> script is provided in the package <package>rmt-server</package> . This script allows you to configure a client machine to use an &rmt; server. It can also be used to reconfigure an existing client to use a different &rmt; server."
+msgstr ""
+
+#. Tag: para
+#: rmt_client.xml:174
+#, no-c-format
+msgid "To configure a client machine to use &rmt; with <command>rmt-client-setup</command> , follow these steps:"
+msgstr ""
+
+#. Tag: para
+#: rmt_client.xml:180
+#, no-c-format
+msgid "Download <filename>rmt-client-setup</filename> from the &rmt; server:"
+msgstr ""
+
+#. Tag: screen
 #: rmt_client.xml:183
 #, no-c-format
-msgid "Configuring Clients with the clientSetup4SMT.sh Script"
+msgid "&prompt.root;<command>curl https://<replaceable>RMT_SERVER</replaceable>/tools/rmt-client-setup --output rmt-client-setup</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:185
+#: rmt_client.xml:186
 #, no-c-format
-msgid "The <command>/usr/share/doc/packages/smt/clientSetup4SMT.sh</command> script is provided together with &rmt;. This script allows you to configure a client machine to use an &rmt; server. It can also be used to reconfigure an existing client to use a different &rmt; server."
+msgid "Run the script with the URL of the &rmt; server as parameter."
+msgstr ""
+
+#. Tag: screen
+#: rmt_client.xml:189
+#, no-c-format
+msgid "&prompt.root;<command>sh rmt-client-setup https://<replaceable>RMT_SERVER</replaceable>/</command>"
+msgstr ""
+
+#. Tag: para
+#: rmt_client.xml:190
+#, no-c-format
+msgid "Alternatively, you can specify the correct fingerprint or path to the server certificate. For details, see <command>sh rmt-client-setup --help</command> ."
+msgstr ""
+
+#. Tag: para
+#: rmt_client.xml:197
+#, no-c-format
+msgid "The script downloads the server's CA certificate. Accept it by pressing <keycap>Y</keycap> . The tool now performs all necessary modifications on the client."
+msgstr ""
+
+#. Tag: para
+#: rmt_client.xml:204
+#, no-c-format
+msgid "Use <command>SUSEConnect</command> to add more products. For details, run <command>SUSEConnect --help</command> ."
 msgstr ""
 
 #. Tag: title
-#: rmt_client.xml:193
-#, no-c-format
-msgid "Installation of <command>wget</command>"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:194
-#, no-c-format
-msgid "The script <filename>clientSetup4SMT.sh</filename> itself uses <command>wget</command> , so <command>wget</command> must be installed on the client."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:201
-#, no-c-format
-msgid "To configure a client machine to use &rmt; with the <command>clientSetup4SMT.sh</command> script, follow these steps:"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:208
-#, no-c-format
-msgid "Copy the <filename>clientSetup4SMT.sh</filename> script from your &rmt; server to the client machine. The script is available at <filename>&lt;SMT_HOSTNAME&gt;/repo/tools/clientSetup4SMT.sh</filename> and <filename>/srv/www/htdocs/repo/tools/clientSetup4SMT.sh</filename> . You can download it with a browser, using <command>wget</command> , or by another means, such as with <command>scp</command> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:218
-#, no-c-format
-msgid "As &rootuser;, execute the script on the client machine. The script can be executed in two ways. In the first case, the script name is followed by the registration URL. For example:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:223
-#, no-c-format
-msgid "&prompt.root;./clientSetup4SMT.sh https://smt.&exampledomain;/center/regsvc"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:224
-#, no-c-format
-msgid "In the second case, the script uses the <option>--host</option> option followed by the host name of the &rmt; server, and <option>--regcert</option> followed by the URL of the SSL certificate; for example:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:230
-#, no-c-format
-msgid "&prompt.root;./clientSetup4SMT.sh --host smt.&exampledomain; \\\n"
-      "  --regcert http://smt.&exampledomain;/certs/smt.crt"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:232
-#, no-c-format
-msgid "In this case, without any <quote>namespace</quote> specified, the client will be configured to use the default production repositories. If <option>--namespace <replaceable>GROUPNAME</replaceable></option> is specified, the client will use that staging group."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:240
-#, no-c-format
-msgid "The script downloads the server's CA certificate. Accept it by pressing <keycap>Y</keycap> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:246
-#, no-c-format
-msgid "The script performs all necessary modifications on the client. However, the registration itself is not performed by the script."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:252
-#, no-c-format
-msgid "The script downloads and asks to accept additional GPG keys to sign repositories with."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:258
-#, no-c-format
-msgid "Perform the registration by executing"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:261
-#, no-c-format
-msgid "&prompt.sudo;SUSEConnect -p <replaceable>PRODUCT_NAME</replaceable> --url <replaceable>https://smt.example.org</replaceable>"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:262
-#, no-c-format
-msgid "or running the <command>yast2 registration</command> (&sls; 12 SP1 and newer) or <command>yast2 scc</command> (&sls; 12) module on the client."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:269
-#, no-c-format
-msgid "This script is also provided for download. You can get it by running"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:273
-#, no-c-format
-msgid "&prompt.user;wget http://smt.example.com/repo/tools/clientSetup4SMT.sh"
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:276
-#, no-c-format
-msgid "Extension and Module Registration"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:277
-#, no-c-format
-msgid "When registering an existing system against &rmt;&mdash;both on the command line and using &yast;&mdash;you need to register additional extensions and modules separately, one by one. This applies both to already installed extensions and to extensions that you plan to install."
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:292
-#, no-c-format
-msgid "Problems Downloading GPG Keys from the Server"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:293
-#, no-c-format
-msgid "The <literal>apache2-example-pages</literal> package includes a <filename>robots.txt</filename> file. The file is installed into the Apache2 document root directory, and controls how clients can access files from the Web server. If this package is installed on the server, <filename>clientSetup4SMT.sh</filename> fails to download the keys stored under <filename>/repo/keys</filename> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:301
-#, no-c-format
-msgid "You can solve this problem by either editing <filename>robots.txt</filename> , or uninstalling the <literal>apache2-example-pages</literal> package."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:306
-#, no-c-format
-msgid "If you choose to edit the <filename>robots.txt</filename> file, add before the <literal>Disallow: /</literal> statement:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:310
-#, no-c-format
-msgid "Allow: /repo/keys"
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:317
+#: rmt_client.xml:214
 #, no-c-format
 msgid "Configuring Clients with &yast;"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:319
+#: rmt_client.xml:215
 #, no-c-format
 msgid "To configure a client to perform the registration against an &rmt; server use the &yast; <guimenu>Product Registration</guimenu> module <command>yast2 registration</command> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:324
+#: rmt_client.xml:220
 #, no-c-format
 msgid "On the client, the credentials are not necessary and you may leave the relevant fields empty. Click <guimenu>Local Registration Server</guimenu> and enter its URL. Then click <guimenu>Next</guimenu> until the exit from the module."
 msgstr ""
 
 #. Tag: title
-#: rmt_client.xml:357
+#: rmt_client.xml:229
 #, no-c-format
 msgid "Listing Accessible Repositories"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:359
+#: rmt_client.xml:230
 #, no-c-format
-msgid "To retrieve the accessible repositories for a client, download <filename>repo/repoindex.xml</filename> from the &rmt; server with the client's credentials. The credentials are stored in <filename>/etc/zypp/credentials.d/SCCcredentials</filename> on the client machine. Using <command>wget</command> , the command for testing could be as follows:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:368
-#, no-c-format
-msgid "&prompt.user;wget https://<replaceable>USER</replaceable>:<replaceable>PASS</replaceable>@smt.example.com/repo/repoindex.xml"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:370
-#, no-c-format
-msgid "<filename>repoindex.xml</filename> returns the complete repository list as they come from the vendor. If a repository is marked for staging, <filename>repoindex.xml</filename> lists the repository in the <literal>full</literal> namespace ( <filename>repos/full/$RCE</filename> )."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:377
-#, no-c-format
-msgid "To get a list of all repositories available on the &rmt; server, use the credentials specified in the <literal>[LOCAL]</literal> section of <filename>/etc/smt.conf</filename> on the server as <literal>mirrorUser</literal> and <literal>mirrorPassword</literal> ."
+msgid "To list available modules and repositories, use <command>SUSEConnect --list-extensions</command> . Alternatively, you can also browse the directory listing of the &rmt; server by visiting <literal>https://<replaceable>RMT_SERVER</replaceable>/repo/</literal> and its subdirectories."
 msgstr ""
 
 #. Tag: title
-#: rmt_client.xml:385
+#: rmt_client.xml:240
 #, no-c-format
 msgid "Online Migration of &sle; Clients"
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:387
+#: rmt_client.xml:241
 #, no-c-format
-msgid "&sle; clients registered against &rmt; can be migrated online to the latest service pack of the same major release the same way as clients registered against &scc; or Novell Customer Center. Before starting the migration, make sure that &rmt; is configured to provide the correct version of repositories to which you need the clients to migrate."
+msgid "&sle; clients registered against &rmt; can be migrated online to the latest service pack of the same major release the same way as clients registered against &scc;. Before starting the migration, make sure that &rmt; has the required products available and mirrored."
 msgstr ""
 
 #. Tag: para
-#: rmt_client.xml:395
+#: rmt_client.xml:248
 #, no-c-format
-msgid "For detailed information on online migration, see <xref linkend=\"cha.upgrade-paths\"/> ."
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:402
-#, no-c-format
-msgid "How to Update Red Hat Enterprise Linux with &rmt;"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:404
-#, no-c-format
-msgid "<remark condition=\"clarity\"> 2018-02-12 - fs: Needs further discussion - all versions of RH listed below will not be supported by RMT (too old) </remark> &rmt; enables customers that possess the required entitlements to mirror updates for Red Hat Enterprise Linux (RHEL). Refer to <link xlink:href=\"http://www.suse.com/products/expandedsupport/\"/> for details on &sls; Subscription with Expanded Support. This section discusses the actions required to configure the &rmt; server and clients (RHEL servers) for this solution."
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:421
-#, no-c-format
-msgid "&sls; 10"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:422
-#, no-c-format
-msgid "Configuring RHEL client with Subscription Management Tool for &sle; (&rmt; 1.0) running &sls; 10 is slightly different. For more information, see <link xlink:href=\"http://www.novell.com/support/search.do?usemicrosite=true&amp;searchString=7001751\">How to update Red Hat Enterprise Linux with &rmt;.</link>"
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:431
-#, no-c-format
-msgid "How to Prepare &rmt; Server for Mirroring and Publishing Updates for RHEL"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:434
-#, no-c-format
-msgid "Install &sls; (SLES) with the &rmt; packages as per the documentation on the respective products."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:440
-#, no-c-format
-msgid "During &rmt; setup, use organization credentials that have access to Novell-provided RHEL update repositories."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:446
-#, no-c-format
-msgid "Verify that the organization credentials have access to download updates for the Red Hat products with"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:450
-#, no-c-format
-msgid "&prompt.sudo;smt-repos -m | grep RES"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:453
-#, no-c-format
-msgid "Enable mirroring of the RHEL update repositories for the desired architecture(s):"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:457
-#, no-c-format
-msgid "&prompt.sudo;smt-repos -e <replaceable>REPO-NAME</replaceable> <replaceable>ARCHITECTURE</replaceable>"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:460
-#, no-c-format
-msgid "Mirror the updates and log verbose output:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:463
-#, no-c-format
-msgid "&prompt.sudo;smt-mirror -d -L /var/log/smt/smt-mirror.log"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:464
-#, no-c-format
-msgid "The updates for RHEL will also be mirrored automatically as part of the default nightly &rmt; mirroring cron job. When the mirror process of the repositories for your RHEL products has completed, the updates are available via"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:470
-#, no-c-format
-msgid "http://smt-server.your-domain.top/repo/$RCE/<replaceable>REPOSITORY_NAME</replaceable>/<replaceable>ARCHITECTURE</replaceable>/"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:473
-#, no-c-format
-msgid "To enable GPG checking of the repositories, the key used to sign the repositories needs to be made available to the RHEL clients. This key is now available in the res-signingkeys package, which is included in the &rmt; installation source."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:481
-#, no-c-format
-msgid "Install the <literal>res-signingkeys</literal> package with the command"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:484
-#, no-c-format
-msgid "&prompt.sudo;zypper in -y res-signingkeys"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:487
-#, no-c-format
-msgid "The installation of the package stores the key file as <filename>/srv/www/htdocs/repo/keys/res-signingkeys.key</filename> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:493
-#, no-c-format
-msgid "Now the key is available to the clients and can be imported into their RPM database as described later."
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:504
-#, no-c-format
-msgid "How to Configure the YUM Client on RHEL 5.2 to Receive Updates from &rmt;"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:514
-#, no-c-format
-msgid "Create a file in <filename>/etc/yum.repos.d/</filename> and name it <literal>RES5.repo</literal> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:520
-#, no-c-format
-msgid "Edit the file and enter the repository data, and point to the repository on the &rmt; server as follows:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:524
-#, no-c-format
-msgid "[smt]\n"
-      "name=SMT repository\n"
-      "baseurl=http://<replaceable>smt.example.com</replaceable>/repo/$RCE/<replaceable>REPOSITORY_NAME</replaceable>/<replaceable>ARCHITECTURE</replaceable>/\n"
-      "enabled=1\n"
-      "gpgcheck=1"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:529
-#, no-c-format
-msgid "Example of base URL:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:532
-#, no-c-format
-msgid "http://smt.mycompany.com/repo/$RCE/RES5/i386/"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:540
-#, no-c-format
-msgid "Disable standard Red Hat repositories by setting"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:543
-#, no-c-format
-msgid "enabled=0"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:544
-#, no-c-format
-msgid "in the repository entries in other files in <filename>/etc/yum.repos.d/</filename> (if any are enabled)."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:548
-#, no-c-format
-msgid "Both YUM and the update notification applet should work correctly now and notify of available updates when applicable. You may need to restart the applet."
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:558
-#, no-c-format
-msgid "How to Configure the UP2DATE Client on RHEL 3.9 and 4.7 to Receive Updates from &rmt;"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:561
-#, no-c-format
-msgid "Import the repository signing key downloaded above into the local RPM database with"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:565
-#, no-c-format
-msgid "&prompt.sudo;rpm --import http://<replaceable>smt.example.com</replaceable>/repo/keys/res-signingkeys.key"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:568
-#, no-c-format
-msgid "Edit the file <filename>/etc/sysconfig/rhn/sources</filename> and make the following changes:"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:574
-#, no-c-format
-msgid "Comment out any lines starting with <literal>up2date</literal> ."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:577
-#, no-c-format
-msgid "Normally, there will be a line that says \"up2date default\"."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:582
-#, no-c-format
-msgid "Add an entry pointing to the &rmt; repository (all in one line):"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:585
-#, no-c-format
-msgid "&prompt.sudo;yum <replaceable>REPO_NAME</replaceable> http://<replaceable>smt.example.com</replaceable>/repo/$RCE/<replaceable>REPOSITORY_NAME</replaceable>/<replaceable>ARCHITECTURE</replaceable>/"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:586
-#, no-c-format
-msgid "where <literal>repo-name</literal> should be set to RES3 for 3.9 and RES4 for 4.7."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:592
-#, no-c-format
-msgid "Save the file."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:597
-#, no-c-format
-msgid "Both up2date and the update notification applet should work correctly now, pointing to the &rmt; repository and indicating updates when available. In case of trouble, try to restart the applet."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:602
-#, no-c-format
-msgid "To ensure correct reporting of the Red Hat Enterprise systems in &scc;, they need to be registered against your &rmt; server. For this a special suseRegisterRES package is provided through the RES* repositories and it should be installed, configured and executed as described below."
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:611
-#, no-c-format
-msgid "How to Register RHEL 5.2 against &rmt;"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:614
-#, no-c-format
-msgid "Install the suseRegisterRES package."
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:617
-#, no-c-format
-msgid "&prompt.sudo;yum install suseRegisterRES"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:632
-#, no-c-format
-msgid "&prompt.sudo;cat smt.crt &gt;&gt; /etc/pki/tls/cert.pem"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:639
-#, no-c-format
-msgid "url: https://<replaceable>smt.example.com</replaceable>/center/regsvc/"
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:655
-#, no-c-format
-msgid "How to Register RHEL 4.7 and RHEL 3.9 against &rmt;"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:658
-#, no-c-format
-msgid "Install the <literal>suseRegisterRES</literal> package:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:661
-#, no-c-format
-msgid "&prompt.sudo;up2date --get suseRegisterRES\n"
-      "&prompt.sudo;up2date --get perl-XML-Writer\n"
-      "&prompt.sudo;rpm -ivh /var/spool/up2date/suseRegisterRES*.rpm /var/spool/up2date/perl-XML-Writer-0*.rpm"
-msgstr ""
-
-#. Tag: title
-#: rmt_client.xml:665
-#, no-c-format
-msgid "Additional Packages"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:666
-#, no-c-format
-msgid "You may need to install the <literal>perl-Crypt-SSLeay</literal> and <literal>perl-XML-Parser</literal> packages from the original RHEL media."
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:674
-#, no-c-format
-msgid "Copy the &rmt; certificate to the system:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:677
-#, no-c-format
-msgid "&prompt.sudo;wget http://<replaceable>smt.example.com</replaceable>/smt.crt"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:678
-#, no-c-format
-msgid "&prompt.sudo;cat smt.crt &gt;&gt; /usr/share/ssl/cert.pem"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:681
-#, no-c-format
-msgid "Edit <filename>/etc/suseRegister.conf</filename> to point to &rmt; by changing the URL value to"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:685
-#, no-c-format
-msgid "url = https://<replaceable>smt.example.com</replaceable>/center/regsvc/"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:686
-#, no-c-format
-msgid "or (for &scc;)"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:689
-#, no-c-format
-msgid "url = https://<replaceable>smt.example.com</replaceable>/connect/"
-msgstr ""
-
-#. Tag: para
-#: rmt_client.xml:692
-#, no-c-format
-msgid "Register the system:"
-msgstr ""
-
-#. Tag: screen
-#: rmt_client.xml:695
-#, no-c-format
-msgid "&prompt.sudo;suse_register"
+msgid "For detailed information on the online migration, see <xref linkend=\"cha.upgrade-paths\"/> ."
 msgstr ""
 

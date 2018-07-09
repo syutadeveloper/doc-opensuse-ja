@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-07-09 09:07+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -2441,30 +2441,30 @@ msgstr ""
 #, no-c-format
 msgid ""
 "Approximately 1024. The actual number depends on the length of the device "
-"number strings. It is a compile-time variable within multipath-tools, which "
-"can be raised if this limit poses a problem."
+"number strings for each multipath device. It is a compile-time variable "
+"within multipath-tools, which can be raised if this limit poses a problem."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1794
+#: storage_filesystems.xml:1795
 #, no-c-format
 msgid "Maximum size per block device"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1799
+#: storage_filesystems.xml:1800
 #, no-c-format
 msgid "Up to 8 EiB."
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1809
+#: storage_filesystems.xml:1810
 #, no-c-format
 msgid "Troubleshooting File Systems"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1811
+#: storage_filesystems.xml:1812
 #, no-c-format
 msgid ""
 "This section describes some known issues and possible solutions for file "
@@ -2472,13 +2472,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1817
+#: storage_filesystems.xml:1818
 #, no-c-format
 msgid "Btrfs Error: No space is left on device"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1818
+#: storage_filesystems.xml:1819
 #, no-c-format
 msgid ""
 "The root ( <filename>/</filename> ) partition using the Btrfs file system "
@@ -2487,7 +2487,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1823
+#: storage_filesystems.xml:1824
 #, no-c-format
 msgid ""
 "See the following sections for information about possible causes and "
@@ -2495,13 +2495,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1828
+#: storage_filesystems.xml:1829
 #, no-c-format
 msgid "Disk Space Consumed by Snapper Snapshots"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1829
+#: storage_filesystems.xml:1830
 #, no-c-format
 msgid ""
 "If Snapper is running for the Btrfs file system, the <quote><literal>No "
@@ -2510,7 +2510,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1834
+#: storage_filesystems.xml:1835
 #, no-c-format
 msgid ""
 "You can remove some snapshots from Snapper, however, the snapshots are not "
@@ -2518,19 +2518,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1838
+#: storage_filesystems.xml:1839
 #, no-c-format
 msgid "To delete files from Snapper:"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1843
+#: storage_filesystems.xml:1844
 #, no-c-format
 msgid "Open a terminal console."
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1848
+#: storage_filesystems.xml:1849
 #, no-c-format
 msgid ""
 "At the command prompt, enter <command>btrfs filesystem show</command> , for "
@@ -2538,7 +2538,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1852
+#: storage_filesystems.xml:1853
 #, no-c-format
 msgid ""
 "&prompt.sudo;btrfs filesystem show\n"
@@ -2548,13 +2548,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1858
+#: storage_filesystems.xml:1859
 #, no-c-format
 msgid "Enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1861
+#: storage_filesystems.xml:1862
 #, no-c-format
 msgid ""
 "&prompt.sudo;btrfs fi balance start <replaceable>MOUNTPOINT</replaceable> -"
@@ -2562,7 +2562,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1862
+#: storage_filesystems.xml:1863
 #, no-c-format
 msgid ""
 "This command attempts to relocate data in empty or near-empty data chunks, "
@@ -2572,25 +2572,25 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1870
+#: storage_filesystems.xml:1871
 #, no-c-format
 msgid "List the snapshots in Snapper. Enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1873
+#: storage_filesystems.xml:1874
 #, no-c-format
 msgid "&prompt.sudo;snapper -c root list"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1876
+#: storage_filesystems.xml:1877
 #, no-c-format
 msgid "Delete one or more snapshots from Snapper. Enter"
 msgstr ""
 
 #. Tag: screen
-#: storage_filesystems.xml:1879
+#: storage_filesystems.xml:1880
 #, no-c-format
 msgid ""
 "&prompt.sudo;snapper -c root delete <replaceable>SNAPSHOT_NUMBER(S)</"
@@ -2598,7 +2598,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1880
+#: storage_filesystems.xml:1881
 #, no-c-format
 msgid ""
 "Ensure that you delete the oldest snapshots first. The older a snapshot is, "
@@ -2606,7 +2606,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1886
+#: storage_filesystems.xml:1887
 #, no-c-format
 msgid ""
 "To help prevent this problem, you can change the Snapper cleanup algorithms. "
@@ -2616,7 +2616,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1893
+#: storage_filesystems.xml:1894
 #, no-c-format
 msgid ""
 "If you use Snapper with Btrfs on the file system disk, it is advisable to "
@@ -2626,13 +2626,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1901
+#: storage_filesystems.xml:1902
 #, no-c-format
 msgid "Disk Space Consumed by Log, Crash, and Cache Files"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1902
+#: storage_filesystems.xml:1903
 #, no-c-format
 msgid ""
 "If the system disk is filling up with data, you can try deleting files from "
@@ -2641,7 +2641,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1908
+#: storage_filesystems.xml:1909
 #, no-c-format
 msgid ""
 "The Btrfs &rootuser; file system subvolumes <filename>/var/log</filename> , "
@@ -2653,7 +2653,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1916
+#: storage_filesystems.xml:1917
 #, no-c-format
 msgid ""
 "On test and development machines, especially if you have frequent crashes of "
@@ -2662,13 +2662,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1926
+#: storage_filesystems.xml:1927
 #, no-c-format
 msgid "Freeing Unused File System Blocks"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1927
+#: storage_filesystems.xml:1928
 #, no-c-format
 msgid ""
 "On solid-state drives (SSDs) and thinly provisioned volumes it is useful to "
@@ -2678,7 +2678,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1933
+#: storage_filesystems.xml:1934
 #, no-c-format
 msgid ""
 "The recommended way to trim a supported file system (except Btrfs) on "
@@ -2691,13 +2691,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1943
+#: storage_filesystems.xml:1944
 #, no-c-format
 msgid "Do Not Use <command>wiper.sh</command> on Btrfs"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1944
+#: storage_filesystems.xml:1945
 #, no-c-format
 msgid ""
 "The <command>wiper.sh</command> script trims read-write mounted Ext4 and XFS "
@@ -2709,13 +2709,62 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: storage_filesystems.xml:1957
+#: storage_filesystems.xml:1958
+#, no-c-format
+msgid "No Defragmentation on SSDs"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:1959
+#, no-c-format
+msgid ""
+"Linux file systems contain mechanisms to avoid data fragmentation and "
+"usually it is not necessary to defragment. However, there are use cases, "
+"where data fragmentation cannot be avoided and where defragmenting the hard "
+"disk significantly improves the performance."
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:1965
+#, no-c-format
+msgid ""
+"This only applies to conventional hard disks. On solid state disks (SSDs) "
+"which use flash memory to store data, the firmware provides an algorithm "
+"that determines to which chips the data is written. Data is usually spread "
+"all over the device. Therefore defragmenting an SSD does not have the "
+"desired effect and will reduce the lifespan of an SSD by writing unnecessary "
+"data."
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:1973
+#, no-c-format
+msgid ""
+"For the reasons mentioned above, &suse; explicitly recommends <emphasis>not</"
+"emphasis> to defragment SSDs. Some vendors also warn about defragmenting "
+"solid state disks. This includes, but it is not limited to the following:"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:1981
+#, no-c-format
+msgid "HPE 3PAR StoreServ All-Flash"
+msgstr ""
+
+#. Tag: para
+#: storage_filesystems.xml:1986
+#, no-c-format
+msgid "HPE 3PAR StoreServ Converged Flash"
+msgstr ""
+
+#. Tag: title
+#: storage_filesystems.xml:1995
 #, no-c-format
 msgid "Additional Information"
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1959
+#: storage_filesystems.xml:1997
 #, no-c-format
 msgid ""
 "Each of the file system projects described above maintains its own home page "
@@ -2723,7 +2772,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1966
+#: storage_filesystems.xml:2004
 #, no-c-format
 msgid ""
 "The Btrfs Wiki on Kernel.org: <link xlink:href=\"https://btrfs.wiki.kernel."
@@ -2731,7 +2780,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1972
+#: storage_filesystems.xml:2010
 #, no-c-format
 msgid ""
 "E2fsprogs: Ext2/3/4 File System Utilities: <link xlink:href=\"http://"
@@ -2739,7 +2788,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1978
+#: storage_filesystems.xml:2016
 #, no-c-format
 msgid ""
 "Introducing Ext3: <link xlink:href=\"http://www.ibm.com/developerworks/linux/"
@@ -2747,7 +2796,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1984
+#: storage_filesystems.xml:2022
 #, no-c-format
 msgid ""
 "XFS: A High-Performance Journaling File System: <link xlink:href=\"http://"
@@ -2755,7 +2804,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1990
+#: storage_filesystems.xml:2028
 #, no-c-format
 msgid ""
 "The OCFS2 Project: <link xlink:href=\"http://oss.oracle.com/projects/ocfs2/"
@@ -2763,7 +2812,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:1997
+#: storage_filesystems.xml:2035
 #, no-c-format
 msgid ""
 "A comprehensive multi-part tutorial about Linux file systems can be found at "
@@ -2773,7 +2822,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_filesystems.xml:2004
+#: storage_filesystems.xml:2042
 #, no-c-format
 msgid ""
 "An in-depth comparison of file systems (not only Linux file systems) is "
