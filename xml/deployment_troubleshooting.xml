@@ -4,13 +4,10 @@
 %entities;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" role="General" xml:id="cha.installation_troubleshooting">
- <title>Troubleshooting</title>
+ <title>トラブルシューティング</title>
  <info>
   <abstract>
-   <para>
-    This section highlights some typical problems you may run into during
-    installation and offers possible solutions or workarounds.
-   </para>
+   <para>本章では、インストール時に発生する一般的な問題と、その解決方法や回避方法を説明しています。</para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
@@ -19,22 +16,10 @@
  </info>
 
  <sect1 xml:id="sec.installation_troubleshooting.checking_media">
-  <title>Checking Media</title>
-  <para>
-   If you encounter any problems using the &productname; installation media,
-   check the integrity of your installation media. Boot from the media and
-   choose <guimenu>Check Installation Media</guimenu> from the boot menu. In a
-   running system, start &yast; and choose <menuchoice>
-   <guimenu>Software</guimenu> <guimenu>Media Check</guimenu> </menuchoice>.
-   To check the &productname; medium, insert it into the drive and click
-   <guimenu>Start Check</guimenu> in the <guimenu>Media Check</guimenu> screen
-   of &yast;. This may take several minutes. If errors are detected, do not
-   use this medium for installation. Media problems may occur when having
-   burned the medium yourself. Burning the media at a low speed (4x) helps to
-   avoid problems.
-  </para>
+  <title>メディアの確認</title>
+  <para>&productname; のインストールメディアを利用していて何らかの問題が発生した場合、まずはインストールメディアが正しく読み込めるかどうかを検証してください。メディアから起動したのち、起動メニューで <guimenu>インストールメディアの検証</guimenu> (英語では <guimenu>Check Installation Media</guimenu>) を選択してください。既にインストール済みのシステムがある場合は、 &yast; を起動して <menuchoice> <guimenu>ソフトウエア</guimenu> <guimenu>メディア確認</guimenu> </menuchoice> を選択してもかまいません。 &productname; のメディアを確認するには、ドライブに書き込んだメディアを挿入して、 &yast; の <guimenu>メディアチェック</guimenu> 画面から <guimenu>チェック開始</guimenu> を押してください。数分程度の時間で確認作業が終わります。何らかのエラーが検出された場合は、そのメディアをインストールに使用してはなりません。メディアの問題は、ご自身でメディアに書き込んだ場合によく発生するものです。より遅い速度 (4x など) で書き込むことで、問題を回避できることがあります。</para>
   <figure xml:id="fig.yast2.mediacheck">
-   <title>Checking Media</title>
+   <title>メディアの確認</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="yast2_medaicheck1.png" width="75%" format="PNG"/>
@@ -46,44 +31,25 @@
   </figure>
  </sect1>
  <sect1 xml:id="sec.installation_troubleshooting.dvd">
-  <title>No Bootable DVD Drive Available</title>
-  <para>
-   If your computer does not contain a built-in bootable DVD drive
-   there are several alternatives. This is also an option if your drive
-   is not supported by &productname;.
-  </para>
+  <title>起動可能な DVD ドライブが存在しない</title>
+  <para>お使いのコンピュータに内蔵の起動可能な DVD ドライブがない場合でも、いくつかの代替案があります。また、お使いのドライブが &productname; でサポートしていないような場合にも、この代替案は有用です。</para>
   <variablelist>
    <varlistentry>
-    <term>Using External DVD Device</term>
+    <term>外付け DVD デバイスの使用</term>
     <listitem>
-     <para>
-      Linux supports most existing DVD drives. If the system has no DVD drive,
-      it is still possible that an external DVD drive, connected through USB,
-      FireWire, or SCSI, can be used to boot the system. Sometimes a BIOS update
-      may help if you encounter problems.
-     </para>
+     <para>Linux ではほとんどの DVD ドライブに対応しています。お使いのシステムに DVD ドライブがない場合でも、 USB や FireWire, SCSI などで DVD ドライブをお使いのシステムに接続して、それを起動用に使用することができます。また、 BIOS を更新することで問題が解決する場合もあります。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Network Boot via PXE</term>
+    <term>PXE を介したネットワーク起動</term>
     <listitem>
-     <para>
-      If a machine lacks a DVD drive, but provides a working Ethernet
-      connection, perform a completely network-based installation.
-      <phrase os="sles;sled">See
-      <xref linkend="sec.remote_installation.scenario.vncpxe"/> and
-      <xref linkend="sec.remote_installation.scenario.sshpxe"/> for
-      details.</phrase>
-     </para>
+     <para>お使いのマシンに DVD ドライブがない場合でも、イーサネットのポートがあれば、すべてをネットワーク経由で取得するインストール形態を取ることもできます。 <phrase os="sles;sled">詳しくは <xref linkend="sec.remote_installation.scenario.vncpxe"/> と <xref linkend="sec.remote_installation.scenario.sshpxe"/> をお読みください。</phrase></para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>USB Flash Drive</term>
+    <term>USB メモリ</term>
     <listitem>
-     <para>
-      You can use a USB flash drive if your machine lacks a DVD drive and
-      network connection. <phrase os="sles;sled">For details, see:</phrase>
-     </para>
+     <para>DVD ドライブがなくても、 USB メモリとネットワーク接続を利用してインストールすることができます。 <phrase os="sles;sled">詳しくは下記をお読みください:</phrase></para>
      <itemizedlist os="sles;sled">
       <listitem>
        <para arch="x86_64"><xref linkend="sec.x86.media.boot"/></para>
@@ -98,116 +64,52 @@
  </sect1>
 
  <sect1 xml:id="sec.installation_troubleshooting.bios">
-  <title>Booting from Installation Media Fails</title>
-  <para>
-   One reason a machine does not boot the installation media can be an
-   incorrect boot sequence setting in BIOS. The BIOS boot sequence must have
-   DVD drive set as the first entry for booting. Otherwise the machine would
-   try to boot from another medium, typically the hard disk. Guidance for
-   changing the BIOS boot sequence can be found in the documentation provided
-   with your mainboard, or in the following paragraphs.
-  </para>
-  <para>
-   The BIOS is the software that enables the very basic functions of a
-   computer. Motherboard vendors provide a BIOS specifically made for their
-   hardware. Normally, the BIOS setup can only be accessed at a specific
-   time&mdash;when the machine is booting. During this initialization phase,
-   the machine performs several diagnostic hardware tests. One of them is a
-   memory check, indicated by a memory counter. When the counter appears, look
-   for a line, usually below the counter or somewhere at the bottom,
-   mentioning the key to press to access the BIOS setup. Usually the key to
-   press is one of <keycap function="delete"/>, <keycap>F1</keycap>, or
-   <keycap function="escape"/>. Press this key until the BIOS setup screen
-   appears.
-  </para>
+  <title>インストールメディアからの起動が失敗する</title>
+  <para>インストールメディアからの起動がうまくいかない理由の 1 つとして、よくあるのが BIOS 側での起動順序の設定です。 BIOS の起動順序の設定では、 DVD ドライブが先にくるように設定しなければなりません。このように設定しないと、マシンは他のメディア、一般的にはハードディスクから起動してしまうためです。 BIOS の起動順序の変更については、お使いのメインボードに付属するドキュメンテーションのほか、下記をお読みになることでも変更できることがあります。</para>
+  <para>BIOS とは、コンピュータのごく基本的な機能のみを提供するソフトウエアです。メインボードの製造元では、それぞれのハードウエアごとに固有の BIOS を提供しています。通常、 BIOS の設定画面はマシンの起動後一定時間内にのみアクセスすることができます。この時間内では初期化の処理が行なわれていて、いくつかのハードウエアテストなどが行なわれています。たとえばメモリの合計サイズの表示でメモリのチェックなどを行なっています。メモリの表示が現われると、それと共に BIOS 設定画面に入るために入力すべきキーが、その表示の前後もしくは最下部に表示されます。一般的には <keycap function="delete"/> , <keycap>F1</keycap> , <keycap function="escape"/> のいずれかのキーを押すことになります。 BIOS の設定画面が現われるまで、表示されたキーを押し続けてください。</para>
   <procedure xml:id="pro.tinstallation_troubleshooting.bios">
-   <title>Changing the BIOS Boot Sequence</title>
+   <title>BIOS での起動順序の変更</title>
    <step>
-    <para>
-     Enter the BIOS using the proper key as announced by the boot routines and
-     wait for the BIOS screen to appear.
-    </para>
+    <para>まずはマシンの電源を入れた後の画面表示に従って、 BIOS 設定画面に入るためのキーを押します。</para>
    </step>
    <step>
-    <para>
-     To change the boot sequence in an AWARD BIOS, look for the <guimenu>BIOS
-     FEATURES SETUP</guimenu> entry. Other manufacturers may have a different
-     name for this, such as <guimenu>ADVANCED CMOS SETUP</guimenu>. When you
-     have found the entry, select it and confirm with
-     <keycap function="enter"/>.
-    </para>
+    <para>AWARD BIOS が搭載されたマシンで起動順序を変更するには、 <guimenu>BIOS FEATURES SETUP</guimenu> の項目に移動します。製造元によっては <guimenu>ADVANCED CMOS SETUP</guimenu> のような名称になっているものもあります。項目が見つかったら、それを選択して <keycap function="enter"/> を押します。</para>
    </step>
    <step>
-    <para>
-     In the screen that opens, look for a subentry called <guimenu>BOOT
-     SEQUENCE</guimenu> or <guimenu>BOOT ORDER</guimenu>. Change the settings
-     by pressing <keycap function="pageup"/> or <keycap function="pagedown"/>
-     until the DVD drive is listed first.
-    </para>
+    <para>画面が表示されたら、 <guimenu>BOOT SEQUENCE</guimenu> や <guimenu>BOOT ORDER</guimenu> と書かれた項目をサガします。ここで <keycap function="pageup"/> や <keycap function="pagedown"/> を押して、 DVD ドライブが最初にくるようにします。</para>
    </step>
    <step>
-    <para>
-     Leave the BIOS setup screen by pressing <keycap function="escape"/>. To
-     save the changes, select <guimenu>SAVE &amp; EXIT SETUP</guimenu>, or
-     press <keycap>F10</keycap>. To confirm that your settings should be
-     saved, press <keycap>Y</keycap>.
-    </para>
+    <para>設定が終わったら、 <keycap function="escape"/> を押して終了します。設定を保存するには、 <guimenu>SAVE &amp; EXIT SETUP</guimenu> を選択するか、 <keycap>F10</keycap> を押します。設定保存の確認メッセージが表示されたら、 <keycap>Y</keycap> を押します。</para>
    </step>
   </procedure>
   <procedure>
-   <title>Changing the Boot Sequence in an SCSI BIOS (Adaptec Host Adapter)</title>
+   <title>SCSI BIOS (Adaptec Host Adapter) での起動順序の変更</title>
    <step>
-    <para>
-     Open the setup by pressing <keycombo> <keycap function="control"/>
-     <keycap>A</keycap> </keycombo>.
-    </para>
+    <para><keycombo> <keycap function="control"/> <keycap>A</keycap> </keycombo> を押してセットアップ画面を開きます。</para>
    </step>
    <step>
-    <para>
-     Select <guimenu>Disk Utilities</guimenu>. The connected hardware
-     components are now displayed.
-    </para>
-    <para>
-     Make note of the SCSI ID of your DVD drive.
-    </para>
+    <para><guimenu>Disk Utilities</guimenu> を選択します。接続されたハードウエアコンポーネントが表示されます。</para>
+    <para>ここで DVD ドライブの SCSI ID を覚えておきます。</para>
    </step>
    <step>
-    <para>
-     Exit the menu with <keycap function="escape"/>.
-    </para>
+    <para><keycap function="escape"/> を押してメニューを終了します。</para>
    </step>
    <step>
-    <para>
-     Open <guimenu>Configure Adapter Settings</guimenu>. Under
-     <guimenu>Additional Options</guimenu>, select <guimenu>Boot Device
-     Options</guimenu> and press <keycap function="enter"/>.
-    </para>
+    <para><guimenu>Configure Adapter Settings</guimenu> を選択します。 <guimenu>Additional Options</guimenu> では <guimenu>Boot Device Options</guimenu> を選択して <keycap function="enter"/> を押します。</para>
    </step>
    <step>
-    <para>
-     Enter the ID of the DVD drive and press <keycap function="enter"/> again.
-    </para>
+    <para>DVD ドライブの ID を入力して再度 <keycap function="enter"/> を押します。</para>
    </step>
    <step>
-    <para>
-     Press <keycap function="escape"/> twice to return to the start screen of
-     the SCSI BIOS.
-    </para>
+    <para><keycap function="escape"/> を 2 回押して、 SCSI BIOS の開始画面まで戻ります。</para>
    </step>
    <step>
-    <para>
-     Exit this screen and confirm with <guimenu>Yes</guimenu> to boot the
-     computer.
-    </para>
+    <para>画面を終了し、 <guimenu>Yes</guimenu> を選んで設定を保存したあと、コンピュータを再起動します。</para>
    </step>
   </procedure>
-  <para>
-   Regardless of what language and keyboard layout your final installation
-   will be using, most BIOS configurations use the US keyboard layout as
-   shown in the following figure:
-  </para>
+  <para>インストール時に言語やキーボードを選択した場合であっても、ほとんどの BIOS 設定画面では下記に示す US キーボードレイアウトが適用されます:</para>
   <figure xml:id="fig.trouble.install.keyboard_us">
-   <title>US Keyboard Layout</title>
+   <title>US キーボードレイアウト</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="keyboard_us.svg" width="75%" format="SVG"/>
@@ -220,348 +122,180 @@
  </sect1>
 
  <sect1 xml:id="sec.installation_troubleshooting.noboot">
-  <title>Boot Failure</title>
-  <para>
-   Some hardware types, mainly very old or very recent ones, fail to boot.
-   Reasons can be missing support for hardware in the installation kernel
-   or drivers causing problems on some specific hardware.
-  </para>
-  <para>
-   If your system fails to install using the standard
-   <guimenu>Installation</guimenu> mode from the first installation boot
-   screen, try the following:
-  </para>
+  <title>起動の失敗</title>
+  <para>特に非常に古いマシンや非常に新しいマシンの場合、起動に失敗する場合があります。これは、インストール時のカーネル内に必要なハードウエア向けのドライバが存在していなかったり、特定のハードウエアでドライバがうまく動かなかったりするためです。</para>
+  <para>起動してすぐの画面で <guimenu>インストール</guimenu> を選択してもインストールシステムが開始できない場合、下記をお試しください:</para>
   <procedure>
    <step>
-    <para>
-     With the DVD still in the drive, reboot the machine with
-     <keycombo> <keycap function="control"/>
-     <keycap function="alt"/> <keycap function="delete"/> </keycombo> or using
-     the hardware reset button.
-    </para>
+    <para>DVD がドライブ内にある場合は、 <keycombo> <keycap function="control"/> <keycap function="alt"/> <keycap function="delete"/> </keycombo> を押すか、機械的なリセットボタンで再起動を行ないます。</para>
    </step>
    <step>
-    <para>
-     When the boot screen appears, press <keycap>F5</keycap>, use the arrow
-     keys of your keyboard to navigate to <guimenu>No ACPI</guimenu> and press
-     <keycap function="enter"/> to launch the boot and installation process.
-     This option disables the support for ACPI power management techniques.
-    </para>
+    <para>起動してすぐの画面で <keycap>F5</keycap> を押します。矢印 (カーソル) キーを利用して <guimenu>ACPI 無し</guimenu> を選択して <keycap function="enter"/> を押し、あとは通常通り <guimenu>インストール</guimenu> を選択します。これにより、 ACPI による電源管理技術を無効化して起動します。</para>
    </step>
    <step>
-    <para>
-     Proceed with the installation as described in <xref linkend="cha.install"/>.
-    </para>
+    <para>あとは <xref linkend="cha.install"/> に示された手順で、通常通りインストールします。</para>
    </step>
   </procedure>
-  <para>
-   If this fails, proceed as above, but choose <guimenu>Safe
-   Settings</guimenu> instead. This option disables ACPI and DMA support. Most
-   hardware will boot with this option.
-  </para>
-  <para>
-   If both of these options fail, use the boot parameters prompt to pass any
-   additional parameters needed to support this type of hardware to the
-   installation kernel. For more information about the parameters available as
-   boot parameters, refer to the kernel documentation located in
-   <filename>/usr/src/linux/Documentation/kernel-parameters.txt</filename>.
-  </para>
+  <para>これでもうまくいかない場合は、代わりに <guimenu>セーフモード</guimenu> を選択してみてください。これにより、 ACPI と DMA の両方のサポートを無効化します。ほとんどのハードウエアで、問題なく動作するようになるはずです。</para>
+  <para>いずれを選択してもうまくいかない場合は、その種類のハードウエアに対応するために特定の起動パラメータを指定してみることもできます。利用可能な起動パラメータについて、詳しくはカーネルのドキュメンテーション <filename>/usr/src/linux/Documentation/kernel-parameters.txt</filename> をお読みください。</para>
   <tip>
-   <title>Obtaining Kernel Documentation</title>
-   <para>
-    Install the <systemitem class="systemname">kernel-source</systemitem>
-    package to view the kernel documentation.
-   </para>
+   <title>カーネルのドキュメンテーションの取得</title>
+   <para><systemitem class="systemname">kernel-source</systemitem> パッケージをインストールすることで、カーネルのドキュメンテーションを読むことができます。</para>
   </tip>
-  <para>
-   There are other ACPI-related kernel parameters that can be entered
-   at the boot prompt prior to booting for installation:
-  </para>
+  <para>ドキュメンテーションには、起動プロンプトに入力することのできるその他の ACPI 関連の起動パラメータが書かれています。</para>
   <variablelist>
    <varlistentry>
-    <term><systemitem>acpi=off</systemitem>
-    </term>
+    <term><systemitem>acpi=off</systemitem></term>
     <listitem>
-     <para>
-      This parameter disables the complete ACPI subsystem on your computer.
-      This may be useful if your computer cannot handle ACPI or if you think
-      ACPI in your computer causes trouble.
-     </para>
+     <para>このパラメータを指定すると、お使いのコンピュータで ACPI サブシステムを完全に無効化します。お使いのコンピュータが ACPI を処理できないものである場合や、何らかの問題があるような場合に便利です。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>acpi=force</systemitem>
-    </term>
+    <term><systemitem>acpi=force</systemitem></term>
     <listitem>
-     <para>
-      Always enable ACPI even if your computer has an old BIOS dated before
-      the year 2000. This parameter also enables ACPI if it is set in addition
-      to <systemitem>acpi=off</systemitem>.
-     </para>
+     <para>お使いのコンピュータの BIOS が 2000 年以前に作成されたものであっても、 ACPI を強制的に有効化します。このパラメータは、 <systemitem>acpi=off</systemitem> と共に設定した場合でも、 ACPI が有効化されます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>acpi=noirq</systemitem>
-    </term>
+    <term><systemitem>acpi=noirq</systemitem></term>
     <listitem>
-     <para>
-      Do not use ACPI for IRQ routing.
-     </para>
+     <para>ACPI を IRQ のルーティングとして使用しないようにします。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>acpi=ht</systemitem>
-    </term>
+    <term><systemitem>acpi=ht</systemitem></term>
     <listitem>
-     <para>
-      Run only enough ACPI to enable hyper-threading.
-     </para>
+     <para>ACPI を有効化した場合にのみ Hyper-Threading を有効化します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>acpi=strict</systemitem>
-    </term>
+    <term><systemitem>acpi=strict</systemitem></term>
     <listitem>
-     <para>
-      Be less tolerant of platforms that are not strictly ACPI specification
-      compliant.
-     </para>
+     <para>ACPI の仕様に厳密に準拠して動作します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>pci=noacpi</systemitem>
-    </term>
+    <term><systemitem>pci=noacpi</systemitem></term>
     <listitem>
-     <para>
-      Disable PCI IRQ routing of the new ACPI system.
-     </para>
+     <para>新しい ACPI システムの PCI IRQ ルーティングを無効化します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>pnpacpi=off</systemitem>
-    </term>
+    <term><systemitem>pnpacpi=off</systemitem></term>
     <listitem>
-     <para>
-      This option is for serial or parallel problems when your BIOS setup
-      contains wrong interrupts or ports.
-     </para>
+     <para>このオプションは、お使いの BIOS 設定内に誤った割り込みやポートが設定されたシリアル／パラレルポートがある場合に使用します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>notsc</systemitem>
-    </term>
+    <term><systemitem>notsc</systemitem></term>
     <listitem>
-     <para>
-      Disable the time stamp counter. This option can be used to work around
-      timing problems on your systems. It is a recent feature, so if you see
-      regressions on your machine, especially time related or even total
-      hangs, this option is worth a try.
-     </para>
+     <para>タイムスタンプカウンタを無効化します。このオプションは、お使いのシステムでタイミングの問題が発生する場合の回避策となるものです。これは比較的新しい機能であるため、お使いのマシンで時刻関連の問題のほか、ハングアップしてしまうような問題を検出した場合、このオプションを試してみることをお勧めします。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>nohz=off</systemitem>
-    </term>
+    <term><systemitem>nohz=off</systemitem></term>
     <listitem>
-     <para>
-      Disable the nohz feature. If your machine hangs, this option may help.
-      Otherwise it is of no use.
-     </para>
+     <para>nohz 機能を無効化します。お使いのマシンがハングアップしてしまうような場合に有用です。それ以外の問題には対応できないものと思われます。</para>
     </listitem>
    </varlistentry>
   </variablelist>
-  <para>
-   When you have determined the right parameter combination, &yast;
-   automatically writes them to the boot loader configuration to make sure
-   that the system boots properly next time.
-  </para>
-  <para>
-   If inexplicable errors occur when the kernel is loaded or during the
-   installation, select <guimenu>Memory Test</guimenu> in the boot menu to
-   check the memory. If <guimenu>Memory Test</guimenu> returns an error, it is
-   usually a hardware error.
-  </para>
+  <para>正しいパラメータの組み合わせが判明したら、 &yast; 側では次回以降の起動でそれらを続けて使用できるよう、ブートローダの設定内にそれらを書き込みます。</para>
+  <para>カーネルの読み込み時やインストール中に不可解なエラーが発生した場合は、起動メニュー内で <guimenu>メモリテスト</guimenu> を選んで、メモリのテストを実施することをお勧めします。 <guimenu>メモリテスト</guimenu> でエラーが発生した場合は、ハードウエアのエラーであるものと思われます。</para>
  </sect1>
 
  <sect1 xml:id="sec.installation_troubleshooting.graph">
-  <title>Fails to Launch Graphical Installer</title>
-  <para>
-   After you insert the medium into your drive and reboot your machine, the
-   installation screen comes up, but after you select
-   <guimenu>Installation</guimenu>, the graphical installer does not start.
-  </para>
-  <para>
-   There are several ways to deal with this situation:
-  </para>
+  <title>グラフィカルなインストールシステムの起動に失敗する</title>
+  <para>ドライブにメディアを挿入してマシンを再起動すると、起動画面が表示されるものの、<guimenu>インストール</guimenu> を選択してもグラフィカルなインストーラが開始しないことがあります。</para>
+  <para>このような状況に対応する方法がいくつかあります:</para>
   <itemizedlist>
    <listitem>
-    <para>
-     Try to select another screen resolution for the installation dialogs.
-    </para>
+    <para>インストール画面で使用する画面の解像度を変更してみます。</para>
    </listitem>
    <listitem>
-    <para>
-     Select <guimenu>Text Mode</guimenu> for installation.
-    </para>
+    <para><guimenu>テキストモード</guimenu> を選択してインストールします。</para>
    </listitem>
    <listitem>
-    <para>
-     Do a remote installation via VNC using the graphical installer.
-    </para>
+    <para>グラフィカルなインストールシステムを VNC 経由で表示させて、ネットワーク上離れた場所からインストールしてみます。</para>
    </listitem>
   </itemizedlist>
   <procedure xml:id="pro.installation_troubleshooting.graph">
-   <title>Change Screen Resolution for Installation</title>
+   <title>インストールシステムでの解像度の変更</title>
    <step>
-    <para>
-     Boot for installation.
-    </para>
+    <para>インストールシステムを起動します。</para>
    </step>
    <step>
-    <para>
-     Press <keycap>F3</keycap> to open a menu from which to select a lower
-     resolution for installation purposes.
-    </para>
+    <para><keycap>F3</keycap> を押してメニューを表示させ、インストール時に使用する解像度を選択します。通常はより低い解像度ほど成功しやすくなっています。</para>
    </step>
    <step>
-    <para>
-     Select <guimenu>Installation</guimenu> and proceed with the installation
-     as described in <xref linkend="cha.install"/>.
-    </para>
+    <para>あとは <xref linkend="cha.install"/> で説明しているとおり、 <guimenu>インストール</guimenu> を選んで通常通りインストールします。</para>
    </step>
   </procedure>
   <procedure xml:id="pro.installation_troubleshooting.text">
-   <title>Installation in Text Mode</title>
+   <title>テキストモードでのインストール</title>
    <step>
-    <para>
-     Boot for installation.
-    </para>
+    <para>インストールシステムを起動します。</para>
    </step>
    <step>
-    <para>
-     Press <keycap>F3</keycap> and select <guimenu>Text Mode</guimenu>.
-    </para>
+    <para><keycap>F3</keycap> を押して <guimenu>テキストモード</guimenu> を選択します。</para>
    </step>
    <step>
-    <para>
-     Select <guimenu>Installation</guimenu> and proceed with the installation
-     as described in <xref linkend="cha.install"/>.
-    </para>
+    <para>あとは <xref linkend="cha.install"/> で説明しているとおり、 <guimenu>インストール</guimenu> を選んで通常通りインストールします。</para>
    </step>
   </procedure>
   <procedure xml:id="pro.trouble.install.vnc">
-   <title>VNC Installation</title>
+   <title>VNC でのインストール</title>
    <step>
-    <para>
-     Boot for installation.
-    </para>
+    <para>インストールシステムを起動します。</para>
    </step>
    <step>
-    <para>
-     Enter the following text at the boot parameters prompt:
-    </para>
-<screen>vnc=1 vncpassword=<replaceable>SOME_PASSWORD</replaceable></screen>
-    <para>
-     Replace <replaceable>SOME_PASSWORD</replaceable> with the password to use
-     for VNC installation.
-    </para>
+    <para>起動パラメータのプロンプトで、下記のように入力します:</para>
+<screen>vnc=1 vncpassword=<replaceable>パスワード</replaceable></screen>
+    <para>ここで、 <replaceable>パスワード</replaceable> には VNC インストール時に使用するパスワードを設定します。</para>
    </step>
    <step>
-    <para>
-     Select <guimenu>Installation</guimenu> then press
-     <keycap function="enter"/> to start the installation.
-    </para>
-    <para>
-     Instead of starting right into the graphical installation routine, the
-     system continues to run in a text mode. The system then halts, displaying a message
-     containing the IP address and port number at which the installer can be
-     reached via a browser interface or a VNC viewer application.
-    </para>
+    <para>あとは <guimenu>インストール</guimenu> を選んで <keycap function="enter"/> を押すと、インストールを始めることができます。</para>
+    <para>グラフィカルなインストールシステムが起動する代わりに、システムはテキストモードで表示を行ないます。起動が終わると、インストールシステムに接続するための IP アドレスとポート番号が表示されます。 Web ブラウザまたは VNC ビューアアプリケーションを利用することで、インストールシステムを表示することができるようになります。</para>
    </step>
    <step>
-    <para>
-     If using a browser to access the installer, launch the browser and enter
-     the address information provided by the installation routines on the
-     future &productname; machine and press <keycap function="enter"/>:
-    </para>
-<screen>http://<replaceable>IP_ADDRESS_OF_MACHINE</replaceable>:5801</screen>
-    <para>
-     A dialog opens in the browser window prompting you for the VNC password.
-     Enter it and proceed with the installation as described in
-     <xref linkend="cha.install"/>.
-    </para>
+    <para>ブラウザを利用してインストールシステムに接続する場合は、ブラウザを起動して &productname; マシンに表示された IP アドレスから、下記のように入力して <keycap function="enter"/> を押します:</para>
+<screen>http://<replaceable>マシンの IP アドレス</replaceable>:5801</screen>
+    <para>VNC パスワードを入力するためのブラウザウインドウが表示されます。パスワードを入力して進めてください。あとは <xref linkend="cha.install"/> の手順でインストールすることができます。</para>
     <important>
-     <title>Cross-platform Support</title>
-     <para>
-      Installation via VNC works with any browser under any operating system,
-      provided Java support is enabled.
-     </para>
+     <title>クロスプラットフォームサポートについて</title>
+     <para>VNC によるインストールは、任意のオペレーティングシステムで動作するブラウザをお使いいただくことができます。ただし、 Java サポートが必要です。</para>
     </important>
-    <para>
-     Provide the IP address and password to your VNC viewer when prompted. A
-     window opens, displaying the installation dialogs. Proceed with the
-     installation as usual.
-    </para>
+    <para>VNC ビューアを起動して、 IP アドレスとパスワードを入力します。ウインドウが表示されたら、そこにはインストールシステムが表示されているはずです。あとは通常のインストールと同じです。</para>
    </step>
   </procedure>
  </sect1>
 
  <sect1 xml:id="sec.installation_troubleshooting.mini">
-  <title>Only Minimalist Boot Screen Started</title>
-  <para>
-   You inserted the medium into the drive, the BIOS routines are finished, but
-   the system does not start with the graphical boot screen. Instead it
-   launches a very minimalist text-based interface. This may happen on any
-   machine not providing sufficient graphics memory for rendering a graphical
-   boot screen.
-  </para>
-  <para>
-   Although the text boot screen looks minimalist, it provides nearly the
-   same functionality as the graphical one:
-  </para>
+  <title>最小限の起動画面で始まってしまう</title>
+  <para>ドライブにメディアを挿入して BIOS のルーチンが終了しても、システムがグラフィカルな起動画面を表示しない場合があります。この場合は、最小限の機能だけが用意されたテキストベースのインターフェイスが表示されます。これは、グラフィカルな画面を表示するためのグラフィックメモリが無いような場合に発生します。</para>
+  <para>テキストベースの画面は非常に機能が限られているように見えますが、機能面ではグラフィカルなインストールシステムとほとんど同じです:</para>
   <variablelist>
    <varlistentry>
-    <term>Boot Options</term>
+    <term>起動オプション</term>
     <listitem>
-     <para>
-      Unlike the graphical interface, the different boot parameters cannot be
-      selected using the cursor keys of your keyboard. The boot menu of the
-      text mode boot screen offers some keywords to enter at the boot prompt.
-      These keywords map to the options offered in the graphical version.
-      Enter your choice and press <keycap function="enter"/> to launch the
-      boot process.
-     </para>
+     <para>グラフィカルなインターフェイスとは異なり、キーボードの矢印 (カーソル) キーでは起動パラメータを選択することができません。テキストモードの起動画面では、起動オプションをキーボードから入力する機能だけが用意されています。使用できるキーワードはグラフィカルな場合と同じです。必要な値を入力して <keycap function="enter"/> を押すと、起動処理が始まります。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Custom Boot Options</term>
+    <term>独自の起動オプション</term>
     <listitem>
-     <para>
-      After selecting a boot parameter, enter the appropriate keyword at the boot
-      prompt or enter some custom boot parameters as described in
-      <xref linkend="sec.installation_troubleshooting.noboot"/>. To launch the installation
-      process, press <keycap function="enter"/>.
-     </para>
+     <para>起動パラメータを選択したら、起動プロンプト内に必要なキーワードを入力します。起動パラメータについて、詳しくは <xref linkend="sec.installation_troubleshooting.noboot"/> をお読みください。インストールシステムを開始するには、 <keycap function="enter"/> を押します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Screen Resolutions</term>
+    <term>画面の解像度</term>
     <listitem>
-     <para>
-      Use the function keys (<keycap>F1</keycap> ...
-      <keycap>F12</keycap>) to determine the screen resolution for
-      installation. If
-      you need to boot in text mode, choose <keycap>F3</keycap>.
-     </para>
+     <para>インストール時に使用する解像度は、ファンクションキー (<keycap>F1</keycap> ... <keycap>F12</keycap>) で設定することができます。テキストモードで起動する場合は、 <keycap>F3</keycap> を押してください。</para>
     </listitem>
    </varlistentry>
   </variablelist>
  </sect1>
  <sect1 xml:id="sec.installation_troubleshooting.log" os="sles">
-  <title>Log Files</title>
-  <para>
-   For more information about log files that are created during installation,
-   see <xref linkend="sec.admsupport.install"/>.
-  </para>
+  <title>ログファイル</title>
+  <para>インストール時に作成されるログファイルについて、詳しくは <xref linkend="sec.admsupport.install"/> をお読みください。</para>
  </sect1>
 </chapter>

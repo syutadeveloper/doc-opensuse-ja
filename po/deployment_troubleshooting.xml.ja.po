@@ -1,26 +1,29 @@
+# translation of deployment_troubleshooting.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: deployment_troubleshooting.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-11 18:12+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:12
 #, no-c-format
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:15
@@ -29,12 +32,14 @@ msgid ""
 "This section highlights some typical problems you may run into during "
 "installation and offers possible solutions or workarounds."
 msgstr ""
+"本章では、インストール時に発生する一般的な問題と、その解決方法や"
+"回避方法を説明しています。"
 
 #. Tag: dm:translation
 #: deployment_troubleshooting.xml:22
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:28
@@ -51,18 +56,31 @@ msgid ""
 "installation. Media problems may occur when having burned the medium "
 "yourself. Burning the media at a low speed (4x) helps to avoid problems."
 msgstr ""
+"&productname; のインストールメディアを利用していて何らかの問題が発生した場合、"
+"まずはインストールメディアが正しく読み込めるかどうかを検証してください。メディア"
+"から起動したのち、起動メニューで <guimenu>インストールメディアの検証</guimenu>"
+" (英語では <guimenu>Check Installation Media</guimenu>) を選択してください。"
+"既にインストール済みのシステムがある場合は、 &yast; を起動して <menuchoice>"
+" <guimenu>ソフトウエア</guimenu> <guimenu>メディア確認</guimenu> </menuchoice> "
+"を選択してもかまいません。 &productname; のメディアを確認するには、ドライブに"
+"書き込んだメディアを挿入して、 &yast; の <guimenu>メディアチェック</guimenu> "
+"画面から <guimenu>チェック開始</guimenu> を押してください。数分程度の時間で"
+"確認作業が終わります。何らかのエラーが検出された場合は、そのメディアをインストール"
+"に使用してはなりません。メディアの問題は、ご自身でメディアに書き込んだ場合に"
+"よく発生するものです。より遅い速度 (4x など) で書き込むことで、問題を回避"
+"できることがあります。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:42
 #, no-c-format
 msgid "Checking Media"
-msgstr ""
+msgstr "メディアの確認"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:54
 #, no-c-format
 msgid "No Bootable DVD Drive Available"
-msgstr ""
+msgstr "起動可能な DVD ドライブが存在しない"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:55
@@ -72,12 +90,15 @@ msgid ""
 "several alternatives. This is also an option if your drive is not supported "
 "by &productname;."
 msgstr ""
+"お使いのコンピュータに内蔵の起動可能な DVD ドライブがない場合でも、"
+"いくつかの代替案があります。また、お使いのドライブが &productname; でサポート"
+"していないような場合にも、この代替案は有用です。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:62
 #, no-c-format
 msgid "Using External DVD Device"
-msgstr ""
+msgstr "外付け DVD デバイスの使用"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:64
@@ -88,12 +109,16 @@ msgid ""
 "FireWire, or SCSI, can be used to boot the system. Sometimes a BIOS update "
 "may help if you encounter problems."
 msgstr ""
+"Linux ではほとんどの DVD ドライブに対応しています。お使いのシステムに DVD ドライブが"
+"ない場合でも、 USB や FireWire, SCSI などで DVD ドライブをお使いのシステムに接続して、"
+"それを起動用に使用することができます。また、 BIOS を更新することで問題が解決する"
+"場合もあります。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:73
 #, no-c-format
 msgid "Network Boot via PXE"
-msgstr ""
+msgstr "PXE を介したネットワーク起動"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:75
@@ -104,12 +129,16 @@ msgid ""
 "\">See <xref linkend=\"sec.remote_installation.scenario.vncpxe\"/> and <xref "
 "linkend=\"sec.remote_installation.scenario.sshpxe\"/> for details.</phrase>"
 msgstr ""
+"お使いのマシンに DVD ドライブがない場合でも、イーサネットのポートがあれば、"
+"すべてをネットワーク経由で取得するインストール形態を取ることもできます。 <phrase os=\"sles;sled"
+"\">詳しくは <xref linkend=\"sec.remote_installation.scenario.vncpxe\"/> と <xref "
+"linkend=\"sec.remote_installation.scenario.sshpxe\"/> をお読みください。</phrase>"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:89
 #, no-c-format
 msgid "USB Flash Drive"
-msgstr ""
+msgstr "USB メモリ"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:91
@@ -118,24 +147,26 @@ msgid ""
 "You can use a USB flash drive if your machine lacks a DVD drive and network "
 "connection. <phrase os=\"sles;sled\">For details, see:</phrase>"
 msgstr ""
+"DVD ドライブがなくても、 USB メモリとネットワーク接続を利用してインストールする"
+"ことができます。 <phrase os=\"sles;sled\">詳しくは下記をお読みください:</phrase>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:97
 #, no-c-format
 msgid "<xref linkend=\"sec.x86.media.boot\"/>"
-msgstr ""
+msgstr "<xref linkend=\"sec.x86.media.boot\"/>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:100
 #, no-c-format
 msgid "<xref linkend=\"sec.aarch64.media.boot\"/>"
-msgstr ""
+msgstr "<xref linkend=\"sec.aarch64.media.boot\"/>"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:109
 #, no-c-format
 msgid "Booting from Installation Media Fails"
-msgstr ""
+msgstr "インストールメディアからの起動が失敗する"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:110
@@ -148,6 +179,12 @@ msgid ""
 "changing the BIOS boot sequence can be found in the documentation provided "
 "with your mainboard, or in the following paragraphs."
 msgstr ""
+"インストールメディアからの起動がうまくいかない理由の 1 つとして、よくあるのが"
+" BIOS 側での起動順序の設定です。 BIOS の起動順序の設定では、 DVD ドライブが"
+"先にくるように設定しなければなりません。このように設定しないと、マシンは他の"
+"メディア、一般的にはハードディスクから起動してしまうためです。 BIOS の起動順序の"
+"変更については、お使いのメインボードに付属するドキュメンテーションのほか、"
+"下記をお読みになることでも変更できることがあります。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:118
@@ -164,12 +201,22 @@ msgid ""
 "of <keycap function=\"delete\"/> , <keycap>F1</keycap> , or <keycap function="
 "\"escape\"/> . Press this key until the BIOS setup screen appears."
 msgstr ""
+"BIOS とは、コンピュータのごく基本的な機能のみを提供するソフトウエアです。"
+"メインボードの製造元では、それぞれのハードウエアごとに固有の BIOS を提供して"
+"います。通常、 BIOS の設定画面はマシンの起動後一定時間内にのみアクセスする"
+"ことができます。この時間内では初期化の処理が行なわれていて、いくつかのハードウエア"
+"テストなどが行なわれています。たとえばメモリの合計サイズの表示でメモリのチェックなどを"
+"行なっています。メモリの表示が現われると、それと共に BIOS 設定画面に入るために"
+"入力すべきキーが、その表示の前後もしくは最下部に表示されます。一般的には"
+" <keycap function=\"delete\"/> , <keycap>F1</keycap> , <keycap function=\"escape\"/> "
+"のいずれかのキーを押すことになります。 BIOS の設定画面が現われるまで、"
+"表示されたキーを押し続けてください。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:132
 #, no-c-format
 msgid "Changing the BIOS Boot Sequence"
-msgstr ""
+msgstr "BIOS での起動順序の変更"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:134
@@ -178,6 +225,8 @@ msgid ""
 "Enter the BIOS using the proper key as announced by the boot routines and "
 "wait for the BIOS screen to appear."
 msgstr ""
+"まずはマシンの電源を入れた後の画面表示に従って、 BIOS 設定画面に入るための"
+"キーを押します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:140
@@ -189,6 +238,10 @@ msgid ""
 "have found the entry, select it and confirm with <keycap function=\"enter\"/"
 "> ."
 msgstr ""
+"AWARD BIOS が搭載されたマシンで起動順序を変更するには、 <guimenu>BIOS "
+"FEATURES SETUP</guimenu> の項目に移動します。製造元によっては "
+"<guimenu>ADVANCED CMOS SETUP</guimenu> のような名称になっているものもあります。"
+"項目が見つかったら、それを選択して <keycap function=\"enter\"/> を押します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:149
@@ -199,6 +252,9 @@ msgid ""
 "<keycap function=\"pageup\"/> or <keycap function=\"pagedown\"/> until the "
 "DVD drive is listed first."
 msgstr ""
+"画面が表示されたら、 <guimenu>BOOT SEQUENCE</guimenu> や <guimenu>BOOT ORDER</guimenu> "
+"と書かれた項目をサガします。ここで <keycap function=\"pageup\"/> や"
+" <keycap function=\"pagedown\"/> を押して、 DVD ドライブが最初にくるようにします。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:157
@@ -209,12 +265,16 @@ msgid ""
 "<keycap>F10</keycap> . To confirm that your settings should be saved, press "
 "<keycap>Y</keycap> ."
 msgstr ""
+"設定が終わったら、 <keycap function=\"escape\"/> を押して終了します。設定を"
+"保存するには、 <guimenu>SAVE &amp; EXIT SETUP</guimenu> を選択するか、"
+" <keycap>F10</keycap> を押します。設定保存の確認メッセージが表示されたら、"
+" <keycap>Y</keycap> を押します。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:166
 #, no-c-format
 msgid "Changing the Boot Sequence in an SCSI BIOS (Adaptec Host Adapter)"
-msgstr ""
+msgstr "SCSI BIOS (Adaptec Host Adapter) での起動順序の変更"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:168
@@ -223,6 +283,8 @@ msgid ""
 "Open the setup by pressing <keycombo> <keycap function=\"control\"/> "
 "<keycap>A</keycap> </keycombo> ."
 msgstr ""
+"<keycombo> <keycap function=\"control\"/> <keycap>A</keycap> </keycombo> を押して"
+"セットアップ画面を開きます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:174
@@ -231,18 +293,20 @@ msgid ""
 "Select <guimenu>Disk Utilities</guimenu> . The connected hardware components "
 "are now displayed."
 msgstr ""
+"<guimenu>Disk Utilities</guimenu> を選択します。接続されたハードウエアコンポーネント"
+"が表示されます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:178
 #, no-c-format
 msgid "Make note of the SCSI ID of your DVD drive."
-msgstr ""
+msgstr "ここで DVD ドライブの SCSI ID を覚えておきます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:183
 #, no-c-format
 msgid "Exit the menu with <keycap function=\"escape\"/> ."
-msgstr ""
+msgstr "<keycap function=\"escape\"/> を押してメニューを終了します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:188
@@ -252,13 +316,15 @@ msgid ""
 "<guimenu>Additional Options</guimenu> , select <guimenu>Boot Device Options</"
 "guimenu> and press <keycap function=\"enter\"/> ."
 msgstr ""
+"<guimenu>Configure Adapter Settings</guimenu> を選択します。"
+" <guimenu>Additional Options</guimenu> では <guimenu>Boot Device Options</"
+"guimenu> を選択して <keycap function=\"enter\"/> を押します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:195
 #, no-c-format
-msgid ""
-"Enter the ID of the DVD drive and press <keycap function=\"enter\"/> again."
-msgstr ""
+msgid "Enter the ID of the DVD drive and press <keycap function=\"enter\"/> again."
+msgstr "DVD ドライブの ID を入力して再度 <keycap function=\"enter\"/> を押します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:200
@@ -266,7 +332,7 @@ msgstr ""
 msgid ""
 "Press <keycap function=\"escape\"/> twice to return to the start screen of "
 "the SCSI BIOS."
-msgstr ""
+msgstr "<keycap function=\"escape\"/> を 2 回押して、 SCSI BIOS の開始画面まで戻ります。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:206
@@ -275,6 +341,8 @@ msgid ""
 "Exit this screen and confirm with <guimenu>Yes</guimenu> to boot the "
 "computer."
 msgstr ""
+"画面を終了し、 <guimenu>Yes</guimenu> を選んで設定を保存したあと、コンピュータを"
+"再起動します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:212
@@ -284,18 +352,20 @@ msgid ""
 "be using, most BIOS configurations use the US keyboard layout as shown in "
 "the following figure:"
 msgstr ""
+"インストール時に言語やキーボードを選択した場合であっても、ほとんどの BIOS 設定"
+"画面では下記に示す US キーボードレイアウトが適用されます:"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:218
 #, no-c-format
 msgid "US Keyboard Layout"
-msgstr ""
+msgstr "US キーボードレイアウト"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:231
 #, no-c-format
 msgid "Boot Failure"
-msgstr ""
+msgstr "起動の失敗"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:232
@@ -305,6 +375,9 @@ msgid ""
 "Reasons can be missing support for hardware in the installation kernel or "
 "drivers causing problems on some specific hardware."
 msgstr ""
+"特に非常に古いマシンや非常に新しいマシンの場合、起動に失敗する場合があります。"
+"これは、インストール時のカーネル内に必要なハードウエア向けのドライバが"
+"存在していなかったり、特定のハードウエアでドライバがうまく動かなかったりするためです。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:237
@@ -313,6 +386,8 @@ msgid ""
 "If your system fails to install using the standard <guimenu>Installation</"
 "guimenu> mode from the first installation boot screen, try the following:"
 msgstr ""
+"起動してすぐの画面で <guimenu>インストール</guimenu> を選択してもインストール"
+"システムが開始できない場合、下記をお試しください:"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:244
@@ -322,6 +397,9 @@ msgid ""
 "function=\"control\"/> <keycap function=\"alt\"/> <keycap function=\"delete"
 "\"/> </keycombo> or using the hardware reset button."
 msgstr ""
+"DVD がドライブ内にある場合は、 <keycombo> <keycap "
+"function=\"control\"/> <keycap function=\"alt\"/> <keycap function=\"delete"
+"\"/> </keycombo> を押すか、機械的なリセットボタンで再起動を行ないます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:252
@@ -332,6 +410,10 @@ msgid ""
 "function=\"enter\"/> to launch the boot and installation process. This "
 "option disables the support for ACPI power management techniques."
 msgstr ""
+"起動してすぐの画面で <keycap>F5</keycap> を押します。矢印 (カーソル) キーを利用して"
+" <guimenu>ACPI 無し</guimenu> を選択して <keycap function=\"enter\"/> を押し、"
+"あとは通常通り <guimenu>インストール</guimenu> を選択します。これにより、"
+" ACPI による電源管理技術を無効化して起動します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:260
@@ -339,7 +421,7 @@ msgstr ""
 msgid ""
 "Proceed with the installation as described in <xref linkend=\"cha.install\"/"
 "> ."
-msgstr ""
+msgstr "あとは <xref linkend=\"cha.install\"/> に示された手順で、通常通りインストールします。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:265
@@ -349,6 +431,9 @@ msgid ""
 "instead. This option disables ACPI and DMA support. Most hardware will boot "
 "with this option."
 msgstr ""
+"これでもうまくいかない場合は、代わりに <guimenu>セーフモード</guimenu> を選択して"
+"みてください。これにより、 ACPI と DMA の両方のサポートを無効化します。ほとんどの"
+"ハードウエアで、問題なく動作するようになるはずです。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:270
@@ -360,12 +445,16 @@ msgid ""
 "boot parameters, refer to the kernel documentation located in <filename>/usr/"
 "src/linux/Documentation/kernel-parameters.txt</filename> ."
 msgstr ""
+"いずれを選択してもうまくいかない場合は、その種類のハードウエアに対応するために"
+"特定の起動パラメータを指定してみることもできます。利用可能な起動パラメータに"
+"ついて、詳しくはカーネルのドキュメンテーション <filename>/usr/"
+"src/linux/Documentation/kernel-parameters.txt</filename> をお読みください。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:278
 #, no-c-format
 msgid "Obtaining Kernel Documentation"
-msgstr ""
+msgstr "カーネルのドキュメンテーションの取得"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:279
@@ -374,6 +463,8 @@ msgid ""
 "Install the <systemitem class=\"systemname\">kernel-source</systemitem> "
 "package to view the kernel documentation."
 msgstr ""
+"<systemitem class=\"systemname\">kernel-source</systemitem> パッケージを"
+"インストールすることで、カーネルのドキュメンテーションを読むことができます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:284
@@ -382,12 +473,14 @@ msgid ""
 "There are other ACPI-related kernel parameters that can be entered at the "
 "boot prompt prior to booting for installation:"
 msgstr ""
+"ドキュメンテーションには、起動プロンプトに入力することのできるその他の ACPI "
+"関連の起動パラメータが書かれています。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:290
 #, no-c-format
 msgid "<systemitem>acpi=off</systemitem>"
-msgstr ""
+msgstr "<systemitem>acpi=off</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:293
@@ -397,12 +490,15 @@ msgid ""
 "may be useful if your computer cannot handle ACPI or if you think ACPI in "
 "your computer causes trouble."
 msgstr ""
+"このパラメータを指定すると、お使いのコンピュータで ACPI サブシステムを完全に"
+"無効化します。お使いのコンピュータが ACPI を処理できないものである場合や、"
+"何らかの問題があるような場合に便利です。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:301
 #, no-c-format
 msgid "<systemitem>acpi=force</systemitem>"
-msgstr ""
+msgstr "<systemitem>acpi=force</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:304
@@ -412,36 +508,39 @@ msgid ""
 "year 2000. This parameter also enables ACPI if it is set in addition to "
 "<systemitem>acpi=off</systemitem> ."
 msgstr ""
+"お使いのコンピュータの BIOS が 2000 年以前に作成されたものであっても、 ACPI を"
+"強制的に有効化します。このパラメータは、 <systemitem>acpi=off</systemitem> と"
+"共に設定した場合でも、 ACPI が有効化されます。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:312
 #, no-c-format
 msgid "<systemitem>acpi=noirq</systemitem>"
-msgstr ""
+msgstr "<systemitem>acpi=noirq</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:315
 #, no-c-format
 msgid "Do not use ACPI for IRQ routing."
-msgstr ""
+msgstr "ACPI を IRQ のルーティングとして使用しないようにします。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:321
 #, no-c-format
 msgid "<systemitem>acpi=ht</systemitem>"
-msgstr ""
+msgstr "<systemitem>acpi=ht</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:324
 #, no-c-format
 msgid "Run only enough ACPI to enable hyper-threading."
-msgstr ""
+msgstr "ACPI を有効化した場合にのみ Hyper-Threading を有効化します。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:330
 #, no-c-format
 msgid "<systemitem>acpi=strict</systemitem>"
-msgstr ""
+msgstr "<systemitem>acpi=strict</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:333
@@ -449,25 +548,25 @@ msgstr ""
 msgid ""
 "Be less tolerant of platforms that are not strictly ACPI specification "
 "compliant."
-msgstr ""
+msgstr "ACPI の仕様に厳密に準拠して動作します。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:340
 #, no-c-format
 msgid "<systemitem>pci=noacpi</systemitem>"
-msgstr ""
+msgstr "<systemitem>pci=noacpi</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:343
 #, no-c-format
 msgid "Disable PCI IRQ routing of the new ACPI system."
-msgstr ""
+msgstr "新しい ACPI システムの PCI IRQ ルーティングを無効化します。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:349
 #, no-c-format
 msgid "<systemitem>pnpacpi=off</systemitem>"
-msgstr ""
+msgstr "<systemitem>pnpacpi=off</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:352
@@ -476,12 +575,14 @@ msgid ""
 "This option is for serial or parallel problems when your BIOS setup contains "
 "wrong interrupts or ports."
 msgstr ""
+"このオプションは、お使いの BIOS 設定内に誤った割り込みやポートが設定されたシリアル／パラレル"
+"ポートがある場合に使用します。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:359
 #, no-c-format
 msgid "<systemitem>notsc</systemitem>"
-msgstr ""
+msgstr "<systemitem>notsc</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:362
@@ -492,12 +593,16 @@ msgid ""
 "regressions on your machine, especially time related or even total hangs, "
 "this option is worth a try."
 msgstr ""
+"タイムスタンプカウンタを無効化します。このオプションは、お使いのシステムでタイミングの"
+"問題が発生する場合の回避策となるものです。これは比較的新しい機能であるため、"
+"お使いのマシンで時刻関連の問題のほか、ハングアップしてしまうような問題を検出した場合、"
+"このオプションを試してみることをお勧めします。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:371
 #, no-c-format
 msgid "<systemitem>nohz=off</systemitem>"
-msgstr ""
+msgstr "<systemitem>nohz=off</systemitem>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:374
@@ -506,6 +611,8 @@ msgid ""
 "Disable the nohz feature. If your machine hangs, this option may help. "
 "Otherwise it is of no use."
 msgstr ""
+"nohz 機能を無効化します。お使いのマシンがハングアップしてしまうような場合に"
+"有用です。それ以外の問題には対応できないものと思われます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:381
@@ -515,6 +622,8 @@ msgid ""
 "automatically writes them to the boot loader configuration to make sure that "
 "the system boots properly next time."
 msgstr ""
+"正しいパラメータの組み合わせが判明したら、 &yast; 側では次回以降の起動で"
+"それらを続けて使用できるよう、ブートローダの設定内にそれらを書き込みます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:386
@@ -525,12 +634,16 @@ msgid ""
 "check the memory. If <guimenu>Memory Test</guimenu> returns an error, it is "
 "usually a hardware error."
 msgstr ""
+"カーネルの読み込み時やインストール中に不可解なエラーが発生した場合は、"
+"起動メニュー内で <guimenu>メモリテスト</guimenu> を選んで、メモリの"
+"テストを実施することをお勧めします。 <guimenu>メモリテスト</guimenu> で"
+"エラーが発生した場合は、ハードウエアのエラーであるものと思われます。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:395
 #, no-c-format
 msgid "Fails to Launch Graphical Installer"
-msgstr ""
+msgstr "グラフィカルなインストールシステムの起動に失敗する"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:396
@@ -540,36 +653,39 @@ msgid ""
 "installation screen comes up, but after you select <guimenu>Installation</"
 "guimenu> , the graphical installer does not start."
 msgstr ""
+"ドライブにメディアを挿入してマシンを再起動すると、起動画面が表示されるものの、"
+"<guimenu>インストール</guimenu> を選択してもグラフィカルなインストーラが"
+"開始しないことがあります。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:401
 #, no-c-format
 msgid "There are several ways to deal with this situation:"
-msgstr ""
+msgstr "このような状況に対応する方法がいくつかあります:"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:406
 #, no-c-format
 msgid "Try to select another screen resolution for the installation dialogs."
-msgstr ""
+msgstr "インストール画面で使用する画面の解像度を変更してみます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:411
 #, no-c-format
 msgid "Select <guimenu>Text Mode</guimenu> for installation."
-msgstr ""
+msgstr "<guimenu>テキストモード</guimenu> を選択してインストールします。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:416
 #, no-c-format
 msgid "Do a remote installation via VNC using the graphical installer."
-msgstr ""
+msgstr "グラフィカルなインストールシステムを VNC 経由で表示させて、ネットワーク上離れた場所からインストールしてみます。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:422
 #, no-c-format
 msgid "Change Screen Resolution for Installation"
-msgstr ""
+msgstr "インストールシステムでの解像度の変更"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:429
@@ -578,18 +694,20 @@ msgid ""
 "Press <keycap>F3</keycap> to open a menu from which to select a lower "
 "resolution for installation purposes."
 msgstr ""
+"<keycap>F3</keycap> を押してメニューを表示させ、インストール時に使用する"
+"解像度を選択します。通常はより低い解像度ほど成功しやすくなっています。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:442
 #, no-c-format
 msgid "Installation in Text Mode"
-msgstr ""
+msgstr "テキストモードでのインストール"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:449
 #, no-c-format
 msgid "Press <keycap>F3</keycap> and select <guimenu>Text Mode</guimenu> ."
-msgstr ""
+msgstr "<keycap>F3</keycap> を押して <guimenu>テキストモード</guimenu> を選択します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:454
@@ -598,30 +716,32 @@ msgid ""
 "Select <guimenu>Installation</guimenu> and proceed with the installation as "
 "described in <xref linkend=\"cha.install\"/> ."
 msgstr ""
+"あとは <xref linkend=\"cha.install\"/> で説明しているとおり、 <guimenu>インストール</guimenu> "
+"を選んで通常通りインストールします。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:461
 #, no-c-format
 msgid "VNC Installation"
-msgstr ""
+msgstr "VNC でのインストール"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:463
 #, no-c-format
 msgid "Boot for installation."
-msgstr ""
+msgstr "インストールシステムを起動します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:468
 #, no-c-format
 msgid "Enter the following text at the boot parameters prompt:"
-msgstr ""
+msgstr "起動パラメータのプロンプトで、下記のように入力します:"
 
 #. Tag: screen
 #: deployment_troubleshooting.xml:471
 #, no-c-format
 msgid "vnc=1 vncpassword=<replaceable>SOME_PASSWORD</replaceable>"
-msgstr ""
+msgstr "vnc=1 vncpassword=<replaceable>パスワード</replaceable>"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:472
@@ -630,6 +750,8 @@ msgid ""
 "Replace <replaceable>SOME_PASSWORD</replaceable> with the password to use "
 "for VNC installation."
 msgstr ""
+"ここで、 <replaceable>パスワード</replaceable> には VNC インストール時に"
+"使用するパスワードを設定します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:478
@@ -638,6 +760,8 @@ msgid ""
 "Select <guimenu>Installation</guimenu> then press <keycap function=\"enter\"/"
 "> to start the installation."
 msgstr ""
+"あとは <guimenu>インストール</guimenu> を選んで <keycap function=\"enter\"/> "
+"を押すと、インストールを始めることができます。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:482
@@ -648,6 +772,10 @@ msgid ""
 "message containing the IP address and port number at which the installer can "
 "be reached via a browser interface or a VNC viewer application."
 msgstr ""
+"グラフィカルなインストールシステムが起動する代わりに、システムはテキストモードで"
+"表示を行ないます。起動が終わると、インストールシステムに接続するための IP アドレスと"
+"ポート番号が表示されます。 Web ブラウザまたは VNC ビューアアプリケーションを利用する"
+"ことで、インストールシステムを表示することができるようになります。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:490
@@ -657,12 +785,14 @@ msgid ""
 "address information provided by the installation routines on the future "
 "&productname; machine and press <keycap function=\"enter\"/> :"
 msgstr ""
+"ブラウザを利用してインストールシステムに接続する場合は、ブラウザを起動して"
+" &productname; マシンに表示された IP アドレスから、下記のように入力して <keycap function=\"enter\"/> を押します:"
 
 #. Tag: screen
 #: deployment_troubleshooting.xml:495
 #, no-c-format
 msgid "http://<replaceable>IP_ADDRESS_OF_MACHINE</replaceable>:5801"
-msgstr ""
+msgstr "http://<replaceable>マシンの IP アドレス</replaceable>:5801"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:496
@@ -672,12 +802,15 @@ msgid ""
 "Enter it and proceed with the installation as described in <xref linkend="
 "\"cha.install\"/> ."
 msgstr ""
+"VNC パスワードを入力するためのブラウザウインドウが表示されます。パスワードを"
+"入力して進めてください。あとは <xref linkend=\"cha.install\"/> の手順でインストール"
+"することができます。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:502
 #, no-c-format
 msgid "Cross-platform Support"
-msgstr ""
+msgstr "クロスプラットフォームサポートについて"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:503
@@ -686,6 +819,8 @@ msgid ""
 "Installation via VNC works with any browser under any operating system, "
 "provided Java support is enabled."
 msgstr ""
+"VNC によるインストールは、任意のオペレーティングシステムで動作するブラウザを"
+"お使いいただくことができます。ただし、 Java サポートが必要です。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:508
@@ -695,12 +830,15 @@ msgid ""
 "window opens, displaying the installation dialogs. Proceed with the "
 "installation as usual."
 msgstr ""
+"VNC ビューアを起動して、 IP アドレスとパスワードを入力します。ウインドウが"
+"表示されたら、そこにはインストールシステムが表示されているはずです。"
+"あとは通常のインストールと同じです。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:518
 #, no-c-format
 msgid "Only Minimalist Boot Screen Started"
-msgstr ""
+msgstr "最小限の起動画面で始まってしまう"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:519
@@ -712,6 +850,10 @@ msgid ""
 "machine not providing sufficient graphics memory for rendering a graphical "
 "boot screen."
 msgstr ""
+"ドライブにメディアを挿入して BIOS のルーチンが終了しても、システムがグラフィカル"
+"な起動画面を表示しない場合があります。この場合は、最小限の機能だけが用意された"
+"テキストベースのインターフェイスが表示されます。これは、グラフィカルな画面を"
+"表示するためのグラフィックメモリが無いような場合に発生します。"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:526
@@ -720,12 +862,14 @@ msgid ""
 "Although the text boot screen looks minimalist, it provides nearly the same "
 "functionality as the graphical one:"
 msgstr ""
+"テキストベースの画面は非常に機能が限られているように見えますが、機能面ではグラフィカルな"
+"インストールシステムとほとんど同じです:"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:532
 #, no-c-format
 msgid "Boot Options"
-msgstr ""
+msgstr "起動オプション"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:534
@@ -737,12 +881,17 @@ msgid ""
 "keywords map to the options offered in the graphical version. Enter your "
 "choice and press <keycap function=\"enter\"/> to launch the boot process."
 msgstr ""
+"グラフィカルなインターフェイスとは異なり、キーボードの矢印 (カーソル) キーでは"
+"起動パラメータを選択することができません。テキストモードの起動画面では、起動"
+"オプションをキーボードから入力する機能だけが用意されています。使用できる"
+"キーワードはグラフィカルな場合と同じです。必要な値を入力して <keycap function=\"enter\"/> "
+"を押すと、起動処理が始まります。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:545
 #, no-c-format
 msgid "Custom Boot Options"
-msgstr ""
+msgstr "独自の起動オプション"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:547
@@ -753,12 +902,16 @@ msgid ""
 "\"sec.installation_troubleshooting.noboot\"/> . To launch the installation "
 "process, press <keycap function=\"enter\"/> ."
 msgstr ""
+"起動パラメータを選択したら、起動プロンプト内に必要なキーワードを入力します。"
+"起動パラメータについて、詳しくは <xref linkend=\"sec.installation_troubleshooting.noboot\"/> "
+"をお読みください。インストールシステムを開始するには、 <keycap function=\"enter\"/> を"
+"押します。"
 
 #. Tag: term
 #: deployment_troubleshooting.xml:556
 #, no-c-format
 msgid "Screen Resolutions"
-msgstr ""
+msgstr "画面の解像度"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:558
@@ -768,12 +921,14 @@ msgid ""
 "determine the screen resolution for installation. If you need to boot in "
 "text mode, choose <keycap>F3</keycap> ."
 msgstr ""
+"インストール時に使用する解像度は、ファンクションキー (<keycap>F1</keycap> ... <keycap>F12</keycap>) "
+"で設定することができます。テキストモードで起動する場合は、 <keycap>F3</keycap> を押してください。"
 
 #. Tag: title
 #: deployment_troubleshooting.xml:569
 #, no-c-format
 msgid "Log Files"
-msgstr ""
+msgstr "ログファイル"
 
 #. Tag: para
 #: deployment_troubleshooting.xml:570
@@ -782,3 +937,6 @@ msgid ""
 "For more information about log files that are created during installation, "
 "see <xref linkend=\"sec.admsupport.install\"/> ."
 msgstr ""
+"インストール時に作成されるログファイルについて、詳しくは"
+" <xref linkend=\"sec.admsupport.install\"/> をお読みください。"
+
