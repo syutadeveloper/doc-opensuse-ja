@@ -287,7 +287,7 @@ __EOF__
         }
 
         for my $oldNode (@{$result{$r}{"ref"}}) {
-          my $newNode = $$oldNode->getOwner->createElement($result{$r}{"nodeName"});
+          my $newNode = $$oldNode->getOwner->createElement($$oldNode->nodeName);
 
           # copy attributes
           if ($$oldNode->hasAttributes) {
