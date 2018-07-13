@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.yast.hw.keym">
- <title>Setting Up Your System Keyboard Layout</title>
+ <title>システムのキーボードレイアウトの設定</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,43 +13,23 @@
   </dm:docmanager>
  </info>
 
- <para>
-  The &yast; <guimenu>System Keyboard Layout</guimenu> module lets you define
-  the default keyboard layout for the system (also used for the console). Users
-  can modify the keyboard layout in their individual X sessions, using the
-  desktop's tools.
- </para>
+ <para>&yast; の <guimenu>システムキーボード配列</guimenu> モジュールを利用することで、システム (およびコンソール) で利用する既定のキーボード配列を設定することができます。一般ユーザ側では、各デスクトップ側で提供しているツールを利用して、個別の X セッション向けのキーボード配列を設定することもできます。</para>
 
  <procedure>
   <step>
-   <para>
-    Start the &yast; <guimenu>System Keyboard Configuration</guimenu> dialog by
-    clicking <menuchoice> <guimenu>Hardware</guimenu> <guimenu>System Keyboard
-    Layout</guimenu> </menuchoice> in &yast;. Alternatively, start the module
-    from the command line with <command>sudo yast2 keyboard</command>.
-   </para>
+   <para>&yast; を起動して <menuchoice> <guimenu>ハードウエア</guimenu> <guimenu>システムキーボード配列</guimenu> </menuchoice> を選択します。それ以外にも、 <command>sudo yast2 keyboard</command> を直接実行してもかまいません。</para>
   </step>
   <step>
-   <para>
-    Select the desired <guimenu>Keyboard Layout</guimenu> from the list.
-   </para>
+   <para>表示された一覧の中から、 <guimenu>キーボードレイアウト</guimenu> を選択します。</para>
   </step>
   <step>
-   <para>
-    Optionally, you can also define the keyboard repeat rate or keyboard delay
-    rate in the <guimenu>Expert Settings</guimenu>.
-   </para>
+   <para>必要があれば、 <guimenu>熟練者向け設定</guimenu> を利用することで、キーボードのリピートの早さや待ち時間などを設定することができます。</para>
   </step>
   <step>
-   <para>
-    Try the selected settings in the <guimenu>Test</guimenu> text box.
-   </para>
+   <para><guimenu>テスト</guimenu> のテキストボックス内で、設定が正しいかどうかを確認します。</para>
   </step>
   <step>
-   <para>
-    If the result is as expected, confirm your changes and close the dialog.
-    The settings are written to <filename>/etc/sysconfig/keyboard</filename>.
-   </para>
+   <para>正しい設定であることが確認できたら、ダイアログを閉じます。設定は <filename>/etc/sysconfig/keyboard</filename> に書き込まれます。</para>
   </step>
  </procedure>
 </sect1>
