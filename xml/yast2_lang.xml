@@ -5,128 +5,62 @@
 ]>
 <!--taroth 2010-01-08: yast2 module maintainer: jsuchome@suse.cz-->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.yast.lang">
- <title>Changing Language and Country Settings with &yast;</title>
+ <title>&yast; を利用した言語と国別設定の変更</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
- <para>
-  Working in different countries or having to work in a multilingual
-  environment requires your computer to be set up to support this.
-  &productnamereg; can handle different <literal>locales</literal> in parallel.
-  A locale is a set of parameters that defines the language and country
-  settings reflected in the user interface.
- </para>
- <para>
-  The main system language was selected during installation and keyboard and
-  time zone settings were adjusted. However, you can install additional
-  languages on your system and determine which of the installed languages
-  should be the default.
- </para>
- <para>
-  For those tasks, use the &yast; language module as described in
-  <xref linkend="sec.yast.langmod"/>. Install secondary languages to get optional
-  localization if you need to start applications or desktops in languages other
-  than the primary one.
- </para>
- <para>
-  Apart from that, the &yast; timezone module allows you to adjust your country
-  and timezone settings accordingly. It also lets you synchronize your system
-  clock against a time server. For details, refer to
-  <xref linkend="sec.yast.country"/>.
- </para>
+ <para>様々な国や様々な言語環境で作業をする場合、お使いのコンピュータをそれぞれの国や言語にあわせて設定する必要が生じます。 &productnamereg; では、異なる <literal>ロケール</literal> を同時に処理することができます。ロケールとは、言語や国別の設定をユーザインターフェイスに適用するパラメータの集合体を意味する言葉です。</para>
+ <para>メインのシステム言語はインストール時に設定しているもので、キーボードとタイムゾーンの設定も、インストール時に設定しています。しかしながら、お使いのシステムに追加の言語をインストールしたり、インストールされている言語の中から既定の言語を選択し直したりすることもできます。</para>
+ <para>これらの作業を行なうには、 <xref linkend="sec.yast.langmod"/> に示されている手順で &yast; 言語モジュールを使用します。なお、アプリケーションや言語をメイン以外の言語で起動する必要がある場合は、第二言語としてインストールを行ないます。</para>
+ <para>これに加えて、 &yast; タイムゾーンモジュールでは、ご利用の国やタイムゾーンを調整する機能が用意されています。また、タイムサーバを利用してシステムの時刻を同期する機能もあります。詳しくは <xref linkend="sec.yast.country"/> をお読みください。</para>
  <sect1 xml:id="sec.yast.langmod">
-  <title>Changing the System Language</title>
+  <title>システム言語の変更</title>
 
-  <para>
-   Depending on how you use your desktop and whether you want to switch the
-   entire system to another language or only the desktop environment itself,
-   there are several ways to do this:
-  </para>
+  <para>お使いのデスクトップ環境によって、および言語の切り替えをシステム全体に対して適用するのか、もしくはデスクトップ環境だけに適用するのかによって、いくつかの方法が用意されています:</para>
 
   <variablelist>
    <varlistentry xml:id="vle.lang.system">
-    <term>Changing the System Language Globally</term>
+    <term>システム言語のグローバルな変更</term>
     <listitem>
-     <para>
-      Proceed as described in <xref linkend="sec.yast.lang.primsec"/> and
-      <xref linkend="sec.yast.lang.switch"/> to install additional localized
-      packages with &yast; and to set the default language. Changes are
-      effective after the next login. To ensure that the entire system reflects
-      the change, reboot the system or close and restart all running services,
-      applications, and programs.
-     </para>
+     <para><xref linkend="sec.yast.lang.primsec"/> および <xref linkend="sec.yast.lang.switch"/> の手順に従って、 &yast; を利用して追加の言語パッケージをインストールし、既定のシステム言語を切り替えます。設定の反映は、次回のログインから有効になります。システム全体に変更を反映させるには、システムを再起動するか、すべてのサービスやアプリケーション、プログラムを起動し直します。</para>
     </listitem>
    </varlistentry>
    <varlistentry xml:id="vle.lang.desktop">
-    <term>Changing the Language for the Desktop Only</term>
+    <term>デスクトップのみに対する言語の変更</term>
     <listitem>
-     <para>
-      Provided you have previously installed the desired language packages for
-      your desktop environment with &yast; as described below, you can switch
-      the language of your desktop using the desktop's control center.
-      <phrase os="sled;osuse">Refer to
-      <xref linkend="sec.gnome.settings.lang"/> for details.</phrase> After the
-      X server has been restarted, your entire desktop reflects your new choice
-      of language. Applications not belonging to your desktop framework are not
-      affected by this change and may still appear in the language that was set
-      in &yast;.
-     </para>
+     <para>&yast; を利用してお使いのデスクトップ環境に対応する言語パッケージをインストールし、同じくデスクトップ環境向けに用意されたコントロールセンターなどのアプリで言語を切り替えます。 <phrase os="sled;osuse">詳しくは <xref linkend="sec.gnome.settings.lang"/> をお読みください。</phrase>  X サーバを再起動すると、デスクトップが新しい言語で表示されるようになります。なお、お使いのデスクトップフレームワークに属していないアプリケーションについては、この変更を行なっても反映されません。そのようなアプリケーションについては、 &yast; で設定した言語のままになります。</para>
     </listitem>
    </varlistentry>
    <varlistentry xml:id="vle.lang.application">
-    <term>Temporarily Switching Languages for One Application Only</term>
+    <term>特定のアプリケーションだけの一時的な言語変更</term>
     <listitem>
-     <para>
-      You can also run a single application in another language (that has
-      already been installed with &yast;). To do so, start it from the command
-      line by specifying the language code as described in
-      <xref linkend="sec.yast.lang.applications"/>.
-     </para>
+     <para>特定のアプリケーションだけを他の言語で表示することもできます (あらかじめ &yast; でインストールしておく必要があります) 。特定のアプリケーションで言語を切り替えて表示するには、 <xref linkend="sec.yast.lang.applications"/> の手順に従って言語コードをコマンドラインで指定してください。</para>
     </listitem>
    </varlistentry>
   </variablelist>
 
   <sect2 xml:id="sec.yast.lang.primsec">
-   <title>Modifying System Languages with &yast;</title>
-   <para>
-    &yast; knows two different language categories:
-   </para>
+   <title>&yast; を利用したシステム言語の変更</title>
+   <para>&yast; では 2 種類の言語分類を用意しています:</para>
    <variablelist>
     <varlistentry>
-     <term>Primary Language</term>
+     <term>第一言語</term>
      <listitem>
-      <para>
-       The primary language set in &yast; applies to the entire system,
-       including &yast; and the desktop environment. This language is used
-       whenever available unless you manually specify another language.
-      </para>
+      <para>&yast; で設定する第一言語はシステム全体に反映させるためのものです。 &yast; 自身とデスクトップ環境の両方に適用されます。この言語は、異なる言語を敢えて指定せず、かつ利用可能な場合に常に使用される言語となります。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Secondary Languages</term>
+     <term>第二言語</term>
      <listitem>
-      <para>
-       Install secondary languages to make your system multilingual. Languages
-       installed as secondary languages can be selected manually for a specific
-       situation. For example, use a secondary language to start an application
-       in a certain language to do word processing in this language.
-      </para>
+      <para>お使いのシステムを複数の言語に対応させるには、第二言語をインストールします。第二言語としてインストールした言語は、いくつかの場所で手作業で選択することができます、たとえばアプリケーションの起動時に特定の言語を指定して起動することで、その言語で文書を作成したりすることができるようになります。</para>
      </listitem>
     </varlistentry>
    </variablelist>
-   <para>
-    Before installing additional languages, determine which of them should be
-    the default system language (primary language).
-   </para>
-   <para>
-    To access the &yast; language module, start &yast; and click <menuchoice>
-    <guimenu>System</guimenu> <guimenu>Language</guimenu> </menuchoice>.
-    Alternatively, start the <guimenu>Languages</guimenu> dialog directly by
-    running <command>sudo yast2 language &amp;</command> from a command line.
-   </para>
+   <para>追加の言語をインストールする前に、まずは既定のシステム言語 (第一言語) をどれにするのかを決定しておく必要があります。</para>
+   <para>&yast; の言語モジュールにアクセスするには、 &yast; を起動して <menuchoice> <guimenu>システム</guimenu> <guimenu>言語</guimenu> </menuchoice> を選択します。それ以外にも、コマンドラインで <command>sudo yast2 language &amp;</command> と入力しても、 <guimenu>言語</guimenu> ダイアログを表示させることができます。</para>
    <informalfigure>
     <mediaobject>
      <imageobject role="fo">
@@ -138,168 +72,81 @@
     </mediaobject>
    </informalfigure>
    <procedure xml:id="pro.yast.lang.additional">
-    <title>Installing Additional Languages</title>
-    <para>
-     When installing additional languages, &yast; also allows you to
-     set different locale settings for the user &rootuser;, see <xref linkend="st.yast.lang.additional.root"/>. The option
-     <guimenu>Locale Settings for User root</guimenu> determines how
-     the locale variables (<envar>LC_*</envar>) in the file
-     <filename>/etc/sysconfig/language</filename> are set for
-     &rootuser;. You can set them to the same locale as for normal
-     users. Alternatively, you can keep it unaffected by any language
-     changes, or only set the variable <envar>RC_LC_CTYPE</envar> to
-     the same values as for the normal users. The
-     <envar>RC_LC_CTYPE</envar> variable sets the localization for
-     language-specific function calls.
-    </para>
+    <title>追加の言語のインストール</title>
+    <para>追加の言語をインストールする際、 &yast; では &rootuser; に対するロケール設定を別途設定することができます。 <guimenu>root ユーザに対するロケール設定</guimenu> では、ロケール関連の変数 ( <envar>LC_*</envar> ) を &rootuser; に対しても設定するかどうかを <filename>/etc/sysconfig/language</filename> に設定します。通常は一般ユーザと同じロケールでかまいません。それ以外にも、言語の変更を反映しないように設定したり、 <envar>RC_LC_CTYPE</envar> だけを一般ユーザと同じ設定にしたりすることができます。 <envar>RC_LC_CTYPE</envar> 変数は、言語固有の機能を使用する際に、どの言語として処理するのかを設定するものです。</para>
     <step>
-     <para>
-      To add languages in the &yast; language module, select the
-      <guimenu>Secondary Languages</guimenu> you want to install.
-     </para>
+     <para>&yast; の言語モジュールで言語を追加するには、追加したい言語を<guimenu>第二言語</guimenu> で選択します。</para>
     </step>
     <step>
-     <para>
-      To make a language the default language, set it as <guimenu>Primary
-      Language</guimenu>.
-     </para>
+     <para>指定した言語を既定の言語にしたい場合は、 <guimenu>第一言語</guimenu> で選択を行ないます。</para>
     </step>
     <step>
-     <para>
-      Additionally, adapt the keyboard to the new primary language and adjust
-      the time zone, if appropriate.
-     </para>
+     <para>なお、必要であれば第一言語の変更にあわせてキーボードの設定やタイムゾーンなどを調整することもできます。</para>
 <!-- bnc#359220 -->
      <tip>
-      <title>Advanced Settings</title>
-      <para>
-       For advanced keyboard or time zone settings, select <menuchoice>
-       <guimenu>Hardware</guimenu> <guimenu>System Keyboard Layout</guimenu>
-       </menuchoice> or <menuchoice> <guimenu>System</guimenu> <guimenu>Date
-       and Time</guimenu> </menuchoice> in &yast; to start the respective
-       dialogs. For more information, refer to <xref linkend="sec.yast.hw.keym"/>
-       and <xref linkend="sec.yast.country"/>.
-      </para>
+      <title>高度な設定</title>
+      <para>高度なキーボード設定やタイムゾーン設定を行ないたい場合は、 &yast; から <menuchoice> <guimenu>ハードウエア</guimenu> <guimenu>システムキーボード配列</guimenu> </menuchoice> や <menuchoice> <guimenu>システム</guimenu> <guimenu>日付と時刻</guimenu> </menuchoice> などを選んで、必要なダイアログから設定を行ないます。詳しくは <xref linkend="sec.yast.hw.keym"/> と <xref linkend="sec.yast.country"/> をお読みください。</para>
      </tip>
     </step>
     <step xml:id="st.yast.lang.additional.root">
-     <para>
-      To change language settings specific to the user &rootuser;, click
-      <guimenu>Details</guimenu>.
-     </para>
+     <para>&rootuser; ユーザ固有の言語設定を変更するには、 <guimenu>詳細</guimenu> を押します。</para>
      <substeps performance="required">
       <step>
-       <para>
-        Set <guimenu>Locale Settings for User root</guimenu> to the desired
-        value. For more information, click <guimenu>Help</guimenu>.
-       </para>
+       <para><guimenu>root ユーザに対するロケール設定</guimenu> を設定したい値にします。詳しくは <guimenu>ヘルプ</guimenu> を押してください。</para>
       </step>
       <step>
-       <para>
-        Decide if you want to <guimenu>Use UTF-8 Encoding</guimenu> for
-        &rootuser; or not.
-       </para>
+       <para>また、 &rootuser; に対して <guimenu>UTF-8 エンコーディングを使用する</guimenu> かどうかを選択することもできます。</para>
       </step>
      </substeps>
     </step>
     <step>
-     <para>
-      If your locale was not included in the list of primary languages
-      available, try specifying it with <guimenu>Detailed Locale
-      Setting</guimenu>. However, some localization may be incomplete.
-     </para>
+     <para>ご希望の言語が利用可能な第一言語の中に見つからない場合は、 <guimenu>言語の詳細</guimenu> で指定することもできます。ただし、翻訳が不完全な可能性があります。</para>
     </step>
     <step>
-     <para>
-      Confirm your changes in the dialogs with <guimenu>OK</guimenu>. If you
-      have selected secondary languages, &yast; installs the localized software
-      packages for the additional languages.
-     </para>
+     <para>ダイアログないでの設定を確認したら、 <guimenu>OK</guimenu> を押して閉じます。第二言語を追加している場合は、 &yast; が追加の言語に対する翻訳ソフトウエアパッケージをインストールします。</para>
     </step>
    </procedure>
-   <para>
-    The system is now multilingual. However, to start an application in a
-    language other than the primary one, you need to set the desired language
-    explicitly as explained in <xref linkend="sec.yast.lang.applications"/>.
-   </para>
+   <para>これでお使いのシステムが複数の言語に対応するようになりました。ただし、第一言語以外の言語でアプリケーションを起動するには、 <xref linkend="sec.yast.lang.applications"/> で説明している方法で言語を明示的に指定する必要があります。</para>
   </sect2>
 
   <sect2 xml:id="sec.yast.lang.switch">
-   <title>Switching the Default System Language</title>
-   <para>
-    To globally change the default language of a system, use the following procedure:
-   </para>
+   <title>既定のシステム言語の切り替え</title>
+   <para>システム全体に対する既定の言語を変更するには、下記の手順で行ないます:</para>
    <procedure>
     <step>
-     <para>
-      Start the &yast; language module.
-     </para>
+     <para>&yast; 言語モジュールを起動します。</para>
     </step>
     <step>
-     <para>
-      Select the desired new system language as <guimenu>Primary
-      Language</guimenu>.
-     </para>
+     <para><guimenu>第一言語</guimenu> で新しいシステム言語を選択します。</para>
      <important>
-      <title>Deleting Former System Languages</title>
-      <para>
-       If you switch to a different primary language, the localized software
-       packages for the former primary language will be removed from the
-       system. To switch the default system language but keep the former
-       primary language as additional language, add it as <guimenu>Secondary
-       Language</guimenu> by enabling the respective check box.
-      </para>
+      <title>不要になったシステム言語の削除</title>
+      <para>第一言語を切り替えると、従来の第一言語向けの翻訳パッケージがシステムから削除されます。第一言語は切り替えるものの、古い第一言語パッケージを追加の言語として残しておくには、 <guimenu>第二言語</guimenu> で対応する言語にチェックを入れてください。</para>
      </important>
     </step>
     <step>
-     <para>
-      Adjust the keyboard and time zone options as desired.
-     </para>
+     <para>キーボードとタイムゾーンを必要に応じて変更します。</para>
     </step>
     <step>
-     <para>
-      Confirm your changes with <guimenu>OK</guimenu>.
-     </para>
+     <para>変更点を確認して <guimenu>OK</guimenu> を閉じます。</para>
     </step>
     <step>
-     <para>
-      After &yast; has applied the changes, restart current X sessions (for
-      example, by logging out and logging in again) to make &yast; and the
-      desktop applications reflect your new language settings.
-     </para>
+     <para>&yast; が変更点を適用したあとは、現在の X セッションを再起動 (たとえばログアウトしてログインし直す) して、 &yast; とデスクトップアプリケーションが新しい言語に対応するようにしてください。</para>
     </step>
    </procedure>
   </sect2>
 
   <sect2 xml:id="sec.yast.lang.applications">
-   <title>Switching Languages for Standard X and &gnome; Applications</title>
-   <para>
-    After you have installed the respective language with &yast;, you can run a
-    single application in another language.
-   </para>
-   <para>
-    Start the application from the command line by using the following command:
-   </para>
-<screen>LANG=<replaceable>LANGUAGE</replaceable>&nbsp;<replaceable>application</replaceable></screen>
-   <para>
-    For example, to start f-spot in German, run
-    <command>LANG=de_DE&nbsp;f-spot</command>. For other languages, use the
-    appropriate language code. Get a list of all language codes available with
-    the <command>locale&nbsp;</command> <option>-av</option> command.
-   </para>
+   <title>標準 X および &gnome; アプリケーションに対する言語の切り替え</title>
+   <para>&yast; で言語をインストールしたあとは、インストールした言語で特定のアプリケーションを起動することができます。</para>
+   <para>コマンドラインから下記のように入力して、アプリケーションを起動します:</para>
+<screen>LANG=<replaceable>言語</replaceable>&nbsp;<replaceable>アプリケーション</replaceable></screen>
+   <para>たとえば f-spot をドイツ語で起動するには、 <command>LANG=de_DE&nbsp;f-spot</command> と入力します。その他の言語の場合は、それぞれ対応する言語コードを指定してください。言語コードの一覧は、 <command>locale&nbsp;</command> <option>-av</option> コマンドで取得することができます。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.yast.country">
-  <title>Changing the Country and Time Settings</title>
+  <title>国と時刻の設定の変更</title>
 
-  <para>
-   Using the &yast; date and time module, adjust your system date, clock and
-   time zone information to the area you are working in. To access the &yast;
-   module, start &yast; and click <menuchoice> <guimenu>System</guimenu>
-   <guimenu>Date and Time</guimenu> </menuchoice>. Alternatively, start the
-   <guimenu>Clock and Time Zone</guimenu> dialog directly by running
-   <command>sudo yast2 timezone &amp;</command> from a command line.
-  </para>
+  <para>&yast; 日付と時刻のモジュールを利用することで、お使いのシステムの日時のほか、タイムゾーン情報を変更することができます。 &yast; 日付と時刻のモジュールを起動するには、 &yast; を起動して <menuchoice> <guimenu>システム</guimenu> <guimenu>日付と時刻</guimenu> </menuchoice> を選択します。それ以外にも、コマンドラインで <command>sudo yast2 timezone &amp;</command> と入力しても、 <guimenu>日付と時刻</guimenu> ダイアログを表示させることができます。</para>
 
   <informalfigure>
    <mediaobject>
@@ -312,93 +159,50 @@
    </mediaobject>
   </informalfigure>
 
-  <para>
-   First, select a general region, such as <guimenu>Europe</guimenu>. Choose an
-   appropriate country that matches the one you are working in, for example,
-   <guimenu>Germany</guimenu>.
-  </para>
+  <para>まずは <guimenu>ヨーロッパ</guimenu> など、大まかな地域を選択します。次に、より細かい国 (例: <guimenu>ドイツ</guimenu>) を選択します。</para>
 
-  <para>
-   Depending on which operating systems run on your workstation, adjust the
-   hardware clock settings accordingly:
-  </para>
+  <para>お使いのコンピュータで、ほかにどのようなオペレーティングシステムを動作させているのかに従って、下記のいずれかの設定を行ないます:</para>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     If you run another operating system on your machine, such as Microsoft
-     Windows*, it is likely your system does not use UTC, but local time. In
-     this case, deactivate <guimenu>Hardware Clock Set To UTC</guimenu>.
-    </para>
+    <para>Microsoft Windows* など、他のオペレーティングシステムを動作させている場合は、お使いのコンピュータは UTC ではなくローカルの時刻に設定されているものと思われます。この場合は、 <guimenu>ハードウエアの時刻を UTC に設定する</guimenu> のチェックを外します。</para>
    </listitem>
    <listitem>
-    <para>
-     If you only run Linux on your machine, set the hardware clock to UTC and
-     have the switch from standard time to daylight saving time performed
-     automatically.
-    </para>
+    <para>お使いのマシンで Linux のみを動作させている場合は、ハードウエアの時刻を UTC に設定することで、自動的に夏時間の切り替えを行なうことができます。</para>
    </listitem>
   </itemizedlist>
 
   <important>
-   <title>Set the Hardware Clock to UTC</title>
-   <para>
-    The switch from standard time to daylight saving time (and vice versa) can
-    only be performed automatically when the hardware clock (CMOS clock) is set
-    to UTC. This also applies if you use automatic time synchronization with
-    NTP, because automatic synchronization will only be performed if the time
-    difference between the hardware and system clock is less than 15 minutes.
-   </para>
-   <para>
-    Since a wrong system time can cause serious problems (missed backups,
-    dropped mail messages, mount failures on remote file systems, etc.) it is
-    strongly recommended to <emphasis>always</emphasis> set the hardware clock
-    to UTC.
-   </para>
+   <title>ハードウエアクロックの UTC への切り替えについて</title>
+   <para>標準時から夏時間への切り替え (もしくはその逆) は、ハードウエア (CMOS) の時計が UTC に設定されている場合にのみ、自動的に行なうことができます。これは、 NTP で自動的に時刻を同期させている場合も同様で、 NTP はハードウエアとシステムの時計の差が 15 分未満の場合にのみ動作するためです。</para>
+   <para>なお、システムの時計を正しく設定しないと、様々な問題が発生する可能性があります (たとえばバックアップの処理を行なわずに飛ばしてしまったり、メールメッセージが期限切れであるものとして捨てられてしまったり、マウントが失敗してしまったりなど) 。特に理由がない限り、ハードウエアの時計は UTC に設定しておくことを <emphasis>強く</emphasis> お勧めします。</para>
   </important>
 
-  <para>
-   You can change the date and time manually or opt for synchronizing your
-   machine against an NTP server, either permanently or only for adjusting your
-   hardware clock.
-  </para>
+  <para>日付と時刻は手作業で変更することができるほか、必要であれば NTP サーバを利用して同期することもできます。設定は恒久的に保存することができるほか、一時的に利用することもできます。</para>
 
   <procedure>
-   <title>Manually Adjusting Time and Date</title>
+   <title>日付と時刻の手動設定</title>
    <step>
-    <para>
-     In the &yast; timezone module, click <guimenu>Other Settings</guimenu> to
-     set date and time.
-    </para>
+    <para>&yast; のタイムゾーンモジュールで日付と時刻の設定を行なうため、 <guimenu>その他の設定</guimenu> を押します。</para>
    </step>
    <step>
-    <para>
-     Select <guimenu>Manually</guimenu> and enter date and time values.
-    </para>
+    <para><guimenu>手動</guimenu> を選択して日付と時刻を入力します。</para>
    </step>
    <step>
-    <para>
-     Confirm your changes.
-    </para>
+    <para>最後に設定内容を確認します。</para>
    </step>
   </procedure>
 
   <procedure>
-   <title>Setting Date and Time With NTP Server</title>
+   <title>NTP サーバを利用した日付と時刻の設定</title>
    <step>
-    <para>
-     Click <guimenu>Other Settings</guimenu> to set date and time.
-    </para>
+    <para>日付と時刻の設定を行なうため、 <guimenu>その他の設定</guimenu> を押します。</para>
    </step>
    <step>
-    <para>
-     Select <guimenu>Synchronize with NTP Server</guimenu>.
-    </para>
+    <para><guimenu>NTP サーバと同期</guimenu> を選択します。</para>
    </step>
    <step>
-    <para>
-     Enter the address of an NTP server, if not already populated.
-    </para>
+    <para>何も入力されていない場合は、 NTP サーバのアドレスを入力します。</para>
     <informalfigure>
      <mediaobject>
       <imageobject role="html">
@@ -411,26 +215,16 @@
     </informalfigure>
    </step>
    <step>
-    <para>
-     Click <guimenu>Synchronize Now</guimenu> to get your system time set
-     correctly.
-    </para>
+    <para><guimenu>今すぐ同期</guimenu> を押すと、お使いのシステムに正しい時刻が設定されます。</para>
    </step>
    <step>
-    <para>
-     To use NTP permanently, enable <guimenu>Save NTP Configuration</guimenu>.
-    </para>
+    <para>NTP の設定を恒久的に保存するには、 <guimenu>NTP 設定の保存</guimenu> を選択します。</para>
    </step>
    <step>
-    <para>
-     With the <guimenu>Configure</guimenu> button, you can open the advanced
-     NTP configuration. For details, see <xref linkend="sec.ntp.yast"/>.
-    </para>
+    <para><guimenu>設定</guimenu> ボタンを押すと、高度な NTP 設定を表示することができます。詳しくは <xref linkend="sec.ntp.yast"/> をお読みください。</para>
    </step>
    <step>
-    <para>
-     Confirm your changes.
-    </para>
+    <para>最後に設定内容を確認します。</para>
    </step>
   </procedure>
  </sect1>
