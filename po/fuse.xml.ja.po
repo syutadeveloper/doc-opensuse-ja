@@ -1,26 +1,29 @@
+# translation of fuse.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: fuse.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-15 15:47+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: fuse.xml:30
 #, no-c-format
 msgid "Accessing File Systems with FUSE"
-msgstr ""
+msgstr "FUSE を利用したファイルシステムへのアクセス"
 
 #. Tag: para
 #: fuse.xml:33
@@ -33,18 +36,25 @@ msgid ""
 "ins, it allows you to extend FUSE to access almost all file systems like "
 "remote SSH connections, ISO images, and more."
 msgstr ""
+"FUSE とは <emphasis>File System in User Space</emphasis> の略で、特権を"
+"持たないユーザがファイルシステムを設定したり、マウントしたりすることの"
+"できる仕組みです。通常、ファイルシステムは <systemitem class=\"username\">root</"
+"systemitem> でなければ操作ができませんが、 FUSE ではそれができるように"
+"なっています。また、 FUSE それ自身はカーネルモジュールとして提供されている"
+"もので、 FUSE と対応するプラグインを組み合わせることで、 SSH での接続や"
+" ISO イメージなどが、ファイルシステムとして利用できるようになります。"
 
 #. Tag: dm:translation
 #: fuse.xml:45
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: title
 #: fuse.xml:62
 #, no-c-format
 msgid "Configuring FUSE"
-msgstr ""
+msgstr "FUSE の設定"
 
 #. Tag: para
 #: fuse.xml:64
@@ -55,6 +65,11 @@ msgid ""
 "use, you need additional plug-ins available as separate packages. <phrase os="
 "\"osuse\">For an overview, see <xref linkend=\"sec.fuse.plugins\"/>.</phrase>"
 msgstr ""
+"FUSE を始めるにあたっては、まず <systemitem class=\"resource\">fuse</systemitem> "
+"パッケージをインストールしておく必要があります。このほか、使用するファイル"
+"システムによっては、個別のパッケージとして提供されている追加のプラグインを"
+"必要とすることもあります。 <phrase os=\"osuse\">詳しくは <xref linkend=\"sec.fuse.plugins\"/> "
+"をお読みください。 </phrase>"
 
 #. Tag: para
 #: fuse.xml:72
@@ -65,12 +80,17 @@ msgid ""
 "you can create a directory <filename>~/mounts</filename> and insert your "
 "subdirectories for your different file systems there."
 msgstr ""
+"通常は FUSE 自身を設定する必要はありません。ただし、あらかじめマウントポイント"
+"を一括管理する目的から、専用のディレクトリを作っておくことをお勧めします。"
+"たとえば <filename>~/mounts</filename> のようなディレクトリを作っておいて、"
+"その中に各々のサブディレクトリを作成して、そこにマウントするような形態が"
+"お勧めです。"
 
 #. Tag: title
 #: fuse.xml:80
 #, no-c-format
 msgid "Mounting an NTFS Partition"
-msgstr ""
+msgstr "NTFS パーティションのマウント"
 
 #. Tag: para
 #: fuse.xml:82
@@ -82,6 +102,10 @@ msgid ""
 "process of mounting a Windows partition described below requires root "
 "privileges."
 msgstr ""
+"NTFS とは <emphasis>New Technology File System</emphasis> の略で、 Windows に"
+"おける既定のファイルシステムです。なお、 FUSE それ自身は特権が不要であるものの、"
+"Windows パーティション (つまりブロックデバイス) にアクセスするにあたっては"
+"特権が必要となるため、下記の手順でも root 権限が必要となります。"
 
 #. Tag: para
 #: fuse.xml:89
@@ -91,6 +115,9 @@ msgid ""
 "package <systemitem class=\"resource\">ntfs-3g</systemitem> . <phrase os="
 "\"sles\">It is available in &sle; Workstation Extension.</phrase>"
 msgstr ""
+"<systemitem class=\"username\">root</systemitem> になってパッケージ"
+" <systemitem class=\"resource\">ntfs-3g</systemitem> をインストールします。"
+"<phrase os=\"sles\">このパッケージは、 &sle; Workstation Extension 内に含まれています。</phrase>"
 
 #. Tag: para
 #: fuse.xml:96
@@ -99,6 +126,8 @@ msgid ""
 "Create a directory that is to be used as a mount point, for example "
 "<filename>~/mounts/windows</filename> ."
 msgstr ""
+"マウントポイントとして使用するディレクトリを作成します。たとえば"
+" <filename>~/mounts/windows</filename> のディレクトリを作成します。"
 
 #. Tag: para
 #: fuse.xml:102
@@ -110,6 +139,12 @@ msgid ""
 "fdisk</command> <option>-l</option> . Look for partitions with a partition "
 "type of <literal>HPFS/NTFS</literal> ."
 msgstr ""
+"マウントしたい Windows パーティションを見つけるため、 &yast; を起動して"
+"パーティション設定モジュールを開始して、 Windows のパーティションを見つけます"
+" (ただし、何も変更する必要はありません) 。この方法以外にも、 &rootuser; で"
+" <command>/sbin/fdisk</command> <option>-l</option> を実行してもかまいません。"
+"いずれの場合も、パーティションの種類が <literal>HPFS/NTFS</literal> になっている"
+"ものを選びます。"
 
 #. Tag: para
 #: fuse.xml:111
@@ -118,6 +153,8 @@ msgid ""
 "Mount the partition in read-write mode. Replace the placeholder "
 "<replaceable>DEVICE</replaceable> with your respective Windows partition:"
 msgstr ""
+"パーティションを読み書き両方が可能なモードでマウントします。下記にある"
+" <replaceable>デバイス</replaceable> を、 Windows パーティションのデバイス名に置き換えて実行します:"
 
 #. Tag: screen
 #: fuse.xml:115
@@ -126,6 +163,8 @@ msgid ""
 "&prompt.user;ntfs-3g /dev/<replaceable>DEVICE</replaceable> "
 "<replaceable>MOUNT POINT</replaceable>"
 msgstr ""
+"&prompt.user;ntfs-3g /dev/<replaceable>デバイス</replaceable> "
+"<replaceable>マウントポイント</replaceable>"
 
 #. Tag: para
 #: fuse.xml:116
@@ -134,6 +173,8 @@ msgid ""
 "To use your Windows partition in read-only mode, append <option>-o ro</"
 "option> :"
 msgstr ""
+"Windows パーティションを読み込み専用モードで使用するには、 <option>-o ro</"
+"option> オプションを追加します:"
 
 #. Tag: screen
 #: fuse.xml:120
@@ -142,6 +183,8 @@ msgid ""
 "&prompt.user;ntfs-3g /dev/<replaceable>DEVICE</replaceable> "
 "<replaceable>MOUNT POINT</replaceable> -o ro"
 msgstr ""
+"&prompt.user;ntfs-3g /dev/<replaceable>デバイス</replaceable> "
+"<replaceable>マウントポイント</replaceable> -o ro"
 
 #. Tag: para
 #: fuse.xml:121
@@ -152,6 +195,10 @@ msgid ""
 "a different user, use the command <command>id</command> <option>USER</"
 "option> to get the output of the UID and GID values. Set it with:"
 msgstr ""
+"<command>ntfs-3g</command> コマンドは、現在のユーザ (UID) とグループ (GID) "
+"で指定したデバイスにアクセスします。異なるユーザに対して書き込み許可を与える"
+"には、 <command>id</command> <option>ユーザ名</option> コマンドを実行して UID と GID を"
+"取得したあと、下記のようにして設定を行ないます:"
 
 #. Tag: screen
 #: fuse.xml:128
@@ -162,18 +209,22 @@ msgid ""
 "ntfs-3g /dev/<replaceable>DEVICE</replaceable> <replaceable>MOUNT POINT</"
 "replaceable> -o uid=1000,gid=100"
 msgstr ""
+"&prompt.root;id tux\n"
+"uid=1000(tux) gid=100(users) groups=100(users),16(dialout),33(video)\n"
+"ntfs-3g /dev/<replaceable>デバイス</replaceable> <replaceable>マウントポイント</"
+"replaceable> -o uid=1000,gid=100"
 
 #. Tag: para
 #: fuse.xml:131
 #, no-c-format
 msgid "Find additional options in the man page."
-msgstr ""
+msgstr "詳しいオプションについては、マニュアルページをお読みください。"
 
 #. Tag: title
 #: fuse.xml:143
 #, no-c-format
 msgid "Mounting Remote File System with SSHFS"
-msgstr ""
+msgstr "SSHFS を利用したリモートファイルシステムのマウント"
 
 #. Tag: para
 #: fuse.xml:145
@@ -183,12 +234,15 @@ msgid ""
 "two computers using a secure channel. To establish an SSH connection through "
 "FUSE, proceed as follows:"
 msgstr ""
+"SSH は Secure SHell の略で、 2 台のコンピュータの間の通信を暗号化してやりとり"
+"することのできるネットワークプロトコルです。 FUSE を介して SSH 接続を確立する"
+"には、下記の手順で行ないます:"
 
 #. Tag: para
 #: fuse.xml:153
 #, no-c-format
 msgid "Install the package <systemitem class=\"resource\">sshfs</systemitem> ."
-msgstr ""
+msgstr "<systemitem class=\"resource\">sshfs</systemitem> パッケージをインストールします。"
 
 #. Tag: para
 #: fuse.xml:158
@@ -198,12 +252,16 @@ msgid ""
 "use <filename>~/mounts/<replaceable>HOST</replaceable></filename> . Replace "
 "<replaceable>HOST</replaceable> with the name of your remote computer."
 msgstr ""
+"マウントポイントとして使用するディレクトリを作成します。 たとえば"
+"<filename>~/mounts/<replaceable>ホスト名</replaceable></filename> のような"
+"ディレクトリがよいでしょう。ここで <replaceable>ホスト名</replaceable> は"
+"実際のホスト名に置き換えて実行します。"
 
 #. Tag: para
 #: fuse.xml:165
 #, no-c-format
 msgid "Mount the remote file system:"
-msgstr ""
+msgstr "リモートのファイルシステムをマウントします:"
 
 #. Tag: screen
 #: fuse.xml:168
@@ -212,12 +270,14 @@ msgid ""
 "&prompt.root;sshfs <replaceable>USER</replaceable>@<replaceable>HOST</"
 "replaceable> <replaceable>MOUNT POINT</replaceable>"
 msgstr ""
+"&prompt.root;sshfs <replaceable>ユーザ名</replaceable>@<replaceable>ホスト名</"
+"replaceable> <replaceable>マウントポイント</replaceable>"
 
 #. Tag: para
 #: fuse.xml:171
 #, no-c-format
 msgid "Enter your password for the remote computer."
-msgstr ""
+msgstr "あとはリモートのコンピュータに対するパスワードを入力します。"
 
 #. Tag: para
 #: fuse.xml:177
@@ -226,12 +286,14 @@ msgid ""
 "To unmount the resource, run <command>fusermount -u</command> "
 "<replaceable>MOUNT POINT</replaceable> ."
 msgstr ""
+"マウントを解除するには、 <command>fusermount -u</command> "
+"<replaceable>マウントポイント</replaceable> のように実行します。"
 
 #. Tag: title
 #: fuse.xml:183
 #, no-c-format
 msgid "Mounting an ISO File System"
-msgstr ""
+msgstr "ISO ファイルシステムのマウント"
 
 #. Tag: para
 #: fuse.xml:185
@@ -240,13 +302,14 @@ msgid ""
 "To look into an ISO image, you can mount it with the <systemitem class="
 "\"resource\">fuseiso</systemitem> package:"
 msgstr ""
+"ISO イメージの内容を読み出すには、 <systemitem class="
+"\"resource\">fuseiso</systemitem> パッケージを利用して、下記のように実行します:"
 
 #. Tag: para
 #: fuse.xml:192
 #, no-c-format
-msgid ""
-"Install the package <systemitem class=\"resource\">fuseiso</systemitem> ."
-msgstr ""
+msgid "Install the package <systemitem class=\"resource\">fuseiso</systemitem> ."
+msgstr "<systemitem class=\"resource\">fuseiso</systemitem> パッケージをインストールします。"
 
 #. Tag: para
 #: fuse.xml:197
@@ -255,12 +318,14 @@ msgid ""
 "Create a directory that is to be used as a mount point, for example "
 "<filename>~/mounts/iso</filename> ."
 msgstr ""
+"マウントポイントとして使用するディレクトリを作成します。 たとえば"
+"<filename>~/mounts/iso</filename> のようなディレクトリがよいでしょう。"
 
 #. Tag: para
 #: fuse.xml:203
 #, no-c-format
 msgid "Mount the ISO image:"
-msgstr ""
+msgstr "ISO イメージをマウントします:"
 
 #. Tag: screen
 #: fuse.xml:206
@@ -268,7 +333,7 @@ msgstr ""
 msgid ""
 "&prompt.root;fuseiso <replaceable>ISO_IMAGE</replaceable> <replaceable>MOUNT "
 "POINT</replaceable>"
-msgstr ""
+msgstr "&prompt.root;fuseiso <replaceable>ISO イメージのパス</replaceable> <replaceable>マウントポイント</replaceable>"
 
 #. Tag: para
 #: fuse.xml:210
@@ -278,6 +343,9 @@ msgid ""
 "unmount the resource, use <command>fusermount -u</command> "
 "<replaceable>MOUNT POINT</replaceable> ."
 msgstr ""
+"ISO イメージは、そのファイルの仕様上読み込み専用であり、書き込むことはできません。"
+"マウントを解除するには、 <command>fusermount -u</command> "
+"<replaceable>マウントポイント</replaceable> のように実行します。"
 
 #. Tag: para
 #: fuse.xml:219
@@ -287,138 +355,142 @@ msgid ""
 "<!-- taroth 2014-11-17: as of SLE 12, ntfs-3g plug-in is shipped, but none "
 "of the other modules-->"
 msgstr ""
+"FUSE には様々なプラグインが用意されています。下記の表では、よく使用される"
+"一般的なプラグインを示しています。"
+"<!-- taroth 2014-11-17: as of SLE 12, ntfs-3g plug-in is shipped, but none "
+"of the other modules-->"
 
 #. Tag: title
 #: fuse.xml:230
 #, no-c-format
 msgid "Available FUSE Plug-ins"
-msgstr ""
+msgstr "利用可能な FUSE プラグイン"
 
 #. Tag: para
 #: fuse.xml:235
 #, no-c-format
 msgid "<systemitem class=\"resource\">curlftpfs</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">curlftpfs</systemitem>"
 
 #. Tag: para
 #: fuse.xml:240
 #, no-c-format
 msgid "mount FTP servers"
-msgstr ""
+msgstr "FTP サーバのマウント"
 
 #. Tag: para
 #: fuse.xml:247
 #, no-c-format
 msgid "<systemitem class=\"resource\">encfs</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">encfs</systemitem>"
 
 #. Tag: para
 #: fuse.xml:252
 #, no-c-format
 msgid "mount encrypted file systems"
-msgstr ""
+msgstr "暗号化されたファイルシステムのマウント"
 
 #. Tag: para
 #: fuse.xml:259
 #, no-c-format
 msgid "<systemitem class=\"resource\">fuseiso</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">fuseiso</systemitem>"
 
 #. Tag: para
 #: fuse.xml:264
 #, no-c-format
 msgid "mounts CD-ROM images with ISO9660 file systems in them"
-msgstr ""
+msgstr "ISO9660 ファイルシステムの CD-ROM イメージのマウント"
 
 #. Tag: para
 #: fuse.xml:271
 #, no-c-format
 msgid "<systemitem class=\"resource\">fusepod</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">fusepod</systemitem>"
 
 #. Tag: para
 #: fuse.xml:276
 #, no-c-format
 msgid "mount iPods"
-msgstr ""
+msgstr "iPod のマウント"
 
 #. Tag: para
 #: fuse.xml:283
 #, no-c-format
 msgid "<systemitem class=\"resource\">fusesmb</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">fusesmb</systemitem>"
 
 #. Tag: para
 #: fuse.xml:288
 #, no-c-format
 msgid "mount browseable Samba clients or Windows shares"
-msgstr ""
+msgstr "参照可能な Samba 共有や Windows 共有のマウント"
 
 #. Tag: para
 #: fuse.xml:295
 #, no-c-format
 msgid "<systemitem class=\"resource\">gphotofs</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">gphotofs</systemitem>"
 
 #. Tag: para
 #: fuse.xml:300
 #, no-c-format
 msgid "mount supported digital cameras through gPhoto"
-msgstr ""
+msgstr "gPhoto を介した対応デジタルカメラのマウント"
 
 #. Tag: para
 #: fuse.xml:307
 #, no-c-format
 msgid "<systemitem class=\"resource\">ntfs-3g</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">ntfs-3g</systemitem>"
 
 #. Tag: para
 #: fuse.xml:312
 #, no-c-format
 msgid "mount NTFS volumes (with read and write support)"
-msgstr ""
+msgstr "NTFS ボリュームのマウント (読み書き両方に対応)"
 
 #. Tag: para
 #: fuse.xml:319
 #, no-c-format
 msgid "<systemitem class=\"resource\">obexfs</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">obexfs</systemitem>"
 
 #. Tag: para
 #: fuse.xml:324
 #, no-c-format
 msgid "mount Bluetooth devices"
-msgstr ""
+msgstr "Bluetooth デバイスのマウント"
 
 #. Tag: para
 #: fuse.xml:331
 #, no-c-format
 msgid "<systemitem class=\"resource\">sshfs</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">sshfs</systemitem>"
 
 #. Tag: para
 #: fuse.xml:336
 #, no-c-format
 msgid "file system client based on SSH file transfer protocol"
-msgstr ""
+msgstr "SSH ファイル転送プロトコルをベースにしたファイルシステムクライアント"
 
 #. Tag: para
 #: fuse.xml:343
 #, no-c-format
 msgid "<systemitem class=\"resource\">wdfs</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"resource\">wdfs</systemitem>"
 
 #. Tag: para
 #: fuse.xml:348
 #, no-c-format
 msgid "mount WebDAV file systems"
-msgstr ""
+msgstr "WebDAV ファイルシステムのマウント"
 
 #. Tag: title
 #: fuse.xml:358
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: fuse.xml:360
@@ -427,3 +499,6 @@ msgid ""
 "See the home page <link xlink:href=\"http://fuse.sourceforge.net\"/> of FUSE "
 "for more information."
 msgstr ""
+"FUSE について、さらに詳しくは <link xlink:href=\"http://fuse.sourceforge.net\"/> を"
+"お読みください。"
+
