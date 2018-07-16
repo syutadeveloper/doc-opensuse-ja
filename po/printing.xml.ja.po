@@ -1,32 +1,35 @@
+# translation of printing.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: printing.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-16 14:04+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: printing.xml:9
 #, no-c-format
 msgid "Printer Operation"
-msgstr ""
+msgstr "印刷の操作"
 
 #. Tag: dm:translation
 #: printing.xml:13
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: printing.xml:16
@@ -39,6 +42,12 @@ msgid ""
 "managing print jobs. If your printer does not work as expected, refer to "
 "<xref linkend=\"sec.print.prob\"/> ."
 msgstr ""
+"&productnamereg; では、ネットワークプリンタなど、様々な種類のプリンタから"
+"印刷することができます。プリンタは手作業で設定することができるほか、 &yast; "
+"経由で設定することもできます。設定方法については <xref linkend=\"sec.yast.hw.print\"/> "
+"をお読みください。また、印刷ジョブの開始や管理については、グラフィカルな"
+"ユーティリティとコマンドラインのユーティリティの両方が用意されています。"
+"印刷が正しく動作しない場合は、 <xref linkend=\"sec.print.prob\"/> をお読みください。"
 
 #. Tag: para
 #: printing.xml:24
@@ -46,7 +55,7 @@ msgstr ""
 msgid ""
 "CUPS (Common Unix Printing System) is the standard print system in "
 "&productname;."
-msgstr ""
+msgstr "CUPS (Common Unix Printing System) は &productname; での標準印刷システムです。"
 
 #. Tag: para
 #: printing.xml:28
@@ -58,12 +67,17 @@ msgid ""
 "language. Printers can be categorized on the basis of the following three "
 "classes of printer languages:"
 msgstr ""
+"各種のプリンタは USB やネットワークなどのインターフェイスで違いがあるほか、"
+"プリンタ言語でも違いがあります。プリンタをお買い上げになる場合は、まず"
+"インターフェイスが対応可能なものかどうか (USB, イーサネット, Wi-Fi など) "
+"とプリンタの言語をご確認ください。プリンタの言語としては、下記の 3 種類に"
+"分類することができます:"
 
 #. Tag: term
 #: printing.xml:37
 #, no-c-format
 msgid "PostScript Printers"
-msgstr ""
+msgstr "PostScript プリンタ"
 
 #. Tag: para
 #: printing.xml:39
@@ -75,6 +89,10 @@ msgid ""
 "converted in additional stages in the print system, the number of potential "
 "error sources is reduced."
 msgstr ""
+"PostScript は、ほとんどの Linux や Unix での印刷ジョブの作成にあたって"
+"使用されるプリンタ言語で、内部の印刷システムでも使用されています。 PostScript "
+"文書をプリンタ側で直接処理できる場合で、印刷システム側でさらなる編集作業"
+"などが発生しない場合は、潜在的にエラーの発生しうる可能性を大きく減らすことができます。"
 
 #. Tag: para
 #: printing.xml:46
@@ -85,12 +103,16 @@ msgid ""
 "PostScript) already exist. For traditional PostScript printers PDF needs to "
 "be converted to PostScript in the printing workflow."
 msgstr ""
+"現時点では、標準の印刷ジョブ形式が PostScript から PDF という形式に置き換えられて"
+"いますが、 PDF を直接印刷することのできる PostScript+PDF 対応のプリンタも"
+"現われてきています。従来型の PostScript のみに対応したプリンタの場合、 PDF は"
+"印刷のワークフロー内で PostScript に変換する必要があります。"
 
 #. Tag: term
 #: printing.xml:55
 #, no-c-format
 msgid "Standard Printers (Languages Like PCL and ESC/P)"
-msgstr ""
+msgstr "標準プリンタ (PCL や ESC/P などの言語)"
 
 #. Tag: para
 #: printing.xml:57
@@ -106,12 +128,22 @@ msgid ""
 "no printer manufacturers who develop Linux drivers and make them available "
 "to Linux distributors under an open source license."
 msgstr ""
+"既知のプリンタ言語であれば、 Ghostscript を利用することで、印刷システム側で"
+" PostScript のジョブをそれぞれの言語に変換することができます。この処理は"
+"逐次翻訳処理 (インタプリティング) と呼ばれます。最もよく知られている言語は"
+" PCL (HP 社のプリンタなどが対応しています) と ESC/P (EPSON 社のプリンタで"
+"使用されています) の 2 種類で、これらの言語は Linux で通常サポートされて"
+"いるため、十分な印刷結果が得られます。ただし、 Linux では特殊な印刷機能に"
+"対応していない場合があります。 HP 社と EPSON 社以外の場合は、プリンタの"
+"製造元が Linux ドライバを開発しておらず、 Linux のディストリビューション"
+"として配布のできるオープンソースライセンスでは、ソフトウエアが存在しない"
+"のが現状です。"
 
 #. Tag: term
 #: printing.xml:71
 #, no-c-format
 msgid "Proprietary Printers (Also Called GDI Printers)"
-msgstr ""
+msgstr "プロプライエタリプリンタ (GDI プリンタとも呼びます)"
 
 #. Tag: para
 #: printing.xml:73
@@ -123,6 +155,11 @@ msgid ""
 "available for these printers. See <xref linkend=\"sec.print.gdi\"/> for more "
 "information."
 msgstr ""
+"これらのプリンタは、汎用的なプリンタ言語のいずれにも対応していないものです。"
+"これらは非公開のプリンタ言語を使用しているほか、新しい型式が販売されるように"
+"なると、言語側にも変更が加えられるようになってしまっています。通常は、"
+" Windows 向けのドライバのみが公開されています。詳しくは <xref linkend=\"sec.print.gdi\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: printing.xml:83
@@ -131,12 +168,14 @@ msgid ""
 "Before you buy a new printer, refer to the following sources to check how "
 "well the printer you intend to buy is supported:"
 msgstr ""
+"新しいプリンタを購入される場合は、まず下記の情報源をお読みのうえ、"
+"購入予定のプリンタがサポートされているかどうかをご確認ください:"
 
 #. Tag: term
 #: printing.xml:89
 #, no-c-format
 msgid "<link xlink:href=\"http://www.linuxfoundation.org/OpenPrinting/\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://www.linuxfoundation.org/OpenPrinting/\"/>"
 
 #. Tag: para
 #: printing.xml:92
@@ -150,37 +189,43 @@ msgid ""
 "databases may not necessarily indicate the correct status, but only provide "
 "an approximation."
 msgstr ""
+"OpenPrinting の Web ページには、プリンタデータベースが提供されています。"
+"データベースには最新の Linux におけるサポート状態が書かれています。ただし、"
+" Linux ディストリビューションは、開発上の都合で決められたタイミングでドライバを"
+"取り込むものであるため、 <quote>perfectly supported</quote> (完全対応) と"
+"されているプリンタであっても、最新の &productname; バージョンでは対応しきれて"
+"いない場合があります。そのため、このデータベースは必ずしも正しい状態には"
+"なりませんので、参考情報としてお読みください。"
 
 #. Tag: term
 #: printing.xml:104
 #, no-c-format
 msgid "<link xlink:href=\"http://pages.cs.wisc.edu/~ghost/\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://pages.cs.wisc.edu/~ghost/\"/>"
 
 #. Tag: para
 #: printing.xml:107
 #, no-c-format
 msgid "The Ghostscript Web page."
-msgstr ""
+msgstr "Ghostscript の Web ページもご確認ください。"
 
 #. Tag: term
 #: printing.xml:113
 #, no-c-format
-msgid ""
-"<filename>/usr/share/doc/packages/ghostscript/catalog.devices</filename>"
-msgstr ""
+msgid "<filename>/usr/share/doc/packages/ghostscript/catalog.devices</filename>"
+msgstr "<filename>/usr/share/doc/packages/ghostscript/catalog.devices</filename>"
 
 #. Tag: para
 #: printing.xml:116
 #, no-c-format
 msgid "List of built-in Ghostscript drivers."
-msgstr ""
+msgstr "内蔵の Ghostscript ドライバに書かれている一覧です。"
 
 #. Tag: title
 #: printing.xml:123
 #, no-c-format
 msgid "The CUPS Workflow"
-msgstr ""
+msgstr "CUPS の流れ"
 
 #. Tag: para
 #: printing.xml:125
@@ -191,6 +236,10 @@ msgid ""
 "the name of the print queue, and optionally, information for the filter, "
 "such as printer-specific options."
 msgstr ""
+"まずはユーザが印刷ジョブを作成します。印刷ジョブには、印刷するデータそのもの"
+"のほか、スプーラに対する情報が含まれています。これにはプリンタの名前や"
+"印刷キューの名前のほか、プリンタ固有の情報としてフィルタに関する情報などが"
+"含まれています。"
 
 #. Tag: para
 #: printing.xml:132
@@ -201,6 +250,10 @@ msgid ""
 "receive data. When the printer is ready, the spooler sends the data through "
 "the filter and back-end to the printer."
 msgstr ""
+"それぞれのプリンタに対しては、少なくとも 1 つの専用印刷キューが割り当てられ"
+"ます。スプーラは、目的のプリンタがデータを受信できる状態になるまで、"
+"キュー内に印刷ジョブを貯めておきます。プリンタの準備ができると、フィルタと"
+"バックエンドを通して、プリンタに対してデータを送信します。"
 
 #. Tag: para
 #: printing.xml:139
@@ -213,6 +266,12 @@ msgid ""
 "with the parameters needed to enable them on the printer. The filter system "
 "makes sure that options selected by the user are enabled."
 msgstr ""
+"フィルタは、アプリケーションが生成した印刷用のデータ (通常は PostScript, PDF "
+"などですが、 ASCII, JPEG などである場合もあります) をプリンタ固有のデータ"
+" (PostScript, PCL, ESC/P など) に変換します。プリンタの機能は PPD ファイル"
+"として定義されていて、プリンタ固有のオプションのほか、プリンタで特定の機能を"
+"有効化するためのパラメータなどが定義されています。フィルタシステムでは、"
+"ユーザが選択したオプションが有効化されるよう設定します。"
 
 #. Tag: para
 #: printing.xml:148
@@ -225,12 +284,18 @@ msgid ""
 "printer. The back-end receives the printer-specific data from the filter "
 "then passes it to the printer."
 msgstr ""
+"PostScript プリンタを使用している場合は、フィルタシステムがデータを"
+"プリンタ固有の PostScript に変換します。この場合、プリンタドライバは不要"
+"となります。 PostScript 以外のプリンタの場合は、フィルタシステムが同じく"
+"プリンタ固有のデータに変換します。この場合は、お使いのプリンタに合わせた"
+"ドライバが必要となります。バックエンドは、プリンタ固有のデータをフィルタから"
+"受信して、それをプリンタに送信します。"
 
 #. Tag: title
 #: printing.xml:158
 #, no-c-format
 msgid "Methods and Protocols for Connecting Printers"
-msgstr ""
+msgstr "プリンタの接続方式とプロトコル"
 
 #. Tag: para
 #: printing.xml:160
@@ -243,6 +308,10 @@ msgid ""
 "emphasis> at <link xlink:href=\"http://en.opensuse.org/SDB:CUPS_in_a_Nutshell"
 "\"/> ."
 msgstr ""
+"システムとプリンタを接続する方式には複数のものがあります。 CUPS ではローカル"
+"のプリンタとネットワーク経由で接続されたプリンタを区別せずに設定することが"
+"できます。プリンタの接続方法について、詳しくは "
+"<link xlink:href=\"http://ja.opensuse.org/SDB:CUPS_in_a_Nutshell\"/> をお読みください。"
 
 #. Tag: para
 #: printing.xml:170
@@ -253,12 +322,17 @@ msgid ""
 "printing is only possible over the network. The cabling for network printers "
 "must be installed according to the instructions of the printer manufacturer."
 msgstr ""
+"&zseries; メインフレームに対して、ローカルで接続するような z/VM 提供の"
+"プリンタ、および類似デバイスは、 CUPS 側でサポートしていません。これらの"
+"プラットフォームでは、印刷処理はネットワーク経由でのみ行なうことができます。"
+"ネットワークプリンタとのケーブル接続は、プリンタの製造元が提供する手順に"
+"従って行なわなければなりません。"
 
 #. Tag: title
 #: printing.xml:178
 #, no-c-format
 msgid "Changing Cable Connections in a Running System"
-msgstr ""
+msgstr "実行中のシステムにおけるケーブル接続の変更"
 
 #. Tag: para
 #: printing.xml:179
@@ -269,12 +343,17 @@ msgid ""
 "your system or printer, shut down the system before changing any connections "
 "that are not USB."
 msgstr ""
+"マシンに対してプリンタを接続するにあたっては、 USB 以外の方式ではホットプラグ"
+" (活性挿抜) に対応しておらず、動作中に接続したり、動作中に取り外したりする"
+"ことができないことに注意してください。お使いのシステムやプリンタが損傷を"
+"受けないようにするため、 USB 以外の方式で接続されている場合は、接続を変更する"
+"前にシステムをシャットダウンしてください。"
 
 #. Tag: title
 #: printing.xml:188
 #, no-c-format
 msgid "Installing the Software"
-msgstr ""
+msgstr "ソフトウエアのインストール"
 
 #. Tag: para
 #: printing.xml:190
@@ -286,6 +365,11 @@ msgid ""
 "options in CUPS. Without a PPD file, the print data would be forwarded to "
 "the printer in a <quote>raw</quote> state, which is usually not desired."
 msgstr ""
+"PPD (PostScript Printer Description) はコンピュータ言語の一種で、解像度や"
+"オプション、両面印刷の可否などの情報を設定するためのものです。これらの"
+"仕組みは、 CUPS で様々なオプションを使用する際に必要となるもので、 PPD "
+"ファイルがないと、プリンタに対して <quote>何も加工しない</quote> 状態でデータを"
+"送信しなければならなくなってしまいます。"
 
 #. Tag: para
 #: printing.xml:198
@@ -297,6 +381,11 @@ msgid ""
 "postscript</systemitem> . See <xref linkend=\"sec.print.special.ppd\"/> and "
 "<xref linkend=\"sec.print.prob.ppd\"/> ."
 msgstr ""
+"PostScript プリンタを設定するにあたって最も適切なやり方は、適切な PPD ファイルを"
+"取得することです。 <systemitem>manufacturer-PPDs</systemitem> や <systemitem>OpenPrintingPPDs-"
+"postscript</systemitem> のパッケージには、多数の PPD ファイルが用意されています。"
+"詳しくは <xref linkend=\"sec.print.special.ppd\"/> および"
+"<xref linkend=\"sec.print.prob.ppd\"/> をお読みください。"
 
 #. Tag: para
 #: printing.xml:207
@@ -307,6 +396,11 @@ msgid ""
 "linkend=\"sec.yast.hw.print.local.get_ppd\"/> . Subsequently, the PPD file "
 "can be selected during the printer setup."
 msgstr ""
+"新しい PPD ファイルは <filename>/usr/share/cups/model/</filename> ディレクトリ内に"
+"保存することができるほか、 <xref linkend=\"sec.yast.hw.print.local.get_ppd\"/> の"
+"手順に従うことで、 &yast; から印刷システムに追加することもできます。"
+" PPD ファイルを追加したあとは、プリンタの設定時に追加した PPD ファイルを"
+"選択することができます。"
 
 #. Tag: para
 #: printing.xml:214
@@ -318,12 +412,19 @@ msgid ""
 "system may no longer be able to address devices of other manufacturers. For "
 "this reason, the installation of manufacturer software is not recommended."
 msgstr ""
+"なお、プリンタの製造元がソフトウエア (アプリケーション) パッケージ全体をインストールさせようと"
+"する場合がありますが、これをそのままインストールしてしまうと、 &productname; "
+"で提供しているサポートを受けられなくなってしまう場合があることにご注意ください。"
+"これは、ソフトウエアパッケージによっては印刷コマンドの動作を書き換えてしまう"
+"ものがあるためで、このようなシステムにしてしまうと、他の製造元のプリンタを"
+"扱えなくなってしまいます。このような理由から、製造元が提供するソフトウエアの"
+"インストールは、お勧めできません。"
 
 #. Tag: title
 #: printing.xml:224
 #, no-c-format
 msgid "Network Printers"
-msgstr ""
+msgstr "ネットワークプリンタ"
 
 #. Tag: para
 #: printing.xml:226
@@ -338,6 +439,15 @@ msgid ""
 "need to experiment with various options to achieve a functional "
 "configuration."
 msgstr ""
+"ネットワークプリンタの場合は様々なプロトコルに対応しているほか、同時に複数の"
+"プロトコルに対応できるものもあります。対応するプロトコルのうちのほとんどは"
+"標準化されているものですが、製造元によっては非標準のプロトコルを使用している"
+"場合があります。この場合は、ごく限られたオペレーティングシステム向けの"
+"ドライバしか公開していません。残念ながらこのような場合、一般的には Linux 向けの"
+"ドライバはほとんど公開されていないのが現状です。このような状況から、"
+"全てのプロトコルが Linux でスムーズに動作するとは限りません。そのため、"
+"いくつかのプロトコルを使ってみて、期待通りに動作するかどうかを試してみる必要が"
+"あります。"
 
 #. Tag: para
 #: printing.xml:250
@@ -347,12 +457,15 @@ msgid ""
 "systemitem> , <systemitem>IPP</systemitem> and <systemitem>smb</systemitem> "
 "protocols."
 msgstr ""
+"CUPS では <systemitem>ソケット</systemitem> , <systemitem>LPD</"
+"systemitem> , <systemitem>IPP</systemitem> <systemitem>smb</systemitem> に"
+"それぞれ対応しています。"
 
 #. Tag: term
 #: printing.xml:258
 #, no-c-format
 msgid "socket"
-msgstr ""
+msgstr "ソケット"
 
 #. Tag: para
 #: printing.xml:260
@@ -365,12 +478,18 @@ msgid ""
 "THE.PRINTER</replaceable> : <replaceable>PORT</replaceable> , for example: "
 "<systemitem>socket://&subnetII;.202:9100/</systemitem> ."
 msgstr ""
+"<emphasis>ソケット</emphasis> とは、純粋な TCP ソケットを介して純粋な"
+"印刷データを送信する仕組みです。一般的には <option>9100</option> や <option>35</option> "
+"などのポート番号を使用します。デバイス URI (Uniform Resource Identifier) "
+"の文法は下記のとおりです: socket:// <replaceable>プリンタの IP アドレス"
+"</replaceable> : <replaceable>ポート番号</replaceable> 。例: "
+"<systemitem>socket://&subnetII;.202:9100/</systemitem>"
 
 #. Tag: term
 #: printing.xml:271
 #, no-c-format
 msgid "LPD (Line Printer Daemon)"
-msgstr ""
+msgstr "LPD (ラインプリンタデーモン (Line Printer Daemon))"
 
 #. Tag: para
 #: printing.xml:273
@@ -386,12 +505,20 @@ msgid ""
 "<option>515</option> . An example device URI is <systemitem>lpd://"
 "&subnetII;.202/LPT1</systemitem> ."
 msgstr ""
+"LPD プロトコルは RFC&nbsp;1179 で規定されているプロトコルです。このプロトコル"
+"では、印刷キューの ID などのジョブ関連データが、実際の印刷データよりも前に"
+"送信されます。そのため、 LPD プロトコルで印刷する場合は、印刷キューを指定"
+"しなければなりません。また、多くのプリンタの製造元の実装では、印刷キューの"
+"名前に任意のものを設定することができます。また、プリンタのマニュアル側で"
+"使用すべき名前が固定で示されているものもあります (例: LPT, LPT1, LP1 など) 。"
+" LPD サービスのポート番号は <option>515</option> です。デバイス URI は"
+"たとえば下記のようになります: <systemitem>lpd://&subnetII;.202/LPT1</systemitem>"
 
 #. Tag: term
 #: printing.xml:287
 #, no-c-format
 msgid "IPP (Internet Printing Protocol)"
-msgstr ""
+msgstr "IPP (インターネット印刷プロトコル (Internet Printing Protocol))"
 
 #. Tag: para
 #: printing.xml:289
@@ -405,12 +532,19 @@ msgid ""
 "&subnetII;.202/ps</systemitem> and <systemitem>ipp://&subnetII;.202/printers/"
 "ps</systemitem> ."
 msgstr ""
+"IPP は HTTP プロトコルをベースにして作られたプロトコルで、比較的新しい (1999 年) "
+"プロトコルです。 IPP では、他のプロトコルよりも多くのジョブ関連データを送信します。"
+" CUPS では IPP を内部的なデータ転送手段として使用しています。 IPP を正しく"
+"設定するため、印刷キューの名前を指定する必要があります。 IPP のポート番号は"
+" <literal>631</literal> です。デバイス URI はたとえば下記のようになります:"
+"<systemitem>ipp://&subnetII;.202/ps</systemitem> や"
+" <systemitem>ipp://&subnetII;.202/printers/ps</systemitem>"
 
 #. Tag: term
 #: printing.xml:301
 #, no-c-format
 msgid "SMB (Windows Share)"
-msgstr ""
+msgstr "SMB (Windows 共有)"
 
 #. Tag: para
 #: printing.xml:303
@@ -423,6 +557,12 @@ msgid ""
 "printer</systemitem> , <systemitem>smb://user:password@&smbname;/printer</"
 "systemitem> , and <systemitem>smb://&smbname;/printer</systemitem> ."
 msgstr ""
+"CUPS は Windows で共有されているプリンタにも接続して印刷することができます。"
+"この場合、使用するプロトコルは SMB と呼ばれます。 SMB ではポート番号"
+" <option>137</option> , <option>138</option>, <option>139</option> を"
+"それぞれ使用します。デバイス URI は <systemitem>smb://user:password@workgroup/&smbname;/"
+"printer</systemitem> , <systemitem>smb://user:password@&smbname;/printer</"
+"systemitem>, <systemitem>smb://&smbname;/printer</systemitem> のいずれかの形態を取ります。"
 
 #. Tag: para
 #: printing.xml:316
@@ -434,6 +574,11 @@ msgid ""
 "systemitem> package) can be used to ascertain the protocol. <command>nmap</"
 "command> checks a host for open ports. For example:"
 msgstr ""
+"プリンタ側で対応しているプロトコルは、接続するまえにあらかじめ設定しておく"
+"必要があります。製造元が必要な情報を公開していない場合は、 <command>nmap</command> "
+"(<systemitem>nmap</systemitem> パッケージ) コマンドを利用することで、"
+"どのようなプロトコルに対応しているのかを調べることができます。 <command>nmap</"
+"command> は開いているポートを調べるためのコマンドで、たとえば下記のように実行します:"
 
 #. Tag: screen
 #: printing.xml:324
@@ -442,12 +587,14 @@ msgid ""
 "&prompt.user;nmap -p 35,137-139,515,631,9100-10000 <replaceable>IP.OF.THE."
 "PRINTER</replaceable>"
 msgstr ""
+"&prompt.user;nmap -p 35,137-139,515,631,9100-10000 <replaceable>プリンタの IP "
+"アドレス</replaceable>"
 
 #. Tag: title
 #: printing.xml:327
 #, no-c-format
 msgid "Configuring CUPS with Command Line Tools"
-msgstr ""
+msgstr "コマンドラインツールを利用した CUPS の設定"
 
 #. Tag: para
 #: printing.xml:329
@@ -459,6 +606,11 @@ msgid ""
 "determine valid device URIs on your system use the command <command>lpinfo -"
 "v | grep \":/\"</command> :"
 msgstr ""
+"CUPS は <command>lpinfo</command> , <command>lpadmin</command>, <command>lpoptions</command> "
+"などのコマンドラインツールで設定することもできます。設定を行なうにあたっては、"
+"バックエンド (USB など) とパラメータから構成されるデバイス URI を指定する必要が"
+"あります。お使いのシステムでデバイス URI を判断するには、 <command>lpinfo -"
+"v | grep \":/\"</command> を実行します:"
 
 #. Tag: screen
 #: printing.xml:337
@@ -468,6 +620,9 @@ msgid ""
 "direct usb://ACME/FunPrinter%20XL\n"
 "network socket://&cupsip;"
 msgstr ""
+"&prompt.sudo;lpinfo -v | grep \":/\"\n"
+"direct usb://ACME/FunPrinter%20XL\n"
+"network socket://&cupsip;"
 
 #. Tag: para
 #: printing.xml:341
@@ -477,6 +632,9 @@ msgid ""
 "remove or manage print queues. To add a print queue, use the following "
 "syntax:"
 msgstr ""
+"<command>lpadmin</command> を使用することで、 CUPS サーバに対して"
+"印刷キューの追加や削除、管理などを行なうことができます。印刷キューを追加"
+"するには、下記の文法で指定します:"
 
 #. Tag: screen
 #: printing.xml:347
@@ -486,6 +644,9 @@ msgid ""
 "<replaceable>DEVICE-URI</replaceable> -P <replaceable>PPD-FILE</replaceable> "
 "-E"
 msgstr ""
+"&prompt.sudo;lpadmin -p <replaceable>キュー名</replaceable> -v "
+"<replaceable>デバイス URI</replaceable> -P <replaceable>PPD ファイル</replaceable> "
+"-E"
 
 #. Tag: para
 #: printing.xml:349
@@ -496,6 +657,11 @@ msgid ""
 "( <option>-P</option> ). This means that you must know the PPD file and the "
 "device URI to configure the printer manually."
 msgstr ""
+"上記のように実行すると、 <option>-v</option> で指定したデバイスが、"
+"指定した PPD ファイル ( <option>-P</option> ) および"
+" <replaceable>キュー名</replaceable> ( <option>-p</option> ) のキュー名で"
+"利用できるようになります。このことから、プリンタを手作業で設定するにあたっては、"
+" PPD ファイルとデバイス URI をあらかじめ知っておかなければならないことになります。"
 
 #. Tag: para
 #: printing.xml:356
@@ -506,6 +672,10 @@ msgid ""
 "connection. To enable the printer, <option>-E</option> must be used as shown "
 "in the following example:"
 msgstr ""
+"なお、 <option>-E</option> を最初のオプションとして指定してはなりません。"
+"<option>-E</option> オプションを最初に指定すると、全ての CUPS コマンドで"
+"暗号化された接続を使用する意味になります。プリンタを有効化するには、"
+" <option>-E</option> を下記のように指定して使用しなければなりません:"
 
 #. Tag: screen
 #: printing.xml:363
@@ -514,12 +684,14 @@ msgid ""
 "&prompt.sudo;lpadmin -p ps -v usb://ACME/FunPrinter%20XL -P \\\n"
 "/usr/share/cups/model/Postscript.ppd.gz -E"
 msgstr ""
+"&prompt.sudo;lpadmin -p ps -v usb://ACME/FunPrinter%20XL -P \\\n"
+"/usr/share/cups/model/Postscript.ppd.gz -E"
 
 #. Tag: para
 #: printing.xml:366
 #, no-c-format
 msgid "The following example configures a network printer:"
-msgstr ""
+msgstr "ネットワークプリンタを設定するには、下記の例のように実行します:"
 
 #. Tag: screen
 #: printing.xml:370
@@ -528,6 +700,8 @@ msgid ""
 "&prompt.sudo;lpadmin -p ps -v socket://&subnetII;.202:9100/ -P \\\n"
 "/usr/share/cups/model/Postscript-level1.ppd.gz -E"
 msgstr ""
+"&prompt.sudo;lpadmin -p ps -v socket://&subnetII;.202:9100/ -P \\\n"
+"/usr/share/cups/model/Postscript-level1.ppd.gz -E"
 
 #. Tag: para
 #: printing.xml:373
@@ -536,6 +710,8 @@ msgid ""
 "For more options of <command>lpadmin</command> , see the man page of "
 "<systemitem>lpadmin(8)</systemitem> ."
 msgstr ""
+"<command>lpadmin</command> に対するさらなるオプションについては、"
+" <systemitem>lpadmin(8)</systemitem> のマニュアルページをお読みください。"
 
 #. Tag: para
 #: printing.xml:378
@@ -546,30 +722,35 @@ msgid ""
 "these default options with &yast; is also possible. Using command line "
 "tools, set default options as follows:"
 msgstr ""
+"プリンタを設定する際、いくつかのオプションには既定値が設定されます。"
+"これらのオプションは、それぞれの印刷ジョブで変更することができます (ただし"
+"使用している印刷ツールに依存します) 。 &yast; でもそれらの既定値を変更する"
+"ことができます。コマンドラインツールの場合、既定値を設定するには下記の手順で"
+"行ないます:"
 
 #. Tag: para
 #: printing.xml:387
 #, no-c-format
 msgid "First, list all options:"
-msgstr ""
+msgstr "まずは全てのオプションを表示します:"
 
 #. Tag: screen
 #: printing.xml:390
 #, no-c-format
 msgid "&prompt.sudo;lpoptions -p <replaceable>QUEUE</replaceable> -l"
-msgstr ""
+msgstr "&prompt.sudo;lpoptions -p <replaceable>キュー名</replaceable> -l"
 
 #. Tag: para
 #: printing.xml:391
 #, no-c-format
 msgid "Example:"
-msgstr ""
+msgstr "例:"
 
 #. Tag: screen
 #: printing.xml:394
 #, no-c-format
 msgid "Resolution/Output Resolution: 150dpi *300dpi 600dpi"
-msgstr ""
+msgstr "Resolution/Output Resolution: 150dpi *300dpi 600dpi"
 
 #. Tag: para
 #: printing.xml:395
@@ -578,25 +759,26 @@ msgid ""
 "The activated default option is identified by a preceding asterisk "
 "( <literal>*</literal> )."
 msgstr ""
+"既定値として設定されている値には、アスタリスク ( <literal>*</literal> ) が"
+"付けられています。"
 
 #. Tag: para
 #: printing.xml:401
 #, no-c-format
 msgid "Change the option with <command>lpadmin</command> :"
-msgstr ""
+msgstr "<command>lpadmin</command> を利用することで、このオプションを変更することができます:"
 
 #. Tag: screen
 #: printing.xml:404
 #, no-c-format
-msgid ""
-"&prompt.sudo;lpadmin -p <replaceable>QUEUE</replaceable> -o Resolution=600dpi"
-msgstr ""
+msgid "&prompt.sudo;lpadmin -p <replaceable>QUEUE</replaceable> -o Resolution=600dpi"
+msgstr "&prompt.sudo;lpadmin -p <replaceable>キュー名</replaceable> -o Resolution=600dpi"
 
 #. Tag: para
 #: printing.xml:407
 #, no-c-format
 msgid "Check the new setting:"
-msgstr ""
+msgstr "変更された設定を確認します:"
 
 #. Tag: screen
 #: printing.xml:410
@@ -606,6 +788,9 @@ msgid ""
 "\n"
 "Resolution/Output Resolution: 150dpi 300dpi *600dpi"
 msgstr ""
+"&prompt.sudo;lpoptions -p <replaceable>キュー名</replaceable> -l\n"
+"\n"
+"Resolution/Output Resolution: 150dpi 300dpi *600dpi"
 
 #. Tag: para
 #: printing.xml:416
@@ -616,12 +801,16 @@ msgid ""
 "class=\"username\">root</systemitem> settings are written to <filename>/etc/"
 "cups/lpoptions</filename> ."
 msgstr ""
+"一般ユーザが <command>lpoptions</command> を実行した場合、設定値は"
+" <filename>~/.cups/lpoptions</filename> 内に書き込まれます。 <systemitem "
+"class=\"username\">root</systemitem> で実行した場合は、設定値は"
+"<filename>/etc/cups/lpoptions</filename> に書き込まれます。"
 
 #. Tag: title
 #: printing.xml:424
 #, no-c-format
 msgid "Printing from the Command Line"
-msgstr ""
+msgstr "コマンドラインからの印刷"
 
 #. Tag: para
 #: printing.xml:426
@@ -632,6 +821,10 @@ msgid ""
 "substituting the corresponding names for <replaceable>QUEUENAME</"
 "replaceable> and <replaceable>FILENAME</replaceable> ."
 msgstr ""
+"コマンドラインから印刷処理を行なうには、 <command>lp -d</command> "
+"<replaceable>キュー名</replaceable> <replaceable>ファイル名</replaceable> "
+"のようにして実行します。ここで、 <replaceable>キュー名</replaceable> と"
+" <replaceable>ファイル名</replaceable> には適切な値を指定します。"
 
 #. Tag: para
 #: printing.xml:434
@@ -642,12 +835,17 @@ msgid ""
 "usually without specifying <replaceable>FILENAME</replaceable> , for "
 "example, <command>lp -d</command> <replaceable>QUEUENAME</replaceable> ."
 msgstr ""
+"アプリケーションによっては、 <command>lp</command> コマンドを利用して印刷"
+"するものもあります。この場合は、アプリケーションの印刷ダイアログ内で"
+" <replaceable>ファイル名</replaceable> 以外の正しいオプションを指定してください。"
+"たとえば <command>lp -d</command> <replaceable>キュー名</replaceable> "
+"のようになります。"
 
 #. Tag: title
 #: printing.xml:442
 #, no-c-format
 msgid "Special Features in &productname;"
-msgstr ""
+msgstr "&productname; での特殊機能"
 
 #. Tag: para
 #: printing.xml:444
@@ -656,12 +854,14 @@ msgid ""
 "Several CUPS features have been adapted for &productname;. Some of the most "
 "important changes are covered here."
 msgstr ""
+"いくつかの CUPS 機能が &productname; にも用意されています。ここでは、"
+"重要な変更点が示されています。"
 
 #. Tag: title
 #: printing.xml:450
 #, no-c-format
 msgid "CUPS and Firewall"
-msgstr ""
+msgstr "CUPS とファイアウオール"
 
 #. Tag: para
 #: printing.xml:451
@@ -674,12 +874,18 @@ msgid ""
 "linkend=\"sec.security.firewall.firewalld\"/> and at <link xlink:href="
 "\"http://en.opensuse.org/SDB:CUPS_and_SANE_Firewall_settings\"/> ."
 msgstr ""
+"&productname; を既定値のままインストールすると、 &firewalld; が有効化され、"
+"ネットワークインターフェイスが <literal>public</literal> ゾーンに割り当てられます。"
+"この場合、全ての着信接続がブロックされます。 &firewalld; の設定について、"
+"詳しくは <xref linkend=\"sec.security.firewall.firewalld\"/> および"
+" <link xlink:href=\"http://ja.opensuse.org/SDB:CUPS_and_SANE_Firewall_settings\"/> "
+"をお読みください。"
 
 #. Tag: title
 #: printing.xml:460
 #, no-c-format
 msgid "CUPS Client"
-msgstr ""
+msgstr "CUPS クライアント"
 
 #. Tag: para
 #: printing.xml:461
@@ -690,12 +896,16 @@ msgid ""
 "configure the network interface to be in the <literal>Internal Zone</"
 "literal> , so the workstation is reachable from within the network."
 msgstr ""
+"通常、 CUPS はファイアウオールの内側にある、信頼のおけるネットワーク環境内の"
+"ワークステーションで動作させるものです。この場合は、ネットワークインターフェイスを"
+"<literal>Internal</literal> ゾーンに割り当てることをお勧めします。"
+"これにより、ネットワーク側からワークステーションにアクセスできるようになります。"
 
 #. Tag: title
 #: printing.xml:469
 #, no-c-format
 msgid "CUPS Server"
-msgstr ""
+msgstr "CUPS サーバ"
 
 #. Tag: para
 #: printing.xml:470
@@ -708,12 +918,17 @@ msgid ""
 "that it is protected by special firewall rules and secure settings in the "
 "CUPS configuration."
 msgstr ""
+"CUPS サーバがファイアウオールで保護される信頼のできるネットワーク環境内に"
+"ある場合、ネットワークインターフェイスはファイアウオールの "
+"<literal>Internal</literal> ゾーンに割り当てるべきです。 CUPS サーバを"
+"特別なファイアウオールルールで防ぎ、かつ CUPS で機密を保護する設定をしない限り、"
+"信頼のできないネットワーク環境内に配置することはおすすめしません。"
 
 #. Tag: title
 #: printing.xml:482
 #, no-c-format
 msgid "Browsing for Network Printers"
-msgstr ""
+msgstr "ネットワークプリンタの参照"
 
 #. Tag: para
 #: printing.xml:483
@@ -724,6 +939,10 @@ msgid ""
 "display a list of available printers in printing dialogs, for example. This "
 "is called <quote>browsing</quote> ."
 msgstr ""
+"CUPS サーバは、共有されているプリンタとその状態に関する情報を、ネットワークに"
+"対して定期的に提供します。クライアントはこの情報を元にして、たとえば印刷ダイアログ"
+"内のプリンタ情報を更新します。これを <quote>ブラウジング</quote> (参照) "
+"と呼びます。"
 
 #. Tag: para
 #: printing.xml:489
@@ -739,6 +958,15 @@ msgid ""
 "started after booting, enable it with <command>sudo systemctl enable cups-"
 "browsed</command> on all clients."
 msgstr ""
+"CUPS サーバは、自身の印刷キューに関する情報をネットワーク側に提供する"
+"際、従来から用意されている CUPS ブラウジングプロトコルのほか、 Bonjour/DNS-SD "
+"も利用することができます。印刷キューに関する情報を参照できるようにするには、"
+"全てのクライアントで <systemitem class=\"daemon\">cups-browsed</systemitem> "
+"サービスを動作させる必要があります。 <systemitem class=\"daemon\">cups-browsed</systemitem> "
+"は既定では起動するように設定されていませんので、今すぐ起動するには <command>sudo "
+"systemctl start cups-browsed</command> を、システムの起動時に自動的に開始する"
+"ように設定するには <command>sudo systemctl enable cups-browsed</command> を、"
+"全てのクライアントで実行してください。"
 
 #. Tag: para
 #: printing.xml:501
@@ -751,12 +979,18 @@ msgid ""
 "systemitem> and start the associated service with <command>sudo systemctl "
 "start avahi-daemon</command> on all clients."
 msgstr ""
+"<systemitem class=\"daemon\">cups-browsed</systemitem> を開始しても印刷キューが"
+"現われない場合、 CUPS サーバが印刷キューを Bonjour/DNS-SD で情報公開している"
+"ものと思われます。この場合は、全てのクライアントで <systemitem class=\"resource\">avahi</"
+"systemitem> パッケージをインストールし、 <command>sudo systemctl "
+"start avahi-daemon</command> を実行して関連するサービスを起動しておく必要が"
+"あります。"
 
 #. Tag: title
 #: printing.xml:513
 #, no-c-format
 msgid "PPD Files in Various Packages"
-msgstr ""
+msgstr "様々なパッケージ内にある PPD ファイルについて"
 
 #. Tag: para
 #: printing.xml:514
@@ -770,6 +1004,13 @@ msgid ""
 "a database from the vendor and model information extracted from the PPD "
 "files."
 msgstr ""
+"&yast; プリンタ設定モジュールでは、 <filename>/usr/share/cups/model</filename> "
+"内にある PPD ファイルを利用してキューを設定します。特定のプリンタのモデル"
+" (型式) 向けの PPD ファイルを見つけるにあたって、 &yast; はハードウエアの"
+"検出段階で取り出した製造元とモデルの情報と、インストールされている全ての"
+" PPD ファイル内の情報を比較して行ないます。このような仕組みから、 &yast; "
+"のプリンタ設定モジュールは、 PPD ファイル内にある情報をデータベース化して"
+"検索を高速にできるようにしています。"
 
 #. Tag: para
 #: printing.xml:523
@@ -784,42 +1025,50 @@ msgid ""
 "postscript</systemitem> packages) to achieve an optimum configuration for "
 "your printers."
 msgstr ""
+"PPD ファイルのみを使用し、その他の情報源を使用しない構成であることから、"
+" <filename>/usr/share/cups/model</filename> にある PPD ファイルを自由に"
+"編集することもできるようになっています。たとえば特定の PostScript プリンタ"
+"に対する PPD ファイルが <systemitem>manufacturer-PPDs</systemitem> パッケージにも"
+" <systemitem>OpenPrintingPPDs-postscript</systemitem> パッケージにも用意"
+"されていないものの、製造元から提供されている場合、これを <filename>/usr/share/cups/"
+"model</filename> 内にコピーすることで、プリンタの機能を最大限に生かしながら"
+"印刷することができるようになります。"
 
 #. Tag: para
 #: printing.xml:533
 #, no-c-format
 msgid "Additional PPD files are provided by the following packages:"
-msgstr ""
+msgstr "追加の PPD ファイルは、下記のパッケージ内に含まれています:"
 
 #. Tag: para
 #: printing.xml:538
 #, no-c-format
 msgid "gutenprint: the Gutenprint driver and its matching PPDs"
-msgstr ""
+msgstr "gutenprint: Gutenprint ドライバとそれを利用する PPD"
 
 #. Tag: para
 #: printing.xml:543
 #, no-c-format
 msgid "splix: the SpliX driver and its matching PPDs"
-msgstr ""
+msgstr "splix: SpliX ドライバとそれを利用する PPD"
 
 #. Tag: para
 #: printing.xml:548
 #, no-c-format
 msgid "OpenPrintingPPDs-ghostscript: PPDs for Ghostscript built-in drivers"
-msgstr ""
+msgstr "OpenPrintingPPDs-ghostscript: Ghostscript 内蔵ドライバを使用する PPD"
 
 #. Tag: para
 #: printing.xml:553
 #, no-c-format
 msgid "OpenPrintingPPDs-hpijs: PPDs for the HPIJS driver for non-HP printers"
-msgstr ""
+msgstr "OpenPrintingPPDs-hpijs: HP 社のプリンタ以外に対する HPIJS ドライバ向け PPD"
 
 #. Tag: title
 #: printing.xml:561
 #, no-c-format
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
 #. Tag: para
 #: printing.xml:563
@@ -831,12 +1080,17 @@ msgid ""
 "configuration. Common network printer problems, defective printouts, and "
 "queue handling are also addressed."
 msgstr ""
+"下記には、プリンタハードウエアやソフトウエアで最もよく発生する問題と、"
+"その解決策や回避策を説明しています。特に GDI プリンタを利用する場合の"
+"問題や、 PPD ファイルやポートの設定などのほか、一般的なネットワークプリンタを"
+"使用する際の問題や、印刷が正しく出力されない問題やキューの処理の問題などを"
+"示しています。"
 
 #. Tag: title
 #: printing.xml:572
 #, no-c-format
 msgid "Printers without Standard Printer Language Support"
-msgstr ""
+msgstr "標準プリンタ言語に対応していないプリンタについて"
 
 #. Tag: para
 #: printing.xml:573
@@ -852,6 +1106,14 @@ msgid ""
 "not the programming interface, but that these printers can only be addressed "
 "with the proprietary printer language of the respective printer model."
 msgstr ""
+"一般的なプリンタ言語には対応しておらず、特殊な非公開の制御シーケンスを通じて"
+"のみ制御可能なプリンタの場合は、製造元がドライバを提供しているオペレーティング"
+"システムでしか動作させることができません。 GDI は Microsoft* がグラフィック"
+"デバイス向けに作成したプログラミングインターフェイスですが、 Windows 向けの"
+"ドライバしか製造元が提供していないものの場合、 Windows は GDI を利用して"
+"プリンタ出力を行なうことから、 <emphasis>GDI プリンタ</emphasis> と呼んでいます。"
+"実際にはプロクセラミングインターフェイスの問題ではなく、これらのプリンタが"
+"非公開のプリンタ言語を使用している点が問題となります。"
 
 #. Tag: para
 #: printing.xml:585
@@ -864,6 +1126,13 @@ msgid ""
 "into GDI mode when printing from Windows). For other GDI printers there are "
 "extension modules for a standard printer language available."
 msgstr ""
+"このような GDI プリンタの場合、型式によっては GDI モードと標準プリンタ言語"
+"モードとを切り替えることができるものがあります。詳しくはプリンタのマニュアル"
+"をお読みのうえ、対応可能かどうかをご確認ください。また、型式によっては、特殊な"
+" Windows ソフトウエアを利用して切り替えるものもあります。この場合、 Windows "
+"側でプリンタを使用すると、 GDI モードに強制的に切り替わってしまいますので、"
+" Linux 側での印刷の際にはご注意ください。その他の GDI プリンタに対しては、"
+"利用可能な標準プリンタ言語向けの拡張モジュールがある場合もあります。"
 
 #. Tag: para
 #: printing.xml:593
@@ -876,6 +1145,12 @@ msgid ""
 "standard printer language do not depend on a special print system version or "
 "a special hardware platform."
 msgstr ""
+"また、製造元によってはプリンタに対するプロプライエタリな (=オープンソース"
+"ではない) ドライバを提供している場合があります。このようなドライバは、"
+"インストール済みの印刷システムで動作するかどうか、および様々なハードウエア"
+"プラットフォームに対応しているかどうかを保証することができません。逆に、"
+"標準プリンタ言語に対応しているプリンタであれば、印刷システムもハードウエア"
+"プラットフォームにも依存せずに使用することができます。"
 
 #. Tag: para
 #: printing.xml:601
@@ -888,12 +1163,18 @@ msgid ""
 "special driver software and obtain driver updates that may be required "
 "because of new developments in the print system."
 msgstr ""
+"プロプライエタリな Linux ドライバの試行錯誤に時間を取られるくらいであれば、"
+"標準プリンタ言語 (できれば PostScript) に対応したプリンタを購入してしまった"
+"ほうが、コスト面でもより有利になることでしょう。これでドライバの問題は"
+"一挙に解決できるわけですし、特殊なドライバのインストールや設定を行なう"
+"必要もなくなるほか、今後のバージョンアップでも新しいドライバの提供を"
+"待つ必要がなくなります。"
 
 #. Tag: title
 #: printing.xml:612
 #, no-c-format
 msgid "No Suitable PPD File Available for a PostScript Printer"
-msgstr ""
+msgstr "PostScript プリンタに対応する PPD ファイルが存在しない場合について"
 
 #. Tag: para
 #: printing.xml:613
@@ -905,6 +1186,11 @@ msgid ""
 "the PPD file from the driver CD of the printer manufacturer or download a "
 "suitable PPD file from the Web page of the printer manufacturer."
 msgstr ""
+"<systemitem>manufacturer-PPDs</systemitem> や "
+"<systemitem>OpenPrintingPPDs-postscript</systemitem> パッケージにお使いの PostScript "
+"プリンタに対応した PPD ファイルが含まれていない場合は、プリンタの製造元が"
+"提供するドライバ CD 内に PPD ファイルが含まれていたり、プリンタの製造元の"
+" Web ページからダウンロードできたりする場合があります。"
 
 #. Tag: para
 #: printing.xml:620
@@ -921,18 +1207,28 @@ msgid ""
 "eliminated. If necessary, ask the printer manufacturer for a suitable PPD "
 "file."
 msgstr ""
+"PPD ファイルが zip アーカイブ (.zip) や自己展開型の zip アーカイブ"
+" ( <filename>.exe</filename> ) で提供されている場合、まず <command>unzip</"
+"command> コマンドで展開を行なってください。展開を行なったら、まず PPD ファイルに"
+"付属するライセンス条件をご確認のうえ、 <command>cupstestppd</command> "
+"ユーティリティをお使いになり、 PPD ファイルが <quote>Adobe PostScript "
+"プリンタ定義ファイル仕様 バージョン 4.3</quote> に準拠しているかどうかを"
+"ご確認ください。ユーティリティが <quote>失敗</quote> を返す場合、 PPD "
+"ファイルには致命的な問題があり、重大な問題を引き起こすだろうことが判明します。"
+"ご利用になる前に、 <command>cupstestppd</command> で報告される問題点は"
+"全て解決しておくべきです。詳しくはプリンタの製造元にお尋ねください。"
 
 #. Tag: title
 #: printing.xml:635
 #, no-c-format
 msgid "Network Printer Connections"
-msgstr ""
+msgstr "ネットワークプリンタの設定"
 
 #. Tag: term
 #: printing.xml:639
 #, no-c-format
 msgid "Identifying Network Problems"
-msgstr ""
+msgstr "ネットワークの問題点の判別"
 
 #. Tag: para
 #: printing.xml:641
@@ -942,24 +1238,27 @@ msgid ""
 "the printer as a local printer. If this works, the problems are related to "
 "the network."
 msgstr ""
+"まずはプリンタをコンピュータに直接接続してみてください。テスト用にローカル"
+"接続してプリンタの動作を確認します。問題なく動作するようであれば、問題点は"
+"ネットワーク側にあることになります。"
 
 #. Tag: term
 #: printing.xml:649
 #, no-c-format
 msgid "Checking the TCP/IP Network"
-msgstr ""
+msgstr "TCP/IP スタックの確認"
 
 #. Tag: para
 #: printing.xml:651
 #, no-c-format
 msgid "The TCP/IP network and name resolution must be functional."
-msgstr ""
+msgstr "TCP/IP ネットワークと名前解決が正しく動作しなければなりません。"
 
 #. Tag: term
 #: printing.xml:682
 #, no-c-format
 msgid "Checking a Remote <command>lpd</command>"
-msgstr ""
+msgstr "リモートの <command>lpd</command> の確認"
 
 #. Tag: para
 #: printing.xml:685
@@ -969,6 +1268,9 @@ msgid ""
 "<command>lpd</command> (port <literal>515</literal> ) on <replaceable>HOST</"
 "replaceable> :"
 msgstr ""
+"下記のコマンドを実行して、 <replaceable>ホスト</replaceable> にある"
+" <command>lpd</command> (ポート <literal>515</literal> ) に接続できるかどうかを"
+"確認します:"
 
 #. Tag: screen
 #: printing.xml:690
@@ -977,6 +1279,8 @@ msgid ""
 "&prompt.user;netcat -z <replaceable>HOST</replaceable> 515 &amp;&amp; echo "
 "ok || echo failed"
 msgstr ""
+"&prompt.user;netcat -z <replaceable>HOST</replaceable> 515 &amp;&amp; echo "
+"ok || echo failed"
 
 #. Tag: para
 #: printing.xml:691
@@ -986,6 +1290,9 @@ msgid ""
 "<command>lpd</command> may not be active or there may be basic network "
 "problems."
 msgstr ""
+"<command>lpd</command> への接続が確立できない (<quote>failed</quote> "
+"と出力される) 場合は、プリンタ側で <command>lpd</command> が正しく"
+"動作していないか、基本的なネットワークの問題であることが分かります。"
 
 #. Tag: para
 #: printing.xml:696
@@ -996,6 +1303,10 @@ msgid ""
 "\">root</systemitem> to query a status report for <replaceable>QUEUE</"
 "replaceable> on remote <replaceable>HOST</replaceable> :"
 msgstr ""
+"<command>lpd</command> サービスへの接続ができた場合は、さらに次のコマンドを"
+" <systemitem class=\"username\">root</systemitem> で実行して、"
+" <replaceable>ホスト</replaceable> 内にある <replaceable>queue</replaceable> "
+"という印刷キューの状態を問い合わせます:"
 
 #. Tag: screen
 #: printing.xml:703
@@ -1004,6 +1315,8 @@ msgid ""
 "&prompt.root;echo -e \"\\004queue\" \\\n"
 "| netcat -w 2 -p 722 <replaceable>HOST</replaceable> 515"
 msgstr ""
+"&prompt.root;echo -e \"\\004queue\" \\\n"
+"| netcat -w 2 -p 722 <replaceable>ホスト</replaceable> 515"
 
 #. Tag: para
 #: printing.xml:705
@@ -1016,12 +1329,19 @@ msgid ""
 "shown in <xref linkend=\"aus.d.lpd\"/> , the problem is caused by the remote "
 "<command>lpd</command> ."
 msgstr ""
+"<command>lpd</command> が何も応答を返さない場合は、プリンタ側で "
+"<command>lpd</command> が正しく動作していないか、基本的なネットワークの"
+"問題であることが分かります。 <command>lpd</command> が応答を返した場合は、"
+"応答には <literal>ホスト</literal> の <literal>queue</literal> でなぜ"
+"印刷ができないのかが表示されるはずです。 <xref linkend=\"aus.d.lpd\"/> のような"
+"応答が届いた場合は、問題はリモート側の <command>lpd</command> にあることが"
+"わかります。"
 
 #. Tag: title
 #: printing.xml:714
 #, no-c-format
 msgid "Error Message from <command>lpd</command>"
-msgstr ""
+msgstr "<command>lpd</command> からのエラーメッセージ"
 
 #. Tag: screen
 #: printing.xml:715
@@ -1032,12 +1352,16 @@ msgid ""
 "printer: spooling disabled\n"
 "printer: printing disabled"
 msgstr ""
+"lpd: your host does not have line printer access\n"
+"lpd: queue does not exist\n"
+"printer: spooling disabled\n"
+"printer: printing disabled"
 
 #. Tag: term
 #: printing.xml:723
 #, no-c-format
 msgid "Checking a Remote <command>cupsd</command>"
-msgstr ""
+msgstr "リモートの <command>cupsd</command> の確認"
 
 #. Tag: para
 #: printing.xml:726
@@ -1049,12 +1373,17 @@ msgid ""
 "network. Make sure to stop your local CUPS daemon before executing the "
 "command."
 msgstr ""
+"CUPS ネットワークサーバは、自分自身が持つキューを 30 秒間隔で UDP ポート"
+" <literal>631</literal> にブロードキャスト (全体通知) します。これを利用する"
+"ことで、ネットワーク内にある CUPS ネットワークサーバを検出することができます。"
+"なお、下記を実行するにあたっては、ローカルの CUPS デーモンを停止してから"
+"実行してください。"
 
 #. Tag: screen
 #: printing.xml:733
 #, no-c-format
 msgid "&prompt.user;netcat -u -l -p 631 &amp; PID=$! ; sleep 40 ; kill $PID"
-msgstr ""
+msgstr "&prompt.user;netcat -u -l -p 631 &amp; PID=$! ; sleep 40 ; kill $PID"
 
 #. Tag: para
 #: printing.xml:734
@@ -1063,18 +1392,20 @@ msgid ""
 "If a broadcasting CUPS network server exists, the output appears as shown in "
 "<xref linkend=\"aus.d.bcast\"/> ."
 msgstr ""
+"ブロードキャストしている CUPS ネットワークサーバが見つかると、"
+" <xref linkend=\"aus.d.bcast\"/> のように出力が現われます。"
 
 #. Tag: title
 #: printing.xml:739
 #, no-c-format
 msgid "Broadcast from the CUPS Network Server"
-msgstr ""
+msgstr "CUPS ネットワークサーバからのブロードキャスト"
 
 #. Tag: screen
 #: printing.xml:740
 #, no-c-format
 msgid "ipp://&subnetII;.202:631/printers/queue"
-msgstr ""
+msgstr "ipp://&subnetII;.202:631/printers/queue"
 
 #. Tag: para
 #: printing.xml:742
@@ -1083,6 +1414,8 @@ msgid ""
 "Take into account that &zseries; Ethernet devices do not receive broadcasts "
 "by default."
 msgstr ""
+"&zseries; のイーサネットデバイスは、既定ではブロードキャストの受信を行なわないように"
+"なっています。"
 
 #. Tag: para
 #: printing.xml:746
@@ -1092,6 +1425,9 @@ msgid ""
 "established to <command>cupsd</command> (port <literal>631</literal> ) on "
 "<replaceable>HOST</replaceable> :"
 msgstr ""
+"下記のコマンドを実行して、 <replaceable>ホスト</replaceable> にある"
+" <command>lpd</command> (ポート <literal>631</literal> ) に接続できるかどうかを"
+"確認します:"
 
 #. Tag: screen
 #: printing.xml:751
@@ -1100,6 +1436,8 @@ msgid ""
 "&prompt.user;netcat -z <replaceable>HOST</replaceable> 631 &amp;&amp; echo "
 "ok || echo failed"
 msgstr ""
+"&prompt.user;netcat -z <replaceable>ホスト</replaceable> 631 &amp;&amp; echo "
+"ok || echo failed"
 
 #. Tag: para
 #: printing.xml:752
@@ -1112,6 +1450,15 @@ msgid ""
 "<replaceable>HOST</replaceable> , provided the respective <command>cupsd</"
 "command> is active and the host accepts queries."
 msgstr ""
+"<command>cupsd</command> への接続が確立できない (<quote>failed</quote> "
+"と出力される) 場合は、プリンタ側で <command>cupsd</command> が正しく"
+"動作していないか、基本的なネットワークの問題であることが分かります。"
+"また、 <command>lpstat -h</command> <replaceable>ホスト</replaceable> -l -t "
+"のように実行すると、 <replaceable>ホスト</replaceable> にある全ての"
+"<command>cupsd</command> のキューに対して、おそらくは非常に長い状態情報が"
+"表示されます。これが問題なく出力されれば、 <command>cupsd</command> は"
+"問題なく動作していない、問い合わせを受け付けることができるようになっている"
+"ものと考えられます。"
 
 #. Tag: para
 #: printing.xml:760
@@ -1122,6 +1469,10 @@ msgid ""
 "single carriage-return character. Nothing should be printed. Possibly, a "
 "blank page may be ejected."
 msgstr ""
+"次のコマンドは、 <replaceable>ホスト</replaceable> 内にある"
+" <replaceable>キュー</replaceable> に対して、改行文字 1 文字を含むだけの"
+"印刷ジョブを受け付けるかどうかを試しています。これで出力されるものは"
+"何もなく、単に空白のページが出力されるはずです。"
 
 #. Tag: screen
 #: printing.xml:766
@@ -1130,12 +1481,14 @@ msgid ""
 "&prompt.user;echo -en \"\\r\" \\\n"
 "| lp -d queue -h <replaceable>HOST</replaceable>"
 msgstr ""
+"&prompt.user;echo -en \"\\r\" \\\n"
+"| lp -d queue -h <replaceable>ホスト</replaceable>"
 
 #. Tag: term
 #: printing.xml:771
 #, no-c-format
 msgid "Troubleshooting a Network Printer or Print Server Machine"
-msgstr ""
+msgstr "ネットワークプリンタや印刷サーバ機のトラブルシューティング"
 
 #. Tag: para
 #: printing.xml:775
@@ -1148,6 +1501,12 @@ msgid ""
 "addressing the printer connected to the print server machine directly with "
 "the TCP socket. See <xref linkend=\"sec.print.net\"/> ."
 msgstr ""
+"印刷サーバ機内で動作しているスプーラは、複数の印刷ジョブを取り扱う必要が"
+"あることから、場合によっては問題が発生することがあります。ただ、この問題は"
+"印刷サーバ機側の問題であることから、この問題を解決する方法はありません。"
+"ただし、印刷サーバ機に接続されているプリンタに TCP で直接アクセスして、"
+"スプーラを使用せずに印刷できる機器もあります。詳しくは <xref linkend=\"sec.print.net\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: printing.xml:783
@@ -1163,6 +1522,16 @@ msgid ""
 "<command>nmap&nbsp;</command> <replaceable>IP-address</replaceable> may "
 "deliver the following output for a print server machine:"
 msgstr ""
+"このような方法でアクセスする場合、印刷サーバ機はデータ転送の形態を変換する"
+" (TCP/IP ネットワークとローカルのプリンタ接続) だけのコンバータとして動作する"
+"ことになります。この方法を使用するには、印刷サーバ機どどのような TCP ポートを"
+"利用できるのかを調べる必要があります。プリンタが接続されていて印刷サーバ機の"
+"電源が投入されている場合、 <systemitem>nmap</systemitem> パッケージ内にある"
+"<command>nmap</command> ユーティリティを使用することで、判断を行なうことが"
+"できます。なお、実行にあたっては、印刷サーバ機の電源を投入してからしばらく"
+"待って実行してください。たとえば <command>nmap&nbsp;</command>"
+" <replaceable>IP アドレス</replaceable> のように実行すると、下記のような"
+"出力が現われます:"
 
 #. Tag: screen
 #: printing.xml:794
@@ -1175,6 +1544,12 @@ msgid ""
 "631/tcp    open        cups\n"
 "9100/tcp   open        jetdirect"
 msgstr ""
+"Port       State       Service\n"
+"23/tcp     open        telnet\n"
+"80/tcp     open        http\n"
+"515/tcp    open        printer\n"
+"631/tcp    open        cups\n"
+"9100/tcp   open        jetdirect"
 
 #. Tag: para
 #: printing.xml:800
@@ -1189,12 +1564,19 @@ msgid ""
 "&nbsp; <replaceable>IP_ADDRESS</replaceable> . This may take some time. For "
 "further information, refer to the man page of <command>nmap</command> ."
 msgstr ""
+"この出力により、印刷サーバ機で TCP ソケットのポート <literal>9100</literal> に"
+"アクセスすることで、プリンタに直接アクセスできることがわかります。既定の"
+" <command>nmap</command> では、 <filename>/usr/share/nmap/nmap-services</filename> "
+"ファイル内に書かれた既知のポートのみをチェックしますが、特定の範囲の全てのポートをチェック"
+"する場合は、 <command>nmap -p&nbsp;</command> <replaceable>開始ポート</replaceable> "
+"- <replaceable>終了ポート</replaceable> &nbsp; <replaceable>IP アドレス</replaceable> " "のように指定してください。これを実行すると、しばらくの時間がかかります。"
+"詳しい情報については、 <command>nmap</command> のマニュアルページをお読みください。"
 
 #. Tag: para
 #: printing.xml:811
 #, no-c-format
 msgid "Enter a command like"
-msgstr ""
+msgstr "あとは下記のようなコマンドを入力します:"
 
 #. Tag: screen
 #: printing.xml:814
@@ -1203,6 +1585,8 @@ msgid ""
 "&prompt.user;echo -en \"\\rHello\\r\\f\" | netcat -w 1 IP-address port\n"
 "cat file | netcat -w 1 IP-address port"
 msgstr ""
+"&prompt.user;echo -en \"\\rHello\\r\\f\" | netcat -w 1 IP_アドレス ポート\n"
+"cat file | netcat -w 1 IP_アドレス ポート"
 
 #. Tag: para
 #: printing.xml:816
@@ -1211,12 +1595,14 @@ msgid ""
 "to send character strings or files directly to the respective port to test "
 "if the printer can be addressed on this port."
 msgstr ""
+"これにより、プリンタがそのポートで動作している場合、文字列やファイルを"
+"特定のポートに送信することができます。"
 
 #. Tag: title
 #: printing.xml:826
 #, no-c-format
 msgid "Defective Printouts without Error Message"
-msgstr ""
+msgstr "エラーメッセージが出力されないものの出力が正しくない場合について"
 
 #. Tag: para
 #: printing.xml:827
@@ -1229,12 +1615,18 @@ msgid ""
 "If the printer cannot print the printer-specific data, select a PPD file "
 "that is more suitable for the printer."
 msgstr ""
+"印刷システムとしては、印刷ジョブは CUPS のバックエンドが宛先 (プリンタ) "
+"にデータを転送し終えた時点で完了となります。宛先での処理が失敗したような"
+"場合 (たとえば特定のプリンタ固有データの印刷ができなかったなど) は、"
+"印刷システム側には何も通知がされませんので、問題に気がつくこともありません。"
+"プリンタが特定の固有データを印刷できない場合は、プリンタに対してより"
+"適切な PPD ファイルを選択してください。"
 
 #. Tag: title
 #: printing.xml:838
 #, no-c-format
 msgid "Disabled Queues"
-msgstr ""
+msgstr "キューの無効化について"
 
 #. Tag: para
 #: printing.xml:839
@@ -1250,12 +1642,20 @@ msgid ""
 "administrator must re-enable printing with the command <command>cupsenable</"
 "command> ."
 msgstr ""
+"何回転送しようとしても宛先にデータを届けることができない場合、 CUPS "
+"バックエンド (<literal>USB</literal> もしくは <literal>socket</literal>) は"
+"印刷システム (<command>cupsd</command>) に対してエラーを通知します。"
+"バックエンド側では、何回データ送信に失敗したらエラーとして扱うのかを"
+"基準として決めています。この場合、それ以降の試行は無駄であるものと判断できるため、"
+" <command>cupsd</command> では対応するキューでの印刷を無効化します。"
+"問題の原因が判明し解決したら、システム管理者側で <command>cupsenable</"
+"command> を実行して、印刷を再度有効化する必要があります。"
 
 #. Tag: title
 #: printing.xml:853
 #, no-c-format
 msgid "CUPS Browsing: Deleting Print Jobs"
-msgstr ""
+msgstr "CUPS ブラウジング: 印刷キューの削除"
 
 #. Tag: para
 #: printing.xml:854
@@ -1273,6 +1673,17 @@ msgid ""
 "print job as completed when it has been forwarded to the server "
 "<command>cupsd</command> ."
 msgstr ""
+"CUPS ネットワークサーバが、キューをクライアントに対してブラウジングで"
+"ブロードキャスト (全体通知) し、クライアント側の <command>cupsd</command> が"
+"動作している場合、クライアント側の <command>cupsd</command> はその"
+"キューに対する印刷ジョブを受け付けるようになり、印刷ジョブが届いたらそれを"
+"サーバ宛に送信するようになります。サーバ側の <command>cupsd</command> が"
+"印刷ジョブを受け取ると、新しいジョブ番号が割り当てられます。このような"
+"仕組みであるため、クライアント側でのジョブ番号とサーバ側でのジョブ番号は、"
+"一般的に異なる値になります。ただし、クライアント側では印刷ジョブを"
+"即時に転送するため、クライアント側でジョブを削除することができない"
+"場合があります。これは、 <command>cupsd</command> が印刷ジョブを転送し終えた"
+"時点で、クライアント側ではジョブを削除してしまうためです。"
 
 #. Tag: para
 #: printing.xml:867
@@ -1284,19 +1695,23 @@ msgid ""
 "sent it completely to the printer). Use the obtained job number to delete "
 "the print job on the server as follows:"
 msgstr ""
+"サーバ側で印刷ジョブを削除するには、まずサーバ側でのジョブ番号を判断する"
+"ため、 <command>lpstat -h &cupsname; -o</command> のようなコマンドを実行"
+"します。ただし、こちらもサーバ側でジョブが完了していない (つまりプリンタからの"
+"首里つょくが完了していない) 場合に限ります。ジョブ番号が判明したら、"
+"あとはサーバ内で印刷ジョブを削除します:"
 
 #. Tag: screen
 #: printing.xml:875
 #, no-c-format
-msgid ""
-"&prompt.user;cancel -h &cupsname; <replaceable>QUEUE-JOBNUMBER</replaceable>"
-msgstr ""
+msgid "&prompt.user;cancel -h &cupsname; <replaceable>QUEUE-JOBNUMBER</replaceable>"
+msgstr "&prompt.user;cancel -h &cupsname; <replaceable>キュー名-ジョブ番号</replaceable>"
 
 #. Tag: title
 #: printing.xml:879
 #, no-c-format
 msgid "Defective Print Jobs and Data Transfer Errors"
-msgstr ""
+msgstr "出力が正しくない場合やデータ転送エラーが発生する場合について"
 
 #. Tag: para
 #: printing.xml:880
@@ -1307,6 +1722,11 @@ msgid ""
 "(or the printer) is switched back on. Defective print jobs must be removed "
 "from the queue with <command>cancel</command> ."
 msgstr ""
+"印刷処理の最中にプリンタの電源を落としてしまったり、コンピュータをシャット"
+"ダウンしてしまったりした場合は、印刷ジョブがキュー内に残ったままになって"
+"しまうことがあります。印刷処理はコンピュータ (もしくはプリンタ) に再度"
+"電源が入った際に再開されます。この場合を含め、出力が正しくない場合は、"
+" <command>cancel</command> でキューから印刷ジョブを削除しなければなりません。"
 
 #. Tag: para
 #: printing.xml:886
@@ -1317,6 +1737,10 @@ msgid ""
 "prints numerous sheets of paper with unintelligible characters. To fix the "
 "problem, follow these steps:"
 msgstr ""
+"印刷ジョブにそもそも不正なデータが入っていた場合や、ホストとプリンタとの"
+"間で通信エラーが発生した場合、プリンタはデータを正しく処理することができず、"
+"意味不明な文字の羅列などの形で、大量のページが出力されてしまったりすることが"
+"あります。このような問題を解決するには、下記の手順で修復してください:"
 
 #. Tag: para
 #: printing.xml:895
@@ -1326,6 +1750,9 @@ msgid ""
 "trays of laser printers. High-quality printers have a button for canceling "
 "the current printout."
 msgstr ""
+"まずは印刷を止めるため、インクジェットプリンタの場合は全ての用紙を取り外し、"
+"レーザープリンタの場合はトレイを開きます。高品質なプリンタであれば、現在の"
+"出力を止めるためのキャンセルボタンが用意されている場合もあります。"
 
 #. Tag: para
 #: printing.xml:902
@@ -1339,6 +1766,12 @@ msgid ""
 "<command>cancel -h &cupsname;</command> <replaceable>QUEUE</replaceable> - "
 "<replaceable>JOBNUMBER</replaceable> ."
 msgstr ""
+"印刷ジョブは、プリンタに対してデータを送信し終えるまで、キューを保持したまま"
+"になりますので、まずは <command>lpstat -o</command> や <command>lpstat -h &cupsname; -o</command> "
+"などを実行して、現在印刷中のキューを判断します。あとは <command>cancel</command> "
+"<replaceable>キュー名</replaceable> - <replaceable>ジョブ番号</replaceable> もしくは "
+"<command>cancel -h &cupsname;</command> <replaceable>キュー名</replaceable> - "
+"<replaceable>ジョブ番号</replaceable> で印刷ジョブを削除します。"
 
 #. Tag: para
 #: printing.xml:914
@@ -1348,6 +1781,9 @@ msgid ""
 "has been deleted from the queue. Check if a CUPS back-end process is still "
 "running for the respective queue and terminate it."
 msgstr ""
+"ただし、キューから印刷ジョブを削除しても、しばらくはプリンタが出力を続けてしまう"
+"場合がありますので、対応する印刷キューの CUPS のバックエンドプロセスを終了"
+"させます。"
 
 #. Tag: para
 #: printing.xml:921
@@ -1356,18 +1792,20 @@ msgid ""
 "Reset the printer completely by switching it off for some time. Then insert "
 "the paper and turn on the printer."
 msgstr ""
+"いったんプリンタの電源を落として、プリンタをリセットします。しばらく経ってから"
+"用紙を入れ、プリンタの電源を入れてください。"
 
 #. Tag: title
 #: printing.xml:930
 #, no-c-format
 msgid "Debugging CUPS"
-msgstr ""
+msgstr "CUPS のデバッグ"
 
 #. Tag: para
 #: printing.xml:931
 #, no-c-format
 msgid "Use the following generic procedure to locate problems in CUPS:"
-msgstr ""
+msgstr "CUPS で問題が発生した場合、その原因を探るための一般的な方法は下記のとおりです:"
 
 #. Tag: para
 #: printing.xml:936
@@ -1376,12 +1814,14 @@ msgid ""
 "Set <command>LogLevel debug</command> in <filename>/etc/cups/cupsd.conf</"
 "filename> ."
 msgstr ""
+"<filename>/etc/cups/cupsd.conf</filename> 内に <command>LogLevel debug</command> "
+"を設定します。"
 
 #. Tag: para
 #: printing.xml:942
 #, no-c-format
 msgid "Stop <command>cupsd</command> ."
-msgstr ""
+msgstr "<command>cupsd</command> を停止します。"
 
 #. Tag: para
 #: printing.xml:947
@@ -1390,18 +1830,20 @@ msgid ""
 "Remove <filename>/var/log/cups/error_log*</filename> to avoid having to "
 "search through very large log files."
 msgstr ""
+"過去の出力の中に埋もれてしまうことを防ぐため、 <filename>/var/log/cups/error_log*</filename> "
+"を削除します。"
 
 #. Tag: para
 #: printing.xml:953
 #, no-c-format
 msgid "Start <command>cupsd</command> ."
-msgstr ""
+msgstr "<command>cupsd</command> を開始します。"
 
 #. Tag: para
 #: printing.xml:958
 #, no-c-format
 msgid "Repeat the action that led to the problem."
-msgstr ""
+msgstr "問題を再現させます。"
 
 #. Tag: para
 #: printing.xml:963
@@ -1410,12 +1852,14 @@ msgid ""
 "Check the messages in <filename>/var/log/cups/error_log*</filename> to "
 "identify the cause of the problem."
 msgstr ""
+"<filename>/var/log/cups/error_log*</filename> の内容を確認して、"
+"問題の原因を探ります。"
 
 #. Tag: title
 #: printing.xml:972
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: printing.xml:973
@@ -1428,3 +1872,10 @@ msgid ""
 "www.suse.com/support/\"/>). Locate the relevant articles with a text search "
 "for <literal>CUPS</literal>.</phrase>"
 msgstr ""
+"&productname; における印刷時の問題について、より深い情報は openSUSE "
+"サポートデータベース (<link xlink:href=\"http://en.opensuse.org/"
+"Portal:Printing\"/> に用意されています。 <phrase os=\"sles;sled\">なお、多くの"
+"問題に対する解決方法が、 SUSE ナレッジベース (<link xlink:href=\"http://"
+"www.suse.com/support/\"/>) 内で提供されています。関連する記事は、"
+" <literal>CUPS</literal> で検索してお探しください。</phrase>"
+
