@@ -4,7 +4,7 @@
 %entities;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.add-ons">
- <title>Installing Add-On Products</title>
+ <title>アドオン製品のインストール</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker>
@@ -12,105 +12,46 @@
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
   <abstract>
-   <para>
-    Add-on products are system extensions. You can install a third party
-    add-on product or a special system extension of &productnamereg; (for
-    example, a CD with support for additional languages or a CD with binary
-    drivers). To install a new add-on, start &yast; and select <menuchoice>
-    <guimenu>Software</guimenu> <guimenu>Add-On Products</guimenu>
-    </menuchoice>. You can select various types of product media, like CD,
-    FTP, USB mass storage devices (such as USB flash drives or disks) or a
-    local directory. You can also work directly with ISO files. To add an
-    add-on as ISO file media, select <guimenu>Local ISO Image</guimenu> then
-    enter the <guimenu>Path to ISO Image</guimenu>. The <guimenu>Repository
-    Name</guimenu> is arbitrary.
-   </para>
+   <para>アドオン製品とは、システムを拡張するためのものです。 &productnamereg; には、サードパーティ製のアドオンのほか、特殊なシステム拡張も用意されています (たとえば追加の言語に対応するための CD や、バイナリドライバの CD などがあります) 。新しいアドオンをインストールするには、 &yast; を起動して <menuchoice> <guimenu>ソフトウエア</guimenu> <guimenu>アドオン製品</guimenu> </menuchoice> を選択してください。アドオン製品のメディアとしては、 CD や FTP, USB マスストレージデバイス (USB メモリや USB ハードディスク) やローカルのディレクトリなど、様々なものを選択することができます。このほか、 ISO ファイルを直接使用することもできます。 ISO ファイルをアドオン製品として使用するには、 <guimenu>ローカル ISO イメージ</guimenu> を選択したあと、 <guimenu>ISO イメージのパス</guimenu> を入力します。 <guimenu>リポジトリ名</guimenu> には、任意の名前を入力します。</para>
   </abstract>
  </info>
  <sect1 xml:id="sec.add-ons.addon">
-  <title>Add-Ons</title>
+  <title>アドオン</title>
 
-  <para>
-   To install a new add-on, proceed as follows:
-  </para>
+  <para>新しいアドオンをインストールするには、下記の手順で行ないます:</para>
 
   <procedure>
    <step>
-    <para>
-     In &yast; select <menuchoice> <guimenu>Software</guimenu>
-     <guimenu>Add-On Products</guimenu> </menuchoice> to see an overview of
-     already installed add-on products.
-    </para>
+    <para>&yast; で <menuchoice> <guimenu>ソフトウエア</guimenu> <guimenu>アドオン製品</guimenu> </menuchoice> を選択します。既にインストールされているアドオン製品の一覧が表示されます。</para>
    </step>
    <step>
-    <para>
-     To install a new add-on product, click <guimenu>Add</guimenu>.
-    </para>
+    <para>新しいアドオン製品をインストールするには、 <guimenu>追加</guimenu> を押します。</para>
    </step>
    <step>
-    <para>
-     From the list of available <guimenu>Media Types</guimenu> specify the
-     type matching your repository.
-    </para>
+    <para>表示されたメディアタイプの一覧から、リポジトリの種類に該当するものを選択します。</para>
    </step>
    <step>
-    <para>
-     To add a repository from a removable medium, choose the relevant option
-     and insert the medium or connect the USB device to the machine,
-     respectively.
-    </para>
+    <para>リムーバブルメディアからリポジトリを追加するには、メディアタイプを選択したあとメディアを挿入するか、マシンに USB デバイスを接続します。</para>
    </step>
    <step>
-    <para>
-     You can choose to <guimenu>Download Repository Description
-     Files</guimenu> now. If the option is unchecked, &yast; will
-     automatically download the files later, if needed. Click
-     <guimenu>Next</guimenu> to proceed.
-    </para>
+    <para>なお、 <guimenu>リポジトリの説明をダウンロード</guimenu> を選択することもできます。このオプションを選択していない場合、必要であれば &yast; は後からファイルをダウンロードするようになります。 <guimenu>次へ</guimenu> を押して進めます。</para>
    </step>
    <step>
-    <para>
-     When adding a repository from the network, enter the data you are
-     prompted for. Continue with <guimenu>Next</guimenu>.
-    </para>
+    <para>ネットワークからリポジトリを追加する場合は、それぞれ必要なデータの入力を求められます。入力が終わったら <guimenu>次へ</guimenu> を押します。</para>
    </step>
    <step>
-    <para>
-     Depending on the repository you have added, you may be asked if you
-     want to import the &gpg; key with which it is signed or asked to agree to
-     a license.
-    </para>
-    <para>
-     After confirming these messages, &yast; will download and parse the
-     metadata and add the repository to the list of <guimenu>Configured
-     Repositories.</guimenu>.
-    </para>
+    <para>追加したリポジトリの種類によって、 &gpg; 署名鍵の取り込みを求められたり、ライセンスへの同意を求められたりします。</para>
+    <para>これらのメッセージへの確認が完了すると、 &yast; はメタデータをダウンロードして処理する作業を行ないます。これが完了すると、 <guimenu>設定済みのリポジトリ</guimenu> 内に表示されるようになります。</para>
    </step>
    <step>
-    <para>
-     If needed, adjust the repository <guimenu>Properties</guimenu> as
-     described in <xref linkend="sec.yast-software.instsource.manage"/> or confirm
-     your changes with <guimenu>OK</guimenu> to close the configuration
-     dialog.
-    </para>
+    <para>必要であれば、 <xref linkend="sec.yast-software.instsource.manage"/> の手順に従って、リポジトリの設定を変更することができます。設定ダイアログでは、必要な変更を行なった後、 <guimenu>OK</guimenu> を押すと適用することができます。</para>
    </step>
    <step>
-    <para>
-     After having successfully added the repository for the add-on media,
-     the software manager starts and you can install packages. Refer to
-     <xref linkend="cha.yast-software"/> for details.
-    </para>
+    <para>アドオン製品に対するリポジトリの追加が終わったら、あとはソフトウエアマネージャを起動して、必要なパッケージをインストールします。詳しくは <xref linkend="cha.yast-software"/> をお読みください。</para>
    </step>
   </procedure>
  </sect1>
  <sect1 xml:id="sec.add-ons.drivers">
-  <title>Binary Drivers</title>  <para>
-   Some hardware needs binary-only drivers to function properly. If you have
-   such hardware, refer to the release notes for more information about
-   availability of binary drivers for your system. To read the release
-   notes, open &yast; and select <menuchoice>
-   <guimenu>Miscellaneous</guimenu> <guimenu>Release Notes</guimenu>
-   </menuchoice>.
-  </para>
+  <title>バイナリドライバ</title>  <para>ハードウエアによっては、正しく動作させるためのバイナリドライバ (ソースコードが公開されていないドライバ) を使用する必要があるものがあります。そのようなハードウエアをお持ちの場合は、お使いのシステムに対応するバイナリドライバが提供されているかどうかを、リリースノートなどでご確認ください。リリースノートは、 &yast; を起動して <menuchoice> <guimenu>その他</guimenu> <guimenu>リリースノート</guimenu> </menuchoice> を選択すると、読むことができます。</para>
  </sect1>
 </chapter>
