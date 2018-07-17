@@ -1,26 +1,29 @@
+# translation of opensuse_update.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: opensuse_update.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-17 18:26+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: opensuse_update.xml:11
 #, no-c-format
 msgid "Upgrading the System and System Changes"
-msgstr ""
+msgstr "システムのアップグレードとシステムの変更"
 
 #. Tag: para
 #: opensuse_update.xml:14
@@ -35,12 +38,19 @@ msgid ""
 "see <xref linkend=\"sec.upgrade.yast\"/> and <xref linkend=\"sec.update."
 "zypper\"/> ."
 msgstr ""
+"既存のシステムは、再インストールを行なうことなくアップグレードすることができます。"
+"アップグレードには 2 種類の方式があります。 1 つは <emphasis>個別のソフトウエア"
+"パッケージの更新</emphasis> 、もう 1 つは <emphasis>システム全体のアップグレード</emphasis> "
+"です。個別のソフトウエアパッケージの更新については、 <xref linkend=\"cha.yast-software\"/> "
+"と <xref linkend=\"cha.onlineupdate.you\"/> で説明しています。また、本章では"
+" 2 種類のアップグレード方法を説明しています。 1 つは <xref linkend=\"sec.upgrade.yast\"/> "
+"で、もう 1 つは <xref linkend=\"sec.update.zypper\"/> です。"
 
 #. Tag: title
 #: opensuse_update.xml:27
 #, no-c-format
 msgid "Upgrading the System"
-msgstr ""
+msgstr "システムのアップグレード"
 
 #. Tag: title
 #: opensuse_update.xml:29
@@ -49,6 +59,8 @@ msgid ""
 "<productname>&productname;</productname> <productnumber>&productnumber;</"
 "productnumber> is only available as 64-bit version"
 msgstr ""
+"<productname>&productname;</productname> <productnumber>&productnumber;</"
+"productnumber> における 64 ビット版のみの提供について"
 
 #. Tag: para
 #: opensuse_update.xml:34
@@ -62,6 +74,14 @@ msgid ""
 "consider switching to <link xlink:href=\"https://en.opensuse.org/Portal:"
 "Tumbleweed\"> &opensuse; Tumbleweed</link> ."
 msgstr ""
+"<productname>&productname;</productname> <productnumber>&productnumber;</"
+"productnumber> は 64 ビット版のみの提供となっています。また、 32 ビット版の"
+"インストール環境から 64 ビット版への移行についても、サポート対象外となって"
+"おります。 <xref linkend=\"art.opensuse.installquick\"/> および"
+"<xref linkend=\"cha.install\"/> にある手順に従って、お使いのコンピュータに"
+"新規に <productname>&productname;</productname> をインストールし直すか、"
+"<link xlink:href=\"https://ja.opensuse.org/Portal:Tumbleweed\"> "
+"&opensuse; Tumbleweed</link> への切り替えをお勧めします。"
 
 #. Tag: para
 #: opensuse_update.xml:46
@@ -71,6 +91,9 @@ msgid ""
 "online at <link xlink:href=\"https://doc.opensuse.org/release-notes/\"> "
 "&productname; Release Notes</link> ."
 msgstr ""
+"リリースノートはインストールメディア内に添付されているほか、"
+" <link xlink:href=\"https://doc.opensuse.org/release-notes/\"> "
+"&productname; リリースノート</link> からも読むことができるようになっています。"
 
 #. Tag: para
 #: opensuse_update.xml:51
@@ -84,12 +107,18 @@ msgid ""
 "depend on your particular partitioning profile, the software selected, and "
 "the version numbers of the system."
 msgstr ""
+"ソフトウエアはバージョンが上がるたびに <quote>成長</quote> し、必要なサイズが増大していくものです。"
+"そのため、アップグレードを行なう前に、あらかじめ <command>df</command> を利用して"
+"空き容量を確認しておくことをお勧めします。ディスクの空き容量が少ない場合は、"
+"まずお使いのデータ類をバックアップしてから、パーティションを作成し直すことを"
+"お勧めします。各パーティションに必要な容量は、インストールされているソフトウエア"
+"や環境によって大きく異なりますので、一般的な値というものは特にありません。"
 
 #. Tag: title
 #: opensuse_update.xml:62
 #, no-c-format
 msgid "Preparations"
-msgstr ""
+msgstr "準備作業"
 
 #. Tag: para
 #: opensuse_update.xml:63
@@ -104,6 +133,14 @@ msgid ""
 "<systemitem class=\"username\">root</systemitem> . Only <systemitem class="
 "\"username\">root</systemitem> has read permission for all local files."
 msgstr ""
+"アップグレードを行なう前に、まずはデータを保全するため、別のメディア (リムーバブル"
+"ハードディスクや USB メモリなど) に設定ファイルをコピーします。一般的には、"
+"設定ファイルは <filename>/etc</filename> 内にありますが、 <filename>/var</filename> "
+"内に存在する場合もあります。また、バックアップメディアに <filename>/home</filename> "
+"( <envar>HOME</envar> ディレクトリ) 以下のファイルをコピーしてもかまいません。"
+"なお、バックアップにあたっては、 <systemitem class=\"username\">root</systemitem> "
+"で作業を行なう必要があります。これは、全てのローカルファイルを読み込むことができる"
+"のは、 <systemitem class=\"username\">root</systemitem> だけであるためです。"
 
 #. Tag: para
 #: opensuse_update.xml:75
@@ -114,12 +151,16 @@ msgid ""
 "<xref linkend=\"aus.update.df\"/> , the root partition to write down is "
 "<filename>/dev/sda3</filename> (mounted as <filename>/</filename> )."
 msgstr ""
+"アップグレードを始める前に、次はルートパーティションを確認します。 <command>df&nbsp;/</command> "
+"コマンドを実行すると、ルートパーティションの名前が表示されます。 <xref linkend=\"aus.update.df\"/> "
+"の例では、 <filename>/dev/sda3</filename> がルートパーティションです"
+" (<filename>/</filename> にマウントされているため) 。"
 
 #. Tag: title
 #: opensuse_update.xml:84
 #, no-c-format
 msgid "List with <command>df -h</command>"
-msgstr ""
+msgstr "<command>df -h</command> の出力結果"
 
 #. Tag: screen
 #: opensuse_update.xml:85
@@ -132,12 +173,18 @@ msgid ""
 "/dev/sda1       39G  1.6G   37G   4% /windows/C\n"
 "/dev/sda2      4.6G  2.6G  2.1G  57% /windows/D"
 msgstr ""
+"ファイルシス  サイズ  使用  残り 使用% マウント位置\n"
+"/dev/sda3       74G   22G   53G  29% /\n"
+"udev           252M  124K  252M   1% /dev\n"
+"/dev/sda5      116G  5.8G  111G   5% /home\n"
+"/dev/sda1       39G  1.6G   37G   4% /windows/C\n"
+"/dev/sda2      4.6G  2.6G  2.1G  57% /windows/D"
 
 #. Tag: title
 #: opensuse_update.xml:95
 #, no-c-format
 msgid "Possible Problems"
-msgstr ""
+msgstr "発生しうる問題"
 
 #. Tag: para
 #: opensuse_update.xml:96
@@ -149,12 +196,17 @@ msgid ""
 "must resort to copying back your backup data. Check the following issues "
 "before starting the system update."
 msgstr ""
+"既定のシステムを以前のバージョンから本バージョンにアップグレードする際、"
+" &yast; は様々な作業を実施します。お使いの環境のカスタマイズ状況によっては、"
+"いくつかの手順 (もしくはアップグレード処理全体) が失敗し、バックアップデータから"
+"書き戻さなければならない状況になるかもしれません。システムのアップグレードを"
+"行なう前に、下記の点をご確認ください。"
 
 #. Tag: title
 #: opensuse_update.xml:104
 #, no-c-format
 msgid "Checking passwd and group in /etc"
-msgstr ""
+msgstr "/etc 内の passwd, group ファイルの確認"
 
 #. Tag: para
 #: opensuse_update.xml:105
@@ -166,12 +218,17 @@ msgid ""
 "<command>grpck</command> as <systemitem class=\"username\">root</systemitem> "
 "to eliminate any reported errors."
 msgstr ""
+"システムのアップグレードを始める前に、 <filename>/etc/passwd</filename> および"
+" <filename>/etc/group</filename> ファイル内に文法エラーがないことをご確認ください。"
+"文法エラーをチェックするには、 <systemitem class=\"username\">root</systemitem> で"
+" <command>pwck</command> および <command>grpck</command> の各検証ユーティリティを"
+"お使いになり、エラーが表示された場合は修正を行なってください。"
 
 #. Tag: title
 #: opensuse_update.xml:116
 #, no-c-format
 msgid "Shut Down Virtual Machines"
-msgstr ""
+msgstr "仮想マシンのシャットダウン"
 
 #. Tag: para
 #: opensuse_update.xml:117
@@ -181,12 +238,16 @@ msgid ""
 "properly shut down all running &vmguest;s prior to the update. Otherwise you "
 "may not be able to access the guests after the update."
 msgstr ""
+"&kvm; や &xen; を利用して、お使いのマシンを &vmhost; として動作させている場合は、"
+"アップグレードを行なう前に全ての &vmguest; を正しくシャットダウンしてください。"
+"シャットダウンを行なっておかないと、更新後にゲストにアクセスできなくなってしまう"
+"場合があります。"
 
 #. Tag: title
 #: opensuse_update.xml:124
 #, no-c-format
 msgid "PostgreSQL"
-msgstr ""
+msgstr "PostgreSQL"
 
 #. Tag: para
 #: opensuse_update.xml:125
@@ -197,12 +258,17 @@ msgid ""
 "databases. See the manual page of <command>pg_dump</command> . This is only "
 "necessary if you actually used PostgreSQL prior to your update."
 msgstr ""
+"<phrase role=\"productname\">PostgreSQL</phrase> "
+"( <systemitem class=\"resource\">postgres</systemitem> パッケージ) を"
+"動作させている場合は、データベースをダンプしておいてください。詳しくは"
+" <command>pg_dump</command> のマニュアルページをお読みください。ただし、"
+"この作業は更新前の時点から PostgreSQL を使用していた場合に限って必要となる作業です。"
 
 #. Tag: title
 #: opensuse_update.xml:135
 #, no-c-format
 msgid "Upgrading with YaST"
-msgstr ""
+msgstr "YaST を利用したアップグレード"
 
 #. Tag: para
 #: opensuse_update.xml:136
@@ -211,6 +277,8 @@ msgid ""
 "Following the preparation procedure outlined in <xref linkend=\"cha.update-"
 "preparation\"/> , you can now upgrade your system:"
 msgstr ""
+"<xref linkend=\"cha.update-preparation\"/> に示す手順で準備を行なったら、"
+"あとはシステムのアップグレードを行なうだけです:"
 
 #. Tag: para
 #: opensuse_update.xml:142
@@ -219,6 +287,8 @@ msgid ""
 "Optionally, prepare an installation server. For background information, see "
 "<xref linkend=\"sec.deployment.instserver.sles9\"/> ."
 msgstr ""
+"必要であれば、インストールサーバをご用意ください。背景となる情報について、詳しくは"
+" <xref linkend=\"sec.deployment.instserver.sles9\"/> をお読みください。"
 
 #. Tag: para
 #: opensuse_update.xml:150
@@ -230,6 +300,10 @@ msgid ""
 "slightly different boot screen is used. Secure boot on UEFI machines is "
 "supported."
 msgstr ""
+"まずは &productname; の DVD メディアをドライブに挿入し、コンピュータを再起動して"
+"インストールシステムを起動します。従来型の BIOS が搭載されたマシンの場合、下記の"
+"ようなグラフィカルな起動画面が表示されます。 UEFI が搭載されたマシンの場合は、"
+"下記とは少し異なる画面になります。 UEFI マシンでの Secure Boot にも対応しています。"
 
 #. Tag: para
 #: opensuse_update.xml:157
@@ -240,6 +314,10 @@ msgid ""
 "\"sec.boot_parameters.screen\"/> or <xref linkend=\"sec.boot_parameters.uefi"
 "\"/> for more information about changing boot parameters."
 msgstr ""
+"<keycap>F2</keycap> を押して、インストールシステムで使用する言語を選択します。"
+"キーボードレイアウトについても、言語にあわせて自動設定されます。起動パラメータの"
+"変更方法について、詳しくは <xref linkend=\"sec.boot_parameters.screen\"/> と"
+" <xref linkend=\"sec.boot_parameters.uefi\"/> をお読みください。"
 
 #. Tag: para
 #: opensuse_update.xml:176
@@ -249,6 +327,9 @@ msgid ""
 "function=\"enter\"/> . This boots the system and loads the &productname; "
 "installer. Do not select <guimenu>Installation</guimenu> ."
 msgstr ""
+"起動画面では <guimenu>アップグレード</guimenu> を選択して <keycap "
+"function=\"enter\"/> を押します。システムが起動し、 &productname; のインストール"
+"システムが開始します。なお、 <guimenu>インストール</guimenu> は選択しないでください。"
 
 #. Tag: para
 #: opensuse_update.xml:183
@@ -258,6 +339,9 @@ msgid ""
 "initialized with the language settings you have chosen on the boot screen. "
 "Change them here, if necessary."
 msgstr ""
+"起動時の画面で選択した <guimenu>言語</guimenu> と <guimenu>キーボードレイアウ"
+"ト</guimenu> が選択された状態で始まります。ここでも言語とキーボードレイアウトを変更"
+"することができます。"
 
 #. Tag: para
 #: opensuse_update.xml:188
@@ -267,6 +351,9 @@ msgid ""
 "on the boot screen. <guimenu>License Translations</guimenu> are available. "
 "Proceed with <guimenu>Next</guimenu> ."
 msgstr ""
+"ここでは、ライセンス同意の文書をお読みください。文書は選択した言語で表示され"
+"ます。他の言語で読みたい場合は、 <guimenu>ライセンス翻訳</guimenu> 内で選択し"
+"てください。読み終わりましたら、 <guimenu>次へ</guimenu> で先に進みます。"
 
 #. Tag: para
 #: opensuse_update.xml:205
@@ -279,12 +366,20 @@ msgid ""
 "preparation\"/> ). &yast; reads the old <filename>fstab</filename> on this "
 "partition to analyze and mount the file systems listed there."
 msgstr ""
+"&yast; はまず、ルートパーティションが複数存在していないかどうかを確認します。"
+"ルートパーティションが 1 つしか見つからなかった場合は、そのまま次の手順に進みます。"
+"複数のルートパーティションが見つかった場合は、それらが表示されますので、"
+"適切なパーティションを選択して <guimenu>次へ</guimenu> を"
+"押します (<xref linkend=\"cha.update-preparation\"/> の環境では、"
+" <filename>/dev/sda3</filename> を選択します) 。 &yast; はパーティション内に"
+"ある既存の <filename>fstab</filename> ファイルを読み込み、設定されている"
+"その他のパーティションをマウントします。"
 
 #. Tag: title
 #: opensuse_update.xml:238
 #, no-c-format
 msgid "Release Notes"
-msgstr ""
+msgstr "リリースノート"
 
 #. Tag: para
 #: opensuse_update.xml:239
@@ -293,6 +388,8 @@ msgid ""
 "From this point on, the Release Notes can be viewed from any screen during "
 "the installation process by selecting <guimenu>Release Notes</guimenu> ."
 msgstr ""
+"これ以降の手順では、表示された <guimenu>リリースノート</guimenu> ボタンを押す"
+"ことで、リリースノートを表示することができるようになります。"
 
 #. Tag: para
 #: opensuse_update.xml:247
@@ -304,6 +401,11 @@ msgid ""
 "be installed from DVD and you can optionally enable the default online "
 "repositories can be chosen in the next step."
 msgstr ""
+"次に &yast; は <guimenu>以前利用していたリポジトリ</guimenu> の一覧を表示します。"
+"既定では、全てのリポジトリが削除されるように設定されます。独自のリポジトリを"
+"設定していない場合は、設定を変更せずそのまま進めてください。このまま進めれば"
+"アップグレード用のパッケージは DVD からインストールされますし、必要であれば"
+"次の手順で既定のオンラインリポジトリを追加することもできます。"
 
 #. Tag: para
 #: opensuse_update.xml:254
@@ -312,6 +414,8 @@ msgid ""
 "If you have had added custom repositories, for example from the &opensuse; "
 "Build Service, you have two choices:"
 msgstr ""
+"独自のリポジトリ、たとえば &opensuse; Build Service のリポジトリを設定している"
+"ような場合は、下記の 2 つの方法をとることができます:"
 
 #. Tag: para
 #: opensuse_update.xml:260
@@ -322,6 +426,10 @@ msgid ""
 "this method if no version of the repository that matches\tthe new &opensuse; "
 "Leap version, is available."
 msgstr ""
+"\tリポジトリを <literal>削除</literal> の状態のままにします。この方式をとると、"
+"それらのリポジトリからインストールされたソフトウエアについては、アップグレードの"
+"処理時に削除されることになります。アップグレード先の新しい &opensuse; 向けに、"
+"該当するリポジトリが提供されていないような場合に、有効な手段となります。"
 
 #. Tag: para
 #: opensuse_update.xml:268
@@ -334,6 +442,12 @@ msgid ""
 "<guimenu>Toggle Status</guimenu> until it is set to\t <guimenu>Enable</"
 "guimenu> ."
 msgstr ""
+"\tリポジトリを手作業で更新して、新しいバージョンに対応したリポジトリを使用するように"
+"します。この方法は、アップグレード先の新しい &opensuse; 向けに、リポジトリが"
+"提供されている場合に有効な手段です。対象のリポジトリを選択して、 <guimenu>変更</guimenu> "
+"を押します。 URL の入力を求められますので、新しいバージョンに対応したリポジトリの"
+" URL を入力します。あとは <guimenu>有効化／無効化</guimenu> で <guimenu>有効</guimenu> "
+"となるように設定します。"
 
 #. Tag: para
 #: opensuse_update.xml:278
@@ -343,6 +457,10 @@ msgid ""
 "absolutely sure they will also work with the new &opensuse; version. If not, "
 "the system may be unstable or not work at all."
 msgstr ""
+"なお、新しいバージョンの &opensuse; で間違いなく動作することが分かっている場合を"
+"除いて、従来のバージョンに対応したリポジトリをそのまま使用してはなりません。"
+"従来のバージョンに対応したリポジトリを使い続けてしまうと、システムが不安定に"
+"なってしまう場合があるほか、場合によっては全く動作しなくなってしまうこともあります。"
 
 #. Tag: para
 #: opensuse_update.xml:327
@@ -354,6 +472,11 @@ msgid ""
 "is strongly recommended&mdash;this will ensure that you get the latest "
 "package versions available, including ll security updates and fixes."
 msgstr ""
+"インターネットへの接続が利用できる場合、必要であればオンラインリポジトリを"
+"設定することができます。ただし、全てのパッケージが正しくアップグレードできるよう、"
+"以前に利用していたリポジトリは全て有効化してください。また、更新リポジトリに"
+"ついては、必ず有効化しておくことを強くお勧めします。これは、セキュリティ更新や"
+"その他の修正など、様々な最新のパッケージを受け取ることができるためです。"
 
 #. Tag: para
 #: opensuse_update.xml:346
@@ -363,6 +486,8 @@ msgid ""
 "the license agreement for the online repositories with <guimenu>Next</"
 "guimenu> ."
 msgstr ""
+"<guimenu>次へ</guimenu> を押して進めると、オンラインリポジトリのライセンス"
+"同意が表示されます。 <guimenu>次へ</guimenu> を押して進めてください。"
 
 #. Tag: para
 #: opensuse_update.xml:354
@@ -373,12 +498,17 @@ msgid ""
 "current configuration is listed for each setting. To change it, click the "
 "headline."
 msgstr ""
+"<guimenu>インストール設定</guimenu> では、その他のインストール設定とその設定"
+"内容が一覧で表示されます。必要であれば、ここから変更することもできます。変更"
+"を行ないたい場合は、それぞれの項目名のリンク (下線が引かれた箇所) を押してく"
+"ださい。また、ファイアウオールや SSH などの設定については、設定項目内のリンク"
+"を押すことで、直接変更できるものもあります。"
 
 #. Tag: term
 #: opensuse_update.xml:362
 #, no-c-format
 msgid "<guimenu>System</guimenu>"
-msgstr ""
+msgstr "<guimenu>システム</guimenu>"
 
 #. Tag: para
 #: opensuse_update.xml:365
@@ -389,12 +519,16 @@ msgid ""
 "guimenu> &mdash;see <xref linkend=\"sec.yast_install.proposal.system\"/> for "
 "more information."
 msgstr ""
+"<guimenu>システム</guimenu> を押すと、詳細なハードウエア情報を表示することが"
+"できます。ここでは <guimenu>カーネル設定</guimenu> を押して詳細な設定を行なう"
+"ことができます。詳しくは <xref linkend=\"sec.yast_install.proposal.system\"/"
+"> をお読みください。"
 
 #. Tag: term
 #: opensuse_update.xml:374
 #, no-c-format
 msgid "<guimenu>Update Options</guimenu>"
-msgstr ""
+msgstr "<guimenu>更新オプション</guimenu>"
 
 #. Tag: para
 #: opensuse_update.xml:377
@@ -405,6 +539,10 @@ msgid ""
 "patterns. Each pattern contains several software packages needed for "
 "specific functions (for example, Web and LAMP server or a print server)."
 msgstr ""
+"既定では、 &yast; は選択されているパターンに従って、完全な <guimenu>新しい"
+"ソフトウエアと機能をインストールして更新</guimenu> を行ないます。それぞれの"
+"パターンには、それを実行するのに必要な複数のソフトウエアパッケージが含まれて"
+"います (たとえば Web および LAMP サーバ や 印刷サーバ など) 。"
 
 #. Tag: para
 #: opensuse_update.xml:384
@@ -413,12 +551,14 @@ msgid ""
 "Here you can change the package selection or change the <guimenu>Update "
 "Mode</guimenu> to <guimenu>Only Update Installed Packages</guimenu> ."
 msgstr ""
+"ここではパッケージの選択を変更することができるほか、 <guimenu>更新モード</guimenu> "
+"を <guimenu>インストール済みのパッケージのみ更新</guimenu> にすることができます。"
 
 #. Tag: term
 #: opensuse_update.xml:392
 #, no-c-format
 msgid "<guimenu>Packages</guimenu>"
-msgstr ""
+msgstr "<guimenu>パッケージ</guimenu>"
 
 #. Tag: para
 #: opensuse_update.xml:395
@@ -429,6 +569,10 @@ msgid ""
 "contents and search for individual packages. See <xref linkend=\"cha.yast-"
 "software\"/> for more information."
 msgstr ""
+"<guimenu>パッケージ</guimenu> 画面を利用することで、パッケージの選択をさらに"
+"調整することができます。パターンの選択だけでなく、個別のパッケージのインストール"
+"を設定することもできます。詳しくは <xref linkend=\"cha.yast-software\"/> を"
+"お読みください。"
 
 #. Tag: para
 #: opensuse_update.xml:401
@@ -437,12 +581,14 @@ msgid ""
 "If you intend to enhance your system, it is recommended to finish the "
 "upgrade first and then install additional software."
 msgstr ""
+"お使いのシステムの拡張を行なう場合は、まず先にアップグレードを完了させてから、"
+"その後に追加のソフトウエアをインストールすることをお勧めします。"
 
 #. Tag: term
 #: opensuse_update.xml:408
 #, no-c-format
 msgid "<guimenu>Backup</guimenu>"
-msgstr ""
+msgstr "<guimenu>バックアップ</guimenu>"
 
 #. Tag: para
 #: opensuse_update.xml:411
@@ -452,12 +598,16 @@ msgid ""
 "Selecting backups slows down the upgrade process. Use this option if you do "
 "not have a recent system backup."
 msgstr ""
+"様々なシステムコンポーネントのバックアップを作成する機能が用意されています。"
+"バックアップを行なうように選択すると、アップグレードの処理にかかる時間が伸びます"
+"ので、あらかじめご注意ください。このオプションは、直近のシステムバックアップを"
+"採取していないような場合に必要な設定です。"
 
 #. Tag: term
 #: opensuse_update.xml:419
 #, no-c-format
 msgid "<guimenu>Language</guimenu>"
-msgstr ""
+msgstr "<guimenu>言語</guimenu>"
 
 #. Tag: para
 #: opensuse_update.xml:422
@@ -468,12 +618,15 @@ msgid ""
 "guimenu> . Optionally, you can adjust the keyboard layout and timezone to "
 "the selected primary language."
 msgstr ""
+"ここでは、 <guimenu>第一言語</guimenu> と追加の <guimenu>第二言語</guimenu> "
+"をそれぞれ変更することができます。また、必要であればキーボードレイアウトや"
+"タイムゾーンを第一言語にあわせて設定することもできます。"
 
 #. Tag: term
 #: opensuse_update.xml:431
 #, no-c-format
 msgid "<guimenu>Keyboard Layout</guimenu>"
-msgstr ""
+msgstr "<guimenu>キーボードレイアウト</guimenu>"
 
 #. Tag: para
 #: opensuse_update.xml:434
@@ -482,12 +635,14 @@ msgid ""
 "Here you can change the keyboard layout and adjust additional "
 "<guimenu>Expert Keyboard Settings</guimenu> ."
 msgstr ""
+"ここではキーボードレイアウトを変更することができるほか、"
+" <guimenu>熟練者向け設定</guimenu> を利用して細かい調整を行なうこともできます。"
 
 #. Tag: term
 #: opensuse_update.xml:441
 #, no-c-format
 msgid "<guimenu>Booting</guimenu>"
-msgstr ""
+msgstr "<guimenu>起動</guimenu>"
 
 #. Tag: para
 #: opensuse_update.xml:444
@@ -497,6 +652,9 @@ msgid ""
 "only recommended if really needed. Refer to <xref linkend=\"cha.grub2\"/> "
 "for details."
 msgstr ""
+"このセクションでは、ブートローダの設定を表示します。既定値の変更は、どうしても"
+"必要な場合を除いて、お勧めできません。詳しくは <xref linkend=\"cha.grub2\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: opensuse_update.xml:464
@@ -509,6 +667,12 @@ msgid ""
 "to this point no changes have been made to your system. After you click "
 "<guimenu>Update</guimenu> a second time, the upgrade process starts."
 msgstr ""
+"<guimenu>インストール設定</guimenu> での設定作業が完了したら、最後に"
+" <guimenu>更新</guimenu> を押すと更新処理を始めることができます。"
+"なお、ソフトウエアの選択によっては、インストールを行なう前にライセンスへの"
+"同意を求められることがあります。また、 <guimenu>更新開始</guimenu> を"
+"押すまでは、システムに対して何も変更を加えません。 <guimenu>更新開始</guimenu> "
+"を押すと、実際のアップグレード処理が始まります。"
 
 #. Tag: para
 #: opensuse_update.xml:486
@@ -521,6 +685,12 @@ msgid ""
 "notes, if wanted. <!-- Click <guimenu>Finish</guimenu> to write the &yast; "
 "configuration. -->"
 msgstr ""
+"基本部分のアップグレードインストールが完了すると、 &yast; はシステムを再起動します。"
+"<!-- test the Internet connection as offered by the &yast; dialog. --> "
+"最後に、 &yast; は <phrase os=\"sles;sled\"> &ncc; 設定で提供している</phrase> 残りの"
+"ソフトウエアがあれば、それらを更新します。また、アップグレード中はリリース"
+"ノートを読むこともできます。 <!-- Click <guimenu>Finish</guimenu> to write the &yast; "
+"configuration. -->"
 
 #. Tag: para
 #: opensuse_update.xml:497
@@ -529,12 +699,14 @@ msgid ""
 "For more information about the &ncc;, see <xref linkend=\"sec.yast_install."
 "scc_registration\"/> ."
 msgstr ""
+"&ncc; について、詳しくは <xref linkend=\"sec.yast_install.scc_registration\"/> "
+"をお読みください。"
 
 #. Tag: title
 #: opensuse_update.xml:506
 #, no-c-format
 msgid "Updating Individual Packages"
-msgstr ""
+msgstr "個別のパッケージのアップグレード"
 
 #. Tag: para
 #: opensuse_update.xml:507
@@ -544,6 +716,9 @@ msgid ""
 "individual packages. From this point on, however, it is your responsibility "
 "to ensure that your system remains consistent."
 msgstr ""
+"システム全体のアップグレードではなく、個別のパッケージに対して更新を行なう"
+"こともできます。ただし、個別のパッケージをアップグレードした場合は、システム"
+"が安定して動作することを保証できませんので、ご自身の責任のもとお使いください。"
 
 #. Tag: para
 #: opensuse_update.xml:512
@@ -560,12 +735,20 @@ msgid ""
 "libraries</emphasis> . Updating these programs and applications in the "
 "running system may lead to system instability."
 msgstr ""
+"<xref linkend=\"cha.yast-software\"/> で説明している手順で &yast; のソフトウエア"
+"管理ツールを起動します。すると、インストール済みのパッケージで、より新しいバージョンの"
+"存在するものに対しては、 <guimenu>インストール済み (利用可能)</guimenu> の列が、"
+"青色の表示になります。また、システムの動作全体に影響のあるパッケージの場合は、"
+" &yast; がその旨を警告します。このようなパッケージは、更新モードでのみ"
+"更新されるべきものです。たとえば多くのパッケージに <emphasis>共有ライブラリ</emphasis> "
+"が含まれていますが、これらがそれに該当します。これらのプログラムや"
+"アプリケーションの更新を行なうと、システムの安定性が損なわれる可能性があります。"
 
 #. Tag: title
 #: opensuse_update.xml:527
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: opensuse_update.xml:529
@@ -576,6 +759,10 @@ msgid ""
 "individual packages can be accessed using the &yast; Online Update. For more "
 "information, see <xref linkend=\"cha.onlineupdate.you\"/> ."
 msgstr ""
+"様々なバージョンにおける一般的な問題や特殊な問題が、オンラインで公開されています。"
+"詳しくは下記のリンクをお読みください。また、個別のパッケージに対する重要な"
+"更新情報については、 &yast; のオンライン更新からアクセスすることができます。"
+"詳しくは <xref linkend=\"cha.onlineupdate.you\"/> をお読みください。"
 
 #. Tag: para
 #: opensuse_update.xml:536
@@ -587,3 +774,8 @@ msgid ""
 "opensuse.org/openSUSE:Most_annoying_bugs\"/> for information about recent "
 "changes and issues."
 msgstr ""
+"直近で判明している変更点や問題点について、詳しくは <literal>製品ハイライト</literal> "
+" ( <link xlink:href=\"http://ja.opensuse.org/Product_highlights\"/> ) や"
+" &opensuse; の <literal>バグ</literal> 情報 ( <link xlink:href=\"http://ja."
+"opensuse.org/openSUSE:Most_annoying_bugs\"/> ) などをお読みください。"
+

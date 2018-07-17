@@ -4,77 +4,28 @@
 %entities;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.update.osuse">
- <title>Upgrading the System and System Changes</title>
+ <title>システムのアップグレードとシステムの変更</title>
  <info>
   <abstract>
-   <para>
-    You can upgrade an existing system without completely reinstalling
-    it. There are two types of renewing the system or parts of it:
-    <emphasis>updating individual software packages</emphasis> and
-    <emphasis>upgrading the entire system</emphasis>. Updating individual
-    packages is covered in <xref linkend="cha.yast-software"/> and <xref linkend="cha.onlineupdate.you"/>. Two ways to upgrade the system are
-    discussed in the following sections&mdash; see <xref linkend="sec.upgrade.yast"/> and <xref linkend="sec.update.zypper"/>.
-   </para>
+   <para>既存のシステムは、再インストールを行なうことなくアップグレードすることができます。アップグレードには 2 種類の方式があります。 1 つは <emphasis>個別のソフトウエアパッケージの更新</emphasis> 、もう 1 つは <emphasis>システム全体のアップグレード</emphasis> です。個別のソフトウエアパッケージの更新については、 <xref linkend="cha.yast-software"/> と <xref linkend="cha.onlineupdate.you"/> で説明しています。また、本章では 2 種類のアップグレード方法を説明しています。 1 つは <xref linkend="sec.upgrade.yast"/> で、もう 1 つは <xref linkend="sec.update.zypper"/> です。</para>
   </abstract>
  </info>
  <sect1 xml:id="sec.update.suselinux">
-  <title>Upgrading the System</title>
+  <title>システムのアップグレード</title>
  <important>
-  <title>
-   <productname>&productname;</productname>
-   <productnumber>&productnumber;</productnumber> is only available as
-   64-bit version
-  </title>
-  <para>
-   <productname>&productname;</productname>
-   <productnumber>&productnumber;</productnumber> is only available as
-   64-bit version. Upgrading 32-bit installations to 64-bit is not supported.
-   Please follow the instructions in
-   <xref linkend="art.opensuse.installquick"/> and <xref linkend="cha.install"/>
-   to install <productname>&productname;</productname> on your computer or
-   consider switching to
-   <link xlink:href="https://en.opensuse.org/Portal:Tumbleweed">
-    &opensuse; Tumbleweed</link>.
-  </para>
+  <title><productname>&productname;</productname> <productnumber>&productnumber;</productnumber> における 64 ビット版のみの提供について</title>
+  <para><productname>&productname;</productname> <productnumber>&productnumber;</productnumber> は 64 ビット版のみの提供となっています。また、 32 ビット版のインストール環境から 64 ビット版への移行についても、サポート対象外となっております。 <xref linkend="art.opensuse.installquick"/> および<xref linkend="cha.install"/> にある手順に従って、お使いのコンピュータに新規に <productname>&productname;</productname> をインストールし直すか、<link xlink:href="https://ja.opensuse.org/Portal:Tumbleweed"> &opensuse; Tumbleweed</link> への切り替えをお勧めします。</para>
  </important>
- <para>
-   The release notes are bundled in the installer, and you may also read them
-   online at <link xlink:href="https://doc.opensuse.org/release-notes/">
-   &productname; Release Notes</link>.
- </para>
-  <para>
-   Software tends to <quote>grow</quote> from version to version. Therefore,
-   take a look at the available partition space with <command>df</command>
-   before updating. If you suspect you are running short of disk space,
-   secure your data before you update and repartition your system. There is
-   no general rule regarding how much space each partition should have.
-   Space requirements depend on your particular partitioning profile, the
-   software selected, and the version numbers of the system.
-  </para>
+ <para>リリースノートはインストールメディア内に添付されているほか、 <link xlink:href="https://doc.opensuse.org/release-notes/"> &productname; リリースノート</link> からも読むことができるようになっています。</para>
+  <para>ソフトウエアはバージョンが上がるたびに <quote>成長</quote> し、必要なサイズが増大していくものです。そのため、アップグレードを行なう前に、あらかじめ <command>df</command> を利用して空き容量を確認しておくことをお勧めします。ディスクの空き容量が少ない場合は、まずお使いのデータ類をバックアップしてから、パーティションを作成し直すことをお勧めします。各パーティションに必要な容量は、インストールされているソフトウエアや環境によって大きく異なりますので、一般的な値というものは特にありません。</para>
 
   <sect2 xml:id="cha.update-preparation">
-   <title>Preparations</title>
-   <para>
-    Before upgrading, copy the old configuration files to a separate medium
-    (such as removable hard disk or USB flash drive) to secure the data.
-    This primarily applies to files stored in <filename>/etc</filename> as
-    well as some of the directories and files in <filename>/var</filename>.
-    You may also want to write the user data in <filename>/home</filename>
-    (the <envar>HOME</envar> directories) to a backup medium. Back up this
-    data as <systemitem class="username">root</systemitem>. Only
-    <systemitem class="username">root</systemitem> has read permission
-    for all local files.
-   </para>
-   <para>
-    Before starting your update, make note of the root partition. The
-    command <command>df&nbsp;/</command> lists the device name of the root
-    partition. In <xref linkend="aus.update.df"/>, the root partition
-    to write down is <filename>/dev/sda3</filename> (mounted as
-    <filename>/</filename>).
-   </para>
+   <title>準備作業</title>
+   <para>アップグレードを行なう前に、まずはデータを保全するため、別のメディア (リムーバブルハードディスクや USB メモリなど) に設定ファイルをコピーします。一般的には、設定ファイルは <filename>/etc</filename> 内にありますが、 <filename>/var</filename> 内に存在する場合もあります。また、バックアップメディアに <filename>/home</filename> ( <envar>HOME</envar> ディレクトリ) 以下のファイルをコピーしてもかまいません。なお、バックアップにあたっては、 <systemitem class="username">root</systemitem> で作業を行なう必要があります。これは、全てのローカルファイルを読み込むことができるのは、 <systemitem class="username">root</systemitem> だけであるためです。</para>
+   <para>アップグレードを始める前に、次はルートパーティションを確認します。 <command>df&nbsp;/</command> コマンドを実行すると、ルートパーティションの名前が表示されます。 <xref linkend="aus.update.df"/> の例では、 <filename>/dev/sda3</filename> がルートパーティションです (<filename>/</filename> にマウントされているため) 。</para>
    <example xml:id="aus.update.df">
-    <title>List with <command>df -h</command></title>
-<screen>Filesystem     Size  Used Avail Use% Mounted on
+    <title><command>df -h</command> の出力結果</title>
+<screen>ファイルシス  サイズ  使用  残り 使用% マウント位置
 /dev/sda3       74G   22G   53G  29% /
 udev           252M  124K  252M   1% /dev
 /dev/sda5      116G  5.8G  111G   5% /home
@@ -84,73 +35,32 @@ udev           252M  124K  252M   1% /dev
   </sect2>
 
   <sect2>
-   <title>Possible Problems</title>
-   <para>
-    If you upgrade a default system from the previous version to this
-    version, &yast; works out the necessary changes and performs them.
-    Depending on your customization, some steps (or the entire upgrade
-    procedure) may fail and you must resort to copying back your backup
-    data. Check the following issues before starting the system update.
-   </para>
+   <title>発生しうる問題</title>
+   <para>既定のシステムを以前のバージョンから本バージョンにアップグレードする際、 &yast; は様々な作業を実施します。お使いの環境のカスタマイズ状況によっては、いくつかの手順 (もしくはアップグレード処理全体) が失敗し、バックアップデータから書き戻さなければならない状況になるかもしれません。システムのアップグレードを行なう前に、下記の点をご確認ください。</para>
    <sect3>
-    <title>Checking passwd and group in /etc</title>
-    <para>
-     Before upgrading the system, make sure that
-     <filename>/etc/passwd</filename> and <filename>/etc/group</filename> do
-     not contain any syntax errors. For this purpose, start the verification
-     utilities <command>pwck</command> and <command>grpck</command> as
-     <systemitem class="username">root</systemitem> to eliminate any
-     reported errors.
-    </para>
+    <title>/etc 内の passwd, group ファイルの確認</title>
+    <para>システムのアップグレードを始める前に、 <filename>/etc/passwd</filename> および <filename>/etc/group</filename> ファイル内に文法エラーがないことをご確認ください。文法エラーをチェックするには、 <systemitem class="username">root</systemitem> で <command>pwck</command> および <command>grpck</command> の各検証ユーティリティをお使いになり、エラーが表示された場合は修正を行なってください。</para>
    </sect3>
    <sect3>
-    <title>Shut Down Virtual Machines</title>
-    <para>
-     If your machine serves as a &vmhost; for &kvm; or &xen;, make sure to
-     properly shut down all running &vmguest;s prior to the update. Otherwise
-     you may not be able to access the guests after the update.
-    </para>
+    <title>仮想マシンのシャットダウン</title>
+    <para>&kvm; や &xen; を利用して、お使いのマシンを &vmhost; として動作させている場合は、アップグレードを行なう前に全ての &vmguest; を正しくシャットダウンしてください。シャットダウンを行なっておかないと、更新後にゲストにアクセスできなくなってしまう場合があります。</para>
    </sect3>
    <sect3>
     <title>PostgreSQL</title>
-    <para>
-     Before updating <phrase role="productname">PostgreSQL</phrase>
-     (<systemitem class="resource">postgres</systemitem>), dump the
-     databases. See the manual page of <command>pg_dump</command>. This is
-     only necessary if you actually used PostgreSQL prior to your update.
-    </para>
+    <para><phrase role="productname">PostgreSQL</phrase> ( <systemitem class="resource">postgres</systemitem> パッケージ) を動作させている場合は、データベースをダンプしておいてください。詳しくは <command>pg_dump</command> のマニュアルページをお読みください。ただし、この作業は更新前の時点から PostgreSQL を使用していた場合に限って必要となる作業です。</para>
    </sect3>
   </sect2>
 
   <sect2 xml:id="sec.upgrade.yast">
-   <title>Upgrading with YaST</title>
-   <para>
-    Following the preparation procedure outlined in
-    <xref linkend="cha.update-preparation"/>, you can now upgrade your system:
-   </para>
+   <title>YaST を利用したアップグレード</title>
+   <para><xref linkend="cha.update-preparation"/> に示す手順で準備を行なったら、あとはシステムのアップグレードを行なうだけです:</para>
    <procedure>
     <step os="sles;sled">
-     <para>
-      Optionally, prepare an installation server. For background
-      information, see
-      <xref linkend="sec.deployment.instserver.sles9"/>.
-     </para>
+     <para>必要であれば、インストールサーバをご用意ください。背景となる情報について、詳しくは <xref linkend="sec.deployment.instserver.sles9"/> をお読みください。</para>
     </step>
     <step>
-     <para>
-      Insert the &productname; DVD into the drive, then reboot the
-      computer to start the installation program. On machines with a
-      traditional BIOS you will see the graphical boot screen shown below.
-      On machines equipped with UEFI, a slightly different boot screen is
-      used. Secure boot on UEFI machines is supported.
-     </para>
-     <para>
-      Use <keycap>F2</keycap> to change the language for the installer. A
-      corresponding keyboard layout is chosen automatically. See
-      <xref linkend="sec.boot_parameters.screen"/> or
-      <xref linkend="sec.boot_parameters.uefi"/> for more information
-      about changing boot parameters.
-     </para>
+     <para>まずは &productname; の DVD メディアをドライブに挿入し、コンピュータを再起動してインストールシステムを起動します。従来型の BIOS が搭載されたマシンの場合、下記のようなグラフィカルな起動画面が表示されます。 UEFI が搭載されたマシンの場合は、下記とは少し異なる画面になります。 UEFI マシンでの Secure Boot にも対応しています。</para>
+     <para><keycap>F2</keycap> を押して、インストールシステムで使用する言語を選択します。キーボードレイアウトについても、言語にあわせて自動設定されます。起動パラメータの変更方法について、詳しくは <xref linkend="sec.boot_parameters.screen"/> と <xref linkend="sec.boot_parameters.uefi"/> をお読みください。</para>
      <informalfigure>
       <mediaobject>
        <imageobject role="fo">
@@ -163,23 +73,11 @@ udev           252M  124K  252M   1% /dev
      </informalfigure>
     </step>
     <step>
-     <para>
-      Select <guimenu>Upgrade</guimenu> on the boot screen, then press
-      <keycap function="enter"/>. This boots the system and loads the
-      &productname; installer. Do not select <guimenu>Installation</guimenu>.
-     </para>
+     <para>起動画面では <guimenu>アップグレード</guimenu> を選択して <keycap function="enter"/> を押します。システムが起動し、 &productname; のインストールシステムが開始します。なお、 <guimenu>インストール</guimenu> は選択しないでください。</para>
     </step>
     <step>
-     <para>
-      The <guimenu>Language</guimenu> and <guimenu>Keyboard Layout</guimenu>
-      are initialized with the language settings you have chosen on the boot
-      screen. Change them here, if necessary.
-     </para>
-     <para>
-      Read the License Agreement. It is presented in the language you have
-      chosen on the boot screen. <guimenu>License Translations</guimenu> are
-      available. Proceed with <guimenu>Next</guimenu>.
-     </para>
+     <para>起動時の画面で選択した <guimenu>言語</guimenu> と <guimenu>キーボードレイアウト</guimenu> が選択された状態で始まります。ここでも言語とキーボードレイアウトを変更することができます。</para>
+     <para>ここでは、ライセンス同意の文書をお読みください。文書は選択した言語で表示されます。他の言語で読みたい場合は、 <guimenu>ライセンス翻訳</guimenu> 内で選択してください。読み終わりましたら、 <guimenu>次へ</guimenu> で先に進みます。</para>
      <informalfigure>
       <mediaobject>
        <imageobject role="fo">
@@ -192,15 +90,7 @@ udev           252M  124K  252M   1% /dev
      </informalfigure>
     </step>
     <step>
-     <para>
-      &yast; determines if there are multiple root partitions. If there is
-      only one, continue with the next step. If there are several, select
-      the right partition and confirm with <guimenu>Next</guimenu>
-      (<filename>/dev/sda3</filename> was selected in the example in
-      <xref linkend="cha.update-preparation"/>). &yast; reads the old
-      <filename>fstab</filename> on this partition to analyze and mount the
-      file systems listed there.
-     </para>
+     <para>&yast; はまず、ルートパーティションが複数存在していないかどうかを確認します。ルートパーティションが 1 つしか見つからなかった場合は、そのまま次の手順に進みます。複数のルートパーティションが見つかった場合は、それらが表示されますので、適切なパーティションを選択して <guimenu>次へ</guimenu> を押します (<xref linkend="cha.update-preparation"/> の環境では、 <filename>/dev/sda3</filename> を選択します) 。 &yast; はパーティション内にある既存の <filename>fstab</filename> ファイルを読み込み、設定されているその他のパーティションをマウントします。</para>
      <!-- cwickert 2016-03-23: This seems no longer necessary or possible -->
      <!-- <warning>
       <title>Persistent Device Names</title>
@@ -225,26 +115,13 @@ udev           252M  124K  252M   1% /dev
       </mediaobject>
      </informalfigure>
      <tip>
-      <title>Release Notes</title>
-      <para>
-       From this point on, the Release Notes can be viewed from any screen
-       during the installation process by selecting <guimenu>Release
-        Notes</guimenu>.
-      </para>
+      <title>リリースノート</title>
+      <para>これ以降の手順では、表示された <guimenu>リリースノート</guimenu> ボタンを押すことで、リリースノートを表示することができるようになります。</para>
      </tip>
     </step>
     <step>
-     <para>
-      &yast; shows a list of <guimenu>Previously Used Repositories</guimenu>.
-      By default all repositories will get removed. If you had not added any
-      custom repositories, do not change the settings. The packages for the
-      upgrade will be installed from DVD and you can optionally enable the
-      default online repositories can be chosen in the next step.
-     </para>
-     <para>
-      If you have had added custom repositories, for example from the
-      &opensuse; Build Service, you have two choices:
-     </para>
+     <para>次に &yast; は <guimenu>以前利用していたリポジトリ</guimenu> の一覧を表示します。既定では、全てのリポジトリが削除されるように設定されます。独自のリポジトリを設定していない場合は、設定を変更せずそのまま進めてください。このまま進めればアップグレード用のパッケージは DVD からインストールされますし、必要であれば次の手順で既定のオンラインリポジトリを追加することもできます。</para>
+     <para>独自のリポジトリ、たとえば &opensuse; Build Service のリポジトリを設定しているような場合は、下記の 2 つの方法をとることができます:</para>
      <itemizedlist>
       <listitem>
        <para>
@@ -265,11 +142,7 @@ udev           252M  124K  252M   1% /dev
        </para>
       </listitem>
      </itemizedlist>
-     <para>
-      Do not use repositories matching the previous version unless you are
-      absolutely sure they will also work with the new &opensuse; version. If
-      not, the system may be unstable or not work at all.
-     </para>
+     <para>なお、新しいバージョンの &opensuse; で間違いなく動作することが分かっている場合を除いて、従来のバージョンに対応したリポジトリをそのまま使用してはなりません。従来のバージョンに対応したリポジトリを使い続けてしまうと、システムが不安定になってしまう場合があるほか、場合によっては全く動作しなくなってしまうこともあります。</para>
      <informalfigure>
       <mediaobject>
        <imageobject role="fo">
@@ -314,14 +187,7 @@ udev           252M  124K  252M   1% /dev
     </step>
 -->
     <step>
-     <para>
-      In case an Internet connection is available, you may now activate
-      optional online repositories. Please
-      enable all repositories you had enable before to ensure all packages get
-      upgraded correctly. Enabling the update repositories is strongly
-      recommended&mdash;this will ensure that you get the latest package
-      versions available, including ll security updates and fixes.
-     </para>
+     <para>インターネットへの接続が利用できる場合、必要であればオンラインリポジトリを設定することができます。ただし、全てのパッケージが正しくアップグレードできるよう、以前に利用していたリポジトリは全て有効化してください。また、更新リポジトリについては、必ず有効化しておくことを強くお勧めします。これは、セキュリティ更新やその他の修正など、様々な最新のパッケージを受け取ることができるためです。</para>
      <informalfigure>
       <mediaobject>
        <imageobject role="fo">
@@ -333,109 +199,54 @@ udev           252M  124K  252M   1% /dev
       </mediaobject>
      </informalfigure>
 
-     <para>
-      After having proceeded with <guimenu>Next</guimenu>, you need to
-      confirm the license agreement for the online repositories with
-      <guimenu>Next</guimenu>.
-     </para>
+     <para><guimenu>次へ</guimenu> を押して進めると、オンラインリポジトリのライセンス同意が表示されます。 <guimenu>次へ</guimenu> を押して進めてください。</para>
     </step>
 
     <step>
-     <para>
-      Use the <guimenu>Installation Settings</guimenu> screen to review
-      and&mdash;if necessary&mdash;change several proposed
-      installation settings. The current configuration is listed for each
-      setting. To change it, click the headline.
-     </para>
+     <para><guimenu>インストール設定</guimenu> では、その他のインストール設定とその設定内容が一覧で表示されます。必要であれば、ここから変更することもできます。変更を行ないたい場合は、それぞれの項目名のリンク (下線が引かれた箇所) を押してください。また、ファイアウオールや SSH などの設定については、設定項目内のリンクを押すことで、直接変更できるものもあります。</para>
      <variablelist>
       <varlistentry>
-       <term><guimenu>System</guimenu>
-       </term>
+       <term><guimenu>システム</guimenu></term>
        <listitem>
-        <para>
-         View detailed hardware information by clicking
-         <guimenu>System</guimenu>. In the resulting screen you can also
-         change <guimenu>Kernel Settings</guimenu>&mdash;see
-         <xref linkend="sec.yast_install.proposal.system"/> for more information.
-        </para>
+        <para><guimenu>システム</guimenu> を押すと、詳細なハードウエア情報を表示することができます。ここでは <guimenu>カーネル設定</guimenu> を押して詳細な設定を行なうことができます。詳しくは <xref linkend="sec.yast_install.proposal.system"/> をお読みください。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><guimenu>Update Options</guimenu>
-       </term>
+       <term><guimenu>更新オプション</guimenu></term>
        <listitem>
-        <para>
-         By default, &yast; will update perform full <guimenu>Update with
-         Installation of New Software and Features</guimenu> based on a
-         selection of patterns. Each pattern contains several software packages
-         needed for specific functions (for example, Web and LAMP server or a
-         print server).
-        </para>
-        <para>
-         Here you can change the package selection or change the
-         <guimenu>Update Mode</guimenu> to
-         <guimenu>Only Update Installed Packages</guimenu>.
-        </para>
+        <para>既定では、 &yast; は選択されているパターンに従って、完全な <guimenu>新しいソフトウエアと機能をインストールして更新</guimenu> を行ないます。それぞれのパターンには、それを実行するのに必要な複数のソフトウエアパッケージが含まれています (たとえば Web および LAMP サーバ や 印刷サーバ など) 。</para>
+        <para>ここではパッケージの選択を変更することができるほか、 <guimenu>更新モード</guimenu> を <guimenu>インストール済みのパッケージのみ更新</guimenu> にすることができます。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><guimenu>Packages</guimenu>
-       </term>
+       <term><guimenu>パッケージ</guimenu></term>
        <listitem>
-        <para>
-         You can further tweak the package selection on the
-         <guimenu>Packages</guimenu> screen. Here you can not only select
-         patterns but also list their contents and search for individual
-         packages. See <xref linkend="cha.yast-software"/> for more information.
-        </para>
-        <para>
-         If you intend to enhance your system, it is recommended to finish the
-         upgrade first and then install additional software.
-        </para>
+        <para><guimenu>パッケージ</guimenu> 画面を利用することで、パッケージの選択をさらに調整することができます。パターンの選択だけでなく、個別のパッケージのインストールを設定することもできます。詳しくは <xref linkend="cha.yast-software"/> をお読みください。</para>
+        <para>お使いのシステムの拡張を行なう場合は、まず先にアップグレードを完了させてから、その後に追加のソフトウエアをインストールすることをお勧めします。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><guimenu>Backup</guimenu>
-       </term>
+       <term><guimenu>バックアップ</guimenu></term>
        <listitem>
-        <para>
-         You also have the possibility to make backups of various system
-         components. Selecting backups slows down the upgrade process. Use this
-         option if you do not have a recent system backup.
-        </para>
+        <para>様々なシステムコンポーネントのバックアップを作成する機能が用意されています。バックアップを行なうように選択すると、アップグレードの処理にかかる時間が伸びますので、あらかじめご注意ください。このオプションは、直近のシステムバックアップを採取していないような場合に必要な設定です。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><guimenu>Language</guimenu>
-       </term>
+       <term><guimenu>言語</guimenu></term>
        <listitem>
-        <para>
-         This section allows you to change the <guimenu>Primary
-         Language</guimenu>primary language and configure additional
-         <guimenu>Secontry Languages.</guimenu>. Optionally, you can adjust the
-         keyboard layout and timezone to the selected primary language.
-        </para>
+        <para>ここでは、 <guimenu>第一言語</guimenu> と追加の <guimenu>第二言語</guimenu> をそれぞれ変更することができます。また、必要であればキーボードレイアウトやタイムゾーンを第一言語にあわせて設定することもできます。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><guimenu>Keyboard Layout</guimenu>
-       </term>
+       <term><guimenu>キーボードレイアウト</guimenu></term>
        <listitem>
-        <para>
-         Here you can change the keyboard layout and adjust additional
-         <guimenu>Expert Keyboard Settings</guimenu>.
-        </para>
+        <para>ここではキーボードレイアウトを変更することができるほか、 <guimenu>熟練者向け設定</guimenu> を利用して細かい調整を行なうこともできます。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><guimenu>Booting</guimenu>
-       </term>
+       <term><guimenu>起動</guimenu></term>
        <listitem>
-        <para>
-         This section shows the boot loader configuration. Changing the
-         defaults is only recommended if really needed. Refer to
-         <xref linkend="cha.grub2"/> for details.
-        </para>
+        <para>このセクションでは、ブートローダの設定を表示します。既定値の変更は、どうしても必要な場合を除いて、お勧めできません。詳しくは <xref linkend="cha.grub2"/> をお読みください。</para>
        </listitem>
       </varlistentry>
      </variablelist>
@@ -451,15 +262,7 @@ udev           252M  124K  252M   1% /dev
      </informalfigure>
     </step>
     <step>
-     <para>
-      After you have finalized the system configuration on the
-      <guimenu>Installation Settings</guimenu> screen, click
-      <guimenu>Update</guimenu>. Depending on your software selection you
-      may need to agree to license agreements before the installation
-      confirmation screen pops up. Up to this point no changes have been
-      made to your system. After you click <guimenu>Update</guimenu> a
-      second time, the upgrade process starts.
-     </para>
+     <para><guimenu>インストール設定</guimenu> での設定作業が完了したら、最後に <guimenu>更新</guimenu> を押すと更新処理を始めることができます。なお、ソフトウエアの選択によっては、インストールを行なう前にライセンスへの同意を求められることがあります。また、 <guimenu>更新開始</guimenu> を押すまでは、システムに対して何も変更を加えません。 <guimenu>更新開始</guimenu> を押すと、実際のアップグレード処理が始まります。</para>
      <informalfigure>
       <mediaobject>
        <imageobject role="fo">
@@ -473,61 +276,24 @@ udev           252M  124K  252M   1% /dev
     </step>
 
    </procedure>
-   <para>
-    Once the basic upgrade installation is finished, &yast; reboots the
-    system.
-<!-- test the Internet connection as offered by the &yast;
-    dialog. -->
-    Finally, &yast; updates the remaining software, if
-    any<phrase os="sles;sled">, offers the &ncc; Configuration,</phrase>
-    and displays the release notes, if wanted.
-<!-- Click
-    <guimenu>Finish</guimenu> to write the &yast; configuration. -->
-   </para>
-   <para os="sles;sled">
-    For more information about the &ncc;, see
-    <xref linkend="sec.yast_install.scc_registration"/>.
-   </para>
+   <para>基本部分のアップグレードインストールが完了すると、 &yast; はシステムを再起動します。<!-- test the Internet connection as offered by the &yast; dialog. --> 最後に、 &yast; は <phrase os="sles;sled"> &ncc; 設定で提供している</phrase> 残りのソフトウエアがあれば、それらを更新します。また、アップグレード中はリリースノートを読むこともできます。 <!-- Click <guimenu>Finish</guimenu> to write the &yast; configuration. --></para>
+   <para os="sles;sled">&ncc; について、詳しくは <xref linkend="sec.yast_install.scc_registration"/> をお読みください。</para>
   </sect2>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="zypper_upgrade.xml"/>
 
   <sect2 xml:id="sec.update.packages" os="osuse">
-   <title>Updating Individual Packages</title>
-   <para>
-    Regardless of your overall updated environment, you can always update
-    individual packages. From this point on, however, it is your
-    responsibility to ensure that your system remains consistent.
-   </para>
-   <para>
-    Use the &yast; software management tool to update packages as described
-    in <xref linkend="cha.yast-software"/>. Select components from the &yast;
-    package selection list according to your needs. If a newer version of a
-    package exists, the version numbers of the installed and the available
-    versions are listed in blue color in the <guimenu>Installed
-    (Available)</guimenu> column. If you select a package essential for the
-    overall operation of the system, &yast; issues a warning. Such packages
-    should be updated only in the update mode. For example, many packages
-    contain <emphasis>shared libraries</emphasis>. Updating these programs
-    and applications in the running system may lead to system instability.
-   </para>
+   <title>個別のパッケージのアップグレード</title>
+   <para>システム全体のアップグレードではなく、個別のパッケージに対して更新を行なうこともできます。ただし、個別のパッケージをアップグレードした場合は、システムが安定して動作することを保証できませんので、ご自身の責任のもとお使いください。</para>
+   <para><xref linkend="cha.yast-software"/> で説明している手順で &yast; のソフトウエア管理ツールを起動します。すると、インストール済みのパッケージで、より新しいバージョンの存在するものに対しては、 <guimenu>インストール済み (利用可能)</guimenu> の列が、青色の表示になります。また、システムの動作全体に影響のあるパッケージの場合は、 &yast; がその旨を警告します。このようなパッケージは、更新モードでのみ更新されるべきものです。たとえば多くのパッケージに <emphasis>共有ライブラリ</emphasis> が含まれていますが、これらがそれに該当します。これらのプログラムやアプリケーションの更新を行なうと、システムの安定性が損なわれる可能性があります。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.update.version" os="osuse">
-  <title>For More Information</title>
+  <title>さらなる情報</title>
 
-  <para>
-   Problems and special issues of the various versions are published online
-   as they are identified. See the links listed below. Important updates of
-   individual packages can be accessed using the &yast; Online Update. For
-   more information, see <xref linkend="cha.onlineupdate.you"/>.
-  </para>
+  <para>様々なバージョンにおける一般的な問題や特殊な問題が、オンラインで公開されています。詳しくは下記のリンクをお読みください。また、個別のパッケージに対する重要な更新情報については、 &yast; のオンライン更新からアクセスすることができます。詳しくは <xref linkend="cha.onlineupdate.you"/> をお読みください。</para>
 
-  <para>
-   Refer to the <literal>Product highlights</literal> (<link xlink:href="http://en.opensuse.org/Product_highlights"/> and the
-   <literal>Bugs</literal> article in the &opensuse; wiki at <link xlink:href="http://en.opensuse.org/openSUSE:Most_annoying_bugs"/> for
-   information about recent changes and issues.
-  </para>
+  <para>直近で判明している変更点や問題点について、詳しくは <literal>製品ハイライト</literal>  ( <link xlink:href="http://ja.opensuse.org/Product_highlights"/> ) や &opensuse; の <literal>バグ</literal> 情報 ( <link xlink:href="http://ja.opensuse.org/openSUSE:Most_annoying_bugs"/> ) などをお読みください。</para>
  </sect1>
 
 </chapter>
