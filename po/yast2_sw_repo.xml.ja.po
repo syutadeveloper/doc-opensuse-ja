@@ -1,32 +1,35 @@
+# translation of yast2_sw_repo.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: yast2_sw_repo.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:15+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-18 13:24+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: yast2_sw_repo.xml:12
 #, no-c-format
 msgid "Managing Software Repositories and Services"
-msgstr ""
+msgstr "ソフトウエアリポジトリとサービスの管理"
 
 #. Tag: dm:translation
 #: yast2_sw_repo.xml:17
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: yast2_sw_repo.xml:21
@@ -42,6 +45,15 @@ msgid ""
 "an additional repository containing translations, dictionaries, etc. might "
 "also be configured."
 msgstr ""
+"<!-- FIXME openSUSE --> サードパーティ製のソフトウエアをインストールするには、"
+"お使いのシステムにソフトウエアリポジトリを追加する必要があります。既定では、"
+" <phrase os=\"sles;sled\">システムを登録していれば、</phrase> "
+" &productname;-DVD &productnumber; のような製品のリポジトリと、それに対応する"
+"更新リポジトリが自動で設定されます。 <phrase os=\"sles;sled\"> システムの"
+"登録について、詳しくは <xref linkend=\"sec.yast_install.scc_registration\"/> "
+"もしくは <xref linkend=\"sec.update.registersystem\"/> をお読みください。</phrase>"
+"なお、最初に選択した製品によっては、あらかじめ翻訳や辞書などの追加のリポジトリが"
+"設定されている場合もあります。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:34
@@ -57,6 +69,16 @@ msgid ""
 "offer one or more software repositories. Such a Service can be changed "
 "dynamically by its administrator or vendor."
 msgstr ""
+"リポジトリを管理するには、 &yast; を起動して <menuchoice> <guimenu>ソフトウエア</guimenu> "
+"<guimenu>ソフトウエアリポジトリ</guimenu> </menuchoice> を選択します。選択を行なうと、"
+" <guimenu>設定済みのソフトウエアリポジトリ</guimenu> のダイアログが表示されます。"
+"ここでは、 <guimenu>サービス</guimenu> と呼ばれる購読 (サブスクリプション) も"
+"管理することができます。 <guimenu>サービス</guimenu> を表示するには、右上の"
+" <guimenu>表示</guimenu> で <guimenu>全てのサービス</guimenu> を選択してください。"
+"ここで言うところの <quote>サービス</quote> とは、 <guimenu>リポジトリインデックス"
+"サービス</guimenu> (Repository Index Service; RIS) を表わすもので、 1 つまたは"
+"複数のリポジトリを提供するための仕組みです。このようなサービスは、管理者や製造元が"
+"動的に変更することができます。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:46
@@ -69,12 +91,18 @@ msgid ""
 "Whenever you add a new repository, &yast; offers the ability to import its "
 "key."
 msgstr ""
+"それぞれのリポジトリには、リポジトリ自身の内容 (パッケージ名、バージョンなど) を"
+"説明するファイルが含まれています。これらのリポジトリ内のファイルは、 &yast; を利用"
+"することでローカルにダウンロードすることができます。また、それらのファイルの正当性を"
+"確認する目的で、ソフトウエアリポジトリのメンテナ側で &gpg; 鍵を利用して署名を行なう"
+"こともできます。新しいリポジトリを追加する場合、 &yast; ではそれらの鍵を取り込む"
+"機能も提供しています。"
 
 #. Tag: title
 #: yast2_sw_repo.xml:56
 #, no-c-format
 msgid "Trusting External Software Sources"
-msgstr ""
+msgstr "外部のソフトウエア提供元の信頼について"
 
 #. Tag: para
 #: yast2_sw_repo.xml:57
@@ -85,12 +113,16 @@ msgid ""
 "problems arising from software installed from third-party software "
 "repositories."
 msgstr ""
+"リポジトリの一覧に外部のリポジトリを追加する場合、あらかじめそのリポジトリが信頼"
+"できるものであるかどうかをご確認ください。 &suse; では、第三者 (サードパーティ) "
+"のリポジトリからのソフトウエアをインストールした場合、それらのソフトウエアによって"
+"発生した問題については保証も対応もできません。ご了承ください。"
 
 #. Tag: title
 #: yast2_sw_repo.xml:66
 #, no-c-format
 msgid "Adding Software Repositories"
-msgstr ""
+msgstr "ソフトウエアリポジトリの追加"
 
 #. Tag: para
 #: yast2_sw_repo.xml:67
@@ -99,6 +131,8 @@ msgid ""
 "You can either add repositories from DVD/CD, removable mass storage devices "
 "(such as flash disks), a local directory, an ISO image or a network source."
 msgstr ""
+"リポジトリは DVD/CD のほか、取り外しが可能なストレージデバイス (USB メモリなど) や"
+"ローカルのディレクトリ、 ISO イメージやネットワークサーバなどを指定することができます。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:71
@@ -107,24 +141,26 @@ msgid ""
 "To add repositories from the <guimenu>Configured Software Repositories</"
 "guimenu> dialog in &yast; proceed as follows:"
 msgstr ""
+"&yast; の <guimenu>設定済みのソフトウエアリポジトリ</guimenu> からリポジトリを"
+"追加するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: yast2_sw_repo.xml:77
 #, no-c-format
 msgid "Click <guimenu>Add</guimenu> ."
-msgstr ""
+msgstr "<guimenu>追加</guimenu> を押します。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:82
 #, no-c-format
 msgid "Select one of the options listed in the dialog:"
-msgstr ""
+msgstr "表示された選択肢の中から、いずれかを選択します:"
 
 #. Tag: title
 #: yast2_sw_repo.xml:86
 #, no-c-format
 msgid "Adding a Software Repository"
-msgstr ""
+msgstr "ソフトウエアリポジトリの追加"
 
 #. Tag: para
 #: yast2_sw_repo.xml:98
@@ -134,6 +170,9 @@ msgid ""
 "SLP, select <guimenu>Scan Using SLP</guimenu> and click <guimenu>Next</"
 "guimenu> ."
 msgstr ""
+"SLP でサービスを告知しているインストールサーバを、リポジトリとして設定するには、"
+" <guimenu>SLP を使用したスキャン</guimenu> を選択して <guimenu>次へ</guimenu> "
+"を押します。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:105
@@ -143,6 +182,9 @@ msgid ""
 "insert the medium or connect the USB device to the machine, respectively. "
 "Click <guimenu>Next</guimenu> to start the installation."
 msgstr ""
+"リムーバブルメディアをリポジトリとして設定するには、対応するオプションを選択して"
+"メディアを挿入するか、もしくは USB デバイスをマシンに接続します。挿入や接続が"
+"完了したら <guimenu>次へ</guimenu> を押すと、インストールを始めることができます。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:112
@@ -154,6 +196,11 @@ msgid ""
 "optional. If none is specified, &yast; will use the product name or the URL "
 "as repository name."
 msgstr ""
+"リポジトリの種類によっても異なりますが、ほとんどの場合はいずれかの種類を選択した"
+"あと、メディアのパス (もしくは URL) を入力するよう求められます。入力が終わったら"
+" <guimenu>次へ</guimenu> を押します。 <guimenu>リポジトリ名</guimenu> は指定"
+"しなくてもかまいません。何も指定しない場合は、製品名もしくは URL そのものを"
+"リポジトリ名として使用します。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:121
@@ -163,6 +210,8 @@ msgid ""
 "activated by default. If you deactivate the option, &yast; will "
 "automatically download the files later, if needed."
 msgstr ""
+"既定では、 <guimenu>リポジトリの説明をダウンロード</guimenu> が選択されています。"
+"オプションの選択を外した場合は、 &yast; が必要に応じて後からダウンロードを行ないます。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:128
@@ -171,6 +220,8 @@ msgid ""
 "Depending on the repository you have added, you may be prompted to import "
 "the repository's &gpg; key or asked to agree to a license."
 msgstr ""
+"追加したリポジトリの種類によっても異なりますが、リポジトリの &gpg; 鍵の取り込みを"
+"求められたり、ライセンスへの同意を求められたりします。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:133
@@ -180,6 +231,9 @@ msgid ""
 "metadata. It will add the repository to the list of <guimenu>Configured "
 "Repositories</guimenu> ."
 msgstr ""
+"これらのメッセージの確認が終わると、 &yast; はメタデータのダウンロードと処理を"
+"行ないます。処理が終わると、 <guimenu>設定済みのソフトウエアリポジトリ</guimenu> "
+"内に追加されるようになります。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:140
@@ -188,6 +242,8 @@ msgid ""
 "If needed, adjust the repository <guimenu>Properties</guimenu> as described "
 "in <xref linkend=\"sec.yast-software.instsource.manage\"/> ."
 msgstr ""
+"また、必要であれば、 <xref linkend=\"sec.yast-software.instsource.manage\"/> の"
+"手順に従ってリポジトリの <guimenu>プロパティ</guimenu> を調整することもできます。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:146
@@ -195,7 +251,7 @@ msgstr ""
 msgid ""
 "Confirm your changes with <guimenu>OK</guimenu> to close the configuration "
 "dialog."
-msgstr ""
+msgstr "全ての変更が完了したら、 <guimenu>OK</guimenu> を押して設定ダイアログを閉じます。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:152
@@ -205,12 +261,15 @@ msgid ""
 "and you can install packages from this repository. For details, refer to "
 "<xref linkend=\"cha.yast-software\"/> ."
 msgstr ""
+"リポジトリの追加が完了した後は、ソフトウエアマネージャを起動することで、"
+"追加したリポジトリが提供するパッケージをインストールすることができるようになります。"
+"詳しくは <xref linkend=\"cha.yast-software\"/> をお読みください。"
 
 #. Tag: title
 #: yast2_sw_repo.xml:162
 #, no-c-format
 msgid "Managing Repository Properties"
-msgstr ""
+msgstr "リポジトリのプロパティ変更"
 
 #. Tag: para
 #: yast2_sw_repo.xml:163
@@ -220,12 +279,14 @@ msgid ""
 "<guimenu>Software Repositories</guimenu> lets you change the following "
 "repository properties:"
 msgstr ""
+"<guimenu>設定済みのソフトウエアリポジトリ</guimenu> では、リポジトリの"
+"プロパティを変更することができます:"
 
 #. Tag: term
 #: yast2_sw_repo.xml:170
 #, no-c-format
 msgid "Status"
-msgstr ""
+msgstr "状態"
 
 #. Tag: para
 #: yast2_sw_repo.xml:172
@@ -238,12 +299,18 @@ msgid ""
 "repository name to toggle its status. To remove a repository completely, "
 "click <guimenu>Delete</guimenu> ."
 msgstr ""
+"リポジトリを <guimenu>有効</guimenu> または <guimenu>無効</guimenu> にすることができます。"
+"有効化されているリポジトリからのパッケージのみをインストールすることができます。"
+"一時的にリポジトリを無効化したい場合は、対象のリポジトリを選択してから"
+" <guimenu>有効</guimenu> の選択を外してください。なお、リポジトリ名をダブルクリック"
+"することでも、状態を切り替えることができます。リポジトリを完全に削除するには、"
+" <guimenu>削除</guimenu> を押してください。"
 
 #. Tag: term
 #: yast2_sw_repo.xml:183
 #, no-c-format
 msgid "Refresh"
-msgstr ""
+msgstr "更新"
 
 #. Tag: para
 #: yast2_sw_repo.xml:185
@@ -257,12 +324,19 @@ msgid ""
 "choose <guimenu>Automatically Refresh</guimenu> . To do a manual refresh "
 "click <guimenu>Refresh</guimenu> and select one of the options."
 msgstr ""
+"リポジトリを更新する際、内容の説明 (パッケージ名、バージョンなど) をローカルの"
+"キャッシュにダウンロードします。キャッシュは &yast; が使用するもので、"
+" CD や DVD など、内容が不変なリポジトリの場合に便利な設定ですが、"
+"定期的に変更されるリポジトリでも、それなりの効果があります。"
+"リポジトリの内容説明を常に最新の状態に維持するには、 <guimenu>自動的に更新する</guimenu> "
+"を選択してください。手作業で更新する場合は、 <guimenu>更新</guimenu> を押して、"
+"表示された選択肢の中からいずれかを選択してください。"
 
 #. Tag: term
 #: yast2_sw_repo.xml:198
 #, no-c-format
 msgid "<guimenu>Keep Downloaded Packages</guimenu>"
-msgstr ""
+msgstr "<guimenu>ダウンロード済みのパッケージを保存</guimenu>"
 
 #. Tag: para
 #: yast2_sw_repo.xml:201
@@ -275,12 +349,18 @@ msgid ""
 "zypp/zypp.conf</filename> , by default it is <filename>/var/cache/zypp/"
 "packages</filename> ."
 msgstr ""
+"ネットワーク上離れた場所にあるリポジトリからパッケージをインストールする場合、"
+"パッケージはインストールを行なう前にダウンロードされます。既定では、インストールが"
+"成功すると、ダウンロードしたパッケージは削除されます。 <guimenu>ダウンロード済みのパッケージを保存</guimenu> "
+"を選択すると、ダウンロードしたパッケージを削除せずに保持するようになります。"
+"ダウンロード先は <filename>/etc/zypp/zypp.conf</filename> で設定することができます。"
+"既定のダウンロード先は <filename>/var/cache/zypp/packages</filename> です。"
 
 #. Tag: term
 #: yast2_sw_repo.xml:212
 #, no-c-format
 msgid "<guimenu>Priority</guimenu>"
-msgstr ""
+msgstr "<guimenu>優先度</guimenu>"
 
 #. Tag: para
 #: yast2_sw_repo.xml:215
@@ -298,12 +378,22 @@ msgid ""
 "downloading packages unnecessarily from the Internet by giving a local "
 "repository (for example, a DVD) a higher priority."
 msgstr ""
+"リポジトリに対する <guimenu>優先度</guimenu> は <literal>1</literal> から"
+" <literal>200</literal> までの値を設定するもので、 <literal>1</literal> が"
+"最も高い優先度を、 <literal>200</literal> が最も低い優先度を表わします。"
+"&yast; で新しいリポジトリを追加すると、既定で優先度 <literal>99</literal> が"
+"割り当てられます。また、優先度として <literal>0</literal> を指定すると、"
+"リポジトリに対して既定の値 ( <literal>99</literal> ) が割り当てられます。"
+"なお、複数のリポジトリで同じパッケージが提供されていると、その中で最も高い"
+"優先度を持つリポジトリからインストールが行なわれます。これは、ローカルのリポジトリ"
+"の優先度を高くしておくことで、無駄なダウンロードを防いだりする目的で使用する"
+"ものです。"
 
 #. Tag: title
 #: yast2_sw_repo.xml:230
 #, no-c-format
 msgid "Priority Compared to Version"
-msgstr ""
+msgstr "優先度とバージョンの関係について"
 
 #. Tag: para
 #: yast2_sw_repo.xml:231
@@ -314,12 +404,16 @@ msgid ""
 "priority, otherwise you might install an outdated version that will not be "
 "updated until the next online update."
 msgstr ""
+"いずれの場合であっても、最も高い優先度のリポジトリからのパッケージが優先されます。"
+"そのため、更新リポジトリについては、他のリポジトリと同じ優先度か高い優先度を"
+"設定しておいてください。そうでないと次回のオンライン更新を行なうまでの間、更新前の"
+"パッケージだけがインストールされることになってしまいます。"
 
 #. Tag: term
 #: yast2_sw_repo.xml:241
 #, no-c-format
 msgid "Name and URL"
-msgstr ""
+msgstr "名前と URL"
 
 #. Tag: para
 #: yast2_sw_repo.xml:243
@@ -328,12 +422,14 @@ msgid ""
 "To change a repository name or its URL, select it from the list with a "
 "single-click and then click <guimenu>Edit</guimenu> ."
 msgstr ""
+"リポジトリの名前や URL を変更するには、一覧からマウスの左ボタンでリポジトリを"
+"選んでから、 <guimenu>編集</guimenu> を押します。"
 
 #. Tag: title
 #: yast2_sw_repo.xml:253
 #, no-c-format
 msgid "Managing Repository Keys"
-msgstr ""
+msgstr "リポジトリの鍵の管理"
 
 #. Tag: para
 #: yast2_sw_repo.xml:254
@@ -346,6 +442,13 @@ msgid ""
 "something might be wrong with the repository. Disable the repository as an "
 "installation source until you know the cause of the key change."
 msgstr ""
+"ソフトウエアのリポジトリは、パッケージの不正な改ざんなどを避けるため、リポジトリの"
+"メンテナが &gpg; 鍵で署名を付与することができます。また、 &yast; で新しいリポジトリを"
+"追加する際には、その署名鍵を取り込むかどうかを尋ねるようにもなっています。"
+"これにより、署名鍵が変更されていないかどうかを確認できるようになっています。"
+"署名鍵の変更は、メンテナの管理するサーバなどへの不正侵入など、何らかの"
+"理由で置き換えられることがありますが、これが本当にメンテナの鍵であるかどうかを"
+"何らかの方法で確認してから、鍵を取り込むことをお勧めします。"
 
 #. Tag: para
 #: yast2_sw_repo.xml:262
@@ -357,3 +460,10 @@ msgid ""
 "<guimenu>Add</guimenu> , <guimenu>Edit</guimenu> or <guimenu>Delete</"
 "guimenu> keys with a click on the respective buttons."
 msgstr ""
+"取り込んだ鍵を管理するには、 <guimenu>設定済みのソフトウエアリポジトリ</guimenu> "
+"で <guimenu>GPG 鍵</guimenu> を押します。すると、一覧内に &gpg; 鍵が表示されるように"
+"なります。鍵の詳細を表示するには、一覧内でいずれかの鍵を選択してください。"
+"詳細はウインドウの下側に表示されます。また、 <guimenu>追加</guimenu> , "
+"<guimenu>編集</guimenu> , <guimenu>削除</guimenu> で、それぞれ鍵を追加／編集／削除する"
+"こともできます。"
+
