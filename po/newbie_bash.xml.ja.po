@@ -1,26 +1,29 @@
+# translation of newbie_bash.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: newbie_bash.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-19 19:31+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: newbie_bash.xml:11
 #, no-c-format
 msgid "Shell Basics"
-msgstr ""
+msgstr "シェルの基本"
 
 #. Tag: para
 #: newbie_bash.xml:12
@@ -34,6 +37,11 @@ msgid ""
 "configured during installation and used by desktop environments such as KDE "
 "or GNOME."
 msgstr ""
+"Linux で様々な作業を行なう際、ほとんどの作業はコマンドラインインタプリタ (シェル) "
+"を使用せずに作業ができてしまいます。 Linux システムが起動すると、通常はログイン処理を"
+"促し、それ以降の作業を行なうグラフィカルなユーザインターフェイスが表示されます。"
+"Linux でのグラフィカルなユーザインターフェイスは、 KDE や GNOME など、インストール時に"
+"選択したデスクトップ環境を一般的に使用します。"
 
 #. Tag: para
 #: newbie_bash.xml:21
@@ -47,6 +55,12 @@ msgid ""
 "it, the more you will realize that the command line is often the quickest "
 "and easiest way to perform some daily tasks."
 msgstr ""
+"しかしながら、グラフィカルなインターフェイスが利用できなくなる問題に引っかかって"
+"しまったような場合などに備えて、シェルの使い方の基本を覚えておくと便利です。"
+"たとえば X Window System の問題が発生したような場合、シェルの知識を持っておかないと、"
+"コマンドの入力 1 つにしても恐る恐る実行することになってしまいます。また、"
+"問題が発生していなくても、場合によっては、コマンドラインでやってしまったほうが"
+"ずっと手っ取り早い作業もあります。"
 
 #. Tag: para
 #: newbie_bash.xml:30
@@ -56,6 +70,9 @@ msgid ""
 "behavior and in the commands they accept. The default shell in "
 "&productnamereg; is Bash (GNU Bourne-Again Shell)."
 msgstr ""
+"Unix や Linux の場合、動作やコマンド体系が少しずつ異なる複数のシェルが用意"
+"されています。 &productnamereg; での既定のシェルは、 Bash (GNU Bourne-Again Shell) "
+"と呼ばれているシェルです。"
 
 #. Tag: para
 #: newbie_bash.xml:35
@@ -67,12 +84,16 @@ msgid ""
 "<quote>power user</quote> already, refer to <xref linkend=\"cha.adm.shell\"/"
 "> ."
 msgstr ""
+"下記の章では、 bash シェルのごく基本的な使い方と、コマンドラインを利用した基本的な"
+"作業のやり方について説明しています。シェルについてさらに詳しく学びたい場合や、"
+"既に <quote>パワーユーザ</quote> であるとご自身でお考えの方は、 <xref linkend=\"cha.adm.shell\"/> "
+"をお読みください。"
 
 #. Tag: title
 #: newbie_bash.xml:43
 #, no-c-format
 msgid "Starting a Shell"
-msgstr ""
+msgstr "シェルの起動"
 
 #. Tag: para
 #: newbie_bash.xml:45
@@ -81,12 +102,14 @@ msgid ""
 "Basically, there are two different ways to start a shell from the graphical "
 "user interface which usually shows after you have booted your computer:"
 msgstr ""
+"基本的には、お使いのコンピュータを起動してグラフィカルユーザインターフェイスが"
+"表示されている状況からは、下記のいずれかの方法でシェルを起動することができます:"
 
 #. Tag: para
 #: newbie_bash.xml:53
 #, no-c-format
 msgid "you can leave the graphical user interface or"
-msgstr ""
+msgstr "グラフィカルなユーザインターフェイスとは別の画面でシェルを起動する"
 
 #. Tag: para
 #: newbie_bash.xml:58
@@ -94,7 +117,7 @@ msgstr ""
 msgid ""
 "you can start a terminal window <emphasis>within</emphasis> the graphical "
 "user interface."
-msgstr ""
+msgstr "グラフィカルなユーザインターフェイス <emphasis>内</emphasis> でシェルを起動する"
 
 #. Tag: para
 #: newbie_bash.xml:65
@@ -105,6 +128,10 @@ msgid ""
 "GNOME. Whichever way you choose, there is always a way back and you can "
 "switch back and forth between the shell and the graphical user interface."
 msgstr ""
+"前者の方式はいつでも利用できる仕組みではありますが、既に KDE や GNOME などの"
+"デスクトップ環境にログインしている場合は、後者のほうが都合がよいでしょう。"
+"いずれの方法を選択した場合も、シェルとグラフィカルユーザインターフェイスとの"
+"間を切り替えることができます。"
 
 #. Tag: para
 #: newbie_bash.xml:72
@@ -118,6 +145,13 @@ msgid ""
 "<keycap function=\"enter\"/> . The prompt now changes and shows some useful "
 "information as in the following example:"
 msgstr ""
+"前者の方法でシェルを起動するには、グラフィカルユーザインターフェイスを終了する"
+"ため、 <keycombo> <keycap function=\"control\"/> <keycap function=\"alt\"/>"
+" <keycap>F2</keycap> </keycombo> を押します。するとグラフィカルな表示が消え、"
+"テキストベースのログインプロンプトが表示されるようになります。ここからユーザ名を"
+"入力して <keycap function=\"enter\"/> を押すと、パスワードの入力を求められます"
+"ので、パスワードを入力して再度 <keycap function=\"enter\"/> を押します。"
+"すると、下記のようなプロンプトが表示されます:"
 
 #. Tag: screen
 #: newbie_bash.xml:83
@@ -127,18 +161,21 @@ msgid ""
 "hostname\"/>&nbsp;&nbsp;&nbsp;<co xml:id=\"co.prompt.path\"/>\n"
 "tux@linux:~&gt;"
 msgstr ""
+" <co xml:id=\"co.prompt.user\"/>&nbsp;&nbsp;&nbsp;<co xml:id=\"co.prompt."
+"hostname\"/>&nbsp;&nbsp;&nbsp;<co xml:id=\"co.prompt.path\"/>\n"
+"tux@linux:~&gt;"
 
 #. Tag: para
 #: newbie_bash.xml:88
 #, no-c-format
 msgid "Your login."
-msgstr ""
+msgstr "ログインしたユーザ名を表わします。"
 
 #. Tag: para
 #: newbie_bash.xml:93
 #, no-c-format
 msgid "The hostname of your computer."
-msgstr ""
+msgstr "コンピュータのホスト名を表わします。"
 
 #. Tag: para
 #: newbie_bash.xml:98
@@ -148,6 +185,9 @@ msgid ""
 "usually is your home directory, indicated by the <literal>~</literal> symbol "
 "(tilde) ."
 msgstr ""
+"現在の (カレント) ディレクトリのパスを表わします。ログインしてすぐの状態では、"
+"カレントディレクトリはホームディレクトリになっています。ホームディレクトリは"
+"<literal>~</literal> (チルダ) で表わされます。"
 
 #. Tag: para
 #: newbie_bash.xml:106
@@ -156,6 +196,9 @@ msgid ""
 "When you are logged in at a remote computer the information provided by the "
 "prompt always shows you which system you are currently working on."
 msgstr ""
+"ネットワーク上離れた場所からログインしている場合でも、上記で出力されるホスト名は"
+"ログイン先のものになりますので、どこで作業を行なっているのかが明らかになるように"
+"なっています。"
 
 #. Tag: para
 #: newbie_bash.xml:111
@@ -172,6 +215,14 @@ msgid ""
 "switch back to the graphical user interface. You will find your desktop and "
 "the applications running on it unchanged."
 msgstr ""
+"カーソルがこのプロンプトの後ろに表示されていれば、お使いのコンピュータシステムで"
+"コマンドを入力できる状態にあることになります。たとえば <command>ls</command> "
+"<option>-l</option> のように入力すると、詳細な出力形式でカレントディレクトリの"
+"内容を表示することができます。なお、シェルの使用を終了し、元の画面に戻りたい"
+"場合は、 <command>exit</command> と入力して <keycap function=\"enter\"/> を"
+"押してください。その後、 <keycombo> <keycap function=\"alt\"/> <keycap>F7</keycap> "
+"</keycombo> を押すと、元のグラフィカルなユーザインターフェイスに戻ることができます。"
+"デスクトップも動作中のアプリケーションも、元のままになっているはずです。"
 
 #. Tag: para
 #: newbie_bash.xml:125
@@ -190,12 +241,23 @@ msgid ""
 "window press <keycombo> <keycap function=\"alt\"/> <keycap>F4</keycap> </"
 "keycombo> ."
 msgstr ""
+"GNOME や KDE のデスクトップ環境にログイン済みで、デスクトップ内に端末 (シェル) "
+"ウインドウを表示させたい場合は、 <keycombo> <keycap function=\"alt\"/> <keycap>F2</keycap> "
+"</keycombo> を押して <command>konsole</command> (KDE の場合) もしくは"
+" <command>gnome-terminal</command> (GNOME の場合) を入力します。すると、デスクトップ"
+"内に端末ウインドウが表示されるようになります。既にデスクトップにログインしているため、"
+"上述のものと同じシステム周りの情報が表示されます。ここからコマンドを入力して"
+"実行すると、デスクトップと同時並行で処理が動作するようになります。デスクトップ"
+"内の他のアプリケーションに切り替えたい場合は、単にそれぞれのアプリケーションの"
+"ウインドウをマウスで選択するか、パネル内のタスクバーなどで選択を行なってください。"
+"端末ウインドウを閉じるには、 <keycombo> <keycap function=\"alt\"/> <keycap>F4</keycap>"
+" </keycombo> を押します。"
 
 #. Tag: title
 #: newbie_bash.xml:141
 #, no-c-format
 msgid "Entering Commands"
-msgstr ""
+msgstr "コマンドの入力"
 
 #. Tag: para
 #: newbie_bash.xml:143
@@ -211,12 +273,21 @@ msgid ""
 "correct typing errors or add options. The command is not executed until you "
 "press <keycap function=\"enter\"/> ."
 msgstr ""
+"シェル内にプロンプトが表示されれば、コマンドを受け取って実行することができる"
+"ことになります。コマンドには複数の要素が存在しています。最初はコマンドそれ自身で、"
+"その後ろにパラメータやオプションが続きます。また、コマンドやオプションは、"
+"<keycap function=\"left\"/> , <keycap function=\"right\"/> , <keycap function=\"home\"/> , "
+"<keycap function=\"end\"/> , <keycap function=\"backspace\"/> (バックスペース), "
+"<keycap function=\"delete\"/> , <keycap function=\"space\"/> (スペース) "
+"の各キーで編集を行なうことができます。入力を間違ってしまったりした場合は、"
+"これらのキーで編集作業を行なうことができます。コマンドは <keycap function=\"enter\"/> "
+"が押されるまで、実行はされません。"
 
 #. Tag: title
 #: newbie_bash.xml:160
 #, no-c-format
 msgid "No News Is Good News"
-msgstr ""
+msgstr "便りが無いのは良い便り"
 
 #. Tag: para
 #: newbie_bash.xml:161
@@ -227,6 +298,10 @@ msgid ""
 "executed. Messages only appear in case of problems or errors &mdash;or if "
 "you explicitly ask for them by executing a command with a certain option."
 msgstr ""
+"シェルは寡黙です。グラフィカルなユーザインターフェイスとは異なり、コマンドが"
+"実行した際にも確認メッセージは表示しないのが通常です。何らかの問題やエラーが"
+"発生した場合や、コマンドの実行時に特定のオプションを指定して出力するように"
+"した場合にのみ、メッセージが表示されます。"
 
 #. Tag: para
 #: newbie_bash.xml:168
@@ -237,12 +312,16 @@ msgid ""
 "you should know if you really want to get rid of the object: it will be "
 "deleted irretrievably, without confirmation."
 msgstr ""
+"なお、何らかのモノを削除する際には、特に注意する必要があります。たとえば"
+" <command>rm</command> というコマンドはファイルを削除するためのコマンドですが、"
+"特に何もオプションを指定しない限り確認メッセージの類は表示されず、そのまま"
+"黙って削除を実行してしまいます。"
 
 #. Tag: title
 #: newbie_bash.xml:177
 #, no-c-format
 msgid "Using Commands without Options"
-msgstr ""
+msgstr "オプション無しでのコマンドの使用"
 
 #. Tag: para
 #: newbie_bash.xml:178
@@ -254,6 +333,11 @@ msgid ""
 "Entering the plain <command>ls</command> command shows the contents of the "
 "current directory:"
 msgstr ""
+"<xref linkend=\"sec.new.bash.accperm.ugo\"/> では、最も基本的なコマンドである"
+" <command>ls</command> を使用しました。このコマンドはディレクトリの内容を表示"
+"するためのコマンドで、オプションを指定しても、指定しなくても実行することができます。"
+" <command>ls</command> コマンドをオプション無しで実行すると、現在のディレクトリに"
+"対する内容を簡潔に出力します:"
 
 #. Tag: screen
 #: newbie_bash.xml:186
@@ -263,6 +347,9 @@ msgid ""
 "bin Desktop Documents public_html tux.txt\n"
 "&prompt.user;"
 msgstr ""
+"&prompt.user;ls\n"
+"bin Desktop Documents public_html tux.txt\n"
+"&prompt.user;"
 
 #. Tag: para
 #: newbie_bash.xml:189
@@ -274,12 +361,18 @@ msgid ""
 "command> . By default, the colors in the Bash shell give you a hint: "
 "directories are usually shown in blue, files in black."
 msgstr ""
+"Linux では、ファイルの拡張子は任意で、必須ではありません。上記の例では <literal>.txt</literal> "
+"という拡張子が付けられたファイルがありますが、拡張子を指定しなくてもかまいません。"
+"このような仕組みであることから、 <command>ls</command> の出力ではファイルと"
+"フォルダの区別が難しくなっていますが、既定の bash シェルでは色を付けて出力"
+"するようになっています (ディレクトリは青色、ファイルは黒色) ので、ここから"
+"ファイルとフォルダを区別することができます。"
 
 #. Tag: title
 #: newbie_bash.xml:199
 #, no-c-format
 msgid "Using Commands with Options"
-msgstr ""
+msgstr "オプション付きでのコマンドの使用"
 
 #. Tag: para
 #: newbie_bash.xml:200
@@ -292,6 +385,12 @@ msgid ""
 "with a hyphen. The <command>ls</command> <option>-l</option> command shows "
 "the contents of the same directory in full detail (long listing format):"
 msgstr ""
+"ディレクトリの内容をより詳しく表示するには、 <command>ls</command> に文字列で"
+"オプションを指定するのが適切です。オプションはコマンドの動作を修正するための仕組み"
+"で、要件にあわせた動作を行なうためのモノです。コマンドとオプションの間はスペース"
+"で区切り、オプションの場合は通常ハイフンで始まります。たとえば <command>ls</command> "
+"<option>-l</option> (<quote>long</quote> (長い) の意味) を実行すると、同じ"
+"ディレクトリをずっと詳しく表示します:"
 
 #. Tag: screen
 #: newbie_bash.xml:209
@@ -305,12 +404,19 @@ msgid ""
 "-rw-r--r-- 1 tux users  47896 2015-06-21 09:46 tux.txt\n"
 "&prompt.user;"
 msgstr ""
+"&prompt.user;ls -l\n"
+"drwxr-xr-x 1 tux users     48 2015-06-23 16:08 bin\n"
+"drwx---r-- 1 tux users  53279 2015-06-21 13:16 Desktop\n"
+"drwx------ 1 tux users    280 2015-06-23 16:08 Documents\n"
+"drwxr-xr-x 1 tux users  70733 2015-06-21 09:35 public_html\n"
+"-rw-r--r-- 1 tux users  47896 2015-06-21 09:46 tux.txt\n"
+"&prompt.user;"
 
 #. Tag: para
 #: newbie_bash.xml:216
 #, no-c-format
 msgid "This output shows the following information about each object:"
-msgstr ""
+msgstr "この出力には、各オブジェクトに対する情報が書かれています:"
 
 #. Tag: screen
 #: newbie_bash.xml:219
@@ -321,6 +427,10 @@ msgid ""
 "\"co.ls_l.size\"/> 2006-06-23 16:08<co xml:id=\"co.ls_l.date\"/> bin<co xml:"
 "id=\"co.ls_l.name\"/>"
 msgstr ""
+"drwxr-xr-x<co xml:id=\"co.ls_l.perm\"/> 1<co xml:id=\"co.ls_l.a\"/> tux<co "
+"xml:id=\"co.ls_l.user\"/> users<co xml:id=\"co.ls_l.group\"/> 48<co xml:id="
+"\"co.ls_l.size\"/> 2006-06-23 16:08<co xml:id=\"co.ls_l.date\"/> bin<co xml:"
+"id=\"co.ls_l.name\"/>"
 
 #. Tag: para
 #: newbie_bash.xml:222
@@ -329,12 +439,14 @@ msgid ""
 "Type of object and access permissions. For further information, refer to "
 "<xref linkend=\"sec.new.bash.accperm.ugo\"/> ."
 msgstr ""
+"オブジェクトの種類とアクセス権を示しています。詳しくは"
+" <xref linkend=\"sec.new.bash.accperm.ugo\"/> をお読みください。"
 
 #. Tag: para
 #: newbie_bash.xml:229
 #, no-c-format
 msgid "Number of hard links to this file."
-msgstr ""
+msgstr "このファイルに対するハードリンク数を示しています。"
 
 #. Tag: para
 #: newbie_bash.xml:234
@@ -343,6 +455,8 @@ msgid ""
 "Owner of the file or directory. For further information, refer to <xref "
 "linkend=\"sec.new.bash.accperm.ugo\"/> ."
 msgstr ""
+"ファイルやディレクトリの所有者を示しています。詳しくは"
+" <xref linkend=\"sec.new.bash.accperm.ugo\"/> をお読みください。"
 
 #. Tag: para
 #: newbie_bash.xml:241
@@ -351,24 +465,26 @@ msgid ""
 "Group assigned to the file or directory. For further information, refer to "
 "<xref linkend=\"sec.new.bash.accperm.ugo\"/> ."
 msgstr ""
+"ファイルやディレクトリに割り当てられたグループを示しています。詳しくは"
+" <xref linkend=\"sec.new.bash.accperm.ugo\"/> をお読みください。"
 
 #. Tag: para
 #: newbie_bash.xml:248
 #, no-c-format
 msgid "File size in bytes."
-msgstr ""
+msgstr "バイト単位でのファイルサイズを示しています。"
 
 #. Tag: para
 #: newbie_bash.xml:253
 #, no-c-format
 msgid "Date and time of the last change."
-msgstr ""
+msgstr "最終変更日時を示しています。"
 
 #. Tag: para
 #: newbie_bash.xml:258
 #, no-c-format
 msgid "Name of the object."
-msgstr ""
+msgstr "オブジェクトの名前を示しています。"
 
 #. Tag: para
 #: newbie_bash.xml:263
@@ -383,6 +499,13 @@ msgid ""
 "directory, indicated by a dot in front (for example, <literal>.hiddenfile</"
 "literal> )."
 msgstr ""
+"通常は、最初のオプションに対してだけハイフンを付け、それ以降のオプションはスペース"
+"を入れずに入力することで、複数のオプションをまとめて記述することができます。たとえば"
+"ディレクトリ内の全てのファイルを長い形式で出力させたい場合は、 <option>-l</option> "
+"と <option>-a</option> (<quote>all</quote> (全て) の意味) を組み合わせて"
+" <command>ls</command> コマンドに指定し、 <command>ls</command> <option>-la</option> "
+"のようにして実行します。これでディレクトリ内の隠しファイル (ドットで始まるファイル、"
+"たとえば <literal>.hiddenfile</literal> など) をあわせて表示するようになります。"
 
 #. Tag: para
 #: newbie_bash.xml:273
@@ -393,6 +516,10 @@ msgid ""
 "also sort the output of <command>ls</command> <option>-l</option> according "
 "to various criteria such as date, file extension or file size:"
 msgstr ""
+"<command>ls</command> で出力される内容は、ファイル名のアルファベット順に並び替え"
+"られます。ですが、グラフィカルなファイルマネージャと同様に、 <command>ls</command> "
+"<option>-l</option> で出力される内容を、日付や拡張子、ファイルサイズなどで"
+"並び替えることができます:"
 
 #. Tag: para
 #: newbie_bash.xml:281
@@ -401,6 +528,8 @@ msgid ""
 "For date and time, use <command>ls</command> <option>-lt</option> (displays "
 "newest first)."
 msgstr ""
+"日時で並べ替えるには、 <command>ls</command> <option>-lt</option> のように指定して"
+"実行します (新しいものを先に表示します) 。"
 
 #. Tag: para
 #: newbie_bash.xml:287
@@ -409,6 +538,8 @@ msgid ""
 "For extensions, use <command>ls</command> <option>-lx</option> (displays "
 "files with no extension first)."
 msgstr ""
+"拡張子で並べ替えるには、 <command>ls</command> <option>-lx</option> のように指定して"
+"実行します (拡張子の無いものが先に表示されます) 。"
 
 #. Tag: para
 #: newbie_bash.xml:293
@@ -417,6 +548,8 @@ msgid ""
 "For file size, use <command>ls</command> <option>-lS</option> (displays "
 "largest first)."
 msgstr ""
+"ファイルサイズで並べ替えるには、 <command>ls</command> <option>-lS</option> のように"
+"指定して実行します (大きいものが先に表示されます) 。"
 
 #. Tag: para
 #: newbie_bash.xml:299
@@ -429,12 +562,18 @@ msgid ""
 "first. There are lots of other useful options for <command>ls</command> . In "
 "the following section you will learn how to investigate them."
 msgstr ""
+"逆順で並び替えるには、お使いの <command>ls</command> コマンドに <option>-r</option> "
+"オプションを追加します。たとえば <command>ls</command> <option>-lr</option> のように"
+"実行すると、ディレクトリの内容一覧をアルファベットの逆順で出力します。また、"
+" <command>ls</command> <option>-ltr</option> を実行すると古いファイルを先に表示"
+"することができます。このほかにも、 <command>ls</command> には多数の便利なオプション"
+"が用意されています。以下の章では、それらの調べ方を示しています。"
 
 #. Tag: title
 #: newbie_bash.xml:311
 #, no-c-format
 msgid "Bash Shortcut Keys"
-msgstr ""
+msgstr "bash ショートカットキー"
 
 #. Tag: para
 #: newbie_bash.xml:312
@@ -444,38 +583,38 @@ msgid ""
 "all sorts of commands and the corresponding outputs. In the following table, "
 "find some useful shortcut keys for navigating and editing in the shell."
 msgstr ""
+"コマンドを入力して実行していると、シェルの画面がコマンドとその出力で埋め尽くされる"
+"ことになります。下記の表では、シェル内のナビゲーションと編集に役立つキーを示しています。"
 
 #. Tag: para
 #: newbie_bash.xml:323
 #, no-c-format
 msgid "Shortcut Key"
-msgstr ""
+msgstr "ショートカットキー"
 
 #. Tag: para
 #: newbie_bash.xml:337
 #, no-c-format
-msgid ""
-"<keycombo> <keycap function=\"control\"/> <keycap>L</keycap> </keycombo>"
-msgstr ""
+msgid "<keycombo> <keycap function=\"control\"/> <keycap>L</keycap> </keycombo>"
+msgstr "<keycombo> <keycap function=\"control\"/> <keycap>L</keycap> </keycombo>"
 
 #. Tag: para
 #: newbie_bash.xml:343
 #, no-c-format
 msgid "Clears the screen and moves the current line to the top of the page."
-msgstr ""
+msgstr "画面を消去し、現在の行をページの冒頭に移動します。"
 
 #. Tag: para
 #: newbie_bash.xml:351
 #, no-c-format
-msgid ""
-"<keycombo> <keycap function=\"control\"/> <keycap>C</keycap> </keycombo>"
-msgstr ""
+msgid "<keycombo> <keycap function=\"control\"/> <keycap>C</keycap> </keycombo>"
+msgstr "<keycombo> <keycap function=\"control\"/> <keycap>C</keycap> </keycombo>"
 
 #. Tag: para
 #: newbie_bash.xml:357
 #, no-c-format
 msgid "Aborts the command which is currently being executed."
-msgstr ""
+msgstr "現在実行中のコマンドを中止します。"
 
 #. Tag: para
 #: newbie_bash.xml:364
@@ -484,12 +623,14 @@ msgid ""
 "<keycombo> <keycap function=\"shift\"/> <keycap function=\"pageup\"/> </"
 "keycombo>"
 msgstr ""
+"<keycombo> <keycap function=\"shift\"/> <keycap function=\"pageup\"/> </"
+"keycombo>"
 
 #. Tag: para
 #: newbie_bash.xml:370
 #, no-c-format
 msgid "Scrolls upwards."
-msgstr ""
+msgstr "上にスクロールします。"
 
 #. Tag: para
 #: newbie_bash.xml:377
@@ -498,69 +639,68 @@ msgid ""
 "<keycombo> <keycap function=\"shift\"/> <keycap function=\"pagedown\"/> </"
 "keycombo>"
 msgstr ""
+"<keycombo> <keycap function=\"shift\"/> <keycap function=\"pagedown\"/> </"
+"keycombo>"
 
 #. Tag: para
 #: newbie_bash.xml:383
 #, no-c-format
 msgid "Scrolls downwards."
-msgstr ""
+msgstr "下にスクロールします。"
 
 #. Tag: para
 #: newbie_bash.xml:390
 #, no-c-format
-msgid ""
-"<keycombo> <keycap function=\"control\"/> <keycap>U</keycap> </keycombo>"
-msgstr ""
+msgid "<keycombo> <keycap function=\"control\"/> <keycap>U</keycap> </keycombo>"
+msgstr "<keycombo> <keycap function=\"control\"/> <keycap>U</keycap> </keycombo>"
 
 #. Tag: para
 #: newbie_bash.xml:396
 #, no-c-format
 msgid "Deletes from cursor position to start of line."
-msgstr ""
+msgstr "カーソルのある位置から行頭までを削除します。"
 
 #. Tag: para
 #: newbie_bash.xml:403
 #, no-c-format
-msgid ""
-"<keycombo> <keycap function=\"control\"/> <keycap>K</keycap> </keycombo>"
-msgstr ""
+msgid "<keycombo> <keycap function=\"control\"/> <keycap>K</keycap> </keycombo>"
+msgstr "<keycombo> <keycap function=\"control\"/> <keycap>K</keycap> </keycombo>"
 
 #. Tag: para
 #: newbie_bash.xml:409
 #, no-c-format
 msgid "Deletes from cursor position to the end of line."
-msgstr ""
+msgstr "カーソルのある位置から行末までを削除します。"
 
 #. Tag: para
 #: newbie_bash.xml:416
 #, no-c-format
-msgid ""
-"<keycombo> <keycap function=\"control\"/> <keycap>D</keycap> </keycombo>"
-msgstr ""
+msgid "<keycombo> <keycap function=\"control\"/> <keycap>D</keycap> </keycombo>"
+msgstr "<keycombo> <keycap function=\"control\"/> <keycap>D</keycap> </keycombo>"
 
 #. Tag: para
 #: newbie_bash.xml:422
 #, no-c-format
 msgid "Closes the shell session."
-msgstr ""
+msgstr "シェルのセッションを閉じます。"
 
 #. Tag: para
 #: newbie_bash.xml:429
 #, no-c-format
 msgid "<keycap function=\"up\"/> , <keycap function=\"down\"/>"
-msgstr ""
+msgstr "<keycap function=\"up\"/> , <keycap function=\"down\"/>"
 
 #. Tag: para
 #: newbie_bash.xml:434
 #, no-c-format
 msgid "Browses in the history of executed commands."
-msgstr ""
+msgstr "過去に実行したコマンドの履歴を参照します。"
 
 #. Tag: title
 #: newbie_bash.xml:446
 #, no-c-format
 msgid "Getting Help"
-msgstr ""
+msgstr "ヘルプについて"
 
 #. Tag: para
 #: newbie_bash.xml:447
@@ -569,12 +709,14 @@ msgid ""
 "If you remember the name of command but are not sure about the options or "
 "the syntax of the command, choose one of the following possibilities:"
 msgstr ""
+"コマンドの名前は覚えていたものの、オプションやコマンドの書式を忘れてしまった"
+"場合は、下記のいずれかの方法で調べることができます:"
 
 #. Tag: term
 #: newbie_bash.xml:453
 #, no-c-format
 msgid "<option>--help</option> / <option>-h</option> option"
-msgstr ""
+msgstr "<option>--help</option> / <option>-h</option> オプション"
 
 #. Tag: para
 #: newbie_bash.xml:455
@@ -586,12 +728,17 @@ msgid ""
 "command> <option>--help</option> displays all the options for the "
 "<command>ls</command> command."
 msgstr ""
+"特定のコマンドに対してオプションを確認したいだけであれば、コマンドの後ろにスペースで"
+"区切って <option>--help</option> と指定してください。 <option>--help</option> "
+"オプションは多数のコマンドに実装されています。たとえば <command>ls</"
+"command> <option>--help</option> のように入力すると、 <command>ls</command> "
+"コマンドに対する全てのオプションが表示されます。"
 
 #. Tag: term
 #: newbie_bash.xml:465
 #, no-c-format
 msgid "Manual Pages"
-msgstr ""
+msgstr "マニュアルページ"
 
 #. Tag: para
 #: newbie_bash.xml:467
@@ -602,6 +749,11 @@ msgid ""
 "can be accessed with <command>man</command> followed by the name of the "
 "command, for example, <command>man&nbsp;ls</command> ."
 msgstr ""
+"様々なコマンドに対して詳しく学びたい場合は、マニュアルページを読むこともできます。"
+"マニュアルページには、コマンドの動作に関する簡単な説明も付属しています。マニュアル"
+"ページは <command>man</command> コマンドでアクセスすることができます。マニュアル"
+"ページを読みたいコマンドを、スペースで区切って指定してください。たとえば"
+" <command>man&nbsp;ls</command> のように実行します。"
 
 #. Tag: para
 #: newbie_bash.xml:473
@@ -610,6 +762,8 @@ msgid ""
 "Man pages are displayed directly in the shell. To navigate them, use the "
 "following keys:"
 msgstr ""
+"マニュアルページはシェル内に直接表示されます。マニュアルページ内を移動するには、"
+"下記のキーをお使いください:"
 
 #. Tag: para
 #: newbie_bash.xml:485
@@ -618,12 +772,14 @@ msgid ""
 "Move between the beginning and the end of a document with <keycap function="
 "\"home\"/> and <keycap function=\"end\"/>"
 msgstr ""
+"マニュアルページの冒頭および末尾への移動: <keycap function=\"home\"/> ,"
+" <keycap function=\"end\"/>"
 
 #. Tag: para
 #: newbie_bash.xml:491
 #, no-c-format
 msgid "Quit the man page viewer by pressing <keycap>Q</keycap>"
-msgstr ""
+msgstr "マニュアルページの終了: <keycap>Q</keycap>"
 
 #. Tag: para
 #: newbie_bash.xml:496
@@ -632,12 +788,15 @@ msgid ""
 "For more information about the <command>man</command> command, use "
 "<command>man man</command> ."
 msgstr ""
+"<command>man</command> コマンドそのものについても、マニュアルページで"
+"調べることができます。詳しくは <command>man man</command> と入力して"
+"ください。"
 
 #. Tag: term
 #: newbie_bash.xml:503
 #, no-c-format
 msgid "Info Pages"
-msgstr ""
+msgstr "info ページ"
 
 #. Tag: para
 #: newbie_bash.xml:505
@@ -647,6 +806,9 @@ msgid ""
 "info page for a certain command, enter <command>info</command> followed by "
 "the name of the command (for example, <command>info ls</command> )."
 msgstr ""
+"info ページは、特定のコマンドに対してより詳しい説明を記述しているものです。"
+"特定のコマンドに対する info ページを読むには、 <command>info</command> に続いて"
+"コマンド名を指定してください (例: <command>info ls</command>) 。"
 
 #. Tag: para
 #: newbie_bash.xml:511
@@ -655,6 +817,8 @@ msgid ""
 "Info pages are displayed directly in the shell. To navigate them, use the "
 "following keys:"
 msgstr ""
+"info ページはシェル内に直接表示されます。 info ページ内を移動するには、"
+"下記のキーをお使いください:"
 
 #. Tag: para
 #: newbie_bash.xml:517
@@ -663,6 +827,8 @@ msgid ""
 "Use <keycap function=\"space\"/> to move forward a section ( <emphasis>node</"
 "emphasis> ). Use <keycap function=\"backspace\"/> to move backward a section."
 msgstr ""
+"セクション (<emphasis>ノード</emphasis>) 内の前もしくは後ろへの移動:"
+" <keycap function=\"space\"/> , <keycap function=\"backspace\"/> "
 
 #. Tag: para
 #: newbie_bash.xml:524
@@ -670,13 +836,13 @@ msgstr ""
 msgid ""
 "Move up and down with <keycap function=\"pageup\"/> and <keycap function="
 "\"pagedown\"/>"
-msgstr ""
+msgstr "単純な上下移動: <keycap function=\"pageup\"/> , <keycap function=\"pagedown\"/>"
 
 #. Tag: para
 #: newbie_bash.xml:530
 #, no-c-format
 msgid "Quit the info page viewer by pressing <keycap>Q</keycap>"
-msgstr ""
+msgstr "info ページの終了: <keycap>Q</keycap>"
 
 #. Tag: para
 #: newbie_bash.xml:538
@@ -686,12 +852,16 @@ msgid ""
 "both are available (usually for key commands), sometimes only a man page or "
 "an info page exists, and sometimes neither of them are available."
 msgstr ""
+"なお、全てのコマンドに対してマニュアルページや info ページが用意されているとは"
+"限らないことに注意してください。両方が用意されているもの (主なコマンド類) のほか、"
+"マニュアルページと info ページのいずれかが用意されているものや、どちらも用意されて"
+"いないものもあります。"
 
 #. Tag: title
 #: newbie_bash.xml:547
 #, no-c-format
 msgid "Working with Files and Directories"
-msgstr ""
+msgstr "ファイルやディレクトリの作業"
 
 #. Tag: para
 #: newbie_bash.xml:549
@@ -700,12 +870,14 @@ msgid ""
 "To address a certain file or directory, you must specify the path leading to "
 "that directory or file. There are two ways to specify a path:"
 msgstr ""
+"ある特定のファイルやディレクトリを指定する際、そのファイルやディレクトリへの"
+"経路 (パス) を指定する必要があります。パスの指定方法には、下記の 2 種類があります:"
 
 #. Tag: term
 #: newbie_bash.xml:556
 #, no-c-format
 msgid "Absolute Path"
-msgstr ""
+msgstr "絶対パス"
 
 #. Tag: para
 #: newbie_bash.xml:559
@@ -716,18 +888,22 @@ msgid ""
 "named <filename>file.txt</filename> in your <filename>Documents</filename> "
 "directory might be:"
 msgstr ""
+"ルートディレクトリ ( <filename>/</filename> ) から、そのファイルやディレクトリに"
+"至る経路 (パス) 全体を表わす方法です。たとえば、ホームディレクトリ内の"
+" <filename>Documents</filename> というディレクトリにある <filename>file.txt</filename> "
+"というファイルの絶対パスは、下記のようになります:"
 
 #. Tag: screen
 #: newbie_bash.xml:565
 #, no-c-format
 msgid "/home/&exampleuser_plain;/Documents/file.txt"
-msgstr ""
+msgstr "/home/&exampleuser_plain;/Documents/file.txt"
 
 #. Tag: term
 #: newbie_bash.xml:569
 #, no-c-format
 msgid "Relative Path"
-msgstr ""
+msgstr "相対パス"
 
 #. Tag: para
 #: newbie_bash.xml:572
@@ -738,12 +914,17 @@ msgid ""
 "&exampleuser_plain;</filename> , the relative path <filename>file.txt</"
 "filename> in your <filename>Documents</filename> directory is:"
 msgstr ""
+"現在の作業ディレクトリ (カレントディレクトリ) から、そのファイルやディレクトリに"
+"至る経路 (パス) を表わす方法です。カレントディレクトリが <filename>/home/"
+"&exampleuser_plain;</filename> であった場合、ホームディレクトリ内の"
+" <filename>Documents</filename> 内にある <filename>file.txt</"
+"filename> ファイルの相対パスは、下記のようになります:"
 
 #. Tag: screen
 #: newbie_bash.xml:579
 #, no-c-format
 msgid "Documents/file.txt"
-msgstr ""
+msgstr "Documents/file.txt"
 
 #. Tag: para
 #: newbie_bash.xml:580
@@ -754,12 +935,17 @@ msgid ""
 "&exampleuser_plain;</filename> (with <filename>..</filename> ) before you "
 "can go further down:"
 msgstr ""
+"たとえばカレントディレクトリが <filename>/home/&exampleuser_plain;/"
+"Music</filename> であった場合は、ホームディレクトリにいったん戻るための"
+"経路を記述しなければ、上と同じファイルを指定することができません。この場合は、"
+"<filename>..</filename> を指定して、一階層上のディレクトリに移動してから、"
+"残りのディレクトリやファイルの経路を指定します:"
 
 #. Tag: screen
 #: newbie_bash.xml:586
 #, no-c-format
 msgid "../Documents/file.txt"
-msgstr ""
+msgstr "../Documents/file.txt"
 
 #. Tag: para
 #: newbie_bash.xml:591
@@ -769,6 +955,10 @@ msgid ""
 "Absolute paths always start with a slash. Relative paths do not have a slash "
 "at the beginning, but can have one or two dots."
 msgstr ""
+"パスの表記では複数のディレクトリ名とファイル名を組み合わせますが、"
+"それぞれはスラッシュで区切ります。また、絶対パスは必ずスラッシュで始まりますが、"
+"相対パスはスラッシュ以外の文字で始まります。"
+"また、相対パスの場合、 1 つまたは 2 つのドットを使用することがあります。"
 
 #. Tag: para
 #: newbie_bash.xml:597
@@ -779,12 +969,16 @@ msgid ""
 "same result. To change directories, use the <command>cd</command> command "
 "and specify the path to the directory."
 msgstr ""
+"コマンドを入力する場合、パスはどちらの方法で指定してもかまいません。"
+"いずれか入力が楽なほうをお選びください。どちらを入力しても結果は同じです。"
+"また、カレントディレクトリを変更するには、 <command>cd</command> コマンドを"
+"使用してパスを指定します。"
 
 #. Tag: title
 #: newbie_bash.xml:605
 #, no-c-format
 msgid "Handling Blanks in Filenames or Directory Names"
-msgstr ""
+msgstr "ファイル名やディレクトリ名における空白 (スペース) の処理について"
 
 #. Tag: para
 #: newbie_bash.xml:606
@@ -799,6 +993,19 @@ msgid ""
 "is that variable expansion takes place within double quotes. Single quotes "
 "ensure that the shell sees the quoted string literally.-->"
 msgstr ""
+"ファイル名やディレクトリ名に空白を含む場合、空白の前にバックスラッシュ"
+"<!-- Japanese original contents start -->"
+"<!-- It says 'backslash may be rendered as Yen mark (Japanese currency sign) depending on the font' -->"
+" (フォントによっては円マークとして描画される場合があります) "
+"<!-- Japanese original contents end -->"
+" ( <literal>\\</literal> ) を付けてスペースを避ける (エスケープ) 処理をするか、"
+"もしくはパス全体を引用符で括って指定します。このように指定しないと、 bash は"
+"<filename>My Documents</filename> のようなファイル名を 2 つのファイル名もしくは"
+"ディレクトリ名であるものと解釈してしまい、この例では <filename>My</filename> と"
+" <filename>Documents</filename> の 2 つのパスになってしまいます。"
+"<!--The difference between single and double quotes "
+"is that variable expansion takes place within double quotes. Single quotes "
+"ensure that the shell sees the quoted string literally.-->"
 
 #. Tag: para
 #: newbie_bash.xml:621
@@ -807,6 +1014,8 @@ msgid ""
 "When specifying paths, the following <quote>shortcuts</quote> can save you a "
 "lot of typing:"
 msgstr ""
+"なお、パスを指定する際は、下記の <quote>ショートカット</quote> を利用して、"
+"入力を省略することができます:"
 
 #. Tag: para
 #: newbie_bash.xml:628
@@ -825,6 +1034,19 @@ msgid ""
 "home directory may not be called <filename>/home</filename> but can be "
 "mapped to any directory in the file system."
 msgstr ""
+"チルダ記号 ( <literal>~</literal> ) はホームディレクトリのショートカットです。"
+"たとえば、お使いのホームディレクトリの内容を一覧表示したい場合は、"
+" <command>ls</command> <option>~</option> のように指定することができます。"
+"また、他のユーザのホームディレクトリを指定する場合は、 <command>ls</command> "
+"<option>~<replaceable>ユーザ名</replaceable> </option> のように入力します"
+" (このコマンドは、そのユーザのホームディレクトリを見る権限が与えられている"
+"場合にのみ出力することができます。詳しくは <xref linkend="
+"\"sec.new.bash.accperm\"/> をお読みください) 。たとえば <command>ls "
+"~&exampleuser_plain;</command> のようなコマンドを実行すると、 &exampleuser; "
+"というユーザ名のホームディレクトリの内容を一覧表示することになります。"
+"この仕組みは、たとえばネットワーク環境などで <filename>/home</filename> "
+"以外のディレクトリ内にホームディレクトリが存在するような場合に、便利な"
+"ショートカットとなります。"
 
 #. Tag: para
 #: newbie_bash.xml:643
@@ -834,6 +1056,9 @@ msgid ""
 "entering <command>cd ~</command> or by simply entering <command>cd</command> "
 "without any options."
 msgstr ""
+"なお、カレントディレクトリがどこであっても、ホームディレクトリに戻りたい場合は"
+" <command>cd ~</command> と入力するか、もしくは単にオプション無しで"
+" <command>cd</command> と入力して実行してください。"
 
 #. Tag: para
 #: newbie_bash.xml:650
@@ -844,6 +1069,9 @@ msgid ""
 "<command>cp</command> or <command>mv</command> by which you can copy or move "
 "files and directories."
 msgstr ""
+"相対パスで指定している場合は、カレントディレクトリはドット 1 つ ( <literal>.</literal> ) "
+"で指定することができます。これは特に <command>cp</command> (ファイルやディレクトリのコピー) や"
+" <command>mv</command> (ファイルやディレクトリの移動) 等のコマンドを実行する際に便利です。"
 
 #. Tag: para
 #: newbie_bash.xml:658
@@ -854,6 +1082,12 @@ msgid ""
 "directory, enter <command>cd ..</command> , to go up two levels from the "
 "current directory enter <command>cd ../..</command> etc."
 msgstr ""
+"また、ドットを 2 つ並べる ( <literal>..</literal> ) と、ツリー構造内で 1 段上位の"
+"ディレクトリ (ルートディレクトリに 1 段だけ近いほうのディレクトリ。親ディレクトリ"
+"とも呼びます) を表わすことができます。たとえばカレントディレクトリの親ディレクトリに"
+"移動するには <command>cd ..</command> と入力して実行しますし、"
+" 2 段上位のディレクトリに移動したい場合は、 <command>cd ../..</command> 等のように"
+"指定して実行します。"
 
 #. Tag: para
 #: newbie_bash.xml:668
@@ -862,12 +1096,14 @@ msgid ""
 "To apply your knowledge, find some examples below. They address basic tasks "
 "you may want to execute with files or folders using Bash."
 msgstr ""
+"知識をより深めるため、下記には様々な例を示します。 bash を利用すれば、ファイルや"
+"ディレクトリに対する様々な基本作業を行なうことができます。"
 
 #. Tag: title
 #: newbie_bash.xml:675
 #, no-c-format
 msgid "Examples for Working with Files and Directories"
-msgstr ""
+msgstr "ファイルやディレクトリの作業例"
 
 #. Tag: para
 #: newbie_bash.xml:676
@@ -876,25 +1112,29 @@ msgid ""
 "Suppose you want to copy a file located somewhere in your home directory to "
 "a subdirectory of <filename>/tmp</filename> that you need to create first."
 msgstr ""
+"ここでは、ホームディレクトリ内のどこかにあるファイルを、 <filename>/tmp</filename> "
+"のサブディレクトリにコピーする流れを示しています。もちろん、コピー先のディレクトリも"
+"流れの中で作成するものとします。"
 
 #. Tag: title
 #: newbie_bash.xml:682
 #, no-c-format
 msgid "Creating and Changing Directories"
-msgstr ""
+msgstr "ディレクトリの作成と移動"
 
 #. Tag: para
 #: newbie_bash.xml:683
 #, no-c-format
-msgid ""
-"From your home directory create a subdirectory in <filename>/tmp</filename> :"
+msgid "From your home directory create a subdirectory in <filename>/tmp</filename> :"
 msgstr ""
+"カレントディレクトリがホームディレクトリであるものとして、まずは <filename>/tmp</filename> 内に"
+"サブ (1 段下位の／子の) ディレクトリを作成します:"
 
 #. Tag: screen
 #: newbie_bash.xml:691
 #, no-c-format
 msgid "&prompt.user;mkdir /tmp/test"
-msgstr ""
+msgstr "&prompt.user;mkdir /tmp/test"
 
 #. Tag: para
 #: newbie_bash.xml:692
@@ -905,18 +1145,23 @@ msgid ""
 "<filename>/tmp</filename> directory. In this case, you are using an absolute "
 "path to create the <filename>test</filename> directory."
 msgstr ""
+"<command>mkdir</command> は <quote>make directory</quote> (ディレクトリの作成) "
+"の意味です。このコマンドを実行すると、新しい <filename>test</filename> という"
+"名前のディレクトリを <filename>/tmp</filename> ディレクトリ内に作成します。"
+"この場合、 <filename>test</filename> ディレクトリを作成する際に使用したパスは"
+"絶対パスです。"
 
 #. Tag: para
 #: newbie_bash.xml:701
 #, no-c-format
 msgid "To check what happened, now enter"
-msgstr ""
+msgstr "作成されたディレクトリを確認するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:704
 #, no-c-format
 msgid "&prompt.user;ls -l /tmp"
-msgstr ""
+msgstr "&prompt.user;ls -l /tmp"
 
 #. Tag: para
 #: newbie_bash.xml:705
@@ -925,24 +1170,26 @@ msgid ""
 "The new directory <filename>test</filename> should appear in the list of "
 "contents of the <filename>/tmp</filename> directory."
 msgstr ""
+"新しく作成した <filename>test</filename> ディレクトリが、"
+"<filename>/tmp</filename> ディレクトリ内に作成されているはずです。"
 
 #. Tag: para
 #: newbie_bash.xml:711
 #, no-c-format
 msgid "Switch to the newly created directory with"
-msgstr ""
+msgstr "新しく作成したディレクトリに移動するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:714
 #, no-c-format
 msgid "&prompt.user;cd /tmp/test"
-msgstr ""
+msgstr "&prompt.user;cd /tmp/test"
 
 #. Tag: title
 #: newbie_bash.xml:718
 #, no-c-format
 msgid "Creating and Copying Files"
-msgstr ""
+msgstr "ファイルの作成とコピー"
 
 #. Tag: para
 #: newbie_bash.xml:719
@@ -951,12 +1198,15 @@ msgid ""
 "Now create a new file in a subdirectory of your home directory and copy it "
 "to <filename>/tmp/test</filename> . Use a relative path for this task."
 msgstr ""
+"次に、ホームディレクトリ内のサブディレクトリに新しいファイルを作成し、これを"
+" <filename>/tmp/test</filename> 内にコピーします。このとき、相対パスを利用して"
+"指定を行ないます。"
 
 #. Tag: title
 #: newbie_bash.xml:725
 #, no-c-format
 msgid "Overwriting of Existing Files"
-msgstr ""
+msgstr "既存のファイルへの上書き"
 
 #. Tag: para
 #: newbie_bash.xml:726
@@ -969,18 +1219,26 @@ msgid ""
 "existing file. Otherwise Bash will overwrite the existing file without "
 "confirmation."
 msgstr ""
+"ファイルのコピーや移動、名前変更を行なう前に、宛先となるディレクトリ内に"
+"同じ名前のファイルが存在していないかどうかをご確認ください。存在している"
+"場合は、別のファイル名でコピーや移動、名前変更を行なうか、もしくは"
+" <command>cp</command> や <command>mv</command> などのコマンドに"
+" <option>-i</option> のようなオプションを追加してください。これにより、"
+"既存のファイルに上書きする際に、確認プロンプトが表示されるようになります。"
+"オプションを設定しないと、 bash は何も確認を行なうことなくファイルを"
+"上書きしてしまいます。"
 
 #. Tag: para
 #: newbie_bash.xml:736
 #, no-c-format
 msgid "To list the contents of your home directory, enter"
-msgstr ""
+msgstr "まずはホームディレクトリの内容を一覧表示します。下記のように入力して実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:739
 #, no-c-format
 msgid "&prompt.user;ls -l ~"
-msgstr ""
+msgstr "&prompt.user;ls -l ~"
 
 #. Tag: para
 #: newbie_bash.xml:740
@@ -990,12 +1248,15 @@ msgid ""
 "default. If not, create this subdirectory with the <command>mkdir</command> "
 "command you already know:"
 msgstr ""
+"<!-- NOTE: When in environment other than English, \"Documents\" will be translated to something."
+" But it may be difficult to input within terminal. So we changed the explanation in this translation. -->"
+"まずは新しいディレクトリ <filename>Documents</filename> を、ホームディレクトリ内に作成します:"
 
 #. Tag: screen
 #: newbie_bash.xml:745
 #, no-c-format
 msgid "&prompt.user;mkdir ~/Documents"
-msgstr ""
+msgstr "&prompt.user;mkdir ~/Documents"
 
 #. Tag: para
 #: newbie_bash.xml:748
@@ -1004,12 +1265,14 @@ msgid ""
 "To create a new, empty file named <filename>myfile.txt</filename> in the "
 "<filename>Documents</filename> directory, enter"
 msgstr ""
+"続いて、作成した <filename>Documents</filename> ディレクトリ内に"
+" <filename>myfile.txt</filename> という空のファイルを作成します:"
 
 #. Tag: screen
 #: newbie_bash.xml:752
 #, no-c-format
 msgid "&prompt.user;touch ~/Documents/myfile.txt"
-msgstr ""
+msgstr "&prompt.user;touch ~/Documents/myfile.txt"
 
 #. Tag: para
 #: newbie_bash.xml:753
@@ -1020,42 +1283,46 @@ msgid ""
 "filename which does not exist in your target directory, it creates a new "
 "file."
 msgstr ""
+"通常、 <command>touch</command> コマンドは、既存のファイルに対して最終更新"
+"日時とアクセス日時を更新させるためのコマンドです。ですが、存在しないファイル"
+"に対して <command>touch</command> コマンドを実行すると、新しくファイルを"
+"作成する処理を行ないます。"
 
 #. Tag: para
 #: newbie_bash.xml:761
 #, no-c-format
 msgid "Enter"
-msgstr ""
+msgstr "下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:764
 #, no-c-format
 msgid "&prompt.user;ls -l ~/Documents"
-msgstr ""
+msgstr "&prompt.user;ls -l ~/Documents"
 
 #. Tag: para
 #: newbie_bash.xml:765
 #, no-c-format
 msgid "The new file should appear in the list of contents."
-msgstr ""
+msgstr "新しく作成したファイルが、一覧内に現われるようになります。"
 
 #. Tag: para
 #: newbie_bash.xml:770
 #, no-c-format
 msgid "To copy the newly created file, enter"
-msgstr ""
+msgstr "新しく作成したファイルをコピーするには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:773
 #, no-c-format
 msgid "&prompt.user;cp ~/Documents/myfile.txt ."
-msgstr ""
+msgstr "&prompt.user;cp ~/Documents/myfile.txt ."
 
 #. Tag: para
 #: newbie_bash.xml:774
 #, no-c-format
 msgid "Do not forget the dot at the end."
-msgstr ""
+msgstr "なお、末尾のドットを忘れずに入力してください。"
 
 #. Tag: para
 #: newbie_bash.xml:777
@@ -1066,12 +1333,15 @@ msgid ""
 "to the current directory, <filename>/tmp/test</filename> , without changing "
 "the name of the file."
 msgstr ""
+"このコマンドは bash に対して、ホームディレクトリ内の <filename>Documents</filename> "
+"サブディレクトリにある <filename>myfile.txt</filename> を、カレントディレクトリに"
+"名前を変更せずにコピーするよう指示しているものです。"
 
 #. Tag: para
 #: newbie_bash.xml:785
 #, no-c-format
 msgid "Check the result by entering"
-msgstr ""
+msgstr "下記のように入力すると、結果を確認することができます:"
 
 #. Tag: para
 #: newbie_bash.xml:789
@@ -1080,12 +1350,14 @@ msgid ""
 "The file <filename>myfile.txt </filename> should appear in the list of "
 "contents for <filename>/tmp/test</filename> ."
 msgstr ""
+"<filename>/tmp/test</filename> の一覧の中に、 <filename>myfile.txt</filename> が"
+"現われるようになっているはずです。"
 
 #. Tag: title
 #: newbie_bash.xml:796
 #, no-c-format
 msgid "Renaming and Removing Files or Directories"
-msgstr ""
+msgstr "ファイルやディレクトリの名前変更と削除"
 
 #. Tag: para
 #: newbie_bash.xml:797
@@ -1095,24 +1367,27 @@ msgid ""
 "<filename>tuxfile.txt</filename> . Finally you decide to remove the renamed "
 "file and the <filename>test</filename> subdirectory."
 msgstr ""
+"ここでは、 <filename>myfile.txt</filename> を <filename>tuxfile.txt</filename> "
+"という名前に変更する作業を行ないます。最後はそのファイルと、 <filename>test</filename> "
+"サブディレクトリを削除します。"
 
 #. Tag: para
 #: newbie_bash.xml:803
 #, no-c-format
 msgid "To rename the file, enter"
-msgstr ""
+msgstr "ファイルの名前を変更するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:806
 #, no-c-format
 msgid "&prompt.user;mv myfile.txt tuxfile.txt"
-msgstr ""
+msgstr "&prompt.user;mv myfile.txt tuxfile.txt"
 
 #. Tag: para
 #: newbie_bash.xml:809
 #, no-c-format
 msgid "To check what happened, enter"
-msgstr ""
+msgstr "結果を確認するには、下記のように実行します:"
 
 #. Tag: para
 #: newbie_bash.xml:813
@@ -1121,6 +1396,8 @@ msgid ""
 "Instead of <filename>myfile.txt</filename> , <filename>tuxfile.txt</"
 "filename> should appear in the list of contents."
 msgstr ""
+"内容の一覧には、 <filename>myfile.txt</filename> ではなく"
+" <filename>tuxfile.txt</filename> が現われているはずです。"
 
 #. Tag: para
 #: newbie_bash.xml:818
@@ -1131,24 +1408,27 @@ msgid ""
 "specifies the target of the operation. You can use <command>mv</command> "
 "either"
 msgstr ""
+"<command>mv</command> は <literal>move</literal> (移動) の意味で、 2 つの"
+"パラメータを指定します: 1 つめは移動元の指定で、 2 つめは移動先の指定です。"
+"また、 <command>mv</command> には 2 種類の動作があります:"
 
 #. Tag: para
 #: newbie_bash.xml:826
 #, no-c-format
 msgid "to rename a file or a directory,"
-msgstr ""
+msgstr "ファイルやディレクトリの名前変更"
 
 #. Tag: para
 #: newbie_bash.xml:831
 #, no-c-format
 msgid "to move a file or directory to a new location or"
-msgstr ""
+msgstr "ファイルやディレクトリの新しい場所への移動"
 
 #. Tag: para
 #: newbie_bash.xml:836
 #, no-c-format
 msgid "to do both in one step."
-msgstr ""
+msgstr "上記 2 つの一括実行"
 
 #. Tag: para
 #: newbie_bash.xml:843
@@ -1157,55 +1437,58 @@ msgid ""
 "Coming to the conclusion that you do not need the file any longer, you can "
 "delete it by entering"
 msgstr ""
+"最後に、ファイルが不要であるという結論に至ったら、下記のように実行することで"
+"削除を行なうことができます:"
 
 #. Tag: screen
 #: newbie_bash.xml:847
 #, no-c-format
 msgid "&prompt.user;rm tuxfile.txt"
-msgstr ""
+msgstr "&prompt.user;rm tuxfile.txt"
 
 #. Tag: para
 #: newbie_bash.xml:848
 #, no-c-format
 msgid "Bash deletes the file without any confirmation."
-msgstr ""
+msgstr "bash は削除の際、何も確認メッセージを表示しません。"
 
 #. Tag: para
 #: newbie_bash.xml:853
 #, no-c-format
 msgid "Move up one level with <command>cd ..</command> and check with"
 msgstr ""
+"<command>cd ..</command> のように実行すると、 1 階層上のディレクトリに移動することができます。"
+"移動の結果は、下記を実行すると確認することができます:"
 
 #. Tag: screen
 #: newbie_bash.xml:856
 #, no-c-format
 msgid "&prompt.user;ls -l test"
-msgstr ""
+msgstr "&prompt.user;ls -l test"
 
 #. Tag: para
 #: newbie_bash.xml:857
 #, no-c-format
 msgid "if the <filename>test</filename> directory is empty now."
-msgstr ""
+msgstr "上記を実行して、 <filename>test</filename> ディレクトリ内に何も残っていないことを確認します。"
 
 #. Tag: para
 #: newbie_bash.xml:862
 #, no-c-format
-msgid ""
-"If yes, you can remove the <filename>test</filename> directory by entering"
-msgstr ""
+msgid "If yes, you can remove the <filename>test</filename> directory by entering"
+msgstr "何も残っていなければ、下記を実行することで <filename>test</filename> ディレクトリを削除することができます:"
 
 #. Tag: screen
 #: newbie_bash.xml:866
 #, no-c-format
 msgid "&prompt.user;rmdir test"
-msgstr ""
+msgstr "&prompt.user;rmdir test"
 
 #. Tag: title
 #: newbie_bash.xml:872
 #, no-c-format
 msgid "Becoming Root"
-msgstr ""
+msgstr "root での作業"
 
 #. Tag: para
 #: newbie_bash.xml:874
@@ -1218,26 +1501,29 @@ msgid ""
 "tasks or running certain programs such as &yast; requires &rootuser; "
 "permissions."
 msgstr ""
+"&rootuser; はスーパーユーザとも呼ばれ、システムの全てに対してアクセスし、様々な"
+"管理作業を実行する権限を持っています。システムに対する変更は無制限に行なうことが"
+"できるほか、全てのファイルに対するアクセス権も持っています。そのため、様々な"
+"管理作業のほか、 &yast; のような管理を行なうアプリケーションを実行する場合には、"
+" &rootuser; の権限が必要となります。"
 
 #. Tag: title
 #: newbie_bash.xml:884
 #, no-c-format
 msgid "Using <command>su</command>"
-msgstr ""
+msgstr "<command>su</command> の使用"
 
 #. Tag: para
 #: newbie_bash.xml:885
 #, no-c-format
-msgid ""
-"In order to temporarily become &rootuser; in a shell, proceed as follows:"
-msgstr ""
+msgid "In order to temporarily become &rootuser; in a shell, proceed as follows:"
+msgstr "シェル内で一時的に &rootuser; になるには、下記の手順で行ないます:"
 
 #. Tag: para
 #: newbie_bash.xml:891
 #, no-c-format
-msgid ""
-"Enter <command>su</command> . You are prompted for the &rootuser; password."
-msgstr ""
+msgid "Enter <command>su</command> . You are prompted for the &rootuser; password."
+msgstr "<command>su</command> コマンドを実行します。これで &rootuser; のパスワードを尋ねられます。"
 
 #. Tag: para
 #: newbie_bash.xml:897
@@ -1249,6 +1535,12 @@ msgid ""
 "<literal>#</literal> appears at the end of the prompt, signaling that you "
 "are acting as &rootuser; now."
 msgstr ""
+"パスワードを入力します。 &rootuser; のパスワードが誤っていると、シェルはその旨を"
+"表わすメッセージを出力します。この場合は、パスワードの再入力は求められず、"
+" <command>su</command> コマンドの入力からやり直す必要があります。パスワードの"
+"入力が正しい場合、プロンプトが変化してハッシュ記号 <literal>#</literal> が"
+"表示されるようになります。これにより、 &rootuser; であることがわかるように"
+"なっています。"
 
 #. Tag: para
 #: newbie_bash.xml:906
@@ -1257,12 +1549,14 @@ msgid ""
 "Execute your task. For example, transfer ownership of a file to a new user "
 "which only &rootuser; is allowed to do:"
 msgstr ""
+"あとは必要な作業を行ないます。たとえばファイルの所有権を変更するような作業は、"
+" &rootuser; しか行なうことができません。たとえば下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:910
 #, no-c-format
 msgid "&prompt.user;chown &exampleuserII; kde_quick.xml"
-msgstr ""
+msgstr "&prompt.user;chown &exampleuserII; kde_quick.xml"
 
 #. Tag: para
 #: newbie_bash.xml:913
@@ -1271,12 +1565,14 @@ msgid ""
 "After having completed your tasks as &rootuser;, switch back to your normal "
 "user account. To do so, enter"
 msgstr ""
+"&rootuser; での作業が終わったら、通常の一般ユーザに戻ります。戻るには、"
+"下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:917
 #, no-c-format
 msgid "&prompt.user;exit"
-msgstr ""
+msgstr "&prompt.user;exit"
 
 #. Tag: para
 #: newbie_bash.xml:918
@@ -1285,12 +1581,14 @@ msgid ""
 "The hash symbol disappears and you are acting as <quote>normal</quote> user "
 "again."
 msgstr ""
+"プロンプトからハッシュ記号が消え、 <quote>一般の</quote> ユーザに戻ったことが"
+"わかります。"
 
 #. Tag: title
 #: newbie_bash.xml:932
 #, no-c-format
 msgid "Using <command>sudo</command>"
-msgstr ""
+msgstr "<command>sudo</command> の使用"
 
 #. Tag: para
 #: newbie_bash.xml:933
@@ -1307,6 +1605,19 @@ msgid ""
 "&rootuser; password by default (if not configured otherwise by your system "
 "administrator)."
 msgstr ""
+"<command>su</command> 以外の方法としては、 <command>sudo</command> "
+"というコマンドもあります。これは superuser do (<quote>スーパーユーザで"
+"何かを行なう</quote> の意味) の略で、 &rootuser; のみが実施できる作業を、"
+" <command>su</command> と同様に行なうことができるコマンドです。 sudo の場合は、"
+" su と異なり、管理者側であらかじめ設定した特定のユーザに対して、特定のコマンド"
+"のみを実行できるように設定することができます。また、システム側の設定に依存しますが、"
+" sudo では一般のユーザが &rootuser; になるにあたって、自分自身の (&rootuser; の"
+"ものではない) パスワード入力で &rootuser; のコマンドを実行するように設定する"
+"こともできます。さらに sudo では、パスワードの入力時に <quote>チケット</quote> "
+"を発行する仕組みになっていて、一定の時間 (通常は数分程度) が経過するまでは"
+"再度パスワード入力を求めないようにもなっています。なお &opensuse; では、"
+"既定で &rootuser; のパスワードの入力を求めるようになっています (システム管理者が"
+"設定を変更した場合を除きます) 。"
 
 #. Tag: para
 #: newbie_bash.xml:945
@@ -1316,12 +1627,16 @@ msgid ""
 "twice (to &rootuser; and back again). To change the ownership of a file "
 "using sudo, only one command is necessary instead of three:"
 msgstr ""
+"一般ユーザにとっては、アカウントを切り替える (&rootuser; になって作業を行ない、"
+"終わったら一般ユーザに戻る) 手間を省くことができる点がメリットとなります。"
+"たとえばファイルの所有権を sudo で変更する場合、コマンドは 3 つではなく 1 つだけで"
+"済みます:"
 
 #. Tag: screen
 #: newbie_bash.xml:950
 #, no-c-format
 msgid "&prompt.sudo;chown &exampleuserII; kde_quick.xml"
-msgstr ""
+msgstr "&prompt.sudo;chown &exampleuserII; kde_quick.xml"
 
 #. Tag: para
 #: newbie_bash.xml:951
@@ -1335,12 +1650,20 @@ msgid ""
 "gaining &rootuser; privileges in case a user forgets to switch back to his "
 "normal user account again and leaves a &rootuser; shell open."
 msgstr ""
+"尋ねられたとおりパスワードの入力を行なうと、コマンドが実行されます。なお、実行"
+"直後に &rootuser; での作業を行なっても、パスワードの再入力は求められません。"
+"これはチケットが発行されていることによるもので、有効期限が切れるまでの間は"
+"パスワードの再入力無しでコマンドを実行することができるためです。ただし、一定の"
+"時間が経過すると、パスワードの再入力が必要となります。このような仕組みにより、"
+"一般ユーザが &rootuser; になって作業を行なっていて、一般ユーザに戻るのを忘れて"
+"マシンを放置してしまったような場合、悪意のあるユーザが横からその権限を奪取して"
+"しまうような問題を防ぐことができます。"
 
 #. Tag: title
 #: newbie_bash.xml:967
 #, no-c-format
 msgid "Time-Saving Features of Bash"
-msgstr ""
+msgstr "bash の省力化機能"
 
 #. Tag: para
 #: newbie_bash.xml:969
@@ -1349,12 +1672,14 @@ msgid ""
 "Entering commands in Bash can involve a lot of typing. This section "
 "introduces some features that can save you both time and typing."
 msgstr ""
+"bash でコマンド入力を行なうにあたっては、数多くのキーボード入力が必要となります。"
+"この章では、入力の手間と時間を省くためのさまざまな機能を紹介しています。"
 
 #. Tag: term
 #: newbie_bash.xml:976
 #, no-c-format
 msgid "History"
-msgstr ""
+msgstr "履歴"
 
 #. Tag: para
 #: newbie_bash.xml:978
@@ -1370,6 +1695,13 @@ msgid ""
 "first letter of the command you want to repeat and press <keycap function="
 "\"pageup\"/> ."
 msgstr ""
+"既定では、 bash は入力したコマンドを <quote>記憶</quote> します。この機能は"
+" <emphasis>履歴</emphasis> 機能と呼ばれます。履歴には参照する機能だけでなく、"
+"再実行する機能も備わっています。履歴から実行を行なうには、 <keycap function=\"up\"/> "
+"を何回も押して再実行したい履歴を探します。なお、 <keycap function=\"down\"/> を"
+"押すと、新しいほうに向かって履歴を探ることができます。コマンドの冒頭部分を覚えて"
+"いる場合は、冒頭部分を入力して <keycap function=\"pageup\"/> を押すと、該当する"
+"履歴を検索することができます。"
 
 #. Tag: para
 #: newbie_bash.xml:990
@@ -1380,6 +1712,10 @@ msgid ""
 "\"enter\"/> . To edit the command line, move the cursor to the desired "
 "position using the arrow keys and start typing."
 msgstr ""
+"必要な履歴が見つかったら、 <keycap function=\"enter\"/> を押して実行するまでの間で"
+"あれば、そこからコマンドラインの編集を行なうことができます (たとえばファイル名やパスなどを"
+"変えたりすることができます) 。編集はカーソルキーを利用して行ない、入力は通常通りの"
+"入力で行ないます。"
 
 #. Tag: para
 #: newbie_bash.xml:996
@@ -1389,12 +1725,16 @@ msgid ""
 "<keycap function=\"control\"/> <keycap>R</keycap> </keycombo> to start an "
 "incremental search function. showing the following prompt:"
 msgstr ""
+"また、履歴内の特定のコマンドを検索することもできます。この場合は、 <keycombo> "
+"<keycap function=\"control\"/> <keycap>R</keycap> </keycombo> を押して、"
+"インクリメンタル検索機能をお使いください。機能が起動すると、下記のようなプロンプト"
+"になります:"
 
 #. Tag: screen
 #: newbie_bash.xml:1001
 #, no-c-format
 msgid "&prompt.user;(reverse-i-search)`':"
-msgstr ""
+msgstr "&prompt.user;(reverse-i-search)`':"
 
 #. Tag: para
 #: newbie_bash.xml:1002
@@ -1408,12 +1748,17 @@ msgid ""
 "command you chose. You can now edit the command or directly execute it by "
 "pressing <keycap function=\"enter\"/> ."
 msgstr ""
+"あとは検索したい文字列を入力するだけです。文字を入力するごとに検索範囲が狭められます。"
+"入力した内容はコロン (<literal>:</literal>) の左側に、検索結果はコロンの右側にそれぞれ"
+"表示されます。検索結果を受け入れるには、 <keycap function=\"escape\"/> を押します。"
+"これでプロンプトが元の表示に戻りますので、あとは必要に応じてコマンドラインを編集し、"
+" <keycap function=\"enter\"/> を押すと実行することができます。"
 
 #. Tag: term
 #: newbie_bash.xml:1015
 #, no-c-format
 msgid "Completion"
-msgstr ""
+msgstr "補完"
 
 #. Tag: para
 #: newbie_bash.xml:1017
@@ -1434,12 +1779,24 @@ msgid ""
 "\"/> , you can simultaneously check whether the file or path you want to "
 "enter really exists (and you can be sure of getting the spelling right)."
 msgstr ""
+"bash ではもう 1 つ便利な機能があります。それはファイル名やディレクトリ名を補完"
+"する機能です。ファイル名やディレクトリ名の一部を入力して <keycap function=\"tab\"/> "
+"を押すと、該当するものが 1 つしかなかった場合は、そのままファイル名やディレクトリ名"
+"の残りが自動的に入力され、カーソルがファイル名やディレクトリ名の末尾に移動します。"
+"このような仕組みにより、残りのオプションもすぐに入力できるようになっています。"
+"逆に、該当するものが複数存在する場合 (たとえば同じ文字で始まるファイルが複数あるような"
+"場合) は、名前が異なる箇所まで自動的に入力が行なわれます。ここからさらに <keycap "
+"function=\"tab\"/> を押すと、該当するもの全てを一覧表示することができます。"
+"あとはどれを選択するのかをキー入力で選んで、さらに <keycap function=\"tab\"/> "
+"を押して範囲を狭めていってください。このような仕組みは、ファイルやディレクトリが"
+"実際に存在しているかどうか (および、正しいスペルで入力しているかどうか) を"
+"確認する手段としても、利用することができます。"
 
 #. Tag: term
 #: newbie_bash.xml:1040
 #, no-c-format
 msgid "Wild Cards"
-msgstr ""
+msgstr "ワイルドカード"
 
 #. Tag: para
 #: newbie_bash.xml:1042
@@ -1449,48 +1806,51 @@ msgid ""
 "pathname expansion. Wild cards are characters that can stand for other "
 "characters. There are three different types of these in Bash:"
 msgstr ""
+"パスを指定する箇所では、 1 つもしくは複数の文字をワイルドカードにすることが"
+"できます。ワイルドカードとは、他の文字に置き換えることのできる文字で、"
+" bash では下記の 3 種類のワイルドカード機能を提供しています:"
 
 #. Tag: para
 #: newbie_bash.xml:1052
 #, no-c-format
 msgid "Wild Card"
-msgstr ""
+msgstr "ワイルドカード"
 
 #. Tag: para
 #: newbie_bash.xml:1057
 #, no-c-format
 msgid "Function"
-msgstr ""
+msgstr "機能"
 
 #. Tag: para
 #: newbie_bash.xml:1064
 #, no-c-format
 msgid "<literal>?</literal>"
-msgstr ""
+msgstr "<literal>?</literal>"
 
 #. Tag: para
 #: newbie_bash.xml:1069
 #, no-c-format
 msgid "Matches exactly one arbitrary character"
-msgstr ""
+msgstr "任意の 1 文字と置き換えることのできる文字です"
 
 #. Tag: para
 #: newbie_bash.xml:1076
 #, no-c-format
 msgid "<literal>*</literal>"
-msgstr ""
+msgstr "<literal>*</literal>"
 
 #. Tag: para
 #: newbie_bash.xml:1081
 #, no-c-format
 msgid "Matches any number of characters"
-msgstr ""
+msgstr "任意の長さの文字列と置き換えることのできる文字です"
 
 #. Tag: para
 #: newbie_bash.xml:1088
 #, no-c-format
 msgid "<literal>[<replaceable>SET</replaceable>]</literal>"
-msgstr ""
+msgstr "<literal>[<replaceable>セット</replaceable>]</literal>"
 
 #. Tag: para
 #: newbie_bash.xml:1093
@@ -1499,13 +1859,13 @@ msgid ""
 "Matches one of the characters from the group specified inside the square "
 "brackets, which is represented here by the string <replaceable>SET</"
 "replaceable> ."
-msgstr ""
+msgstr "[] の内側で指定したグループのいずれかの文字に置き換えることのできる指定です"
 
 #. Tag: title
 #: newbie_bash.xml:1108
 #, no-c-format
 msgid "Examples For Using History, Completion and Wildcards"
-msgstr ""
+msgstr "履歴／補完／ワイルドカードの使用例"
 
 #. Tag: para
 #: newbie_bash.xml:1109
@@ -1513,13 +1873,13 @@ msgstr ""
 msgid ""
 "The following examples illustrate how to make use of these convenient "
 "features of Bash."
-msgstr ""
+msgstr "下記の例では、 bash におけるこれらの使用方法を説明しています。"
 
 #. Tag: title
 #: newbie_bash.xml:1114
 #, no-c-format
 msgid "Using History and Completion"
-msgstr ""
+msgstr "履歴と補完の使用"
 
 #. Tag: para
 #: newbie_bash.xml:1115
@@ -1529,6 +1889,9 @@ msgid ""
 "your shell buffer should be filled with commands which you can retrieve "
 "using the history function."
 msgstr ""
+"既に <xref linkend=\"sec.new.bash.fildir.ex\"/> の流れに従って作業を"
+"行なっていた場合、履歴機能としていくつかのコマンドラインが記憶されているはずです。"
+"下記では、既に上述の流れを実施していて、履歴が存在する場合の手順を示しています。"
 
 #. Tag: para
 #: newbie_bash.xml:1121
@@ -1537,6 +1900,8 @@ msgid ""
 "Press <keycap function=\"up\"/> repeatedly until <command>cd ~</command> "
 "appears."
 msgstr ""
+"まずは <command>cd ~</command> が現われるまで、 <keycap function=\"up\"/> "
+"を何度も押していきます。"
 
 #. Tag: para
 #: newbie_bash.xml:1127
@@ -1545,6 +1910,8 @@ msgid ""
 "Press <keycap function=\"enter\"/> to execute the command and to switch to "
 "your home directory."
 msgstr ""
+"<keycap function=\"enter\"/> を押してコマンドを実行すると、ホームディレクトリ"
+"への移動が行なわれます。"
 
 #. Tag: para
 #: newbie_bash.xml:1131
@@ -1554,12 +1921,16 @@ msgid ""
 "the same letter, <filename>Documents</filename> and <filename>Desktop</"
 "filename> ."
 msgstr ""
+"<!-- NOTE: When in environment other than English, \"Documents\" will be translated to something."
+" But it may be difficult to input within terminal. So we changed the explanation in this translation. -->"
+"たとえば、お使いのホームディレクトリ内に <filename>Documents</filename> と <filename>Desktop</"
+"filename> というディレクトリがあるものとします。"
 
 #. Tag: para
 #: newbie_bash.xml:1138
 #, no-c-format
 msgid "Type <command>cd D</command> and press <keycap function=\"tab\"/> ."
-msgstr ""
+msgstr "まずは <command>cd D</command> まで入力して <keycap function=\"tab\"/> を押します。"
 
 #. Tag: para
 #: newbie_bash.xml:1141
@@ -1568,13 +1939,14 @@ msgid ""
 "Nothing happens since Bash cannot identify to which one of the "
 "subdirectories you want to change."
 msgstr ""
+"押しても特に何も起こりません。 bash は複数のディレクトリが存在することを"
+"知っているためです。"
 
 #. Tag: para
 #: newbie_bash.xml:1147
 #, no-c-format
-msgid ""
-"Press <keycap function=\"tab\"/> again to see the list of possible choices:"
-msgstr ""
+msgid "Press <keycap function=\"tab\"/> again to see the list of possible choices:"
+msgstr "再度 <keycap function=\"tab\"/> を押すと、選択肢が表示されます:"
 
 #. Tag: screen
 #: newbie_bash.xml:1151
@@ -1584,6 +1956,9 @@ msgid ""
 "Desktop/ Documents/ Downloads/\n"
 "&prompt.user;<command>cd D</command>"
 msgstr ""
+"&prompt.user;<command>cd D</command>\n"
+"Desktop/ Documents/ Downloads/\n"
+"&prompt.user;<command>cd D</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1156
@@ -1592,24 +1967,26 @@ msgid ""
 "The prompt still shows your initial input. Type the next character of the "
 "subdirectory you want to go to and press <keycap function=\"tab\"/> again."
 msgstr ""
+"プロンプトは入力した時点のままの表示になっています。ここからさらに文字を入力"
+"して <keycap function=\"tab\"/> を押します。"
 
 #. Tag: para
 #: newbie_bash.xml:1161
 #, no-c-format
 msgid "Bash now completes the path."
-msgstr ""
+msgstr "これで bash は残りの文字を埋めるようになります。"
 
 #. Tag: para
 #: newbie_bash.xml:1166
 #, no-c-format
 msgid "You can now execute the command with <keycap function=\"enter\"/> ."
-msgstr ""
+msgstr "コマンドラインの入力が終わったら、 <keycap function=\"enter\"/> を押すと実行することができます。"
 
 #. Tag: title
 #: newbie_bash.xml:1172
 #, no-c-format
 msgid "Using Wildcards"
-msgstr ""
+msgstr "ワイルドカードの使用"
 
 #. Tag: para
 #: newbie_bash.xml:1173
@@ -1621,12 +1998,16 @@ msgid ""
 "<filename>myfile2.txt</filename> etc. You want to search for certain files "
 "according to their properties."
 msgstr ""
+"この例では、お使いのホームディレクトリ内に様々な拡張子のファイルが存在していて、"
+"<filename>myfile1.txt</filename> , <filename>myfile2.txt</filename> など、"
+"異なるファイル名で複数のバージョンのファイルが保存されているものとします。このときの"
+"ワイルドカードの使い方を説明しています。"
 
 #. Tag: para
 #: newbie_bash.xml:1181
 #, no-c-format
 msgid "First, create some test files in your home directory:"
-msgstr ""
+msgstr "まずはホームディレクトリ内に、いくつかのテストファイルを作成します:"
 
 #. Tag: para
 #: newbie_bash.xml:1186
@@ -1636,6 +2017,9 @@ msgid ""
 "with different file extensions, for example <filename>.pdf</filename> , "
 "<filename>.xml</filename> and <filename>.jpg</filename> ."
 msgstr ""
+"<command>touch</command> コマンドを利用して、いくつかの (中身が空の) ファイルを"
+"作成します。たとえば <filename>.pdf</filename> , <filename>.xml</filename> ,"
+" <filename>.jpg</filename> などの拡張子で作成します。"
 
 #. Tag: para
 #: newbie_bash.xml:1192
@@ -1645,6 +2029,10 @@ msgid ""
 "function) or with only one <command>touch</command> command: simply add "
 "several filenames separated by a space."
 msgstr ""
+"ファイルの作成は、 bash の履歴機能を利用すれば繰り返し (ファイル名を変えながら) "
+"実行できますし、 <command>touch</command> コマンドは複数のファイルを指定する"
+"ことができますので、スペース区切りでファイル名を複数指定して、一括で実行しても"
+"かまいません。"
 
 #. Tag: para
 #: newbie_bash.xml:1199
@@ -1652,19 +2040,19 @@ msgstr ""
 msgid ""
 "Create at least two files that have the same file extension, for example "
 "<filename>.html</filename> ."
-msgstr ""
+msgstr "また、同じ拡張子 (たとえば <filename>.html</filename>) のファイルを 2 つ用意します。"
 
 #. Tag: para
 #: newbie_bash.xml:1205
 #, no-c-format
 msgid "To create several <quote>versions</quote> of one file, enter"
-msgstr ""
+msgstr "さらに、連続した数字を付与したファイルを複数作成します。下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1208
 #, no-c-format
 msgid "&prompt.user;touch myfile{1..5}.txt"
-msgstr ""
+msgstr "&prompt.user;touch myfile{1..5}.txt"
 
 #. Tag: para
 #: newbie_bash.xml:1209
@@ -1673,12 +2061,14 @@ msgid ""
 "This command creates five consecutively numbered files: <filename>myfile1."
 "txt</filename> , &hellip;, <filename>myfile5.txt</filename> ."
 msgstr ""
+"上記のコマンドを実行すると、 <filename>myfile1."
+"txt</filename> , &hellip;, <filename>myfile5.txt</filename> をそれぞれ作成します。"
 
 #. Tag: para
 #: newbie_bash.xml:1216
 #, no-c-format
 msgid "List the contents of the directory. It should look similar to this:"
-msgstr ""
+msgstr "まずはディレクトリの内容を一覧表示します。下記のような出力になるはずです:"
 
 #. Tag: screen
 #: newbie_bash.xml:1220
@@ -1697,6 +2087,19 @@ msgid ""
 "-rw-r--r-- 1 tux users   0 2006-07-14 13:49 myfile5.txt\n"
 "-rw-r--r-- 1 tux users   0 2006-07-14 13:32 tux.png"
 msgstr ""
+"&prompt.user;ls -l\n"
+"合計 0\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:34 foo.xml\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:47 home.html\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:47 index.html\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:47 toc.html\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:34 manual.pdf\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:49 myfile1.txt\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:49 myfile2.txt\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:49 myfile3.txt\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:49 myfile4.txt\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:49 myfile5.txt\n"
+"-rw-r--r-- 1 tux users 0  7月 14 13:32 tux.png"
 
 #. Tag: para
 #: newbie_bash.xml:1236
@@ -1704,19 +2107,19 @@ msgstr ""
 msgid ""
 "With wild cards, select certain subsets of the files according to various "
 "criteria:"
-msgstr ""
+msgstr "ワイルドカードを使用すると、様々な条件を指定して一部のファイルを効率的に指定することができます:"
 
 #. Tag: para
 #: newbie_bash.xml:1242
 #, no-c-format
 msgid "To list all files with the <filename>.html</filename> extension, enter"
-msgstr ""
+msgstr "<filename>.html</filename> という拡張子のファイルを全て表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1246
 #, no-c-format
 msgid "&prompt.user;ls -l *.html"
-msgstr ""
+msgstr "&prompt.user;ls -l *.html"
 
 #. Tag: para
 #: newbie_bash.xml:1249
@@ -1724,13 +2127,13 @@ msgstr ""
 msgid ""
 "To list all <quote>versions</quote> of <filename>myfile.txt</filename> , "
 "enter"
-msgstr ""
+msgstr "<filename>myfile<replaceable>数字</replaceable>.txt</filename> のファイルを一覧表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1253
 #, no-c-format
 msgid "&prompt.user;ls -l myfile?.txt"
-msgstr ""
+msgstr "&prompt.user;ls -l myfile?.txt"
 
 #. Tag: para
 #: newbie_bash.xml:1254
@@ -1743,6 +2146,12 @@ msgid ""
 "another question mark, so your string looks like <command>myfile??.txt</"
 "command> )."
 msgstr ""
+"上記の例では <literal>?</literal> というワイルドカードを使用していますが、これは"
+"ファイルの数字部分が 1 桁のものしか表示することができないことに注意してください。"
+"たとえば <filename>myfile10.txt</filename> というファイルが存在する場合、"
+"このファイルを含めるには <literal>?</literal> を <literal>*</literal> に変更する"
+"必要があります。また、数字部分が 2 桁のもののみを一覧表示するには、"
+" <command>myfile??.txt</command> となります。"
 
 #. Tag: para
 #: newbie_bash.xml:1264
@@ -1751,24 +2160,27 @@ msgid ""
 "To remove, for example, version 1-3 and version 5 of <filename>myfile.txt</"
 "filename> , enter"
 msgstr ""
+"<filename>myfile1.txt</filename> , <filename>myfile2.txt</filename> , "
+"<filename>myfile3.txt</filename> , <filename>myfile5.txt</filename> をそれぞれ"
+"削除するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1268
 #, no-c-format
 msgid "&prompt.user;rm myfile[1-3,5].txt"
-msgstr ""
+msgstr "&prompt.user;rm myfile[1-3,5].txt"
 
 #. Tag: para
 #: newbie_bash.xml:1271
 #, no-c-format
 msgid "Check the result with"
-msgstr ""
+msgstr "下記を実行すると、結果を確認することができます:"
 
 #. Tag: screen
 #: newbie_bash.xml:1274
 #, no-c-format
 msgid "&prompt.user;ls -l"
-msgstr ""
+msgstr "&prompt.user;ls -l"
 
 #. Tag: para
 #: newbie_bash.xml:1275
@@ -1776,7 +2188,7 @@ msgstr ""
 msgid ""
 "Of all <filename>myfile.txt</filename> versions only <filename>myfile4.txt</"
 "filename> should be left."
-msgstr ""
+msgstr "削除を行なった後は、 <filename>myfile4.txt</filename> ファイルだけが残っているはずです。"
 
 #. Tag: para
 #: newbie_bash.xml:1283
@@ -1787,12 +2199,16 @@ msgid ""
 "as <command>rm myfile[1-3,5].txt</command> because there are only files with "
 "the extension <filename>.txt</filename> available."
 msgstr ""
+"なお、複数のワイルドカードを同時に指定することもできます。たとえば上記の例では、"
+" <command>rm myfile[1-3,5].*</command> と実行しても、"
+" <command>rm myfile[1-3,5].txt</command> と同じ結果になります。"
+"これは、該当するファイルが全て <filename>.txt</filename> という拡張子であるためです。"
 
 #. Tag: title
 #: newbie_bash.xml:1290
 #, no-c-format
 msgid "Using Wildcards in <command>rm</command> Commands"
-msgstr ""
+msgstr "<command>rm</command> コマンドでのワイルドカードについて"
 
 #. Tag: para
 #: newbie_bash.xml:1291
@@ -1804,12 +2220,17 @@ msgid ""
 "wildcard string with <command>ls</command> instead of <command>rm</command> "
 "first."
 msgstr ""
+"<command>rm</command> コマンドを使用する際、ワイルドカードの使用は非常に便利な"
+"ものですが、その反面として危険性もはらんでいます。場合によっては、必要以上にファイルを"
+"削除してしまうこともあります。何が削除されるのかを事前に確認するため、まずは"
+" <command>rm</command> の前に <command>ls</command> を利用して、ワイルドカード"
+"を指定しておくことをお勧めします。"
 
 #. Tag: title
 #: newbie_bash.xml:1302
 #, no-c-format
 msgid "Editing Texts"
-msgstr ""
+msgstr "テキストの編集"
 
 #. Tag: para
 #: newbie_bash.xml:1304
@@ -1822,18 +2243,24 @@ msgid ""
 "should know at least the most basic operations with vi. There may be "
 "situations where no other editor than vi is available."
 msgstr ""
+"コマンドラインからファイルを編集するには、 vi エディタの使用方法を知っておく必要が"
+"あります。 vi はほとんどの UNIX/Linux システムで利用できる既定のエディタです。"
+" vi ではモードと呼ばれる概念があり、これによってキーを入力しても異なる動作になる"
+"ようになっています。ただし、初心者には少しわかりにくい仕組みであることから、"
+"本章でごく基本的な操作方法を説明しています。なお、場合によっては vi エディタしか"
+"利用できない状況もあります。"
 
 #. Tag: para
 #: newbie_bash.xml:1313
 #, no-c-format
 msgid "Basically, vi makes use of three operating modes:"
-msgstr ""
+msgstr "基本的には、 vi には 3 種類の操作モードがあります:"
 
 #. Tag: term
 #: newbie_bash.xml:1319
 #, no-c-format
 msgid "<emphasis>command</emphasis> mode"
-msgstr ""
+msgstr "<emphasis>コマンド</emphasis> モード"
 
 #. Tag: para
 #: newbie_bash.xml:1321
@@ -1842,24 +2269,26 @@ msgid ""
 "In this mode, vi accepts certain key combinations as commands. Simple tasks "
 "such as searching words or deleting a line can be executed."
 msgstr ""
+"このモードでは、 vi はキーの組み合わせをコマンドとして解釈します。単語の検索や"
+"行の削除などの作業を行なうことができます。"
 
 #. Tag: term
 #: newbie_bash.xml:1328
 #, no-c-format
 msgid "<emphasis>insert</emphasis> mode"
-msgstr ""
+msgstr "<emphasis>挿入</emphasis> モード"
 
 #. Tag: para
 #: newbie_bash.xml:1330
 #, no-c-format
 msgid "In this mode, you can write normal text."
-msgstr ""
+msgstr "このモードでは、通常のテキストをそのまま入力することができます。"
 
 #. Tag: term
 #: newbie_bash.xml:1336
 #, no-c-format
 msgid "<emphasis>extended</emphasis> mode"
-msgstr ""
+msgstr "<emphasis>拡張</emphasis> モード"
 
 #. Tag: para
 #: newbie_bash.xml:1338
@@ -1869,6 +2298,8 @@ msgid ""
 "switch to this mode), vi can execute also more complex tasks such as "
 "searching and replacing text."
 msgstr ""
+"このモードは、切り替える際に <literal>:</literal> を入力することから、コロン"
+"モードとも呼ばれ、テキストの検索や置換などのより複雑な処理を行なうことができます。"
 
 #. Tag: para
 #: newbie_bash.xml:1347
@@ -1877,18 +2308,20 @@ msgid ""
 "In the following (very simple) example, you will learn how to open and edit "
 "a file with vi, how to save your changes and quit vi."
 msgstr ""
+"下記の (非常にシンプルな) 例では、 vi でファイルを開いて編集し、保存を行なって"
+"終了するまでの流れを説明しています。"
 
 #. Tag: title
 #: newbie_bash.xml:1353
 #, no-c-format
 msgid "Example: Editing with vi"
-msgstr ""
+msgstr "例: vi での編集"
 
 #. Tag: title
 #: newbie_bash.xml:1356
 #, no-c-format
 msgid "Display of Keys"
-msgstr ""
+msgstr "キーの表示"
 
 #. Tag: para
 #: newbie_bash.xml:1357
@@ -1899,18 +2332,21 @@ msgid ""
 "enter a key in uppercase, this is stated explicitly by showing a key "
 "combination including the <keycap function=\"shift\"/> key."
 msgstr ""
+"下記の例では様々なコマンドを入力していますが、 vi でのキー入力は基本的に小文字で"
+"行ないます。下記の説明では、敢えて大文字を必要とする場合に限り、"
+" <keycap function=\"shift\"/> を含めたキー入力で表わしています。"
 
 #. Tag: para
 #: newbie_bash.xml:1365
 #, no-c-format
 msgid "To create and open a new file with vi, enter"
-msgstr ""
+msgstr "vi で新しくファイルを作成して開くには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1368
 #, no-c-format
 msgid "&prompt.user;vi textfile.txt"
-msgstr ""
+msgstr "&prompt.user;vi textfile.txt"
 
 #. Tag: para
 #: newbie_bash.xml:1369
@@ -1919,6 +2355,8 @@ msgid ""
 "By default, vi opens in <emphasis>command</emphasis> mode in which you "
 "cannot enter text."
 msgstr ""
+"既定では、 vi は <emphasis>コマンド</emphasis> モードで起動します。ここでは、"
+"直接テキストを入力することはできません。"
 
 #. Tag: para
 #: newbie_bash.xml:1375
@@ -1927,6 +2365,8 @@ msgid ""
 "Press <keycap>I</keycap> to switch to insert mode. The bottom line changes "
 "and indicates that you now can insert text."
 msgstr ""
+"<keycap>I</keycap> を押して挿入モードに切り替えます。最下行の表示が変化しますので、"
+"テキストを挿入できる状態になっていることが分かります。"
 
 #. Tag: para
 #: newbie_bash.xml:1381
@@ -1936,6 +2376,9 @@ msgid ""
 "function=\"escape\"/> to switch back to command mode. Press <keycap>O</"
 "keycap> to insert a new line and to switch to insert mode again."
 msgstr ""
+"何かテキストを記述します。改行を挿入したい場合は、まず <keycap "
+"function=\"escape\"/> を押してコマンドモードに戻り、 <keycap>O</"
+"keycap> を押して改行を入れ、再度挿入モードに戻ります。"
 
 #. Tag: para
 #: newbie_bash.xml:1390
@@ -1944,6 +2387,8 @@ msgid ""
 "In the insert mode, you can edit the text with the arrow keys and with "
 "<keycap function=\"delete\"/> ."
 msgstr ""
+"挿入モードでは、矢印 (カーソル) キーと <keycap function=\"delete\"/> で"
+"テキストを編集することができます。"
 
 #. Tag: para
 #: newbie_bash.xml:1397
@@ -1953,6 +2398,9 @@ msgid ""
 "again. Then press <keycap>:</keycap> which takes you to the extended mode. "
 "The bottom line now shows a colon."
 msgstr ""
+"vi を終了するには、まず <keycap function=\"escape\"/> を押してコマンドモードに"
+"切り替えます。そこから <keycap>:</keycap> を押して拡張モードに切り替えます。"
+"最下行にコロンが表示されるようになります。"
 
 #. Tag: para
 #: newbie_bash.xml:1404
@@ -1965,6 +2413,12 @@ msgid ""
 "<replaceable>FILENAME</replaceable></command> and press <keycap function="
 "\"enter\"/> ."
 msgstr ""
+"記入した内容を保存して vi を終了するには、 <command>wq</command> ( <literal>w</"
+"literal> は <literal>write</literal> (書き込む) の意味、 <literal>q</literal> は "
+"<literal>quit</literal> (終了) の意味 ) と入力して <keycap function=\"enter\"/> を押します。"
+"ファイル名を変えて保存したい場合は、 <command>w "
+"<replaceable>ファイル名</replaceable></command> のように入力して <keycap function="
+"\"enter\"/> を押します。"
 
 #. Tag: para
 #: newbie_bash.xml:1414
@@ -1972,13 +2426,13 @@ msgstr ""
 msgid ""
 "To leave vi without saving, type <command>q!</command> instead and press "
 "<keycap function=\"enter\"/> ."
-msgstr ""
+msgstr "保存せずに vi を終了するには、 <command>q!</command> と入力して <keycap function=\"enter\"/> を押します。"
 
 #. Tag: title
 #: newbie_bash.xml:1424
 #, no-c-format
 msgid "Searching for Files or Contents"
-msgstr ""
+msgstr "ファイルやその内容の検索"
 
 #. Tag: para
 #: newbie_bash.xml:1426
@@ -1986,13 +2440,13 @@ msgstr ""
 msgid ""
 "Bash offers you several commands to search for files and to search for the "
 "contents of files:"
-msgstr ""
+msgstr "bash には、ファイル名やファイルの内容を検索する方法がいくつか用意されています:"
 
 #. Tag: term
 #: newbie_bash.xml:1433
 #, no-c-format
 msgid "<command>find</command>"
-msgstr ""
+msgstr "<command>find</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1436
@@ -2004,12 +2458,17 @@ msgid ""
 "also include wild cards. Unlike <command>locate</command> , which uses a "
 "database, <command>find</command> scans the actual directory."
 msgstr ""
+"<command>find</command> は指定したディレクトリ内でファイルを検索するための"
+"コマンドです。最初のパラメータで検索を開始するディレクトリを指定します。以降は"
+"オプションで、 <option>-name</option> はファイル名に対する条件を指定します"
+" (ワイルドカードでも指定できます) 。なお、データベースを使用する <command>locate</command> "
+"コマンドとは異なり、 <command>find</command> は実際のディレクトリをそのまま検索します。"
 
 #. Tag: term
 #: newbie_bash.xml:1447
 #, no-c-format
 msgid "<command>grep</command>"
-msgstr ""
+msgstr "<command>grep</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1450
@@ -2020,12 +2479,16 @@ msgid ""
 "the line in which <literal>searchstring</literal> was found, along with the "
 "filename. If desired, use wild cards to specify filenames."
 msgstr ""
+"<command>grep</command> はファイルの内容を検索するためのコマンドで、主にテキスト"
+"ファイル内の検索を行ないます。検索文字列に合致した箇所が見つかると、このコマンドは"
+"ファイル名と行全体を表示します。必要であれば、ファイル名にワイルドカードを指定する"
+"こともできます。"
 
 #. Tag: title
 #: newbie_bash.xml:1462
 #, no-c-format
 msgid "Examples for Searching"
-msgstr ""
+msgstr "検索例"
 
 #. Tag: para
 #: newbie_bash.xml:1465
@@ -2034,12 +2497,14 @@ msgid ""
 "To search your home directory for all occurrences of filenames that contain "
 "the file extension <filename>.txt</filename> , use:"
 msgstr ""
+"ホームディレクトリ内のファイルを検索し、 <filename>.txt</filename> という拡張子の"
+"ファイルだけを表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1469
 #, no-c-format
 msgid "&prompt.user;find ~ -name '*.txt' -print"
-msgstr ""
+msgstr "&prompt.user;find ~ -name '*.txt' -print"
 
 #. Tag: para
 #: newbie_bash.xml:1472
@@ -2049,12 +2514,14 @@ msgid ""
 "occurrences of files which contain, for example, the word <literal>music</"
 "literal> , use:"
 msgstr ""
+"たとえば <literal>music</literal> という文字列を内容に含むファイルを、"
+"ホームディレクトリ以下から検索するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1477
 #, no-c-format
 msgid "&prompt.user;grep music ~/*"
-msgstr ""
+msgstr "&prompt.user;grep music ~/*"
 
 #. Tag: para
 #: newbie_bash.xml:1478
@@ -2064,6 +2531,10 @@ msgid ""
 "command above you will not find any files containing <literal>Music</"
 "literal> .To ignore case, use the <option>-i</option> option."
 msgstr ""
+"<command>grep</command> は既定では大文字と小文字を区別して動作します。そのため、"
+"上記のコマンドでは <literal>Music</literal> という文字列は検索に該当しない"
+"ことになります。大文字と小文字を区別しない場合は、 <option>-i</option> "
+"オプションを指定してください。"
 
 #. Tag: para
 #: newbie_bash.xml:1486
@@ -2072,18 +2543,20 @@ msgid ""
 "To use a search string which consists of more than one word, enclose the "
 "string in double quotation marks, for example:"
 msgstr ""
+"複数の単語からなる文字列を検索する場合は、文字列を引用符で括ってください。"
+"たとえば下記のようになります:"
 
 #. Tag: screen
 #: newbie_bash.xml:1490
 #, no-c-format
 msgid "&prompt.user;grep \"music is great\" ~/*"
-msgstr ""
+msgstr "&prompt.user;grep \"music is great\" ~/*"
 
 #. Tag: title
 #: newbie_bash.xml:1496
 #, no-c-format
 msgid "Viewing Text Files"
-msgstr ""
+msgstr "テキストファイルの表示"
 
 #. Tag: para
 #: newbie_bash.xml:1498
@@ -2096,12 +2569,17 @@ msgid ""
 "file. Bash offers you several commands to have a quick look at the contents "
 "of a text file directly in the shell, without opening an editor."
 msgstr ""
+"<command>grep</command> でファイルの内容を検索した場合、検索文字列に該当した"
+"ファイル名とその行のみが表示されます。ただ、場合によっては、これだけでは情報不足で、"
+"本当に目的のファイルかどうかが判断できない場合があります。このような場合に備え、"
+" bash ではエディタを利用することなく、テキストファイルの内容を表示する機能を"
+"複数用意しています。"
 
 #. Tag: term
 #: newbie_bash.xml:1510
 #, no-c-format
 msgid "<command>head</command>"
-msgstr ""
+msgstr "<command>head</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1512
@@ -2111,12 +2589,14 @@ msgid ""
 "you do not specify the command any further, <command>head</command> shows "
 "the first 10 lines of a text file."
 msgstr ""
+"<command>head</command> はテキストファイルの冒頭の複数行を表示するコマンドです。"
+"特に何も指定しない場合は、テキストファイルの冒頭 10 行分を表示します。"
 
 #. Tag: term
 #: newbie_bash.xml:1520
 #, no-c-format
 msgid "<command>tail</command>"
-msgstr ""
+msgstr "<command>tail</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1522
@@ -2128,12 +2608,16 @@ msgid ""
 "log files of your system, where the most recent messages or log entries are "
 "usually found at the end of the file."
 msgstr ""
+"<command>tail</command> コマンドは <command>head</command> コマンドの逆で、"
+"何も指定しない場合はテキストファイルの末尾 10 行を表示します。これは特に、システムの"
+"ログファイルを閲覧する場合に便利なコマンドです。ログファイルの末尾には直近のログが"
+"記録されていますので、直近の情報を取得する際にはこのコマンドを使うとよいでしょう。"
 
 #. Tag: term
 #: newbie_bash.xml:1533
 #, no-c-format
 msgid "<command>less</command>"
-msgstr ""
+msgstr "<command>less</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1535
@@ -2146,12 +2630,19 @@ msgid ""
 "<keycap function=\"end\"/> to the end of the document. To end the viewing "
 "mode, press <keycap>Q</keycap> ."
 msgstr ""
+"<command>less</command> を使用すると、テキストファイルの全体を表示することが"
+"できます。また、 <keycap function=\"pageup\"/> や <keycap function=\"pagedown\"/> "
+"のキーを押すと、それぞれ半ページ単位で移動 (スクロール) することもできます。"
+"また、 <keycap function=\"space\"/> は 1 ページ分下に移動することができるほか、"
+" <keycap function=\"home\"/> でファイルの冒頭に、 <keycap function=\"end\"/> で"
+"ファイルの末尾にそれぞれ移動することができます。表示を終了するには、"
+" <keycap>Q</keycap> を押してください。"
 
 #. Tag: term
 #: newbie_bash.xml:1546
 #, no-c-format
 msgid "<command>more</command>"
-msgstr ""
+msgstr "<command>more</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1548
@@ -2163,12 +2654,17 @@ msgid ""
 "<keycap function=\"space\"/> to move forward. When you reach the end of the "
 "document, the viewer closes automatically."
 msgstr ""
+"<literal>less</literal> の代用として <literal>more</literal> というコマンドを"
+"使用することもできます。同じような機能を持つコマンドですが、 <literal>more</literal> "
+"はファイルの冒頭方向に戻る機能がないため、少し不便なコマンドではあります。"
+"末尾の方向に進むには <keycap function=\"space\"/> を押します。ファイルの末尾まで"
+"到達すると、 <literal>more</literal> は自動的に終了します。"
 
 #. Tag: term
 #: newbie_bash.xml:1559
 #, no-c-format
 msgid "<command>cat</command>"
-msgstr ""
+msgstr "<command>cat</command>"
 
 #. Tag: para
 #: newbie_bash.xml:1561
@@ -2179,12 +2675,16 @@ msgid ""
 "command> does not allow you to scroll it is not very useful as viewer but it "
 "is rather often used in combination with other commands."
 msgstr ""
+"<command>cat</command> はファイルの内容を表示するコマンドで、ファイル全体を止まる"
+"ことなくそのまま出力します。 <command>cat</command> にはスクロールのような機能が"
+"ないので、非常に使いづらく思えてしまいますが、しばしば他のコマンドと組み合わせて使用する"
+"ためのコマンドです。"
 
 #. Tag: title
 #: newbie_bash.xml:1573
 #, no-c-format
 msgid "Redirection and Pipes"
-msgstr ""
+msgstr "リダイレクトとパイプ"
 
 #. Tag: para
 #: newbie_bash.xml:1574
@@ -2195,6 +2695,9 @@ msgid ""
 "output of one command as the input for the next one. The shell offers this "
 "function by means of redirection or pipes."
 msgstr ""
+"作業内容によっては、コマンドの出力した結果をファイルに出力したり、複数のコマンドを"
+"組み合わせて、一方のコマンドの出力を他方のコマンドの入力として使用したりしたい"
+"場合があります。シェルでは、このような仕組みをリダイレクトやパイプとして提供しています。"
 
 #. Tag: para
 #: newbie_bash.xml:1581
@@ -2205,12 +2708,16 @@ msgid ""
 "redirect the input or the output to another object, such as a file or "
 "another command."
 msgstr ""
+"通常、シェルの標準的な出力先 (標準出力) は画面 (シェルのウインドウ) に、"
+"標準的な入力元 (標準入力) はキーボードにそれぞれ設定されています。それぞれ"
+"対応するシンボルを指定することで、入出力を他のファイルやコマンドに流す"
+"ことができます。"
 
 #. Tag: term
 #: newbie_bash.xml:1590
 #, no-c-format
 msgid "Redirection"
-msgstr ""
+msgstr "リダイレクト"
 
 #. Tag: para
 #: newbie_bash.xml:1592
@@ -2220,12 +2727,16 @@ msgid ""
 "file (output redirection), with <literal>&lt;</literal> you can use a file "
 "as input for a command (input redirection)."
 msgstr ""
+"<literal>&gt;</literal> というシンボルを指定すると、出力結果をファイルに流す"
+" (リダイレクトする) ことができます (出力リダイレクト) 。また、"
+" <literal>&lt;</literal> というシンボルを指定すると、逆にファイルの内容を"
+"入力として使用することができます　(入力リダイレクト) 。"
 
 #. Tag: term
 #: newbie_bash.xml:1600
 #, no-c-format
 msgid "Pipe"
-msgstr ""
+msgstr "パイプ"
 
 #. Tag: para
 #: newbie_bash.xml:1602
@@ -2237,25 +2748,28 @@ msgid ""
 "redirection symbols &gt; and &lt;, the use of the pipe is not constrained to "
 "files."
 msgstr ""
+"パイプ記号 (<literal>|</literal>) を使用しても、出力をリダイレクトすることが"
+"できます。ただし、パイプ記号の場合、出力先はファイルではなく次のコマンドに"
+"なります。つまり、複数のコマンドをパイプで繋げて指定すれば、前のコマンドの出力を"
+"次のコマンドの入力として使用できることになります。"
 
 #. Tag: title
 #: newbie_bash.xml:1614
 #, no-c-format
 msgid "Examples for Redirection and Pipe"
-msgstr ""
+msgstr "リダイレクトとパイプの例"
 
 #. Tag: para
 #: newbie_bash.xml:1617
 #, no-c-format
-msgid ""
-"To write the output of a command like <command>ls</command> to a file, enter"
-msgstr ""
+msgid "To write the output of a command like <command>ls</command> to a file, enter"
+msgstr "<command>ls</command> の出力をファイルに保存するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1621
 #, no-c-format
 msgid "&prompt.user;ls -l &gt; filelist.txt"
-msgstr ""
+msgstr "&prompt.user;ls -l &gt; filelist.txt"
 
 #. Tag: para
 #: newbie_bash.xml:1622
@@ -2263,8 +2777,11 @@ msgstr ""
 msgid ""
 "This creates a file named <filename>filelist.txt</filename> that contains "
 "the list of contents of your current directory as generated by the "
-"<command>ls</command> command."
+" command."
 msgstr ""
+"このコマンドを実行すると、カレントディレクトリに <filename>filelist.txt</filename> "
+"というファイルが作成され、 <filename>filelist.txt</filename> の出力結果が"
+"書き込まれます。"
 
 #. Tag: para
 #: newbie_bash.xml:1627
@@ -2274,12 +2791,16 @@ msgid ""
 "this command overwrites the existing file. To prevent this, use <literal>&gt;"
 "&gt;</literal> instead of &gt;. Entering"
 msgstr ""
+"ただし、コマンドの実行よりも前に <filename>filelist.txt</filename> というファイルが"
+"存在していると、このコマンドを実行することでファイルが上書きされてしまいます。"
+"これを防ぐには、 &gt; ではなく <literal>&gt;&gt;</literal> と指定します。たとえば"
+"下記のようになります:"
 
 #. Tag: screen
 #: newbie_bash.xml:1632
 #, no-c-format
 msgid "&prompt.user;ls -l &gt;&gt; filelist.txt"
-msgstr ""
+msgstr "&prompt.user;ls -l &gt;&gt; filelist.txt"
 
 #. Tag: para
 #: newbie_bash.xml:1633
@@ -2289,6 +2810,9 @@ msgid ""
 "existing file named <filename>filelist.txt</filename> . If the file does not "
 "exist, it is created."
 msgstr ""
+"上記を実行すると、 <command>ls</command> コマンドの出力が、既存の"
+" <filename>filelist.txt</filename> ファイルに追記されるようになります。"
+"なお、ファイルが存在しない場合は、新規に作成されます。"
 
 #. Tag: para
 #: newbie_bash.xml:1640
@@ -2297,12 +2821,14 @@ msgid ""
 "Redirections also works the other way round. Instead of using the standard "
 "input from the keyboard for a command, you can use a file as input:"
 msgstr ""
+"リダイレクトは逆方向にも使用することができます。キーボードからの入力ではなく、"
+"ファイルからの入力を行ないたい場合は、たとえば下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1645
 #, no-c-format
 msgid "&prompt.user;sort &lt; filelist.txt"
-msgstr ""
+msgstr "&prompt.user;sort &lt; filelist.txt"
 
 #. Tag: para
 #: newbie_bash.xml:1646
@@ -2313,12 +2839,15 @@ msgid ""
 "the screen. Of course, you can also write the result into another file, "
 "using a combination of redirections:"
 msgstr ""
+"上記を実行すると、 <filename>filelist.txt</filename> の内容を読み込んで、"
+"それを並べ替え (sort) て出力します。出力先は画面になります。リダイレクトを"
+"組み合わせれば、結果を他のファイルに流すこともできます:"
 
 #. Tag: screen
 #: newbie_bash.xml:1652
 #, no-c-format
 msgid "&prompt.user;sort &lt; filelist.txt &gt; sorted_filelist.txt"
-msgstr ""
+msgstr "&prompt.user;sort &lt; filelist.txt &gt; sorted_filelist.txt"
 
 #. Tag: para
 #: newbie_bash.xml:1655
@@ -2329,12 +2858,16 @@ msgid ""
 "<literal>less</literal> to be able to scroll through the pages. To do so, "
 "enter"
 msgstr ""
+"たとえば <command>ls</command> <option>-l</option> など、コマンドが長い出力を"
+"生成するような場合、パイプを利用して <literal>less</literal> のようなコマンドに"
+"流すことで、出力結果をスクロールしながら読むことができるようになります。"
+"たとえば下記のようになります:"
 
 #. Tag: screen
 #: newbie_bash.xml:1661
 #, no-c-format
 msgid "&prompt.user;ls -l | less"
-msgstr ""
+msgstr "&prompt.user;ls -l | less"
 
 #. Tag: para
 #: newbie_bash.xml:1662
@@ -2343,6 +2876,8 @@ msgid ""
 "The list of contents of the current directory is shown in <literal>less</"
 "literal> ."
 msgstr ""
+"上記のように実行することで、カレントディレクトリの内容を <literal>less</"
+"literal> で読むことができるようになります。"
 
 #. Tag: para
 #: newbie_bash.xml:1666
@@ -2353,18 +2888,22 @@ msgid ""
 "command. For example, if you want to view a list of files in a directory "
 "which are owned by the user &exampleuser;, enter"
 msgstr ""
+"パイプは、しばしば <command>grep</command> コマンドとも併用します。"
+"これは、出力された内容から特定の文字列を含む箇所だけを抜き出して表示する"
+"際に利用するもので、たとえば下記を実行すると、 &exampleuser; が所有する"
+"ファイルだけを出力することができます:"
 
 #. Tag: screen
 #: newbie_bash.xml:1673
 #, no-c-format
 msgid "&prompt.user;ls -l | grep tux"
-msgstr ""
+msgstr "&prompt.user;ls -l | grep tux"
 
 #. Tag: title
 #: newbie_bash.xml:1679
 #, no-c-format
 msgid "Starting Programs and Handling Processes"
-msgstr ""
+msgstr "プログラムの起動とプロセスの管理"
 
 #. Tag: para
 #: newbie_bash.xml:1681
@@ -2379,6 +2918,13 @@ msgid ""
 "command> (or <command>evince&nbsp;~/vacation.pdf</command> ) to start a PDF "
 "viewer displaying your file."
 msgstr ""
+"<xref linkend=\"sec.new.bash.edit\"/> で示しているとおり、シェルからは様々な"
+"プログラムを起動することができます。プログラムによっては、 X Window System "
+"のようなグラフィカルユーザインターフェイス (GUI) を持つものもあります。たとえば"
+" KDE や GNOME をお使いの環境で、ホームディレクトリ内にある <filename>vacation.pdf</filename> "
+"というファイルを読みたい場合、 <command>okular&nbsp;~/vacation.pdf</"
+"command> (もしくは <command>evince&nbsp;~/vacation.pdf</command> ) と入力すると、"
+" PDF ビューアが起動して PDF ファイルを表示することができます。"
 
 #. Tag: para
 #: newbie_bash.xml:1693
@@ -2390,6 +2936,13 @@ msgid ""
 "\"/> <keycap>Z</keycap> </keycombo> to suspend the process and enter "
 "<command>bg</command> to send the process to the background."
 msgstr ""
+" PDF ビューアを開いている間、端末ウインドウのほうをご覧ください。プロンプトが"
+"表示されていないことに気がつくかと思います。つまり、この時点では何もコマンドを"
+"受け付けなくなっています。 PDF ビューアを終了すると、再度プロンプトが表示される"
+"ようになり、コマンドも実行できるようになります。このような問題を回避するには、"
+"プログラム (例: PDF ビューア) を起動している間に <keycombo> <keycap function=\"control"
+"\"/> <keycap>Z</keycap> </keycombo> を押してプロセス (処理) を一時停止し、"
+" <command>bg</command> と入力してプロセスをバックグラウンド (裏) で動作させることができます。"
 
 #. Tag: para
 #: newbie_bash.xml:1701
@@ -2400,12 +2953,17 @@ msgid ""
 "is by sending a process to the background directly when starting it. To do "
 "so, add an ampersand at the end of the command:"
 msgstr ""
+"これで <filename>vacation.pdf</filename> を表示しながら、同じ端末でさらなる"
+"コマンドを入力できるようになりました。ただし、いちいち上記のような手順を"
+"行なっても面倒なので、最初からバックグラウンドで動作させる方法もあります。"
+"これを行なう場合には、コマンドの末尾にアンパサンド (<literal>&amp;</literal>) "
+"を付けます:"
 
 #. Tag: screen
 #: newbie_bash.xml:1708
 #, no-c-format
 msgid "&prompt.user;okular ~/vacation.pdf &amp;"
-msgstr ""
+msgstr "&prompt.user;okular ~/vacation.pdf &amp;"
 
 #. Tag: para
 #: newbie_bash.xml:1710
@@ -2415,6 +2973,10 @@ msgid ""
 "same shell, the <command>jobs</command> command gives you an overview of the "
 "jobs. It also shows the job number in brackets and their status:"
 msgstr ""
+"バックグラウンドプロセス (シェル内では <quote>ジョブ</quote> とも言います) "
+"を起動している場合、 <command>jobs</command> というコマンドを実行することで、"
+"存在するジョブを一覧で表示することができます。ジョブにはそれぞれ番号が"
+"付けられています ([] 内の番号がジョブ番号です):"
 
 #. Tag: screen
 #: newbie_bash.xml:1717
@@ -2425,6 +2987,10 @@ msgid ""
 "[2]-  Running        okular book.opensuse.reference-xep.pdf &amp;\n"
 "[3]+  Stopped        man jobs"
 msgstr ""
+"&prompt.user;jobs\n"
+"[1]   実行中         okular book.opensuse.startup-xep.pdf &amp;\n"
+"[2]-  停止           okular book.opensuse.reference-xep.pdf &amp;\n"
+"[3]+  停止           man jobs"
 
 #. Tag: para
 #: newbie_bash.xml:1722
@@ -2433,6 +2999,8 @@ msgid ""
 "To bring a job to the foreground again, enter <command>fg "
 "<replaceable>JOB_NUMBER</replaceable></command> ."
 msgstr ""
+"ジョブを再度フォアグラウンド (表) に戻すには、 <command>fg "
+"<replaceable>ジョブ番号</replaceable></command> と入力して実行します:"
 
 #. Tag: para
 #: newbie_bash.xml:1727
@@ -2443,6 +3011,10 @@ msgid ""
 "options) shows a list of all your processes&mdash;those you started. Find an "
 "example output below:"
 msgstr ""
+"<command>job</command> コマンドは、端末から起動したバックグラウンドプロセス"
+"のみを表示することができますが、 <command>ps</command> コマンドでは、"
+"何もオプションを指定しなければ、自分自身のユーザに紐付く全てのプロセスを"
+"表示することができます。たとえば下記のような出力になります:"
 
 #. Tag: screen
 #: newbie_bash.xml:1734
@@ -2455,6 +3027,12 @@ msgid ""
 "30187 pts/1    00:00:00 kwrite\n"
 "30280 pts/1    00:00:00 ps"
 msgstr ""
+"&prompt.user;ps\n"
+"PID TTY          TIME CMD\n"
+"15500 pts/1    00:00:00 bash\n"
+"28214 pts/1    00:00:00 okular\n"
+"30187 pts/1    00:00:00 kwrite\n"
+"30280 pts/1    00:00:00 ps"
 
 #. Tag: para
 #: newbie_bash.xml:1741
@@ -2466,12 +3044,17 @@ msgid ""
 "of <command>ps</command> . For example, to shut down the KWrite editor in "
 "the example above, enter"
 msgstr ""
+"通常の手段ではプログラムを終了できなくなってしまった場合は、"
+" <command>kill</command> コマンドを利用してプロセスに対応するプログラムを"
+"停止させることができます。これを行なうには、 <command>ps</command> の出力で"
+"得られるプロセス ID (PID) を指定する必要があります。たとえば上記の出力で、"
+" kwrite を終了させたい場合は、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1749
 #, no-c-format
 msgid "&prompt.user;kill 30187"
-msgstr ""
+msgstr "&prompt.user;kill 30187"
 
 #. Tag: para
 #: newbie_bash.xml:1751
@@ -2480,6 +3063,8 @@ msgid ""
 "This sends a <emphasis>TERM</emphasis> signal that instructs the program to "
 "shut itself down."
 msgstr ""
+"これでプログラムに対して <emphasis>TERM</emphasis> というシグナルが送信され、"
+"プログラムを終了するよう指示することができます。"
 
 #. Tag: para
 #: newbie_bash.xml:1756
@@ -2492,12 +3077,15 @@ msgid ""
 "number, you must prefix the number with a percent character ( <literal>%</"
 "literal> ):"
 msgstr ""
+"上記の方法以外にも、 <command>jobs</command> コマンドで表示されるジョブ番号を"
+"指定して終了させることもできます。この場合は、ジョブ番号の前にパーセント"
+"記号 ( <literal>%</literal> ) を指定します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1765
 #, no-c-format
 msgid "&prompt.user;kill %<replaceable>JOB_NUMBER</replaceable>"
-msgstr ""
+msgstr "&prompt.user;kill %<replaceable>ジョブ番号</replaceable>"
 
 #. Tag: para
 #: newbie_bash.xml:1767
@@ -2506,12 +3094,14 @@ msgid ""
 "If <command>kill</command> does not help&mdash;as is sometimes the case for "
 "<quote>runaway</quote> programs&mdash;try"
 msgstr ""
+"場合によっては、通常の <command>kill</command> コマンドでも終了しなくなって"
+"しまう場合もあります。この場合は下記のように実行してみてください:"
 
 #. Tag: screen
 #: newbie_bash.xml:1772
 #, no-c-format
 msgid "&prompt.user;kill -9 <replaceable>PID</replaceable>"
-msgstr ""
+msgstr "&prompt.user;kill -9 <replaceable>PID</replaceable>"
 
 #. Tag: para
 #: newbie_bash.xml:1774
@@ -2520,6 +3110,9 @@ msgid ""
 "This sends a <emphasis>KILL</emphasis> signal instead of a <emphasis>TERM</"
 "emphasis> signal, usually bringing the specified process to an end."
 msgstr ""
+"上記を実行すると、 <emphasis>TERM</emphasis> シグナルではなく、"
+" <emphasis>KILL</emphasis> というシグナルが送信されるようになります。"
+"通常は、これでプログラムを強制終了させることができます。"
 
 #. Tag: para
 #: newbie_bash.xml:1780
@@ -2529,19 +3122,21 @@ msgid ""
 "handling jobs and processes. Find an overview for system administrators in "
 "<xref linkend=\"sec.util.processes\"/> ."
 msgstr ""
+"本章は、ジョブとプロセスに関するごく基本的なコマンドについて紹介してきました。"
+"システム管理者の場合は、 <xref linkend=\"sec.util.processes\"/> も"
+"合わせてお読みになることをお勧めします。"
 
 #. Tag: title
 #: newbie_bash.xml:1788
 #, no-c-format
 msgid "Archives and Data Compression"
-msgstr ""
+msgstr "書庫 (アーカイブ) とデータ圧縮"
 
 #. Tag: para
 #: newbie_bash.xml:1789
 #, no-c-format
-msgid ""
-"On Linux, there are two types of commands that make data easier to transfer:"
-msgstr ""
+msgid "On Linux, there are two types of commands that make data easier to transfer:"
+msgstr "Linux では、 2 種類のコマンドを使用してデータを転送しやすい形にすることができます:"
 
 #. Tag: para
 #: newbie_bash.xml:1795
@@ -2551,6 +3146,9 @@ msgid ""
 "commonly used archiver is <command>tar</command> , another example is "
 "<command>cpio</command> ."
 msgstr ""
+"1 つは書庫プログラムと呼ばれ、複数の (一般的には多数の) ファイルを 1 つの"
+"ファイルにまとめます。一般的には <command>tar</command> や <command>cpio</command> "
+"などを使用します。"
 
 #. Tag: para
 #: newbie_bash.xml:1802
@@ -2559,6 +3157,9 @@ msgid ""
 "Compressors, which losslessly make a file smaller. The most commonly used "
 "compressors are <command>gzip</command> and <command>bzip2</command> ."
 msgstr ""
+"もう 1 つはデータ圧縮プログラムと呼ばれ、元のデータに展開できる状態を維持しながら、"
+"よりファイルを小さくします。一般的には <command>gzip</command> や <command>bzip2</command> "
+"を使用します。"
 
 #. Tag: para
 #: newbie_bash.xml:1809
@@ -2568,6 +3169,9 @@ msgid ""
 "the compressed archive files that are prevalent on other operating systems, "
 "for example, <filename>ZIP</filename> or <filename>RAR</filename> ."
 msgstr ""
+"上記 2 種類のコマンドを組み合わせて使用することで、データ圧縮型書庫を実現"
+"することができます。他のオペレーティングシステムでは <filename>ZIP</filename> "
+"や <filename>RAR</filename> などと呼ばれるファイルです。"
 
 #. Tag: para
 #: newbie_bash.xml:1814
@@ -2577,18 +3181,21 @@ msgid ""
 "subdirectories into an archive named <filename>testarchive.tar</filename> , "
 "do the following:"
 msgstr ""
+"たとえば <filename>test</filename> ディレクトリ以下の全てのファイルと"
+"サブディレクトリを、 <filename>testarchive.tar</filename> というファイルに"
+"まとめたい場合は、下記のように実行します:"
 
 #. Tag: title
 #: newbie_bash.xml:1820
 #, no-c-format
 msgid "Archiving Files"
-msgstr ""
+msgstr "ファイルの書庫の作成"
 
 #. Tag: para
 #: newbie_bash.xml:1822
 #, no-c-format
 msgid "Open a shell."
-msgstr ""
+msgstr "シェルを開きます。"
 
 #. Tag: para
 #: newbie_bash.xml:1827
@@ -2597,18 +3204,20 @@ msgid ""
 "Use <command>cd</command> to change to your home directory where the "
 "<filename>test</filename> directory is located."
 msgstr ""
+"<command>cd</command> コマンドを利用して、 <filename>test</filename> "
+"ディレクトリのある場所まで移動します。"
 
 #. Tag: para
 #: newbie_bash.xml:1833
 #, no-c-format
 msgid "Commpress the file with:"
-msgstr ""
+msgstr "書庫の作成は下記のようにして行ないます:"
 
 #. Tag: screen
 #: newbie_bash.xml:1836
 #, no-c-format
 msgid "&prompt.user;tar -cvf testarchive.tar test"
-msgstr ""
+msgstr "&prompt.user;tar -cvf testarchive.tar test"
 
 #. Tag: para
 #: newbie_bash.xml:1837
@@ -2618,6 +3227,9 @@ msgid ""
 "directed by <option>-f</option> . The <option>-v</option> option lists the "
 "files as they are processed."
 msgstr ""
+"<option>-c</option> オプションは書庫の作成を、 <option>-v</option> オプションは"
+"処理したファイルの情報を出力する指示を、 <option>-f</option> オプションは"
+"出力先のファイルの指定を、それぞれ行なっています。"
 
 #. Tag: para
 #: newbie_bash.xml:1843
@@ -2626,24 +3238,26 @@ msgid ""
 "The <filename>test</filename> directory with all its files and directories "
 "has remained unchanged on your hard disk."
 msgstr ""
+"<filename>test</filename> ディレクトリに存在していたファイルやディレクトリは、"
+"そのまま削除されずそのまま保持されます。"
 
 #. Tag: para
 #: newbie_bash.xml:1849
 #, no-c-format
 msgid "View the contents of the archive file with:"
-msgstr ""
+msgstr "書庫ファイルの内容を表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1852
 #, no-c-format
 msgid "&prompt.user;tar -tf testarchive.tar"
-msgstr ""
+msgstr "&prompt.user;tar -tf testarchive.tar"
 
 #. Tag: para
 #: newbie_bash.xml:1855
 #, no-c-format
 msgid "To unpack the archive, use:"
-msgstr ""
+msgstr "書庫の内容を展開するには、下記のように実行します:"
 
 #. Tag: para
 #: newbie_bash.xml:1859
@@ -2652,6 +3266,8 @@ msgid ""
 "If files in your current directory are named the same as the files in the "
 "archive, they will be overwritten without warning."
 msgstr ""
+"なお、カレントディレクトリ以下に書庫内と同じファイルやディレクトリが"
+"存在する場合、それらは何も警告されることなく上書きされます。"
 
 #. Tag: para
 #: newbie_bash.xml:1866
@@ -2660,12 +3276,14 @@ msgid ""
 "To compress files, use <command>gzip</command> or, for better compression, "
 "<command>bzip2</command> ."
 msgstr ""
+"ファイルを圧縮するには、 <command>gzip</command> または <command>bzip2</command> "
+"コマンドを使用します。後者のほうが、より高い圧縮率になります。"
 
 #. Tag: title
 #: newbie_bash.xml:1871
 #, no-c-format
 msgid "Compressing a File"
-msgstr ""
+msgstr "ファイルの圧縮"
 
 #. Tag: para
 #: newbie_bash.xml:1873
@@ -2674,18 +3292,20 @@ msgid ""
 "For this example, reuse the archive <filename>testarchive.tar</filename> "
 "from <xref linkend=\"pro.bash.archive\"/> ."
 msgstr ""
+"下記の例では、 <xref linkend=\"pro.bash.archive\"/> で作成した書庫を"
+"そのまま使用しています。"
 
 #. Tag: para
 #: newbie_bash.xml:1878
 #, no-c-format
 msgid "To compress the archive, use:"
-msgstr ""
+msgstr "書庫を圧縮するには、下記のように実行します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1881
 #, no-c-format
 msgid "&prompt.user;gzip testarchive.tar"
-msgstr ""
+msgstr "&prompt.user;gzip testarchive.tar"
 
 #. Tag: para
 #: newbie_bash.xml:1882
@@ -2695,6 +3315,9 @@ msgid ""
 "tar</filename> is no longer there and that the file <filename>testarchive."
 "tar.gz</filename> has been created instead."
 msgstr ""
+"<command>ls</command> コマンドを実行するとわかりますが、上記のコマンドを実行すると"
+" <filename>testarchive.tar</filename> というファイルが削除され、その代わりに"
+" <filename>testarchive.tar.gz</filename> というファイルが作成されます。"
 
 #. Tag: para
 #: newbie_bash.xml:1887
@@ -2703,12 +3326,14 @@ msgid ""
 "As an alternative, use <command>bzip2 testarchive.tar</command> which works "
 "analogously but provides somewhat better compression."
 msgstr ""
+"上記以外にも、 <command>bzip2 testarchive.tar</command> のように実行すると、"
+"より高い圧縮率で圧縮を行なうことができます。"
 
 #. Tag: para
 #: newbie_bash.xml:1893
 #, no-c-format
 msgid "Now decompress and unarchive the file again:"
-msgstr ""
+msgstr "今度は圧縮を展開して、書庫からファイルを取り出してみます:"
 
 #. Tag: para
 #: newbie_bash.xml:1898
@@ -2717,6 +3342,8 @@ msgid ""
 "This can be done in two steps by first decompressing and then unarchiving "
 "the file:"
 msgstr ""
+"書庫を作成して圧縮した手順とは逆に、圧縮を展開してから書庫の内容を"
+"取り出します:"
 
 #. Tag: screen
 #: newbie_bash.xml:1902
@@ -2726,18 +3353,21 @@ msgid ""
 "&prompt.user;<command>gzip --decompress testarchive.tar.gz</command>\n"
 "&prompt.user;<command>tar -xvf testarchive.tar</command>\n"
 msgstr ""
+"\n"
+"&prompt.user;<command>gzip --decompress testarchive.tar.gz</command>\n"
+"&prompt.user;<command>tar -xvf testarchive.tar</command>\n"
 
 #. Tag: para
 #: newbie_bash.xml:1908
 #, no-c-format
 msgid "You can also decompress and unarchive in one step:"
-msgstr ""
+msgstr "展開と取り出しを一括で行なうこともできます:"
 
 #. Tag: screen
 #: newbie_bash.xml:1911
 #, no-c-format
 msgid "&prompt.user;tar -xvf testarchive.tar"
-msgstr ""
+msgstr "&prompt.user;tar -xvf testarchive.tar"
 
 #. Tag: para
 #: newbie_bash.xml:1914
@@ -2747,3 +3377,7 @@ msgid ""
 "filename> directory has been created with the same contents as your "
 "<filename>test</filename> directory in your home directory."
 msgstr ""
+"<command>ls</command> を実行すると、新しく <filename>test</"
+"filename> というディレクトリが作成され、ホームディレクトリにある"
+" <filename>test</filename> ディレクトリと同じ内容が作成されます。"
+
