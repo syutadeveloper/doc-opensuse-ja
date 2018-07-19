@@ -789,11 +789,7 @@ Desktop/ Documents/ Downloads/
     <step>
      <para><command>ls</command> の出力をファイルに保存するには、下記のように実行します:</para>
 <screen>&prompt.user;ls -l &gt; filelist.txt</screen>
-     <para>
-      This creates a file named <filename>filelist.txt</filename> that
-      contains the list of contents of your current directory as generated
-      by the <command>ls</command> command.
-     </para>
+     <para>このコマンドを実行すると、カレントディレクトリに <filename>filelist.txt</filename> というファイルが作成され、 <command>ls</command> の出力結果が書き込まれます。</para>
      <para>ただし、コマンドの実行よりも前に <filename>filelist.txt</filename> というファイルが存在していると、このコマンドを実行することでファイルが上書きされてしまいます。これを防ぐには、 &gt; ではなく <literal>&gt;&gt;</literal> と指定します。たとえば下記のようになります:</para>
 <screen>&prompt.user;ls -l &gt;&gt; filelist.txt</screen>
      <para>上記を実行すると、 <command>ls</command> コマンドの出力が、既存の <filename>filelist.txt</filename> ファイルに追記されるようになります。なお、ファイルが存在しない場合は、新規に作成されます。</para>
