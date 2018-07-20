@@ -220,7 +220,9 @@ __EOF__
             }
 
             if ($msgmode == 2) {
+              $msgid =~ s/\\\\/\\/g;
               $msgid =~ s/\\"/"/g;
+	      $msgbuf =~ s/\\\\/\\/g;
               $msgbuf =~ s/\\"/"/g;
 
               $po{$msgid} = $msgbuf;
@@ -253,7 +255,9 @@ __EOF__
     }
   }
 
+  $msgid =~ s/\\\\/\\/g;
   $msgid =~ s/\\"/"/g;
+  $msgbuf =~ s/\\\\/\\/g;
   $msgbuf =~ s/\\"/"/g;
 
   $po{$msgid} = $msgbuf;
