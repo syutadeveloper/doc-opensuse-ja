@@ -286,19 +286,7 @@ drwxr-xr-x 1 tux users  70733 2015-06-21 09:35 public_html
 
   <note>
    <title>ファイル名やディレクトリ名における空白 (スペース) の処理について</title>
-   <para>
-    If a filename or the name of a directory contains a space, either escape
-    the space using a back slash (<literal>\</literal>) in front of the
-    blank or enclose the filename in single
-<!-- or double-->
-    quotes. Otherwise Bash interprets a filename like <filename>My
-    Documents</filename> as the names of two files or directories,
-    <filename>My</filename> and <filename>Documents</filename> in this case.
-<!--The difference between
-    single and double quotes is that variable expansion takes place within
-    double quotes. Single quotes ensure that the shell sees the quoted string
-    literally.-->
-   </para>
+   <para>ファイル名やディレクトリ名に空白を含む場合、空白の前にバックスラッシュ<!-- Japanese original contents start --><!-- It says 'backslash may be rendered as Yen mark (Japanese currency sign) depending on the font' --> (フォントによっては円マークとして描画される場合があります) <!-- Japanese original contents end --> ( <literal>\</literal> ) を付けてスペースを避ける (エスケープ) 処理をするか、もしくはパス全体を引用符で括って指定します。このように指定しないと、 bash は<filename>My Documents</filename> のようなファイル名を 2 つのファイル名もしくはディレクトリ名であるものと解釈してしまい、この例では <filename>My</filename> と <filename>Documents</filename> の 2 つのパスになってしまいます。<!--The difference between single and double quotes is that variable expansion takes place within double quotes. Single quotes ensure that the shell sees the quoted string literally.--></para>
   </note>
 
   <para>なお、パスを指定する際は、下記の <quote>ショートカット</quote> を利用して、入力を省略することができます:</para>
