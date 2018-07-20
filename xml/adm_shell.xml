@@ -5,16 +5,10 @@
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.adm.shell">
 <!-- Better Title? -->
- <title>Bash and Bash Scripts</title>
+ <title>bash と bash スクリプト</title>
  <info>
   <abstract>
-   <para>
-    Today, many people use computers with a graphical user interface (GUI)
-    like &gnome;. Although they offer lots of features, their use is limited
-    when it comes to the execution of automated tasks. Shells are a good
-    addition to GUIs and this chapter gives you an overview of some aspects of
-    shells, in this case Bash.
-   </para>
+   <para>今となっては多くの人々が &gnome; のようなグラフィカルユーザインターフェイス (GUI) を使用するようになっています。 GUI は多数の機能が提供されているものの、特に自動化という側面においては、限られた用途でしか使用できません。シェルは GUI とも共存できる仕組みで、本章で示している bash シェルの使い方を覚えれば、より効率的に作業を進めることができるようになります。</para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
@@ -23,237 +17,158 @@
  </info>
 <!-- Better Title? -->
  <sect1 xml:id="sec.adm.whatistheshell">
-  <title>What is <quote>The Shell</quote>?</title>
+  <title><quote>シェル</quote> とは</title>
 
 <!--<para>A shell is a fundamental part of each Linux system: Its user
       interface allow users to enter commands to execute different
       tasks, like listing of directories, showing files, or searching
       for files.</para>-->
 
-  <para>
-   Traditionally, <emphasis>the</emphasis> shell is Bash (Bourne again Shell).
-   When this chapter speaks about <quote>the shell</quote> it means Bash. There
-   are actually more available shells than Bash (ash, csh, ksh, zsh, &hellip;),
-   each employing different features and characteristics. If you need further
-   information about other shells, search for <emphasis>shell</emphasis> in
-   &yast;.
-  </para>
+  <para>伝統的には、シェルといえば bash (Bourne again Shell) のことを指します。本章でもそれにならい、 <quote>シェル</quote> を bash の意味で使用します。実際には bash 以外の様々なシェル (ash, csh, ksh, zsh, &hellip;) がありますが、それぞれ少しずつ異なる機能と動作が提供されています。他のシェルについて詳しく知りたい場合は、 &yast; で <emphasis>shell</emphasis> を検索してください。</para>
 
   <sect2 xml:id="sec.adm.configfiles">
-   <title>Knowing the Bash Configuration Files</title>
-   <para>
-    A shell can be invoked as an:
-   </para>
+   <title>bash の設定ファイルについて</title>
+   <para>シェルは下記のいずれかの方式で起動することができます:</para>
    <orderedlist spacing="normal">
     <listitem>
      <formalpara>
-      <title>Interactive login shell</title>
-      <para>
-       This is used when logging in to a machine, invoking Bash with the
-       <option>--login</option> option or when logging in to a remote machine
-       with SSH.
-      </para>
+      <title>対話的なログインシェル</title>
+      <para>マシンに対してログインした際に使用されるシェルで、 bash には　<option>--login</option> というパラメータが追加されます。これは、 SSH などでリモートからログインした場合にも使用されるものです。</para>
      </formalpara>
     </listitem>
     <listitem>
      <formalpara>
-      <title><quote>Ordinary</quote> interactive shell</title>
-      <para>
-       This is normally the case when starting xterm, konsole, gnome-terminal
-       or similar tools.
-      </para>
+      <title><quote>通常の</quote> 対話的なシェル</title>
+      <para>xterm, konsole, gnome-terminal などのツールを通じて bash を開始した場合は、こちらのシェルになります。</para>
      </formalpara>
     </listitem>
     <listitem>
      <formalpara>
-      <title>Non-interactive shell</title>
-      <para>
-       This is used when invoking a shell script at the command line.
-      </para>
+      <title>非対話型のシェル</title>
+      <para>コマンドラインでシェルスクリプトを実行すると、こちらのシェルになります。</para>
      </formalpara>
     </listitem>
    </orderedlist>
-   <para>
-    Depending on which type of shell you use, different configuration files are
-    being read. The following tables show the login and non-login shell
-    configuration files.
-   </para>
+   <para>使用しているシェルの種類によって、それぞれ異なる設定ファイルが読み込まれます。下記の表では、ログインシェルの場合と非ログインシェルの場合で、読み込まれる設定ファイルを示しています。</para>
    <table xml:id="tab.adm.shell.config.loginshells">
-    <title>Bash Configuration Files for Login Shells</title>
+    <title>ログインシェルで使用する際の bash 設定ファイル</title>
     <tgroup cols="2">
      <thead>
       <row>
        <entry>
-        <para>
-         File
-        </para>
+        <para>ファイル</para>
        </entry>
        <entry>
-        <para>
-         Description
-        </para>
+        <para>説明</para>
        </entry>
       </row>
      </thead>
      <tbody>
       <row>
        <entry>
-        <para>
-         <filename>/etc/profile</filename>
-        </para>
+        <para><filename>/etc/profile</filename></para>
        </entry>
        <entry>
-        <para>
-         Do not modify this file, otherwise your modifications can be destroyed
-         during your next update!
-        </para>
+        <para>このファイルは変更してはなりません。パッケージ側で管理されているファイルであるため、更新を行なうと変更した内容が上書きされてしまいます。</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <filename>/etc/profile.local</filename>
-        </para>
+        <para><filename>/etc/profile.local</filename></para>
        </entry>
        <entry>
-        <para>
-         Use this file if you extend <filename>/etc/profile</filename>
-        </para>
+        <para><filename>/etc/profile</filename> に対して何らかの項目を追加したい場合は、こちらのファイルに記述してください</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <filename>/etc/profile.d/</filename>
-        </para>
+        <para><filename>/etc/profile.d/</filename></para>
        </entry>
        <entry>
-        <para>
-         Contains system-wide configuration files for specific programs
-        </para>
+        <para>特定のプログラムに対するシステム全体の設定ファイルが含まれています</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <filename>~/.profile</filename>
-        </para>
+        <para><filename>~/.profile</filename></para>
        </entry>
        <entry>
-        <para>
-         Insert user specific configuration for login shells here
-        </para>
+        <para>ログインシェルでユーザ固有の設定を行ないたい場合は、こちらに記述してください</para>
        </entry>
       </row>
 <!--  -->
      </tbody>
     </tgroup>
    </table>
-   <para>
-    Note that the login shell also sources the configuration files listed under
-    <xref linkend="tab.adm.shell.configs.nonloginshells"/>.
-   </para>
+   <para>なお、ログインシェルの場合は、 <xref linkend="tab.adm.shell.configs.nonloginshells"/> にある設定ファイルもあわせて読み込みます。</para>
    <table xml:id="tab.adm.shell.configs.nonloginshells">
-    <title>Bash Configuration Files for Non-Login Shells</title>
+    <title>非ログインシェルで使用する際の bash 設定ファイル</title>
     <tgroup cols="2">
      <tbody>
       <row>
        <entry>
-        <para>
-         <filename>/etc/bash.bashrc</filename>
-        </para>
+        <para><filename>/etc/bash.bashrc</filename></para>
        </entry>
        <entry>
-        <para>
-         Do not modify this file, otherwise your modifications can be destroyed
-         during your next update!
-        </para>
+        <para>このファイルは変更してはなりません。パッケージ側で管理されているファイルであるため、更新を行なうと変更した内容が上書きされてしまいます。</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <filename>/etc/bash.bashrc.local</filename>
-        </para>
+        <para><filename>/etc/bash.bashrc.local</filename></para>
        </entry>
        <entry>
-        <para>
-         Use this file to insert your system-wide modifications for Bash only
-        </para>
+        <para>bash のみに対して、システム全体に反映すべき設定があれば、こちらのファイルに記述してください</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <filename>~/.bashrc</filename>
-        </para>
+        <para><filename>~/.bashrc</filename></para>
        </entry>
        <entry>
-        <para>
-         Insert user specific configuration here
-        </para>
+        <para>ユーザ固有の設定を行ないたい場合は、こちらに記述してください</para>
        </entry>
       </row>
      </tbody>
     </tgroup>
    </table>
-   <para>
-    Additionally, Bash uses some more files:
-   </para>
+   <para>これらに加えて、 bash では下記のようなファイルを使用します:</para>
    <table>
-    <title>Special Files for Bash</title>
+    <title>bash での特殊ファイル</title>
     <tgroup cols="2">
      <thead>
       <row>
        <entry>
-        <para>
-         File
-        </para>
+        <para>ファイル</para>
        </entry>
        <entry>
-        <para>
-         Description
-        </para>
+        <para>説明</para>
        </entry>
       </row>
      </thead>
      <tbody>
       <row>
        <entry>
-        <para>
-         <filename>~/.bash_history</filename>
-        </para>
+        <para><filename>~/.bash_history</filename></para>
        </entry>
        <entry>
-        <para>
-         Contains a list of all commands you have been typing
-        </para>
+        <para>これまでに入力したコマンドラインの履歴一覧</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <filename>~/.bash_logout</filename>
-        </para>
+        <para><filename>~/.bash_logout</filename></para>
        </entry>
        <entry>
-        <para>
-         Executed when logging out
-        </para>
+        <para>ログアウト時に実行するスクリプトです</para>
        </entry>
        </row>
        <row>
        <entry>
-        <para>
-         <filename>~/.alias</filename>
-        </para>
+        <para><filename>~/.alias</filename></para>
        </entry>
        <entry>
-        <para>
-         User defined aliases of frequently used commands. See
-         <command>man 1 alias</command> for more details about how to define
-         aliases.
-        </para>
+        <para>よく使用するコマンドに対して、別名を定義することができるファイルです。別名の定義方法について、詳しくは <command>man 1 alias</command> を実行してお読みください。</para>
        </entry>
       </row>
      </tbody>
@@ -264,377 +179,229 @@
   <xi:include href="fs_structure_i.xml"/>
  </sect1>
  <sect1 xml:id="sec.adm.shellscripts">
-  <title>Writing Shell Scripts</title>
+  <title>シェルスクリプトの作成</title>
 
-  <para>
-   Shell scripts provide a convenient way to perform a wide range of tasks: collecting
-   data, searching for a word or phrase in a text and other useful things.
-   The following example shows a small shell script that prints a text:
-  </para>
+  <para>シェルスクリプトは、幅広い処理を実行することができる便利な仕組みです。データの収集やファイル内の単語や語句の検索など、様々な処理を行なうことができます。下記の例では、テキストを出力する簡単なシェルスクリプトを示しています:</para>
 
   <example>
-   <title>A Shell Script Printing a Text</title>
+   <title>テキストを出力するシェルスクリプト</title>
 <screen>#!/bin/sh <co xml:id="co.adm.shell.shebang"/>
-# Output the following line: <co xml:id="co.adm.shell.comment"/>
+# 下記の行を出力します: <co xml:id="co.adm.shell.comment"/>
 echo "Hello World" <co xml:id="co.adm.shell.echo"/></screen>
    <calloutlist>
     <callout arearefs="co.adm.shell.shebang">
-     <para>
-      The first line begins with the <emphasis>Shebang</emphasis>
-      characters (<literal>#!</literal>) which is an indicator
-      that this file is a script. The script is executed with the specified
-      interpreter after the Shebang, in this case <command>/bin/sh</command>.
-     </para>
+     <para>最初の行は <emphasis>シェバン</emphasis> と呼ばれる文字列 ( <literal>#!</literal> ) で始まっています。これは、このファイルがスクリプトであることを示す文字列です。スクリプトは、シェバンの後ろに書かれたインタプリタを利用して実行されます。この例の場合は、 <command>/bin/sh</command> になっています。</para>
     </callout>
     <callout arearefs="co.adm.shell.comment">
-     <para>
-      The second line is a comment beginning with the hash sign. It is
-      recommended to comment difficult lines to remember what they do.
-     </para>
+     <para>2 行目はハッシュ記号で始まるコメント文です。スクリプト内で何をやっているのかがわかりにくいような場合に、書いておいたほうがよいものです。</para>
     </callout>
     <callout arearefs="co.adm.shell.echo">
-     <para>
-      The third line uses the built-in command <command>echo</command> to print
-      the corresponding text.
-     </para>
+     <para>3 行目は内蔵コマンド <command>echo</command> を実行する箇所で、後ろに書かれた文字列を出力しています。</para>
     </callout>
    </calloutlist>
   </example>
 
-  <para>
-   Before you can run this script you need some prerequisites:
-  </para>
+  <para>スクリプトを実行するにあたっては、下記の要件を満たす必要があります:</para>
 
   <orderedlist spacing="normal">
    <listitem>
-    <para>
-     Every script should contain a Shebang line (as in the example above). If
-     the line is missing, you need to call the interpreter manually.
-    </para>
+    <para>スクリプトには、上記の例のようにシェバンを書いておくべきです。シェバンが書かれていないと、実行のたびにインタプリタを手作業で指定しなければならなくなります。</para>
    </listitem>
    <listitem>
-    <para>
-     You can save the script wherever you want. However, it is a good idea to
-     save it in a directory where the shell can find it. The search path in a
-     shell is determined by the environment variable <envar>PATH</envar>.
-     Usually a normal user does not have write access to
-     <filename>/usr/bin</filename>. Therefore it is recommended to save your
-     scripts in the users' directory <filename>~/bin/</filename>. The above
-     example gets the name <filename>hello.sh</filename>.
-    </para>
+    <para>スクリプトは任意の場所に保存することができますが、一般的にはシェルから見つけやすい場所においておくことをお勧めします。シェルでパスを検索する際は、 <envar>PATH</envar> という環境変数の内容を参照します。ただし、一般ユーザは <filename>/usr/bin</filename> に書き込むことができないのが通常ですので、スクリプトはホームディレクトリ以下の <filename>~/bin/</filename> などに保存しておくとよいでしょう。上記のファイルは、 <filename>hello.sh</filename> というファイル名で保存しているものとします。</para>
    </listitem>
    <listitem>
-    <para>
-     The script needs executable permissions. Set the permissions with the
-     following command:
-    </para>
+    <para>スクリプトには実行のアクセス権が必要です。下記の通り実行して、実行権限を付与してください:</para>
 <screen>&prompt.user;chmod +x ~/bin/hello.sh</screen>
    </listitem>
   </orderedlist>
 
-  <para>
-   If you have fulfilled all of the above prerequisites, you can execute the
-   script in the following ways:
-  </para>
+  <para>上記の要件を全て満たしたら、あとは下記のいずれかの方式でスクリプトを実行します:</para>
 
   <orderedlist spacing="normal">
    <listitem>
     <formalpara>
-     <title>As Absolute Path</title>
-     <para>
-      The script can be executed with an absolute path. In our case, it is
-      <command>~/bin/hello.sh</command>.
-     </para>
+     <title>絶対パス</title>
+     <para>スクリプトは絶対パスで実行することができます。今回の例の場合は、 <command>~/bin/hello.sh</command> と入力すると、実行することができます。</para>
     </formalpara>
    </listitem>
    <listitem>
     <formalpara>
-     <title>Everywhere</title>
-     <para>
-      If the <envar>PATH</envar> environment variable contains the directory
-      where the script is located, you can execute the script with
-      <command>hello.sh</command>.
-     </para>
+     <title>任意の場所</title>
+     <para><envar>PATH</envar> 環境変数にはスクリプトの存在しうるディレクトリが並べられています。このディレクトリ内のどこかに <filename>hello.sh</filename> を配置していれば、 <command>hello.sh</command> と入力するだけで実行することができます。</para>
     </formalpara>
    </listitem>
   </orderedlist>
  </sect1>
  <sect1 xml:id="sec.adm.shell.redirect">
-  <title>Redirecting Command Events</title>
+  <title>コマンドイベントのリダイレクト</title>
 
-  <para>
-   Each command can use three channels, either for input or output:
-  </para>
+  <para>それぞれのコマンドには、入力や出力のための計 3 種類のチャンネルが用意されています:</para>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
     <formalpara>
-     <title>Standard Output</title>
-     <para>
-      This is the default output channel. Whenever a command prints something,
-      it uses the standard output channel.
-     </para>
+     <title>標準出力</title>
+     <para>既定の出力チャンネルです。コマンドが何らかの出力を行なうと、それは標準出力に書き出されます。</para>
     </formalpara>
    </listitem>
    <listitem>
     <formalpara>
-     <title>Standard Input</title>
-     <para>
-      If a command needs input from users or other commands, it uses this
-      channel.
-     </para>
+     <title>標準入力</title>
+     <para>ユーザから、もしくは他のコマンドからの入力が必要な場合、このチャンネルを使用します。</para>
     </formalpara>
    </listitem>
    <listitem>
     <formalpara>
-     <title>Standard Error</title>
-     <para>
-      Commands use this channel for error reporting.
-     </para>
+     <title>標準エラー出力</title>
+     <para>コマンドは、エラー報告を行なう際、このチャンネルを使用します。</para>
     </formalpara>
    </listitem>
   </itemizedlist>
 
-  <para>
-   To redirect these channels, there are the following possibilities:
-  </para>
+  <para>これらのチャンネルをリダイレクト (転送) するには、下記のいずれかの方法があります:</para>
 
   <variablelist>
    <varlistentry>
-    <term><literal>Command &gt; File</literal>
-    </term>
+    <term><literal>コマンド &gt; ファイル</literal></term>
     <listitem>
-     <para>
-      Saves the output of the command into a file, an existing file will be
-      deleted. For example, the <command>ls</command> command writes its output
-      into the file <filename>listing.txt</filename>:
-     </para>
+     <para>コマンドの出力をファイルに保存します。ただし、既存のファイルは削除されることに注意してください。たとえば <command>ls</command> コマンドの出力を <filename>listing.txt</filename> ファイルに保存するには、下記のようにして行ないます:</para>
 <screen>&prompt.user;ls &gt; listing.txt</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><literal>Command &gt;&gt; File</literal>
-    </term>
+    <term><literal>コマンド &gt;&gt; ファイル</literal></term>
     <listitem>
-     <para>
-      Appends the output of the command to a file. For example, the
-      <command>ls</command> command appends its output to the file
-      <filename>listing.txt</filename>:
-     </para>
+     <para>コマンドの出力をファイルに追記します。たとえば <command>ls</command> コマンドの出力を <filename>listing.txt</filename> ファイルに追記するには、下記のようにして行ないます:</para>
 <screen>&prompt.user;ls &gt;&gt; listing.txt</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><literal>Command &lt; File</literal>
-    </term>
+    <term><literal>コマンド &lt; ファイル</literal></term>
     <listitem>
-     <para>
-      Reads the file as input for the given command. For example, the
-      <command>read</command> command reads in the content of the file into the
-      variable:
-     </para>
+     <para>指定したコマンドに対して、ファイルの内容を入力として設定します。たとえば <command>read</command> というコマンドを利用して、ファイルの内容を変数に取り込むには、下記のように実行します:</para>
 <screen>&prompt.user;read a &lt; foo</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><literal>Command1 | Command2</literal>
-    </term>
+    <term><literal>コマンド_1 | コマンド_2</literal></term>
     <listitem>
-     <para>
-      Redirects the output of the left command as input for the right command.
-      For example, the <command>cat</command> command outputs the content of
-      the <filename>/proc/cpuinfo</filename> file. This output is used by
-      <command>grep</command> to filter only those lines which contain
-      <literal>cpu</literal>:
-     </para>
+     <para>左側のコマンドの出力を右側のコマンドの入力として使用します。たとえば <command>cat</command> コマンドで <filename>/proc/cpuinfo</filename> ファイルの内容を出力し、その出力を <command>grep</command> コマンドでフィルタして、 <literal>cpu</literal> という文字列を含む行だけを取り出すには、下記のように実行します:</para>
 <screen>&prompt.user;cat /proc/cpuinfo | grep cpu</screen>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para>
-   Every channel has a <emphasis>file descriptor</emphasis>: 0 (zero) for
-   standard input, 1 for standard output and 2 for standard error. It is
-   allowed to insert this file descriptor before a <literal>&lt;</literal> or
-   <literal>&gt;</literal> character. For example, the following line searches
-   for a file starting with <filename>foo</filename>, but suppresses its errors
-   by redirecting it to <filename>/dev/null</filename>:
-  </para>
+  <para>それぞれのチャンネルには <emphasis>ファイルディスクリプタ</emphasis> が割り当てられています。 0 (ゼロ) が標準入力、 1 が標準出力、 2 が標準エラー出力です。これらの数字を <literal>&lt;</literal> や <literal>&gt;</literal> の前に指定することで、それぞれの入出力を自在に扱うことができるようになります。たとえば <filename>foo</filename> で始まるファイルを検索するものの、エラー出力については、 <filename>/dev/null</filename> にリダイレクトしたい場合は、下記のように実行します:</para>
 
 <screen>&prompt.user;find / -name "foo*" 2&gt;/dev/null</screen>
  </sect1>
  <sect1 xml:id="sec.adm.alias">
-  <title>Using Aliases</title>
+  <title>別名定義の使用</title>
 
-  <para>
-   An alias is a shortcut definition of one or more commands. The syntax for an
-   alias is:
-  </para>
+  <para>別名定義は、 1 つまたは複数のコマンドのショートカットです。別名定義の書式は下記の通りです:</para>
 
-<screen>alias <replaceable>NAME</replaceable>=<replaceable>DEFINITION</replaceable></screen>
+<screen>alias <replaceable>名前</replaceable>=<replaceable>定義</replaceable></screen>
 
-  <para>
-   For example, the following line defines an alias <command>lt</command> that
-   outputs a long listing (option <option>-l</option>), sorts it by
-   modification time (<option>-t</option>), and prints it in reverse sorted order (<option>-r</option>):
-  </para>
+  <para>たとえば下記の行を実行すると、 <command>lt</command> という名前で、長い形式の出力 (<option>-l</option> オプション) を行ない、かつ更新日時順に並べ替え ( <option>-t</option> ) 、並び順を逆順とする ( <option>-r</option> ) 別名を定義することができます:</para>
 
 <screen>&prompt.user;alias lt='ls -ltr'</screen>
 
-  <para>
-   To view all alias definitions, use <command>alias</command>. Remove your
-   alias with <command>unalias</command> and the corresponding alias name.
-  </para>
+  <para>全ての別名定義を一覧で表示するには、 <command>alias</command> とだけ入力して実行します。また、別名定義を削除するには、 <command>unalias</command> に続いて別名を指定します。</para>
  </sect1>
  <sect1 xml:id="sec.adm.variables">
-  <title>Using Variables in Bash</title>
+  <title>bash 内での変数の使用</title>
 
-  <para>
-   A shell variable can be global or local. Global variables, or environment
-   variables, can be accessed in all shells. In contrast, local variables are
-   visible in the current shell only.
-  </para>
+  <para>シェルでは変数をローカルかグローバルに設定することができます。グローバル変数は環境変数とも呼ばれ、全てのシェルからアクセスすることができます。逆にローカル変数は、現在のシェルからしかアクセスできないものを指します。</para>
 
-  <para>
-   To view all environment variables, use the <command>printenv</command>
-   command. If you need to know the value of a variable, insert the name of
-   your variable as an argument:
-  </para>
+  <para>全ての環境変数を出力するには、 <command>printenv</command> を使用します。変数の値を知りたい場合は、コマンドの後ろに変数名を指定します:</para>
 
 <screen>&prompt.user;printenv PATH</screen>
 
-  <para>
-   A variable, be it global or local, can also be viewed with
-   <command>echo</command>:
-  </para>
+  <para>グローバル変数でもローカル変数でも、  <command>echo</command> コマンドを使用すれば値を出力することができます:</para>
 
 <screen>&prompt.user;echo $PATH</screen>
 
-  <para>
-   To set a local variable, use a variable name followed by the equal sign,
-   followed by the value:
-  </para>
+  <para>ローカル変数を設定するには、変数名に続いてイコール記号を付け、その後ろに値を記述します:</para>
 
 <screen>&prompt.user;PROJECT="SLED"</screen>
 
-  <para>
-   Do not insert spaces around the equal sign, otherwise you get an error. To
-   set an environment variable, use <command>export</command>:
-  </para>
+  <para>なお、イコール記号の後には空白 (スペース) を入れないでください。空白を入れてしまうと、エラーになってしまいます。環境変数を設定したい場合は、 <command>export</command> というコマンドを使用します:</para>
 
 <screen>&prompt.user;export NAME="tux"</screen>
 
-  <para>
-   To remove a variable, use <command>unset</command>:
-  </para>
+  <para>変数を削除するには、 <command>unset</command> コマンドを使用します:</para>
 
 <screen>&prompt.user;unset NAME</screen>
 
-  <para>
-   The following table contains some common environment variables which can be
-   used in you shell scripts:
-  </para>
+  <para>下記の表には、シェルスクリプト内でよく使用される、いくつかの一般的な環境変数を示しています:</para>
 
   <table xml:id="tab.adm.envars">
-   <title>Useful Environment Variables</title>
+   <title>便利な環境変数</title>
    <tgroup cols="2">
     <tbody>
      <row>
       <entry>
-       <para>
-        <envar>HOME</envar>
-       </para>
+       <para><envar>HOME</envar></para>
       </entry>
       <entry>
-       <para>
-        the home directory of the current user
-       </para>
+       <para>現在のユーザのホームディレクトリ</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <envar>HOST</envar>
-       </para>
+       <para><envar>HOST</envar></para>
       </entry>
       <entry>
-       <para>
-        the current host name
-       </para>
+       <para>現在のホスト名</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <envar>LANG</envar>
-       </para>
+       <para><envar>LANG</envar></para>
       </entry>
       <entry>
-       <para>
-        when a tool is localized, it uses the language from this environment
-        variable. English can also be set to <literal>C</literal>
-       </para>
+       <para>ツールがローカライズ (各国語に翻訳) されている場合、この環境変数を利用して言語を判断します。英語環境の場合は、 <literal>C</literal> に設定されていることがあります。</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <envar>PATH</envar>
-       </para>
+       <para><envar>PATH</envar></para>
       </entry>
       <entry>
-       <para>
-        the search path of the shell, a list of directories separated by colon
-       </para>
+       <para>シェルがプログラムを検索する際のパスの一覧です。コロン区切りでディレクトリを並べます</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <envar>PS1</envar>
-       </para>
+       <para><envar>PS1</envar></para>
       </entry>
       <entry>
-       <para>
-        specifies the normal prompt printed before each command
-       </para>
+       <para>各コマンドの前に表示される、一般ユーザ向けのプロンプト</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <envar>PS2</envar>
-       </para>
+       <para><envar>PS2</envar></para>
       </entry>
       <entry>
-       <para>
-        specifies the secondary prompt printed when you execute a multi-line
-        command
-       </para>
+       <para>複数行のコマンドを実行する際に表示される、 2 行目以降のプロンプト</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <envar>PWD</envar>
-       </para>
+       <para><envar>PWD</envar></para>
       </entry>
       <entry>
-       <para>
-        current working directory
-       </para>
+       <para>現在の作業ディレクトリ</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <envar>USER</envar>
-       </para>
+       <para><envar>USER</envar></para>
       </entry>
       <entry>
-       <para>
-        the current user
-       </para>
+       <para>現在のユーザのユーザ名</para>
       </entry>
      </row>
     </tbody>
@@ -642,33 +409,20 @@ echo "Hello World" <co xml:id="co.adm.shell.echo"/></screen>
   </table>
 
   <sect2 xml:id="sec.adm.variables.argument">
-   <title>Using Argument Variables</title>
+   <title>パラメータ変数の使用</title>
 <!-- toms 2008-11-04: TODO: Argument Variables
         $0...$9  positional argument
         $*       all arguments
         $#       number of arguments
         $@       all arguments with spaces
       -->
-   <para>
-    For example, if you have the script <command>foo.sh</command> you can
-    execute it like this:
-   </para>
-<screen>&prompt.user;foo.sh "Tux Penguin" 2000 </screen>
-   <para>
-    To access all the arguments which are passed to your script, you need
-    positional parameters. These are <envar>$1</envar> for the first argument,
-    <envar>$2</envar> for the second, and so on. You can have up to nine
-    parameters. To get the script name, use <envar>$0</envar>.
-   </para>
-   <para>
-    The following script <command>foo.sh</command> prints all arguments from 1
-    to 4:
-   </para>
+   <para>たとえば <command>foo.sh</command> というスクリプトが存在する場合、下記のように実行することができます:</para>
+<screen>&prompt.user;foo.sh "Tux Penguin" 2000</screen>
+   <para>お使いのスクリプトで全てのパラメータにアクセスするには、位置パラメータを使用します。 <envar>$1</envar> が最初のパラメータ、 <envar>$2</envar> が 2 つめのパラメータ・・・と続きます。最大 9 個までのパラメータを読み込むことができます。なお、スクリプトのファイル名を取り出したい場合は、 <envar>$0</envar> を使用します。</para>
+   <para>下記の <command>foo.sh</command> スクリプトは、パラメータのうち 1 個目から 4 個目までを表示します:</para>
 <screen>#!/bin/sh
 echo \"$1\" \"$2\" \"$3\" \"$4\"</screen>
-   <para>
-    If you execute this script with the above arguments, you get:
-   </para>
+   <para>上記のスクリプトを上記のコマンドラインで実行したとすると、下記のような出力になります:</para>
 <screen>"Tux Penguin" "2000" "" ""</screen>
 <!--
       <table id="tab.adm.shell.argvar">
@@ -746,70 +500,49 @@ echo ${x=3}
   </sect2>
 
   <sect2 xml:id="sec.adm.shell.varsubst">
-   <title>Using Variable Substitution</title>
-   <para>
-    Variable substitutions apply a pattern to the content of a variable either
-    from the left or right side. The following list contains the possible
-    syntax forms:
-   </para>
+   <title>変数置換の使用</title>
+   <para>変数置換は、変数の値に対して左側もしくは右側からパターンを適用する処理を行ないます。下記のような書式が用意されています:</para>
    <variablelist>
     <varlistentry>
-     <term><literal>${VAR#pattern}</literal>
-     </term>
+     <term><literal>${変数#パターン}</literal></term>
      <listitem>
-      <para>
-       removes the shortest possible match from the left:
-      </para>
+      <para>左側からパターンに該当する最短の部分を削除します:</para>
 <screen>&prompt.user;file=/home/tux/book/book.tar.bz2
 &prompt.user;echo ${file#*/}
 home/tux/book/book.tar.bz2</screen>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><literal>${VAR##pattern}</literal>
-     </term>
+     <term><literal>${変数##パターン}</literal></term>
      <listitem>
-      <para>
-       removes the longest possible match from the left:
-      </para>
+      <para>左側からパターンに該当する最長の部分を削除します:</para>
 <screen>&prompt.user;file=/home/tux/book/book.tar.bz2
 &prompt.user;echo ${file##*/}
 book.tar.bz2</screen>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><literal>${VAR%pattern}</literal>
-     </term>
+     <term><literal>${変数%パターン}</literal></term>
      <listitem>
-      <para>
-       removes the shortest possible match from the right:
-      </para>
+      <para>右側からパターンに該当する最短の部分を削除します:</para>
 <screen>&prompt.user;file=/home/tux/book/book.tar.bz2
 &prompt.user;echo ${file%.*}
 /home/tux/book/book.tar</screen>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><literal>${VAR%%pattern}</literal>
-     </term>
+     <term><literal>${変数%%パターン}</literal></term>
      <listitem>
-      <para>
-       removes the longest possible match from the right:
-      </para>
+      <para>右側からパターンに該当する最長の部分を削除します:</para>
 <screen>&prompt.user;file=/home/tux/book/book.tar.bz2
 &prompt.user;echo ${file%%.*}
 /home/tux/book/book</screen>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><literal>${VAR/pattern_1/pattern_2}</literal>
-     </term>
+     <term><literal>${変数/パターン_1/パターン_2}</literal></term>
      <listitem>
-      <para>
-       substitutes the content of <replaceable>VAR</replaceable> from the
-       <replaceable>PATTERN_1</replaceable> with
-       <replaceable>PATTERN_2</replaceable>:
-      </para>
+      <para><replaceable>変数</replaceable> の値のうち、<replaceable>PATTERN_1</replaceable> を <replaceable>PATTERN_2</replaceable> で置き換えます:</para>
 <screen>&prompt.user;file=/home/tux/book/book.tar.bz2
 &prompt.user;echo ${file/tux/wilber}
 /home/wilber/book/book.tar.bz2</screen>
@@ -832,56 +565,31 @@ book.tar.bz2</screen>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.adm.shell.grouping">
-  <title>Grouping and Combining Commands</title>
+  <title>コマンドのグループ化と組み合わせ化</title>
 
-  <para>
-   Shells allow you to concatenate and group commands for conditional
-   execution. Each command returns an exit code which determines the success or
-   failure of its operation. If it is 0 (zero) the command was successful,
-   everything else marks an error which is specific to the command.
-  </para>
+  <para>シェルでは、条件分岐などのためにコマンドをグループ化したり組み合わせたりすることができます。それぞれのコマンドには終了コードが決められていて、操作が成功したのか失敗したのかが分かるようになっています。 0 (ゼロ) はコマンドが成功したことを、それ以外の場合は何らかの失敗があったことを示します (値の意味は、コマンドによって異なります) 。</para>
 
-  <para>
-   The following list shows, how commands can be grouped:
-  </para>
+  <para>下記の表では、様々なグループ化の方法を示しています:</para>
 
   <variablelist>
    <varlistentry>
-    <term><literal>Command1 ; Command2</literal>
-    </term>
+    <term><literal>コマンド_1 ; コマンド_2</literal></term>
     <listitem>
-     <para>
-      executes the commands in sequential order. The exit code is not checked.
-      The following line displays the content of the file with
-      <command>cat</command> and then prints its file properties with
-      <command>ls</command> regardless of their exit codes:
-     </para>
+     <para>コマンドを順次実行します。終了コードについては何もチェックを行ないません。下記の例では、 <command>cat</command> コマンドでファイルの内容を出力したあと、終了コードをチェックせずに <command>ls</command> コマンドを実行し、ファイルの情報を出力します:</para>
 <screen>&prompt.user;cat filelist.txt ; ls -l filelist.txt</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><literal>Command1 &amp;&amp; Command2</literal>
-    </term>
+    <term><literal>コマンド_1 &amp;&amp; コマンド_2</literal></term>
     <listitem>
-     <para>
-      runs the right command, if the left command was successful (logical AND).
-      The following line displays the content of the file and prints its file
-      properties only, when the previous command was successful (compare it
-      with the previous entry in this list):
-     </para>
+     <para>左側のコマンドが成功した場合にのみ、右側のコマンドを実行します (論理積) 。下記の例では、ファイルの内容を出力したあと、その出力が成功した場合にのみ、ファイルの情報を出力します:</para>
 <screen>&prompt.user;cat filelist.txt &amp;&amp; ls -l filelist.txt</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><literal>Command1 || Command2</literal>
-    </term>
+    <term><literal>コマンド_1 || コマンド_2</literal></term>
     <listitem>
-     <para>
-      runs the right command, when the left command has failed (logical OR).
-      The following line creates only a directory in
-      <filename>/home/wilber/bar</filename> when the creation of the directory
-      in <filename>/home/tux/foo</filename> has failed:
-     </para>
+     <para>左側のコマンドが失敗した場合にのみ、右側のコマンドを実行します (論理和) 。下記の例では、 <filename>/home/tux/foo</filename> ディレクトリの作成が失敗した場合にのみ、 <filename>/home/wilber/bar</filename> ディレクトリを作成します:</para>
 <screen>&prompt.user;mkdir /home/tux/foo || mkdir /home/wilber/bar</screen>
     </listitem>
    </varlistentry>
@@ -893,112 +601,69 @@ book.tar.bz2</screen>
         </listitem>
       </varlistentry>-->
    <varlistentry>
-    <term><literal>funcname(){ ... }</literal>
-    </term>
+    <term><literal>関数名(){ ... }</literal></term>
     <listitem>
-     <para>
-      creates a shell function. You can use the positional parameters to access
-      its arguments. The following line defines the function
-      <literal>hello</literal> to print a short message:
-     </para>
+     <para>シェル関数を作成します。関数のパラメータは位置パラメータを使用して所得することができます。たとえば下記の例では、短いメッセージを出力する <literal>hello</literal> という関数を定義します:</para>
 <screen>&prompt.user;hello() { echo "Hello $1"; }</screen>
-     <para>
-      You can call this function like this:
-     </para>
+     <para>関数の呼び出しは、下記のようにして行ないます:</para>
 <screen>&prompt.user;hello Tux</screen>
-     <para>
-      which prints:
-     </para>
+     <para>上記を実行すると、下記のように出力されます:</para>
 <screen>Hello Tux</screen>
     </listitem>
    </varlistentry>
   </variablelist>
  </sect1>
  <sect1 xml:id="sec.adm.shell.commonconstructs">
-  <title>Working with Common Flow Constructs</title>
+  <title>一般的なフローの構築</title>
 
-  <para>
-   To control the flow of your script, a shell has <command>while</command>,
-   <command>if</command>, <command>for</command> and <command>case</command>
-   constructs.
-  </para>
+  <para>スクリプトの流れを制御するため、シェルには <command>while</command> , <command>if</command> , <command>for</command> , <command>case</command> の各要素が提供されています。</para>
 
 <!-- toms: Explaining test expressions? -->
 
   <sect2 xml:id="sec.adm.shell.if">
-   <title>The if Control Command</title>
-   <para>
-    The <command>if</command> command is used to check expressions. For
-    example, the following code tests whether the current user is Tux:
-   </para>
+   <title>制御コマンド - if</title>
+   <para><command>if</command> コマンドは条件分岐を行なうことができるコマンドです。たとえば下記の例では、現在のユーザが Tux であるかどうかによって、出力されるメッセージが変わる仕組みを作っています:</para>
 <screen>if test $USER = "tux"; then
   echo "Hello Tux."
 else
   echo "You are not Tux."
 fi</screen>
-   <para>
-    The test expression can be as complex or simple as possible. The following
-    expression checks if the file <filename>foo.txt</filename> exists:
-   </para>
+   <para>test 表現を使用することで、より複雑かつできるかぎりシンプルな構造を作成することができます。下記の例では、 <filename>foo.txt</filename> ファイルが存在しているかどうかを確認し、存在していればメッセージを出力します:</para>
 <screen>if test -e /tmp/foo.txt ; then
   echo "Found foo.txt"
 fi</screen>
-   <para>
-    The test expression can also be abbreviated in square brackets:
-   </para>
+   <para>test 表現は大括弧 [] で省略することができます:</para>
 <screen>if [ -e /tmp/foo.txt ] ; then
   echo "Found foo.txt"
 fi</screen>
-   <para>
-    Find more useful expressions at
-    <link xlink:href="https://bash.cyberciti.biz/guide/If..else..fi"/>.
-   </para>
+   <para>さらに詳しい表記方法については、 <link xlink:href="https://bash.cyberciti.biz/guide/If..else..fi"/> をお読みください。</para>
   </sect2>
 
   <sect2 xml:id="sec.adm.shell.for">
-   <title>Creating Loops with the <command>for</command> Command</title>
-   <para>
-    The <command>for</command> loop allows you to execute commands to a list of
-    entries. For example, the following code prints some information about PNG
-    files in the current directory:
-   </para>
+   <title><command>for</command> コマンドによるループの作成</title>
+   <para><command>for</command> は一連のコマンドを繰り返し実行するための表現です。下記の例では、カレントディレクトリ内にある PNG ファイルについて、その情報を出力しています:</para>
 <screen>for i in *.png; do
  ls -l $i
 done</screen>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.adm.shell.moreinfo">
-  <title>For More Information</title>
+  <title>さらなる情報</title>
 
-  <para>
-   Important information about Bash is provided in the man pages <command>man
-   bash</command>. More about this topic can be found in the following list:
-  </para>
+  <para>bash に関する重要な情報は、マニュアルページ内に書かれています。詳しくは <command>man bash</command> を実行してお読みください。また、このトピックに関して、さらなる情報をご希望の場合は、下記をお読みください:</para>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     <link xlink:href="http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html"/>&mdash;Bash
-     Guide for Beginners
-    </para>
+    <para><link xlink:href="http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html"/> &mdash;Bash Guide for Beginners (英語)</para>
    </listitem>
    <listitem>
-    <para>
-     <link xlink:href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html"/>&mdash;BASH
-     Programming - Introduction HOW-TO
-    </para>
+    <para><link xlink:href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html"/> &mdash;BASH Programming - Introduction HOW-TO (英語)</para>
    </listitem>
    <listitem>
-    <para>
-     <link xlink:href="http://tldp.org/LDP/abs/html/index.html"/>&mdash;Advanced
-     Bash-Scripting Guide
-    </para>
+    <para><link xlink:href="http://tldp.org/LDP/abs/html/index.html"/> &mdash;Advanced Bash-Scripting Guide (英語)</para>
    </listitem>
    <listitem>
-    <para>
-     <link xlink:href="http://www.grymoire.com/Unix/Sh.html"/>&mdash;Sh - the
-     Bourne Shell
-    </para>
+    <para><link xlink:href="http://www.grymoire.com/Unix/Sh.html"/> &mdash;Sh - the Bourne Shell (英語)</para>
    </listitem>
   </itemizedlist>
  </sect1>
