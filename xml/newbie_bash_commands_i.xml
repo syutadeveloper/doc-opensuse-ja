@@ -4,469 +4,301 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en" xml:id="sec.shell.commands">
- <title>Important Linux Commands</title>
- <para>
-  This section provides an overview of the most important Linux commands. There are
-  many more commands than listed in this chapter. Along with the individual
-  commands, parameters are listed and, where appropriate, a typical sample
-  application is introduced.
- </para>
- <para>
-  Adjust the parameters to your needs. It makes no sense to write <command>ls
-  file</command> if no file named <filename>file</filename> actually exists.
-  You can usually combine several parameters, for example, by writing
-  <command>ls -la</command> instead of <command>ls -l -a</command>.
- </para>
+ <title>主要な Linux コマンド</title>
+ <para>本章では、主要な Linux コマンドについて、その概要を示しています。実際には、ここで掲載しているものよりもずっと多くのコマンドが存在しています。なお、コマンドの紹介では、パラメータの一覧のほか、一般的な使い方についても説明しています。</para>
+ <para>パラメータは必要に応じて変えてください。たとえば <filename>file</filename> という名前のファイルが存在していなければ、 <command>ls file</command> を実行しても意味がありません。また、パラメータは複数を組み合わせて使用することもできます。たとえば <command>ls -l -a</command> を短くして、 <command>ls -la</command> のように実行することもできます。</para>
 
  <sect2 xml:id="sec.commands.file">
-  <title>File Commands</title>
-  <para>
-   The following section lists the most important commands for file
-   management. It covers everything from general file administration to the
-   manipulation of file system ACLs.
-  </para>
+  <title>ファイル関連のコマンド</title>
+  <para>この章では、ファイルを管理するための主要なコマンドを紹介しています。一般的なファイル管理のほか、ファイルシステムのアクセス制御リスト (ACL) の操作に関するコマンドも含まれています。</para>
   <sect3 xml:id="sec.shell.fileadmin">
-   <title>File Administration</title>
+   <title>ファイルの管理</title>
    <variablelist>
     <varlistentry>
-     <term><command>ls</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>ls</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       If you run <command>ls</command> without any additional parameters,
-       the program lists the contents of the current directory in short
-       form.
-      </para>
+      <para>何もパラメータを指定せずに <command>ls</command> を実行すると、このプログラムはカレントディレクトリの内容を短い形式で出力します。</para>
       <variablelist>
        <varlistentry>
         <term><option>-l</option></term>
         <listitem>
-         <para>
-          Detailed list
-         </para>
+         <para>詳細な形式で出力します</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-a</option></term>
         <listitem>
-         <para>
-          Displays hidden files
-         </para>
+         <para>隠しファイルを表示します</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>cp</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>SOURCE</replaceable>&#x20;<replaceable>TARGET</replaceable></term>
+     <term><command>cp</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>コピー元</replaceable> &#x20; <replaceable>コピー先</replaceable></term>
      <listitem>
-      <para>
-       Copies <filename>source</filename> to <filename>target</filename>.
-      </para>
+      <para><filename>コピー元</filename> から <filename>コピー先</filename> にファイルをコピーします。</para>
       <variablelist>
        <varlistentry>
         <term>-i</term>
         <listitem>
-         <para>
-          Waits for confirmation, if necessary, before an existing
-          <literal>target</literal> is overwritten
-         </para>
+         <para><filename>コピー先</filename> が既に存在する場合、確認メッセージを表示して待機します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term>-r</term>
         <listitem>
-         <para>
-          Copies recursively (includes subdirectories)
-         </para>
+         <para>コピーを再帰的に実行します (サブディレクトリを含めてコピーします)</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>mv</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>SOURCE</replaceable>&#x20;<replaceable>TARGET</replaceable></term>
+     <term><command>mv</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>移動元</replaceable> &#x20; <replaceable>移動先</replaceable></term>
      <listitem>
-      <para>
-       Copies <filename>source</filename> to <filename>target</filename>
-       then deletes the original <filename>source</filename>.
-      </para>
+      <para><filename>移動元</filename> から <filename>移動先</filename> にコピーを行ない、成功すれば <filename>移動元</filename> を削除します。</para>
       <variablelist>
        <varlistentry>
         <term>-b</term>
         <listitem>
-         <para>
-          Creates a backup copy of the <filename>source</filename> before
-          moving
-         </para>
+         <para>移動を行なう前に、 <filename>移動元</filename> のバックアップコピーを作成します</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term>-i</term>
         <listitem>
-         <para>
-          Waits for confirmation, if necessary, before an existing
-          <filename>targetfile</filename> is overwritten
-         </para>
+         <para><filename>移動先</filename> が既に存在する場合、確認メッセージを表示して待機します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>rm</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>rm</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       Removes the specified files from the file system. Directories are not
-       removed by <command>rm</command> unless the option
-       <option>-r</option> is used.
-      </para>
+      <para>システムから指定したファイルを削除します。ディレクトリについては、  <option>-r</option> オプションを指定しない限り、削除されません。</para>
       <variablelist>
        <varlistentry>
         <term><option>-r</option></term>
         <listitem>
-         <para>
-          Deletes any existing subdirectories
-         </para>
+         <para>既存のサブディレクトリについても削除します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-i</option></term>
         <listitem>
-         <para>
-          Waits for confirmation before deleting each file
-         </para>
+         <para>各ファイルを削除する際に、確認メッセージを表示して待機します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>ln</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>SOURCE</replaceable>&#x20;<replaceable>TARGET</replaceable></term>
+     <term><command>ln</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>リンク元</replaceable> &#x20; <replaceable>リンク先</replaceable></term>
      <listitem>
-      <para>
-       Creates an internal link from <replaceable>source</replaceable> to
-       <replaceable>target</replaceable>. Normally, such a link points directly to
-       <replaceable>source</replaceable> on the same file system. However, if
-       <command>ln</command> is executed with the <option>-s</option>
-       option, it creates a symbolic link that only points to the directory
-       in which <filename>source</filename> is located, enabling linking
-       across file systems.
-      </para>
+      <para><replaceable>リンク元</replaceable> から <replaceable>リンク先</replaceable> に対して、内部リンクを作成します。通常、リンクは同じファイルシステム内のものに対してのみ設定することができますが、 <command>ln</command> に <option>-s</option> オプションを付けて実行すると、ファイルシステムを跨いでリンクを行なうことができるシンボリックリンクを作成することができます。</para>
       <variablelist>
        <varlistentry>
         <term>-s</term>
         <listitem>
-         <para>
-          Creates a symbolic link
-         </para>
+         <para>シンボリックリンクを作成します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>cd</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>DIRECTORY</replaceable></term>
+     <term><command>cd</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ディレクトリ</replaceable></term>
      <listitem>
-      <para>
-       Changes the current directory. <command>cd</command> without any
-       parameters changes to the user's home directory.
-      </para>
+      <para>カレント (現在作業中の) ディレクトリを変更します。何もパラメータを付けずに <command>cd</command> を実行すると、ホームディレクトリに移動します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>mkdir</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>DIRECTORY</replaceable></term>
+     <term><command>mkdir</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ディレクトリ</replaceable></term>
      <listitem>
-      <para>
-       Creates a new directory.
-      </para>
+      <para>新しいディレクトリを作成します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>rmdir</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>DIRECTORY</replaceable></term>
+     <term><command>rmdir</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ディレクトリ</replaceable></term>
      <listitem>
-      <para>
-       Deletes the specified directory if it is already empty.
-      </para>
+      <para>ディレクトリ内に何も残っていない場合にのみ、指定したディレクトリを削除します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>chown</command>&#x20;<replaceable>OPTIONS</replaceable> <literal><replaceable>USER_NAME</replaceable>[:<replaceable>GROUP</replaceable>]</literal>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>chown</command> &#x20; <replaceable>オプション</replaceable> <literal><replaceable>ユーザ名</replaceable>[:<replaceable>グループ</replaceable>]</literal> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       Transfers ownership of a file to the user with the specified
-       user name.
-      </para>
+      <para>ファイルの所有者を、指定したユーザに変更します。</para>
       <variablelist>
        <varlistentry>
         <term><option>-R</option></term>
         <listitem>
-         <para>
-          Changes files and directories in all subdirectories
-         </para>
+         <para>全てのサブディレクトリ内のファイルとディレクトリに対して、この変更を行ないます。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>chgrp</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>GROUP_NAME</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>chgrp</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>グループ名</replaceable> &#x20; <replaceable>ファイル名</replaceable></term>
      <listitem>
-      <para>
-       Transfers the group ownership of a given <filename>file</filename> to
-       the group with the specified group name. The file owner can change
-       group ownership only if a member of both the current and the new
-       group.
-      </para>
+      <para>ファイルの所有グループを、指定したグループに変更します。なお、ファイルの所有者は、現時点で設定されているグループと新しいグループの両方に所属している場合にのみ、グループを変更することができます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>chmod</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>MODE</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>chmod</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>モード</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       Changes the access permissions.
-      </para>
-      <para>
-       The <literal>mode</literal> parameter has three parts:
-       <literal>group</literal>, <literal>access</literal>, and
-       <literal>access type</literal>. <literal>group</literal> accepts the
-       following characters:
-      </para>
+      <para>アクセス権を変更します。</para>
+      <para><literal>モード</literal> は 3 種類の部分 (<literal>対象</literal> , <literal>アクセス</literal> , <literal>アクセス種別</literal>) から構成されています。 <literal>対象</literal> には下記の文字を指定することができます:</para>
       <variablelist>
        <varlistentry>
         <term>u</term>
         <listitem>
-         <para>
-          User
-         </para>
+         <para>ユーザ</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term>g</term>
         <listitem>
-         <para>
-          Group
-         </para>
+         <para>グループ</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term>o</term>
         <listitem>
-         <para>
-          Others
-         </para>
+         <para>その他</para>
         </listitem>
        </varlistentry>
       </variablelist>
-      <para>
-       For <literal>access</literal>, grant access with <literal>+</literal>
-       and deny it with <literal>-</literal>.
-      </para>
-      <para>
-       The <literal>access type</literal> is controlled by the following
-       options:
-      </para>
+      <para><literal>アクセス</literal> には <literal>+</literal> (アクセスを許可する) もしくは <literal>-</literal> (アクセスを拒否する) のいずれかを指定します。</para>
+      <para><literal>アクセス種別</literal> には下記の文字を指定することができます:</para>
       <variablelist>
        <varlistentry>
         <term>r</term>
         <listitem>
-         <para>
-          Read
-         </para>
+         <para>読み込み</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term>w</term>
         <listitem>
-         <para>
-          Write
-         </para>
+         <para>書き込み</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term>x</term>
         <listitem>
-         <para>
-          Execute&mdash;executing files or changing to the directory
-         </para>
+         <para>実行 (ファイルに対しては実行を、ディレクトリに対してはそのディレクトリへの移動を表わします)</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term>s</term>
         <listitem>
-         <para>
-          Setuid bit&mdash;the application or program is started as if it
-          were started by the owner of the file
-         </para>
+         <para>setuid ビット (アプリケーションやプログラムに対して、そのファイルの所有者に成り代わって実行するかどうかを示すビットです)</para>
         </listitem>
        </varlistentry>
       </variablelist>
-      <para>
-       As an alternative, a numeric code can be used. The four digits of
-       this code are composed of the sum of the values 4, 2, and 1&mdash;the
-       decimal result of a binary mask. The first digit sets the set user ID
-       (SUID) (4), the set group ID (2), and the sticky (1) bits. The second
-       digit defines the permissions of the owner of the file. The third
-       digit defines the permissions of the group members and the last digit
-       sets the permissions for all other users. The read permission is set
-       with 4, the write permission with 2, and the permission for executing
-       a file is set with 1. The owner of a file would usually receive a 6
-       or a 7 for executable files.
-      </para>
+      <para>上記の方法以外にも、数値で指定することができます。数値の場合は 4 桁で指定し、それぞれの桁は 1, 2, 4 の数値を必要に応じて足した値を指定します。できあがった数値はバイナリマスクと呼ばれます。 1 桁目は setuid (4), setgid (2), sticky (1) を表わし、 2 桁目はファイルの所有者に対するアクセス権を、 3 桁目はグループに対するアクセス権を、 4 桁目はその他に対するアクセス権をそれぞれ指定します。 2 桁目以降は、読み込み (4), 書き込み (2), 実行 (1) の意味になります。ファイルの所有者に対しては、実行可能なファイルの場合 6 か 7 の数値を指定します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>gzip</command>&#x20;<replaceable>PARAMETERS</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>gzip</command> &#x20; <replaceable>パラメータ</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       This program compresses the contents of files using complex
-       mathematical algorithms. Files compressed in this way are given the
-       extension <filename>.gz</filename> and need to be uncompressed before
-       they can be used. To compress several files or even entire
-       directories, use the <command>tar</command> command.
-      </para>
+      <para>このプログラムは、複雑な数学的アルゴリズムを利用して、ファイルの内容を圧縮します。圧縮されたファイルには、拡張子 <filename>.gz</filename> が付けられ、通常通り使用する場合には、あらかじめ展開処理を行なわなければならなくなります。なお、このコマンドでは、複数のファイルやディレクトリをまとめることはできません。複数のファイルやディレクトリをまとめる場合は、 <command>tar</command> コマンドをお使いください。</para>
       <variablelist>
        <varlistentry>
         <term>-d</term>
         <listitem>
-         <para>
-          Decompresses the packed gzip files so they return to their
-          original size and can be processed normally (like the command
-          <command>gunzip</command>)
-         </para>
+         <para>以前に gzip で圧縮していたファイルを展開し、元のサイズおよび内容に戻します (<command>gunzip</command> コマンドでも同じことを行なうことができます)</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>tar</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>ARCHIVE</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>tar</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>書庫</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       <command>tar</command> puts one or more files into an archive.
-       Compression is optional. <command>tar</command> is a quite complex
-       command with several options available. The most frequently used
-       options are:
-      </para>
+      <para><command>tar</command> は 1 つまたは複数のファイルを書庫に配置します。必要であれば圧縮を行なうこともできます。 <command>tar</command> は非常に複雑なコマンドで、多くのオプションが用意されています。最もよく使用されるオプションは、下記のとおりです:</para>
       <variablelist>
        <varlistentry>
         <term><option>-f</option></term>
         <listitem>
-         <para>
-          Writes the output to a file and not to the screen as is usually
-          the case
-         </para>
+         <para>画面ではなくファイルに出力を行ないます (通常はこれを指定します) 。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-c</option></term>
         <listitem>
-         <para>
-          Creates a new TAR archive
-         </para>
+         <para>新しい tar 書庫を作成します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-r</option></term>
         <listitem>
-         <para>
-          Adds files to an existing archive
-         </para>
+         <para>既存の書庫にファイルを追加します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-t</option></term>
         <listitem>
-         <para>
-          Outputs the contents of an archive
-         </para>
+         <para>書庫の内容を出力します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-u</option></term>
         <listitem>
-         <para>
-          Adds files, but only if they are newer than the files already
-          contained in the archive
-         </para>
+         <para>書庫内にあるファイルよりも新しい場合にのみ、書庫にファイルを追加します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-x</option></term>
         <listitem>
-         <para>
-          Unpacks files from an archive (<emphasis>extraction</emphasis>)
-         </para>
+         <para>書庫からファイルを取り出します ( <emphasis>抽出</emphasis> )</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-z</option></term>
         <listitem>
-         <para>
-          Packs the resulting archive with <command>gzip</command>
-         </para>
+         <para>作成もしくは展開する書庫を <command>gzip</command> で圧縮または展開します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-j</option></term>
         <listitem>
-         <para>
-          Compresses the resulting archive with <command>bzip2</command>
-         </para>
+         <para>作成もしくは展開する書庫を <command>bzip2</command> で圧縮または展開します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-v</option></term>
         <listitem>
-         <para>
-          Lists files processed
-         </para>
+         <para>処理したファイルの一覧を出力します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
-      <para>
-       The archive files created by <command>tar</command> end with
-       <filename>.tar</filename>. If the TAR archive was also compressed
-       using <command>gzip</command>, the ending is
-       <filename>.tgz</filename> or <filename>.tar.gz</filename>. If it was
-       compressed using <command>bzip2</command>, the ending is
-       <filename>.tar.bz2</filename>.
-      </para>
+      <para><command>tar</command> で作成した書庫には、拡張子 <filename>.tar</filename> を付けるのが一般的です。ただし、書庫を <command>gzip</command> で圧縮した場合は、拡張子が <filename>.tgz</filename> または <filename>.tar.gz</filename> になります。また、 <command>bzip2</command> で圧縮した場合は、拡張子が <filename>.tar.bz2</filename> になります。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>find</command>&#x20;<replaceable>OPTIONS</replaceable></term>
+     <term><command>find</command> &#x20; <replaceable>オプション</replaceable></term>
      <listitem>
-      <para>
-       With <command>find</command>, search for a file in a given directory.
-       The first argument specifies the directory in which to start the
-       search. The option <command>-name</command> must be followed by a
-       search string, which may also include wild cards. Unlike
-       <command>locate</command>, which uses a database,
-       <command>find</command> scans the actual directory.
-      </para>
+      <para><command>find</command> を使用すると、指定したディレクトリ内でファイルを探すことができます。最初のオプションには、検索を開始するディレクトリを指定します。それ以降に各種のオプションを指定しますが、たとえば <command>-name</command> オプションの後ろには検索文字列を指定します。ここではワイルドカードも指定することができます。なお、データベースを使用する <command>locate</command> とは異なり、 <command>find</command> は実際のディレクトリ内を検索します。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect3>
   <sect3 xml:id="sec.commands.filecontents">
-   <title>Commands to Access File Contents</title>
+   <title>ファイルの内容へのアクセス</title>
    <variablelist>
     <varlistentry>
-     <term><command>file</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>file</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       In Linux, files can have a file extensions but do not need to have
-       one. The <command>file</command> determines the file type of a given
-       file. With the output of <command>file</command>, you can then choose
-       an appropriate application with which to open the file.
-      </para>
+      <para>Linux ではファイル名に拡張子を付けることができますが、必ずしも必要となるものではありません。 <command>file</command> コマンドでは、指定したファイルの種類を判別することができます。 <command>file</command> コマンドの出力を元にすることで、ファイルを開くことのできるアプリケーションを判断することができます。</para>
       <variablelist>
        <varlistentry>
         <term>-z</term>
         <listitem>
-         <para>
-          Tries to look inside compressed files
-         </para>
+         <para>圧縮ファイルの内容を展開して判別します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
@@ -475,110 +307,72 @@
    </variablelist>
    <variablelist>
     <varlistentry>
-     <term><command>cat</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>cat</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       The <command>cat</command> command displays the contents of a file,
-       printing the entire contents to the screen without interruption.
-      </para>
+      <para><command>cat</command> コマンドはファイルの内容を出力するためのコマンドです。ただし、ファイルの内容全体を一時停止することなく一括で出力してしまうことに注意してください。</para>
       <variablelist>
        <varlistentry>
         <term>-n</term>
         <listitem>
-         <para>
-          Numbers the output on the left margin
-         </para>
+         <para>左側に行番号を出力します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>less</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>less</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       This command can be used to browse the contents of the specified
-       file. Scroll half a screen page up or down with <keycap function="pageup"/>
-       and <keycap function="pagedown"/> or a full screen page down with
-       <keycap function="space"/>. Jump to the beginning or end of a file using
-       <keycap function="home"/> and <keycap function="end"/>. Press
-       <keycap>Q</keycap> to quit the program.
-      </para>
+      <para>このコマンドは、指定したファイルの内容を見やすく表示するためのコマンドです。<keycap function="pageup"/> や <keycap function="pagedown"/> でそれぞれ半ページずつ前もしくは後ろに移動することができるほか、 <keycap function="space"/> で 1 ページ分後ろに移動することもできます。また、 <keycap function="home"/> と <keycap function="end"/> で、それぞれファイルの冒頭と末尾に移動することもできます。プログラムを終了するには、 <keycap>Q</keycap> を押します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>grep</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>SEARCH_STRING</replaceable>&#x20;<replaceable>FILES</replaceable></term>
+     <term><command>grep</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>検索文字列</replaceable> &#x20; <replaceable>ファイル</replaceable></term>
      <listitem>
-      <para>
-       The <command>grep</command> command finds a specific search string in
-       the specified files. If the search string is found, the command
-       displays the line in which <replaceable>SEARCH_STRING</replaceable> was
-       found along with the file name.
-      </para>
+      <para><command>grep</command> コマンドは、指定したファイルの内容を検索するためのコマンドです。検索文字列に該当する箇所が見つかると、 <!-- ? ファイル名と共に --> <replaceable>検索文字列</replaceable> を含む行が表示されます。</para>
       <variablelist>
        <varlistentry>
         <term><option>-i</option></term>
         <listitem>
-         <para>
-          Ignores case
-         </para>
+         <para>大文字と小文字を区別せずに検索します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-H</option></term>
         <listitem>
-         <para>
-          Only displays the names of the relevant files, but not the text
-          lines
-         </para>
+         <para>該当する行を表示せず、該当したファイルの名前のみを表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-n</option></term>
         <listitem>
-         <para>
-          Additionally displays the numbers of the lines in which it found a
-          hit
-         </para>
+         <para>該当した箇所を表示する際、行番号も合わせて表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-l</option></term>
         <listitem>
-         <para>
-          Only lists the files in which <literal>searchstring</literal> does
-          not occur
-         </para>
+         <para><!-- Wrong description? --><replaceable>検索文字列</replaceable> に該当していないファイルのファイル名のみを表示します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>diff</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>FILE_1</replaceable>&#x20;<replaceable>FILE_2</replaceable></term>
+     <term><command>diff</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ファイル_1</replaceable> &#x20; <replaceable>ファイル_2</replaceable></term>
      <listitem>
-      <para>
-       The <command>diff</command> command compares the contents of any two
-       files. The output produced by the program lists all lines that do not
-       match. This is frequently used by programmers who need only to send
-       their program alterations and not the entire source code.
-      </para>
+      <para><command>diff</command> コマンドは 2 つのファイルの内容を比較し、違いのあった箇所だけを出力します。これはプログラマがよく使用するコマンドで、ソースコード内の変更箇所だけを抽出する際に使用します。</para>
       <variablelist>
        <varlistentry>
         <term><option>-q</option></term>
         <listitem>
-         <para>
-          Only reports whether the two files differ
-         </para>
+         <para>2 つのファイルに差異があるかどうかだけを表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-u</option></term>
         <listitem>
-         <para>
-          Produces a <quote>unified</quote> diff, which makes the output
-          more readable
-         </para>
+         <para><quote>Unified</quote> 形式の差分を出力します。これにより、より読みやすい出力になります。</para>
         </listitem>
        </varlistentry>
       </variablelist>
@@ -588,62 +382,33 @@
   </sect3>
 <!-- ** -->
   <sect3 xml:id="sec.commands.filesystems">
-   <title>File Systems</title>
+   <title>ファイルシステム</title>
    <variablelist>
     <varlistentry>
-     <term><command>mount</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>DEVICE</replaceable>&#x20;<replaceable>MOUNT_POINT</replaceable></term>
+     <term><command>mount</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>デバイス</replaceable> &#x20; <replaceable>マウントポイント</replaceable></term>
      <listitem>
-      <para>
-       This command can be used to mount any data media, such as hard disks,
-       CD-ROM drives, and other drives, to a directory of the Linux file
-       system.
-      </para>
+      <para>このコマンドは、ハードディスクや CD-ROM ドライブなどのデータメディアを、 Linux ファイルシステムのディレクトリ内に割り当てる (マウントする) ことができるコマンドです。</para>
       <variablelist>
        <varlistentry>
         <term><option>-r</option></term>
         <listitem>
-         <para>
-          Mount read-only
-         </para>
+         <para>読み込み専用でマウントします。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
-        <term><option>-t <replaceable>FILE_SYSTEM</replaceable></option></term>
+        <term><option>-t <replaceable>ファイルシステム</replaceable></option></term>
         <listitem>
-         <para>
-          Specify the file system: For Linux hard disks, this is commonly
-          <literal>ext4</literal>, <literal>xfs</literal>, or
-          <literal>btrfs</literal>.
-         </para>
+         <para>ファイルシステムの種類を指定します。 Linux で使用しているハードディスクの場合、 <literal>ext4</literal> , <literal>xfs</literal> , <literal>btrfs</literal> などがよく使われます。</para>
         </listitem>
        </varlistentry>
       </variablelist>
-      <para>
-       For hard disks not defined in the file
-       <filename>/etc/fstab</filename>, the device type must also be
-       specified. In this case, only
-       &rootuser; can mount it. If the
-       file system needs to also be mounted by other users, enter the option
-       <literal>user</literal> in the appropriate line in the
-       <filename>/etc/fstab</filename> file (separated by commas) and save
-       this change. Further information is available in the
-       <systemitem>mount(1)</systemitem> man page.
-      </para>
+      <para><filename>/etc/fstab</filename> に定義されていないハードディスクの場合、デバイスの種類も指定しなければなりません。この場合、 &rootuser; だけがマウントすることができます。一般ユーザからファイルシステムをマウントできるようにするには、<filename>/etc/fstab</filename> 内の適切な箇所に、カンマ区切りで <literal>user</literal> というオプションを追加する必要があります。詳しくは <systemitem>mount(1)</systemitem> のマニュアルページをお読みください。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>umount</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>MOUNT_POINT</replaceable></term>
+     <term><command>umount</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>マウントポイント</replaceable></term>
      <listitem>
-      <para>
-       This command unmounts a mounted drive from the file system. To
-       prevent data loss, run this command before taking a removable data
-       medium from its drive. Normally, only
-       &rootuser; is allowed to run the
-       commands <command>mount</command> and <command>umount</command>. To
-       enable other users to run these commands, edit the
-       <filename>/etc/fstab</filename> file to specify the option
-       <literal>user</literal> for the relevant drive.
-      </para>
+      <para>このコマンドは、ファイルシステムから特定のドライブをマウント解除 (アンマウント) します。データの損失を防ぐため、リムーバブルメディアをお使いの場合は、メディアを取り出す前に、このコマンドを実行してください。通常は <command>mount</command> コマンドと同様に、 <command>umount</command> も &rootuser; だけが実行できます。一般ユーザからファイルシステムをマウントできるようにするには、<filename>/etc/fstab</filename> 内の適切な箇所に、カンマ区切りで <literal>user</literal> というオプションを追加する必要があります。</para>
      </listitem>
     </varlistentry>
    </variablelist>
@@ -651,327 +416,211 @@
  </sect2>
 
  <sect2 xml:id="sec.commands.system">
-  <title>System Commands</title>
-  <para>
-   The following section lists a few of the most important commands needed
-   for retrieving system information and controlling processes and the
-   network.
-  </para>
+  <title>システムコマンド</title>
+  <para>この章では、システムの情報を表示したりプロセスやネットワークを制御したりする際に必要となる、最も重要なコマンドをいくつか紹介しています。</para>
   <sect3 xml:id="sec.commands.systeminfo">
-   <title>System Information</title>
+   <title>システム情報</title>
    <variablelist>
     <varlistentry>
-     <term><command>df</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>DIRECTORY</replaceable></term>
+     <term><command>df</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ディレクトリ</replaceable></term>
      <listitem>
-      <para>
-       The <command>df</command> (disk free) command, when used without any
-       options, displays information about the total disk space, the disk
-       space currently in use, and the free space on all the mounted drives.
-       If a directory is specified, the information is limited to the drive
-       on which that directory is located.
-      </para>
+      <para><command>df</command> (Disk Free の略) コマンドでは、何もオプションを指定しないで実行すると、全てのマウント済みのドライブに対して、全体容量と使用中の容量、そして空き容量をそれぞれ表示します。ディレクトリを指定した場合は、そのディレクトリのあるドライブの情報だけを表示します。</para>
       <variablelist>
        <varlistentry>
         <term><option>-h</option></term>
         <listitem>
-         <para>
-          Shows the number of occupied blocks in gigabytes, megabytes, or
-          kilobytes&mdash;in human-readable format
-         </para>
+         <para>占有されているブロックをギガバイト, メガバイト, キロバイトなどの読みやすい形式で表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-T</option></term>
         <listitem>
-         <para>
-          Type of file system (ext2, nfs, etc.)
-         </para>
+         <para>ファイルシステムの種類を指定します (ext2, nfs, etc.)</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>du</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>PATH</replaceable></term>
+     <term><command>du</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>パス</replaceable></term>
      <listitem>
-      <para>
-       This command, when executed without any parameters, shows the total
-       disk space occupied by files and subdirectories in the current
-       directory.
-      </para>
+      <para>何もオプションを付けずにこのコマンドを実行すると、カレントディレクトリ以下のサブディレクトリに対して、それぞれがファイルなどで占有するディスク領域を表示します。</para>
       <variablelist>
        <varlistentry>
         <term><option>-a</option></term>
         <listitem>
-         <para>
-          Displays the size of each individual file
-         </para>
+         <para>各ファイルのサイズを表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-h</option></term>
         <listitem>
-         <para>
-          Output in human-readable form
-         </para>
+         <para>読みやすい形式で表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-s</option></term>
         <listitem>
-         <para>
-          Displays only the calculated total size
-         </para>
+         <para>合計サイズのみを表示します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>free</command>&#x20;<replaceable>OPTIONS</replaceable></term>
+     <term><command>free</command> &#x20; <replaceable>オプション</replaceable></term>
      <listitem>
-      <para>
-       The command <command>free</command> displays information about RAM
-       and swap space usage, showing the total and the used amount in both
-       categories. See <xref linkend="sec.suse.free"/> for more information.
-      </para>
+      <para><command>free</command> コマンドは、メモリとスワップ領域に関する情報を表示します。合計サイズと使用済みのサイズの両方をそれぞれ表示します。詳しくは <xref linkend="sec.suse.free"/> をお読みください。</para>
       <variablelist>
        <varlistentry>
         <term><option>-b</option></term>
         <listitem>
-         <para>
-          Output in bytes
-         </para>
+         <para>バイト単位で表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-k</option></term>
         <listitem>
-         <para>
-          Output in kilobytes
-         </para>
+         <para>キロバイト単位で表示します。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-m</option></term>
         <listitem>
-         <para>
-          Output in megabytes
-         </para>
+         <para>メガバイト単位で表示します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>date</command>&#x20;<replaceable>OPTIONS</replaceable></term>
+     <term><command>date</command> &#x20; <replaceable>オプション</replaceable></term>
      <listitem>
-      <para>
-       This simple program displays the current system time. If run as
-       &rootuser;, it can also be used
-       to change the system time. Details about the program are available in
-       the date(1) man page.
-      </para>
+      <para>このシンプルなプログラムは、現在のシステムにおける日時を表示します。 &rootuser; で実行すると、システムの時刻を修正する目的で使用することもできます。このプログラムに関する詳細は、 date(1) のマニュアルページをお読みください。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect3>
 <!-- *** -->
   <sect3 xml:id="sec.commands.processes">
-   <title>Processes</title>
+   <title>プロセス</title>
    <variablelist>
     <varlistentry>
-     <term><command>top</command>&#x20;<replaceable>OPTIONS</replaceable></term>
+     <term><command>top</command> &#x20; <replaceable>オプション</replaceable></term>
      <listitem>
-      <para>
-       <command>top</command> provides a quick overview of the currently
-       running processes. Press <keycap>H</keycap> to access a page that
-       briefly explains the main options for customizing the program.
-      </para>
+      <para><command>top</command> コマンドは、現在動作中のプロセスに関する概要を表示することができます。 <keycap>H</keycap> を押すと、プログラムをカスタマイズするための簡潔な説明が表示されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>ps</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>PROCESS_ID</replaceable></term>
+     <term><command>ps</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>プロセス_ID</replaceable></term>
      <listitem>
-      <para>
-       If run without any options, this command displays a table of all your
-       own programs or processes&mdash;those you started. The options for
-       this command are not preceded by hyphen.
-      </para>
+      <para>何もオプションを付けずに実行すると、自身が所有する (=開始した) 全てのプログラムやプロセスの一覧表が表示されます。なお、このコマンドに対するオプションは、ハイフンを付けずに指定します。</para>
       <variablelist>
        <varlistentry>
         <term>aux</term>
         <listitem>
-         <para>
-          Displays a detailed list of all processes, independent of the
-          owner
-         </para>
+         <para>自分自身が所有するものだけでなく、全てのプロセスを詳細に表示します。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>kill</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>PROCESS_ID</replaceable></term>
+     <term><command>kill</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>プロセス_ID</replaceable></term>
      <listitem>
-      <para>
-       Unfortunately, sometimes a program cannot be terminated in the normal
-       way. In most cases, you should still be able to stop such a runaway
-       program by executing the <command>kill</command> command, specifying
-       the respective process ID (see <command>top</command> and
-       <command>ps</command>). <command>kill</command> sends a
-       <emphasis>TERM</emphasis> signal that instructs the program to shut
-       itself down. If this does not help, the following parameter can be
-       used:
-      </para>
+      <para>時によっては、プログラムを通常の方法で終了させることができない場合があります。ほとんどの場合、 <command>kill</command> の後ろにプロセス ID (<command>top</command> コマンドや <command>ps</command> コマンドで取得することができます) を指定することで、プログラムを終了することができます。 <command>kill</command> コマンドは通常、 <emphasis>TERM</emphasis> というシグナルを送信して、プログラム側に終了を依頼します。これでもうまく終了できない場合は、下記のパラメータを試してみてください:</para>
       <variablelist>
        <varlistentry>
         <term>-9</term>
         <listitem>
-         <para>
-          Sends a <emphasis>KILL</emphasis> signal instead of a
-          <emphasis>TERM</emphasis> signal, bringing the specified process
-          to an end in almost all cases
-         </para>
+         <para><emphasis>TERM</emphasis> ではなく <emphasis>KILL</emphasis> シグナルを送信します。このシグナルであれば、ほぼ全ての場合においてプロセスを強制終了することができます。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>killall</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>PROCESS_NAME</replaceable></term>
+     <term><command>killall</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>プロセス名</replaceable></term>
      <listitem>
-      <para>
-       This command is similar to <command>kill</command>, but uses the
-       process name (instead of the process ID) as an argument, ending all
-       processes with that name.
-      </para>
+      <para>このコマンドは <command>kill</command> に似たコマンドですが、プロセス ID ではなくプロセス名を指定して実行します。このコマンドでは、同じ名前のプロセス全てに対して、シグナルを送信します。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect3>
   <sect3 xml:id="sec.commands.network">
-   <title>Network</title>
+   <title>ネットワーク</title>
    <variablelist>
     <varlistentry>
-     <term><command>ping</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>HOSTNAME_OR_IP_ADDRESS</replaceable></term>
+     <term><command>ping</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ホスト名または_IP_アドレス</replaceable></term>
      <listitem>
-      <para>
-       The <command>ping</command> command is the standard tool for testing
-       the basic functionality of TCP/IP networks. It sends a small data
-       packet to the destination host, requesting an immediate reply. If
-       this works, <command>ping</command> displays a message to that
-       effect, which indicates that the network link is functioning.
-      </para>
+      <para><command>ping</command> コマンドは TCP/IP ネットワークの基本的な動作をテストするための標準的なツールで、宛先のホストに対して小さなデータパケットを送信し、その応答を待ちます。相手側から応答があれば、 <command>ping</command> コマンドはその旨を示すメッセージを表示しますので、これによってネットワークリンクが確立できていることがわかるようになっています。</para>
       <variablelist>
        <varlistentry>
-        <term><option>-c</option><replaceable>NUMBER</replaceable></term>
+        <term><option>-c</option> <replaceable>回数</replaceable></term>
         <listitem>
-         <para>
-          Determines the total number of packages to send and ends after
-          they have been dispatched (by default, there is no limitation set)
-         </para>
+         <para>データパケットの送信回数を指定します。ここで指定した回数を送信したのち、しばらくしてプログラムが終了します (既定では、何度もパケットを送り続けます) 。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
         <term><option>-f</option></term>
         <listitem>
-         <para>
-          <emphasis>flood ping</emphasis>: sends as many data packages as
-          possible; a popular means, reserved for
-          &rootuser;, to test networks
-         </para>
+         <para><emphasis>flood ping</emphasis> と呼ばれる ping の送信方法を実施します。この方法では、できる限り多くのパケットを送信してネットワークのテストを行ないます。 &rootuser; のみに提供されている機能です。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
-        <term><option>-i</option><replaceable>VALUE</replaceable></term>
+        <term><option>-i</option> <replaceable>間隔</replaceable></term>
         <listitem>
-         <para>
-          Specifies the interval between two data packages in seconds
-          (default: one second)
-         </para>
+         <para>2 つのデータパケットの送信間隔を指定します (既定値: 1 秒) 。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>host</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>HOSTNAME</replaceable>&#x20;<replaceable>SERVER</replaceable></term>
+     <term><command>host</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ホスト名</replaceable> &#x20; <replaceable>サーバ</replaceable></term>
      <listitem>
-      <para>
-       The domain name system resolves domain names to IP addresses. With
-       this tool, send queries to name servers (DNS servers).
-      </para>
+      <para>ドメインネームシステム (DNS) に対して、ホスト名を IP アドレスに変換するように依頼します。このツールを利用することで、ネームサーバに対する問い合わせを送信することができます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>ssh</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<literal>[<replaceable>USER</replaceable>@]<replaceable>HOSTNAME</replaceable></literal>&#x20;<replaceable>COMMAND</replaceable></term>
+     <term><command>ssh</command> &#x20; <replaceable>オプション</replaceable> &#x20; <literal>[<replaceable>ユーザ名</replaceable>@]<replaceable>ホスト名</replaceable></literal> &#x20; <replaceable>コマンド</replaceable></term>
      <listitem>
-      <para>
-       SSH is actually an Internet protocol that enables you to work on
-       remote hosts across a network. SSH is also the name of a Linux
-       program that uses this protocol to enable operations on remote
-       computers.
-      </para>
+      <para>SSH はネットワークを介して特定のホスト内で作業を行なうことができる、インターネットプロトコルです。 SSH は Linux プログラムの名前でもあり、 SSH プロトコルを利用してリモートのコンピュータのシェルに接続します。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect3>
   <sect3 xml:id="sec.commands.misc">
-   <title>Miscellaneous</title>
+   <title>その他</title>
    <variablelist>
     <varlistentry>
-     <term><command>passwd</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>USER_NAME</replaceable></term>
+     <term><command>passwd</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ユーザ名</replaceable></term>
      <listitem>
-      <para>
-       Users may change their own passwords at any time using this command.
-       The administrator &rootuser; can
-       use the command to change the password of any user on the system.
-      </para>
+      <para>ユーザは自分自身のパスワードを任意の時点で変更することができます。管理者である &rootuser; の場合、このコマンドでユーザ名を指定することで、システム内の任意のユーザに対するパスワードを変更することができます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>su</command>&#x20;<replaceable>OPTIONS</replaceable>&#x20;<replaceable>USER_NAME</replaceable></term>
+     <term><command>su</command> &#x20; <replaceable>オプション</replaceable> &#x20; <replaceable>ユーザ名</replaceable></term>
      <listitem>
-      <para>
-       The <command>su</command> command makes it possible to log in under a
-       different user name from a running session. Specify a user name and the
-       corresponding password. The password is not required from
-       &rootuser;, because
-       &rootuser; is authorized to
-       assume the identity of any user. When using the command without
-       specifying a user name, you are prompted for the
-       &rootuser; password and change to
-       the superuser (&rootuser;). Use
-       <command>su -</command> to start a login shell for a different user.
-      </para>
+      <para><command>su</command> は現在のセッション内で、他のユーザに成り代わる (Switch User) ためのコマンドです。ユーザ名を指定して実行すると、対応するパスワードの入力を求められます。なお、 &rootuser; から実行している場合は、パスワードの入力は求められません。これは、 &rootuser; が全てのユーザの管理者であるためです。ユーザ名を指定せずに実行した場合、 &rootuser; のパスワード入力を求められ、パスワードが適合していれば &rootuser; になることができます。また、 <command>su -</command> のように実行すると、異なるユーザ向けにログインシェルを起動するようになります。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>halt</command>&#x20;<replaceable>OPTIONS</replaceable></term>
+     <term><command>halt</command> &#x20; <replaceable>オプション</replaceable></term>
      <listitem>
-      <para>
-       To avoid loss of data, you should always use this program to shut
-       down your system.
-      </para>
+      <para>データの損失を避けるため、このプログラムでシステムをシャットタウンしてください。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><command>reboot</command>&#x20;<replaceable>OPTIONS</replaceable></term>
+     <term><command>reboot</command> &#x20; <replaceable>オプション</replaceable></term>
      <listitem>
-      <para>
-       Does the same as <command>halt</command> except the system performs
-       an immediate reboot.
-      </para>
+      <para><command>halt</command> コマンドと似た仕組みで、こちらはシステムを再起動します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term><command>clear</command></term>
      <listitem>
-      <para>
-       This command cleans up the visible area of the console. It has no
-       options.
-      </para>
+      <para>このコマンドは、端末内の可視領域を消去します。オプションはありません。</para>
      </listitem>
     </varlistentry>
    </variablelist>
@@ -979,11 +628,7 @@
  </sect2>
 
  <sect2 xml:id="sec.shell.commands.info">
-  <title>For More Information</title>
-  <para>
-   There are many more commands than listed in this chapter. For information
-   about other commands or more detailed information, also see the
-   publication <citetitle>Linux in a Nutshell</citetitle> by O'Reilly.
-  </para>
+  <title>さらなる情報</title>
+  <para>本章で記述しているよりもずっと多くのコマンドが、システムには存在しています。他のコマンドに関する情報や、さらに詳しい情報については、 O'Reilly 社発行の書籍 <citetitle>Linux in a Nutshell</citetitle> をお読みになることをお勧めします。</para>
  </sect2>
 </sect1>

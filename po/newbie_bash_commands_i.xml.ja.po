@@ -1,26 +1,29 @@
+# translation of newbie_bash_commands_i.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: newbie_bash_commands_i.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-21 10:13+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:11
 #, no-c-format
 msgid "Important Linux Commands"
-msgstr ""
+msgstr "主要な Linux コマンド"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:12
@@ -31,6 +34,10 @@ msgid ""
 "individual commands, parameters are listed and, where appropriate, a typical "
 "sample application is introduced."
 msgstr ""
+"本章では、主要な Linux コマンドについて、その概要を示しています。"
+"実際には、ここで掲載しているものよりもずっと多くのコマンドが存在しています。"
+"なお、コマンドの紹介では、パラメータの一覧のほか、一般的な使い方についても"
+"説明しています。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:18
@@ -41,12 +48,17 @@ msgid ""
 "You can usually combine several parameters, for example, by writing "
 "<command>ls -la</command> instead of <command>ls -l -a</command> ."
 msgstr ""
+"パラメータは必要に応じて変えてください。たとえば <filename>file</filename> "
+"という名前のファイルが存在していなければ、 <command>ls file</command> を"
+"実行しても意味がありません。また、パラメータは複数を組み合わせて使用することも"
+"できます。たとえば <command>ls -l -a</command> を短くして、"
+" <command>ls -la</command> のように実行することもできます。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:26
 #, no-c-format
 msgid "File Commands"
-msgstr ""
+msgstr "ファイル関連のコマンド"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:27
@@ -56,12 +68,15 @@ msgid ""
 "It covers everything from general file administration to the manipulation of "
 "file system ACLs."
 msgstr ""
+"この章では、ファイルを管理するための主要なコマンドを紹介しています。"
+"一般的なファイル管理のほか、ファイルシステムのアクセス制御リスト (ACL) の操作に"
+"関するコマンドも含まれています。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:33
 #, no-c-format
 msgid "File Administration"
-msgstr ""
+msgstr "ファイルの管理"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:36
@@ -70,6 +85,8 @@ msgid ""
 "<command>ls</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>FILES</replaceable>"
 msgstr ""
+"<command>ls</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:38
@@ -78,18 +95,20 @@ msgid ""
 "If you run <command>ls</command> without any additional parameters, the "
 "program lists the contents of the current directory in short form."
 msgstr ""
+"何もパラメータを指定せずに <command>ls</command> を実行すると、このプログラムは"
+"カレントディレクトリの内容を短い形式で出力します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:47
 #, no-c-format
 msgid "Detailed list"
-msgstr ""
+msgstr "詳細な形式で出力します"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:55
 #, no-c-format
 msgid "Displays hidden files"
-msgstr ""
+msgstr "隠しファイルを表示します"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:64
@@ -98,12 +117,14 @@ msgid ""
 "<command>cp</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>SOURCE</replaceable> &#x20; <replaceable>TARGET</replaceable>"
 msgstr ""
+"<command>cp</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>コピー元</replaceable> &#x20; <replaceable>コピー先</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:66
 #, no-c-format
 msgid "Copies <filename>source</filename> to <filename>target</filename> ."
-msgstr ""
+msgstr "<filename>コピー元</filename> から <filename>コピー先</filename> にファイルをコピーします。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:73
@@ -111,19 +132,19 @@ msgstr ""
 msgid ""
 "Waits for confirmation, if necessary, before an existing <literal>target</"
 "literal> is overwritten"
-msgstr ""
+msgstr "<filename>コピー先</filename> が既に存在する場合、確認メッセージを表示して待機します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:80
 #, no-c-format
 msgid "-r"
-msgstr ""
+msgstr "-r"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:82
 #, no-c-format
 msgid "Copies recursively (includes subdirectories)"
-msgstr ""
+msgstr "コピーを再帰的に実行します (サブディレクトリを含めてコピーします)"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:91
@@ -132,6 +153,8 @@ msgid ""
 "<command>mv</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>SOURCE</replaceable> &#x20; <replaceable>TARGET</replaceable>"
 msgstr ""
+"<command>mv</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>移動元</replaceable> &#x20; <replaceable>移動先</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:93
@@ -140,24 +163,26 @@ msgid ""
 "Copies <filename>source</filename> to <filename>target</filename> then "
 "deletes the original <filename>source</filename> ."
 msgstr ""
+"<filename>移動元</filename> から <filename>移動先</filename> にコピーを"
+"行ない、成功すれば <filename>移動元</filename> を削除します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:99
 #, no-c-format
 msgid "-b"
-msgstr ""
+msgstr "-b"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:101
 #, no-c-format
 msgid "Creates a backup copy of the <filename>source</filename> before moving"
-msgstr ""
+msgstr "移動を行なう前に、 <filename>移動元</filename> のバックアップコピーを作成します"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:108
 #, no-c-format
 msgid "-i"
-msgstr ""
+msgstr "-i"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:110
@@ -165,7 +190,7 @@ msgstr ""
 msgid ""
 "Waits for confirmation, if necessary, before an existing "
 "<filename>targetfile</filename> is overwritten"
-msgstr ""
+msgstr "<filename>移動先</filename> が既に存在する場合、確認メッセージを表示して待機します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:120
@@ -174,6 +199,8 @@ msgid ""
 "<command>rm</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>FILES</replaceable>"
 msgstr ""
+"<command>rm</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:122
@@ -183,18 +210,20 @@ msgid ""
 "removed by <command>rm</command> unless the option <option>-r</option> is "
 "used."
 msgstr ""
+"システムから指定したファイルを削除します。ディレクトリについては、 "
+" <option>-r</option> オプションを指定しない限り、削除されません。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:131
 #, no-c-format
 msgid "Deletes any existing subdirectories"
-msgstr ""
+msgstr "既存のサブディレクトリについても削除します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:139
 #, no-c-format
 msgid "Waits for confirmation before deleting each file"
-msgstr ""
+msgstr "各ファイルを削除する際に、確認メッセージを表示して待機します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:148
@@ -203,6 +232,8 @@ msgid ""
 "<command>ln</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>SOURCE</replaceable> &#x20; <replaceable>TARGET</replaceable>"
 msgstr ""
+"<command>ln</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>リンク元</replaceable> &#x20; <replaceable>リンク先</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:150
@@ -215,18 +246,23 @@ msgid ""
 "creates a symbolic link that only points to the directory in which "
 "<filename>source</filename> is located, enabling linking across file systems."
 msgstr ""
+"<replaceable>リンク元</replaceable> から <replaceable>リンク先</replaceable> に対して、"
+"内部リンクを作成します。通常、リンクは同じファイルシステム内のものに対してのみ"
+"設定することができますが、 <command>ln</command> に <option>-s</option> "
+"オプションを付けて実行すると、ファイルシステムを跨いでリンクを行なうことができる"
+"シンボリックリンクを作成することができます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:161
 #, no-c-format
 msgid "-s"
-msgstr ""
+msgstr "-s"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:163
 #, no-c-format
 msgid "Creates a symbolic link"
-msgstr ""
+msgstr "シンボリックリンクを作成します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:172
@@ -235,6 +271,8 @@ msgid ""
 "<command>cd</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>DIRECTORY</replaceable>"
 msgstr ""
+"<command>cd</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ディレクトリ</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:174
@@ -243,6 +281,8 @@ msgid ""
 "Changes the current directory. <command>cd</command> without any parameters "
 "changes to the user's home directory."
 msgstr ""
+"カレント (現在作業中の) ディレクトリを変更します。何もパラメータを付けずに"
+" <command>cd</command> を実行すると、ホームディレクトリに移動します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:181
@@ -251,12 +291,14 @@ msgid ""
 "<command>mkdir</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>DIRECTORY</replaceable>"
 msgstr ""
+"<command>mkdir</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ディレクトリ</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:183
 #, no-c-format
 msgid "Creates a new directory."
-msgstr ""
+msgstr "新しいディレクトリを作成します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:189
@@ -265,12 +307,14 @@ msgid ""
 "<command>rmdir</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>DIRECTORY</replaceable>"
 msgstr ""
+"<command>rmdir</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ディレクトリ</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:191
 #, no-c-format
 msgid "Deletes the specified directory if it is already empty."
-msgstr ""
+msgstr "ディレクトリ内に何も残っていない場合にのみ、指定したディレクトリを削除します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:197
@@ -280,24 +324,27 @@ msgid ""
 "<literal><replaceable>USER_NAME</replaceable>[:<replaceable>GROUP</"
 "replaceable>]</literal> &#x20; <replaceable>FILES</replaceable>"
 msgstr ""
+"<command>chown</command> &#x20; <replaceable>オプション</replaceable> "
+"<literal><replaceable>ユーザ名</replaceable>[:<replaceable>グループ</"
+"replaceable>]</literal> &#x20; <replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:199
 #, no-c-format
 msgid "Transfers ownership of a file to the user with the specified user name."
-msgstr ""
+msgstr "ファイルの所有者を、指定したユーザに変更します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:205
 #, no-c-format
 msgid "<option>-R</option>"
-msgstr ""
+msgstr "<option>-R</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:207
 #, no-c-format
 msgid "Changes files and directories in all subdirectories"
-msgstr ""
+msgstr "全てのサブディレクトリ内のファイルとディレクトリに対して、この変更を行ないます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:216
@@ -306,6 +353,8 @@ msgid ""
 "<command>chgrp</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>GROUP_NAME</replaceable> &#x20; <replaceable>FILES</replaceable>"
 msgstr ""
+"<command>chgrp</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>グループ名</replaceable> &#x20; <replaceable>ファイル名</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:218
@@ -315,6 +364,9 @@ msgid ""
 "group with the specified group name. The file owner can change group "
 "ownership only if a member of both the current and the new group."
 msgstr ""
+"ファイルの所有グループを、指定したグループに変更します。"
+"なお、ファイルの所有者は、現時点で設定されているグループと新しいグループの"
+"両方に所属している場合にのみ、グループを変更することができます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:227
@@ -323,12 +375,14 @@ msgid ""
 "<command>chmod</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>MODE</replaceable> &#x20; <replaceable>FILES</replaceable>"
 msgstr ""
+"<command>chmod</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>モード</replaceable> &#x20; <replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:229
 #, no-c-format
 msgid "Changes the access permissions."
-msgstr ""
+msgstr "アクセス権を変更します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:232
@@ -338,42 +392,45 @@ msgid ""
 "literal> , <literal>access</literal> , and <literal>access type</literal> . "
 "<literal>group</literal> accepts the following characters:"
 msgstr ""
+"<literal>モード</literal> は 3 種類の部分 (<literal>対象</"
+"literal> , <literal>アクセス</literal> , <literal>アクセス種別</literal>) から構成されています。"
+" <literal>対象</literal> には下記の文字を指定することができます:"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:240
 #, no-c-format
 msgid "u"
-msgstr ""
+msgstr "u"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:242
 #, no-c-format
 msgid "User"
-msgstr ""
+msgstr "ユーザ"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:248
 #, no-c-format
 msgid "g"
-msgstr ""
+msgstr "g"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:250
 #, no-c-format
 msgid "Group"
-msgstr ""
+msgstr "グループ"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:256
 #, no-c-format
 msgid "o"
-msgstr ""
+msgstr "o"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:258
 #, no-c-format
 msgid "Others"
-msgstr ""
+msgstr "その他"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:264
@@ -382,55 +439,56 @@ msgid ""
 "For <literal>access</literal> , grant access with <literal>+</literal> and "
 "deny it with <literal>-</literal> ."
 msgstr ""
+"<literal>アクセス</literal> には <literal>+</literal> (アクセスを許可する) もしくは"
+" <literal>-</literal> (アクセスを拒否する) のいずれかを指定します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:268
 #, no-c-format
-msgid ""
-"The <literal>access type</literal> is controlled by the following options:"
-msgstr ""
+msgid "The <literal>access type</literal> is controlled by the following options:"
+msgstr "<literal>アクセス種別</literal> には下記の文字を指定することができます:"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:274
 #, no-c-format
 msgid "r"
-msgstr ""
+msgstr "r"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:276
 #, no-c-format
 msgid "Read"
-msgstr ""
+msgstr "読み込み"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:282
 #, no-c-format
 msgid "w"
-msgstr ""
+msgstr "w"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:284
 #, no-c-format
 msgid "Write"
-msgstr ""
+msgstr "書き込み"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:290
 #, no-c-format
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:292
 #, no-c-format
 msgid "Execute&mdash;executing files or changing to the directory"
-msgstr ""
+msgstr "実行 (ファイルに対しては実行を、ディレクトリに対してはそのディレクトリへの移動を表わします)"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:298
 #, no-c-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:300
@@ -439,6 +497,8 @@ msgid ""
 "Setuid bit&mdash;the application or program is started as if it were started "
 "by the owner of the file"
 msgstr ""
+"setuid ビット (アプリケーションやプログラムに対して、そのファイルの所有者に成り代わって"
+"実行するかどうかを示すビットです)"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:307
@@ -454,6 +514,13 @@ msgid ""
 "with 2, and the permission for executing a file is set with 1. The owner of "
 "a file would usually receive a 6 or a 7 for executable files."
 msgstr ""
+"上記の方法以外にも、数値で指定することができます。数値の場合は 4 桁で指定し、"
+"それぞれの桁は 1, 2, 4 の数値を必要に応じて足した値を指定します。できあがった"
+"数値はバイナリマスクと呼ばれます。 1 桁目は setuid (4), setgid (2), sticky (1) "
+"を表わし、 2 桁目はファイルの所有者に対するアクセス権を、 3 桁目はグループに"
+"対するアクセス権を、 4 桁目はその他に対するアクセス権をそれぞれ指定します。"
+" 2 桁目以降は、読み込み (4), 書き込み (2), 実行 (1) の意味になります。"
+"ファイルの所有者に対しては、実行可能なファイルの場合 6 か 7 の数値を指定します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:322
@@ -462,6 +529,8 @@ msgid ""
 "<command>gzip</command> &#x20; <replaceable>PARAMETERS</replaceable> &#x20; "
 "<replaceable>FILES</replaceable>"
 msgstr ""
+"<command>gzip</command> &#x20; <replaceable>パラメータ</replaceable> &#x20; "
+"<replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:324
@@ -473,12 +542,18 @@ msgid ""
 "compress several files or even entire directories, use the <command>tar</"
 "command> command."
 msgstr ""
+"このプログラムは、複雑な数学的アルゴリズムを利用して、ファイルの内容を圧縮"
+"します。圧縮されたファイルには、拡張子 <filename>.gz</filename> が付けられ、"
+"通常通り使用する場合には、あらかじめ展開処理を行なわなければならなくなります。"
+"なお、このコマンドでは、複数のファイルやディレクトリをまとめることはできません。"
+"複数のファイルやディレクトリをまとめる場合は、 <command>tar</command> "
+"コマンドをお使いください。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:333
 #, no-c-format
 msgid "-d"
-msgstr ""
+msgstr "-d"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:335
@@ -487,6 +562,8 @@ msgid ""
 "Decompresses the packed gzip files so they return to their original size and "
 "can be processed normally (like the command <command>gunzip</command> )"
 msgstr ""
+"以前に gzip で圧縮していたファイルを展開し、元のサイズおよび内容に戻します"
+" (<command>gunzip</command> コマンドでも同じことを行なうことができます)"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:346
@@ -495,6 +572,8 @@ msgid ""
 "<command>tar</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>ARCHIVE</replaceable> &#x20; <replaceable>FILES</replaceable>"
 msgstr ""
+"<command>tar</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>書庫</replaceable> &#x20; <replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:348
@@ -504,43 +583,46 @@ msgid ""
 "is optional. <command>tar</command> is a quite complex command with several "
 "options available. The most frequently used options are:"
 msgstr ""
+"<command>tar</command> は 1 つまたは複数のファイルを書庫に配置します。"
+"必要であれば圧縮を行なうこともできます。 <command>tar</command> は非常に"
+"複雑なコマンドで、多くのオプションが用意されています。最もよく使用される"
+"オプションは、下記のとおりです:"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:358
 #, no-c-format
-msgid ""
-"Writes the output to a file and not to the screen as is usually the case"
-msgstr ""
+msgid "Writes the output to a file and not to the screen as is usually the case"
+msgstr "画面ではなくファイルに出力を行ないます (通常はこれを指定します) 。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:365
 #, no-c-format
 msgid "<option>-c</option>"
-msgstr ""
+msgstr "<option>-c</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:367
 #, no-c-format
 msgid "Creates a new TAR archive"
-msgstr ""
+msgstr "新しい tar 書庫を作成します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:375
 #, no-c-format
 msgid "Adds files to an existing archive"
-msgstr ""
+msgstr "既存の書庫にファイルを追加します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:381
 #, no-c-format
 msgid "<option>-t</option>"
-msgstr ""
+msgstr "<option>-t</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:383
 #, no-c-format
 msgid "Outputs the contents of an archive"
-msgstr ""
+msgstr "書庫の内容を出力します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:391
@@ -548,55 +630,55 @@ msgstr ""
 msgid ""
 "Adds files, but only if they are newer than the files already contained in "
 "the archive"
-msgstr ""
+msgstr "書庫内にあるファイルよりも新しい場合にのみ、書庫にファイルを追加します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:398
 #, no-c-format
 msgid "<option>-x</option>"
-msgstr ""
+msgstr "<option>-x</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:400
 #, no-c-format
 msgid "Unpacks files from an archive ( <emphasis>extraction</emphasis> )"
-msgstr ""
+msgstr "書庫からファイルを取り出します ( <emphasis>抽出</emphasis> )"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:406
 #, no-c-format
 msgid "<option>-z</option>"
-msgstr ""
+msgstr "<option>-z</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:408
 #, no-c-format
 msgid "Packs the resulting archive with <command>gzip</command>"
-msgstr ""
+msgstr "作成もしくは展開する書庫を <command>gzip</command> で圧縮または展開します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:414
 #, no-c-format
 msgid "<option>-j</option>"
-msgstr ""
+msgstr "<option>-j</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:416
 #, no-c-format
 msgid "Compresses the resulting archive with <command>bzip2</command>"
-msgstr ""
+msgstr "作成もしくは展開する書庫を <command>bzip2</command> で圧縮または展開します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:422
 #, no-c-format
 msgid "<option>-v</option>"
-msgstr ""
+msgstr "<option>-v</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:424
 #, no-c-format
 msgid "Lists files processed"
-msgstr ""
+msgstr "処理したファイルの一覧を出力します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:430
@@ -608,12 +690,17 @@ msgid ""
 "filename> . If it was compressed using <command>bzip2</command> , the ending "
 "is <filename>.tar.bz2</filename> ."
 msgstr ""
+"<command>tar</command> で作成した書庫には、拡張子 <filename>.tar</filename> "
+"を付けるのが一般的です。ただし、書庫を <command>gzip</command> で圧縮した場合は、"
+"拡張子が <filename>.tgz</filename> または <filename>.tar.gz</filename> になります。"
+"また、 <command>bzip2</command> で圧縮した場合は、拡張子が <filename>.tar.bz2</filename> "
+"になります。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:441
 #, no-c-format
 msgid "<command>find</command> &#x20; <replaceable>OPTIONS</replaceable>"
-msgstr ""
+msgstr "<command>find</command> &#x20; <replaceable>オプション</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:443
@@ -625,12 +712,18 @@ msgid ""
 "may also include wild cards. Unlike <command>locate</command> , which uses a "
 "database, <command>find</command> scans the actual directory."
 msgstr ""
+"<command>find</command> を使用すると、指定したディレクトリ内でファイルを探す"
+"ことができます。最初のオプションには、検索を開始するディレクトリを指定します。"
+"それ以降に各種のオプションを指定しますが、たとえば <command>-name</command> オプション"
+"の後ろには検索文字列を指定します。ここではワイルドカードも指定することができます。"
+"なお、データベースを使用する <command>locate</command> とは異なり、"
+" <command>find</command> は実際のディレクトリ内を検索します。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:456
 #, no-c-format
 msgid "Commands to Access File Contents"
-msgstr ""
+msgstr "ファイルの内容へのアクセス"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:459
@@ -639,6 +732,8 @@ msgid ""
 "<command>file</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>FILES</replaceable>"
 msgstr ""
+"<command>file</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:461
@@ -649,18 +744,23 @@ msgid ""
 "output of <command>file</command> , you can then choose an appropriate "
 "application with which to open the file."
 msgstr ""
+"Linux ではファイル名に拡張子を付けることができますが、必ずしも必要となるもの"
+"ではありません。 <command>file</command> コマンドでは、指定したファイルの"
+"種類を判別することができます。 <command>file</command> コマンドの出力を"
+"元にすることで、ファイルを開くことのできるアプリケーションを判断する"
+"ことができます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:469
 #, no-c-format
 msgid "-z"
-msgstr ""
+msgstr "-z"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:471
 #, no-c-format
 msgid "Tries to look inside compressed files"
-msgstr ""
+msgstr "圧縮ファイルの内容を展開して判別します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:482
@@ -669,6 +769,8 @@ msgid ""
 "<command>cat</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>FILES</replaceable>"
 msgstr ""
+"<command>cat</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:484
@@ -677,18 +779,20 @@ msgid ""
 "The <command>cat</command> command displays the contents of a file, printing "
 "the entire contents to the screen without interruption."
 msgstr ""
+"<command>cat</command> コマンドはファイルの内容を出力するためのコマンドです。"
+"ただし、ファイルの内容全体を一時停止することなく一括で出力してしまうことに注意してください。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:490
 #, no-c-format
 msgid "-n"
-msgstr ""
+msgstr "-n"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:492
 #, no-c-format
 msgid "Numbers the output on the left margin"
-msgstr ""
+msgstr "左側に行番号を出力します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:501
@@ -697,6 +801,8 @@ msgid ""
 "<command>less</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>FILES</replaceable>"
 msgstr ""
+"<command>less</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ファイル</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:503
@@ -709,6 +815,12 @@ msgid ""
 "function=\"home\"/> and <keycap function=\"end\"/> . Press <keycap>Q</"
 "keycap> to quit the program."
 msgstr ""
+"このコマンドは、指定したファイルの内容を見やすく表示するためのコマンドです。"
+"<keycap function=\"pageup\"/> や <keycap function=\"pagedown\"/> でそれぞれ"
+"半ページずつ前もしくは後ろに移動することができるほか、 <keycap function=\"space\"/> "
+"で 1 ページ分後ろに移動することもできます。また、 <keycap function=\"home\"/> "
+"と <keycap function=\"end\"/> で、それぞれファイルの冒頭と末尾に移動することも"
+"できます。プログラムを終了するには、 <keycap>Q</keycap> を押します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:514
@@ -718,6 +830,9 @@ msgid ""
 "<replaceable>SEARCH_STRING</replaceable> &#x20; <replaceable>FILES</"
 "replaceable>"
 msgstr ""
+"<command>grep</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>検索文字列</replaceable> &#x20; <replaceable>ファイル</"
+"replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:516
@@ -728,55 +843,59 @@ msgid ""
 "line in which <replaceable>SEARCH_STRING</replaceable> was found along with "
 "the file name."
 msgstr ""
+"<command>grep</command> コマンドは、指定したファイルの内容を検索するための"
+"コマンドです。検索文字列に該当する箇所が見つかると、 <!-- ? ファイル名と共に -->"
+" <replaceable>検索文字列</replaceable> を含む行が表示されます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:524
 #, no-c-format
 msgid "<option>-i</option>"
-msgstr ""
+msgstr "<option>-i</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:526
 #, no-c-format
 msgid "Ignores case"
-msgstr ""
+msgstr "大文字と小文字を区別せずに検索します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:532
 #, no-c-format
 msgid "<option>-H</option>"
-msgstr ""
+msgstr "<option>-H</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:534
 #, no-c-format
 msgid "Only displays the names of the relevant files, but not the text lines"
-msgstr ""
+msgstr "該当する行を表示せず、該当したファイルの名前のみを表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:541
 #, no-c-format
 msgid "<option>-n</option>"
-msgstr ""
+msgstr "<option>-n</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:543
 #, no-c-format
 msgid "Additionally displays the numbers of the lines in which it found a hit"
-msgstr ""
+msgstr "該当した箇所を表示する際、行番号も合わせて表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:550
 #, no-c-format
 msgid "<option>-l</option>"
-msgstr ""
+msgstr "<option>-l</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:552
 #, no-c-format
-msgid ""
-"Only lists the files in which <literal>searchstring</literal> does not occur"
+msgid "Only lists the files in which <literal>searchstring</literal> does not occur"
 msgstr ""
+"<!-- Wrong description? -->"
+"<replaceable>検索文字列</replaceable> に該当していないファイルのファイル名のみを表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:562
@@ -785,6 +904,8 @@ msgid ""
 "<command>diff</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>FILE_1</replaceable> &#x20; <replaceable>FILE_2</replaceable>"
 msgstr ""
+"<command>diff</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ファイル_1</replaceable> &#x20; <replaceable>ファイル_2</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:564
@@ -795,37 +916,39 @@ msgid ""
 "is frequently used by programmers who need only to send their program "
 "alterations and not the entire source code."
 msgstr ""
+"<command>diff</command> コマンドは 2 つのファイルの内容を比較し、"
+"違いのあった箇所だけを出力します。これはプログラマがよく使用するコマンドで、"
+"ソースコード内の変更箇所だけを抽出する際に使用します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:572
 #, no-c-format
 msgid "<option>-q</option>"
-msgstr ""
+msgstr "<option>-q</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:574
 #, no-c-format
 msgid "Only reports whether the two files differ"
-msgstr ""
+msgstr "2 つのファイルに差異があるかどうかだけを表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:580
 #, no-c-format
 msgid "<option>-u</option>"
-msgstr ""
+msgstr "<option>-u</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:582
 #, no-c-format
-msgid ""
-"Produces a <quote>unified</quote> diff, which makes the output more readable"
-msgstr ""
+msgid "Produces a <quote>unified</quote> diff, which makes the output more readable"
+msgstr "<quote>Unified</quote> 形式の差分を出力します。これにより、より読みやすい出力になります。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:595
 #, no-c-format
 msgid "File Systems"
-msgstr ""
+msgstr "ファイルシステム"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:598
@@ -835,6 +958,9 @@ msgid ""
 "<replaceable>DEVICE</replaceable> &#x20; <replaceable>MOUNT_POINT</"
 "replaceable>"
 msgstr ""
+"<command>mount</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>デバイス</replaceable> &#x20; <replaceable>マウントポイント</"
+"replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:600
@@ -843,24 +969,27 @@ msgid ""
 "This command can be used to mount any data media, such as hard disks, CD-ROM "
 "drives, and other drives, to a directory of the Linux file system."
 msgstr ""
+"このコマンドは、ハードディスクや CD-ROM ドライブなどのデータメディアを、"
+" Linux ファイルシステムのディレクトリ内に割り当てる (マウントする) ことができる"
+"コマンドです。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:607
 #, no-c-format
 msgid "<option>-r</option>"
-msgstr ""
+msgstr "<option>-r</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:609
 #, no-c-format
 msgid "Mount read-only"
-msgstr ""
+msgstr "読み込み専用でマウントします。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:615
 #, no-c-format
 msgid "<option>-t <replaceable>FILE_SYSTEM</replaceable></option>"
-msgstr ""
+msgstr "<option>-t <replaceable>ファイルシステム</replaceable></option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:617
@@ -870,6 +999,9 @@ msgid ""
 "<literal>ext4</literal> , <literal>xfs</literal> , or <literal>btrfs</"
 "literal> ."
 msgstr ""
+"ファイルシステムの種類を指定します。 Linux で使用しているハードディスクの"
+"場合、 <literal>ext4</literal> , <literal>xfs</literal> , <literal>btrfs</"
+"literal> などがよく使われます。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:625
@@ -882,6 +1014,12 @@ msgid ""
 "fstab</filename> file (separated by commas) and save this change. Further "
 "information is available in the <systemitem>mount(1)</systemitem> man page."
 msgstr ""
+"<filename>/etc/fstab</filename> に定義されていないハードディスクの場合、デバイスの"
+"種類も指定しなければなりません。この場合、 &rootuser; だけがマウントすること"
+"ができます。一般ユーザからファイルシステムをマウントできるようにするには、"
+"<filename>/etc/fstab</filename> 内の適切な箇所に、カンマ区切りで <literal>user</literal> "
+"というオプションを追加する必要があります。詳しくは <systemitem>mount(1)</systemitem> "
+"のマニュアルページをお読みください。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:639
@@ -890,6 +1028,8 @@ msgid ""
 "<command>umount</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>MOUNT_POINT</replaceable>"
 msgstr ""
+"<command>umount</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>マウントポイント</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:641
@@ -902,12 +1042,19 @@ msgid ""
 "commands, edit the <filename>/etc/fstab</filename> file to specify the "
 "option <literal>user</literal> for the relevant drive."
 msgstr ""
+"このコマンドは、ファイルシステムから特定のドライブをマウント解除 (アンマウント) "
+"します。データの損失を防ぐため、リムーバブルメディアをお使いの場合は、メディアを"
+"取り出す前に、このコマンドを実行してください。通常は <command>mount</command> "
+"コマンドと同様に、 <command>umount</command> も &rootuser; だけが実行できます。"
+"一般ユーザからファイルシステムをマウントできるようにするには、"
+"<filename>/etc/fstab</filename> 内の適切な箇所に、カンマ区切りで <literal>user</literal> "
+"というオプションを追加する必要があります。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:658
 #, no-c-format
 msgid "System Commands"
-msgstr ""
+msgstr "システムコマンド"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:659
@@ -916,12 +1063,14 @@ msgid ""
 "The following section lists a few of the most important commands needed for "
 "retrieving system information and controlling processes and the network."
 msgstr ""
+"この章では、システムの情報を表示したりプロセスやネットワークを制御したりする際に"
+"必要となる、最も重要なコマンドをいくつか紹介しています。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:665
 #, no-c-format
 msgid "System Information"
-msgstr ""
+msgstr "システム情報"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:668
@@ -930,6 +1079,8 @@ msgid ""
 "<command>df</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>DIRECTORY</replaceable>"
 msgstr ""
+"<command>df</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ディレクトリ</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:670
@@ -941,6 +1092,10 @@ msgid ""
 "directory is specified, the information is limited to the drive on which "
 "that directory is located."
 msgstr ""
+"<command>df</command> (Disk Free の略) コマンドでは、何もオプションを"
+"指定しないで実行すると、全てのマウント済みのドライブに対して、全体容量と"
+"使用中の容量、そして空き容量をそれぞれ表示します。ディレクトリを指定した"
+"場合は、そのディレクトリのあるドライブの情報だけを表示します。"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:681
@@ -949,18 +1104,20 @@ msgid ""
 "Shows the number of occupied blocks in gigabytes, megabytes, or "
 "kilobytes&mdash;in human-readable format"
 msgstr ""
+"占有されているブロックをギガバイト, メガバイト, キロバイトなどの"
+"読みやすい形式で表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:688
 #, no-c-format
 msgid "<option>-T</option>"
-msgstr ""
+msgstr "<option>-T</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:690
 #, no-c-format
 msgid "Type of file system (ext2, nfs, etc.)"
-msgstr ""
+msgstr "ファイルシステムの種類を指定します (ext2, nfs, etc.)"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:699
@@ -969,6 +1126,8 @@ msgid ""
 "<command>du</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>PATH</replaceable>"
 msgstr ""
+"<command>du</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>パス</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:701
@@ -977,48 +1136,50 @@ msgid ""
 "This command, when executed without any parameters, shows the total disk "
 "space occupied by files and subdirectories in the current directory."
 msgstr ""
+"何もオプションを付けずにこのコマンドを実行すると、カレントディレクトリ以下の"
+"サブディレクトリに対して、それぞれがファイルなどで占有するディスク領域を表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:708
 #, no-c-format
 msgid "<option>-a</option>"
-msgstr ""
+msgstr "<option>-a</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:710
 #, no-c-format
 msgid "Displays the size of each individual file"
-msgstr ""
+msgstr "各ファイルのサイズを表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:716
 #, no-c-format
 msgid "<option>-h</option>"
-msgstr ""
+msgstr "<option>-h</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:718
 #, no-c-format
 msgid "Output in human-readable form"
-msgstr ""
+msgstr "読みやすい形式で表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:724
 #, no-c-format
 msgid "<option>-s</option>"
-msgstr ""
+msgstr "<option>-s</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:726
 #, no-c-format
 msgid "Displays only the calculated total size"
-msgstr ""
+msgstr "合計サイズのみを表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:735
 #, no-c-format
 msgid "<command>free</command> &#x20; <replaceable>OPTIONS</replaceable>"
-msgstr ""
+msgstr "<command>free</command> &#x20; <replaceable>オプション</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:737
@@ -1028,48 +1189,51 @@ msgid ""
 "space usage, showing the total and the used amount in both categories. See "
 "<xref linkend=\"sec.suse.free\"/> for more information."
 msgstr ""
+"<command>free</command> コマンドは、メモリとスワップ領域に関する情報を"
+"表示します。合計サイズと使用済みのサイズの両方をそれぞれ表示します。詳しくは"
+" <xref linkend=\"sec.suse.free\"/> をお読みください。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:744
 #, no-c-format
 msgid "<option>-b</option>"
-msgstr ""
+msgstr "<option>-b</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:746
 #, no-c-format
 msgid "Output in bytes"
-msgstr ""
+msgstr "バイト単位で表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:752
 #, no-c-format
 msgid "<option>-k</option>"
-msgstr ""
+msgstr "<option>-k</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:754
 #, no-c-format
 msgid "Output in kilobytes"
-msgstr ""
+msgstr "キロバイト単位で表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:760
 #, no-c-format
 msgid "<option>-m</option>"
-msgstr ""
+msgstr "<option>-m</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:762
 #, no-c-format
 msgid "Output in megabytes"
-msgstr ""
+msgstr "メガバイト単位で表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:771
 #, no-c-format
 msgid "<command>date</command> &#x20; <replaceable>OPTIONS</replaceable>"
-msgstr ""
+msgstr "<command>date</command> &#x20; <replaceable>オプション</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:773
@@ -1079,18 +1243,21 @@ msgid ""
 "it can also be used to change the system time. Details about the program are "
 "available in the date(1) man page."
 msgstr ""
+"このシンプルなプログラムは、現在のシステムにおける日時を表示します。 &rootuser; "
+"で実行すると、システムの時刻を修正する目的で使用することもできます。このプログラム"
+"に関する詳細は、 date(1) のマニュアルページをお読みください。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:785
 #, no-c-format
 msgid "Processes"
-msgstr ""
+msgstr "プロセス"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:788
 #, no-c-format
 msgid "<command>top</command> &#x20; <replaceable>OPTIONS</replaceable>"
-msgstr ""
+msgstr "<command>top</command> &#x20; <replaceable>オプション</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:790
@@ -1100,6 +1267,9 @@ msgid ""
 "processes. Press <keycap>H</keycap> to access a page that briefly explains "
 "the main options for customizing the program."
 msgstr ""
+"<command>top</command> コマンドは、現在動作中のプロセスに関する概要を表示"
+"することができます。 <keycap>H</keycap> を押すと、プログラムをカスタマイズ"
+"するための簡潔な説明が表示されます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:798
@@ -1108,6 +1278,8 @@ msgid ""
 "<command>ps</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>PROCESS_ID</replaceable>"
 msgstr ""
+"<command>ps</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>プロセス_ID</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:800
@@ -1117,18 +1289,21 @@ msgid ""
 "programs or processes&mdash;those you started. The options for this command "
 "are not preceded by hyphen."
 msgstr ""
+"何もオプションを付けずに実行すると、自身が所有する (=開始した) 全ての"
+"プログラムやプロセスの一覧表が表示されます。なお、このコマンドに対する"
+"オプションは、ハイフンを付けずに指定します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:807
 #, no-c-format
 msgid "aux"
-msgstr ""
+msgstr "aux"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:809
 #, no-c-format
 msgid "Displays a detailed list of all processes, independent of the owner"
-msgstr ""
+msgstr "自分自身が所有するものだけでなく、全てのプロセスを詳細に表示します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:819
@@ -1137,6 +1312,8 @@ msgid ""
 "<command>kill</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>PROCESS_ID</replaceable>"
 msgstr ""
+"<command>kill</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>プロセス_ID</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:821
@@ -1150,12 +1327,19 @@ msgid ""
 "instructs the program to shut itself down. If this does not help, the "
 "following parameter can be used:"
 msgstr ""
+"時によっては、プログラムを通常の方法で終了させることができない場合があります。"
+"ほとんどの場合、 <command>kill</command> の後ろにプロセス ID (<command>top</command> "
+"コマンドや <command>ps</command> コマンドで取得することができます) を指定する"
+"ことで、プログラムを終了することができます。 <command>kill</command> "
+"コマンドは通常、 <emphasis>TERM</emphasis> というシグナルを送信して、"
+"プログラム側に終了を依頼します。これでもうまく終了できない場合は、"
+"下記のパラメータを試してみてください:"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:833
 #, no-c-format
 msgid "-9"
-msgstr ""
+msgstr "-9"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:835
@@ -1165,6 +1349,9 @@ msgid ""
 "emphasis> signal, bringing the specified process to an end in almost all "
 "cases"
 msgstr ""
+"<emphasis>TERM</emphasis> ではなく <emphasis>KILL</emphasis> シグナルを"
+"送信します。このシグナルであれば、ほぼ全ての場合においてプロセスを強制終了"
+"することができます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:846
@@ -1173,6 +1360,8 @@ msgid ""
 "<command>killall</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>PROCESS_NAME</replaceable>"
 msgstr ""
+"<command>killall</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>プロセス名</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:848
@@ -1182,12 +1371,15 @@ msgid ""
 "name (instead of the process ID) as an argument, ending all processes with "
 "that name."
 msgstr ""
+"このコマンドは <command>kill</command> に似たコマンドですが、プロセス ID "
+"ではなくプロセス名を指定して実行します。このコマンドでは、同じ名前のプロセス"
+"全てに対して、シグナルを送信します。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:858
 #, no-c-format
 msgid "Network"
-msgstr ""
+msgstr "ネットワーク"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:861
@@ -1196,6 +1388,8 @@ msgid ""
 "<command>ping</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>HOSTNAME_OR_IP_ADDRESS</replaceable>"
 msgstr ""
+"<command>ping</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ホスト名または_IP_アドレス</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:863
@@ -1207,12 +1401,17 @@ msgid ""
 "<command>ping</command> displays a message to that effect, which indicates "
 "that the network link is functioning."
 msgstr ""
+"<command>ping</command> コマンドは TCP/IP ネットワークの基本的な動作をテスト"
+"するための標準的なツールで、宛先のホストに対して小さなデータパケットを送信し、"
+"その応答を待ちます。相手側から応答があれば、 <command>ping</command> コマンドは"
+"その旨を示すメッセージを表示しますので、これによってネットワークリンクが確立"
+"できていることがわかるようになっています。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:872
 #, no-c-format
 msgid "<option>-c</option> <replaceable>NUMBER</replaceable>"
-msgstr ""
+msgstr "<option>-c</option> <replaceable>回数</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:874
@@ -1221,12 +1420,14 @@ msgid ""
 "Determines the total number of packages to send and ends after they have "
 "been dispatched (by default, there is no limitation set)"
 msgstr ""
+"データパケットの送信回数を指定します。ここで指定した回数を送信したのち、"
+"しばらくしてプログラムが終了します (既定では、何度もパケットを送り続けます) 。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:881
 #, no-c-format
 msgid "<option>-f</option>"
-msgstr ""
+msgstr "<option>-f</option>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:883
@@ -1235,12 +1436,15 @@ msgid ""
 "<emphasis>flood ping</emphasis> : sends as many data packages as possible; a "
 "popular means, reserved for &rootuser;, to test networks"
 msgstr ""
+"<emphasis>flood ping</emphasis> と呼ばれる ping の送信方法を実施します。"
+"この方法では、できる限り多くのパケットを送信してネットワークのテストを"
+"行ないます。 &rootuser; のみに提供されている機能です。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:891
 #, no-c-format
 msgid "<option>-i</option> <replaceable>VALUE</replaceable>"
-msgstr ""
+msgstr "<option>-i</option> <replaceable>間隔</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:893
@@ -1248,7 +1452,7 @@ msgstr ""
 msgid ""
 "Specifies the interval between two data packages in seconds (default: one "
 "second)"
-msgstr ""
+msgstr "2 つのデータパケットの送信間隔を指定します (既定値: 1 秒) 。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:903
@@ -1257,6 +1461,8 @@ msgid ""
 "<command>host</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>HOSTNAME</replaceable> &#x20; <replaceable>SERVER</replaceable>"
 msgstr ""
+"<command>host</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ホスト名</replaceable> &#x20; <replaceable>サーバ</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:905
@@ -1265,6 +1471,9 @@ msgid ""
 "The domain name system resolves domain names to IP addresses. With this "
 "tool, send queries to name servers (DNS servers)."
 msgstr ""
+"ドメインネームシステム (DNS) に対して、ホスト名を IP アドレスに変換するように"
+"依頼します。このツールを利用することで、ネームサーバに対する問い合わせを"
+"送信することができます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:912
@@ -1274,6 +1483,9 @@ msgid ""
 "<literal>[<replaceable>USER</replaceable>@]<replaceable>HOSTNAME</"
 "replaceable></literal> &#x20; <replaceable>COMMAND</replaceable>"
 msgstr ""
+"<command>ssh</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<literal>[<replaceable>ユーザ名</replaceable>@]<replaceable>ホスト名</"
+"replaceable></literal> &#x20; <replaceable>コマンド</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:914
@@ -1283,12 +1495,15 @@ msgid ""
 "hosts across a network. SSH is also the name of a Linux program that uses "
 "this protocol to enable operations on remote computers."
 msgstr ""
+"SSH はネットワークを介して特定のホスト内で作業を行なうことができる、"
+"インターネットプロトコルです。 SSH は Linux プログラムの名前でもあり、"
+" SSH プロトコルを利用してリモートのコンピュータのシェルに接続します。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:925
 #, no-c-format
 msgid "Miscellaneous"
-msgstr ""
+msgstr "その他"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:928
@@ -1297,6 +1512,8 @@ msgid ""
 "<command>passwd</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>USER_NAME</replaceable>"
 msgstr ""
+"<command>passwd</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ユーザ名</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:930
@@ -1306,6 +1523,9 @@ msgid ""
 "administrator &rootuser; can use the command to change the password of any "
 "user on the system."
 msgstr ""
+"ユーザは自分自身のパスワードを任意の時点で変更することができます。"
+"管理者である &rootuser; の場合、このコマンドでユーザ名を指定することで、"
+"システム内の任意のユーザに対するパスワードを変更することができます。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:938
@@ -1314,6 +1534,8 @@ msgid ""
 "<command>su</command> &#x20; <replaceable>OPTIONS</replaceable> &#x20; "
 "<replaceable>USER_NAME</replaceable>"
 msgstr ""
+"<command>su</command> &#x20; <replaceable>オプション</replaceable> &#x20; "
+"<replaceable>ユーザ名</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:940
@@ -1327,12 +1549,20 @@ msgid ""
 "&rootuser; password and change to the superuser (&rootuser;). Use "
 "<command>su -</command> to start a login shell for a different user."
 msgstr ""
+"<command>su</command> は現在のセッション内で、他のユーザに成り代わる"
+" (Switch User) ためのコマンドです。ユーザ名を指定して実行すると、"
+"対応するパスワードの入力を求められます。なお、 &rootuser; から実行している"
+"場合は、パスワードの入力は求められません。これは、 &rootuser; が全ての"
+"ユーザの管理者であるためです。ユーザ名を指定せずに実行した場合、"
+" &rootuser; のパスワード入力を求められ、パスワードが適合していれば"
+" &rootuser; になることができます。また、 <command>su -</command> のように"
+"実行すると、異なるユーザ向けにログインシェルを起動するようになります。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:955
 #, no-c-format
 msgid "<command>halt</command> &#x20; <replaceable>OPTIONS</replaceable>"
-msgstr ""
+msgstr "<command>halt</command> &#x20; <replaceable>オプション</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:957
@@ -1340,13 +1570,13 @@ msgstr ""
 msgid ""
 "To avoid loss of data, you should always use this program to shut down your "
 "system."
-msgstr ""
+msgstr "データの損失を避けるため、このプログラムでシステムをシャットタウンしてください。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:964
 #, no-c-format
 msgid "<command>reboot</command> &#x20; <replaceable>OPTIONS</replaceable>"
-msgstr ""
+msgstr "<command>reboot</command> &#x20; <replaceable>オプション</replaceable>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:966
@@ -1354,26 +1584,25 @@ msgstr ""
 msgid ""
 "Does the same as <command>halt</command> except the system performs an "
 "immediate reboot."
-msgstr ""
+msgstr "<command>halt</command> コマンドと似た仕組みで、こちらはシステムを再起動します。"
 
 #. Tag: term
 #: newbie_bash_commands_i.xml:973
 #, no-c-format
 msgid "<command>clear</command>"
-msgstr ""
+msgstr "<command>clear</command>"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:975
 #, no-c-format
-msgid ""
-"This command cleans up the visible area of the console. It has no options."
-msgstr ""
+msgid "This command cleans up the visible area of the console. It has no options."
+msgstr "このコマンドは、端末内の可視領域を消去します。オプションはありません。"
 
 #. Tag: title
 #: newbie_bash_commands_i.xml:986
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: newbie_bash_commands_i.xml:987
@@ -1383,3 +1612,7 @@ msgid ""
 "about other commands or more detailed information, also see the publication "
 "<citetitle>Linux in a Nutshell</citetitle> by O'Reilly."
 msgstr ""
+"本章で記述しているよりもずっと多くのコマンドが、システムには存在しています。"
+"他のコマンドに関する情報や、さらに詳しい情報については、 O'Reilly 社発行の書籍"
+" <citetitle>Linux in a Nutshell</citetitle> をお読みになることをお勧めします。"
+
