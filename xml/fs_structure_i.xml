@@ -4,530 +4,305 @@
 %entities;
 ]>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.adm.dirstructure">
- <title>The Directory Structure</title>
+ <title>ディレクトリ構造</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
- <para>
-  The following table provides a short overview of the most important
-  higher-level directories that you find on a Linux system. Find more detailed
-  information about the directories and important subdirectories in the
-  following list.
- </para>
+ <para>下記の表には、 Linux システムにおける最も重要なディレクトリ構造と、それぞれのディレクトリに対する用途の説明を記載しています。</para>
  <table>
-  <title>Overview of a Standard Directory Tree</title>
+  <title>標準ディレクトリ構造の概要</title>
   <tgroup cols="2">
    <colspec colnum="1" colname="1" colwidth="25*"/>
    <colspec colnum="2" colname="2" colwidth="75*"/>
    <thead>
     <row>
      <entry>
-      <para>
-       Directory
-      </para>
+      <para>ディレクトリ</para>
      </entry>
      <entry>
-      <para>
-       Contents
-      </para>
+      <para>内容</para>
      </entry>
     </row>
    </thead>
    <tbody>
     <row>
      <entry>
-      <para>
-       <filename>/</filename>
-      </para>
+      <para><filename>/</filename></para>
      </entry>
      <entry>
-      <para>
-       Root directory&mdash;the starting point of the directory tree.
-      </para>
+      <para>ルートディレクトリです。ディレクトリツリーの開始点です。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/bin</filename>
-      </para>
+      <para><filename>/bin</filename></para>
      </entry>
      <entry>
-      <para>
-       Essential binary files, such as commands that are needed by both the
-       system administrator and normal users. Usually also contains the shells,
-       such as Bash.
-      </para>
+      <para>システム管理者と一般ユーザの両方で必要となる、主要なバイナリファイルが含まれるディレクトリです。 bash などのシェルもここに用意されています。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/boot</filename>
-      </para>
+      <para><filename>/boot</filename></para>
      </entry>
      <entry>
-      <para>
-       Static files of the boot loader.
-      </para>
+      <para>ブートローダが使用する各種のファイルがあるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/dev</filename>
-      </para>
+      <para><filename>/dev</filename></para>
      </entry>
      <entry>
-      <para>
-       Files needed to access host-specific devices.
-      </para>
+      <para>ホスト固有のデバイスにアクセスするためのファイルがあるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/etc</filename>
-      </para>
+      <para><filename>/etc</filename></para>
      </entry>
      <entry>
-      <para>
-       Host-specific system configuration files.
-      </para>
+      <para>ホスト固有のシステム設定ファイルがあるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/home</filename>
-      </para>
+      <para><filename>/home</filename></para>
      </entry>
      <entry>
-      <para>
-       Holds the home directories of all users who have accounts on the system.
-       However, &rootuser;'s home directory is not located in
-       <filename>/home</filename> but in <filename>/root</filename>.
-      </para>
+      <para>システムにアカウントを持つ全てのユーザに対して、ホームディレクトリが作成されるディレクトリです。ただし、 &rootuser; のホームディレクトリについては、 <filename>/home</filename> ではなく <filename>/root</filename> にあります。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/lib</filename>
-      </para>
+      <para><filename>/lib</filename></para>
      </entry>
      <entry>
-      <para>
-       Essential shared libraries and kernel modules.
-      </para>
+      <para>主要な共有ライブラリとカーネルモジュールがあるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/media</filename>
-      </para>
+      <para><filename>/media</filename></para>
      </entry>
      <entry>
-      <para>
-       Mount points for removable media.
-      </para>
+      <para>リムーバブルメディアのマウントポイントです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/mnt</filename>
-      </para>
+      <para><filename>/mnt</filename></para>
      </entry>
      <entry>
-      <para>
-       Mount point for temporarily mounting a file system.
-      </para>
+      <para>一時的にファイルシステムをマウントするためのマウントポイントです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/opt</filename>
-      </para>
+      <para><filename>/opt</filename></para>
      </entry>
      <entry>
-      <para>
-       Add-on application software packages.
-      </para>
+      <para>アドオン製品のソフトウエアパッケージが配置されるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/root</filename>
-      </para>
+      <para><filename>/root</filename></para>
      </entry>
      <entry>
-      <para>
-       Home directory for the superuser &rootuser;.
-      </para>
+      <para>スーパーユーザ &rootuser; のホームディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/sbin</filename>
-      </para>
+      <para><filename>/sbin</filename></para>
      </entry>
      <entry>
-      <para>
-       Essential system binaries.
-      </para>
+      <para>主要なシステムバイナリが含まれるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/srv</filename>
-      </para>
+      <para><filename>/srv</filename></para>
      </entry>
      <entry>
-      <para>
-       Data for services provided by the system.
-      </para>
+      <para>システムが提供するサービス向けのデータが含まれるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/tmp</filename>
-      </para>
+      <para><filename>/tmp</filename></para>
      </entry>
      <entry>
-      <para>
-       Temporary files.
-      </para>
+      <para>一時的な (テンポラリ) ファイルが配置されるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/usr</filename>
-      </para>
+      <para><filename>/usr</filename></para>
      </entry>
      <entry>
-      <para>
-       Secondary hierarchy with read-only data.
-      </para>
+      <para>読み込み専用のデータが配置される二次構造のディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/var</filename>
-      </para>
+      <para><filename>/var</filename></para>
      </entry>
      <entry>
-      <para>
-       Variable data such as log files.
-      </para>
+      <para>ログファイルなどの可変データが含まれるディレクトリです。</para>
      </entry>
     </row>
     <row>
      <entry>
-      <para>
-       <filename>/windows</filename>
-      </para>
+      <para><filename>/windows</filename></para>
      </entry>
      <entry>
-      <para>
-       Only available if you have both Microsoft Windows* and Linux installed
-       on your system. Contains the Windows data.
-      </para>
+      <para>お使いのシステムに Microsoft Windows* と Linux が同時にインストールされている場合にのみ利用できるディレクトリです。 Windows 側のデータが含まれています。</para>
      </entry>
     </row>
    </tbody>
   </tgroup>
  </table>
- <para>
-  The following list provides more detailed information and gives some examples
-  of which files and subdirectories can be found in the directories:
- </para>
+ <para>下記の一覧では、より詳しい説明を行なっているほか、それらのディレクトリ内に存在するファイルやサブディレクトリも例示しています:</para>
  <variablelist>
   <varlistentry>
-   <term><filename>/bin</filename>
-   </term>
+   <term><filename>/bin</filename></term>
    <listitem>
-    <para>
-     Contains the basic shell commands that may be used both by &rootuser; and
-     by other users. These commands include <command>ls</command>,
-     <command>mkdir</command>, <command>cp</command>, <command>mv</command>,
-     <command>rm</command> and <command>rmdir</command>.
-     <filename>/bin</filename> also contains Bash, the default shell in
-     &productname;.
-    </para>
+    <para>&rootuser; と一般ユーザの両方が使用する、基本的なシェルコマンド類が含まれています。たとえば <command>ls</command> , <command>mkdir</command> , <command>cp</command> , <command>mv</command> , <command>rm</command> , <command>rmdir</command> などがあります。また、 <filename>/bin</filename> ディレクトリには &productname; における既定のシェル bash も含まれています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/boot</filename>
-   </term>
+   <term><filename>/boot</filename></term>
    <listitem>
-    <para>
-     Contains data required for booting, such as the boot loader, the kernel,
-     and other data that is used before the kernel begins executing user-mode
-     programs.
-    </para>
+    <para>ブートローダやカーネルのほか、カーネルがユーザモードに切り替わる前に必要となる、各種データが含まれています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/dev</filename>
-   </term>
+   <term><filename>/dev</filename></term>
    <listitem>
-    <para>
-     Holds device files that represent hardware components.
-    </para>
+    <para>ハードウエアコンポーネントを表わす各種のデバイスファイルが含まれています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/etc</filename>
-   </term>
+   <term><filename>/etc</filename></term>
    <listitem>
-    <para>
-     Contains local configuration files that control the operation of programs
-     like the X Window System. The <filename>/etc/init.d</filename>
-     subdirectory contains LSB init scripts that can be executed during the
-     boot process.
-    </para>
+    <para>X Window System などのプログラムを制御する際に必要となる、ローカル側の設定ファイルが含まれています。 <filename>/etc/init.d</filename> サブディレクトリには、起動処理時に実行される LSB 初期化スクリプトが含まれています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/home/<replaceable>USERNAME</replaceable></filename>
-   </term>
+   <term><filename>/home/<replaceable>ユーザ名</replaceable></filename></term>
    <listitem>
-    <para>
-     Holds the private data of every user who has an account on the system. The
-     files located here can only be modified by their owner or by the system
-     administrator. By default, your e-mail directory and personal desktop
-     configuration are located here in the form of hidden files and
-     directories, such as <filename>.gconf/</filename> and
-     <filename>.config</filename>.
-    </para>
+    <para>システム内にアカウントを持つ各ユーザに対して提供される、プライベートなディレクトリです。ここには各ユーザやシステムの管理者のみが変更することのできる、各種のファイルが配置されます。既定では、電子メールやデスクトップ環境の個人名設定なども、この中の隠しファイルや隠しサブディレクトリ (例: <filename>.gconf/</filename> , <filename>.config</filename> など) に配置されます。</para>
     <note>
-     <title>Home Directory in a Network Environment</title>
-     <para>
-      If you are working in a network environment, your home directory may be
-      mapped to a directory in the file system other than
-      <filename>/home</filename>.
-     </para>
+     <title>ネットワーク環境におけるホームディレクトリについて</title>
+     <para>ネットワーク環境で作業を行なっている場合、ホームディレクトリが <filename>/home</filename> 以外のディレクトリになっている場合があります。</para>
     </note>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/lib</filename>
-   </term>
+   <term><filename>/lib</filename></term>
    <listitem>
-    <para>
-     Contains the essential shared libraries needed to boot the system and to
-     run the commands in the root file system. The Windows equivalent for
-     shared libraries are DLL files.
-    </para>
+    <para>システムを起動したり、ルートファイルシステム内で様々なコマンドを実行したりする際に必要な、各種の共有ライブラリが含まれています。 Windows では、共有ライブラリのことを DLL ファイルと呼ばれています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/media</filename>
-   </term>
+   <term><filename>/media</filename></term>
    <listitem>
-    <para>
-     Contains mount points for removable media, such as CD-ROMs, flash disks,
-     and digital cameras (if they use USB). <filename>/media</filename>
-     generally holds any type of drive except the hard disk of your system.
-     When your removable medium has been inserted or connected to the system
-     and has been mounted, you can access it from here.
-     <remark>taroth 060518:
-       find out how the names of the drives are assigned to a
-     medium!</remark>
-    </para>
+    <para>CD-ROM や USB メモリ、デジタルカメラ (USB 接続の場合) などのリムーバブルメディア向けのマウントポイントが含まれています。 <filename>/media</filename> は一般に、お使いのシステムのハードディスクを除く任意のドライブのマウントポイントとなるものです。システムに対してリムーバブルメディアを挿入したり接続したりした場合は、ここからアクセスすることができるようになります。<remark>taroth 060518: find out how the names of the drives are assigned to a medium!</remark></para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/mnt</filename>
-   </term>
+   <term><filename>/mnt</filename></term>
    <listitem>
-    <para>
-     This directory provides a mount point for a temporarily mounted file
-     system. &rootuser; may mount file systems here.
-    </para>
+    <para>このディレクトリは、一時的にファイルシステムをマウントするためのディレクトリです。 &rootuser; がこのディレクトリにマウントする場合もあります。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/opt</filename>
-   </term>
+   <term><filename>/opt</filename></term>
    <listitem>
-    <para>
-     Reserved for the installation of third-party software. Optional software
-     and larger add-on program packages can be found here.
-    </para>
+    <para>サードパーティ製のソフトウエアをインストールするための予約ディレクトリです。オプションのソフトウエアのほか、巨大なアドオンプログラムなどが配置されます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/root</filename>
-   </term>
+   <term><filename>/root</filename></term>
    <listitem>
-    <para>
-     Home directory for the &rootuser; user. The personal data of &rootuser; is
-     located here.
-    </para>
+    <para>&rootuser; ユーザのホームディレクトリです。 &rootuser; の個人的なデータが保存されます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/run</filename>
-   </term>
+   <term><filename>/run</filename></term>
    <listitem>
-    <para>
-     A tmpfs directory used by <systemitem>systemd</systemitem> and various
-     components. <filename>/var/run</filename> is a symbolic link to
-     <filename>/run</filename>.
-    </para>
+    <para><systemitem>systemd</systemitem> などの様々なコンポーネントが使用する tmpfs ディレクトリです。 <filename>/var/run</filename> は <filename>/run</filename> へのシンボリックリンクになっています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/sbin</filename>
-   </term>
+   <term><filename>/sbin</filename></term>
    <listitem>
-    <para>
-     As the <literal>s</literal> indicates, this directory holds utilities for
-     the superuser. <filename>/sbin</filename> contains the binaries essential
-     for booting, restoring and recovering the system in addition to the
-     binaries in <filename>/bin</filename>.
-    </para>
+    <para><literal>s</literal> は <quote>スーパーユーザ</quote> の意味で、スーパーユーザ向けのユーティリティ類が含まれています。 <filename>/sbin</filename> には<filename>/bin</filename> に加えて、起動やシステムの復元、回復などを行なうプログラム類が含まれています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/srv</filename>
-   </term>
+   <term><filename>/srv</filename></term>
    <listitem>
-    <para>
-     Holds data for services provided by the system, such as FTP and HTTP.
-    </para>
+    <para>FTP や HTTP など、システムが提供するサービス向けのデータが含まれています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/tmp</filename>
-   </term>
+   <term><filename>/tmp</filename></term>
    <listitem>
-    <para>
-     This directory is used by programs that require temporary storage of
-     files.
-    </para>
+    <para>このディレクトリは、プログラムがファイルを一時的に保存する際のディレクトリです。</para>
     <important>
-     <title>Cleaning up <filename>/tmp</filename> at Boot Time</title>
-     <para>
-      Data stored in <filename>/tmp</filename> is not guaranteed to survive a
-      system reboot. It depends, for example, on settings made in
-      <filename>/etc/tmpfiles.d/tmp.conf</filename>.
-     </para>
+     <title>起動時の <filename>/tmp</filename> の清掃処理について</title>
+     <para><filename>/tmp</filename> 内に保存されているファイルは、システムを再起動すると失われる (清掃される) 場合があります。清掃処理はシステムの環境に依存しますが、<filename>/etc/tmpfiles.d/tmp.conf</filename> などに設定がある場合があります。</para>
     </important>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/usr</filename>
-   </term>
+   <term><filename>/usr</filename></term>
    <listitem>
-    <para>
-     <literal>/usr</literal> has nothing to do with users, but is the acronym
-     for Unix system resources. The data in <filename>/usr</filename> is
-     static, read-only data that can be shared among various hosts compliant
-     with the <literal>Filesystem Hierarchy Standard</literal> (FHS). This
-     directory contains all application programs including the graphical
-     desktops such as GNOME and establishes a secondary hierarchy in the file
-     system. <filename>/usr</filename> holds several subdirectories, such as
-     <filename>/usr/bin</filename>, <filename>/usr/sbin</filename>,
-     <filename>/usr/local</filename>, and <filename>/usr/share/doc</filename>.
-    </para>
+    <para><literal>/usr</literal> は <literal>user</literal> ではありませんし、関係もありません。 <literal>/usr</literal> は <literal>Unix System Resources</literal> の略で、頻繁に書き込まれるようなものではない、固定でほぼ読み込み専用の、ホスト間で共有しうるデータやプログラムが保存されます。このディレクトリは <literal>Filesystem Hierarchy Standard</literal> (FHS) の企画に準拠したディレクトリで、 GNOME などのデスクと婦環境を含むアプリケーションプログラムを保持する、ファイルシステム内での二次的な構造を提供するものです。また、 <filename>/usr</filename> には<filename>/usr/bin</filename> , <filename>/usr/sbin</filename> , <filename>/usr/local</filename> , <filename>/usr/share/doc</filename> などのサブディレクトリが作成されます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/usr/bin</filename>
-   </term>
+   <term><filename>/usr/bin</filename></term>
    <listitem>
-    <para>
-     Contains generally accessible programs.
-    </para>
+    <para>一般的に利用可能なプログラムが配置されます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/usr/sbin</filename>
-   </term>
+   <term><filename>/usr/sbin</filename></term>
    <listitem>
-    <para>
-     Contains programs reserved for the system administrator, such as repair
-     functions.
-    </para>
+    <para>各種の修復機能など、システム管理者向けに予約されたプログラムが配置されます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/usr/local</filename>
-   </term>
+   <term><filename>/usr/local</filename></term>
    <listitem>
-    <para>
-     In this directory the system administrator can install local,
-     distribution-independent extensions.
-    </para>
+    <para>このディレクトリには、システム管理者が独自にインストールした、ディストリビューション外の拡張が配置されます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/usr/share/doc</filename>
-   </term>
+   <term><filename>/usr/share/doc</filename></term>
    <listitem>
-    <para>
-     Holds various documentation files and the release notes for your system.
-     In the <filename>manual</filename> subdirectory find an online version of
-     this manual. If more than one language is installed, this directory may
-     contain versions of the manuals for different languages.
-    </para>
-    <para>
-     Under <filename>packages</filename> find the documentation included in the
-     software packages installed on your system. For every package, a
-     subdirectory
-     <filename>/usr/share/doc/packages/<replaceable>PACKAGENAME</replaceable></filename>
-     is created that often holds README files for the package and sometimes
-     examples, configuration files or additional scripts.
-    </para>
-    <para>
-     If HOWTOs are installed on your system <filename>/usr/share/doc</filename>
-     also holds the <filename>howto</filename> subdirectory in which to find
-     additional documentation on many tasks related to the setup and operation
-     of Linux software.
-    </para>
+    <para>お使いのシステムに対応する、様々なドキュメンテーションファイルやリリースノートが配置されます。 <filename>manual</filename> サブディレクトリには、このマニュアルのオンライン版が用意されている場合もあります。また、複数の言語をインストールしている場合、このディレクトリには複数の言語に対応したマニュアルが配置されている場合もあります。</para>
+    <para><filename>packages</filename> サブディレクトリには、お使いのシステムにインストールされているソフトウエアパッケージに含まれる、各種のドキュメンテーションが配置されます。それぞれのパッケージごとに <filename>/usr/share/doc/packages/<replaceable>パッケージ名</replaceable></filename> というサブディレクトリが作成されていて、 README ファイルやその他のサンプル、設定ファイルの例や追加のスクリプトなどが提供されます。</para>
+    <para>HOWTO についても <filename>/usr/share/doc</filename> 以下の <filename>howto</filename> サブディレクトリ内に配置されていることがあります。ここには Linux ソフトウエアの設定や操作など、様々な作業に対する追加のドキュメンテーションが配置されます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><filename>/var</filename>
-   </term>
+   <term><filename>/var</filename></term>
    <listitem>
-    <para>
-     Whereas <filename>/usr</filename> holds static, read-only data,
-     <filename>/var</filename> is for data which is written during system
-     operation and thus is variable data, such as log files or spooling data.
-     For an overview of the most important log files you can find under
-     <filename>/var/log/</filename>, refer to
-     <xref linkend="tab.trouble.info"/>.
-    </para>
+    <para><filename>/usr</filename> には固定でほぼ読み込み専用のデータがありましたが、<filename>/var</filename> にはシステムの動作中に適宜書き込みや書き換えが行なわれる、様々な可変 (<literal>variable</literal>) データが含まれています。これにはたとえば、ログファイルやスプールデータなどが含まれます。 <filename>/var/log/</filename> 以下のログファイルについて、詳しくは <xref linkend="tab.trouble.info"/> をお読みください。</para>
    </listitem>
   </varlistentry>
   <varlistentry os="sled;osuse">
-   <term><filename>/windows</filename>
-   </term>
+   <term><filename>/windows</filename></term>
    <listitem>
-    <para>
-     Only available if you have both Microsoft Windows and Linux installed on
-     your system. Contains the Windows data available on the Windows partition
-     of your system. Whether you can edit the data in this directory depends on
-     the file system your Windows partition uses. If it is FAT32, you can open
-     and edit the files in this directory. For NTFS, &productname; also
-     includes write access support. However, the driver for the NTFS-3g file
-     system has limited functionality.
-    </para>
+    <para>Microsoft Windows と Linux を同じシステム内にインストールしている場合にのみ、利用できるディレクトリです。ここにはお使いのシステムにインストールされた Windows のパーティションがマウントされ、ここから読み書きができるようになっています。 Windows 側のファイルシステムに依存しますが、 FAT32 であれば何も問題なく読み書きすることができます。 NTFS の場合にも &productname; は読み書きの両方に対応する機能が用意されていますが、ドライバである NTFS-3g 側の制限により、全ての機能を利用できるというわけではありません。</para>
    </listitem>
   </varlistentry>
  </variablelist>
