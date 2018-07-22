@@ -4,247 +4,115 @@
 %entities;
 ]>
 <sect2 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.trouble.data.recover.rescue">
- <title>Using the Rescue System</title>
+ <title>レスキューシステムの使用</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
- <para>
-  There are several reasons a system could fail to come up and run properly. A
-  corrupted file system following a system crash, corrupted configuration
-  files, or a corrupted boot loader configuration are the most common ones.
- </para>
- <para>
-  To help you to resolve these situations, &productname; contains a rescue
-  system that you can boot. The rescue system is a small Linux system that can
-  be loaded into a RAM disk and mounted as root file system, allowing you to
-  access your Linux partitions from the outside. Using the rescue system, you
-  can recover or modify any important aspect of your system.
- </para>
+ <para>様々な理由から、システムは起動しなくなってしまったり、正しく動作しなくなってしまったりすることがあります。たとえばシステムがクラッシュしてファイルシステムが壊れてしまったり、設定ファイルやブートローダが壊れてしまったり、などの問題が発生することがあります。</para>
+ <para>このような問題を解決するための支援として、 &productname; にはレスキューシステムと呼ばれる仕組みが用意されています。レスキューシステムは小さな Linux システムで、 RAM ディスク内に読み込まれてルートファイルシステムとなることができるものであるため、 Linux のパーティションをインストール済みの Linux の外側からアクセスすることができるようになります。レスキューシステムを使用すれば、お使いのシステム内の主要な要素を復元し、修復することができるようになります。</para>
  <itemizedlist mark="bullet" spacing="normal">
   <listitem>
-   <para>
-    Manipulate any type of configuration file.
-   </para>
+   <para>任意の種類の設定ファイルに対する編集作業</para>
   </listitem>
   <listitem>
-   <para>
-    Check the file system for defects and start automatic repair processes.
-   </para>
+   <para>ファイルシステムの瑕疵部分の修正と自動的な修復処理の実行</para>
   </listitem>
   <listitem>
-   <para>
-    Access the installed system in a <quote>change root</quote> environment.
-   </para>
+   <para><quote>change root</quote> 環境でのインストール済みシステムへのアクセス</para>
   </listitem>
   <listitem>
-   <para>
-    Check, modify, and re-install the boot loader configuration.
-   </para>
+   <para>ブートローダの設定の確認／修正／再インストール</para>
   </listitem>
   <listitem>
-   <para>
-    Recover from a badly installed device driver or unusable kernel.
-   </para>
+   <para>うまく動作しないデバイスドライバや使用不可能なカーネルからの回復</para>
   </listitem>
   <listitem>
-   <para>
-    Resize partitions using the parted command. Find more information about
-    this tool at the GNU Parted Web site
-    <link xlink:href="http://www.gnu.org/software/parted/parted.html"/>.
-   </para>
+   <para>parted コマンドを使用したパーティションサイズの変更。 GNU Parted について、詳しくは GNU Parted の Web サイト <link xlink:href="http://www.gnu.org/software/parted/parted.html"/> をご覧ください。</para>
   </listitem>
  </itemizedlist>
- <para>
-  The rescue system can be loaded from various sources and locations. The
-  simplest option is to boot the rescue system from the original installation
-  medium.
- </para>
+ <para>レスキューシステムは様々なメディアや場所から読み込むことができます。最もシンプルな方法は、インストールに使用したメディアから起動することです。</para>
  <note os="sles" arch="zseries">
-  <title>&zseries; Starting the Rescue System</title>
-  <para>
-   On &zseries; the installation system can be used for rescue purposes. To
-   start the rescue system follow the instructions in
-   <xref linkend="sec.zseries.rescue"/>.
-  </para>
+  <title>&zseries; でのレスキューシステムの起動</title>
+  <para>&zseries; では、インストールシステムをレスキューシステムとして使用することができます。レスキューシステムの起動について、詳しくは <xref linkend="sec.zseries.rescue"/> をお読みください。</para>
  </note>
  <procedure>
   <step>
-   <para>
-    Insert the installation medium into your DVD drive.
-   </para>
+   <para>まずはインストールメディアを DVD ドライブに挿入します。</para>
   </step>
   <step>
-   <para>
-    Reboot the system.
-   </para>
+   <para>システムを再起動します。</para>
   </step>
   <step>
-   <para>
-    At the boot screen, press <keycap>F4</keycap> and choose
-    <guimenu>DVD-ROM</guimenu>. Then choose <guimenu>Rescue System</guimenu>
-    from the main menu.
-   </para>
+   <para>起動画面では、<!-- NOTE: change language --> <keycap>F2</keycap> を押して言語を選択してから、<!-- NOTE: change language --> <keycap>F4</keycap> を押して <guimenu>DVD-ROM</guimenu> を選択します。その後、メインメニューから <guimenu>レスキューシステム</guimenu> を選択します。</para>
   </step>
   <step>
-   <para>
-    Enter <literal>root</literal> at the <literal>Rescue:</literal> prompt. A
-    password is not required.
-   </para>
+   <para><literal>Rescue:</literal> のプロンプトが表示されたら、 <literal>root</literal> と入力します。パスワードは不要です。</para>
   </step>
  </procedure>
  <procedure xml:id="proc.trouble.data.recover.rescue.network">
-  <para>
-   If your hardware setup does not include a DVD drive, you can boot the rescue
-   system from a network source. The following example applies to a remote boot
-   scenario&mdash;if using another boot medium, such as a DVD, modify the
-   <filename>info</filename> file accordingly and boot as you would for a
-   normal installation.
-  </para>
+  <para>お使いのマシンに DVD ドライブがない場合は、ネットワーク経由でレスキューシステムを起動することができます。たとえば下記の例はネットワーク上離れた場所にあるサーバから起動する例です。<!-- not applicable?: if using another boot medium, such as a DVD, modify the <filename>info</filename> file accordingly and boot as you would for a normal installation. --></para>
   <step>
-   <para>
-    Enter the configuration of your PXE boot setup and add the lines
-    <literal>install=<replaceable>PROTOCOL</replaceable>://<replaceable>INSTSOURCE</replaceable></literal>
-    and <literal>rescue=1</literal>. If you need to start the repair system,
-    use <literal>repair=1</literal> instead. As with a normal installation,
-    <replaceable>PROTOCOL</replaceable> stands for any of the supported network
-    protocols (NFS, HTTP, FTP, etc.) and <replaceable>INSTSOURCE</replaceable>
-    for the path to your network installation source.
-   </para>
+   <para>PXE ブートの設定画面に入って、それぞれ<literal>install=<replaceable>プロトコル</replaceable>://<replaceable>ソースパス</replaceable></literal> と <literal>rescue=1</literal> を追加します。修復システムを起動する場合は、 <literal>repair=1</literal> を追加してください。通常のインストール時と同様に、 <replaceable>プロトコル</replaceable> には対応するネットワークプロトコル (NFS, HTTP, FTP など) を入れ、 <replaceable>ソースパス</replaceable> にはネットワーク上のインストール元に対するパスを指定します。</para>
   </step>
   <step>
-   <para>
-    Boot the system using <quote>Wake on LAN</quote><phrase os="sles;sled">, as
-    described in <xref linkend="sec.deployment.prep_boot.wol"/></phrase>.
-   </para>
+   <para><quote>Wake on LAN</quote> を利用してシステムを起動します。 <phrase os="sles;sled">, 詳しくは <xref linkend="sec.deployment.prep_boot.wol"/> をお読みください。</phrase></para>
   </step>
   <step>
-   <para>
-    Enter <literal>root</literal> at the <literal>Rescue:</literal> prompt. A
-    password is not required.
-   </para>
+   <para><literal>Rescue:</literal> のプロンプトが表示されたら、 <literal>root</literal> と入力します。パスワードは不要です。</para>
   </step>
  </procedure>
- <para>
-  When you have entered the rescue system, you can use the virtual consoles
-  that can be reached with
-  <keycombo><keycap function="alt"/><keycap>F1</keycap></keycombo> to
-  <keycombo><keycap function="alt"/><keycap>F6</keycap></keycombo>.
- </para>
- <para>
-  A shell and other useful utilities, such as the mount program, are
-  available in the <filename>/bin</filename> directory. The
-  <filename>/sbin</filename> directory contains important file and network
-  utilities for reviewing and repairing the file system. This directory also
-  contains the most important binaries for system maintenance, such as
-  <command>fdisk</command>, <command>mkfs</command>, <command>mkswap</command>,
-  <command>mount</command>, and <command>shutdown</command>,
-  <command>ip</command> and <command>ss</command> for maintaining the network.
-  The directory <filename>/usr/bin</filename> contains the vi editor, find,
-  less, and SSH.
- </para>
- <para>
-  To see the system messages, either use the command <command>dmesg</command>
-  or view the system log with <command>journalctl</command>.
- </para>
+ <para>レスキューシステムに入ったあとは、複数の仮想コンソールを使用できるようになります。それぞれ <keycombo><keycap function="alt"/><keycap>F1</keycap></keycombo> から <keycombo><keycap function="alt"/><keycap>F6</keycap></keycombo> までを押してアクセスしてください。</para>
+ <para>シェルや mount プログラムなどのユーティリティ類が、 <filename>/bin</filename> ディレクトリ内に配置されています。また、 <filename>/sbin</filename> ディレクトリには、重要なファイルユーティリティやネットワークユーティリティが配置されています。ファイルユーティリティには、たとえばファイルシステムの確認や修復などのコマンドが含まれます。また、このディレクトリにはシステムをメンテナンスするための様々なプログラムも用意されています。具体的には、 <command>fdisk</command> , <command>mkfs</command> , <command>mkswap</command> , <command>mount</command> , and <command>shutdown</command> , <command>ip</command> , <command>ss</command> などがあります。さらに、 <filename>/usr/bin</filename> ディレクトリには、 vi エディタや find, less, SSH などの各プログラムも用意されています。</para>
+ <para>システムからのメッセージを読みたい場合は <command>dmesg</command> コマンドを、システムログを読みたい場合は <command>journalctl</command> をそれぞれお使いください。</para>
  <sect3 xml:id="sec.trouble.data.recover.rescue.file">
-  <title>Checking and Manipulating Configuration Files</title>
-  <para>
-   As an example for a configuration that might be fixed using the rescue
-   system, imagine you have a broken configuration file that prevents the
-   system from booting properly. You can fix this using the rescue system.
-  </para>
+  <title>設定ファイルの確認と操作</title>
+  <para>レスキューシステムで設定ファイルを修正する場合の例として、たとえば何らかの設定ファイルが壊れてしまっていて、それによって起動が妨げられている場合を考えます。これもレスキューシステムを使用すれば、解決することができます。</para>
   <procedure>
-   <para>
-    To manipulate a configuration file, proceed as follows:
-   </para>
+   <para>設定ファイルを修正するには、下記の手順で行ないます:</para>
    <step>
-    <para>
-     Start the rescue system using one of the methods described above.
-    </para>
+    <para>まずは上述のいずれかの方法で、レスキューシステムを起動します。</para>
    </step>
    <step>
-    <para>
-     To mount a root file system located under <filename>/dev/sda6</filename>
-     to the rescue system, use the following command:
-    </para>
+    <para><filename>/dev/sda6</filename> にあるルートファイルシステムをマウントするには、下記のコマンドを実行します:</para>
 <screen>&prompt.sudo;mount /dev/sda6 /mnt</screen>
-    <para>
-     All directories of the system are now located under
-     <filename>/mnt</filename>
-    </para>
+    <para>これで <filename>/mnt</filename> 内にルートファイルシステムが見えるようになります。</para>
    </step>
    <step>
-    <para>
-     Change the directory to the mounted root file system:
-    </para>
+    <para>マウントしたルートファイルシステム内に移動します:</para>
 <screen>&prompt.sudo;cd /mnt</screen>
    </step>
    <step>
-    <para>
-     Open the problematic configuration file in the vi editor. Adjust and save
-     the configuration.
-    </para>
+    <para>vi エディタを利用して、問題のある設定ファイルを開きます。必要な修正を加えたあと、保存して終了します。</para>
    </step>
    <step>
-    <para>
-     Unmount the root file system from the rescue system:
-    </para>
+    <para>最後にレスキューシステムからファイルシステムのマウントを解除します:</para>
 <screen>&prompt.sudo;umount /mnt</screen>
    </step>
    <step>
-    <para>
-     Reboot the machine.
-    </para>
+    <para>あとはマシンを再起動するだけです。</para>
    </step>
   </procedure>
  </sect3>
  <sect3 xml:id="sec.trouble.data.recover.rescue.filesystem">
-  <title>Repairing and Checking File Systems</title>
-  <para>
-   Generally, file systems cannot be repaired on a running system. If you
-   encounter serious problems, you may not even be able to mount your root file
-   system and the system boot may end with a <quote>kernel panic</quote>. In
-   this case, the only way is to repair the system from the outside. The system
-   contains the utilities to check and repair the <literal>btrfs</literal>,
-   <literal>ext2</literal>, <literal>ext3</literal>, <literal>ext4</literal>,
-   <literal>xfs</literal>, <literal>dosfs</literal>, and <literal>vfat</literal>
-   file systems. Look for the command
-   <command>fsck.<replaceable>FILESYSTEM</replaceable></command>.
-   For example, if you need a file system
-   check for <literal>btrfs</literal>, use <command>fsck.btrfs</command>.
-  </para>
+  <title>ファイルシステムの修復とチェック</title>
+  <para>一般的には、システムが動作している場合はファイルシステムの修復を行なうことができません。また、ルートファイルシステムに重大な問題が発生した場合は、マウントを行なうことができず、起動を行なっても <quote>カーネルパニック</quote> の状態で停止してしまうことがあります。この場合は、システムの外部からファイルシステムを修復するしか手段がなくなってしまいます。レスキューシステムには、 <literal>btrfs</literal> , <literal>ext2</literal> , <literal>ext3</literal> , <literal>ext4</literal> , <literal>xfs</literal> , <literal>dosfs</literal> , <literal>vfat</literal> の各ファイルシステムに対応した、チェックと修復のためのプログラムが含まれています。それぞれは <command>fsck.<replaceable>ファイルシステム</replaceable></command> の名前で提供されています。たとえば <literal>btrfs</literal> のファイルシステムをチェックしたい場合は、 <command>fsck.btrfs</command> を使用します。</para>
 <!-- TODO: Add FATE#315126 -->
  </sect3>
  <sect3 xml:id="sec.trouble.data.recover.rescue.access">
-  <title>Accessing the Installed System</title>
-  <para>
-   If you need to access the installed system from the rescue system, you need
-   to do this in a <emphasis>change root</emphasis> environment. For example,
-   to modify the boot loader configuration, or to execute a hardware
-   configuration utility.
-  </para>
-  <para>
-   To set up a change root environment based on the installed system, proceed
-   as follows:
-  </para>
+  <title>インストール済みシステムへのアクセス</title>
+  <para>レスキューシステムからインストール済みのシステムにアクセスする必要がある場合は、 <emphasis>change root</emphasis> という仕組みを利用します。たとえばブートローダの設定を修正する場合や、ハードウエアの設定ユーティリティを実行するような場合がそれにあたります。</para>
+  <para>インストール済みのシステムに対して、 change root 環境を構築するには、下記の手順で行ないます:</para>
   <procedure>
    <step>
     <tip>
-     <title>Import LVM Volume Groups</title>
-     <para>
-      If you are using an LVM setup (refer to <xref os="sles" linkend="part.lvm"/><xref os="sled;osuse" linkend="sec.yast.system.lvm"/> for more
-      general details), import all existing volume groups to be able to
-      find and mount the device(s):
-     </para>
+     <title>LVM ボリュームグループの取り込み</title>
+     <para>LVM を使用している場合 (詳しくは <xref os="sles" linkend="part.lvm"/> <xref os="sled;osuse" linkend="sec.yast.system.lvm"/> をお読みください) は、全ての既存のボリュームグループを取り込んで、デバイスをマウントできるようにする必要があります:</para>
 <screen>&rootuser;vgimport -a</screen>
     </tip>
-    <para>
-     Run <command>lsblk</command> to check which node corresponds to the root
-     partition. It is <filename>/dev/sda2</filename> in our example:
-    </para>
+    <para><command>lsblk</command> コマンドを実行して、ノードとルートパーティションの関係性を調査します。たとえば下記の例では、 <filename>/dev/sda2</filename> がルートパーティションになります:</para>
 <screen>&prompt.user;lsblk
 NAME        MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda           8:0    0 149,1G  0 disk
@@ -254,135 +122,68 @@ sda           8:0    0 149,1G  0 disk
   └─cr_home 254:0    0   127G  0 crypt /home</screen>
    </step>
    <step>
-    <para>
-     Mount the root partition from the installed system:
-    </para>
+    <para>インストール済みのシステムのルートパーティションをマウントします:</para>
 <screen>&prompt.sudo;mount /dev/sda2 /mnt</screen>
    </step>
    <step>
-    <para>
-     Mount <filename>/proc</filename>, <filename>/dev</filename>, and
-     <filename>/sys</filename> partitions:
-    </para>
+    <para><filename>/proc</filename> , <filename>/dev</filename> , <filename>/sys</filename> の各ファイルシステムをマウントします:</para>
 <screen>&prompt.sudo;mount -t proc none /mnt/proc
 &prompt.sudo;mount --rbind /dev /mnt/dev
 &prompt.sudo;mount --rbind /sys /mnt/sys</screen>
    </step>
    <step>
-    <para>
-     Now you can <quote>change root</quote> into the new environment, keeping
-     the <systemitem>bash</systemitem> shell:
-    </para>
+    <para>これで <quote>change root</quote> を行なうだけの環境が揃いました。実際に <quote>change root</quote> を行ない、その中で <systemitem>bash</systemitem> を起動します。</para>
 <screen>&prompt.user;chroot /mnt /bin/bash</screen>
    </step>
    <step>
-    <para>
-     Finally, mount the remaining partitions from the installed system:
-    </para>
+    <para>最後に、インストール済みのシステムに設定されている残りのパーティションをマウントします:</para>
 <screen>&prompt.user;mount -a</screen>
    </step>
    <step>
-    <para>
-     Now you have access to the installed system. Before rebooting the system,
-     unmount the partitions with <command>umount</command> <option>-a</option>
-     and leave the <quote>change root</quote> environment with
-     <command>exit</command>.
-    </para>
+    <para>これでインストール済みのシステムにアクセスできるようになりました。なお、作業が終わったら、再起動を行なう前に <command>umount</command> <option>-a</option> コマンドでパーティションのマウントを解除し、 <command>exit</command> で <quote>change root</quote> を抜けてください。</para>
    </step>
   </procedure>
   <warning>
-   <title>Limitations</title>
-   <para>
-    Although you have full access to the files and applications of the
-    installed system, there are some limitations. The kernel that is running is
-    the one that was booted with the rescue system, not with the change root
-    environment. It only supports essential hardware and it is not possible to
-    add kernel modules from the installed system unless the kernel versions are
-    identical. Always check the version of the currently running (rescue)
-    kernel with <command>uname -r</command> and then find out if a matching
-    subdirectory exists in the <filename>/lib/modules</filename> directory in
-    the change root environment. If yes, you can use the installed modules,
-    otherwise you need to supply their correct versions on other media, such as
-    a flash disk. Most often the rescue kernel version differs from the
-    installed one &mdash; then you cannot simply access a sound card, for
-    example. It is also not possible to start a graphical user interface.
-   </para>
-   <para>
-    Also note that you leave the <quote>change root</quote> environment when
-    you switch the console with
-    <keycombo><keycap function="alt"/><keycap>F1</keycap></keycombo> to
-    <keycombo><keycap function="alt"/><keycap>F6</keycap></keycombo>.
-   </para>
+   <title>制限事項について</title>
+   <para>change root 環境では、インストール済みのシステム内にある全てのファイルやアプリケーションにアクセスすることができますが、いくつかの制限もあります。レスキューシステムでは、カーネルはレスキューシステムのバージョンになり、 change root 環境内にインストールされているカーネルにはなりません。また、ハードウエアへの対応も最小限に限られ、レスキューシステムとカーネルバージョンが全く同じである場合を除いて、カーネルモジュールを追加することもできません。現在実行中のカーネルのバージョンは、 <command>uname -r</command> コマンドで確認できるほか、インストール済みのカーネルのバージョンは、 change root 環境下の <filename>/lib/modules</filename> ディレクトリ以下のサブディレクトリで判断することができます。全く同じバージョンである場合は、カーネルモジュールを読み込むことができますが、そうでない場合は USB メモリなどからカーネルモジュールを読み込まなければならなくなります。一般的にはレスキューシステムのカーネルとインストール済みのカーネルのバージョンは異なりますので、サウンドカードへのアクセスなども行なうことができません。また、グラフィカルユーザインターフェイスの起動もできません。</para>
+   <para>また、 <keycombo><keycap function="alt"/><keycap>F1</keycap></keycombo> から <keycombo><keycap function="alt"/><keycap>F6</keycap></keycombo> までのキーを押してコンソールを切り替えても、 <quote>change root</quote> からは抜けてしまうことにも注意してください。</para>
   </warning>
  </sect3>
  <sect3 xml:id="sec.trouble.data.recover.rescue.grub">
-  <title>Modifying and Re-installing the Boot Loader</title>
-  <para>
-   Sometimes a system cannot boot because the boot loader configuration is
-   corrupted. The start-up routines cannot, for example, translate physical
-   drives to the actual locations in the Linux file system without a working
-   boot loader.
-  </para>
-  <para>
-   To check the boot loader configuration and re-install the boot loader,
-   proceed as follows:
-  </para>
+  <title>ブートローダの修正と再インストール</title>
+  <para>場合によっては、ブートローダの設定が壊れてしまうことによって、システムが起動できなくなることがあります。起動ルーチンではたとえば、物理ドライブを Linux ファイルシステム内の実際の場所に変換する際、正しくブートローダが動作していなければなりません。</para>
+  <para>ブートローダの設定を確認し、ブートローダを再インストールするには、下記の手順で行ないます:</para>
   <procedure>
    <step>
-    <para>
-     Perform the necessary steps to access the installed system as described in
-     <xref linkend="sec.trouble.data.recover.rescue.access"/>.
-    </para>
+    <para><xref linkend="sec.trouble.data.recover.rescue.access"/> に示す手順に従って、インストール済みのシステムにアクセスします。</para>
    </step>
    <step>
-    <para>
-     Check that the GRUB 2 boot loader is installed on the system. If not,
-     install the package <systemitem>grub2</systemitem> and run
-    </para>
+    <para>まずはお使いのシステムに GRUB 2 ブートローダがインストールされていることを確認します。インストールされていない場合は <systemitem>grub2</systemitem> パッケージをインストールし、下記のコマンドを実行します:</para>
 <screen>&prompt.sudo;grub2-install /dev/sda</screen>
    </step>
    <step>
-    <para>
-     Check whether the following files are correctly configured according to
-     the &grub; configuration principles outlined in
-     <xref linkend="cha.grub2"/> and apply fixes if necessary.
-    </para>
+    <para>次に、下記のファイルが &grub; の設定書式通りに記述されていることを確認します。書式についての説明は <xref linkend="cha.grub2"/> にあります。もしも書式通りに記述されていない場合は、修正を行なってください。</para>
     <itemizedlist mark="bullet" spacing="normal">
      <listitem>
-      <para>
-       <filename>/etc/default/grub</filename>
-      </para>
+      <para><filename>/etc/default/grub</filename></para>
      </listitem>
      <listitem>
-      <para>
-       <filename>/boot/grub2/device.map</filename> (optional file, only present
-       if created manually)
-      </para>
+      <para><filename>/boot/grub2/device.map</filename> (手作業で作成した場合にのみ存在するファイルです。必ずしも必要なファイルではありません)</para>
      </listitem>
      <listitem>
-      <para>
-       <filename>/boot/grub2/grub.cfg</filename> (this file is generated, do
-       not edit)
-      </para>
+      <para><filename>/boot/grub2/grub.cfg</filename> (このファイルは自動生成されるファイルですので、編集はしないでください)</para>
      </listitem>
      <listitem>
-      <para>
-       <filename>/etc/sysconfig/bootloader</filename>
-      </para>
+      <para><filename>/etc/sysconfig/bootloader</filename></para>
      </listitem>
     </itemizedlist>
    </step>
    <step>
-    <para>
-     Re-install the boot loader using the following command sequence:
-    </para>
+    <para>あとは下記のコマンド順序を実行して、ブートローダを再インストールします:</para>
 <screen>&prompt.sudo;grub2-mkconfig -o /boot/grub2/grub.cfg</screen>
    </step>
    <step>
-    <para>
-     Unmount the partitions, log out from the <quote>change root</quote>
-     environment, and reboot the system:
-    </para>
+    <para>パーティションのマウントを解除し、 <quote>change root</quote> 環境からログアウトしたのち、システムを再起動します:</para>
 <screen>&prompt.user;umount -a
 exit
 reboot</screen>
@@ -390,108 +191,45 @@ reboot</screen>
   </procedure>
  </sect3>
  <sect3 xml:id="sec.trouble.data.recover.rescue.dud">
-  <title>Fixing Kernel Installation</title>
-  <para>
-   A kernel update may introduce a new bug which can impact the operation of
-   your system. For example a driver for a piece of hardware in your system may
-   be faulty, which prevents you from accessing and using it. In this case,
-   revert to the last working kernel (if available on the system) or install
-   the original kernel from the installation media.
-  </para>
+  <title>カーネルのインストールの修正</title>
+  <para>カーネルの更新内容によっては、お使いのシステムに影響があるような新しいバグを起こしてしまうことがあります。たとえば、お使いのハードウエアのデバイス向けのドライバに問題があって、必要なアクセスができなくなってしまう、などの問題が考えられます。この場合は、直前まで問題なく動作していた古いカーネルに戻す (ただしシステム内に残っていれば) か、インストールメディアから元のカーネルをインストールし直すことで、対応することができます。</para>
   <tip>
-   <title>How to Keep Last Kernels after Update</title>
-   <para>
-    To prevent failures to boot after a faulty kernel update, use the kernel
-    multiversion feature and tell <systemitem>libzypp</systemitem> which
-    kernels you want to keep after the update.
-   </para>
-   <para>
-    For example to always keep the last two kernels and the currently running
-    one, add
-   </para>
+   <title>更新後の最新カーネルの維持方法について</title>
+   <para>カーネルの更新失敗時に起動ができなくなってしまう問題を避けるため、カーネルのマルチバージョン機能を有効にし、更新後も古いカーネルを保存し続けるよう、 <systemitem>libzypp</systemitem> に設定しておくことをお勧めします。</para>
+   <para>たとえば最近の 2 つのカーネルと、現在動作中のカーネルをそれぞれ保持しておきたい場合は、 <filename>/etc/zypp/zypp.conf</filename> 内に下記のように設定します:</para>
 <screen>multiversion.kernels = latest,latest-1,running</screen>
-   <para>
-    to the <filename>/etc/zypp/zypp.conf</filename> file. See
-    <xref linkend="cha.tuning.multikernel"/> for more information.
-   </para>
+   <para>詳しくは <xref linkend="cha.tuning.multikernel"/> をお読みください。</para>
   </tip>
-  <para>
-   A similar case is when you need to re-install or update a broken driver for
-   a device not supported by &productname;. For example when a hardware vendor
-   uses a specific device, such as a hardware RAID controller, which needs a
-   binary driver to be recognized by the operating system. The vendor typically
-   releases a Driver Update Disk (DUD) with the fixed or updated version of the
-   required driver.
-  </para>
-  <para>
-   In both cases you need to access the installed system in the rescue mode and
-   fix the kernel related problem, otherwise the system may fail to boot
-   correctly:
-  </para>
+  <para>似たようなケースとして、 &productname; でサポートされていないデバイスに対して、うまく動作しないドライバを再インストールしたり、更新したりする必要に迫られる場合があります。たとえばハードウエアの製造元が、ハードウエア RAID コントローラなどの特殊なデバイスを使用していて、バイナリドライバが必要となる場合です。この場合、製造元は、ドライバ更新ディスク (DUD) を作成して、ドライバの修正版や更新版を提供することがあります。</para>
+  <para>いずれの場合であっても、まずはレスキューモードでインストール済みのシステムにアクセスして、カーネル関連の問題を修正しておかないと、システムの起動ができないままになってしまいます:</para>
   <procedure>
    <step>
-    <para>
-     Boot from the &productname; installation media.
-    </para>
+    <para>まずは &productname; のインストールメディアから起動します。</para>
    </step>
    <step>
-    <para>
-     If you are recovering after a faulty kernel update, skip this step. If you
-     need to use a driver update disk (DUD), press <keycap>F6</keycap> to load
-     the driver update after the boot menu appears, and choose the path or URL
-     to the driver update and confirm with <guimenu>Yes</guimenu>.
-    </para>
+    <para>カーネルの更新で問題が発生している場合は、この手順は飛ばしてください。ドライバ更新ディスク (DUD) を使用する必要がある場合は、 <keycap>F6</keycap> を押して起動メニューの表示後にドライバ更新を適用する指定をし、ドライバ更新のパスや URL を指定して <guimenu>はい</guimenu> で確認を行なってください。</para>
    </step>
    <step>
-    <para>
-     Choose <guimenu>Rescue System</guimenu> from the boot menu and press
-     <keycap function="enter"/>. If you chose to use DUD, you will be asked to
-     specify where the driver update is stored.
-    </para>
+    <para>起動メニューで <guimenu>レスキューシステム</guimenu> を選択して <keycap function="enter"/> を押します。 DUD を選択している場合は、ドライバ更新の場所を尋ねられます。</para>
    </step>
    <step>
-    <para>
-     Enter <literal>root</literal> at the <literal>Rescue:</literal> prompt. A
-     password is not required.
-    </para>
+    <para><literal>Rescue:</literal> のプロンプトが表示されたら、 <literal>root</literal> と入力します。パスワードは不要です。</para>
    </step>
    <step>
-    <para>
-     Manually mount the target system and <quote>change root</quote> into the
-     new environment. For more information, see
-     <xref linkend="sec.trouble.data.recover.rescue.access"/>.
-    </para>
+    <para>修復するシステムを手作業でマウントし、その環境内に <quote>change root</quote> で入ります。詳しくは <xref linkend="sec.trouble.data.recover.rescue.access"/> をお読みください。</para>
    </step>
    <step>
-    <para>
-     If using DUD, install/re-install/update the faulty device driver package.
-     Always make sure the installed kernel version exactly matches the version
-     of the driver you are installing.
-    </para>
-    <para>
-     If fixing faulty kernel update installation, you can install the original
-     kernel from the installation media with the following procedure.
-    </para>
+    <para>DUD を使用している場合は、デバイスドライバのパッケージをインストール／再インストール／更新します。ただし、インストールしようとしているドライバが、お使いのカーネルのバージョンと正確に一致していることを確認してください。</para>
+    <para>もしもカーネルの更新時に問題が発生しているような場合は、インストールメディアにあるオリジナルのカーネルに入れ替えることもできます。この場合は、下記の手順を実施してください:</para>
     <substeps performance="required">
      <step>
-      <para>
-       Identify your DVD device with <command>hwinfo --cdrom</command> and
-       mount it with <command>mount /dev/sr0 /mnt</command>.
-      </para>
+      <para>DVD デバイスを <command>hwinfo --cdrom</command> で確認し、<command>mount /dev/sr0 /mnt</command> などでマウントします。</para>
      </step>
      <step>
-      <para>
-       Navigate to the directory where your kernel files are stored on the DVD,
-       for example <command>cd /mnt/suse/x86_64/</command>.
-      </para>
+      <para>DVD 内のカーネルファイルが保存されているディレクトリまで移動します。たとえば <command>cd /mnt/suse/x86_64/</command> のように実行します。</para>
      </step>
      <step>
-      <para>
-       Install required <systemitem>kernel-*</systemitem>,
-       <systemitem>kernel-*-base</systemitem>, and
-       <systemitem>kernel-*-extra</systemitem> packages of your flavor with the
-       <command>rpm -i</command> command.
-      </para>
+      <para><command>rpm -i</command> コマンドを利用して、お使いのフレーバーに対応した <systemitem>kernel-*</systemitem> , <systemitem>kernel-*-base</systemitem> , <systemitem>kernel-*-extra</systemitem> の各パッケージをインストールします。</para>
      </step>
 <!-- fs 2014-02-19:
      Commenting, since there is currently no convenient way to check this with
@@ -510,16 +248,10 @@ reboot</screen>
     </substeps>
    </step>
    <step>
-    <para>
-     Update configuration files and reinitialize the boot loader if needed. For
-     more information, see
-     <xref linkend="sec.trouble.data.recover.rescue.grub"/>.
-    </para>
+    <para>必要に応じてブートローダの設定ファイルを更新し、ブートローダを再設定します。詳しくは <xref linkend="sec.trouble.data.recover.rescue.grub"/> をお読みください。</para>
    </step>
    <step>
-    <para>
-     Remove any bootable media from the system drive and reboot.
-    </para>
+    <para>あとはシステムから起動メディアを取り出して、再起動します。</para>
    </step>
   </procedure>
  </sect3>

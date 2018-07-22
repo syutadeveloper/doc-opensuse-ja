@@ -1,32 +1,35 @@
+# translation of system_repair.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: system_repair.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-22 21:03+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: system_repair.xml:9
 #, no-c-format
 msgid "Using the Rescue System"
-msgstr ""
+msgstr "レスキューシステムの使用"
 
 #. Tag: dm:translation
 #: system_repair.xml:13
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: system_repair.xml:16
@@ -36,6 +39,10 @@ msgid ""
 "corrupted file system following a system crash, corrupted configuration "
 "files, or a corrupted boot loader configuration are the most common ones."
 msgstr ""
+"様々な理由から、システムは起動しなくなってしまったり、正しく動作しなくなってしまったり"
+"することがあります。たとえばシステムがクラッシュしてファイルシステムが壊れて"
+"しまったり、設定ファイルやブートローダが壊れてしまったり、などの問題が"
+"発生することがあります。"
 
 #. Tag: para
 #: system_repair.xml:21
@@ -47,37 +54,42 @@ msgid ""
 "access your Linux partitions from the outside. Using the rescue system, you "
 "can recover or modify any important aspect of your system."
 msgstr ""
+"このような問題を解決するための支援として、 &productname; にはレスキューシステム"
+"と呼ばれる仕組みが用意されています。レスキューシステムは小さな Linux システムで、"
+" RAM ディスク内に読み込まれてルートファイルシステムとなることができるものである"
+"ため、 Linux のパーティションをインストール済みの Linux の外側からアクセスする"
+"ことができるようになります。レスキューシステムを使用すれば、お使いのシステム"
+"内の主要な要素を復元し、修復することができるようになります。"
 
 #. Tag: para
 #: system_repair.xml:30
 #, no-c-format
 msgid "Manipulate any type of configuration file."
-msgstr ""
+msgstr "任意の種類の設定ファイルに対する編集作業"
 
 #. Tag: para
 #: system_repair.xml:35
 #, no-c-format
 msgid "Check the file system for defects and start automatic repair processes."
-msgstr ""
+msgstr "ファイルシステムの瑕疵部分の修正と自動的な修復処理の実行"
 
 #. Tag: para
 #: system_repair.xml:40
 #, no-c-format
-msgid ""
-"Access the installed system in a <quote>change root</quote> environment."
-msgstr ""
+msgid "Access the installed system in a <quote>change root</quote> environment."
+msgstr "<quote>change root</quote> 環境でのインストール済みシステムへのアクセス"
 
 #. Tag: para
 #: system_repair.xml:45
 #, no-c-format
 msgid "Check, modify, and re-install the boot loader configuration."
-msgstr ""
+msgstr "ブートローダの設定の確認／修正／再インストール"
 
 #. Tag: para
 #: system_repair.xml:50
 #, no-c-format
 msgid "Recover from a badly installed device driver or unusable kernel."
-msgstr ""
+msgstr "うまく動作しないデバイスドライバや使用不可能なカーネルからの回復"
 
 #. Tag: para
 #: system_repair.xml:55
@@ -87,6 +99,9 @@ msgid ""
 "tool at the GNU Parted Web site <link xlink:href=\"http://www.gnu.org/"
 "software/parted/parted.html\"/> ."
 msgstr ""
+"parted コマンドを使用したパーティションサイズの変更。 GNU Parted について、"
+"詳しくは GNU Parted の Web サイト <link xlink:href=\"http://www.gnu.org/"
+"software/parted/parted.html\"/> をご覧ください。"
 
 #. Tag: para
 #: system_repair.xml:62
@@ -96,12 +111,14 @@ msgid ""
 "simplest option is to boot the rescue system from the original installation "
 "medium."
 msgstr ""
+"レスキューシステムは様々なメディアや場所から読み込むことができます。"
+"最もシンプルな方法は、インストールに使用したメディアから起動することです。"
 
 #. Tag: title
 #: system_repair.xml:68
 #, no-c-format
 msgid "&zseries; Starting the Rescue System"
-msgstr ""
+msgstr "&zseries; でのレスキューシステムの起動"
 
 #. Tag: para
 #: system_repair.xml:69
@@ -111,18 +128,21 @@ msgid ""
 "start the rescue system follow the instructions in <xref linkend=\"sec."
 "zseries.rescue\"/> ."
 msgstr ""
+"&zseries; では、インストールシステムをレスキューシステムとして使用する"
+"ことができます。レスキューシステムの起動について、詳しくは <xref linkend=\"sec."
+"zseries.rescue\"/> をお読みください。"
 
 #. Tag: para
 #: system_repair.xml:77
 #, no-c-format
 msgid "Insert the installation medium into your DVD drive."
-msgstr ""
+msgstr "まずはインストールメディアを DVD ドライブに挿入します。"
 
 #. Tag: para
 #: system_repair.xml:82
 #, no-c-format
 msgid "Reboot the system."
-msgstr ""
+msgstr "システムを再起動します。"
 
 #. Tag: para
 #: system_repair.xml:87
@@ -131,6 +151,12 @@ msgid ""
 "At the boot screen, press <keycap>F4</keycap> and choose <guimenu>DVD-ROM</"
 "guimenu> . Then choose <guimenu>Rescue System</guimenu> from the main menu."
 msgstr ""
+"起動画面では、"
+"<!-- NOTE: change language -->"
+" <keycap>F2</keycap> を押して言語を選択してから、"
+"<!-- NOTE: change language -->"
+" <keycap>F4</keycap> を押して <guimenu>DVD-ROM</guimenu> を選択します。"
+"その後、メインメニューから <guimenu>レスキューシステム</guimenu> を選択します。"
 
 #. Tag: para
 #: system_repair.xml:101
@@ -142,6 +168,12 @@ msgid ""
 "<filename>info</filename> file accordingly and boot as you would for a "
 "normal installation."
 msgstr ""
+"お使いのマシンに DVD ドライブがない場合は、ネットワーク経由でレスキューシステムを"
+"起動することができます。たとえば下記の例はネットワーク上離れた場所にある"
+"サーバから起動する例です。"
+"<!-- not applicable?: if using another boot medium, such as a DVD, modify the "
+"<filename>info</filename> file accordingly and boot as you would for a "
+"normal installation. -->"
 
 #. Tag: para
 #: system_repair.xml:109
@@ -156,6 +188,14 @@ msgid ""
 "FTP, etc.) and <replaceable>INSTSOURCE</replaceable> for the path to your "
 "network installation source."
 msgstr ""
+"PXE ブートの設定画面に入って、それぞれ"
+"<literal>install=<replaceable>プロトコル</replaceable>://"
+"<replaceable>ソースパス</replaceable></literal> と <literal>rescue=1</literal> "
+"を追加します。修復システムを起動する場合は、 <literal>repair=1</literal> "
+"を追加してください。通常のインストール時と同様に、 <replaceable>プロトコル</"
+"replaceable> には対応するネットワークプロトコル (NFS, HTTP, FTP など) "
+"を入れ、 <replaceable>ソースパス</replaceable> にはネットワーク上の"
+"インストール元に対するパスを指定します。"
 
 #. Tag: para
 #: system_repair.xml:120
@@ -164,6 +204,8 @@ msgid ""
 "Boot the system using <quote>Wake on LAN</quote> <phrase os=\"sles;sled\">, "
 "as described in <xref linkend=\"sec.deployment.prep_boot.wol\"/></phrase> ."
 msgstr ""
+"<quote>Wake on LAN</quote> を利用してシステムを起動します。 <phrase os=\"sles;sled\">, "
+"詳しくは <xref linkend=\"sec.deployment.prep_boot.wol\"/> をお読みください。</phrase>"
 
 #. Tag: para
 #: system_repair.xml:133
@@ -174,6 +216,10 @@ msgid ""
 "keycap></keycombo> to <keycombo><keycap function=\"alt\"/><keycap>F6</"
 "keycap></keycombo> ."
 msgstr ""
+"レスキューシステムに入ったあとは、複数の仮想コンソールを使用できるように"
+"なります。それぞれ <keycombo><keycap function=\"alt\"/><keycap>F1</"
+"keycap></keycombo> から <keycombo><keycap function=\"alt\"/><keycap>F6</"
+"keycap></keycombo> までを押してアクセスしてください。"
 
 #. Tag: para
 #: system_repair.xml:139
@@ -189,6 +235,17 @@ msgid ""
 "<command>ss</command> for maintaining the network. The directory <filename>/"
 "usr/bin</filename> contains the vi editor, find, less, and SSH."
 msgstr ""
+"シェルや mount プログラムなどのユーティリティ類が、 <filename>/bin</filename> "
+"ディレクトリ内に配置されています。また、 <filename>/sbin</filename> ディレクトリ"
+"には、重要なファイルユーティリティやネットワークユーティリティが配置されています。"
+"ファイルユーティリティには、たとえばファイルシステムの確認や修復などのコマンドが"
+"含まれます。また、このディレクトリにはシステムをメンテナンスするための様々な"
+"プログラムも用意されています。具体的には、 <command>fdisk</command> , "
+"<command>mkfs</command> , <command>mkswap</command> , <command>mount</"
+"command> , and <command>shutdown</command> , <command>ip</command> , "
+"<command>ss</command> などがあります。さらに、 <filename>/usr/bin</filename> "
+"ディレクトリには、 vi エディタや find, less, SSH などの各プログラムも"
+"用意されています。"
 
 #. Tag: para
 #: system_repair.xml:151
@@ -197,12 +254,14 @@ msgid ""
 "To see the system messages, either use the command <command>dmesg</command> "
 "or view the system log with <command>journalctl</command> ."
 msgstr ""
+"システムからのメッセージを読みたい場合は <command>dmesg</command> コマンドを、"
+"システムログを読みたい場合は <command>journalctl</command> をそれぞれお使いください。"
 
 #. Tag: title
 #: system_repair.xml:156
 #, no-c-format
 msgid "Checking and Manipulating Configuration Files"
-msgstr ""
+msgstr "設定ファイルの確認と操作"
 
 #. Tag: para
 #: system_repair.xml:157
@@ -212,18 +271,21 @@ msgid ""
 "system, imagine you have a broken configuration file that prevents the "
 "system from booting properly. You can fix this using the rescue system."
 msgstr ""
+"レスキューシステムで設定ファイルを修正する場合の例として、たとえば何らかの"
+"設定ファイルが壊れてしまっていて、それによって起動が妨げられている場合を"
+"考えます。これもレスキューシステムを使用すれば、解決することができます。"
 
 #. Tag: para
 #: system_repair.xml:163
 #, no-c-format
 msgid "To manipulate a configuration file, proceed as follows:"
-msgstr ""
+msgstr "設定ファイルを修正するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: system_repair.xml:167
 #, no-c-format
 msgid "Start the rescue system using one of the methods described above."
-msgstr ""
+msgstr "まずは上述のいずれかの方法で、レスキューシステムを起動します。"
 
 #. Tag: para
 #: system_repair.xml:172
@@ -232,31 +294,32 @@ msgid ""
 "To mount a root file system located under <filename>/dev/sda6</filename> to "
 "the rescue system, use the following command:"
 msgstr ""
+"<filename>/dev/sda6</filename> にあるルートファイルシステムをマウントするには、"
+"下記のコマンドを実行します:"
 
 #. Tag: screen
 #: system_repair.xml:176
 #, no-c-format
 msgid "&prompt.sudo;mount /dev/sda6 /mnt"
-msgstr ""
+msgstr "&prompt.sudo;mount /dev/sda6 /mnt"
 
 #. Tag: para
 #: system_repair.xml:177
 #, no-c-format
-msgid ""
-"All directories of the system are now located under <filename>/mnt</filename>"
-msgstr ""
+msgid "All directories of the system are now located under <filename>/mnt</filename>"
+msgstr "これで <filename>/mnt</filename> 内にルートファイルシステムが見えるようになります。"
 
 #. Tag: para
 #: system_repair.xml:183
 #, no-c-format
 msgid "Change the directory to the mounted root file system:"
-msgstr ""
+msgstr "マウントしたルートファイルシステム内に移動します:"
 
 #. Tag: screen
 #: system_repair.xml:186
 #, no-c-format
 msgid "&prompt.sudo;cd /mnt"
-msgstr ""
+msgstr "&prompt.sudo;cd /mnt"
 
 #. Tag: para
 #: system_repair.xml:189
@@ -265,30 +328,32 @@ msgid ""
 "Open the problematic configuration file in the vi editor. Adjust and save "
 "the configuration."
 msgstr ""
+"vi エディタを利用して、問題のある設定ファイルを開きます。必要な修正を加えた"
+"あと、保存して終了します。"
 
 #. Tag: para
 #: system_repair.xml:195
 #, no-c-format
 msgid "Unmount the root file system from the rescue system:"
-msgstr ""
+msgstr "最後にレスキューシステムからファイルシステムのマウントを解除します:"
 
 #. Tag: screen
 #: system_repair.xml:198
 #, no-c-format
 msgid "&prompt.sudo;umount /mnt"
-msgstr ""
+msgstr "&prompt.sudo;umount /mnt"
 
 #. Tag: para
 #: system_repair.xml:201
 #, no-c-format
 msgid "Reboot the machine."
-msgstr ""
+msgstr "あとはマシンを再起動するだけです。"
 
 #. Tag: title
 #: system_repair.xml:208
 #, no-c-format
 msgid "Repairing and Checking File Systems"
-msgstr ""
+msgstr "ファイルシステムの修復とチェック"
 
 #. Tag: para
 #: system_repair.xml:209
@@ -306,12 +371,24 @@ msgid ""
 "file system check for <literal>btrfs</literal> , use <command>fsck.btrfs</"
 "command> ."
 msgstr ""
+"一般的には、システムが動作している場合はファイルシステムの修復を行なうことが"
+"できません。また、ルートファイルシステムに重大な問題が発生した場合は、マウントを"
+"行なうことができず、起動を行なっても <quote>カーネルパニック</quote> の状態で"
+"停止してしまうことがあります。この場合は、システムの外部からファイルシステムを"
+"修復するしか手段がなくなってしまいます。レスキューシステムには、 <literal>btrfs</literal> , "
+"<literal>ext2</literal> , <literal>ext3</literal> , <literal>ext4</"
+"literal> , <literal>xfs</literal> , <literal>dosfs</literal> , "
+"<literal>vfat</literal> の各ファイルシステムに対応した、チェックと修復の"
+"ためのプログラムが含まれています。それぞれは <command>fsck."
+"<replaceable>ファイルシステム</replaceable></command> の名前で提供されています。"
+"たとえば <literal>btrfs</literal> のファイルシステムをチェックしたい場合は、"
+" <command>fsck.btrfs</command> を使用します。"
 
 #. Tag: title
 #: system_repair.xml:225
 #, no-c-format
 msgid "Accessing the Installed System"
-msgstr ""
+msgstr "インストール済みシステムへのアクセス"
 
 #. Tag: para
 #: system_repair.xml:226
@@ -322,6 +399,10 @@ msgid ""
 "to modify the boot loader configuration, or to execute a hardware "
 "configuration utility."
 msgstr ""
+"レスキューシステムからインストール済みのシステムにアクセスする必要がある場合は、"
+" <emphasis>change root</emphasis> という仕組みを利用します。たとえばブート"
+"ローダの設定を修正する場合や、ハードウエアの設定ユーティリティを実行する"
+"ような場合がそれにあたります。"
 
 #. Tag: para
 #: system_repair.xml:232
@@ -330,12 +411,14 @@ msgid ""
 "To set up a change root environment based on the installed system, proceed "
 "as follows:"
 msgstr ""
+"インストール済みのシステムに対して、 change root 環境を構築するには、下記の"
+"手順で行ないます:"
 
 #. Tag: title
 #: system_repair.xml:239
 #, no-c-format
 msgid "Import LVM Volume Groups"
-msgstr ""
+msgstr "LVM ボリュームグループの取り込み"
 
 #. Tag: para
 #: system_repair.xml:240
@@ -346,12 +429,16 @@ msgid ""
 "general details), import all existing volume groups to be able to find and "
 "mount the device(s):"
 msgstr ""
+"LVM を使用している場合 (詳しくは <xref os=\"sles\" linkend=\"part.lvm"
+"\"/> <xref os=\"sled;osuse\" linkend=\"sec.yast.system.lvm\"/> をお読みください) "
+"は、全ての既存のボリュームグループを取り込んで、デバイスをマウントできる"
+"ようにする必要があります:"
 
 #. Tag: screen
 #: system_repair.xml:246
 #, no-c-format
 msgid "&rootuser;vgimport -a"
-msgstr ""
+msgstr "&rootuser;vgimport -a"
 
 #. Tag: para
 #: system_repair.xml:248
@@ -360,6 +447,9 @@ msgid ""
 "Run <command>lsblk</command> to check which node corresponds to the root "
 "partition. It is <filename>/dev/sda2</filename> in our example:"
 msgstr ""
+"<command>lsblk</command> コマンドを実行して、ノードとルートパーティションの"
+"関係性を調査します。たとえば下記の例では、 <filename>/dev/sda2</filename> "
+"がルートパーティションになります:"
 
 #. Tag: screen
 #: system_repair.xml:252
@@ -373,18 +463,25 @@ msgid ""
 "└─sda3        8:3    0   127G  0 part\n"
 "  └─cr_home 254:0    0   127G  0 crypt /home"
 msgstr ""
+"&prompt.user;lsblk\n"
+"NAME        MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT\n"
+"sda           8:0    0 149,1G  0 disk\n"
+"├─sda1        8:1    0     2G  0 part  [SWAP]\n"
+"├─sda2        8:2    0    20G  0 part  /\n"
+"└─sda3        8:3    0   127G  0 part\n"
+"  └─cr_home 254:0    0   127G  0 crypt /home"
 
 #. Tag: para
 #: system_repair.xml:261
 #, no-c-format
 msgid "Mount the root partition from the installed system:"
-msgstr ""
+msgstr "インストール済みのシステムのルートパーティションをマウントします:"
 
 #. Tag: screen
 #: system_repair.xml:264
 #, no-c-format
 msgid "&prompt.sudo;mount /dev/sda2 /mnt"
-msgstr ""
+msgstr "&prompt.sudo;mount /dev/sda2 /mnt"
 
 #. Tag: para
 #: system_repair.xml:267
@@ -393,6 +490,8 @@ msgid ""
 "Mount <filename>/proc</filename> , <filename>/dev</filename> , and "
 "<filename>/sys</filename> partitions:"
 msgstr ""
+"<filename>/proc</filename> , <filename>/dev</filename> , <filename>/sys</filename> "
+"の各ファイルシステムをマウントします:"
 
 #. Tag: screen
 #: system_repair.xml:271
@@ -402,6 +501,9 @@ msgid ""
 "&prompt.sudo;mount --rbind /dev /mnt/dev\n"
 "&prompt.sudo;mount --rbind /sys /mnt/sys"
 msgstr ""
+"&prompt.sudo;mount -t proc none /mnt/proc\n"
+"&prompt.sudo;mount --rbind /dev /mnt/dev\n"
+"&prompt.sudo;mount --rbind /sys /mnt/sys"
 
 #. Tag: para
 #: system_repair.xml:276
@@ -410,24 +512,27 @@ msgid ""
 "Now you can <quote>change root</quote> into the new environment, keeping the "
 "<systemitem>bash</systemitem> shell:"
 msgstr ""
+"これで <quote>change root</quote> を行なうだけの環境が揃いました。"
+"実際に <quote>change root</quote> を行ない、その中で <systemitem>bash</systemitem> "
+"を起動します。"
 
 #. Tag: screen
 #: system_repair.xml:280
 #, no-c-format
 msgid "&prompt.user;chroot /mnt /bin/bash"
-msgstr ""
+msgstr "&prompt.user;chroot /mnt /bin/bash"
 
 #. Tag: para
 #: system_repair.xml:283
 #, no-c-format
 msgid "Finally, mount the remaining partitions from the installed system:"
-msgstr ""
+msgstr "最後に、インストール済みのシステムに設定されている残りのパーティションをマウントします:"
 
 #. Tag: screen
 #: system_repair.xml:286
 #, no-c-format
 msgid "&prompt.user;mount -a"
-msgstr ""
+msgstr "&prompt.user;mount -a"
 
 #. Tag: para
 #: system_repair.xml:289
@@ -438,12 +543,16 @@ msgid ""
 "and leave the <quote>change root</quote> environment with <command>exit</"
 "command> ."
 msgstr ""
+"これでインストール済みのシステムにアクセスできるようになりました。なお、"
+"作業が終わったら、再起動を行なう前に <command>umount</command> <option>-a</option> "
+"コマンドでパーティションのマウントを解除し、 <command>exit</command> で"
+" <quote>change root</quote> を抜けてください。"
 
 #. Tag: title
 #: system_repair.xml:298
 #, no-c-format
 msgid "Limitations"
-msgstr ""
+msgstr "制限事項について"
 
 #. Tag: para
 #: system_repair.xml:299
@@ -463,6 +572,21 @@ msgid ""
 "installed one &mdash; then you cannot simply access a sound card, for "
 "example. It is also not possible to start a graphical user interface."
 msgstr ""
+"change root 環境では、インストール済みのシステム内にある全てのファイルや"
+"アプリケーションにアクセスすることができますが、いくつかの制限もあります。"
+"レスキューシステムでは、カーネルはレスキューシステムのバージョンになり、"
+" change root 環境内にインストールされているカーネルにはなりません。また、"
+"ハードウエアへの対応も最小限に限られ、レスキューシステムとカーネルバージョンが"
+"全く同じである場合を除いて、カーネルモジュールを追加することもできません。"
+"現在実行中のカーネルのバージョンは、 <command>uname -r</command> コマンドで"
+"確認できるほか、インストール済みのカーネルのバージョンは、 change root 環境下の"
+" <filename>/lib/modules</filename> ディレクトリ以下のサブディレクトリで"
+"判断することができます。全く同じバージョンである場合は、カーネルモジュールを"
+"読み込むことができますが、そうでない場合は USB メモリなどからカーネル"
+"モジュールを読み込まなければならなくなります。一般的にはレスキューシステムの"
+"カーネルとインストール済みのカーネルのバージョンは異なりますので、サウンド"
+"カードへのアクセスなども行なうことができません。また、グラフィカルユーザ"
+"インターフェイスの起動もできません。"
 
 #. Tag: para
 #: system_repair.xml:314
@@ -473,12 +597,16 @@ msgid ""
 "keycap></keycombo> to <keycombo><keycap function=\"alt\"/><keycap>F6</"
 "keycap></keycombo> ."
 msgstr ""
+"また、 <keycombo><keycap function=\"alt\"/><keycap>F1</keycap></keycombo> "
+"から <keycombo><keycap function=\"alt\"/><keycap>F6</keycap></keycombo> "
+"までのキーを押してコンソールを切り替えても、 <quote>change root</quote> からは"
+"抜けてしまうことにも注意してください。"
 
 #. Tag: title
 #: system_repair.xml:323
 #, no-c-format
 msgid "Modifying and Re-installing the Boot Loader"
-msgstr ""
+msgstr "ブートローダの修正と再インストール"
 
 #. Tag: para
 #: system_repair.xml:324
@@ -489,6 +617,10 @@ msgid ""
 "drives to the actual locations in the Linux file system without a working "
 "boot loader."
 msgstr ""
+"場合によっては、ブートローダの設定が壊れてしまうことによって、システムが"
+"起動できなくなることがあります。起動ルーチンではたとえば、物理ドライブを"
+" Linux ファイルシステム内の実際の場所に変換する際、正しくブートローダが"
+"動作していなければなりません。"
 
 #. Tag: para
 #: system_repair.xml:330
@@ -497,6 +629,8 @@ msgid ""
 "To check the boot loader configuration and re-install the boot loader, "
 "proceed as follows:"
 msgstr ""
+"ブートローダの設定を確認し、ブートローダを再インストールするには、下記の"
+"手順で行ないます:"
 
 #. Tag: para
 #: system_repair.xml:336
@@ -505,6 +639,8 @@ msgid ""
 "Perform the necessary steps to access the installed system as described in "
 "<xref linkend=\"sec.trouble.data.recover.rescue.access\"/> ."
 msgstr ""
+"<xref linkend=\"sec.trouble.data.recover.rescue.access\"/> に示す手順に"
+"従って、インストール済みのシステムにアクセスします。"
 
 #. Tag: para
 #: system_repair.xml:342
@@ -513,12 +649,15 @@ msgid ""
 "Check that the GRUB 2 boot loader is installed on the system. If not, "
 "install the package <systemitem>grub2</systemitem> and run"
 msgstr ""
+"まずはお使いのシステムに GRUB 2 ブートローダがインストールされている"
+"ことを確認します。インストールされていない場合は <systemitem>grub2</systemitem> "
+"パッケージをインストールし、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: system_repair.xml:346
 #, no-c-format
 msgid "&prompt.sudo;grub2-install /dev/sda"
-msgstr ""
+msgstr "&prompt.sudo;grub2-install /dev/sda"
 
 #. Tag: para
 #: system_repair.xml:349
@@ -528,12 +667,15 @@ msgid ""
 "&grub; configuration principles outlined in <xref linkend=\"cha.grub2\"/> "
 "and apply fixes if necessary."
 msgstr ""
+"次に、下記のファイルが &grub; の設定書式通りに記述されていることを確認します。"
+"書式についての説明は <xref linkend=\"cha.grub2\"/> にあります。もしも書式"
+"通りに記述されていない場合は、修正を行なってください。"
 
 #. Tag: para
 #: system_repair.xml:356
 #, no-c-format
 msgid "<filename>/etc/default/grub</filename>"
-msgstr ""
+msgstr "<filename>/etc/default/grub</filename>"
 
 #. Tag: para
 #: system_repair.xml:361
@@ -542,6 +684,8 @@ msgid ""
 "<filename>/boot/grub2/device.map</filename> (optional file, only present if "
 "created manually)"
 msgstr ""
+"<filename>/boot/grub2/device.map</filename> (手作業で作成した場合にのみ存在する"
+"ファイルです。必ずしも必要なファイルではありません)"
 
 #. Tag: para
 #: system_repair.xml:367
@@ -550,24 +694,26 @@ msgid ""
 "<filename>/boot/grub2/grub.cfg</filename> (this file is generated, do not "
 "edit)"
 msgstr ""
+"<filename>/boot/grub2/grub.cfg</filename> (このファイルは自動生成されるファイル"
+"ですので、編集はしないでください)"
 
 #. Tag: para
 #: system_repair.xml:373
 #, no-c-format
 msgid "<filename>/etc/sysconfig/bootloader</filename>"
-msgstr ""
+msgstr "<filename>/etc/sysconfig/bootloader</filename>"
 
 #. Tag: para
 #: system_repair.xml:380
 #, no-c-format
 msgid "Re-install the boot loader using the following command sequence:"
-msgstr ""
+msgstr "あとは下記のコマンド順序を実行して、ブートローダを再インストールします:"
 
 #. Tag: screen
 #: system_repair.xml:383
 #, no-c-format
 msgid "&prompt.sudo;grub2-mkconfig -o /boot/grub2/grub.cfg"
-msgstr ""
+msgstr "&prompt.sudo;grub2-mkconfig -o /boot/grub2/grub.cfg"
 
 #. Tag: para
 #: system_repair.xml:386
@@ -576,6 +722,8 @@ msgid ""
 "Unmount the partitions, log out from the <quote>change root</quote> "
 "environment, and reboot the system:"
 msgstr ""
+"パーティションのマウントを解除し、 <quote>change root</quote> 環境から"
+"ログアウトしたのち、システムを再起動します:"
 
 #. Tag: screen
 #: system_repair.xml:390
@@ -585,12 +733,15 @@ msgid ""
 "exit\n"
 "reboot"
 msgstr ""
+"&prompt.user;umount -a\n"
+"exit\n"
+"reboot"
 
 #. Tag: title
 #: system_repair.xml:397
 #, no-c-format
 msgid "Fixing Kernel Installation"
-msgstr ""
+msgstr "カーネルのインストールの修正"
 
 #. Tag: para
 #: system_repair.xml:398
@@ -602,12 +753,18 @@ msgid ""
 "revert to the last working kernel (if available on the system) or install "
 "the original kernel from the installation media."
 msgstr ""
+"カーネルの更新内容によっては、お使いのシステムに影響があるような新しいバグを"
+"起こしてしまうことがあります。たとえば、お使いのハードウエアのデバイス向けの"
+"ドライバに問題があって、必要なアクセスができなくなってしまう、などの問題が"
+"考えられます。この場合は、直前まで問題なく動作していた古いカーネルに戻す (ただし"
+"システム内に残っていれば) か、インストールメディアから元のカーネルをインストール"
+"し直すことで、対応することができます。"
 
 #. Tag: title
 #: system_repair.xml:406
 #, no-c-format
 msgid "How to Keep Last Kernels after Update"
-msgstr ""
+msgstr "更新後の最新カーネルの維持方法について"
 
 #. Tag: para
 #: system_repair.xml:407
@@ -617,6 +774,9 @@ msgid ""
 "multiversion feature and tell <systemitem>libzypp</systemitem> which kernels "
 "you want to keep after the update."
 msgstr ""
+"カーネルの更新失敗時に起動ができなくなってしまう問題を避けるため、"
+"カーネルのマルチバージョン機能を有効にし、更新後も古いカーネルを保存し続ける"
+"よう、 <systemitem>libzypp</systemitem> に設定しておくことをお勧めします。"
 
 #. Tag: para
 #: system_repair.xml:412
@@ -625,12 +785,14 @@ msgid ""
 "For example to always keep the last two kernels and the currently running "
 "one, add"
 msgstr ""
+"たとえば最近の 2 つのカーネルと、現在動作中のカーネルをそれぞれ保持しておきたい"
+"場合は、 <filename>/etc/zypp/zypp.conf</filename> 内に下記のように設定します:"
 
 #. Tag: screen
 #: system_repair.xml:416
 #, no-c-format
 msgid "multiversion.kernels = latest,latest-1,running"
-msgstr ""
+msgstr "multiversion.kernels = latest,latest-1,running"
 
 #. Tag: para
 #: system_repair.xml:417
@@ -638,7 +800,7 @@ msgstr ""
 msgid ""
 "to the <filename>/etc/zypp/zypp.conf</filename> file. See <xref linkend="
 "\"cha.tuning.multikernel\"/> for more information."
-msgstr ""
+msgstr "詳しくは <xref linkend=\"cha.tuning.multikernel\"/> をお読みください。"
 
 #. Tag: para
 #: system_repair.xml:422
@@ -651,6 +813,12 @@ msgid ""
 "releases a Driver Update Disk (DUD) with the fixed or updated version of the "
 "required driver."
 msgstr ""
+"似たようなケースとして、 &productname; でサポートされていないデバイスに対して、"
+"うまく動作しないドライバを再インストールしたり、更新したりする必要に迫られる"
+"場合があります。たとえばハードウエアの製造元が、ハードウエア RAID コントローラ"
+"などの特殊なデバイスを使用していて、バイナリドライバが必要となる場合です。"
+"この場合、製造元は、ドライバ更新ディスク (DUD) を作成して、ドライバの修正版や"
+"更新版を提供することがあります。"
 
 #. Tag: para
 #: system_repair.xml:430
@@ -660,12 +828,15 @@ msgid ""
 "fix the kernel related problem, otherwise the system may fail to boot "
 "correctly:"
 msgstr ""
+"いずれの場合であっても、まずはレスキューモードでインストール済みのシステムに"
+"アクセスして、カーネル関連の問題を修正しておかないと、システムの起動ができない"
+"ままになってしまいます:"
 
 #. Tag: para
 #: system_repair.xml:437
 #, no-c-format
 msgid "Boot from the &productname; installation media."
-msgstr ""
+msgstr "まずは &productname; のインストールメディアから起動します。"
 
 #. Tag: para
 #: system_repair.xml:442
@@ -676,6 +847,10 @@ msgid ""
 "the driver update after the boot menu appears, and choose the path or URL to "
 "the driver update and confirm with <guimenu>Yes</guimenu> ."
 msgstr ""
+"カーネルの更新で問題が発生している場合は、この手順は飛ばしてください。"
+"ドライバ更新ディスク (DUD) を使用する必要がある場合は、 <keycap>F6</keycap> "
+"を押して起動メニューの表示後にドライバ更新を適用する指定をし、ドライバ更新の"
+"パスや URL を指定して <guimenu>はい</guimenu> で確認を行なってください。"
 
 #. Tag: para
 #: system_repair.xml:450
@@ -685,6 +860,9 @@ msgid ""
 "function=\"enter\"/> . If you chose to use DUD, you will be asked to specify "
 "where the driver update is stored."
 msgstr ""
+"起動メニューで <guimenu>レスキューシステム</guimenu> を選択して <keycap "
+"function=\"enter\"/> を押します。 DUD を選択している場合は、ドライバ更新の"
+"場所を尋ねられます。"
 
 #. Tag: para
 #: system_repair.xml:457
@@ -693,6 +871,8 @@ msgid ""
 "Enter <literal>root</literal> at the <literal>Rescue:</literal> prompt. A "
 "password is not required."
 msgstr ""
+"<literal>Rescue:</literal> のプロンプトが表示されたら、 <literal>root</literal> "
+"と入力します。パスワードは不要です。"
 
 #. Tag: para
 #: system_repair.xml:463
@@ -702,6 +882,9 @@ msgid ""
 "environment. For more information, see <xref linkend=\"sec.trouble.data."
 "recover.rescue.access\"/> ."
 msgstr ""
+"修復するシステムを手作業でマウントし、その環境内に <quote>change root</quote> で"
+"入ります。詳しくは <xref linkend=\"sec.trouble.data.recover.rescue.access\"/> を"
+"お読みください。"
 
 #. Tag: para
 #: system_repair.xml:470
@@ -711,6 +894,9 @@ msgid ""
 "Always make sure the installed kernel version exactly matches the version of "
 "the driver you are installing."
 msgstr ""
+"DUD を使用している場合は、デバイスドライバのパッケージをインストール／再インストール／更新"
+"します。ただし、インストールしようとしているドライバが、お使いのカーネルのバージョンと"
+"正確に一致していることを確認してください。"
 
 #. Tag: para
 #: system_repair.xml:475
@@ -719,6 +905,8 @@ msgid ""
 "If fixing faulty kernel update installation, you can install the original "
 "kernel from the installation media with the following procedure."
 msgstr ""
+"もしもカーネルの更新時に問題が発生しているような場合は、インストールメディアにある"
+"オリジナルのカーネルに入れ替えることもできます。この場合は、下記の手順を実施してください:"
 
 #. Tag: para
 #: system_repair.xml:481
@@ -727,6 +915,8 @@ msgid ""
 "Identify your DVD device with <command>hwinfo --cdrom</command> and mount it "
 "with <command>mount /dev/sr0 /mnt</command> ."
 msgstr ""
+"DVD デバイスを <command>hwinfo --cdrom</command> で確認し、"
+"<command>mount /dev/sr0 /mnt</command> などでマウントします。"
 
 #. Tag: para
 #: system_repair.xml:487
@@ -735,6 +925,8 @@ msgid ""
 "Navigate to the directory where your kernel files are stored on the DVD, for "
 "example <command>cd /mnt/suse/x86_64/</command> ."
 msgstr ""
+"DVD 内のカーネルファイルが保存されているディレクトリまで移動します。たとえば"
+" <command>cd /mnt/suse/x86_64/</command> のように実行します。"
 
 #. Tag: para
 #: system_repair.xml:493
@@ -744,6 +936,9 @@ msgid ""
 "base</systemitem> , and <systemitem>kernel-*-extra</systemitem> packages of "
 "your flavor with the <command>rpm -i</command> command."
 msgstr ""
+"<command>rpm -i</command> コマンドを利用して、お使いのフレーバーに対応した <systemitem>kernel-*</systemitem> ,"
+" <systemitem>kernel-*-base</systemitem> , <systemitem>kernel-*-extra</systemitem> "
+"の各パッケージをインストールします。"
 
 #. Tag: para
 #: system_repair.xml:517
@@ -753,9 +948,12 @@ msgid ""
 "more information, see <xref linkend=\"sec.trouble.data.recover.rescue.grub\"/"
 "> ."
 msgstr ""
+"必要に応じてブートローダの設定ファイルを更新し、ブートローダを再設定します。"
+"詳しくは <xref linkend=\"sec.trouble.data.recover.rescue.grub\"/> をお読みください。"
 
 #. Tag: para
 #: system_repair.xml:524
 #, no-c-format
 msgid "Remove any bootable media from the system drive and reboot."
-msgstr ""
+msgstr "あとはシステムから起動メディアを取り出して、再起動します。"
+
