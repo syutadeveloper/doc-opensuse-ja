@@ -67,7 +67,7 @@
    <varlistentry>
     <term>ncurses モードでのナビゲーションツリーの使用</term>
     <listitem>
-     <para>いくつかの &yast; モジュールでは、ウインドウの左側でツリー構造を表示して、設定ダイアログを選択するものがあります。このツリー表示では、矢印 (カーソル) キー (( <keycap function="up"/> および <keycap function="down"/> ) を利用して選択を行なってください。また、ツリーの内容を開くには <keycap function="space"/> を押します。なお、 ncurses モードでは、選択したダイアログを開くには、 <keycap function="enter"/> を押さなければならないことに注意してください。これは再描画に伴う時間消費を削減するためのもので、敢えて実装している仕組みです。</para>
+     <para>いくつかの &yast; モジュールでは、ウインドウの左側でツリー構造を表示して、設定ダイアログを選択するものがあります。このツリー表示では、矢印 (カーソル) キー ( <keycap function="up"/> および <keycap function="down"/> ) を利用して選択を行なってください。また、ツリーの内容を開くには <keycap function="space"/> を押します。なお、 ncurses モードでは、選択したダイアログを開くには、 <keycap function="enter"/> を押さなければならないことに注意してください。これは再描画に伴う時間消費を削減するためのもので、敢えて実装している仕組みです。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -179,7 +179,7 @@
 <screen>&prompt.sudo;yast <replaceable>-i パッケージ名</replaceable></screen>
    <para>もしくは、下記のように実行してもかまいません:</para>
 <screen>&prompt.sudo;yast --install <replaceable>-i パッケージ名</replaceable></screen>
-   <para><replaceable>パッケージ名</replaceable> には単一のパッケージ名を指定します (例: <package>gvim</package>) 。この際、依存関係で確認できたパッケージも自動的にインストールすることができます。また、 RPM パッケージのフルパスを指定することもできます。この場合は、依存関係の確認は行ないません。</para>
+   <para><replaceable>パッケージ名</replaceable> には単一のパッケージ名を指定します (例: <package>gvim</package>) 。この際、依存関係で確認できたパッケージも自動的にインストールすることができます。また、 RPM パッケージのフルパスを指定することもできます。この場合は、依存関係の確認は行なわずにインストールします。</para>
    <para>&yast; が提供するよりも多くの機能に対応したソフトウエア管理ユーティリティをご希望の場合は、 zypper の使用を検討してください。このユーティリティでは、 &yast; パッケージマネージャが使用するのと同じソフトウエア管理ライブラリを利用しています。 zypper の基本的な使用方法について、詳しくは <xref linkend="sec.zypper"/> をお読みください。</para>
   </sect2>
 
