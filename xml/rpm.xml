@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.rpm">
- <title>RPM&mdash;the Package Manager</title>
+ <title>RPM パッケージマネージャ</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,352 +13,164 @@
   </dm:docmanager>
  </info>
 
- <para>
-  RPM (RPM Package Manager) is used for managing software packages. Its main
-  commands are <command>rpm</command> and <command>rpmbuild</command>. The
-  powerful RPM database can be queried by the users, system administrators and
-  package builders for detailed information about the installed software.
- </para>
+ <para>RPM (RPM パッケージマネージャ) は、ソフトウエアパッケージを管理するために使用するツールです。主なコマンドは <command>rpm</command> と <command>rpmbuild</command> です。ユーザやシステム管理者、そしてパッケージの作成者からパワフルな RPM データベースに対して問い合わせを行ない、インストール済みのソフトウエアに関する詳細な情報を引き出すことができるようになっています。</para>
 
- <para>
-  <command>rpm</command> has five modes: installing, uninstalling
-  (or updating) software packages, rebuilding the RPM database, querying RPM
-  bases or individual RPM archives, integrity checking of packages and signing
-  packages. <command>rpmbuild</command> can be used to build installable
-  packages from pristine sources.
- </para>
+ <para><command>rpm</command> には 5 種類のモードが存在しています。それぞれインストールと削除 (もしくは更新) 、 RPM データベースの再構築と RPM データベースや個別の RPM 書庫に対する問い合わせ、そしてパッケージの一貫性チェックおよびパッケージへの署名の各機能です。一方の <command>rpmbuild</command> は、純粋なソースコードからインストール可能なパッケージを構築する機能を提供します。</para>
 
- <para>
-  Installable RPM archives are packed in a special binary format. These
-  archives consist of the program files to install and certain meta information
-  used during the installation by <command>rpm</command> to configure the
-  software package or stored in the RPM database for documentation purposes.
-  RPM archives normally have the extension <filename>.rpm</filename>.
- </para>
+ <para>インストール可能な RPM 書庫は、特殊なバイナリ形式になっています。書庫にはインストールすべきプログラムファイルのほか、インストール時に <command>rpm</command> が読み込んで、ソフトウエアパッケージの設定に使用するメタデータや、 RPM データベース内に保存する各種の情報などが含まれています。また、 RPM 書庫は通常、 <filename>.rpm</filename> という拡張子が設定されます。</para>
 
  <tip>
-  <title>Software Development Packages</title>
-  <para>
-   For several packages, the components needed for software development
-   (libraries, headers, include files, etc.) have been put into separate
-   packages. These development packages are only needed if you want to compile
-   software yourself (for example, the most recent &gnome; packages). They can
-   be identified by the name extension <literal>-devel</literal>, such as the
-   packages <systemitem class="resource">alsa-devel</systemitem> and
-   <systemitem class="resource">gimp-devel</systemitem>.
-  </para>
+  <title>ソフトウエア開発パッケージ</title>
+  <para>パッケージによっては、ソフトウエア開発に必要なコンポーネント (ライブラリ、ヘッダファイルなど) が別途のパッケージに分割されていることがあります。これらの開発用パッケージは、ソフトウエア自身 (たとえば最新の &gnome; パッケージなど) をコンパイルする場合にのみ必要なものです。開発用パッケージは <literal>-devel</literal> という名前で識別できるようになっていて、たとえば <systemitem class="resource">alsa-devel</systemitem> や <systemitem class="resource">gimp-devel</systemitem> のような名前で提供されています。</para>
  </tip>
 
  <sect2 xml:id="sec.rpm.package_auth">
-  <title>Verifying Package Authenticity</title>
-  <para>
-   RPM packages have a &gpg; signature. To verify the signature of an RPM
-   package, use the command <command>rpm --checksig&nbsp;</command>
-   <replaceable>PACKAGE</replaceable>-1.2.3.rpm to determine whether the
-   package originates from &suse; or from another trustworthy facility. This is
-   especially recommended for update packages from the Internet.
-  </para>
+  <title>パッケージの発行者の検証</title>
+  <para>RPM パッケージには &gpg; の署名が付与されています。 RPM パッケージの署名を検証するには、 <command>rpm --checksig&nbsp;</command> <replaceable>パッケージ名</replaceable>-1.2.3.rpm のように実行します。これで &suse; から提供されているパッケージなのか、それとも他の信頼できる提供元からのパッケージなのかを判別することができます。また、この仕組みはインターネット経由でパッケージを更新する場合には、特にお勧めの機能です。</para>
 <!--taroth 2015-06-01: fix for https://bugzilla.suse.com/show_bug.cgi?id=927292-->
-  <para os="sles;sled">
-   While fixing issues in the operating system, you might need to install a
-   Problem Temporary Fix (PTF) into a production system. The packages provided
-   by &suse; are signed against a special PTF key. However, in contrast to
-   &sle; 11, this key is not imported by default on &sle; 12 systems. To
-   manually import the key, use the following command:
-  </para>
+  <para os="sles;sled">オペレーティングシステムの問題が正式に解決されるまでの間、本番環境に対して一時的な修正である Problem Temporary Fix (PTF) をインストールする必要がある場合があります。 &suse; が提供するパッケージの場合、特殊な PTF 鍵を利用して署名が付与されます。ただし、 &sle; 11 とは異なり、この鍵は &sle; 12 システムでは既定で取り込みが行なわれません。手作業で鍵を取り込むには、下記のコマンドを実行してください:</para>
   <screen os="sles;sled">&prompt.sudo;rpm --import \
 /usr/share/doc/packages/suse-build-key/suse_ptf_key.asc</screen>
-  <para os="sles;sled">
-   After importing the key, you can install PTF packages on your system.
-  </para>
+  <para os="sles;sled">鍵を取り込むことで、 PTF パッケージをシステムにインストールできるようになります。</para>
  </sect2>
 
  <sect2 xml:id="sec.rpm.packages_manage">
-  <title>Managing Packages: Install, Update, and Uninstall</title>
-  <para>
-   Normally, the installation of an RPM archive is quite simple: <command>rpm
-   -i</command> <replaceable>PACKAGE</replaceable>.rpm. With this command the
-   package is installed, but only if its dependencies are fulfilled and if
-   there are no conflicts with other packages. With an error message,
-   <command>rpm</command> requests those packages that need to be installed to
-   meet dependency requirements. In the background, the RPM database ensures
-   that no conflicts arise&mdash;a specific file can only belong to one
-   package. By choosing different options, you can force <command>rpm</command>
-   to ignore these defaults, but this is only for experts. Otherwise, you risk
-   compromising the integrity of the system and possibly jeopardize the ability
-   to update the system.
-  </para>
-  <para>
-   The options <option>-U</option> or <option>--upgrade</option> and
-   <option>-F</option> or <option>--freshen</option> can be used to update a
-   package (for example, <command>rpm -F</command>
-   <replaceable>PACKAGE</replaceable>.rpm). This command removes the files of
-   the old version and immediately installs the new files. The difference
-   between the two versions is that <option>-U</option> installs packages that
-   previously did not exist in the system, while <option>-F</option> merely
-   updates previously installed packages. When updating, <command>rpm</command>
-   updates configuration files carefully using the following strategy:
-  </para>
+  <title>パッケージの管理: インストール／更新／削除</title>
+  <para>通常は、 RPM パッケージのインストールは至ってシンプルに、 <command>rpm -i</command> <replaceable>パッケージ</replaceable>.rpm を実行するだけで済みます。このコマンドは、依存関係が満たされていて、かつ他のパッケージとの間で矛盾が発生しない場合に限って成功します。何らかの問題が発生した場合、 <command>rpm</command> は依存関係を満たすために必要なパッケージを一覧で表示します。裏側では、 RPM データベースは 1 つのファイルが複数のパッケージに属してしまったりする矛盾が発生しないように処理を行ないます。なお、 <command>rpm</command> にオプションを指定することで、これらの既定値を無視して強制的にインストールすることができますが、これは知識のあるユーザ向けの機能です。これによってシステムの一貫性が損なわれたり、場合によってはシステムの更新機能を阻害してしまったりすることがあります。</para>
+  <para>また、 <option>-U</option> (もしくは <option>--upgrade</option>) と <option>-F</option> (もしくは <option>--freshen</option>) は、パッケージを更新する際に使用するオプションです (たとえば <command>rpm -F</command> <replaceable>パッケージ</replaceable> のように実行します) 。このコマンドは古いバージョンのファイルを削除して、即時に新しいバージョンのファイルをインストールする動作を行ないます。ただし、 <option>-U</option> を指定した場合、その時点でインストールされていないパッケージであればインストールを行なうのに対し、 <option>-F</option> ではインストールされていないパッケージの場合は何も行ないません。また、更新を行なう際、 <command>rpm</command> は設定ファイルを下記の方式で注意深く書き換えます:</para>
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     If a configuration file was not changed by the system administrator,
-     <command>rpm</command> installs the new version of the appropriate file.
-     No action by the system administrator is required.
-    </para>
+    <para>システム管理者側で設定ファイルを書き換えていない場合、 <command>rpm</command> は単純に新しいバージョンの設定ファイルを書き込みます。システム管理者側での作業は何も発生しません。</para>
    </listitem>
    <listitem>
-    <para>
-     If a configuration file was changed by the system administrator before the
-     update, <command>rpm</command> saves the changed file with the extension
-     <filename>.rpmorig</filename> or <filename>.rpmsave</filename> (backup
-     file) and installs the version from the new package. This is done only if
-     the originally installed file and the newer version are different. If this is
-     the case, compare the backup file (<filename>.rpmorig</filename> or
-     <filename>.rpmsave</filename>) with the newly installed file and make your
-     changes again in the new file. Afterward, delete all
-     <filename>.rpmorig</filename> and <filename>.rpmsave</filename> files to
-     avoid problems with future updates.
-    </para>
+    <para>システム管理者側で設定ファイルを書き換えている場合、 <command>rpm</command> は変更したファイルを <filename>.rpmorig</filename> もしくは <filename>.rpmsave</filename> (バックアップファイル) という拡張子を付けて保存し、新しいバージョンの設定ファイルを書き込みます。これは通常、インストールされている設定ファイルと新しいバージョンの設定ファイルが異なる場合にのみ行なわれます。この場合は、バックアップファイル ( <filename>.rpmorig</filename> もしくは <filename>.rpmsave</filename> ) と新しくインストールされた設定ファイルとを比較して、新しい設定ファイルに必要な変更を加える作業を行なうことになります。作業が終わったら、 <filename>.rpmorig</filename> や <filename>.rpmsave</filename> のファイルは削除しておいてください。今後の更新の際に問題を引き起こす可能性があるためです。</para>
    </listitem>
    <listitem>
-    <para>
-     <filename>.rpmnew</filename> files appear if the configuration file
-     already exists <emphasis>and</emphasis> if the <option>noreplace</option>
-     label was specified in the <filename>.spec</filename> file.
-    </para>
+    <para>なお、対応する <filename>.spec</filename> ファイル内に <option>noreplace</option> という指定があった場合、設定ファイルが書き換えられていると <filename>.rpmnew</filename> というファイルが作成されます。</para>
    </listitem>
   </itemizedlist>
-  <para>
-   Following an update, <filename>.rpmsave</filename> and
-   <filename>.rpmnew</filename> files should be removed after comparing them,
-   so they do not obstruct future updates. The <filename>.rpmorig</filename>
-   extension is assigned if the file has not previously been recognized by the
-   RPM database.
-  </para>
-  <para>
-   Otherwise, <filename>.rpmsave</filename> is used. In other words,
-   <filename>.rpmorig</filename> results from updating from a foreign format to
-   RPM. <filename>.rpmsave</filename> results from updating from an older RPM
-   to a newer RPM. <filename>.rpmnew</filename> does not disclose any
-   information to whether the system administrator has made any changes to the
-   configuration file. A list of these files is available in
-   <filename>/var/adm/rpmconfigcheck</filename>. Some configuration files (like
-   <filename>/etc/httpd/httpd.conf</filename>) are not overwritten to allow
-   continued operation.
-  </para>
-  <para>
-   The <option>-U</option> switch is <emphasis>not</emphasis> only an
-   equivalent to uninstalling with the <option>-e</option> option and
-   installing with the <option>-i</option> option. Use <option>-U</option>
-   whenever possible.
-  </para>
-  <para>
-   To remove a package, enter <command>rpm -e</command>
-   <replaceable>PACKAGE</replaceable>. This command only deletes the package if
-   there are no unresolved dependencies. It is theoretically impossible to
-   delete Tcl/Tk, for example, as long as another application requires it. Even
-   in this case, RPM calls for assistance from the database. If such a deletion
-   is, for whatever reason, impossible (even if <emphasis>no</emphasis>
-   additional dependencies exist), it may be helpful to rebuild the RPM
-   database using the option <option>--rebuilddb</option>.
-  </para>
+  <para>更新作業後、設定ファイルの比較が終わったら <filename>.rpmsave</filename> と <filename>.rpmnew</filename> ファイルは削除しておいてください。これは、今後の更新の際に問題を引き起こす可能性があるためです。なお、 <filename>.rpmorig</filename> は、対象のファイルが RPM データベース内で認識されていなかった場合に設定されます。</para>
+  <para>それ以外の場合は <filename>.rpmsave</filename> が生成されます。言い換えると、 <filename>.rpmorig</filename> は他の形式から RPM に更新した場合にのみ生成されるもので、 <filename>.rpmsave</filename> は古い RPM から新しい RPM に更新した場合に生成されます。また、 <filename>.rpmnew</filename> にはシステム管理者が変更した設定ファイルの内容は含まれていません。これらのファイルの一覧は、 <filename>/var/adm/rpmconfigcheck</filename> 内に用意されています。また、設定ファイルによっては、継続的な稼働を目的として、上書きを行なわないようにしているものもあります (例: <filename>/etc/httpd/httpd.conf</filename>) 。</para>
+  <para>ちなみに、 <option>-U</option> スイッチでの更新は、 <option>-e</option> オプションでいったんパッケージを削除してから、 <option>-i</option> でインストールし直す処理と等価では <emphasis>ありません</emphasis> 。できる限り <option>-U</option> で更新することをお勧めします。</para>
+  <para>パッケージを削除するには、 <command>rpm -e</command> <replaceable>パッケージ名</replaceable> を実行します。このコマンドは、パッケージの依存関係に未解決のものがない場合にのみ削除を行ないます。言い換えると、たとえば他のアプリケーションが Tcl/Tk を必要としている限り、理論上は Tcl/Tk を削除することができないことを意味します。この場合でも、 RPM はデータベースの支援を必要とします。もしも (依存関係に問題が内にもかかわらず) 何らかの理由で削除ができなくなってしまった場合は、 <option>--rebuilddb</option> オプションを使用して RPM データベースを再構築して解決を試みてください。</para>
  </sect2>
 
  <sect2 xml:id="sec.rpm.delta">
-  <title>Delta RPM Packages</title>
-  <para>
-   Delta RPM packages contain the difference between an old and a new version
-   of an RPM package. Applying a delta RPM onto an old RPM results in a
-   completely new RPM. It is not necessary to have a copy of the old RPM
-   because a delta RPM can also work with an installed RPM. The delta RPM
-   packages are even smaller in size than patch RPMs, which is an advantage
-   when transferring update packages over the Internet. The drawback is that
-   update operations with delta RPMs involved consume considerably more CPU
-   cycles than plain or patch RPMs.
-  </para>
-  <para>
-   The <command>makedeltarpm</command> and <command>applydelta</command>
-   binaries are part of the delta RPM suite (package
-   <systemitem>deltarpm</systemitem>) and help you create and apply delta RPM
-   packages. With the following commands, you can create a delta RPM called
-   <filename>new.delta.rpm</filename>. The following command assumes that
-   <filename>old.rpm</filename> and <filename>new.rpm</filename> are present:
-  </para>
+  <title>差分 (デルタ) RPM パッケージ</title>
+  <para>差分 (デルタ) RPM パッケージは、古いバージョンと新しいバージョンの RPM パッケージのうち、差異のある部分だけを保持するパッケージです。古いバージョンの RPM パッケージに対して差分 RPM を適用することで、新しいバージョンの RPM を生成することができます。差分 RPM はインストール済みの RPM に対しても適用することができますので、古いバージョンの RPM を保持しておく必要はありません。差分 RPM パッケージは修正 RPM よりもずっと小さいサイズにすることができますので、インターネットを介して更新パッケージを転送するような場合に便利な仕組みです。ただし、差分 RPM での更新処理は、純粋な RPM や修正 RPM に比べて CPU サイクルを多く消費するため、その点ではデメリットとなります。</para>
+  <para>差分 RPM スイート (<systemitem>deltarpm</systemitem> パッケージ) には、 <command>makedeltarpm</command> と <command>applydelta</command> の各コマンドが用意されていて、これらを利用することで差分 RPM パッケージを作成したり適用したりすることができるようになっています。下記のコマンドは差分 RPM を作成するためのコマンドで、 <filename>new.delta.rpm</filename> という差分 RPM を、<filename>old.rpm</filename> と <filename>new.rpm</filename> の各 RPM から作成します:</para>
 <screen>&prompt.sudo;makedeltarpm old.rpm new.rpm new.delta.rpm</screen>
-  <para>
-   Using <command>applydeltarpm</command>, you can reconstruct the new RPM from
-   the file system if the old package is already installed:
-  </para>
+  <para><command>applydeltarpm</command> を使用することで、インストール済みの古い RPM (<filename>old.rpm</filename>) から新しい RPM を再構築することができます:</para>
 <screen>&prompt.sudo;applydeltarpm new.delta.rpm new.rpm</screen>
-  <para>
-   To derive it from the old RPM without accessing the file system, use the
-   <option>-r</option> option:
-  </para>
+  <para>ファイルシステム内の古い RPM にはアクセスせずに差分 RPM を適用するには、 <option>-r</option> オプションを使用します:</para>
 <screen>&prompt.sudo;applydeltarpm -r old.rpm new.delta.rpm new.rpm</screen>
-  <para>
-   See <filename>/usr/share/doc/packages/deltarpm/README</filename> for
-   technical details.
-  </para>
+  <para>技術的な詳細について、詳しくは <filename>/usr/share/doc/packages/deltarpm/README</filename> をお読みください。</para>
  </sect2>
 
  <sect2 xml:id="sec.rpm.query">
-  <title>RPM Queries</title>
-  <para>
-   With the <option>-q</option> option <command>rpm</command> initiates
-   queries, making it possible to inspect an RPM archive (by adding the option
-   <option>-p</option>) and to query the RPM database of installed packages.
-   Several switches are available to specify the type of information required.
-   See <xref linkend="tab.rpm.query"/>.
-  </para>
+  <title>RPM データベースへの問い合わせ</title>
+  <para><option>-q</option> オプションを使用することで、 <command>rpm</command> は RPM 書庫 (<option>-p</option>) やインストール済みパッケージの RPM データベースに対して、問い合わせを行なう機能を提供します。なお、必要な情報を取得するためのスイッチが各種用意されています。詳しくは <xref linkend="tab.rpm.query"/> をご覧ください。</para>
   <table xml:id="tab.rpm.query">
-   <title>The Most Important RPM Query Options</title>
+   <title>最も重要な RPM 問い合わせオプション</title>
    <tgroup cols="2">
     <tbody>
      <row>
       <entry>
-       <para>
-        <option>-i</option>
-       </para>
+       <para><option>-i</option></para>
       </entry>
       <entry>
-       <para>
-        Package information
-       </para>
+       <para>パッケージ情報</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>-l</option>
-       </para>
+       <para><option>-l</option></para>
       </entry>
       <entry>
-       <para>
-        File list
-       </para>
+       <para>ファイル一覧</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>-f FILE</option>
-       </para>
+       <para><option>-f FILE</option></para>
       </entry>
       <entry>
-       <para>
-        Query the package that contains the file
-        <replaceable>FILE</replaceable> (the full path must be specified with
-        <replaceable>FILE</replaceable>)
-       </para>
+       <para><replaceable>FILE</replaceable> で指定したファイルを含むパッケージ (<replaceable>FILE</replaceable> ではフルパスを指定する必要があります)</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>-s</option>
-       </para>
+       <para><option>-s</option></para>
       </entry>
       <entry>
-       <para>
-        File list with status information (implies <option>-l</option>)
-       </para>
+       <para>ファイル一覧と状態に関する情報 (<option>-l</option> の機能を含みます)</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>-d</option>
-       </para>
+       <para><option>-d</option></para>
       </entry>
       <entry>
-       <para>
-        List only documentation files (implies <literal>-l</literal>)
-       </para>
+       <para>ドキュメンテーションファイルのみを一覧表示 (<option>-l</option> の機能を含みます)</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>-c</option>
-       </para>
+       <para><option>-c</option></para>
       </entry>
       <entry>
-       <para>
-        List only configuration files (implies <option>-l</option>)
-       </para>
+       <para>設定ファイルのみを一覧表示 (<option>-l</option> の機能を含みます)</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>--dump</option>
-       </para>
+       <para><option>--dump</option></para>
       </entry>
       <entry>
-       <para>
-        File list with complete details (to be used with <option>-l</option>,
-        <option>-c</option>, or <option>-d</option>)
-       </para>
+       <para>ファイル一覧と情報 (<option>-l</option> , <option>-c</option> , <option>-d</option> とあわせて指定する必要があります)</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>--provides</option>
-       </para>
+       <para><option>--provides</option></para>
       </entry>
       <entry>
-       <para>
-        List features of the package that another package can request with
-        <option>--requires</option>
-       </para>
+       <para>他のパッケージから <option>--requires</option> で要求することのできる、パッケージの機能一覧</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>--requires</option>, <option>-R</option>
-       </para>
+       <para><option>--requires</option> , <option>-R</option></para>
       </entry>
       <entry>
-       <para>
-        Capabilities the package requires
-       </para>
+       <para>パッケージが必要とする機能</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>--scripts</option>
-       </para>
+       <para><option>--scripts</option></para>
       </entry>
       <entry>
-       <para>
-        Installation scripts (preinstall, postinstall, uninstall)
-       </para>
+       <para>インストールスクリプト (preinstall (インストール前), postinstall (インストール後), uninstall (削除時))</para>
       </entry>
      </row>
     </tbody>
    </tgroup>
   </table>
-  <para>
-   For example, the command <command>rpm -q -i wget</command> displays the
-   information shown in <xref linkend="aus.update.rpm-i"/>.
-  </para>
+  <para>たとえば <command>rpm -q -i wget</command> のように実行すると、 <xref linkend="aus.update.rpm-i"/> のような情報が表示されます。</para>
   <example xml:id="aus.update.rpm-i">
    <title><command>rpm -q -i wget</command></title>
 <screen os="osuse"><?dbsuse-fo font-size="0.70em"?>Name        : wget
 Version     : 1.14
 Release     : 10.3
 Architecture: x86_64
-Install Date: Fri 14 Jul 2017 04:09:58 PM CEST
+Install Date: 2017年07月14日 16時09分58秒
 Group       : Productivity/Networking/Web/Utilities
 Size        : 2046452
 License     : GPL-3.0+
-Signature   : RSA/SHA256, Wed 10 May 2017 02:40:21 AM CEST, Key ID b88b2fd43dbdc284
+Signature   : RSA/SHA256, 2017年05月10日 02時40分21秒, Key ID b88b2fd43dbdc284
 Source RPM  : wget-1.14-10.3.src.rpm
-Build Date  : Wed 10 May 2017 02:40:12 AM CEST
+Build Date  : 2017年05月10日 02時40分12秒
 Build Host  : lamb55
 Relocations : (not relocatable)
 Packager    : http://bugs.opensuse.org
@@ -373,13 +185,13 @@ Distribution: openSUSE Leap 42.3</screen>
 Version     : 1.14
 Release     : 17.1
 Architecture: x86_64
-Install Date: Mon 30 Jan 2017 14:01:29 CET
+Install Date: 2017年01月30日 14時01分29秒
 Group       : Productivity/Networking/Web/Utilities
 Size        : 2046483
 License     : GPL-3.0+
-Signature   : RSA/SHA256, Thu 08 Dec 2016 07:48:44 CET, Key ID 70af9e8139db7c82
+Signature   : RSA/SHA256, 2016年12月08日 07時48分44秒, Key ID 70af9e8139db7c82
 Source RPM  : wget-1.14-17.1.src.rpm
-Build Date  : Thu 08 Dec 2016 07:48:34 CET
+Build Date  : 2016年12月08日 07時48分34秒
 Build Host  : sheep09
 Relocations : (not relocatable)
 Packager    : https://www.suse.com/
@@ -391,20 +203,13 @@ Wget enables you to retrieve WWW documents or FTP files from a server.
 This can be done in script files or via the command line.
 Distribution: SUSE Linux Enterprise 12</screen>
   </example>
-  <para>
-   The option <option>-f</option> only works if you specify the complete file
-   name with its full path. Provide as many file names as desired. For example:
-  </para>
+  <para><option>-f</option> オプションで指定するファイル名は、フルパスを指定した場合にのみ動作します。また、ファイル名は必要な分だけ記述することができます。たとえば下記のようになります:</para>
 <screen>&prompt.user;rpm -q -f /bin/rpm /usr/bin/wget
 rpm-4.11.2-15.1.x86_64
 wget-1.14-17.1.x86_64</screen>
-  <para>
-   If only part of the file name is known, use a shell script as shown in
-   <xref linkend="dat.rpm.search"/>. Pass the partial file name to the script
-   shown as a parameter when running it.
-  </para>
+  <para>ファイル名の一部のみが判明している場合は、 <xref linkend="dat.rpm.search"/> で示しているようなスクリプトをお使いください。スクリプトのパラメータとしてファイル名の一部を指定して実行してください。</para>
   <example xml:id="dat.rpm.search">
-   <title>Script to Search for Packages</title>
+   <title>パッケージを検索するためのスクリプト</title>
 <screen>#! /bin/sh
 for i in $(rpm -q -a -l | grep $1); do
     echo "\"$i\" is in package:"
@@ -412,377 +217,191 @@ for i in $(rpm -q -a -l | grep $1); do
     echo ""
 done</screen>
   </example>
-  <para>
-   The command <command>rpm -q --changelog</command>
-   <replaceable>PACKAGE</replaceable> displays a detailed list of change
-   information about a specific package, sorted by date.
-  </para>
-  <para>
-   With the installed RPM database, verification checks can be made. Initiate
-   these with <option>-V</option>, or <option>--verify</option>. With this
-   option, <command>rpm</command> shows all files in a package that have been
-   changed since installation. <command>rpm</command> uses eight character
-   symbols to give some hints about the following changes:
-  </para>
+  <para>また、　<command>rpm -q --changelog</command> <replaceable>パッケージ名</replaceable> のように実行すると、特定のパッケージに対する更新情報を、詳細な一覧形式で日付順に取得することができます。</para>
+  <para>インストール済み RPM データベースに対しては、検証作業を行なうことができます。これを行なうには、 <option>-V</option> または <option>--verify</option> を指定してください。このオプションを指定すると、 <command>rpm</command> はパッケージ内のファイルのうち、インストール時点から変更されているものを全て表示します。 <command>rpm</command> では、 8 文字の記号を表示して、どのような点に差異があったのかを表示します:</para>
   <table xml:id="tab.rpm.verify">
-   <title>RPM Verify Options</title>
+   <title>RPM 検証オプション</title>
    <tgroup cols="2">
     <tbody>
      <row>
       <entry>
-       <para>
-        <option>5</option>
-       </para>
+       <para><option>5</option></para>
       </entry>
       <entry>
-       <para>
-        MD5 check sum
-       </para>
+       <para>MD5 チェックサム</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>S</option>
-       </para>
+       <para><option>S</option></para>
       </entry>
       <entry>
-       <para>
-        File size
-       </para>
+       <para>ファイルサイズ</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>L</option>
-       </para>
+       <para><option>L</option></para>
       </entry>
       <entry>
-       <para>
-        Symbolic link
-       </para>
+       <para>シンボリックリンク</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>T</option>
-       </para>
+       <para><option>T</option></para>
       </entry>
       <entry>
-       <para>
-        Modification time
-       </para>
+       <para>最終更新日時</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>D</option>
-       </para>
+       <para><option>D</option></para>
       </entry>
       <entry>
-       <para>
-        Major and minor device numbers
-       </para>
+       <para>メジャー／マイナーデバイス番号</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>U</option>
-       </para>
+       <para><option>U</option></para>
       </entry>
       <entry>
-       <para>
-        Owner
-       </para>
+       <para>所有者</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>G</option>
-       </para>
+       <para><option>G</option></para>
       </entry>
       <entry>
-       <para>
-        Group
-       </para>
+       <para>グループ</para>
       </entry>
      </row>
      <row>
       <entry>
-       <para>
-        <option>M</option>
-       </para>
+       <para><option>M</option></para>
       </entry>
       <entry>
-       <para>
-        Mode (permissions and file type)
-       </para>
+       <para>モード (パーミッションとファイルの種類)</para>
       </entry>
      </row>
     </tbody>
    </tgroup>
   </table>
-  <para>
-   In the case of configuration files, the letter <option>c</option> is
-   printed. For example, for changes to <filename>/etc/wgetrc</filename>
-   (<systemitem class="resource">wget</systemitem> package):
-  </para>
+  <para>設定ファイルの場合は <option>c</option> という文字が出力されます。たとえば <filename>/etc/wgetrc</filename> ファイル ( <systemitem class="resource">wget</systemitem> パッケージ) が書き換えられている場合、下記のような出力になります:</para>
 <screen>&prompt.user;rpm -V wget
 S.5....T c /etc/wgetrc</screen>
-  <para>
-   The files of the RPM database are placed in
-   <filename>/var/lib/rpm</filename>. If the partition
-   <filename>/usr</filename> has a size of 1&nbsp;GB, this database can occupy
-   nearly 30&nbsp;MB, especially after a complete update. If the database is
-   much larger than expected, it is useful to rebuild the database with the
-   option <option>--rebuilddb</option>. Before doing this, make a backup of the
-   old database. The <command>cron</command> script
-   <command>cron.daily</command> makes daily copies of the database (packed
-   with gzip) and stores them in <filename>/var/adm/backup/rpmdb</filename>.
-   The number of copies is controlled by the variable
-   <systemitem>MAX_RPMDB_BACKUPS</systemitem> (default: <option>5</option>) in
-   <filename>/etc/sysconfig/backup</filename>. The size of a single backup is
-   approximately 1&nbsp;MB for 1&nbsp;GB in <filename>/usr</filename>.
-  </para>
+  <para>RPM データベースのファイルは <filename>/var/lib/rpm</filename> 内にあります。<filename>/usr</filename> のあるパーティションが 1 GB 程度のサイズである場合、特に完全更新を行なった場合は顕著ですが、データベースはおおよそ 30 MB 程度のサイズを占有します。データベースが期待するサイズよりもずっと大きい場合は、 <option>--rebuilddb</option> オプションを使用してデータベースを再構築するとよいでしょう。ただし、再構築を行なうにあたっては、事前に古いデータベースをバックアップしておいてください。また、 <command>cron</command> スクリプトの <command>cron.daily</command> では、データベースのバックアップを採取して gzip で圧縮し、 <filename>/var/adm/backup/rpmdb</filename> 内に保存する処理を行なっています。保存するバックアップの最大数は <filename>/etc/sysconfig/backup</filename> ファイル内の <systemitem>MAX_RPMDB_BACKUPS</systemitem> で設定することができます (既定値: <option>5</option>) 。なお、 <filename>/usr</filename> が 1 GB 程度である場合、バックアップ 1 つあたり 1 MB 程度になります。</para>
  </sect2>
 
  <sect2 xml:id="sec.rpm.sources">
-  <title>Installing and Compiling Source Packages</title>
-  <para>
-   All source packages carry a <filename>.src.rpm</filename> extension (source
-   RPM).
-  </para>
+  <title>ソースパッケージのインストールとコンパイル</title>
+  <para>全てのソースパッケージには <filename>.src.rpm</filename> という拡張子 (ソース RPM) が設定されます。</para>
   <note>
-   <title>Installed Source Packages</title>
-   <para>
-    Source packages can be copied from the installation medium to the hard disk
-    and unpacked with &yast;. They are not, however, marked as installed
-    (<literal>[i]</literal>) in the package manager. This is because the source
-    packages are not entered in the RPM database. Only
-    <emphasis>installed</emphasis> operating system software is listed in the
-    RPM database. When you <quote>install</quote> a source package, only the
-    source code is added to the system.
-   </para>
+   <title>インストール済みのソースパッケージ</title>
+   <para>ソースパッケージは、 &yast; を利用することでインストールメディアからハードディスクにコピーすることができます。ただし、インストールを行なってもパッケージマネージャの表示が ( <literal>[i]</literal> ) になることはありません。これは、ソースパッケージが RPM データベース内で管理されないことによるものです。 RPM データベースには、 <emphasis>インストール済みの</emphasis> オペレーティングシステムのソフトウエアのみの情報が書かれています。ソースパッケージについては、 <quote>インストール</quote> を行なってもシステムにソースコードが追加されるだけです。</para>
   </note>
-  <para>
-   The following directories must be available for <command>rpm</command> and
-   <command>rpmbuild</command> in <filename>/usr/src/packages</filename>
-   (unless you specified custom settings in a file like
-   <filename>/etc/rpmrc</filename>):
-  </para>
+  <para><command>rpm</command> と <command>rpmbuild</command> で利用する目的で、<filename>/usr/src/packages</filename> 以下に下記のディレクトリが作成されます (ただし、 <filename>/etc/rpmrc</filename> のようなファイルで独自に設定した場合を除きます):</para>
   <variablelist>
    <varlistentry>
-    <term><filename>SOURCES</filename>
-    </term>
+    <term><filename>SOURCES</filename></term>
     <listitem>
-     <para>
-      for the original sources (<filename>.tar.bz2</filename> or
-      <filename>.tar.gz</filename> files, etc.) and for distribution-specific
-      adjustments (mostly <filename>.diff</filename> or
-      <filename>.patch</filename> files)
-     </para>
+     <para>オリジナルのソースコード (<filename>.tar.bz2</filename> や <filename>.tar.gz</filename> など) と、ディストリビューション固有の調整 (多くは <filename>.diff</filename> や <filename>.patch</filename> など) が含まれます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><filename>SPECS</filename>
-    </term>
+    <term><filename>SPECS</filename></term>
     <listitem>
-     <para>
-      for the <filename>.spec</filename> files, similar to a meta Makefile,
-      which control the <emphasis>build</emphasis> process
-     </para>
+     <para><filename>.spec</filename> ファイルが配置されるディレクトリです。これは <quote>メタ Makefile</quote> と表現しうる仕組みで、 <emphasis>構築</emphasis> 処理を制御するためのファイルです。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><filename>BUILD</filename>
-    </term>
+    <term><filename>BUILD</filename></term>
     <listitem>
-     <para>
-      all the sources are unpacked, patched and compiled in this directory
-     </para>
+     <para>ソースコードの展開や修正の適用、コンパイルなどをこのディレクトリで行ないます</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><filename>RPMS</filename>
-    </term>
+    <term><filename>RPMS</filename></term>
     <listitem>
-     <para>
-      where the completed binary packages are stored
-     </para>
+     <para>作成されたバイナリパッケージが配置されるディレクトリです。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><filename>SRPMS</filename>
-    </term>
+    <term><filename>SRPMS</filename></term>
     <listitem>
-     <para>
-      here are the source RPMs
-     </para>
+     <para>ソース RPM が配置されるディレクトリです。</para>
     </listitem>
    </varlistentry>
   </variablelist>
-  <para>
-   When you install a source package with &yast;, all the necessary components
-   are installed in <filename>/usr/src/packages</filename>: the sources and the
-   adjustments in <filename>SOURCES</filename> and the relevant
-   <filename>.spec</filename> file in <filename>SPECS</filename>.
-  </para>
+  <para>&yast; からソースパッケージをインストールすると、 <filename>/usr/src/packages</filename> 以下に必要な全てのコンポーネントが配置されます。具体的には、ソースコードと修正類が <filename>SOURCES</filename> に、対応する <filename>.spec</filename> ファイルが <filename>SPECS</filename> にそれぞれ配置されます。</para>
   <warning>
-   <title>System Integrity</title>
-   <para>
-    Do not experiment with system components
-    (<systemitem class="resource">glibc</systemitem>,
-    <systemitem class="resource">rpm</systemitem>, etc.), because this
-    endangers the stability of your system.
-   </para>
+   <title>システムの安定性への危険について</title>
+   <para>システムコンポーネント (例: <systemitem class="resource">glibc</systemitem> , <systemitem class="resource">rpm</systemitem> など) に対しては、下記の手順を試してはなりません。場合によってはシステムの安定性を壊してしまう危険があるためです。</para>
   </warning>
-  <para>
-   The following example uses the <filename>wget.src.rpm</filename> package.
-   After installing the source package, you should have files similar to those
-   in the following list:
-  </para>
+  <para>下記の例は、 <filename>wget.src.rpm</filename> パッケージをインストールした場合の例です。ソースパッケージをインストールすると、下記のようなファイルが作成されます:</para>
 <screen>/usr/src/packages/SOURCES/wget-1.11.4.tar.bz2
 /usr/src/packages/SOURCES/wgetrc.patch
 /usr/src/packages/SPECS/wget.spec</screen>
-  <para>
-   <command>rpmbuild</command> <option>-b<replaceable>X</replaceable></option>
-   <filename>/usr/src/packages/SPECS/wget.spec</filename> starts the
-   compilation. <replaceable>X</replaceable> is a wild card for various stages
-   of the build process (see the output of <option>--help</option> or the RPM
-   documentation for details). The following is merely a brief explanation:
-  </para>
+  <para><command>rpmbuild</command> <option>-b<replaceable>X</replaceable></option> <filename>/usr/src/packages/SPECS/wget.spec</filename> のように実行すると、コンパイル処理が始まります。なお、 <replaceable>X</replaceable> には構築プロセスのどの段階までを実行するのかを指定します (詳しくは <option>--help</option> で表示されるヘルプか、 RPM のドキュメンテーションをお読みください) 。下記には概要説明を記載します:</para>
   <variablelist>
    <varlistentry>
-    <term><option>-bp</option>
-    </term>
+    <term><option>-bp</option></term>
     <listitem>
-     <para>
-      Prepare sources in <filename>/usr/src/packages/BUILD</filename>: unpack
-      and patch.
-     </para>
+     <para><filename>/usr/src/packages/BUILD</filename> 以下にソースコードを展開し、必要であれば修正を適用します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-bc</option>
-    </term>
+    <term><option>-bc</option></term>
     <listitem>
-     <para>
-      Do the same as <option>-bp</option>, but with additional compilation.
-     </para>
+     <para><option>-bp</option> までの処理に加え、追加でコンパイルまで実行します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-bi</option>
-    </term>
+    <term><option>-bi</option></term>
     <listitem>
-     <para>
-      Do the same as <option>-bp</option>, but with additional installation of
-      the built software. Caution: if the package does not support the
-      BuildRoot feature, you might overwrite configuration files.
-     </para>
+     <para><option>-bp</option> までの処理に加え、構築済みのソフトウエアをインストールする処理まで実行します。注意: パッケージが BuildRoot 機能に対応していない場合、これを実行すると設定ファイルを上書きしてしまいます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-bb</option>
-    </term>
+    <term><option>-bb</option></term>
     <listitem>
-     <para>
-      Do the same as <option>-bi</option>, but with the additional creation of
-      the binary package. If the compile was successful, the binary should be
-      in <filename>/usr/src/packages/RPMS</filename>.
-     </para>
+     <para><option>-bi</option> までの処理に加え、バイナリパッケージの作成まで実行します。コンパイルが成功すれば、 <filename>/usr/src/packages/RPMS</filename> ディレクトリ内に配置されます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-ba</option>
-    </term>
+    <term><option>-ba</option></term>
     <listitem>
-     <para>
-      Do the same as <option>-bb</option>, but with the additional creation of
-      the source RPM. If the compilation was successful, the binary should be
-      in <filename>/usr/src/packages/SRPMS</filename>.
-     </para>
+     <para><option>-bb</option> までの処理に加え、ソース RPM の作成まで実行します。コンパイルが成功すれば、 <filename>/usr/src/packages/SRPMS</filename> ディレクトリ内に配置されます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--short-circuit</option>
-    </term>
+    <term><option>--short-circuit</option></term>
     <listitem>
-     <para>
-      Skip some steps.
-     </para>
+     <para>いくつかの手順を飛ばして実行します。</para>
     </listitem>
    </varlistentry>
   </variablelist>
-  <para>
-   The binary RPM created can now be installed with <command>rpm</command>
-   <option>-i</option> or, preferably, with <command>rpm</command>
-   <option>-U</option>. Installation with <command>rpm</command> makes it
-   appear in the RPM database.
-  </para>
-  <para>
-   Keep in mind, the <literal>BuildRoot</literal> directive in the spec file is
-   deprecated since &productname; <phrase os="sles;sled">12</phrase><phrase os="osuse">42.1</phrase>. If you still need this feature, use the
-   <option>--buildroot</option> option as a workaround. <phrase os="sles;sled">For a more detailed background, see the support database at
-   <link xlink:href="https://www.suse.com/support/kb/doc?id=7017104"/>.</phrase>
-  </para>
+  <para>作成されたバイナリ RPM は、 <command>rpm</command> <option>-i</option> または <command>rpm</command> <option>-U</option> でインストールすることができます。 <command>rpm</command> でインストールを行なうと、 RPM データベース内に現われるようになります。</para>
+  <para>なお、 spec ファイル内の <literal>BuildRoot</literal> ディレクティブは、 &productname; <phrase os="sles;sled">12</phrase> <phrase os="osuse">42.1</phrase> で廃止予定としてマークされていることに注意してください。どうしてもこの機能が必要な場合は、回避策として <option>--buildroot</option> オプションを指定してください。<phrase os="sles;sled">背景となる情報について、詳しくはサポートデータベース <link xlink:href="https://www.suse.com/support/kb/doc?id=7017104"/> をお読みください。</phrase></para>
  </sect2>
 
  <sect2 xml:id="sec.rpm.build">
-  <title>Compiling RPM Packages with build</title>
-  <para>
-   The danger with many packages is that unwanted files are added to the
-   running system during the build process. To prevent this use
-   <systemitem>build</systemitem>, which creates a defined environment in which
-   the package is built. To establish this chroot environment, the
-   <command>build</command> script must be provided with a complete package
-   tree. This tree can be made available on the hard disk, via NFS, or from
-   DVD. Set the position with <command>build --rpms</command>
-   <replaceable>DIRECTORY</replaceable>. Unlike <command>rpm</command>, the
-   <command>build</command> command looks for the <filename>.spec</filename>
-   file in the source directory. To build <filename>wget</filename> (like in
-   the above example) with the DVD mounted in the system under
-   <filename>/media/dvd</filename>, use the following commands as
-   &rootuser;:
-  </para>
+  <title>build を利用した RPM パッケージのコンパイル</title>
+  <para>構築処理を行なうにあたっては、多くのパッケージをインストールする必要がありますが、これらはシステムを動作させるにあたっては不要なものです。不要なパッケージのインストールを回避するには、 <systemitem>build</systemitem> をお使いください。これはパッケージを構築するための環境を、現在使用中のものとは別に作成できる仕組みで、 chroot の仕組みを利用して環境の作成と構築を行ないます。構築環境はハードディスクのほか、 NFS や DVD を利用することができます。環境の作成元となる場所を指定するには、 <command>build --rpms</command> <replaceable>ディレクトリ</replaceable> のように指定してください。なお、 <command>rpm</command> とは異なり、 <command>build</command> コマンドではソースディレクトリ内に <filename>.spec</filename> を配置します。たとえば <filename>wget</filename> パッケージを <filename>/media/dvd</filename> にマウントされた DVD を利用して構築したい場合は、下記のコマンドを &rootuser; で実行します:</para>
 <screen>&prompt.root;cd /usr/src/packages/SOURCES/
 &prompt.root;mv ../SPECS/wget.spec .
 &prompt.root;build --rpms /media/dvd/suse/ wget.spec</screen>
-  <para>
-   Subsequently, a minimum environment is established at
-   <filename>/var/tmp/build-root</filename>. The package is built in this
-   environment. Upon completion, the resulting packages are located in
-   <filename>/var/tmp/build-root/usr/src/packages/RPMS</filename>.
-  </para>
-  <para>
-   The <command>build</command> script offers several additional options. For
-   example, cause the script to prefer your own RPMs, omit the initialization
-   of the build environment or limit the <command>rpm</command> command to one
-   of the above-mentioned stages. Access additional information with
-   <command>build</command> <option>--help</option> and by reading the
-   <command>build</command> man page.
-  </para>
+  <para>すると、最小構成の環境が <filename>/var/tmp/build-root</filename> 内に作成されます。パッケージはこの環境を利用して構築されます。構築が完了すると、作成されたパッケージは <filename>/var/tmp/build-root/usr/src/packages/RPMS</filename> に配置されます。</para>
+  <para><command>build</command> スクリプトにはいくつかの追加オプションがあります。たとえばスクリプトに対して独自の RPM を使用させたり、構築環境の初期化を省略したり、 <command>rpm</command> コマンドに対して上述の途中段階までで停止させたりすることができます。詳しくは <command>build</command> <option>--help</option> で表示されるヘルプか、もしくは <command>build</command> のマニュアルページをお読みください。</para>
  </sect2>
 
  <sect2 xml:id="sec.rpm.tools">
-  <title>Tools for RPM Archives and the RPM Database</title>
-  <para>
-   Midnight Commander (<command>mc</command>) can display the contents of RPM
-   archives and copy parts of them. It represents archives as virtual file
-   systems, offering all usual menu options of Midnight Commander. Display the
-   <filename>HEADER</filename> with <keycap>F3</keycap>. View the archive
-   structure with the cursor keys and <keycap function="enter"/>. Copy archive
-   components with <keycap>F5</keycap>.
-  </para>
-  <para>
-   A full-featured package manager is available as a &yast; module. For
-   details, see <xref linkend="cha.yast-software"/>.
-  </para>
+  <title>RPM 書庫および RPM データベース向けツール</title>
+  <para>Midnight Commander ( <command>mc</command> ) では、 RPM 書庫の内容を表示することができるほか、一部をコピーしたりすることができます。 Midnight Commander では仮想的なファイルシステムとして表示されるため、通常のメニューオプションを全て利用することができます。また、 <keycap>F3</keycap> を押すと <filename>HEADER</filename> を表示することができるほか、カーソルキーで書庫の内容を選択して <keycap function="enter"/> を押すと、内容を表示することができます。また、一部をコピーしたい場合は、 <keycap>F5</keycap> を押します。</para>
+  <para>&yast; モジュールには、完全機能のパッケージマネージャが用意されています。詳しくは <xref linkend="cha.yast-software"/> をお読みください。</para>
 <!--
   -->
  </sect2>

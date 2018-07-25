@@ -1,32 +1,35 @@
+# translation of rpm.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: rpm.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-25 14:51+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: rpm.xml:9
 #, no-c-format
 msgid "RPM&mdash;the Package Manager"
-msgstr ""
+msgstr "RPM パッケージマネージャ"
 
 #. Tag: dm:translation
 #: rpm.xml:14
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: rpm.xml:18
@@ -37,6 +40,11 @@ msgid ""
 "powerful RPM database can be queried by the users, system administrators and "
 "package builders for detailed information about the installed software."
 msgstr ""
+"RPM (RPM パッケージマネージャ) は、ソフトウエアパッケージを管理するために使用するツールです。"
+"主なコマンドは <command>rpm</command> と <command>rpmbuild</command> です。"
+"ユーザやシステム管理者、そしてパッケージの作成者からパワフルな RPM データベースに"
+"対して問い合わせを行ない、インストール済みのソフトウエアに関する詳細な情報を"
+"引き出すことができるようになっています。"
 
 #. Tag: para
 #: rpm.xml:25
@@ -48,6 +56,11 @@ msgid ""
 "packages. <command>rpmbuild</command> can be used to build installable "
 "packages from pristine sources."
 msgstr ""
+"<command>rpm</command> には 5 種類のモードが存在しています。それぞれインストールと"
+"削除 (もしくは更新) 、 RPM データベースの再構築と RPM データベースや"
+"個別の RPM 書庫に対する問い合わせ、そしてパッケージの一貫性チェックおよびパッケージ"
+"への署名の各機能です。一方の <command>rpmbuild</command> は、純粋なソースコード"
+"からインストール可能なパッケージを構築する機能を提供します。"
 
 #. Tag: para
 #: rpm.xml:33
@@ -60,12 +73,17 @@ msgid ""
 "documentation purposes. RPM archives normally have the extension <filename>."
 "rpm</filename> ."
 msgstr ""
+"インストール可能な RPM 書庫は、特殊なバイナリ形式になっています。書庫には"
+"インストールすべきプログラムファイルのほか、インストール時に <command>rpm</command> "
+"が読み込んで、ソフトウエアパッケージの設定に使用するメタデータや、 RPM データ"
+"ベース内に保存する各種の情報などが含まれています。また、 RPM 書庫は通常、 <filename>."
+"rpm</filename> という拡張子が設定されます。"
 
 #. Tag: title
 #: rpm.xml:42
 #, no-c-format
 msgid "Software Development Packages"
-msgstr ""
+msgstr "ソフトウエア開発パッケージ"
 
 #. Tag: para
 #: rpm.xml:43
@@ -79,12 +97,19 @@ msgid ""
 "packages <systemitem class=\"resource\">alsa-devel</systemitem> and "
 "<systemitem class=\"resource\">gimp-devel</systemitem> ."
 msgstr ""
+"パッケージによっては、ソフトウエア開発に必要なコンポーネント (ライブラリ、"
+"ヘッダファイルなど) が別途のパッケージに分割されていることがあります。これらの"
+"開発用パッケージは、ソフトウエア自身 (たとえば最新の &gnome; パッケージなど) を"
+"コンパイルする場合にのみ必要なものです。開発用パッケージは <literal>-devel</literal> "
+"という名前で識別できるようになっていて、たとえば"
+" <systemitem class=\"resource\">alsa-devel</systemitem> や"
+" <systemitem class=\"resource\">gimp-devel</systemitem> のような名前で提供されています。"
 
 #. Tag: title
 #: rpm.xml:55
 #, no-c-format
 msgid "Verifying Package Authenticity"
-msgstr ""
+msgstr "パッケージの発行者の検証"
 
 #. Tag: para
 #: rpm.xml:56
@@ -96,6 +121,12 @@ msgid ""
 "package originates from &suse; or from another trustworthy facility. This is "
 "especially recommended for update packages from the Internet."
 msgstr ""
+"RPM パッケージには &gpg; の署名が付与されています。 RPM パッケージの署名を検証する"
+"には、 <command>rpm --checksig&nbsp;</command> <replaceable>パッケージ名</replaceable>"
+"-1.2.3.rpm のように実行します。これで &suse; から提供されているパッケージなのか、"
+"それとも他の信頼できる提供元からのパッケージなのかを判別することができます。"
+"また、この仕組みはインターネット経由でパッケージを更新する場合には、特にお勧めの"
+"機能です。"
 
 #. Tag: para
 #: rpm.xml:64
@@ -107,6 +138,12 @@ msgid ""
 "&sle; 11, this key is not imported by default on &sle; 12 systems. To "
 "manually import the key, use the following command:"
 msgstr ""
+"オペレーティングシステムの問題が正式に解決されるまでの間、本番環境に対して一時的な"
+"修正である Problem Temporary Fix (PTF) をインストールする必要がある場合が"
+"あります。 &suse; が提供するパッケージの場合、特殊な PTF 鍵を利用して署名が"
+"付与されます。ただし、 &sle; 11 とは異なり、この鍵は &sle; 12 システムでは"
+"既定で取り込みが行なわれません。手作業で鍵を取り込むには、下記のコマンドを実行"
+"してください:"
 
 #. Tag: screen
 #: rpm.xml:71
@@ -115,18 +152,20 @@ msgid ""
 "&prompt.sudo;rpm --import \\\n"
 "/usr/share/doc/packages/suse-build-key/suse_ptf_key.asc"
 msgstr ""
+"&prompt.sudo;rpm --import \\\n"
+"/usr/share/doc/packages/suse-build-key/suse_ptf_key.asc"
 
 #. Tag: para
 #: rpm.xml:73
 #, no-c-format
 msgid "After importing the key, you can install PTF packages on your system."
-msgstr ""
+msgstr "鍵を取り込むことで、 PTF パッケージをシステムにインストールできるようになります。"
 
 #. Tag: title
 #: rpm.xml:79
 #, no-c-format
 msgid "Managing Packages: Install, Update, and Uninstall"
-msgstr ""
+msgstr "パッケージの管理: インストール／更新／削除"
 
 #. Tag: para
 #: rpm.xml:80
@@ -144,6 +183,16 @@ msgid ""
 "compromising the integrity of the system and possibly jeopardize the ability "
 "to update the system."
 msgstr ""
+"通常は、 RPM パッケージのインストールは至ってシンプルに、 <command>rpm -i</command>"
+" <replaceable>パッケージ</replaceable>.rpm を実行するだけで済みます。このコマンドは、"
+"依存関係が満たされていて、かつ他のパッケージとの間で矛盾が発生しない場合に限って"
+"成功します。何らかの問題が発生した場合、 <command>rpm</command> は依存関係を"
+"満たすために必要なパッケージを一覧で表示します。裏側では、 RPM データベースは"
+" 1 つのファイルが複数のパッケージに属してしまったりする矛盾が発生しないように"
+"処理を行ないます。なお、 <command>rpm</command> にオプションを指定することで、"
+"これらの既定値を無視して強制的にインストールすることができますが、これは知識の"
+"あるユーザ向けの機能です。これによってシステムの一貫性が損なわれたり、場合によっては"
+"システムの更新機能を阻害してしまったりすることがあります。"
 
 #. Tag: para
 #: rpm.xml:93
@@ -159,6 +208,15 @@ msgid ""
 "packages. When updating, <command>rpm</command> updates configuration files "
 "carefully using the following strategy:"
 msgstr ""
+"また、 <option>-U</option> (もしくは <option>--upgrade</option>) と <option>-"
+"F</option> (もしくは <option>--freshen</option>) は、パッケージを更新する際に"
+"使用するオプションです (たとえば <command>rpm -F</command> <replaceable>パッケージ</replaceable> "
+"のように実行します) 。このコマンドは古いバージョンのファイルを削除して、即時に"
+"新しいバージョンのファイルをインストールする動作を行ないます。ただし、 <option>-U</option> を"
+"指定した場合、その時点でインストールされていないパッケージであればインストールを行なうのに対し、"
+" <option>-F</option> ではインストールされていないパッケージの場合は何も行ないません。"
+"また、更新を行なう際、 <command>rpm</command> は設定ファイルを下記の方式で"
+"注意深く書き換えます:"
 
 #. Tag: para
 #: rpm.xml:106
@@ -168,6 +226,9 @@ msgid ""
 "<command>rpm</command> installs the new version of the appropriate file. No "
 "action by the system administrator is required."
 msgstr ""
+"システム管理者側で設定ファイルを書き換えていない場合、 <command>rpm</command> は"
+"単純に新しいバージョンの設定ファイルを書き込みます。システム管理者側での作業は"
+"何も発生しません。"
 
 #. Tag: para
 #: rpm.xml:113
@@ -184,6 +245,16 @@ msgid ""
 "filename> and <filename>.rpmsave</filename> files to avoid problems with "
 "future updates."
 msgstr ""
+"システム管理者側で設定ファイルを書き換えている場合、 <command>rpm</command> は"
+"変更したファイルを <filename>.rpmorig</filename> もしくは <filename>.rpmsave</filename> "
+"(バックアップファイル) という拡張子を付けて保存し、新しいバージョンの設定ファイルを"
+"書き込みます。これは通常、インストールされている設定ファイルと新しいバージョンの"
+"設定ファイルが異なる場合にのみ行なわれます。この場合は、バックアップファイル"
+" ( <filename>.rpmorig</filename> もしくは <filename>.rpmsave</filename> ) と"
+"新しくインストールされた設定ファイルとを比較して、新しい設定ファイルに必要な変更を"
+"加える作業を行なうことになります。作業が終わったら、 <filename>.rpmorig</filename> "
+"や <filename>.rpmsave</filename> のファイルは削除しておいてください。今後の"
+"更新の際に問題を引き起こす可能性があるためです。"
 
 #. Tag: para
 #: rpm.xml:127
@@ -193,6 +264,9 @@ msgid ""
 "exists <emphasis>and</emphasis> if the <option>noreplace</option> label was "
 "specified in the <filename>.spec</filename> file."
 msgstr ""
+"なお、対応する <filename>.spec</filename> ファイル内に <option>noreplace</option> "
+"という指定があった場合、設定ファイルが書き換えられていると <filename>.rpmnew</filename> "
+"というファイルが作成されます。"
 
 #. Tag: para
 #: rpm.xml:134
@@ -203,6 +277,11 @@ msgid ""
 "obstruct future updates. The <filename>.rpmorig</filename> extension is "
 "assigned if the file has not previously been recognized by the RPM database."
 msgstr ""
+"更新作業後、設定ファイルの比較が終わったら <filename>.rpmsave</filename> と"
+" <filename>.rpmnew</filename> ファイルは削除しておいてください。これは、"
+"今後の更新の際に問題を引き起こす可能性があるためです。なお、"
+" <filename>.rpmorig</filename> は、対象のファイルが RPM データベース内で"
+"認識されていなかった場合に設定されます。"
 
 #. Tag: para
 #: rpm.xml:141
@@ -218,6 +297,14 @@ msgid ""
 "httpd/httpd.conf</filename> ) are not overwritten to allow continued "
 "operation."
 msgstr ""
+"それ以外の場合は <filename>.rpmsave</filename> が生成されます。"
+"言い換えると、 <filename>.rpmorig</filename> は他の形式から RPM に更新した"
+"場合にのみ生成されるもので、 <filename>.rpmsave</filename> は古い RPM から"
+"新しい RPM に更新した場合に生成されます。また、 <filename>.rpmnew</filename> には"
+"システム管理者が変更した設定ファイルの内容は含まれていません。これらのファイルの"
+"一覧は、 <filename>/var/adm/rpmconfigcheck</filename> 内に用意されています。"
+"また、設定ファイルによっては、継続的な稼働を目的として、上書きを行なわないように"
+"しているものもあります (例: <filename>/etc/httpd/httpd.conf</filename>) 。"
 
 #. Tag: para
 #: rpm.xml:152
@@ -228,6 +315,10 @@ msgid ""
 "installing with the <option>-i</option> option. Use <option>-U</option> "
 "whenever possible."
 msgstr ""
+"ちなみに、 <option>-U</option> スイッチでの更新は、 <option>-e</option> オプションで"
+"いったんパッケージを削除してから、 <option>-i</option> でインストールし直す処理と"
+"等価では <emphasis>ありません</emphasis> 。できる限り <option>-U</option> で"
+"更新することをお勧めします。"
 
 #. Tag: para
 #: rpm.xml:158
@@ -242,12 +333,20 @@ msgid ""
 "dependencies exist), it may be helpful to rebuild the RPM database using the "
 "option <option>--rebuilddb</option> ."
 msgstr ""
+"パッケージを削除するには、 <command>rpm -e</command> <replaceable>パッケージ名</"
+"replaceable> を実行します。このコマンドは、パッケージの依存関係に未解決のものがない"
+"場合にのみ削除を行ないます。言い換えると、たとえば他のアプリケーションが Tcl/Tk を"
+"必要としている限り、理論上は Tcl/Tk を削除することができないことを意味します。"
+"この場合でも、 RPM はデータベースの支援を必要とします。もしも (依存関係に問題が"
+"内にもかかわらず) 何らかの理由で削除ができなくなってしまった場合は、"
+" <option>--rebuilddb</option> オプションを使用して RPM データベースを再構築して"
+"解決を試みてください。"
 
 #. Tag: title
 #: rpm.xml:171
 #, no-c-format
 msgid "Delta RPM Packages"
-msgstr ""
+msgstr "差分 (デルタ) RPM パッケージ"
 
 #. Tag: para
 #: rpm.xml:172
@@ -262,6 +361,15 @@ msgid ""
 "update operations with delta RPMs involved consume considerably more CPU "
 "cycles than plain or patch RPMs."
 msgstr ""
+"差分 (デルタ) RPM パッケージは、古いバージョンと新しいバージョンの RPM パッケージのうち、"
+"差異のある部分だけを保持するパッケージです。古いバージョンの RPM パッケージに対して"
+"差分 RPM を適用することで、新しいバージョンの RPM を生成することができます。"
+"差分 RPM はインストール済みの RPM に対しても適用することができますので、"
+"古いバージョンの RPM を保持しておく必要はありません。差分 RPM パッケージは"
+"修正 RPM よりもずっと小さいサイズにすることができますので、インターネットを介して"
+"更新パッケージを転送するような場合に便利な仕組みです。ただし、差分 RPM での"
+"更新処理は、純粋な RPM や修正 RPM に比べて CPU サイクルを多く消費するため、"
+"その点ではデメリットとなります。"
 
 #. Tag: para
 #: rpm.xml:182
@@ -274,12 +382,19 @@ msgid ""
 "rpm</filename> . The following command assumes that <filename>old.rpm</"
 "filename> and <filename>new.rpm</filename> are present:"
 msgstr ""
+"差分 RPM スイート (<systemitem>deltarpm</systemitem> パッケージ) には、"
+" <command>makedeltarpm</command> と <command>applydelta</command> の各コマンドが"
+"用意されていて、これらを利用することで差分 RPM パッケージを作成したり適用したり"
+"することができるようになっています。下記のコマンドは差分 RPM を作成するための"
+"コマンドで、 <filename>new.delta.rpm</filename> という差分 RPM を、"
+"<filename>old.rpm</filename> と <filename>new.rpm</filename> の各"
+" RPM から作成します:"
 
 #. Tag: screen
 #: rpm.xml:190
 #, no-c-format
 msgid "&prompt.sudo;makedeltarpm old.rpm new.rpm new.delta.rpm"
-msgstr ""
+msgstr "&prompt.sudo;makedeltarpm old.rpm new.rpm new.delta.rpm"
 
 #. Tag: para
 #: rpm.xml:191
@@ -288,12 +403,14 @@ msgid ""
 "Using <command>applydeltarpm</command> , you can reconstruct the new RPM "
 "from the file system if the old package is already installed:"
 msgstr ""
+"<command>applydeltarpm</command> を使用することで、インストール済みの古い RPM"
+" (<filename>old.rpm</filename>) から新しい RPM を再構築することができます:"
 
 #. Tag: screen
 #: rpm.xml:195
 #, no-c-format
 msgid "&prompt.sudo;applydeltarpm new.delta.rpm new.rpm"
-msgstr ""
+msgstr "&prompt.sudo;applydeltarpm new.delta.rpm new.rpm"
 
 #. Tag: para
 #: rpm.xml:196
@@ -302,12 +419,14 @@ msgid ""
 "To derive it from the old RPM without accessing the file system, use the "
 "<option>-r</option> option:"
 msgstr ""
+"ファイルシステム内の古い RPM にはアクセスせずに差分 RPM を適用するには、"
+" <option>-r</option> オプションを使用します:"
 
 #. Tag: screen
 #: rpm.xml:200
 #, no-c-format
 msgid "&prompt.sudo;applydeltarpm -r old.rpm new.delta.rpm new.rpm"
-msgstr ""
+msgstr "&prompt.sudo;applydeltarpm -r old.rpm new.delta.rpm new.rpm"
 
 #. Tag: para
 #: rpm.xml:201
@@ -316,12 +435,14 @@ msgid ""
 "See <filename>/usr/share/doc/packages/deltarpm/README</filename> for "
 "technical details."
 msgstr ""
+"技術的な詳細について、詳しくは <filename>/usr/share/doc/packages/deltarpm/README</filename> "
+"をお読みください。"
 
 #. Tag: title
 #: rpm.xml:208
 #, no-c-format
 msgid "RPM Queries"
-msgstr ""
+msgstr "RPM データベースへの問い合わせ"
 
 #. Tag: para
 #: rpm.xml:209
@@ -333,42 +454,47 @@ msgid ""
 "Several switches are available to specify the type of information required. "
 "See <xref linkend=\"tab.rpm.query\"/> ."
 msgstr ""
+"<option>-q</option> オプションを使用することで、 <command>rpm</command> は"
+" RPM 書庫 (<option>-p</option>) やインストール済みパッケージの RPM データベース"
+"に対して、問い合わせを行なう機能を提供します。なお、必要な情報を取得するための"
+"スイッチが各種用意されています。詳しくは <xref linkend=\"tab.rpm.query\"/> "
+"をご覧ください。"
 
 #. Tag: title
 #: rpm.xml:217
 #, no-c-format
 msgid "The Most Important RPM Query Options"
-msgstr ""
+msgstr "最も重要な RPM 問い合わせオプション"
 
 #. Tag: para
 #: rpm.xml:222
 #, no-c-format
 msgid "<option>-i</option>"
-msgstr ""
+msgstr "<option>-i</option>"
 
 #. Tag: para
 #: rpm.xml:227
 #, no-c-format
 msgid "Package information"
-msgstr ""
+msgstr "パッケージ情報"
 
 #. Tag: para
 #: rpm.xml:234
 #, no-c-format
 msgid "<option>-l</option>"
-msgstr ""
+msgstr "<option>-l</option>"
 
 #. Tag: para
 #: rpm.xml:239
 #, no-c-format
 msgid "File list"
-msgstr ""
+msgstr "ファイル一覧"
 
 #. Tag: para
 #: rpm.xml:246
 #, no-c-format
 msgid "<option>-f FILE</option>"
-msgstr ""
+msgstr "<option>-f FILE</option>"
 
 #. Tag: para
 #: rpm.xml:251
@@ -377,48 +503,50 @@ msgid ""
 "Query the package that contains the file <replaceable>FILE</replaceable> "
 "(the full path must be specified with <replaceable>FILE</replaceable> )"
 msgstr ""
+"<replaceable>FILE</replaceable> で指定したファイルを含むパッケージ"
+" (<replaceable>FILE</replaceable> ではフルパスを指定する必要があります)"
 
 #. Tag: para
 #: rpm.xml:260
 #, no-c-format
 msgid "<option>-s</option>"
-msgstr ""
+msgstr "<option>-s</option>"
 
 #. Tag: para
 #: rpm.xml:265
 #, no-c-format
 msgid "File list with status information (implies <option>-l</option> )"
-msgstr ""
+msgstr "ファイル一覧と状態に関する情報 (<option>-l</option> の機能を含みます)"
 
 #. Tag: para
 #: rpm.xml:272
 #, no-c-format
 msgid "<option>-d</option>"
-msgstr ""
+msgstr "<option>-d</option>"
 
 #. Tag: para
 #: rpm.xml:277
 #, no-c-format
 msgid "List only documentation files (implies <literal>-l</literal> )"
-msgstr ""
+msgstr "ドキュメンテーションファイルのみを一覧表示 (<option>-l</option> の機能を含みます)"
 
 #. Tag: para
 #: rpm.xml:284
 #, no-c-format
 msgid "<option>-c</option>"
-msgstr ""
+msgstr "<option>-c</option>"
 
 #. Tag: para
 #: rpm.xml:289
 #, no-c-format
 msgid "List only configuration files (implies <option>-l</option> )"
-msgstr ""
+msgstr "設定ファイルのみを一覧表示 (<option>-l</option> の機能を含みます)"
 
 #. Tag: para
 #: rpm.xml:296
 #, no-c-format
 msgid "<option>--dump</option>"
-msgstr ""
+msgstr "<option>--dump</option>"
 
 #. Tag: para
 #: rpm.xml:301
@@ -427,12 +555,14 @@ msgid ""
 "File list with complete details (to be used with <option>-l</option> , "
 "<option>-c</option> , or <option>-d</option> )"
 msgstr ""
+"ファイル一覧と情報 (<option>-l</option> , <option>-c</option> , <option>-d</option> "
+"とあわせて指定する必要があります)"
 
 #. Tag: para
 #: rpm.xml:309
 #, no-c-format
 msgid "<option>--provides</option>"
-msgstr ""
+msgstr "<option>--provides</option>"
 
 #. Tag: para
 #: rpm.xml:314
@@ -441,30 +571,32 @@ msgid ""
 "List features of the package that another package can request with <option>--"
 "requires</option>"
 msgstr ""
+"他のパッケージから <option>--requires</option> で要求することのできる、"
+"パッケージの機能一覧"
 
 #. Tag: para
 #: rpm.xml:322
 #, no-c-format
 msgid "<option>--requires</option> , <option>-R</option>"
-msgstr ""
+msgstr "<option>--requires</option> , <option>-R</option>"
 
 #. Tag: para
 #: rpm.xml:327
 #, no-c-format
 msgid "Capabilities the package requires"
-msgstr ""
+msgstr "パッケージが必要とする機能"
 
 #. Tag: para
 #: rpm.xml:334
 #, no-c-format
 msgid "<option>--scripts</option>"
-msgstr ""
+msgstr "<option>--scripts</option>"
 
 #. Tag: para
 #: rpm.xml:339
 #, no-c-format
 msgid "Installation scripts (preinstall, postinstall, uninstall)"
-msgstr ""
+msgstr "インストールスクリプト (preinstall (インストール前), postinstall (インストール後), uninstall (削除時))"
 
 #. Tag: para
 #: rpm.xml:347
@@ -473,12 +605,14 @@ msgid ""
 "For example, the command <command>rpm -q -i wget</command> displays the "
 "information shown in <xref linkend=\"aus.update.rpm-i\"/> ."
 msgstr ""
+"たとえば <command>rpm -q -i wget</command> のように実行すると、"
+" <xref linkend=\"aus.update.rpm-i\"/> のような情報が表示されます。"
 
 #. Tag: title
 #: rpm.xml:352
 #, no-c-format
 msgid "<command>rpm -q -i wget</command>"
-msgstr ""
+msgstr "<command>rpm -q -i wget</command>"
 
 #. Tag: screen
 #: rpm.xml:353
@@ -507,6 +641,27 @@ msgid ""
 "This can be done in script files or via the command line.\n"
 "Distribution: openSUSE Leap 42.3"
 msgstr ""
+"<?dbsuse-fo font-size=\"0.70em\"?>Name        : wget\n"
+"Version     : 1.14\n"
+"Release     : 10.3\n"
+"Architecture: x86_64\n"
+"Install Date: 2017年07月14日 16時09分58秒\n"
+"Group       : Productivity/Networking/Web/Utilities\n"
+"Size        : 2046452\n"
+"License     : GPL-3.0+\n"
+"Signature   : RSA/SHA256, 2017年05月10日 02時40分21秒, Key ID b88b2fd43dbdc284\n"
+"Source RPM  : wget-1.14-10.3.src.rpm\n"
+"Build Date  : 2017年05月10日 02時40分12秒\n"
+"Build Host  : lamb55\n"
+"Relocations : (not relocatable)\n"
+"Packager    : http://bugs.opensuse.org\n"
+"Vendor      : openSUSE\n"
+"URL         : http://www.gnu.org/software/wget/\n"
+"Summary     : A Tool for Mirroring FTP and HTTP Servers\n"
+"Description :\n"
+"Wget enables you to retrieve WWW documents or FTP files from a server.\n"
+"This can be done in script files or via the command line.\n"
+"Distribution: openSUSE Leap 42.3"
 
 #. Tag: screen
 #: rpm.xml:374
@@ -535,6 +690,27 @@ msgid ""
 "This can be done in script files or via the command line.\n"
 "Distribution: SUSE Linux Enterprise 12"
 msgstr ""
+"<?dbsuse-fo font-size=\"0.70em\"?>Name        : wget\n"
+"Version     : 1.14\n"
+"Release     : 17.1\n"
+"Architecture: x86_64\n"
+"Install Date: 2017年01月30日 14時01分29秒\n"
+"Group       : Productivity/Networking/Web/Utilities\n"
+"Size        : 2046483\n"
+"License     : GPL-3.0+\n"
+"Signature   : RSA/SHA256, 2016年12月08日 07時48分44秒, Key ID 70af9e8139db7c82\n"
+"Source RPM  : wget-1.14-17.1.src.rpm\n"
+"Build Date  : 2016年12月08日 07時48分34秒\n"
+"Build Host  : sheep09\n"
+"Relocations : (not relocatable)\n"
+"Packager    : https://www.suse.com/\n"
+"Vendor      : SUSE LLC &lt;https://www.suse.com/&gt;\n"
+"URL         : http://www.gnu.org/software/wget/\n"
+"Summary     : A Tool for Mirroring FTP and HTTP Servers\n"
+"Description :\n"
+"Wget enables you to retrieve WWW documents or FTP files from a server.\n"
+"This can be done in script files or via the command line.\n"
+"Distribution: SUSE Linux Enterprise 12"
 
 #. Tag: para
 #: rpm.xml:396
@@ -543,6 +719,8 @@ msgid ""
 "The option <option>-f</option> only works if you specify the complete file "
 "name with its full path. Provide as many file names as desired. For example:"
 msgstr ""
+"<option>-f</option> オプションで指定するファイル名は、フルパスを指定した場合に"
+"のみ動作します。また、ファイル名は必要な分だけ記述することができます。たとえば下記のようになります:"
 
 #. Tag: screen
 #: rpm.xml:400
@@ -552,6 +730,9 @@ msgid ""
 "rpm-4.11.2-15.1.x86_64\n"
 "wget-1.14-17.1.x86_64"
 msgstr ""
+"&prompt.user;rpm -q -f /bin/rpm /usr/bin/wget\n"
+"rpm-4.11.2-15.1.x86_64\n"
+"wget-1.14-17.1.x86_64"
 
 #. Tag: para
 #: rpm.xml:403
@@ -561,12 +742,15 @@ msgid ""
 "linkend=\"dat.rpm.search\"/> . Pass the partial file name to the script "
 "shown as a parameter when running it."
 msgstr ""
+"ファイル名の一部のみが判明している場合は、 <xref linkend=\"dat.rpm.search\"/> "
+"で示しているようなスクリプトをお使いください。スクリプトのパラメータとしてファイル名"
+"の一部を指定して実行してください。"
 
 #. Tag: title
 #: rpm.xml:409
 #, no-c-format
 msgid "Script to Search for Packages"
-msgstr ""
+msgstr "パッケージを検索するためのスクリプト"
 
 #. Tag: screen
 #: rpm.xml:410
@@ -579,6 +763,12 @@ msgid ""
 "    echo \"\"\n"
 "done"
 msgstr ""
+"#! /bin/sh\n"
+"for i in $(rpm -q -a -l | grep $1); do\n"
+"    echo \"\\\"$i\\\" is in package:\"\n"
+"    rpm -q -f $i\n"
+"    echo \"\"\n"
+"done"
 
 #. Tag: para
 #: rpm.xml:417
@@ -588,6 +778,9 @@ msgid ""
 "replaceable> displays a detailed list of change information about a specific "
 "package, sorted by date."
 msgstr ""
+"また、　<command>rpm -q --changelog</command> <replaceable>パッケージ名</replaceable> "
+"のように実行すると、特定のパッケージに対する更新情報を、詳細な一覧形式で日付順に"
+"取得することができます。"
 
 #. Tag: para
 #: rpm.xml:422
@@ -599,108 +792,114 @@ msgid ""
 "changed since installation. <command>rpm</command> uses eight character "
 "symbols to give some hints about the following changes:"
 msgstr ""
+"インストール済み RPM データベースに対しては、検証作業を行なうことができます。"
+"これを行なうには、 <option>-V</option> または <option>--verify</option> を"
+"指定してください。このオプションを指定すると、 <command>rpm</command> は"
+"パッケージ内のファイルのうち、インストール時点から変更されているものを全て"
+"表示します。 <command>rpm</command> では、 8 文字の記号を表示して、どのような"
+"点に差異があったのかを表示します:"
 
 #. Tag: title
 #: rpm.xml:430
 #, no-c-format
 msgid "RPM Verify Options"
-msgstr ""
+msgstr "RPM 検証オプション"
 
 #. Tag: para
 #: rpm.xml:435
 #, no-c-format
 msgid "<option>5</option>"
-msgstr ""
+msgstr "<option>5</option>"
 
 #. Tag: para
 #: rpm.xml:440
 #, no-c-format
 msgid "MD5 check sum"
-msgstr ""
+msgstr "MD5 チェックサム"
 
 #. Tag: para
 #: rpm.xml:447
 #, no-c-format
 msgid "<option>S</option>"
-msgstr ""
+msgstr "<option>S</option>"
 
 #. Tag: para
 #: rpm.xml:452
 #, no-c-format
 msgid "File size"
-msgstr ""
+msgstr "ファイルサイズ"
 
 #. Tag: para
 #: rpm.xml:459
 #, no-c-format
 msgid "<option>L</option>"
-msgstr ""
+msgstr "<option>L</option>"
 
 #. Tag: para
 #: rpm.xml:464
 #, no-c-format
 msgid "Symbolic link"
-msgstr ""
+msgstr "シンボリックリンク"
 
 #. Tag: para
 #: rpm.xml:471
 #, no-c-format
 msgid "<option>T</option>"
-msgstr ""
+msgstr "<option>T</option>"
 
 #. Tag: para
 #: rpm.xml:476
 #, no-c-format
 msgid "Modification time"
-msgstr ""
+msgstr "最終更新日時"
 
 #. Tag: para
 #: rpm.xml:483
 #, no-c-format
 msgid "<option>D</option>"
-msgstr ""
+msgstr "<option>D</option>"
 
 #. Tag: para
 #: rpm.xml:488
 #, no-c-format
 msgid "Major and minor device numbers"
-msgstr ""
+msgstr "メジャー／マイナーデバイス番号"
 
 #. Tag: para
 #: rpm.xml:495
 #, no-c-format
 msgid "<option>U</option>"
-msgstr ""
+msgstr "<option>U</option>"
 
 #. Tag: para
 #: rpm.xml:500
 #, no-c-format
 msgid "Owner"
-msgstr ""
+msgstr "所有者"
 
 #. Tag: para
 #: rpm.xml:507
 #, no-c-format
 msgid "<option>G</option>"
-msgstr ""
+msgstr "<option>G</option>"
 
 #. Tag: para
 #: rpm.xml:512
 #, no-c-format
 msgid "Group"
-msgstr ""
+msgstr "グループ"
 
 #. Tag: para
 #: rpm.xml:519
 #, no-c-format
 msgid "<option>M</option>"
-msgstr ""
+msgstr "<option>M</option>"
 
 #. Tag: para
 #: rpm.xml:524
 #, no-c-format
 msgid "Mode (permissions and file type)"
-msgstr ""
+msgstr "モード (パーミッションとファイルの種類)"
 
 #. Tag: para
 #: rpm.xml:532
@@ -710,6 +909,9 @@ msgid ""
 "printed. For example, for changes to <filename>/etc/wgetrc</filename> "
 "( <systemitem class=\"resource\">wget</systemitem> package):"
 msgstr ""
+"設定ファイルの場合は <option>c</option> という文字が出力されます。"
+"たとえば <filename>/etc/wgetrc</filename> ファイル ( <systemitem class=\"resource\">"
+"wget</systemitem> パッケージ) が書き換えられている場合、下記のような出力になります:"
 
 #. Tag: screen
 #: rpm.xml:537
@@ -718,6 +920,8 @@ msgid ""
 "&prompt.user;rpm -V wget\n"
 "S.5....T c /etc/wgetrc"
 msgstr ""
+"&prompt.user;rpm -V wget\n"
+"S.5....T c /etc/wgetrc"
 
 #. Tag: para
 #: rpm.xml:539
@@ -736,12 +940,25 @@ msgid ""
 "<filename>/etc/sysconfig/backup</filename> . The size of a single backup is "
 "approximately 1&nbsp;MB for 1&nbsp;GB in <filename>/usr</filename> ."
 msgstr ""
+"RPM データベースのファイルは <filename>/var/lib/rpm</filename> 内にあります。"
+"<filename>/usr</filename> のあるパーティションが 1 GB 程度のサイズである場合、"
+"特に完全更新を行なった場合は顕著ですが、データベースはおおよそ 30 MB 程度の"
+"サイズを占有します。データベースが期待するサイズよりもずっと大きい場合は、"
+" <option>--rebuilddb</option> オプションを使用してデータベースを再構築すると"
+"よいでしょう。ただし、再構築を行なうにあたっては、事前に古いデータベースを"
+"バックアップしておいてください。また、 <command>cron</command> スクリプトの"
+" <command>cron.daily</command> では、データベースのバックアップを採取して"
+" gzip で圧縮し、 <filename>/var/adm/backup/rpmdb</filename> 内に保存する"
+"処理を行なっています。保存するバックアップの最大数は <filename>/etc/sysconfig/backup</filename> "
+"ファイル内の <systemitem>MAX_RPMDB_BACKUPS</systemitem> で設定することが"
+"できます (既定値: <option>5</option>) 。なお、 <filename>/usr</filename> が"
+" 1 GB 程度である場合、バックアップ 1 つあたり 1 MB 程度になります。"
 
 #. Tag: title
 #: rpm.xml:557
 #, no-c-format
 msgid "Installing and Compiling Source Packages"
-msgstr ""
+msgstr "ソースパッケージのインストールとコンパイル"
 
 #. Tag: para
 #: rpm.xml:558
@@ -750,12 +967,14 @@ msgid ""
 "All source packages carry a <filename>.src.rpm</filename> extension (source "
 "RPM)."
 msgstr ""
+"全てのソースパッケージには <filename>.src.rpm</filename> という拡張子 (ソース RPM) "
+"が設定されます。"
 
 #. Tag: title
 #: rpm.xml:563
 #, no-c-format
 msgid "Installed Source Packages"
-msgstr ""
+msgstr "インストール済みのソースパッケージ"
 
 #. Tag: para
 #: rpm.xml:564
@@ -769,6 +988,13 @@ msgid ""
 "RPM database. When you <quote>install</quote> a source package, only the "
 "source code is added to the system."
 msgstr ""
+"ソースパッケージは、 &yast; を利用することでインストールメディアからハードディスク"
+"にコピーすることができます。ただし、インストールを行なってもパッケージマネージャの"
+"表示が ( <literal>[i]</literal> ) になることはありません。これは、ソースパッケージが"
+" RPM データベース内で管理されないことによるものです。 RPM データベースには、"
+" <emphasis>インストール済みの</emphasis> オペレーティングシステムのソフトウエア"
+"のみの情報が書かれています。ソースパッケージについては、 <quote>インストール</quote> "
+"を行なってもシステムにソースコードが追加されるだけです。"
 
 #. Tag: para
 #: rpm.xml:574
@@ -779,12 +1005,15 @@ msgid ""
 "(unless you specified custom settings in a file like <filename>/etc/rpmrc</"
 "filename> ):"
 msgstr ""
+"<command>rpm</command> と <command>rpmbuild</command> で利用する目的で、"
+"<filename>/usr/src/packages</filename> 以下に下記のディレクトリが作成されます"
+" (ただし、 <filename>/etc/rpmrc</filename> のようなファイルで独自に設定した場合を除きます):"
 
 #. Tag: term
 #: rpm.xml:582
 #, no-c-format
 msgid "<filename>SOURCES</filename>"
-msgstr ""
+msgstr "<filename>SOURCES</filename>"
 
 #. Tag: para
 #: rpm.xml:585
@@ -794,12 +1023,15 @@ msgid ""
 "gz</filename> files, etc.) and for distribution-specific adjustments (mostly "
 "<filename>.diff</filename> or <filename>.patch</filename> files)"
 msgstr ""
+"オリジナルのソースコード (<filename>.tar.bz2</filename> や <filename>.tar.gz</filename> "
+"など) と、ディストリビューション固有の調整 (多くは <filename>.diff</filename> や"
+" <filename>.patch</filename> など) が含まれます。"
 
 #. Tag: term
 #: rpm.xml:594
 #, no-c-format
 msgid "<filename>SPECS</filename>"
-msgstr ""
+msgstr "<filename>SPECS</filename>"
 
 #. Tag: para
 #: rpm.xml:597
@@ -808,42 +1040,44 @@ msgid ""
 "for the <filename>.spec</filename> files, similar to a meta Makefile, which "
 "control the <emphasis>build</emphasis> process"
 msgstr ""
+"<filename>.spec</filename> ファイルが配置されるディレクトリです。これは <quote>メタ "
+"Makefile</quote> と表現しうる仕組みで、 <emphasis>構築</emphasis> 処理を制御するためのファイルです。"
 
 #. Tag: term
 #: rpm.xml:604
 #, no-c-format
 msgid "<filename>BUILD</filename>"
-msgstr ""
+msgstr "<filename>BUILD</filename>"
 
 #. Tag: para
 #: rpm.xml:607
 #, no-c-format
 msgid "all the sources are unpacked, patched and compiled in this directory"
-msgstr ""
+msgstr "ソースコードの展開や修正の適用、コンパイルなどをこのディレクトリで行ないます"
 
 #. Tag: term
 #: rpm.xml:613
 #, no-c-format
 msgid "<filename>RPMS</filename>"
-msgstr ""
+msgstr "<filename>RPMS</filename>"
 
 #. Tag: para
 #: rpm.xml:616
 #, no-c-format
 msgid "where the completed binary packages are stored"
-msgstr ""
+msgstr "作成されたバイナリパッケージが配置されるディレクトリです。"
 
 #. Tag: term
 #: rpm.xml:622
 #, no-c-format
 msgid "<filename>SRPMS</filename>"
-msgstr ""
+msgstr "<filename>SRPMS</filename>"
 
 #. Tag: para
 #: rpm.xml:625
 #, no-c-format
 msgid "here are the source RPMs"
-msgstr ""
+msgstr "ソース RPM が配置されるディレクトリです。"
 
 #. Tag: para
 #: rpm.xml:631
@@ -854,12 +1088,16 @@ msgid ""
 "the adjustments in <filename>SOURCES</filename> and the relevant <filename>."
 "spec</filename> file in <filename>SPECS</filename> ."
 msgstr ""
+"&yast; からソースパッケージをインストールすると、 <filename>/usr/src/packages</filename> "
+"以下に必要な全てのコンポーネントが配置されます。具体的には、ソースコードと修正類が"
+" <filename>SOURCES</filename> に、対応する <filename>.spec</filename> ファイルが"
+" <filename>SPECS</filename> にそれぞれ配置されます。"
 
 #. Tag: title
 #: rpm.xml:638
 #, no-c-format
 msgid "System Integrity"
-msgstr ""
+msgstr "システムの安定性への危険について"
 
 #. Tag: para
 #: rpm.xml:639
@@ -869,6 +1107,9 @@ msgid ""
 "\">glibc</systemitem> , <systemitem class=\"resource\">rpm</systemitem> , "
 "etc.), because this endangers the stability of your system."
 msgstr ""
+"システムコンポーネント (例: <systemitem class=\"resource\">glibc</systemitem> ,"
+" <systemitem class=\"resource\">rpm</systemitem> など) に対しては、下記の手順を"
+"試してはなりません。場合によってはシステムの安定性を壊してしまう危険があるためです。"
 
 #. Tag: para
 #: rpm.xml:646
@@ -878,6 +1119,8 @@ msgid ""
 "After installing the source package, you should have files similar to those "
 "in the following list:"
 msgstr ""
+"下記の例は、 <filename>wget.src.rpm</filename> パッケージをインストールした場合の例です。"
+"ソースパッケージをインストールすると、下記のようなファイルが作成されます:"
 
 #. Tag: screen
 #: rpm.xml:651
@@ -887,6 +1130,9 @@ msgid ""
 "/usr/src/packages/SOURCES/wgetrc.patch\n"
 "/usr/src/packages/SPECS/wget.spec"
 msgstr ""
+"/usr/src/packages/SOURCES/wget-1.11.4.tar.bz2\n"
+"/usr/src/packages/SOURCES/wgetrc.patch\n"
+"/usr/src/packages/SPECS/wget.spec"
 
 #. Tag: para
 #: rpm.xml:654
@@ -898,12 +1144,18 @@ msgid ""
 "of the build process (see the output of <option>--help</option> or the RPM "
 "documentation for details). The following is merely a brief explanation:"
 msgstr ""
+"<command>rpmbuild</command> <option>-b<replaceable>X</replaceable></option> "
+"<filename>/usr/src/packages/SPECS/wget.spec</filename> のように実行すると、"
+"コンパイル処理が始まります。なお、 <replaceable>X</replaceable> には構築プロセスの"
+"どの段階までを実行するのかを指定します (詳しくは <option>--help</option> で表示される"
+"ヘルプか、 RPM のドキュメンテーションをお読みください) 。下記には概要説明を"
+"記載します:"
 
 #. Tag: term
 #: rpm.xml:663
 #, no-c-format
 msgid "<option>-bp</option>"
-msgstr ""
+msgstr "<option>-bp</option>"
 
 #. Tag: para
 #: rpm.xml:666
@@ -912,24 +1164,26 @@ msgid ""
 "Prepare sources in <filename>/usr/src/packages/BUILD</filename> : unpack and "
 "patch."
 msgstr ""
+"<filename>/usr/src/packages/BUILD</filename> 以下にソースコードを展開し、必要で"
+"あれば修正を適用します。"
 
 #. Tag: term
 #: rpm.xml:673
 #, no-c-format
 msgid "<option>-bc</option>"
-msgstr ""
+msgstr "<option>-bc</option>"
 
 #. Tag: para
 #: rpm.xml:676
 #, no-c-format
 msgid "Do the same as <option>-bp</option> , but with additional compilation."
-msgstr ""
+msgstr "<option>-bp</option> までの処理に加え、追加でコンパイルまで実行します。"
 
 #. Tag: term
 #: rpm.xml:682
 #, no-c-format
 msgid "<option>-bi</option>"
-msgstr ""
+msgstr "<option>-bi</option>"
 
 #. Tag: para
 #: rpm.xml:685
@@ -939,12 +1193,15 @@ msgid ""
 "the built software. Caution: if the package does not support the BuildRoot "
 "feature, you might overwrite configuration files."
 msgstr ""
+"<option>-bp</option> までの処理に加え、構築済みのソフトウエアをインストールする"
+"処理まで実行します。注意: パッケージが BuildRoot 機能に対応していない場合、"
+"これを実行すると設定ファイルを上書きしてしまいます。"
 
 #. Tag: term
 #: rpm.xml:693
 #, no-c-format
 msgid "<option>-bb</option>"
-msgstr ""
+msgstr "<option>-bb</option>"
 
 #. Tag: para
 #: rpm.xml:696
@@ -954,12 +1211,15 @@ msgid ""
 "the binary package. If the compile was successful, the binary should be in "
 "<filename>/usr/src/packages/RPMS</filename> ."
 msgstr ""
+"<option>-bi</option> までの処理に加え、バイナリパッケージの作成まで実行します。"
+"コンパイルが成功すれば、 <filename>/usr/src/packages/RPMS</filename> ディレクトリ内に"
+"配置されます。"
 
 #. Tag: term
 #: rpm.xml:704
 #, no-c-format
 msgid "<option>-ba</option>"
-msgstr ""
+msgstr "<option>-ba</option>"
 
 #. Tag: para
 #: rpm.xml:707
@@ -969,18 +1229,21 @@ msgid ""
 "the source RPM. If the compilation was successful, the binary should be in "
 "<filename>/usr/src/packages/SRPMS</filename> ."
 msgstr ""
+"<option>-bb</option> までの処理に加え、ソース RPM の作成まで実行します。"
+"コンパイルが成功すれば、 <filename>/usr/src/packages/SRPMS</filename> ディレクトリ内に"
+"配置されます。"
 
 #. Tag: term
 #: rpm.xml:715
 #, no-c-format
 msgid "<option>--short-circuit</option>"
-msgstr ""
+msgstr "<option>--short-circuit</option>"
 
 #. Tag: para
 #: rpm.xml:718
 #, no-c-format
 msgid "Skip some steps."
-msgstr ""
+msgstr "いくつかの手順を飛ばして実行します。"
 
 #. Tag: para
 #: rpm.xml:724
@@ -991,6 +1254,10 @@ msgid ""
 "option> . Installation with <command>rpm</command> makes it appear in the "
 "RPM database."
 msgstr ""
+"作成されたバイナリ RPM は、 <command>rpm</command> <option>-i</option> または"
+" <command>rpm</command> <option>-U</option> でインストールすることができます。"
+" <command>rpm</command> でインストールを行なうと、 RPM データベース内に現われる"
+"ようになります。"
 
 #. Tag: para
 #: rpm.xml:730
@@ -1003,12 +1270,18 @@ msgid ""
 "\">For a more detailed background, see the support database at <link xlink:"
 "href=\"https://www.suse.com/support/kb/doc?id=7017104\"/>.</phrase>"
 msgstr ""
+"なお、 spec ファイル内の <literal>BuildRoot</literal> ディレクティブは、"
+" &productname; <phrase os=\"sles;sled\">12</phrase> <phrase os=\"osuse\">42.1</phrase> "
+"で廃止予定としてマークされていることに注意してください。どうしてもこの機能が必要な"
+"場合は、回避策として <option>--buildroot</option> オプションを指定してください。"
+"<phrase os=\"sles;sled\">背景となる情報について、詳しくはサポートデータベース <link xlink:"
+"href=\"https://www.suse.com/support/kb/doc?id=7017104\"/> をお読みください。</phrase>"
 
 #. Tag: title
 #: rpm.xml:742
 #, no-c-format
 msgid "Compiling RPM Packages with build"
-msgstr ""
+msgstr "build を利用した RPM パッケージのコンパイル"
 
 #. Tag: para
 #: rpm.xml:743
@@ -1027,6 +1300,18 @@ msgid ""
 "the above example) with the DVD mounted in the system under <filename>/media/"
 "dvd</filename> , use the following commands as &rootuser;:"
 msgstr ""
+"構築処理を行なうにあたっては、多くのパッケージをインストールする必要がありますが、"
+"これらはシステムを動作させるにあたっては不要なものです。不要なパッケージ"
+"のインストールを回避するには、 <systemitem>build</systemitem> をお使いください。"
+"これはパッケージを構築するための環境を、現在使用中のものとは別に作成できる"
+"仕組みで、 chroot の仕組みを利用して環境の作成と構築を行ないます。構築環境は"
+"ハードディスクのほか、 NFS や DVD を利用することができます。環境の作成元となる"
+"場所を指定するには、 <command>build --rpms</command> <replaceable>ディレクトリ"
+"</replaceable> のように指定してください。なお、 <command>rpm</command> とは"
+"異なり、 <command>build</command> コマンドではソースディレクトリ内に"
+" <filename>.spec</filename> を配置します。たとえば <filename>wget</filename> "
+"パッケージを <filename>/media/dvd</filename> にマウントされた DVD を利用して"
+"構築したい場合は、下記のコマンドを &rootuser; で実行します:"
 
 #. Tag: screen
 #: rpm.xml:758
@@ -1036,6 +1321,9 @@ msgid ""
 "&prompt.root;mv ../SPECS/wget.spec .\n"
 "&prompt.root;build --rpms /media/dvd/suse/ wget.spec"
 msgstr ""
+"&prompt.root;cd /usr/src/packages/SOURCES/\n"
+"&prompt.root;mv ../SPECS/wget.spec .\n"
+"&prompt.root;build --rpms /media/dvd/suse/ wget.spec"
 
 #. Tag: para
 #: rpm.xml:761
@@ -1046,6 +1334,10 @@ msgid ""
 "completion, the resulting packages are located in <filename>/var/tmp/build-"
 "root/usr/src/packages/RPMS</filename> ."
 msgstr ""
+"すると、最小構成の環境が <filename>/var/tmp/build-root</filename> 内に作成"
+"されます。パッケージはこの環境を利用して構築されます。構築が完了すると、作成"
+"されたパッケージは <filename>/var/tmp/build-root/usr/src/packages/RPMS</filename> "
+"に配置されます。"
 
 #. Tag: para
 #: rpm.xml:767
@@ -1058,12 +1350,17 @@ msgid ""
 "<command>build</command> <option>--help</option> and by reading the "
 "<command>build</command> man page."
 msgstr ""
+"<command>build</command> スクリプトにはいくつかの追加オプションがあります。"
+"たとえばスクリプトに対して独自の RPM を使用させたり、構築環境の初期化を省略したり、"
+" <command>rpm</command> コマンドに対して上述の途中段階までで停止させたりすることが"
+"できます。詳しくは <command>build</command> <option>--help</option> で表示される"
+"ヘルプか、もしくは <command>build</command> のマニュアルページをお読みください。"
 
 #. Tag: title
 #: rpm.xml:778
 #, no-c-format
 msgid "Tools for RPM Archives and the RPM Database"
-msgstr ""
+msgstr "RPM 書庫および RPM データベース向けツール"
 
 #. Tag: para
 #: rpm.xml:779
@@ -1076,6 +1373,13 @@ msgid ""
 "structure with the cursor keys and <keycap function=\"enter\"/> . Copy "
 "archive components with <keycap>F5</keycap> ."
 msgstr ""
+"Midnight Commander ( <command>mc</command> ) では、 RPM 書庫の内容を表示する"
+"ことができるほか、一部をコピーしたりすることができます。 Midnight Commander では"
+"仮想的なファイルシステムとして表示されるため、通常のメニューオプションを全て"
+"利用することができます。また、 <keycap>F3</keycap> を押すと <filename>HEADER</filename> "
+"を表示することができるほか、カーソルキーで書庫の内容を選択して <keycap function=\"enter\"/> "
+"を押すと、内容を表示することができます。また、一部をコピーしたい場合は、 <keycap>F5</keycap> "
+"を押します。"
 
 #. Tag: para
 #: rpm.xml:787
@@ -1084,3 +1388,6 @@ msgid ""
 "A full-featured package manager is available as a &yast; module. For "
 "details, see <xref linkend=\"cha.yast-software\"/> ."
 msgstr ""
+"&yast; モジュールには、完全機能のパッケージマネージャが用意されています。"
+"詳しくは <xref linkend=\"cha.yast-software\"/> をお読みください。"
+
