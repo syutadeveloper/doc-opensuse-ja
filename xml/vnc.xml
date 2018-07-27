@@ -6,96 +6,53 @@
 role='description'><phrase>Add new session</phrase></textobject><imageobject role='fo'><imagedata fileref='remmina_plus.png' width='1.2em' format='PNG'/></imageobject><imageobject role='html'><imagedata fileref='remmina_plus.png' width='1.2em' format='PNG'/></imageobject></inlinemediaobject>">
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.vnc">
- <title>Remote Access with VNC</title>
+ <title>VNC によるリモートアクセス</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
   <abstract>
-   <para>
-    Virtual Network Computing (VNC) enables you to control a remote computer
-    via a graphical desktop (as opposed to a remote shell access). VNC is
-    platform-independent and lets you access the remote machine from any
-    operating system.
-   </para>
+   <para>VNC は Virtual Network Computing (仮想ネットワークコンピューティング) の略で、ネットワーク上離れたコンピュータを (シェルではなく) グラフィカルなデスクトップ経由でアクセスする機能を提供します。 VNC はプラットフォームに依存しない構造で、任意のオペレーティングシステムからアクセスする機能を提供します。</para>
 
-   <para>
-    &productname; supports two different kinds of VNC sessions: One-time
-    sessions that <quote>live</quote> as long as the VNC connection from the
-    client is kept up, and persistent sessions that <quote>live</quote> until
-    they are explicitly terminated.
-   </para>
+   <para>&productname; では 2 種類の VNC セッションに対応しています。 1 つはワンタイムセッションと呼ばれ、クライアントからの接続が切れるまで <quote>有効</quote> となるセッションです。もう 1 つは永続セッションと呼ばれ、明示的に終了させるまでずっと <quote>有効</quote> であり続けるセッションです。</para>
   </abstract>
  </info>
  <note>
-  <title>Session Types</title>
-  <para>
-   A machine can offer both kinds of sessions simultaneously on different
-   ports, but an open session cannot be converted from one type to the other.
-  </para>
+  <title>セッションの種類</title>
+  <para>それぞれ異なるポートであれば、両方の種類のセッションを同じマシン内で同時に提供することもできます。ただし、開いたセッションの種類を変更することはできません。</para>
  </note>
  <important os="osuse">
-  <title>Supported Display Managers</title>
-  <para>
-   A machine can reliably accept VNC connections only if it uses a display
-   manager that supports the XDMCP protocol. While
-   <systemitem>gdm</systemitem>, <systemitem>lxdm</systemitem>, or
-   <systemitem>lightdm</systemitem> support XDMCP, the KDE 5 default display
-   manager <systemitem>sddm</systemitem> does not support it. When changing the
-   default display manager, remember to log out of the current X session and
-   restart the display manager with
-  </para>
+  <title>対応するディスプレイマネージャ</title>
+  <para>VNC 接続を受け付けるには、 XDMCP プロトコルに対応したディスプレイマネージャを使用する必要があります。 <systemitem>gdm</systemitem> , <systemitem>lxdm</systemitem> , <systemitem>lightdm</systemitem> は XDMCP に対応していますが、 KDE 5 の既定のディスプレイマネージャである <systemitem>sddm</systemitem> の場合は、 XDMCP に対応していません。ディスプレイマネージャを変更した場合は、現在の X セッションをログアウトしたあと、下記のコマンドで再起動を行なってください:</para>
 <screen>
 &prompt.user;sudo systemctl restart xdm.service
 </screen>
  </important>
  <sect1 xml:id="sec.vnc.viewer">
-  <title>The <command>vncviewer</command> Client</title>
+  <title><command>vncviewer</command> クライアント</title>
 
-  <para>
-   To connect to a VNC service provided by a server, a client is needed. The
-   default in &productname; is <command>vncviewer</command>, provided by the
-   <systemitem class="resource">tigervnc</systemitem> package.
-  </para>
+  <para>サーバ側で提供されている VNC サービスに接続するには、クライアントソフトウエアが必要です。 &productname; での既定は <command>vncviewer</command> で、 <systemitem class="resource">tigervnc</systemitem> パッケージ内に含まれています。</para>
 
   <sect2 xml:id="sec.vnc.viewer.connectcli">
-   <title>Connecting Using the vncviewer CLI</title>
-   <para>
-    To start your VNC viewer and initiate a session with the server, use the
-    command:
-   </para>
+   <title>vncviewer コマンドラインを利用した接続</title>
+   <para>VNC ビューアを起動してサーバ内のセッションに接続するには、下記のコマンドを使用します:</para>
 <screen>&prompt.user;vncviewer &wsIname;:1</screen>
-   <para>
-    Instead of the VNC display number you can also specify the port number with
-    two colons:
-   </para>
+   <para>ディスプレイ番号を指定する代わりに、コロンを 2 つ繋げてポート番号を指定することもできます:</para>
 <screen>&prompt.user;vncviewer &wsIname;::5901</screen>
    <note>
-    <title>Display and Port Number</title>
-    <para>
-     The actual display or port number you specify in the VNC client must be
-     the same as the display or port number picked by the
-     <command>vncserver</command> command on the target machine. See
-     <xref linkend="sec.vnc.persistent"/> for further info.
-    </para>
+    <title>ディスプレイ番号とポート番号について</title>
+    <para>VNC クライアント側で指定するディスプレイ番号やポート番号は、接続先のマシンで<command>vncserver</command> コマンドを実行する際に指定したディスプレイ番号やポート番号と同じ値を指定します。詳しくは <xref linkend="sec.vnc.persistent"/> をお読みください。</para>
    </note>
   </sect2>
 
   <sect2 xml:id="sec.vnc.viewer.connectgui">
-   <title>Connecting Using the vncviewer GUI</title>
-   <para>
-    By running <command>vncviewer</command> without specifying
-    <command>--listen</command> or a host to connect to, it will show a window
-    to ask for connection details. Enter the host into the <guimenu>VNC
-    server</guimenu> field like in <xref linkend="sec.vnc.viewer.connectcli"/>
-    and click <guimenu>Connect</guimenu>.
-   </para>
+   <title>vncviewer GUI を利用した接続</title>
+   <para><command>--listen</command> を指定せずに <command>vncviewer</command> を実行するか、もしくは接続先のホストを指定して実行すると、詳細な接続設定を行なうためのウインドウが表示されます。 <guimenu>VNC server</guimenu> の欄には、 <xref linkend="sec.vnc.viewer.connectcli"/> で指定しているような接続先を指定して、 <guimenu>Connect</guimenu> を押します。</para>
    <figure xml:id="fig.vnc.viewer.connectgui">
     <title>vncviewer</title>
     <mediaobject>
-     <textobject role="description"><phrase>vncviewer asking for connection details</phrase>
-     </textobject>
+     <textobject role="description"><phrase>接続の詳細設定を行なうための vncviewer の画面</phrase></textobject>
      <imageobject role="html">
       <imagedata fileref="vnc_connect.png" format="PNG"/>
      </imageobject>
@@ -107,42 +64,28 @@ role='description'><phrase>Add new session</phrase></textobject><imageobject rol
   </sect2>
 
   <sect2 xml:id="sec.vnc.viewer.encrypt">
-   <title>Notification of Unencrypted Connections</title>
-   <para>
-    The VNC protocol supports different kinds of encrypted connections, not to
-    be confused with password authentication. If a connection does not use TLS,
-    the text <quote>(Connection not encrypted!)</quote> can be seen in the
-    window title of the VNC viewer.
-   </para>
+   <title>暗号化されていない接続に対する通知</title>
+   <para>VNC プロトコルでは、様々な種類の暗号化接続 (注: パスワード認証とは全く異なり、通信そのものを暗号化して外部から内容を読み取られないようにする仕組みです) に対応しています。接続時に TLS を使用していないと、 VNC ビューアのウインドウタイトルに <quote>(Connection not encrypted!)</quote> (通信が暗号化されていません) というメッセージが表示されるようになっています。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="vnc.remmina">
-  <title>Remmina: the Remote Desktop Client</title>
+  <title>Remmina: リモートデスクトップクライアント</title>
 
-  <para>
-   Remmina is a modern and feature rich remote desktop client. It supports
-   several access methods, for example VNC, SSH, RDP, or Spice.
-  </para>
+  <para>Remmina はモダンで機能の豊富なリモートデスクトップクライアントです。 VNC, SSH, RDP, Spice の各プロトコルに対応しています。</para>
 
   <sect2 xml:id="vnc.remmina.install">
-   <title>Installation</title>
-   <para>
-    To use Remmina, verify whether the <package>remmina</package> package is
-    installed on your system, and install it if not. Remember to install the
-    VNC plug-in for Remmina as well:
-   </para>
+   <title>インストール</title>
+   <para>Remmina を使用するには、まず <package>remmina</package> パッケージをインストールする必要があり伸す。インストールされていない場合は、下記のように実行して Remmina の VNC プラグインと共にインストールを行なってください:</para>
 <screen>
 &prompt.root;zypper in remmina remmina-plugin-vnc
 </screen>
   </sect2>
 
   <sect2 xml:id="vnc.remmina.usage">
-   <title>Main Window</title>
-   <para>
-    Run Remmina by entering the <command>remmina</command> command.
-   </para>
+   <title>メインウインドウ</title>
+   <para>Remmina を起動するには、 <command>remmina</command> と入力して実行します。</para>
    <figure>
-    <title>Remmina's Main Window</title>
+    <title>Remmina のメインウインドウ</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="remmina.png" width="50%" format="PNG"/>
@@ -152,23 +95,14 @@ role='description'><phrase>Add new session</phrase></textobject><imageobject rol
      </imageobject>
     </mediaobject>
    </figure>
-   <para>
-    The main application window shows the list of stored remote sessions. Here
-    you can add and save a new remote session, quick-start a new session
-    without saving it, start a previously saved session, or set Remmina's
-    global preferences.
-   </para>
+   <para>アプリケーションのメインウインドウには、保存されているリモートセッションの一覧が表示されます。ここに新しいリモートセッションを登録して保存しておくことができるほか、保存を行なわずに素早く新しいセッションを開始したり、保存したセッションを開始することもできます。このほか、 Remmina のグローバル設定を変更することもできます。</para>
   </sect2>
 
   <sect2 xml:id="vnc.remmina.addnew">
-   <title>Adding Remote Sessions</title>
-   <para>
-    To add and save a new remote session, click &remmina-plus-icon; in the
-    top left of the main window. The
-    <guimenu>Remote Desktop Preference</guimenu> window opens.
-   </para>
+   <title>リモートセッションの追加</title>
+   <para>新しいリモートセッションを追加して保存するには、メインウインドウの左上にある &remmina-plus-icon; を押します。すると、 <guimenu>リモートデスクトップの設定</guimenu> というウインドウが表示されます。</para>
    <figure>
-    <title>Remote Desktop Preference</title>
+    <title>リモートデスクトップの設定</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="remmina_session_details.png" width="80%" format="PNG"/>
@@ -178,90 +112,56 @@ role='description'><phrase>Add new session</phrase></textobject><imageobject rol
      </imageobject>
     </mediaobject>
    </figure>
-   <para>
-    Complete the fields that specify your newly added remote session profile.
-    The most important are:
-   </para>
+   <para>新しく追加するセッションプロファイルに対して、各種の情報を設定します。主なものは下記のとおりです:</para>
    <variablelist>
     <varlistentry>
-     <term>Name</term>
+     <term>名前</term>
      <listitem>
-      <para>
-       Name of the profile. It will be listed in the main window.
-      </para>
+      <para>プロファイルの名前を指定します。名前はメインウインドウ内の一覧に表示されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Protocol</term>
+     <term>プロトコル</term>
      <listitem>
-      <para>
-       The protocol to use when connecting to the remote session, for example
-       VNC.
-      </para>
+      <para>リモートのセッションに接続する際に使用するプロトコル (例: VNC) を指定します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Server</term>
+     <term>サーバー</term>
      <listitem>
-      <para>
-       The IP or DNS address and display number of the remote server.
-      </para>
+      <para>リモートサーバの IP アドレスまたはホスト名と、ディスプレイ番号を指定します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>User name, Password</term>
+     <term>ユーザー名, パスワード</term>
      <listitem>
-      <para>
-       Credentials to use for remote authentication. Leave empty for no
-       authentication.
-      </para>
+      <para>リモートサーバに接続する際の認証情報を設定します。認証を行なわない場合は、何も入力しないでください。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Color depth, Quality</term>
+     <term>色数, 品質</term>
      <listitem>
-      <para>
-       Select the best options according to your connection speed and quality.
-      </para>
+      <para>お使いの環境の接続速度と品質にあわせて、最適な設定を選択してください。</para>
      </listitem>
     </varlistentry>
    </variablelist>
-   <para>
-    Select the <guimenu>Advanced</guimenu> tab to enter more specific settings.
-   </para>
+   <para><guimenu>高度な設定</guimenu> 他部を選択すると、より詳しいオプションを設定することができます。</para>
    <tip>
-    <title>Disable Encryption</title>
-    <para>
-     If the communication between the client and the remote server is not
-     encrypted, activate <guimenu>Disable encryption</guimenu>, otherwise the
-     connection fails.
-    </para>
+    <title>暗号化の無効化</title>
+    <para>クライアントとリモートのサーバの間で暗号化を行なわない場合は、 <guimenu>暗号化を無効にする</guimenu> を選択してください。選択を行なわないと、接続が失敗します。</para>
    </tip>
-   <para>
-    Select the <guimenu>SSH</guimenu> tab for advanced SSH tunneling and
-    authentication options.
-   </para>
-   <para>
-    Confirm with <guimenu>Save</guimenu>. Your new profile will be listed in
-    the main window.
-   </para>
+   <para>SSH でトンネル接続するような場合や、認証オプションを設定する必要がある場合は、 <guimenu>SSH</guimenu> タブを選択してください。</para>
+   <para>設定が終わったら <guimenu>Save</guimenu> を押します。新しいプロファイルがメインウインドウ内に表示されるようになります。</para>
   </sect2>
 
   <sect2 xml:id="vnc.remmina.start">
-   <title>Starting Remote Sessions</title>
-   <para>
-    You can either start a previously saved session, or quick-start a remote
-    session without saving the connection details.
-   </para>
+   <title>リモートセッションの開始</title>
+   <para>以前に保存したセッションから起動することができるほか、接続の詳細を保存せずに素早く接続することもできます。</para>
    <sect3 xml:id="vnc.remmina.quickstart">
-    <title>Quick-starting Remote Sessions</title>
-    <para>
-     To start a remote session quickly without properly adding and saving
-     connection details, use the drop-down box and text box at the top of the
-     main window.
-    </para>
+    <title>リモートセッションを素早く開始する方法</title>
+    <para>様々な詳細設定を入力せずにリモートセッションに素早く接続するには、メインウインドウの上部にあるドロップダウンボックスとテキストボックスをお使いください。</para>
     <figure>
-     <title>Quick-starting</title>
+     <title>クイックスタート</title>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="remmina_quickstart.png" width="40%" format="PNG"/>
@@ -271,30 +171,17 @@ role='description'><phrase>Add new session</phrase></textobject><imageobject rol
       </imageobject>
      </mediaobject>
     </figure>
-    <para>
-     Select the communication protocol from the drop-down box, for example
-     'VNC', then enter the VNC server DNS or IP address followed by a colon and
-     a display number, and confirm with <keycap function="enter"/>.
-    </para>
+    <para>まずはドロップダウンボックスで通信プロトコルを選択 (例: 'VNC') して、その後 VNC サーバのホスト名または IP アドレスを入力してください。ディスプレイ番号を指定する場合は、ホスト名または IP アドレスに続いてコロンを入力し、番号を入力してください。入力が終わったら <keycap function="enter"/> で接続します。</para>
    </sect3>
    <sect3>
-    <title>Opening Saved Remote Sessions</title>
-    <para>
-     To open a specific remote session, double-click it from the list of
-     sessions.
-    </para>
+    <title>保存済みのリモートセッションへの接続</title>
+    <para>特定のリモートセッションを開くには、セッションの一覧から項目を選んでダブルクリックします。</para>
    </sect3>
    <sect3>
-    <title>Remote Sessions Window</title>
-    <para>
-     Remote sessions are opened in tabs of a separate window. Each tab hosts
-     one session. The toolbar on the left of the window helps you manage the
-     windows / sessions, such as toggle fullscreen mode, resize the window to
-     match the display size of the session, send specific keystrokes to the
-     session, take screenshots of the session, or set the image quality.
-    </para>
+    <title>リモートセッションのウインドウ</title>
+    <para>リモートのセッションはウインドウ内のタブとして表示されます。それぞれのタブがセッションに対応しています。また、ウインドウの左側にあるツールバーを利用することで、ウインドウやセッションを管理することができます。ここではフルスクリーンモードやセッションのディスプレイサイズに合わせたウインドウのサイズ変更、そしてセッションに対する特定キー入力の送信や画像品質の設定などを行なうことができます。</para>
     <figure>
-     <title>Remmina Viewing SLES 15 Remote Session</title>
+     <title>Remmina による SLES 15 リモートセッション接続</title>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="remmina_sle15inside.png" width="80%" format="PNG"/>
@@ -308,46 +195,21 @@ role='description'><phrase>Add new session</phrase></textobject><imageobject rol
   </sect2>
 
   <sect2 xml:id="vnc.remmina.edit_delete_clone">
-   <title>Editing, Copying, and Deleting Saved Sessions</title>
-   <para>
-    To <emphasis>edit</emphasis> a saved remote session, right-click its name
-    in Remmina's main window and select <guimenu>Edit</guimenu>. Refer to
-    <xref linkend="vnc.remmina.addnew"/> for the description of the relevant
-    fields.
-   </para>
-   <para>
-    To <emphasis>copy</emphasis> a saved remote session, right-click its name
-    in Remmina's main window and select <guimenu>Copy</guimenu>. In the
-    <guimenu>Remote Desktop Preference</guimenu> window, change the name of the
-    profile, optionally adjust relevant options, and confirm with
-    <guimenu>Save</guimenu>.
-   </para>
-   <para>
-    To <emphasis>Delete</emphasis> a saved remote session, right-click its name
-    in Remmina's main window and select <guimenu>Delete</guimenu>. Confirm
-    with <guimenu>Yes</guimenu> in the next dialog.
-   </para>
+   <title>保存済みセッションの編集／コピー／削除</title>
+   <para>保存済みのリモートセッションを <emphasis>編集</emphasis> するには、 Remmina のメインウインドウ内で名前を右クリックし、 <guimenu>Edit</guimenu> を選択します。それぞれの項目に関する説明は、 <xref linkend="vnc.remmina.addnew"/> をお読みください。</para>
+   <para>保存済みのリモートセッションを <emphasis>コピー</emphasis> するには、 Remmina のメインウインドウ内で名前を右クリックし、 <guimenu>コピー</guimenu> を選択します。 <guimenu>リモートデスクトップの設定</guimenu> ウインドウが表示されたら、プロファイルの名前を変更してください。それ以外にも、必要に応じてオプションを変更してもかまいません。変更が終わったら <guimenu>Save</guimenu> を押してください。</para>
+   <para>保存済みのリモートセッションを <emphasis>削除</emphasis> するには、 Remmina のメインウインドウ内で名前を右クリックし、 <guimenu>Delete</guimenu> を選択します。削除確認のメッセージが表示されますので、 <guimenu>はい</guimenu> を押して削除を行なってください。</para>
   </sect2>
 
   <sect2 xml:id="vnc.remmina.cmdline">
-   <title>Running Remote Sessions from the Command Line</title>
-   <para>
-    If you need to open a remote session from the command line or from a batch
-    file without first opening the main application window, use the following
-    syntax:
-   </para>
+   <title>コマンドラインからのリモートセッションの実行</title>
+   <para>リモートセッションをコマンドラインから開きたい場合や、バッチファイルから開く際に、メインのアプリケーションウインドウ無しで表示させたい場合は、下記のような書式で実行します:</para>
 <screen>
- &prompt.user;remmina -c <replaceable>profile_name</replaceable>.remmina
+ &prompt.user;remmina -c <replaceable>プロファイル名</replaceable>.remmina
 </screen>
-   <para>
-    Remmina's profile files are stored in the
-    <filename>.local/share/remmina/</filename> directory in your home
-    directory. To determine which profile file belongs to the session you want
-    to open, run Remmina, click the session name in the main window, and read
-    the path to the profile file in the window's status line at the bottom.
-   </para>
+   <para>Remmina の設定ファイルは、ホームディレクトリ内の <filename>.local/share/remmina/</filename> ディレクトリ内に保存されます。設定ファイルは名前などとは無関係に付与されます。プロファイルからファイル名を調べたい場合は、 Remmina を起動してからメインウインドウ内のプロファイルを選択し、ウインドウ下部のステータス行に表示されるパスからファイル名を判断してください。</para>
    <figure>
-    <title>Reading Path to the Profile File</title>
+    <title>プロファイルのファイルパスの表示</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="remmina_status.png" width="50%" format="PNG"/>
@@ -357,80 +219,42 @@ role='description'><phrase>Add new session</phrase></textobject><imageobject rol
      </imageobject>
     </mediaobject>
    </figure>
-   <para>
-    While Remmina is not running, you can rename the profile file to a more
-    reasonable file name, such as <filename>sle15.remmina</filename>. You can
-    even copy the profile file to your custom directory and run it using the
-    <command>remmina -c</command> command from there.
-   </para>
+   <para>Remmina を起動していない状態であれば、 <filename>sle15.remmina</filename> のように、設定ファイルをよりわかりやすいファイル名に変更することができます。もちろん設定ファイルをどこか別のディレクトリにコピーして、 <command>remmina -c</command> で指定して実行することもできます。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.vnc.one-time">
-  <title>One-time VNC Sessions</title>
+  <title>ワンタイム VNC セッション</title>
 
-  <para>
-   A one-time session is initiated by the remote client. It starts a graphical
-   login screen on the server. This way you can choose the user which starts
-   the session and, if supported by the login manager, the desktop environment.
-   When you terminate the client connection to such a VNC session, all
-   applications started within that session will be terminated, too. One-time
-   VNC sessions cannot be shared, but it is possible to have multiple sessions
-   on a single host at the same time.
-  </para>
+  <para>ワンタイムセッションはリモートのクライアントからの接続で起動する仕組みです。クライアントから接続を行なうと、サーバ内のグラフィカルなログイン画面を表示し、セッションを開始することができます。また、ログインマネージャ側で対応していれば、デスクトップ環境を選択することもできます。ワンタイムセッションの接続を閉じると、その中で動作していたアプリケーションも終了します。ワンタイム VNC セッションは共有することができませんが、単一のホスト内で複数のセッションを扱うことができます。</para>
 
   <procedure xml:id="pro.vnc.one-time.activate">
-   <title>Enabling One-time VNC Sessions</title>
+   <title>ワンタイム VNC セッションの有効化</title>
    <step>
-    <para>
-     Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Network
-     Services</guimenu> <guimenu>Remote Administration (VNC)</guimenu>
-     </menuchoice>.
-    </para>
+    <para><menuchoice> <guimenu>&yast;</guimenu> <guimenu>ネットワークサービス</guimenu> <guimenu>リモート管理 (VNC)</guimenu> </menuchoice> を選択して起動します。</para>
    </step>
    <step>
-    <para>
-     Check <guimenu>Allow Remote Administration Without Session
-     Management</guimenu>.
-    </para>
+    <para><guimenu>セッション管理機能無しのリモート管理を許可する</guimenu> を選択します。</para>
    </step>
    <step>
-    <para>
-     Activate <guimenu>Enable access using a web browser</guimenu> if you plan
-     to access the VNC session in a Web browser window.
-    </para>
+    <para>VNC セッションを Web ブラウザからアクセスできるようにするには、 <guimenu>Web ブラウザを利用したアクセスを有効にする</guimenu> を選択します。</para>
    </step>
    <step>
-    <para>
-     If necessary, also check <guimenu>Open Port in Firewall</guimenu> (for
-     example, when your network interface is configured to be in the External
-     Zone). If you have more than one network interface, restrict opening the
-     firewall ports to a specific interface via <guimenu>Firewall
-     Details</guimenu>.
-    </para>
+    <para>必要であれば、 <guimenu>ファイアウオールでポートを開く</guimenu> を選択することもできます (たとえばネットワークインターフェイスが外部ゾーンとして設定されている場合など) 。複数のネットワークインターフェイスが設定されている場合は、 <guimenu>ファイアウオールの詳細</guimenu> ボタンでネットワークインターフェイスを選択し、そのインターフェイスでだけ開くこともできます。</para>
    </step>
    <step>
-    <para>
-     Confirm your settings with <guimenu>Next</guimenu>.
-    </para>
+    <para>設定を確認して <guimenu>次へ</guimenu> を押します。</para>
    </step>
    <step>
-    <para>
-     In case not all needed packages are available yet, you need to approve the
-     installation of missing packages.
-    </para>
+    <para>この時点で必要なパッケージがインストールされていない場合は、それらのパッケージをインストールするよう承認を求められます。</para>
     <tip>
-     <title>Restart the Display Manager</title>
-     <para>
-      &yast; makes changes to the display manager settings. You need to log out
-      of your current graphical session and restart the display manager for the
-      changes to take effect.
-     </para>
+     <title>ディスプレイマネージャの再起動について</title>
+     <para>&yast; ではディスプレイマネージャの設定を変更します。設定を反映させるには、いったんお使いのグラフィカルセッションを終了し、ディスプレイマネージャを再起動する必要があります。</para>
     </tip>
    </step>
   </procedure>
 
   <figure>
-   <title>Remote Administration</title>
+   <title>リモート管理</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="vnc_nosession.png" width="70%" format="PNG"/>
@@ -442,321 +266,137 @@ role='description'><phrase>Add new session</phrase></textobject><imageobject rol
   </figure>
 
   <sect2 xml:id="sec.vnc.one-time.configs">
-   <title>Available Configurations</title>
-   <para>
-    The default configuration on &productname; serves sessions with a
-    resolution of 1024x768 pixels at a color depth of 16-bit. The sessions are
-    available on ports <systemitem class="resource">5901</systemitem> for
-    <quote>regular</quote> VNC viewers (equivalent to VNC display
-    <literal>1</literal>) and on port
-    <systemitem class="resource">5801</systemitem> for Web browsers.
-   </para>
-   <para>
-    Other configurations can be made available on different
-    ports<phrase os="sles;osuse">, see
-    <xref linkend="sec.vnc.one-time.config"/></phrase>.<phrase os="sled"> Ask
-    your system administrator for details if you need to modify the
-    configuration.</phrase>
-   </para>
-   <para>
-    VNC display numbers and X display numbers are independent in one-time
-    sessions. A VNC display number is manually assigned to every configuration
-    that the server supports (:1 in the example above). Whenever a VNC session
-    is initiated with one of the configurations, it automatically gets a free X
-    display number.
-   </para>
-   <para>
-    By default, both the VNC client and server try to communicate securely via a
-    self-signed SSL certificate, which is generated after installation. You can
-    either use the default one, or replace it with your own. When using the
-    self-signed certificate, you need to confirm its signature before the first
-    connection&mdash;both in the VNC viewer and the Web browser.
-   </para>
+   <title>利用可能な設定</title>
+   <para>&productname; の既定の設定では、解像度が 1024x768 ピクセルで 16 ビットの色数になっています。ポートは <quote>通常の</quote> VNC ビューアからの接続が <systemitem class="resource">5901</systemitem> で、 Web ブラウザからの接続が <systemitem class="resource">5801</systemitem> です。</para>
+   <para>異なるポートを使用するように設定することもできます。 <phrase os="sles;osuse">詳しくは <xref linkend="sec.vnc.one-time.config"/> をお読みください。</phrase><phrase os="sled"> 設定を変更する必要がある場合は、システム管理者にお尋ねください。</phrase></para>
+   <para>VNC でのディスプレイ番号と X のディスプレイ番号は、ワンタイムセッションではそれぞれ独立して管理されます。 VNC のディスプレイ番号は、それぞれのサーバ設定で手作業で割り当てて使用します (上記の例では :1 がディスプレイ番号です) が、 X のディスプレイ番号は、 VNC セッションが開始された際、その時点で空いている X ディスプレイ番号を自動的に使用します。</para>
+   <para>既定では、 VNC クライアントとサーバは、インストール時に生成した自己署名型の SSL 証明書を利用して、機密保持接続を確立しようとします。このままお使いいただくこともできますが、必要に応じて証明書を置き換えることもできます。ただし、自己署名型の証明書を利用する場合、 VNC ビューア側や Web ブラウザ側で証明書の警告メッセージが表示されることになります。</para>
   </sect2>
 
   <sect2 xml:id="sec.vnc.one-time.connect">
-   <title>Initiating a One-time VNC Session</title>
-   <para>
-    To connect to a one-time VNC session, a VNC viewer must be installed, see
-    also <xref linkend="sec.vnc.viewer"/>.  Alternatively use a
-    JavaScript-capable Web browser to view the VNC session by entering the
-    following URL: <literal>http://&wsIname;:5801</literal>
-   </para>
+   <title>ワンタイム VNC セッションの開始</title>
+   <para>ワンタイム VNC セッションに接続するには、まず VNC ビューアをインストールしておかなければなりません。インストールに関する詳細は <xref linkend="sec.vnc.viewer"/> をお読みください。なお、 JavaScript に対応した Web ブラウザを利用して、 VNC のセッションに接続することもできます。この場合は、 <literal>http://&wsIname;:5801</literal> のような URL を指定して接続してください。</para>
   </sect2>
 
   <sect2 xml:id="sec.vnc.one-time.config">
-   <title>Configuring One-time VNC Sessions</title>
-   <para>
-    You can skip this section, if you do not need or want to modify the default
-    configuration.
-   </para>
-   <para>
-    One-time VNC sessions are started via the &systemd; socket
-    <systemitem>xvnc.socket</systemitem>. By default it offers six
-    configuration blocks: three for VNC viewers (<literal>vnc1</literal> to
-    <literal>vnc3</literal>), and three serving a JavaScript client
-    (<literal>vnchttpd1</literal> to <literal>vnchttpd3</literal>). By default
-    only <literal>vnc1</literal> and <literal>vnchttpd1</literal> are active.
-   </para>
-   <para>
-    To activate the VNC server socket at boot time, run the following command:
-   </para>
+   <title>ワンタイム VNC セッションの設定</title>
+   <para>既定値を変更する必要がなければ、この手順は実施しなくてもかまいません。</para>
+   <para>ワンタイム VNC セッションは、 &systemd; のソケット <systemitem>xvnc.socket</systemitem> 経由で起動されます。既定では 6 つの設定ブロックが存在していて、そのうち 3 つが VNC ビューア向け ( <literal>vnc1</literal> から <literal>vnc3</literal> まで) で、残りの 3 つが JavaScript クライアント向け ( <literal>vnchttpd1</literal> から <literal>vnchttpd3</literal> まで) です。既定では <literal>vnc1</literal> と <literal>vnchttpd1</literal> だけが有効化されています。</para>
+   <para>VNC サーバソケットをシステムの起動時に有効化するには、下記のコマンドを実行します:</para>
 <screen>sudo systemctl enable xvnc.socket</screen>
-   <para>
-    To start the socket immediately, run:
-   </para>
+   <para>即時にソケットを開始するには、下記のコマンドを実行します:</para>
 <screen>sudo systemctl start xvnc.socket</screen>
-   <para>
-    The <command>Xvnc</command> server can be configured via the
-    <literal>server_args</literal> option. For a list of options, see
-    <command>Xvnc --help</command>.
-   </para>
-   <para>
-    When adding custom configurations, make sure they are not using ports that
-    are already in use by other configurations, other services, or existing
-    persistent VNC sessions on the same host.
-   </para>
-   <para>
-    Activate configuration changes by entering the following command:
-   </para>
+   <para><command>Xvnc</command> サーバは、 <literal>server_args</literal> オプションを介して設定することができます。オプションの一覧については <command>Xvnc --help</command> をお読みください。</para>
+   <para>独自の設定を加える場合、同じホストで動作している他の設定やサービス、既存の VNC セッションなどが使用していないポートを設定するよう注意してください。</para>
+   <para>設定の変更を反映させるには、下記のコマンドを実行します:</para>
 <screen>&prompt.sudo;systemctl reload xvnc.socket</screen>
    <important>
-    <title>Firewall and VNC Ports</title>
-    <para>
-     When activating Remote Administration as described in
-     <xref linkend="pro.vnc.one-time.activate"/>, the ports
-     <systemitem class="resource">5801</systemitem> and
-     <systemitem class="resource">5901</systemitem> are opened in the firewall.
-     If the network interface serving the VNC sessions is protected by a
-     firewall, you need to manually open the respective ports when activating
-     additional ports for VNC sessions. See
-     <xref linkend="cha.security.firewall"/> for instructions.
-    </para>
+    <title>ファイアウオールと VNC ポート</title>
+    <para><xref linkend="pro.vnc.one-time.activate"/> で説明している手順でリモート管理を設定すると、ポート <systemitem class="resource">5801</systemitem> と <systemitem class="resource">5901</systemitem> を開くように設定されます。 VNC セッションを提供するネットワークインターフェイスがファイアウオールで保護されている場合は、それぞれのポートを開くように設定する必要があります。詳しくは <xref linkend="cha.security.firewall"/> をお読みください。</para>
    </important>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.vnc.persistent">
-  <title>Persistent VNC Sessions</title>
+  <title>永続 VNC セッション</title>
 
-  <para>
-   A persistent session can be accessed from multiple clients simultaneously.
-   This is ideal for demonstration purposes where one client has full access
-   and all other clients have view-only access. Another use case are trainings
-   where the trainer might need access to the trainee's desktop.
-  </para>
+  <para>永続 VNC セッションを使用すると、複数のクライアントから同時に接続できるようになります。たとえば 1 つのクライアントに対してだけ操作を許可しておき、それ以外の全てのクライアントは表示専用に設定することで、デモンストレーション目的で公開するようなこともできます。また、講師から参加者のデスクトップにアクセスできるように設定しておけば、トレーニングなどの際にも便利に使用することができます。</para>
 
   <tip xml:id="sec.vnc.persistent.connect">
-   <title>Connecting to a Persistent VNC Session</title>
-   <para>
-    To connect to a persistent VNC session, a VNC viewer must be installed.
-    Refer to <xref linkend="sec.vnc.viewer"/> for more details.  Alternatively
-    use a JavaScript-capable Web browser to view the VNC session by entering the
-    following URL: <literal>http://&wsIname;:5801</literal>
-   </para>
+   <title>永続 VNC セッションへの接続</title>
+   <para>永続 VNC セッションに接続するには、まず VNC ビューアをインストールしておかなければなりません。インストールに関する詳細は <xref linkend="sec.vnc.viewer"/> をお読みください。なお、 JavaScript に対応した Web ブラウザを利用して、 VNC のセッションに接続することもできます。この場合は、 <literal>http://&wsIname;:5801</literal> のような URL を指定して接続してください。</para>
   </tip>
 
-  <para>
-   There are two types of persistent VNC sessions:
-  </para>
+  <para>永続 VNC セッションには 2 種類の仕組みが用意されています:</para>
 
   <itemizedlist>
    <listitem>
-    <para>
-     <xref linkend="vnc.persistent.vncserver" xrefstyle="select:title"/>
-    </para>
+    <para><xref linkend="vnc.persistent.vncserver" xrefstyle="select:title"/></para>
    </listitem>
    <listitem>
-    <para>
-     <xref linkend="vnc.persistent.vncmanager" xrefstyle="select:title"/>
-    </para>
+    <para><xref linkend="vnc.persistent.vncmanager" xrefstyle="select:title"/></para>
    </listitem>
   </itemizedlist>
 
   <sect2 xml:id="vnc.persistent.vncserver">
-   <title>VNC Session Initiated Using <systemitem>vncserver</systemitem></title>
-   <para>
-    This type of persistent VNC session is initiated on the server. The session
-    and all applications started in this session run regardless of client
-    connections until the session is terminated. Access to persistent sessions
-    is protected by two possible types of passwords:
-   </para>
+   <title><systemitem>vncserver</systemitem> を利用した VNC セッションの起動</title>
+   <para>この種類の永続 VNC セッションの場合、サーバ内で起動を行ないます。セッションとそのセッション内で起動したアプリケーションは、セッションを終了しない限り、クライアントの接続が切れてもそのまま動作し続けます。永続セッションへの接続は、 2 種類のパスワードで保護することができます:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      a regular password that grants full access or
-     </para>
+     <para>完全なアクセスを許可する通常のパスワード</para>
     </listitem>
     <listitem>
-     <para>
-      an optional view-only password that grants a non-interactive (view-only)
-      access.
-     </para>
+     <para>非対話型 (表示のみ) のアクセスを許可するパスワード</para>
     </listitem>
    </itemizedlist>
-   <para>
-    A session can have multiple client connections of both kinds at once.
-   </para>
+   <para>なお、 1 つのセッションに対して複数のクライアントが同時に接続することができます。</para>
    <procedure xml:id="pro.vnc.persistent.activate">
-    <title>Starting a Persistent VNC Session using <command>vncserver</command></title>
+    <title><command>vncserver</command> を利用した永続 VNC セッションの開始</title>
     <step>
-     <para>
-      Open a shell and make sure you are logged in as the user that should own
-      the VNC session.
-<!-- max: should we add some more
-     words here to explain that the shell session could either be a
-     local one or a ssh session, or can we assume this to be known by
-     the customer? -->
-     </para>
+     <para>まずはシェルを開いて、 VNC セッションの所有者となるべきユーザでログインしていることを確認します。 <!-- max: should we add some more words here to explain that the shell session could either be a local one or a ssh session, or can we assume this to be known by the customer? --></para>
     </step>
     <step>
-     <para>
-      If the network interface serving the VNC sessions is protected by a
-      firewall, you need to manually open the port used by your session in the
-      firewall. If starting multiple sessions you may alternatively open a
-      range of ports. See <xref linkend="cha.security.firewall"/> for details
-      on how to configure the firewall.
-     </para>
-     <para>
-      <command>vncserver</command> uses the ports
-      <systemitem class="resource">5901</systemitem> for display
-      <literal>:1</literal>, <systemitem class="resource">5902</systemitem> for
-      display <literal>:2</literal>, and so on. For persistent sessions, the
-      VNC display and the X display usually have the same number.
-     </para>
+     <para>VNC セッションを提供するネットワークインターフェイスがファイアウオールで保護されている場合は、セッションで開くポートを許可するように設定する必要があります。また、複数のセッションを開始する場合は、ポートの範囲を指定して許可することもできます。ファイアウオールの設定について、詳しくは <xref linkend="cha.security.firewall"/> をお読みください。</para>
+     <para><command>vncserver</command> はディスプレイ <literal>:1</literal> に対してはポート <systemitem class="resource">5901</systemitem> を、ディスプレイ <literal>:2</literal> に対しては <systemitem class="resource">5902</systemitem> などをそれぞれ使用します。永続セッションの場合は、 VNC のディスプレイ番号と X のディスプレイ番号は通常同じになります。</para>
     </step>
     <step>
-     <para>
-      To start a session with a resolution of 1024x768 pixel and with a color
-      depth of 16-bit, enter the following command:
-     </para>
+     <para>1024x768 ピクセルで 16 ビットの色数でセッションを開始するには、下記のコマンドを実行します:</para>
 <screen>vncserver -alwaysshared -geometry 1024x768 -depth 16</screen>
-     <para>
-      The <command>vncserver</command> command picks an unused display number
-      when none is given and prints its choice. See <command>man 1
-      vncserver</command> for more options.
-     </para>
+     <para><command>vncserver</command> でディスプレイ番号を指定しない場合は、空いているディスプレイ番号を自動的に探して使用し、その番号を表示します。詳しくは <command>man 1 vncserver</command> をお読みください。</para>
     </step>
    </procedure>
-   <para>
-    When running <command>vncserver</command> for the first time, it asks for a
-    password for full access to the session. If needed, you can also provide a
-    password for view-only access to the session.
-   </para>
-   <para>
-    The password(s) you are providing here are also used for future sessions
-    started by the same user. They can be changed with the
-    <command>vncpasswd</command> command.
-   </para>
+   <para><command>vncserver</command> を初めて実行した場合は、完全なアクセスを許可するためのパスワードを入力するよう求められます。また、必要であれば表示のみを許可するパスワードを設定することもできます。</para>
+   <para>同じユーザが次回以降にセッションを開始しようとすると、ここで入力したパスワードを使用して開始する動作になります。パスワードを変更したい場合は、 <command>vncpasswd</command> コマンドをお使いください。</para>
    <important>
-    <title>Security Considerations</title>
-    <para>
-     Make sure to use strong passwords of significant length (eight or more
-     characters). Do not share these passwords.
-    </para>
+    <title>セキュリティに対して考慮すべき事項</title>
+    <para>十分な長さ (8 文字以上) で、かつ強いパスワードを設定してください。パスワードは不用意に開示してはなりません。</para>
    </important>
-   <para>
-    To terminate the session shut down the desktop environment that runs inside
-    the VNC session from the VNC viewer as you would shut it down if it was a
-    regular local X session.
-   </para>
-   <para>
-    If you prefer to manually terminate a session, open a shell on the VNC
-    server and make sure you are logged in as the user that owns the VNC
-    session you want to terminate. Run the following command to terminate the
-    session that runs on display <literal>:1</literal>: <command>vncserver
-    -kill :1</command>
-   </para>
+   <para>セッションを終了するには、一般的なログアウト処理と同様に、 VNC セッションを起動したデスクトップ環境を終了することで行ないます。</para>
+   <para>手作業でセッションを終了したい場合は、 VNC サーバ内でシェルを開いて、終了したい VNC セッションの所有者であることを確認し、 <command>vncserver -kill :1</command> のように実行します。このとき、　<literal>:1</literal> には実際のディスプレイ番号を指定します。</para>
    <sect3 xml:id="sec.vnc.persistent.configure">
-    <title>Configuring Persistent VNC Sessions</title>
-    <para>
-     Persistent VNC sessions can be configured by editing
-     <filename>$HOME/.vnc/xstartup</filename>. By default this shell script
-     starts the same GUI/window manager it was started from. In &productname;
-     this will either be &gnome; or IceWM. If you want to start your session
-     with a window manager of your choice, set the variable
-     <envar>WINDOWMANAGER</envar>:
-    </para>
+    <title>永続 VNC セッションの設定</title>
+    <para>永続 VNC セッションは、 <filename>$HOME/.vnc/xstartup</filename> ファイルを編集することで設定を行なうことができます。既定では、このシェルスクリプトは同じ GUI/ウインドウマネージャを利用するようになっています (&productname; の場合、 &gnome; もしくは IceWM のいずれかです) 。ウインドウマネージャを選択してセッションを開始したい場合は、下記のようにして <envar>WINDOWMANAGER</envar> を設定します:</para>
 <screen>WINDOWMANAGER=gnome vncserver -geometry 1024x768
 WINDOWMANAGER=icewm vncserver -geometry 1024x768</screen>
     <note>
-     <title>One Configuration for Each User</title>
-     <para>
-      Persistent VNC sessions are configured in a single per-user
-      configuration. Multiple sessions started by the same user will all use
-      the same start-up and password files.
-     </para>
+     <title>ユーザごとの設定であることについて</title>
+     <para>永続 VNC セッションはユーザごとに設定を行ないます。同じユーザで複数のセッションを開始した場合、同じ起動ファイルとパスワードファイルを使用することになります。</para>
     </note>
    </sect3>
   </sect2>
 
   <sect2 xml:id="vnc.persistent.vncmanager">
-   <title>VNC Session Initiated Using <systemitem>vncmanager</systemitem></title>
+   <title><systemitem>vncmanager</systemitem> を利用した VNC セッションの起動</title>
    <para/>
    <procedure xml:id="vnc.persistent.vncmanager.enable">
-    <title>Enabling Persistent VNC Sessions</title>
+    <title>永続 VNC セッションの有効化</title>
     <step>
-     <para>
-      Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Network
-      Services</guimenu> <guimenu>Remote Administration (VNC)</guimenu>
-      </menuchoice>.
-     </para>
+     <para><menuchoice> <guimenu>&yast;</guimenu> <guimenu>ネットワークサービス</guimenu> <guimenu>リモート管理 (VNC)</guimenu> </menuchoice> を選択して起動します。</para>
     </step>
     <step>
-     <para>
-      Activate <guimenu>Allow Remote Administration With Session
-      Management</guimenu>.
-     </para>
+     <para><guimenu>セッション管理機能付きのリモート管理を許可する</guimenu> を選択します。</para>
     </step>
     <step>
-     <para>
-      Activate <guimenu>Enable access using a web browser</guimenu> if you plan
-      to access the VNC session in a Web browser window.
-     </para>
+     <para>VNC セッションを Web ブラウザからアクセスできるようにするには、 <guimenu>Web ブラウザを利用したアクセスを有効にする</guimenu> を選択します。</para>
     </step>
     <step>
-     <para>
-      If necessary, also check <guimenu>Open Port in Firewall</guimenu> (for
-      example, when your network interface is configured to be in the External
-      Zone). If you have more than one network interface, restrict opening the
-      firewall ports to a specific interface via <guimenu>Firewall
-      Details</guimenu>.
-     </para>
+     <para>必要であれば、 <guimenu>ファイアウオールでポートを開く</guimenu> を選択することもできます (たとえばネットワークインターフェイスが外部ゾーンとして設定されている場合など) 。複数のネットワークインターフェイスが設定されている場合は、 <guimenu>ファイアウオールの詳細</guimenu> ボタンでネットワークインターフェイスを選択し、そのインターフェイスでだけ開くこともできます。</para>
     </step>
     <step>
-     <para>
-      Confirm your settings with <guimenu>Next</guimenu>.
-     </para>
+     <para>設定を確認して <guimenu>次へ</guimenu> を押します。</para>
     </step>
     <step>
-     <para>
-      In case not all needed packages are available yet, you need to approve
-      the installation of missing packages.
-     </para>
+     <para>この時点で必要なパッケージがインストールされていない場合は、それらのパッケージをインストールするよう承認を求められます。</para>
      <tip>
-      <title>Restart the Display Manager</title>
-      <para>
-       &yast; makes changes to the display manager settings. You need to log
-       out of your current graphical session and restart the display manager
-       for the changes to take effect.
-      </para>
+      <title>ディスプレイマネージャの再起動について</title>
+      <para>&yast; ではディスプレイマネージャの設定を変更します。設定を反映させるには、いったんお使いのグラフィカルセッションを終了し、ディスプレイマネージャを再起動する必要があります。</para>
      </tip>
     </step>
    </procedure>
    <sect3 xml:id="vnc.persistent.vncmanager.configure">
-    <title>Configuring Persistent VNC Sessions</title>
-    <para>
-     After you enable the VNC session management as described in <xref linkend="vnc.persistent.vncmanager.enable"/>, you can normally
-     connect to the remote session with your favorite VNC viewer, such
-     as <command>vncviewer</command> or Remmina. You will be presented
-     with the login screen. After you log in, the 'VNC' icon will
-     appear in the system tray of your desktop environment. Click the
-     icon to open the <guimenu>VNC Session</guimenu> window. If it does
-     not appear or if your desktop environment does not support icons
-     in the system tray, run <command>vncmanager-controller</command>
-     manually.
-    </para>
+    <title>永続 VNC セッションの設定</title>
+    <para><xref linkend="vnc.persistent.vncmanager.enable"/> の手順に従って VNC セッションを有効化したあとは、 <command>vncviewer</command> や Remmina などの VNC ビューアを利用して、リモートのセッションに接続できるようになります。この場合は、ログイン画面が表示されます。ログインを行なうと、デスクトップ環境のシステムトレイ内に、 'VNC' というアイコンが表示されるようになります。アイコンを押すと <guimenu>VNC セッション</guimenu> ウインドウを表示することができます。なお、アイコンが現われない場合は、お使いのデスクトップ環境でシステムトレイ内のアイコン表示に対応していない可能性がありますので、この場合は <command>vncmanager-controller</command> コマンドをお使いのうえ、設定を行なってください。</para>
     <figure>
-     <title>VNC Session Settings</title>
+     <title>VNC セッションの設定</title>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="vncmanager_session.png" width="85%" format="PNG"/>
@@ -766,98 +406,58 @@ WINDOWMANAGER=icewm vncserver -geometry 1024x768</screen>
       </imageobject>
      </mediaobject>
     </figure>
-    <para>
-     There are several settings which influence the VNC session's behavior:
-    </para>
+    <para>VNC セッションの動作を変えるには、それぞれ下記の設定を変更します:</para>
     <variablelist>
      <varlistentry>
-      <term><guimenu>Non-persistent, private</guimenu>
-      </term>
+      <term><guimenu>Non-persistent, private</guimenu></term>
       <listitem>
-       <para>
-        This is equivalent to a one-time session. Such a session is not
-        visible to others and will be terminated after you disconnect
-        from it. Refer to <xref linkend="sec.vnc.one-time"/> for more
-        information.
-       </para>
+       <para>これを選択すると、ワンタイムセッションと同じ動作になります。セッションは他のユーザからは見えなくなりますが、切断するとセッションは終了してしまいます。詳しくは <xref linkend="sec.vnc.one-time"/> をお読みください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>Persistent, visible</guimenu>
-      </term>
+      <term><guimenu>Persistent, visible</guimenu></term>
       <listitem>
-       <para>
-        The session is visible to other users and keeps running even after you
-        disconnect from it.
-       </para>
+       <para>これを選択すると、セッションは他のユーザから見えるようになり、切断してもセッションが終了しなくなります。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>Session name</guimenu>
-      </term>
+      <term><guimenu>Session name</guimenu></term>
       <listitem>
-       <para>
-        Here you can specify the name of the persistent session so that it is
-        easily identified when reconnecting.
-       </para>
+       <para>ここには永続セッションの名前を指定します。これにより、再接続時の識別が容易になります。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>No password required</guimenu>
-      </term>
+      <term><guimenu>No password required</guimenu></term>
       <listitem>
-       <para>
-        The session will be freely accessible without having to log in under
-        user credentials.
-       </para>
+       <para>ユーザの認証情報の入力を行なうことなく、セッションに対して自由にアクセスできるようにします。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>Require user login</guimenu>
-      </term>
+      <term><guimenu>Require user login</guimenu></term>
       <listitem>
-       <para>
-        You need to log in with a valid user name and password to access the
-        session. Lists the valid user names in the <guimenu>Allowed
-        users</guimenu> text box.
-       </para>
+       <para>セッションにアクセスするために、正しいユーザ名とパスワードでのログインを求めるようにします。許可するユーザの一覧は、 <guimenu>Allowed users</guimenu> で指定します。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>Allow one client at time</guimenu>
-      </term>
+      <term><guimenu>Allow one client at time</guimenu></term>
       <listitem>
-       <para>
-        Disables joining the session by multiple users at the same time.
-       </para>
+       <para>複数のユーザが同時に接続することがないようにします。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>Allow multiple clients at time</guimenu>
-      </term>
+      <term><guimenu>Allow multiple clients at time</guimenu></term>
       <listitem>
-       <para>
-        Allows multiple users to join the persistent session at the
-        same time. This can be used remote presentations or trainings.
-       </para>
+       <para>永続セッションに対して、複数のユーザが同時に接続できるようにします。これはプレゼンテーションやトレーニングの際に便利な仕組みです。</para>
       </listitem>
      </varlistentry>
     </variablelist>
-    <para>
-     Confirm with <guimenu>OK</guimenu>.
-    </para>
+    <para><guimenu>OK</guimenu> を押して閉じます。</para>
    </sect3>
    <sect3 xml:id="vnc.persistent.vncmanager.join">
-    <title>Joining Persistent VNC Sessions</title>
-    <para>
-     After you set up a persistent VNC session as described in
-     <xref linkend="vnc.persistent.vncmanager.configure"/>, you can join
-     it with your VNC viewer. After your VNC client connects to the server,
-     you will be prompted to choose whether you want to create a new session,
-     or join the existing one:
-    </para>
+    <title>永続 VNC セッションへの参加</title>
+    <para><xref linkend="vnc.persistent.vncmanager.configure"/> の手順で永続 VNC セッションの設定を行なったら、あとは VNC ビューアを利用して接続することで、セッションに参加できるようになります。 VNC クライアントがサーバに接続すると、新しいセッションを作成するか、既存のセッションに参加するかを選択することができます:</para>
     <figure>
-     <title>Joining a Persistent VNC Session</title>
+     <title>永続 VNC セッションへの参加</title>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="vncmanager_whether.png" width="80%" format="PNG"/>
@@ -867,115 +467,67 @@ WINDOWMANAGER=icewm vncserver -geometry 1024x768</screen>
       </imageobject>
      </mediaobject>
     </figure>
-    <para>
-     After you click the name of the existing session, you may be asked for
-     login credentials, depending on the persistent session settings.
-    </para>
+    <para>既存のセッションの名前を選択すると、永続セッションの設定によってはログインを求められることがあります。</para>
    </sect3>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.vnc.encrypt">
-  <title>Encrypted VNC Communication</title>
+  <title>暗号化された VNC 通信</title>
 
-  <para>
-   If the VNC server is set up properly, all communication between the VNC
-   server and the client is encrypted. The authentication happens at the
-   beginning of the session, the actual data transfer only begins afterward.
-  </para>
+  <para>VNC サーバを正しく設定すると、 VNC サーバとクライアントとの間が暗号化されるようになります。認証はセッションの冒頭で行なわれ、実際のデータ転送はそれ以降に行なわれます。</para>
 
-  <para>
-   Whether for a one-time or a persistent VNC session, security options are
-   configured via the <option>-securitytypes</option> parameter of the
-   <command>/usr/bin/Xvnc</command> command located on the
-   <literal>server_args</literal> line. The <option>-securitytypes</option>
-   parameter selects both authentication method and encryption. It has the
-   following options:
-  </para>
+  <para>ワンタイム VNC セッションや永続 VNC セッションでは、 <literal>server_args</literal> 行で設定する <command>/usr/bin/Xvnc</command> コマンドの <option>-securitytypes</option> を指定することができます。 <option>-securitytypes</option> オプションでは認証方法と暗号化の両方を選択します。下記のいずれかを設定することができます:</para>
 
   <variablelist>
-   <title>Authentications</title>
+   <title>認証</title>
    <varlistentry>
     <term>None, TLSNone, X509None</term>
     <listitem>
-     <para>
-      No authentication.
-     </para>
+     <para>認証を行ないません。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>VncAuth, TLSVnc, X509Vnc</term>
     <listitem>
-     <para>
-      Authentication using custom password.
-     </para>
+     <para>独自のパスワードを利用して認証します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>Plain, TLSPlain, X509Plain</term>
     <listitem>
-     <para>
-      Authentication using PAM to verify user's password.
-     </para>
+     <para>ユーザのパスワードを確認するため、 PAM を利用して認証します。</para>
     </listitem>
    </varlistentry>
   </variablelist>
 
   <variablelist>
-   <title>Encryptions</title>
+   <title>暗号化</title>
    <varlistentry>
     <term>None, VncAuth, Plain</term>
     <listitem>
-     <para>
-      No encryption.
-     </para>
+     <para>暗号化を行ないません。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>TLSNone, TLSVnc, TLSPlain</term>
     <listitem>
-     <para>
-      Anonymous TLS encryption. Everything is encrypted, but there is no
-      verification of the remote host. So you are protected against passive
-      attackers, but not against man-in-the-middle attackers.
-     </para>
+     <para>匿名 TLS 暗号を使用します。全ての通信内容が暗号化されますが、リモートホスト側の検証は何も行ないません。ネットワーク上は暗号化されるため、盗聴の危険からは保護されますが、中間者攻撃 (man-in-the-middle attack) には無力です。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>X509None, X509Vnc, X509Plain</term>
     <listitem>
-     <para>
-      TLS encryption with certificate. If you use a self-signed certificate,
-      you will be asked to verify it on the first connection. On subsequent
-      connections you will be warned only if the certificate changed. So you
-      are protected against everything except man-in-the-middle on the first
-      connection (similar to typical SSH usage). If you use a certificate
-      signed by a certificate authority matching the machine name, then you get
-      full security (similar to typical HTTPS usage).
-     </para>
+     <para>証明書付きの TLS 暗号を使用します。自己署名型の証明書を使用している場合、最初の接続でユーザの確認を求められます。それ以降の接続では、証明書が変更された場合にのみ警告されるようになります。これにより盗聴の危険だけでなく、初回の接続以降は中間者攻撃 (man-in-the-middle attack) にも耐えられるようになります (SSH における鍵の確認と同様の方法です) 。また、公的な証明機関が発行し、マシン名が一致した証明書を使用している場合は、完全なセキュリティを実現できるようになります (一般的な HTTPS 暗号化接続と同じです) 。</para>
      <tip>
-      <title>Path to Certificate and Key</title>
-      <para>
-       With X509 based encryption, you need to specify the path to the X509
-       certificate and the key with <option>-X509Cert</option> and
-       <option>-X509Key</option> options.
-      </para>
+      <title>証明書とその鍵へのパス</title>
+      <para>X509 ベースの暗号化を使用する際は、 <option>-X509Cert</option> と <option>-X509Key</option> のオプションで証明書と鍵を指定する必要があります。</para>
      </tip>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para>
-   If you select multiple security types separated by comma, the first one
-   supported and allowed by both client and server will be used. That way you
-   can configure opportunistic encryption on the server. This is useful if you
-   need to support VNC clients that do not support encryption.
-  </para>
+  <para>複数のセキュリティタイプを指定する場合は、カンマで区切ってください。サーバとクライアントとの間で、最初に対応し許可された仕組みを使用します。この方法により、サーバ側で暗号化の優先順位を付けることができるようになります。また、この方法では暗号化に対応していないクライアントを受け付けなければならないような場合にも、有用です。</para>
 
-  <para>
-   On the client, you can also specify the allowed security types to prevent a
-   downgrade attack if you are connecting to a server which you know has
-   encryption enabled (although our vncviewer will warn you with the
-   "Connection not encrypted!" message in that case).
-  </para>
+  <para>クライアント側でも同様にセキュリティタイプを指定することができます。これにより、暗号化に対応しているはずのサーバに接続する際、誤って暗号化せずに接続するような問題を防ぐことができます (ただし、この設定を行なわなくても、 vncviewer であれば "Connection not encrypted!" (接続が暗号化されていません) と表示されるので、問題に気がつくことはできます) 。</para>
  </sect1>
 </chapter>

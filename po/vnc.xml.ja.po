@@ -1,32 +1,35 @@
+# translation of vnc.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: vnc.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-27 18:00+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: vnc.xml:10
 #, no-c-format
 msgid "Remote Access with VNC"
-msgstr ""
+msgstr "VNC によるリモートアクセス"
 
 #. Tag: dm:translation
 #: vnc.xml:14
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: vnc.xml:17
@@ -36,6 +39,10 @@ msgid ""
 "a graphical desktop (as opposed to a remote shell access). VNC is platform-"
 "independent and lets you access the remote machine from any operating system."
 msgstr ""
+"VNC は Virtual Network Computing (仮想ネットワークコンピューティング) の略で、"
+"ネットワーク上離れたコンピュータを (シェルではなく) グラフィカルなデスクトップ経由で"
+"アクセスする機能を提供します。 VNC はプラットフォームに依存しない構造で、任意の"
+"オペレーティングシステムからアクセスする機能を提供します。"
 
 #. Tag: para
 #: vnc.xml:24
@@ -46,12 +53,16 @@ msgid ""
 "client is kept up, and persistent sessions that <quote>live</quote> until "
 "they are explicitly terminated."
 msgstr ""
+"&productname; では 2 種類の VNC セッションに対応しています。 1 つはワンタイム"
+"セッションと呼ばれ、クライアントからの接続が切れるまで <quote>有効</quote> となる"
+"セッションです。もう 1 つは永続セッションと呼ばれ、明示的に終了させるまでずっと"
+" <quote>有効</quote> であり続けるセッションです。"
 
 #. Tag: title
 #: vnc.xml:33
 #, no-c-format
 msgid "Session Types"
-msgstr ""
+msgstr "セッションの種類"
 
 #. Tag: para
 #: vnc.xml:34
@@ -60,12 +71,14 @@ msgid ""
 "A machine can offer both kinds of sessions simultaneously on different "
 "ports, but an open session cannot be converted from one type to the other."
 msgstr ""
+"それぞれ異なるポートであれば、両方の種類のセッションを同じマシン内で同時に"
+"提供することもできます。ただし、開いたセッションの種類を変更することはできません。"
 
 #. Tag: title
 #: vnc.xml:40
 #, no-c-format
 msgid "Supported Display Managers"
-msgstr ""
+msgstr "対応するディスプレイマネージャ"
 
 #. Tag: para
 #: vnc.xml:41
@@ -79,6 +92,12 @@ msgid ""
 "display manager, remember to log out of the current X session and restart "
 "the display manager with"
 msgstr ""
+"VNC 接続を受け付けるには、 XDMCP プロトコルに対応したディスプレイマネージャを"
+"使用する必要があります。 <systemitem>gdm</systemitem> , <systemitem>lxdm</systemitem> ,"
+" <systemitem>lightdm</systemitem> は XDMCP に対応していますが、 KDE 5 の"
+"既定のディスプレイマネージャである <systemitem>sddm</systemitem> の場合は、"
+" XDMCP に対応していません。ディスプレイマネージャを変更した場合は、現在の"
+" X セッションをログアウトしたあと、下記のコマンドで再起動を行なってください:"
 
 #. Tag: screen
 #: vnc.xml:50
@@ -87,12 +106,14 @@ msgid ""
 "\n"
 "&prompt.user;sudo systemctl restart xdm.service\n"
 msgstr ""
+"\n"
+"&prompt.user;sudo systemctl restart xdm.service\n"
 
 #. Tag: title
 #: vnc.xml:55
 #, no-c-format
 msgid "The <command>vncviewer</command> Client"
-msgstr ""
+msgstr "<command>vncviewer</command> クライアント"
 
 #. Tag: para
 #: vnc.xml:57
@@ -102,12 +123,15 @@ msgid ""
 "default in &productname; is <command>vncviewer</command> , provided by the "
 "<systemitem class=\"resource\">tigervnc</systemitem> package."
 msgstr ""
+"サーバ側で提供されている VNC サービスに接続するには、クライアントソフトウエアが"
+"必要です。 &productname; での既定は <command>vncviewer</command> で、"
+" <systemitem class=\"resource\">tigervnc</systemitem> パッケージ内に含まれています。"
 
 #. Tag: title
 #: vnc.xml:64
 #, no-c-format
 msgid "Connecting Using the vncviewer CLI"
-msgstr ""
+msgstr "vncviewer コマンドラインを利用した接続"
 
 #. Tag: para
 #: vnc.xml:65
@@ -115,13 +139,13 @@ msgstr ""
 msgid ""
 "To start your VNC viewer and initiate a session with the server, use the "
 "command:"
-msgstr ""
+msgstr "VNC ビューアを起動してサーバ内のセッションに接続するには、下記のコマンドを使用します:"
 
 #. Tag: screen
 #: vnc.xml:69
 #, no-c-format
 msgid "&prompt.user;vncviewer &wsIname;:1"
-msgstr ""
+msgstr "&prompt.user;vncviewer &wsIname;:1"
 
 #. Tag: para
 #: vnc.xml:70
@@ -129,19 +153,19 @@ msgstr ""
 msgid ""
 "Instead of the VNC display number you can also specify the port number with "
 "two colons:"
-msgstr ""
+msgstr "ディスプレイ番号を指定する代わりに、コロンを 2 つ繋げてポート番号を指定することもできます:"
 
 #. Tag: screen
 #: vnc.xml:74
 #, no-c-format
 msgid "&prompt.user;vncviewer &wsIname;::5901"
-msgstr ""
+msgstr "&prompt.user;vncviewer &wsIname;::5901"
 
 #. Tag: title
 #: vnc.xml:76
 #, no-c-format
 msgid "Display and Port Number"
-msgstr ""
+msgstr "ディスプレイ番号とポート番号について"
 
 #. Tag: para
 #: vnc.xml:77
@@ -152,12 +176,16 @@ msgid ""
 "command> command on the target machine. See <xref linkend=\"sec.vnc."
 "persistent\"/> for further info."
 msgstr ""
+"VNC クライアント側で指定するディスプレイ番号やポート番号は、接続先のマシンで"
+"<command>vncserver</command> コマンドを実行する際に指定したディスプレイ番号や"
+"ポート番号と同じ値を指定します。詳しくは <xref linkend=\"sec.vnc."
+"persistent\"/> をお読みください。"
 
 #. Tag: title
 #: vnc.xml:87
 #, no-c-format
 msgid "Connecting Using the vncviewer GUI"
-msgstr ""
+msgstr "vncviewer GUI を利用した接続"
 
 #. Tag: para
 #: vnc.xml:88
@@ -169,24 +197,29 @@ msgid ""
 "field like in <xref linkend=\"sec.vnc.viewer.connectcli\"/> and click "
 "<guimenu>Connect</guimenu> ."
 msgstr ""
+"<command>--listen</command> を指定せずに <command>vncviewer</command> を"
+"実行するか、もしくは接続先のホストを指定して実行すると、詳細な接続設定を"
+"行なうためのウインドウが表示されます。 <guimenu>VNC server</guimenu> の欄には、"
+" <xref linkend=\"sec.vnc.viewer.connectcli\"/> で指定しているような接続先を"
+"指定して、 <guimenu>Connect</guimenu> を押します。"
 
 #. Tag: title
 #: vnc.xml:96
 #, no-c-format
 msgid "vncviewer"
-msgstr ""
+msgstr "vncviewer"
 
 #. Tag: textobject
 #: vnc.xml:98
 #, no-c-format
 msgid "<phrase>vncviewer asking for connection details</phrase>"
-msgstr ""
+msgstr "<phrase>接続の詳細設定を行なうための vncviewer の画面</phrase>"
 
 #. Tag: title
 #: vnc.xml:111
 #, no-c-format
 msgid "Notification of Unencrypted Connections"
-msgstr ""
+msgstr "暗号化されていない接続に対する通知"
 
 #. Tag: para
 #: vnc.xml:112
@@ -197,12 +230,17 @@ msgid ""
 "the text <quote>(Connection not encrypted!)</quote> can be seen in the "
 "window title of the VNC viewer."
 msgstr ""
+"VNC プロトコルでは、様々な種類の暗号化接続 (注: パスワード認証とは全く異なり、"
+"通信そのものを暗号化して外部から内容を読み取られないようにする仕組みです) に"
+"対応しています。接続時に TLS を使用していないと、 VNC ビューアのウインドウタイトルに"
+" <quote>(Connection not encrypted!)</quote> (通信が暗号化されていません) という"
+"メッセージが表示されるようになっています。"
 
 #. Tag: title
 #: vnc.xml:121
 #, no-c-format
 msgid "Remmina: the Remote Desktop Client"
-msgstr ""
+msgstr "Remmina: リモートデスクトップクライアント"
 
 #. Tag: para
 #: vnc.xml:123
@@ -211,12 +249,14 @@ msgid ""
 "Remmina is a modern and feature rich remote desktop client. It supports "
 "several access methods, for example VNC, SSH, RDP, or Spice."
 msgstr ""
+"Remmina はモダンで機能の豊富なリモートデスクトップクライアントです。 VNC, SSH, "
+"RDP, Spice の各プロトコルに対応しています。"
 
 #. Tag: title
 #: vnc.xml:129
 #, no-c-format
 msgid "Installation"
-msgstr ""
+msgstr "インストール"
 
 #. Tag: para
 #: vnc.xml:130
@@ -226,6 +266,9 @@ msgid ""
 "installed on your system, and install it if not. Remember to install the VNC "
 "plug-in for Remmina as well:"
 msgstr ""
+"Remmina を使用するには、まず <package>remmina</package> パッケージをインストール"
+"する必要があり伸す。インストールされていない場合は、下記のように実行して Remmina の"
+" VNC プラグインと共にインストールを行なってください:"
 
 #. Tag: screen
 #: vnc.xml:135
@@ -234,24 +277,26 @@ msgid ""
 "\n"
 "&prompt.root;zypper in remmina remmina-plugin-vnc\n"
 msgstr ""
+"\n"
+"&prompt.root;zypper in remmina remmina-plugin-vnc\n"
 
 #. Tag: title
 #: vnc.xml:141
 #, no-c-format
 msgid "Main Window"
-msgstr ""
+msgstr "メインウインドウ"
 
 #. Tag: para
 #: vnc.xml:142
 #, no-c-format
 msgid "Run Remmina by entering the <command>remmina</command> command."
-msgstr ""
+msgstr "Remmina を起動するには、 <command>remmina</command> と入力して実行します。"
 
 #. Tag: title
 #: vnc.xml:146
 #, no-c-format
 msgid "Remmina's Main Window"
-msgstr ""
+msgstr "Remmina のメインウインドウ"
 
 #. Tag: para
 #: vnc.xml:156
@@ -262,12 +307,16 @@ msgid ""
 "saving it, start a previously saved session, or set Remmina's global "
 "preferences."
 msgstr ""
+"アプリケーションのメインウインドウには、保存されているリモートセッションの一覧が"
+"表示されます。ここに新しいリモートセッションを登録して保存しておくことができるほか、"
+"保存を行なわずに素早く新しいセッションを開始したり、保存したセッションを開始することも"
+"できます。このほか、 Remmina のグローバル設定を変更することもできます。"
 
 #. Tag: title
 #: vnc.xml:165
 #, no-c-format
 msgid "Adding Remote Sessions"
-msgstr ""
+msgstr "リモートセッションの追加"
 
 #. Tag: para
 #: vnc.xml:166
@@ -277,12 +326,15 @@ msgid ""
 "left of the main window. The <guimenu>Remote Desktop Preference</guimenu> "
 "window opens."
 msgstr ""
+"新しいリモートセッションを追加して保存するには、メインウインドウの左上にある"
+" &remmina-plus-icon; を押します。すると、 <guimenu>リモートデスクトップの設定</guimenu> "
+"というウインドウが表示されます。"
 
 #. Tag: title
 #: vnc.xml:172
 #, no-c-format
 msgid "Remote Desktop Preference"
-msgstr ""
+msgstr "リモートデスクトップの設定"
 
 #. Tag: para
 #: vnc.xml:182
@@ -291,49 +343,50 @@ msgid ""
 "Complete the fields that specify your newly added remote session profile. "
 "The most important are:"
 msgstr ""
+"新しく追加するセッションプロファイルに対して、各種の情報を設定します。"
+"主なものは下記のとおりです:"
 
 #. Tag: term
 #: vnc.xml:188
 #, no-c-format
 msgid "Name"
-msgstr ""
+msgstr "名前"
 
 #. Tag: para
 #: vnc.xml:190
 #, no-c-format
 msgid "Name of the profile. It will be listed in the main window."
-msgstr ""
+msgstr "プロファイルの名前を指定します。名前はメインウインドウ内の一覧に表示されます。"
 
 #. Tag: term
 #: vnc.xml:196
 #, no-c-format
 msgid "Protocol"
-msgstr ""
+msgstr "プロトコル"
 
 #. Tag: para
 #: vnc.xml:198
 #, no-c-format
-msgid ""
-"The protocol to use when connecting to the remote session, for example VNC."
-msgstr ""
+msgid "The protocol to use when connecting to the remote session, for example VNC."
+msgstr "リモートのセッションに接続する際に使用するプロトコル (例: VNC) を指定します。"
 
 #. Tag: term
 #: vnc.xml:205
 #, no-c-format
 msgid "Server"
-msgstr ""
+msgstr "サーバー"
 
 #. Tag: para
 #: vnc.xml:207
 #, no-c-format
 msgid "The IP or DNS address and display number of the remote server."
-msgstr ""
+msgstr "リモートサーバの IP アドレスまたはホスト名と、ディスプレイ番号を指定します。"
 
 #. Tag: term
 #: vnc.xml:213
 #, no-c-format
 msgid "User name, Password"
-msgstr ""
+msgstr "ユーザー名, パスワード"
 
 #. Tag: para
 #: vnc.xml:215
@@ -342,31 +395,32 @@ msgid ""
 "Credentials to use for remote authentication. Leave empty for no "
 "authentication."
 msgstr ""
+"リモートサーバに接続する際の認証情報を設定します。認証を行なわない場合は、"
+"何も入力しないでください。"
 
 #. Tag: term
 #: vnc.xml:222
 #, no-c-format
 msgid "Color depth, Quality"
-msgstr ""
+msgstr "色数, 品質"
 
 #. Tag: para
 #: vnc.xml:224
 #, no-c-format
 msgid "Select the best options according to your connection speed and quality."
-msgstr ""
+msgstr "お使いの環境の接続速度と品質にあわせて、最適な設定を選択してください。"
 
 #. Tag: para
 #: vnc.xml:230
 #, no-c-format
-msgid ""
-"Select the <guimenu>Advanced</guimenu> tab to enter more specific settings."
-msgstr ""
+msgid "Select the <guimenu>Advanced</guimenu> tab to enter more specific settings."
+msgstr "<guimenu>高度な設定</guimenu> 他部を選択すると、より詳しいオプションを設定することができます。"
 
 #. Tag: title
 #: vnc.xml:234
 #, no-c-format
 msgid "Disable Encryption"
-msgstr ""
+msgstr "暗号化の無効化"
 
 #. Tag: para
 #: vnc.xml:235
@@ -376,6 +430,9 @@ msgid ""
 "encrypted, activate <guimenu>Disable encryption</guimenu> , otherwise the "
 "connection fails."
 msgstr ""
+"クライアントとリモートのサーバの間で暗号化を行なわない場合は、"
+" <guimenu>暗号化を無効にする</guimenu> を選択してください。選択を行なわないと、"
+"接続が失敗します。"
 
 #. Tag: para
 #: vnc.xml:241
@@ -384,6 +441,8 @@ msgid ""
 "Select the <guimenu>SSH</guimenu> tab for advanced SSH tunneling and "
 "authentication options."
 msgstr ""
+"SSH でトンネル接続するような場合や、認証オプションを設定する必要がある場合は、"
+" <guimenu>SSH</guimenu> タブを選択してください。"
 
 #. Tag: para
 #: vnc.xml:245
@@ -392,12 +451,14 @@ msgid ""
 "Confirm with <guimenu>Save</guimenu> . Your new profile will be listed in "
 "the main window."
 msgstr ""
+"設定が終わったら <guimenu>Save</guimenu> を押します。新しいプロファイルがメイン"
+"ウインドウ内に表示されるようになります。"
 
 #. Tag: title
 #: vnc.xml:252
 #, no-c-format
 msgid "Starting Remote Sessions"
-msgstr ""
+msgstr "リモートセッションの開始"
 
 #. Tag: para
 #: vnc.xml:253
@@ -406,12 +467,14 @@ msgid ""
 "You can either start a previously saved session, or quick-start a remote "
 "session without saving the connection details."
 msgstr ""
+"以前に保存したセッションから起動することができるほか、接続の詳細を保存せずに"
+"素早く接続することもできます。"
 
 #. Tag: title
 #: vnc.xml:258
 #, no-c-format
 msgid "Quick-starting Remote Sessions"
-msgstr ""
+msgstr "リモートセッションを素早く開始する方法"
 
 #. Tag: para
 #: vnc.xml:259
@@ -421,12 +484,15 @@ msgid ""
 "connection details, use the drop-down box and text box at the top of the "
 "main window."
 msgstr ""
+"様々な詳細設定を入力せずにリモートセッションに素早く接続するには、"
+"メインウインドウの上部にあるドロップダウンボックスとテキストボックスを"
+"お使いください。"
 
 #. Tag: title
 #: vnc.xml:265
 #, no-c-format
 msgid "Quick-starting"
-msgstr ""
+msgstr "クイックスタート"
 
 #. Tag: para
 #: vnc.xml:275
@@ -436,25 +502,28 @@ msgid ""
 "then enter the VNC server DNS or IP address followed by a colon and a "
 "display number, and confirm with <keycap function=\"enter\"/> ."
 msgstr ""
+"まずはドロップダウンボックスで通信プロトコルを選択 (例: 'VNC') して、"
+"その後 VNC サーバのホスト名または IP アドレスを入力してください。ディスプレイ番号を"
+"指定する場合は、ホスト名または IP アドレスに続いてコロンを入力し、番号を"
+"入力してください。入力が終わったら <keycap function=\"enter\"/> で接続します。"
 
 #. Tag: title
 #: vnc.xml:282
 #, no-c-format
 msgid "Opening Saved Remote Sessions"
-msgstr ""
+msgstr "保存済みのリモートセッションへの接続"
 
 #. Tag: para
 #: vnc.xml:283
 #, no-c-format
-msgid ""
-"To open a specific remote session, double-click it from the list of sessions."
-msgstr ""
+msgid "To open a specific remote session, double-click it from the list of sessions."
+msgstr "特定のリモートセッションを開くには、セッションの一覧から項目を選んでダブルクリックします。"
 
 #. Tag: title
 #: vnc.xml:289
 #, no-c-format
 msgid "Remote Sessions Window"
-msgstr ""
+msgstr "リモートセッションのウインドウ"
 
 #. Tag: para
 #: vnc.xml:290
@@ -466,18 +535,23 @@ msgid ""
 "match the display size of the session, send specific keystrokes to the "
 "session, take screenshots of the session, or set the image quality."
 msgstr ""
+"リモートのセッションはウインドウ内のタブとして表示されます。それぞれのタブが"
+"セッションに対応しています。また、ウインドウの左側にあるツールバーを利用することで、"
+"ウインドウやセッションを管理することができます。ここではフルスクリーンモードや"
+"セッションのディスプレイサイズに合わせたウインドウのサイズ変更、そしてセッション"
+"に対する特定キー入力の送信や画像品質の設定などを行なうことができます。"
 
 #. Tag: title
 #: vnc.xml:298
 #, no-c-format
 msgid "Remmina Viewing SLES 15 Remote Session"
-msgstr ""
+msgstr "Remmina による SLES 15 リモートセッション接続"
 
 #. Tag: title
 #: vnc.xml:312
 #, no-c-format
 msgid "Editing, Copying, and Deleting Saved Sessions"
-msgstr ""
+msgstr "保存済みセッションの編集／コピー／削除"
 
 #. Tag: para
 #: vnc.xml:313
@@ -487,6 +561,9 @@ msgid ""
 "Remmina's main window and select <guimenu>Edit</guimenu> . Refer to <xref "
 "linkend=\"vnc.remmina.addnew\"/> for the description of the relevant fields."
 msgstr ""
+"保存済みのリモートセッションを <emphasis>編集</emphasis> するには、 Remmina の"
+"メインウインドウ内で名前を右クリックし、 <guimenu>Edit</guimenu> を選択します。"
+"それぞれの項目に関する説明は、 <xref linkend=\"vnc.remmina.addnew\"/> をお読みください。"
 
 #. Tag: para
 #: vnc.xml:319
@@ -498,6 +575,11 @@ msgid ""
 "profile, optionally adjust relevant options, and confirm with <guimenu>Save</"
 "guimenu> ."
 msgstr ""
+"保存済みのリモートセッションを <emphasis>コピー</emphasis> するには、 Remmina の"
+"メインウインドウ内で名前を右クリックし、 <guimenu>コピー</guimenu> を選択します。"
+" <guimenu>リモートデスクトップの設定</guimenu> ウインドウが表示されたら、プロファイル"
+"の名前を変更してください。それ以外にも、必要に応じてオプションを変更してもかまいません。"
+"変更が終わったら <guimenu>Save</guimenu> を押してください。"
 
 #. Tag: para
 #: vnc.xml:326
@@ -507,12 +589,15 @@ msgid ""
 "in Remmina's main window and select <guimenu>Delete</guimenu> . Confirm with "
 "<guimenu>Yes</guimenu> in the next dialog."
 msgstr ""
+"保存済みのリモートセッションを <emphasis>削除</emphasis> するには、 Remmina の"
+"メインウインドウ内で名前を右クリックし、 <guimenu>Delete</guimenu> を選択します。"
+"削除確認のメッセージが表示されますので、 <guimenu>はい</guimenu> を押して削除を行なってください。"
 
 #. Tag: title
 #: vnc.xml:334
 #, no-c-format
 msgid "Running Remote Sessions from the Command Line"
-msgstr ""
+msgstr "コマンドラインからのリモートセッションの実行"
 
 #. Tag: para
 #: vnc.xml:335
@@ -522,6 +607,9 @@ msgid ""
 "file without first opening the main application window, use the following "
 "syntax:"
 msgstr ""
+"リモートセッションをコマンドラインから開きたい場合や、バッチファイルから開く際に、"
+"メインのアプリケーションウインドウ無しで表示させたい場合は、下記のような書式で"
+"実行します:"
 
 #. Tag: screen
 #: vnc.xml:340
@@ -530,6 +618,8 @@ msgid ""
 "\n"
 " &prompt.user;remmina -c <replaceable>profile_name</replaceable>.remmina\n"
 msgstr ""
+"\n"
+" &prompt.user;remmina -c <replaceable>プロファイル名</replaceable>.remmina\n"
 
 #. Tag: para
 #: vnc.xml:343
@@ -541,12 +631,17 @@ msgid ""
 "in the main window, and read the path to the profile file in the window's "
 "status line at the bottom."
 msgstr ""
+"Remmina の設定ファイルは、ホームディレクトリ内の <filename>.local/share/remmina/</"
+"filename> ディレクトリ内に保存されます。設定ファイルは名前などとは無関係に付与"
+"されます。プロファイルからファイル名を調べたい場合は、 Remmina を起動してから"
+"メインウインドウ内のプロファイルを選択し、ウインドウ下部のステータス行に表示される"
+"パスからファイル名を判断してください。"
 
 #. Tag: title
 #: vnc.xml:351
 #, no-c-format
 msgid "Reading Path to the Profile File"
-msgstr ""
+msgstr "プロファイルのファイルパスの表示"
 
 #. Tag: para
 #: vnc.xml:361
@@ -557,12 +652,16 @@ msgid ""
 "even copy the profile file to your custom directory and run it using the "
 "<command>remmina -c</command> command from there."
 msgstr ""
+"Remmina を起動していない状態であれば、 <filename>sle15.remmina</filename> のように、"
+"設定ファイルをよりわかりやすいファイル名に変更することができます。もちろん設定ファイル"
+"をどこか別のディレクトリにコピーして、 <command>remmina -c</command> で指定して"
+"実行することもできます。"
 
 #. Tag: title
 #: vnc.xml:370
 #, no-c-format
 msgid "One-time VNC Sessions"
-msgstr ""
+msgstr "ワンタイム VNC セッション"
 
 #. Tag: para
 #: vnc.xml:372
@@ -576,12 +675,18 @@ msgid ""
 "VNC sessions cannot be shared, but it is possible to have multiple sessions "
 "on a single host at the same time."
 msgstr ""
+"ワンタイムセッションはリモートのクライアントからの接続で起動する仕組みです。"
+"クライアントから接続を行なうと、サーバ内のグラフィカルなログイン画面を表示し、"
+"セッションを開始することができます。また、ログインマネージャ側で対応していれば、"
+"デスクトップ環境を選択することもできます。ワンタイムセッションの接続を閉じると、"
+"その中で動作していたアプリケーションも終了します。ワンタイム VNC セッションは"
+"共有することができませんが、単一のホスト内で複数のセッションを扱うことができます。"
 
 #. Tag: title
 #: vnc.xml:383
 #, no-c-format
 msgid "Enabling One-time VNC Sessions"
-msgstr ""
+msgstr "ワンタイム VNC セッションの有効化"
 
 #. Tag: para
 #: vnc.xml:392
@@ -589,19 +694,19 @@ msgstr ""
 msgid ""
 "Check <guimenu>Allow Remote Administration Without Session Management</"
 "guimenu> ."
-msgstr ""
+msgstr "<guimenu>セッション管理機能無しのリモート管理を許可する</guimenu> を選択します。"
 
 #. Tag: title
 #: vnc.xml:434
 #, no-c-format
 msgid "Remote Administration"
-msgstr ""
+msgstr "リモート管理"
 
 #. Tag: title
 #: vnc.xml:446
 #, no-c-format
 msgid "Available Configurations"
-msgstr ""
+msgstr "利用可能な設定"
 
 #. Tag: para
 #: vnc.xml:447
@@ -613,6 +718,10 @@ msgid ""
 "quote> VNC viewers (equivalent to VNC display <literal>1</literal> ) and on "
 "port <systemitem class=\"resource\">5801</systemitem> for Web browsers."
 msgstr ""
+"&productname; の既定の設定では、解像度が 1024x768 ピクセルで 16 ビットの色数に"
+"なっています。ポートは <quote>通常の</quote> VNC ビューアからの接続が"
+" <systemitem class=\"resource\">5901</systemitem> で、 Web ブラウザからの接続が"
+" <systemitem class=\"resource\">5801</systemitem> です。"
 
 #. Tag: para
 #: vnc.xml:455
@@ -623,6 +732,9 @@ msgid ""
 "<phrase os=\"sled\"> Ask your system administrator for details if you need "
 "to modify the configuration.</phrase>"
 msgstr ""
+"異なるポートを使用するように設定することもできます。 <phrase os=\"sles;osuse\">"
+"詳しくは <xref linkend=\"sec.vnc.one-time.config\"/> をお読みください。</phrase>"
+"<phrase os=\"sled\"> 設定を変更する必要がある場合は、システム管理者にお尋ねください。</phrase>"
 
 #. Tag: para
 #: vnc.xml:462
@@ -634,6 +746,11 @@ msgid ""
 "is initiated with one of the configurations, it automatically gets a free X "
 "display number."
 msgstr ""
+"VNC でのディスプレイ番号と X のディスプレイ番号は、ワンタイムセッションでは"
+"それぞれ独立して管理されます。 VNC のディスプレイ番号は、それぞれのサーバ"
+"設定で手作業で割り当てて使用します (上記の例では :1 がディスプレイ番号です) が、"
+" X のディスプレイ番号は、 VNC セッションが開始された際、その時点で空いている X "
+"ディスプレイ番号を自動的に使用します。"
 
 #. Tag: para
 #: vnc.xml:469
@@ -645,12 +762,17 @@ msgid ""
 "signed certificate, you need to confirm its signature before the first "
 "connection&mdash;both in the VNC viewer and the Web browser."
 msgstr ""
+"既定では、 VNC クライアントとサーバは、インストール時に生成した自己署名型の SSL "
+"証明書を利用して、機密保持接続を確立しようとします。このままお使いいただくことも"
+"できますが、必要に応じて証明書を置き換えることもできます。ただし、自己署名型の"
+"証明書を利用する場合、 VNC ビューア側や Web ブラウザ側で証明書の警告メッセージが"
+"表示されることになります。"
 
 #. Tag: title
 #: vnc.xml:479
 #, no-c-format
 msgid "Initiating a One-time VNC Session"
-msgstr ""
+msgstr "ワンタイム VNC セッションの開始"
 
 #. Tag: para
 #: vnc.xml:480
@@ -661,12 +783,17 @@ msgid ""
 "capable Web browser to view the VNC session by entering the following URL: "
 "<literal>http://&wsIname;:5801</literal>"
 msgstr ""
+"ワンタイム VNC セッションに接続するには、まず VNC ビューアをインストールしておかなければ"
+"なりません。インストールに関する詳細は <xref linkend=\"sec.vnc.viewer\"/> を"
+"お読みください。なお、 JavaScript に対応した Web ブラウザを利用して、 VNC の"
+"セッションに接続することもできます。この場合は、 <literal>http://&wsIname;:5801</literal> "
+"のような URL を指定して接続してください。"
 
 #. Tag: title
 #: vnc.xml:489
 #, no-c-format
 msgid "Configuring One-time VNC Sessions"
-msgstr ""
+msgstr "ワンタイム VNC セッションの設定"
 
 #. Tag: para
 #: vnc.xml:490
@@ -674,7 +801,7 @@ msgstr ""
 msgid ""
 "You can skip this section, if you do not need or want to modify the default "
 "configuration."
-msgstr ""
+msgstr "既定値を変更する必要がなければ、この手順は実施しなくてもかまいません。"
 
 #. Tag: para
 #: vnc.xml:494
@@ -687,31 +814,36 @@ msgid ""
 "<literal>vnchttpd3</literal> ). By default only <literal>vnc1</literal> and "
 "<literal>vnchttpd1</literal> are active."
 msgstr ""
+"ワンタイム VNC セッションは、 &systemd; のソケット <systemitem>xvnc.socket"
+"</systemitem> 経由で起動されます。既定では 6 つの設定ブロックが存在していて、"
+"そのうち 3 つが VNC ビューア向け ( <literal>vnc1</literal> から <literal>vnc3</literal> まで) "
+"で、残りの 3 つが JavaScript クライアント向け ( <literal>vnchttpd1</literal> から "
+"<literal>vnchttpd3</literal> まで) です。既定では <literal>vnc1</literal> と "
+"<literal>vnchttpd1</literal> だけが有効化されています。"
 
 #. Tag: para
 #: vnc.xml:502
 #, no-c-format
-msgid ""
-"To activate the VNC server socket at boot time, run the following command:"
-msgstr ""
+msgid "To activate the VNC server socket at boot time, run the following command:"
+msgstr "VNC サーバソケットをシステムの起動時に有効化するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: vnc.xml:505
 #, no-c-format
 msgid "sudo systemctl enable xvnc.socket"
-msgstr ""
+msgstr "sudo systemctl enable xvnc.socket"
 
 #. Tag: para
 #: vnc.xml:506
 #, no-c-format
 msgid "To start the socket immediately, run:"
-msgstr ""
+msgstr "即時にソケットを開始するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: vnc.xml:509
 #, no-c-format
 msgid "sudo systemctl start xvnc.socket"
-msgstr ""
+msgstr "sudo systemctl start xvnc.socket"
 
 #. Tag: para
 #: vnc.xml:510
@@ -721,6 +853,9 @@ msgid ""
 "<literal>server_args</literal> option. For a list of options, see "
 "<command>Xvnc --help</command> ."
 msgstr ""
+"<command>Xvnc</command> サーバは、 <literal>server_args</literal> オプションを"
+"介して設定することができます。オプションの一覧については <command>Xvnc --help</command> "
+"をお読みください。"
 
 #. Tag: para
 #: vnc.xml:515
@@ -730,24 +865,26 @@ msgid ""
 "are already in use by other configurations, other services, or existing "
 "persistent VNC sessions on the same host."
 msgstr ""
+"独自の設定を加える場合、同じホストで動作している他の設定やサービス、既存の VNC セッション"
+"などが使用していないポートを設定するよう注意してください。"
 
 #. Tag: para
 #: vnc.xml:520
 #, no-c-format
 msgid "Activate configuration changes by entering the following command:"
-msgstr ""
+msgstr "設定の変更を反映させるには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: vnc.xml:523
 #, no-c-format
 msgid "&prompt.sudo;systemctl reload xvnc.socket"
-msgstr ""
+msgstr "&prompt.sudo;systemctl reload xvnc.socket"
 
 #. Tag: title
 #: vnc.xml:525
 #, no-c-format
 msgid "Firewall and VNC Ports"
-msgstr ""
+msgstr "ファイアウオールと VNC ポート"
 
 #. Tag: para
 #: vnc.xml:526
@@ -761,12 +898,18 @@ msgid ""
 "activating additional ports for VNC sessions. See <xref linkend=\"cha."
 "security.firewall\"/> for instructions."
 msgstr ""
+"<xref linkend=\"pro.vnc.one-time.activate\"/> で説明している手順でリモート管理"
+"を設定すると、ポート <systemitem class=\"resource\">5801</"
+"systemitem> と <systemitem class=\"resource\">5901</systemitem> を開くように"
+"設定されます。 VNC セッションを提供するネットワークインターフェイスがファイア"
+"ウオールで保護されている場合は、それぞれのポートを開くように設定する必要があります。"
+"詳しくは <xref linkend=\"cha.security.firewall\"/> をお読みください。"
 
 #. Tag: title
 #: vnc.xml:540
 #, no-c-format
 msgid "Persistent VNC Sessions"
-msgstr ""
+msgstr "永続 VNC セッション"
 
 #. Tag: para
 #: vnc.xml:542
@@ -777,12 +920,17 @@ msgid ""
 "and all other clients have view-only access. Another use case are trainings "
 "where the trainer might need access to the trainee's desktop."
 msgstr ""
+"永続 VNC セッションを使用すると、複数のクライアントから同時に接続できるようになります。"
+"たとえば 1 つのクライアントに対してだけ操作を許可しておき、それ以外の全てのクライアントは"
+"表示専用に設定することで、デモンストレーション目的で公開するようなこともできます。"
+"また、講師から参加者のデスクトップにアクセスできるように設定しておけば、トレーニング"
+"などの際にも便利に使用することができます。"
 
 #. Tag: title
 #: vnc.xml:550
 #, no-c-format
 msgid "Connecting to a Persistent VNC Session"
-msgstr ""
+msgstr "永続 VNC セッションへの接続"
 
 #. Tag: para
 #: vnc.xml:551
@@ -793,31 +941,35 @@ msgid ""
 "use a JavaScript-capable Web browser to view the VNC session by entering the "
 "following URL: <literal>http://&wsIname;:5801</literal>"
 msgstr ""
+"永続 VNC セッションに接続するには、まず VNC ビューアをインストールしておかなければ"
+"なりません。インストールに関する詳細は <xref linkend=\"sec.vnc.viewer\"/> を"
+"お読みください。なお、 JavaScript に対応した Web ブラウザを利用して、 VNC の"
+"セッションに接続することもできます。この場合は、 <literal>http://&wsIname;:5801</literal> "
+"のような URL を指定して接続してください。"
 
 #. Tag: para
 #: vnc.xml:559
 #, no-c-format
 msgid "There are two types of persistent VNC sessions:"
-msgstr ""
+msgstr "永続 VNC セッションには 2 種類の仕組みが用意されています:"
 
 #. Tag: para
 #: vnc.xml:565
 #, no-c-format
 msgid "<xref linkend=\"vnc.persistent.vncserver\" xrefstyle=\"select:title\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vnc.persistent.vncserver\" xrefstyle=\"select:title\"/>"
 
 #. Tag: para
 #: vnc.xml:570
 #, no-c-format
-msgid ""
-"<xref linkend=\"vnc.persistent.vncmanager\" xrefstyle=\"select:title\"/>"
-msgstr ""
+msgid "<xref linkend=\"vnc.persistent.vncmanager\" xrefstyle=\"select:title\"/>"
+msgstr "<xref linkend=\"vnc.persistent.vncmanager\" xrefstyle=\"select:title\"/>"
 
 #. Tag: title
 #: vnc.xml:577
 #, no-c-format
 msgid "VNC Session Initiated Using <systemitem>vncserver</systemitem>"
-msgstr ""
+msgstr "<systemitem>vncserver</systemitem> を利用した VNC セッションの起動"
 
 #. Tag: para
 #: vnc.xml:578
@@ -828,12 +980,16 @@ msgid ""
 "connections until the session is terminated. Access to persistent sessions "
 "is protected by two possible types of passwords:"
 msgstr ""
+"この種類の永続 VNC セッションの場合、サーバ内で起動を行ないます。セッションと"
+"そのセッション内で起動したアプリケーションは、セッションを終了しない限り、"
+"クライアントの接続が切れてもそのまま動作し続けます。永続セッションへの接続は、"
+" 2 種類のパスワードで保護することができます:"
 
 #. Tag: para
 #: vnc.xml:586
 #, no-c-format
 msgid "a regular password that grants full access or"
-msgstr ""
+msgstr "完全なアクセスを許可する通常のパスワード"
 
 #. Tag: para
 #: vnc.xml:591
@@ -841,19 +997,19 @@ msgstr ""
 msgid ""
 "an optional view-only password that grants a non-interactive (view-only) "
 "access."
-msgstr ""
+msgstr "非対話型 (表示のみ) のアクセスを許可するパスワード"
 
 #. Tag: para
 #: vnc.xml:597
 #, no-c-format
 msgid "A session can have multiple client connections of both kinds at once."
-msgstr ""
+msgstr "なお、 1 つのセッションに対して複数のクライアントが同時に接続することができます。"
 
 #. Tag: title
 #: vnc.xml:601
 #, no-c-format
 msgid "Starting a Persistent VNC Session using <command>vncserver</command>"
-msgstr ""
+msgstr "<command>vncserver</command> を利用した永続 VNC セッションの開始"
 
 #. Tag: para
 #: vnc.xml:603
@@ -864,6 +1020,10 @@ msgid ""
 "the shell session could either be a local one or a ssh session, or can we "
 "assume this to be known by the customer? -->"
 msgstr ""
+"まずはシェルを開いて、 VNC セッションの所有者となるべきユーザでログインしている"
+"ことを確認します。 <!-- max: should we add some more words here to explain that "
+"the shell session could either be a local one or a ssh session, or can we "
+"assume this to be known by the customer? -->"
 
 #. Tag: para
 #: vnc.xml:613
@@ -875,6 +1035,11 @@ msgid ""
 "of ports. See <xref linkend=\"cha.security.firewall\"/> for details on how "
 "to configure the firewall."
 msgstr ""
+"VNC セッションを提供するネットワークインターフェイスがファイアウオールで"
+"保護されている場合は、セッションで開くポートを許可するように設定する必要があります。"
+"また、複数のセッションを開始する場合は、ポートの範囲を指定して許可することもできます。"
+"ファイアウオールの設定について、詳しくは <xref linkend=\"cha.security.firewall\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: vnc.xml:620
@@ -886,6 +1051,11 @@ msgid ""
 "on. For persistent sessions, the VNC display and the X display usually have "
 "the same number."
 msgstr ""
+"<command>vncserver</command> はディスプレイ <literal>:1</literal> に対しては"
+"ポート <systemitem class=\"resource\">5901</systemitem> を、ディスプレイ"
+" <literal>:2</literal> に対しては <systemitem class=\"resource\">5902</systemitem> "
+"などをそれぞれ使用します。永続セッションの場合は、 VNC のディスプレイ番号と X の"
+"ディスプレイ番号は通常同じになります。"
 
 #. Tag: para
 #: vnc.xml:629
@@ -893,13 +1063,13 @@ msgstr ""
 msgid ""
 "To start a session with a resolution of 1024x768 pixel and with a color "
 "depth of 16-bit, enter the following command:"
-msgstr ""
+msgstr "1024x768 ピクセルで 16 ビットの色数でセッションを開始するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: vnc.xml:633
 #, no-c-format
 msgid "vncserver -alwaysshared -geometry 1024x768 -depth 16"
-msgstr ""
+msgstr "vncserver -alwaysshared -geometry 1024x768 -depth 16"
 
 #. Tag: para
 #: vnc.xml:634
@@ -909,6 +1079,9 @@ msgid ""
 "none is given and prints its choice. See <command>man 1 vncserver</command> "
 "for more options."
 msgstr ""
+"<command>vncserver</command> でディスプレイ番号を指定しない場合は、空いている"
+"ディスプレイ番号を自動的に探して使用し、その番号を表示します。詳しくは <command>man 1 vncserver</command> "
+"をお読みください。"
 
 #. Tag: para
 #: vnc.xml:641
@@ -918,6 +1091,9 @@ msgid ""
 "password for full access to the session. If needed, you can also provide a "
 "password for view-only access to the session."
 msgstr ""
+"<command>vncserver</command> を初めて実行した場合は、完全なアクセスを許可するための"
+"パスワードを入力するよう求められます。また、必要であれば表示のみを許可するパスワードを"
+"設定することもできます。"
 
 #. Tag: para
 #: vnc.xml:646
@@ -927,12 +1103,15 @@ msgid ""
 "started by the same user. They can be changed with the <command>vncpasswd</"
 "command> command."
 msgstr ""
+"同じユーザが次回以降にセッションを開始しようとすると、ここで入力したパスワードを"
+"使用して開始する動作になります。パスワードを変更したい場合は、 <command>vncpasswd</"
+"command> コマンドをお使いください。"
 
 #. Tag: title
 #: vnc.xml:652
 #, no-c-format
 msgid "Security Considerations"
-msgstr ""
+msgstr "セキュリティに対して考慮すべき事項"
 
 #. Tag: para
 #: vnc.xml:653
@@ -941,6 +1120,8 @@ msgid ""
 "Make sure to use strong passwords of significant length (eight or more "
 "characters). Do not share these passwords."
 msgstr ""
+"十分な長さ (8 文字以上) で、かつ強いパスワードを設定してください。パスワードは"
+"不用意に開示してはなりません。"
 
 #. Tag: para
 #: vnc.xml:658
@@ -950,6 +1131,8 @@ msgid ""
 "the VNC session from the VNC viewer as you would shut it down if it was a "
 "regular local X session."
 msgstr ""
+"セッションを終了するには、一般的なログアウト処理と同様に、 VNC セッションを起動"
+"したデスクトップ環境を終了することで行ないます。"
 
 #. Tag: para
 #: vnc.xml:663
@@ -961,6 +1144,10 @@ msgid ""
 "that runs on display <literal>:1</literal> : <command>vncserver -kill :1</"
 "command>"
 msgstr ""
+"手作業でセッションを終了したい場合は、 VNC サーバ内でシェルを開いて、終了したい"
+" VNC セッションの所有者であることを確認し、 <command>vncserver -kill :1</command> "
+"のように実行します。このとき、　<literal>:1</literal> には実際のディスプレイ番号を"
+"指定します。"
 
 #. Tag: para
 #: vnc.xml:672
@@ -972,6 +1159,11 @@ msgid ""
 "&gnome; or IceWM. If you want to start your session with a window manager of "
 "your choice, set the variable <envar>WINDOWMANAGER</envar> :"
 msgstr ""
+"永続 VNC セッションは、 <filename>$HOME/.vnc/xstartup</filename> ファイルを編集"
+"することで設定を行なうことができます。既定では、このシェルスクリプトは同じ GUI/"
+"ウインドウマネージャを利用するようになっています (&productname; の場合、 &gnome; "
+"もしくは IceWM のいずれかです) 。ウインドウマネージャを選択してセッションを開始したい"
+"場合は、下記のようにして <envar>WINDOWMANAGER</envar> を設定します:"
 
 #. Tag: screen
 #: vnc.xml:680
@@ -980,12 +1172,14 @@ msgid ""
 "WINDOWMANAGER=gnome vncserver -geometry 1024x768\n"
 "WINDOWMANAGER=icewm vncserver -geometry 1024x768"
 msgstr ""
+"WINDOWMANAGER=gnome vncserver -geometry 1024x768\n"
+"WINDOWMANAGER=icewm vncserver -geometry 1024x768"
 
 #. Tag: title
 #: vnc.xml:683
 #, no-c-format
 msgid "One Configuration for Each User"
-msgstr ""
+msgstr "ユーザごとの設定であることについて"
 
 #. Tag: para
 #: vnc.xml:684
@@ -995,18 +1189,20 @@ msgid ""
 "Multiple sessions started by the same user will all use the same start-up "
 "and password files."
 msgstr ""
+"永続 VNC セッションはユーザごとに設定を行ないます。同じユーザで複数のセッションを"
+"開始した場合、同じ起動ファイルとパスワードファイルを使用することになります。"
 
 #. Tag: title
 #: vnc.xml:694
 #, no-c-format
 msgid "VNC Session Initiated Using <systemitem>vncmanager</systemitem>"
-msgstr ""
+msgstr "<systemitem>vncmanager</systemitem> を利用した VNC セッションの起動"
 
 #. Tag: title
 #: vnc.xml:697
 #, no-c-format
 msgid "Enabling Persistent VNC Sessions"
-msgstr ""
+msgstr "永続 VNC セッションの有効化"
 
 #. Tag: para
 #: vnc.xml:699
@@ -1015,6 +1211,8 @@ msgid ""
 "Start <menuchoice> <guimenu>&yast;</guimenu> <guimenu>Network Services</"
 "guimenu> <guimenu>Remote Administration (VNC)</guimenu> </menuchoice> ."
 msgstr ""
+"<menuchoice> <guimenu>&yast;</guimenu> <guimenu>ネットワークサービス</"
+"guimenu> <guimenu>リモート管理 (VNC)</guimenu> </menuchoice> を選択して起動します。"
 
 #. Tag: para
 #: vnc.xml:706
@@ -1022,7 +1220,7 @@ msgstr ""
 msgid ""
 "Activate <guimenu>Allow Remote Administration With Session Management</"
 "guimenu> ."
-msgstr ""
+msgstr "<guimenu>セッション管理機能付きのリモート管理を許可する</guimenu> を選択します。"
 
 #. Tag: para
 #: vnc.xml:712
@@ -1031,6 +1229,8 @@ msgid ""
 "Activate <guimenu>Enable access using a web browser</guimenu> if you plan to "
 "access the VNC session in a Web browser window."
 msgstr ""
+"VNC セッションを Web ブラウザからアクセスできるようにするには、"
+" <guimenu>Web ブラウザを利用したアクセスを有効にする</guimenu> を選択します。"
 
 #. Tag: para
 #: vnc.xml:718
@@ -1042,12 +1242,17 @@ msgid ""
 "firewall ports to a specific interface via <guimenu>Firewall Details</"
 "guimenu> ."
 msgstr ""
+"必要であれば、 <guimenu>ファイアウオールでポートを開く</guimenu> を選択する"
+"こともできます (たとえばネットワークインターフェイスが外部ゾーンとして設定されている"
+"場合など) 。複数のネットワークインターフェイスが設定されている場合は、"
+" <guimenu>ファイアウオールの詳細</guimenu> ボタンでネットワークインターフェイスを"
+"選択し、そのインターフェイスでだけ開くこともできます。"
 
 #. Tag: para
 #: vnc.xml:727
 #, no-c-format
 msgid "Confirm your settings with <guimenu>Next</guimenu> ."
-msgstr ""
+msgstr "設定を確認して <guimenu>次へ</guimenu> を押します。"
 
 #. Tag: para
 #: vnc.xml:732
@@ -1056,12 +1261,14 @@ msgid ""
 "In case not all needed packages are available yet, you need to approve the "
 "installation of missing packages."
 msgstr ""
+"この時点で必要なパッケージがインストールされていない場合は、それらのパッケージを"
+"インストールするよう承認を求められます。"
 
 #. Tag: title
 #: vnc.xml:737
 #, no-c-format
 msgid "Restart the Display Manager"
-msgstr ""
+msgstr "ディスプレイマネージャの再起動について"
 
 #. Tag: para
 #: vnc.xml:738
@@ -1071,12 +1278,15 @@ msgid ""
 "your current graphical session and restart the display manager for the "
 "changes to take effect."
 msgstr ""
+"&yast; ではディスプレイマネージャの設定を変更します。設定を反映させるには、"
+"いったんお使いのグラフィカルセッションを終了し、ディスプレイマネージャを再起動する"
+"必要があります。"
 
 #. Tag: title
 #: vnc.xml:747
 #, no-c-format
 msgid "Configuring Persistent VNC Sessions"
-msgstr ""
+msgstr "永続 VNC セッションの設定"
 
 #. Tag: para
 #: vnc.xml:748
@@ -1092,24 +1302,33 @@ msgid ""
 "support icons in the system tray, run <command>vncmanager-controller</"
 "command> manually."
 msgstr ""
+"<xref linkend=\"vnc.persistent.vncmanager.enable\"/> の手順に従って VNC "
+"セッションを有効化したあとは、 <command>vncviewer</command> や Remmina などの"
+" VNC ビューアを利用して、リモートのセッションに接続できるようになります。"
+"この場合は、ログイン画面が表示されます。ログインを行なうと、デスクトップ環境の"
+"システムトレイ内に、 'VNC' というアイコンが表示されるようになります。アイコンを"
+"押すと <guimenu>VNC セッション</guimenu> ウインドウを表示することができます。"
+"なお、アイコンが現われない場合は、お使いのデスクトップ環境でシステムトレイ内の"
+"アイコン表示に対応していない可能性がありますので、この場合は <command>vncmanager-controller</"
+"command> コマンドをお使いのうえ、設定を行なってください。"
 
 #. Tag: title
 #: vnc.xml:761
 #, no-c-format
 msgid "VNC Session Settings"
-msgstr ""
+msgstr "VNC セッションの設定"
 
 #. Tag: para
 #: vnc.xml:771
 #, no-c-format
 msgid "There are several settings which influence the VNC session's behavior:"
-msgstr ""
+msgstr "VNC セッションの動作を変えるには、それぞれ下記の設定を変更します:"
 
 #. Tag: term
 #: vnc.xml:776
 #, no-c-format
 msgid "<guimenu>Non-persistent, private</guimenu>"
-msgstr ""
+msgstr "<guimenu>Non-persistent, private</guimenu>"
 
 #. Tag: para
 #: vnc.xml:779
@@ -1119,12 +1338,15 @@ msgid ""
 "others and will be terminated after you disconnect from it. Refer to <xref "
 "linkend=\"sec.vnc.one-time\"/> for more information."
 msgstr ""
+"これを選択すると、ワンタイムセッションと同じ動作になります。セッションは他の"
+"ユーザからは見えなくなりますが、切断するとセッションは終了してしまいます。詳しくは"
+" <xref linkend=\"sec.vnc.one-time\"/> をお読みください。"
 
 #. Tag: term
 #: vnc.xml:788
 #, no-c-format
 msgid "<guimenu>Persistent, visible</guimenu>"
-msgstr ""
+msgstr "<guimenu>Persistent, visible</guimenu>"
 
 #. Tag: para
 #: vnc.xml:791
@@ -1133,12 +1355,14 @@ msgid ""
 "The session is visible to other users and keeps running even after you "
 "disconnect from it."
 msgstr ""
+"これを選択すると、セッションは他のユーザから見えるようになり、切断してもセッションが"
+"終了しなくなります。"
 
 #. Tag: term
 #: vnc.xml:798
 #, no-c-format
 msgid "<guimenu>Session name</guimenu>"
-msgstr ""
+msgstr "<guimenu>Session name</guimenu>"
 
 #. Tag: para
 #: vnc.xml:801
@@ -1146,13 +1370,13 @@ msgstr ""
 msgid ""
 "Here you can specify the name of the persistent session so that it is easily "
 "identified when reconnecting."
-msgstr ""
+msgstr "ここには永続セッションの名前を指定します。これにより、再接続時の識別が容易になります。"
 
 #. Tag: term
 #: vnc.xml:808
 #, no-c-format
 msgid "<guimenu>No password required</guimenu>"
-msgstr ""
+msgstr "<guimenu>No password required</guimenu>"
 
 #. Tag: para
 #: vnc.xml:811
@@ -1160,13 +1384,13 @@ msgstr ""
 msgid ""
 "The session will be freely accessible without having to log in under user "
 "credentials."
-msgstr ""
+msgstr "ユーザの認証情報の入力を行なうことなく、セッションに対して自由にアクセスできるようにします。"
 
 #. Tag: term
 #: vnc.xml:818
 #, no-c-format
 msgid "<guimenu>Require user login</guimenu>"
-msgstr ""
+msgstr "<guimenu>Require user login</guimenu>"
 
 #. Tag: para
 #: vnc.xml:821
@@ -1176,24 +1400,26 @@ msgid ""
 "session. Lists the valid user names in the <guimenu>Allowed users</guimenu> "
 "text box."
 msgstr ""
+"セッションにアクセスするために、正しいユーザ名とパスワードでのログインを求める"
+"ようにします。許可するユーザの一覧は、 <guimenu>Allowed users</guimenu> で指定します。"
 
 #. Tag: term
 #: vnc.xml:829
 #, no-c-format
 msgid "<guimenu>Allow one client at time</guimenu>"
-msgstr ""
+msgstr "<guimenu>Allow one client at time</guimenu>"
 
 #. Tag: para
 #: vnc.xml:832
 #, no-c-format
 msgid "Disables joining the session by multiple users at the same time."
-msgstr ""
+msgstr "複数のユーザが同時に接続することがないようにします。"
 
 #. Tag: term
 #: vnc.xml:838
 #, no-c-format
 msgid "<guimenu>Allow multiple clients at time</guimenu>"
-msgstr ""
+msgstr "<guimenu>Allow multiple clients at time</guimenu>"
 
 #. Tag: para
 #: vnc.xml:841
@@ -1202,18 +1428,20 @@ msgid ""
 "Allows multiple users to join the persistent session at the same time. This "
 "can be used remote presentations or trainings."
 msgstr ""
+"永続セッションに対して、複数のユーザが同時に接続できるようにします。"
+"これはプレゼンテーションやトレーニングの際に便利な仕組みです。"
 
 #. Tag: para
 #: vnc.xml:848
 #, no-c-format
 msgid "Confirm with <guimenu>OK</guimenu> ."
-msgstr ""
+msgstr "<guimenu>OK</guimenu> を押して閉じます。"
 
 #. Tag: title
 #: vnc.xml:853
 #, no-c-format
 msgid "Joining Persistent VNC Sessions"
-msgstr ""
+msgstr "永続 VNC セッションへの参加"
 
 #. Tag: para
 #: vnc.xml:854
@@ -1224,12 +1452,16 @@ msgid ""
 "viewer. After your VNC client connects to the server, you will be prompted "
 "to choose whether you want to create a new session, or join the existing one:"
 msgstr ""
+"<xref linkend=\"vnc.persistent.vncmanager.configure\"/> の手順で永続 VNC セッションの"
+"設定を行なったら、あとは VNC ビューアを利用して接続することで、セッションに参加できる"
+"ようになります。 VNC クライアントがサーバに接続すると、新しいセッションを作成するか、"
+"既存のセッションに参加するかを選択することができます:"
 
 #. Tag: title
 #: vnc.xml:863
 #, no-c-format
 msgid "Joining a Persistent VNC Session"
-msgstr ""
+msgstr "永続 VNC セッションへの参加"
 
 #. Tag: para
 #: vnc.xml:873
@@ -1238,12 +1470,14 @@ msgid ""
 "After you click the name of the existing session, you may be asked for login "
 "credentials, depending on the persistent session settings."
 msgstr ""
+"既存のセッションの名前を選択すると、永続セッションの設定によってはログインを求められる"
+"ことがあります。"
 
 #. Tag: title
 #: vnc.xml:881
 #, no-c-format
 msgid "Encrypted VNC Communication"
-msgstr ""
+msgstr "暗号化された VNC 通信"
 
 #. Tag: para
 #: vnc.xml:883
@@ -1253,6 +1487,8 @@ msgid ""
 "server and the client is encrypted. The authentication happens at the "
 "beginning of the session, the actual data transfer only begins afterward."
 msgstr ""
+"VNC サーバを正しく設定すると、 VNC サーバとクライアントとの間が暗号化されるように"
+"なります。認証はセッションの冒頭で行なわれ、実際のデータ転送はそれ以降に行なわれます。"
 
 #. Tag: para
 #: vnc.xml:889
@@ -1265,72 +1501,76 @@ msgid ""
 "parameter selects both authentication method and encryption. It has the "
 "following options:"
 msgstr ""
+"ワンタイム VNC セッションや永続 VNC セッションでは、 <literal>server_args</literal> "
+"行で設定する <command>/usr/bin/Xvnc</command> コマンドの <option>-securitytypes</option> "
+"を指定することができます。 <option>-securitytypes</option> オプションでは"
+"認証方法と暗号化の両方を選択します。下記のいずれかを設定することができます:"
 
 #. Tag: title
 #: vnc.xml:899
 #, no-c-format
 msgid "Authentications"
-msgstr ""
+msgstr "認証"
 
 #. Tag: term
 #: vnc.xml:901
 #, no-c-format
 msgid "None, TLSNone, X509None"
-msgstr ""
+msgstr "None, TLSNone, X509None"
 
 #. Tag: para
 #: vnc.xml:903
 #, no-c-format
 msgid "No authentication."
-msgstr ""
+msgstr "認証を行ないません。"
 
 #. Tag: term
 #: vnc.xml:909
 #, no-c-format
 msgid "VncAuth, TLSVnc, X509Vnc"
-msgstr ""
+msgstr "VncAuth, TLSVnc, X509Vnc"
 
 #. Tag: para
 #: vnc.xml:911
 #, no-c-format
 msgid "Authentication using custom password."
-msgstr ""
+msgstr "独自のパスワードを利用して認証します。"
 
 #. Tag: term
 #: vnc.xml:917
 #, no-c-format
 msgid "Plain, TLSPlain, X509Plain"
-msgstr ""
+msgstr "Plain, TLSPlain, X509Plain"
 
 #. Tag: para
 #: vnc.xml:919
 #, no-c-format
 msgid "Authentication using PAM to verify user's password."
-msgstr ""
+msgstr "ユーザのパスワードを確認するため、 PAM を利用して認証します。"
 
 #. Tag: title
 #: vnc.xml:927
 #, no-c-format
 msgid "Encryptions"
-msgstr ""
+msgstr "暗号化"
 
 #. Tag: term
 #: vnc.xml:929
 #, no-c-format
 msgid "None, VncAuth, Plain"
-msgstr ""
+msgstr "None, VncAuth, Plain"
 
 #. Tag: para
 #: vnc.xml:931
 #, no-c-format
 msgid "No encryption."
-msgstr ""
+msgstr "暗号化を行ないません。"
 
 #. Tag: term
 #: vnc.xml:937
 #, no-c-format
 msgid "TLSNone, TLSVnc, TLSPlain"
-msgstr ""
+msgstr "TLSNone, TLSVnc, TLSPlain"
 
 #. Tag: para
 #: vnc.xml:939
@@ -1340,12 +1580,15 @@ msgid ""
 "verification of the remote host. So you are protected against passive "
 "attackers, but not against man-in-the-middle attackers."
 msgstr ""
+"匿名 TLS 暗号を使用します。全ての通信内容が暗号化されますが、リモートホスト"
+"側の検証は何も行ないません。ネットワーク上は暗号化されるため、盗聴の危険からは"
+"保護されますが、中間者攻撃 (man-in-the-middle attack) には無力です。"
 
 #. Tag: term
 #: vnc.xml:947
 #, no-c-format
 msgid "X509None, X509Vnc, X509Plain"
-msgstr ""
+msgstr "X509None, X509Vnc, X509Plain"
 
 #. Tag: para
 #: vnc.xml:949
@@ -1359,12 +1602,19 @@ msgid ""
 "by a certificate authority matching the machine name, then you get full "
 "security (similar to typical HTTPS usage)."
 msgstr ""
+"証明書付きの TLS 暗号を使用します。自己署名型の証明書を使用している場合、"
+"最初の接続でユーザの確認を求められます。それ以降の接続では、証明書が変更された"
+"場合にのみ警告されるようになります。これにより盗聴の危険だけでなく、初回の接続"
+"以降は中間者攻撃 (man-in-the-middle attack) にも耐えられるようになります"
+" (SSH における鍵の確認と同様の方法です) 。また、公的な証明機関が発行し、マシン名"
+"が一致した証明書を使用している場合は、完全なセキュリティを実現できるようになります"
+" (一般的な HTTPS 暗号化接続と同じです) 。"
 
 #. Tag: title
 #: vnc.xml:959
 #, no-c-format
 msgid "Path to Certificate and Key"
-msgstr ""
+msgstr "証明書とその鍵へのパス"
 
 #. Tag: para
 #: vnc.xml:960
@@ -1374,6 +1624,8 @@ msgid ""
 "certificate and the key with <option>-X509Cert</option> and <option>-"
 "X509Key</option> options."
 msgstr ""
+"X509 ベースの暗号化を使用する際は、 <option>-X509Cert</option> と <option>-"
+"X509Key</option> のオプションで証明書と鍵を指定する必要があります。"
 
 #. Tag: para
 #: vnc.xml:970
@@ -1384,6 +1636,10 @@ msgid ""
 "can configure opportunistic encryption on the server. This is useful if you "
 "need to support VNC clients that do not support encryption."
 msgstr ""
+"複数のセキュリティタイプを指定する場合は、カンマで区切ってください。サーバと"
+"クライアントとの間で、最初に対応し許可された仕組みを使用します。この方法により、"
+"サーバ側で暗号化の優先順位を付けることができるようになります。また、この方法では"
+"暗号化に対応していないクライアントを受け付けなければならないような場合にも、有用です。"
 
 #. Tag: para
 #: vnc.xml:977
@@ -1394,3 +1650,9 @@ msgid ""
 "encryption enabled (although our vncviewer will warn you with the "
 "\"Connection not encrypted!\" message in that case)."
 msgstr ""
+"クライアント側でも同様にセキュリティタイプを指定することができます。これにより、"
+"暗号化に対応しているはずのサーバに接続する際、誤って暗号化せずに接続するような"
+"問題を防ぐことができます (ただし、この設定を行なわなくても、 vncviewer であれば"
+" \"Connection not encrypted!\" (接続が暗号化されていません) と表示されるので、"
+"問題に気がつくことはできます) 。"
+
