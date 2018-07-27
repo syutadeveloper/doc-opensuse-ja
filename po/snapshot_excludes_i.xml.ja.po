@@ -1,26 +1,29 @@
+# translation of snapshot_excludes_i.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: snapshot_excludes_i.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-27 10:21+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: dm:translation
 #: snapshot_excludes_i.xml:14
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:18
@@ -30,6 +33,9 @@ msgid ""
 "filename> , <filename>/boot/grub2/powerpc-ieee1275</filename> , <filename>/"
 "boot/grub2/s390x-emu</filename>"
 msgstr ""
+"<filename>/boot/grub2/i386-pc</filename> , <filename>/boot/grub2/x86_64-efi</"
+"filename> , <filename>/boot/grub2/powerpc-ieee1275</filename> , <filename>/"
+"boot/grub2/s390x-emu</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:24
@@ -40,12 +46,16 @@ msgid ""
 "directories are present on AMD64/Intel 64 machines, the latter two on IBM "
 "&power; and on &zseries;, respectively."
 msgstr ""
+"ブートローダ設定の巻き戻しには対応していません。また、上記のディレクトリは"
+"いずれもアーキテクチャ固有のものであり、前半の 2 つは AMD64/Intel 64 マシンで"
+"使用されるディレクトリ、後半の 2 つは IBM &power; や &zseries; で使用される"
+"ディレクトリです。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:33
 #, no-c-format
 msgid "<filename>/home</filename>"
-msgstr ""
+msgstr "<filename>/home</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:36
@@ -54,12 +64,14 @@ msgid ""
 "If <filename>/home</filename> does not reside on a separate partition, it is "
 "excluded to avoid data loss on rollbacks."
 msgstr ""
+"<filename>/home</filename> が個別のディレクトリ内に存在していない場合、"
+"ロールバックによってデータが失われてしまうことを防ぐため、除外を設定しています。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:43
 #, no-c-format
 msgid "<filename>/opt</filename> , <filename>/var/opt</filename>"
-msgstr ""
+msgstr "<filename>/opt</filename> , <filename>/var/opt</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:46
@@ -68,12 +80,15 @@ msgid ""
 "Third-party products usually get installed to <filename>/opt</filename> . It "
 "is excluded to avoid uninstalling these applications on rollbacks."
 msgstr ""
+"サードパーティ製の製品は <filename>/opt</filename> 以下にインストールされるのが"
+"一般的です。そのため、ロールバックによってこれらのアプリケーションが削除されて"
+"しまうことのないよう、除外を設定しています。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:53
 #, no-c-format
 msgid "<filename>/srv</filename>"
-msgstr ""
+msgstr "<filename>/srv</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:56
@@ -82,6 +97,8 @@ msgid ""
 "Contains data for Web and FTP servers. It is excluded to avoid data loss on "
 "rollbacks."
 msgstr ""
+"Web サーバや FTP サーバのデータを含むディレクトリです。ロールバックによってそれらの"
+"データが失われてしまうことの無いよう、除外を設定しています。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:63
@@ -90,6 +107,8 @@ msgid ""
 "<filename>/tmp</filename> , <filename>/var/tmp</filename> , <filename>/var/"
 "cache</filename> , <filename>/var/crash</filename>"
 msgstr ""
+"<filename>/tmp</filename> , <filename>/var/tmp</filename> , <filename>/var/"
+"cache</filename> , <filename>/var/crash</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:67
@@ -98,12 +117,14 @@ msgid ""
 "All directories containing temporary files and caches are excluded from "
 "snapshots."
 msgstr ""
+"いずれも一時的な (テンポラリ) ファイルとキャッシュが保存されるディレクトリで"
+"あるため、除外を設定しています。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:74
 #, no-c-format
 msgid "<filename>/usr/local</filename>"
-msgstr ""
+msgstr "<filename>/usr/local</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:77
@@ -112,12 +133,15 @@ msgid ""
 "This directory is used when manually installing software. It is excluded to "
 "avoid uninstalling these installations on rollbacks."
 msgstr ""
+"このディレクトリは手作業でソフトウエアをインストールした場合に使用するディレクトリです。"
+"ロールバックによって、これらのソフトウエアが消えてしまったりしないようにするため、"
+"除外を設定しています。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:84
 #, no-c-format
 msgid "<filename>/var/lib/libvirt/images</filename>"
-msgstr ""
+msgstr "<filename>/var/lib/libvirt/images</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:87
@@ -128,12 +152,16 @@ msgid ""
 "versions during a rollback. By default, this subvolume is created with the "
 "option <literal>no copy on write</literal> ."
 msgstr ""
+"libvirt で仮想マシンを作成する際、そのイメージを配置するための既定のディレクトリです。"
+"ロールバックによって仮想マシンの状態が元に戻ったりしてしまわないようにするため、"
+"除外を設定しています。既定では、このサブボリュームは <literal>コピーオンライト (cow) "
+"無し</literal> オプション付きで作成されます。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:96
 #, no-c-format
 msgid "<filename>/var/lib/mailman</filename> , <filename>/var/spool</filename>"
-msgstr ""
+msgstr "<filename>/var/lib/mailman</filename> , <filename>/var/spool</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:99
@@ -142,12 +170,14 @@ msgid ""
 "Directories containing mails or mail queues are excluded to avoid a loss of "
 "mails after a rollback."
 msgstr ""
+"メールやメールキューが含まれるディレクトリです。ロールバックによってメールデータが"
+"失われることがないよう、除外を設定しています。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:106
 #, no-c-format
 msgid "<filename>/var/lib/named</filename>"
-msgstr ""
+msgstr "<filename>/var/lib/named</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:109
@@ -156,6 +186,8 @@ msgid ""
 "Contains zone data for the DNS server. Excluded from snapshots to ensure a "
 "name server can operate after a rollback."
 msgstr ""
+"DNS サーバのゾーンデータが含まれるディレクトリです。ロールバック後もネームサーバ"
+"が正しく動作するようにするため、除外を設定しています。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:116
@@ -164,6 +196,8 @@ msgid ""
 "<filename>/var/lib/mariadb</filename> , <filename>/var/lib/mysql</"
 "filename> , <filename>/var/lib/pgqsl</filename>"
 msgstr ""
+"<filename>/var/lib/mariadb</filename> , <filename>/var/lib/mysql</"
+"filename> , <filename>/var/lib/pgqsl</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:120
@@ -172,12 +206,15 @@ msgid ""
 "These directories contain database data. By default, these subvolumes are "
 "created with the option <literal>no copy on write</literal> ."
 msgstr ""
+"これらのディレクトリには、データベースのデータが含まれています。"
+"既定では、このサブボリュームは <literal>コピーオンライト (cow) "
+"無し</literal> オプション付きで作成されます。"
 
 #. Tag: term
 #: snapshot_excludes_i.xml:127
 #, no-c-format
 msgid "<filename>/var/log</filename>"
-msgstr ""
+msgstr "<filename>/var/log</filename>"
 
 #. Tag: para
 #: snapshot_excludes_i.xml:130
@@ -186,3 +223,7 @@ msgid ""
 "Log file location. Excluded from snapshots to allow log file analysis after "
 "the rollback of a broken system."
 msgstr ""
+"ログファイルが保存される場所です。システムに障害が発生してロールバックを行なった"
+"場合、ログファイルが元に戻ってしまうと後から解析することができなくなってしまうため、"
+"除外を設定しています。"
+
