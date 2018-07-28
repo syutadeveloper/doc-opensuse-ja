@@ -1,32 +1,35 @@
+# translation of deployment_expert_partitioner_overview.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: deployment_expert_partitioner_overview.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-28 19:43+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:12
 #, no-c-format
 msgid "Using the Expert Partitioner"
-msgstr ""
+msgstr "熟練者向けパーティション設定の使用"
 
 #. Tag: dm:translation
 #: deployment_expert_partitioner_overview.xml:17
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:21
@@ -37,12 +40,17 @@ msgid ""
 "disks. You can add, delete, resize, and edit partitions, or access the soft "
 "RAID, and LVM configuration."
 msgstr ""
+"<xref linkend=\"fig.expert_partitioner.overview\"/> に示されている熟練者向け"
+"パーティション設定を使用することで、 1 台もしくは複数台のハードディスクに対して、"
+"パーティション設定を変更することができるようになります。パーティションの追加や削除、"
+"サイズ変更のほか、パーティションの編集やソフトウエア RAID, LVM などの設定を行なう"
+"こともできます。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:29
 #, no-c-format
 msgid "Repartitioning the Running System"
-msgstr ""
+msgstr "動作中のシステムに対するパーティション設定の変更について"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:30
@@ -53,18 +61,22 @@ msgid ""
 "repartitioning your installed system and always create a complete backup of "
 "your data before attempting to do so."
 msgstr ""
+"動作中でもパーティションの変更を行なうことはできますが、誤った操作をしてしまうと、"
+"データを失ってしまうリスクが非常に高くなります。インストール済みのシステムに対する"
+"パーティション設定の変更はできる限り避けるものとし、どうしても必要な場合は、"
+"事前に完全なバックアップを採取してから実施してください。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:39
 #, no-c-format
 msgid "The &yast; Partitioner"
-msgstr ""
+msgstr "&yast; パーティション設定"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:51
 #, no-c-format
 msgid "&zseries;: Device Names"
-msgstr ""
+msgstr "&zseries;: デバイス名"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:52
@@ -75,6 +87,9 @@ msgid ""
 "<filename>dasda</filename> or <filename>sda</filename> for the first "
 "recognized device."
 msgstr ""
+"&zseries; では DASD と SCSI のハードディスクのみを認識します。 IDE ハードディスク"
+"には対応していません。最初に認識したハードディスクとして <filename>dasda</filename> "
+"や <filename>sda</filename> というデバイスが現われるのは、そのためです。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:60
@@ -92,6 +107,17 @@ msgid ""
 "partitions are also displayed. The mount point describes where the partition "
 "appears in the Linux file system tree."
 msgstr ""
+"&yast; の <guimenu>熟練者向けパーティション設定</guimenu> のダイアログ内の"
+"<guimenu>利用可能なストレージ</guimenu> には、接続されている全てのハードディスクに"
+"対して、既存のパーティションや提案するパーティション設定が表示されます。ハードディスク"
+"全体は <filename>/dev/sda</filename> <phrase arch=\"zseries\" os=\"sles\"> や"
+" <filename>/dev/dasda</filename></phrase> のように番号無しで表示されていて、"
+"パーティションは <filename>/dev/sda1</filename> <phrase arch=\"zseries\" "
+"os=\"sles\"> や <filename>/dev/dasda1</filename> </phrase> のように、それらの"
+"デバイス名に数字を足したもので表わされています。それぞれのハードディスクや"
+"パーティションのサイズ、種類、暗号化状態、ファイルシステム、マウントポイント"
+"もそれぞれ表示されています。マウントポイントとは、 Linux のファイルシステム"
+"ツリー内のどこにパーティションを配置するのかを決める情報です。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:75
@@ -104,6 +130,12 @@ msgid ""
 "literal> ), and view file systems with additional features, such as Btrfs, "
 "NFS, or <literal>TMPFS</literal> ."
 msgstr ""
+"左側の <guimenu>システムビュー</guimenu> には、いくつかの機能ビューが用意されて"
+"います。これらのビューは既存のストレージ設定に関する情報を収集したり、各種の"
+"機能 (<literal>RAID</literal> , <literal>ボリューム管理</literal> ,"
+" <literal>暗号化ファイル</literal> など) を設定したりするために使用することが"
+"できます。また、 btrfs や NFS, <literal>TMPFS</literal> などの特殊な機能を持つ"
+"ファイルシステムを表示することができます。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:84
@@ -114,12 +146,16 @@ msgid ""
 "&productname;, free the needed space by going from the bottom toward the top "
 "in the list of partitions."
 msgstr ""
+"インストール時に熟練者向けパーティション設定を起動している場合は、空きの"
+"ハードディスク領域が一覧表示され、それらが自動選択されます。 &productname; に"
+"対して追加のディスク領域を割り当てるには、パーティションの一覧表示の下にある"
+"ボタンを利用して、割り当てを行なってください。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:92
 #, no-c-format
 msgid "Partition Tables"
-msgstr ""
+msgstr "パーティションテーブル"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:93
@@ -132,6 +168,12 @@ msgid ""
 "partition table, make sure that the table format is supported by the "
 "firmware."
 msgstr ""
+"&productname; では様々な <emphasis>パーティションテーブル</emphasis> を使用したり"
+"作成したりすることができます。パーティションテーブルは <emphasis>ディスク"
+"ラベル</emphasis> と呼ばれることもあり、お使いのコンピュータを起動する際に"
+"重要な設定となります。新しく作成したパーティションテーブルから、お使いの"
+"マシンを起動するには、まずパーティションテーブルの形式がお使いのファームウエア側で"
+"対応しているかどうかをご確認ください。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:101
@@ -141,12 +183,16 @@ msgid ""
 "<guimenu>System View</guimenu> and choose <menuchoice><guimenu>Expert</"
 "guimenu> <guimenu>Create New Partition Table</guimenu></menuchoice> ."
 msgstr ""
+"パーティションテーブルを変更するには、 <guimenu>システムビュー</guimenu> で"
+"対象のディスクを選択して、 <menuchoice><guimenu>熟練者向け機能</"
+"guimenu> <guimenu>新しいパーティションテーブルの作成</guimenu></menuchoice> "
+"を選択します。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:108
 #, no-c-format
 msgid "Master Boot Record"
-msgstr ""
+msgstr "マスターブートレコード"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:109
@@ -158,6 +204,12 @@ msgid ""
 "the disk already has an MBR, &productname; allows you to create additional "
 "partitions in it which can be used as the installation target."
 msgstr ""
+"<emphasis>マスターブートレコード</emphasis> とは IBM PC で使用されている"
+"古い形式のパーティションテーブルです。場合によっては <emphasis>MS-DOS</"
+"emphasis> パーティションテーブルと呼ぶ場合もあります。 MBR には 4 個の"
+"プライマリパーティションだけを作成することができます。お使いのディスクに"
+"既に MBR が設定されている場合、 &productname; では追加のパーティションを"
+"作成してインストール先として使用できるようにします。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:117
@@ -167,18 +219,22 @@ msgid ""
 "partition</emphasis> . The extended partition itself is a primary partition "
 "and can contain more <emphasis>logical partitions</emphasis> ."
 msgstr ""
+"この 4 個のパーティションの制限は、 <emphasis>拡張パーティション</emphasis> "
+"という仕組みを利用することで解決することができます。拡張パーティションそれ"
+"自身はプライマリパーティションで、その中に <emphasis>論理パーティション</emphasis> "
+"と呼ばれる複数のパーティションを設定して利用します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:123
 #, no-c-format
 msgid "UEFI firmwares usually support booting from MBR in the legacy mode."
-msgstr ""
+msgstr "なお、 UEFI ファームウエアをお使いの場合、レガシーモードを利用すれば MBR から起動することができます。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:128
 #, no-c-format
 msgid "GPT Partition Table"
-msgstr ""
+msgstr "GPT パーティションテーブル"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:129
@@ -188,42 +244,45 @@ msgid ""
 "default. &productname; will create a GPT on a disk if no other partition "
 "table exists."
 msgstr ""
+"UEFI コンピュータの場合、 <emphasis>GUID パーティションテーブル</emphasis> (GPT) "
+"を既定で使用します。 &productname; では、まだ何もパーティションテーブルが作成"
+"されていない場合、 GPT を作成しようとします。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:134
 #, no-c-format
 msgid "Old BIOS firmwares do not support booting from GPT partitions."
-msgstr ""
+msgstr "なお、古い BIOS ファームウエアをお使いの場合、 GPT パーティションから起動することはできません。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:137
 #, no-c-format
 msgid "You need a GPT partition table to use one of the following features:"
-msgstr ""
+msgstr "下記のいずれかの機能を使用する場合、 GPT パーティションテーブルが必要となります:"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:142
 #, no-c-format
 msgid "More than 4 primary partitions"
-msgstr ""
+msgstr "4 個以上のプライマリパーティションを使用したい場合"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:145
 #, no-c-format
 msgid "UEFI Secure Boot"
-msgstr ""
+msgstr "UEFI の Secure Boot を使用したい場合"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:150
 #, no-c-format
 msgid "Use disks larger than 2&nbsp;TB"
-msgstr ""
+msgstr "2 TB 以上のディスクを使用する場合"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:156
 #, no-c-format
 msgid "Partitions Created with Parted 3.1 or Earlier Mislabeled"
-msgstr ""
+msgstr "parted 3.1 もしくはそれ以前におけるラベル設定の誤りについて"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:157
@@ -235,12 +294,18 @@ msgid ""
 "on such partitions. This will also lead to various disk tools labeling the "
 "partition as a <emphasis>Windows Data Partition</emphasis> or similar."
 msgstr ""
+"parted 3.1 もしくはそれ以前のバージョンで作成した GPT パーティションでは、"
+" Linux 固有の GPT GUID ではなく、 Microsoft Basic Data パーティションのタイプが"
+"設定されてしまいます。新しいバージョンの parted では、これらのパーティションに"
+"対して、 <literal>msftdata</literal> というフラグを設定してしまいます。"
+"そのため、他のパーティションツールを使用すると、これらのパーティションが"
+" Windows のパーティションであるものとして扱われてしまうことがあります。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:165
 #, no-c-format
 msgid "To remove the flag, run:"
-msgstr ""
+msgstr "フラグを削除したい場合は、下記のように実行します:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:168
@@ -249,12 +314,14 @@ msgid ""
 "&prompt.root;parted <replaceable>DEVICE</replaceable> set "
 "<replaceable>PARTITION_NUMBER</replaceable> msftdata off"
 msgstr ""
+"&prompt.root;parted <replaceable>デバイス名</replaceable> set "
+"<replaceable>パーティション番号</replaceable> msftdata off"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:172
 #, no-c-format
 msgid "Partition Tables on &zseries;"
-msgstr ""
+msgstr "&zseries; におけるパーティションテーブル"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:173
@@ -265,12 +332,17 @@ msgid ""
 "disks can be partitioned as described above, DASDs can have no more than "
 "three partition entries in their partition tables."
 msgstr ""
+"&zseries; では、 %sls; は <emphasis>SCSI ハードディスク</emphasis> と"
+" <emphasis>Direct Access Storage Devices</emphasis> (DASD) に対応しています。"
+" SCSI ディスクは上述のようにパーティションを作成することができますが、"
+" DASD ディスクの場合は、パーティションテーブル内に 3 個以上のパーティションを"
+"作成することができません。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:183
 #, no-c-format
 msgid "Partitions"
-msgstr ""
+msgstr "パーティション"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:184
@@ -280,6 +352,9 @@ msgid ""
 "systems. The default file system used by &productname; is <literal>Btrfs</"
 "literal> . For details, see <xref linkend=\"sec.yast.btrfs\"/> ."
 msgstr ""
+"&yast; パーティション設定では、いくつかのファイルシステムを作成してフォーマット"
+"することができます。 &productname; での既定のファイルシステムは <literal>Btrfs</"
+"literal> です。詳しくは <xref linkend=\"sec.yast.btrfs\"/> をお読みください。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:190
@@ -289,12 +364,15 @@ msgid ""
 "<literal>Ext3</literal> , <literal>Ext4</literal> , <literal>FAT</literal> , "
 "<literal>XFS</literal> and <literal>Swap</literal> ."
 msgstr ""
+"また、よく使用される他のファイルシステムにも対応しています: <literal>Ext2</literal> , "
+"<literal>Ext3</literal> , <literal>Ext4</literal> , <literal>FAT</literal> , "
+"<literal>XFS</literal> , <literal>Swap</literal>"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:197
 #, no-c-format
 msgid "Creating a Partition"
-msgstr ""
+msgstr "パーティションの作成"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:198
@@ -304,6 +382,9 @@ msgid ""
 "disk with free space. The actual modification can be done in the "
 "<guimenu>Partitions</guimenu> tab:"
 msgstr ""
+"パーティションを作成するには、 <guimenu>ハードディスク</guimenu> を選んで"
+"空き領域のあるハードディスクを選択したあと、右側で <guimenu>パーティション</guimenu> "
+"タブを選択し、下記のようにして行ないます:"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:205
@@ -315,6 +396,11 @@ msgid ""
 "partitions. For details, see <xref linkend=\"sec.expert_partitioner.tables\"/"
 "> ."
 msgstr ""
+"<guimenu>追加</guimenu> を押して新しいパーティションを作成します。 <emphasis>MBR</emphasis> "
+"を使用している場合は、プライマリパーティションと拡張パーティションのどちらを"
+"作成するのかを尋ねられます。拡張パーティションテーブルを作成すると、その内部に"
+"さらにパーティションを作成できるようになります。詳しくは <xref linkend=\"sec.expert_partitioner.tables\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:214
@@ -323,6 +409,8 @@ msgid ""
 "Specify the size of the new partition. You can either choose to occupy all "
 "the free unpartitioned space, or enter a custom size."
 msgstr ""
+"新しいパーティションに対して設定するサイズを指定します。空き領域全てを割り当てる"
+"こともできますし、サイズを指定することもできます。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:220
@@ -334,6 +422,12 @@ msgid ""
 "information on supported file systems, see <systemitem class=\"username"
 "\">root</systemitem> ."
 msgstr ""
+"次に使用するファイルシステムとマウントポイントを設定します。 &yast; では"
+"各パーティションを作成する際、マウントポイントを自動的に判別して提案します。"
+"また、ラベルでのマウントなど、マウント方法を変更したい場合は、 <guimenu>fstab "
+"オプション</guimenu> を押してください。 <!-- ? For more "
+"information on supported file systems, see <systemitem class=\"username"
+"\">root</systemitem> . -->"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:229
@@ -344,6 +438,9 @@ msgid ""
 "the available options, refer to <xref linkend=\"sec.expert_partitioner."
 "options\"/> ."
 msgstr ""
+"必要であれば、追加のファイルシステムオプションを指定することもできます。たとえば"
+"永続性のあるデバイス名が必要な場合などが挙げられます。利用可能なオプションについて、"
+"詳しくは <xref linkend=\"sec.expert_partitioner.options\"/> をお読みください。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:237
@@ -352,6 +449,8 @@ msgid ""
 "Click <guimenu>Finish</guimenu> to apply your partitioning setup and leave "
 "the partitioning module."
 msgstr ""
+"最後に <guimenu>完了</guimenu> を押すと、パーティション設定を適用してパーティション"
+"設定モジュールを終了することができます。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:241
@@ -360,12 +459,14 @@ msgid ""
 "If you created the partition during installation, you are returned to the "
 "installation overview screen."
 msgstr ""
+"インストール時にパーティションを作成している場合は、インストール概要の画面に"
+"戻ることができます。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:249
 #, no-c-format
 msgid "Btrfs Partitioning"
-msgstr ""
+msgstr "btrfs パーティション設定"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:250
@@ -377,12 +478,18 @@ msgid ""
 "it is not listed in the list of created subvolumes. As a default Btrfs "
 "subvolume, it can be mounted as a normal file system."
 msgstr ""
+"ルートパーティションに対する規定のファイルシステムは btrfs になっています。"
+"詳しくは <xref linkend=\"cha.snapper\"/> <phrase os=\"sles\"> と <xref linkend=\"cha."
+"filesystems\"/></phrase> をお読みください。ルートファイルシステムは既定の"
+"サブボリュームになっていて、作成されるサブボリュームの一覧内には現われません。"
+"また、既定のサブボリュームであることから、通常のファイルシステムとしてマウント"
+"できるようになっています。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:259
 #, no-c-format
 msgid "Btrfs on an Encrypted Root Partition"
-msgstr ""
+msgstr "暗号化されたルートパーティション内での btrfs について"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:260
@@ -394,6 +501,12 @@ msgid ""
 "type. Otherwise the GRUB2 boot loader may not have enough space for the "
 "second stage loader."
 msgstr ""
+"既定のパーティション設定では、ルートパーティションを btrfs に設定し、"
+" <filename>/boot</filename> がディレクトリとなるように設定されます。ルート"
+"パーティションを暗号化する場合、既定の MSDOS パーティションテーブルではなく、"
+" GPT パーティションテーブルを使用することをご確認ください。そうでないと、"
+" GRUB2 ブートローダが第 2 ステージのブートローダを書き込む際、十分な領域を"
+"確保できなくなってしまう場合があります。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:268
@@ -410,12 +523,23 @@ msgid ""
 "sense to exclude specific directories from snapshots. This is the reason "
 "&yast; suggests creating the following separate subvolumes:"
 msgstr ""
+"btrfs のサブボリュームに対しては、スナップショットを採取することができます。"
+"スナップショットはシステムイベントをベースにした自動採取のほか、必要に応じて"
+"手作業で採取することもできます。ファイルシステムに変更を加える例としては、"
+" <command>zypper</command> は <command>snapper</command> コマンドを呼び出して、"
+"変更の前後にスナップショットを採取する機能があります。このスナップショットは、"
+" <command>zypper</command> が変更した内容では何か問題があって、元の状態に"
+"戻したいような場合に便利な仕組みです。 <command>zypper</command> から呼び出される"
+" <command>snapper</command> では、既定では <emphasis>ルート</emphasis> ファイル"
+"システムのスナップショットを採取しますが、特定のディレクトリをスナップショットから"
+"除外することもできます。このような仕組みを実現するため、 &yast; では下記の"
+"サブボリュームを作成します:"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:283
 #, no-c-format
 msgid "Size of Btrfs Partition"
-msgstr ""
+msgstr "btrfs のパーティションサイズについて"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:284
@@ -425,12 +549,15 @@ msgid ""
 "enough space for Btrfs. The suggested size for a root Btrfs partition with "
 "default subvolumes is 20 GB."
 msgstr ""
+"スナップショットの保存には追加のディスク容量が必要となります。そのため、"
+" btrfs を作成する際は、十分な容量を設定することをお勧めします。既定のサブボリューム"
+"を作成する場合、ルートファイルシステムに対する btrfs の推奨サイズは、 20 GB です。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:292
 #, no-c-format
 msgid "Managing Btrfs Subvolumes using &yast;"
-msgstr ""
+msgstr "&yast; を利用した btrfs のサブボリューム管理"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:293
@@ -440,12 +567,15 @@ msgid ""
 "<guimenu>Expert partitioner</guimenu> module. You can add new or remove "
 "existing subvolumes."
 msgstr ""
+"btrfs パーティションのサブボリュームは、 &yast; <guimenu>熟練者向けパーティション"
+"設定</guimenu> で管理できるようになりました。ここではサブボリュームの追加や"
+"削除を行なうことができます。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:299
 #, no-c-format
 msgid "Btrfs Subvolumes with &yast;"
-msgstr ""
+msgstr "&yast; を利用した btrfs サブボリューム"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:301
@@ -455,6 +585,9 @@ msgid ""
 "<menuchoice><guimenu>System</guimenu><guimenu>Partitioner</guimenu></"
 "menuchoice> ."
 msgstr ""
+"&yast; を起動して <menuchoice><guimenu>システム</guimenu><guimenu>パーティション設定</guimenu>"
+"</menuchoice>  を選択して、 <guimenu>熟練者向けパーティション設定</guimenu> "
+"を表示します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:307
@@ -463,6 +596,8 @@ msgid ""
 "Choose <guimenu>Btrfs</guimenu> in the left <guimenu>System View</guimenu> "
 "pane."
 msgstr ""
+"左側の <guimenu>システムビュー</guimenu> ペイン内で <guimenu>btrfs</guimenu> "
+"を選択します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:313
@@ -471,6 +606,8 @@ msgid ""
 "Select the Btrfs partition whose subvolumes you need to manage and click "
 "<guimenu>Edit</guimenu> ."
 msgstr ""
+"管理したいサブボリュームのある btrfs パーティションを選んで、 <guimenu>編集</guimenu> "
+"を押します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:319
@@ -481,13 +618,16 @@ msgid ""
 "<literal>@/.snapshots/xyz/snapshot</literal> entries&mdash;each of these "
 "subvolumes belongs to one existing snapshot."
 msgstr ""
+"<!-- ?? Click <guimenu>Subvolume Handling</guimenu> . --> すると、選択した btrfs "
+"パーティション内にある既存のサブボリュームが表示されます。この中には"
+" <literal>@/.snapshots/xyz/snapshot</literal> のような項目がある場合がありますが、"
+"これらのサブボリュームは既存のスナップショットに属するものです。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:327
 #, no-c-format
-msgid ""
-"Depending on whether you want to add or remove subvolumes, do the following:"
-msgstr ""
+msgid "Depending on whether you want to add or remove subvolumes, do the following:"
+msgstr "サブボリュームの追加や削除によって、それぞれ下記を実施します:"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:333
@@ -496,6 +636,8 @@ msgid ""
 "To remove a subvolume, select it from the list of <guimenu>Exisitng "
 "Subvolumes</guimenu> and click <guimenu>Remove</guimenu> ."
 msgstr ""
+"サブボリュームを削除するには、 <guimenu>btrfs ボリュームの編集</guimenu> の一覧から"
+"サブボリュームを選んで、 <guimenu>削除</guimenu> を押します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:339
@@ -504,30 +646,32 @@ msgid ""
 "To add a new subvolume, enter its name to the <guimenu>New Subvolume</"
 "guimenu> text box and click <guimenu>Add new</guimenu> ."
 msgstr ""
+"新しいサブボリュームを追加するには、 <guimenu>追加</guimenu> ボタンを押して"
+"名前を入力し、 <guimenu>OK</guimenu> を押します。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:344
 #, no-c-format
 msgid "Btrfs Subvolumes in &yast; Partitioner"
-msgstr ""
+msgstr "&yast; パーティション設定における btrfs サブボリューム"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:358
 #, no-c-format
 msgid "Confirm with <guimenu>OK</guimenu> and <guimenu>Finish</guimenu> ."
-msgstr ""
+msgstr "<guimenu>OK</guimenu> および <guimenu>Finish</guimenu> を押していって完了します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:363
 #, no-c-format
 msgid "Leave the partitioner with <guimenu>Finish</guimenu> ."
-msgstr ""
+msgstr "これで手順は完了です。 <!-- ??? with <guimenu>Finish</guimenu> -->"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:372
 #, no-c-format
 msgid "Editing a Partition"
-msgstr ""
+msgstr "パーティションの編集"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:373
@@ -538,25 +682,28 @@ msgid ""
 "are usually sufficient and do not require any modification. To edit your "
 "partition setup manually, proceed as follows:"
 msgstr ""
+"新しいパーティションを作成したり、既存のパーティションを編集したりする場合、"
+"様々なパラメータを設定することができます。新しいパーティションの場合、ほとんどは"
+" &yast; が設定する既定のパラメータで十分であり、それ以上の変更は必要ありません。"
+"パーティションの設定を手作業で編集するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:381
 #, no-c-format
 msgid "Select the partition."
-msgstr ""
+msgstr "パーティションを選択します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:386
 #, no-c-format
-msgid ""
-"Click <guimenu>Edit</guimenu> to edit the partition and set the parameters:"
-msgstr ""
+msgid "Click <guimenu>Edit</guimenu> to edit the partition and set the parameters:"
+msgstr "<guimenu>編集</guimenu> を押してパーティションの編集を開始し、必要なパラメータを設定します:"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:392
 #, no-c-format
 msgid "File System ID"
-msgstr ""
+msgstr "ファイルシステム ID"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:394
@@ -567,12 +714,17 @@ msgid ""
 "values are <guimenu>Linux</guimenu> , <guimenu>Linux swap</guimenu> , "
 "<guimenu>Linux LVM</guimenu> , and <guimenu>Linux RAID</guimenu> ."
 msgstr ""
+"この時点ではパーティションをフォーマットしたくない場合、パーティションが正しく"
+"登録されるよう、ファイルシステムの ID を設定しておくことをお勧めします。一般的には"
+" <guimenu>Linux</guimenu> , <guimenu>Linux swap</guimenu> ,"
+" <guimenu>Linux LVM</guimenu> , and <guimenu>Linux RAID</guimenu> のいずれかを"
+"指定します。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:404
 #, no-c-format
 msgid "File System"
-msgstr ""
+msgstr "ファイルシステム"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:408
@@ -582,6 +734,9 @@ msgid ""
 "guimenu> and select file system type in the <guimenu>File System</guimenu> "
 "list."
 msgstr ""
+"パーティションに対するファイルシステムを変更するには、 <guimenu>デバイスを"
+"フォーマットする</guimenu> を選択して、 <guimenu>ファイルシステム</guimenu> 内の一覧から"
+"ファイルシステムを選択します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:413
@@ -597,6 +752,15 @@ msgid ""
 "smaller partitions because it does not require much disk space for "
 "management."
 msgstr ""
+"&productname; ではいくつかの種類のファイルシステムに対応しています。 btrfs は"
+"他のファイルシステムに比べて高度な機能を持つことから、ルートパーティションに対して"
+"お勧めです。コピーオンライトの機能を持つほか、スナップショットやマルチデバイス"
+"への分散、サブボリュームなど、さまざまな便利な技術が提供されています。"
+"また、 XFS, ext3, jfs はいずれもジャーナル機能のあるファイルシステムです。"
+"これらのファイルシステムは、書き込み時に操作の履歴 (ジャーナル) を持つことから、"
+"システムがクラッシュしても素早く回復できる特長を持ちます。 ext2 はジャーナル"
+"機能のないファイルシステムですが、管理領域を小さくすることができるため、"
+"小さいパーティションにお勧めです。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:424
@@ -605,6 +769,8 @@ msgid ""
 "The default file system for the root partition is Btrfs. The default file "
 "system for additional partitions is XFS."
 msgstr ""
+"ルートパーティションに対する既定のファイルシステムは btrfs です。また、"
+"その他のパーティションに対する規定のファイルシステムは xfs です。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:428
@@ -615,12 +781,16 @@ msgid ""
 "up your swap space, consider adding memory to your system instead of adding "
 "swap space."
 msgstr ""
+"swap (スワップ) は仮想メモリとして使用することのできる特殊なファイルシステムです。"
+"スワップパーティションは、少なくとも 256 MB 以上で作成しておくことをお勧めします。"
+"ただし、スワップ領域が不足した場合は、スワップ領域の追加ではなくメモリの追加を"
+"お勧めします。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:435
 #, no-c-format
 msgid "Changing the File System"
-msgstr ""
+msgstr "ファイルシステムの変更時の注意"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:436
@@ -629,18 +799,20 @@ msgid ""
 "Changing the file system and reformatting partitions irreversibly deletes "
 "all data from the partition."
 msgstr ""
+"ファイルシステムを変更してパーティションを再フォーマットすると、その"
+"パーティション内にあるデータは全て削除され、復元できなくなります。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:441
 #, no-c-format
 msgid "For details on the various file systems, refer to &storage_guide;."
-msgstr ""
+msgstr "様々なファイルシステムについての詳細は、 &storage_guide; をお読みください。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:447
 #, no-c-format
 msgid "Encrypt Device"
-msgstr ""
+msgstr "暗号化デバイス"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:451
@@ -652,12 +824,16 @@ msgid ""
 "information about the encryption of file systems is provided in <xref "
 "linkend=\"cha.security.cryptofs\"/> ."
 msgstr ""
+"暗号化を有効化すると、ハードディスクに書き込まれる全てのデータが暗号化されるように"
+"なります。これにより機密データの安全性が高まりますが、暗号化の処理にはそれなりの"
+"時間を要するため、システムの速度は落ちることになります。ファイルシステムの"
+"暗号化について、詳しくは <xref linkend=\"cha.security.cryptofs\"/> をお読みください。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:461
 #, no-c-format
 msgid "Mount Point"
-msgstr ""
+msgstr "マウントポイント"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:465
@@ -666,12 +842,14 @@ msgid ""
 "Specify the directory where the partition should be mounted in the file "
 "system tree. Select from &yast; suggestions or enter any other name."
 msgstr ""
+"このパーティションを、ファイルシステムのツリー内のどの位置に配置するのかを"
+"指定します。 &yast; の提案する値の中から選択するか、もしくは任意のパスを指定してください。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:472
 #, no-c-format
 msgid "Fstab Options"
-msgstr ""
+msgstr "fstab オプション"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:476
@@ -683,6 +861,11 @@ msgid ""
 "file system identification from the device name to a volume label. In the "
 "volume label, use all characters except <literal>/</literal> and space."
 msgstr ""
+"グローバルなファイルシステム管理ファイル ( <filename>/etc/fstab</filename> ) "
+"内には、様々なパラメータが含まれています。ほとんどの場合において、既定値のまま"
+"使用すれば十分です。ただし、ファイルシステムの識別をデバイス名ではなくボリューム"
+"ラベルで行なうなど、いくつかの設定を変更することができます。なお、ボリューム"
+"ラベルには <literal>/</literal> とスペースを除く、任意の文字を指定することができます。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:484
@@ -692,12 +875,15 @@ msgid ""
 "guimenu> , <guimenu>UUID</guimenu> or <guimenu>LABEL</guimenu> . In "
 "&productname;, persistent device names are enabled by default."
 msgstr ""
+"永続性のあるデバイス名を使用するには、 <guimenu>デバイス ID</guimenu> ,"
+" <guimenu>UUID</guimenu> , <guimenu>LABEL</guimenu> のいずれかを選択して"
+"ください。 &productname; では、永続性のあるデバイス名を既定で使用します。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:490
 #, no-c-format
 msgid "&zseries;: Mounting by Path"
-msgstr ""
+msgstr "&zseries;: パスによるマウント"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:491
@@ -707,6 +893,9 @@ msgid ""
 "copying for cloning purposes, devices are mounted by path in <filename>/etc/"
 "fstab</filename> on &zseries; by default."
 msgstr ""
+"&zseries; でディスク同士のクローン (複製) 処理を実施した場合、 ID によるマウント"
+"を行なうと問題が発生することから、 &zseries; の既定では <filename>/etc/fstab</filename> "
+"でデバイスパスによるマウントを使用します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:497
@@ -717,6 +906,9 @@ msgid ""
 "the partition label <literal>HOME</literal> for a partition intended to "
 "mount to <filename>/home</filename> ."
 msgstr ""
+"パーティションをラベルでマウントしたい場合は、 <guimenu>ボリュームラベル</guimenu> "
+"のテキスト項目に名前を入力してください。たとえば <filename>/home</filename> 向けの"
+"パーティションであれば、 <literal>HOME</literal> のようなボリュームラベルを指定します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:503
@@ -728,18 +920,23 @@ msgid ""
 "module. For further information on how to configure user quota, refer to "
 "<xref linkend=\"sec.yast.userman.adv.quota\"/> ."
 msgstr ""
+"ファイルシステム内でクォータ (容量制限) を行ないたい場合は、 <guimenu>クォータサポートを"
+"有効にする</guimenu> を選択してください。この設定は、 &yast; の <guimenu>ユーザ管理</guimenu> "
+"モジュールでユーザ向けのクォータを設定する際、事前に設定しておかなければならない項目です。"
+"クォータの設定方法について、詳しくは <xref linkend=\"sec.yast.userman.adv.quota\"/> を"
+"お読みください。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:516
 #, no-c-format
 msgid "Select <guimenu>Finish</guimenu> to save the changes."
-msgstr ""
+msgstr "<guimenu>完了</guimenu> を押すと設定を保存することができます。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:522
 #, no-c-format
 msgid "Resize File Systems"
-msgstr ""
+msgstr "ファイルシステムのサイズ変更"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:523
@@ -750,12 +947,16 @@ msgid ""
 "partitions while mounted. To resize partitions, unmount the relevant "
 "partition before running the partitioner."
 msgstr ""
+"既存のファイルシステムのサイズを変更するには、対象のパーティションを選択して"
+" <guimenu>サイズ変更</guimenu> を押します。ただし、パーティションのサイズ変更は"
+"マウントされている状態では行なうことができません。サイズ変更を行なうには、"
+"パーティション設定を実行する前にマウント解除を行なってください。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:533
 #, no-c-format
 msgid "Expert Options"
-msgstr ""
+msgstr "熟練者向けオプション"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:534
@@ -766,25 +967,28 @@ msgid ""
 "guimenu> menu in the lower right part of the <guimenu>Expert Partitioner</"
 "guimenu> window. The menu contains the following commands:"
 msgstr ""
+"<guimenu>システムビュー</guimenu> ペイン内でハードディスク (例: <guimenu>sda</guimenu>) "
+"を選択すると、 <guimenu>熟練者向けパーティション設定</guimenu> ウインドウの"
+"右下に <guimenu>熟練者向け機能</guimenu> が表示されます。このボタンには、"
+"下記のコマンドが含まれています:"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:543
 #, no-c-format
 msgid "Create New Partition Table"
-msgstr ""
+msgstr "新しいパーティションテーブルの作成"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:545
 #, no-c-format
-msgid ""
-"This option helps you create a new partition table on the selected device."
-msgstr ""
+msgid "This option helps you create a new partition table on the selected device."
+msgstr "このオプションを選択することで、選択したデバイスに新しいパーティションテーブルを作成することができます。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:550
 #, no-c-format
 msgid "Creating a New Partition Table"
-msgstr ""
+msgstr "新しいパーティションテーブルの作成"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:551
@@ -793,12 +997,14 @@ msgid ""
 "Creating a new partition table on a device irreversibly removes all the "
 "partitions and their data from that device."
 msgstr ""
+"新しいパーティションテーブルを作成すると、そのデバイス内にある全てのデータと"
+"全てのパーティションが削除され、復元できなくなります。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:559
 #, no-c-format
 msgid "Clone This Disk"
-msgstr ""
+msgstr "このディスクを複製する"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:561
@@ -807,12 +1013,14 @@ msgid ""
 "This option helps you clone the device partition layout (but not the data) "
 "to other available disk devices."
 msgstr ""
+"このオプションを選択すると、デバイスのパーティションレイアウトを他の"
+"ディスクデバイスに複製することができます (ただしデータは複製されません) 。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:571
 #, no-c-format
 msgid "Advanced Options"
-msgstr ""
+msgstr "高度なオプション"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:572
@@ -824,12 +1032,15 @@ msgid ""
 "<guimenu>Expert Partitioner</guimenu> window. The menu contains the "
 "following commands:"
 msgstr ""
+"<guimenu>システムビュー</guimenu> ペイン内でコンピュータ名の書かれた箇所を選択すると、"
+" <guimenu>熟練者向けパーティション設定</guimenu> ウインドウ内の右下に"
+" <guimenu>設定</guimenu> というボタンが表示されます。このメニューには、下記のコマンドが含まれています:"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:581
 #, no-c-format
 msgid "Configure iSCSI"
-msgstr ""
+msgstr "iSCSI の設定"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:583
@@ -838,12 +1049,15 @@ msgid ""
 "To access SCSI over IP block devices, you first need to configure iSCSI. "
 "This results in additionally available devices in the main partition list."
 msgstr ""
+"SCSI over IP のブロックデバイスにアクセスするには、まず iSCSI の設定を行なう"
+"必要があります。これを実行することにより、パーティションの一覧内に新しい"
+"デバイスを表示することができるようになります。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:591
 #, no-c-format
 msgid "Configure Multipath"
-msgstr ""
+msgstr "マルチパスの設定"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:593
@@ -852,12 +1066,14 @@ msgid ""
 "Selecting this option helps you configure the multipath enhancement to the "
 "supported mass storage devices."
 msgstr ""
+"このオプションを選択することで、対応するマスストレージデバイスに対してマルチパス"
+"機能拡張を設定することができるようになります。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:603
 #, no-c-format
 msgid "More Partitioning Tips"
-msgstr ""
+msgstr "パーティション設定のヒント"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:604
@@ -866,12 +1082,14 @@ msgid ""
 "The following section includes a few hints and tips on partitioning that "
 "should help you make the right decisions when setting up your system."
 msgstr ""
+"下記の章には、お使いのシステムを設定する際に正しい判断を下すための、"
+"パーティション関連のヒントが記載されています。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:609
 #, no-c-format
 msgid "Cylinder Numbers"
-msgstr ""
+msgstr "シリンダ番号"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:610
@@ -882,12 +1100,15 @@ msgid ""
 "calculating the number of cylinders, you should always use the difference "
 "between the last and the first cylinder number and add one."
 msgstr ""
+"パーティションツールによっては、シリンダ数が <literal>0</literal> からはじまるものと"
+" <literal>1</literal> からはじまるものがあります。シリンダ数を計算する場合は、"
+"始めと終わりのシリンダ番号を確認し、 +1 するようにしてください。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:618
 #, no-c-format
 msgid "Using <literal>swap</literal>"
-msgstr ""
+msgstr "<literal>スワップ</literal> の使用について"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:619
@@ -899,6 +1120,11 @@ msgid ""
 "have twice the size of your RAM in swap, the performance of the system "
 "suffered. These limitations no longer exist."
 msgstr ""
+"スワップは利用可能な物理メモリを拡張するための仕組みです。これにより、物理メモリ"
+"よりも多くのメモリを使用することができるようになります。カーネルのバージョン"
+" 2.4.10 以前では、安全対策としてスワップを用意しておくのが通常で、一般的には"
+"物理メモリサイズの 2 倍程度を確保しておくものでした。ただし、現在はそのような"
+"制限はありません。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:626
@@ -908,6 +1134,10 @@ msgid ""
 "pages that might be moved from memory to disk. Therefore, running "
 "applications have more memory available and caching works more smoothly."
 msgstr ""
+"Linux では <quote>Least Recently Used</quote> (LRU) という仕組みを利用して、"
+"メモリからディスクに移動すべきページを判断します。そのため、実行中の"
+"アプリケーションに対してはより多くのメモリが割り当てられることになり、"
+"キャッシュもより効率的に動作するようになっています。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:631
@@ -916,12 +1146,15 @@ msgid ""
 "If an application tries to allocate the maximum allowed memory, problems "
 "with swap can arise. There are three major scenarios to look at:"
 msgstr ""
+"もしもアプリケーションが利用可能なメモリを目一杯使用しようとした場合、"
+"スワップまわりの問題が発生することがあります。この場合、設定に応じて"
+"下記のような動作になります:"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:637
 #, no-c-format
 msgid "System with no swap"
-msgstr ""
+msgstr "スワップを設定していないシステムの場合"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:639
@@ -931,12 +1164,16 @@ msgid ""
 "thus all other running applications are slowed. After a few minutes, the "
 "kernel's out-of-memory kill mechanism activates and kills the process."
 msgstr ""
+"アプリケーションは最大のメモリを確保します。全てのキャッシュメモリは解放される"
+"ことになるため、他のアプリケーションの動作は遅くなります。しばらくすると、"
+"カーネルの Out-of-Memory Kill (メモリ枯渇解決) 機構が動作して、プロセスを"
+"強制終了 (kill) し始めます。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:648
 #, no-c-format
 msgid "System with medium sized swap (128 MB&ndash;512 MB)"
-msgstr ""
+msgstr "中程度のサイズ (128 MB から 512 MB 程度) のスワップがあるシステムの場合"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:650
@@ -952,12 +1189,21 @@ msgid ""
 "disk</quote> . In that case, the swap size should be large enough to contain "
 "the necessary data from memory (512 MB&ndash;1GB)."
 msgstr ""
+"初めのうちはシステムはスワップが無い場合と同様に遅くなります。物理メモリが"
+"全て割り当てられると、スワップ領域を使い始めます。この時点では、システムの動作は"
+"非常に遅くなり、リモートからコマンドを受け付けることもできないような状態になります。"
+"あとはスワップ領域を受け持っているハードディスクの速度によりますが、システムは"
+" Out-of-Memory Kill (メモリ枯渇解決) 機構が問題を解決するまで、 10 から 15 分程度"
+"そのままの状態になります。なお、 <quote>ディスクへのサスペンド</quote> (休止状態) "
+"を使用するコンピュータの場合は、ある程度のスワップ領域が必要です。この場合は、"
+"物理メモリのデータをスワップ領域に待避するための、十分なサイズが必要です (512 MB "
+"から 1GB 程度必要になります) 。"
 
 #. Tag: term
 #: deployment_expert_partitioner_overview.xml:665
 #, no-c-format
 msgid "System with lots of swap (several GB)"
-msgstr ""
+msgstr "大きなサイズ (1 GB 以上) のスワップがあるシステムの場合"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:667
@@ -974,6 +1220,16 @@ msgid ""
 "disk space for their needs. It is advisable to use this option instead of "
 "using lots of swap space."
 msgstr ""
+"制御ができず、スワップ領域を過剰に使用するようなアプリケーションは、使用しない"
+"のが最適です。ただし、そのようなアプリケーションを使用した場合、システムは"
+"回復するのに数時間程度を要してしまいます。プロセス内では、他のプロセスが"
+"タイムアウトや失敗になることも多く、それらのプロセスを終わらせたとしても、"
+"システムは不安定な状態になります。この場合は、物理的なリセットボタンでリセット"
+"を行ない、回復を行なうのが一般的です。大容量のスワップ領域は、この機能に"
+"依存するような特殊なアプリケーションを使用する場合に限って設定すべきもの"
+"です。このようなアプリケーション (データベースやグラフィック編集プログラム"
+"など) の場合は、独自のディスク待避機構を持つ場合がありますので、スワップ領域の"
+"拡大ではなく、それらの仕組みを使用するようにするのがお勧めです。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:683
@@ -986,18 +1242,24 @@ msgid ""
 "files are generally slower than partitions, but compared to physical RAM, "
 "both are extremely slow so the actual difference is negligible."
 msgstr ""
+"お使いのシステムが制御不可能になっていない場合で、スワップ領域を追加する必要が"
+"ある場合は、スワップ領域をその場で追加することができます。スワップ領域用の"
+"パーティションを既に確保してある場合は、 &yast; で追加することができます。"
+"確保していない場合は、スワップ領域をファイルとして作成することもできます。"
+"スワップファイルは一般的にパーティションよりも遅いものですが、物理メモリに"
+"比べればどちらも同様に遅いので、ファイルであることを気にする必要はありません。"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:692
 #, no-c-format
 msgid "Adding a Swap File Manually"
-msgstr ""
+msgstr "スワップファイルの手動追加"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:693
 #, no-c-format
 msgid "To add a swap file in the running system, proceed as follows:"
-msgstr ""
+msgstr "動作中のシステムでスワップファイルを追加するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:697
@@ -1007,6 +1269,9 @@ msgid ""
 "128&nbsp;MB swap at <filename>/var/lib/swap/swapfile</filename> , use the "
 "commands:"
 msgstr ""
+"まずはお使いのシステム内に空のファイルを作成します。たとえば"
+" <filename>/var/lib/swap/swapfile</filename> 内に 128 MB のスワップファイルを"
+"作成するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:702
@@ -1015,54 +1280,56 @@ msgid ""
 "&prompt.sudo;mkdir -p /var/lib/swap\n"
 "&prompt.sudo;dd if=/dev/zero of=/var/lib/swap/swapfile bs=1M count=128"
 msgstr ""
+"&prompt.sudo;mkdir -p /var/lib/swap\n"
+"&prompt.sudo;dd if=/dev/zero of=/var/lib/swap/swapfile bs=1M count=128"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:706
 #, no-c-format
 msgid "Initialize this swap file with the command"
-msgstr ""
+msgstr "作成したスワップファイルをフォーマットします:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:709
 #, no-c-format
 msgid "&prompt.sudo;mkswap /var/lib/swap/swapfile"
-msgstr ""
+msgstr "&prompt.sudo;mkswap /var/lib/swap/swapfile"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:713
 #, no-c-format
 msgid "Activate the swap with the command"
-msgstr ""
+msgstr "あとは下記のコマンドでスワップを追加します:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:716
 #, no-c-format
 msgid "&prompt.sudo;swapon /var/lib/swap/swapfile"
-msgstr ""
+msgstr "&prompt.sudo;swapon /var/lib/swap/swapfile"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:717
 #, no-c-format
 msgid "To disable this swap file, use the command"
-msgstr ""
+msgstr "スワップを無効化するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:720
 #, no-c-format
 msgid "&prompt.sudo;swapoff /var/lib/swap/swapfile"
-msgstr ""
+msgstr "&prompt.sudo;swapoff /var/lib/swap/swapfile"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:723
 #, no-c-format
 msgid "Check the current available swap spaces with the command"
-msgstr ""
+msgstr "利用可能なスワップ領域を確認するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:726
 #, no-c-format
 msgid "&prompt.user;cat /proc/swaps"
-msgstr ""
+msgstr "&prompt.user;cat /proc/swaps"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:727
@@ -1071,6 +1338,8 @@ msgid ""
 "Note that at this point, it is only temporary swap space. After the next "
 "reboot, it is no longer used."
 msgstr ""
+"ただし、上記の手順は一時的にスワップ領域を設定するための仕組みです。"
+"システムを再起動してしまうと、追加したスワップ領域は使われなくなります。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:733
@@ -1079,18 +1348,20 @@ msgid ""
 "To enable this swap file permanently, add the following line to <filename>/"
 "etc/fstab</filename> :"
 msgstr ""
+"作成したスワップファイルを恒久的に使用するには、下記のような行を"
+" <filename>/etc/fstab</filename> に追加します:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:737
 #, no-c-format
 msgid "/var/lib/swap/swapfile swap swap defaults 0 0"
-msgstr ""
+msgstr "/var/lib/swap/swapfile swap swap defaults 0 0"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:744
 #, no-c-format
 msgid "Partitioning and LVM"
-msgstr ""
+msgstr "パーティション設定と LVM"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:745
@@ -1108,6 +1379,17 @@ msgid ""
 "repartitioning should not be necessary. Instead, change the configuration of "
 "the logical volumes."
 msgstr ""
+"<guimenu>熟練者向けパーティション設定</guimenu> 内には LVM の設定にアクセスできる"
+"機能が用意されています。 LVM の設定にアクセスするには、 <guimenu>システムビュー</guimenu> "
+"内の <guimenu>ボリューム管理</guimenu> を選択してください。ただし、お使いの"
+"システム内に既に動作している LVM 設定が存在した場合、最初の LVM 設定に入る"
+"段階で自動的に LVM が有効化されます。この場合は、有効化されたボリューム"
+"グループに属するパーティションのディスクは、編集することができなくなります。"
+" Linux カーネルでは、ディスク内のいずれかのパーティションが使用中の場合、"
+"ディスクのパーティションテーブルを再読み込みできないことによるものです。"
+"つまり、お使いのシステム内に LVM 設定がある場合は、物理的なパーティション"
+"設定は行なうことができないことになります。その代わり、論理ボリュームの"
+"設定を変更してください。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:758
@@ -1119,6 +1401,11 @@ msgid ""
 "example, in the VG <literal>system</literal> and PV <filename>/dev/sda2</"
 "filename> , do this with the command:"
 msgstr ""
+"物理ボリュームを作成すると、その冒頭でボリュームに関する情報をパーティションに書き込みます。"
+" LVM 以外の用途でパーティションを再利用する場合は、このボリュームに書き込まれた"
+"情報を削除することをお勧めします。たとえば論理ボリューム <literal>system</literal> "
+"の物理ボリューム <filename>/dev/sda2</filename> がある場合、下記のようなコマンドを"
+"実行します:"
 
 #. Tag: screen
 #: deployment_expert_partitioner_overview.xml:765
@@ -1126,13 +1413,13 @@ msgstr ""
 msgid ""
 "<command>dd</command> <option>if=/dev/zero of=/dev/sda2 bs=512 count=1</"
 "option>"
-msgstr ""
+msgstr "<command>dd</command> <option>if=/dev/zero of=/dev/sda2 bs=512 count=1</option>"
 
 #. Tag: title
 #: deployment_expert_partitioner_overview.xml:767
 #, no-c-format
 msgid "File System for Booting"
-msgstr ""
+msgstr "起動用のファイルシステム"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:768
@@ -1142,9 +1429,13 @@ msgid ""
 "filename> ) must not be stored on an LVM logical volume. Instead, store it "
 "on a normal physical partition."
 msgstr ""
+"起動用に使用するファイルシステム (ルートファイルシステム、もしくは <filename>/boot</"
+"filename> のファイルシステム) は、 LVM の論理ボリューム内に配置してはなりません。"
+"その代わり、通常の物理パーティション内に配置してください。"
 
 #. Tag: para
 #: deployment_expert_partitioner_overview.xml:774
 #, no-c-format
 msgid "For more details about LVM, see <xref linkend=\"book.storage\"/> ."
-msgstr ""
+msgstr "LVM に関して、詳しくは <xref linkend=\"book.storage\"/> をお読みください。"
+
