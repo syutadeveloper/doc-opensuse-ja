@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.yast.system.raid">
- <title>Soft RAID</title>
+ <title>ソフトウエア RAID</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,85 +13,36 @@
   </dm:docmanager>
  </info>
 
- <para>
-  This section describes actions required to create and configure various types
-  of RAID. <phrase os="sles">In case you need background information about
-  RAID, refer to <xref linkend="sec.raid.intro"/></phrase>.
- </para>
+ <para>この章では、様々な種類の RAID を作成したり設定したりするために必要な手順を説明しています。 <phrase os="sles">背景となる情報について、詳しくは <xref linkend="sec.raid.intro"/> をお読みください。</phrase></para>
 
  <sect2 xml:id="sec.yast.system.raid.conf">
-  <title>Soft RAID Configuration</title>
-  <para>
-   The &yast; <guimenu>RAID</guimenu> configuration can be reached from the
-   &yast; Expert Partitioner, described in
-   <xref linkend="sec.expert_partitioner"/>. This partitioning tool enables
-   you to edit and delete existing partitions and create new ones to be used
-   with soft RAID:
-  </para>
+  <title>ソフトウエア RAID の設定</title>
+  <para>&yast; の <guimenu>RAID</guimenu> 設定は、 &yast; の熟練者向けパーティション設定 (詳しくは <xref linkend="sec.expert_partitioner"/> をお読みください) の <guimenu>システムビュー</guimenu> ペイン内にある <guimenu>RAID</guimenu> の項目からアクセスすることができます。熟練者向けパーティション設定では、ソフトウエア RAID で使用するためのパーティションの新規作成や編集、削除などを行なうこともできます。</para>
   <procedure>
    <step>
-    <para>
-     Select a hard disk from <guimenu>Hard Disks</guimenu>.
-    </para>
+    <para>まずは <guimenu>ハードディスク</guimenu> でハードディスクを選択します。</para>
    </step>
    <step>
-    <para>
-     Change to the <guimenu>Partitions</guimenu> tab.
-    </para>
+    <para><guimenu>パーティション</guimenu> タブに切り替えます。</para>
    </step>
    <step>
-    <para>
-     Click <guimenu>Add</guimenu> and enter the desired size of the raid
-     partition on this disk.
-    </para>
+    <para><guimenu>追加</guimenu> を押して、このディスクにおける RAID パーティションのサイズを入力します。</para>
    </step>
    <step>
-    <para>
-     Use <guimenu>Do not Format the Partition</guimenu> and change the
-     <guimenu>File System ID</guimenu> to <guimenu>0xFD Linux RAID</guimenu>.
-     Do not mount this partition.
-    </para>
+    <para><guimenu>デバイスをフォーマットしない</guimenu> を選択したあと、 <guimenu>パーティション ID</guimenu> で <guimenu>0xFD Linux RAID</guimenu> を選択します。 <guimenu>マウントのオプション</guimenu> では <guimenu>デバイスをマウントしない</guimenu> を選択します。</para>
    </step>
    <step>
-    <para>
-     Repeat this procedure until you have defined all the desired physical
-     volumes on the available disks.
-    </para>
+    <para>上記までの手順を繰り返して、必要な物理ボリュームを作成していきます。</para>
    </step>
   </procedure>
-  <para>
-   For RAID&nbsp;0 and RAID&nbsp;1, at least two partitions are
-   needed&mdash;for RAID&nbsp;1, usually exactly two and no more. If
-   RAID&nbsp;5 is used, at least three partitions are required, RAID 6 and RAID
-   10 require at least four partitions. It is recommended to use partitions of
-   the same size only. The RAID partitions should be located on different hard
-   disks to decrease the risk of losing data if one is defective (RAID&nbsp;1
-   and 5) and to optimize the performance of RAID&nbsp;0. After creating all
-   the partitions to use with RAID, click
-   <menuchoice><guimenu>RAID</guimenu><guimenu>Add RAID</guimenu></menuchoice>
-   to start the RAID configuration.
-  </para>
-  <para>
-   In the next dialog, choose between RAID levels 0, 1, 5, 6 and 10. Then,
-   select all partitions with either the <quote>Linux RAID</quote> or
-   <quote>Linux native</quote> type that should be used by the RAID system. No
-   swap or DOS partitions are shown.
-  </para>
+  <para>RAID 0 と RAID 1 の場合、少なくとも 2 つ以上のパーティションが必要です。 RAID 1 では通常、ちょうど 2 つのパーティションを使用し、それ以上は使用しません。また、 RAID 5 の場合は少なくとも 3 つ以上のパーティションが、 RAID 6 と RAID 10の場合は、少なくとも 4 つ以上のパーティションが必要です。ただし、いずれの場合も同じサイズのパーティションを使用することをお勧めします。 RAID パーティションは様々な目的から、異なるハードディスク内にあるパーティションを使用します。 RAID 1 , RAID 5 , RAID 6 の場合はディスク障害時のデータ損失を防ぐため、RAID 0 の場合は性能を最大限に引き出すため、このようにしています。 RAID を設定するパーティションを作成したら、 <menuchoice><guimenu>RAID</guimenu><guimenu>RAID の追加</guimenu></menuchoice> を押して RAID 設定を開始します。</para>
+  <para>次のダイアログでは、 RAID のレベル (0, 1, 5, 6, 10) を選択したあと、 RAID システムに組み入れるべきパーティションを選択していきます。この場合、 <quote>Linux RAID</quote> や <quote>Linux native</quote> になっているパーティションのみを選択することができます。スワップパーティションや DOS パーティションは表示されません。</para>
   <tip>
-   <title>Classify Disks</title>
-   <para>
-    For RAID types where the order of added disks matters, you can mark
-    individual disks with one of the letters A to E. Click the
-    <guimenu>Classify</guimenu> button, select the disk and click of the
-    <guimenu>Class X</guimenu> buttons, where X is the letter you want to
-    assign to the disk. Assign all available RAID disks this way, and confirm
-    with <guimenu>OK</guimenu>. You can easily sort the classified disks with
-    the <guimenu>Sorted</guimenu> or <guimenu>Interleaved</guimenu> buttons, or
-    add a sort pattern from a text file with <guimenu>Pattern File</guimenu>.
-   </para>
+   <title>ディスクの分類</title>
+   <para>RAID の種類によっては、追加するディスクの順序が問題となる場合があります。それぞれのディスクに対しては、それぞれ文字 A から E までを設定することができます。まずはディスクを選択して <guimenu>Class X</guimenu> ボタンを押してください。なお、 <literal>X</literal> にはディスクに割り当てる文字が入ります。この方法で利用可能な全ての RAID ディスクを割り当てたあと、 <guimenu>OK</guimenu> で完了してください。あとは <guimenu>並べ替え</guimenu> や <guimenu>インターリーブ</guimenu> の各ボタンを利用することで分類したディスクを並べ替えることができるほか、 <guimenu>パターンファイル</guimenu> を選択することでテキストファイルから並べ替えパターンを選択することができます。</para>
   </tip>
   <figure xml:id="fig.yast2.system.raid.conf">
-   <title>RAID Partitions</title>
+   <title>RAID パーティション</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="install_partitioner_raid.png" width="75%" format="PNG"/>
@@ -101,59 +52,27 @@
     </imageobject>
    </mediaobject>
   </figure>
-  <para>
-   To add a previously unassigned partition to the selected RAID volume, first
-   click the partition then <guimenu>Add</guimenu>. Assign all partitions
-   reserved for RAID. Otherwise, the space on the partition remains unused.
-   After assigning all partitions, click <guimenu>Next</guimenu> to select the
-   available <guimenu>RAID Options</guimenu>.
-  </para>
-  <para>
-   In this last step, set the file system to use, encryption and the mount
-   point for the RAID volume. After completing the configuration with
-   <guimenu>Finish</guimenu>, see the <filename>/dev/md0</filename> device and
-   others indicated with <emphasis>RAID</emphasis> in the Expert Partitioner.
-  </para>
+  <para>上記の手順でパーティションを作成したら、あとは RAID ボリュームに追加していきます。パーティションを選択して <guimenu>追加</guimenu> を押してください。選択したパーティションが RAID 用に予約されるようになります。選択しなかったパーティションについては、何も行なわれません。全てのパーティションを割り当てたら、 <guimenu>次へ</guimenu> を押して <guimenu>RAID オプション</guimenu> を選択します。</para>
+  <para>最後の手順では、 RAID ボリュームで使用するファイルシステムと暗号化、およびマウントポイントを設定します。 <guimenu>完了</guimenu> を押して設定を完了したら、 <filename>/dev/md0</filename> が熟練者向けパーティション設定に表示されるようになります。</para>
  </sect2>
 
  <sect2 xml:id="sec.yast.system.raid.trouble">
-  <title>Troubleshooting</title>
-  <para>
-   Check the file <filename>/proc/mdstat</filename> to find out whether a RAID
-   partition has been damaged. If Th system fails, shut down your Linux system
-   and replace the defective hard disk with a new one partitioned the same way.
-   Then restart your system and enter the command <command>mdadm /dev/mdX --add
-   /dev/sdX</command>. Replace 'X' with your particular device identifiers.
-   This integrates the hard disk automatically into the RAID system and fully
-   reconstructs it.
-  </para>
-  <para>
-   Note that although you can access all data during the rebuild, you may
-   encounter some performance issues until the RAID has been fully rebuilt.
-  </para>
+  <title>トラブルシューティング</title>
+  <para>まずは <filename>/proc/mdstat</filename> ファイルを確認して、 RAID パーティションが壊れていないかどうかを調べてください。ハードディスクが壊れてしまったような場合は、 Linux システムをシャットダウンしてディスクを交換し、新しいディスクを同じ手順でパーティション設定して追加してください。あとは <command>mdadm /dev/mdX --add /dev/sdX</command> のように実行すると、 RAID に組み入れることができるようになります。なお、 'X' にはデバイスの識別子が入ります。これにより、ハードディスクが自動的に RAID システムに組み入れられ、再構築が開始されます。</para>
+  <para>なお、再構築中であってもデータにアクセスすることはできますが、再構築が完了するまでは RAID の性能が落ちることに注意してください。</para>
  </sect2>
 
  <sect2 xml:id="sec.yast.system.raid.information">
-  <title>For More Information</title>
-  <para>
-   Configuration instructions and more details for soft RAID can be found in
-   the HOWTOs at:
-  </para>
+  <title>さらなる情報</title>
+  <para>設定手順やソフトウエア RAID に関する詳細な情報が、それぞれ下記に用意されています:</para>
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     <filename>/usr/share/doc/packages/mdadm/Software-RAID.HOWTO.html</filename>
-    </para>
+    <para><filename>/usr/share/doc/packages/mdadm/Software-RAID.HOWTO.html</filename></para>
    </listitem>
    <listitem>
-    <para>
-     <link xlink:href="http://raid.wiki.kernel.org"/>
-    </para>
+    <para><link xlink:href="http://raid.wiki.kernel.org"/></para>
    </listitem>
   </itemizedlist>
-  <para>
-   Linux RAID mailing lists are available, such as
-   <link xlink:href="http://marc.info/?l=linux-raid"/>.
-  </para>
+  <para>Linux RAID メーリングリストもご利用いただけます。詳しくは <link xlink:href="http://marc.info/?l=linux-raid"/> をお読みください。</para>
  </sect2>
 </sect1>
