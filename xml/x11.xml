@@ -4,178 +4,79 @@
 %entities;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.gui_desktop">
- <title>Graphical User Interface</title>
+ <title>グラフィカルユーザインターフェイス</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
   <abstract>
-   <para>
-    &productname; includes the X.org server<phrase os="sled;osuse">,
-    Wayland</phrase> and the &gnome; desktop. This chapter describes the
-    configuration of the graphical user interface for all users.
-   </para>
+   <para>&productname; には X.org サーバと <phrase os="sled;osuse">Wayland 、そして</phrase> &gnome; が含まれています。この章では、全てのユーザに対するグラフィカルユーザインターフェイスの設定方法を説明しています。</para>
   </abstract>
  </info>
  <sect1 xml:id="sec.gui_desktop.xorg">
   <title>X Window System</title>
-  <para>
-   The X.org server is the de facto standard for implementing the X11
-   protocol. X is network-based, enabling applications started on one
-   host to be displayed on another host connected over any kind of
-   network (LAN or Internet).
-  </para>
-  <para>
-   Usually, the X Window System needs no configuration. The hardware is
-   dynamically detected during X start-up. The use of
-   <filename>xorg.conf</filename> is therefore deprecated. If you still
-   need to specify custom options to change the way X behaves, you can
-   still do so by modifying configuration files under
-   <filename>/etc/X11/xorg.conf.d/</filename>.
-  </para>
-  <para os="sled;osuse">
-   In &productname; &productnumber; Wayland is included as an alternative
-   to the X.org server. It can be selected during the installation.
-  </para>
+  <para>X.org サーバは X11 プロトコルを実装した事実上の標準 (de facto standard) システムです。X はネットワークベースのプロトコルであり、任意の種類のネットワークを介して、一方のホストで動作させているアプリケーションの表示を、他のホストに転送することができます。</para>
+  <para>通常、 X Window System では設定を行なう必要はありません。ハードウエアは X の起動時に動的に検出されるようになっていますので、 <filename>xorg.conf</filename> を使用する必要もなくなっています。ただし、どうしても X の動作を変更する必要があるような場合は、 <filename>/etc/X11/xorg.conf.d/</filename> 内の設定ファイルを変更して対応してください。</para>
+  <para os="sled;osuse">&productname; &productnumber; では、 Wayland が X.org サーバの代替として提供されています。インストール時に選択することもできます。</para>
   <tip arch="zseries" os="sles">
-   <title>&zseries;: Configuring the Graphical User Interface</title>
-   <para>
-    &zseries; does not have any input or output devices supported by
-    &xvendor;. Therefore, none of the configuration procedures described in this
-    section apply. More relevant information for &zseries; can be found in
-    <xref linkend="cha.zseries"/>.
-   </para>
+   <title>&zseries;: グラフィカルユーザインターフェイスの設定について</title>
+   <para>&zseries; では、 &xvendor; 側で対応する入出力デバイスがありません。そのため、この章内で説明している設定手順は、いずれも意味がありません。 &zseries; について、詳しくは<xref linkend="cha.zseries"/> をお読みください。</para>
   </tip>
-  <para>
-   Install the package <systemitem class="resource">xorg-docs</systemitem> to
-   get more in-depth information about X11. <command>man 5 xorg.conf</command>
-   tells you more about the format of the manual configuration (if needed).
-   More information on the X11 development can be found on the project's home
-   page at <link xlink:href="http://www.x.org"/>.
-  </para>
+  <para>X11 について、より深い情報をご希望の場合は、 <systemitem class="resource">xorg-docs</systemitem> パッケージをインストールしてください。 <command>man 5 xorg.conf</command> では、 (必要であれば) 手作業での設定を行なう際の書式に関する説明があります。 X11 の開発について、詳しくはプロジェクトのページ (<link xlink:href="http://www.x.org"/>) をお読みください。</para>
 
-  <para>
-   Drivers are found in <systemitem>xf86-video-*</systemitem> packages, for
-   example <systemitem>xf86-video-ati</systemitem>. Many of the drivers
-   delivered with these packages are described in detail in the related manual
-   page. For example, if you use the <literal>ati</literal> driver, find more
-   information about this driver in <command>man 4 ati</command>.
-  </para>
+  <para>ドライバ類は <systemitem>xf86-video-*</systemitem> パッケージ内 (たとえば <systemitem>xf86-video-ati</systemitem> ) に含まれています。これらのパッケージ形式で配布されているドライバは、それぞれ対応するマニュアルページ内に説明があります。たとえば <literal>ati</literal> ドライバを使用する場合、このドライバに関する詳細は <command>man 4 ati</command> で表示することができます。</para>
 
-  <para>
-   Information about third-party drivers is available in
-   <filename>/usr/share/doc/packages/&lt;package_name&gt;</filename>.
-   For example, the documentation of <systemitem class="resource">x11-video-nvidiaG03</systemitem> is available in
-   <filename>/usr/share/doc/packages/x11-video-nvidiaG04</filename>
-   after the package was installed.
-  </para>
+  <para>サードパーティ製のドライバに関する情報は、 <filename>/usr/share/doc/packages/&lt;パッケージ名&gt;</filename> 内にあります。たとえば <systemitem class="resource">x11-video-nvidiaG03</systemitem> に関する説明は、 <filename>/usr/share/doc/packages/x11-video-nvidiaG04</filename> 内にあります (ただし、パッケージをインストールしておく必要があります) 。</para>
  </sect1>
  <xi:include href="x11_fonts.xml"/>
  <sect1 xml:id="sec.gui_desktop.gnome">
-  <title>&gnome; Configuration for Administrators</title>
+  <title>管理者向けの &gnome; 設定</title>
 
   <sect2 xml:id="sec.gui_desktop.gnome.dconf">
-   <title>The dconfg System</title>
+   <title>dconfig システム</title>
 
-   <para>
-    The &gnome; desktop manages its configuration with
-    <literal>dconf</literal>. It is a hierarchically structured database
-    or registry where the user can change their own settings, and the
-    system administrator can set default or mandatory values for all
-    users. <literal>dconf</literal> replaces the
-    <literal>gconf</literal> of &gnome; 2.
-   </para>
+   <para>&gnome; デスクトップでは、設定を <literal>dconf</literal> というシステムで管理します。これは階層構造化されたデータベースやレジストリと呼ばれるような仕組みで、ユーザは自分自身の設定を、システム管理者は全てのユーザに対する既定値や必須の設定などを行なうことができる仕組みです。 <literal>dconf</literal> は &gnome; 2 で使用されていた <literal>gconf</literal> を置き換えるものでもあります。</para>
 
-   <para>
-    Use <command>dconf-editor</command> to view the dconf options with a
-    graphical user interface. Use <command>dconf</command> to access and
-    change configuration options with the command line.
-   </para>
+   <para>グラフィカルユーザインターフェイスで dconf のオプションを表示するには、 <command>dconf-editor</command> を使用します。コマンドラインで設定にアクセスしたり、変更したりしたい場合は、 <command>dconf</command> コマンドを使用します。</para>
 
-   <para>
-    The &gnome; <literal>Tweaks</literal> tool provides an easy-to-use
-    user interface for additional configuration options beyond the
-    normal &gnome; configuration. The tool can be started from the
-    &gnome; application menu or from the command line with
-    <command>gnome-tweak-tool</command>.
-   </para>
+   <para>&gnome; では通常の &gnome; 設定に加えて、さらに細かい設定を行なうための使いやすい <literal>調整</literal> ツールを提供しています。このツールは &gnome; のアプリケーションメニューから起動することができるほか、 <command>gnome-tweak-tool</command> コマンドでも起動することができます。</para>
   </sect2>
 
   <sect2 xml:id="sec.gui_desktop.gnome.global">
-   <title>System-wide Configuration</title>
-   <para>
-    Global <literal>dconf</literal> configuration parameters can be set
-    in the <filename>/etc/dconf/db/</filename> directory. This includes
-    the configuration for GDM or locking certain configuration options
-    for users.
-   </para>
-   <para>
-    Use the following procedure as an example to create a system-wide
-    configuration:
-   </para>
+   <title>システム全体の設定</title>
+   <para>グローバルな <literal>dconf</literal> 設定パラメータは、 <filename>/etc/dconf/db/</filename> ディレクトリ内に設定します。ここには GDM に対する設定のほか、特定のオプションをユーザから変更させないような設定も含まれます。</para>
+   <para>システム全体の設定を作成したい場合は、たとえば下記のような手順で行ないます:</para>
    <procedure>
     <step>
-     <para>
-      Create a new directory that ends with a <literal>.d</literal> in
-      <filename>/etc/dconf/db/</filename>. This directory can contain an
-      arbitrary amount of text files with configuration options. For this
-      example, create the file
-      <filename>/etc/dconf/db/network/00-proxy</filename> with the
-      following content:
-     </para>
-     <screen># This is a comment
+     <para><filename>/etc/dconf/db/</filename> 内に、 <literal>.d</literal> で終わる新しいディレクトリを作成します。このディレクトリには、テキストファイル形式で任意の設定を行なうことができます。この例では、 <filename>/etc/dconf/db/network/00-proxy</filename> というファイルを作成して、下記の内容を入力します:</para>
+     <screen># ここはコメントです
 [system/proxy/http]
 host='10.0.0.1'
 enabled=true</screen>
     </step>
     <step>
-     <para>
-      Parse the new configuration directives into the dconf database format:
-     </para>
+     <para>新しく追加した内容を dconf データベース形式に取り込むには、下記のように実行します:</para>
      <screen>&prompt.sudo;<command>dconf update</command></screen>
     </step>
     <step>
-     <para>
-      Add the new <literal>network</literal> configuration database to
-      the default user profile, by creating the file <filename>/etc/dconf/profiles/user</filename>.
-      Then add the following content:
-     </para>
+     <para>新しく作成した <literal>network</literal> の設定データベースを既定のユーザプロファイルに追加します。 <filename>/etc/dconf/profiles/user</filename> ファイルを作成して、下記の内容を入力します:</para>
      <screen>system-db:network</screen>
-     <para>
-      The file <filename>/etc/dconf/profiles/user</filename> is a &gnome;
-      default that will be used. Other profiles can be defined in the
-      environment variable <literal>DCONF_PROFILE</literal>.
-     </para>
+     <para><filename>/etc/dconf/profiles/user</filename> は &gnome; の既定値を表わすファイルです。その他のプロファイルについては、環境変数 <literal>DCONF_PROFILE</literal> で指定します。</para>
     </step>
     <step>
-     <para>
-      Optional: To lock the proxy configuration for users, create the file
-      <filename>/etc/dconf/db/network/locks/proxy</filename>. Then add
-      a line to this file with the keys that may not be changed:
-     </para>
+     <para>必要であれば、プロキシの設定をユーザに変更させないようにすることもできます。この場合は、<filename>/etc/dconf/db/network/locks/proxy</filename> ファイルを作成して、変更させたくないキーを一覧で入力します:</para>
      <screen>/system/proxy/http/host
 /system/proxy/http/enabled</screen>
     </step>
    </procedure>
-   <para>
-    You can use the graphical <command>dconf-editor</command> to create a
-    profile with one user and then use <command>dconf dump /</command>
-    to list all configuration options. The configuration options can
-    then be stored in a global profile.
-   </para>
-   <para>
-    A detailed description of the global configuration is available at
-    <link xlink:href="https://wiki.gnome.org/Projects/dconf/SystemAdministrators"/>.
-   </para>
+   <para>グラフィカルな <command>dconf-editor</command> を使用することで、 1 人のユーザでプロファイルを作成することができます。その後 <command>dconf dump /</command> を実行することで、全ての設定オプションを一覧表示することができます。設定オプションは、グローバルプロファイル内に保存されます。</para>
+   <para>グローバル設定に関する詳細な説明は、 <link xlink:href="https://wiki.gnome.org/Projects/dconf/SystemAdministrators"/> にあります。</para>
   </sect2>
 
   <sect2 xml:id="sec.gui_desktop.gnome.more-info">
-   <title>More Information</title>
-   <para>
-    For more information, see
-    <link xlink:href="http://help.gnome.org/admin/"/>.
-   </para>
+   <title>さらなる情報</title>
+   <para>さらに詳しく知るには、 <link xlink:href="http://help.gnome.org/admin/"/> をお読みください。</para>
   </sect2>
  </sect1>
 </chapter>
