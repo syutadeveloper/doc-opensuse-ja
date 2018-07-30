@@ -4,23 +4,12 @@
 %entities;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.tuning.multikernel">
- <title>Installing Multiple Kernel Versions</title>
+ <title>複数バージョンのカーネルのインストール</title>
  <info>
   <abstract>
-   <para>
-    &productname; supports the parallel installation of multiple kernel
-    versions. When installing a second kernel, a boot entry and an initrd are
-    automatically created, so no further manual configuration is needed. When
-    rebooting the machine, the newly added kernel is available as an additional
-    boot parameter.
-   </para>
+   <para>&productname; では、複数のバージョンのカーネルを同時にインストールすることができます。複数のバージョンのカーネルをインストールしていても、それぞれのバージョンに対する initrd と起動項目が作成されますので、手作業で何かを行なう必要はありません。通常通り起動するだけで、いずれかのバージョンを選んで起動することができるようになっています。</para>
 
-   <para>
-    Using this functionality, you can safely test kernel updates while being
-    able to always fall back to the proven former kernel. To do this, do not use
-    the update tools (such as the &yast; Online Update or the updater applet),
-    but instead follow the process described in this chapter.
-   </para>
+   <para>このような機能を利用することで、カーネルの更新を行なっても元のバージョンに戻ることができるようになります。新しいバージョンのカーネルで何か問題が発生しても、すぐに元の (問題の起こらない) バージョンのカーネルに戻すことができます。なお、この機能を利用する場合は、更新ツール (&yast; オンライン更新や更新アプレット) を使用せず、本章で示している手順に従って作業を行なってください。</para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
@@ -29,271 +18,141 @@
  </info>
  <warning os="sles;sled">
 <!-- cannot think of a better heading... -->
-  <title>Support Entitlement</title>
-  <para>
-   Be aware that you lose your entire support entitlement for the machine when
-   installing a self-compiled or a third-party kernel. Only kernels shipped
-   with &productname; and kernels delivered via the official update channels
-   for &productname; are supported.
-  </para>
+  <title>サポート契約について</title>
+  <para>ご自身で独自にコンパイルしたカーネルや、サードパーティ製のカーネルを使用してしまうと、サポート契約の範囲外の行為になってしまいます。 &productname; に同梱されているカーネルや、 &productname; 公式の更新チャンネル経由で提供されたカーネルのみをお使いください。</para>
  </warning>
  <tip>
-  <title>Check Your Boot Loader Configuration Kernel</title>
-  <para>
-   It is recommended to check your boot loader configuration after having
-   installed another kernel to set the default boot entry of your choice. See
-   <xref linkend="sec.grub2.yast2.config"/> for more information.
-  </para>
+  <title>ブートローダの設定確認について</title>
+  <para>複数のバージョンのカーネルをインストールした場合は、ブートローダの設定を確認し、どのバージョンを既定にするのかを選択してください。詳しくは <xref linkend="sec.grub2.yast2.config"/> をお読みください。</para>
  </tip>
  <sect1 xml:id="sec.tuning.multikernel.enable">
-  <title>Enabling and Configuring Multiversion Support</title>
+  <title>マルチバージョン対応の有効化と設定</title>
 
 <!-- bnc#891805: on sle 12 enabled by default -->
 
-  <para>
-   Installing multiple versions of a software package (multiversion support) is
-   enabled by default since <phrase os="sles;sled">&sls; 12</phrase><phrase os="osuse">&opensuse; Leap</phrase>. To verify this setting, proceed as
-   follows:
-  </para>
+  <para>ソフトウエアパッケージに対して、複数のバージョンをインストールできるようにする機能 (マルチバージョン対応) は、 <phrase os="sles;sled">&sls; 12</phrase> <phrase os="osuse">&opensuse; Leap</phrase> 以降では既定で有効化されています。設定を確認するには、下記の手順で行ないます:</para>
 
   <procedure>
    <step>
-    <para>
-     Open <filename>/etc/zypp/zypp.conf</filename> with the editor of your
-     choice as &rootuser;.
-    </para>
+    <para>&rootuser; でエディタを利用して <filename>/etc/zypp/zypp.conf</filename> を開きます。</para>
    </step>
    <step>
-    <para>
-     Search for the string <literal>multiversion</literal>. If multiversion is
-     enabled for all kernel packages capable of this feature, the following
-     line appears uncommented:
-    </para>
+    <para><literal>multiversion</literal> で文字列検索を行ないます。この機能に対応する全てのカーネルパッケージに対して、マルチバージョン機能が有効化されている場合は、下記のような行がコメントアウトされていない形で書かれているはずです:</para>
 <screen>multiversion = provides:multiversion(kernel)</screen>
    </step>
    <step>
-    <para>
-     To restrict multiversion support to certain kernel flavors, add the
-     package names as a comma-separated list to the
-     <literal>multiversion</literal> option in
-     <filename>/etc/zypp/zypp.conf</filename>&mdash;for example
-    </para>
+    <para>特定のカーネルフレーバーに対してのみマルチバージョン対応を行なう場合は、 <filename>/etc/zypp/zypp.conf</filename> 内の <literal>multiversion</literal> オプション内に、下記のような形でパッケージ名をカンマ区切りで指定します:</para>
 <screen>multiversion = kernel-default,kernel-default-base,kernel-source</screen>
    </step>
    <step>
-    <para>
-     Save your changes.
-    </para>
+    <para>設定を保存して終了します。</para>
    </step>
   </procedure>
 
   <warning>
-   <title>Kernel Module Packages (KMP)</title>
-   <para>
-    Make sure that required vendor provided kernel modules (Kernel Module
-    Packages) are also installed for the new updated kernel. The kernel update
-    process will not warn about eventually missing kernel modules because
-    package requirements are still fulfilled by the old kernel that is kept on
-    the system.
-   </para>
+   <title>カーネルモジュールパッケージ (KMP) について</title>
+   <para>更新されたカーネルをインストールする場合は、必要なカーネルモジュール (カーネルモジュールパッケージ) についても、更新されたバージョンに対応するものが製造元から提供されていることをご確認ください。上記の設定を行なって複数のバージョンのカーネルがインストールできるようになると、古いカーネルにのみ対応するカーネルモジュールが存在していても、パッケージの依存関係としては問題が発生しませんので、新しいカーネルを起動しようとした際に、必要なカーネルモジュールを見つけることができずに問題が発生することがあります。</para>
   </warning>
 
   <sect2 xml:id="sec.tuning.multikernel.enable.keep">
-   <title>Automatically Deleting Unused Kernels</title>
-   <para>
-    When frequently testing new kernels with multiversion support enabled, the
-    boot menu quickly becomes confusing. Since a <filename>/boot</filename>
-    partition usually has limited space you also might run into trouble with
-    <filename>/boot</filename> overflowing. While you can delete unused kernel
-    versions manually with &yast; or Zypper (as described below), you can also
-    configure <systemitem class="library">libzypp</systemitem> to automatically
-    delete kernels no longer used. By default no kernels are deleted.
-   </para>
+   <title>不要なカーネルの自動削除</title>
+   <para>複数バージョンのカーネルに対応するよう設定していて、頻繁に新しいカーネルをインストールしていると、起動メニューが非常に複雑化していってしまいます。一般的には、 <filename>/boot</filename> パーティションにはそれほど大きなサイズが割り当てられていないため、 <filename>/boot</filename> の容量不足として顕在化する場合もあります。このような場合は、 &yast; や zypper を利用して不要なバージョンのカーネルを削除できるだけでなく、 <systemitem class="library">libzypp</systemitem> に対してカーネルの自動削除を設定することができます。既定では何もカーネルを削除しない設定になっています。</para>
    <procedure>
     <step>
-     <para>
-      Open <filename>/etc/zypp/zypp.conf</filename> with the editor of your
-      choice as &rootuser;.
-     </para>
+     <para>&rootuser; でエディタを利用して <filename>/etc/zypp/zypp.conf</filename> を開きます。</para>
     </step>
     <step>
-     <para>
-      Search for the string <literal>multiversion.kernels</literal> and
-      activate this option by uncommenting the line. This option takes a
-      comma-separated list of the following values:
-     </para>
+     <para><literal>multiversion.kernels</literal> で文字列検索を行ない、まずはその行のコメントを外します。このオプションでは、カンマ区切りで下記の値のいずれかを指定します:</para>
      <formalpara>
-      <title><literal><replaceable>4.4.126-48</replaceable></literal>:</title>
-      <para>
-       keep the kernel with the specified version number
-      </para>
+      <title><literal><replaceable>4.4.126-48</replaceable></literal> :</title>
+      <para>指定したバージョンのカーネルを明示的に維持します</para>
      </formalpara>
      <formalpara>
-      <title><literal>latest</literal>:</title>
-      <para>
-       keep the kernel with the highest version number
-      </para>
+      <title><literal>latest</literal> :</title>
+      <para>最も新しいバージョン番号のカーネルを維持します</para>
      </formalpara>
      <formalpara>
-      <title><literal>latest-N</literal>:</title>
-      <para>
-       keep the kernel with the Nth highest version number
-      </para>
+      <title><literal>latest-N</literal> :</title>
+      <para>N 番目に新しいバージョン番号のカーネルを維持します</para>
      </formalpara>
      <formalpara>
-      <title><literal>running</literal>:</title>
-      <para>
-       keep the running kernel
-      </para>
+      <title><literal>running</literal> :</title>
+      <para>現在使用中のカーネルを維持します</para>
      </formalpara>
      <formalpara>
-      <title><literal>oldest</literal>:</title>
-      <para>
-       keep the kernel with the lowest version number (the one that was
-       originally shipped with &productname;)
-      </para>
+      <title><literal>oldest</literal> :</title>
+      <para>最も古いバージョン番号 (もしくは &productname; の出荷時に添付されている) のカーネルを維持します</para>
      </formalpara>
      <formalpara>
       <title><literal>oldest+N</literal></title>
-      <para>
-       keep the kernel with the Nth lowest version number
-      </para>
+      <para>N 番目に古いバージョン番号のカーネルを維持します</para>
      </formalpara>
-     <para>
-      Here are some examples
-     </para>
+     <para>下記に例を示します:</para>
      <variablelist>
       <varlistentry>
-       <term><literal>multiversion.kernels = latest,running</literal>
-       </term>
+       <term><literal>multiversion.kernels = latest,running</literal></term>
        <listitem>
-        <para>
-         Keep the latest kernel and the one currently running. This is similar
-         to not enabling the multiversion feature, except that the old kernel
-         is removed <emphasis>after the next reboot</emphasis> and not
-         immediately after the installation.
-        </para>
+        <para>最新のカーネルと、現在使用中のカーネルを維持します。これはマルチバージョン機能を有効化しない場合と似た動作になりますが、古いほうのカーネルの削除は、インストールの時点ではなく、 <emphasis>次回の再起動時</emphasis> にのみ行なわれる点が異なります。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><literal>multiversion.kernels = latest,latest-1,running</literal>
-       </term>
+       <term><literal>multiversion.kernels = latest,latest-1,running</literal></term>
        <listitem>
-        <para>
-         Keep the last two kernels and the one currently running.
-        </para>
+        <para>最新の 2 つのバージョンのカーネルと、現在使用中のカーネルを維持します。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><literal>
-         multiversion.kernels = latest,running,<replaceable>4.4.126-48</replaceable></literal>
-       </term>
+       <term><literal> multiversion.kernels = latest,running,<replaceable>4.4.126-48</replaceable></literal></term>
        <listitem>
-        <para>
-         Keep the latest kernel, the one currently running, and
-         <replaceable>4.4.126-48</replaceable>.
-        </para>
+        <para>最新のカーネルと現在使用中のカーネル、そしてバージョン固定で <replaceable>4.4.126-48</replaceable> を維持します。</para>
        </listitem>
       </varlistentry>
      </variablelist>
      <tip>
-      <title>Keep the Running Kernel</title>
-      <para>
-       Unless you are using a special setup, always keep the
-       kernel marked <literal>running</literal>.
-      </para>
-      <para>
-       If you do not keep the running kernel, it will be deleted when
-       updating the kernel. In turn, this means that all of the running
-       kernel's modules are also deleted and cannot be loaded anymore.
-      </para>
-      <para>
-       If you decide not to keep the running kernel, always reboot
-       immediately after a kernel upgrade to avoid issues with modules.
-      </para>
+      <title>使用中のカーネルの維持について</title>
+      <para>特別な設定をしていない限り、 <literal>running</literal> 現在使用中のカーネルについては、削除せずに維持しておくことをお勧めします。</para>
+      <para>現在使用中のカーネルを維持するように設定していないと、カーネルを更新した際に使用中のカーネルパッケージが削除されてしまいます。パッケージにはカーネルモジュールが含まれますので、更新後は新しいカーネルモジュールを読み込めなくなってしまいます。</para>
+      <para>現在使用中のカーネルを維持しない場合は、カーネルの更新後すぐに再起動を行なうようにして、モジュールによる問題を回避してください。</para>
      </tip>
     </step>
    </procedure>
   </sect2>
   <sect2 xml:id="sec.tuning.multikernel.deleteoldkernel">
-   <title>Use Case: Deleting an Old Kernel after Reboot Only</title>
-   <para>
-    You want to make sure that an old kernel will only be deleted after the
-    system has rebooted successfully with the new kernel.
-   </para>
-   <para>
-    Change the following line in <filename>/etc/zypp/zypp.conf</filename>:
-   </para>
+   <title>設定例: 再起動後に古いカーネルのみを削除する設定</title>
+   <para>新しいカーネルで正常に再起動ができた場合にのみ、再起動時に古いカーネルを削除する設定です。</para>
+   <para><filename>/etc/zypp/zypp.conf</filename> 内を下記のように設定します:</para>
 <screen>multiversion.kernels = latest,running</screen>
-   <para>
-    The previous parameters tell the system to keep the latest kernel and the
-    running one only if they differ.
-   </para>
+   <para>上記のパラメータを指定すると、最新のカーネルと現在使用中のカーネル (最新のカーネルでなければ) を維持する動作になります。</para>
   </sect2>
 
   <sect2 xml:id="sec.tuning.multikernel.fallback">
-   <title>Use Case: Keeping Older Kernels as Fallback</title>
-   <para>
-    You want to keep one or more kernel versions to have one or more
-    <quote>spare</quote> kernels.
-   </para>
-   <para>
-    This can be useful if you need kernels for testing. If something goes wrong
-    (for example, your machine does not boot), you
-    still can use one or more kernel versions which are known to be good.
-   </para>
-   <para>
-    Change the following line in <filename>/etc/zypp/zypp.conf</filename>:
-   </para>
+   <title>設定例: 古いカーネルを残す設定</title>
+   <para>1 つ以上のバージョンのカーネルを、 <quote>予備の</quote> カーネルとして残しておく設定です。</para>
+   <para>この設定は、テスト目的でカーネルをインストールするような場合に便利です。マシンの起動ができないなど何らかの問題が発生した場合、予備として残しておいたカーネルに戻すことができます。</para>
+   <para><filename>/etc/zypp/zypp.conf</filename> 内を下記のように設定します:</para>
 <screen>multiversion.kernels = latest,latest-1,latest-2,running</screen>
-   <para>
-    When you reboot your system after the installation of a new kernel, the
-    system will keep three kernels: the current kernel (configured as
-    <literal>latest,running</literal>) and its two immediate predecessors
-    (configured as <literal>latest-1</literal> and <literal>latest-2</literal>).
-   </para>
+   <para>新しいバージョンのカーネルをインストールしてシステムを再起動すると、システムは 3 種類のバージョンのカーネル (現在のカーネル (<literal>latest,running</literal> と 2 種類の古いカーネル (<literal>latest-1</literal> , <literal>latest-2</literal>)) を残すようになります。</para>
   </sect2>
 
   <sect2 xml:id="sec.tuning.multikernel.specificversion">
-   <title>Use Case: Keeping a Specific Kernel Version</title>
-   <para>
-    You make regular system updates and install new kernel versions. However,
-    you are also compiling your own kernel version and want
-    to make sure that the system will keep them.
-   </para>
-   <para>
-    Change the following line in <filename>/etc/zypp/zypp.conf</filename>:
-   </para>
+   <title>設定例: 特定バージョンのカーネルを維持する設定</title>
+   <para>通常のシステム更新を行ない、必要に応じて新しいバージョンのカーネルをインストールします。ただし、独自のバージョンのカーネルをコンパイルしていて、そのバージョンについては、削除せずに残しておきたいものとします。</para>
+   <para><filename>/etc/zypp/zypp.conf</filename> 内を下記のように設定します:</para>
 <screen>multiversion.kernels = latest,3.12.28-4.20,running</screen>
-   <para>
-    When you reboot your system after the installation of a new kernel, the
-    system will keep two kernels: the new and running kernel (configured as
-    <literal>latest,running</literal>) and your self-compiled kernel
-    (configured as <literal>3.12.28-4.20</literal>).
-   </para>
+   <para>新しいバージョンのカーネルをインストールしてシステムを再起動すると、システムは 2 種類のバージョンのカーネル (現在のカーネル (<literal>latest,running</literal>) と 独自にコンパイルしたカーネル (<literal>3.12.28-4.20</literal>) を残すようになります。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.tuning.multikernel.yast">
-  <title>Installing/Removing Multiple Kernel Versions with &yast;</title>
-  <para>
-   You can install or remove multiple kernels with &yast;:
-  </para>
+  <title>&yast; による複数バージョンのカーネルのインストールと削除</title>
+  <para>&yast; を利用することで、複数のバージョンのカーネルをインストールしたり削除したりすることができます:</para>
   <procedure>
    <step>
-    <para>
-     Start &yast; and open the software manager via <menuchoice>
-     <guimenu>Software</guimenu> <guimenu>Software Management</guimenu>
-     </menuchoice>.
-    </para>
+    <para>&yast; を起動して <menuchoice> <guimenu>ソフトウエア</guimenu> <guimenu>ソフトウエア管理</guimenu> </menuchoice> を選び、ソフトウエアマネージャを起動します。</para>
    </step>
    <step>
-    <para>
-     List all packages capable of providing multiple versions by choosing
-     <menuchoice> <guimenu>View</guimenu> <guimenu>Package Groups</guimenu>
-     <guimenu>Multiversion Packages</guimenu> </menuchoice>.
-    </para>
+    <para><menuchoice> <guimenu>表示</guimenu> <guimenu>パッケージグループ</guimenu> <guimenu>複数バージョンのパッケージ</guimenu> </menuchoice> を選択すると、複数バージョンに対応したパッケージを一覧表示することができます。</para>
     <figure>
-     <title>The &yast; Software Manager: Multiversion View</title>
+     <title>&yast; ソフトウエアマネージャ: 複数バージョンのパッケージ</title>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="yast2_sw_multiversion.png" width="90%" format="PNG"/>
@@ -305,109 +164,65 @@
     </figure>
    </step>
    <step>
-    <para>
-     Select a package and open its <guimenu>Version</guimenu> tab in the bottom
-     pane on the left.
-    </para>
+    <para>パッケージを選択したあと、 <!-- ?? on the left --> 右下にある <guimenu>バージョン</guimenu> タブを選択します。</para>
    </step>
    <step>
-    <para>
-     To install a package, click the check box next to it. A green check mark indicates it
-     is selected for installation.
-    </para>
-    <para>
-     To remove an already installed package (marked with a white check mark),
-     click the check box next to it until a red <literal>X</literal> indicates it is
-     selected for removal.
-    </para>
+    <para>パッケージをインストールするには、左側にあるチェックボックスにチェックを入れます。緑色のチェックマークが、インストールするよう選択されていることを表わしています。</para>
+    <para>インストール済みのパッケージ (白いチェックマークが付いているもの) を削除するには、左側にあるチェックボックスが赤い <literal>X</literal> 印になるようにチェックを入れます。</para>
    </step>
    <step>
-    <para>
-     Click <guimenu>Accept</guimenu> to start the installation.
-    </para>
+    <para><guimenu>了解</guimenu> を押してインストールを開始します。</para>
    </step>
   </procedure>
  </sect1>
  <sect1 xml:id="sec.tuning.multikernel.zypper">
-  <title>Installing/Removing Multiple Kernel Versions with Zypper</title>
-  <para>
-   You can install or remove multiple kernels with <command>zypper</command>:
-  </para>
+  <title>zypper による複数バージョンのカーネルのインストールと削除</title>
+  <para><command>zypper</command> を利用することでも、複数バージョンのカーネルをインストールしたり削除したりすることができます:</para>
   <procedure>
    <step>
-    <para>
-     Use the command <command>zypper se -s 'kernel*'</command> to display a
-     list of all kernel packages available:
-    </para>
-<screen><?dbsuse-fo font-size="7pt"?>S | Name           | Type       | Version         | Arch   | Repository
---+----------------+------------+-----------------+--------+-------------------
-v | kernel-default | package    | 2.6.32.10-0.4.1 | x86_64 | Alternative Kernel
-i | kernel-default | package    | 2.6.32.9-0.5.1  | x86_64 | (System Packages)
-  | kernel-default | srcpackage | 2.6.32.10-0.4.1 | noarch | Alternative Kernel
-i | kernel-default | package    | 2.6.32.9-0.5.1  | x86_64 | (System Packages)
+    <para><command>zypper se -s 'kernel*'</command> と入力して実行すると、利用可能な全てのバージョンのカーネルパッケージを一覧表示することができます:</para>
+<screen><?dbsuse-fo font-size="7pt"?>S | 名前           | 種類             | バージョン       | アーキテクチャ | リポジトリ
+--+----------------+------------------+-----------------+---------------+-------------------
+v | kernel-default | パッケージ       | 2.6.32.10-0.4.1 | x86_64        | Alternative Kernel
+i | kernel-default | パッケージ       | 2.6.32.9-0.5.1  | x86_64        | (System Packages)
+  | kernel-default | ソースパッケージ | 2.6.32.10-0.4.1 | noarch        | Alternative Kernel
+i | kernel-default | パッケージ       | 2.6.32.9-0.5.1  | x86_64        | (System Packages)
 ...</screen>
    </step>
    <step>
-    <para>
-     Specify the exact version when installing:
-    </para>
+    <para>特定のバージョンをインストールしたい場合は、下記のように入力して実行します:</para>
 <screen>&prompt.sudo;zypper in kernel-default-2.6.32.10-0.4.1</screen>
    </step>
    <step>
-    <para>
-     When uninstalling a kernel, use the commands <command>zypper se -si
-     'kernel*'</command> to list all kernels installed and <command>zypper
-     rm</command> <replaceable>PACKAGENAME-VERSION</replaceable> to remove the
-     package.
-    </para>
+    <para>カーネルを削除する場合は、まず <command>zypper se -si 'kernel*'</command> を実行してインストール済みのカーネルを確認して、 <command>zypper rm</command> <replaceable>パッケージ名-バージョン</replaceable> のように入力して実行し、パッケージを削除します。</para>
    </step>
   </procedure>
  </sect1>
  <sect1 xml:id="sec.tuning.multikernel.latest" os="osuse">
-  <title>
-   Installing the Latest Kernel Version from the Repository <literal>Kernel:HEAD</literal>
-  </title>
+  <title><literal>Kernel:HEAD</literal> リポジトリからの最新カーネルのインストール</title>
   <procedure>
    <step>
-    <para>
-     Add the <literal>Kernel:HEAD</literal> repository with (the repository
-     is added using the alias <literal>kernel-repo</literal>):
-    </para>
+    <para><literal>Kernel:HEAD</literal> リポジトリを追加します (リポジトリには、 <literal>kernel-repo</literal> という別名を付与します):</para>
 <screen>&prompt.sudo;zypper ar \
 http://download.opensuse.org/repositories/Kernel:/HEAD/standard/ \
 kernel-repo</screen>
    </step>
    <step>
-    <para>
-     To refresh repositories, run:
-    </para>
+    <para>リポジトリを更新するには、下記のように実行します:</para>
     <screen>&prompt.sudo;zypper ref</screen>
    </step>
    <step>
-    <para>
-     To upgrade the kernel to the latest version in the
-     <literal>Kernel:HEAD</literal> repository, run:
-    </para>
+    <para><literal>Kernel:HEAD</literal> が提供する最新バージョンのカーネルにアップグレードしたい場合は、下記のように実行します:</para>
     <screen>&prompt.sudo;zypper dist-upgrade --from kernel-repo</screen>
    </step>
    <step>
-    <para>
-     Reboot the machine.
-    </para>
+    <para>システムを再起動します。</para>
    </step>
   </procedure>
 
   <warning>
-   <title>Installing from <literal>Kernel:HEAD</literal> May Break the System</title>
-   <para>
-    Installing a kernel from <literal>Kernel:HEAD</literal> should never be
-    necessary, because important fixes are backported by &suse; and are made
-    available as official updates. Installing the latest kernel only makes
-    sense for kernel developers and kernel testers. If installing from
-    <literal>Kernel:HEAD</literal>, be aware that it may break your system.
-    Make sure to always have the original kernel available for booting as
-    well.
-   </para>
+   <title><literal>Kernel:HEAD</literal> 提供のカーネルの危険性について</title>
+   <para>カーネルに対する重要な修正は &suse; 側で既存のバージョンに移植 (バックポート) され、公式の更新として公開されるため、 <literal>Kernel:HEAD</literal> が提供するカーネルをインストールする必要はありません。最新のバージョンのカーネルは、主にカーネルの開発者やテスターがインストールして使用するものです。また、 <literal>Kernel:HEAD</literal> からインストールを行なう場合は、お使いのシステムが壊れてしまうことがあり得ることにも注意してください。さらに、元のバージョンのカーネルについても、起動時の問題が発生した場合に向けて残しておいてください。</para>
   </warning>
  </sect1>
 </chapter>
