@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.x11.fontsys">
- <title>Installing and Configuring Fonts</title>
+ <title>フォントのインストールと設定</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,138 +13,64 @@
   </dm:docmanager>
  </info>
 
- <para>
-  Fonts in Linux can be categorized into two parts:
- </para>
+ <para>Linux でのフォントは、下記の 2 種類に分類することができます:</para>
 
  <variablelist>
   <varlistentry>
-   <term>Outline or Vector Fonts</term>
+   <term>アウトラインフォント／ベクトルフォント</term>
    <listitem>
-    <para>
-     Contains a mathematical description as drawing instructions about the
-     shape of a glyph. As such, each glyph can be scaled to arbitrary sizes
-     without loss of quality. Before such a font (or glyph) can be used, the
-     mathematical descriptions need to be transformed into a raster (grid).
-     This process is called <emphasis>font rasterization</emphasis>.
-     <emphasis>Font hinting</emphasis> (embedded inside the font) improves and
-     optimizes the rendering result for a particular size. Rasterization and
-     hinting is done with the FreeType library.
-    </para>
-    <para>
-     Common formats under Linux are PostScript Type 1 and Type 2, TrueType, and
-     OpenType.
-    </para>
+    <para>字体を描画するための描画命令として、数学的な記述を行なっているフォントです。このような仕組みであることから、品質を損なうことなく任意のサイズに拡大や縮小をすることができます。ただしフォントを使用する際には、そのような数学的な記述をドットパターン (グリッド) に変形させる必要があります。この処理を一般的に、 <emphasis>フォントのラスタライズ</emphasis> と呼びます。また、フォントによっては <emphasis>ヒンティング</emphasis> (ビットマップへの調整のためのフォント内組み込み) 情報として、特定のサイズでの描画結果を保持させておき、描画結果を改善したり高速化したりすることもあります。ラスタライズやヒンティングの動作は、 FreeType ライブラリが担っています。</para>
+    <para>Linux での一般的なフォント形式は、 PostScript Type 1, Type 2, TrueType, OpenType です。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Bitmap or Raster Fonts</term>
+   <term>ビットマップフォント／ラスタフォント</term>
    <listitem>
-    <para>
-     Consists of an array of pixels designed for a specific font size. Bitmap
-     fonts are extremely fast and simple to render. However, compared to vector
-     fonts, bitmap fonts cannot be scaled without losing quality. As such,
-     these fonts are usually distributed in different sizes. These days, bitmap
-     fonts are still used in the Linux console and sometimes in terminals.
-    </para>
-    <para>
-     Under Linux, Portable Compiled Format (PCF) or Glyph Bitmap Distribution
-     Format (BDF) are the most common formats.
-    </para>
+    <para>特定のフォントサイズ向けにドットパターンの配列を持つフォントです。ビットマップフォントは非常に高速かつシンプルに描画することができます。ただし、ベクトルフォントとは異なり、品質を損なうことなく拡大したり縮小したりすることができません。このような構造であることから、一般的には複数のサイズのフォントが同梱されています。ビットマップフォントは、現在も Linux コンソールや場合によっては端末などで使用されています。</para>
+    <para>Linux での一般的なフォント形式は、 Portable Compiled Format (PCF) と Glyph Bitmap Distribution Format (BDF) です。</para>
    </listitem>
   </varlistentry>
  </variablelist>
 
- <para>
-  The appearance of these fonts can be influenced by two main aspects:
- </para>
+ <para>フォントの外観は、主に 2 つの要素から構成されます:</para>
 
  <itemizedlist mark="bullet" spacing="normal">
   <listitem>
-   <para>
-    choosing a suitable font family,
-   </para>
+   <para>フォントの特徴を決めるファミリ</para>
   </listitem>
   <listitem>
-   <para>
-    rendering the font with an algorithm that achieves results comfortable for
-    the receiver's eyes.
-   </para>
+   <para>利用者にとって見やすい結果を生み出すためのフォント描画アルゴリズム</para>
   </listitem>
  </itemizedlist>
 
- <para>
-  The last point is only relevant to vector fonts. Although the above two
-  points are highly subjective, some defaults need to be created.
- </para>
+ <para>後者はベクトルフォントの場合にのみ意味がある項目です。また、上記はいずれも主観的な要素が強いものですが、いくつかの既定値を作成する必要があります。</para>
 
- <para>
-  Linux font rendering systems consist of several libraries with different
-  relations. The basic font rendering library is
-  <link xlink:href="http://www.freetype.org/">FreeType</link>, which converts
-  font glyphs of supported formats into optimized bitmap glyphs. The rendering
-  process is controlled by an algorithm and its parameters (which may be
-  subject to patent issues).
- </para>
+ <para>Linux のフォント描画システムは、異なる関係性を持つ複数のライブラリから構成されています。基本的なフォント描画ライブラリは <link xlink:href="http://www.freetype.org/">FreeType</link> で、対応する形式のフォントの字体を最適化されたビットマップ (ドットパターン) に変換します。描画処理はアルゴリズムとパラメータによって制御されています (ここに特許に関する問題が存在します) 。</para>
 
- <para>
-  Every program or library which uses FreeType should consult the
-  <link xlink:href="http://www.fontconfig.org/">Fontconfig</link> library. This
-  library gathers font configuration from users and from the system. When a
-  user amends his Fontconfig setting, this change will result in
-  Fontconfig-aware applications.
- </para>
+ <para>FreeType を使用するプログラムやライブラリに対しては、 <link xlink:href="http://www.fontconfig.org/">Fontconfig</link> ライブラリの使用をお勧めします。このライブラリは、ユーザやシステムからのフォント設定を収集する仕組みを提供します。ユーザが Fontconfig の設定を修正すると、影響は Fontconfig を使用する全てのアプリケーションに及びます。</para>
 
- <para>
-  More sophisticated OpenType shaping needed for scripts such as Arabic, Han or
-  Phags-Pa and other higher level text processing is done using
-  <link xlink:href="http://www.harfbuzz.org/">Harfbuzz</link> or
-  <link xlink:href="http://www.pango.org/">Pango</link>.
- </para>
+ <para>アラビア文字やパスパ文字 <!-- Add Japanese -->、日本語 <!-- Add Japanese --> など、より洗練された OpenType 描画やその他の高レベルなテキスト処理機能を必要とする場合は、<link xlink:href="http://www.harfbuzz.org/">Harfbuzz</link> や <link xlink:href="http://www.pango.org/">Pango</link> をお使いになることをお勧めします。</para>
 
  <sect2 xml:id="sec.x11.fontsys.showing.fonts">
-  <title>Showing Installed Fonts</title>
-  <para>
-   To get an overview about which fonts are installed on your system, ask the
-   commands <command>rpm</command> or <command>fc-list</command>. Both will
-   give you a good answer, but may return a different list depending on system
-   and user configuration:
-  </para>
+  <title>インストール済みのフォントの一覧表示</title>
+  <para>お使いのシステムにインストールされているフォントの概要を知るには、 <command>rpm</command> や <command>fc-list</command> のコマンドを使用します。いずれのコマンドとも必要な情報を出力しますが、システムやユーザの設定によっては異なる一覧を返すことがあります:</para>
   <variablelist>
    <varlistentry>
-    <term><command>rpm</command>
-    </term>
+    <term><command>rpm</command></term>
     <listitem>
-     <para>
-      Invoke <command>rpm</command> to see which software packages containing
-      fonts are installed on your system:
-     </para>
+     <para><command>rpm</command> コマンドを利用することで、お使いのシステム内にどのようなフォントを含むソフトウエアパッケージがインストールされているのかを知ることができます:</para>
 <screen>&prompt.user;rpm -qa '*fonts*'</screen>
-     <para>
-      Every font package should satisfy this expression. However, the command
-      may return some false positives like <literal>fonts-config</literal>
-      (which is neither a font nor does it contain fonts).
-     </para>
+     <para>それぞれのフォントパッケージは上記のコマンドで表示されますが、 <literal>fonts-config</literal> パッケージのように、フォントそのものでもなく、フォントを含むものでもないものが、一部表示されてしまいます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>fc-list</command>
-    </term>
+    <term><command>fc-list</command></term>
     <listitem>
-     <para>
-      Invoke <command>fc-list</command> to get an overview about what font
-      families can be accessed, whether they are installed on the system or in
-      your home:
-     </para>
+     <para><command>fc-list</command> を実行することで、どのフォントファミリを利用できるのかを知ることができます。ただし、システム内にインストールされているものと、ユーザが独自にインストールしているものの両方が表示されます:</para>
 <screen>&prompt.user;fc-list ':' family</screen>
      <note>
-      <title>Command <command>fc-list</command></title>
-      <para>
-       The command <command>fc-list</command> is a wrapper to the Fontconfig
-       library. It is possible to query a lot of interesting information from
-       Fontconfig&mdash;or, to be more precise, from its cache. See
-       <command>man 1 fc-list</command> for more details.
-      </para>
+      <title><command>fc-list</command> コマンド</title>
+      <para><command>fc-list</command> は Fontconfig ライブラリに対するラッパーです。 Fontconfig を利用することで、さらに多くの興味深い、かつ正確な情報をキャッシュから問い合わせることができます。詳しくは <command>man 1 fc-list</command> をお読みください。</para>
      </note>
     </listitem>
    </varlistentry>
@@ -152,104 +78,47 @@
  </sect2>
 
  <sect2 xml:id="sec.x11.fontsys.viewing">
-  <title>Viewing Fonts</title>
-  <para>
-   If you want to know what an installed font family looks like, either use the
-   command <command>ftview</command> (package
-   <systemitem>ft2demos</systemitem>) or visit
-   <link xlink:href="http://fontinfo.opensuse.org/"/>. For example, to display
-   the FreeMono font in 14 point, use <command>ftview</command> like this:
-  </para>
+  <title>フォントの表示</title>
+  <para>インストールされているフォントの外観を確認したい場合は、 <command>ftview</command> コマンド (<systemitem>ft2demos</systemitem> パッケージ) を使用するか、もしくは<link xlink:href="http://fontinfo.opensuse.org/"/> にアクセスしてください。たとえば FreeMono フォントを 14 ポイントで表示したい場合は、下記のようにして <command>ftview</command> コマンドを実行します:</para>
 <screen>&prompt.user;ftview 14 /usr/share/fonts/truetype/FreeMono.ttf</screen>
-  <para>
-   If you need further information, go to
-   <link xlink:href="http://fontinfo.opensuse.org/"/> to find out which styles
-   (regular, bold, italic, etc.) and languages are supported.
-  </para>
+  <para>さらに詳しい情報を得るには、 <link xlink:href="http://fontinfo.opensuse.org/"/> にアクセスしてください。ここにはスタイルに関する情報 (レギュラー, ボールド, イタリックなど) と対応する言語に関する情報が提供されています。</para>
  </sect2>
 
  <sect2 xml:id="sec.x11.fontsys.querying">
-  <title>Querying Fonts</title>
-  <para>
-   To query which font is used when a pattern is given, use the
-   <command>fc-match</command> command.
-  </para>
-  <para>
-   For example, if your pattern contains an already installed font,
-   <command>fc-match</command> returns the file name, font family, and the
-   style:
-  </para>
+  <title>フォントの問い合わせ</title>
+  <para>特定のパターンに対して適用されるフォントを確認するには、 <command>fc-match</command> コマンドを使用します。</para>
+  <para>たとえばパターン内に既にインストール済みのフォントが含まれている場合、 <command>fc-match</command> はファイル名とフォントファミリ、スタイルに関する情報を表示します:</para>
 <screen>&prompt.user;fc-match 'Liberation Serif'
 LiberationSerif-Regular.ttf: "Liberation Serif" "Regular"</screen>
-  <para>
-   If the desired font does not exist on your system, Fontconfig's matching
-   rules take place and try to find the most similar fonts available. This
-   means, your request is substituted:
-  </para>
+  <para>もしも必要なフォントがお使いのシステム内に存在していない場合は、 Fontconfig のマッチングルールを利用して、最も近いフォントを見つけようとします。言い換えると、要求内容が置き換えられるということになります:</para>
 <screen>&prompt.user;fc-match 'Foo Family'
 DejaVuSans.ttf: "DejaVu Sans" "Book"</screen>
-  <para>
-   Fontconfig supports <emphasis>aliases</emphasis>: a name is substituted with
-   another family name. A typical example are the generic names such as
-   <quote>sans-serif</quote>, <quote>serif</quote>, and
-   <quote>monospace</quote>. These alias names can be substituted by real
-   family names or even a preference list of family names:
-  </para>
+  <para>Fontconfig では、一方の名前を別のファミリ名に置き換えることのできる <emphasis>別名</emphasis> に対応しています。一般的には、 <quote>sans-serif</quote> , <quote>serif</quote> , <quote>monospace</quote> などの一般的な名前を、実際のファミリ名やファミリ名の優先順に置き換える際に使用します:</para>
 <screen>&prompt.user;for font in serif sans mono; do fc-match "$font" ; done
 DejaVuSerif.ttf: "DejaVu Serif" "Book"
 DejaVuSans.ttf: "DejaVu Sans" "Book"
 DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
-  <para>
-   The result may vary on your system, depending on which fonts are currently
-   installed.
-  </para>
+  <para>上記の結果は、システムにどのフォントがインストールされているかによって異なります。</para>
   <note>
-   <title>Similarity Rules according to Fontconfig</title>
-   <para>
-    Fontconfig <emphasis>always</emphasis> returns a real family (if at least
-    one is installed) according to the given request, as similar as possible.
-    <quote>Similarity</quote> depends on Fontconfig's internal metrics and on
-    the user's or administrator's Fontconfig settings.
-   </para>
+   <title>fontconfig に対しても同様のルールが適用される件について</title>
+   <para>Fontconfig は指定された要求に対して、 <emphasis>常に</emphasis> 最も近い実際のファミリ名 (少なくとも 1 つがインストールされていれば) を返します 。 <quote>近さ</quote> の判断基準は Fontconfig の内部仕様と、ユーザやシステム管理者が設定した Fontconfig の設定に従って決まります。</para>
   </note>
  </sect2>
 
  <sect2 xml:id="sec.x11.fontsys.install">
-  <title>Installing Fonts</title>
-  <para>
-   To install a new font there are these major methods:
-  </para>
+  <title>フォントのインストール</title>
+  <para>新しいフォントをインストールするにあたっては、いくつかの主要な方法が存在します:</para>
   <orderedlist spacing="normal">
    <listitem>
-    <para>
-     Manually install the font files such as <filename>*.ttf</filename> or
-     <filename>*.otf</filename> to a known font directory. If it needs to be
-     system-wide, use the standard directory
-     <filename>/usr/share/fonts</filename>. For installation in your home
-     directory, use <filename>~/.config/fonts</filename>.
-    </para>
-    <para>
-     If you want to deviate from the standard directories, Fontconfig allows
-     you to choose another one. Let Fontconfig know by using the
-     <literal>&lt;dir&gt;</literal> element, see
-     <xref linkend="sec.x11.fontsys.config.fontconfig"/> for details.
-    </para>
+    <para><filename>*.ttf</filename> や <filename>*.otf</filename> のようなフォントファイルを、既知のフォントディレクトリにインストールする方法があります。システム全体に対して反映させる場合は、標準のディレクトリ <filename>/usr/share/fonts</filename> にインストールします。ユーザ個人でインストールしたい場合は、 <filename>~/.config/fonts</filename> にインストールします。</para>
+    <para>標準以外のディレクトリにインストールしたい場合は、 Fontconfig 側を設定する必要があります。 Fontconfig に対して <literal>&lt;dir&gt;</literal> 要素を追加して、ディレクトリを指定してください。詳しくは <xref linkend="sec.x11.fontsys.config.fontconfig"/> をお読みください。</para>
    </listitem>
    <listitem>
-    <para>
-     Install fonts using <command>zypper</command>. Lots of fonts are already
-     available as a package, be it on your &suse; distribution or in the <link xlink:href="http://download.opensuse.org/repositories/M17N:/fonts/">M17N:fonts</link>
-     repository. Add the repository to your list using the following command.
-     For example, to add a repository for <phrase os="sles;sled">&slea;
-     15</phrase><phrase os="osuse">&productname; 15</phrase>:
-    </para>
+    <para><command>zypper</command> を利用してフォントをインストールする方法もあります。多数のフォントが &suse; ディストリビューションの一部としてパッケージの形態で提供されているほか、 <link xlink:href="http://download.opensuse.org/repositories/M17N:/fonts/">M17N:fonts</link> リポジトリにも多数のフォントが用意されています。 M17N:fonts リポジトリを追加する場合は、下記の手順で行ないます:</para>
 <screen>&prompt.sudo;zypper ar
      <phrase os="sles;sled">http://download.opensuse.org/repositories/M17N:/fonts/SLE_15/</phrase><phrase os="osuse">http://download.opensuse.org/repositories/M17N:/fonts/openSUSE_Leap_15.0/</phrase></screen>
-    <para>
-     To search for your <replaceable>FONT_FAMILY_NAME</replaceable> use this
-     command:
-    </para>
-<screen>&prompt.user;zypper se '<replaceable>FONT_FAMILY_NAME</replaceable>*fonts'</screen>
+    <para><replaceable>フォントファミリ名</replaceable> で検索するには、下記のコマンドを使用します:</para>
+<screen>&prompt.user;zypper se '<replaceable>フォントファミリ名</replaceable>*fonts'</screen>
    </listitem>
 <!-- Currently disabled -->
 <!--<listitem>
@@ -261,264 +130,133 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
  </sect2>
 
  <sect2 xml:id="sec.x11.fontsys.config">
-  <title>Configuring the Appearance of Fonts</title>
-  <para>
-   Depending on the rendering medium, and font size, the result may be
-   unsatisfactory. For example, an average monitor these days has a resolution
-   of 100dpi which makes pixels too big and glyphs look clunky.
-  </para>
-  <para>
-   There are several algorithms available to deal with low resolutions, such as
-   anti-aliasing (grayscale smoothing), hinting (fitting to the grid), or
-   subpixel rendering (tripling resolution in one direction). These algorithms
-   can also differ from one font format to another.
-  </para>
+  <title>フォントの外観の設定</title>
+  <para>レンダリングの状態やフォントサイズによっては、見た目があまりきれいに描画されない場合があります。たとえば現在の一般的なモニタは 100dpi 程度の解像度ですが、そのままではドットとしては大きすぎて、角張った表示になってしまいます。</para>
+  <para>アンチエイリアス (灰色を利用した平滑化) やヒンティング (ビットマップへの調整のためのフォント内組み込み) 、サブピクセルレンダリング (一方向の解像度を 3 倍化する技術) など、低解像度でもきれいに描画するためのアルゴリズムがいくつか用意されています。これらのアルゴリズムは、フォント形式によっても異なります。</para>
   <important>
-   <title>Patent Issues with Subpixel Rendering</title>
-   <para>
-    Subpixel rendering is not used in &suse; distributions.
-    Although FreeType2 has support for this algorithm, it is covered by several
-    patents expiring at the end of the year 2019. Therefore, setting subpixel
-    rendering options in Fontconfig has no effect unless the system has a
-    FreeType2 library with subpixel rendering compiled in.
-   </para>
+   <title>サブピクセルレンダリングに対する特許問題について</title>
+   <para>&suse; ディストリビューションでは、サブピクセルレンダリングを使用していません。 FreeType2 にはこのアルゴリズムが含まれていますが、 2019 年の年末まではいくつかの特許が成立している状況であるため、サブピクセルレンダリングを明示的にコンパイルして組み込まない限り、 fontconfig 内のサブピクセルレンダリング関係の設定には効果がありません。</para>
   </important>
-  <para>
-   Via Fontconfig, it is possible to select a rendering algorithms for every
-   font individually or for a set of fonts.
-  </para>
+  <para>Fontconfig では、描画アルゴリズムを各フォントに対して個別に設定することができるほか、フォントセットを指定して設定することもできます。</para>
   <sect3 xml:id="sec.x11.fontsys.config.sysconfig">
-   <title>Configuring Fonts via <literal>sysconfig</literal></title>
-   <para>
-    &productname; comes with a <literal>sysconfig</literal> layer above
-    Fontconfig. This is a good starting point for experimenting with font
-    configuration. To change the default settings, edit the configuration file
-    <filename>/etc/sysconfig/fonts-config</filename>. (or use the &yast;
-    sysconfig module). After you have edited the file, run
-    <command>fonts-config</command>:
-   </para>
+   <title><literal>sysconfig</literal> を介したフォントの設定</title>
+   <para>&productname; には、 Fontconfig に対する <literal>sysconfig</literal> と呼ばれるレイヤが用意されています。このファイルを利用すれば、最も簡単に設定を試すことができます。既定の設定を変更するには、 <filename>/etc/sysconfig/fonts-config</filename> ファイルを編集してください (もしくは、 &yast; の sysconfig モジュールを利用してもかまいません) 。ファイルを編集したら、 <command>fonts-config</command> を実行します:</para>
 <screen>&prompt.sudo;/usr/sbin/fonts-config</screen>
-   <para>
-    Restart the application to make the effect visible. Keep in mind the
-    following issues:
-   </para>
+   <para>アプリケーションを再起動すると、効果が適用されます。ただし、下記に注意してください:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      A few applications do need not to be restarted. For example, Firefox
-      re-reads Fontconfig configuration from time to time. Newly created or
-      reloaded tabs get new font configurations later.
-     </para>
+     <para>アプリケーションによっては、再起動をする必要がないものもあります。たとえば、 Firefox では Fontconfig を自動的に再読み込みします。新しく作成したタブや、タブを再読み込みすることで、新しいフォント設定を適用することができます。</para>
     </listitem>
     <listitem>
-     <para>
-      The <command>fonts-config</command> script is called automatically after
-      every package installation or removal (if not, it is a bug of the font
-      software package).
-     </para>
+     <para><command>fonts-config</command> スクリプトは、フォントパッケージをインストールしたり削除したりするごとに、自動的に呼び出されます (もしもそうでなければ、フォントパッケージのバグです) 。</para>
     </listitem>
     <listitem>
-     <para>
-      Every sysconfig variable can be temporarily overridden by the
-      <command>fonts-config</command> command line option. See
-      <command>fonts-config --help</command> for details.
-     </para>
+     <para>それぞれの sysconfig の値は、 <command>fonts-config</command> のコマンドラインオプションを使用することで、一時的に上書きすることができます。詳しくは <command>fonts-config --help</command> をお読みください。</para>
     </listitem>
    </itemizedlist>
-   <para>
-    There are several sysconfig variables which can be altered. See
-    <command>man 1 fonts-config</command> or the help page of the &yast;
-    sysconfig module. The following variables are examples:
-   </para>
+   <para>sysconfig で変更可能な変数には、様々なものがあります。詳しくは <command>man 1 fonts-config</command> もしくは &yast; sysconfig モジュールのヘルプページをお読みください。下記に主な変数を示します:</para>
    <variablelist>
     <varlistentry>
-     <term>Usage of Rendering Algorithms</term>
+     <term>使用する描画アルゴリズムの設定</term>
      <listitem>
-      <para>
-       Consider <varname>FORCE_HINTSTYLE</varname>,
-       <varname>FORCE_AUTOHINT</varname>, <varname>FORCE_BW</varname>,
-       <varname>FORCE_BW_MONOSPACE</varname>,
-       <varname>USE_EMBEDDED_BITMAPS</varname> and
-       <varname>EMBEDDED_BITMAP_LANGAGES</varname>
-      </para>
+      <para><varname>FORCE_HINTSTYLE</varname> , <varname>FORCE_AUTOHINT</varname> , <varname>FORCE_BW</varname> , <varname>FORCE_BW_MONOSPACE</varname> , <varname>USE_EMBEDDED_BITMAPS</varname> , <varname>EMBEDDED_BITMAP_LANGAGES</varname></para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Preference Lists of Generic Aliases</term>
+     <term>一般的な別名に対する優先順位リスト</term>
      <listitem>
-      <para>
-       Use <varname>PREFER_SANS_FAMILIES</varname>,
-       <varname>PREFER_SERIF_FAMILIES</varname>,
-       <varname>PREFER_MONO_FAMILIES</varname> and
-       <varname>SEARCH_METRIC_COMPATIBLE</varname>
-      </para>
+      <para><varname>PREFER_SANS_FAMILIES</varname> , <varname>PREFER_SERIF_FAMILIES</varname> , <varname>PREFER_MONO_FAMILIES</varname> , <varname>SEARCH_METRIC_COMPATIBLE</varname></para>
      </listitem>
     </varlistentry>
    </variablelist>
-   <para>
-    The following list provides some configuration examples, sorted from the
-    <quote>most readable</quote> fonts (more contrast) to <quote>most
-    beautiful</quote> (more smoothed).
-   </para>
+   <para>下記の一覧では、 <quote>最も読みやすい</quote> (最も濃淡のある) フォントを先に、 <quote>最も美しい</quote> (最もなめらかな) フォントを後ろに並べて設定例を示しています。</para>
    <variablelist>
     <varlistentry xml:id="vle.x11.fontsys.sysconfig.bitmap">
-     <term>Bitmap Fonts</term>
+     <term>ビットマップフォント</term>
      <listitem>
-      <para>
-       Prefer bitmap fonts via the <varname>PREFER_*_FAMILIES</varname>
-       variables. Follow the example in the help section for these variables.
-       Be aware that these fonts are rendered black and white, not smoothed and
-       that bitmap fonts are available in several sizes only. Consider using
-      </para>
+      <para><varname>PREFER_*_FAMILIES</varname> の変数を利用することで、ビットマップフォントを優先して使用するように設定することができます。これらの値について、詳しくはヘルプセクション内の例をお読みください。ただし、ビットマップフォントは白黒の 2 値のみで描画されるフォントであり、限られたサイズの文字しか表示することができないことに注意してください。なお、</para>
 <screen>SEARCH_METRIC_COMPATIBLE="no"</screen>
-      <para>
-       to disable metric compatibility-driven family name substitutions.
-      </para>
+      <para>を指定して、メトリック基準のファミリ名置換を無効化しておくことをお勧めします。</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="vle.x11.fontsys.sysconfig.bw">
-     <term>Scalable Fonts Rendered Black and White</term>
+     <term>白黒描画のアウトラインフォント</term>
      <listitem>
-      <para>
-       Scalable fonts rendered without antialiasing can result in a similar
-       outcome to bitmap fonts, while maintaining font scalability. Use well
-       hinted fonts like the Liberation families. Unfortunately, there is a
-       lack of well hinted fonts though. Set the following variable to force
-       this method:
-      </para>
+      <para>アウトラインフォントをアンチエイリアス処理無しで描画すると、アウトラインによる拡大／縮小の機能を生かしたまま、ビットマップフォントに似た出力を行なうことができます。なお、 Liberation ファミリのように適切なヒンティング情報のあるフォントをお使いください。ただし、ヒンティングのあるフォントは少数です。この方式を強制する場合は、下記の変数を設定してください:</para>
 <screen>FORCE_BW="yes"</screen>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="vle.x11.fontsys.sysconfig.bw_monospace">
-     <term>Monospaced Fonts Rendered Black and White</term>
+     <term>白黒描画の等幅フォント</term>
      <listitem>
-      <para>
-       Render monospaced fonts without antialiasing only, otherwise use default
-       settings:
-      </para>
+      <para>アンチエイリアス処理のみを無くして等幅のフォントを描画したい場合は、下記のように設定します:</para>
 <screen>FORCE_BW_MONOSPACE="yes"</screen>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="vle.x11.fontsys.sysconfig.default">
-     <term>Default Settings</term>
+     <term>既定の設定</term>
      <listitem>
-      <para>
-       All fonts are rendered with antialiasing. Well hinted fonts will be
-       rendered with the <emphasis>byte code interpreter</emphasis> (BCI) and
-       the rest with autohinter (<literal>hintstyle=hintslight</literal>).
-       Leave all relevant sysconfig variables to the default setting.
-      </para>
+      <para>全てのフォントに対してアンチエイリアス処理が行なわれます。適切にヒント情報が書かれたフォントであれば、 <emphasis>バイトコードインタプリタ</emphasis> (Byte Code Interpreter; BCI) を利用して描画し、それ以外のフォントは自動ヒント ( <literal>hintstyle=hintslight</literal> ) を利用して描画します。この場合、 sysconfig の設定は全て既定値に設定してください。</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="vle.x11.fontsys.sysconfig.cff">
-     <term>CFF Fonts</term>
+     <term>CFF フォント</term>
      <listitem>
-      <para>
-       Use fonts in CFF format. They can be considered also more readable than
-       the default TrueType fonts given the current improvements in FreeType2.
-       Try them out by following the example of
-       <literal>PREFER_*_FAMILIES</literal>. Possibly make them more dark and
-       bold with:
-      </para>
+      <para>CFF 形式のフォントを使用します。これらは FreeType2 での最新の改善版で提供される既定の TrueType フォントよりも、より読みやすく描画されます。下記にある <literal>PREFER_*_FAMILIES</literal> の例をご覧になり、これらのフォントをお試しください。なお、より暗く太く表示したい場合は、下記を設定します:</para>
 <screen>SEARCH_METRIC_COMPATIBLE="no"</screen>
-      <para>
-       as they are rendered by <literal>hintstyle=hintslight</literal> by
-       default. Also consider using:
-      </para>
+      <para>これは既定値である <literal>hintstyle=hintslight</literal> と比較した場合のものです。また、下記もお試しになることをお勧めします:</para>
 <screen>SEARCH_METRIC_COMPATIBLE="no"</screen>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="ex.x11.fontsys.sysconfig.autohint">
-     <term>Autohinter Exclusively</term>
+     <term>排他的な自動ヒント</term>
      <listitem>
-      <para>
-       Even for a well hinted font, use FreeType2's autohinter. That can lead
-       to thicker, sometimes fuzzier letter shapes with lower contrast. Set the
-       following variable to activate this:
-      </para>
+      <para>たとえ十分なヒント情報のあるフォントであっても、 FreeType2 の自動ヒント機能を使ってみる価値があります。この仕組みにより、低解像度の環境でもより太く滑らかに表示することができます。この機能を有効化するには、下記とおり変数を設定します:</para>
 <screen>FORCE_AUTOHINTER="yes"</screen>
-      <para>
-       Use <literal>FORCE_HINTSTYLE</literal> to control the level of hinting.
-      </para>
+      <para>ヒント処理のレベルを制御したい場合は、 <literal>FORCE_HINTSTYLE</literal> をお使いください。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect3>
   <sect3 xml:id="sec.x11.fontsys.config.fontconfig">
-   <title>Diving into Fontconfig XML</title>
-   <para>
-    Fontconfig's configuration format is the <emphasis>eXtensible Markup
-    Language</emphasis> (XML). These few examples are not a complete reference,
-    but a brief overview. Details and other inspiration can be found in
-    <command>man 5 fonts-conf</command> or in
-    <filename>/etc/fonts/conf.d/</filename>.
-   </para>
-   <para>
-    The central Fontconfig configuration file is
-    <filename>/etc/fonts/fonts.conf</filename>, which&mdash;along other
-    work&mdash;includes the whole <filename>/etc/fonts/conf.d/</filename>
-    directory. To customize Fontconfig, there are two places where you can
-    insert your changes:
-   </para>
+   <title>Fontconfig XML の紹介</title>
+   <para>Fontconfig の設定形式は、 <emphasis>eXtensible Markup Language</emphasis> (XML) と呼ばれる形式になっています。下記のいくつかの設定例は完全なリファレンスにはなっていませんが、簡潔な説明としては十分であるものと考えております。詳細やその他の考え方について、詳しくは <command>man 5 fonts-conf</command> や <filename>/etc/fonts/conf.d/</filename> をお読みください。</para>
+   <para>Fontconfig での中心的な設定ファイルは <filename>/etc/fonts/fonts.conf</filename> です。また、 <filename>/etc/fonts/conf.d/</filename> 以下にある設定も自動的に取り込まれるよう設定されています。 Fontconfig をカスタマイズするには、下記のいずれかの場所で設定を行なってください:</para>
    <orderedlist xml:id="ol.x11.fontsys.configfiles" spacing="normal">
-    <title>Fontconfig Configuration Files</title>
+    <title>Fontconfig 設定ファイル</title>
     <listitem>
      <formalpara>
-      <title>System-wide changes</title>
-      <para>
-       Edit the file <filename>/etc/fonts/local.conf</filename> (by default, it
-       contains an empty <literal>fontconfig</literal> element).
-      </para>
+      <title>システム全体の変更</title>
+      <para><filename>/etc/fonts/local.conf</filename> ファイルを編集してください (既定では、何も要素の入っていない <literal>fontconfig</literal> タグが書かれているだけのはずです) 。</para>
      </formalpara>
     </listitem>
     <listitem>
      <formalpara>
-      <title>User-specific changes</title>
-      <para>
-       Edit the file <filename>~/.config/fontconfig/fonts.conf</filename>.
-       Place Fontconfig configuration files in the
-       <filename>~/.config/fontconfig/conf.d/</filename> directory.
-      </para>
+      <title>ユーザ固有の変更</title>
+      <para><filename>~/.config/fontconfig/fonts.conf</filename> ファイルを編集するか、独自にファイルを作成してある場合は <filename>~/.config/fontconfig/conf.d/</filename> ディレクトリ内に置いてもかまいません。</para>
      </formalpara>
     </listitem>
    </orderedlist>
-   <para>
-    User-specific changes overwrite any system-wide settings.
-   </para>
+   <para>ユーザ固有の変更は、システム全体の変更を上書きして動作します。</para>
    <note>
-    <title>Deprecated User Configuration File</title>
-    <para>
-     The file <filename>~/.fonts.conf</filename> is marked as deprecated and
-     should not be used anymore. Use
-     <filename>~/.config/fontconfig/fonts.conf</filename> instead.
-    </para>
+    <title>廃止予定のユーザ設定ファイルについて</title>
+    <para><filename>~/.fonts.conf</filename> ファイルは廃止予定とされているものであり、現在は使用すべきではありません。代わりに <filename>~/.config/fontconfig/fonts.conf</filename> をお使いください。</para>
    </note>
-   <para>
-    Every configuration file needs to have a <literal>fontconfig</literal>
-    element. As such, the minimal file looks like this:
-   </para>
+   <para>それぞれの設定ファイルには、 <literal>fontconfig</literal> というタグ要素が存在する必要があります。このような構造から、最小限の設定ファイルは下記のようになります:</para>
 <screen>&lt;?xml version="1.0"?&gt;
    &lt;!DOCTYPE fontconfig SYSTEM "fonts.dtd"&gt;
    &lt;fontconfig&gt;
    &lt;!-- Insert your changes here --&gt;
    &lt;/fontconfig&gt;</screen>
-   <para>
-    If the default directories are not enough, insert the
-    <literal>dir</literal> element with the respective directory:
-   </para>
+   <para>既定のディレクトリでは不十分な場合、 <literal>dir</literal> 要素を入れてディレクトリを指定します:</para>
 <screen>&lt;dir&gt;/usr/share/fonts2&lt;/dir&gt;</screen>
-   <para>
-    Fontconfig searches <emphasis>recursively</emphasis> for fonts.
-   </para>
-   <para>
-    Font-rendering algorithms can be chosen with following Fontconfig snippet
-    (see <xref linkend="ex.x11.fontsys.fontconfig.rendering_algorithms"/>):
-   </para>
+   <para>Fontconfig では、 <emphasis>再帰的に</emphasis> フォントを検索します。</para>
+   <para>フォントの描画アルゴリズムは、それぞれ <xref linkend="ex.x11.fontsys.fontconfig.rendering_algorithms"/> のように指定することで選択することができます:</para>
    <example xml:id="ex.x11.fontsys.fontconfig.rendering_algorithms">
-    <title>Specifying Rendering Algorithms</title>
+    <title>レンダリングアルゴリズムの指定</title>
 <screen>&lt;match target="font"&gt;
  &lt;test name="family"&gt;
-  &lt;string&gt;<replaceable>FAMILY_NAME</replaceable>&lt;/string&gt;
+  &lt;string&gt;<replaceable>ファミリ名</replaceable>&lt;/string&gt;
  &lt;/test&gt;
  &lt;edit name="antialias" mode="assign"&gt;
   &lt;bool&gt;true&lt;/bool&gt;
@@ -534,19 +272,12 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
  &lt;/edit&gt;
 &lt;/match&gt;</screen>
    </example>
-   <para>
-    Various properties of fonts can be tested. For example, the
-    <literal>&lt;test&gt;</literal> element can test for the font family (as
-    shown in the example), size interval, spacing, font format, and others.
-    When abandoning <literal>&lt;test&gt;</literal> completely, all
-    <literal>&lt;edit&gt;</literal> elements will be applied to every font
-    (global change).
-   </para>
+   <para>フォントに対する様々なプロパティをテストすることができます。たとえば <literal>&lt;test&gt;</literal> 要素はフォントファミリ (上記の例のように) のほか、サイズ間隔やスペーシング、フォント形式など様々なものがあります。 <literal>&lt;test&gt;</literal> で指定する以外にも、全てのフォントに対して適用する場合は <literal>&lt;edit&gt;</literal> 要素を使用することもできます。</para>
    <example xml:id="ex.x11.fontsys.fontconfig.aliases1">
-    <title>Aliases and Family Name Substitutions</title>
+    <title>別名とファミリ名の置き換え</title>
     <variablelist>
      <varlistentry xml:id="vle.x11.fontsys.example.alias.default">
-      <term>Rule 1</term>
+      <term>ルール 1</term>
       <listitem>
 <screen>&lt;alias&gt;
  &lt;family&gt;Alegreya SC&lt;/family&gt;
@@ -557,7 +288,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
       </listitem>
      </varlistentry>
      <varlistentry xml:id="vle.x11.fontsys.example.alias.prefer">
-      <term>Rule 2</term>
+      <term>ルール 2</term>
       <listitem>
 <screen>&lt;alias&gt;
  &lt;family&gt;serif&lt;/family&gt;
@@ -568,7 +299,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
       </listitem>
      </varlistentry>
      <varlistentry xml:id="vle.x11.fontsys.example.alias.accept">
-      <term>Rule 3</term>
+      <term>ルール 3</term>
       <listitem>
 <screen>&lt;alias&gt;
  &lt;family&gt;serif&lt;/family&gt;
@@ -580,250 +311,149 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
      </varlistentry>
     </variablelist>
    </example>
-   <para>
-    The rules from <xref linkend="ex.x11.fontsys.fontconfig.aliases1"/> create
-    a <emphasis>prioritized family list</emphasis> (PFL). Depending on the
-    element, different actions are performed:
-   </para>
+   <para><xref linkend="ex.x11.fontsys.fontconfig.aliases1"/> にあるルールは、 <emphasis>優先ファミリリスト</emphasis> (PFL; Prioritized Family List) を作成しています。それぞれ要素によって異なる処理を行なっています:</para>
    <variablelist>
     <varlistentry>
-     <term><literal>&lt;default&gt;</literal> from
-     <xref linkend="vle.x11.fontsys.example.alias.default"/>
-     </term>
+     <term><xref linkend="vle.x11.fontsys.example.alias.default"/> の <literal>&lt;default&gt;</literal></term>
      <listitem>
-      <para>
-       This rule adds a <literal>serif</literal> family name <emphasis>at the
-       end</emphasis> of the PFL.
-      </para>
+      <para>このルールは、 PFL の <emphasis>末尾に</emphasis> 、 <literal>serif</literal> のファミリ名ファミリ名を追加しています。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><literal>&lt;prefer&gt;</literal> from
-     <xref linkend="vle.x11.fontsys.example.alias.prefer"/>
-     </term>
+     <term><xref linkend="vle.x11.fontsys.example.alias.prefer"/> の <literal>&lt;prefer&gt;</literal></term>
      <listitem>
-      <para>
-       This rule adds <quote>Droid Serif</quote> <emphasis>just
-       before</emphasis> the first occurrence of <literal>serif</literal> in
-       the PFL, whenever <literal>Alegreya SC</literal> is in PFL.
-      </para>
+      <para>このルールは、 PFL 内の最初にある <literal>serif</literal> の <emphasis>直前に</emphasis> 、 <quote>Droid Serif</quote> を追加しています。ただし、 <literal>Alegreya SC</literal> が PFL 内に存在している必要があります。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><literal>&lt;accept&gt;</literal> from <xref linkend="vle.x11.fontsys.example.alias.accept"/>
-     </term>
+     <term><xref linkend="vle.x11.fontsys.example.alias.accept"/> の <literal>&lt;accept&gt;</literal></term>
      <listitem>
-      <para>
-       This rule adds a <quote>STIXGeneral</quote> family name <emphasis>just
-       after</emphasis> the first occurrence of the <literal>serif</literal>
-       family name in the PFL.
-      </para>
+      <para>このルールは、 PFL 内の <literal>serif</literal> ファミリ名の <emphasis>直後に</emphasis> 、 <quote>STIXGeneral</quote> を追加しています。</para>
      </listitem>
     </varlistentry>
    </variablelist>
-   <para>
-    Putting this together, when snippets occur in the order
-    <xref linkend="vle.x11.fontsys.example.alias.default"/> -
-    <xref linkend="vle.x11.fontsys.example.alias.prefer"/> -
-    <xref linkend="vle.x11.fontsys.example.alias.accept"/> and the user
-    requests <quote>Alegreya SC</quote>, then the PFL is created as depicted in
-    <xref linkend="tab.x11.fontsys.example.alias"/>.
-   </para>
+   <para>これらを組み合わせて、たとえば設定ファイルの中で <xref linkend="vle.x11.fontsys.example.alias.default"/> - <xref linkend="vle.x11.fontsys.example.alias.prefer"/> - <xref linkend="vle.x11.fontsys.example.alias.accept"/> の順に現われたとし、ユーザが <quote>Alegreya SC</quote> を要求すると、 PFL は <xref linkend="tab.x11.fontsys.example.alias"/> のように構築されることになります。</para>
    <table xml:id="tab.x11.fontsys.example.alias">
-    <title>Generating PFL from Fontconfig rules</title>
+    <title>Fontconfig ルールからの PFL の生成</title>
     <tgroup cols="2">
      <colspec colwidth="1*"/>
      <colspec colwidth="3*"/>
      <thead>
       <row>
        <entry>
-        <para>
-         Order
-        </para>
+        <para>順序</para>
        </entry>
        <entry>
-        <para>
-         Current PFL
-        </para>
+        <para>その時点での PFL</para>
        </entry>
       </row>
      </thead>
      <tbody>
       <row>
        <entry>
-        <para>
-         Request
-        </para>
+        <para>要求</para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>
-        </para>
+        <para><literal>Alegreya SC</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.default"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.default"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>serif</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>serif</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.prefer"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.prefer"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>,
-         <literal>serif</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , <literal>serif</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.accept"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.accept"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>,
-         <literal>serif</literal>, <literal>STIXGeneral</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , <literal>serif</literal> , <literal>STIXGeneral</literal></para>
        </entry>
       </row>
      </tbody>
     </tgroup>
    </table>
-   <para>
-    In Fontconfig's metrics, the family name has the highest priority over
-    other patterns, like style, size, etc. Fontconfig checks which family is
-    currently installed on the system. If <quote>Alegreya SC</quote> is
-    installed, then Fontconfig returns it. If not, it asks for <quote>Droid
-    Serif</quote>, etc.
-   </para>
-   <para>
-    Be careful. When the order of Fontconfig snippets is changed, Fontconfig
-    can return different results, as depicted in
-    <xref linkend="tab.x11.fontsys.example.alias2"/>.
-   </para>
+   <para>Fontconfig の方式では、他のパターンやスタイル、サイズなどと比べて、ファミリ名は最優先の順位が設定されます。 Fontconfig では、システムにインストールされているフォントファミリを確認し、もしも <quote>Alegreya SC</quote> がインストールされている場合、 Fontconfig はそのまま返します。インストールされていない場合は、 <quote>Droid Serif</quote> などを探そうとします。</para>
+   <para>なお、 Fontconfig の設定順序を変えてしまうと、 Fontconfig が異なる動作をしてしまうことになります。たとえば <xref linkend="tab.x11.fontsys.example.alias2"/> のようになります。</para>
    <table xml:id="tab.x11.fontsys.example.alias2">
-    <title>Results from Generating PFL from Fontconfig Rules with Changed Order</title>
+    <title>順序を変更した Fntconfig ルールから生成した PFL による結果</title>
     <tgroup cols="3">
      <thead>
       <row>
        <entry>
-        <para>
-         Order
-        </para>
+        <para>順序</para>
        </entry>
        <entry>
-        <para>
-         Current PFL
-        </para>
+        <para>その時点での PFL</para>
        </entry>
        <entry>
-        <para>
-         Note
-        </para>
+        <para>注意</para>
        </entry>
       </row>
      </thead>
      <tbody>
       <row>
        <entry>
-        <para>
-         Request
-        </para>
+        <para>要求</para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>
-        </para>
+        <para><literal>Alegreya SC</literal></para>
        </entry>
        <entry>
-        <para>
-         Same request performed.
-        </para>
+        <para>同じ処理を実施したものとします。</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.prefer"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.prefer"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>
-        </para>
+        <para><literal>Alegreya SC</literal></para>
        </entry>
        <entry>
-        <para>
-         <literal>serif</literal> not in PFL, nothing is substituted
-        </para>
+        <para><literal>serif</literal> が PFL 内に存在しないので、何も起こりません。</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.accept"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.accept"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>
-        </para>
+        <para><literal>Alegreya SC</literal></para>
        </entry>
        <entry>
-        <para>
-         <literal>serif</literal> not in PFL, nothing is substituted
-        </para>
+        <para><literal>serif</literal> が PFL 内に存在しないので、何も起こりません。</para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.default"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.default"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>serif</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>serif</literal></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal> present in PFL, substitution is
-         performed
-        </para>
+        <para><literal>Alegreya SC</literal> が PFL 内に存在するので、置き換えが起こります</para>
        </entry>
       </row>
      </tbody>
     </tgroup>
    </table>
    <note>
-    <title>Implication</title>
-    <para>
-     Think of the <literal>&lt;default&gt;</literal> alias as a classification
-     or inclusion of this group (if not installed). As the example shows,
-     <literal>&lt;default&gt;</literal> should always precede the
-     <literal>&lt;prefer&gt;</literal> and <literal>&lt;accept&gt;</literal>
-     aliases of that group.
-    </para>
-    <para>
-     <literal>&lt;default&gt;</literal> classification is not limited to the
-     generic aliases serif, sans-serif and monospace. See
-     <filename>/usr/share/fontconfig/conf.avail/30-metric-aliases.conf</filename>
-     for a complex example.
-    </para>
+    <title>暗黙設定について</title>
+    <para><literal>&lt;default&gt;</literal> で指定した別名は、このグループに対する分類や包含 (インストールされていなければ) の意味があるものとお考えください。例に示されているとおり、 <literal>&lt;default&gt;</literal> の設定は、そのグループに対する<literal>&lt;prefer&gt;</literal> と <literal>&lt;accept&gt;</literal> よりも常に優先して動作します。</para>
+    <para><literal>&lt;default&gt;</literal> の分類は、 serif, sans-serif, monospace に対する一般的な別名だけに限りません。より複雑な例については、 <filename>/usr/share/fontconfig/conf.avail/30-metric-aliases.conf</filename> をお読みください。</para>
 <!-- Commented out as this  -->
 <!--<para>
         We can also think about Fontconfig alias system as of oriented graph.
@@ -836,14 +466,9 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
         <literal>STIXGeneral</literal>).
         </para>-->
    </note>
-   <para>
-    The following Fontconfig snippet in
-    <xref linkend="ex.x11.fontsys.fontconfig.aliases2"/> creates a
-    <literal>serif</literal> group. Every family in this group could substitute
-    others when a former font is not installed.
-   </para>
+   <para>下記 <xref linkend="ex.x11.fontsys.fontconfig.aliases2"/> の Fontconfig の設定例では、 <literal>serif</literal> というグループを作成しています。このグループ内の各ファミリは、前のフォントがインストールされていない場合に、後ろ側のフォントで置き換える動作をします。</para>
    <example xml:id="ex.x11.fontsys.fontconfig.aliases2">
-    <title>Aliases and Family Name Substitutions</title>
+    <title>別名とファミリ名の置き換え</title>
 <screen>&lt;alias&gt;
  &lt;family&gt;Alegreya SC&lt;/family&gt;
  &lt;default&gt;
@@ -871,20 +496,13 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
  &lt;/accept&gt;
 &lt;/alias&gt;</screen>
    </example>
-   <para>
-    Priority is given by the order in the <literal>&lt;accept&gt;</literal>
-    alias. Similarly, stronger <literal>&lt;prefer&gt;</literal> aliases can be
-    used.
-   </para>
-   <para>
-    <xref linkend="ex.x11.fontsys.fontconfig.aliases1"/> is expanded by
-    <xref linkend="ex.x11.fontsys.fontconfig.aliases3"/>.
-   </para>
+   <para>優先順位は <literal>&lt;accept&gt;</literal> の順序で設定されています。なお、より強い <literal>&lt;prefer&gt;</literal> の別名を使用することもできます。</para>
+   <para><xref linkend="ex.x11.fontsys.fontconfig.aliases3"/> は<xref linkend="ex.x11.fontsys.fontconfig.aliases1"/> をさらに拡張する設定です。</para>
    <example xml:id="ex.x11.fontsys.fontconfig.aliases3">
-    <title>Aliases and Family Names Substitutions</title>
+    <title>別名とファミリ名の置き換え</title>
     <variablelist>
      <varlistentry xml:id="vle.x11.fontsys.example.alias.accept2">
-      <term>Rule 4</term>
+      <term>ルール 4</term>
       <listitem>
 <screen>&lt;alias&gt;
  &lt;family&gt;serif&lt;/family&gt;
@@ -895,7 +513,7 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
       </listitem>
      </varlistentry>
      <varlistentry xml:id="vle.x11.fontsys.example.alias.prefer2">
-      <term>Rule 5</term>
+      <term>ルール 5</term>
       <listitem>
 <screen>&lt;alias&gt;
  &lt;family&gt;serif&lt;/family&gt;
@@ -907,147 +525,85 @@ DejaVuSansMono.ttf: "DejaVu Sans Mono" "Book"</screen>
      </varlistentry>
     </variablelist>
    </example>
-   <para>
-    The expanded configuration from
-    <xref linkend="ex.x11.fontsys.fontconfig.aliases3"/> would lead to the
-    following PFL evolution:
-   </para>
+   <para><xref linkend="ex.x11.fontsys.fontconfig.aliases3"/> によって拡張した設定は、下記のような PFL になります:</para>
    <table xml:id="tab.x11.fontsys.example.alias3">
-    <title>Results from Generating PFL from Fontconfig Rules</title>
+    <title>Fontconfig ルールから生成した PFL による結果</title>
     <tgroup cols="2">
      <colspec colwidth="1*"/>
      <colspec colwidth="3*"/>
      <thead>
       <row>
        <entry>
-        <para>
-         Order
-        </para>
+        <para>順序</para>
        </entry>
        <entry>
-        <para>
-         Current PFL
-        </para>
+        <para>その時点での PFL</para>
        </entry>
       </row>
      </thead>
      <tbody>
       <row>
        <entry>
-        <para>
-         Request
-        </para>
+        <para>要求</para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>
-        </para>
+        <para><literal>Alegreya SC</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.default"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.default"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>serif</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>serif</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.prefer"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.prefer"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>,
-         <literal>serif</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , <literal>serif</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.accept"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.accept"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>,
-         <literal>serif</literal>, <literal>STIXGeneral</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , <literal>serif</literal> , <literal>STIXGeneral</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.accept2"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.accept2"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>,
-         <literal>serif</literal>, <literal>Liberation Serif</literal>,
-         <literal>STIXGeneral</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , <literal>serif</literal> , <literal>Liberation Serif</literal> , <literal>STIXGeneral</literal></para>
        </entry>
       </row>
       <row>
        <entry>
-        <para>
-         <xref linkend="vle.x11.fontsys.example.alias.prefer2"/>
-        </para>
+        <para><xref linkend="vle.x11.fontsys.example.alias.prefer2"/></para>
        </entry>
        <entry>
-        <para>
-         <literal>Alegreya SC</literal>, <literal>Droid Serif</literal>,
-         <literal>DejaVu Serif</literal>, <literal>serif</literal>,
-         <literal>Liberation Serif</literal>, <literal>STIXGeneral</literal>
-        </para>
+        <para><literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , <literal>DejaVu Serif</literal> , <literal>serif</literal> , <literal>Liberation Serif</literal> , <literal>STIXGeneral</literal></para>
        </entry>
       </row>
      </tbody>
     </tgroup>
    </table>
    <note>
-    <title>Implications.</title>
+    <title>暗黙設定について</title>
     <itemizedlist mark="bullet" spacing="normal">
      <listitem>
-      <para>
-       In case multiple <literal>&lt;accept&gt;</literal> declarations for the
-       same generic name exist, the declaration that is parsed last
-       <quote>wins</quote>. If possible, do not use
-       <literal>&lt;accept&gt;</literal> <emphasis role="bold">after</emphasis>
-       user (<filename>/etc/fonts/conf.d/*-user.conf</filename>) when creating
-       a system-wide configuration.
-      </para>
+      <para>同じ汎用名に対して <literal>&lt;accept&gt;</literal> の定義が複数存在する場合、最後に処理された定義が <quote>勝ち残ります</quote> 。また、可能であれば、システム全体の設定を作成する際に、ユーザ設定 ( <filename>/etc/fonts/conf.d/*-user.conf</filename> ) の <emphasis role="bold">後ろで</emphasis> <literal>&lt;accept&gt;</literal> を使用しないでください。</para>
      </listitem>
      <listitem>
-      <para>
-       In case multiple <literal>&lt;prefer</literal> declarations for the same
-       generic name exist, the declaration that is parsed last
-       <quote>wins</quote>. If possible, do not use
-       <literal>&lt;prefer&gt;</literal>
-       <emphasis role="bold">before</emphasis> user in the system-wide
-       configuration.
-      </para>
+      <para>同じ汎用名に対して <literal>&lt;prefer&gt;</literal> の定義が複数存在する場合、最後に処理された定義が <quote>勝ち残ります</quote> 。また、可能であれば、システム全体の設定を作成する際に、ユーザ設定 ( <filename>/etc/fonts/conf.d/*-user.conf</filename> ) の <emphasis role="bold">前に</emphasis> <literal>&lt;prefer&gt;</literal> を使用しないでください。</para>
      </listitem>
      <listitem>
-      <para>
-       Every <literal>&lt;prefer&gt;</literal> declaration overwrites
-       <literal>&lt;accept&gt;</literal> declarations for the same generic
-       name. If the administrator wants to allow the user to use even
-       <literal>&lt;accept&gt;</literal> and not only
-       <literal>&lt;prefer&gt;</literal>,the administrator should not use
-       <literal>&lt;prefer&gt;</literal> in the system-wide configuration. On
-       the other hand, as users mostly use <literal>&lt;prefer&gt;</literal>,
-       this should not have any detrimental effect. We also see the use of
-       <literal>&lt;prefer&gt;</literal> in system-wide configurations.
-      </para>
+      <para>それぞれの <literal>&lt;prefer&gt;</literal> 宣言は、同じ汎用名に対する <literal>&lt;accept&gt;</literal> 宣言を上書きします。もしも管理者がユーザに対して <literal>&lt;prefer&gt;</literal> だけでなく <literal>&lt;accept&gt;</literal> も使用させたい場合は、管理者はシステム全体の設定で <literal>&lt;prefer&gt;</literal> を使用しないでください。一方のユーザは <literal>&lt;prefer&gt;</literal> を多く使用しますが、こちらについては問題はありません。ただ、システム全体の設定で <literal>&lt;prefer&gt;</literal> が使用されているのをよく見かけます。</para>
      </listitem>
     </itemizedlist>
    </note>

@@ -1,44 +1,47 @@
+# translation of x11_fonts.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: x11_fonts.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-31 17:59+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: x11_fonts.xml:9
 #, no-c-format
 msgid "Installing and Configuring Fonts"
-msgstr ""
+msgstr "フォントのインストールと設定"
 
 #. Tag: dm:translation
 #: x11_fonts.xml:14
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: x11_fonts.xml:18
 #, no-c-format
 msgid "Fonts in Linux can be categorized into two parts:"
-msgstr ""
+msgstr "Linux でのフォントは、下記の 2 種類に分類することができます:"
 
 #. Tag: term
 #: x11_fonts.xml:24
 #, no-c-format
 msgid "Outline or Vector Fonts"
-msgstr ""
+msgstr "アウトラインフォント／ベクトルフォント"
 
 #. Tag: para
 #: x11_fonts.xml:26
@@ -53,6 +56,14 @@ msgid ""
 "result for a particular size. Rasterization and hinting is done with the "
 "FreeType library."
 msgstr ""
+"字体を描画するための描画命令として、数学的な記述を行なっているフォントです。"
+"このような仕組みであることから、品質を損なうことなく任意のサイズに拡大や縮小を"
+"することができます。ただしフォントを使用する際には、そのような数学的な記述を"
+"ドットパターン (グリッド) に変形させる必要があります。この処理を一般的に、"
+" <emphasis>フォントのラスタライズ</emphasis> と呼びます。また、フォントによっては"
+" <emphasis>ヒンティング</emphasis> (ビットマップへの調整のためのフォント内組み込み) 情報として、特定の"
+"サイズでの描画結果を保持させておき、描画結果を改善したり高速化したりすることも"
+"あります。ラスタライズやヒンティングの動作は、 FreeType ライブラリが担っています。"
 
 #. Tag: para
 #: x11_fonts.xml:36
@@ -60,13 +71,13 @@ msgstr ""
 msgid ""
 "Common formats under Linux are PostScript Type 1 and Type 2, TrueType, and "
 "OpenType."
-msgstr ""
+msgstr "Linux での一般的なフォント形式は、 PostScript Type 1, Type 2, TrueType, OpenType です。"
 
 #. Tag: term
 #: x11_fonts.xml:43
 #, no-c-format
 msgid "Bitmap or Raster Fonts"
-msgstr ""
+msgstr "ビットマップフォント／ラスタフォント"
 
 #. Tag: para
 #: x11_fonts.xml:45
@@ -78,6 +89,11 @@ msgid ""
 "fonts are usually distributed in different sizes. These days, bitmap fonts "
 "are still used in the Linux console and sometimes in terminals."
 msgstr ""
+"特定のフォントサイズ向けにドットパターンの配列を持つフォントです。ビットマップ"
+"フォントは非常に高速かつシンプルに描画することができます。ただし、ベクトルフォント"
+"とは異なり、品質を損なうことなく拡大したり縮小したりすることができません。このような"
+"構造であることから、一般的には複数のサイズのフォントが同梱されています。ビットマップ"
+"フォントは、現在も Linux コンソールや場合によっては端末などで使用されています。"
 
 #. Tag: para
 #: x11_fonts.xml:52
@@ -86,18 +102,20 @@ msgid ""
 "Under Linux, Portable Compiled Format (PCF) or Glyph Bitmap Distribution "
 "Format (BDF) are the most common formats."
 msgstr ""
+"Linux での一般的なフォント形式は、 Portable Compiled Format (PCF) と"
+" Glyph Bitmap Distribution Format (BDF) です。"
 
 #. Tag: para
 #: x11_fonts.xml:60
 #, no-c-format
 msgid "The appearance of these fonts can be influenced by two main aspects:"
-msgstr ""
+msgstr "フォントの外観は、主に 2 つの要素から構成されます:"
 
 #. Tag: para
 #: x11_fonts.xml:66
 #, no-c-format
 msgid "choosing a suitable font family,"
-msgstr ""
+msgstr "フォントの特徴を決めるファミリ"
 
 #. Tag: para
 #: x11_fonts.xml:71
@@ -105,7 +123,7 @@ msgstr ""
 msgid ""
 "rendering the font with an algorithm that achieves results comfortable for "
 "the receiver's eyes."
-msgstr ""
+msgstr "利用者にとって見やすい結果を生み出すためのフォント描画アルゴリズム"
 
 #. Tag: para
 #: x11_fonts.xml:78
@@ -114,6 +132,8 @@ msgid ""
 "The last point is only relevant to vector fonts. Although the above two "
 "points are highly subjective, some defaults need to be created."
 msgstr ""
+"後者はベクトルフォントの場合にのみ意味がある項目です。また、上記はいずれも"
+"主観的な要素が強いものですが、いくつかの既定値を作成する必要があります。"
 
 #. Tag: para
 #: x11_fonts.xml:83
@@ -125,6 +145,11 @@ msgid ""
 "formats into optimized bitmap glyphs. The rendering process is controlled by "
 "an algorithm and its parameters (which may be subject to patent issues)."
 msgstr ""
+"Linux のフォント描画システムは、異なる関係性を持つ複数のライブラリから構成されて"
+"います。基本的なフォント描画ライブラリは <link xlink:href=\"http://www."
+"freetype.org/\">FreeType</link> で、対応する形式のフォントの字体を最適化された"
+"ビットマップ (ドットパターン) に変換します。描画処理はアルゴリズムとパラメータ"
+"によって制御されています (ここに特許に関する問題が存在します) 。"
 
 #. Tag: para
 #: x11_fonts.xml:92
@@ -136,6 +161,11 @@ msgid ""
 "amends his Fontconfig setting, this change will result in Fontconfig-aware "
 "applications."
 msgstr ""
+"FreeType を使用するプログラムやライブラリに対しては、 <link xlink:"
+"href=\"http://www.fontconfig.org/\">Fontconfig</link> ライブラリの使用を"
+"お勧めします。このライブラリは、ユーザやシステムからのフォント設定を収集する仕組み"
+"を提供します。ユーザが Fontconfig の設定を修正すると、影響は Fontconfig を"
+"使用する全てのアプリケーションに及びます。"
 
 #. Tag: para
 #: x11_fonts.xml:100
@@ -146,12 +176,16 @@ msgid ""
 "href=\"http://www.harfbuzz.org/\">Harfbuzz</link> or <link xlink:href="
 "\"http://www.pango.org/\">Pango</link> ."
 msgstr ""
+"アラビア文字やパスパ文字 <!-- Add Japanese -->、日本語 <!-- Add Japanese --> など、"
+"より洗練された OpenType 描画やその他の高レベルなテキスト処理機能を必要とする場合は、"
+"<link xlink:href=\"http://www.harfbuzz.org/\">Harfbuzz</link> や <link xlink:href="
+"\"http://www.pango.org/\">Pango</link> をお使いになることをお勧めします。"
 
 #. Tag: title
 #: x11_fonts.xml:108
 #, no-c-format
 msgid "Showing Installed Fonts"
-msgstr ""
+msgstr "インストール済みのフォントの一覧表示"
 
 #. Tag: para
 #: x11_fonts.xml:109
@@ -162,12 +196,15 @@ msgid ""
 "give you a good answer, but may return a different list depending on system "
 "and user configuration:"
 msgstr ""
+"お使いのシステムにインストールされているフォントの概要を知るには、 <command>rpm</command> "
+"や <command>fc-list</command> のコマンドを使用します。いずれのコマンドとも必要な"
+"情報を出力しますが、システムやユーザの設定によっては異なる一覧を返すことがあります:"
 
 #. Tag: term
 #: x11_fonts.xml:117
 #, no-c-format
 msgid "<command>rpm</command>"
-msgstr ""
+msgstr "<command>rpm</command>"
 
 #. Tag: para
 #: x11_fonts.xml:120
@@ -176,12 +213,14 @@ msgid ""
 "Invoke <command>rpm</command> to see which software packages containing "
 "fonts are installed on your system:"
 msgstr ""
+"<command>rpm</command> コマンドを利用することで、お使いのシステム内にどのような"
+"フォントを含むソフトウエアパッケージがインストールされているのかを知ることができます:"
 
 #. Tag: screen
 #: x11_fonts.xml:124
 #, no-c-format
 msgid "&prompt.user;rpm -qa '*fonts*'"
-msgstr ""
+msgstr "&prompt.user;rpm -qa '*fonts*'"
 
 #. Tag: para
 #: x11_fonts.xml:125
@@ -191,12 +230,15 @@ msgid ""
 "return some false positives like <literal>fonts-config</literal> (which is "
 "neither a font nor does it contain fonts)."
 msgstr ""
+"それぞれのフォントパッケージは上記のコマンドで表示されますが、"
+" <literal>fonts-config</literal> パッケージのように、フォントそのものでもなく、"
+"フォントを含むものでもないものが、一部表示されてしまいます。"
 
 #. Tag: term
 #: x11_fonts.xml:133
 #, no-c-format
 msgid "<command>fc-list</command>"
-msgstr ""
+msgstr "<command>fc-list</command>"
 
 #. Tag: para
 #: x11_fonts.xml:136
@@ -206,18 +248,21 @@ msgid ""
 "families can be accessed, whether they are installed on the system or in "
 "your home:"
 msgstr ""
+"<command>fc-list</command> を実行することで、どのフォントファミリを利用できるのかを"
+"知ることができます。ただし、システム内にインストールされているものと、ユーザが"
+"独自にインストールしているものの両方が表示されます:"
 
 #. Tag: screen
 #: x11_fonts.xml:141
 #, no-c-format
 msgid "&prompt.user;fc-list ':' family"
-msgstr ""
+msgstr "&prompt.user;fc-list ':' family"
 
 #. Tag: title
 #: x11_fonts.xml:143
 #, no-c-format
 msgid "Command <command>fc-list</command>"
-msgstr ""
+msgstr "<command>fc-list</command> コマンド"
 
 #. Tag: para
 #: x11_fonts.xml:144
@@ -228,12 +273,15 @@ msgid ""
 "Fontconfig&mdash;or, to be more precise, from its cache. See <command>man 1 "
 "fc-list</command> for more details."
 msgstr ""
+"<command>fc-list</command> は Fontconfig ライブラリに対するラッパーです。"
+" Fontconfig を利用することで、さらに多くの興味深い、かつ正確な情報をキャッシュから"
+"問い合わせることができます。詳しくは <command>man 1 fc-list</command> をお読みください。"
 
 #. Tag: title
 #: x11_fonts.xml:157
 #, no-c-format
 msgid "Viewing Fonts"
-msgstr ""
+msgstr "フォントの表示"
 
 #. Tag: para
 #: x11_fonts.xml:158
@@ -245,12 +293,17 @@ msgid ""
 "> . For example, to display the FreeMono font in 14 point, use "
 "<command>ftview</command> like this:"
 msgstr ""
+"インストールされているフォントの外観を確認したい場合は、 <command>ftview</command> "
+"コマンド (<systemitem>ft2demos</systemitem> パッケージ) を使用するか、もしくは"
+"<link xlink:href=\"http://fontinfo.opensuse.org/\"/> にアクセスしてください。"
+"たとえば FreeMono フォントを 14 ポイントで表示したい場合は、下記のようにして"
+" <command>ftview</command> コマンドを実行します:"
 
 #. Tag: screen
 #: x11_fonts.xml:165
 #, no-c-format
 msgid "&prompt.user;ftview 14 /usr/share/fonts/truetype/FreeMono.ttf"
-msgstr ""
+msgstr "&prompt.user;ftview 14 /usr/share/fonts/truetype/FreeMono.ttf"
 
 #. Tag: para
 #: x11_fonts.xml:166
@@ -260,12 +313,15 @@ msgid ""
 "opensuse.org/\"/> to find out which styles (regular, bold, italic, etc.) and "
 "languages are supported."
 msgstr ""
+"さらに詳しい情報を得るには、 <link xlink:href=\"http://fontinfo.opensuse.org/\"/> "
+"にアクセスしてください。ここにはスタイルに関する情報 (レギュラー, ボールド, イタリックなど) "
+"と対応する言語に関する情報が提供されています。"
 
 #. Tag: title
 #: x11_fonts.xml:174
 #, no-c-format
 msgid "Querying Fonts"
-msgstr ""
+msgstr "フォントの問い合わせ"
 
 #. Tag: para
 #: x11_fonts.xml:175
@@ -274,6 +330,8 @@ msgid ""
 "To query which font is used when a pattern is given, use the <command>fc-"
 "match</command> command."
 msgstr ""
+"特定のパターンに対して適用されるフォントを確認するには、 <command>fc-"
+"match</command> コマンドを使用します。"
 
 #. Tag: para
 #: x11_fonts.xml:179
@@ -282,6 +340,8 @@ msgid ""
 "For example, if your pattern contains an already installed font, <command>fc-"
 "match</command> returns the file name, font family, and the style:"
 msgstr ""
+"たとえばパターン内に既にインストール済みのフォントが含まれている場合、 <command>fc-"
+"match</command> はファイル名とフォントファミリ、スタイルに関する情報を表示します:"
 
 #. Tag: screen
 #: x11_fonts.xml:184
@@ -290,6 +350,8 @@ msgid ""
 "&prompt.user;fc-match 'Liberation Serif'\n"
 "LiberationSerif-Regular.ttf: \"Liberation Serif\" \"Regular\""
 msgstr ""
+"&prompt.user;fc-match 'Liberation Serif'\n"
+"LiberationSerif-Regular.ttf: \"Liberation Serif\" \"Regular\""
 
 #. Tag: para
 #: x11_fonts.xml:186
@@ -299,6 +361,9 @@ msgid ""
 "rules take place and try to find the most similar fonts available. This "
 "means, your request is substituted:"
 msgstr ""
+"もしも必要なフォントがお使いのシステム内に存在していない場合は、 Fontconfig の"
+"マッチングルールを利用して、最も近いフォントを見つけようとします。言い換えると、"
+"要求内容が置き換えられるということになります:"
 
 #. Tag: screen
 #: x11_fonts.xml:191
@@ -307,6 +372,8 @@ msgid ""
 "&prompt.user;fc-match 'Foo Family'\n"
 "DejaVuSans.ttf: \"DejaVu Sans\" \"Book\""
 msgstr ""
+"&prompt.user;fc-match 'Foo Family'\n"
+"DejaVuSans.ttf: \"DejaVu Sans\" \"Book\""
 
 #. Tag: para
 #: x11_fonts.xml:193
@@ -318,6 +385,10 @@ msgid ""
 "quote> . These alias names can be substituted by real family names or even a "
 "preference list of family names:"
 msgstr ""
+"Fontconfig では、一方の名前を別のファミリ名に置き換えることのできる <emphasis>"
+"別名</emphasis> に対応しています。一般的には、 <quote>sans-serif</quote> ,"
+" <quote>serif</quote> , <quote>monospace</quote> などの一般的な名前を、"
+"実際のファミリ名やファミリ名の優先順に置き換える際に使用します:"
 
 #. Tag: screen
 #: x11_fonts.xml:200
@@ -328,6 +399,10 @@ msgid ""
 "DejaVuSans.ttf: \"DejaVu Sans\" \"Book\"\n"
 "DejaVuSansMono.ttf: \"DejaVu Sans Mono\" \"Book\""
 msgstr ""
+"&prompt.user;for font in serif sans mono; do fc-match \"$font\" ; done\n"
+"DejaVuSerif.ttf: \"DejaVu Serif\" \"Book\"\n"
+"DejaVuSans.ttf: \"DejaVu Sans\" \"Book\"\n"
+"DejaVuSansMono.ttf: \"DejaVu Sans Mono\" \"Book\""
 
 #. Tag: para
 #: x11_fonts.xml:204
@@ -335,13 +410,13 @@ msgstr ""
 msgid ""
 "The result may vary on your system, depending on which fonts are currently "
 "installed."
-msgstr ""
+msgstr "上記の結果は、システムにどのフォントがインストールされているかによって異なります。"
 
 #. Tag: title
 #: x11_fonts.xml:209
 #, no-c-format
 msgid "Similarity Rules according to Fontconfig"
-msgstr ""
+msgstr "fontconfig に対しても同様のルールが適用される件について"
 
 #. Tag: para
 #: x11_fonts.xml:210
@@ -352,18 +427,22 @@ msgid ""
 "<quote>Similarity</quote> depends on Fontconfig's internal metrics and on "
 "the user's or administrator's Fontconfig settings."
 msgstr ""
+"Fontconfig は指定された要求に対して、 <emphasis>常に</emphasis> 最も近い実際の"
+"ファミリ名 (少なくとも 1 つがインストールされていれば) を返します 。 <quote>近さ"
+"</quote> の判断基準は Fontconfig の内部仕様と、ユーザやシステム管理者が設定した"
+" Fontconfig の設定に従って決まります。"
 
 #. Tag: title
 #: x11_fonts.xml:220
 #, no-c-format
 msgid "Installing Fonts"
-msgstr ""
+msgstr "フォントのインストール"
 
 #. Tag: para
 #: x11_fonts.xml:221
 #, no-c-format
 msgid "To install a new font there are these major methods:"
-msgstr ""
+msgstr "新しいフォントをインストールするにあたっては、いくつかの主要な方法が存在します:"
 
 #. Tag: para
 #: x11_fonts.xml:226
@@ -375,6 +454,11 @@ msgid ""
 "filename> . For installation in your home directory, use <filename>~/.config/"
 "fonts</filename> ."
 msgstr ""
+"<filename>*.ttf</filename> や <filename>*.otf</filename> のようなフォント"
+"ファイルを、既知のフォントディレクトリにインストールする方法があります。システム"
+"全体に対して反映させる場合は、標準のディレクトリ <filename>/usr/share/fonts</filename> "
+"にインストールします。ユーザ個人でインストールしたい場合は、 <filename>~/.config/"
+"fonts</filename> にインストールします。"
 
 #. Tag: para
 #: x11_fonts.xml:233
@@ -385,6 +469,10 @@ msgid ""
 "</literal> element, see <xref linkend=\"sec.x11.fontsys.config.fontconfig\"/"
 "> for details."
 msgstr ""
+"標準以外のディレクトリにインストールしたい場合は、 Fontconfig 側を設定する必要が"
+"あります。 Fontconfig に対して <literal>&lt;dir&gt;</literal> 要素を追加して、"
+"ディレクトリを指定してください。詳しくは <xref linkend=\"sec.x11.fontsys.config.fontconfig\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: x11_fonts.xml:241
@@ -397,6 +485,11 @@ msgid ""
 "command. For example, to add a repository for <phrase os=\"sles;sled"
 "\">&slea; 15</phrase> <phrase os=\"osuse\">&productname; 15</phrase> :"
 msgstr ""
+"<command>zypper</command> を利用してフォントをインストールする方法もあります。"
+"多数のフォントが &suse; ディストリビューションの一部としてパッケージの形態で"
+"提供されているほか、 <link xlink:href=\"http://download.opensuse.org/repositories/"
+"M17N:/fonts/\">M17N:fonts</link> リポジトリにも多数のフォントが用意されています。"
+" M17N:fonts リポジトリを追加する場合は、下記の手順で行ないます:"
 
 #. Tag: screen
 #: x11_fonts.xml:249
@@ -407,6 +500,10 @@ msgid ""
 "M17N:/fonts/SLE_15/</phrase><phrase os=\"osuse\">http://download.opensuse."
 "org/repositories/M17N:/fonts/openSUSE_Leap_15.0/</phrase>"
 msgstr ""
+"&prompt.sudo;zypper ar\n"
+"     <phrase os=\"sles;sled\">http://download.opensuse.org/repositories/"
+"M17N:/fonts/SLE_15/</phrase><phrase os=\"osuse\">http://download.opensuse."
+"org/repositories/M17N:/fonts/openSUSE_Leap_15.0/</phrase>"
 
 #. Tag: para
 #: x11_fonts.xml:253
@@ -414,20 +511,19 @@ msgstr ""
 msgid ""
 "To search for your <replaceable>FONT_FAMILY_NAME</replaceable> use this "
 "command:"
-msgstr ""
+msgstr "<replaceable>フォントファミリ名</replaceable> で検索するには、下記のコマンドを使用します:"
 
 #. Tag: screen
 #: x11_fonts.xml:257
 #, no-c-format
-msgid ""
-"&prompt.user;zypper se '<replaceable>FONT_FAMILY_NAME</replaceable>*fonts'"
-msgstr ""
+msgid "&prompt.user;zypper se '<replaceable>FONT_FAMILY_NAME</replaceable>*fonts'"
+msgstr "&prompt.user;zypper se '<replaceable>フォントファミリ名</replaceable>*fonts'"
 
 #. Tag: title
 #: x11_fonts.xml:269
 #, no-c-format
 msgid "Configuring the Appearance of Fonts"
-msgstr ""
+msgstr "フォントの外観の設定"
 
 #. Tag: para
 #: x11_fonts.xml:270
@@ -437,6 +533,9 @@ msgid ""
 "unsatisfactory. For example, an average monitor these days has a resolution "
 "of 100dpi which makes pixels too big and glyphs look clunky."
 msgstr ""
+"レンダリングの状態やフォントサイズによっては、見た目があまりきれいに描画されない"
+"場合があります。たとえば現在の一般的なモニタは 100dpi 程度の解像度ですが、"
+"そのままではドットとしては大きすぎて、角張った表示になってしまいます。"
 
 #. Tag: para
 #: x11_fonts.xml:275
@@ -447,12 +546,16 @@ msgid ""
 "subpixel rendering (tripling resolution in one direction). These algorithms "
 "can also differ from one font format to another."
 msgstr ""
+"アンチエイリアス (灰色を利用した平滑化) やヒンティング (ビットマップへの調整のためのフォント内組み込み) 、"
+"サブピクセルレンダリング (一方向の解像度を 3 倍化する技術) など、低解像度でもきれいに"
+"描画するためのアルゴリズムがいくつか用意されています。これらのアルゴリズムは、"
+"フォント形式によっても異なります。"
 
 #. Tag: title
 #: x11_fonts.xml:282
 #, no-c-format
 msgid "Patent Issues with Subpixel Rendering"
-msgstr ""
+msgstr "サブピクセルレンダリングに対する特許問題について"
 
 #. Tag: para
 #: x11_fonts.xml:283
@@ -464,6 +567,11 @@ msgid ""
 "Fontconfig has no effect unless the system has a FreeType2 library with "
 "subpixel rendering compiled in."
 msgstr ""
+"&suse; ディストリビューションでは、サブピクセルレンダリングを使用していません。"
+" FreeType2 にはこのアルゴリズムが含まれていますが、 2019 年の年末まではいくつかの"
+"特許が成立している状況であるため、サブピクセルレンダリングを明示的にコンパイル"
+"して組み込まない限り、 fontconfig 内のサブピクセルレンダリング関係の設定には"
+"効果がありません。"
 
 #. Tag: para
 #: x11_fonts.xml:291
@@ -472,12 +580,14 @@ msgid ""
 "Via Fontconfig, it is possible to select a rendering algorithms for every "
 "font individually or for a set of fonts."
 msgstr ""
+"Fontconfig では、描画アルゴリズムを各フォントに対して個別に設定することができる"
+"ほか、フォントセットを指定して設定することもできます。"
 
 #. Tag: title
 #: x11_fonts.xml:296
 #, no-c-format
 msgid "Configuring Fonts via <literal>sysconfig</literal>"
-msgstr ""
+msgstr "<literal>sysconfig</literal> を介したフォントの設定"
 
 #. Tag: para
 #: x11_fonts.xml:297
@@ -490,12 +600,18 @@ msgid ""
 "sysconfig module). After you have edited the file, run <command>fonts-"
 "config</command> :"
 msgstr ""
+"&productname; には、 Fontconfig に対する <literal>sysconfig</literal> と"
+"呼ばれるレイヤが用意されています。このファイルを利用すれば、最も簡単に設定を"
+"試すことができます。既定の設定を変更するには、 <filename>/etc/sysconfig/fonts-config</filename> "
+"ファイルを編集してください (もしくは、 &yast; の sysconfig モジュールを利用しても"
+"かまいません) 。ファイルを編集したら、 <command>fonts-config</command> を"
+"実行します:"
 
 #. Tag: screen
 #: x11_fonts.xml:305
 #, no-c-format
 msgid "&prompt.sudo;/usr/sbin/fonts-config"
-msgstr ""
+msgstr "&prompt.sudo;/usr/sbin/fonts-config"
 
 #. Tag: para
 #: x11_fonts.xml:306
@@ -503,7 +619,7 @@ msgstr ""
 msgid ""
 "Restart the application to make the effect visible. Keep in mind the "
 "following issues:"
-msgstr ""
+msgstr "アプリケーションを再起動すると、効果が適用されます。ただし、下記に注意してください:"
 
 #. Tag: para
 #: x11_fonts.xml:312
@@ -513,6 +629,9 @@ msgid ""
 "reads Fontconfig configuration from time to time. Newly created or reloaded "
 "tabs get new font configurations later."
 msgstr ""
+"アプリケーションによっては、再起動をする必要がないものもあります。たとえば、 Firefox "
+"では Fontconfig を自動的に再読み込みします。新しく作成したタブや、タブを再読み込み"
+"することで、新しいフォント設定を適用することができます。"
 
 #. Tag: para
 #: x11_fonts.xml:319
@@ -522,6 +641,9 @@ msgid ""
 "every package installation or removal (if not, it is a bug of the font "
 "software package)."
 msgstr ""
+"<command>fonts-config</command> スクリプトは、フォントパッケージをインストールしたり"
+"削除したりするごとに、自動的に呼び出されます (もしもそうでなければ、フォントパッケージ"
+"のバグです) 。"
 
 #. Tag: para
 #: x11_fonts.xml:326
@@ -531,6 +653,9 @@ msgid ""
 "config</command> command line option. See <command>fonts-config --help</"
 "command> for details."
 msgstr ""
+"それぞれの sysconfig の値は、 <command>fonts-config</command> のコマンドラインオプション"
+"を使用することで、一時的に上書きすることができます。詳しくは <command>fonts-config --help</"
+"command> をお読みください。"
 
 #. Tag: para
 #: x11_fonts.xml:333
@@ -540,12 +665,15 @@ msgid ""
 "1 fonts-config</command> or the help page of the &yast; sysconfig module. "
 "The following variables are examples:"
 msgstr ""
+"sysconfig で変更可能な変数には、様々なものがあります。詳しくは <command>man "
+"1 fonts-config</command> もしくは &yast; sysconfig モジュールのヘルプページ"
+"をお読みください。下記に主な変数を示します:"
 
 #. Tag: term
 #: x11_fonts.xml:340
 #, no-c-format
 msgid "Usage of Rendering Algorithms"
-msgstr ""
+msgstr "使用する描画アルゴリズムの設定"
 
 #. Tag: para
 #: x11_fonts.xml:342
@@ -556,12 +684,15 @@ msgid ""
 "varname> , <varname>USE_EMBEDDED_BITMAPS</varname> and "
 "<varname>EMBEDDED_BITMAP_LANGAGES</varname>"
 msgstr ""
+"<varname>FORCE_HINTSTYLE</varname> , <varname>FORCE_AUTOHINT</varname> ,"
+" <varname>FORCE_BW</varname> , <varname>FORCE_BW_MONOSPACE</varname> ,"
+" <varname>USE_EMBEDDED_BITMAPS</varname> , <varname>EMBEDDED_BITMAP_LANGAGES</varname>"
 
 #. Tag: term
 #: x11_fonts.xml:352
 #, no-c-format
 msgid "Preference Lists of Generic Aliases"
-msgstr ""
+msgstr "一般的な別名に対する優先順位リスト"
 
 #. Tag: para
 #: x11_fonts.xml:354
@@ -571,6 +702,8 @@ msgid ""
 "<varname>PREFER_SERIF_FAMILIES</varname> , <varname>PREFER_MONO_FAMILIES</"
 "varname> and <varname>SEARCH_METRIC_COMPATIBLE</varname>"
 msgstr ""
+"<varname>PREFER_SANS_FAMILIES</varname> , <varname>PREFER_SERIF_FAMILIES</varname> ,"
+" <varname>PREFER_MONO_FAMILIES</varname> , <varname>SEARCH_METRIC_COMPATIBLE</varname>"
 
 #. Tag: para
 #: x11_fonts.xml:363
@@ -580,12 +713,14 @@ msgid ""
 "<quote>most readable</quote> fonts (more contrast) to <quote>most beautiful</"
 "quote> (more smoothed)."
 msgstr ""
+"下記の一覧では、 <quote>最も読みやすい</quote> (最も濃淡のある) フォントを先に、"
+" <quote>最も美しい</quote> (最もなめらかな) フォントを後ろに並べて設定例を示しています。"
 
 #. Tag: term
 #: x11_fonts.xml:370
 #, no-c-format
 msgid "Bitmap Fonts"
-msgstr ""
+msgstr "ビットマップフォント"
 
 #. Tag: para
 #: x11_fonts.xml:372
@@ -596,18 +731,22 @@ msgid ""
 "these fonts are rendered black and white, not smoothed and that bitmap fonts "
 "are available in several sizes only. Consider using"
 msgstr ""
+"<varname>PREFER_*_FAMILIES</varname> の変数を利用することで、ビットマップフォントを"
+"優先して使用するように設定することができます。これらの値について、詳しくはヘルプセクション"
+"内の例をお読みください。ただし、ビットマップフォントは白黒の 2 値のみで描画されるフォント"
+"であり、限られたサイズの文字しか表示することができないことに注意してください。なお、"
 
 #. Tag: para
 #: x11_fonts.xml:379
 #, no-c-format
 msgid "to disable metric compatibility-driven family name substitutions."
-msgstr ""
+msgstr "を指定して、メトリック基準のファミリ名置換を無効化しておくことをお勧めします。"
 
 #. Tag: term
 #: x11_fonts.xml:385
 #, no-c-format
 msgid "Scalable Fonts Rendered Black and White"
-msgstr ""
+msgstr "白黒描画のアウトラインフォント"
 
 #. Tag: para
 #: x11_fonts.xml:387
@@ -618,18 +757,23 @@ msgid ""
 "like the Liberation families. Unfortunately, there is a lack of well hinted "
 "fonts though. Set the following variable to force this method:"
 msgstr ""
+"アウトラインフォントをアンチエイリアス処理無しで描画すると、アウトラインによる拡大／縮小"
+"の機能を生かしたまま、ビットマップフォントに似た出力を行なうことができます。なお、"
+" Liberation ファミリのように適切なヒンティング情報のあるフォントをお使いください。"
+"ただし、ヒンティングのあるフォントは少数です。この方式を強制する場合は、下記の変数を"
+"設定してください:"
 
 #. Tag: screen
 #: x11_fonts.xml:394
 #, no-c-format
 msgid "FORCE_BW=\"yes\""
-msgstr ""
+msgstr "FORCE_BW=\"yes\""
 
 #. Tag: term
 #: x11_fonts.xml:398
 #, no-c-format
 msgid "Monospaced Fonts Rendered Black and White"
-msgstr ""
+msgstr "白黒描画の等幅フォント"
 
 #. Tag: para
 #: x11_fonts.xml:400
@@ -637,19 +781,19 @@ msgstr ""
 msgid ""
 "Render monospaced fonts without antialiasing only, otherwise use default "
 "settings:"
-msgstr ""
+msgstr "アンチエイリアス処理のみを無くして等幅のフォントを描画したい場合は、下記のように設定します:"
 
 #. Tag: screen
 #: x11_fonts.xml:404
 #, no-c-format
 msgid "FORCE_BW_MONOSPACE=\"yes\""
-msgstr ""
+msgstr "FORCE_BW_MONOSPACE=\"yes\""
 
 #. Tag: term
 #: x11_fonts.xml:408
 #, no-c-format
 msgid "Default Settings"
-msgstr ""
+msgstr "既定の設定"
 
 #. Tag: para
 #: x11_fonts.xml:410
@@ -660,12 +804,16 @@ msgid ""
 "autohinter ( <literal>hintstyle=hintslight</literal> ). Leave all relevant "
 "sysconfig variables to the default setting."
 msgstr ""
+"全てのフォントに対してアンチエイリアス処理が行なわれます。適切にヒント情報が書かれた"
+"フォントであれば、 <emphasis>バイトコードインタプリタ</emphasis> (Byte Code Interpreter; BCI) "
+"を利用して描画し、それ以外のフォントは自動ヒント ( <literal>hintstyle=hintslight</literal> ) "
+"を利用して描画します。この場合、 sysconfig の設定は全て既定値に設定してください。"
 
 #. Tag: term
 #: x11_fonts.xml:419
 #, no-c-format
 msgid "CFF Fonts"
-msgstr ""
+msgstr "CFF フォント"
 
 #. Tag: para
 #: x11_fonts.xml:421
@@ -676,6 +824,10 @@ msgid ""
 "out by following the example of <literal>PREFER_*_FAMILIES</literal> . "
 "Possibly make them more dark and bold with:"
 msgstr ""
+"CFF 形式のフォントを使用します。これらは FreeType2 での最新の改善版で提供される"
+"既定の TrueType フォントよりも、より読みやすく描画されます。下記にある"
+" <literal>PREFER_*_FAMILIES</literal> の例をご覧になり、これらのフォントをお試し"
+"ください。なお、より暗く太く表示したい場合は、下記を設定します:"
 
 #. Tag: para
 #: x11_fonts.xml:429
@@ -684,18 +836,20 @@ msgid ""
 "as they are rendered by <literal>hintstyle=hintslight</literal> by default. "
 "Also consider using:"
 msgstr ""
+"これは既定値である <literal>hintstyle=hintslight</literal> と比較した場合のものです。"
+"また、下記もお試しになることをお勧めします:"
 
 #. Tag: screen
 #: x11_fonts.xml:433
 #, no-c-format
 msgid "SEARCH_METRIC_COMPATIBLE=\"no\""
-msgstr ""
+msgstr "SEARCH_METRIC_COMPATIBLE=\"no\""
 
 #. Tag: term
 #: x11_fonts.xml:437
 #, no-c-format
 msgid "Autohinter Exclusively"
-msgstr ""
+msgstr "排他的な自動ヒント"
 
 #. Tag: para
 #: x11_fonts.xml:439
@@ -705,24 +859,27 @@ msgid ""
 "thicker, sometimes fuzzier letter shapes with lower contrast. Set the "
 "following variable to activate this:"
 msgstr ""
+"たとえ十分なヒント情報のあるフォントであっても、 FreeType2 の自動ヒント機能を使ってみる"
+"価値があります。この仕組みにより、低解像度の環境でもより太く滑らかに表示することができます。"
+"この機能を有効化するには、下記とおり変数を設定します:"
 
 #. Tag: screen
 #: x11_fonts.xml:444
 #, no-c-format
 msgid "FORCE_AUTOHINTER=\"yes\""
-msgstr ""
+msgstr "FORCE_AUTOHINTER=\"yes\""
 
 #. Tag: para
 #: x11_fonts.xml:445
 #, no-c-format
 msgid "Use <literal>FORCE_HINTSTYLE</literal> to control the level of hinting."
-msgstr ""
+msgstr "ヒント処理のレベルを制御したい場合は、 <literal>FORCE_HINTSTYLE</literal> をお使いください。"
 
 #. Tag: title
 #: x11_fonts.xml:453
 #, no-c-format
 msgid "Diving into Fontconfig XML"
-msgstr ""
+msgstr "Fontconfig XML の紹介"
 
 #. Tag: para
 #: x11_fonts.xml:454
@@ -734,6 +891,11 @@ msgid ""
 "<command>man 5 fonts-conf</command> or in <filename>/etc/fonts/conf.d/</"
 "filename> ."
 msgstr ""
+"Fontconfig の設定形式は、 <emphasis>eXtensible Markup Language</emphasis> (XML) "
+"と呼ばれる形式になっています。下記のいくつかの設定例は完全なリファレンスには"
+"なっていませんが、簡潔な説明としては十分であるものと考えております。詳細やその他の"
+"考え方について、詳しくは <command>man 5 fonts-conf</command> や"
+" <filename>/etc/fonts/conf.d/</filename> をお読みください。"
 
 #. Tag: para
 #: x11_fonts.xml:461
@@ -744,18 +906,22 @@ msgid ""
 "<filename>/etc/fonts/conf.d/</filename> directory. To customize Fontconfig, "
 "there are two places where you can insert your changes:"
 msgstr ""
+"Fontconfig での中心的な設定ファイルは <filename>/etc/fonts/fonts.conf</filename> "
+"です。また、 <filename>/etc/fonts/conf.d/</filename> 以下にある設定も自動的に"
+"取り込まれるよう設定されています。 Fontconfig をカスタマイズするには、下記の"
+"いずれかの場所で設定を行なってください:"
 
 #. Tag: title
 #: x11_fonts.xml:469
 #, no-c-format
 msgid "Fontconfig Configuration Files"
-msgstr ""
+msgstr "Fontconfig 設定ファイル"
 
 #. Tag: title
 #: x11_fonts.xml:472
 #, no-c-format
 msgid "System-wide changes"
-msgstr ""
+msgstr "システム全体の変更"
 
 #. Tag: para
 #: x11_fonts.xml:473
@@ -764,12 +930,15 @@ msgid ""
 "Edit the file <filename>/etc/fonts/local.conf</filename> (by default, it "
 "contains an empty <literal>fontconfig</literal> element)."
 msgstr ""
+"<filename>/etc/fonts/local.conf</filename> ファイルを編集してください"
+" (既定では、何も要素の入っていない <literal>fontconfig</literal> タグが"
+"書かれているだけのはずです) 。"
 
 #. Tag: title
 #: x11_fonts.xml:481
 #, no-c-format
 msgid "User-specific changes"
-msgstr ""
+msgstr "ユーザ固有の変更"
 
 #. Tag: para
 #: x11_fonts.xml:482
@@ -779,18 +948,21 @@ msgid ""
 "Fontconfig configuration files in the <filename>~/.config/fontconfig/conf.d/"
 "</filename> directory."
 msgstr ""
+"<filename>~/.config/fontconfig/fonts.conf</filename> ファイルを編集するか、"
+"独自にファイルを作成してある場合は <filename>~/.config/fontconfig/conf.d/"
+"</filename> ディレクトリ内に置いてもかまいません。"
 
 #. Tag: para
 #: x11_fonts.xml:490
 #, no-c-format
 msgid "User-specific changes overwrite any system-wide settings."
-msgstr ""
+msgstr "ユーザ固有の変更は、システム全体の変更を上書きして動作します。"
 
 #. Tag: title
 #: x11_fonts.xml:494
 #, no-c-format
 msgid "Deprecated User Configuration File"
-msgstr ""
+msgstr "廃止予定のユーザ設定ファイルについて"
 
 #. Tag: para
 #: x11_fonts.xml:495
@@ -800,6 +972,9 @@ msgid ""
 "should not be used anymore. Use <filename>~/.config/fontconfig/fonts.conf</"
 "filename> instead."
 msgstr ""
+"<filename>~/.fonts.conf</filename> ファイルは廃止予定とされているものであり、"
+"現在は使用すべきではありません。代わりに <filename>~/.config/fontconfig/fonts.conf</"
+"filename> をお使いください。"
 
 #. Tag: para
 #: x11_fonts.xml:501
@@ -808,6 +983,8 @@ msgid ""
 "Every configuration file needs to have a <literal>fontconfig</literal> "
 "element. As such, the minimal file looks like this:"
 msgstr ""
+"それぞれの設定ファイルには、 <literal>fontconfig</literal> というタグ要素が存在する"
+"必要があります。このような構造から、最小限の設定ファイルは下記のようになります:"
 
 #. Tag: screen
 #: x11_fonts.xml:505
@@ -819,6 +996,11 @@ msgid ""
 "   &lt;!-- Insert your changes here --&gt;\n"
 "   &lt;/fontconfig&gt;"
 msgstr ""
+"&lt;?xml version=\"1.0\"?&gt;\n"
+"   &lt;!DOCTYPE fontconfig SYSTEM \"fonts.dtd\"&gt;\n"
+"   &lt;fontconfig&gt;\n"
+"   &lt;!-- Insert your changes here --&gt;\n"
+"   &lt;/fontconfig&gt;"
 
 #. Tag: para
 #: x11_fonts.xml:510
@@ -827,18 +1009,20 @@ msgid ""
 "If the default directories are not enough, insert the <literal>dir</literal> "
 "element with the respective directory:"
 msgstr ""
+"既定のディレクトリでは不十分な場合、 <literal>dir</literal> 要素を入れて"
+"ディレクトリを指定します:"
 
 #. Tag: screen
 #: x11_fonts.xml:514
 #, no-c-format
 msgid "&lt;dir&gt;/usr/share/fonts2&lt;/dir&gt;"
-msgstr ""
+msgstr "&lt;dir&gt;/usr/share/fonts2&lt;/dir&gt;"
 
 #. Tag: para
 #: x11_fonts.xml:515
 #, no-c-format
 msgid "Fontconfig searches <emphasis>recursively</emphasis> for fonts."
-msgstr ""
+msgstr "Fontconfig では、 <emphasis>再帰的に</emphasis> フォントを検索します。"
 
 #. Tag: para
 #: x11_fonts.xml:518
@@ -847,12 +1031,14 @@ msgid ""
 "Font-rendering algorithms can be chosen with following Fontconfig snippet "
 "(see <xref linkend=\"ex.x11.fontsys.fontconfig.rendering_algorithms\"/> ):"
 msgstr ""
+"フォントの描画アルゴリズムは、それぞれ <xref linkend=\"ex.x11.fontsys.fontconfig.rendering_algorithms\"/> "
+"のように指定することで選択することができます:"
 
 #. Tag: title
 #: x11_fonts.xml:523
 #, no-c-format
 msgid "Specifying Rendering Algorithms"
-msgstr ""
+msgstr "レンダリングアルゴリズムの指定"
 
 #. Tag: screen
 #: x11_fonts.xml:524
@@ -876,6 +1062,23 @@ msgid ""
 " &lt;/edit&gt;\n"
 "&lt;/match&gt;"
 msgstr ""
+"&lt;match target=\"font\"&gt;\n"
+" &lt;test name=\"family\"&gt;\n"
+"  &lt;string&gt;<replaceable>ファミリ名</replaceable>&lt;/string&gt;\n"
+" &lt;/test&gt;\n"
+" &lt;edit name=\"antialias\" mode=\"assign\"&gt;\n"
+"  &lt;bool&gt;true&lt;/bool&gt;\n"
+" &lt;/edit&gt;\n"
+" &lt;edit name=\"hinting\" mode=\"assign\"&gt;\n"
+"  &lt;bool&gt;true&lt;/bool&gt;\n"
+" &lt;/edit&gt;\n"
+" &lt;edit name=\"autohint\" mode=\"assign\"&gt;\n"
+"  &lt;bool&gt;false&lt;/bool&gt;\n"
+" &lt;/edit&gt;\n"
+" &lt;edit name=\"hintstyle\" mode=\"assign\"&gt;\n"
+"  &lt;const&gt;hintfull&lt;/const&gt;\n"
+" &lt;/edit&gt;\n"
+"&lt;/match&gt;"
 
 #. Tag: para
 #: x11_fonts.xml:542
@@ -887,12 +1090,17 @@ msgid ""
 "<literal>&lt;test&gt;</literal> completely, all <literal>&lt;edit&gt;</"
 "literal> elements will be applied to every font (global change)."
 msgstr ""
+"フォントに対する様々なプロパティをテストすることができます。たとえば <literal>&lt;"
+"test&gt;</literal> 要素はフォントファミリ (上記の例のように) のほか、サイズ間隔や"
+"スペーシング、フォント形式など様々なものがあります。 <literal>&lt;test&gt;</literal> "
+"で指定する以外にも、全てのフォントに対して適用する場合は <literal>&lt;edit&gt;</"
+"literal> 要素を使用することもできます。"
 
 #. Tag: term
 #: x11_fonts.xml:554
 #, no-c-format
 msgid "Rule 1"
-msgstr ""
+msgstr "ルール 1"
 
 #. Tag: screen
 #: x11_fonts.xml:556
@@ -905,12 +1113,18 @@ msgid ""
 " &lt;/default&gt;\n"
 "&lt;/alias&gt;"
 msgstr ""
+"&lt;alias&gt;\n"
+" &lt;family&gt;Alegreya SC&lt;/family&gt;\n"
+" &lt;default&gt;\n"
+"  &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;/default&gt;\n"
+"&lt;/alias&gt;"
 
 #. Tag: term
 #: x11_fonts.xml:565
 #, no-c-format
 msgid "Rule 2"
-msgstr ""
+msgstr "ルール 2"
 
 #. Tag: screen
 #: x11_fonts.xml:567
@@ -923,12 +1137,18 @@ msgid ""
 " &lt;/prefer&gt;\n"
 "&lt;/alias&gt;"
 msgstr ""
+"&lt;alias&gt;\n"
+" &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;prefer&gt;\n"
+"  &lt;family&gt;Droid Serif&lt;/family&gt;\n"
+" &lt;/prefer&gt;\n"
+"&lt;/alias&gt;"
 
 #. Tag: term
 #: x11_fonts.xml:576
 #, no-c-format
 msgid "Rule 3"
-msgstr ""
+msgstr "ルール 3"
 
 #. Tag: screen
 #: x11_fonts.xml:578
@@ -941,6 +1161,12 @@ msgid ""
 " &lt;/accept&gt;\n"
 "&lt;/alias&gt;"
 msgstr ""
+"&lt;alias&gt;\n"
+" &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;accept&gt;\n"
+"  &lt;family&gt;STIXGeneral&lt;/family&gt;\n"
+" &lt;/accept&gt;\n"
+"&lt;/alias&gt;"
 
 #. Tag: para
 #: x11_fonts.xml:588
@@ -950,6 +1176,9 @@ msgid ""
 "a <emphasis>prioritized family list</emphasis> (PFL). Depending on the "
 "element, different actions are performed:"
 msgstr ""
+"<xref linkend=\"ex.x11.fontsys.fontconfig.aliases1\"/> にあるルールは、"
+" <emphasis>優先ファミリリスト</emphasis> (PFL; Prioritized Family List) を作成"
+"しています。それぞれ要素によって異なる処理を行なっています:"
 
 #. Tag: term
 #: x11_fonts.xml:595
@@ -957,7 +1186,7 @@ msgstr ""
 msgid ""
 "<literal>&lt;default&gt;</literal> from <xref linkend=\"vle.x11.fontsys."
 "example.alias.default\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.default\"/> の <literal>&lt;default&gt;</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:599
@@ -966,6 +1195,8 @@ msgid ""
 "This rule adds a <literal>serif</literal> family name <emphasis>at the end</"
 "emphasis> of the PFL."
 msgstr ""
+"このルールは、 PFL の <emphasis>末尾に</emphasis> 、 <literal>serif</literal> のファミリ名"
+"ファミリ名を追加しています。"
 
 #. Tag: term
 #: x11_fonts.xml:606
@@ -973,7 +1204,7 @@ msgstr ""
 msgid ""
 "<literal>&lt;prefer&gt;</literal> from <xref linkend=\"vle.x11.fontsys."
 "example.alias.prefer\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.prefer\"/> の <literal>&lt;prefer&gt;</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:610
@@ -983,6 +1214,9 @@ msgid ""
 "the first occurrence of <literal>serif</literal> in the PFL, whenever "
 "<literal>Alegreya SC</literal> is in PFL."
 msgstr ""
+"このルールは、 PFL 内の最初にある <literal>serif</literal> の <emphasis>直前に</emphasis> 、"
+" <quote>Droid Serif</quote> を追加しています。ただし、 <literal>Alegreya SC</literal> が"
+" PFL 内に存在している必要があります。"
 
 #. Tag: term
 #: x11_fonts.xml:618
@@ -990,7 +1224,7 @@ msgstr ""
 msgid ""
 "<literal>&lt;accept&gt;</literal> from <xref linkend=\"vle.x11.fontsys."
 "example.alias.accept\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.accept\"/> の <literal>&lt;accept&gt;</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:621
@@ -1000,6 +1234,8 @@ msgid ""
 "after</emphasis> the first occurrence of the <literal>serif</literal> family "
 "name in the PFL."
 msgstr ""
+"このルールは、 PFL 内の <literal>serif</literal> ファミリ名の <emphasis>直後に</emphasis> 、"
+" <quote>STIXGeneral</quote> を追加しています。"
 
 #. Tag: para
 #: x11_fonts.xml:629
@@ -1011,12 +1247,17 @@ msgid ""
 "accept\"/> and the user requests <quote>Alegreya SC</quote> , then the PFL "
 "is created as depicted in <xref linkend=\"tab.x11.fontsys.example.alias\"/> ."
 msgstr ""
+"これらを組み合わせて、たとえば設定ファイルの中で <xref linkend=\"vle."
+"x11.fontsys.example.alias.default\"/> - <xref linkend=\"vle.x11.fontsys."
+"example.alias.prefer\"/> - <xref linkend=\"vle.x11.fontsys.example.alias."
+"accept\"/> の順に現われたとし、ユーザが <quote>Alegreya SC</quote> を要求すると、"
+" PFL は <xref linkend=\"tab.x11.fontsys.example.alias\"/> のように構築されることになります。"
 
 #. Tag: title
 #: x11_fonts.xml:638
 #, no-c-format
 msgid "Generating PFL from Fontconfig rules"
-msgstr ""
+msgstr "Fontconfig ルールからの PFL の生成"
 
 #. Tag: para
 #: x11_fonts.xml:710
@@ -1027,6 +1268,11 @@ msgid ""
 "installed on the system. If <quote>Alegreya SC</quote> is installed, then "
 "Fontconfig returns it. If not, it asks for <quote>Droid Serif</quote> , etc."
 msgstr ""
+"Fontconfig の方式では、他のパターンやスタイル、サイズなどと比べて、ファミリ名は"
+"最優先の順位が設定されます。 Fontconfig では、システムにインストールされている"
+"フォントファミリを確認し、もしも <quote>Alegreya SC</quote> がインストールされて"
+"いる場合、 Fontconfig はそのまま返します。インストールされていない場合は、"
+" <quote>Droid Serif</quote> などを探そうとします。"
 
 #. Tag: para
 #: x11_fonts.xml:717
@@ -1036,43 +1282,45 @@ msgid ""
 "return different results, as depicted in <xref linkend=\"tab.x11.fontsys."
 "example.alias2\"/> ."
 msgstr ""
+"なお、 Fontconfig の設定順序を変えてしまうと、 Fontconfig が異なる動作をしてしまう"
+"ことになります。たとえば <xref linkend=\"tab.x11.fontsys.example.alias2\"/> "
+"のようになります。"
 
 #. Tag: title
 #: x11_fonts.xml:723
 #, no-c-format
 msgid "Results from Generating PFL from Fontconfig Rules with Changed Order"
-msgstr ""
+msgstr "順序を変更した Fntconfig ルールから生成した PFL による結果"
 
 #. Tag: para
 #: x11_fonts.xml:738
 #, no-c-format
 msgid "Note"
-msgstr ""
+msgstr "注意"
 
 #. Tag: para
 #: x11_fonts.xml:757
 #, no-c-format
 msgid "Same request performed."
-msgstr ""
+msgstr "同じ処理を実施したものとします。"
 
 #. Tag: para
 #: x11_fonts.xml:791
 #, no-c-format
 msgid "<literal>serif</literal> not in PFL, nothing is substituted"
-msgstr ""
+msgstr "<literal>serif</literal> が PFL 内に存在しないので、何も起こりません。"
 
 #. Tag: para
 #: x11_fonts.xml:808
 #, no-c-format
-msgid ""
-"<literal>Alegreya SC</literal> present in PFL, substitution is performed"
-msgstr ""
+msgid "<literal>Alegreya SC</literal> present in PFL, substitution is performed"
+msgstr "<literal>Alegreya SC</literal> が PFL 内に存在するので、置き換えが起こります"
 
 #. Tag: title
 #: x11_fonts.xml:818
 #, no-c-format
 msgid "Implication"
-msgstr ""
+msgstr "暗黙設定について"
 
 #. Tag: para
 #: x11_fonts.xml:819
@@ -1084,6 +1332,11 @@ msgid ""
 "prefer&gt;</literal> and <literal>&lt;accept&gt;</literal> aliases of that "
 "group."
 msgstr ""
+"<literal>&lt;default&gt;</literal> で指定した別名は、このグループに対する分類や"
+"包含 (インストールされていなければ) の意味があるものとお考えください。例に示されて"
+"いるとおり、 <literal>&lt;default&gt;</literal> の設定は、そのグループに対する"
+"<literal>&lt;prefer&gt;</literal> と <literal>&lt;accept&gt;</literal> よりも"
+"常に優先して動作します。"
 
 #. Tag: para
 #: x11_fonts.xml:826
@@ -1094,6 +1347,9 @@ msgid ""
 "fontconfig/conf.avail/30-metric-aliases.conf</filename> for a complex "
 "example."
 msgstr ""
+"<literal>&lt;default&gt;</literal> の分類は、 serif, sans-serif, monospace "
+"に対する一般的な別名だけに限りません。より複雑な例については、 <filename>/usr/share/"
+"fontconfig/conf.avail/30-metric-aliases.conf</filename> をお読みください。"
 
 #. Tag: para
 #: x11_fonts.xml:844
@@ -1104,12 +1360,16 @@ msgid ""
 "family in this group could substitute others when a former font is not "
 "installed."
 msgstr ""
+"下記 <xref linkend=\"ex.x11.fontsys.fontconfig.aliases2\"/> の Fontconfig "
+"の設定例では、 <literal>serif</literal> というグループを作成しています。"
+"このグループ内の各ファミリは、前のフォントがインストールされていない場合に、"
+"後ろ側のフォントで置き換える動作をします。"
 
 #. Tag: title
 #: x11_fonts.xml:851
 #, no-c-format
 msgid "Aliases and Family Name Substitutions"
-msgstr ""
+msgstr "別名とファミリ名の置き換え"
 
 #. Tag: screen
 #: x11_fonts.xml:852
@@ -1142,6 +1402,32 @@ msgid ""
 " &lt;/accept&gt;\n"
 "&lt;/alias&gt;"
 msgstr ""
+"&lt;alias&gt;\n"
+" &lt;family&gt;Alegreya SC&lt;/family&gt;\n"
+" &lt;default&gt;\n"
+"  &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;/default&gt;\n"
+"&lt;/alias&gt;\n"
+"&lt;alias&gt;\n"
+" &lt;family&gt;Droid Serif&lt;/family&gt;\n"
+" &lt;default&gt;\n"
+"  &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;/default&gt;\n"
+"&lt;/alias&gt;\n"
+"&lt;alias&gt;\n"
+" &lt;family&gt;STIXGeneral&lt;/family&gt;\n"
+" &lt;default&gt;\n"
+"  &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;/default&gt;\n"
+"&lt;/alias&gt;\n"
+"&lt;alias&gt;\n"
+" &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;accept&gt;\n"
+"  &lt;family&gt;Droid Serif&lt;/family&gt;\n"
+"  &lt;family&gt;STIXGeneral&lt;/family&gt;\n"
+"  &lt;family&gt;Alegreya SC&lt;/family&gt;\n"
+" &lt;/accept&gt;\n"
+"&lt;/alias&gt;"
 
 #. Tag: para
 #: x11_fonts.xml:879
@@ -1151,6 +1437,8 @@ msgid ""
 "alias. Similarly, stronger <literal>&lt;prefer&gt;</literal> aliases can be "
 "used."
 msgstr ""
+"優先順位は <literal>&lt;accept&gt;</literal> の順序で設定されています。"
+"なお、より強い <literal>&lt;prefer&gt;</literal> の別名を使用することもできます。"
 
 #. Tag: para
 #: x11_fonts.xml:884
@@ -1159,18 +1447,20 @@ msgid ""
 "<xref linkend=\"ex.x11.fontsys.fontconfig.aliases1\"/> is expanded by <xref "
 "linkend=\"ex.x11.fontsys.fontconfig.aliases3\"/> ."
 msgstr ""
+"<xref linkend=\"ex.x11.fontsys.fontconfig.aliases3\"/> は"
+"<xref linkend=\"ex.x11.fontsys.fontconfig.aliases1\"/> をさらに拡張する設定です。"
 
 #. Tag: title
 #: x11_fonts.xml:889
 #, no-c-format
 msgid "Aliases and Family Names Substitutions"
-msgstr ""
+msgstr "別名とファミリ名の置き換え"
 
 #. Tag: term
 #: x11_fonts.xml:892
 #, no-c-format
 msgid "Rule 4"
-msgstr ""
+msgstr "ルール 4"
 
 #. Tag: screen
 #: x11_fonts.xml:894
@@ -1183,12 +1473,18 @@ msgid ""
 " &lt;/accept&gt;\n"
 "&lt;/alias&gt;"
 msgstr ""
+"&lt;alias&gt;\n"
+" &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;accept&gt;\n"
+"  &lt;family&gt;Liberation Serif&lt;/family&gt;\n"
+" &lt;/accept&gt;\n"
+"&lt;/alias&gt;"
 
 #. Tag: term
 #: x11_fonts.xml:903
 #, no-c-format
 msgid "Rule 5"
-msgstr ""
+msgstr "ルール 5"
 
 #. Tag: screen
 #: x11_fonts.xml:905
@@ -1201,6 +1497,12 @@ msgid ""
 " &lt;/prefer&gt;\n"
 "&lt;/alias&gt;"
 msgstr ""
+"&lt;alias&gt;\n"
+" &lt;family&gt;serif&lt;/family&gt;\n"
+" &lt;prefer&gt;\n"
+"  &lt;family&gt;DejaVu Serif&lt;/family&gt;\n"
+" &lt;/prefer&gt;\n"
+"&lt;/alias&gt;"
 
 #. Tag: para
 #: x11_fonts.xml:915
@@ -1209,54 +1511,56 @@ msgid ""
 "The expanded configuration from <xref linkend=\"ex.x11.fontsys.fontconfig."
 "aliases3\"/> would lead to the following PFL evolution:"
 msgstr ""
+"<xref linkend=\"ex.x11.fontsys.fontconfig.aliases3\"/> によって拡張した設定は、"
+"下記のような PFL になります:"
 
 #. Tag: title
 #: x11_fonts.xml:921
 #, no-c-format
 msgid "Results from Generating PFL from Fontconfig Rules"
-msgstr ""
+msgstr "Fontconfig ルールから生成した PFL による結果"
 
 #. Tag: para
 #: x11_fonts.xml:928
 #, no-c-format
 msgid "Order"
-msgstr ""
+msgstr "順序"
 
 #. Tag: para
 #: x11_fonts.xml:933
 #, no-c-format
 msgid "Current PFL"
-msgstr ""
+msgstr "その時点での PFL"
 
 #. Tag: para
 #: x11_fonts.xml:942
 #, no-c-format
 msgid "Request"
-msgstr ""
+msgstr "要求"
 
 #. Tag: para
 #: x11_fonts.xml:947
 #, no-c-format
 msgid "<literal>Alegreya SC</literal>"
-msgstr ""
+msgstr "<literal>Alegreya SC</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:954
 #, no-c-format
 msgid "<xref linkend=\"vle.x11.fontsys.example.alias.default\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.default\"/>"
 
 #. Tag: para
 #: x11_fonts.xml:959
 #, no-c-format
 msgid "<literal>Alegreya SC</literal> , <literal>serif</literal>"
-msgstr ""
+msgstr "<literal>Alegreya SC</literal> , <literal>serif</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:966
 #, no-c-format
 msgid "<xref linkend=\"vle.x11.fontsys.example.alias.prefer\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.prefer\"/>"
 
 #. Tag: para
 #: x11_fonts.xml:971
@@ -1265,12 +1569,14 @@ msgid ""
 "<literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , "
 "<literal>serif</literal>"
 msgstr ""
+"<literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , "
+"<literal>serif</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:979
 #, no-c-format
 msgid "<xref linkend=\"vle.x11.fontsys.example.alias.accept\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.accept\"/>"
 
 #. Tag: para
 #: x11_fonts.xml:984
@@ -1279,12 +1585,14 @@ msgid ""
 "<literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , "
 "<literal>serif</literal> , <literal>STIXGeneral</literal>"
 msgstr ""
+"<literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , "
+"<literal>serif</literal> , <literal>STIXGeneral</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:992
 #, no-c-format
 msgid "<xref linkend=\"vle.x11.fontsys.example.alias.accept2\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.accept2\"/>"
 
 #. Tag: para
 #: x11_fonts.xml:997
@@ -1294,12 +1602,15 @@ msgid ""
 "<literal>serif</literal> , <literal>Liberation Serif</literal> , "
 "<literal>STIXGeneral</literal>"
 msgstr ""
+"<literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , "
+"<literal>serif</literal> , <literal>Liberation Serif</literal> , "
+"<literal>STIXGeneral</literal>"
 
 #. Tag: para
 #: x11_fonts.xml:1006
 #, no-c-format
 msgid "<xref linkend=\"vle.x11.fontsys.example.alias.prefer2\"/>"
-msgstr ""
+msgstr "<xref linkend=\"vle.x11.fontsys.example.alias.prefer2\"/>"
 
 #. Tag: para
 #: x11_fonts.xml:1011
@@ -1309,12 +1620,15 @@ msgid ""
 "<literal>DejaVu Serif</literal> , <literal>serif</literal> , "
 "<literal>Liberation Serif</literal> , <literal>STIXGeneral</literal>"
 msgstr ""
+"<literal>Alegreya SC</literal> , <literal>Droid Serif</literal> , "
+"<literal>DejaVu Serif</literal> , <literal>serif</literal> , "
+"<literal>Liberation Serif</literal> , <literal>STIXGeneral</literal>"
 
 #. Tag: title
 #: x11_fonts.xml:1022
 #, no-c-format
 msgid "Implications."
-msgstr ""
+msgstr "暗黙設定について"
 
 #. Tag: para
 #: x11_fonts.xml:1025
@@ -1326,6 +1640,11 @@ msgid ""
 "role=\"bold\">after</emphasis> user ( <filename>/etc/fonts/conf.d/*-user."
 "conf</filename> ) when creating a system-wide configuration."
 msgstr ""
+"同じ汎用名に対して <literal>&lt;accept&gt;</literal> の定義が複数存在する場合、"
+"最後に処理された定義が <quote>勝ち残ります</quote> 。また、可能であれば、システム"
+"全体の設定を作成する際に、ユーザ設定 ( <filename>/etc/fonts/conf.d/*-user."
+"conf</filename> ) の <emphasis role=\"bold\">後ろで</emphasis> "
+"<literal>&lt;accept&gt;</literal> を使用しないでください。"
 
 #. Tag: para
 #: x11_fonts.xml:1035
@@ -1336,6 +1655,11 @@ msgid ""
 "quote> . If possible, do not use <literal>&lt;prefer&gt;</literal> <emphasis "
 "role=\"bold\">before</emphasis> user in the system-wide configuration."
 msgstr ""
+"同じ汎用名に対して <literal>&lt;prefer&gt;</literal> の定義が複数存在する場合、"
+"最後に処理された定義が <quote>勝ち残ります</quote> 。また、可能であれば、システム"
+"全体の設定を作成する際に、ユーザ設定 ( <filename>/etc/fonts/conf.d/*-user."
+"conf</filename> ) の <emphasis role=\"bold\">前に</emphasis> "
+"<literal>&lt;prefer&gt;</literal> を使用しないでください。"
 
 #. Tag: para
 #: x11_fonts.xml:1045
@@ -1350,3 +1674,11 @@ msgid ""
 "</literal> , this should not have any detrimental effect. We also see the "
 "use of <literal>&lt;prefer&gt;</literal> in system-wide configurations."
 msgstr ""
+"それぞれの <literal>&lt;prefer&gt;</literal> 宣言は、同じ汎用名に対する <literal>&lt;"
+"accept&gt;</literal> 宣言を上書きします。もしも管理者がユーザに対して"
+" <literal>&lt;prefer&gt;</literal> だけでなく <literal>&lt;accept&gt;</literal> も"
+"使用させたい場合は、管理者はシステム全体の設定で <literal>&lt;prefer&gt;</literal> を"
+"使用しないでください。一方のユーザは <literal>&lt;prefer&gt;</literal> を多く"
+"使用しますが、こちらについては問題はありません。ただ、システム全体の設定で"
+" <literal>&lt;prefer&gt;</literal> が使用されているのをよく見かけます。"
+
