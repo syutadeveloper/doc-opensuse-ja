@@ -1,32 +1,35 @@
+# translation of 64bit_issues.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 64bit_issues.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:13+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-01 14:23+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: 64bit_issues.xml:12
 #, no-c-format
 msgid "32-Bit and 64-Bit Applications in a 64-Bit System Environment"
-msgstr ""
+msgstr "64 ビットシステム環境における 32 ビット／ 64 ビットアプリケーション"
 
 #. Tag: dm:translation
 #: 64bit_issues.xml:16
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: 64bit_issues.xml:19
@@ -39,6 +42,12 @@ msgid ""
 "chapter offers a brief overview of how this support is implemented on 64-bit "
 "&productname; platforms."
 msgstr ""
+"&productnamereg; は <phrase os=\"sles\">いくつかの</phrase> 64 ビットプラットフォーム"
+"で動作します。ですが、全てのアプリケーションを 64 ビットプラットフォームに移植しなければ"
+"ならない、というわけではありません。 &productname; では、 64 ビット環境下で 32 ビットの"
+"アプリケーションを動作させることができます。本章では、 64 ビットの &productname; "
+"プラットフォームで、どのようにして 32 ビットアプリケーションを動作させているのかについて、"
+"概要を説明しています。"
 
 #. Tag: para
 #: 64bit_issues.xml:27
@@ -55,12 +64,20 @@ msgid ""
 "The current &power; system runs most applications in 32-bit mode, but you "
 "can run 64-bit applications.</phrase>"
 msgstr ""
+"&productname; は <phrase os=\"sles\">&ppc;, &zseries;, &amd64;/&intel64;</phrase>"
+"<phrase os=\"sled;osuse\">amd64 や &intel64;</phrase> の各 64 ビットプラットフォーム"
+"で動作しますが、この 64 ビット環境内で 32 ビットアプリケーションを標準で動作させることが"
+"できます。 <phrase os=\"sles\">&power; の場合は ppc 、 &amd64;/&intel64; の場合は"
+"x86 と呼ばれています。</phrase> このサポートにより、 64 ビット環境に移植されるのを待つ"
+"までもなく、既存の 32 ビットアプリケーションをそのまま使い続けることができるという"
+"ことです。 <phrase os=\"sles\"> 現在の &power; システムでは、多くのアプリケーションが"
+" 32 ビットモードで動作していますが、 64 ビットアプリケーションにも対応しています。</phrase>"
 
 #. Tag: title
 #: 64bit_issues.xml:43
 #, no-c-format
 msgid "No Support for Building 32-bit Applications"
-msgstr ""
+msgstr "32 ビットアプリケーションの構築に対するサポートについて"
 
 #. Tag: para
 #: 64bit_issues.xml:44
@@ -69,18 +86,20 @@ msgid ""
 "&productname; does not support compiling 32-bit applications, it only offers "
 "runtime support for 32-bit binaries."
 msgstr ""
+"&productname; では、 32 ビットアプリケーションのコンパイルはサポートしていません。"
+"32 ビットアプリケーションの実行のみサポートしています。"
 
 #. Tag: title
 #: 64bit_issues.xml:52
 #, no-c-format
 msgid "Runtime Support"
-msgstr ""
+msgstr "ランタイムサポート"
 
 #. Tag: title
 #: 64bit_issues.xml:55
 #, no-c-format
 msgid "Conflicts Between Application Versions"
-msgstr ""
+msgstr "アプリケーションバージョン間の矛盾について"
 
 #. Tag: para
 #: 64bit_issues.xml:56
@@ -90,6 +109,9 @@ msgid ""
 "parallel installation of both versions is bound to lead to problems. In such "
 "cases, decide on one of the two versions and install and use this."
 msgstr ""
+"あるアプリケーションに対して 32 ビット版と 64 ビット版の両方が存在する場合、"
+"両方のバージョンをインストールしてしまうと、問題が発生する場合があります。このような"
+"場合は、いずれかのバージョンをインストールしてお使いください。"
 
 #. Tag: para
 #: 64bit_issues.xml:61
@@ -101,6 +123,10 @@ msgid ""
 "also runs 32-bit applications it is necessary to always install both "
 "versions of a PAM module."
 msgstr ""
+"ただし、 PAM (プラグイン型の認証モジュール; Pluggable Authentication Modules) "
+"ついては例外です。認証処理時の PAM は、ユーザとアプリケーションとの間での仲介"
+"として動作します。 32 ビットアプリケーションを動作させる 64 ビットオペレーティング"
+"システムの場合は、両方のバージョンの PAM モジュールをインストールする必要があります。"
 
 #. Tag: para
 #: 64bit_issues.xml:70
@@ -111,6 +137,10 @@ msgid ""
 "libraries are identical. They must be differentiated from each other in "
 "another way."
 msgstr ""
+"また、正しく動作させるためには、それぞれのアプリケーションに様々なライブラリが"
+"必要となります。残念ながら、これらのライブラリの 32 ビット版と 64 ビット版は"
+"全く同じ動作をするものではありません。これらは互いに違うものとして扱う必要が"
+"あります。"
 
 #. Tag: para
 #: 64bit_issues.xml:77
@@ -121,6 +151,10 @@ msgid ""
 "version of <filename>libc.so.6</filename> is located under <filename>/lib/"
 "libc.so.6</filename> in both the 32-bit and 64-bit environments."
 msgstr ""
+"32 ビット版のアプリケーションの互換性を維持するために、 32 ビット版の環境と同じ"
+"場所にライブラリを配置する必要があります。たとえば 32 ビット版の <filename>libc.so.6</filename> "
+"は、 32 ビットオペレーティングシステムでも 64 ビットオペレーティングシステムでも、"
+" <filename>/lib/libc.so.6</filename> に配置します。"
 
 #. Tag: para
 #: 64bit_issues.xml:85
@@ -134,6 +168,12 @@ msgid ""
 "under <filename>/lib</filename> and <filename>/usr/lib</filename> , so the "
 "file name for both versions can remain unchanged."
 msgstr ""
+"一方の 64 ビット版のライブラリとオブジェクトは、 <filename>lib64</filename> 以下に"
+"配置されます。 32 ビット版で <filename>/lib</filename> や <filename>/usr/lib</"
+"filename> に配置していたオブジェクトファイルは、それぞれ <filename>/lib64</filename> "
+"と <filename>/usr/lib64</filename> に配置します。このような仕組みにより、 32 ビット"
+"版のライブラリは以前と同じ配置のまま、 64 ビット版のライブラリを同時に配置することが"
+"できるようになっています。"
 
 #. Tag: para
 #: 64bit_issues.xml:96
@@ -144,12 +184,16 @@ msgid ""
 "scheme conforms to LSB (Linux Standards Base) and FHS (File System Hierarchy "
 "Standard)."
 msgstr ""
+"ただし、 32 ビット版の <filename>/lib</filename> ディレクトリには、ビットサイズに"
+"関係のないデータも含まれていますが、これらについては移動されておらず、従来通りデータ"
+"が配置されています。これは LSB (Linux Standards Base) と FHS (File System Hierarchy "
+"Standard) の仕様に準拠しているためです。"
 
 #. Tag: title
 #: 64bit_issues.xml:104
 #, no-c-format
 msgid "Kernel Specifications"
-msgstr ""
+msgstr "カーネルの仕様"
 
 #. Tag: para
 #: 64bit_issues.xml:106
@@ -161,6 +205,12 @@ msgid ""
 "32-bit kernel. This means that the 32-bit application can communicate with "
 "the 64-bit kernel in the same way as with the 32-bit kernel."
 msgstr ""
+"&amd64;/&intel64; <phrase os=\"sles\">や &power;, &zseries;</phrase> の 64 "
+"ビットカーネルでは、 64 ビットと 32 ビットの両方に対して ABI (アプリケーション"
+"バイナリインターフェイス) が提供されています。しかも、 32 ビット版の ABI については、"
+" 32 ビット版のカーネルと全く同じ仕様になっています。これにより、 32 ビット"
+"アプリケーションであっても、 32 ビットカーネルの場合と全く同じ方法で 64 ビット"
+"カーネルにアクセスできることになります。"
 
 #. Tag: para
 #: 64bit_issues.xml:115
@@ -173,6 +223,11 @@ msgid ""
 "properly. On &zseries;, not all ioctls are available in the 32-bit kernel "
 "ABI</phrase> ."
 msgstr ""
+"64 ビットカーネルでの 32 ビットシステムコールは、システムプログラムが使用する"
+"全ての API まではサポートしていません。これはプラットフォームに依存して決まります。"
+"このような理由から、 <command>lspci</command> のような少数のアプリケーションでは、"
+"同じビット数のライブラリを使用しなければなりません。 <phrase os=\"sles\"> また、"
+" &zseries;, では全ての 32 ビットカーネル ABI に対応しているというわけでもありません。</phrase>"
 
 #. Tag: para
 #: 64bit_issues.xml:124
@@ -181,12 +236,15 @@ msgid ""
 "A 64-bit kernel can only load 64-bit kernel modules that have been specially "
 "compiled for this kernel. It is not possible to use 32-bit kernel modules."
 msgstr ""
+"なお、 64 ビット版のカーネルは、そのカーネル向けにコンパイルされた 64 ビット版の"
+"カーネルモジュールだけを読み込むことができます。 32 ビット版のカーネルモジュールを"
+"読み込むことはできません。"
 
 #. Tag: title
 #: 64bit_issues.xml:130
 #, no-c-format
 msgid "Kernel-loadable Modules"
-msgstr ""
+msgstr "カーネルモジュールについて"
 
 #. Tag: para
 #: 64bit_issues.xml:131
@@ -198,3 +256,9 @@ msgid ""
 "of the kernel-loadable module and the 32-bit compiled version of the kernel "
 "API are available for this module."
 msgstr ""
+"アプリケーションによってはカーネルモジュールを提供していて、それを読み込まなければ"
+"正しく動作しないものがあります。 64 ビットシステム環境で、このような 32 ビット版"
+"アプリケーションを動作させたい場合は、このアプリケーションの製造元に連絡をとって、"
+" 64 ビット版のカーネルモジュールを作成してもらい、 32 ビット版のアプリケーションで"
+"動作するよう依頼する必要があります。"
+
