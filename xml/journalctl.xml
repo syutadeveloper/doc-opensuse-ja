@@ -4,27 +4,15 @@
 %entities;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.journalctl">
- <title><command>journalctl</command>: Query the &systemd; Journal</title>
+ <title><command>journalctl</command> : &systemd; ジャーナルへの問い合わせコマンド</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
- <para>
-  When &systemd; replaced traditional init scripts in <phrase os="sles;sled">&sle; 12</phrase><phrase os="osuse">&opensuse; Leap</phrase>
-  (see <xref linkend="cha.systemd"/>), it introduced its own logging system
-  called <emphasis>journal</emphasis>. There is no need to run a
-  <systemitem>syslog</systemitem> based service anymore, as all system events
-  are written in the journal.
- </para>
- <para>
-  The journal itself is a system service managed by &systemd;. Its full name is
-  <literal>systemd-journald.service</literal>. It collects and stores logging
-  data by maintaining structured indexed journals based on logging information
-  received from the kernel, user processes, standard input, and system service errors. The <literal>systemd-journald</literal> service is on
-  by default:
- </para>
+ <para><phrase os="sles;sled">&sle; 12</phrase> <phrase os="osuse">&opensuse; Leap</phrase> で従来の init スクリプトが &systemd; に置き換わりました (詳しくは <xref linkend="cha.systemd"/> をお読みください) が、これによって <emphasis>ジャーナル</emphasis> と呼ばれる新しいログシステムが提供されるようになりました。これにより、 <systemitem>syslog</systemitem> ベースのサービスを動作させる必要はなくなり、全てのイベントがジャーナルに書き込まれるようになっています。</para>
+ <para>ジャーナルそれ自身は &systemd; が管理するシステムサービスで、正確には <literal>systemd-journald.service</literal> という名称です。カーネルやユーザスペース、標準入力やシステムサービスのエラーなどから、様々なログ記録情報を収集し、構造化され順序番号の付いたジャーナルを管理して、データを記録し保存することができます。 <literal>systemd-journald</literal> サービスは既定で有効化されています:</para>
 <screen>&prompt.sudo;systemctl status systemd-journald
 systemd-journald.service - Journal Service
    Loaded: loaded (/usr/lib/systemd/system/systemd-journald.service; static)
@@ -37,30 +25,17 @@ systemd-journald.service - Journal Service
            └─413 /usr/lib/systemd/systemd-journald
 [...]</screen>
  <sect1 xml:id="sec.journalctl.persistent">
-  <title>Making the Journal Persistent</title>
+  <title>ジャーナルの恒久化</title>
 
-  <para>
-   The journal stores log data in <filename>/run/log/journal/</filename> by
-   default. Because the <filename>/run/</filename> directory is volatile by
-   nature, log data is lost at reboot. To make the log data persistent, the
-   directory <filename>/var/log/journal/</filename> with correct ownership and
-   permissions must exist, where the systemd-journald service can store its
-   data. &systemd; will create the directory for you&mdash;and switch to
-   persistent logging&mdash;if you do the following:
-  </para>
+  <para>ジャーナルは既定では <filename>/run/log/journal/</filename> 内にデータを保存します。ただし、 <filename>/run/</filename> ディレクトリはメモリ内にのみ保持されるディレクトリであるため、システムを再起動するとログデータが失われてしまいます。ログデータを恒久的に保存するには、 <filename>/var/log/journal/</filename> を作成して適切な所有権とアクセス許可を設定し、 systemd-journald に対してデータを保存するように設定する必要があります。ただし &systemd; では、ログを恒久的に保存するように設定するだけで、自動的にこのディレクトリを作成して設定することができます。具体的には下記の手順を実施します:</para>
 
   <procedure>
    <step>
-    <para>
-     As &rootuser;, open <filename>/etc/systemd/journald.conf</filename> for
-     editing.
-    </para>
+    <para>&rootuser; で vi エディタを利用して、 <filename>/etc/systemd/journald.conf</filename> を開きます:</para>
 <screen>&prompt.root;vi /etc/systemd/journald.conf</screen>
    </step>
    <step>
-    <para>
-     Uncomment the line containing <literal>Storage=</literal> and change it to
-    </para>
+    <para><literal>Storage=</literal> を含む行のコメントを外して、下記のようにします:</para>
 <screen>[...]
 [Journal]
 Storage=persistent
@@ -68,29 +43,19 @@ Storage=persistent
 [...]</screen>
    </step>
    <step>
-    <para>
-     Save the file and restart systemd-journald:
-    </para>
+    <para>ファイルを保存して終了し、 systemd-journald を再起動します:</para>
 <screen>&prompt.root;systemctl restart systemd-journald</screen>
    </step>
   </procedure>
  </sect1>
  <sect1 xml:id="sec.journalctl.switches">
-  <title><command>journalctl</command> Useful Switches</title>
+  <title><command>journalctl</command> での便利なスイッチ</title>
 
-  <para>
-   This section introduces several common useful options to enhance the default
-   <command>journalctl</command> behavior. All switches are described in the
-   <command>journalctl</command> manual page, <command>man 1
-   journalctl</command>.
-  </para>
+  <para>本章では、既定の <command>journalctl</command> の動作を拡張するにあたって、便利なオプション類をいくつか紹介しています。全てのスイッチについての説明をご希望の場合は、 <command>journalctl</command> のマニュアルページ (<command>man 1 journalctl</command>) をご覧ください。</para>
 
   <tip>
-   <title>Messages Related to a Specific Executable</title>
-   <para>
-    To show all journal messages related to a specific executable, specify the
-    full path to the executable:
-   </para>
+   <title>特定の実行ファイルに関連するメッセージ</title>
+   <para>特定の実行ファイルに関連する全てのジャーナルメッセージを表示するには、実行ファイルのフルパスを指定します:</para>
 <screen>&prompt.sudo;journalctl /usr/lib/systemd/systemd</screen>
   </tip>
 
@@ -98,49 +63,31 @@ Storage=persistent
    <varlistentry>
     <term>-f</term>
     <listitem>
-     <para>
-      Shows only the most recent journal messages, and prints new log entries
-      as they are added to the journal.
-     </para>
+     <para>直近のジャーナルメッセージのみを表示し、以後ジャーナルに更新があるたびに項目を随時表示します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>-e</term>
     <listitem>
-     <para>
-      Prints the messages and jumps to the end of the journal, so that the
-      latest entries are visible within the pager.
-     </para>
+     <para>ジャーナルメッセージを表示して末尾に移動します。ページャを介して最新の項目から閲覧できるようになります。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>-r</term>
     <listitem>
-     <para>
-      Prints the messages of the journal in reverse order, so that the latest
-      entries are listed first.
-     </para>
+     <para>ジャーナルのメッセージを逆順で表示します。最新の項目が最初に表示されるようになります。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>-k</term>
     <listitem>
-     <para>
-      Shows only kernel messages. This is equivalent to the field match
-      <literal>_TRANSPORT=kernel</literal> (see
-      <xref linkend="sec.journalctl.filter.fields"/>).
-     </para>
+     <para>カーネルメッセージのみを表示します。これは項目ベースのフィルタで、 <literal>_TRANSPORT=kernel</literal> と同じ意味になります (詳しくは <xref linkend="sec.journalctl.filter.fields"/> をお読みください) 。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>-u</term>
     <listitem>
-     <para>
-      Shows only messages for the specified &systemd; unit. This is equivalent
-      to the field match
-      <literal>_SYSTEMD_UNIT=<replaceable>UNIT</replaceable></literal> (see
-      <xref linkend="sec.journalctl.filter.fields"/>).
-     </para>
+     <para>指定した &systemd; ユニットに対するメッセージのみを表示します。これは項目ベースのフィルタで、 <literal>_SYSTEMD_UNIT=<replaceable>ユニット名</replaceable></literal> と同じ意味になります (詳しくは <xref linkend="sec.journalctl.filter.fields"/> をお読みください) 。</para>
 <screen>&prompt.sudo;journalctl -u apache2
 [...]
 Jun 03 10:07:11 pinkiepie systemd[1]: Starting The Apache Webserver...
@@ -152,154 +99,78 @@ Jun 03 10:07:12 pinkiepie systemd[1]: Started The Apache Webserver.</screen>
   <para/>
  </sect1>
  <sect1 xml:id="sec.journalctl.filter">
-  <title>Filtering the Journal Output</title>
+  <title>ジャーナル出力のフィルタリング</title>
 
-  <para>
-   When called without switches, <command>journalctl</command> shows the full
-   content of the journal, the oldest entries listed first. The output can be
-   filtered by specific switches and fields.
-  </para>
+  <para>何もスイッチを指定しないで <command>journalctl</command> を実行すると、ジャーナル内にある全ての情報を古いものから順に表示します。出力はスイッチと項目を指定することでフィルタすることができます。</para>
 
   <sect2 xml:id="sec.journalctl.filter.boot">
-   <title>Filtering Based on a Boot Number</title>
-   <para>
-    <command>journalctl</command> can filter messages based on a specific
-    system boot. To list all available boots, run
-   </para>
+   <title>起動番号をベースにしたフィルタ</title>
+   <para><command>journalctl</command> では、特定のシステム起動時に限ってメッセージを表示することができます。全てのシステム起動を表示するには、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl --list-boots
 -1 097ed2cd99124a2391d2cffab1b566f0 Mon 2014-05-26 08:36:56 EDT—Fri 2014-05-30 05:33:44 EDT
  0 156019a44a774a0bb0148a92df4af81b Fri 2014-05-30 05:34:09 EDT—Fri 2014-05-30 06:15:01 EDT</screen>
-   <para>
-    The first column lists the boot offset: <literal>0</literal> for the
-    current boot, <literal>-1</literal> for the previous one,
-    <literal>-2</literal> for the one prior to that, etc. The second column
-    contains the boot ID followed by the limiting time stamps of the specific
-    boot.
-   </para>
-   <para>
-    Show all messages from the current boot:
-   </para>
+   <para>一番左の列は起動オフセットと呼ばれる値で、 <literal>0</literal> が現在の起動時、 <literal>-1</literal> が前回、 <literal>-2</literal> が前々回のようになっています。 2 つ目の列には起動 ID が書かれていて、その後ろにはそれぞれのタイムスタンプが書かれています。</para>
+   <para>現在の起動に限定して全てのメッセージを表示するには、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl -b</screen>
-   <para>
-    If you need to see journal messages from the previous boot, add an offset
-    parameter. The following example outputs the previous boot messages:
-   </para>
+   <para>以前の起動時のジャーナルメッセージを表示したい場合は、オフセット値を指定します。たとえば前回の起動時のメッセージを表示したい場合は、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl -b -1</screen>
-   <para>
-    Another way is to list boot messages based on the boot ID. For this
-    purpose, use the _BOOT_ID field:
-   </para>
+   <para>起動時を指定するもう 1 つの方法としては、起動 ID を指定する方法があります。この場合は _BOOT_ID フィールドでフィルタを設定します:</para>
 <screen>&prompt.sudo;journalctl _BOOT_ID=156019a44a774a0bb0148a92df4af81b</screen>
   </sect2>
 
   <sect2 xml:id="sec.journalctl.filter.time">
-   <title>Filtering Based on Time Interval</title>
-   <para>
-    You can filter the output of <command>journalctl</command> by specifying
-    the starting and/or ending date. The date specification should be of the
-    format "2014-06-30 9:17:16". If the time part is omitted, midnight is
-    assumed. If seconds are omitted, ":00" is assumed. If the date part is
-    omitted, the current day is assumed. Instead of numeric expression, you can
-    specify the keywords "yesterday", "today", or "tomorrow". They refer to
-    midnight of the day before the current day, of the current day, or of the
-    day after the current day. If you specify "now", it refers to the current
-    time. You can also specify relative times prefixed with
-    <literal>-</literal> or <literal>+</literal>, referring to times before or
-    after the current time.
-   </para>
-   <para>
-    Show only new messages since now, and update the output continuously:
-   </para>
+   <title>時間範囲をベースにしたフィルタ</title>
+   <para><command>journalctl</command> の出力は、開始と終了の日時を指定してフィルタすることもできます。日付を指定する場合は、 "2014-06-30 9:17:16" のように指定します。また、時刻を省略した場合は "00:00:00" であるものと解釈され、時刻の秒を省略した場合は ":00" であるものと解釈されます。日付部分を省略した場合は、今日の日付であるものとして解釈されます。また、日付での表記の代替として、 "yesterday" (昨日), "today" (今日), "tomorrow" (明日) のような表現を使用することもできます。これらを指定した場合、時刻は "00:00:00" と解釈されます。さらに、 "now" と指定すると、現在の日時であるものとして解釈されます。このほか、 <literal>-</literal> や <literal>+</literal> を頭に付けて相対日時を指定することもできます。</para>
+   <para>現在以降の新しいメッセージを表示し、以後更新があるたびに随時表示するには、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl --since "now" -f</screen>
-   <para>
-    Show all messages since last midnight till 3:20am:
-   </para>
+   <para>今日になってから午前 3:20 までの全てのメッセージを表示するには、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl --since "today" --until "3:20"</screen>
   </sect2>
 
   <sect2 xml:id="sec.journalctl.filter.fields">
-   <title>Filtering Based on Fields</title>
-   <para>
-    You can filter the output of the journal by specific fields. The syntax of
-    a field to be matched is <literal>FIELD_NAME=MATCHED_VALUE</literal>, such
-    as <literal>_SYSTEMD_UNIT=httpd.service</literal>. You can specify multiple
-    matches in a single query to filter the output messages even more. See
-    <command>man 7 systemd.journal-fields</command> for a list of default
-    fields.
-   </para>
-   <para>
-    Show messages produced by a specific process ID:
-   </para>
+   <title>項目をベースにしたフィルタ</title>
+   <para>ジャーナルのメッセージは、特定の項目でフィルタして出力することができます。項目を指定する場合は、 <literal><replaceable>フィールド名</replaceable>=<replaceable>値</replaceable></literal> の形式 (例: <literal>_SYSTEMD_UNIT=httpd.service</literal>) で指定します。また、 1 回の問い合わせで複数のフィルタを指定することもできます。既定で利用できる項目の一覧について、詳しくは <command>man 7 systemd.journal-fields</command> をお読みください。</para>
+   <para>特定のプロセス ID が生成したメッセージのみを表示するには、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl _PID=1039</screen>
-   <para>
-    Show messages belonging to a specific user ID:
-   </para>
+   <para>特定のユーザ ID に属するメッセージのみを表示するには、下記のように実行します:</para>
 <screen># journalctl _UID=1000</screen>
-   <para>
-    Show messages from the kernel ring buffer (the same as
-    <command>dmesg</command> produces):
-   </para>
+   <para>カーネルのリングバッファからのメッセージのみを表示するには、下記のように実行します (<command>dmesg</command> コマンドが生成するものと同じ内容になります):</para>
 <screen>&prompt.sudo;journalctl _TRANSPORT=kernel</screen>
-   <para>
-    Show messages from the service's standard or error output:
-   </para>
+   <para>サービスの標準出力や標準エラー出力のメッセージのみを表示するには、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl _TRANSPORT=stdout</screen>
-   <para>
-    Show messages produced by a specified service only:
-   </para>
+   <para>指定したサービスが生成したメッセージのみを表示するには、下記のように実行します:</para>
 <screen>&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service</screen>
-   <para>
-    If two different fields are specified, only entries that match both
-    expressions at the same time are shown:
-   </para>
+   <para>別々の項目に対して複数の条件を指定した場合は、同時に両方の条件に合致したメッセージのみを表示します:</para>
 <screen>&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=1488</screen>
-   <para>
-    If two matches refer to the same field, all entries matching either
-    expression are shown:
-   </para>
+   <para>同じ項目に対して複数の条件を指定した場合は、いずれかの条件に合致したメッセージを表示します:</para>
 <screen>&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service _SYSTEMD_UNIT=dbus.service</screen>
-   <para>
-    You can use the '+' separator to combine two expressions in a logical 'OR'.
-    The following example shows all messages from the Avahi service process
-    with the process ID 1480 together with all messages from the D-Bus service:
-   </para>
+   <para>なお、 '+' のセパレータを指定することで、論理 'OR' を実現することができます。下記の例では、 Avahi サービスプロセスのプロセス ID 1480 のメッセージと、 D-Bus サービスのメッセージをあわせて表示します:</para>
 <screen>&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=1480 + _SYSTEMD_UNIT=dbus.service</screen>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.journalctl.investigate">
-  <title>Investigating &systemd; Errors</title>
+  <title>&systemd; のエラー調査</title>
 
-  <para>
-   This section introduces a simple example to illustrate how to find and fix
-   the error reported by &systemd; during <command>apache2</command> start-up.
-  </para>
+  <para>本章では、 &systemd; が <command>apache2</command> を起動する際に発生した問題を、調べて修正するまでの流れを説明しています。</para>
 
   <procedure>
    <step>
-    <para>
-     Try to start the apache2 service:
-    </para>
+    <para>apache2 を開始してみます:</para>
 <screen># systemctl start apache2
 Job for apache2.service failed. See 'systemctl status apache2' and 'journalctl -xn' for details.</screen>
    </step>
    <step>
-    <para>
-     Let us see what the service's status says:
-    </para>
+    <para>サービスの状態はどのようになっているのかを調べてみます:</para>
 <screen>&prompt.sudo;systemctl status apache2
 apache2.service - The Apache Webserver
    Loaded: loaded (/usr/lib/systemd/system/apache2.service; disabled)
    Active: failed (Result: exit-code) since Tue 2014-06-03 11:08:13 CEST; 7min ago
   Process: 11026 ExecStop=/usr/sbin/start_apache2 -D SYSTEMD -DFOREGROUND \
            -k graceful-stop (code=exited, status=1/FAILURE)</screen>
-    <para>
-     The ID of the process causing the failure is 11026.
-    </para>
+    <para>エラーを発生させているのはプロセス ID 11026 であることがわかります。</para>
    </step>
    <step>
-    <para>
-     Show the verbose version of messages related to process ID 11026:
-    </para>
+    <para>プロセス ID 11026 に関連するメッセージを詳細に表示してみます:</para>
 <screen>&prompt.sudo;journalctl -o verbose _PID=11026
 [...]
 MESSAGE=AH00526: Syntax error on line 6 of /etc/apache2/default-server.conf:
@@ -308,10 +179,7 @@ MESSAGE=Invalid command 'DocumenttRoot', perhaps misspelled or defined by a modu
 [...]</screen>
    </step>
    <step>
-    <para>
-     Fix the typo inside <filename>/etc/apache2/default-server.conf</filename>,
-     start the apache2 service, and print its status:
-    </para>
+    <para><filename>/etc/apache2/default-server.conf</filename> ファイル内にスペルミスがあることがわかります。これを修正して apache2 サービスを開始しなおし、再度状態を確認してみます:</para>
 <screen>&prompt.sudo;systemctl start apache2 &amp;&amp; systemctl status apache2
 apache2.service - The Apache Webserver
    Loaded: loaded (/usr/lib/systemd/system/apache2.service; disabled)
@@ -332,88 +200,53 @@ apache2.service - The Apache Webserver
   </procedure>
  </sect1>
  <sect1 xml:id="sec.journalctl.config">
-  <title>Journald Configuration</title>
+  <title>journald の設定</title>
 
-  <para>
-   The behavior of the systemd-journald service can be adjusted by modifying
-   <filename>/etc/systemd/journald.conf</filename>. This section introduces
-   only basic option settings. For a complete file description, see
-   <command>man 5 journald.conf</command>. Note that you need to restart the
-   journal for the changes to take effect with
-  </para>
+  <para>systemd-journald サービスの動作は、 <filename>/etc/systemd/journald.conf</filename> を編集することで調整することができます。本章では基本的な設定のみを紹介しています。より詳しい設定ファイルの説明については、 <command>man 5 journald.conf</command> をお読みください。また、設定ファイルを変更したあとは、下記のコマンドで systemd-journald を再起動する必要があります:</para>
 
 <screen>&prompt.sudo;systemctl restart systemd-journald</screen>
 
   <sect2 xml:id="sec.journalctl.config.systemmaxuse">
-   <title>Changing the Journal Size Limit</title>
-   <para>
-    If the journal log data is saved to a persistent location (see
-    <xref linkend="sec.journalctl.persistent"/>), it uses up to 10% of the file
-    system the <filename>/var/log/journal</filename> resides on. For example,
-    if <filename>/var/log/journal</filename> is located on a 30 GB
-    <filename>/var</filename> partition, the journal may use up to 3 GB of the
-    disk space. To change this limit, change (and uncomment) the
-    <option>SystemMaxUse</option> option:
-   </para>
+   <title>ジャーナルのサイズ制限の変更</title>
+   <para>ジャーナルのログデータを恒久的な場所 (詳しくは <xref linkend="sec.journalctl.persistent"/> をお読みください) に保存する場合、 <filename>/var/log/journal</filename> が配置されているファイルシステムに対して、最大 10% までの領域を使用します。たとえば <filename>/var/log/journal</filename> が 30 GB の <filename>/var</filename> パーティション内に存在する場合、ジャーナルは最大で 3 GB までのディスク領域を使用します。この制限を変更したい場合は、 <option>SystemMaxUse</option> オプションを変更し (およびコメントを外し) てください:</para>
 <screen>SystemMaxUse=50M</screen>
   </sect2>
 
   <sect2 xml:id="sec.journalctl.config.ttypath">
-   <title>Forwarding the Journal to <filename>/dev/ttyX</filename></title>
-   <para>
-    You can forward the journal to a terminal device to inform you about system
-    messages on a preferred terminal screen, for example
-    <literal>/dev/tty12</literal>. Change the following journald options to
-   </para>
+   <title>ジャーナルから <filename>/dev/ttyX</filename> への転送</title>
+   <para>ジャーナルは、 <literal>/dev/tty12</literal> などの特定の端末デバイスに転送することもできます。下記の journald オプションを変更してください:</para>
 <screen>ForwardToConsole=yes
 TTYPath=/dev/tty12</screen>
   </sect2>
 
   <sect2 xml:id="sec.journalctl.config.forwardtosyslog">
-   <title>Forwarding the Journal to Syslog Facility</title>
-   <para>
-    Journald is backward compatible with traditional syslog implementations
-    such as <systemitem>rsyslog</systemitem>. Make sure the following is valid:
-   </para>
+   <title>ジャーナルから syslog への転送</title>
+   <para>journald には、 <systemitem>rsyslog</systemitem> をはじめとした従来の syslog 実装との後方互換性が用意されています。この機能を利用するにあたっては、あらかじめ下記をご確認ください:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      rsyslog is installed.
-     </para>
+     <para>rsyslog がインストールされていること。</para>
 <screen>&prompt.sudo;rpm -q rsyslog
 rsyslog-7.4.8-2.16.x86_64</screen>
     </listitem>
     <listitem>
-     <para>
-      rsyslog service is enabled.
-     </para>
+     <para>rsyslog サービスが有効化されていること。</para>
 <screen>&prompt.sudo;systemctl is-enabled rsyslog
 enabled</screen>
     </listitem>
     <listitem>
-     <para>
-      Forwarding to syslog is enabled in
-      <filename>/etc/systemd/journald.conf</filename>.
-     </para>
+     <para>syslog への転送は <filename>/etc/systemd/journald.conf</filename> で設定します。</para>
 <screen>ForwardToSyslog=yes</screen>
     </listitem>
    </itemizedlist>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.journalctl.yast">
-  <title>Using &yast; to Filter the &systemd; Journal</title>
+  <title>&yast; を利用した &systemd; ジャーナルのフィルタリング</title>
 
-  <para>
-   For an easy way of filtering the systemd journal (without having to deal
-   with the journalctl syntax), you can use the &yast; journal module. After
-   installing it with <command>sudo zypper in yast2-journal</command>, start it
-   from &yast; by selecting <menuchoice> <guimenu>System</guimenu>
-   <guimenu>Systemd Journal</guimenu> </menuchoice>. Alternatively, start it
-   from command line by entering <command>sudo yast2 journal</command>.
-  </para>
+  <para>systemd ジャーナルを journalctl の文法を使用せずに簡単にフィルタリングするには、 &yast; の journal モジュールを使用するとよいでしょう。 <command>sudo zypper in yast2-journal</command> でインストールを行なったあと、 &yast; を起動して <menuchoice> <guimenu>その他</guimenu> <guimenu>systemd ジャーナル</guimenu> </menuchoice> を選択します。それ以外にも、コマンドラインから <command>sudo yast2 journal</command> と入力して実行してもかまいません。</para>
 
   <figure xml:id="fig.journalctl.yast">
-   <title>&yast; systemd Journal</title>
+   <title>&yast; systemd ジャーナル</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="yast2_journal.png" width="80%" format="PNG"/>
@@ -424,23 +257,10 @@ enabled</screen>
    </mediaobject>
   </figure>
 
-  <para>
-   The module displays the log entries in a table. The search box on top allows
-   you to search for entries that contain certain characters, similar to using
-   <command>grep</command>. To filter the entries by date and time, unit, file,
-   or priority, click <guimenu>Change filters</guimenu> and set the respective
-   options.
-  </para>
+  <para>このモジュールは、ログ項目を表形式で表示します。上部にある検索ボックスを使用すると、 <command>grep</command> を使用したときのように、指定した文字列を含む項目のみを表示することができます。また、日時やユニット、ファイルや重大度でフィルタを行ないたい場合は、 <guimenu>フィルタの変更</guimenu> を押して必要な設定を行なってください。</para>
  </sect1>
  <sect1 xml:id="sec.journalctl.gnome-logs">
-  <title>Viewing Logs in &gnome;</title>
-  <para>
-   You can view the journal with <emphasis>&gnome; Logs</emphasis>.
-   Start it from the application menu. To view system log messages, it
-   needs to be run as root, for example with <command>xdg-su
-   gnome-logs</command>. This command can be executed when pressing
-   <keycombo> <keycap function="alt"/>
-   <keycap>F2</keycap></keycombo>.
-  </para>
+  <title>&gnome; でのログ表示</title>
+  <para>また、ジャーナルは <emphasis>&gnome; Logs</emphasis> でも読むことができます。アプリケーションメニューから起動してお使いください。システムログメッセージを読むには root 権限が必要となりますので、 <command>xdg-su gnome-logs</command> などのようにして起動してください。このコマンドは、 <keycombo> <keycap function="alt"/> <keycap>F2</keycap></keycombo> を押して起動することもできます。</para>
  </sect1>
 </chapter>

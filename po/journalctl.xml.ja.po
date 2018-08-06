@@ -1,32 +1,35 @@
+# translation of journalctl.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: journalctl.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-07-05 01:25+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-06 15:08+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: journalctl.xml:9
 #, no-c-format
 msgid "<command>journalctl</command> : Query the &systemd; Journal"
-msgstr ""
+msgstr "<command>journalctl</command> : &systemd; ジャーナルへの問い合わせコマンド"
 
 #. Tag: dm:translation
 #: journalctl.xml:13
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: journalctl.xml:16
@@ -39,6 +42,12 @@ msgid ""
 "<systemitem>syslog</systemitem> based service anymore, as all system events "
 "are written in the journal."
 msgstr ""
+"<phrase os=\"sles;sled\">&sle; 12</phrase> <phrase os=\"osuse\">&opensuse; Leap</phrase> "
+"で従来の init スクリプトが &systemd; に置き換わりました (詳しくは <xref linkend=\"cha.systemd\"/> "
+"をお読みください) が、これによって <emphasis>ジャーナル</emphasis> と呼ばれる"
+"新しいログシステムが提供されるようになりました。これにより、 <systemitem>syslog</systemitem> "
+"ベースのサービスを動作させる必要はなくなり、全てのイベントがジャーナルに書き込まれる"
+"ようになっています。"
 
 #. Tag: para
 #: journalctl.xml:24
@@ -51,6 +60,11 @@ msgid ""
 "system service errors. The <literal>systemd-journald</literal> service is on "
 "by default:"
 msgstr ""
+"ジャーナルそれ自身は &systemd; が管理するシステムサービスで、正確には"
+" <literal>systemd-journald.service</literal> という名称です。カーネルやユーザ"
+"スペース、標準入力やシステムサービスのエラーなどから、様々なログ記録情報を収集し、"
+"構造化され順序番号の付いたジャーナルを管理して、データを記録し保存することが"
+"できます。 <literal>systemd-journald</literal> サービスは既定で有効化されています:"
 
 #. Tag: screen
 #: journalctl.xml:31
@@ -69,12 +83,24 @@ msgid ""
 "           └─413 /usr/lib/systemd/systemd-journald\n"
 "[...]"
 msgstr ""
+"&prompt.sudo;systemctl status systemd-journald\n"
+"systemd-journald.service - Journal Service\n"
+"   Loaded: loaded (/usr/lib/systemd/system/systemd-journald.service; "
+"static)\n"
+"   Active: active (running) since Mon 2014-05-26 08:36:59 EDT; 3 days ago\n"
+"     Docs: man:systemd-journald.service(8)\n"
+"           man:journald.conf(5)\n"
+" Main PID: 413 (systemd-journal)\n"
+"   Status: \"Processing requests...\"\n"
+"   CGroup: /system.slice/systemd-journald.service\n"
+"           └─413 /usr/lib/systemd/systemd-journald\n"
+"[...]"
 
 #. Tag: title
 #: journalctl.xml:43
 #, no-c-format
 msgid "Making the Journal Persistent"
-msgstr ""
+msgstr "ジャーナルの恒久化"
 
 #. Tag: para
 #: journalctl.xml:45
@@ -88,6 +114,14 @@ msgid ""
 "data. &systemd; will create the directory for you&mdash;and switch to "
 "persistent logging&mdash;if you do the following:"
 msgstr ""
+"ジャーナルは既定では <filename>/run/log/journal/</filename> 内にデータを保存します。"
+"ただし、 <filename>/run/</filename> ディレクトリはメモリ内にのみ保持されるディレクトリ"
+"であるため、システムを再起動するとログデータが失われてしまいます。ログデータを"
+"恒久的に保存するには、 <filename>/var/log/journal/</filename> を作成して適切な所有権と"
+"アクセス許可を設定し、 systemd-journald に対してデータを保存するように設定する"
+"必要があります。ただし &systemd; では、ログを恒久的に保存するように設定する"
+"だけで、自動的にこのディレクトリを作成して設定することができます。具体的には"
+"下記の手順を実施します:"
 
 #. Tag: para
 #: journalctl.xml:57
@@ -95,20 +129,19 @@ msgstr ""
 msgid ""
 "As &rootuser;, open <filename>/etc/systemd/journald.conf</filename> for "
 "editing."
-msgstr ""
+msgstr "&rootuser; で vi エディタを利用して、 <filename>/etc/systemd/journald.conf</filename> を開きます:"
 
 #. Tag: screen
 #: journalctl.xml:61
 #, no-c-format
 msgid "&prompt.root;vi /etc/systemd/journald.conf"
-msgstr ""
+msgstr "&prompt.root;vi /etc/systemd/journald.conf"
 
 #. Tag: para
 #: journalctl.xml:64
 #, no-c-format
-msgid ""
-"Uncomment the line containing <literal>Storage=</literal> and change it to"
-msgstr ""
+msgid "Uncomment the line containing <literal>Storage=</literal> and change it to"
+msgstr "<literal>Storage=</literal> を含む行のコメントを外して、下記のようにします:"
 
 #. Tag: screen
 #: journalctl.xml:67
@@ -120,24 +153,29 @@ msgid ""
 "#Compress=yes\n"
 "[...]"
 msgstr ""
+"[...]\n"
+"[Journal]\n"
+"Storage=persistent\n"
+"#Compress=yes\n"
+"[...]"
 
 #. Tag: para
 #: journalctl.xml:74
 #, no-c-format
 msgid "Save the file and restart systemd-journald:"
-msgstr ""
+msgstr "ファイルを保存して終了し、 systemd-journald を再起動します:"
 
 #. Tag: screen
 #: journalctl.xml:77
 #, no-c-format
 msgid "&prompt.root;systemctl restart systemd-journald"
-msgstr ""
+msgstr "&prompt.root;systemctl restart systemd-journald"
 
 #. Tag: title
 #: journalctl.xml:82
 #, no-c-format
 msgid "<command>journalctl</command> Useful Switches"
-msgstr ""
+msgstr "<command>journalctl</command> での便利なスイッチ"
 
 #. Tag: para
 #: journalctl.xml:84
@@ -148,12 +186,16 @@ msgid ""
 "<command>journalctl</command> manual page, <command>man 1 journalctl</"
 "command> ."
 msgstr ""
+"本章では、既定の <command>journalctl</command> の動作を拡張するにあたって、"
+"便利なオプション類をいくつか紹介しています。全てのスイッチについての説明を"
+"ご希望の場合は、 <command>journalctl</command> のマニュアルページ"
+" (<command>man 1 journalctl</command>) をご覧ください。"
 
 #. Tag: title
 #: journalctl.xml:92
 #, no-c-format
 msgid "Messages Related to a Specific Executable"
-msgstr ""
+msgstr "特定の実行ファイルに関連するメッセージ"
 
 #. Tag: para
 #: journalctl.xml:93
@@ -161,19 +203,19 @@ msgstr ""
 msgid ""
 "To show all journal messages related to a specific executable, specify the "
 "full path to the executable:"
-msgstr ""
+msgstr "特定の実行ファイルに関連する全てのジャーナルメッセージを表示するには、実行ファイルのフルパスを指定します:"
 
 #. Tag: screen
 #: journalctl.xml:97
 #, no-c-format
 msgid "&prompt.sudo;journalctl /usr/lib/systemd/systemd"
-msgstr ""
+msgstr "&prompt.sudo;journalctl /usr/lib/systemd/systemd"
 
 #. Tag: term
 #: journalctl.xml:102
 #, no-c-format
 msgid "-f"
-msgstr ""
+msgstr "-f"
 
 #. Tag: para
 #: journalctl.xml:104
@@ -181,13 +223,13 @@ msgstr ""
 msgid ""
 "Shows only the most recent journal messages, and prints new log entries as "
 "they are added to the journal."
-msgstr ""
+msgstr "直近のジャーナルメッセージのみを表示し、以後ジャーナルに更新があるたびに項目を随時表示します。"
 
 #. Tag: term
 #: journalctl.xml:111
 #, no-c-format
 msgid "-e"
-msgstr ""
+msgstr "-e"
 
 #. Tag: para
 #: journalctl.xml:113
@@ -195,13 +237,13 @@ msgstr ""
 msgid ""
 "Prints the messages and jumps to the end of the journal, so that the latest "
 "entries are visible within the pager."
-msgstr ""
+msgstr "ジャーナルメッセージを表示して末尾に移動します。ページャを介して最新の項目から閲覧できるようになります。"
 
 #. Tag: term
 #: journalctl.xml:120
 #, no-c-format
 msgid "-r"
-msgstr ""
+msgstr "-r"
 
 #. Tag: para
 #: journalctl.xml:122
@@ -209,13 +251,13 @@ msgstr ""
 msgid ""
 "Prints the messages of the journal in reverse order, so that the latest "
 "entries are listed first."
-msgstr ""
+msgstr "ジャーナルのメッセージを逆順で表示します。最新の項目が最初に表示されるようになります。"
 
 #. Tag: term
 #: journalctl.xml:129
 #, no-c-format
 msgid "-k"
-msgstr ""
+msgstr "-k"
 
 #. Tag: para
 #: journalctl.xml:131
@@ -225,12 +267,15 @@ msgid ""
 "<literal>_TRANSPORT=kernel</literal> (see <xref linkend=\"sec.journalctl."
 "filter.fields\"/> )."
 msgstr ""
+"カーネルメッセージのみを表示します。これは項目ベースのフィルタで、"
+" <literal>_TRANSPORT=kernel</literal> と同じ意味になります (詳しくは"
+" <xref linkend=\"sec.journalctl.filter.fields\"/> をお読みください) 。"
 
 #. Tag: term
 #: journalctl.xml:139
 #, no-c-format
 msgid "-u"
-msgstr ""
+msgstr "-u"
 
 #. Tag: para
 #: journalctl.xml:141
@@ -240,6 +285,9 @@ msgid ""
 "the field match <literal>_SYSTEMD_UNIT=<replaceable>UNIT</replaceable></"
 "literal> (see <xref linkend=\"sec.journalctl.filter.fields\"/> )."
 msgstr ""
+"指定した &systemd; ユニットに対するメッセージのみを表示します。これは項目ベースのフィルタで、"
+" <literal>_SYSTEMD_UNIT=<replaceable>ユニット名</replaceable></literal> と同じ意味になります (詳しくは"
+" <xref linkend=\"sec.journalctl.filter.fields\"/> をお読みください) 。"
 
 #. Tag: screen
 #: journalctl.xml:147
@@ -250,12 +298,16 @@ msgid ""
 "Jun 03 10:07:11 pinkiepie systemd[1]: Starting The Apache Webserver...\n"
 "Jun 03 10:07:12 pinkiepie systemd[1]: Started The Apache Webserver."
 msgstr ""
+"&prompt.sudo;journalctl -u apache2\n"
+"[...]\n"
+"Jun 03 10:07:11 pinkiepie systemd[1]: Starting The Apache Webserver...\n"
+"Jun 03 10:07:12 pinkiepie systemd[1]: Started The Apache Webserver."
 
 #. Tag: title
 #: journalctl.xml:158
 #, no-c-format
 msgid "Filtering the Journal Output"
-msgstr ""
+msgstr "ジャーナル出力のフィルタリング"
 
 #. Tag: para
 #: journalctl.xml:160
@@ -265,12 +317,15 @@ msgid ""
 "content of the journal, the oldest entries listed first. The output can be "
 "filtered by specific switches and fields."
 msgstr ""
+"何もスイッチを指定しないで <command>journalctl</command> を実行すると、ジャーナル"
+"内にある全ての情報を古いものから順に表示します。出力はスイッチと項目を指定する"
+"ことでフィルタすることができます。"
 
 #. Tag: title
 #: journalctl.xml:167
 #, no-c-format
 msgid "Filtering Based on a Boot Number"
-msgstr ""
+msgstr "起動番号をベースにしたフィルタ"
 
 #. Tag: para
 #: journalctl.xml:168
@@ -279,6 +334,8 @@ msgid ""
 "<command>journalctl</command> can filter messages based on a specific system "
 "boot. To list all available boots, run"
 msgstr ""
+"<command>journalctl</command> では、特定のシステム起動時に限ってメッセージを表示"
+"することができます。全てのシステム起動を表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:172
@@ -290,6 +347,9 @@ msgid ""
 " 0 156019a44a774a0bb0148a92df4af81b Fri 2014-05-30 05:34:09 EDT—Fri "
 "2014-05-30 06:15:01 EDT"
 msgstr ""
+"&prompt.sudo;journalctl --list-boots\n"
+"-1 097ed2cd99124a2391d2cffab1b566f0 Mon 2014-05-26 08:36:56 EDT—Fri 2014-05-30 05:33:44 EDT\n"
+" 0 156019a44a774a0bb0148a92df4af81b Fri 2014-05-30 05:34:09 EDT—Fri 2014-05-30 06:15:01 EDT"
 
 #. Tag: para
 #: journalctl.xml:175
@@ -300,18 +360,21 @@ msgid ""
 "the one prior to that, etc. The second column contains the boot ID followed "
 "by the limiting time stamps of the specific boot."
 msgstr ""
+"一番左の列は起動オフセットと呼ばれる値で、 <literal>0</literal> が現在の起動時、"
+" <literal>-1</literal> が前回、 <literal>-2</literal> が前々回のようになっています。"
+" 2 つ目の列には起動 ID が書かれていて、その後ろにはそれぞれのタイムスタンプが書かれています。"
 
 #. Tag: para
 #: journalctl.xml:182
 #, no-c-format
 msgid "Show all messages from the current boot:"
-msgstr ""
+msgstr "現在の起動に限定して全てのメッセージを表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:185
 #, no-c-format
 msgid "&prompt.sudo;journalctl -b"
-msgstr ""
+msgstr "&prompt.sudo;journalctl -b"
 
 #. Tag: para
 #: journalctl.xml:186
@@ -320,12 +383,14 @@ msgid ""
 "If you need to see journal messages from the previous boot, add an offset "
 "parameter. The following example outputs the previous boot messages:"
 msgstr ""
+"以前の起動時のジャーナルメッセージを表示したい場合は、オフセット値を指定します。"
+"たとえば前回の起動時のメッセージを表示したい場合は、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:190
 #, no-c-format
 msgid "&prompt.sudo;journalctl -b -1"
-msgstr ""
+msgstr "&prompt.sudo;journalctl -b -1"
 
 #. Tag: para
 #: journalctl.xml:191
@@ -334,18 +399,20 @@ msgid ""
 "Another way is to list boot messages based on the boot ID. For this purpose, "
 "use the _BOOT_ID field:"
 msgstr ""
+"起動時を指定するもう 1 つの方法としては、起動 ID を指定する方法があります。"
+"この場合は _BOOT_ID フィールドでフィルタを設定します:"
 
 #. Tag: screen
 #: journalctl.xml:195
 #, no-c-format
 msgid "&prompt.sudo;journalctl _BOOT_ID=156019a44a774a0bb0148a92df4af81b"
-msgstr ""
+msgstr "&prompt.sudo;journalctl _BOOT_ID=156019a44a774a0bb0148a92df4af81b"
 
 #. Tag: title
 #: journalctl.xml:199
 #, no-c-format
 msgid "Filtering Based on Time Interval"
-msgstr ""
+msgstr "時間範囲をベースにしたフィルタ"
 
 #. Tag: para
 #: journalctl.xml:200
@@ -362,36 +429,45 @@ msgid ""
 "can also specify relative times prefixed with <literal>-</literal> or "
 "<literal>+</literal> , referring to times before or after the current time."
 msgstr ""
+"<command>journalctl</command> の出力は、開始と終了の日時を指定してフィルタする"
+"こともできます。日付を指定する場合は、 \"2014-06-30 9:17:16\" のように指定します。"
+"また、時刻を省略した場合は \"00:00:00\" であるものと解釈され、時刻の秒を省略した"
+"場合は \":00\" であるものと解釈されます。日付部分を省略した場合は、今日の日付で"
+"あるものとして解釈されます。また、日付での表記の代替として、 \"yesterday\" (昨日),"
+" \"today\" (今日), \"tomorrow\" (明日) のような表現を使用することもできます。"
+"これらを指定した場合、時刻は \"00:00:00\" と解釈されます。さらに、 \"now\" と指定"
+"すると、現在の日時であるものとして解釈されます。このほか、 <literal>-</literal> や "
+"<literal>+</literal> を頭に付けて相対日時を指定することもできます。"
 
 #. Tag: para
 #: journalctl.xml:213
 #, no-c-format
 msgid "Show only new messages since now, and update the output continuously:"
-msgstr ""
+msgstr "現在以降の新しいメッセージを表示し、以後更新があるたびに随時表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:216
 #, no-c-format
 msgid "&prompt.sudo;journalctl --since \"now\" -f"
-msgstr ""
+msgstr "&prompt.sudo;journalctl --since \"now\" -f"
 
 #. Tag: para
 #: journalctl.xml:217
 #, no-c-format
 msgid "Show all messages since last midnight till 3:20am:"
-msgstr ""
+msgstr "今日になってから午前 3:20 までの全てのメッセージを表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:220
 #, no-c-format
 msgid "&prompt.sudo;journalctl --since \"today\" --until \"3:20\""
-msgstr ""
+msgstr "&prompt.sudo;journalctl --since \"today\" --until \"3:20\""
 
 #. Tag: title
 #: journalctl.xml:224
 #, no-c-format
 msgid "Filtering Based on Fields"
-msgstr ""
+msgstr "項目をベースにしたフィルタ"
 
 #. Tag: para
 #: journalctl.xml:225
@@ -403,30 +479,36 @@ msgid ""
 "matches in a single query to filter the output messages even more. See "
 "<command>man 7 systemd.journal-fields</command> for a list of default fields."
 msgstr ""
+"ジャーナルのメッセージは、特定の項目でフィルタして出力することができます。項目を"
+"指定する場合は、 <literal><replaceable>フィールド名</replaceable>=<replaceable>値</replaceable></literal> "
+"の形式 (例: <literal>_SYSTEMD_UNIT=httpd.service</literal>) で指定します。"
+"また、 1 回の問い合わせで複数のフィルタを指定することもできます。既定で利用できる"
+"項目の一覧について、詳しくは <command>man 7 systemd.journal-fields</command> を"
+"お読みください。"
 
 #. Tag: para
 #: journalctl.xml:233
 #, no-c-format
 msgid "Show messages produced by a specific process ID:"
-msgstr ""
+msgstr "特定のプロセス ID が生成したメッセージのみを表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:236
 #, no-c-format
 msgid "&prompt.sudo;journalctl _PID=1039"
-msgstr ""
+msgstr "&prompt.sudo;journalctl _PID=1039"
 
 #. Tag: para
 #: journalctl.xml:237
 #, no-c-format
 msgid "Show messages belonging to a specific user ID:"
-msgstr ""
+msgstr "特定のユーザ ID に属するメッセージのみを表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:240
 #, no-c-format
 msgid "# journalctl _UID=1000"
-msgstr ""
+msgstr "# journalctl _UID=1000"
 
 #. Tag: para
 #: journalctl.xml:241
@@ -435,36 +517,38 @@ msgid ""
 "Show messages from the kernel ring buffer (the same as <command>dmesg</"
 "command> produces):"
 msgstr ""
+"カーネルのリングバッファからのメッセージのみを表示するには、下記のように実行します"
+" (<command>dmesg</command> コマンドが生成するものと同じ内容になります):"
 
 #. Tag: screen
 #: journalctl.xml:245
 #, no-c-format
 msgid "&prompt.sudo;journalctl _TRANSPORT=kernel"
-msgstr ""
+msgstr "&prompt.sudo;journalctl _TRANSPORT=kernel"
 
 #. Tag: para
 #: journalctl.xml:246
 #, no-c-format
 msgid "Show messages from the service's standard or error output:"
-msgstr ""
+msgstr "サービスの標準出力や標準エラー出力のメッセージのみを表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:249
 #, no-c-format
 msgid "&prompt.sudo;journalctl _TRANSPORT=stdout"
-msgstr ""
+msgstr "&prompt.sudo;journalctl _TRANSPORT=stdout"
 
 #. Tag: para
 #: journalctl.xml:250
 #, no-c-format
 msgid "Show messages produced by a specified service only:"
-msgstr ""
+msgstr "指定したサービスが生成したメッセージのみを表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: journalctl.xml:253
 #, no-c-format
 msgid "&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service"
-msgstr ""
+msgstr "&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service"
 
 #. Tag: para
 #: journalctl.xml:254
@@ -472,13 +556,13 @@ msgstr ""
 msgid ""
 "If two different fields are specified, only entries that match both "
 "expressions at the same time are shown:"
-msgstr ""
+msgstr "別々の項目に対して複数の条件を指定した場合は、同時に両方の条件に合致したメッセージのみを表示します:"
 
 #. Tag: screen
 #: journalctl.xml:258
 #, no-c-format
 msgid "&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=1488"
-msgstr ""
+msgstr "&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=1488"
 
 #. Tag: para
 #: journalctl.xml:259
@@ -486,7 +570,7 @@ msgstr ""
 msgid ""
 "If two matches refer to the same field, all entries matching either "
 "expression are shown:"
-msgstr ""
+msgstr "同じ項目に対して複数の条件を指定した場合は、いずれかの条件に合致したメッセージを表示します:"
 
 #. Tag: screen
 #: journalctl.xml:263
@@ -495,6 +579,8 @@ msgid ""
 "&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service "
 "_SYSTEMD_UNIT=dbus.service"
 msgstr ""
+"&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service "
+"_SYSTEMD_UNIT=dbus.service"
 
 #. Tag: para
 #: journalctl.xml:264
@@ -504,6 +590,9 @@ msgid ""
 "The following example shows all messages from the Avahi service process with "
 "the process ID 1480 together with all messages from the D-Bus service:"
 msgstr ""
+"なお、 '+' のセパレータを指定することで、論理 'OR' を実現することができます。下記の"
+"例では、 Avahi サービスプロセスのプロセス ID 1480 のメッセージと、 D-Bus サービス"
+"のメッセージをあわせて表示します:"
 
 #. Tag: screen
 #: journalctl.xml:269
@@ -512,12 +601,14 @@ msgid ""
 "&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=1480 + "
 "_SYSTEMD_UNIT=dbus.service"
 msgstr ""
+"&prompt.sudo;journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=1480 + "
+"_SYSTEMD_UNIT=dbus.service"
 
 #. Tag: title
 #: journalctl.xml:273
 #, no-c-format
 msgid "Investigating &systemd; Errors"
-msgstr ""
+msgstr "&systemd; のエラー調査"
 
 #. Tag: para
 #: journalctl.xml:275
@@ -526,12 +617,14 @@ msgid ""
 "This section introduces a simple example to illustrate how to find and fix "
 "the error reported by &systemd; during <command>apache2</command> start-up."
 msgstr ""
+"本章では、 &systemd; が <command>apache2</command> を起動する際に発生した問題を、"
+"調べて修正するまでの流れを説明しています。"
 
 #. Tag: para
 #: journalctl.xml:282
 #, no-c-format
 msgid "Try to start the apache2 service:"
-msgstr ""
+msgstr "apache2 を開始してみます:"
 
 #. Tag: screen
 #: journalctl.xml:285
@@ -541,12 +634,15 @@ msgid ""
 "Job for apache2.service failed. See 'systemctl status apache2' and "
 "'journalctl -xn' for details."
 msgstr ""
+"# systemctl start apache2\n"
+"Job for apache2.service failed. See 'systemctl status apache2' and "
+"'journalctl -xn' for details."
 
 #. Tag: para
 #: journalctl.xml:289
 #, no-c-format
 msgid "Let us see what the service's status says:"
-msgstr ""
+msgstr "サービスの状態はどのようになっているのかを調べてみます:"
 
 #. Tag: screen
 #: journalctl.xml:292
@@ -561,18 +657,24 @@ msgid ""
 "\\\n"
 "           -k graceful-stop (code=exited, status=1/FAILURE)"
 msgstr ""
+"&prompt.sudo;systemctl status apache2\n"
+"apache2.service - The Apache Webserver\n"
+"   Loaded: loaded (/usr/lib/systemd/system/apache2.service; disabled)\n"
+"   Active: failed (Result: exit-code) since Tue 2014-06-03 11:08:13 CEST; 7min ago\n"
+"  Process: 11026 ExecStop=/usr/sbin/start_apache2 -D SYSTEMD -DFOREGROUND \\\n"
+"           -k graceful-stop (code=exited, status=1/FAILURE)"
 
 #. Tag: para
 #: journalctl.xml:298
 #, no-c-format
 msgid "The ID of the process causing the failure is 11026."
-msgstr ""
+msgstr "エラーを発生させているのはプロセス ID 11026 であることがわかります。"
 
 #. Tag: para
 #: journalctl.xml:303
 #, no-c-format
 msgid "Show the verbose version of messages related to process ID 11026:"
-msgstr ""
+msgstr "プロセス ID 11026 に関連するメッセージを詳細に表示してみます:"
 
 #. Tag: screen
 #: journalctl.xml:306
@@ -587,6 +689,14 @@ msgid ""
 "module\n"
 "[...]"
 msgstr ""
+"&prompt.sudo;journalctl -o verbose _PID=11026\n"
+"[...]\n"
+"MESSAGE=AH00526: Syntax error on line 6 of /etc/apache2/default-server."
+"conf:\n"
+"[...]\n"
+"MESSAGE=Invalid command 'DocumenttRoot', perhaps misspelled or defined by a "
+"module\n"
+"[...]"
 
 #. Tag: para
 #: journalctl.xml:314
@@ -595,6 +705,9 @@ msgid ""
 "Fix the typo inside <filename>/etc/apache2/default-server.conf</filename> , "
 "start the apache2 service, and print its status:"
 msgstr ""
+"<filename>/etc/apache2/default-server.conf</filename> ファイル内にスペルミスが"
+"あることがわかります。これを修正して apache2 サービスを開始しなおし、再度状態を"
+"確認してみます:"
 
 #. Tag: screen
 #: journalctl.xml:318
@@ -622,12 +735,27 @@ msgid ""
 "           └─11285 /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf -D "
 "[...]\n"
 msgstr ""
+"&prompt.sudo;systemctl start apache2 &amp;&amp; systemctl status apache2\n"
+"apache2.service - The Apache Webserver\n"
+"   Loaded: loaded (/usr/lib/systemd/system/apache2.service; disabled)\n"
+"   Active: active (running) since Tue 2014-06-03 11:26:24 CEST; 4ms ago\n"
+"  Process: 11026 ExecStop=/usr/sbin/start_apache2 -D SYSTEMD -DFOREGROUND\n"
+"           -k graceful-stop (code=exited, status=1/FAILURE)\n"
+" Main PID: 11263 (httpd2-prefork)\n"
+"   Status: \"Processing requests...\"\n"
+"   CGroup: /system.slice/apache2.service\n"
+"           ├─11263 /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf -D [...]\n"
+"           ├─11280 /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf -D [...]\n"
+"           ├─11281 /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf -D [...]\n"
+"           ├─11282 /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf -D [...]\n"
+"           ├─11283 /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf -D [...]\n"
+"           └─11285 /usr/sbin/httpd2-prefork -f /etc/apache2/httpd.conf -D [...]\n"
 
 #. Tag: title
 #: journalctl.xml:338
 #, no-c-format
 msgid "Journald Configuration"
-msgstr ""
+msgstr "journald の設定"
 
 #. Tag: para
 #: journalctl.xml:340
@@ -639,18 +767,23 @@ msgid ""
 "<command>man 5 journald.conf</command> . Note that you need to restart the "
 "journal for the changes to take effect with"
 msgstr ""
+"systemd-journald サービスの動作は、 <filename>/etc/systemd/journald.conf</filename> を"
+"編集することで調整することができます。本章では基本的な設定のみを紹介しています。"
+"より詳しい設定ファイルの説明については、 <command>man 5 journald.conf</command> "
+"をお読みください。また、設定ファイルを変更したあとは、下記のコマンドで systemd-journald "
+"を再起動する必要があります:"
 
 #. Tag: screen
 #: journalctl.xml:348
 #, no-c-format
 msgid "&prompt.sudo;systemctl restart systemd-journald"
-msgstr ""
+msgstr "&prompt.sudo;systemctl restart systemd-journald"
 
 #. Tag: title
 #: journalctl.xml:351
 #, no-c-format
 msgid "Changing the Journal Size Limit"
-msgstr ""
+msgstr "ジャーナルのサイズ制限の変更"
 
 #. Tag: para
 #: journalctl.xml:352
@@ -663,18 +796,25 @@ msgid ""
 "partition, the journal may use up to 3 GB of the disk space. To change this "
 "limit, change (and uncomment) the <option>SystemMaxUse</option> option:"
 msgstr ""
+"ジャーナルのログデータを恒久的な場所 (詳しくは <xref linkend=\"sec.journalctl.persistent\"/> "
+"をお読みください) に保存する場合、 <filename>/var/log/journal</filename> が配置"
+"されているファイルシステムに対して、最大 10% までの領域を使用します。たとえば <filename>/"
+"var/log/journal</filename> が 30 GB の <filename>/var</filename> パーティション内に"
+"存在する場合、ジャーナルは最大で 3 GB までのディスク領域を使用します。この制限を"
+"変更したい場合は、 <option>SystemMaxUse</option> オプションを変更し (およびコメントを"
+"外し) てください:"
 
 #. Tag: screen
 #: journalctl.xml:361
 #, no-c-format
 msgid "SystemMaxUse=50M"
-msgstr ""
+msgstr "SystemMaxUse=50M"
 
 #. Tag: title
 #: journalctl.xml:365
 #, no-c-format
 msgid "Forwarding the Journal to <filename>/dev/ttyX</filename>"
-msgstr ""
+msgstr "ジャーナルから <filename>/dev/ttyX</filename> への転送"
 
 #. Tag: para
 #: journalctl.xml:366
@@ -684,6 +824,8 @@ msgid ""
 "messages on a preferred terminal screen, for example <literal>/dev/tty12</"
 "literal> . Change the following journald options to"
 msgstr ""
+"ジャーナルは、 <literal>/dev/tty12</literal> などの特定の端末デバイスに転送する"
+"こともできます。下記の journald オプションを変更してください:"
 
 #. Tag: screen
 #: journalctl.xml:371
@@ -692,12 +834,14 @@ msgid ""
 "ForwardToConsole=yes\n"
 "TTYPath=/dev/tty12"
 msgstr ""
+"ForwardToConsole=yes\n"
+"TTYPath=/dev/tty12"
 
 #. Tag: title
 #: journalctl.xml:376
 #, no-c-format
 msgid "Forwarding the Journal to Syslog Facility"
-msgstr ""
+msgstr "ジャーナルから syslog への転送"
 
 #. Tag: para
 #: journalctl.xml:377
@@ -706,12 +850,14 @@ msgid ""
 "Journald is backward compatible with traditional syslog implementations such "
 "as <systemitem>rsyslog</systemitem> . Make sure the following is valid:"
 msgstr ""
+"journald には、 <systemitem>rsyslog</systemitem> をはじめとした従来の syslog 実装との後方"
+"互換性が用意されています。この機能を利用するにあたっては、あらかじめ下記をご確認ください:"
 
 #. Tag: para
 #: journalctl.xml:383
 #, no-c-format
 msgid "rsyslog is installed."
-msgstr ""
+msgstr "rsyslog がインストールされていること。"
 
 #. Tag: screen
 #: journalctl.xml:386
@@ -720,12 +866,14 @@ msgid ""
 "&prompt.sudo;rpm -q rsyslog\n"
 "rsyslog-7.4.8-2.16.x86_64"
 msgstr ""
+"&prompt.sudo;rpm -q rsyslog\n"
+"rsyslog-7.4.8-2.16.x86_64"
 
 #. Tag: para
 #: journalctl.xml:390
 #, no-c-format
 msgid "rsyslog service is enabled."
-msgstr ""
+msgstr "rsyslog サービスが有効化されていること。"
 
 #. Tag: screen
 #: journalctl.xml:393
@@ -734,6 +882,8 @@ msgid ""
 "&prompt.sudo;systemctl is-enabled rsyslog\n"
 "enabled"
 msgstr ""
+"&prompt.sudo;systemctl is-enabled rsyslog\n"
+"enabled"
 
 #. Tag: para
 #: journalctl.xml:397
@@ -741,19 +891,19 @@ msgstr ""
 msgid ""
 "Forwarding to syslog is enabled in <filename>/etc/systemd/journald.conf</"
 "filename> ."
-msgstr ""
+msgstr "syslog への転送は <filename>/etc/systemd/journald.conf</filename> で設定します。"
 
 #. Tag: screen
 #: journalctl.xml:401
 #, no-c-format
 msgid "ForwardToSyslog=yes"
-msgstr ""
+msgstr "ForwardToSyslog=yes"
 
 #. Tag: title
 #: journalctl.xml:407
 #, no-c-format
 msgid "Using &yast; to Filter the &systemd; Journal"
-msgstr ""
+msgstr "&yast; を利用した &systemd; ジャーナルのフィルタリング"
 
 #. Tag: para
 #: journalctl.xml:409
@@ -766,12 +916,18 @@ msgid ""
 "<guimenu>Systemd Journal</guimenu> </menuchoice> . Alternatively, start it "
 "from command line by entering <command>sudo yast2 journal</command> ."
 msgstr ""
+"systemd ジャーナルを journalctl の文法を使用せずに簡単にフィルタリングするには、"
+" &yast; の journal モジュールを使用するとよいでしょう。 <command>sudo zypper "
+"in yast2-journal</command> でインストールを行なったあと、 &yast; を起動して"
+" <menuchoice> <guimenu>その他</guimenu> <guimenu>systemd ジャーナル</guimenu> "
+"</menuchoice> を選択します。それ以外にも、コマンドラインから <command>sudo yast2"
+" journal</command> と入力して実行してもかまいません。"
 
 #. Tag: title
 #: journalctl.xml:419
 #, no-c-format
 msgid "&yast; systemd Journal"
-msgstr ""
+msgstr "&yast; systemd ジャーナル"
 
 #. Tag: para
 #: journalctl.xml:430
@@ -783,12 +939,16 @@ msgid ""
 "file, or priority, click <guimenu>Change filters</guimenu> and set the "
 "respective options."
 msgstr ""
+"このモジュールは、ログ項目を表形式で表示します。上部にある検索ボックスを使用すると、"
+" <command>grep</command> を使用したときのように、指定した文字列を含む項目のみを"
+"表示することができます。また、日時やユニット、ファイルや重大度でフィルタを行ない"
+"たい場合は、 <guimenu>フィルタの変更</guimenu> を押して必要な設定を行なってください。"
 
 #. Tag: title
 #: journalctl.xml:439
 #, no-c-format
 msgid "Viewing Logs in &gnome;"
-msgstr ""
+msgstr "&gnome; でのログ表示"
 
 #. Tag: para
 #: journalctl.xml:440
@@ -800,3 +960,9 @@ msgid ""
 "command can be executed when pressing <keycombo> <keycap function=\"alt\"/> "
 "<keycap>F2</keycap></keycombo> ."
 msgstr ""
+"また、ジャーナルは <emphasis>&gnome; Logs</emphasis> でも読むことができます。"
+"アプリケーションメニューから起動してお使いください。システムログメッセージを読む"
+"には root 権限が必要となりますので、 <command>xdg-su gnome-logs</command> などの"
+"ようにして起動してください。このコマンドは、 <keycombo> <keycap function=\"alt\"/> "
+"<keycap>F2</keycap></keycombo> を押して起動することもできます。"
+
