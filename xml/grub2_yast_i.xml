@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.grub2.yast2.config">
- <title>Configuring the Boot Loader with &yast;</title>
+ <title>&yast; によるブートローダの設定</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,22 +13,12 @@
   </dm:docmanager>
  </info>
 
- <para>
-  The easiest way to configure general options of the boot loader in your
-  &productname; system is to use the &yast; module. In the &yastcc;, select
-  <menuchoice> <guimenu>System</guimenu> <guimenu>Boot
-  Loader</guimenu></menuchoice>. The module shows the current boot loader
-  configuration of your system and allows you to make changes.
- </para>
+ <para>&productname; システムで、ブートローダに関する一般的な設定を行なうにあたって、最も簡単なのは &yast; を使用することです。 &yast; のブートローダモジュールを起動するには、 &yastcc; から <menuchoice> <guimenu>システム</guimenu> <guimenu>ブートローダ</guimenu></menuchoice> を選択します。</para>
 
- <para>
-  Use the <guimenu>Boot Code Options</guimenu> tab to view and change settings
-  related to type, location and advanced loader settings. You can choose
-  whether to use &grub; in standard or EFI mode.
- </para>
+ <para><guimenu>ブートコードのオプション</guimenu> タブを利用して、種類や場所、高度なブートローダオプションの設定を行なうことができます。また、 &grub; を標準モードで使用するか、 EFI モードで使用するかを選択することもできます。</para>
 
  <figure xml:id="fig.grub2.yast.boot.code.options0">
-  <title>Boot Code Options</title>
+  <title>ブートコードのオプション</title>
   <mediaobject>
    <imageobject role="fo">
     <imagedata fileref="yast2_bootloader_boot_code.png" width="75%" format="PNG"/>
@@ -40,94 +30,56 @@
  </figure>
 
  <important>
-  <title>EFI Systems require GRUB2-EFI</title>
-  <para>
-   If you have an EFI system you can only install GRUB2-EFI, otherwise your
-   system is no longer bootable.
-  </para>
+  <title>EFI システムでは GRUB2-EFI が必要となる件について</title>
+  <para>EFI システムをお使いの場合は、 GRUB2-EFI だけをご利用いただけます。それ以外を選択してしまうと、お使いのシステムを起動できなくなってしまいます。</para>
  </important>
 
  <important>
-  <title>Reinstalling the Boot Loader</title>
-  <para>
-   To reinstall the boot loader, make sure to change a setting in &yast; and
-   then change it back. For example, to reinstall GRUB2-EFI, select
-   <guimenu>GRUB2</guimenu> first and then immediately switch back to
-   <guimenu>GRUB2-EFI</guimenu>.
-  </para>
-  <para>
-   Otherwise, the boot loader may only be partially reinstalled.
-  </para>
+  <title>ブートローダの再インストール</title>
+  <para>ブートローダを再インストールするには、まず &yast; 内でいったん設定を変更してから、元に戻します。たとえば GRUB2-EFI を再インストールしたい場合は、いったん <guimenu>GRUB2</guimenu> を選択してから、 <guimenu>GRUB2-EFI</guimenu> に戻します。</para>
+  <para>上記の手順を実施しないと、ブートローダ全体が書き込まれません。</para>
  </important>
 
  <note>
-  <title>Custom Boot Loader</title>
-  <para>
-   To use a boot loader other than the ones listed, select <guimenu>Do Not
-   Install Any Boot Loader</guimenu>. Read the documentation of your boot
-   loader carefully before choosing this option.
-  </para>
+  <title>独自のブートローダ</title>
+  <para>一覧にあるもの以外のブートローダを使用したい場合は、 <guimenu>管理しない</guimenu> を選択します。なお、この選択を行なう前に、お使いのブートローダのドキュメンテーションをよくお読みください。</para>
  </note>
 
  <sect2 xml:id="sec.grub2.yast2.location">
-  <title>Boot Loader Location and Boot Code Options</title>
+  <title>ブートローダの場所とブートコードのオプション</title>
 
-  <para>
-   The default location of the boot loader depends on the partition setup and
-   is either the Master Boot Record (MBR) or the boot sector of the
-   <filename>/</filename> partition. To modify the location of the boot loader,
-   follow these steps:
-  </para>
+  <para>ブートローダの既定の配置場所はパーティションの設定に依存して決まり、マスターブートレコード (MBR) もしくは <filename>/</filename> パーティションのブートセクタのいずれかに配置します。ブートローダの配置場所を変更するには、下記の手順を実施します:</para>
   <procedure xml:id="pro.sec.grub2.yast2.location">
-   <title>Changing the Boot Loader Location</title>
+   <title>ブートローダの配置場所の変更</title>
    <step>
-    <para>
-     Select the <guimenu>Boot Code Options</guimenu> tab and then choose one of
-     the following options for <guimenu>Boot Loader Location</guimenu>:
-    </para>
+    <para><guimenu>ブートコードのオプション</guimenu> を選択し、 <guimenu>ブートローダの場所</guimenu> で下記のいずれかを選択します:</para>
     <variablelist>
      <varlistentry>
-      <term><guimenu>Boot from Master Boot Record</guimenu>
-      </term>
+      <term><guimenu>マスターブートレコード (MBR) から起動</guimenu></term>
       <listitem>
-       <para>
-        This installs the boot loader in the MBR of the disk containing the
-        directory <filename>/boot</filename>. Usually this will be the disk
-        mounted to <filename>/</filename>, but if <filename>/boot</filename> is
-        mounted to a separate partition on a different disk, the MBR of that
-        disk will be used.
-       </para>
+       <para>これを選択すると、 <filename>/boot</filename> を含むディスクの MBR 内にブートローダをインストールします。通常は <filename>/</filename> と同じディスクになることが多いはずですが、 <filename>/boot</filename> と <filename>/</filename> とがを別々のディスクにインストールされている場合、 <filename>/boot</filename> を含むディスクにインストールします。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>Boot from Root Partition</guimenu>
-      </term>
+      <term><guimenu>ルートパーティションから起動</guimenu></term>
       <listitem>
-       <para>
-        This installs the boot loader in the boot sector of the
-        <filename>/</filename> partition.
-       </para>
+       <para>これを選択すると、 <filename>/</filename> パーティションのブートセクタ内にブートローダをインストールします。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><guimenu>Custom Boot Partition</guimenu>
-      </term>
+      <term><guimenu>独自の起動パーティション</guimenu></term>
       <listitem>
-       <para>
-        Use this option to specify the location of the boot loader manually.
-       </para>
+       <para>ブートローダの配置先を独自に指定したい場合は、こちらに設定を行ないます。</para>
       </listitem>
      </varlistentry>
     </variablelist>
    </step>
    <step>
-    <para>
-     Click <guimenu>OK</guimenu> to apply your changes.
-    </para>
+    <para><guimenu>OK</guimenu> を押すと変更を適用することができます。</para>
    </step>
   </procedure>
   <figure xml:id="fig.grub2.yast.boot.code.options">
-   <title>Code Options</title>
+   <title>コードのオプション</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="yast2_bootloader_boot_code.png" width="75%" format="PNG"/>
@@ -137,106 +89,60 @@
     </imageobject>
    </mediaobject>
   </figure>
-  <para>
-   The <guimenu>Boot Code Options</guimenu> tab includes the following
-   additional options:
-  </para>
+  <para><guimenu>ブートコードのオプション</guimenu> タブには、下記の追加のオプションが用意されています:</para>
    <variablelist>
     <varlistentry>
-     <term><guimenu>Set Active Flag in Partition Table for Boot
-      Partition</guimenu>
-     </term>
+     <term><guimenu>ブートパーティションをアクティブに設定</guimenu></term>
      <listitem>
-      <para>
-       Activates the partition that contains the
-       <filename>/boot</filename> directory. For &power; systems it
-       activates the PReP partition. Use this option on systems with
-       old BIOS and/or legacy operating systems because they may fail
-       to boot from a non-active partition. It is safe to leave this
-       option active.
-      </para>
+      <para><filename>/boot</filename> ディレクトリを含むパーティションをアクティブ化します。 &power; システムの場合は、 PReP パーティションをアクティブ化します。このオプションは、古い BIOS や古いオペレーティングシステムをお使いの場合で、アクティブに設定されたパーティションでないと、起動が失敗するような場合に設定します。ただし、このオプションは有効にしたままで問題ありません。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Write Generic Boot Code to MBR</guimenu>
-     </term>
+     <term><guimenu>MBR に汎用ブートコードを書き込む</guimenu></term>
      <listitem>
-      <para>
-       If MBR contains a custom 'non-GRUB' code, this option replaces it with a
-       generic, operating system independent code. If you deactivate this
-       option, the system may become unbootable.
-      </para>
+      <para>MBR 内に <quote>GRUB 以外の</quote> コードが含まれている場合は、このオプションを選択することで、オペレーティングシステムに依存しない汎用のコードに置き換えることができます。このオプションの選択を外してしまうと、システムが起動できなくなってしまう場合があります。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Enable Trusted Boot Support</guimenu>
-     </term>
+     <term><guimenu>Trusted Boot サポートを有効にする</guimenu></term>
      <listitem>
-      <para>
-       Starts TrustedGRUB2 which supports trusted computing functionality
-       (Trusted Platform Module (TPM)). For more information refer to
-       <link xlink:href="https://github.com/Sirrix-AG/TrustedGRUB2"/>.
-      </para>
+      <para>Trusted Computing 機能 (Trusted Platform Module (TPM)) に対応する TrustedGRUB2 を開始します。詳しくは <link xlink:href="https://github.com/Sirrix-AG/TrustedGRUB2"/> をお読みください。</para>
      </listitem>
     </varlistentry>
    </variablelist>
  </sect2>
 
  <sect2 xml:id="sec.grub2.yast2.config.order">
-  <title>Adjusting the Disk Order</title>
-  <para>
-   If your computer has more than one hard disk, you can specify the boot
-   sequence of the disks. The first disk in the list is where &grub; will be
-   installed in the case of booting from MBR. It is the disk where &productname;
-   is installed by default. The rest of the list is a hint for
-   &grub;'s device mapper (see <xref linkend="sec.grub2.map"/>).
-  </para>
+  <title>ディスクの順序の調整</title>
+  <para>お使いのコンピュータに複数のディスクが接続されている場合、ここでディスクの起動順序を指定することができます。 MBR から起動する場合、一覧内にある最初のディスクが &grub; のインストール先となります。また、既定で &productname; がインストールされるディスクでもあります。一覧内の残りの項目は、 &grub; のデバイスマッパーに対するヒント情報になっています (詳しくは <xref linkend="sec.grub2.map"/> をお読みください) 。</para>
   <warning>
-   <title>Unbootable System</title>
-   <para>
-    The default value is usually valid for almost all deployments. If you change
-    the boot order of disks wrongly, the system may become unbootable on the
-    next reboot. For example, if the first disk in the list is not part of the BIOS
-    boot order, and the other disks in the list have empty MBRs.
-   </para>
+   <title>起動不可能なシステムになってしまう問題について</title>
+   <para>ほほ全てのシステムにおいて、既定値のままご利用いただくのが通常です。ディスクの順序を誤って変更してしまうと、次回の起動時に起動ができなくなってしまいます。たとえば一覧内の最初のディスクが BIOS の起動順序内に含まれていないと、一覧内の他のディスクにはブートコードが書き込まれていないので、起動できなくなってしまいます。</para>
   </warning>
   <procedure xml:id="pro.sec.grub2.yast2.config.order">
-   <title>Setting the Disk Order</title>
+   <title>ディスク順序の変更</title>
    <step>
-    <para>
-     Open the <guimenu>Boot Code Options</guimenu> tab.
-    </para>
+    <para><guimenu>ブートコードのオプション</guimenu> タブを選択します。</para>
    </step>
    <step>
-    <para>
-     Click <guimenu>Edit Disk Boot Order</guimenu>.
-    </para>
+    <para><guimenu>ディスク順序の編集</guimenu> を押します。</para>
    </step>
    <step>
-    <para>
-     If more than one disk is listed, select a disk and click
-     <guimenu>Up</guimenu> or <guimenu>Down</guimenu> to reorder the displayed
-     disks.
-    </para>
+    <para>複数のディスクが一覧内にある場合は、ディスクを選択して <guimenu>上へ</guimenu> または <guimenu>下へ</guimenu> を押して、ディスクの順序を変更してください。</para>
    </step>
    <step>
-    <para>
-     Click <guimenu>OK</guimenu> two times to save the changes.
-    </para>
+    <para><guimenu>OK</guimenu> を 2 回押して、変更を保存します。</para>
    </step>
   </procedure>
  </sect2>
 
  <sect2 xml:id="sec.grub2.yast2.config.advanced">
-  <title>Configuring Advanced Options</title>
-  <para>
-   Advanced boot parameters can be configured via the <guimenu>Boot Loader
-   Options</guimenu> tab.
-  </para>
+  <title>高度なオプションの変更</title>
+  <para>高度なオプションを設定するには、 <guimenu>ブートローダのオプション</guimenu> タブを選択します。</para>
   <sect3 xml:id="sec.grub2.yast2.config.advanced.boot-loader">
-   <title><guimenu>Boot Loader Options</guimenu> Tab</title>
+   <title><guimenu>ブートローダのオプション</guimenu> タブ</title>
    <figure xml:id="fig.grub2.yast.bootloader.options">
-    <title>Boot loader Options</title>
+    <title>ブートローダのオプション</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="yast2_bootloader_options.png" width="75%" format="PNG"/>
@@ -248,61 +154,41 @@
    </figure>
    <variablelist>
     <varlistentry>
-     <term><guimenu>Boot Loader Time-Out</guimenu>
-     </term>
+     <term><guimenu>タイムアウト</guimenu></term>
      <listitem>
-      <para>
-       Change the value of <guimenu>Time-Out in Seconds</guimenu> by typing in
-       a new value and clicking the appropriate arrow key with your mouse.
-      </para>
+      <para><guimenu>タイムアウト (秒)</guimenu> の項目で設定したい値を入力するか、もしくは右にある上下のボタンを利用して、タイムアウトを変更します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Probe Foreign OS</guimenu>
-     </term>
+     <term><guimenu>その他の OS の検出</guimenu></term>
      <listitem>
-      <para>
-       When selected, the boot loader searches for other systems like Windows
-       or other Linux installations.
-      </para>
+      <para>これを選択すると、ブートローダは Windows や他の Linux ディストリビューションなどを検索するようになります。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Hide Menu on Boot</guimenu>
-     </term>
+     <term><guimenu>ブート時にメニューを隠す</guimenu></term>
      <listitem>
-      <para>
-       Hides the boot menu and boots the default entry.
-      </para>
+      <para>起動メニューを隠して、既定の項目を起動するようにします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Adjusting the Default Boot Entry</guimenu>
-     </term>
+     <term><guimenu>既定のブートセクション</guimenu></term>
      <listitem>
-      <para>
-       Select the desired entry from the <quote>Default Boot Section</quote>
-       list. Note that the <quote>&gt;</quote> sign in the boot entry name
-       delimits the boot section and its subsection.
-      </para>
+      <para><quote>既定のブートセクション</quote> の一覧内から必要な項目を選択します。なお、 <quote>&gt;</quote> マークは起動項目の区切り文字で、メニューとサブメニューの区切りを示しています。</para>
      </listitem>
     </varlistentry>
     <varlistentry xml:id="vle.grub2.yast2.boot.password">
-     <term><guimenu>Protect Boot Loader with Password</guimenu>
-     </term>
+     <term><guimenu>ブートローダをパスワードで保護する</guimenu></term>
      <listitem>
-      <para>
-       Protects the boot loader and the system with an additional password. For
-       more information, see <xref linkend="sec.grub2.password"/>.
-      </para>
+      <para>ブートローダとシステムをパスワードで保護します。詳しくは <xref linkend="sec.grub2.password"/> をお読みください。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect3>
   <sect3 xml:id="sec.grub2.yast2.config.advanced.kernel_parameters">
-   <title><guimenu>Kernel Parameters</guimenu> Tab</title>
+   <title><guimenu>カーネルのパラメータ</guimenu> タブ</title>
    <figure xml:id="fig.grub2.yast.kernel.parameters">
-    <title>Kernel Parameters</title>
+    <title>カーネルのパラメータ</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="yast2_bootloader_kernel_parameters.png" width="75%" format="PNG"/>
@@ -314,49 +200,27 @@
    </figure>
    <variablelist>
     <varlistentry>
-     <term><guimenu>Console resolution</guimenu>
-     </term>
+     <term><guimenu>コンソールの解像度</guimenu></term>
      <listitem>
-      <para>
-       The <guimenu>Console resolution</guimenu> option specifies the default
-       screen resolution during the boot process.
-      </para>
+      <para><guimenu>コンソールの解像度</guimenu> オプションでは、起動処理の際の既定の画面解像度を指定します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Kernel Command Line Parameter</guimenu>
-     </term>
+     <term><guimenu>オプションのカーネルコマンドラインパラメータ</guimenu></term>
      <listitem>
-      <para>
-       The optional kernel parameters are added at the end of the default
-       parameters. For a list of all possible parameters, see
-       <link xlink:href="http://en.opensuse.org/Linuxrc"/>.
-      </para>
+      <para>既定のパラメータの末尾に追加される、オプションのカーネルパラメータを指定します。利用可能なパラメータの一覧について、詳しくは <link xlink:href="http://ja.opensuse.org/Linuxrc"/> をご覧ください。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Use graphical console</guimenu>
-     </term>
+     <term><guimenu>グラフィカルコンソールを使用する</guimenu></term>
      <listitem>
-      <para>
-       When checked, the boot menu appears on a graphical splash screen rather
-       than in a text mode. The resolution of the boot screen can be then set
-       from the <guimenu>Console resolution</guimenu> list, and graphical theme
-       definition file can be specified with the <guimenu>Console
-       theme</guimenu> file-chooser.
-      </para>
+      <para>この項目にチェックを入れると、起動メニューがテキストモードではなく、グラフィカルなスプラッシュスクリーンとして表示されるようになります。この画面での解像度は、 <guimenu>コンソールの解像度</guimenu> で選択します。また、テーマは <guimenu>コンソールのテーマ</guimenu> でファイル選択を行なって設定します。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Use Serial Console</guimenu>
-     </term>
+     <term><guimenu>シリアルコンソールを使用する</guimenu></term>
      <listitem>
-      <para>
-       If your machine is controlled via a serial console, activate this option
-       and specify which COM port to use at which speed. See <command>info
-       grub</command> or
-       <link xlink:href="http://www.gnu.org/software/grub/manual/grub.html#Serial-terminal"/>
-      </para>
+      <para>お使いのマシンがシリアルコンソールで制御するシステムである場合は、このオプションを選択して使用する COM ポートと速度を設定してください。詳しくは <command>info grub</command> または <link xlink:href="http://www.gnu.org/software/grub/manual/grub.html#Serial-terminal"/> をお読みください。</para>
      </listitem>
     </varlistentry>
    </variablelist>

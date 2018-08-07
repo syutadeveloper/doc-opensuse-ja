@@ -1,32 +1,35 @@
+# translation of grub2_yast_i.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: grub2_yast_i.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-07 14:51+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: grub2_yast_i.xml:9
 #, no-c-format
 msgid "Configuring the Boot Loader with &yast;"
-msgstr ""
+msgstr "&yast; によるブートローダの設定"
 
 #. Tag: dm:translation
 #: grub2_yast_i.xml:14
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: grub2_yast_i.xml:18
@@ -38,6 +41,10 @@ msgid ""
 "menuchoice> . The module shows the current boot loader configuration of your "
 "system and allows you to make changes."
 msgstr ""
+"&productname; システムで、ブートローダに関する一般的な設定を行なうにあたって、"
+"最も簡単なのは &yast; を使用することです。 &yast; のブートローダモジュールを"
+"起動するには、 &yastcc; から <menuchoice> <guimenu>システム</guimenu> "
+"<guimenu>ブートローダ</guimenu></menuchoice> を選択します。"
 
 #. Tag: para
 #: grub2_yast_i.xml:26
@@ -47,18 +54,21 @@ msgid ""
 "related to type, location and advanced loader settings. You can choose "
 "whether to use &grub; in standard or EFI mode."
 msgstr ""
+"<guimenu>ブートコードのオプション</guimenu> タブを利用して、種類や場所、高度な"
+"ブートローダオプションの設定を行なうことができます。また、 &grub; を標準モードで"
+"使用するか、 EFI モードで使用するかを選択することもできます。"
 
 #. Tag: title
 #: grub2_yast_i.xml:33
 #, no-c-format
 msgid "Boot Code Options"
-msgstr ""
+msgstr "ブートコードのオプション"
 
 #. Tag: title
 #: grub2_yast_i.xml:45
 #, no-c-format
 msgid "EFI Systems require GRUB2-EFI"
-msgstr ""
+msgstr "EFI システムでは GRUB2-EFI が必要となる件について"
 
 #. Tag: para
 #: grub2_yast_i.xml:46
@@ -67,12 +77,14 @@ msgid ""
 "If you have an EFI system you can only install GRUB2-EFI, otherwise your "
 "system is no longer bootable."
 msgstr ""
+"EFI システムをお使いの場合は、 GRUB2-EFI だけをご利用いただけます。それ以外を"
+"選択してしまうと、お使いのシステムを起動できなくなってしまいます。"
 
 #. Tag: title
 #: grub2_yast_i.xml:53
 #, no-c-format
 msgid "Reinstalling the Boot Loader"
-msgstr ""
+msgstr "ブートローダの再インストール"
 
 #. Tag: para
 #: grub2_yast_i.xml:54
@@ -83,18 +95,21 @@ msgid ""
 "<guimenu>GRUB2</guimenu> first and then immediately switch back to "
 "<guimenu>GRUB2-EFI</guimenu> ."
 msgstr ""
+"ブートローダを再インストールするには、まず &yast; 内でいったん設定を変更してから、"
+"元に戻します。たとえば GRUB2-EFI を再インストールしたい場合は、いったん"
+" <guimenu>GRUB2</guimenu> を選択してから、 <guimenu>GRUB2-EFI</guimenu> に戻します。"
 
 #. Tag: para
 #: grub2_yast_i.xml:60
 #, no-c-format
 msgid "Otherwise, the boot loader may only be partially reinstalled."
-msgstr ""
+msgstr "上記の手順を実施しないと、ブートローダ全体が書き込まれません。"
 
 #. Tag: title
 #: grub2_yast_i.xml:66
 #, no-c-format
 msgid "Custom Boot Loader"
-msgstr ""
+msgstr "独自のブートローダ"
 
 #. Tag: para
 #: grub2_yast_i.xml:67
@@ -104,12 +119,15 @@ msgid ""
 "Install Any Boot Loader</guimenu> . Read the documentation of your boot "
 "loader carefully before choosing this option."
 msgstr ""
+"一覧にあるもの以外のブートローダを使用したい場合は、 <guimenu>管理しない</guimenu> "
+"を選択します。なお、この選択を行なう前に、お使いのブートローダのドキュメンテーションを"
+"よくお読みください。"
 
 #. Tag: title
 #: grub2_yast_i.xml:75
 #, no-c-format
 msgid "Boot Loader Location and Boot Code Options"
-msgstr ""
+msgstr "ブートローダの場所とブートコードのオプション"
 
 #. Tag: para
 #: grub2_yast_i.xml:77
@@ -120,12 +138,15 @@ msgid ""
 "</filename> partition. To modify the location of the boot loader, follow "
 "these steps:"
 msgstr ""
+"ブートローダの既定の配置場所はパーティションの設定に依存して決まり、マスターブート"
+"レコード (MBR) もしくは <filename>/</filename> パーティションのブートセクタのいずれか"
+"に配置します。ブートローダの配置場所を変更するには、下記の手順を実施します:"
 
 #. Tag: title
 #: grub2_yast_i.xml:84
 #, no-c-format
 msgid "Changing the Boot Loader Location"
-msgstr ""
+msgstr "ブートローダの配置場所の変更"
 
 #. Tag: para
 #: grub2_yast_i.xml:86
@@ -134,12 +155,14 @@ msgid ""
 "Select the <guimenu>Boot Code Options</guimenu> tab and then choose one of "
 "the following options for <guimenu>Boot Loader Location</guimenu> :"
 msgstr ""
+"<guimenu>ブートコードのオプション</guimenu> を選択し、 <guimenu>ブートローダの場所</guimenu> "
+"で下記のいずれかを選択します:"
 
 #. Tag: term
 #: grub2_yast_i.xml:92
 #, no-c-format
 msgid "<guimenu>Boot from Master Boot Record</guimenu>"
-msgstr ""
+msgstr "<guimenu>マスターブートレコード (MBR) から起動</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:95
@@ -150,12 +173,17 @@ msgid ""
 "to <filename>/</filename> , but if <filename>/boot</filename> is mounted to "
 "a separate partition on a different disk, the MBR of that disk will be used."
 msgstr ""
+"これを選択すると、 <filename>/boot</filename> を含むディスクの MBR 内にブート"
+"ローダをインストールします。通常は <filename>/</filename> と同じディスクになる"
+"ことが多いはずですが、 <filename>/boot</filename> と <filename>/</filename> とが"
+"を別々のディスクにインストールされている場合、 <filename>/boot</filename> を含む"
+"ディスクにインストールします。"
 
 #. Tag: term
 #: grub2_yast_i.xml:105
 #, no-c-format
 msgid "<guimenu>Boot from Root Partition</guimenu>"
-msgstr ""
+msgstr "<guimenu>ルートパーティションから起動</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:108
@@ -164,30 +192,32 @@ msgid ""
 "This installs the boot loader in the boot sector of the <filename>/</"
 "filename> partition."
 msgstr ""
+"これを選択すると、 <filename>/</filename> パーティションのブートセクタ内に"
+"ブートローダをインストールします。"
 
 #. Tag: term
 #: grub2_yast_i.xml:115
 #, no-c-format
 msgid "<guimenu>Custom Boot Partition</guimenu>"
-msgstr ""
+msgstr "<guimenu>独自の起動パーティション</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:118
 #, no-c-format
 msgid "Use this option to specify the location of the boot loader manually."
-msgstr ""
+msgstr "ブートローダの配置先を独自に指定したい場合は、こちらに設定を行ないます。"
 
 #. Tag: para
 #: grub2_yast_i.xml:126
 #, no-c-format
 msgid "Click <guimenu>OK</guimenu> to apply your changes."
-msgstr ""
+msgstr "<guimenu>OK</guimenu> を押すと変更を適用することができます。"
 
 #. Tag: title
 #: grub2_yast_i.xml:132
 #, no-c-format
 msgid "Code Options"
-msgstr ""
+msgstr "コードのオプション"
 
 #. Tag: para
 #: grub2_yast_i.xml:142
@@ -196,13 +226,14 @@ msgid ""
 "The <guimenu>Boot Code Options</guimenu> tab includes the following "
 "additional options:"
 msgstr ""
+"<guimenu>ブートコードのオプション</guimenu> タブには、下記の追加のオプションが"
+"用意されています:"
 
 #. Tag: term
 #: grub2_yast_i.xml:148
 #, no-c-format
-msgid ""
-"<guimenu>Set Active Flag in Partition Table for Boot Partition</guimenu>"
-msgstr ""
+msgid "<guimenu>Set Active Flag in Partition Table for Boot Partition</guimenu>"
+msgstr "<guimenu>ブートパーティションをアクティブに設定</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:152
@@ -214,12 +245,17 @@ msgid ""
 "may fail to boot from a non-active partition. It is safe to leave this "
 "option active."
 msgstr ""
+"<filename>/boot</filename> ディレクトリを含むパーティションをアクティブ化します。"
+" &power; システムの場合は、 PReP パーティションをアクティブ化します。この"
+"オプションは、古い BIOS や古いオペレーティングシステムをお使いの場合で、アクティブ"
+"に設定されたパーティションでないと、起動が失敗するような場合に設定します。ただし、"
+"このオプションは有効にしたままで問題ありません。"
 
 #. Tag: term
 #: grub2_yast_i.xml:163
 #, no-c-format
 msgid "<guimenu>Write Generic Boot Code to MBR</guimenu>"
-msgstr ""
+msgstr "<guimenu>MBR に汎用ブートコードを書き込む</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:166
@@ -229,12 +265,16 @@ msgid ""
 "generic, operating system independent code. If you deactivate this option, "
 "the system may become unbootable."
 msgstr ""
+"MBR 内に <quote>GRUB 以外の</quote> コードが含まれている場合は、このオプションを"
+"選択することで、オペレーティングシステムに依存しない汎用のコードに置き換えること"
+"ができます。このオプションの選択を外してしまうと、システムが起動できなくなって"
+"しまう場合があります。"
 
 #. Tag: term
 #: grub2_yast_i.xml:174
 #, no-c-format
 msgid "<guimenu>Enable Trusted Boot Support</guimenu>"
-msgstr ""
+msgstr "<guimenu>Trusted Boot サポートを有効にする</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:177
@@ -244,12 +284,15 @@ msgid ""
 "Platform Module (TPM)). For more information refer to <link xlink:href="
 "\"https://github.com/Sirrix-AG/TrustedGRUB2\"/> ."
 msgstr ""
+"Trusted Computing 機能 (Trusted Platform Module (TPM)) に対応する TrustedGRUB2 "
+"を開始します。詳しくは <link xlink:href=\"https://github.com/Sirrix-AG/TrustedGRUB2\"/> "
+"をお読みください。"
 
 #. Tag: title
 #: grub2_yast_i.xml:189
 #, no-c-format
 msgid "Adjusting the Disk Order"
-msgstr ""
+msgstr "ディスクの順序の調整"
 
 #. Tag: para
 #: grub2_yast_i.xml:190
@@ -261,12 +304,18 @@ msgid ""
 "&productname; is installed by default. The rest of the list is a hint for "
 "&grub;'s device mapper (see <xref linkend=\"sec.grub2.map\"/> )."
 msgstr ""
+"お使いのコンピュータに複数のディスクが接続されている場合、ここでディスクの起動順序"
+"を指定することができます。 MBR から起動する場合、一覧内にある最初のディスクが"
+" &grub; のインストール先となります。また、既定で &productname; がインストール"
+"されるディスクでもあります。一覧内の残りの項目は、 &grub; のデバイスマッパーに"
+"対するヒント情報になっています (詳しくは <xref linkend=\"sec.grub2.map\"/> を"
+"お読みください) 。"
 
 #. Tag: title
 #: grub2_yast_i.xml:198
 #, no-c-format
 msgid "Unbootable System"
-msgstr ""
+msgstr "起動不可能なシステムになってしまう問題について"
 
 #. Tag: para
 #: grub2_yast_i.xml:199
@@ -277,24 +326,28 @@ msgid ""
 "next reboot. For example, if the first disk in the list is not part of the "
 "BIOS boot order, and the other disks in the list have empty MBRs."
 msgstr ""
+"ほほ全てのシステムにおいて、既定値のままご利用いただくのが通常です。ディスクの順序を"
+"誤って変更してしまうと、次回の起動時に起動ができなくなってしまいます。たとえば一覧内の"
+"最初のディスクが BIOS の起動順序内に含まれていないと、一覧内の他のディスクには"
+"ブートコードが書き込まれていないので、起動できなくなってしまいます。"
 
 #. Tag: title
 #: grub2_yast_i.xml:207
 #, no-c-format
 msgid "Setting the Disk Order"
-msgstr ""
+msgstr "ディスク順序の変更"
 
 #. Tag: para
 #: grub2_yast_i.xml:209
 #, no-c-format
 msgid "Open the <guimenu>Boot Code Options</guimenu> tab."
-msgstr ""
+msgstr "<guimenu>ブートコードのオプション</guimenu> タブを選択します。"
 
 #. Tag: para
 #: grub2_yast_i.xml:214
 #, no-c-format
 msgid "Click <guimenu>Edit Disk Boot Order</guimenu> ."
-msgstr ""
+msgstr "<guimenu>ディスク順序の編集</guimenu> を押します。"
 
 #. Tag: para
 #: grub2_yast_i.xml:219
@@ -303,18 +356,20 @@ msgid ""
 "If more than one disk is listed, select a disk and click <guimenu>Up</"
 "guimenu> or <guimenu>Down</guimenu> to reorder the displayed disks."
 msgstr ""
+"複数のディスクが一覧内にある場合は、ディスクを選択して <guimenu>上へ</guimenu> "
+"または <guimenu>下へ</guimenu> を押して、ディスクの順序を変更してください。"
 
 #. Tag: para
 #: grub2_yast_i.xml:226
 #, no-c-format
 msgid "Click <guimenu>OK</guimenu> two times to save the changes."
-msgstr ""
+msgstr "<guimenu>OK</guimenu> を 2 回押して、変更を保存します。"
 
 #. Tag: title
 #: grub2_yast_i.xml:234
 #, no-c-format
 msgid "Configuring Advanced Options"
-msgstr ""
+msgstr "高度なオプションの変更"
 
 #. Tag: para
 #: grub2_yast_i.xml:235
@@ -323,24 +378,26 @@ msgid ""
 "Advanced boot parameters can be configured via the <guimenu>Boot Loader "
 "Options</guimenu> tab."
 msgstr ""
+"高度なオプションを設定するには、 <guimenu>ブートローダのオプション</guimenu> タブを"
+"選択します。"
 
 #. Tag: title
 #: grub2_yast_i.xml:240
 #, no-c-format
 msgid "<guimenu>Boot Loader Options</guimenu> Tab"
-msgstr ""
+msgstr "<guimenu>ブートローダのオプション</guimenu> タブ"
 
 #. Tag: title
 #: grub2_yast_i.xml:242
 #, no-c-format
 msgid "Boot loader Options"
-msgstr ""
+msgstr "ブートローダのオプション"
 
 #. Tag: term
 #: grub2_yast_i.xml:254
 #, no-c-format
 msgid "<guimenu>Boot Loader Time-Out</guimenu>"
-msgstr ""
+msgstr "<guimenu>タイムアウト</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:257
@@ -349,12 +406,14 @@ msgid ""
 "Change the value of <guimenu>Time-Out in Seconds</guimenu> by typing in a "
 "new value and clicking the appropriate arrow key with your mouse."
 msgstr ""
+"<guimenu>タイムアウト (秒)</guimenu> の項目で設定したい値を入力するか、もしくは"
+"右にある上下のボタンを利用して、タイムアウトを変更します。"
 
 #. Tag: term
 #: grub2_yast_i.xml:264
 #, no-c-format
 msgid "<guimenu>Probe Foreign OS</guimenu>"
-msgstr ""
+msgstr "<guimenu>その他の OS の検出</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:267
@@ -363,24 +422,26 @@ msgid ""
 "When selected, the boot loader searches for other systems like Windows or "
 "other Linux installations."
 msgstr ""
+"これを選択すると、ブートローダは Windows や他の Linux ディストリビューションなどを"
+"検索するようになります。"
 
 #. Tag: term
 #: grub2_yast_i.xml:274
 #, no-c-format
 msgid "<guimenu>Hide Menu on Boot</guimenu>"
-msgstr ""
+msgstr "<guimenu>ブート時にメニューを隠す</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:277
 #, no-c-format
 msgid "Hides the boot menu and boots the default entry."
-msgstr ""
+msgstr "起動メニューを隠して、既定の項目を起動するようにします。"
 
 #. Tag: term
 #: grub2_yast_i.xml:283
 #, no-c-format
 msgid "<guimenu>Adjusting the Default Boot Entry</guimenu>"
-msgstr ""
+msgstr "<guimenu>既定のブートセクション</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:286
@@ -390,12 +451,15 @@ msgid ""
 "Note that the <quote>&gt;</quote> sign in the boot entry name delimits the "
 "boot section and its subsection."
 msgstr ""
+"<quote>既定のブートセクション</quote> の一覧内から必要な項目を選択します。"
+"なお、 <quote>&gt;</quote> マークは起動項目の区切り文字で、メニューとサブメニューの"
+"区切りを示しています。"
 
 #. Tag: term
 #: grub2_yast_i.xml:294
 #, no-c-format
 msgid "<guimenu>Protect Boot Loader with Password</guimenu>"
-msgstr ""
+msgstr "<guimenu>ブートローダをパスワードで保護する</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:297
@@ -404,24 +468,26 @@ msgid ""
 "Protects the boot loader and the system with an additional password. For "
 "more information, see <xref linkend=\"sec.grub2.password\"/> ."
 msgstr ""
+"ブートローダとシステムをパスワードで保護します。詳しくは"
+" <xref linkend=\"sec.grub2.password\"/> をお読みください。"
 
 #. Tag: title
 #: grub2_yast_i.xml:306
 #, no-c-format
 msgid "<guimenu>Kernel Parameters</guimenu> Tab"
-msgstr ""
+msgstr "<guimenu>カーネルのパラメータ</guimenu> タブ"
 
 #. Tag: title
 #: grub2_yast_i.xml:308
 #, no-c-format
 msgid "Kernel Parameters"
-msgstr ""
+msgstr "カーネルのパラメータ"
 
 #. Tag: term
 #: grub2_yast_i.xml:320
 #, no-c-format
 msgid "<guimenu>Console resolution</guimenu>"
-msgstr ""
+msgstr "<guimenu>コンソールの解像度</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:323
@@ -430,12 +496,14 @@ msgid ""
 "The <guimenu>Console resolution</guimenu> option specifies the default "
 "screen resolution during the boot process."
 msgstr ""
+"<guimenu>コンソールの解像度</guimenu> オプションでは、起動処理の際の"
+"既定の画面解像度を指定します。"
 
 #. Tag: term
 #: grub2_yast_i.xml:330
 #, no-c-format
 msgid "<guimenu>Kernel Command Line Parameter</guimenu>"
-msgstr ""
+msgstr "<guimenu>オプションのカーネルコマンドラインパラメータ</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:333
@@ -445,12 +513,15 @@ msgid ""
 "parameters. For a list of all possible parameters, see <link xlink:href="
 "\"http://en.opensuse.org/Linuxrc\"/> ."
 msgstr ""
+"既定のパラメータの末尾に追加される、オプションのカーネルパラメータを指定します。"
+"利用可能なパラメータの一覧について、詳しくは <link xlink:href="
+"\"http://ja.opensuse.org/Linuxrc\"/> をご覧ください。"
 
 #. Tag: term
 #: grub2_yast_i.xml:341
 #, no-c-format
 msgid "<guimenu>Use graphical console</guimenu>"
-msgstr ""
+msgstr "<guimenu>グラフィカルコンソールを使用する</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:344
@@ -461,12 +532,16 @@ msgid ""
 "<guimenu>Console resolution</guimenu> list, and graphical theme definition "
 "file can be specified with the <guimenu>Console theme</guimenu> file-chooser."
 msgstr ""
+"この項目にチェックを入れると、起動メニューがテキストモードではなく、グラフィカルな"
+"スプラッシュスクリーンとして表示されるようになります。この画面での解像度は、"
+" <guimenu>コンソールの解像度</guimenu> で選択します。また、テーマは <guimenu>"
+"コンソールのテーマ</guimenu> でファイル選択を行なって設定します。"
 
 #. Tag: term
 #: grub2_yast_i.xml:354
 #, no-c-format
 msgid "<guimenu>Use Serial Console</guimenu>"
-msgstr ""
+msgstr "<guimenu>シリアルコンソールを使用する</guimenu>"
 
 #. Tag: para
 #: grub2_yast_i.xml:357
@@ -477,3 +552,8 @@ msgid ""
 "command> or <link xlink:href=\"http://www.gnu.org/software/grub/manual/grub."
 "html#Serial-terminal\"/>"
 msgstr ""
+"お使いのマシンがシリアルコンソールで制御するシステムである場合は、このオプションを"
+"選択して使用する COM ポートと速度を設定してください。詳しくは <command>info grub</"
+"command> または <link xlink:href=\"http://www.gnu.org/software/grub/manual/grub."
+"html#Serial-terminal\"/> をお読みください。"
+
