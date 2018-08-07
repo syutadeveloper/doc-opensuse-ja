@@ -20,6 +20,7 @@ my @ignoreNodes =
 my $dummyParaStart =
   "<para xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:xi=\"http://www.w3.org/2001/XInclude\">";
 my $dummyParaEnd = "</para>";
+my $lang = "ja";
 ## constants
 
 if ($#ARGV < 1) {
@@ -312,6 +313,12 @@ __EOF__
         }
       }
     }
+  }
+
+  # replace values of "xml:lang" attributes with "ja"
+  my @attrs = $d->findnodes("//*[\@xml:lang]");
+  foreach my $attr (@attrs) {
+    $attr->setAttribute("xml:lang", $lang);
   }
 
   # XML out
