@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -134,37 +134,38 @@ msgstr ""
 #. Tag: term
 #: tuning_oprofile.xml:117
 #, no-c-format
-msgid "<command>opcontrol</command>"
+msgid "<command>operf</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:124
+#: tuning_oprofile.xml:120
 #, no-c-format
 msgid ""
-"Controls the profiling sessions (start or stop), dumps profile data, and "
-"sets up parameters."
+"Profiler tool. Once profiling stops the data that is by default stored in "
+"<filename><replaceable>CUR_DIR</replaceable>/oprofile_data/samples/current</"
+"filename> can be processed by, for example, <command>opreport</command> ."
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:137
+#: tuning_oprofile.xml:134
 #, no-c-format
 msgid "<command>ophelp</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:140
+#: tuning_oprofile.xml:137
 #, no-c-format
 msgid "Lists available events with short descriptions."
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:146
+#: tuning_oprofile.xml:143
 #, no-c-format
 msgid "<command>opimport</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:149
+#: tuning_oprofile.xml:146
 #, no-c-format
 msgid ""
 "Converts sample database files from a foreign binary format to the native "
@@ -172,25 +173,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:156
+#: tuning_oprofile.xml:153
 #, no-c-format
 msgid "<command>opreport</command>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:159
+#: tuning_oprofile.xml:156
 #, no-c-format
 msgid "Generates reports from profiled data."
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:167
+#: tuning_oprofile.xml:164
 #, no-c-format
 msgid "Using &oprof;"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:169
+#: tuning_oprofile.xml:166
 #, no-c-format
 msgid ""
 "With &oprof;, you can profile both the kernel and applications. When "
@@ -203,7 +204,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:179
+#: tuning_oprofile.xml:176
 #, no-c-format
 msgid ""
 "Applications usually do not need to profile the kernel, therefore you should "
@@ -212,74 +213,75 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:186
+#: tuning_oprofile.xml:183
 #, no-c-format
 msgid "Creating a Report"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:187
+#: tuning_oprofile.xml:184
 #, no-c-format
 msgid ""
 "Starting the daemon, collecting data, stopping the daemon, and creating a "
-"report."
+"report for the application <replaceable>COMMAND</replaceable> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:193
+#: tuning_oprofile.xml:190
 #, no-c-format
 msgid "Open a shell and log in as &rootuser;."
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:198
+#: tuning_oprofile.xml:195
 #, no-c-format
 msgid "Decide if you want to profile with or without the Linux kernel:"
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:204
+#: tuning_oprofile.xml:201
 #, no-c-format
 msgid "Profile With the Linux Kernel"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:205
+#: tuning_oprofile.xml:202
 #, no-c-format
 msgid ""
-"Execute the following commands, because <command>opcontrol</command> can "
-"only work with uncompressed images:"
+"Execute the following commands, because <command>operf</command> can only "
+"work with uncompressed images:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_oprofile.xml:211
+#: tuning_oprofile.xml:208
 #, no-c-format
 msgid ""
 "&prompt.user;cp /boot/vmlinux-`uname -r`.gz /tmp\n"
 "&prompt.user;gunzip /tmp/vmlinux*.gz\n"
-"&prompt.user;opcontrol --vmlinux=/tmp/vmlinux*\n"
+"&prompt.user;operf--vmlinux=/tmp/vmlinux* <replaceable>COMMAND</"
+"replaceable>\n"
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:218
+#: tuning_oprofile.xml:215
 #, no-c-format
 msgid "Profile Without the Linux Kernel"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:219
+#: tuning_oprofile.xml:216
 #, no-c-format
 msgid "Use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: tuning_oprofile.xml:223
+#: tuning_oprofile.xml:220
 #, no-c-format
-msgid "&prompt.root;opcontrol --no-vmlinux"
+msgid "&prompt.root;operf --no-vmlinux <replaceable>COMMAND</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:224
+#: tuning_oprofile.xml:221
 #, no-c-format
 msgid ""
 "To see which functions call other functions in the output, additionally use "
@@ -288,69 +290,26 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_oprofile.xml:229
+#: tuning_oprofile.xml:226
 #, no-c-format
 msgid ""
-"&prompt.root;opcontrol --no-vmlinux --callgraph <replaceable>DEPTH</"
-"replaceable>"
+"&prompt.root;operf --no-vmlinux --callgraph\n"
+"<replaceable>DEPTH</replaceable> <replaceable>COMMAND</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:234
-#, no-c-format
-msgid "Start the &oprof; daemon:"
-msgstr ""
-
-#. Tag: screen
-#: tuning_oprofile.xml:237
+#: tuning_oprofile.xml:232
 #, no-c-format
 msgid ""
-"&prompt.root;opcontrol --start\n"
-"Using 2.6+ OProfile kernel interface.\n"
-"Using log file /var/lib/oprofile/samples/oprofiled.log\n"
-"Daemon started.\n"
-"Profiler running."
-msgstr ""
-
-#. Tag: para
-#: tuning_oprofile.xml:244
-#, no-c-format
-msgid "Now start the application you want to profile."
-msgstr ""
-
-#. Tag: para
-#: tuning_oprofile.xml:249
-#, no-c-format
-msgid "Stop the &oprof; daemon:"
+"<command>operf</command> writes its data to <filename><replaceable>CUR_DIR</"
+"replaceable>/oprofile_data/samples/current</filename> . Once the "
+"<command>operf</command> command finished (or is aborted by "
+"<keycombo><keycap function=\"control\"/> <keycap>C</keycap></keycombo> ), "
+"the data can be analyzed with <command>oreport</command> :"
 msgstr ""
 
 #. Tag: screen
-#: tuning_oprofile.xml:252
-#, no-c-format
-msgid "&prompt.root;opcontrol --stop"
-msgstr ""
-
-#. Tag: para
-#: tuning_oprofile.xml:255
-#, no-c-format
-msgid ""
-"Dump the collected data to <filename>/var/lib/oprofile/samples</filename> :"
-msgstr ""
-
-#. Tag: screen
-#: tuning_oprofile.xml:259
-#, no-c-format
-msgid "&prompt.root;opcontrol --dump"
-msgstr ""
-
-#. Tag: para
-#: tuning_oprofile.xml:262
-#, no-c-format
-msgid "Create a report:"
-msgstr ""
-
-#. Tag: screen
-#: tuning_oprofile.xml:265
+#: tuning_oprofile.xml:238
 #, no-c-format
 msgid ""
 "&prompt.root;opreport\n"
@@ -364,32 +323,20 @@ msgid ""
 "..."
 msgstr ""
 
-#. Tag: para
-#: tuning_oprofile.xml:276
-#, no-c-format
-msgid "Shut down the &oprofd; daemon:"
-msgstr ""
-
-#. Tag: screen
-#: tuning_oprofile.xml:279
-#, no-c-format
-msgid "&prompt.root;opcontrol --shutdown"
-msgstr ""
-
 #. Tag: title
-#: tuning_oprofile.xml:285
+#: tuning_oprofile.xml:252
 #, no-c-format
 msgid "Getting Event Configurations"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:286
+#: tuning_oprofile.xml:253
 #, no-c-format
 msgid "The general procedure for event configuration is as follows:"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:291
+#: tuning_oprofile.xml:258
 #, no-c-format
 msgid ""
 "Use first the events <literal>CPU-CLK_UNHALTED</literal> and "
@@ -397,15 +344,15 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:297
+#: tuning_oprofile.xml:264
 #, no-c-format
 msgid ""
 "Use specific events to find bottlenecks. To list them, use the command "
-"<command>opcontrol</command> <option>--list-events</option> ."
+"<command>perf list</command> ."
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:303
+#: tuning_oprofile.xml:270
 #, no-c-format
 msgid ""
 "If you need to profile certain events, first check the available events "
@@ -414,7 +361,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_oprofile.xml:308
+#: tuning_oprofile.xml:275
 #, no-c-format
 msgid ""
 "&prompt.root;<command>ophelp</command>\n"
@@ -444,15 +391,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:330
-#, no-c-format
-msgid ""
-"You can get the same output from <command>opcontrol</command> <option>--list-"
-"events</option> ."
-msgstr ""
-
-#. Tag: para
-#: tuning_oprofile.xml:334
+#: tuning_oprofile.xml:297
 #, no-c-format
 msgid ""
 "Specify the performance counter events with the option <option>--event</"
@@ -461,19 +400,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_oprofile.xml:340
+#: tuning_oprofile.xml:303
 #, no-c-format
-msgid "&prompt.root;opcontrol --event=CPU_CLK_UNHALTED:100000"
+msgid "&prompt.root;operf --events CPU_CLK_UNHALTED:100000"
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:342
+#: tuning_oprofile.xml:305
 #, no-c-format
 msgid "Setting Sampling Rates with <literal>CPU_CLK_UNHALTED</literal>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:343
+#: tuning_oprofile.xml:306
 #, no-c-format
 msgid ""
 "Setting low sampling rates can seriously impair the system performance while "
@@ -484,49 +423,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:409
-#, no-c-format
-msgid "Using &oprof;'s GUI"
-msgstr ""
-
-#. Tag: para
-#: tuning_oprofile.xml:411
-#, no-c-format
-msgid ""
-"The GUI for &oprof; can be started as &rootuser; with <command>oprof_start</"
-"command> , see <xref linkend=\"fig.tuning.oprofile\"/> . Select your events "
-"and change the counter, if necessary. Every green line is added to the list "
-"of checked events. Hover the mouse over the line to see a help text in the "
-"status line below. Use the <guimenu>Configuration</guimenu> tab to set the "
-"buffer and CPU size, the verbose option and others. Click <guimenu>Start</"
-"guimenu> to execute &oprof;."
-msgstr ""
-
-#. Tag: title
-#: tuning_oprofile.xml:423
-#, no-c-format
-msgid "GUI for &oprof;"
-msgstr ""
-
-#. Tag: title
-#: tuning_oprofile.xml:435
+#: tuning_oprofile.xml:400
 #, no-c-format
 msgid "Generating Reports"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:437
+#: tuning_oprofile.xml:402
 #, no-c-format
 msgid ""
-"Before generating a report, make sure &oprof; has dumped your data to the "
-"<filename>/var/lib/oprofile/samples</filename> directory using the command "
-"<command>opcontrol</command> <option>--dump</option> . A report can be "
-"generated with the commands <command>opreport</command> or "
-"<command>opannotate</command> ."
+"Before generating a report, make sure the <command>operf</command> has "
+"stopped. Unless you have provided an output directory with <option>--session-"
+"dir</option> , <command>operf</command> has written its data to "
+"<replaceable>CUR_DIR</replaceable> /oprofile_data/samples/current, and the "
+"reporting tools <command>opreport</command> and <command>opannotate</"
+"command> will look there by default."
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:445
+#: tuning_oprofile.xml:411
 #, no-c-format
 msgid ""
 "Calling <command>opreport</command> without any options gives a complete "
@@ -536,7 +451,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:452
+#: tuning_oprofile.xml:418
 #, no-c-format
 msgid ""
 "The <command>opannotate</command> generates output with annotations from "
@@ -544,18 +459,18 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: tuning_oprofile.xml:457
+#: tuning_oprofile.xml:423
 #, no-c-format
 msgid ""
 "&prompt.root;<command>opannotate</command> --source \\\n"
 "   --base-dirs=<replaceable>BASEDIR</replaceable> \\\n"
-"   --search-dirs=<replaceable/> \\\n"
+"   --search-dirs=<replaceable>SEARCHDIR</replaceable> \\\n"
 "   --output-dir=annotated/ \\\n"
 "   /lib/libfoo.so"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:463
+#: tuning_oprofile.xml:429
 #, no-c-format
 msgid ""
 "The option <option>--base-dir</option> contains a comma separated list of "
@@ -566,13 +481,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:472
+#: tuning_oprofile.xml:438
 #, no-c-format
 msgid "Inaccuracies in Annotated Source"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:473
+#: tuning_oprofile.xml:439
 #, no-c-format
 msgid ""
 "Because of compiler optimization, code can disappear and appear in a "
@@ -581,13 +496,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: tuning_oprofile.xml:482
+#: tuning_oprofile.xml:448
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:484
+#: tuning_oprofile.xml:450
 #, no-c-format
 msgid ""
 "This chapter only provides a short overview. Refer to the following links "
@@ -595,55 +510,55 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:491
+#: tuning_oprofile.xml:457
 #, no-c-format
 msgid "<link xlink:href=\"http://oprofile.sourceforge.net\"/>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:494
+#: tuning_oprofile.xml:460
 #, no-c-format
 msgid "The project home page."
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:500
+#: tuning_oprofile.xml:466
 #, no-c-format
 msgid "Manpages"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:502
+#: tuning_oprofile.xml:468
 #, no-c-format
 msgid "Details descriptions about the options of the different tools."
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:508
+#: tuning_oprofile.xml:474
 #, no-c-format
 msgid "<filename>/usr/share/doc/packages/oprofile/oprofile.html</filename>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:511
+#: tuning_oprofile.xml:477
 #, no-c-format
 msgid "Contains the &oprof; manual."
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:517
+#: tuning_oprofile.xml:483
 #, no-c-format
 msgid "<link xlink:href=\"http://developer.intel.com/\"/>"
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:520
+#: tuning_oprofile.xml:486
 #, no-c-format
 msgid "Architecture reference for Intel processors."
 msgstr ""
 
 #. Tag: term
-#: tuning_oprofile.xml:536
+#: tuning_oprofile.xml:502
 #, no-c-format
 msgid ""
 "<link xlink:href=\"http://www-01.ibm.com/chips/techlib/techlib.nsf/"
@@ -651,7 +566,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: tuning_oprofile.xml:539
+#: tuning_oprofile.xml:505
 #, no-c-format
 msgid ""
 "Architecture reference for PowerPC64 processors in IBM iSeries, pSeries, and "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: systemd.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: 2018-08-04 09:09+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
@@ -41,11 +41,11 @@ msgid ""
 "processes. All other programs are either started directly by systemd or by "
 "one of its child processes."
 msgstr ""
-"&systemd; プログラムはプロセス ID 1 のプロセスで、システムを必要に応じて"
-"準備する仕組みを担っています。 &systemd; はカーネルから直接起動され、通常であれば"
-"プロセスを強制終了させるシグナル 9 を受けても耐えられる仕組みを備えています。"
-" &systemd; 以外のプログラムは systemd から直接起動されるか、直接起動された"
-"プロセスの子プロセスとして起動されます。"
+"&systemd; プログラムはプロセス ID 1 のプロセスで、システムを必要に応じて準備"
+"する仕組みを担っています。 &systemd; はカーネルから直接起動され、通常であれば"
+"プロセスを強制終了させるシグナル 9 を受けても耐えられる仕組みを備えていま"
+"す。 &systemd; 以外のプログラムは systemd から直接起動されるか、直接起動され"
+"たプロセスの子プロセスとして起動されます。"
 
 #. Tag: para
 #: systemd.xml:23
@@ -61,15 +61,16 @@ msgid ""
 "system state and more. See <link xlink:href=\"http://www.freedesktop.org/"
 "wiki/Software/systemd/\"/> for details."
 msgstr ""
-"systemd は System V init デーモンを置き換えるために作られた仕組みです。 &systemd; "
-"は System V init と完全な互換性があり、 init スクリプトにも対応しています。"
-" systemd を利用する利点の 1 つは、積極的にサービスを並行起動することで、起動時間を"
-"大きく短縮できるという点です。これに加えて、 systemd では必要に応じてサービスを"
-"開始する仕組みも存在します。常にシステムの起動時に開始するのではなく、必要になった"
-"タイミングで起動を行なうことができます。また、 systemd ではカーネルコントロール"
-"グループ (cgroups) にも対応しているほか、スナップショットやシステムの状態の保存と"
-"復元なども行なうことができます。詳しくは <link xlink:href=\"http://www.freedesktop.org/"
-"wiki/Software/systemd/\"/> をお読みください。"
+"systemd は System V init デーモンを置き換えるために作られた仕組みです。 "
+"&systemd; は System V init と完全な互換性があり、 init スクリプトにも対応して"
+"います。 systemd を利用する利点の 1 つは、積極的にサービスを並行起動すること"
+"で、起動時間を大きく短縮できるという点です。これに加えて、 systemd では必要に"
+"応じてサービスを開始する仕組みも存在します。常にシステムの起動時に開始するの"
+"ではなく、必要になったタイミングで起動を行なうことができます。また、 systemd "
+"ではカーネルコントロールグループ (cgroups) にも対応しているほか、スナップ"
+"ショットやシステムの状態の保存と復元なども行なうことができます。詳しくは "
+"<link xlink:href=\"http://www.freedesktop.org/wiki/Software/systemd/\"/> をお"
+"読みください。"
 
 #. Tag: title
 #: systemd.xml:60
@@ -96,8 +97,9 @@ msgid ""
 "systemd is a system and session manager for Linux, compatible with System V "
 "and LSB init scripts. The main features are:"
 msgstr ""
-"systemd は Linux 向けのシステムとセッションのマネージャです。 System V および"
-" LSB の init スクリプトと同等以上の機能を備えています。主な機能は下記のとおりです:"
+"systemd は Linux 向けのシステムとセッションのマネージャです。 System V およ"
+"び LSB の init スクリプトと同等以上の機能を備えています。主な機能は下記のとお"
+"りです:"
 
 #. Tag: para
 #: systemd.xml:74
@@ -138,7 +140,8 @@ msgstr "マウント／自動マウントのポイント管理"
 #. Tag: para
 #: systemd.xml:104
 #, no-c-format
-msgid "implements an elaborate transactional dependency-based service control logic"
+msgid ""
+"implements an elaborate transactional dependency-based service control logic"
 msgstr "入念な依存関係ベースのサービス制御ロジックの実装"
 
 #. Tag: title
@@ -158,12 +161,12 @@ msgid ""
 "group of externally created processes. <quote>Unit file</quote> is a generic "
 "term used by systemd for the following:"
 msgstr ""
-"ユニットファイルには、サービスやソケット、デバイスやマウントポイント、自動マウント"
-"ポイントやスワップファイル／パーティション、起動ターゲットや監視対象のファイルシステム"
-"パス、タイマー制御や systemd による監督制御、一時的なシステム状態のスナップショットや"
-"リソース管理スライス、外部生成されたプロセスのグループなど、様々なものに対する情報が"
-"含まれています。 systemd でよく使用される <quote>ユニットファイル</quote> には、"
-"下記のような意味があります:"
+"ユニットファイルには、サービスやソケット、デバイスやマウントポイント、自動マ"
+"ウントポイントやスワップファイル／パーティション、起動ターゲットや監視対象の"
+"ファイルシステムパス、タイマー制御や systemd による監督制御、一時的なシステム"
+"状態のスナップショットやリソース管理スライス、外部生成されたプロセスのグルー"
+"プなど、様々なものに対する情報が含まれています。 systemd でよく使用される "
+"<quote>ユニットファイル</quote> には、下記のような意味があります:"
 
 #. Tag: title
 #: systemd.xml:125
@@ -178,8 +181,8 @@ msgid ""
 "Information about a process (for example running a daemon); file ends with ."
 "service"
 msgstr ""
-"プロセス (たとえばデーモン) に関する情報が含まれています。"
-"ファイル名は <filename>.service</filename> で終わります。"
+"プロセス (たとえばデーモン) に関する情報が含まれています。ファイル名は "
+"<filename>.service</filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:134
@@ -194,8 +197,8 @@ msgid ""
 "Used for grouping units and as synchronization points during start-up; file "
 "ends with .target"
 msgstr ""
-"ユニットのグループ化や起動時の同期ポイントで使用されます。"
-"ファイル名は <filename>.target</filename> で終わります。"
+"ユニットのグループ化や起動時の同期ポイントで使用されます。ファイル名は "
+"<filename>.target</filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:143
@@ -211,9 +214,9 @@ msgid ""
 "based activation (like <systemitem class=\"daemon\">inetd</systemitem> ); "
 "file ends with .socket"
 msgstr ""
-"<systemitem class=\"daemon\">inetd</systemitem> のように、ソケットベースの有効化"
-"を行なうための IPC やネットワークソケット、ファイルシステム FIFO などの情報が"
-"含まれています。ファイル名は <filename>.socket</filename> で終わります。"
+"<systemitem class=\"daemon\">inetd</systemitem> のように、ソケットベースの有"
+"効化を行なうための IPC やネットワークソケット、ファイルシステム FIFO などの情"
+"報が含まれています。ファイル名は <filename>.socket</filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:153
@@ -228,9 +231,9 @@ msgid ""
 "Used to trigger other units (for example running a service when files "
 "change); file ends with .path"
 msgstr ""
-"たとえばファイルが変更されたときにサービスを開始するなど、他のユニットの"
-"トリガーとして使用するものが含まれています。"
-"ファイル名は <filename>.path</filename> で終わります。"
+"たとえばファイルが変更されたときにサービスを開始するなど、他のユニットのトリ"
+"ガーとして使用するものが含まれています。ファイル名は <filename>.path</"
+"filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:162
@@ -245,8 +248,8 @@ msgid ""
 "Information about a timer controlled, for timer-based activation; file ends "
 "with .timer"
 msgstr ""
-"タイマー制御の情報やタイマーベースの有効化に関する情報が含まれています。"
-"ファイル名は <filename>.timer</filename> で終わります。"
+"タイマー制御の情報やタイマーベースの有効化に関する情報が含まれています。ファ"
+"イル名は <filename>.timer</filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:171
@@ -258,7 +261,9 @@ msgstr "マウントポイント"
 #: systemd.xml:172
 #, no-c-format
 msgid "Usually auto-generated by the fstab generator; file ends with .mount"
-msgstr "通常は fstab 生成器で自動生成されるものです。ファイル名は <filename>.mount</filename> で終わります。"
+msgstr ""
+"通常は fstab 生成器で自動生成されるものです。ファイル名は <filename>.mount</"
+"filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:179
@@ -269,10 +274,11 @@ msgstr "自動マウントポイント"
 #. Tag: para
 #: systemd.xml:180
 #, no-c-format
-msgid "Information about a file system automount point; file ends with .automount"
+msgid ""
+"Information about a file system automount point; file ends with .automount"
 msgstr ""
-"ファイルシステムの自動マウントポイントに関する情報が含まれています。"
-"ファイル名は <filename>.automount</filename> で終わります。"
+"ファイルシステムの自動マウントポイントに関する情報が含まれています。ファイル"
+"名は <filename>.automount</filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:188
@@ -287,8 +293,8 @@ msgid ""
 "Information about a swap device or file for memory paging; file ends with ."
 "swap"
 msgstr ""
-"スワップデバイスやメモリページングのためのファイルに関する情報が含まれています。"
-"ファイル名は <filename>.swap</filename> で終わります。"
+"スワップデバイスやメモリページングのためのファイルに関する情報が含まれていま"
+"す。ファイル名は <filename>.swap</filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:197
@@ -303,8 +309,8 @@ msgid ""
 "Information about a device unit as exposed in the sysfs/udev(7) device tree; "
 "file ends with .device"
 msgstr ""
-"sysfs/udev(7) のデバイスツリーで開示されるデバイスユニットに関する情報が含まれています。"
-"ファイル名は <filename>.device</filename> で終わります。"
+"sysfs/udev(7) のデバイスツリーで開示されるデバイスユニットに関する情報が含ま"
+"れています。ファイル名は <filename>.device</filename> で終わります。"
 
 #. Tag: title
 #: systemd.xml:206
@@ -319,8 +325,9 @@ msgid ""
 "A concept for hierarchically managing resources of a group of processes; "
 "file ends with .scope/.slice"
 msgstr ""
-"プロセスのグループを階層構造的にリソース管理するための考え方です。"
-"ファイル名は <filename>.scope</filename> または <filename>.slice</filename> で終わります。"
+"プロセスのグループを階層構造的にリソース管理するための考え方です。ファイル名"
+"は <filename>.scope</filename> または <filename>.slice</filename> で終わりま"
+"す。"
 
 #. Tag: para
 #: systemd.xml:214
@@ -329,8 +336,9 @@ msgid ""
 "For more information about systemd.unit see <link xlink:href=\"http://www."
 "freedesktop.org/software/systemd/man/systemd.unit.html\"/>"
 msgstr ""
-"systemd のユニットファイルについて、さらに詳しく知るには、 <link xlink:href=\"http://www."
-"freedesktop.org/software/systemd/man/systemd.unit.html\"/> をお読みください。"
+"systemd のユニットファイルについて、さらに詳しく知るには、 <link xlink:href="
+"\"http://www.freedesktop.org/software/systemd/man/systemd.unit.html\"/> をお"
+"読みください。"
 
 #. Tag: title
 #: systemd.xml:221
@@ -350,11 +358,12 @@ msgid ""
 "quote> notation like <command>git</command> or <command>zypper</command> :"
 msgstr ""
 "System V init システムには、サービスを管理するためのいくつかのコマンドが用意"
-"されていました。 <command>insserv</command> , <command>telinit</command> などが"
-"それにあたります。 systemd ではサービスの管理を簡単にするために、これらの機能を"
-" <command>systemctl</command> という 1 つのコマンドにまとめて、覚えやすく"
-"しています。このコマンドは、 <command>git</command> や <command>zypper</command> "
-"のように、 <quote>サブコマンド</quote> を指定して各種の処理を行ないます。"
+"されていました。 <command>insserv</command> , <command>telinit</command> など"
+"がそれにあたります。 systemd ではサービスの管理を簡単にするために、これらの機"
+"能を <command>systemctl</command> という 1 つのコマンドにまとめて、覚えやすく"
+"しています。このコマンドは、 <command>git</command> や <command>zypper</"
+"command> のように、 <quote>サブコマンド</quote> を指定して各種の処理を行ない"
+"ます。"
 
 #. Tag: screen
 #: systemd.xml:233
@@ -364,15 +373,16 @@ msgid ""
 "<replaceable>SUBCOMMAND</replaceable> <replaceable>SUBCOMMAND OPTIONS</"
 "replaceable>"
 msgstr ""
-"systemctl <replaceable>一般オプション</replaceable> "
-"<replaceable>サブコマンド</replaceable> <replaceable>サブコマンドのオプション</"
-"replaceable>"
+"systemctl <replaceable>一般オプション</replaceable> <replaceable>サブコマンド"
+"</replaceable> <replaceable>サブコマンドのオプション</replaceable>"
 
 #. Tag: para
 #: systemd.xml:235
 #, no-c-format
 msgid "See <command>man 1 systemctl</command> for a complete manual."
-msgstr "詳しい説明をご希望の場合は、 <command>man 1 systemctl</command> をお読みください。"
+msgstr ""
+"詳しい説明をご希望の場合は、 <command>man 1 systemctl</command> をお読みくだ"
+"さい。"
 
 #. Tag: title
 #: systemd.xml:240
@@ -388,9 +398,9 @@ msgid ""
 "systemd commands send long output to a pager by default. Use the <option>--"
 "no-pager</option> option to turn off paging mode."
 msgstr ""
-"出力先が端末であり、パイプやファイルなどではない場合、 systemd が長い出力を行なう"
-"場合、既定でページ制御機能を起動する仕組みを備えています。ページ制御機能を無効化"
-"するには、 <option>--no-pager</option> オプションを指定します。"
+"出力先が端末であり、パイプやファイルなどではない場合、 systemd が長い出力を行"
+"なう場合、既定でページ制御機能を起動する仕組みを備えています。ページ制御機能"
+"を無効化するには、 <option>--no-pager</option> オプションを指定します。"
 
 #. Tag: para
 #: systemd.xml:246
@@ -402,11 +412,11 @@ msgid ""
 "<systemitem>bash</systemitem> shell and requires the installation of the "
 "package <systemitem class=\"resource\">bash-completion</systemitem> ."
 msgstr ""
-"systemd では bash の補完機能も用意されています。これにより、サブコマンドの冒頭部分"
-"だけを入力して <keycap function=\"tab\"/> を押すと、自動的に残りを補完することが"
-"できます。この機能は <systemitem>bash</systemitem> シェル内でのみ利用可能な機能で、"
-" <systemitem class=\"resource\">bash-completion</systemitem> パッケージをインストール"
-"する必要があります。"
+"systemd では bash の補完機能も用意されています。これにより、サブコマンドの冒"
+"頭部分だけを入力して <keycap function=\"tab\"/> を押すと、自動的に残りを補完"
+"することができます。この機能は <systemitem>bash</systemitem> シェル内でのみ利"
+"用可能な機能で、 <systemitem class=\"resource\">bash-completion</systemitem> "
+"パッケージをインストールする必要があります。"
 
 #. Tag: title
 #: systemd.xml:256
@@ -423,9 +433,9 @@ msgid ""
 "command> , ...). The general syntax for service management commands is as "
 "follows:"
 msgstr ""
-"サービスを管理するためのサブコマンドは、 System V init でサービスを管理するための"
-"サブコマンドとほぼ同じです (<command>start</command> , <command>stop</command> , ...) 。"
-"サービス管理コマンドの書式は下記のとおりです:"
+"サービスを管理するためのサブコマンドは、 System V init でサービスを管理するた"
+"めのサブコマンドとほぼ同じです (<command>start</command> , <command>stop</"
+"command> , ...) 。サービス管理コマンドの書式は下記のとおりです:"
 
 #. Tag: term
 #: systemd.xml:264
@@ -467,9 +477,9 @@ msgid ""
 "executing init scripts one after the other as with System V init, execute a "
 "command like the following:"
 msgstr ""
-"systemd では、複数のサービスを一括で管理することができます。 System V init では"
-"それぞれの init スクリプトを別々に動作させる必要がありましたが、 systemd では"
-"下記のように実行するだけです:"
+"systemd では、複数のサービスを一括で管理することができます。 System V init で"
+"はそれぞれの init スクリプトを別々に動作させる必要がありましたが、 systemd で"
+"は下記のように実行するだけです:"
 
 #. Tag: screen
 #: systemd.xml:281
@@ -485,7 +495,8 @@ msgstr ""
 #: systemd.xml:282
 #, no-c-format
 msgid "To list all services available on the system:"
-msgstr "システムで利用可能な全てのサービスを一覧表示するには、下記のように実行します:"
+msgstr ""
+"システムで利用可能な全てのサービスを一覧表示するには、下記のように実行します:"
 
 #. Tag: screen
 #: systemd.xml:285
@@ -500,8 +511,8 @@ msgid ""
 "The following table lists the most important service management commands for "
 "systemd and System V init:"
 msgstr ""
-"下記の表では、 systemd と System V init における主要なサービス管理コマンドについて、"
-"その比較を行なっています:"
+"下記の表では、 systemd と System V init における主要なサービス管理コマンドに"
+"ついて、その比較を行なっています:"
 
 #. Tag: title
 #: systemd.xml:291
@@ -546,8 +557,8 @@ msgid ""
 "Shuts down services and starts them afterward. If a service is not yet "
 "running it will be started."
 msgstr ""
-"サービスを一旦停止し、その後起動し直します。その時点でサービスが動作していない"
-"場合は、単純に起動します。"
+"サービスを一旦停止し、その後起動し直します。その時点でサービスが動作していな"
+"い場合は、単純に起動します。"
 
 #. Tag: screen
 #: systemd.xml:358
@@ -568,8 +579,8 @@ msgid ""
 "Restarts services if they are currently running. Does nothing for services "
 "that are not running."
 msgstr ""
-"現在動作中の場合にのみサービスを再起動します。その時点でサービスが動作していない"
-"場合は、何も行ないません。"
+"現在動作中の場合にのみサービスを再起動します。その時点でサービスが動作してい"
+"ない場合は、何も行ないません。"
 
 #. Tag: screen
 #: systemd.xml:375
@@ -591,9 +602,10 @@ msgid ""
 "operation. Use case: Tell Apache to reload a modified <filename>httpd.conf</"
 "filename> configuration file. Note that not all services support reloading."
 msgstr ""
-"サービスの運用を止めることなく、サービスに対して設定ファイルを読み込み直すように"
-"指示します。使用例: Apache に対して修正された <filename>httpd.conf</filename> "
-"設定ファイルを読み込み直すなど。ただし全てのサービスが再読み込みに対応しているわけではありません。"
+"サービスの運用を止めることなく、サービスに対して設定ファイルを読み込み直すよ"
+"うに指示します。使用例: Apache に対して修正された <filename>httpd.conf</"
+"filename> 設定ファイルを読み込み直すなど。ただし全てのサービスが再読み込みに"
+"対応しているわけではありません。"
 
 #. Tag: screen
 #: systemd.xml:394
@@ -614,8 +626,8 @@ msgid ""
 "Reloads services if reloading is supported, otherwise restarts them. If a "
 "service is not yet running it will be started."
 msgstr ""
-"再読み込みに対応するサービスの場合は、再読み込みを行ないます。対応していない場合は"
-"再起動を行ないます。サービスが動作していない場合は、起動を行ないます。"
+"再読み込みに対応するサービスの場合は、再読み込みを行ないます。対応していない"
+"場合は再起動を行ないます。サービスが動作していない場合は、起動を行ないます。"
 
 #. Tag: screen
 #: systemd.xml:408
@@ -636,8 +648,9 @@ msgid ""
 "Reloads services if reloading is supported, otherwise restarts them if "
 "currently running. Does nothing for services that are not running."
 msgstr ""
-"再読み込みに対応するサービスの場合は、再読み込みを行ないます。対応していない場合は、"
-"サービスが動作している場合に限って再起動を行ないます。サービスが動作していない場合は、何も行ないません。"
+"再読み込みに対応するサービスの場合は、再読み込みを行ないます。対応していない"
+"場合は、サービスが動作している場合に限って再起動を行ないます。サービスが動作"
+"していない場合は、何も行ないません。"
 
 #. Tag: screen
 #: systemd.xml:425
@@ -661,10 +674,10 @@ msgid ""
 "services_debugging\"/> ). The level of details displayed with the System V "
 "init differs from service to service."
 msgstr ""
-"サービスの状態に関する情報を一覧表示します。 &systemd; では、説明や実行ファイル、"
-"状態や cgroup のほか、サービスが直近に発したメッセージ (詳しくは <xref linkend=\""
-"sec.boot.systemd.basics.services_debugging\"/> をお読みください) も表示します。"
-" System V init との詳細度の違いは、サービスによって異なります。"
+"サービスの状態に関する情報を一覧表示します。 &systemd; では、説明や実行ファイ"
+"ル、状態や cgroup のほか、サービスが直近に発したメッセージ (詳しくは <xref "
+"linkend=\"sec.boot.systemd.basics.services_debugging\"/> をお読みください) も"
+"表示します。 System V init との詳細度の違いは、サービスによって異なります。"
 
 #. Tag: title
 #: systemd.xml:455
@@ -706,11 +719,11 @@ msgid ""
 "when requested or are always unavailable. You can either do this by using "
 "&yast;, or on the command line."
 msgstr ""
-"前のセクション内で説明しているサービス管理コマンドを利用することで、現在のセッション"
-"に対してサービスを制御することができます。 systemd ではサービスを恒久的に有効化"
-"したり無効化したりすることで、必要に応じて起動したり、もしくは常に利用できないように"
-"したりすることができます。これは &yast; で行なうことができるほか、コマンドライン"
-"でも実施することができます。"
+"前のセクション内で説明しているサービス管理コマンドを利用することで、現在の"
+"セッションに対してサービスを制御することができます。 systemd ではサービスを恒"
+"久的に有効化したり無効化したりすることで、必要に応じて起動したり、もしくは常"
+"に利用できないようにしたりすることができます。これは &yast; で行なうことがで"
+"きるほか、コマンドラインでも実施することができます。"
 
 #. Tag: title
 #: systemd.xml:483
@@ -725,8 +738,8 @@ msgid ""
 "The following table lists enabling and disabling commands for systemd and "
 "System V init:"
 msgstr ""
-"下記の表には、それぞれ systemd と System V init で有効化したり無効化したりする"
-"ためのコマンドを示しています。"
+"下記の表には、それぞれ systemd と System V init で有効化したり無効化したりす"
+"るためのコマンドを示しています。"
 
 #. Tag: title
 #: systemd.xml:489
@@ -745,11 +758,12 @@ msgid ""
 "replaceable></command> or <command>rc <replaceable>MY_SERVICE</replaceable> "
 "start</command> ."
 msgstr ""
-"コマンドラインからサービスを有効化しても、サービスは自動では起動しません。"
-"時間のシステムの起動時や、ランレベル／ターゲットの変更時に起動されるよう設定される"
-"だけです。有効化したあとにサービスを起動するには、 <command>systemctl start "
-"<replaceable>サービス名</replaceable></command> や <command>rc <replaceable>"
-"サービス名</replaceable> start</command> を明示的に実行する必要があります。"
+"コマンドラインからサービスを有効化しても、サービスは自動では起動しません。時"
+"間のシステムの起動時や、ランレベル／ターゲットの変更時に起動されるよう設定さ"
+"れるだけです。有効化したあとにサービスを起動するには、 <command>systemctl "
+"start <replaceable>サービス名</replaceable></command> や <command>rc "
+"<replaceable>サービス名</replaceable> start</command> を明示的に実行する必要"
+"があります。"
 
 #. Tag: title
 #: systemd.xml:500
@@ -772,8 +786,11 @@ msgstr "有効化"
 #. Tag: para
 #: systemd.xml:533
 #, no-c-format
-msgid "<command>systemctl enable <replaceable>MY_SERVICE(S)</replaceable></command>"
-msgstr "<command>systemctl enable <replaceable>サービス名_(複数可)</replaceable></command>"
+msgid ""
+"<command>systemctl enable <replaceable>MY_SERVICE(S)</replaceable></command>"
+msgstr ""
+"<command>systemctl enable <replaceable>サービス名_(複数可)</replaceable></"
+"command>"
 
 #. Tag: para
 #: systemd.xml:539
@@ -783,7 +800,8 @@ msgid ""
 "<command>chkconfig -a <replaceable>MY_SERVICE(S)</replaceable></command>"
 msgstr ""
 "<command>insserv <replaceable>サービス名_(複数可)</replaceable></command> , "
-"<command>chkconfig -a <replaceable>サービス名_(複数可)</replaceable></command>"
+"<command>chkconfig -a <replaceable>サービス名_(複数可)</replaceable></"
+"command>"
 
 #. Tag: title
 #: systemd.xml:549
@@ -798,8 +816,8 @@ msgid ""
 "<command>systemctl disable <replaceable>MY_SERVICE(S)</replaceable>.service</"
 "command>"
 msgstr ""
-"<command>systemctl disable <replaceable>サービス名_(複数可)</replaceable>.service</"
-"command>"
+"<command>systemctl disable <replaceable>サービス名_(複数可)</replaceable>."
+"service</command>"
 
 #. Tag: para
 #: systemd.xml:560
@@ -808,8 +826,9 @@ msgid ""
 "<command>insserv -r <replaceable>MY_SERVICE(S)</replaceable></command> , "
 "<command>chkconfig -d <replaceable>MY_SERVICE(S)</replaceable></command>"
 msgstr ""
-"<command>insserv -r <replaceable>サービス名_(複数可)</replaceable></command> , "
-"<command>chkconfig -d <replaceable>サービス名_(複数可)</replaceable></command>"
+"<command>insserv -r <replaceable>サービス名_(複数可)</replaceable></"
+"command> , <command>chkconfig -d <replaceable>サービス名_(複数可)</"
+"replaceable></command>"
 
 #. Tag: title
 #: systemd.xml:571
@@ -826,8 +845,10 @@ msgstr "サービスを有効化しているかどうかを表示します。"
 #. Tag: para
 #: systemd.xml:578
 #, no-c-format
-msgid "<command>systemctl is-enabled <replaceable>MY_SERVICE</replaceable></command>"
-msgstr "<command>systemctl is-enabled <replaceable>サービス名</replaceable></command>"
+msgid ""
+"<command>systemctl is-enabled <replaceable>MY_SERVICE</replaceable></command>"
+msgstr ""
+"<command>systemctl is-enabled <replaceable>サービス名</replaceable></command>"
 
 #. Tag: para
 #: systemd.xml:584
@@ -854,8 +875,10 @@ msgstr ""
 #. Tag: para
 #: systemd.xml:601
 #, no-c-format
-msgid "<command>systemctl reenable <replaceable>MY_SERVICE</replaceable></command>"
-msgstr "<command>systemctl reenable <replaceable>サービス名</replaceable></command>"
+msgid ""
+"<command>systemctl reenable <replaceable>MY_SERVICE</replaceable></command>"
+msgstr ""
+"<command>systemctl reenable <replaceable>サービス名</replaceable></command>"
 
 #. Tag: title
 #: systemd.xml:615
@@ -870,14 +893,16 @@ msgid ""
 "After <quote>disabling</quote> a service, it can still be started manually. "
 "To completely disable a service, you need to mask it. Use with care."
 msgstr ""
-"サービスを <quote>無効化</quote> したあとでも、手作業でサービスを開始することができます。"
-"マスクを実施すると、サービスを完全に無効化することができます。注意してお使いください。"
+"サービスを <quote>無効化</quote> したあとでも、手作業でサービスを開始すること"
+"ができます。マスクを実施すると、サービスを完全に無効化することができます。注"
+"意してお使いください。"
 
 #. Tag: para
 #: systemd.xml:624
 #, no-c-format
 msgid "<command>systemctl mask <replaceable>MY_SERVICE</replaceable></command>"
-msgstr "<command>systemctl mask <replaceable>サービス名</replaceable></command>"
+msgstr ""
+"<command>systemctl mask <replaceable>サービス名</replaceable></command>"
 
 #. Tag: title
 #: systemd.xml:638
@@ -891,13 +916,17 @@ msgstr "マスク解除"
 msgid ""
 "A service that has been masked can only be used again after it has been "
 "unmasked."
-msgstr "マスクを設定したサービスは、マスクを解除しないと再度使用することができなくなります。"
+msgstr ""
+"マスクを設定したサービスは、マスクを解除しないと再度使用することができなくな"
+"ります。"
 
 #. Tag: para
 #: systemd.xml:646
 #, no-c-format
-msgid "<command>systemctl unmask <replaceable>MY_SERVICE</replaceable></command>"
-msgstr "<command>systemctl unmask <replaceable>サービス名</replaceable></command>"
+msgid ""
+"<command>systemctl unmask <replaceable>MY_SERVICE</replaceable></command>"
+msgstr ""
+"<command>systemctl unmask <replaceable>サービス名</replaceable></command>"
 
 #. Tag: title
 #: systemd.xml:664
@@ -914,9 +943,10 @@ msgid ""
 "background process to maintain all other processes and adjust CPU time and "
 "hardware access according to requests from other programs."
 msgstr ""
-"システムの起動やシャットダウンは、いずれも systemd が管理しています。この観点から"
-"すると、カーネルは裏で動作するバックグラウンド (背景) プロセスであり、 CPU 時間と"
-"他のプログラムからのハードウエアアクセスの要求を処理する存在であると言えます。"
+"システムの起動やシャットダウンは、いずれも systemd が管理しています。この観点"
+"からすると、カーネルは裏で動作するバックグラウンド (背景) プロセスであり、 "
+"CPU 時間と他のプログラムからのハードウエアアクセスの要求を処理する存在である"
+"と言えます。"
 
 #. Tag: title
 #: systemd.xml:674
@@ -935,12 +965,13 @@ msgid ""
 "literal> (multiuser with network) and <literal>5</literal> (multiuser with "
 "network and display manager)."
 msgstr ""
-"System V init では、システムは <quote>ランレベル</quote> と呼ばれる状態に対して"
-"起動を行ないます。ランレベルは、どのようにシステムを起動するのかと、どのサービスを"
-"起動するのかを定義するものです。ランレベルは番号で設定されていて、よく知られている"
-"ものは <literal>0</literal> (システムのシャットダウン), <literal>3</literal>"
-" (ネットワーク付きのマルチユーザ環境), <literal>5</literal> (ネットワークとディスプレイ"
-"マネージャ付きのマルチユーザ環境) の 3 種類です。"
+"System V init では、システムは <quote>ランレベル</quote> と呼ばれる状態に対し"
+"て起動を行ないます。ランレベルは、どのようにシステムを起動するのかと、どの"
+"サービスを起動するのかを定義するものです。ランレベルは番号で設定されていて、"
+"よく知られているものは <literal>0</literal> (システムのシャットダウン), "
+"<literal>3</literal> (ネットワーク付きのマルチユーザ環境), <literal>5</"
+"literal> (ネットワークとディスプレイマネージャ付きのマルチユーザ環境) の 3 種"
+"類です。"
 
 #. Tag: para
 #: systemd.xml:683
@@ -953,12 +984,12 @@ msgid ""
 "<systemitem>swap.target</systemitem> mount local file systems and swap "
 "spaces."
 msgstr ""
-"systemd では <quote>ターゲットユニット</quote> と呼ばれる新しい考え方が導入されて"
-"います。しかしながら、従来のランレベルの考え方と完全な互換性をもっています。"
-"ターゲットユニットには、番号ではなく名前が設定され、特定の用途ごとに用意されて"
-"います。たとえば <systemitem>local-fs.target</systemitem> や "
-"<systemitem>swap.target</systemitem> などでは、ローカルのファイルシステムや"
-"スワップ領域をマウントします。"
+"systemd では <quote>ターゲットユニット</quote> と呼ばれる新しい考え方が導入さ"
+"れています。しかしながら、従来のランレベルの考え方と完全な互換性をもっていま"
+"す。ターゲットユニットには、番号ではなく名前が設定され、特定の用途ごとに用意"
+"されています。たとえば <systemitem>local-fs.target</systemitem> や "
+"<systemitem>swap.target</systemitem> などでは、ローカルのファイルシステムやス"
+"ワップ領域をマウントします。"
 
 #. Tag: para
 #: systemd.xml:691
@@ -974,10 +1005,10 @@ msgstr ""
 "また、ターゲット <systemitem>graphical.target</systemitem> はネットワークと"
 "ディスプレイマネージャ機能付きのマルチユーザ環境を表わすターゲットで、これが"
 "ランレベルで言うところの 5 に相当します。 <systemitem>graphical.target</"
-"systemitem> などは複雑なターゲットとして扱われていて、これは複数の他のターゲット"
-"を組み合わせた <quote>メタ</quote> ターゲットとして動作します。このように、"
-"既存の複数のターゲットを組み合わせることで、独自のターゲットを作成するだけの"
-"柔軟性を提供しています。"
+"systemitem> などは複雑なターゲットとして扱われていて、これは複数の他のター"
+"ゲットを組み合わせた <quote>メタ</quote> ターゲットとして動作します。このよう"
+"に、既存の複数のターゲットを組み合わせることで、独自のターゲットを作成するだ"
+"けの柔軟性を提供しています。"
 
 #. Tag: para
 #: systemd.xml:700
@@ -1012,13 +1043,13 @@ msgid ""
 "parameter <literal>systemd.unit=<replaceable>MY_TARGET.target</replaceable></"
 "literal> at the boot prompt."
 msgstr ""
-"既定で起動されるターゲットです。 <quote>実際の</quote> ターゲットではなく、"
-" <systemitem>graphic.target</systemitem> などの他のターゲットに対するシンボリック"
-"リンクになっています。これは &yast; を利用して恒久的な変更を行なうことができます"
-" (詳しくは <xref linkend=\"sec.boot.runlevel.edit\"/> をお読みください) 。"
-"一時的に変更したい場合は、起動プロンプトのカーネルのパラメータに"
-" <literal>systemd.unit=<replaceable>ターゲット名.target</replaceable></literal> "
-"のように指定してください。"
+"既定で起動されるターゲットです。 <quote>実際の</quote> ターゲットではなく、 "
+"<systemitem>graphic.target</systemitem> などの他のターゲットに対するシンボ"
+"リックリンクになっています。これは &yast; を利用して恒久的な変更を行なうこと"
+"ができます (詳しくは <xref linkend=\"sec.boot.runlevel.edit\"/> をお読みくだ"
+"さい) 。一時的に変更したい場合は、起動プロンプトのカーネルのパラメータに "
+"<literal>systemd.unit=<replaceable>ターゲット名.target</replaceable></"
+"literal> のように指定してください。"
 
 #. Tag: term
 #: systemd.xml:722
@@ -1033,8 +1064,8 @@ msgid ""
 "Starts an emergency shell on the console. Only use it at the boot prompt as "
 "<literal>systemd.unit=emergency.target</literal> ."
 msgstr ""
-"コンソール上に緊急用のシェルを起動するターゲットです。起動プロンプトで"
-" <literal>systemd.unit=emergency.target</literal> のように指定して使用します。"
+"コンソール上に緊急用のシェルを起動するターゲットです。起動プロンプトで "
+"<literal>systemd.unit=emergency.target</literal> のように指定して使用します。"
 
 #. Tag: term
 #: systemd.xml:732
@@ -1046,7 +1077,9 @@ msgstr "<systemitem>graphical.target</systemitem>"
 #: systemd.xml:735
 #, no-c-format
 msgid "Starts a system with network, multiuser support and a display manager."
-msgstr "ネットワーク機能付きでマルチユーザ対応、そしてディスプレイマネージャが有効化されるターゲットです。"
+msgstr ""
+"ネットワーク機能付きでマルチユーザ対応、そしてディスプレイマネージャが有効化"
+"されるターゲットです。"
 
 #. Tag: term
 #: systemd.xml:741
@@ -1070,7 +1103,8 @@ msgstr "<systemitem>mail-transfer-agent.target</systemitem>"
 #: systemd.xml:753
 #, no-c-format
 msgid "Starts all services necessary for sending and receiving mails."
-msgstr "電子メールを送受信するのに必要な全てのサービスを開始するターゲットです。"
+msgstr ""
+"電子メールを送受信するのに必要な全てのサービスを開始するターゲットです。"
 
 #. Tag: term
 #: systemd.xml:759
@@ -1117,9 +1151,9 @@ msgid ""
 "target</literal> mapping the corresponding runlevels numbered "
 "<replaceable>X</replaceable> ."
 msgstr ""
-"System V init のランレベルシステムとの互換性を維持するため、 systemd には"
-" <literal>runlevel<replaceable>X</replaceable>.target</literal> という名前の"
-"特殊なターゲットが用意されています。ここで、 <replaceable>X</replaceable> には"
+"System V init のランレベルシステムとの互換性を維持するため、 systemd には "
+"<literal>runlevel<replaceable>X</replaceable>.target</literal> という名前の特"
+"殊なターゲットが用意されています。ここで、 <replaceable>X</replaceable> には"
 "対応するランレベルの番号が入ります。"
 
 #. Tag: para
@@ -1129,8 +1163,8 @@ msgid ""
 "If you want to know the current target, use the command: <command>systemctl "
 "get-default</command>"
 msgstr ""
-"現在のターゲットを知りたい場合は、下記のコマンドを実行します: <command>systemctl "
-"get-default</command>"
+"現在のターゲットを知りたい場合は、下記のコマンドを実行します: "
+"<command>systemctl get-default</command>"
 
 #. Tag: title
 #: systemd.xml:797
@@ -1169,8 +1203,8 @@ msgid ""
 "<systemitem>runlevel0.target</systemitem> , <systemitem>halt.target</"
 "systemitem> , <systemitem>poweroff.target</systemitem>"
 msgstr ""
-"<systemitem>runlevel0.target</systemitem> , <systemitem>halt.target</systemitem> ,"
-" <systemitem>poweroff.target</systemitem>"
+"<systemitem>runlevel0.target</systemitem> , <systemitem>halt.target</"
+"systemitem> , <systemitem>poweroff.target</systemitem>"
 
 #. Tag: para
 #: systemd.xml:836
@@ -1190,7 +1224,9 @@ msgstr "1, S"
 msgid ""
 "<systemitem>runlevel1.target</systemitem> , <systemitem>rescue.target</"
 "systemitem> ,"
-msgstr "<systemitem>runlevel1.target</systemitem> , <systemitem>rescue.target</systemitem> ,"
+msgstr ""
+"<systemitem>runlevel1.target</systemitem> , <systemitem>rescue.target</"
+"systemitem> ,"
 
 #. Tag: para
 #: systemd.xml:854
@@ -1210,7 +1246,9 @@ msgstr "2"
 msgid ""
 "<systemitem>runlevel2.target</systemitem> , <systemitem>multi-user.target</"
 "systemitem> ,"
-msgstr "<systemitem>runlevel2.target</systemitem> , <systemitem>multi-user.target</systemitem> ,"
+msgstr ""
+"<systemitem>runlevel2.target</systemitem> , <systemitem>multi-user.target</"
+"systemitem> ,"
 
 #. Tag: para
 #: systemd.xml:872
@@ -1230,7 +1268,9 @@ msgstr "3"
 msgid ""
 "<systemitem>runlevel3.target</systemitem> , <systemitem>multi-user.target</"
 "systemitem> ,"
-msgstr "<systemitem>runlevel3.target</systemitem> , <systemitem>multi-user.target</systemitem> ,"
+msgstr ""
+"<systemitem>runlevel3.target</systemitem> , <systemitem>multi-user.target</"
+"systemitem> ,"
 
 #. Tag: para
 #: systemd.xml:890
@@ -1268,7 +1308,9 @@ msgstr "5"
 msgid ""
 "<systemitem>runlevel5.target</systemitem> , <systemitem>graphical.target</"
 "systemitem> ,"
-msgstr "<systemitem>runlevel5.target</systemitem> , <systemitem>graphical.target</systemitem> ,"
+msgstr ""
+"<systemitem>runlevel5.target</systemitem> , <systemitem>graphical.target</"
+"systemitem> ,"
 
 #. Tag: para
 #: systemd.xml:925
@@ -1288,7 +1330,9 @@ msgstr "6"
 msgid ""
 "<systemitem>runlevel6.target</systemitem> , <systemitem>reboot.target</"
 "systemitem> ,"
-msgstr "<systemitem>runlevel6.target</systemitem> , <systemitem>reboot.target</systemitem> ,"
+msgstr ""
+"<systemitem>runlevel6.target</systemitem> , <systemitem>reboot.target</"
+"systemitem> ,"
 
 #. Tag: para
 #: systemd.xml:943
@@ -1312,9 +1356,9 @@ msgid ""
 "for instructions on how to create your own bootable target."
 msgstr ""
 "System V init システムでは、ランレベルを <filename>/etc/inittab</filename> で"
-"管理してきましたが、 systemd ではこの設定ファイルを <emphasis>使用していません</emphasis> 。"
-"独自の起動可能なターゲットを作成する方法について、詳しくは"
-" <xref linkend=\"sec.boot.systemd.custom.targets\"/> をお読みください。"
+"管理してきましたが、 systemd ではこの設定ファイルを <emphasis>使用していませ"
+"ん</emphasis> 。独自の起動可能なターゲットを作成する方法について、詳しくは "
+"<xref linkend=\"sec.boot.systemd.custom.targets\"/> をお読みください。"
 
 #. Tag: title
 #: systemd.xml:962
@@ -1358,7 +1402,9 @@ msgstr "現在のターゲット／ランレベルの変更"
 msgid ""
 "<command>systemctl isolate</command> <replaceable>MY_TARGET</replaceable> ."
 "target"
-msgstr "<command>systemctl isolate</command> <replaceable>ターゲット名</replaceable>.target"
+msgstr ""
+"<command>systemctl isolate</command> <replaceable>ターゲット名</replaceable>."
+"target"
 
 #. Tag: para
 #: systemd.xml:1004
@@ -1397,8 +1443,8 @@ msgid ""
 "With systemd there is usually more than one active target. The command lists "
 "all currently active targets."
 msgstr ""
-"systemd の場合、有効なターゲットが複数存在するのが一般的です。このコマンドは、"
-"現在有効なターゲットを全て表示します。"
+"systemd の場合、有効なターゲットが複数存在するのが一般的です。このコマンド"
+"は、現在有効なターゲットを全て表示します。"
 
 #. Tag: para
 #: systemd.xml:1042
@@ -1437,14 +1483,16 @@ msgid ""
 "<command>ln -sf /usr/lib/systemd/system/</command> <replaceable>MY_TARGET</"
 "replaceable> .target /etc/systemd/system/default.target"
 msgstr ""
-"<command>ln -sf /usr/lib/systemd/system/</command> <replaceable>ターゲット名</"
-"replaceable>.target /etc/systemd/system/default.target"
+"<command>ln -sf /usr/lib/systemd/system/</command> <replaceable>ターゲット名"
+"</replaceable>.target /etc/systemd/system/default.target"
 
 #. Tag: para
 #: systemd.xml:1070
 #, no-c-format
 msgid "Use the &ycc_runlevel; or change the line"
-msgstr "&ycc_runlevel; を使用するか、 <filename>/etc/inittab</filename> 内の下記の行を変更します:"
+msgstr ""
+"&ycc_runlevel; を使用するか、 <filename>/etc/inittab</filename> 内の下記の行"
+"を変更します:"
 
 #. Tag: para
 #: systemd.xml:1073
@@ -1456,7 +1504,9 @@ msgstr "<command>id:</command> <replaceable>X</replaceable> :initdefault:"
 #: systemd.xml:1076
 #, no-c-format
 msgid "in <filename>/etc/inittab</filename>"
-msgstr "<!-- No translations required; this expression is written in previous paragraph. -->"
+msgstr ""
+"<!-- No translations required; this expression is written in previous "
+"paragraph. -->"
 
 #. Tag: para
 #: systemd.xml:1083
@@ -1473,8 +1523,11 @@ msgstr "起動プロンプトで下記のオプションを指定します:"
 #. Tag: para
 #: systemd.xml:1091
 #, no-c-format
-msgid "<command>systemd.unit=</command> <replaceable>MY_TARGET</replaceable> .target"
-msgstr "<command>systemd.unit=</command> <replaceable>ターゲット名</replaceable>.target"
+msgid ""
+"<command>systemd.unit=</command> <replaceable>MY_TARGET</replaceable> .target"
+msgstr ""
+"<command>systemd.unit=</command> <replaceable>ターゲット名</replaceable>."
+"target"
 
 #. Tag: para
 #: systemd.xml:1097
@@ -1494,7 +1547,9 @@ msgstr "ターゲット／ランレベルの依存関係の表示"
 msgid ""
 "<command>systemctl show -p \"Requires\"</command> <replaceable>MY_TARGET</"
 "replaceable> .target"
-msgstr "<command>systemctl show -p \"Requires\"</command> <replaceable>ターゲット名</replaceable>.target"
+msgstr ""
+"<command>systemctl show -p \"Requires\"</command> <replaceable>ターゲット名</"
+"replaceable>.target"
 
 #. Tag: para
 #: systemd.xml:1113
@@ -1502,7 +1557,9 @@ msgstr "<command>systemctl show -p \"Requires\"</command> <replaceable>ターゲ
 msgid ""
 "<command>systemctl show -p \"Wants\"</command> <replaceable>MY_TARGET</"
 "replaceable> .target"
-msgstr "<command>systemctl show -p \"Wants\"</command> <replaceable>ターゲット名</replaceable>.target"
+msgstr ""
+"<command>systemctl show -p \"Wants\"</command> <replaceable>ターゲット名</"
+"replaceable>.target"
 
 #. Tag: para
 #: systemd.xml:1117
@@ -1512,8 +1569,9 @@ msgid ""
 "resolved), whereas <quote>Wants</quote> lists the soft dependencies (the "
 "ones that get resolved if possible)."
 msgstr ""
-"<quote>Requires</quote> ではハード依存関係 (解決しなければならないもの) を一覧表示します。"
-"<quote>Wants</quote> ではソフト依存関係 (可能であれば解決すべきもの) を一覧表示します。"
+"<quote>Requires</quote> ではハード依存関係 (解決しなければならないもの) を一"
+"覧表示します。<quote>Wants</quote> ではソフト依存関係 (可能であれば解決すべき"
+"もの) を一覧表示します。"
 
 #. Tag: para
 #: systemd.xml:1124
@@ -1536,10 +1594,10 @@ msgid ""
 "parse <filename>/varlog/</filename> ). systemd also allows you to scan the "
 "start-up procedure to find out how much time each service start-up consumes."
 msgstr ""
-"systemd では、システムの起動処理を分析する機能を提供しています。全てのサービスの一覧と"
-"その状態を、 <filename>/var/log/</filename> などを処理することなく確認することが"
-"できます。また、 systemd では起動処理で時間のかかっている箇所を検出することも"
-"できます。"
+"systemd では、システムの起動処理を分析する機能を提供しています。全てのサービ"
+"スの一覧とその状態を、 <filename>/var/log/</filename> などを処理することなく"
+"確認することができます。また、 systemd では起動処理で時間のかかっている箇所を"
+"検出することもできます。"
 
 #. Tag: title
 #: systemd.xml:1145
@@ -1557,11 +1615,11 @@ msgid ""
 "specific service, use <command>systemctl status <replaceable>MY_SERVICE</"
 "replaceable></command> ."
 msgstr ""
-"システム起動以降に開始されたサービスの完全な一覧を表示するには、 <command>systemctl</command> "
-"と入力して実行します。このコマンドを実行すると、下記のような出力が現われます"
-" (ただし、下記では多くの行を省略しています) 。特定のサービスに対して、より詳しい状態を"
-"取得したい場合は、 <command>systemctl status <replaceable>サービス名</replaceable>"
-"</command> と入力して実行します。"
+"システム起動以降に開始されたサービスの完全な一覧を表示するには、 "
+"<command>systemctl</command> と入力して実行します。このコマンドを実行すると、"
+"下記のような出力が現われます (ただし、下記では多くの行を省略しています) 。特"
+"定のサービスに対して、より詳しい状態を取得したい場合は、 <command>systemctl "
+"status <replaceable>サービス名</replaceable></command> と入力して実行します。"
 
 #. Tag: title
 #: systemd.xml:1154
@@ -1601,14 +1659,19 @@ msgstr ""
 "&prompt.root;systemctl\n"
 "UNIT                        LOAD   ACTIVE SUB       JOB DESCRIPTION\n"
 "[...]\n"
-"iscsi.service               loaded active exited    Login and scanning of iSC+\n"
-"kmod-static-nodes.service   loaded active exited    Create list of required s+\n"
+"iscsi.service               loaded active exited    Login and scanning of iSC"
+"+\n"
+"kmod-static-nodes.service   loaded active exited    Create list of required s"
+"+\n"
 "libvirtd.service            loaded active running   Virtualization daemon\n"
-"nscd.service                loaded active running   Name Service Cache Daemon\n"
+"nscd.service                loaded active running   Name Service Cache "
+"Daemon\n"
 "chronyd.service             loaded active running   NTP Server Daemon\n"
 "polkit.service              loaded active running   Authorization Manager\n"
-"postfix.service             loaded active running   Postfix Mail Transport Ag+\n"
-"rc-local.service            loaded active exited    /etc/init.d/boot.local Co+\n"
+"postfix.service             loaded active running   Postfix Mail Transport Ag"
+"+\n"
+"rc-local.service            loaded active exited    /etc/init.d/boot.local Co"
+"+\n"
 "rsyslog.service             loaded active running   System Logging Service\n"
 "[...]\n"
 "LOAD   = Reflects whether the unit definition was properly loaded.\n"
@@ -1624,7 +1687,9 @@ msgstr ""
 msgid ""
 "To restrict the output to services that failed to start, use the <option>--"
 "failed</option> option:"
-msgstr "開始に失敗したサービスのみを出力したい場合は、 <option>--failed</option> オプションを追加します:"
+msgstr ""
+"開始に失敗したサービスのみを出力したい場合は、 <option>--failed</option> オプ"
+"ションを追加します:"
 
 #. Tag: title
 #: systemd.xml:1180
@@ -1667,11 +1732,11 @@ msgid ""
 "ordered by start-up time and can also generate an SVG graphic showing the "
 "time services took to start in relation to the other services."
 msgstr ""
-"システムの起動にかかった時間をデバッグするために、 systemd では <command>systemd-analyze</"
-"command> というコマンドが用意されています。これは起動にかかった時間の合計のほか、"
-"起動にかかった時間順で並べたサービス一覧を表示することができます。また、必要であれば"
-" SVG の画像を生成して、起動にかかった時間とサービス同士の関係性を表示することも"
-"できます。"
+"システムの起動にかかった時間をデバッグするために、 systemd では "
+"<command>systemd-analyze</command> というコマンドが用意されています。これは起"
+"動にかかった時間の合計のほか、起動にかかった時間順で並べたサービス一覧を表示"
+"することができます。また、必要であれば SVG の画像を生成して、起動にかかった時"
+"間とサービス同士の関係性を表示することもできます。"
 
 #. Tag: term
 #: systemd.xml:1201
@@ -1764,9 +1829,10 @@ msgid ""
 "tell &systemd; to verbosely log the complete start-up procedure by entering "
 "the following parameters at the boot prompt:"
 msgstr ""
-"上述のコマンドを使用することで、起動されたサービスとそれらにかかった時間を知る"
-"ことができます。より詳しい状況を知りたい場合は、起動プロンプトのパラメータで、"
-" &systemd; に対して完全な起動処理のログを出力させるようにすることができます:"
+"上述のコマンドを使用することで、起動されたサービスとそれらにかかった時間を知"
+"ることができます。より詳しい状況を知りたい場合は、起動プロンプトのパラメータ"
+"で、 &systemd; に対して完全な起動処理のログを出力させるようにすることができま"
+"す:"
 
 #. Tag: screen
 #: systemd.xml:1256
@@ -1781,9 +1847,9 @@ msgid ""
 "Now &systemd; writes its log messages into the kernel ring buffer. View that "
 "buffer with <command>dmesg</command> :"
 msgstr ""
-"上記のパラメータ指定により、 &systemd; はカーネルのリングバッファにログメッセージを"
-"出力するようになります。リングバッファを表示するには、 <command>dmesg</command> を"
-"使用します:"
+"上記のパラメータ指定により、 &systemd; はカーネルのリングバッファにログメッ"
+"セージを出力するようになります。リングバッファを表示するには、 "
+"<command>dmesg</command> を使用します:"
 
 #. Tag: screen
 #: systemd.xml:1261
@@ -1808,13 +1874,13 @@ msgid ""
 "command> in init scripts will result in a failure of the script, producing "
 "an <quote>Access denied</quote> error."
 msgstr ""
-"systemd は System V との互換性があるため、既に System V init スクリプトが"
-"ある場合は、それらを使用することができます。ただし、 1 つだけ大きな問題があります。"
-"それは、 System V init スクリプトは、そのままでは動作しないという問題です。"
-" init スクリプト内で <command>su</command> や <command>sudo</command> を"
-"利用してユーザを切り替えてサービスを起動している場合、スクリプトの実行が失敗して"
-" <quote>Access denied</quote> (アクセスが拒否されました) というエラーを発生"
-"させてしまいます。"
+"systemd は System V との互換性があるため、既に System V init スクリプトがある"
+"場合は、それらを使用することができます。ただし、 1 つだけ大きな問題がありま"
+"す。それは、 System V init スクリプトは、そのままでは動作しないという問題で"
+"す。 init スクリプト内で <command>su</command> や <command>sudo</command> を"
+"利用してユーザを切り替えてサービスを起動している場合、スクリプトの実行が失敗"
+"して <quote>Access denied</quote> (アクセスが拒否されました) というエラーを発"
+"生させてしまいます。"
 
 #. Tag: para
 #: systemd.xml:1275
@@ -1826,10 +1892,11 @@ msgid ""
 "started by the init script will also be terminated. To work around this "
 "error, proceed as follows:"
 msgstr ""
-"<command>su</command> や <command>sudo</command> を利用してユーザを切り替える場合、"
-" PAM のセッションが起動されることになります。このセッションは init スクリプトが"
-"完了したときに終了されますので、 init スクリプトから開始されたサービスについても、"
-"終了してしまいます。このエラーを回避するには、下記のようにしてください:"
+"<command>su</command> や <command>sudo</command> を利用してユーザを切り替える"
+"場合、 PAM のセッションが起動されることになります。このセッションは init スク"
+"リプトが完了したときに終了されますので、 init スクリプトから開始されたサービ"
+"スについても、終了してしまいます。このエラーを回避するには、下記のようにして"
+"ください:"
 
 #. Tag: para
 #: systemd.xml:1284
@@ -1838,8 +1905,8 @@ msgid ""
 "Create a service file wrapper with the same name as the init script plus the "
 "file name extension <filename>.service</filename> :"
 msgstr ""
-"init スクリプトと同じ名前で、ファイル名の拡張子が <filename>.service</filename> "
-"になっているサービスラッパーファイルを作成します:"
+"init スクリプトと同じ名前で、ファイル名の拡張子が <filename>.service</"
+"filename> になっているサービスラッパーファイルを作成します:"
 
 #. Tag: screen
 #: systemd.xml:1288
@@ -1873,8 +1940,9 @@ msgstr ""
 "service_wrapper.type\" xrefstyle=\"select:label nopage\"/>\n"
 "ExecStart=<replaceable>init_スクリプトのパス</replaceable> start\n"
 "ExecStop=<replaceable>init_スクリプトのパス</replaceable> stop\n"
-"ExecStopPost=/usr/bin/rm -f <replaceable>PID_ファイルのパス</replaceable><xref "
-"linkend=\"co.service_wrapper.type\" xrefstyle=\"select:label nopage\"/>\n"
+"ExecStopPost=/usr/bin/rm -f <replaceable>PID_ファイルのパス</"
+"replaceable><xref linkend=\"co.service_wrapper.type\" xrefstyle=\"select:"
+"label nopage\"/>\n"
 "\n"
 "[Install]\n"
 "WantedBy=multi-user.target<co xml:id=\"co.service_wrapper.target\"/>"
@@ -1885,7 +1953,9 @@ msgstr ""
 msgid ""
 "Replace all values written in <replaceable>UPPERCASE LETTERS</replaceable> "
 "with appropriate values."
-msgstr "それぞれ <replaceable>日本語</replaceable> で書かれた箇所に必要な値を記入します。"
+msgstr ""
+"それぞれ <replaceable>日本語</replaceable> で書かれた箇所に必要な値を記入しま"
+"す。"
 
 #. Tag: para
 #: systemd.xml:1308
@@ -1902,9 +1972,9 @@ msgid ""
 "started when booting into the display manager, user <literal>graphical."
 "target</literal> here."
 msgstr ""
-"<literal>graphical.target</literal> で起動する場合、 <literal>multi-user.target</literal> "
-"で init スクリプトを起動します。ディスプレイマネージャを起動する場合にのみ"
-" init スクリプトを起動したい場合は、ここを <literal>graphical."
+"<literal>graphical.target</literal> で起動する場合、 <literal>multi-user."
+"target</literal> で init スクリプトを起動します。ディスプレイマネージャを起動"
+"する場合にのみ init スクリプトを起動したい場合は、ここを <literal>graphical."
 "target</literal> にします。"
 
 #. Tag: para
@@ -1914,8 +1984,8 @@ msgid ""
 "Start the daemon with <command>systemctl start <replaceable>APPLICATION</"
 "replaceable></command> ."
 msgstr ""
-"あとは <command>systemctl start <replaceable>アプリケーション</replaceable></command> "
-"でデーモンを開始するだけです。"
+"あとは <command>systemctl start <replaceable>アプリケーション</replaceable></"
+"command> でデーモンを開始するだけです。"
 
 #. Tag: title
 #: systemd.xml:1332
@@ -1933,10 +2003,10 @@ msgid ""
 "the &yast; module with <menuchoice> <guimenu>&yast;</guimenu> "
 "<guimenu>System</guimenu> <guimenu>&ycc_runlevel;</guimenu> </menuchoice> ."
 msgstr ""
-"基本的なサービス管理機能は、 &yast; &ycc_runlevel; モジュールでも実施することができます。"
-"サービスの開始や停止のほか、有効化や無効化も設定することができます。また、"
-"サービスの状態を表示したり、既定のターゲットを変更したりすることもできます。"
-"この &yast; モジュールは、 <menuchoice> <guimenu>&yast;</guimenu> "
+"基本的なサービス管理機能は、 &yast; &ycc_runlevel; モジュールでも実施すること"
+"ができます。サービスの開始や停止のほか、有効化や無効化も設定することができま"
+"す。また、サービスの状態を表示したり、既定のターゲットを変更したりすることも"
+"できます。この &yast; モジュールは、 <menuchoice> <guimenu>&yast;</guimenu> "
 "<guimenu>システム</guimenu> <guimenu>&ycc_runlevel;</guimenu> </menuchoice> "
 "で起動することができます。"
 
@@ -1962,11 +2032,11 @@ msgid ""
 "login screen) and <guimenu>Multi-User</guimenu> (starting the system in "
 "command line mode)."
 msgstr ""
-"システムを起動する際のターゲットを変更するには、 <guimenu>既定のシステムターゲット</guimenu> "
-"のプロップダウンボックスで、ターゲットを選択します。最もよく使用するのは"
-" <guimenu>グラフィカルインターフェイス</guimenu> (グラフィカルなログイン画面を"
-"表示するターゲット) と <guimenu>マルチユーザシステム</guimenu> (コマンドライン"
-"モードでのシステムの開始) です。"
+"システムを起動する際のターゲットを変更するには、 <guimenu>既定のシステムター"
+"ゲット</guimenu> のプロップダウンボックスで、ターゲットを選択します。最もよく"
+"使用するのは <guimenu>グラフィカルインターフェイス</guimenu> (グラフィカルな"
+"ログイン画面を表示するターゲット) と <guimenu>マルチユーザシステム</guimenu> "
+"(コマンドラインモードでのシステムの開始) です。"
 
 #. Tag: term
 #: systemd.xml:1369
@@ -1984,9 +2054,10 @@ msgid ""
 "<guimenu>Start/Stop</guimenu> ."
 msgstr ""
 "一覧からサービスを選択します。このとき、 <guimenu>実行中</guimenu> の列には、"
-"現在動作中かどうかが表示されます ( <guimenu>実行中</guimenu> であれば動作中、"
-" <guimenu>停止</guimenu> であれば停止していることを表わします) 。開始または"
-"停止を行なうには、サービスを選択したあと <guimenu>開始／停止</guimenu> ボタンを押します。"
+"現在動作中かどうかが表示されます ( <guimenu>実行中</guimenu> であれば動作"
+"中、 <guimenu>停止</guimenu> であれば停止していることを表わします) 。開始また"
+"は停止を行なうには、サービスを選択したあと <guimenu>開始／停止</guimenu> ボタ"
+"ンを押します。"
 
 #. Tag: para
 #: systemd.xml:1377
@@ -1996,8 +2067,9 @@ msgid ""
 "session. To change its status throughout a reboot, you need to enable or "
 "disable it."
 msgstr ""
-"サービスの開始または停止は、現時点での変更のみに影響します。システムを再起動した際に"
-"開始または停止を行ないたい場合は、有効化または無効化を実施してください。"
+"サービスの開始または停止は、現時点での変更のみに影響します。システムを再起動"
+"した際に開始または停止を行ないたい場合は、有効化または無効化を実施してくださ"
+"い。"
 
 #. Tag: term
 #: systemd.xml:1385
@@ -2013,10 +2085,11 @@ msgid ""
 "whether it is currently <guimenu>Enabled</guimenu> or <guimenu>Disabled</"
 "guimenu> . Toggle its status by choosing <guimenu>Enable/Disable</guimenu> ."
 msgstr ""
-"一覧からサービスを選択します。このとき、 <guimenu>有効</guimenu> の列には、"
-"現在有効化されているかどうかが表示されます (<guimenu>有効</guimenu> であれば有効化"
-"されていて、 <guimenu>無効</guimenu> であれば無効化されています) 。有効化または"
-"無効化を行なうには、サービスを選択したあと <guimenu>有効／無効</guimenu> ボタンを押します。"
+"一覧からサービスを選択します。このとき、 <guimenu>有効</guimenu> の列には、現"
+"在有効化されているかどうかが表示されます (<guimenu>有効</guimenu> であれば有"
+"効化されていて、 <guimenu>無効</guimenu> であれば無効化されています) 。有効化"
+"または無効化を行なうには、サービスを選択したあと <guimenu>有効／無効</"
+"guimenu> ボタンを押します。"
 
 #. Tag: para
 #: systemd.xml:1393
@@ -2027,10 +2100,10 @@ msgid ""
 "guimenu> ). This setting will not affect the current session. To change its "
 "status in the current session, you need to start or stop it."
 msgstr ""
-"サービスの有効化と無効化は、システムの起動時に開始されるかどうかに影響する"
-" (<guimenu>有効</guimenu> になっていれば開始され、 <guimenu>無効</guimenu> になっていれば"
-"開始されません) だけで、現時点では開始または停止されません。すぐに開始または停止"
-"したい場合は、開始／停止を行なってください。"
+"サービスの有効化と無効化は、システムの起動時に開始されるかどうかに影響する "
+"(<guimenu>有効</guimenu> になっていれば開始され、 <guimenu>無効</guimenu> に"
+"なっていれば開始されません) だけで、現時点では開始または停止されません。すぐ"
+"に開始または停止したい場合は、開始／停止を行なってください。"
 
 #. Tag: term
 #: systemd.xml:1403
@@ -2047,9 +2120,10 @@ msgid ""
 "the one generated by the command <command>systemctl</command> <option>-l</"
 "option> status <replaceable>MY_SERVICE</replaceable> ."
 msgstr ""
-"サービスの状態メッセージを表示するには、一覧からサービスを選んで <guimenu>詳細の表示</guimenu> "
-"を押します。表示される内容は、 <command>systemctl</command> <option>-l</"
-"option> status <replaceable>サービス名</replaceable> と同じ内容になります。"
+"サービスの状態メッセージを表示するには、一覧からサービスを選んで <guimenu>詳"
+"細の表示</guimenu> を押します。表示される内容は、 <command>systemctl</"
+"command> <option>-l</option> status <replaceable>サービス名</replaceable> と"
+"同じ内容になります。"
 
 #. Tag: title
 #: systemd.xml:1417
@@ -2064,8 +2138,8 @@ msgid ""
 "Faulty runlevel settings may make your system unusable. Before applying your "
 "changes, make absolutely sure that you know their consequences."
 msgstr ""
-"ランレベルの設定を誤ってしまうと、お使いのシステムが利用できなくなってしまう場合があります。"
-"変更点を適用する前に、何が起こるのかをよくお確かめください。"
+"ランレベルの設定を誤ってしまうと、お使いのシステムが利用できなくなってしまう"
+"場合があります。変更点を適用する前に、何が起こるのかをよくお確かめください。"
 
 #. Tag: title
 #: systemd.xml:1425
@@ -2080,8 +2154,8 @@ msgid ""
 "The following sections contain some examples for <systemitem>systemd</"
 "systemitem> customization."
 msgstr ""
-"下記の章では、 <systemitem>systemd</systemitem> のカスタマイズを行なうに"
-"あたっての例をいくつか示しています。"
+"下記の章では、 <systemitem>systemd</systemitem> のカスタマイズを行なうにあ"
+"たっての例をいくつか示しています。"
 
 #. Tag: title
 #: systemd.xml:1433
@@ -2097,10 +2171,11 @@ msgid ""
 "<emphasis>never</emphasis> in <filename>/usr/lib/systemd/</filename> . "
 "Otherwise your changes will be overwritten by the next update of systemd."
 msgstr ""
-"systemd のカスタマイズは <filename>/etc/systemd/</filename> 内で行なうものとし、"
-" <emphasis>決して</emphasis> <filename>/usr/lib/systemd/</filename> 内では"
-"行なわないでください。 <filename>/usr/lib/systemd/</filename> でカスタマイズを"
-"行なってしまうと、次回の systemd の更新でそれらが上書きされて消えてしまいます。"
+"systemd のカスタマイズは <filename>/etc/systemd/</filename> 内で行なうものと"
+"し、 <emphasis>決して</emphasis> <filename>/usr/lib/systemd/</filename> 内で"
+"は行なわないでください。 <filename>/usr/lib/systemd/</filename> でカスタマイ"
+"ズを行なってしまうと、次回の systemd の更新でそれらが上書きされて消えてしまい"
+"ます。"
 
 #. Tag: title
 #: systemd.xml:1442
@@ -2115,8 +2190,8 @@ msgid ""
 "The systemd unit files are located in <filename>/usr/lib/systemd/system</"
 "filename> . If you want to customize them, proceed as follows:"
 msgstr ""
-"systemd のユニットファイルは <filename>/usr/lib/systemd/system</filename> "
-"内に配置されます。カスタマイズを実施したい場合は、下記の手順で実施します:"
+"systemd のユニットファイルは <filename>/usr/lib/systemd/system</filename> 内"
+"に配置されます。カスタマイズを実施したい場合は、下記の手順で実施します:"
 
 #. Tag: para
 #: systemd.xml:1450
@@ -2126,9 +2201,9 @@ msgid ""
 "filename> to <filename>/etc/systemd/system</filename> . Keep the file names "
 "identical to the original ones."
 msgstr ""
-"まずは <filename>/usr/lib/systemd/system</filename> にあるファイルを <filename>"
-"/etc/systemd/system</filename> にコピーします。ファイル名は変更せず、元のままに"
-"しておいてください。"
+"まずは <filename>/usr/lib/systemd/system</filename> にあるファイルを "
+"<filename>/etc/systemd/system</filename> にコピーします。ファイル名は変更せ"
+"ず、元のままにしておいてください。"
 
 #. Tag: para
 #: systemd.xml:1458
@@ -2136,7 +2211,9 @@ msgstr ""
 msgid ""
 "Modify the copies in <filename>/etc/systemd/system</filename> according to "
 "your needs."
-msgstr "あとは必要に応じて <filename>/etc/systemd/system</filename> 内のコピーを編集します。"
+msgstr ""
+"あとは必要に応じて <filename>/etc/systemd/system</filename> 内のコピーを編集"
+"します。"
 
 #. Tag: para
 #: systemd.xml:1464
@@ -2147,9 +2224,9 @@ msgid ""
 "that override other configuration files. For details, refer to the "
 "<command>systemd-delta</command> man page."
 msgstr ""
-"変更した設定の概要を知るには、 <command>systemd-delta</command> コマンドを使用します。"
-"このコマンドは設定ファイル同士を比較する機能を提供します。詳しくは"
-" <command>systemd-delta</command> のマニュアルページをお読みください。"
+"変更した設定の概要を知るには、 <command>systemd-delta</command> コマンドを使"
+"用します。このコマンドは設定ファイル同士を比較する機能を提供します。詳しくは "
+"<command>systemd-delta</command> のマニュアルページをお読みください。"
 
 #. Tag: para
 #: systemd.xml:1472
@@ -2159,9 +2236,9 @@ msgid ""
 "over the original files in <filename>/usr/lib/systemd/system</filename> , "
 "provided that their file name is the same."
 msgstr ""
-"なお、 <filename>/etc/systemd</filename> に配置されたファイルは、"
-" <filename>/usr/lib/systemd/system</filename> に配置されているファイルよりも"
-"優先して読み込まれます。ただし、ファイル名が同じでなければなりません。"
+"なお、 <filename>/etc/systemd</filename> に配置されたファイルは、 <filename>/"
+"usr/lib/systemd/system</filename> に配置されているファイルよりも優先して読み"
+"込まれます。ただし、ファイル名が同じでなければなりません。"
 
 #. Tag: title
 #: systemd.xml:1479
@@ -2178,9 +2255,10 @@ msgid ""
 "existing custom <systemitem>xinetd</systemitem> service files to &systemd; "
 "sockets."
 msgstr ""
-"&productname; 15 のリリース以降では、 <systemitem>xinetd</systemitem> のインフラストラクチャ"
-"が削除されています。この章では、独自の <systemitem>xinetd</systemitem> サービス"
-"ファイルを &systemd; のソケットファイルに変換する方法を説明しています。"
+"&productname; 15 のリリース以降では、 <systemitem>xinetd</systemitem> のイン"
+"フラストラクチャが削除されています。この章では、独自の <systemitem>xinetd</"
+"systemitem> サービスファイルを &systemd; のソケットファイルに変換する方法を説"
+"明しています。"
 
 #. Tag: para
 #: systemd.xml:1486
@@ -2193,16 +2271,20 @@ msgid ""
 "&systemd; which executable to start."
 msgstr ""
 "それぞれの <systemitem>xinetd</systemitem> サービスファイルに対して、 2 つの"
-"&systemd; ユニットファイルが必要になります。 1 つはソケットファイル ( <filename>*.socket</filename> ) "
-"で、もう 1 つはサービスファイル ( <filename>*.service</filename> ) になります。"
-"ソケットファイルでは &systemd; に対して、作成すべきソケットを指示し、サービスファイル"
-"では起動すべきプログラムを指定しています。"
+"&systemd; ユニットファイルが必要になります。 1 つはソケットファイル "
+"( <filename>*.socket</filename> ) で、もう 1 つはサービスファイル "
+"( <filename>*.service</filename> ) になります。ソケットファイルでは "
+"&systemd; に対して、作成すべきソケットを指示し、サービスファイルでは起動すべ"
+"きプログラムを指定しています。"
 
 #. Tag: para
 #: systemd.xml:1493
 #, no-c-format
-msgid "Consider the following example <systemitem>xinetd</systemitem> service file:"
-msgstr "たとえば下記のような <systemitem>xinetd</systemitem> サービスファイルがあるものとします:"
+msgid ""
+"Consider the following example <systemitem>xinetd</systemitem> service file:"
+msgstr ""
+"たとえば下記のような <systemitem>xinetd</systemitem> サービスファイルがあるも"
+"のとします:"
 
 #. Tag: screen
 #: systemd.xml:1497
@@ -2296,10 +2378,10 @@ msgid ""
 "refer to the systemd.socket and systemd.service manual pages ( <command>man "
 "5 systemd.socket</command> , <command>man 5 systemd.service</command> )."
 msgstr ""
-"&systemd; の 'ソケット' および 'サービス' ファイルの完全なオプションを知りたい"
-"場合は、それぞれ systemd.socket と systemd.service のマニュアルページを"
-"お読みください (<command>man 5 systemd.socket</command> ,"
-" <command>man 5 systemd.service</command>) 。"
+"&systemd; の 'ソケット' および 'サービス' ファイルの完全なオプションを知りた"
+"い場合は、それぞれ systemd.socket と systemd.service のマニュアルページをお読"
+"みください (<command>man 5 systemd.socket</command> , <command>man 5 systemd."
+"service</command>) 。"
 
 #. Tag: title
 #: systemd.xml:1540
@@ -2316,10 +2398,10 @@ msgid ""
 "in files let you extend the configuration of unit files without having to "
 "edit or override the unit files themselves."
 msgstr ""
-"設定ファイルに対して数行程度を追加もしくは編集したい場合は、 <quote>ドロップ・"
-"イン</quote> ファイルと呼ばれる仕組みを使用することができます。ドロップ・イン"
-"ファイルは、ユニットファイルを編集したり、ユニットファイル全体を上書きしたり"
-"することなく、拡張できる仕組みを提供します。"
+"設定ファイルに対して数行程度を追加もしくは編集したい場合は、 <quote>ドロッ"
+"プ・イン</quote> ファイルと呼ばれる仕組みを使用することができます。ドロップ・"
+"インファイルは、ユニットファイルを編集したり、ユニットファイル全体を上書きし"
+"たりすることなく、拡張できる仕組みを提供します。"
 
 #. Tag: para
 #: systemd.xml:1547
@@ -2329,19 +2411,19 @@ msgid ""
 "service located in <filename>/usr/lib/systemd/system/<replaceable>FOOBAR."
 "SERVICE</replaceable></filename> , proceed as follows:"
 msgstr ""
-"たとえば <filename>/usr/lib/systemd/system/<replaceable>FOOBAR.SERVICE</replaceable></filename> "
-"というファイル名の <replaceable>FOOBAR</replaceable> サービスのうち、 1 つの値だけを"
-"変更したい場合は、下記のようにして行ないます:"
+"たとえば <filename>/usr/lib/systemd/system/<replaceable>FOOBAR.SERVICE</"
+"replaceable></filename> というファイル名の <replaceable>FOOBAR</replaceable> "
+"サービスのうち、 1 つの値だけを変更したい場合は、下記のようにして行ないます:"
 
 #. Tag: para
 #: systemd.xml:1555
-#, no-c-format
+#, fuzzy, no-c-format
 msgid ""
-"Create a directory called <filename>/etc/systemd/system/"
-"<replaceable>MY_SERVICE</replaceable>.service.d/</filename> ."
+"Create a directory called <filename>/etc/systemd/system/<replaceable>FOOBAR</"
+"replaceable>.service.d/</filename> ."
 msgstr ""
-"<filename>/etc/systemd/system/<replaceable>MY_SERVICE</replaceable>.service.d/</filename> "
-"というディレクトリを作成します。"
+"<filename>/etc/systemd/system/<replaceable>MY_SERVICE</replaceable>.service."
+"d/</filename> というディレクトリを作成します。"
 
 #. Tag: para
 #: systemd.xml:1559
@@ -2350,8 +2432,9 @@ msgid ""
 "Note the <literal>.d</literal> suffix. The directory must otherwise be named "
 "like the service that you want to patch with the drop-in file."
 msgstr ""
-"ここで、 <literal>.d</literal> という接尾辞に注意してください。このような名前を設定"
-"することで、ドロップ・インファイルでサービスに対する修正を行なう旨を宣言します。"
+"ここで、 <literal>.d</literal> という接尾辞に注意してください。このような名前"
+"を設定することで、ドロップ・インファイルでサービスに対する修正を行なう旨を宣"
+"言します。"
 
 #. Tag: para
 #: systemd.xml:1565
@@ -2360,14 +2443,14 @@ msgid ""
 "In that directory, create a file "
 "<filename><replaceable>WHATEVERMODIFICATION</replaceable>.conf</filename> ."
 msgstr ""
-"上記のディレクトリ内に"
-" <filename><replaceable>WHATEVERMODIFICATION</replaceable>.conf</filename> "
-"というファイルを作成します。"
+"上記のディレクトリ内に <filename><replaceable>WHATEVERMODIFICATION</"
+"replaceable>.conf</filename> というファイルを作成します。"
 
 #. Tag: para
 #: systemd.xml:1569
 #, no-c-format
-msgid "Make sure it only contains the line with the value that you want to modify."
+msgid ""
+"Make sure it only contains the line with the value that you want to modify."
 msgstr "上記のファイルに、変更したい値の行を記述します。"
 
 #. Tag: para
@@ -2377,8 +2460,8 @@ msgid ""
 "Save your changes to the file. It will be used as an extension of the "
 "original file."
 msgstr ""
-"あとはファイルを保存するだけです。これで、オリジナルのファイルに対する拡張"
-"として動作するようになります。"
+"あとはファイルを保存するだけです。これで、オリジナルのファイルに対する拡張と"
+"して動作するようになります。"
 
 #. Tag: title
 #: systemd.xml:1584
@@ -2396,11 +2479,11 @@ msgid ""
 "adapting an existing target such as <systemitem>graphical.target</"
 "systemitem> ."
 msgstr ""
-"System V init の &suse; システムでは、ランレベル 4 は未使用で、管理者が"
-"独自のランレベル設定を作成できるようになっていました。 systemd では、"
-"必要に応じて任意の数のターゲットを作成することができます。作成するに"
-"あたっては、 <systemitem>graphical.target</systemitem> などの既存の"
-"ターゲットから始めることをお勧めします。"
+"System V init の &suse; システムでは、ランレベル 4 は未使用で、管理者が独自の"
+"ランレベル設定を作成できるようになっていました。 systemd では、必要に応じて任"
+"意の数のターゲットを作成することができます。作成するにあたっては、 "
+"<systemitem>graphical.target</systemitem> などの既存のターゲットから始めるこ"
+"とをお勧めします。"
 
 #. Tag: para
 #: systemd.xml:1594
@@ -2410,9 +2493,9 @@ msgid ""
 "target</filename> to <filename>/etc/systemd/system/<replaceable>MY_TARGET</"
 "replaceable>.target</filename> and adjust it according to your needs."
 msgstr ""
-"まずは設定ファイル <filename>/usr/lib/systemd/system/graphical.target</filename> "
-"を <filename>/etc/systemd/system/<replaceable>ターゲット名</replaceable>.target</filename> "
-"にコピーして、必要な編集を施します。"
+"まずは設定ファイル <filename>/usr/lib/systemd/system/graphical.target</"
+"filename> を <filename>/etc/systemd/system/<replaceable>ターゲット名</"
+"replaceable>.target</filename> にコピーして、必要な編集を施します。"
 
 #. Tag: para
 #: systemd.xml:1602
@@ -2424,10 +2507,10 @@ msgid ""
 "<filename>/etc/systemd/system/<replaceable>MY_TARGET</replaceable>.target."
 "wants</filename> ."
 msgstr ""
-"上記の手順でコピーしたファイルには、ターゲットに対する必須の ( <quote>ハード</quote> ) "
-"依存関係が既に設定されています。 <quote>ソフト</quote> 依存関係を設定したい"
-"場合は、まず <filename>/etc/systemd/system/<replaceable>ターゲット名</replaceable>.target."
-"wants</filename> ディレクトリを作成してください。"
+"上記の手順でコピーしたファイルには、ターゲットに対する必須の ( <quote>ハード"
+"</quote> ) 依存関係が既に設定されています。 <quote>ソフト</quote> 依存関係を"
+"設定したい場合は、まず <filename>/etc/systemd/system/<replaceable>ターゲット"
+"名</replaceable>.target.wants</filename> ディレクトリを作成してください。"
 
 #. Tag: para
 #: systemd.xml:1610
@@ -2437,9 +2520,9 @@ msgid ""
 "systemd/system</filename> into <filename>/etc/systemd/system/"
 "<replaceable>MY_TARGET</replaceable>.target.wants</filename> ."
 msgstr ""
-"ソフト依存関係を設定するには、 <filename>/usr/lib/"
-"systemd/system</filename> 内から <filename>/etc/systemd/system/"
-"<replaceable>MY_TARGET</replaceable>.target.wants</filename> にシンボリックリンクを作成します。"
+"ソフト依存関係を設定するには、 <filename>/usr/lib/systemd/system</filename> "
+"内から <filename>/etc/systemd/system/<replaceable>MY_TARGET</replaceable>."
+"target.wants</filename> にシンボリックリンクを作成します。"
 
 #. Tag: para
 #: systemd.xml:1617
@@ -2448,8 +2531,8 @@ msgid ""
 "When you have finished setting up the target, reload the systemd "
 "configuration to make the new target available:"
 msgstr ""
-"ターゲットの設定が終わったら、 systemd の設定を再読み込みし、新しい"
-"ターゲットが利用できるようにします:"
+"ターゲットの設定が終わったら、 systemd の設定を再読み込みし、新しいターゲット"
+"が利用できるようにします:"
 
 #. Tag: title
 #: systemd.xml:1627
@@ -2467,9 +2550,9 @@ msgid ""
 "\"http://0pointer.de/blog/projects\"/> ."
 msgstr ""
 "下記の章では、システム管理者向けの高度な使い方を説明しています。さらに高度な"
-"ドキュメンテーションについては、 Lennart Pöttering 氏による管理者向け"
-"ドキュメンテーション <link xlink:href=\"http://0pointer.de/blog/projects\"/> を"
-"お読みください。"
+"ドキュメンテーションについては、 Lennart Pöttering 氏による管理者向けドキュメ"
+"ンテーション <link xlink:href=\"http://0pointer.de/blog/projects\"/> をお読み"
+"ください。"
 
 #. Tag: title
 #: systemd.xml:1637
@@ -2491,15 +2574,16 @@ msgid ""
 "configurations from the other two directories ( <filename>/usr/lib/tmpfiles."
 "d/*.conf</filename> is where packages store their configuration files)."
 msgstr ""
-"&systemd; では、一時 (テンポラリ) ディレクトリを定期的にクリーニングする"
-"機能が用意されています。また、以前のバージョンのシステムに存在していた設定は、"
-"自動的に移行され有効化されます。 <literal>tmpfiles.d</literal> という一時"
-"ディレクトリの管理用ファイル、具体的には <filename>/etc/tmpfiles.d/*.conf</filename> ,"
-" <filename>/run/tmpfiles.d/*.conf</filename> , <filename>/usr/lib/tmpfiles.d/*.conf</filename> "
-"の各設定ファイルを利用しています。 <filename>/etc/tmpfiles.d/*.conf</filename> "
-"内にある設定は、残りの 2 つのディレクトリの設定を上書きするために用意されている"
-"ディレクトリです (通常は <filename>/usr/lib/tmpfiles.d/*.conf</filename> 内に"
-"パッケージ側の設定ファイルが配置されます) 。"
+"&systemd; では、一時 (テンポラリ) ディレクトリを定期的にクリーニングする機能"
+"が用意されています。また、以前のバージョンのシステムに存在していた設定は、自"
+"動的に移行され有効化されます。 <literal>tmpfiles.d</literal> という一時ディレ"
+"クトリの管理用ファイル、具体的には <filename>/etc/tmpfiles.d/*.conf</"
+"filename> , <filename>/run/tmpfiles.d/*.conf</filename> , <filename>/usr/lib/"
+"tmpfiles.d/*.conf</filename> の各設定ファイルを利用しています。 <filename>/"
+"etc/tmpfiles.d/*.conf</filename> 内にある設定は、残りの 2 つのディレクトリの"
+"設定を上書きするために用意されているディレクトリです (通常は <filename>/usr/"
+"lib/tmpfiles.d/*.conf</filename> 内にパッケージ側の設定ファイルが配置されま"
+"す) 。"
 
 #. Tag: para
 #: systemd.xml:1651
@@ -2549,13 +2633,17 @@ msgid ""
 msgstr ""
 "&prompt.sudo;systemctl status systemd-tmpfiles-clean.timer\n"
 "systemd-tmpfiles-clean.timer - Daily Cleanup of Temporary Directories\n"
-" Loaded: loaded (/usr/lib/systemd/system/systemd-tmpfiles-clean.timer; static)\n"
-" Active: active (waiting) since Tue 2018-04-09 15:30:36 CEST; 1 weeks 6 days ago\n"
+" Loaded: loaded (/usr/lib/systemd/system/systemd-tmpfiles-clean.timer; "
+"static)\n"
+" Active: active (waiting) since Tue 2018-04-09 15:30:36 CEST; 1 weeks 6 days "
+"ago\n"
 "   Docs: man:tmpfiles.d(5)\n"
 "         man:systemd-tmpfiles(8)\n"
 "\n"
-"Apr 09 15:30:36 &wsI; systemd[1]: Starting Daily Cleanup of Temporary Directories.\n"
-"Apr 09 15:30:36 &wsI; systemd[1]: Started Daily Cleanup of Temporary Directories."
+"Apr 09 15:30:36 &wsI; systemd[1]: Starting Daily Cleanup of Temporary "
+"Directories.\n"
+"Apr 09 15:30:36 &wsI; systemd[1]: Started Daily Cleanup of Temporary "
+"Directories."
 
 #. Tag: para
 #: systemd.xml:1670
@@ -2564,8 +2652,8 @@ msgid ""
 "For more information on temporary files handling, see <command>man 5 "
 "tmpfiles.d</command> ."
 msgstr ""
-"一時ファイルの処理方法について、より詳しく知るには <command>man 5 "
-"tmpfiles.d</command> をお読みください。"
+"一時ファイルの処理方法について、より詳しく知るには <command>man 5 tmpfiles."
+"d</command> をお読みください。"
 
 #. Tag: title
 #: systemd.xml:1677
@@ -2589,12 +2677,12 @@ msgstr ""
 "<xref linkend=\"sec.boot.systemd.basics.services_debugging\"/> では、特定の"
 "サービスに対してログメッセージを閲覧する方法を説明しています。しかしながら、"
 "ログメッセージはサービスに限ったものではありません。 &systemd; 自身が生成した"
-"完全なログメッセージにアクセスしたり、それを検索したりすることもできます。"
-" &systemd; では、ログメッセージを総称して <quote>ジャーナル</quote> と読んでいます。"
-" <command>systemd-journalctl</command> コマンドを使用すると、最も古い記録から"
-"順に完全なログメッセージを表示することができます。フィルタの適用や出力形式の"
-"変更など、様々なオプションについては、 <command>man 1 systemd-journalctl</command> "
-"をお読みください。"
+"完全なログメッセージにアクセスしたり、それを検索したりすることもできます。 "
+"&systemd; では、ログメッセージを総称して <quote>ジャーナル</quote> と読んでい"
+"ます。 <command>systemd-journalctl</command> コマンドを使用すると、最も古い記"
+"録から順に完全なログメッセージを表示することができます。フィルタの適用や出力"
+"形式の変更など、様々なオプションについては、 <command>man 1 systemd-"
+"journalctl</command> をお読みください。"
 
 #. Tag: title
 #: systemd.xml:1692
@@ -2613,13 +2701,13 @@ msgid ""
 "session and will automatically be deleted on reboot. A snapshot name must "
 "end in <filename>.snapshot</filename> ."
 msgstr ""
-"&systemd; では、現在の状態を名前付きのスナップショットとして保存し、後から"
-" <command>isolate</command> サブコマンドで復元できる機能が用意されています。"
-"これは、任意の時点の状態にいつでも戻れるという機能から、サービスや独自の"
-"ターゲットをテストする際に便利な機能です。ただし、スナップショットは現在の"
-"セッションに対してのみ有効で、システムを再起動すると自動的に削除されます。"
-"また、スナップショットの名前は <filename>.snapshot</filename> で終わらなければ"
-"なりません。"
+"&systemd; では、現在の状態を名前付きのスナップショットとして保存し、後から "
+"<command>isolate</command> サブコマンドで復元できる機能が用意されています。こ"
+"れは、任意の時点の状態にいつでも戻れるという機能から、サービスや独自のター"
+"ゲットをテストする際に便利な機能です。ただし、スナップショットは現在のセッ"
+"ションに対してのみ有効で、システムを再起動すると自動的に削除されます。また、"
+"スナップショットの名前は <filename>.snapshot</filename> で終わらなければなり"
+"ません。"
 
 #. Tag: term
 #: systemd.xml:1703
@@ -2633,7 +2721,9 @@ msgstr "スナップショットの作成"
 msgid ""
 "&prompt.sudo;systemctl snapshot <replaceable>MY_SNAPSHOT</replaceable>."
 "snapshot"
-msgstr "&prompt.sudo;systemctl snapshot <replaceable>スナップショット名</replaceable>.snapshot"
+msgstr ""
+"&prompt.sudo;systemctl snapshot <replaceable>スナップショット名</"
+"replaceable>.snapshot"
 
 #. Tag: term
 #: systemd.xml:1709
@@ -2644,8 +2734,11 @@ msgstr "スナップショットの削除"
 #. Tag: screen
 #: systemd.xml:1711
 #, no-c-format
-msgid "&prompt.sudo;systemctl delete <replaceable>MY_SNAPSHOT</replaceable>.snapshot"
-msgstr "&prompt.sudo;systemctl delete <replaceable>スナップショット名</replaceable>.snapshot"
+msgid ""
+"&prompt.sudo;systemctl delete <replaceable>MY_SNAPSHOT</replaceable>.snapshot"
+msgstr ""
+"&prompt.sudo;systemctl delete <replaceable>スナップショット名</replaceable>."
+"snapshot"
 
 #. Tag: term
 #: systemd.xml:1715
@@ -2656,8 +2749,11 @@ msgstr "スナップショットの表示"
 #. Tag: screen
 #: systemd.xml:1717
 #, no-c-format
-msgid "&prompt.sudo;systemctl show <replaceable>MY_SNAPSHOT</replaceable>.snapshot"
-msgstr "&prompt.sudo;systemctl show <replaceable>スナップショット名</replaceable>.snapshot"
+msgid ""
+"&prompt.sudo;systemctl show <replaceable>MY_SNAPSHOT</replaceable>.snapshot"
+msgstr ""
+"&prompt.sudo;systemctl show <replaceable>スナップショット名</replaceable>."
+"snapshot"
 
 #. Tag: term
 #: systemd.xml:1721
@@ -2671,7 +2767,9 @@ msgstr "スナップショットの適用"
 msgid ""
 "&prompt.sudo;systemctl isolate <replaceable>MY_SNAPSHOT</replaceable>."
 "snapshot"
-msgstr "&prompt.sudo;systemctl isolate <replaceable>スナップショット名</replaceable>.snapshot"
+msgstr ""
+"&prompt.sudo;systemctl isolate <replaceable>スナップショット名</replaceable>."
+"snapshot"
 
 #. Tag: para
 #: systemd.xml:1735
@@ -2682,10 +2780,10 @@ msgid ""
 "should be named <replaceable>MODULE</replaceable> .conf and have the "
 "following content:"
 msgstr ""
-"&systemd; では、 <filename>/etc/modules-load.d</filename> 内に存在する設定ファイルに"
-"従って、システムの起動時に自動的にカーネルモジュールを読み込みます。ファイル名は"
-" <replaceable>モジュール名</replaceable>.conf という名前でなければならず、"
-"下記のような内容を記述します:"
+"&systemd; では、 <filename>/etc/modules-load.d</filename> 内に存在する設定"
+"ファイルに従って、システムの起動時に自動的にカーネルモジュールを読み込みま"
+"す。ファイル名は <replaceable>モジュール名</replaceable>.conf という名前でな"
+"ければならず、下記のような内容を記述します:"
 
 #. Tag: screen
 #: systemd.xml:1741
@@ -2706,10 +2804,11 @@ msgid ""
 "two configuration files with the same name exist, the one in <filename>/etc/"
 "modules-load.d</filename> tales precedence."
 msgstr ""
-"特定のパッケージが、カーネルモジュールを読み込ませるために設定ファイルをインストールすると、"
-"そのファイルは <filename>/usr/lib/modules-load.d</filename> 内に保存されます。"
-"また、同じ名前の設定ファイルが <filename>/etc/modules-load.d</filename> 内にも"
-"存在すると、 <filename>/etc/modules-load.d</filename> 内に存在するもののほうが優先的に処理されます。"
+"特定のパッケージが、カーネルモジュールを読み込ませるために設定ファイルをイン"
+"ストールすると、そのファイルは <filename>/usr/lib/modules-load.d</filename> "
+"内に保存されます。また、同じ名前の設定ファイルが <filename>/etc/modules-load."
+"d</filename> 内にも存在すると、 <filename>/etc/modules-load.d</filename> 内に"
+"存在するもののほうが優先的に処理されます。"
 
 #. Tag: para
 #: systemd.xml:1750
@@ -2717,7 +2816,9 @@ msgstr ""
 msgid ""
 "For more information, see the <systemitem>modules-load.d(5)</systemitem> man "
 "page."
-msgstr "詳しくは <systemitem>modules-load.d(5)</systemitem> のマニュアルページをお読みください。"
+msgstr ""
+"詳しくは <systemitem>modules-load.d(5)</systemitem> のマニュアルページをお読"
+"みください。"
 
 #. Tag: title
 #: systemd.xml:1759
@@ -2734,9 +2835,9 @@ msgid ""
 "filename> . This procedure is no longer supported with systemd. If you need "
 "to do actions before starting services, do the following:"
 msgstr ""
-"System V init では、サービスを読み込む際に何らかの処理を行なう必要がある場合、"
-"<filename>/etc/init.d/before.local</filename> 内に記述を行なっていました。"
-" systemd ではこのようなファイルには対応していませんが、サービスの開始前に"
+"System V init では、サービスを読み込む際に何らかの処理を行なう必要がある場"
+"合、<filename>/etc/init.d/before.local</filename> 内に記述を行なっていまし"
+"た。 systemd ではこのようなファイルには対応していませんが、サービスの開始前に"
 "何らかの処理をする必要がある場合は、下記のようにして行ないます:"
 
 #. Tag: term
@@ -2752,14 +2853,17 @@ msgid ""
 "Create a drop-in file in <filename>/etc/modules-load.d</filename> directory "
 "(see <command>man modules-load.d</command> for the syntax)"
 msgstr ""
-"<filename>/etc/modules-load.d</filename> ディレクトリ内にドロップ・インファイル"
-"を作成します (書式については <command>man modules-load.d</command> をお読みください) 。"
+"<filename>/etc/modules-load.d</filename> ディレクトリ内にドロップ・インファイ"
+"ルを作成します (書式については <command>man modules-load.d</command> をお読み"
+"ください) 。"
 
 #. Tag: term
 #: systemd.xml:1777
 #, no-c-format
-msgid "Creating Files or Directories, Cleaning-up Directories, Changing Ownership"
-msgstr "ファイルやディレクトリの作成／ディレクトリのクリーンアップ／所有者の変更"
+msgid ""
+"Creating Files or Directories, Cleaning-up Directories, Changing Ownership"
+msgstr ""
+"ファイルやディレクトリの作成／ディレクトリのクリーンアップ／所有者の変更"
 
 #. Tag: para
 #: systemd.xml:1782
@@ -2768,8 +2872,9 @@ msgid ""
 "Create a drop-in file in <filename>/etc/tmpfiles.d</filename> (see "
 "<command>man tmpfiles.d</command> for the syntax)"
 msgstr ""
-"<filename>/etc/tmpfiles.d</filename> ディレクトリ内にドロップ・インファイル"
-"を作成します (書式については <command>man tmpfiles.d</command> をお読みください) 。"
+"<filename>/etc/tmpfiles.d</filename> ディレクトリ内にドロップ・インファイルを"
+"作成します (書式については <command>man tmpfiles.d</command> をお読みくださ"
+"い) 。"
 
 #. Tag: term
 #: systemd.xml:1789
@@ -2784,8 +2889,8 @@ msgid ""
 "Create a system service file, for example <filename>/etc/systemd/system/"
 "before.service</filename> , from the following template:"
 msgstr ""
-"下記のようにしてシステムサービスファイルを作成します (たとえば <filename>"
-"/etc/systemd/system/before.service</filename> という名前で作成します):"
+"下記のようにしてシステムサービスファイルを作成します (たとえば <filename>/"
+"etc/systemd/system/before.service</filename> という名前で作成します):"
 
 #. Tag: screen
 #: systemd.xml:1796
@@ -2826,8 +2931,8 @@ msgid ""
 "When the service file is created, you should run the following commands (as "
 "&rootuser;):"
 msgstr ""
-"サービスファイルを作成したら、後は下記のコマンドを実行します (&rootuser; で"
-"実行します):"
+"サービスファイルを作成したら、後は下記のコマンドを実行します (&rootuser; で実"
+"行します):"
 
 #. Tag: screen
 #: systemd.xml:1812
@@ -2871,9 +2976,9 @@ msgstr ""
 "従来の System V init システムでは、サービスとして起動したプロセスを明示的には"
 "管理していませんでした。ただし、 Apache のようなサービスでは、 Apache 自身が"
 "必要な多数のプロセス (CGI や Java プロセスなど) を起動して管理していました。"
-"このような方法では、プロセスからサービスを探るのが難しくなってしまうか、"
-"場合によっては全く不可能になってしまっていました。これに加えて、サービスが"
-"正しく終了しなかった場合、子プロセスが残ったままになってしまう場合もありました。"
+"このような方法では、プロセスからサービスを探るのが難しくなってしまうか、場合"
+"によっては全く不可能になってしまっていました。これに加えて、サービスが正しく"
+"終了しなかった場合、子プロセスが残ったままになってしまう場合もありました。"
 
 #. Tag: para
 #: systemd.xml:1835
@@ -2887,11 +2992,11 @@ msgid ""
 "spawned by a service with the name of the service."
 msgstr ""
 "systemd では、このような問題を cgroup で解決しています。 cgroup はカーネルの"
-"機能で、プロセスをまとめ、生成された子プロセスを階層構造型のグループとして"
-"管理する仕組みです。 systemd では、それぞれのサービスを別々の名前付き cgroup "
-"として管理しています。なお、非特権プロセスに対しては cgroup からの <quote>脱退</quote> "
-"は認められていませんので、サービスが起動した全てのプロセスを、効率的に名前で"
-"管理できるようになっています。"
+"機能で、プロセスをまとめ、生成された子プロセスを階層構造型のグループとして管"
+"理する仕組みです。 systemd では、それぞれのサービスを別々の名前付き cgroup と"
+"して管理しています。なお、非特権プロセスに対しては cgroup からの <quote>脱退"
+"</quote> は認められていませんので、サービスが起動した全てのプロセスを、効率的"
+"に名前で管理できるようになっています。"
 
 #. Tag: para
 #: systemd.xml:1843
@@ -2901,8 +3006,9 @@ msgid ""
 "<command>systemd-cgls</command> . The result will look like the following "
 "(shortened) example:"
 msgstr ""
-"サービスに属する全てのプロセスを一覧表示するには、 <command>systemd-cgls</command> "
-"コマンドを使用します。実行結果は、たとえば下記のようになります (一部省略しています):"
+"サービスに属する全てのプロセスを一覧表示するには、 <command>systemd-cgls</"
+"command> コマンドを使用します。実行結果は、たとえば下記のようになります (一部"
+"省略しています):"
 
 #. Tag: title
 #: systemd.xml:1849
@@ -2972,7 +3078,9 @@ msgstr ""
 msgid ""
 "See <xref linkend=\"cha.tuning.cgroups\"/> for more information about "
 "cgroups."
-msgstr "cgroup についての詳細は、 <xref linkend=\"cha.tuning.cgroups\"/> をお読みください。"
+msgstr ""
+"cgroup についての詳細は、 <xref linkend=\"cha.tuning.cgroups\"/> をお読みくだ"
+"さい。"
 
 #. Tag: title
 #: systemd.xml:1883
@@ -2990,11 +3098,11 @@ msgid ""
 "all of its children. Child processes that have not been terminated will "
 "remain as zombie processes."
 msgstr ""
-"<xref linkend=\"sec.boot.systemd.advanced.cgroups\"/> でも説明しているとおり、"
-" System V init のシステムでは、プロセスとサービスとの関係性の管理が必ずできる"
-"という保証がありませんでした。これにより、サービスを終了させて全ての子プロセスを"
-"確実に終了させるということも難しくなっていました。サービスが正しく終了できない"
-"場合、子プロセスがゾンビとして残ってしまうこともありました。"
+"<xref linkend=\"sec.boot.systemd.advanced.cgroups\"/> でも説明しているとお"
+"り、 System V init のシステムでは、プロセスとサービスとの関係性の管理が必ずで"
+"きるという保証がありませんでした。これにより、サービスを終了させて全ての子プ"
+"ロセスを確実に終了させるということも難しくなっていました。サービスが正しく終"
+"了できない場合、子プロセスがゾンビとして残ってしまうこともありました。"
 
 #. Tag: para
 #: systemd.xml:1891
@@ -3006,12 +3114,12 @@ msgid ""
 "kill</command> to send signals to services. For a list of available signals "
 "refer to <command>man 7 signals</command> ."
 msgstr ""
-"それぞれのサービスを cgroup に閉じこめる、という systemd の考え方により、"
-"サービスの全ての子プロセスを明確に管理できるようになるほか、これによって"
-"これらのプロセスそれぞれに対して、シグナルを送信できる仕組みも提供できる"
-"ようになっています。サービスに対してシグナルを送信するには、 <command>systemctl "
-"kill</command> コマンドを使用します。利用可のウナシグナルの一覧については、"
-" <command>man 7 signals</command> をお読みください。"
+"それぞれのサービスを cgroup に閉じこめる、という systemd の考え方により、サー"
+"ビスの全ての子プロセスを明確に管理できるようになるほか、これによってこれらの"
+"プロセスそれぞれに対して、シグナルを送信できる仕組みも提供できるようになって"
+"います。サービスに対してシグナルを送信するには、 <command>systemctl kill</"
+"command> コマンドを使用します。利用可のウナシグナルの一覧については、 "
+"<command>man 7 signals</command> をお読みください。"
 
 #. Tag: term
 #: systemd.xml:1900
@@ -3040,8 +3148,10 @@ msgstr "サービスに対する <replaceable>シグナル</replaceable> の送�
 #. Tag: para
 #: systemd.xml:1911
 #, no-c-format
-msgid "Use the <option>-s</option> option to specify the signal that should be sent."
-msgstr "<option>-s</option> オプションを使用して、送信すべきシグナルを指定します。"
+msgid ""
+"Use the <option>-s</option> option to specify the signal that should be sent."
+msgstr ""
+"<option>-s</option> オプションを使用して、送信すべきシグナルを指定します。"
 
 #. Tag: screen
 #: systemd.xml:1915
@@ -3069,12 +3179,12 @@ msgid ""
 "latter is for example useful to force a service to reload its configuration "
 "by sending <systemitem>SIGHUP</systemitem> :"
 msgstr ""
-"既定では、 <command>kill</command> サブコマンドは指定した cgroup 内の <quote>全ての</quote> "
-"プロセスに対してシグナルを送信しますが、 <option>control</option> (制御プロセスのみ) "
-"または <option>main</option> (メインプロセスのみ) のオプションを指定して、"
-"特定のプロセスのみに送信することもできます。 <option>main</option> は特に、"
-" <systemitem>SIGHUP</systemitem> を送信して設定ファイルを再読み込みさせる"
-"ような場合に便利です:"
+"既定では、 <command>kill</command> サブコマンドは指定した cgroup 内の <quote>"
+"全ての</quote> プロセスに対してシグナルを送信しますが、 <option>control</"
+"option> (制御プロセスのみ) または <option>main</option> (メインプロセスのみ) "
+"のオプションを指定して、特定のプロセスのみに送信することもできます。 "
+"<option>main</option> は特に、 <systemitem>SIGHUP</systemitem> を送信して設定"
+"ファイルを再読み込みさせるような場合に便利です:"
 
 #. Tag: screen
 #: systemd.xml:1928
@@ -3083,8 +3193,8 @@ msgid ""
 "&prompt.sudo;systemctl kill -s SIGHUP --kill-who=main "
 "<replaceable>MY_SERVICE</replaceable>"
 msgstr ""
-"&prompt.sudo;systemctl kill -s SIGHUP --kill-who=main "
-"<replaceable>サービス名</replaceable>"
+"&prompt.sudo;systemctl kill -s SIGHUP --kill-who=main <replaceable>サービス名"
+"</replaceable>"
 
 #. Tag: title
 #: systemd.xml:1933
@@ -3101,9 +3211,10 @@ msgid ""
 "<systemitem class=\"daemon\">dbus</systemitem> is a stand-alone daemon, it "
 "is an integral part of the initialization infrastructure."
 msgstr ""
-"D-Bus サービスは systemd クライアントと systemd マネージャ (プロセス ID=1) との"
-"間のメッセージバスとなるサービスです。 <systemitem class=\"daemon\">dbus</systemitem> "
-"は単独のデーモンではありますが、初期化インフラストラクチャでは必須の構成部品です。"
+"D-Bus サービスは systemd クライアントと systemd マネージャ (プロセス ID=1) と"
+"の間のメッセージバスとなるサービスです。 <systemitem class=\"daemon\">dbus</"
+"systemitem> は単独のデーモンではありますが、初期化インフラストラクチャでは必"
+"須の構成部品です。"
 
 #. Tag: para
 #: systemd.xml:1940
@@ -3114,9 +3225,10 @@ msgid ""
 "1. It will break systemd client/server communication and make most systemd "
 "functions unusable."
 msgstr ""
-"動作中のシステムで <systemitem class=\"daemon\">dbus</systemitem> を終了したり"
-"再起動したりする行為は、 PID 1 の終了や再起動と同様であり、 systemd のクライアント／"
-"サーバ間通信を破壊してしまい、 systemd が正しく動作しなくなってしまいます。"
+"動作中のシステムで <systemitem class=\"daemon\">dbus</systemitem> を終了した"
+"り再起動したりする行為は、 PID 1 の終了や再起動と同様であり、 systemd のクラ"
+"イアント／サーバ間通信を破壊してしまい、 systemd が正しく動作しなくなってしま"
+"います。"
 
 #. Tag: para
 #: systemd.xml:1947
@@ -3125,8 +3237,8 @@ msgid ""
 "Therefore, terminating or restarting <systemitem class=\"daemon\">dbus</"
 "systemitem> is neither recommended nor supported."
 msgstr ""
-"そのため、 <systemitem class=\"daemon\">dbus</systemitem> の終了や再起動は"
-"非推奨であるほか、サポートの対象外となっています。"
+"そのため、 <systemitem class=\"daemon\">dbus</systemitem> の終了や再起動は非"
+"推奨であるほか、サポートの対象外となっています。"
 
 #. Tag: title
 #: systemd.xml:1959
@@ -3143,11 +3255,11 @@ msgid ""
 "error message will be displayed. However, <command>systemctl status</"
 "command> provides means to debug start-up and operation of a service."
 msgstr ""
-"既定では、 systemd はそれほど多くの出力を行ないません。サービスが問題なく"
-"起動できた場合は、全く出力を返しません。失敗した場合にのみ、短いエラー"
-"メッセージを表示します。しかしながら、 <command>systemctl status</command> "
-"コマンドを使用すると、サービスの起動や動作に関して様々なデバッグメッセージを"
-"取得することができます。"
+"既定では、 systemd はそれほど多くの出力を行ないません。サービスが問題なく起動"
+"できた場合は、全く出力を返しません。失敗した場合にのみ、短いエラーメッセージ"
+"を表示します。しかしながら、 <command>systemctl status</command> コマンドを使"
+"用すると、サービスの起動や動作に関して様々なデバッグメッセージを取得すること"
+"ができます。"
 
 #. Tag: para
 #: systemd.xml:1967
@@ -3159,12 +3271,12 @@ msgid ""
 "similar to <command>tail</command> and can also display the log messages in "
 "different formats, making it a powerful debugging tool."
 msgstr ""
-"systemd には独自のログ記録機構 (<quote>ジャーナル</quote> と呼びます) が"
-"備えられています。これにより、サービスのメッセージと状態に関するメッセージの"
-"両方を取得することができます。 <command>status</command> サブコマンドは"
-" <command>tail</command> コマンドに似た仕組みであるほか、異なる形式でログ"
-"メッセージを表示することができるなど、パワフルなデバッグツールとして便利な"
-"存在になっています。"
+"systemd には独自のログ記録機構 (<quote>ジャーナル</quote> と呼びます) が備え"
+"られています。これにより、サービスのメッセージと状態に関するメッセージの両方"
+"を取得することができます。 <command>status</command> サブコマンドは "
+"<command>tail</command> コマンドに似た仕組みであるほか、異なる形式でログメッ"
+"セージを表示することができるなど、パワフルなデバッグツールとして便利な存在に"
+"なっています。"
 
 #. Tag: term
 #: systemd.xml:1976
@@ -3180,9 +3292,9 @@ msgid ""
 "<replaceable>MY_SERVICE</replaceable></command> to get a detailed error "
 "message:"
 msgstr ""
-"サービスの起動に失敗した場合は、 <command>systemctl status "
-"<replaceable>サービス名</replaceable></command> を実行することで、"
-"詳細なエラーメッセージを取得することができます:"
+"サービスの起動に失敗した場合は、 <command>systemctl status <replaceable>サー"
+"ビス名</replaceable></command> を実行することで、詳細なエラーメッセージを取得"
+"することができます:"
 
 #. Tag: screen
 #: systemd.xml:1983
@@ -3206,11 +3318,14 @@ msgstr ""
 "Job failed. See system journal and 'systemctl status' for details.\n"
 "&prompt.root;systemctl status apache2\n"
 "   Loaded: loaded (/usr/lib/systemd/system/apache2.service; disabled)\n"
-"   Active: failed (Result: exit-code) since Mon, 04 Apr 2018 16:52:26 +0200; 29s ago\n"
-"   Process: 3088 ExecStart=/usr/sbin/start_apache2 -D SYSTEMD -k start (code=exited, status=1/FAILURE)\n"
+"   Active: failed (Result: exit-code) since Mon, 04 Apr 2018 16:52:26 +0200; "
+"29s ago\n"
+"   Process: 3088 ExecStart=/usr/sbin/start_apache2 -D SYSTEMD -k start "
+"(code=exited, status=1/FAILURE)\n"
 "   CGroup: name=systemd:/system/apache2.service\n"
 "\n"
-"Apr 04 16:52:26 g144 start_apache2[3088]: httpd2-prefork: Syntax error on line\n"
+"Apr 04 16:52:26 g144 start_apache2[3088]: httpd2-prefork: Syntax error on "
+"line\n"
 "205 of /etc/apache2/httpd.conf: Syntax error on li...alHost&gt;"
 
 #. Tag: term
@@ -3228,9 +3343,9 @@ msgid ""
 "messages to show, use the <option>--lines=<replaceable>N</replaceable></"
 "option> parameter:"
 msgstr ""
-"<command>status</command> サブコマンドは、既定では最新の 10 件のメッセージのみを"
-"表示します。表示する件数を変更したい場合は、 <option>--lines=<replaceable>N</replaceable></"
-"option> パラメータを指定します:"
+"<command>status</command> サブコマンドは、既定では最新の 10 件のメッセージの"
+"みを表示します。表示する件数を変更したい場合は、 <option>--"
+"lines=<replaceable>N</replaceable></option> パラメータを指定します:"
 
 #. Tag: screen
 #: systemd.xml:2004
@@ -3256,9 +3371,9 @@ msgid ""
 "<option>--follow</option> option, which works like <command>tail</command> "
 "<option>-f</option> :"
 msgstr ""
-"サービスメッセージを <quote>リアルタイムに</quote> 表示したい場合は、"
-" <option>--follow</option> オプションを指定します。これは <command>tail</command> "
-"<option>-f</option> に似た動作になります:"
+"サービスメッセージを <quote>リアルタイムに</quote> 表示したい場合は、 "
+"<option>--follow</option> オプションを指定します。これは <command>tail</"
+"command> <option>-f</option> に似た動作になります:"
 
 #. Tag: screen
 #: systemd.xml:2016
@@ -3280,9 +3395,9 @@ msgid ""
 "allows you to change the output format of service messages. The most "
 "important modes available are:"
 msgstr ""
-"<option>--output=<replaceable>モード</replaceable></option> オプションを指定すると、"
-"サービスメッセージの出力形式を変更することができます。最もよく使用する"
-"モードは下記のとおりです:"
+"<option>--output=<replaceable>モード</replaceable></option> オプションを指定"
+"すると、サービスメッセージの出力形式を変更することができます。最もよく使用す"
+"るモードは下記のとおりです:"
 
 #. Tag: term
 #: systemd.xml:2029
@@ -3293,8 +3408,11 @@ msgstr "<option>short</option>"
 #. Tag: para
 #: systemd.xml:2032
 #, no-c-format
-msgid "The default format. Shows the log messages with a human readable time stamp."
-msgstr "既定の出力形式です。ログメッセージを読みやすいタイムスタンプ表示と共に出力します。"
+msgid ""
+"The default format. Shows the log messages with a human readable time stamp."
+msgstr ""
+"既定の出力形式です。ログメッセージを読みやすいタイムスタンプ表示と共に出力し"
+"ます。"
 
 #. Tag: term
 #: systemd.xml:2039
@@ -3329,8 +3447,11 @@ msgstr "さらなる情報"
 #. Tag: para
 #: systemd.xml:2065
 #, no-c-format
-msgid "For more information on systemd refer to the following online resources:"
-msgstr "systemd について、より詳しく知りたい場合は、下記のオンラインリソースをお読みください:"
+msgid ""
+"For more information on systemd refer to the following online resources:"
+msgstr ""
+"systemd について、より詳しく知りたい場合は、下記のオンラインリソースをお読み"
+"ください:"
 
 #. Tag: term
 #: systemd.xml:2071
@@ -3342,7 +3463,8 @@ msgstr "Web ページ"
 #: systemd.xml:2073
 #, no-c-format
 msgid "<link xlink:href=\"http://www.freedesktop.org/wiki/Software/systemd\"/>"
-msgstr "<link xlink:href=\"http://www.freedesktop.org/wiki/Software/systemd\"/>"
+msgstr ""
+"<link xlink:href=\"http://www.freedesktop.org/wiki/Software/systemd\"/>"
 
 #. Tag: term
 #: systemd.xml:2079
@@ -3358,7 +3480,6 @@ msgid ""
 "entries (13 at the time of writing this chapter). Find them at <link xlink:"
 "href=\"http://0pointer.de/blog/projects\"/> ."
 msgstr ""
-"systemd の作者のうちの 1 人である Lennart Pöttering 氏が投稿したブログ記事"
-" (本章記述時点で 13 個): <link xlink:"
-"href=\"http://0pointer.de/blog/projects\"/>"
-
+"systemd の作者のうちの 1 人である Lennart Pöttering 氏が投稿したブログ記事 "
+"(本章記述時点で 13 個): <link xlink:href=\"http://0pointer.de/blog/projects"
+"\"/>"

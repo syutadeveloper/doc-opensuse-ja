@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-09 09:07+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -26,92 +26,104 @@ msgstr ""
 msgid "You can mirror the installation and update repositories on the &rmt; server. This way, you do not need to download updates on each machine, which saves time and bandwidth."
 msgstr ""
 
-#. Tag: title
+#. Tag: para
 #: rmt_mirroring.xml:17
 #, no-c-format
-msgid "&sls; 9 Repositories"
+msgid "In its default configuration, &rmt; mirrors enabled product repositories automatically once every night."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:18
+#: rmt_mirroring.xml:21
 #, no-c-format
-msgid "As &sls; 9 is no longer supported, &rmt; does not mirror &sls; 9 repositories."
+msgid "When enabled repositories are fully mirrored, you can register your client systems against &rmt; by running <command>SUSEConnect --url https://<replaceable>&rmt;_HOSTNAME</replaceable></command> on the client machine. After successful registration, the repositories from the &rmt; server will be used by zypper on the client machine."
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:24
+#: rmt_mirroring.xml:29
+#, no-c-format
+msgid "&sls; 11 Clients"
+msgstr ""
+
+#. Tag: para
+#: rmt_mirroring.xml:30
+#, no-c-format
+msgid "&rmt; does not support clients with &sls; versions 11 and below."
+msgstr ""
+
+#. Tag: title
+#: rmt_mirroring.xml:35
 #, no-c-format
 msgid "Mirroring Credentials"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:26
+#: rmt_mirroring.xml:37
 #, no-c-format
-msgid "Before you create a local mirror of the repositories, you need appropriate organization credentials. You can obtain the credentials from &scc;."
+msgid "Before you create a local mirror of &sle; the repositories, you need appropriate organization credentials. You can obtain the credentials from &scc;."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:31
+#: rmt_mirroring.xml:43
 #, no-c-format
 msgid "To get the credentials from &scc;, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:37
+#: rmt_mirroring.xml:49
 #, no-c-format
 msgid "Visit &scc; at <link xlink:href=\"http://scc.suse.com\"/> and log in."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:42
+#: rmt_mirroring.xml:54
 #, no-c-format
 msgid "If you are member of multiple organizations, chose the organization you want to work with from the sidebar on the left."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:48
+#: rmt_mirroring.xml:60
 #, no-c-format
-msgid "Click <guimenu>Organization</guimenu> in the top menu."
+msgid "Select <guimenu>Proxies</guimenu> in the top menu."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:53
+#: rmt_mirroring.xml:65
 #, no-c-format
-msgid "Switch to the <guimenu>Organizational credentials</guimenu> section."
+msgid "The credentials are displayed in the top right corner."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:58
+#: rmt_mirroring.xml:70
 #, no-c-format
-msgid "To see the password, click <guimenu>Show password</guimenu> ."
+msgid "To see the password, select the eye symbol."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:64
+#: rmt_mirroring.xml:76
 #, no-c-format
 msgid "The obtained credentials should be set with the &yast; &rmt; Server Configuration module or added directly to the <filename>/etc/rmt.conf</filename> file. For more information about the <filename>/etc/rmt.conf</filename> file, see <xref linkend=\"sec.rmt_config.rmtconf\"/> ."
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:73
+#: rmt_mirroring.xml:85
 #, no-c-format
 msgid "Synchronizing Repository Metadata"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:74
+#: rmt_mirroring.xml:86
 #, no-c-format
-msgid "The local &rmt; database needs to be updated periodically with the information downloaded from &scc;. This includes available products and repositories."
+msgid "The local &rmt; database needs to be updated periodically with the information downloaded from &scc;. This includes information about available products and repositories."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:79
+#: rmt_mirroring.xml:91
 #, no-c-format
 msgid "The synchronization is done with the &systemd; timer <literal>rmt-server-sync.timer</literal> . To view the status, for example the next running time, use <command>systemctl status</command> :"
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:84
+#: rmt_mirroring.xml:96
 #, no-c-format
 msgid "&prompt.root;<command>systemctl status rmt-server-sync.timer</command>\n"
       "● rmt-server-sync.timer - RMT Sync timer\n"
@@ -123,31 +135,31 @@ msgid "&prompt.root;<command>systemctl status rmt-server-sync.timer</command>\n"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:91
+#: rmt_mirroring.xml:103
 #, no-c-format
 msgid "To update the &rmt; database manually, use the <command>rmt-cli sync</command> command. For details, see <xref linkend=\"sec.rmt.tools.rmt-cli.sync\"/> ."
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:98
+#: rmt_mirroring.xml:110
 #, no-c-format
 msgid "Mirroring Packages"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:99
+#: rmt_mirroring.xml:111
 #, no-c-format
-msgid "Packages for enabled repositories are mirrored on your &rmt; server. The download of the packages is done periodically but can also be triggered manually."
+msgid "Packages for enabled repositories are mirrored on your &rmt; server. Packages are downloaded periodically once a day. But the download can also be triggered manually at any time."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:104
+#: rmt_mirroring.xml:116
 #, no-c-format
 msgid "The periodic mirroring is done by the &systemd; timer <literal>rmt-server-mirror.timer</literal> . To show the status, for example the next running time, use <command>systemctl status</command> :"
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:110
+#: rmt_mirroring.xml:122
 #, no-c-format
 msgid "&prompt.root;<command>systemctl status rmt-server-mirror.timer</command>\n"
       "● rmt-server-mirror.timer - RMT Mirror timer\n"
@@ -159,37 +171,37 @@ msgid "&prompt.root;<command>systemctl status rmt-server-mirror.timer</command>\
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:117
+#: rmt_mirroring.xml:129
 #, no-c-format
 msgid "To update the mirrored packages manually, use the <command>rmt-cli mirror</command> command. For details, see <xref linkend=\"sec.rmt_tools.rmt-cli.mirror\"/> ."
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:125
+#: rmt_mirroring.xml:137
 #, no-c-format
-msgid "Enabling and Disabling Repositories"
+msgid "Enabling and Disabling Mirroring of Repositories"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:126
+#: rmt_mirroring.xml:138
 #, no-c-format
-msgid "Repositories can be enabled or disabled by specifically or by stating a product. To enable or disable repositories, you either need the product name or ID, or the repository name or ID. In general, enabling or disabling a product is desired, because this automatically enables or disables all repositories associated with the product."
+msgid "Mirroring of repositories can be enabled or disabled individually or by stating a product. When repositories are enabled, it's packages are downloaded and updated during the mirroring process. To enable or disable mirroring of repositories, you either need the product string or ID, or the repository name or ID. In general, enabling or disabling a product is desired, because this automatically enables or disables all repositories associated with the product."
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:135
+#: rmt_mirroring.xml:148
 #, no-c-format
 msgid "Using Products"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:136
+#: rmt_mirroring.xml:149
 #, no-c-format
 msgid "To enable or disable all repositories of a product, use the <command>rmt-cli product enable <replaceable>ID</replaceable></command> and <command>rmt-cli product disable <replaceable>ID</replaceable></command> commands. To retrieve an ID for a disabled but available product, use the <command>rmt-cli product list --all</command> command. To retrieve an ID for an enabled product, use the <command>rmt-cli product list</command> command."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:149
+#: rmt_mirroring.xml:162
 #, no-c-format
 msgid "&prompt.sudo;<command>rmt-cli products list --all</command>\n"
       "+------+------------------+---------+--------------+----------------------+---------------+---------+---------------+\n"
@@ -208,25 +220,25 @@ msgid "&prompt.sudo;<command>rmt-cli products list --all</command>\n"
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:165
+#: rmt_mirroring.xml:178
 #, no-c-format
 msgid "Using Repositories"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:166
+#: rmt_mirroring.xml:179
 #, no-c-format
-msgid "To enable or disable specific repositories, use the <command>rmt-cli repo enable <replaceable>ID</replaceable></command> and <command>rmt-cli repo disable <replaceable>ID</replaceable></command> commands. To retrieve an ID for a disabled but available repository, use the <command>rmt-cli repo list --all</command> command. To retrieve an ID for an enabled repository, use the <command>rmt-cli repo list</command> command."
+msgid "To enable or disable mirroring of specific repositories, use the <command>rmt-cli repo enable <replaceable>ID</replaceable></command> and <command>rmt-cli repo disable <replaceable>ID</replaceable></command> commands. To retrieve an ID for a disabled but available repository, use the <command>rmt-cli repo list --all</command> command. To retrieve an ID for an enabled repository, use the <command>rmt-cli repo list</command> command."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:176
+#: rmt_mirroring.xml:189
 #, no-c-format
 msgid "Example:"
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:179
+#: rmt_mirroring.xml:192
 #, no-c-format
 msgid "&prompt.sudo;<command>rmt-cli repo list --all</command>\n"
       "+--------+-------------------------+-------------------------------------------+------------+---------+---------------+\n"
@@ -245,243 +257,261 @@ msgid "&prompt.sudo;<command>rmt-cli repo list --all</command>\n"
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:197
+#: rmt_mirroring.xml:210
 #, no-c-format
 msgid "Deleting Mirrored Data"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:198
+#: rmt_mirroring.xml:211
 #, no-c-format
-msgid "After you disable a repository or product as described in <xref linkend=\"sec.rmt_mirroring.enable_disable\"/> , the mirrored data still remains on your local hard disk. This includes the mirrored RPM packages. To remove the data, manually remove the corresponding directory:"
+msgid "After you disable mirroring of a repository or product as described in <xref linkend=\"sec.rmt_mirroring.enable_disable\"/> , the mirrored data still remains on your local hard disk. This includes the mirrored RPM packages. To remove the data, manually remove the corresponding directory:"
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:202
+#: rmt_mirroring.xml:215
 #, no-c-format
-msgid "&prompt.sudo;<command>rm -r /usr/share/rmt/public/repo/SUSE/Products/<replaceable>MODULE</replaceable>/<replaceable>VERSION</replaceable>/<replaceable>ARCHITECTURE</replaceable>/</command>"
+msgid "&prompt.sudo;<command>rm -r /usr/share/rmt/public/repo/SUSE/Products/<replaceable>PRODUCT</replaceable>/<replaceable>VERSION</replaceable>/<replaceable>ARCHITECTURE</replaceable>/</command>"
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:206
+#: rmt_mirroring.xml:219
 #, no-c-format
 msgid "Adding Custom Repositories"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:207
+#: rmt_mirroring.xml:220
 #, no-c-format
-msgid "You can mirror custom repositories with the &rmt; server. These repositories are not provided by the &scc;. Repositories can be from the &obs;, from third party vendors, or created with <command>createrepo</command> ."
+msgid "You can mirror custom repositories with the &rmt; server. These repositories are not provided by the &scc;. Repositories can be provided by, for example, the &obs;, third party vendors, or created with <command>createrepo</command> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:213
+#: rmt_mirroring.xml:226
 #, no-c-format
-msgid "Custom repositories can be attached to products. This makes allows you to directly connect several repositories on a client registered to the &rmt; server."
-msgstr ""
-
-#. Tag: para
-#: rmt_mirroring.xml:218
-#, no-c-format
-msgid "The following example procedure illustrates the mirroring of a third-party repository."
-msgstr ""
-
-#. Tag: para
-#: rmt_mirroring.xml:224
-#, no-c-format
-msgid "Add the remote repository to the &rmt; server. Replace <replaceable>URL</replaceable> with the URL to the repository. Replace <replaceable>NAME</replaceable> with a name of your choice for the repository."
-msgstr ""
-
-#. Tag: screen
-#: rmt_mirroring.xml:228
-#, no-c-format
-msgid "&prompt.root;<command>rmt-cli repos custom add <replaceable>URL</replaceable> <replaceable>NAME</replaceable></command>"
+msgid "Custom repositories can be attached to products. This allows you to connect multiple repositories with one command on a client registered to the &rmt; server."
 msgstr ""
 
 #. Tag: para
 #: rmt_mirroring.xml:231
 #, no-c-format
-msgid "List all custom repositories to get the ID of the new repository."
-msgstr ""
-
-#. Tag: screen
-#: rmt_mirroring.xml:234
-#, no-c-format
-msgid "&prompt.root;<command>rmt-cli repos custom list</command>"
+msgid "The following example procedure illustrates the mirroring of a third-party repository."
 msgstr ""
 
 #. Tag: para
 #: rmt_mirroring.xml:237
 #, no-c-format
+msgid "Add the remote repository to the &rmt; server. Replace <replaceable>URL</replaceable> with the URL to the repository. Replace <replaceable>NAME</replaceable> with a name of your choice for the repository."
+msgstr ""
+
+#. Tag: screen
+#: rmt_mirroring.xml:241
+#, no-c-format
+msgid "&prompt.root;<command>rmt-cli repos custom add <replaceable>URL</replaceable> <replaceable>NAME</replaceable></command>"
+msgstr ""
+
+#. Tag: para
+#: rmt_mirroring.xml:244
+#, no-c-format
+msgid "List all custom repositories to get the ID of the new repository."
+msgstr ""
+
+#. Tag: screen
+#: rmt_mirroring.xml:247
+#, no-c-format
+msgid "&prompt.root;<command>rmt-cli repos custom list</command>"
+msgstr ""
+
+#. Tag: para
+#: rmt_mirroring.xml:250
+#, no-c-format
 msgid "Optionally attach the new custom repository to a product. For example, if the new custom repository is required by all desktop clients, it can be attached to the <literal>&sled;</literal> product."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:242
+#: rmt_mirroring.xml:255
 #, no-c-format
 msgid "&prompt.root;<command>rmt-cli repos custom attach <replaceable>REPOSITORY_ID</replaceable> <replaceable>PRODUCT_ID</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:243
+#: rmt_mirroring.xml:256
 #, no-c-format
 msgid "Replace <replaceable>REPOSITORY_ID</replaceable> with the ID of the new custom repository. Replace <replaceable>PRODUCT_ID</replaceable> with the ID of a product you want the repository attached to. If you need to retrieve the <replaceable>PRODUCT_ID</replaceable> , use the command <command>rmt-cli products list --all</command> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:253
+#: rmt_mirroring.xml:266
 #, no-c-format
-msgid "Enable the new custom repository."
+msgid "Enable mirroring of the new custom repository."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:256
+#: rmt_mirroring.xml:269
 #, no-c-format
 msgid "&prompt.root;<command>rmt-cli repos custom enable <replaceable>REPOSITORY_ID</replaceable></command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:259
+#: rmt_mirroring.xml:272
 #, no-c-format
 msgid "To get a list of all available custom repositories commands, see <xref linkend=\"sec.rmt_tools.rmt-cli.repos\"/> ."
 msgstr ""
 
 #. Tag: title
-#: rmt_mirroring.xml:266
+#: rmt_mirroring.xml:279
 #, no-c-format
 msgid "Exporting and Importing Repositories"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:267
+#: rmt_mirroring.xml:280
 #, no-c-format
 msgid "&rmt; has built-in functions to import and export data about available repositories and the mirrored packages. For example, this can be used to speed up the setup of a new &rmt; server by locally copying already mirrored RPM packages."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:273
+#: rmt_mirroring.xml:286
 #, no-c-format
 msgid "Another use case is the <emphasis>offline mode</emphasis> . It allows transferring data to a disconnected &rmt; server, for example to provide updates to computers in an air-gapped network."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:278
+#: rmt_mirroring.xml:291
 #, no-c-format
 msgid "The following procedure describes the transfer of data and mirrored RPMs between two &rmt; servers with a USB drive. The server <literal>sun</literal> is connected to the &scc;, while <literal>sirius</literal> is a server in an air-gapped network."
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:286
+#: rmt_mirroring.xml:299
 #, no-c-format
 msgid "Log in on the server <literal>sun</literal> ."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:289
+#: rmt_mirroring.xml:302
 #, no-c-format
 msgid "&prompt.root.sun;<command>rmt-cli sync</command>\n"
       "&prompt.root.sun;<command>rmt-cli mirror</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:293
+#: rmt_mirroring.xml:306
 #, no-c-format
-msgid "Connect a USB drive, assumed to be <filename>/dev/sda</filename> and mount it, for example in <filename>/mnt/external</filename> ."
+msgid "Connect a USB drive, assumed to be <filename>/dev/sdb</filename> and mount it, for example in <filename>/mnt/external</filename> ."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:297
+#: rmt_mirroring.xml:310
 #, no-c-format
 msgid "&prompt.root.sun;<command>mount /dev/sdb1 /mnt/external</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:302
+#: rmt_mirroring.xml:315
 #, no-c-format
 msgid "Export the data about available repositories and products."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:305
+#: rmt_mirroring.xml:318
 #, no-c-format
 msgid "&prompt.root.sun;<command>rmt-cli export data /mnt/external/</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:308
+#: rmt_mirroring.xml:321
 #, no-c-format
 msgid "Export the list of enabled repositories. The exported file is required for exporting the repositories in the next step."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:312
+#: rmt_mirroring.xml:325
 #, no-c-format
 msgid "&prompt.root.sun;<command>rmt-cli export settings /mnt/external/</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:315
+#: rmt_mirroring.xml:328
 #, no-c-format
 msgid "Export mirrored RPM packages. Depending on the size of mirrored repositories, this can take a long time."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:319
+#: rmt_mirroring.xml:332
 #, no-c-format
 msgid "&prompt.root.sun;<command>rmt-cli export repos /mnt/external/</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:324
+#: rmt_mirroring.xml:337
 #, no-c-format
 msgid "Unmount and unplug the disk from <literal>sun</literal> and go to <literal>sirius</literal> ."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:328
+#: rmt_mirroring.xml:341
 #, no-c-format
 msgid "&prompt.root.sun;<command>umount /mnt/external</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:331
+#: rmt_mirroring.xml:344
 #, no-c-format
 msgid "Connect the USB drive to <literal>sirius</literal> and mount it in <filename>/mnt/external</filename> ."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:335
+#: rmt_mirroring.xml:348
 #, no-c-format
 msgid "&prompt.root.sirius;<command>mount /dev/sdb1 /mnt/external</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:340
+#: rmt_mirroring.xml:353
 #, no-c-format
 msgid "Import the meta data about available repositories and products."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:343
+#: rmt_mirroring.xml:356
 #, no-c-format
 msgid "&prompt.root.sirius;<command>rmt-cli import data /mnt/external/</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:346
+#: rmt_mirroring.xml:359
 #, no-c-format
 msgid "Import mirrored RPM packages. Depending on the size of mirrored repositories, this can take a long time."
 msgstr ""
 
 #. Tag: screen
-#: rmt_mirroring.xml:350
+#: rmt_mirroring.xml:363
 #, no-c-format
 msgid "&prompt.root.sirius;<command>rmt-cli import repos /mnt/external/</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_mirroring.xml:355
+#: rmt_mirroring.xml:368
 #, no-c-format
 msgid "Enable repositories as required on the <literal>sirius</literal> . For details, see <xref linkend=\"sec.rmt_mirroring.enable_disable\"/> ."
+msgstr ""
+
+#. Tag: title
+#: rmt_mirroring.xml:376
+#, no-c-format
+msgid "Exporting Enabled Settings from Air-Gapped Server"
+msgstr ""
+
+#. Tag: para
+#: rmt_mirroring.xml:377
+#, no-c-format
+msgid "If your air-gapped server ( <literal>sirius</literal> ) has many enabled repositories, or if the enabled repositories change frequently, we recommend to export the repository settings from this server."
+msgstr ""
+
+#. Tag: para
+#: rmt_mirroring.xml:383
+#, no-c-format
+msgid "The exported settings can then by imported by the server connected to the &scc; ( <literal>sun</literal> ). This ensures that <literal>sun</literal> downloads all data required by <literal>sirius</literal> ."
 msgstr ""
 

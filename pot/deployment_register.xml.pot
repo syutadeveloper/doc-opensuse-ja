@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-09 09:07+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -298,49 +298,61 @@ msgid "Choose <guimenu>Accept</guimenu> and <guimenu>Finish</guimenu> to conclud
 msgstr ""
 
 #. Tag: title
-#: deployment_register.xml:344
+#: deployment_register.xml:342
+#, no-c-format
+msgid "Module Dependencies"
+msgstr ""
+
+#. Tag: para
+#: deployment_register.xml:343
+#, no-c-format
+msgid "Similar to software packages, who may depend on other packages to function, a module may have dependencies on other modules. If this is the case, the depending module is automatically selected for installation."
+msgstr ""
+
+#. Tag: title
+#: deployment_register.xml:353
 #, no-c-format
 msgid "Deleting Modules and Extensions with &yast;"
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:347
+#: deployment_register.xml:356
 #, no-c-format
 msgid "Start <menuchoice><guimenu>YaST</guimenu> <guimenu>Software</guimenu> <guimenu>Add-On Products</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:370
+#: deployment_register.xml:379
 #, no-c-format
 msgid "Choose the module or extension that should be removed and click <guimenu>Delete</guimenu> . Confirm the warning saying that all packages from the selected component will be removed."
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:377
+#: deployment_register.xml:386
 #, no-c-format
 msgid "The &yast; Software Manager opens and shows a list of all installed packages from the deleted module or extension. Click <guimenu>Accept</guimenu> to remove all of them. It is strongly recommended to do so, because you will no longer get updates for packages from deleted modules or extensions. In case you keep packages, make sure to at least remove the <literal>*-release</literal> package for each module or extension that gets deleted."
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:386
+#: deployment_register.xml:395
 #, no-c-format
 msgid "Proceed with <guimenu>Accept</guimenu> and then <guimenu>OK</guimenu> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_register.xml:416
+#: deployment_register.xml:425
 #, no-c-format
 msgid "Adding/Deleting Modules and Extensions with SUSEConnect"
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:419
+#: deployment_register.xml:428
 #, no-c-format
 msgid "Run <command>SUSEConnect -list-extensions</command> to get an overview of available extensions:"
 msgstr ""
 
 #. Tag: screen
-#: deployment_register.xml:423
+#: deployment_register.xml:432
 #, no-c-format
 msgid "&prompt.user;sudo SUSEConnect -list-extensions\n"
       "AVAILABLE EXTENSIONS AND MODULES\n"
@@ -395,7 +407,7 @@ msgid "&prompt.user;sudo SUSEConnect -list-extensions\n"
 msgstr ""
 
 #. Tag: screen
-#: deployment_register.xml:473
+#: deployment_register.xml:482
 #, no-c-format
 msgid "&prompt.user;sudo SUSEConnect -list-extensions\n"
       "AVAILABLE EXTENSIONS AND MODULES\n"
@@ -425,55 +437,55 @@ msgid "&prompt.user;sudo SUSEConnect -list-extensions\n"
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:501
+#: deployment_register.xml:510
 #, no-c-format
 msgid "Run the commands in the listing for activating/deactivating a module or extension to add or delete a component. Note that adding an extensions requires additional registration codes which are liable for cost."
 msgstr ""
 
 #. Tag: title
-#: deployment_register.xml:510
+#: deployment_register.xml:519
 #, no-c-format
 msgid "Deleting Modules"
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:511
+#: deployment_register.xml:520
 #, no-c-format
 msgid "Note that you should never delete the <guimenu>Basesystem Module</guimenu> . It is also not recommended to delete the <phrase os=\"sles\"><guimenu>Server Applications Module</guimenu></phrase> <phrase os=\"sled\">, <guimenu>&sle; Workstation Extension</guimenu> and <guimenu>Desktop Applications Module</guimenu></phrase> ."
 msgstr ""
 
 #. Tag: title
-#: deployment_register.xml:522
+#: deployment_register.xml:531
 #, no-c-format
 msgid "No Automated Installation/Removal of Packages"
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:523
+#: deployment_register.xml:532
 #, no-c-format
 msgid "When using <command>SUSEConnect</command> to add or delete modules and extensions, the components get de-registered and the respective repositories or services get removed from the system. No installation or removal of packages will be done. If you want this to be done automatically, use &yast; to add or delete modules and extensions."
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:530
+#: deployment_register.xml:539
 #, no-c-format
 msgid "When adding a module or extension, this means no automatic installation of default packages or patterns is performed. You need to do this manually with Zypper on the command line or by running <menuchoice><guimenu>&yast;</guimenu> <guimenu>Software Management</guimenu></menuchoice> ."
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:537
+#: deployment_register.xml:546
 #, no-c-format
 msgid "When deleting a module or extension, this means no automatic cleanup will be done. All packages that belonged to the module or extension will remain installed on the system, but are longer associated with a repository and therefore will no longer receive updates. To remove these so-called <quote>orphaned</quote> packages use Zypper on the command line. <command>zypper packages --orphaned</command> lists these packages and <command>zypper remove</command> deletes one or more packages. Alternatively use <menuchoice><guimenu>&yast;</guimenu> <guimenu>Software Management</guimenu></menuchoice> to list and delete orphaned packages."
 msgstr ""
 
 #. Tag: title
-#: deployment_register.xml:552
+#: deployment_register.xml:561
 #, no-c-format
 msgid "No Updates for Packages from Deleted Modules and Extensions"
 msgstr ""
 
 #. Tag: para
-#: deployment_register.xml:553
+#: deployment_register.xml:562
 #, no-c-format
 msgid "If you choose to keep packages from deleted modules or extensions, you will no longer receive updates for these packages. Because this includes security fixes, keeping such packages may introduce a security risk to your system."
 msgstr ""

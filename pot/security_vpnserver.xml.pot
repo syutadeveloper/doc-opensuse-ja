@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -921,55 +921,55 @@ msgid "Enable this option to write short status updates with statistical data ( 
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1080
+#: security_vpnserver.xml:1076
 #, no-c-format
-msgid "All output is written to syslog. If you have more than one configuration file (for example, one for home and another for work), it is recommended to include the device name into the file name. This avoids overwriting output files accidentally. In this case, it is <systemitem>tun0</systemitem> , taken from the <option>dev</option> directive&mdash;see <xref linkend=\"co.vpn.servconfig.dev\"/> ."
+msgid "All output is written to the system journal which can be displayed with <command>journalctl</command> . If you have more than one configuration file (for example, one for home and another for work), it is recommended to include the device name into the file name. This avoids overwriting output files accidentally. In this case, it is <systemitem>tun0</systemitem> , taken from the <option>dev</option> directive&mdash;see <xref linkend=\"co.vpn.servconfig.dev\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1091
+#: security_vpnserver.xml:1087
 #, no-c-format
 msgid "By default, log messages go to syslog. Overwrite this behavior by removing the hash character. In that case, all messages go to <filename>/var/log/openvpn-server.log</filename> . Do not forget to configure a logrotate service. See <command>man 8 logrotate</command> for further details."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1100
+#: security_vpnserver.xml:1096
 #, no-c-format
 msgid "After having completed this configuration, you can see log messages of your OpenVPN server under <filename>/var/log/openvpn.log</filename> . After having started it for the first time, it should finish with:"
 msgstr ""
 
 #. Tag: screen
-#: security_vpnserver.xml:1105
+#: security_vpnserver.xml:1101
 #, no-c-format
 msgid "... Initialization Sequence Completed"
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1106
+#: security_vpnserver.xml:1102
 #, no-c-format
 msgid "If you do not see this message, check the log carefully for any hints of what is wrong in your configuration file."
 msgstr ""
 
 #. Tag: title
-#: security_vpnserver.xml:1113
+#: security_vpnserver.xml:1109
 #, no-c-format
 msgid "Configuring the VPN Clients"
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1114
+#: security_vpnserver.xml:1110
 #, no-c-format
 msgid "As the basis of your configuration file, copy <filename>/usr/share/doc/packages/openvpn/sample-config-files/client.conf</filename> to <filename>/etc/openvpn/</filename> . Then customize it to your needs."
 msgstr ""
 
 #. Tag: title
-#: security_vpnserver.xml:1120
+#: security_vpnserver.xml:1116
 #, no-c-format
 msgid "VPN Client Configuration File"
 msgstr ""
 
 #. Tag: screen
-#: security_vpnserver.xml:1121
+#: security_vpnserver.xml:1117
 #, no-c-format
 msgid "# /etc/openvpn/client.conf\n"
       "client <co xml:id=\"co.vpn.clientconf.client\"/>\n"
@@ -996,91 +996,91 @@ msgid "# /etc/openvpn/client.conf\n"
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1145
+#: security_vpnserver.xml:1141
 #, no-c-format
 msgid "Specifies that this machine is a client."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1150
+#: security_vpnserver.xml:1146
 #, no-c-format
 msgid "The network device. Both clients and server must use the same device."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1155
+#: security_vpnserver.xml:1151
 #, no-c-format
 msgid "The protocol. Use the same settings as on the server."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1160
+#: security_vpnserver.xml:1156
 #, no-c-format
 msgid "This is security option for clients which ensures that the host they connect to is a designated server."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1166
+#: security_vpnserver.xml:1162
 #, no-c-format
 msgid "Replace the placeholder <replaceable>IP_OR_HOST_NAME</replaceable> with the respective host name or IP address of your VPN server. After the host name, the port of the server is given. You can have multiple lines of <literal>remote</literal> entries pointing to different VPN servers. This is useful for load balancing between different VPN servers."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1176
+#: security_vpnserver.xml:1172
 #, no-c-format
 msgid "For security reasons, run the OpenVPN daemon with reduced privileges. To do so, specify that it should use the group and user <systemitem>nobody</systemitem> ."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1183
+#: security_vpnserver.xml:1179
 #, no-c-format
 msgid "Contains the client files. For security reasons, use a separate pair of files for each client."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1189
+#: security_vpnserver.xml:1185
 #, no-c-format
 msgid "Turn on compression. Only use this parameter if compression is enabled on the server as well."
 msgstr ""
 
 #. Tag: title
-#: security_vpnserver.xml:1326
+#: security_vpnserver.xml:1322
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1328
+#: security_vpnserver.xml:1324
 #, no-c-format
 msgid "For more information on setting up a VPN connection using &nm;, see <xref linkend=\"sec.nm.vpn\"/> ."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1333
+#: security_vpnserver.xml:1329
 #, no-c-format
 msgid "For more information about VPN in general, see:"
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1339
+#: security_vpnserver.xml:1335
 #, no-c-format
 msgid "<link xlink:href=\"http://www.openvpn.net\"/> : the OpenVPN home page"
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1344
+#: security_vpnserver.xml:1340
 #, no-c-format
 msgid "<command>man</command> <option>openvpn</option>"
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1349
+#: security_vpnserver.xml:1345
 #, no-c-format
 msgid "<filename>/usr/share/doc/packages/openvpn/sample-config-files/</filename> : example configuration files for different scenarios."
 msgstr ""
 
 #. Tag: para
-#: security_vpnserver.xml:1355
+#: security_vpnserver.xml:1351
 #, no-c-format
 msgid "<filename>/usr/src/linux/Documentation/networking/tuntap.txt</filename> , to install the <systemitem class=\"resource\">kernel-source</systemitem> package."
 msgstr ""

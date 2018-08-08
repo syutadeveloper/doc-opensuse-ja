@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-09 09:06+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -207,145 +207,145 @@ msgid "The sticky key functionality is available in the &vmm; during and after i
 msgstr ""
 
 #. Tag: title
-#: libvirt_guest_installation.xml:616
+#: libvirt_guest_installation.xml:214
 #, no-c-format
 msgid "Installing from the Command Line with <command>virt-install</command>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:618
+#: libvirt_guest_installation.xml:216
 #, no-c-format
 msgid "<command>virt-install</command> is a command line tool that helps you create new virtual machines using the &libvirt; library. It is useful if you cannot use the graphical user interface, or need to automatize the process of creating virtual machines."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:625
+#: libvirt_guest_installation.xml:223
 #, no-c-format
 msgid "<command>virt-install</command> is a complex script with a lot of command line switches. The following are required. For more information, see the man page of <command>virt-install</command> (1)."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:633
+#: libvirt_guest_installation.xml:231
 #, no-c-format
 msgid "General Options"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:637
+#: libvirt_guest_installation.xml:235
 #, no-c-format
 msgid "<option>--name <replaceable>VM_GUEST_NAME</replaceable></option> : Specify the name of the new virtual machine. The name must be unique across all guests known to the hypervisor on the same connection. It is used to create and name the guest’s configuration file and you can access the guest with this name from <command>virsh</command> . Alphanumeric and <literal>_-.:+</literal> characters are allowed."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:647
+#: libvirt_guest_installation.xml:245
 #, no-c-format
 msgid "<option>--memory <replaceable>REQUIRED_MEMORY</replaceable></option> : Specify the amount of memory to allocate for the new virtual machine in megabytes."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:654
+#: libvirt_guest_installation.xml:252
 #, no-c-format
 msgid "<option>--vcpus <replaceable>NUMBER_OF_CPUS</replaceable></option> : Specify the number of virtual CPUs. For best performance, the number of virtual processors should be less than or equal to the number of physical processors."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:665
+#: libvirt_guest_installation.xml:263
 #, no-c-format
 msgid "Virtualization Type"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:669
+#: libvirt_guest_installation.xml:267
 #, no-c-format
 msgid "<option>--paravirt</option> : Set up a paravirtualized guest. This is the default if the &vmhost; supports paravirtualization and full virtualization."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:676
+#: libvirt_guest_installation.xml:274
 #, no-c-format
 msgid "<option>--hvm</option> : Set up a fully virtualized guest."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:681
+#: libvirt_guest_installation.xml:279
 #, no-c-format
 msgid "<option>--virt-type <replaceable>HYPERVISOR</replaceable></option> : Specify the hypervisor. Supported values are <literal>kvm</literal> , <literal>xen</literal> , or <literal>lxc</literal> ."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:691
+#: libvirt_guest_installation.xml:289
 #, no-c-format
 msgid "Guest Storage"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:693
+#: libvirt_guest_installation.xml:291
 #, no-c-format
 msgid "Specify one of <option>--disk</option> , <option>--filesystem</option> or <option>--nodisks</option> the type of the storage for the new virtual machine. For example, <option>--disk size=10</option> creates 10 GB disk in the default image location for the hypervisor and uses it for the &vmguest;. <option>--filesystem <replaceable>/export/path/on/vmhost</replaceable></option> specifies the directory on the &vmhost; to be exported to the guest. And <option>--nodisks</option> sets up a &vmguest; without a local storage (good for Live CDs)."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:707
+#: libvirt_guest_installation.xml:305
 #, no-c-format
 msgid "Installation Method"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:709
+#: libvirt_guest_installation.xml:307
 #, no-c-format
 msgid "Specify the installation method using one of <option>--location</option> , <option>--cdrom</option> , <option>--pxe</option> , <option>--import</option> , or <option>--boot </option> ."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:717
+#: libvirt_guest_installation.xml:315
 #, no-c-format
 msgid "Accessing the Installation"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:719
+#: libvirt_guest_installation.xml:317
 #, no-c-format
 msgid "Use the <option>--graphics <replaceable>VALUE</replaceable></option> option to specify how to access the installation. &productname; supports the values <literal>vnc</literal> or <literal>none</literal> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:724
+#: libvirt_guest_installation.xml:322
 #, no-c-format
 msgid "If using vnc <command>virt-install</command> tries to launch <command>virt-viewer</command> . If it is not installed or cannot be run, connect to the &vmguest; manually with you preferred viewer. To explicitly prevent <command>virt-install</command> from launching the viewer use <option>--noautoconsole</option> . To define a password for accessing the VNC session, use the following syntax: <option>--graphics vnc,password=<replaceable>PASSWORD</replaceable></option> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:733
+#: libvirt_guest_installation.xml:331
 #, no-c-format
 msgid "In case you are using <option>--graphics none</option> , you can access the &vmguest; through operating system supported services, such as SSH or VNC. Refer to the operating system installation manual on how to set up these services in the installation system."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:742
+#: libvirt_guest_installation.xml:340
 #, no-c-format
 msgid "Passing Kernel and Initrd Files"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:744
+#: libvirt_guest_installation.xml:342
 #, no-c-format
 msgid "It is possible to directly specify the Kernel and Initrd of the installer, for example from a network source. <phrase os=\"sles;sled;\">To set up a network source, see <xref linkend=\"sec.deployment.instserver.http\"/>.</phrase>"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:750
+#: libvirt_guest_installation.xml:348
 #, no-c-format
 msgid "To pass additional boot parameters, use the <option>--extra-args</option> option. This can be used to specify a network configuration. For details, see <xref os=\"sles;sled\" linkend=\"cha.boot_parameters\"/> <link os=\"osuse\" xlink:href=\"https://en.opensuse.org/SDB:Linuxrc\"/> ."
 msgstr ""
 
 #. Tag: title
-#: libvirt_guest_installation.xml:758
+#: libvirt_guest_installation.xml:356
 #, no-c-format
 msgid "Loading Kernel and Initrd from HTTP Server"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_guest_installation.xml:759
+#: libvirt_guest_installation.xml:357
 #, no-c-format
 msgid "&prompt.root;<command>virt-install</command> --location \\\n"
       "\"http://download.opensuse.org/pub/opensuse/distribution/leap/15.0/repo/oss\" \\\n"
@@ -355,7 +355,7 @@ msgid "&prompt.root;<command>virt-install</command> --location \\\n"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_guest_installation.xml:764
+#: libvirt_guest_installation.xml:362
 #, no-c-format
 msgid "&prompt.root;<command>virt-install</command> --location \"http://example.tld/REPOSITORY/DVD1/\" \\\n"
       "--extra-args=\"textmode=1\" --name \"SLES15\" --memory 2048 --virt-type kvm\\\n"
@@ -364,19 +364,19 @@ msgid "&prompt.root;<command>virt-install</command> --location \"http://example.
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:772
+#: libvirt_guest_installation.xml:370
 #, no-c-format
 msgid "Enabling the Console"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:774
+#: libvirt_guest_installation.xml:372
 #, no-c-format
 msgid "By default, the console is not enabled for new virtual machines installed using <command>virt-install</command> . To enable it, use <option>--extra-args=\"console=ttyS0 textmode=1\"</option> as in the following example:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_guest_installation.xml:780
+#: libvirt_guest_installation.xml:378
 #, no-c-format
 msgid "&prompt.user;virt-install --virt-type kvm --name sles12 --memory 1024 \\\n"
       " --disk /var/lib/libvirt/images/disk1.qcow2 --os-variant sles12\n"
@@ -384,49 +384,49 @@ msgid "&prompt.user;virt-install --virt-type kvm --name sles12 --memory 1024 \\\
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:783
+#: libvirt_guest_installation.xml:381
 #, no-c-format
 msgid "After the installation finishes, the <filename>/etc/default/grub</filename> file in the VM image will be updated with the <option>console=ttyS0</option> option on the <literal>GRUB_CMDLINE_LINUX_DEFAULT</literal> line."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:792
+#: libvirt_guest_installation.xml:390
 #, no-c-format
 msgid "Using UEFI and Secure Boot"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:794
+#: libvirt_guest_installation.xml:392
 #, no-c-format
 msgid "Install OVMF as described in <xref linkend=\"sec.vt.installation.ovmf\"/> . Then add the <option>--boot uefi</option> option to the <command>virt-install</command> command."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:800
+#: libvirt_guest_installation.xml:398
 #, no-c-format
 msgid "Secure boot will be used automatically when setting up a new VM with OMVF. To use a specific firmware, use <option>--boot loader=/usr/share/qemu/ovmf-<replaceable>VERSION</replaceable>.bin</option> . Replace <replaceable>VERSION</replaceable> with the file you need."
 msgstr ""
 
 #. Tag: title
-#: libvirt_guest_installation.xml:812
+#: libvirt_guest_installation.xml:410
 #, no-c-format
 msgid "Example of a <command>virt-install</command> command line"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:813
+#: libvirt_guest_installation.xml:411
 #, no-c-format
 msgid "The following command line example creates a new &sled; 12 virtual machine with a virtio accelerated disk and network card. It creates a new 10 GB qcow2 disk image as a storage, the source installation media being the host CD-ROM drive. It will use VNC graphics, and it will auto-launch the graphical client."
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:822
+#: libvirt_guest_installation.xml:420
 #, no-c-format
 msgid "KVM"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_guest_installation.xml:824
+#: libvirt_guest_installation.xml:422
 #, no-c-format
 msgid "&prompt.user;virt-install --connect qemu:///system --virt-type kvm  --name sled12 \\\n"
       "--memory 1024 --disk size=10 --cdrom /dev/cdrom --graphics vnc \\\n"
@@ -434,13 +434,13 @@ msgid "&prompt.user;virt-install --connect qemu:///system --virt-type kvm  --nam
 msgstr ""
 
 #. Tag: term
-#: libvirt_guest_installation.xml:830
+#: libvirt_guest_installation.xml:428
 #, no-c-format
 msgid "&xen;"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_guest_installation.xml:832
+#: libvirt_guest_installation.xml:430
 #, no-c-format
 msgid "&prompt.user;virt-install --connect xen:// --virt-type xen  --name sled12 \\\n"
       "--memory 1024 --disk size=10 --cdrom /dev/cdrom --graphics vnc \\\n"
@@ -448,91 +448,91 @@ msgid "&prompt.user;virt-install --connect xen:// --virt-type xen  --name sled12
 msgstr ""
 
 #. Tag: title
-#: libvirt_guest_installation.xml:841
+#: libvirt_guest_installation.xml:439
 #, no-c-format
 msgid "Advanced Guest Installation Scenarios"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:843
+#: libvirt_guest_installation.xml:441
 #, no-c-format
 msgid "This section provides instructions for operations exceeding the scope of a normal installation, such as memory ballooning and installing add-on products."
 msgstr ""
 
 #. Tag: title
-#: libvirt_guest_installation.xml:850
+#: libvirt_guest_installation.xml:448
 #, no-c-format
 msgid "Memory Ballooning with Windows Guests"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:851
+#: libvirt_guest_installation.xml:449
 #, no-c-format
 msgid "Memory ballooning is a method to change the amount of memory used by &vmguest; at runtime. Both the &kvm; and &xen; hypervisors provide this method, but it needs to be supported by the guest as well."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:856
+#: libvirt_guest_installation.xml:454
 #, no-c-format
 msgid "While openSUSE and SLE-based guests support memory ballooning, Windows guests need the <link xlink:href=\"http://www.suse.com/products/vmdriverpack/\">Virtual Machine Driver Pack (VMDP)</link> to provide ballooning. To set the maximum memory greater than the initial memory configured for Windows guests, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:866
+#: libvirt_guest_installation.xml:464
 #, no-c-format
 msgid "Install the Windows guest with the maximum memory equal or less than the initial value."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:872
+#: libvirt_guest_installation.xml:470
 #, no-c-format
 msgid "Install the Virtual Machine Driver Pack in the Windows guest to provide required drivers."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:878
+#: libvirt_guest_installation.xml:476
 #, no-c-format
 msgid "Shut down the Windows guest."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:883
+#: libvirt_guest_installation.xml:481
 #, no-c-format
 msgid "Reset the maximum memory of the Windows guest to the required value."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:888
+#: libvirt_guest_installation.xml:486
 #, no-c-format
 msgid "Start the Windows guest again."
 msgstr ""
 
 #. Tag: title
-#: libvirt_guest_installation.xml:896
+#: libvirt_guest_installation.xml:494
 #, no-c-format
 msgid "Including Add-on Products in the Installation"
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:897
+#: libvirt_guest_installation.xml:495
 #, no-c-format
 msgid "Some operating systems such as &productname; offer to include add-on products in the installation process. In case the add-on product installation source is provided via network, no special &vmguest; configuration is needed. If it is provided via CD/DVD or ISO image, it is necessary to provide the &vmguest; installation system with both, the standard installation medium and an image for the add-on product."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:905
+#: libvirt_guest_installation.xml:503
 #, no-c-format
 msgid "In case you are using the GUI-based installation, select <guimenu>Customize Configuration Before Install</guimenu> in the last step of the wizard and add the add-on product ISO image via <menuchoice><guimenu>Add Hardware</guimenu> <guimenu>Storage</guimenu></menuchoice> . Specify the path to the image and set the <guimenu>Device Type</guimenu> to <guimenu>CD-ROM</guimenu> ."
 msgstr ""
 
 #. Tag: para
-#: libvirt_guest_installation.xml:913
+#: libvirt_guest_installation.xml:511
 #, no-c-format
 msgid "If installing from the command line, you need to set up the virtual CD/DVD drives with the <option>--disk</option> parameter rather than with <option>--cdrom</option> . The device that is specified first is used for booting. The following example will install &sls; 12 plus SDK:"
 msgstr ""
 
 #. Tag: screen
-#: libvirt_guest_installation.xml:919
+#: libvirt_guest_installation.xml:517
 #, no-c-format
 msgid "&prompt.user;virt-install --name sles12+sdk --memory 1024 --disk size=10 \\\n"
       "--disk /virt/iso/SLES12.iso,device=cdrom \\\n"

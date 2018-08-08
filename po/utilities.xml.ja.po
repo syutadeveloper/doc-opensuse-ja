@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-09 09:06+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -116,20 +116,34 @@ msgstr ""
 #: utilities.xml:78
 #, no-c-format
 msgid ""
-"<!-- FIXME, ke: I think \"rate\" is not the right term here --> vmstat "
-"collects information about processes, memory, I/O, interrupts and CPU. If "
-"called without a sampling rate, it displays average values since the last "
-"reboot. When called with a sampling rate, it displays actual samples:"
+"vmstat collects information about processes, memory, I/O, interrupts and CPU:"
+msgstr ""
+
+#. Tag: screen
+#: utilities.xml:82
+#, no-c-format
+msgid "vmstat [options] [delay [count]]"
+msgstr ""
+
+#. Tag: para
+#: utilities.xml:83
+#, no-c-format
+msgid ""
+"Whenn called without values for delay and count, it displays average values "
+"since the last reboot. When called with a value for delay (in seconds), it "
+"displays values for the given period (two seconds in the examples below). "
+"The value for count specifies the number of updates vmstat should perform. "
+"If not specifies, it will run until manually stopped."
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:86
+#: utilities.xml:91
 #, no-c-format
 msgid "<command>vmstat</command> Output on a Lightly Used Machine"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:87
+#: utilities.xml:92
 #, no-c-format
 msgid ""
 "&prompt.user;vmstat 2\n"
@@ -150,13 +164,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:98
+#: utilities.xml:103
 #, no-c-format
 msgid "<command>vmstat</command> Output on a Heavily Used Machine (CPU bound)"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:99
+#: utilities.xml:104
 #, no-c-format
 msgid ""
 "&prompt.user;vmstat 2\n"
@@ -177,13 +191,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:109
+#: utilities.xml:114
 #, no-c-format
 msgid "First Line of Output"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:110
+#: utilities.xml:115
 #, no-c-format
 msgid ""
 "The first line of the vmstat output always displays average values since the "
@@ -191,19 +205,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:115
+#: utilities.xml:120
 #, no-c-format
 msgid "The columns show the following:"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:120
+#: utilities.xml:125
 #, no-c-format
 msgid "<guimenu>r</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:123
+#: utilities.xml:128
 #, no-c-format
 msgid ""
 "Shows the number of processes in a runnable state. These processes are "
@@ -213,13 +227,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:132
+#: utilities.xml:137
 #, no-c-format
 msgid "<guimenu>b</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:135
+#: utilities.xml:140
 #, no-c-format
 msgid ""
 "Shows the number of processes waiting for a resource other than a CPU. A "
@@ -227,37 +241,37 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:143
+#: utilities.xml:148
 #, no-c-format
 msgid "<guimenu>swpd</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:146
+#: utilities.xml:151
 #, no-c-format
 msgid "The amount of swap space (KB) currently used."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:152
+#: utilities.xml:157
 #, no-c-format
 msgid "<guimenu>free</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:155
+#: utilities.xml:160
 #, no-c-format
 msgid "The amount of unused memory (KB)."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:161
+#: utilities.xml:166
 #, no-c-format
 msgid "<guimenu>inact</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:164
+#: utilities.xml:169
 #, no-c-format
 msgid ""
 "Recently unused memory that can be reclaimed. This column is only visible "
@@ -266,13 +280,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:172
+#: utilities.xml:177
 #, no-c-format
 msgid "<guimenu>active</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:175
+#: utilities.xml:180
 #, no-c-format
 msgid ""
 "Recently used memory that normally does not get reclaimed. This column is "
@@ -281,13 +295,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:183
+#: utilities.xml:188
 #, no-c-format
 msgid "<guimenu>buff</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:186
+#: utilities.xml:191
 #, no-c-format
 msgid ""
 "File buffer cache (KB) in RAM that contains file system metadata. This "
@@ -296,13 +310,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:194
+#: utilities.xml:199
 #, no-c-format
 msgid "<guimenu>cache</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:197
+#: utilities.xml:202
 #, no-c-format
 msgid ""
 "Page cache (KB) in RAM with the actual contents of files. This column is not "
@@ -311,13 +325,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:205
+#: utilities.xml:210
 #, no-c-format
 msgid "<guimenu>si / so</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:208
+#: utilities.xml:213
 #, no-c-format
 msgid ""
 "Amount of data (KB) that is moved from swap to RAM ( <literal>si</literal> ) "
@@ -333,13 +347,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:224
+#: utilities.xml:229
 #, no-c-format
 msgid "<guimenu>bi</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:227
+#: utilities.xml:232
 #, no-c-format
 msgid ""
 "Number of blocks per second received from a block device (for example, a "
@@ -349,13 +363,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:237
+#: utilities.xml:242
 #, no-c-format
 msgid "<guimenu>bo</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:240
+#: utilities.xml:245
 #, no-c-format
 msgid ""
 "Number of blocks per second sent to a block device (for example, a disk "
@@ -363,13 +377,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:247
+#: utilities.xml:252
 #, no-c-format
 msgid "<guimenu>in</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:250
+#: utilities.xml:255
 #, no-c-format
 msgid ""
 "Interrupts per second. A high value may indicate a high I/O level (network "
@@ -379,13 +393,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:260
+#: utilities.xml:265
 #, no-c-format
 msgid "<guimenu>cs</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:263
+#: utilities.xml:268
 #, no-c-format
 msgid ""
 "Number of context switches per second. This is the number of times that the "
@@ -394,37 +408,37 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:271
+#: utilities.xml:276
 #, no-c-format
 msgid "<guimenu>us</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:274
+#: utilities.xml:279
 #, no-c-format
 msgid "Percentage of CPU usage executing application code."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:280
+#: utilities.xml:285
 #, no-c-format
 msgid "<guimenu>sy</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:283
+#: utilities.xml:288
 #, no-c-format
 msgid "Percentage of CPU usage executing kernel code."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:289
+#: utilities.xml:294
 #, no-c-format
 msgid "<guimenu>id</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:292
+#: utilities.xml:297
 #, no-c-format
 msgid ""
 "Percentage of CPU time spent idling. If this value is zero over a longer "
@@ -435,13 +449,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:302
+#: utilities.xml:307
 #, no-c-format
 msgid "<guimenu>wa</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:305
+#: utilities.xml:310
 #, no-c-format
 msgid ""
 "If \"wa\" time is non-zero, it indicates throughput lost because of waiting "
@@ -453,31 +467,31 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:317
+#: utilities.xml:322
 #, no-c-format
 msgid "<guimenu>st</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:320
+#: utilities.xml:325
 #, no-c-format
 msgid "Percentage of CPU time stolen from a virtual machine."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:326
+#: utilities.xml:331
 #, no-c-format
 msgid "See <command>vmstat</command> <option>--help</option> for more options."
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:334
+#: utilities.xml:339
 #, no-c-format
 msgid "System Activity Information: <command>sar</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:335
+#: utilities.xml:340
 #, no-c-format
 msgid ""
 "<command>sar</command> can generate extensive reports on almost all "
@@ -487,13 +501,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:343
+#: utilities.xml:348
 #, no-c-format
 msgid "sysstat Package"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:344
+#: utilities.xml:349
 #, no-c-format
 msgid ""
 "<command>sar</command> is a part of the <package>sysstat</package> package "
@@ -501,13 +515,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:351
+#: utilities.xml:356
 #, no-c-format
 msgid "Generating reports with <command>sar</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:352
+#: utilities.xml:357
 #, no-c-format
 msgid ""
 "To generate reports on the fly, call <command>sar</command> with an interval "
@@ -522,7 +536,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:364
+#: utilities.xml:369
 #, no-c-format
 msgid ""
 "sar 2 10                         # on-the-fly report, 10 times every 2 "
@@ -534,7 +548,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:369
+#: utilities.xml:374
 #, no-c-format
 msgid ""
 "Find examples for useful <command>sar</command> calls and their "
@@ -545,13 +559,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:377
+#: utilities.xml:382
 #, no-c-format
 msgid "CPU Usage Report: <command>sar</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:378
+#: utilities.xml:383
 #, no-c-format
 msgid ""
 "When called with no options, <command>sar</command> shows a basic report "
@@ -561,7 +575,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:384
+#: utilities.xml:389
 #, no-c-format
 msgid ""
 "&prompt.root;sar 10 5\n"
@@ -585,7 +599,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:394
+#: utilities.xml:399
 #, no-c-format
 msgid ""
 "<guimenu>%iowait</guimenu> displays the percentage of time that the CPU was "
@@ -596,13 +610,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:404
+#: utilities.xml:409
 #, no-c-format
 msgid "Memory Usage Report: <command>sar</command> <option>-r</option>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:405
+#: utilities.xml:410
 #, no-c-format
 msgid ""
 "Generate an overall picture of the system memory (RAM) by using the option "
@@ -610,7 +624,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:409
+#: utilities.xml:414
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.root;sar -r 10 5\n"
@@ -634,7 +648,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:419
+#: utilities.xml:424
 #, no-c-format
 msgid ""
 "The columns <guimenu>kbcommit</guimenu> and <guimenu>%commit</guimenu> show "
@@ -645,20 +659,20 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:428
+#: utilities.xml:433
 #, no-c-format
 msgid "Paging Statistics Report: <command>sar</command> <option>-B</option>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:429
+#: utilities.xml:434
 #, no-c-format
 msgid ""
 "Use the option <option>-B</option> to display the kernel paging statistics."
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:433
+#: utilities.xml:438
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.root;sar -B 10 5\n"
@@ -682,7 +696,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:443
+#: utilities.xml:448
 #, no-c-format
 msgid ""
 "The <guimenu>majflt/s</guimenu> (major faults per second) column shows how "
@@ -695,7 +709,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:453
+#: utilities.xml:458
 #, no-c-format
 msgid ""
 "The <guimenu>%vmeff</guimenu> column shows the number of pages scanned "
@@ -707,14 +721,14 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:464
+#: utilities.xml:469
 #, no-c-format
 msgid ""
 "Block Device Statistics Report: <command>sar</command> <option>-d</option>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:465
+#: utilities.xml:470
 #, no-c-format
 msgid ""
 "Use the option <option>-d</option> to display the block device (hard disk, "
@@ -724,7 +738,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:471
+#: utilities.xml:476
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.root;sar -d -p 10 5\n"
@@ -775,7 +789,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:497
+#: utilities.xml:502
 #, no-c-format
 msgid ""
 "Compare the <guimenu>Average</guimenu> values for <guimenu>tps</guimenu> , "
@@ -785,7 +799,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:504
+#: utilities.xml:509
 #, no-c-format
 msgid ""
 "If the machine uses multiple disks, then it is best if I/O is interleaved "
@@ -796,7 +810,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:514
+#: utilities.xml:519
 #, no-c-format
 msgid ""
 "Network Statistics Reports: <command>sar</command> <option>-n "
@@ -804,7 +818,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:515
+#: utilities.xml:520
 #, no-c-format
 msgid ""
 "The option <option>-n</option> lets you generate multiple network related "
@@ -813,7 +827,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:522
+#: utilities.xml:527
 #, no-c-format
 msgid ""
 "<emphasis>DEV</emphasis> : Generates a statistic report for all network "
@@ -821,7 +835,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:528
+#: utilities.xml:533
 #, no-c-format
 msgid ""
 "<emphasis>EDEV</emphasis> : Generates an error statistics report for all "
@@ -829,39 +843,39 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:534
+#: utilities.xml:539
 #, no-c-format
 msgid ""
 "<emphasis>NFS</emphasis> : Generates a statistic report for an NFS client"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:540
+#: utilities.xml:545
 #, no-c-format
 msgid ""
 "<emphasis>NFSD</emphasis> : Generates a statistic report for an NFS server"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:546
+#: utilities.xml:551
 #, no-c-format
 msgid "<emphasis>SOCK</emphasis> : Generates a statistic report on sockets"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:551
+#: utilities.xml:556
 #, no-c-format
 msgid "<emphasis>ALL</emphasis> : Generates all network statistic reports"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:559
+#: utilities.xml:564
 #, no-c-format
 msgid "Visualizing <command>sar</command> Data"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:560
+#: utilities.xml:565
 #, no-c-format
 msgid ""
 "<command>sar</command> reports are not always easy to parse for humans. "
@@ -873,19 +887,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:572
+#: utilities.xml:577
 #, no-c-format
 msgid "System Information"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:577
+#: utilities.xml:582
 #, no-c-format
 msgid "Device Load Information: <command>iostat</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:578
+#: utilities.xml:583
 #, no-c-format
 msgid ""
 "To monitor the system device load, use <command>iostat</command> . It "
@@ -894,7 +908,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:583
+#: utilities.xml:588
 #, no-c-format
 msgid ""
 "To be able to use <command>iostat</command> , install the package "
@@ -902,7 +916,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:587
+#: utilities.xml:592
 #, no-c-format
 msgid ""
 "The first <command>iostat</command> report shows statistics collected since "
@@ -911,7 +925,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:592
+#: utilities.xml:597
 #, no-c-format
 msgid ""
 "&prompt.user;iostat\n"
@@ -928,7 +942,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:602
+#: utilities.xml:607
 #, no-c-format
 msgid ""
 "Invoking <command>iostat</command> in this way will help you find out "
@@ -943,7 +957,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:621
+#: utilities.xml:626
 #, no-c-format
 msgid ""
 "You can also specify that a certain device should be monitored at specified "
@@ -952,13 +966,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:627
+#: utilities.xml:632
 #, no-c-format
 msgid "&prompt.user;<command>iostat</command> -p sda 3 5"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:628
+#: utilities.xml:633
 #, no-c-format
 msgid ""
 "To show statistics of network file systems (NFS), there are two similar "
@@ -966,7 +980,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:634
+#: utilities.xml:639
 #, no-c-format
 msgid ""
 "<command>nfsiostat-sysstat</command> is included with the package "
@@ -974,7 +988,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:640
+#: utilities.xml:645
 #, no-c-format
 msgid ""
 "<command>nfsiostat</command> is included with the package <package>nfs-"
@@ -982,13 +996,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:649
+#: utilities.xml:654
 #, no-c-format
 msgid "Processor Activity Monitoring: <command>mpstat</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:650
+#: utilities.xml:655
 #, no-c-format
 msgid ""
 "The utility <command>mpstat</command> examines activities of each available "
@@ -997,7 +1011,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:655
+#: utilities.xml:660
 #, no-c-format
 msgid ""
 "The timing arguments work the same way as with the <command>iostat</command> "
@@ -1006,7 +1020,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:661
+#: utilities.xml:666
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.root;mpstat 2 5\n"
@@ -1030,13 +1044,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:671
+#: utilities.xml:676
 #, no-c-format
 msgid "From the <command>mpstat</command> data, you can see:"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:676
+#: utilities.xml:681
 #, no-c-format
 msgid ""
 "The ratio between the <guimenu>%usr</guimenu> and <guimenu>%sys</guimenu> . "
@@ -1048,7 +1062,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:687
+#: utilities.xml:692
 #, no-c-format
 msgid ""
 "Whether there is a subset of CPUs that are nearly fully utilized even if the "
@@ -1058,13 +1072,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:699
+#: utilities.xml:704
 #, no-c-format
 msgid "Processor Frequency Monitoring: <command>turbostat</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:700
+#: utilities.xml:705
 #, no-c-format
 msgid ""
 "<command>turbostat</command> shows frequencies, load, temperature, and power "
@@ -1076,7 +1090,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:709
+#: utilities.xml:714
 #, no-c-format
 msgid ""
 "&prompt.sudo;turbostat find /etc -type d -exec true {} \\;\n"
@@ -1092,7 +1106,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:719
+#: utilities.xml:724
 #, no-c-format
 msgid ""
 "The output depends on the CPU type and may vary. To display more details "
@@ -1102,13 +1116,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:728
+#: utilities.xml:733
 #, no-c-format
 msgid "Task Monitoring: <command>pidstat</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:729
+#: utilities.xml:734
 #, no-c-format
 msgid ""
 "If you need to see what load a particular task applies to your system, use "
@@ -1119,7 +1133,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:736
+#: utilities.xml:741
 #, no-c-format
 msgid ""
 "For example, <command>pidstat</command> <option>-C</option> firefox 2 3 "
@@ -1129,7 +1143,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:742
+#: utilities.xml:747
 #, no-c-format
 msgid ""
 "&prompt.root;pidstat -C firefox 2 3\n"
@@ -1150,7 +1164,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:756
+#: utilities.xml:761
 #, no-c-format
 msgid ""
 "Similarly, <command>pidstat</command> <option>-d</option> can be used to "
@@ -1159,13 +1173,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:764
+#: utilities.xml:769
 #, no-c-format
 msgid "Kernel Ring Buffer: <command>dmesg</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:765
+#: utilities.xml:770
 #, no-c-format
 msgid ""
 "The Linux kernel keeps certain messages in a ring buffer. To view these "
@@ -1173,7 +1187,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:769
+#: utilities.xml:774
 #, no-c-format
 msgid ""
 "Older events are logged in the &systemd; journal. See <xref linkend=\"cha."
@@ -1181,13 +1195,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:776
+#: utilities.xml:781
 #, no-c-format
 msgid "List of Open Files: <command>lsof</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:777
+#: utilities.xml:782
 #, no-c-format
 msgid ""
 "To view a list of all the files open for the process with process ID "
@@ -1196,7 +1210,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:782
+#: utilities.xml:787
 #, no-c-format
 msgid ""
 "&prompt.root;lsof -p $$\n"
@@ -1211,7 +1225,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:791
+#: utilities.xml:796
 #, no-c-format
 msgid ""
 "The special shell variable <literal>$$</literal> , whose value is the "
@@ -1219,7 +1233,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:795
+#: utilities.xml:800
 #, no-c-format
 msgid ""
 "When used with <option>-i</option> , <command>lsof</command> lists currently "
@@ -1227,7 +1241,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:799
+#: utilities.xml:804
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.root;lsof -i\n"
@@ -1248,14 +1262,14 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:813
+#: utilities.xml:818
 #, no-c-format
 msgid ""
 "Kernel and udev Event Sequence Viewer: <command>udevadm monitor</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:814
+#: utilities.xml:819
 #, no-c-format
 msgid ""
 "<command>udevadm monitor</command> listens to the kernel uevents and events "
@@ -1265,13 +1279,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:821
+#: utilities.xml:826
 #, no-c-format
 msgid "Monitoring udev Events"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:822
+#: utilities.xml:827
 #, no-c-format
 msgid ""
 "Only root user is allowed to monitor udev events by running the "
@@ -1279,7 +1293,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:830
+#: utilities.xml:835
 #, no-c-format
 msgid ""
 "UEVENT[1138806687] add@/devices/pci0000:00/0000:00:1d.7/usb4/4-2/4-2.2\n"
@@ -1309,19 +1323,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:853
+#: utilities.xml:858
 #, no-c-format
 msgid "Processes"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:858
+#: utilities.xml:863
 #, no-c-format
 msgid "Interprocess Communication: <command>ipcs</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:859
+#: utilities.xml:864
 #, no-c-format
 msgid ""
 "The command <command>ipcs</command> produces a list of the IPC resources "
@@ -1329,7 +1343,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:863
+#: utilities.xml:868
 #, no-c-format
 msgid ""
 "&prompt.root;ipcs\n"
@@ -1358,13 +1372,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:890
+#: utilities.xml:895
 #, no-c-format
 msgid "Process List: <command>ps</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:891
+#: utilities.xml:896
 #, no-c-format
 msgid ""
 "The command <command>ps</command> produces a list of processes. Most "
@@ -1373,7 +1387,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:896
+#: utilities.xml:901
 #, no-c-format
 msgid ""
 "To list all processes with user and command line information, use "
@@ -1381,7 +1395,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:900
+#: utilities.xml:905
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.user;ps axu\n"
@@ -1416,7 +1430,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:917
+#: utilities.xml:922
 #, no-c-format
 msgid ""
 "To check how many <command>sshd</command> processes are running, use the "
@@ -1425,7 +1439,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:923
+#: utilities.xml:928
 #, no-c-format
 msgid ""
 "&prompt.user;ps -p $(pidof sshd)\n"
@@ -1435,7 +1449,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:927
+#: utilities.xml:932
 #, no-c-format
 msgid ""
 "The process list can be formatted according to your needs. The option "
@@ -1444,7 +1458,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:932
+#: utilities.xml:937
 #, no-c-format
 msgid ""
 "&prompt.user;ps ax --format pid,rss,cmd --sort rss\n"
@@ -1465,13 +1479,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:948
+#: utilities.xml:953
 #, no-c-format
 msgid "Useful <command>ps</command> Calls"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:950
+#: utilities.xml:955
 #, no-c-format
 msgid ""
 "<command>ps aux</command> <option>--sort <replaceable>COLUMN</replaceable></"
@@ -1479,7 +1493,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:954
+#: utilities.xml:959
 #, no-c-format
 msgid ""
 "Sort the output by <replaceable>COLUMN</replaceable> . Replace "
@@ -1487,32 +1501,32 @@ msgid ""
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:959
+#: utilities.xml:964
 #, no-c-format
 msgid "<option>pmem</option> for physical memory ratio"
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:960
+#: utilities.xml:965
 #, no-c-format
 msgid "<option>pcpu</option> for CPU ratio"
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:961
+#: utilities.xml:966
 #, no-c-format
 msgid ""
 "<option>rss</option> for resident set size (non-swapped physical memory)"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:967
+#: utilities.xml:972
 #, no-c-format
 msgid "<command>ps axo pid,%cpu,rss,vsz,args,wchan</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:970
+#: utilities.xml:975
 #, no-c-format
 msgid ""
 "Shows every process, their PID, CPU usage ratio, memory size (resident and "
@@ -1520,25 +1534,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:977
+#: utilities.xml:982
 #, no-c-format
 msgid "<command>ps axfo pid,args</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:980
+#: utilities.xml:985
 #, no-c-format
 msgid "Show a process tree."
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:989
+#: utilities.xml:994
 #, no-c-format
 msgid "Process Tree: <command>pstree</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:990
+#: utilities.xml:995
 #, no-c-format
 msgid ""
 "The command <command>pstree</command> produces a list of processes in the "
@@ -1546,7 +1560,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:995
+#: utilities.xml:1000
 #, no-c-format
 msgid ""
 "&prompt.user;pstree\n"
@@ -1582,7 +1596,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1022
+#: utilities.xml:1027
 #, no-c-format
 msgid ""
 "The parameter <option>-p</option> adds the process ID to a given name. To "
@@ -1591,13 +1605,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1030
+#: utilities.xml:1035
 #, no-c-format
 msgid "Table of Processes: <command>top</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1031
+#: utilities.xml:1036
 #, no-c-format
 msgid ""
 "The command <command>top</command> (an abbreviation of <quote>table of "
@@ -1609,7 +1623,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1041
+#: utilities.xml:1046
 #, no-c-format
 msgid ""
 "&prompt.user;top -n 1\n"
@@ -1653,7 +1667,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1065
+#: utilities.xml:1070
 #, no-c-format
 msgid ""
 "By default the output is sorted by CPU usage (column <guimenu>%CPU</"
@@ -1663,7 +1677,7 @@ msgid ""
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:1072
+#: utilities.xml:1077
 #, no-c-format
 msgid ""
 "<keycombo><keycap function=\"shift\"/><keycap>M</keycap></keycombo> : "
@@ -1671,7 +1685,7 @@ msgid ""
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:1073
+#: utilities.xml:1078
 #, no-c-format
 msgid ""
 "<keycombo><keycap function=\"shift\"/><keycap>N</keycap></keycombo> : "
@@ -1679,7 +1693,7 @@ msgid ""
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:1074
+#: utilities.xml:1079
 #, no-c-format
 msgid ""
 "<keycombo><keycap function=\"shift\"/><keycap>T</keycap></keycombo> : Time "
@@ -1687,7 +1701,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1076
+#: utilities.xml:1081
 #, no-c-format
 msgid ""
 "To use any other field for sorting, press <keycap>F</keycap> and select a "
@@ -1696,7 +1710,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1081
+#: utilities.xml:1086
 #, no-c-format
 msgid ""
 "The parameter <option>-U <replaceable>UID</replaceable></option> monitors "
@@ -1706,13 +1720,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1090
+#: utilities.xml:1095
 #, no-c-format
 msgid "&zseries; Hypervisor Monitor: <command>hyptop</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1092
+#: utilities.xml:1097
 #, no-c-format
 msgid ""
 "<command>hyptop</command> provides a dynamic real-time view of an &zseries; "
@@ -1725,7 +1739,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1103
+#: utilities.xml:1108
 #, no-c-format
 msgid ""
 "<guimenu>sys_list</guimenu> : Lists systems that the current hypervisor is "
@@ -1733,13 +1747,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1109
+#: utilities.xml:1114
 #, no-c-format
 msgid "<guimenu>sys</guimenu> : Shows one system in more detail"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1114
+#: utilities.xml:1119
 #, no-c-format
 msgid ""
 "You can run <command>hyptop</command> in interactive mode (default) or in "
@@ -1749,13 +1763,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1120
+#: utilities.xml:1125
 #, no-c-format
 msgid "Output for the <guimenu>sys_list</guimenu> window under LPAR:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1123
+#: utilities.xml:1128
 #, no-c-format
 msgid ""
 "12:30:48 | CPU-T: IFL(18) CP(3) UN(3)     ?=help\n"
@@ -1775,13 +1789,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1137
+#: utilities.xml:1142
 #, no-c-format
 msgid "Output for the \"sys_list\" window under z/VM:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1140
+#: utilities.xml:1145
 #, no-c-format
 msgid ""
 "12:32:21 | CPU-T: UN(16)                          ?=help\n"
@@ -1807,13 +1821,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1160
+#: utilities.xml:1165
 #, no-c-format
 msgid "Output for the <guimenu>sys</guimenu> window under LPAR:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1163
+#: utilities.xml:1168
 #, no-c-format
 msgid ""
 "14:08:41 | H05LP30 | CPU-T: IFL(18) CP(3) UN(3)                  ? = help\n"
@@ -1833,13 +1847,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1177
+#: utilities.xml:1182
 #, no-c-format
 msgid "Output for the <guimenu>sys</guimenu> window under z/VM:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1180
+#: utilities.xml:1185
 #, no-c-format
 msgid ""
 "15:46:57 | T6360003 | CPU-T: UN(16)                  ? = help\n"
@@ -1850,13 +1864,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1188
+#: utilities.xml:1193
 #, no-c-format
 msgid "A top-like I/O Monitor: <command>iotop</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1189
+#: utilities.xml:1194
 #, no-c-format
 msgid ""
 "The <command>iotop</command> utility displays a table of I/O usage by "
@@ -1864,13 +1878,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1194
+#: utilities.xml:1199
 #, no-c-format
 msgid "Installing <command>iotop</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1195
+#: utilities.xml:1200
 #, no-c-format
 msgid ""
 "<command>iotop</command> is not installed by default. You need to install it "
@@ -1878,7 +1892,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1201
+#: utilities.xml:1206
 #, no-c-format
 msgid ""
 "<command>iotop</command> displays columns for the I/O bandwidth read and "
@@ -1890,7 +1904,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1211
+#: utilities.xml:1216
 #, no-c-format
 msgid ""
 "The <keycap function=\"left\"/> and <keycap function=\"right\"/> keys change "
@@ -1898,13 +1912,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1217
+#: utilities.xml:1222
 #, no-c-format
 msgid "<keycap>R</keycap> reverses the sort order."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1222
+#: utilities.xml:1227
 #, no-c-format
 msgid ""
 "<keycap>O</keycap> toggles between showing all processes and threads "
@@ -1913,7 +1927,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1229
+#: utilities.xml:1234
 #, no-c-format
 msgid ""
 "<keycap>P</keycap> toggles between showing threads (default view) and "
@@ -1921,7 +1935,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1235
+#: utilities.xml:1240
 #, no-c-format
 msgid ""
 "<keycap>A</keycap> toggles between showing the current I/O bandwidth "
@@ -1930,7 +1944,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1243
+#: utilities.xml:1248
 #, no-c-format
 msgid ""
 "<keycap>I</keycap> lets you change the priority of a thread or a process's "
@@ -1938,19 +1952,19 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1249
+#: utilities.xml:1254
 #, no-c-format
 msgid "<keycap>Q</keycap> quits <command>iotop</command> ."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1254
+#: utilities.xml:1259
 #, no-c-format
 msgid "Pressing any other key will force a refresh."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1259
+#: utilities.xml:1264
 #, no-c-format
 msgid ""
 "Following is an example output of the command <command>iotop --only</"
@@ -1959,7 +1973,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1264
+#: utilities.xml:1269
 #, no-c-format
 msgid ""
 "&prompt.root;iotop --only\n"
@@ -1973,7 +1987,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1270
+#: utilities.xml:1275
 #, no-c-format
 msgid ""
 "<command>iotop</command> can be also used in a batch mode ( <literal>-b</"
@@ -1983,7 +1997,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1279
+#: utilities.xml:1284
 #, no-c-format
 msgid ""
 "Modify a process's niceness: <command>nice</command> and <command>renice</"
@@ -1991,7 +2005,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1280
+#: utilities.xml:1285
 #, no-c-format
 msgid ""
 "The kernel determines which processes require more CPU time than others by "
@@ -2002,7 +2016,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1288
+#: utilities.xml:1293
 #, no-c-format
 msgid ""
 "Adjusting the niceness level is useful when running a non time-critical "
@@ -2013,7 +2027,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1295
+#: utilities.xml:1300
 #, no-c-format
 msgid ""
 "Calling <command>nice</command> without any parameters prints the current "
@@ -2021,7 +2035,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1299
+#: utilities.xml:1304
 #, no-c-format
 msgid ""
 "&prompt.user;nice\n"
@@ -2029,7 +2043,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1301
+#: utilities.xml:1306
 #, no-c-format
 msgid ""
 "Running <command>nice</command> <replaceable>COMMAND</replaceable> "
@@ -2040,7 +2054,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1309
+#: utilities.xml:1314
 #, no-c-format
 msgid ""
 "To change the niceness of a running process, use <command>renice</command> "
@@ -2049,13 +2063,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1314
+#: utilities.xml:1319
 #, no-c-format
 msgid "&prompt.user;renice +5 3266"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1315
+#: utilities.xml:1320
 #, no-c-format
 msgid ""
 "To renice all processes owned by a specific user, use the option <option>-u "
@@ -2066,19 +2080,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1325
+#: utilities.xml:1330
 #, no-c-format
 msgid "Memory"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1330
+#: utilities.xml:1335
 #, no-c-format
 msgid "Memory Usage: <command>free</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1331
+#: utilities.xml:1336
 #, no-c-format
 msgid ""
 "The utility <command>free</command> examines RAM and swap usage. Details of "
@@ -2086,7 +2100,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1335
+#: utilities.xml:1340
 #, no-c-format
 msgid ""
 "&prompt.user;free\n"
@@ -2097,7 +2111,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1340
+#: utilities.xml:1345
 #, no-c-format
 msgid ""
 "The options <option>-b</option> , <option>-k</option> , <option>-m</"
@@ -2108,13 +2122,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1352
+#: utilities.xml:1357
 #, no-c-format
 msgid "Detailed Memory Usage: <filename>/proc/meminfo</filename>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1353
+#: utilities.xml:1358
 #, no-c-format
 msgid ""
 "Use <filename>/proc/meminfo</filename> to get more detailed information on "
@@ -2125,7 +2139,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1360
+#: utilities.xml:1365
 #, no-c-format
 msgid ""
 "MemTotal:        1942636 kB\n"
@@ -2174,43 +2188,43 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1403
+#: utilities.xml:1408
 #, no-c-format
 msgid "These entries stand for the following:"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1414
+#: utilities.xml:1419
 #, no-c-format
 msgid "<guimenu>MemTotal</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1416
+#: utilities.xml:1421
 #, no-c-format
 msgid "Total amount of RAM."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1422
+#: utilities.xml:1427
 #, no-c-format
 msgid "<guimenu>MemFree</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1424
+#: utilities.xml:1429
 #, no-c-format
 msgid "Amount of unused RAM."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1430
+#: utilities.xml:1435
 #, no-c-format
 msgid "<guimenu>MemAvailable</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1432
+#: utilities.xml:1437
 #, no-c-format
 msgid ""
 "Estimate of how much memory is available for starting new applications "
@@ -2218,25 +2232,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1439
+#: utilities.xml:1444
 #, no-c-format
 msgid "<guimenu>Buffers</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1441
+#: utilities.xml:1446
 #, no-c-format
 msgid "File buffer cache in RAM containing file system metadata."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1447
+#: utilities.xml:1452
 #, no-c-format
 msgid "<guimenu>Cached</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1449
+#: utilities.xml:1454
 #, no-c-format
 msgid ""
 "Page cache in RAM. This excludes buffer cache and swap cache, but includes "
@@ -2244,19 +2258,19 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1457
+#: utilities.xml:1462
 #, no-c-format
 msgid "<guimenu>SwapCached</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1459
+#: utilities.xml:1464
 #, no-c-format
 msgid "Page cache for swapped-out memory."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1465
+#: utilities.xml:1470
 #, no-c-format
 msgid ""
 "<guimenu>Active</guimenu> , <guimenu>Active(anon)</guimenu> , "
@@ -2264,7 +2278,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1470
+#: utilities.xml:1475
 #, no-c-format
 msgid ""
 "Recently used memory that will not be reclaimed unless necessary or on "
@@ -2273,7 +2287,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1478
+#: utilities.xml:1483
 #, no-c-format
 msgid ""
 "<guimenu>Active(anon)</guimenu> tracks swap-backed memory. This includes "
@@ -2282,13 +2296,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1485
+#: utilities.xml:1490
 #, no-c-format
 msgid "<guimenu>Active(file)</guimenu> tracks other file system backed memory."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1494
+#: utilities.xml:1499
 #, no-c-format
 msgid ""
 "<guimenu>Inactive</guimenu> , <guimenu>Inactive(anon)</guimenu> , "
@@ -2296,7 +2310,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1499
+#: utilities.xml:1504
 #, no-c-format
 msgid ""
 "Less recently used memory that will usually be reclaimed first. "
@@ -2305,7 +2319,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1506
+#: utilities.xml:1511
 #, no-c-format
 msgid ""
 "<guimenu>Inactive(anon)</guimenu> tracks swap backed memory. This includes "
@@ -2314,20 +2328,20 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1513
+#: utilities.xml:1518
 #, no-c-format
 msgid ""
 "<guimenu>Inactive(file)</guimenu> tracks other file system backed memory."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1522
+#: utilities.xml:1527
 #, no-c-format
 msgid "<guimenu>Unevictable</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1524
+#: utilities.xml:1529
 #, no-c-format
 msgid ""
 "Amount of memory that cannot be reclaimed (for example, because it is "
@@ -2335,13 +2349,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1531
+#: utilities.xml:1536
 #, no-c-format
 msgid "<guimenu>Mlocked</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1533
+#: utilities.xml:1538
 #, no-c-format
 msgid ""
 "Amount of memory that is backed by the <systemitem>mlock</systemitem> system "
@@ -2351,37 +2365,37 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1544
+#: utilities.xml:1549
 #, no-c-format
 msgid "<guimenu>SwapTotal</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1546
+#: utilities.xml:1551
 #, no-c-format
 msgid "Amount of swap space."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1552
+#: utilities.xml:1557
 #, no-c-format
 msgid "<guimenu>SwapFree</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1554
+#: utilities.xml:1559
 #, no-c-format
 msgid "Amount of unused swap space."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1560
+#: utilities.xml:1565
 #, no-c-format
 msgid "<guimenu>Dirty</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1563
+#: utilities.xml:1568
 #, no-c-format
 msgid ""
 "Amount of memory waiting to be written to disk, because it contains changes "
@@ -2395,37 +2409,37 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1577
+#: utilities.xml:1582
 #, no-c-format
 msgid "<guimenu>Writeback</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1580
+#: utilities.xml:1585
 #, no-c-format
 msgid "Amount of memory that is currently being written to disk."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1586
+#: utilities.xml:1591
 #, no-c-format
 msgid "<guimenu>Mapped</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1589
+#: utilities.xml:1594
 #, no-c-format
 msgid "Memory claimed with the <systemitem>mmap</systemitem> system call."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1595
+#: utilities.xml:1600
 #, no-c-format
 msgid "<guimenu>Shmem</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1597
+#: utilities.xml:1602
 #, no-c-format
 msgid ""
 "Memory shared between groups of processes, such as IPC data, "
@@ -2433,75 +2447,75 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1604
+#: utilities.xml:1609
 #, no-c-format
 msgid "<guimenu>Slab</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1606
+#: utilities.xml:1611
 #, no-c-format
 msgid "Memory allocation for internal data structures of the kernel."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1612
+#: utilities.xml:1617
 #, no-c-format
 msgid "<guimenu>SReclaimable</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1614
+#: utilities.xml:1619
 #, no-c-format
 msgid ""
 "Slab section that can be reclaimed, such as caches (inode, dentry, etc.)."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1620
+#: utilities.xml:1625
 #, no-c-format
 msgid "<guimenu>SUnreclaim</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1622
+#: utilities.xml:1627
 #, no-c-format
 msgid "Slab section that cannot be reclaimed."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1628
+#: utilities.xml:1633
 #, no-c-format
 msgid "<guimenu>KernelStack</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1630
+#: utilities.xml:1635
 #, no-c-format
 msgid ""
 "Amount of kernel space memory used by applications (through system calls)."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1636
+#: utilities.xml:1641
 #, no-c-format
 msgid "<guimenu>PageTables</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1638
+#: utilities.xml:1643
 #, no-c-format
 msgid "Amount of memory dedicated to page tables of all processes."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1644
+#: utilities.xml:1649
 #, no-c-format
 msgid "<guimenu>NFS_Unstable</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1646
+#: utilities.xml:1651
 #, no-c-format
 msgid ""
 "NFS pages that have already been sent to the server, but are not yet "
@@ -2509,37 +2523,37 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1653
+#: utilities.xml:1658
 #, no-c-format
 msgid "<guimenu>Bounce</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1655
+#: utilities.xml:1660
 #, no-c-format
 msgid "Memory used for bounce buffers of block devices."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1661
+#: utilities.xml:1666
 #, no-c-format
 msgid "<guimenu>WritebackTmp</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1663
+#: utilities.xml:1668
 #, no-c-format
 msgid "Memory used by FUSE for temporary writeback buffers."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1669
+#: utilities.xml:1674
 #, no-c-format
 msgid "<guimenu>CommitLimit</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1671
+#: utilities.xml:1676
 #, no-c-format
 msgid ""
 "Amount of memory available to the system based on the overcommit ratio "
@@ -2547,13 +2561,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1679
+#: utilities.xml:1684
 #, no-c-format
 msgid "<guimenu>Committed_AS</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1681
+#: utilities.xml:1686
 #, no-c-format
 msgid ""
 "An approximation of the total amount of memory (RAM and swap) that the "
@@ -2561,61 +2575,61 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1688
+#: utilities.xml:1693
 #, no-c-format
 msgid "<guimenu>VmallocTotal</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1690
+#: utilities.xml:1695
 #, no-c-format
 msgid "Amount of allocated kernel virtual address space."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1696
+#: utilities.xml:1701
 #, no-c-format
 msgid "<guimenu>VmallocUsed</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1698
+#: utilities.xml:1703
 #, no-c-format
 msgid "Amount of used kernel virtual address space."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1704
+#: utilities.xml:1709
 #, no-c-format
 msgid "<guimenu>VmallocChunk</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1706
+#: utilities.xml:1711
 #, no-c-format
 msgid "The largest contiguous block of available kernel virtual address space."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1712
+#: utilities.xml:1717
 #, no-c-format
 msgid "<guimenu>HardwareCorrupted</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1714
+#: utilities.xml:1719
 #, no-c-format
 msgid "Amount of failed memory (can only be detected when using ECC RAM)."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1720
+#: utilities.xml:1725
 #, no-c-format
 msgid "<guimenu>AnonHugePages</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1722
+#: utilities.xml:1727
 #, no-c-format
 msgid ""
 "Anonymous hugepages that are mapped into user space page tables. These are "
@@ -2625,13 +2639,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1731
+#: utilities.xml:1736
 #, no-c-format
 msgid "<guimenu>HugePages_Total</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1733
+#: utilities.xml:1738
 #, no-c-format
 msgid ""
 "Number of preallocated hugepages for use by <systemitem>SHM_HUGETLB</"
@@ -2641,37 +2655,37 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1743
+#: utilities.xml:1748
 #, no-c-format
 msgid "<guimenu>HugePages_Free</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1745
+#: utilities.xml:1750
 #, no-c-format
 msgid "Number of hugepages available."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1751
+#: utilities.xml:1756
 #, no-c-format
 msgid "<guimenu>HugePages_Rsvd</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1753
+#: utilities.xml:1758
 #, no-c-format
 msgid "Number of hugepages that are committed."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1759
+#: utilities.xml:1764
 #, no-c-format
 msgid "<guimenu>HugePages_Surp</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1761
+#: utilities.xml:1766
 #, no-c-format
 msgid ""
 "Number of hugepages available beyond <guimenu>HugePages_Total</guimenu> "
@@ -2680,25 +2694,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1769
+#: utilities.xml:1774
 #, no-c-format
 msgid "<guimenu>Hugepagesize</guimenu>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1771
+#: utilities.xml:1776
 #, no-c-format
 msgid "Size of a hugepage&mdash;on &x86-64; the default is 2048&nbsp;KB."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:1777
+#: utilities.xml:1782
 #, no-c-format
 msgid "<guimenu>DirectMap4k</guimenu> etc."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1779
+#: utilities.xml:1784
 #, no-c-format
 msgid ""
 "Amount of kernel memory that is mapped to pages with a given size (in the "
@@ -2706,13 +2720,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1789
+#: utilities.xml:1794
 #, no-c-format
 msgid "Process Memory Usage: smaps"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1790
+#: utilities.xml:1795
 #, no-c-format
 msgid ""
 "Exactly determining how much memory a certain process is consuming is not "
@@ -2729,7 +2743,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1806
+#: utilities.xml:1811
 #, no-c-format
 msgid ""
 "smaps is expensive to read. Therefore it is not recommended to monitor it "
@@ -2737,19 +2751,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1813
+#: utilities.xml:1818
 #, no-c-format
 msgid "Networking"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1816
+#: utilities.xml:1821
 #, no-c-format
 msgid "Traffic Shaping"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1817
+#: utilities.xml:1822
 #, no-c-format
 msgid ""
 "In case the network bandwidth is lower than expected, you should first check "
@@ -2757,13 +2771,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1824
+#: utilities.xml:1829
 #, no-c-format
 msgid "Basic Network Diagnostics: <command>ip</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1825
+#: utilities.xml:1830
 #, no-c-format
 msgid ""
 "<command>ip</command> is a powerful tool to set up and control network "
@@ -2773,7 +2787,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1831
+#: utilities.xml:1836
 #, no-c-format
 msgid ""
 "If you run <command>ip</command> with no additional parameter, it displays a "
@@ -2785,7 +2799,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1840
+#: utilities.xml:1845
 #, no-c-format
 msgid ""
 "&prompt.root;ip -s link show br0\n"
@@ -2799,7 +2813,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1847
+#: utilities.xml:1852
 #, no-c-format
 msgid ""
 "<command>ip</command> can also show interfaces ( <option>link</option> ), "
@@ -2808,7 +2822,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1852
+#: utilities.xml:1857
 #, no-c-format
 msgid ""
 "&prompt.root;ip route\n"
@@ -2819,7 +2833,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1857
+#: utilities.xml:1862
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.root;ip link\n"
@@ -2838,13 +2852,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1869
+#: utilities.xml:1874
 #, no-c-format
 msgid "Show the Network Usage of Processes: <command>nethogs</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1872
+#: utilities.xml:1877
 #, no-c-format
 msgid ""
 "In some cases, for example if the network traffic suddenly becomes very "
@@ -2855,7 +2869,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1879
+#: utilities.xml:1884
 #, no-c-format
 msgid ""
 "PID   USER  PROGRAM                                DEV   SENT   RECEIVED\n"
@@ -2884,7 +2898,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1892
+#: utilities.xml:1897
 #, no-c-format
 msgid ""
 "Like in <command>top</command> , <command>nethogs</command> features "
@@ -2892,37 +2906,37 @@ msgid ""
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:1897
+#: utilities.xml:1902
 #, no-c-format
 msgid "<keycap>M</keycap> : cycle between display modes (kb/s, kb, b, mb)"
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:1899
+#: utilities.xml:1904
 #, no-c-format
 msgid "<keycap>R</keycap> : sort by <guimenu>RECEIVED</guimenu>"
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:1901
+#: utilities.xml:1906
 #, no-c-format
 msgid "<keycap>S</keycap> : sort by <guimenu>SENT</guimenu>"
 msgstr ""
 
 #. Tag: member
-#: utilities.xml:1902
+#: utilities.xml:1907
 #, no-c-format
 msgid "<keycap>Q</keycap> : quit"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1906
+#: utilities.xml:1911
 #, no-c-format
 msgid "Ethernet Cards in Detail: ethtool"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1907
+#: utilities.xml:1912
 #, no-c-format
 msgid ""
 "<command>ethtool</command> can display and change detailed aspects of your "
@@ -2931,7 +2945,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:1912
+#: utilities.xml:1917
 #, no-c-format
 msgid ""
 "&prompt.root;ethtool eth0\n"
@@ -2950,7 +2964,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1925
+#: utilities.xml:1930
 #, no-c-format
 msgid ""
 "The following table shows <command>ethtool</command> options that you can "
@@ -2958,103 +2972,103 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:1930
+#: utilities.xml:1935
 #, no-c-format
 msgid "List of Query Options of <command>ethtool</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1937
+#: utilities.xml:1942
 #, no-c-format
 msgid "<command>ethtool</command> option"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1942
+#: utilities.xml:1947
 #, no-c-format
 msgid "it queries the device for"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1951
+#: utilities.xml:1956
 #, no-c-format
 msgid "-a"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1956
+#: utilities.xml:1961
 #, no-c-format
 msgid "pause parameter information"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1963
+#: utilities.xml:1968
 #, no-c-format
 msgid "-c"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1968
+#: utilities.xml:1973
 #, no-c-format
 msgid "interrupt coalescing information"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1975
+#: utilities.xml:1980
 #, no-c-format
 msgid "-g"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1980
+#: utilities.xml:1985
 #, no-c-format
 msgid "Rx/Tx (receive/transmit) ring parameter information"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1987
+#: utilities.xml:1992
 #, no-c-format
 msgid "-i"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1992
+#: utilities.xml:1997
 #, no-c-format
 msgid "associated driver information"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:1999
+#: utilities.xml:2004
 #, no-c-format
 msgid "-k"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2004
+#: utilities.xml:2009
 #, no-c-format
 msgid "offload information"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2011
+#: utilities.xml:2016
 #, no-c-format
 msgid "-S"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2016
+#: utilities.xml:2021
 #, no-c-format
 msgid "NIC and driver-specific statistics"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2027
+#: utilities.xml:2032
 #, no-c-format
 msgid "Show the Network Status: <command>ss</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2028
+#: utilities.xml:2033
 #, no-c-format
 msgid ""
 "<command>ss</command> is a tool to dump socket statistics and replaces the "
@@ -3063,7 +3077,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2033
+#: utilities.xml:2038
 #, no-c-format
 msgid ""
 "&prompt.root;ss\n"
@@ -3091,13 +3105,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2045
+#: utilities.xml:2050
 #, no-c-format
 msgid "To show all network ports currently open, use the following command:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2048
+#: utilities.xml:2053
 #, no-c-format
 msgid ""
 "&prompt.root;ss -l\n"
@@ -3117,7 +3131,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2062
+#: utilities.xml:2067
 #, no-c-format
 msgid ""
 "When displaying network connections, you can specify the socket type to "
@@ -3127,7 +3141,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2068
+#: utilities.xml:2073
 #, no-c-format
 msgid ""
 "The following example lists all TCP connections and the programs using these "
@@ -3137,7 +3151,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2075
+#: utilities.xml:2080
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"7pt\"?>&prompt.root;ss -t -a -p\n"
@@ -3155,13 +3169,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2085
+#: utilities.xml:2090
 #, no-c-format
 msgid "The <filename>/proc</filename> File System"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2087
+#: utilities.xml:2092
 #, no-c-format
 msgid ""
 "The <filename>/proc</filename> file system is a pseudo file system in which "
@@ -3170,7 +3184,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2093
+#: utilities.xml:2098
 #, no-c-format
 msgid ""
 "&prompt.user;cat /proc/cpuinfo\n"
@@ -3208,13 +3222,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2122
+#: utilities.xml:2127
 #, no-c-format
 msgid "Detailed Processor Information"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2123
+#: utilities.xml:2128
 #, no-c-format
 msgid ""
 "Detailed information about the processor on the &x86-64; architecture is "
@@ -3222,13 +3236,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2129
+#: utilities.xml:2134
 #, no-c-format
 msgid "Query the allocation and use of interrupts with the following command:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2133
+#: utilities.xml:2138
 #, no-c-format
 msgid ""
 "&prompt.user;cat /proc/interrupts\n"
@@ -3280,7 +3294,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2169
+#: utilities.xml:2174
 #, no-c-format
 msgid ""
 "The address assignment of executables and libraries is contained in the "
@@ -3288,7 +3302,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2174
+#: utilities.xml:2179
 #, no-c-format
 msgid ""
 "&prompt.user;cat /proc/self/maps\n"
@@ -3318,7 +3332,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2194
+#: utilities.xml:2199
 #, no-c-format
 msgid ""
 "A lot more information can be obtained from the /proc file system. Some "
@@ -3326,61 +3340,61 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2201
+#: utilities.xml:2206
 #, no-c-format
 msgid "<filename>/proc/devices</filename>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2204
+#: utilities.xml:2209
 #, no-c-format
 msgid "Available devices"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2210
+#: utilities.xml:2215
 #, no-c-format
 msgid "<filename>/proc/modules</filename>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2213
+#: utilities.xml:2218
 #, no-c-format
 msgid "Kernel modules loaded"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2219
+#: utilities.xml:2224
 #, no-c-format
 msgid "<filename>/proc/cmdline</filename>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2222
+#: utilities.xml:2227
 #, no-c-format
 msgid "Kernel command line"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2228
+#: utilities.xml:2233
 #, no-c-format
 msgid "<filename>/proc/meminfo</filename>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2231
+#: utilities.xml:2236
 #, no-c-format
 msgid "Detailed information about memory usage"
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2237
+#: utilities.xml:2242
 #, no-c-format
 msgid "<filename>/proc/config.gz</filename>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2240
+#: utilities.xml:2245
 #, no-c-format
 msgid ""
 "<command>gzip</command> -compressed configuration file of the kernel "
@@ -3388,13 +3402,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2247
+#: utilities.xml:2252
 #, no-c-format
 msgid "/proc/ <replaceable>PID/</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2250
+#: utilities.xml:2255
 #, no-c-format
 msgid ""
 "Find information about processes currently running in the <filename>/proc/</"
@@ -3405,7 +3419,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2261
+#: utilities.xml:2266
 #, no-c-format
 msgid ""
 "Further information is available in the text file <filename>/usr/src/linux/"
@@ -3414,13 +3428,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2269
+#: utilities.xml:2274
 #, no-c-format
 msgid "<command>procinfo</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2270
+#: utilities.xml:2275
 #, no-c-format
 msgid ""
 "Important information from the <filename>/proc</filename> file system is "
@@ -3428,7 +3442,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2274
+#: utilities.xml:2279
 #, no-c-format
 msgid ""
 "&prompt.user;procinfo\n"
@@ -3469,7 +3483,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2302
+#: utilities.xml:2307
 #, no-c-format
 msgid ""
 "To see all the information, use the parameter <option>-a</option> . The "
@@ -3479,7 +3493,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2308
+#: utilities.xml:2313
 #, no-c-format
 msgid ""
 "By default, the cumulative values are displayed. The parameter <option>-d</"
@@ -3488,13 +3502,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2317
+#: utilities.xml:2322
 #, no-c-format
 msgid "System Control Parameters: <filename>/proc/sys/</filename>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2318
+#: utilities.xml:2323
 #, no-c-format
 msgid ""
 "System control parameters are used to modify the Linux kernel parameters at "
@@ -3506,7 +3520,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2326
+#: utilities.xml:2331
 #, no-c-format
 msgid ""
 "Parameters are grouped into categories and can be listed with "
@@ -3517,25 +3531,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2336
+#: utilities.xml:2341
 #, no-c-format
 msgid "<command>sysctl dev</command> ( <filename>/proc/sys/dev/</filename> )"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2338
+#: utilities.xml:2343
 #, no-c-format
 msgid "Device-specific information."
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2344
+#: utilities.xml:2349
 #, no-c-format
 msgid "<command>sysctl fs</command> ( <filename>/proc/sys/fs/</filename> )"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2346
+#: utilities.xml:2351
 #, no-c-format
 msgid ""
 "Used file handles, quotas, and other file system-oriented parameters. For "
@@ -3543,14 +3557,14 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2354
+#: utilities.xml:2359
 #, no-c-format
 msgid ""
 "<command>sysctl kernel</command> ( <filename>/proc/sys/kernel/</filename> )"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2356
+#: utilities.xml:2361
 #, no-c-format
 msgid ""
 "Information about the task scheduler, system shared memory, and other kernel-"
@@ -3559,13 +3573,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2364
+#: utilities.xml:2369
 #, no-c-format
 msgid "<command>sysctl net</command> ( <filename>/proc/sys/net/</filename> )"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2366
+#: utilities.xml:2371
 #, no-c-format
 msgid ""
 "Information about network bridges, and general network parameters (mainly "
@@ -3574,13 +3588,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: utilities.xml:2374
+#: utilities.xml:2379
 #, no-c-format
 msgid "<command>sysctl vm</command> ( <filename>/proc/sys/vm/</filename> )"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2376
+#: utilities.xml:2381
 #, no-c-format
 msgid ""
 "Entries in this path relate to information about the virtual memory, "
@@ -3589,7 +3603,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2384
+#: utilities.xml:2389
 #, no-c-format
 msgid ""
 "To set or change a parameter for the current session, use the command "
@@ -3600,25 +3614,25 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2395
+#: utilities.xml:2400
 #, no-c-format
 msgid "Hardware Information"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2400
+#: utilities.xml:2405
 #, no-c-format
 msgid "PCI Resources: <command>lspci</command>"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2402
+#: utilities.xml:2407
 #, no-c-format
 msgid "Accessing PCI configuration."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2403
+#: utilities.xml:2408
 #, no-c-format
 msgid ""
 "Most operating systems require root user privileges to grant access to the "
@@ -3626,13 +3640,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2408
+#: utilities.xml:2413
 #, no-c-format
 msgid "The command <command>lspci</command> lists the PCI resources:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2411
+#: utilities.xml:2416
 #, no-c-format
 msgid ""
 "&prompt.root;lspci\n"
@@ -3663,13 +3677,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2436
+#: utilities.xml:2441
 #, no-c-format
 msgid "Using <option>-v</option> results in a more detailed listing:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2439
+#: utilities.xml:2444
 #, no-c-format
 msgid ""
 "&prompt.root;lspci -v\n"
@@ -3687,7 +3701,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2451
+#: utilities.xml:2456
 #, no-c-format
 msgid ""
 "Information about device name resolution is obtained from the file "
@@ -3696,7 +3710,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2456
+#: utilities.xml:2461
 #, no-c-format
 msgid ""
 "The parameter <option>-vv</option> produces all the information that could "
@@ -3705,13 +3719,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2464
+#: utilities.xml:2469
 #, no-c-format
 msgid "USB Devices: <command>lsusb</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2465
+#: utilities.xml:2470
 #, no-c-format
 msgid ""
 "The command <command>lsusb</command> lists all USB devices. With the option "
@@ -3722,7 +3736,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2473
+#: utilities.xml:2478
 #, no-c-format
 msgid ""
 "&prompt.root;lsusb\n"
@@ -3740,13 +3754,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2487
+#: utilities.xml:2492
 #, no-c-format
 msgid "Monitoring and Tuning the Thermal Subsystem: <command>tmon</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2490
+#: utilities.xml:2495
 #, no-c-format
 msgid ""
 "<command>tmon</command> is a tool to help visualize, tune, and test the "
@@ -3755,7 +3769,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2495
+#: utilities.xml:2500
 #, no-c-format
 msgid ""
 "┌──────THERMAL ZONES(SENSORS)──────────────────────────────┐\n"
@@ -3784,7 +3798,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2518
+#: utilities.xml:2523
 #, no-c-format
 msgid ""
 "For detailed information on how to interpret the data, how to log thermal "
@@ -3794,13 +3808,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2528
+#: utilities.xml:2533
 #, no-c-format
 msgid "MCELog: Machine Check Exceptions (MCE)"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2529
+#: utilities.xml:2534
 #, no-c-format
 msgid ""
 "The <systemitem class=\"resource\">mcelog</systemitem> package logs and "
@@ -3810,7 +3824,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2536
+#: utilities.xml:2541
 #, no-c-format
 msgid ""
 "However, the mcelog service is not enabled by default, resulting in memory "
@@ -3821,7 +3835,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2545
+#: utilities.xml:2550
 #, no-c-format
 msgid ""
 "The service can either be enabled and started via the &yast; system services "
@@ -3829,7 +3843,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2549
+#: utilities.xml:2554
 #, no-c-format
 msgid ""
 "&prompt.root;systemctl enable mcelog\n"
@@ -3837,13 +3851,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2554
+#: utilities.xml:2559
 #, no-c-format
 msgid "x86_64: dmidecode: DMI Table Decoder"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2555
+#: utilities.xml:2560
 #, no-c-format
 msgid ""
 "<command>dmidecode</command> shows the machine's DMI table containing "
@@ -3851,7 +3865,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2559
+#: utilities.xml:2564
 #, no-c-format
 msgid ""
 "&prompt.root;dmidecode\n"
@@ -3884,13 +3898,27 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2589
+#: utilities.xml:2594
+#, no-c-format
+msgid "&power;: List Hardware"
+msgstr ""
+
+#. Tag: para
+#: utilities.xml:2595
+#, no-c-format
+msgid ""
+"<command>lshw</command> extracts and displays the hardware configuration of "
+"the machine."
+msgstr ""
+
+#. Tag: title
+#: utilities.xml:2602
 #, no-c-format
 msgid "Files and File Systems"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2593
+#: utilities.xml:2606
 #, no-c-format
 msgid ""
 "For file system-specific information, refer to <xref linkend=\"book.storage"
@@ -3898,13 +3926,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2599
+#: utilities.xml:2612
 #, no-c-format
 msgid "Determine the File Type: <command>file</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2600
+#: utilities.xml:2613
 #, no-c-format
 msgid ""
 "The command <command>file</command> determines the type of a file or a list "
@@ -3912,7 +3940,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2604
+#: utilities.xml:2617
 #, no-c-format
 msgid ""
 "&prompt.user;file /usr/bin/file\n"
@@ -3921,7 +3949,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2607
+#: utilities.xml:2620
 #, no-c-format
 msgid ""
 "The parameter <option>-f <replaceable>LIST</replaceable></option> specifies "
@@ -3930,7 +3958,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2613
+#: utilities.xml:2626
 #, no-c-format
 msgid ""
 "&prompt.user;file /usr/share/man/man1/file.1.gz\n"
@@ -3942,7 +3970,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2618
+#: utilities.xml:2631
 #, no-c-format
 msgid ""
 "The parameter <option>-i</option> outputs a mime type string rather than the "
@@ -3950,7 +3978,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2622
+#: utilities.xml:2635
 #, no-c-format
 msgid ""
 "&prompt.user;file -i /usr/share/misc/magic\n"
@@ -3958,7 +3986,7 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2627
+#: utilities.xml:2640
 #, no-c-format
 msgid ""
 "File Systems and Their Usage: <command>mount</command> , <command>df</"
@@ -3966,7 +3994,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2628
+#: utilities.xml:2641
 #, no-c-format
 msgid ""
 "The command <command>mount</command> shows which file system (device and "
@@ -3974,7 +4002,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2632
+#: utilities.xml:2645
 #, no-c-format
 msgid ""
 "&prompt.root;mount\n"
@@ -3993,7 +4021,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2645
+#: utilities.xml:2658
 #, no-c-format
 msgid ""
 "Obtain information about total usage of the file systems with the command "
@@ -4003,7 +4031,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2651
+#: utilities.xml:2664
 #, no-c-format
 msgid ""
 "&prompt.user;df -h\n"
@@ -4015,7 +4043,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2657
+#: utilities.xml:2670
 #, no-c-format
 msgid ""
 "Display the total size of all the files in a given directory and its "
@@ -4026,7 +4054,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2664
+#: utilities.xml:2677
 #, no-c-format
 msgid ""
 "&prompt.user;du -sh /opt\n"
@@ -4034,13 +4062,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2669
+#: utilities.xml:2682
 #, no-c-format
 msgid "Additional Information about ELF Binaries"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2670
+#: utilities.xml:2683
 #, no-c-format
 msgid ""
 "Read the content of binaries with the <command>readelf</command> utility. "
@@ -4049,7 +4077,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2675
+#: utilities.xml:2688
 #, no-c-format
 msgid ""
 "&prompt.user;readelf --file-header /bin/ls\n"
@@ -4076,19 +4104,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2699
+#: utilities.xml:2712
 #, no-c-format
 msgid "File Properties: <command>stat</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2700
+#: utilities.xml:2713
 #, no-c-format
 msgid "The command <command>stat</command> displays file properties:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2703
+#: utilities.xml:2716
 #, no-c-format
 msgid ""
 "&prompt.user;stat /etc/profile\n"
@@ -4102,7 +4130,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2711
+#: utilities.xml:2724
 #, no-c-format
 msgid ""
 "The parameter <option>--file-system</option> produces details of the "
@@ -4110,7 +4138,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2715
+#: utilities.xml:2728
 #, no-c-format
 msgid ""
 "&prompt.user;stat /etc/profile --file-system\n"
@@ -4122,19 +4150,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2724
+#: utilities.xml:2737
 #, no-c-format
 msgid "User Information"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2729
+#: utilities.xml:2742
 #, no-c-format
 msgid "User Accessing Files: <command>fuser</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2730
+#: utilities.xml:2743
 #, no-c-format
 msgid ""
 "It can be useful to determine what processes or users are currently "
@@ -4145,7 +4173,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2738
+#: utilities.xml:2751
 #, no-c-format
 msgid ""
 "&prompt.user;fuser -v /mnt/*\n"
@@ -4155,7 +4183,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2742
+#: utilities.xml:2755
 #, no-c-format
 msgid ""
 "Following termination of the <command>less</command> process, which was "
@@ -4165,13 +4193,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2752
+#: utilities.xml:2765
 #, no-c-format
 msgid "Who Is Doing What: <command>w</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2753
+#: utilities.xml:2766
 #, no-c-format
 msgid ""
 "With the command <command>w</command> , find out who is logged in to the "
@@ -4179,7 +4207,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2757
+#: utilities.xml:2770
 #, no-c-format
 msgid ""
 "&prompt.user;w\n"
@@ -4194,7 +4222,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2763
+#: utilities.xml:2776
 #, no-c-format
 msgid ""
 "If any users of other systems have logged in remotely, the parameter "
@@ -4206,19 +4234,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2775
+#: utilities.xml:2788
 #, no-c-format
 msgid "Time and Date"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2780
+#: utilities.xml:2793
 #, no-c-format
 msgid "Time Measurement with <command>time</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2781
+#: utilities.xml:2794
 #, no-c-format
 msgid ""
 "Determine the time spent by commands with the <command>time</command> "
@@ -4227,7 +4255,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2786
+#: utilities.xml:2799
 #, no-c-format
 msgid ""
 "&prompt.user;time find . &gt; /dev/null\n"
@@ -4238,21 +4266,21 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2793
+#: utilities.xml:2806
 #, no-c-format
 msgid ""
 "The real time that elapsed from the command's start-up until it finished."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2799
+#: utilities.xml:2812
 #, no-c-format
 msgid ""
 "CPU time of the user as reported by the <literal>times</literal> system call."
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2805
+#: utilities.xml:2818
 #, no-c-format
 msgid ""
 "CPU time of the system as reported by the <literal>times</literal> system "
@@ -4260,7 +4288,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2811
+#: utilities.xml:2824
 #, no-c-format
 msgid ""
 "The output of <filename>/usr/bin/time</filename> is much more detailed. It "
@@ -4269,7 +4297,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2816
+#: utilities.xml:2829
 #, no-c-format
 msgid ""
 "/usr/bin/time -v find . &gt; /dev/null\n"
@@ -4299,13 +4327,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2843
+#: utilities.xml:2856
 #, no-c-format
 msgid "Graph Your Data: RRDtool"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2845
+#: utilities.xml:2858
 #, no-c-format
 msgid ""
 "There are a lot of data in the world around you, which can be easily "
@@ -4315,7 +4343,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2853
+#: utilities.xml:2866
 #, no-c-format
 msgid ""
 "RRDtool is available for most Unix platforms and Linux distributions. "
@@ -4324,7 +4352,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2859
+#: utilities.xml:2872
 #, no-c-format
 msgid ""
 "<command>zypper</command> <option>install</option> <replaceable>rrdtool</"
@@ -4332,13 +4360,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2865
+#: utilities.xml:2878
 #, no-c-format
 msgid "Bindings"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2866
+#: utilities.xml:2879
 #, no-c-format
 msgid ""
 "There are Perl, Python, Ruby, and PHP bindings available for RRDtool, so "
@@ -4347,13 +4375,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2874
+#: utilities.xml:2887
 #, no-c-format
 msgid "How RRDtool Works"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2875
+#: utilities.xml:2888
 #, no-c-format
 msgid ""
 "RRDtool is an abbreviation of <emphasis>Round Robin Database tool</"
@@ -4364,7 +4392,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2883
+#: utilities.xml:2896
 #, no-c-format
 msgid ""
 "As mentioned above, RRDtool is designed to work with data that change in "
@@ -4375,7 +4403,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2890
+#: utilities.xml:2903
 #, no-c-format
 msgid ""
 "Sometimes it is not possible to obtain the data automatically and regularly. "
@@ -4384,7 +4412,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2895
+#: utilities.xml:2908
 #, no-c-format
 msgid ""
 "The following is a simple example of basic RRDtool usage. It illustrates all "
@@ -4394,13 +4422,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2904
+#: utilities.xml:2917
 #, no-c-format
 msgid "A Practical Example"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2905
+#: utilities.xml:2918
 #, no-c-format
 msgid ""
 "Suppose we want to collect and view information about the memory usage in "
@@ -4412,13 +4440,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2914
+#: utilities.xml:2927
 #, no-c-format
 msgid "Collecting Data"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2915
+#: utilities.xml:2928
 #, no-c-format
 msgid ""
 "RRDtool is very often used to measure and visualize network traffic. In such "
@@ -4429,7 +4457,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2923
+#: utilities.xml:2936
 #, no-c-format
 msgid ""
 "Our situation is different&mdash;we need to obtain the data manually. A "
@@ -4438,7 +4466,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2929
+#: utilities.xml:2942
 #, no-c-format
 msgid ""
 "&prompt.user;cat free_mem.sh\n"
@@ -4453,7 +4481,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2941
+#: utilities.xml:2954
 #, no-c-format
 msgid ""
 "The time interval is set to 4 seconds, and is implemented with the "
@@ -4461,7 +4489,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2947
+#: utilities.xml:2960
 #, no-c-format
 msgid ""
 "RRDtool accepts time information in a special format - so called "
@@ -4471,7 +4499,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2955
+#: utilities.xml:2968
 #, no-c-format
 msgid ""
 "The free memory information is reported in bytes with <command>free</"
@@ -4480,7 +4508,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2962
+#: utilities.xml:2975
 #, no-c-format
 msgid ""
 "The line with the <command>echo ...</command> command contains the future "
@@ -4489,7 +4517,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2970
+#: utilities.xml:2983
 #, no-c-format
 msgid ""
 "After running <command>free_mem.sh</command> , you see an output similar to "
@@ -4497,7 +4525,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:2974
+#: utilities.xml:2987
 #, no-c-format
 msgid ""
 "&prompt.user;sh free_mem.sh\n"
@@ -4514,31 +4542,31 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2985
+#: utilities.xml:2998
 #, no-c-format
 msgid "It is convenient to redirect the command's output to a file with"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2988
+#: utilities.xml:3001
 #, no-c-format
 msgid "<command>sh free_mem.sh &gt; free_mem_updates.log</command>"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2991
+#: utilities.xml:3004
 #, no-c-format
 msgid "to simplify its future execution."
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:2996
+#: utilities.xml:3009
 #, no-c-format
 msgid "Creating the Database"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:2997
+#: utilities.xml:3010
 #, no-c-format
 msgid ""
 "Create the initial Robin Round database for our example with the following "
@@ -4546,7 +4574,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:3001
+#: utilities.xml:3014
 #, no-c-format
 msgid ""
 "&prompt.user;rrdtool create free_mem.rrd --start 1272974834 --step=4 \\\n"
@@ -4554,7 +4582,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3006
+#: utilities.xml:3019
 #, no-c-format
 msgid ""
 "This command creates a file called <filename>free_mem.rrd</filename> for "
@@ -4562,7 +4590,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3012
+#: utilities.xml:3025
 #, no-c-format
 msgid ""
 "The <option>--start</option> option specifies the time (in Unix time) when "
@@ -4572,7 +4600,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3020
+#: utilities.xml:3033
 #, no-c-format
 msgid ""
 "The <option>--step</option> specifies the time interval in seconds with "
@@ -4580,7 +4608,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3026
+#: utilities.xml:3039
 #, no-c-format
 msgid ""
 "The <literal>DS:memory:GAUGE:600:U:U</literal> part introduces a new data "
@@ -4591,7 +4619,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3036
+#: utilities.xml:3049
 #, no-c-format
 msgid ""
 "<literal>RRA:AVERAGE:0.5:1:24</literal> creates Round Robin archive (RRA) "
@@ -4602,7 +4630,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3045
+#: utilities.xml:3058
 #, no-c-format
 msgid ""
 "If no error message is displayed, then <filename>free_mem.rrd</filename> "
@@ -4610,7 +4638,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:3050
+#: utilities.xml:3063
 #, no-c-format
 msgid ""
 "&prompt.user;ls -l free_mem.rrd\n"
@@ -4618,13 +4646,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:3054
+#: utilities.xml:3067
 #, no-c-format
 msgid "Updating Database Values"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3055
+#: utilities.xml:3068
 #, no-c-format
 msgid ""
 "After the database is created, you need to fill it with the measured data. "
@@ -4635,7 +4663,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:3062
+#: utilities.xml:3075
 #, no-c-format
 msgid ""
 "&prompt.user;sh free_mem_updates.log; ls -l free_mem.rrd\n"
@@ -4643,7 +4671,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3064
+#: utilities.xml:3077
 #, no-c-format
 msgid ""
 "As you can see, the size of <filename>free_mem.rrd</filename> remained the "
@@ -4651,13 +4679,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:3070
+#: utilities.xml:3083
 #, no-c-format
 msgid "Viewing Measured Values"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3071
+#: utilities.xml:3084
 #, no-c-format
 msgid ""
 "We have already measured the values, created the database, and stored the "
@@ -4666,7 +4694,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3076
+#: utilities.xml:3089
 #, no-c-format
 msgid ""
 "To retrieve all the values from our database, enter the following on the "
@@ -4674,7 +4702,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:3080
+#: utilities.xml:3093
 #, no-c-format
 msgid ""
 "&prompt.user;rrdtool fetch free_mem.rrd AVERAGE --start 1272974830 \\\n"
@@ -4694,7 +4722,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3097
+#: utilities.xml:3110
 #, no-c-format
 msgid ""
 "<literal>AVERAGE</literal> will fetch average value points from the "
@@ -4704,7 +4732,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3106
+#: utilities.xml:3119
 #, no-c-format
 msgid ""
 "The first line of the output prints the name of the data source as defined "
@@ -4712,7 +4740,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3112
+#: utilities.xml:3125
 #, no-c-format
 msgid ""
 "The left results column represents individual points in time, while the "
@@ -4721,7 +4749,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3119
+#: utilities.xml:3132
 #, no-c-format
 msgid ""
 "The <literal>nan</literal> in the last line stands for <quote>not a number</"
@@ -4729,13 +4757,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3125
+#: utilities.xml:3138
 #, no-c-format
 msgid "Now a graph representing the values stored in the database is drawn:"
 msgstr ""
 
 #. Tag: screen
-#: utilities.xml:3128
+#: utilities.xml:3141
 #, no-c-format
 msgid ""
 "&prompt.user;rrdtool graph free_mem.png \\\n"
@@ -4751,13 +4779,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:3139
+#: utilities.xml:3152
 #, no-c-format
 msgid "Points to Notice"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3141
+#: utilities.xml:3154
 #, no-c-format
 msgid ""
 "<filename>free_mem.png</filename> is the file name of the graph to be "
@@ -4765,7 +4793,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3147
+#: utilities.xml:3160
 #, no-c-format
 msgid ""
 "<option>--start</option> and <option>--end</option> limit the time range "
@@ -4773,7 +4801,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3153
+#: utilities.xml:3166
 #, no-c-format
 msgid ""
 "<option>--step</option> specifies the time resolution (in seconds) of the "
@@ -4781,7 +4809,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3159
+#: utilities.xml:3172
 #, no-c-format
 msgid ""
 "The <literal>DEF:...</literal> part is a data definition called "
@@ -4793,7 +4821,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3169
+#: utilities.xml:3182
 #, no-c-format
 msgid ""
 "The <literal>LINE...</literal> part specifies properties of the line to be "
@@ -4802,7 +4830,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3177
+#: utilities.xml:3190
 #, no-c-format
 msgid ""
 "<option>--vertical-label</option> sets the label to be printed along the "
@@ -4811,7 +4839,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3184
+#: utilities.xml:3197
 #, no-c-format
 msgid ""
 "<option>--zoom</option> specifies the zoom factor for the graph. This value "
@@ -4819,7 +4847,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3190
+#: utilities.xml:3203
 #, no-c-format
 msgid ""
 "<option>--x-grid</option> specifies how to draw grid lines and their labels "
@@ -4829,19 +4857,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:3199
+#: utilities.xml:3212
 #, no-c-format
 msgid "Example Graph Created with RRDtool"
 msgstr ""
 
 #. Tag: title
-#: utilities.xml:3213
+#: utilities.xml:3226
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3214
+#: utilities.xml:3227
 #, no-c-format
 msgid ""
 "RRDtool is a very complex tool with a lot of sub-commands and command line "
@@ -4850,7 +4878,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3220
+#: utilities.xml:3233
 #, no-c-format
 msgid ""
 "Apart from RRDtool's man page ( <command>man 1 rrdtool</command> ) which "
@@ -4864,7 +4892,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: utilities.xml:3231
+#: utilities.xml:3244
 #, no-c-format
 msgid ""
 "If you are interested in monitoring network traffic, have a look at <link "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-06-28 08:14+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1457,47 +1457,40 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1199
+#: net_dns.xml:1197
 #, no-c-format
 msgid "The /var/lib/named/&exampledomain;.zone File"
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1200
+#: net_dns.xml:1198
 #, no-c-format
 msgid ""
-"1.  $TTL 2D\n"
-"2.  &exampledomain;. IN SOA      dns  root.&exampledomain;. ( <!-- network "
-"scheme: need short hostname -->\n"
-"3.               2003072441  ; serial\n"
-"4.               1D          ; refresh\n"
-"5.               2H          ; retry\n"
-"6.               1W          ; expiry\n"
-"7.               2D )        ; minimum\n"
-"8.\n"
-"9.               IN NS       dns <!-- network scheme: need short hostname --"
-">\n"
-"10.              IN MX       10 mail\n"
-"11.\n"
-"12. gate         IN A        &gateip; <!-- network scheme: need short "
-"hostname -->\n"
-"13.              IN A        10.0.0.1 <!-- network scheme: What's the "
-"external IP of the gate in the WAN? -->\n"
-"14. dns          IN A        &dnsip; <!-- network scheme: need short "
-"hostname -->\n"
-"15. mail         IN A        &mailip; <!-- network scheme: need short "
-"hostname -->\n"
-"16. &wsI;      IN A        &wsIip;\n"
-"17. &wsII;        IN A        &wsIIip;\n"
-"18. &wsIII;       IN A        &wsIIIip;\n"
-"19. &wsIV;      IN A        &wsIVip;\n"
-"20. ntp          IN CNAME    dns <!-- network scheme: need short hostname --"
-">\n"
-"21. dns6         IN A6  0    &dnsipv6;\n"
+"$TTL 2D <co xml:id=\"welt.zone.ttl\"/>\n"
+"&exampledomain;. IN SOA      dns  root.&exampledomain;. ( <co xml:id=\"welt."
+"zone.soa_start\"/>\n"
+"             2003072441  ; serial <co xml:id=\"welt.zone.serial_no\"/>\n"
+"             1D          ; refresh <co xml:id=\"welt.zone.refresh\"/>\n"
+"             2H          ; retry <co xml:id=\"welt.zone.retry\"/>\n"
+"             1W          ; expiry <co xml:id=\"welt.zone.expire\"/>\n"
+"             2D )        ; minimum <co xml:id=\"welt.zone.caching_time\"/>\n"
+"\n"
+"             IN NS       dns <co xml:id=\"welt.zone.inns\"/>\n"
+"             IN MX       10 mail dns <co xml:id=\"welt.zone.mx\"/>\n"
+"gate         IN A        &gateip; <co xml:id=\"welt.zone.ips\"/>\n"
+"             IN A        10.0.0.1\n"
+"dns          IN A        &dnsip;\n"
+"mail         IN A        &mailip;\n"
+"&wsI;      IN A        &wsIip;\n"
+"&wsII;        IN A        &wsIIip;\n"
+"&wsIII;       IN A        &wsIIIip;\n"
+"&wsIV;      IN A        &wsIVip;\n"
+"ntp          IN CNAME    dns <co xml:id=\"welt.zone.ntp\"/>\n"
+"dns6         IN A6  0    &dnsipv6;"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1236
+#: net_dns.xml:1230
 #, no-c-format
 msgid ""
 "<systemitem>$TTL</systemitem> defines the default time to live that should "
@@ -1506,13 +1499,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1246
+#: net_dns.xml:1237
 #, no-c-format
 msgid "This is where the SOA (start of authority) control record begins:"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1251
+#: net_dns.xml:1242
 #, no-c-format
 msgid ""
 "The name of the domain to administer is <literal>&exampledomain;</literal> "
@@ -1524,7 +1517,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1261
+#: net_dns.xml:1252
 #, no-c-format
 msgid ""
 "After <systemitem>IN SOA</systemitem> is the name of the name server in "
@@ -1534,7 +1527,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1269
+#: net_dns.xml:1260
 #, no-c-format
 msgid ""
 "An e-mail address of the person in charge of this name server follows. "
@@ -1546,38 +1539,27 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1280
+#: net_dns.xml:1271
 #, no-c-format
 msgid ""
 "The <literal>(</literal> includes all lines up to <literal>)</literal> into "
 "the SOA record."
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1289
-#, no-c-format
-msgid "Line 3:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1291
+#: net_dns.xml:1279
 #, no-c-format
 msgid ""
-"The <systemitem>serial number</systemitem> is an arbitrary number that is "
-"increased each time this file is changed. It is needed to inform the "
-"secondary name servers (slave servers) of changes. For this, a 10 digit "
-"number of the date and run number, written as YYYYMMDDNN, has become the "
-"customary format."
-msgstr ""
-
-#. Tag: term
-#: net_dns.xml:1312
-#, no-c-format
-msgid "Line 4:"
+"The <systemitem>serial number</systemitem> is a 10 digit number. It must be "
+"changed each time this file is changed. It is needed to inform the secondary "
+"name servers (slave servers) of changes. For this, a 10 digit number of the "
+"date and run number, written as YYYYMMDDNN, has become the customary format "
+"( YYYY = year, MM = month and DD = day. NN is a sequence number in case you "
+"update it more than once on the given day)."
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1314
+#: net_dns.xml:1289
 #, no-c-format
 msgid ""
 "The <systemitem>refresh rate</systemitem> specifies the time interval at "
@@ -1585,14 +1567,8 @@ msgid ""
 "systemitem> . In this case, one day."
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1322
-#, no-c-format
-msgid "Line 5:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1324
+#: net_dns.xml:1296
 #, no-c-format
 msgid ""
 "The <systemitem>retry rate</systemitem> specifies the time interval at which "
@@ -1600,14 +1576,8 @@ msgid ""
 "server again. Here, two hours."
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1332
-#, no-c-format
-msgid "Line 6:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1334
+#: net_dns.xml:1303
 #, no-c-format
 msgid ""
 "The <systemitem>expiration time</systemitem> specifies the time frame after "
@@ -1615,14 +1585,8 @@ msgid ""
 "regained contact to the primary server. Here, a week."
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1342
-#, no-c-format
-msgid "Line 7:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1344
+#: net_dns.xml:1310
 #, no-c-format
 msgid ""
 "The last entry in the SOA record specifies the <systemitem>negative caching "
@@ -1631,7 +1595,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1354
+#: net_dns.xml:1317
 #, no-c-format
 msgid ""
 "The <systemitem>IN NS</systemitem> specifies the name server responsible for "
@@ -1644,14 +1608,8 @@ msgid ""
 "made to the zone data."
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1367
-#, no-c-format
-msgid "Line 10:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1369
+#: net_dns.xml:1329
 #, no-c-format
 msgid ""
 "The MX record specifies the mail server that accepts, processes, and "
@@ -1664,37 +1622,31 @@ msgid ""
 "used."
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1382
-#, no-c-format
-msgid "Lines 12&ndash;19:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1384
+#: net_dns.xml:1341
 #, no-c-format
 msgid ""
-"These are the actual address records where one or more IP addresses are "
-"assigned to host names. The names are listed here without a <literal>\".\"</"
-"literal> because they do not include their domain, so <systemitem class="
-"\"domainname\">&exampledomain;</systemitem> is added to all of them. Two IP "
-"addresses are assigned to the host <systemitem>gate</systemitem> , as it has "
-"two network cards. <!-- network scheme: need short hostname --> <!-- looks "
-"as if we don't support A6 at least with YAST --> Wherever the host address "
-"is a traditional one (IPv4), the record is marked with <literal>A</"
-"literal> . If the address is an IPv6 address, the entry is marked with "
-"<literal>AAAA</literal> . <!-- The previous token for IPv6 addresses was "
-"only <literal>AAAA</literal>, which is now obsolete. -->"
+"This and the following lines are the actual address records where one or "
+"more IP addresses are assigned to host names. The names are listed here "
+"without a <literal>\".\"</literal> because they do not include their domain, "
+"so <systemitem class=\"domainname\">&exampledomain;</systemitem> is added to "
+"all of them. Two IP addresses are assigned to the host <systemitem>gate</"
+"systemitem> , as it has two network cards. <!-- looks as if we don't support "
+"A6 at least with YAST --> Wherever the host address is a traditional one "
+"(IPv4), the record is marked with <literal>A</literal> . If the address is "
+"an IPv6 address, the entry is marked with <literal>AAAA</literal> . <!-- The "
+"previous token for IPv6 addresses was only <literal>AAAA</literal>, which is "
+"now obsolete. -->"
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1403
+#: net_dns.xml:1359
 #, no-c-format
 msgid "IPv6 Syntax"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1404
+#: net_dns.xml:1360
 #, no-c-format
 msgid ""
 "The IPv6 record has a slightly different syntax than IPv4. Because of the "
@@ -1706,31 +1658,24 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1414
+#: net_dns.xml:1370
 #, no-c-format
 msgid ""
 "pluto     AAAA 2345:00C1:CA11::1234:5678:9ABC:DEF0\n"
 "pluto     AAAA 2345:00D2:DA11::1234:5678:9ABC:DEF0"
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1427
-#, no-c-format
-msgid "Line 20:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1429
+#: net_dns.xml:1382
 #, no-c-format
 msgid ""
-"The alias <literal>ntp</literal> can be used to address <!-- network scheme: "
-"need short hostname --> <literal>dns</literal> ( <systemitem>CNAME</"
-"systemitem> means <!-- network scheme: need short hostname --> "
-"<emphasis>canonical name</emphasis> )."
+"The alias <literal>ntp</literal> can be used to address <literal>dns</"
+"literal> ( <systemitem>CNAME</systemitem> means <emphasis>canonical name</"
+"emphasis> )."
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1442
+#: net_dns.xml:1392
 #, no-c-format
 msgid ""
 "The pseudo domain <literal>in-addr.arpa</literal> is used for the reverse "
@@ -1741,112 +1686,82 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1454
+#: net_dns.xml:1404
 #, no-c-format
 msgid "Reverse Lookup"
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1455
+#: net_dns.xml:1405
 #, no-c-format
 msgid ""
-"1.  $TTL 2D\n"
-"2.  168.192.in-addr.arpa.   IN SOA &dnsname;. root.&exampledomain;. (\n"
-"3.                          2003072441      ; serial\n"
-"4.                          1D              ; refresh\n"
-"5.                          2H              ; retry\n"
-"6.                          1W              ; expiry\n"
-"7.                          2D )            ; minimum\n"
-"8.\n"
-"9.                          IN NS           &dnsname;.\n"
-"10.\n"
-"11. 1.5                     IN PTR          &gatename;. <!-- network scheme: "
-"need IP suffix for this -->\n"
-"12. 100.3                   IN PTR          &wwwname;. <!-- network scheme: "
-"need IP suffix for this -->\n"
-"13. 253.2                   IN PTR          &cupsname;. <!-- network scheme: "
-"need IP suffix for this -->"
-msgstr ""
-
-#. Tag: term
-#: net_dns.xml:1472
-#, no-c-format
-msgid "Line 1:"
+"$TTL 2D <co xml:id=\"data.arpa.ttl\"/>\n"
+"168.192.in-addr.arpa.   IN SOA &dnsname;. root.&exampledomain;. ( <co xml:id="
+"\"data.arpa.soa\"/>\n"
+"                        2003072441      ; serial\n"
+"                        1D              ; refresh\n"
+"                        2H              ; retry\n"
+"                        1W              ; expiry\n"
+"                        2D )            ; minimum\n"
+"\n"
+"                        IN NS           &dnsname;. <co xml:id=\"data.arpa."
+"inns\"/>\n"
+"\n"
+"1.5                     IN PTR          &gatename;. <co xml:id=\"data.arpa."
+"ips\"/>\n"
+"100.3                   IN PTR          &wwwname;.\n"
+"253.2                   IN PTR          &cupsname;."
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1474
+#: net_dns.xml:1422
 #, no-c-format
 msgid "$TTL defines the standard TTL that applies to all entries here."
 msgstr ""
 
-#. Tag: term
-#: net_dns.xml:1480
-#, no-c-format
-msgid "Line 2:"
-msgstr ""
-
 #. Tag: para
-#: net_dns.xml:1482
+#: net_dns.xml:1427
 #, no-c-format
 msgid ""
-"<!--adjust to standard network example--> The configuration file should "
-"activate reverse lookup for the network <systemitem class=\"ipaddress"
-"\">192.168</systemitem> . Given <!-- network scheme: Two-octet prefix "
-"needed. --> that the zone is called <systemitem>168.192.in-addr.arpa</"
-"systemitem> , it should not be added to the host names. Therefore, all host "
-"names are entered in their complete form&mdash;with their domain and with a "
-"<literal>\".\"</literal> at the end. The remaining entries correspond to "
-"those described for the previous <systemitem>&exampledomain;</systemitem> "
-"example."
-msgstr ""
-
-#. Tag: term
-#: net_dns.xml:1497
-#, no-c-format
-msgid "Lines 3&ndash;7:"
+"The configuration file should activate reverse lookup for the network "
+"<systemitem class=\"ipaddress\">192.168</systemitem> . Given that the zone "
+"is called <systemitem>168.192.in-addr.arpa</systemitem> , it should not be "
+"added to the host names. Therefore, all host names are entered in their "
+"complete form&mdash;with their domain and with a <literal>\".\"</literal> at "
+"the end. The remaining entries correspond to those described for the "
+"previous <systemitem>&exampledomain;</systemitem> example."
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1499
-#, no-c-format
-msgid "See the previous example for <systemitem>&exampledomain;</systemitem> ."
-msgstr ""
-
-#. Tag: term
-#: net_dns.xml:1505
-#, no-c-format
-msgid "Line 9:"
-msgstr ""
-
-#. Tag: para
-#: net_dns.xml:1507
+#: net_dns.xml:1437
 #, no-c-format
 msgid ""
-"Again this line specifies the name server responsible for this zone. This "
-"time, however, the name is entered in its complete form with the domain and "
-"a <literal>\".\"</literal> at the end."
-msgstr ""
-
-#. Tag: term
-#: net_dns.xml:1515
-#, no-c-format
-msgid "Lines 11&ndash;13:"
+"See <xref linkend=\"ex.welt.zone\"/> for detail on the entries within this "
+"record."
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1517
+#: net_dns.xml:1443
 #, no-c-format
 msgid ""
-"These are the pointer records hinting at the IP addresses on the respective "
-"hosts. Only the last part of the IP address is entered at the beginning of "
-"the line, without the <literal>\".\"</literal> at the end. Appending the "
-"zone to this (without the <systemitem>.in-addr.arpa</systemitem> ) results "
-"in the complete IP address in reverse order."
+"This line specifies the name server responsible for this zone. This time, "
+"however, the name is entered in its complete form with the domain and a "
+"<literal>\".\"</literal> at the end."
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1529
+#: net_dns.xml:1450
+#, no-c-format
+msgid ""
+"This, and the following lines, are the pointer records hinting at the IP "
+"addresses on the respective hosts. Only the last part of the IP address is "
+"entered at the beginning of the line, without the <literal>\".\"</literal> "
+"at the end. Appending the zone to this (without the <systemitem>.in-addr."
+"arpa</systemitem> ) results in the complete IP address in reverse order."
+msgstr ""
+
+#. Tag: para
+#: net_dns.xml:1460
 #, no-c-format
 msgid ""
 "Normally, zone transfers between different versions of BIND should be "
@@ -1854,13 +1769,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1536
+#: net_dns.xml:1467
 #, no-c-format
 msgid "Dynamic Update of Zone Data"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1538
+#: net_dns.xml:1469
 #, no-c-format
 msgid ""
 "The term <emphasis>dynamic update</emphasis> refers to operations by which "
@@ -1872,7 +1787,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1548
+#: net_dns.xml:1479
 #, no-c-format
 msgid ""
 "Transmit the entries to update to the server with the command "
@@ -1883,13 +1798,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1557
+#: net_dns.xml:1488
 #, no-c-format
 msgid "Secure Transactions"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1559
+#: net_dns.xml:1490
 #, no-c-format
 msgid ""
 "Secure transactions can be made with transaction signatures (TSIGs) based on "
@@ -1898,7 +1813,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1565
+#: net_dns.xml:1496
 #, no-c-format
 msgid ""
 "Secure transactions are needed for communication between different servers "
@@ -1907,7 +1822,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1571
+#: net_dns.xml:1502
 #, no-c-format
 msgid ""
 "Generate a TSIG key with the following command (for details, see "
@@ -1915,25 +1830,25 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1576
+#: net_dns.xml:1507
 #, no-c-format
 msgid "&prompt.sudo;dnssec-keygen -a hmac-md5 -b 128 -n HOST host1-host2"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1578
+#: net_dns.xml:1509
 #, no-c-format
 msgid "This creates two files with names similar to these:"
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1582
+#: net_dns.xml:1513
 #, no-c-format
 msgid "Khost1-host2.+157+34265.private Khost1-host2.+157+34265.key"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1584
+#: net_dns.xml:1515
 #, no-c-format
 msgid ""
 "The key itself (a string like <literal>ejIkuCyyGJwwuN3xAteKgg==</literal> ) "
@@ -1946,7 +1861,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1594
+#: net_dns.xml:1525
 #, no-c-format
 msgid ""
 "key host1-host2 {\n"
@@ -1956,13 +1871,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1600
+#: net_dns.xml:1531
 #, no-c-format
 msgid "File Permissions of <filename>/etc/named.conf</filename>"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1601
+#: net_dns.xml:1532
 #, no-c-format
 msgid ""
 "Make sure that the permissions of <filename>/etc/named.conf</filename> are "
@@ -1975,13 +1890,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1610
+#: net_dns.xml:1541
 #, no-c-format
 msgid "include  \"filename\""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1611
+#: net_dns.xml:1542
 #, no-c-format
 msgid ""
 "Replace <option>filename</option> with an absolute path to your file with "
@@ -1989,7 +1904,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1617
+#: net_dns.xml:1548
 #, no-c-format
 msgid ""
 "<!--adjust to standard network example--> <!-- network schema: We have no "
@@ -2003,7 +1918,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1629
+#: net_dns.xml:1560
 #, no-c-format
 msgid ""
 "server 10.1.2.3 {\n"
@@ -2012,7 +1927,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1633
+#: net_dns.xml:1564
 #, no-c-format
 msgid ""
 "Analogous entries must be included in the configuration files of "
@@ -2020,7 +1935,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1638
+#: net_dns.xml:1569
 #, no-c-format
 msgid ""
 "Add TSIG keys for any ACLs (access control lists, not to be confused with "
@@ -2029,13 +1944,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: net_dns.xml:1644
+#: net_dns.xml:1575
 #, no-c-format
 msgid "allow-update { key host1-host2. ;};"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1646
+#: net_dns.xml:1577
 #, no-c-format
 msgid ""
 "This topic is discussed in more detail in the <emphasis>BIND Administrator "
@@ -2043,13 +1958,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1652
+#: net_dns.xml:1583
 #, no-c-format
 msgid "DNS Security"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1654
+#: net_dns.xml:1585
 #, no-c-format
 msgid ""
 "DNSSEC, or DNS security, is described in RFC&nbsp;2535. The tools available "
@@ -2057,7 +1972,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1659
+#: net_dns.xml:1590
 #, no-c-format
 msgid ""
 "A zone considered secure must have one or several zone keys associated with "
@@ -2068,7 +1983,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1667
+#: net_dns.xml:1598
 #, no-c-format
 msgid ""
 "With the command <command>dnssec-signzone</command> , you can create sets of "
@@ -2078,13 +1993,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: net_dns.xml:1687
+#: net_dns.xml:1618
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: net_dns.xml:1689
+#: net_dns.xml:1620
 #, no-c-format
 msgid ""
 "For more information, see the <emphasis>BIND Administrator Reference Manual</"

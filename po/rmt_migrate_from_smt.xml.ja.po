@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-09 09:07+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -373,29 +373,21 @@ msgstr ""
 msgid "Exporting &smt; Data"
 msgstr ""
 
-#. Tag: para
-#: rmt_migrate_from_smt.xml:553
-#, no-c-format
-msgid ""
-"The goal of this script is to store all the data that RMT could find useful "
-"in a TAR archive that you can bring to your RMT server."
-msgstr ""
-
 #. Tag: title
-#: rmt_migrate_from_smt.xml:560
+#: rmt_migrate_from_smt.xml:554
 #, no-c-format
 msgid "Export &smt; Data"
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:562
+#: rmt_migrate_from_smt.xml:556
 #, no-c-format
 msgid ""
 "Update your SMT server installation by running <command>zypper up</command> ."
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:568
+#: rmt_migrate_from_smt.xml:562
 #, no-c-format
 msgid ""
 "If you want to export your SSL certificates along with the rest of the data, "
@@ -404,7 +396,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:573
+#: rmt_migrate_from_smt.xml:567
 #, no-c-format
 msgid ""
 "If you do not want to export the SSL certificates from &smt; run "
@@ -412,22 +404,22 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:579
+#: rmt_migrate_from_smt.xml:573
 #, no-c-format
 msgid ""
-"The exported configuration is now saved to <filename>smt-export.xxxxxx.tar."
-"gz</filename> . If needed, copy the file to a place where it can be accessed "
-"from the new &rmt; server."
+"The exported configuration is now saved to <filename>smt-export."
+"<replaceable>XXXXXX</replaceable>.tar.gz</filename> . Copy the file to a "
+"location which can be accessed by the new &rmt; server."
 msgstr ""
 
 #. Tag: title
-#: rmt_migrate_from_smt.xml:591
+#: rmt_migrate_from_smt.xml:584
 #, no-c-format
-msgid "Importing &rmt; Data"
+msgid "Importing &smt; Data to &rmt;"
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:593
+#: rmt_migrate_from_smt.xml:586
 #, no-c-format
 msgid ""
 "To make sure your &rmt; installation is up-to-date, run <command>zypper up</"
@@ -435,7 +427,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:599
+#: rmt_migrate_from_smt.xml:592
 #, no-c-format
 msgid ""
 "Copy the exported <literal>.tar.gz</literal> file to an empty directory, "
@@ -443,19 +435,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rmt_migrate_from_smt.xml:603
+#: rmt_migrate_from_smt.xml:596
 #, no-c-format
 msgid ""
 "&prompt.user;<command>mkdir <replaceable>EMPTY_DIR</replaceable></command>\n"
 "&prompt.user;<command>cd <replaceable>EMPTY_DIR</replaceable></command>\n"
-"&prompt.user;<command>cp <replaceable>/PATH/TO/BACKUP</replaceable>.tar.gz ./"
-"</command>\n"
-"&prompt.user;<command>tar xf <replaceable>BACKUP</replaceable>.tar.gz</"
-"command>"
+"&prompt.user;<command>cp <replaceable>/PATH/TO/</replaceable>smt-export."
+"<replaceable>XXXXXX</replaceable>.tar.gz ./</command>\n"
+"&prompt.user;<command>tar xf smt-export.<replaceable>XXXXXX</replaceable>."
+"tar.gz</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:609
+#: rmt_migrate_from_smt.xml:602
 #, no-c-format
 msgid ""
 "If you chose to export the SSL certificates from &smt;, copy the CA private "
@@ -463,7 +455,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rmt_migrate_from_smt.xml:614
+#: rmt_migrate_from_smt.xml:607
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>cp ssl/cacert.key /usr/share/rmt/ssl/rmt-ca.key</"
@@ -473,7 +465,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:618
+#: rmt_migrate_from_smt.xml:611
 #, no-c-format
 msgid ""
 "Run the &yast; &rmt; configuration module as described in <xref linkend="
@@ -483,7 +475,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:626
+#: rmt_migrate_from_smt.xml:619
 #, no-c-format
 msgid ""
 "Run the &rmt; synchronization to get the products and repositories data from "
@@ -491,25 +483,25 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rmt_migrate_from_smt.xml:630
+#: rmt_migrate_from_smt.xml:623
 #, no-c-format
 msgid "&prompt.sudo;<command>rmt-cli sync</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:633
+#: rmt_migrate_from_smt.xml:626
 #, no-c-format
 msgid "Import the data from the &smt; server."
 msgstr ""
 
 #. Tag: screen
-#: rmt_migrate_from_smt.xml:636
+#: rmt_migrate_from_smt.xml:629
 #, no-c-format
 msgid "&prompt.sudo;<command>rmt-data-import -d ./</command>"
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:639
+#: rmt_migrate_from_smt.xml:632
 #, no-c-format
 msgid ""
 "Optional: If the URL of the &rmt; server changed, change the URL parameter "
@@ -519,7 +511,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: rmt_migrate_from_smt.xml:647
+#: rmt_migrate_from_smt.xml:640
 #, no-c-format
 msgid ""
 "Optional: Move the mirrored repository data from to &rmt; and adjust the "
@@ -527,10 +519,22 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: rmt_migrate_from_smt.xml:651
+#: rmt_migrate_from_smt.xml:644
 #, no-c-format
 msgid ""
 "&prompt.sudo;<command>cp -r /var/www/htdocs/repo/* /var/lib/rmt/public/repo</"
 "command>\n"
 "&prompt.sudo;<command>chown -R _rmt:nginx /var/lib/rmt/public/repo</command>"
+msgstr ""
+
+#. Tag: para
+#: rmt_migrate_from_smt.xml:648
+#, no-c-format
+msgid "Update the packages in the repositories."
+msgstr ""
+
+#. Tag: screen
+#: rmt_migrate_from_smt.xml:651
+#, no-c-format
+msgid "&prompt.sudo;<command>rmt-cli mirror</command>"
 msgstr ""

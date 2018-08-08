@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: 2018-06-28 07:14+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -2387,44 +2387,40 @@ msgid ""
 "values. If it finds the specified scripts on the &vmhost; file system, it "
 "runs the <literal>script</literal> before it connects to the network bridge "
 "and <literal>downscript</literal> after it exits the network environment. "
-"You can use these scripts to first set up and bring up the bridged network "
-"devices, and then to deconfigure them. <!-- FIXME: \"deconfigure\" is not a "
-"word. Also, what does \"them\" refer to? the bridged devices or the scripts? "
-"- sknorr, 2016-08-24 --> By default, <filename>/etc/qemu-ifup</filename> and "
-"<filename>/etc/qemu-ifdown</filename> are examined. If <literal>script=no</"
-"literal> and <literal>downscript=no</literal> are specified, the script "
-"execution is disabled and you need to take care of it manually."
+"You can use these scripts to set up and tear down the bridged interfaces. By "
+"default, <filename>/etc/qemu-ifup</filename> and <filename>/etc/qemu-ifdown</"
+"filename> are examined. If <literal>script=no</literal> and "
+"<literal>downscript=no</literal> are specified, the script execution is "
+"disabled and you need to take care of it manually."
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1596
+#: qemu_running_vms_qemukvm.xml:1593
 #, no-c-format
 msgid ""
 "Deletes the TAP interface from a network bridge <literal>br0</literal> ."
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1601
+#: qemu_running_vms_qemukvm.xml:1598
 #, no-c-format
 msgid "Sets the state of the TAP device to <literal>down</literal> ."
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1606
+#: qemu_running_vms_qemukvm.xml:1603
 #, no-c-format
-msgid ""
-"Deconfigures the TAP device. <!-- FIXME: \"deconfigure\" is not a word. - "
-"sknorr, 2016-08-24 -->"
+msgid "Tear down the TAP device."
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1614
+#: qemu_running_vms_qemukvm.xml:1610
 #, no-c-format
 msgid "Connecting to a Bridge with qemu-bridge-helper"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1615
+#: qemu_running_vms_qemukvm.xml:1611
 #, no-c-format
 msgid ""
 "Another way to connect &vmguest; to a network through a network bridge is by "
@@ -2438,13 +2434,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1626
+#: qemu_running_vms_qemukvm.xml:1622
 #, no-c-format
 msgid "The helper is automatically called when you specify a network bridge:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1629
+#: qemu_running_vms_qemukvm.xml:1625
 #, no-c-format
 msgid ""
 "qemu-system-x86_64 [...] \\\n"
@@ -2453,7 +2449,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1632
+#: qemu_running_vms_qemukvm.xml:1628
 #, no-c-format
 msgid ""
 "You can specify your own custom helper script that will take care of the TAP "
@@ -2462,7 +2458,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1637
+#: qemu_running_vms_qemukvm.xml:1633
 #, no-c-format
 msgid ""
 "qemu-system-x86_64 [...] \\\n"
@@ -2471,7 +2467,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1641
+#: qemu_running_vms_qemukvm.xml:1637
 #, no-c-format
 msgid ""
 "To define access privileges to <literal>qemu-bridge-helper</literal> , "
@@ -2480,13 +2476,13 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1646
+#: qemu_running_vms_qemukvm.xml:1642
 #, no-c-format
 msgid "allow br0"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1647
+#: qemu_running_vms_qemukvm.xml:1643
 #, no-c-format
 msgid ""
 "allows the <command>qemu-system-ARCH</command> command to connect its "
@@ -2494,13 +2490,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1656
+#: qemu_running_vms_qemukvm.xml:1652
 #, no-c-format
 msgid "Viewing a &vmguest; with&nbsp;VNC"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1658
+#: qemu_running_vms_qemukvm.xml:1654
 #, no-c-format
 msgid ""
 "By default &qemu; uses a GTK (a cross-platform toolkit library) window to "
@@ -2513,7 +2509,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1672
+#: qemu_running_vms_qemukvm.xml:1668
 #, no-c-format
 msgid ""
 "When working with &qemu;'s virtual machine via VNC session, it is useful to "
@@ -2521,7 +2517,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1676
+#: qemu_running_vms_qemukvm.xml:1672
 #, no-c-format
 msgid ""
 "Moreover, if you need to use another keyboard layout than the default "
@@ -2529,7 +2525,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1682
+#: qemu_running_vms_qemukvm.xml:1678
 #, no-c-format
 msgid ""
 "The first suboption of <literal>-vnc</literal> must be a <emphasis>display</"
@@ -2538,13 +2534,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1690
+#: qemu_running_vms_qemukvm.xml:1686
 #, no-c-format
 msgid "<literal>host:display</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1693
+#: qemu_running_vms_qemukvm.xml:1689
 #, no-c-format
 msgid ""
 "Only connections from <literal>host</literal> on the display number "
@@ -2555,13 +2551,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1703
+#: qemu_running_vms_qemukvm.xml:1699
 #, no-c-format
 msgid "<literal>unix:path</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1706
+#: qemu_running_vms_qemukvm.xml:1702
 #, no-c-format
 msgid ""
 "The VNC server listens for connections on Unix domain sockets. The "
@@ -2570,13 +2566,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1714
+#: qemu_running_vms_qemukvm.xml:1710
 #, no-c-format
 msgid "<literal>none</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1717
+#: qemu_running_vms_qemukvm.xml:1713
 #, no-c-format
 msgid ""
 "The VNC server functionality is initialized, but the server itself is not "
@@ -2585,7 +2581,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1726
+#: qemu_running_vms_qemukvm.xml:1722
 #, no-c-format
 msgid ""
 "Following the display value there may be one or more option flags separated "
@@ -2593,13 +2589,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1733
+#: qemu_running_vms_qemukvm.xml:1729
 #, no-c-format
 msgid "<literal>reverse</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1736
+#: qemu_running_vms_qemukvm.xml:1732
 #, no-c-format
 msgid ""
 "Connect to a listening VNC client via a <emphasis>reverse</emphasis> "
@@ -2607,13 +2603,13 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1743
+#: qemu_running_vms_qemukvm.xml:1739
 #, no-c-format
 msgid "<literal>websocket</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1746
+#: qemu_running_vms_qemukvm.xml:1742
 #, no-c-format
 msgid ""
 "Opens an additional TCP listening port dedicated to VNC Websocket "
@@ -2621,44 +2617,44 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1753
+#: qemu_running_vms_qemukvm.xml:1749
 #, no-c-format
 msgid "<literal>password</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1756
+#: qemu_running_vms_qemukvm.xml:1752
 #, no-c-format
 msgid ""
 "Require that password-based authentication is used for client connections."
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1763
+#: qemu_running_vms_qemukvm.xml:1759
 #, no-c-format
 msgid "<literal>tls</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1766
+#: qemu_running_vms_qemukvm.xml:1762
 #, no-c-format
 msgid "Require that clients use TLS when communicating with the VNC server."
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1772
+#: qemu_running_vms_qemukvm.xml:1768
 #, no-c-format
 msgid "<literal>x509=/path/to/certificate/dir</literal>"
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1782
+#: qemu_running_vms_qemukvm.xml:1778
 #, no-c-format
 msgid "<literal>x509verify=/path/to/certificate/dir</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1785
+#: qemu_running_vms_qemukvm.xml:1781
 #, no-c-format
 msgid ""
 "Valid if TLS is specified. Require that x509 credentials are used for "
@@ -2666,25 +2662,25 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1792
+#: qemu_running_vms_qemukvm.xml:1788
 #, no-c-format
 msgid "<literal>sasl</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1795
+#: qemu_running_vms_qemukvm.xml:1791
 #, no-c-format
 msgid "Require that the client uses SASL to authenticate with the VNC server."
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1801
+#: qemu_running_vms_qemukvm.xml:1797
 #, no-c-format
 msgid "<literal>acl</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1804
+#: qemu_running_vms_qemukvm.xml:1800
 #, no-c-format
 msgid ""
 "Turn on access control lists for checking of the x509 client certificate and "
@@ -2692,43 +2688,43 @@ msgid ""
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1811
+#: qemu_running_vms_qemukvm.xml:1807
 #, no-c-format
 msgid "<literal>lossy</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1814
+#: qemu_running_vms_qemukvm.xml:1810
 #, no-c-format
 msgid "Enable lossy compression methods (gradient, JPEG, ...)."
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1820
+#: qemu_running_vms_qemukvm.xml:1816
 #, no-c-format
 msgid "<literal>non-adaptive</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1823
+#: qemu_running_vms_qemukvm.xml:1819
 #, no-c-format
 msgid "Disable adaptive encodings. Adaptive encodings are enabled by default."
 msgstr ""
 
 #. Tag: term
-#: qemu_running_vms_qemukvm.xml:1829
+#: qemu_running_vms_qemukvm.xml:1825
 #, no-c-format
 msgid "<literal>share=[allow-exclusive|force-shared|ignore]</literal>"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1832
+#: qemu_running_vms_qemukvm.xml:1828
 #, no-c-format
 msgid "Set display sharing policy."
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1840
+#: qemu_running_vms_qemukvm.xml:1836
 #, no-c-format
 msgid ""
 "For more details about the display options, see the <emphasis>qemu-doc</"
@@ -2736,13 +2732,13 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1846
+#: qemu_running_vms_qemukvm.xml:1842
 #, no-c-format
 msgid "An example VNC usage:"
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1850
+#: qemu_running_vms_qemukvm.xml:1846
 #, no-c-format
 msgid ""
 "&prompt.user;qemu-system-x86_64 [...] -vnc :5\n"
@@ -2751,19 +2747,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1855
+#: qemu_running_vms_qemukvm.xml:1851
 #, no-c-format
 msgid "&qemu; VNC Session"
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1867
+#: qemu_running_vms_qemukvm.xml:1863
 #, no-c-format
 msgid "Secure VNC Connections"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1868
+#: qemu_running_vms_qemukvm.xml:1864
 #, no-c-format
 msgid ""
 "The default VNC server setup does not use any form of authentication. In the "
@@ -2772,7 +2768,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1873
+#: qemu_running_vms_qemukvm.xml:1869
 #, no-c-format
 msgid ""
 "There are several levels of security that you can apply to your VNC client/"
@@ -2782,7 +2778,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1879
+#: qemu_running_vms_qemukvm.xml:1875
 #, no-c-format
 msgid ""
 "See <xref linkend=\"app.kvm.certificates\"/> for more information about the "
@@ -2793,7 +2789,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1886
+#: qemu_running_vms_qemukvm.xml:1882
 #, no-c-format
 msgid ""
 "The Remmina VNC viewer supports advanced authentication mechanisms. "
@@ -2807,19 +2803,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1898
+#: qemu_running_vms_qemukvm.xml:1894
 #, no-c-format
 msgid "Password Authentication"
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1899
+#: qemu_running_vms_qemukvm.xml:1895
 #, no-c-format
 msgid "qemu-system-x86_64 [...] -vnc :5,password -monitor stdio"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1900
+#: qemu_running_vms_qemukvm.xml:1896
 #, no-c-format
 msgid ""
 "Starts the &vmguest; graphical output on VNC display number 5 (usually port "
@@ -2830,7 +2826,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1907
+#: qemu_running_vms_qemukvm.xml:1903
 #, no-c-format
 msgid ""
 "QEMU 2.3.1 monitor - type 'help' for more information\n"
@@ -2839,7 +2835,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1911
+#: qemu_running_vms_qemukvm.xml:1907
 #, no-c-format
 msgid ""
 "You need the <literal>-monitor stdio</literal> option here, because you "
@@ -2848,19 +2844,19 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1918
+#: qemu_running_vms_qemukvm.xml:1914
 #, no-c-format
 msgid "Authentication Dialog in Remmina"
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1929
+#: qemu_running_vms_qemukvm.xml:1925
 #, no-c-format
 msgid "x509 Certificate Authentication"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1930
+#: qemu_running_vms_qemukvm.xml:1926
 #, no-c-format
 msgid ""
 "The &qemu; VNC server can use TLS encryption for the session and x509 "
@@ -2871,19 +2867,19 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1937
+#: qemu_running_vms_qemukvm.xml:1933
 #, no-c-format
 msgid "qemu-system-x86_64 [...] -vnc :5,tls,x509verify=/etc/pki/qemu"
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1940
+#: qemu_running_vms_qemukvm.xml:1936
 #, no-c-format
 msgid "x509 Certificate and Password Authentication"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1941
+#: qemu_running_vms_qemukvm.xml:1937
 #, no-c-format
 msgid ""
 "You can combine the password authentication with TLS encryption and x509 "
@@ -2893,7 +2889,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1947
+#: qemu_running_vms_qemukvm.xml:1943
 #, no-c-format
 msgid ""
 "qemu-system-x86_64 [...] -vnc :5,password,tls,x509verify=/etc/pki/qemu \\\n"
@@ -2901,13 +2897,13 @@ msgid ""
 msgstr ""
 
 #. Tag: title
-#: qemu_running_vms_qemukvm.xml:1951
+#: qemu_running_vms_qemukvm.xml:1947
 #, no-c-format
 msgid "SASL Authentication"
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1952
+#: qemu_running_vms_qemukvm.xml:1948
 #, no-c-format
 msgid ""
 "Simple Authentication and Security Layer (SASL) is a framework for "
@@ -2918,7 +2914,7 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: qemu_running_vms_qemukvm.xml:1959
+#: qemu_running_vms_qemukvm.xml:1955
 #, no-c-format
 msgid ""
 "For security reasons, you are advised to combine SASL authentication with "
@@ -2926,7 +2922,7 @@ msgid ""
 msgstr ""
 
 #. Tag: screen
-#: qemu_running_vms_qemukvm.xml:1963
+#: qemu_running_vms_qemukvm.xml:1959
 #, no-c-format
 msgid "qemu-system-x86_64 [...] -vnc :5,tls,x509,sasl -monitor stdio"
 msgstr ""

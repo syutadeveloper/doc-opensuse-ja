@@ -464,7 +464,7 @@
       </entry>
       <entry>
        <para>
-        no 
+        no
        </para>
       </entry>
      </row>
@@ -548,12 +548,6 @@
  </sect1>
  <sect1 xml:id="sec.rmt_migrate.smt_export">
   <title>Exporting &smt; Data</title>
-  <para>
-   The goal of this script is to store all the data that RMT could find
-   useful in a TAR archive that you can bring to your RMT server.
-  </para>
-
-
   <procedure>
    <title>Export &smt; Data</title>
    <step>
@@ -576,17 +570,16 @@
    <step>
     <para>
      The exported configuration is now saved to
-     <filename>smt-export.xxxxxx.tar.gz</filename>. If needed, copy the
-     file to a place where it can be accessed from the new &rmt;
-     server.
+     <filename>smt-export.<replaceable>XXXXXX</replaceable>.tar.gz</filename>. Copy the file to a
+     location which can be accessed by the new &rmt; server.
     </para>
    </step>
   </procedure>
  </sect1>
  <sect1 xml:id="sec.rmt_migrate.rmt_import">
-  <title>Importing &rmt; Data</title>
+  <title>Importing &smt; Data to &rmt;</title>
   <procedure>
-   <title>Importing &rmt; Data</title>
+   <title>Importing &smt; Data to &rmt;</title>
    <step>
     <para>
      To make sure your &rmt; installation is up-to-date, run
@@ -600,8 +593,8 @@
     </para>
 <screen>&prompt.user;<command>mkdir <replaceable>EMPTY_DIR</replaceable></command>
 &prompt.user;<command>cd <replaceable>EMPTY_DIR</replaceable></command>
-&prompt.user;<command>cp <replaceable>/PATH/TO/BACKUP</replaceable>.tar.gz ./</command>
-&prompt.user;<command>tar xf <replaceable>BACKUP</replaceable>.tar.gz</command></screen>
+&prompt.user;<command>cp <replaceable>/PATH/TO/</replaceable>smt-export.<replaceable>XXXXXX</replaceable>.tar.gz ./</command>
+&prompt.user;<command>tar xf smt-export.<replaceable>XXXXXX</replaceable>.tar.gz</command></screen>
    </step>
    <step>
     <para>
@@ -647,6 +640,12 @@
     </para>
 <screen>&prompt.sudo;<command>cp -r /var/www/htdocs/repo/* /var/lib/rmt/public/repo</command>
 &prompt.sudo;<command>chown -R _rmt:nginx /var/lib/rmt/public/repo</command></screen>
+   </step>
+   <step>
+    <para>
+     Update the packages in the repositories.
+    </para>
+    <screen>&prompt.sudo;<command>rmt-cli mirror</command></screen>
    </step>
   </procedure>
  </sect1>

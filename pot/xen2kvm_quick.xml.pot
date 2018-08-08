@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-08-08 01:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <someuser@example.org>\n"
@@ -38,16 +38,16 @@ msgstr ""
 msgid "&productnumber;"
 msgstr ""
 
-#. Tag: date
-#: xen2kvm_quick.xml:18
-#, no-c-format
-msgid "<?dbtimestamp format=\"B d, Y\"?>"
-msgstr ""
-
 #. Tag: productname
 #: xen2kvm_quick.xml:18
 #, no-c-format
 msgid "&productname;"
+msgstr ""
+
+#. Tag: date
+#: xen2kvm_quick.xml:18
+#, no-c-format
+msgid "<?dbtimestamp format=\"B d, Y\"?>"
 msgstr ""
 
 #. Tag: para
@@ -570,35 +570,35 @@ msgstr ""
 #. Tag: para
 #: xen2kvm_quick.xml:464
 #, no-c-format
-msgid "<!-- FIXME: add a pointer to our ssh chapter --> Starting with &slsa; 12 SP2, <command>virt-v2v</command> requires a passwordless SSH connection to the remote host. This means a connection using an SSH key added to the ssh-agent. See <command>man ssh-keygen</command> and <command>man ssh-add</command> for more details on this."
+msgid "Starting with &slsa; 12 SP2, <command>virt-v2v</command> requires a passwordless SSH connection to the remote host. This means a connection using an SSH key added to the ssh-agent. See <command>man ssh-keygen</command> and <command>man ssh-add</command> for more details on this. More information is also available at <xref linkend=\"cha.ssh\"/> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:474
+#: xen2kvm_quick.xml:473
 #, no-c-format
 msgid "To connect to a remote &libvirt; connection, construct a valid connection URI relevant for your remote host. In the following example, the remote host name is <literal>remote_host.example.com</literal> , and the user name for the connection is &rootuser;. The connection URI then looks as follows:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:481
+#: xen2kvm_quick.xml:480
 #, no-c-format
 msgid "xen+ssh://root@remote_host.example.com/"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:482
+#: xen2kvm_quick.xml:481
 #, no-c-format
 msgid "For more information on &libvirt; connection URIs, see <link xlink:href=\"http://libvirt.org/uri.html\"/> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:488
+#: xen2kvm_quick.xml:487
 #, no-c-format
 msgid "Find the &libvirt; domain name of the remote virtual machine you want to convert."
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:492
+#: xen2kvm_quick.xml:491
 #, no-c-format
 msgid "&prompt.root;virsh -c xen+ssh://root@remote_host.example.com/ list\n"
       " Id    Name                           State\n"
@@ -608,19 +608,19 @@ msgid "&prompt.root;virsh -c xen+ssh://root@remote_host.example.com/ list\n"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:497
+#: xen2kvm_quick.xml:496
 #, no-c-format
 msgid "<literal>sles12_xen</literal> is the source virtual machine to convert."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:503
+#: xen2kvm_quick.xml:502
 #, no-c-format
 msgid "The <command>virt-v2v</command> command for the remote connection looks like this:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:507
+#: xen2kvm_quick.xml:506
 #, no-c-format
 msgid "&prompt.root;virt-v2v sles12_xen \\\n"
       "-i <replaceable>libvirt</replaceable> \\\n"
@@ -630,109 +630,109 @@ msgid "&prompt.root;virt-v2v sles12_xen \\\n"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:518
+#: xen2kvm_quick.xml:517
 #, no-c-format
 msgid "Running Converted Virtual Machines"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:519
+#: xen2kvm_quick.xml:518
 #, no-c-format
 msgid "After <command>virt-v2v</command> completes successfully, a new &libvirt; domain will be created with the name specified with the <option>-on</option> option. If you did not specify <option>-on</option> , the same name as the source virtual machine will be used. The new guest can be managed with standard &libvirt; tools, such as <command>virsh</command> or &vmm;."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:528
+#: xen2kvm_quick.xml:527
 #, no-c-format
 msgid "Rebooting the Machine"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:529
+#: xen2kvm_quick.xml:528
 #, no-c-format
 msgid "If you completed the conversion under &xen; as described in <xref linkend=\"x2k.v2v.convert.domain\"/> , you may need to reboot the host machine and boot with the non-&xen; kernel."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:538
+#: xen2kvm_quick.xml:537
 #, no-c-format
 msgid "&xen; to &kvm; Manual Migration"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:543
+#: xen2kvm_quick.xml:542
 #, no-c-format
 msgid "General Outline"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:544
+#: xen2kvm_quick.xml:543
 #, no-c-format
 msgid "The preferred solution to manage virtual machines is based on &libvirt;; for more information, see <link xlink:href=\"http://libvirt.org/\"/> . It has several advantages over the manual way of defining and running virtual machines&mdash;&libvirt; is cross-platform, supports many hypervisors, has secure remote management, has virtual networking, and, most of all, provides a unified abstract layer to manage virtual machines. Therefore the main focus of this article is on the &libvirt; solution."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:555
+#: xen2kvm_quick.xml:554
 #, no-c-format
 msgid "Generally, the &xen; to &kvm; migration runs in the following basic steps:"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:561
+#: xen2kvm_quick.xml:560
 #, no-c-format
 msgid "Make a backup copy of the original &xen; &vmguest;."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:566
+#: xen2kvm_quick.xml:565
 #, no-c-format
 msgid "OPTIONAL: Apply changes specific to paravirtualized guests."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:571
+#: xen2kvm_quick.xml:570
 #, no-c-format
 msgid "Obtain information about the original &xen; &vmguest; and update it to &kvm; equivalents."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:577
+#: xen2kvm_quick.xml:576
 #, no-c-format
 msgid "Shut down the guest on the &xen; host, and run the new one under the &kvm; hypervisor."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:584
+#: xen2kvm_quick.xml:583
 #, no-c-format
 msgid "No Live Migration"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:585
+#: xen2kvm_quick.xml:584
 #, no-c-format
 msgid "The &xen; to &kvm; migration cannot be done live while the source &vmguest; is running. Before running the new &kvm;-ready &vmguest;, you are advised to shut down the original &xen; &vmguest;."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:595
+#: xen2kvm_quick.xml:594
 #, no-c-format
 msgid "Back Up the &xen; &vmguest;"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:596
+#: xen2kvm_quick.xml:595
 #, no-c-format
 msgid "To back up your &xen; &vmguest;, follow these steps:"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:601
+#: xen2kvm_quick.xml:600
 #, no-c-format
 msgid "Identify the relevant &xen; guest you want to migrate, and remember its ID/name."
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:605
+#: xen2kvm_quick.xml:604
 #, no-c-format
 msgid "&prompt.sudo;virsh list --all\n"
       "Id Name                 State\n"
@@ -743,145 +743,145 @@ msgid "&prompt.sudo;virsh list --all\n"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:613
+#: xen2kvm_quick.xml:612
 #, no-c-format
 msgid "Shut down the guest. You can do this either by shutting down the guest OS, or with <command>virsh</command> :"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:617
+#: xen2kvm_quick.xml:616
 #, no-c-format
 msgid "&prompt.sudo;virsh shutdown SLES11SP3"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:620
+#: xen2kvm_quick.xml:619
 #, no-c-format
 msgid "Backup its configuration to an XML file."
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:623
+#: xen2kvm_quick.xml:622
 #, no-c-format
 msgid "&prompt.sudo;virsh dumpxml SLES11SP3 &gt; sles11sp3.xml"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:626
+#: xen2kvm_quick.xml:625
 #, no-c-format
 msgid "Backup its disk image file. Use the <command>cp</command> or <command>rsync</command> commands to create the backup copy. Remember that it is always a good idea to check the copy with the <command>md5sum</command> command."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:634
+#: xen2kvm_quick.xml:633
 #, no-c-format
 msgid "After the image file is backed up, you can start the guest again with"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:637
+#: xen2kvm_quick.xml:636
 #, no-c-format
 msgid "&prompt.sudo;virsh start SLES11SP3"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:643
+#: xen2kvm_quick.xml:642
 #, no-c-format
 msgid "Changes Specific to Paravirtualized Guests"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:644
+#: xen2kvm_quick.xml:643
 #, no-c-format
 msgid "Apply the following changes if you are migrating a paravirtualized &xen; guest. You can do it either on the running guest, or on the stopped guest using <literal>guestfs-tools</literal> . <!-- toba: maybe add more info on guestfs-tools -->"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:651
+#: xen2kvm_quick.xml:650
 #, no-c-format
 msgid "After applying the changes described in this section, the image file related to the migrated &vmguest; will not be usable under &xen; anymore."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:658
+#: xen2kvm_quick.xml:657
 #, no-c-format
 msgid "Install the Default Kernel"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:660
+#: xen2kvm_quick.xml:659
 #, no-c-format
 msgid "No Booting"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:661
+#: xen2kvm_quick.xml:660
 #, no-c-format
 msgid "After you installed the default kernel, do not try to boot the &xen; guest with it, the system will not boot."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:666
+#: xen2kvm_quick.xml:665
 #, no-c-format
 msgid "Before cloning the &xen; guest disk image for use under the &kvm; hypervisor, make sure it is bootable <emphasis>without</emphasis> the &xen; hypervisor. This is very important for paravirtualized &xen; guests as they usually contain a special &xen; kernel, and often do not have a complete &grub; boot loader installed."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:675
+#: xen2kvm_quick.xml:674
 #, no-c-format
 msgid "For &slsa; 11 update the <filename>/etc/sysconfig/kernel</filename> file. Change the <literal>INITRD_MODULES</literal> parameter by removing all &xen; drivers and replacing the with virtio drivers. Replace"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:681
+#: xen2kvm_quick.xml:680
 #, no-c-format
 msgid "INITRD_MODULES=\"xenblk xennet\""
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:685
+#: xen2kvm_quick.xml:684
 #, no-c-format
 msgid "INITRD_MODULES=\"virtio_blk virtio_pci virtio_net virtio_balloon\""
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:686
+#: xen2kvm_quick.xml:685
 #, no-c-format
 msgid "For &slsa; 12 search for <literal>xenblk xennet</literal> in <filename>/etc/dracut.conf.d/*.conf</filename> and replace them with <literal>virtio_blk virtio_pci virtio_net virtio_balloon</literal>"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:692
+#: xen2kvm_quick.xml:691
 #, no-c-format
 msgid "Paravirtualized &xen; guests are running a specific &xen; kernel. To run the guest under &kvm;, you need to install the default kernel."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:698
+#: xen2kvm_quick.xml:697
 #, no-c-format
 msgid "Default Kernel Is Already Installed"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:699
+#: xen2kvm_quick.xml:698
 #, no-c-format
 msgid "You do not need to install the default kernel for a fully virtualized guests as it is already installed."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:704
+#: xen2kvm_quick.xml:703
 #, no-c-format
 msgid "Enter <command>rpm -q kernel-default</command> on the &xen; guest to find out if the default kernel is installed. If not, install it with <command>zypper in kernel-default</command> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:709
+#: xen2kvm_quick.xml:708
 #, no-c-format
 msgid "The kernel we are going to use to boot the guest under &kvm; must have <emphasis>virtio</emphasis> (paravirtualized) drivers available. Run the following command to find out. Do not forget to replace <literal>3.8.9-4</literal> with your kernel version:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:715
+#: xen2kvm_quick.xml:714
 #, no-c-format
 msgid "&prompt.sudo;find /lib/modules/3.8.9-4-default/kernel/drivers/ -name virtio*\n"
       "/lib/modules/3.8.9-4-default/kernel/drivers/net/virtio_net.ko\n"
@@ -898,121 +898,121 @@ msgid "&prompt.sudo;find /lib/modules/3.8.9-4-default/kernel/drivers/ -name virt
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:729
+#: xen2kvm_quick.xml:728
 #, no-c-format
 msgid "Update <filename>/etc/fstab</filename> . Change any storage devices from <literal>xvda</literal> to <literal>vda</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:735
+#: xen2kvm_quick.xml:734
 #, no-c-format
 msgid "Update the boot loader configuration. Enter <command>rpm -q grub2</command> on the &xen; guest to find out if &grub; is already installed. If not, install it with <command>zypper in grub2</command> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:741
+#: xen2kvm_quick.xml:740
 #, no-c-format
 msgid "Now make the newly installed default kernel the default for booting the OS. Also remove/update the kernel command line options that may refer to &xen;-specific devices. You can do it either with &yast; ( <menuchoice><guimenu>System</guimenu><guimenu>Boot Loader</guimenu></menuchoice> ), or manually:"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:750
+#: xen2kvm_quick.xml:749
 #, no-c-format
 msgid "Find the preferred Linux boot menu entry by listing them all:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:753
+#: xen2kvm_quick.xml:752
 #, no-c-format
 msgid "&prompt.user;cat /boot/grub2/grub.cfg | grep 'menuentry '"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:754
+#: xen2kvm_quick.xml:753
 #, no-c-format
 msgid "Remember the order number (counted from zero) of the one you newly installed."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:760
+#: xen2kvm_quick.xml:759
 #, no-c-format
 msgid "Set it the default boot menu entry:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:763
+#: xen2kvm_quick.xml:762
 #, no-c-format
 msgid "&prompt.sudo;grub2-set-default <replaceable>N</replaceable>"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:764
+#: xen2kvm_quick.xml:763
 #, no-c-format
 msgid "Replace <replaceable>N</replaceable> with the number of the boot menu entry you previously discovered."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:770
+#: xen2kvm_quick.xml:769
 #, no-c-format
 msgid "Open <filename>/etc/default/grub</filename> for editing, and look for <option>GRUB_CMDLINE_LINUX_DEFAULT</option> and <option>GRUB_CMDLINE_LINUX_RECOVERY</option> options. Remove/update any reference to &xen;-specific devices. In the following example, you can replace"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:777
+#: xen2kvm_quick.xml:776
 #, no-c-format
 msgid "root=/dev/xvda1 disk=/dev/xvda console=xvc"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:778
+#: xen2kvm_quick.xml:777
 #, no-c-format
 msgid "with"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:781
+#: xen2kvm_quick.xml:780
 #, no-c-format
 msgid "root=/dev/vda1 disk=/dev/vda"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:782
+#: xen2kvm_quick.xml:781
 #, no-c-format
 msgid "Note that you need to remove all references to <literal>xvc</literal> -type consoles (such as <literal>xvc0</literal> )."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:791
+#: xen2kvm_quick.xml:790
 #, no-c-format
 msgid "Update <filename>device.map</filename> in one of <filename>/boot/grub2</filename> or <filename>/boot/grub2-efi</filename> directories. Change any storage device from <literal>xvda</literal> to <literal>vda</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:799
+#: xen2kvm_quick.xml:798
 #, no-c-format
 msgid "To import new default settings, run"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:802
+#: xen2kvm_quick.xml:801
 #, no-c-format
 msgid "grub2-mkconfig -o /boot/grub2/grub.cfg"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:807
+#: xen2kvm_quick.xml:806
 #, no-c-format
 msgid "Update the Guest for Boot under &kvm;"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:810
+#: xen2kvm_quick.xml:809
 #, no-c-format
 msgid "Update the system to use default serial console. List the configured consoles, and remove symbolic links to <literal>xvc?</literal> ones."
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:814
+#: xen2kvm_quick.xml:813
 #, no-c-format
 msgid "&prompt.sudo;ls -l /etc/systemd/system/getty.target.wants/\n"
       "getty@tty1.service -&gt; /usr/lib/systemd/system/getty@.service\n"
@@ -1023,37 +1023,37 @@ msgid "&prompt.sudo;ls -l /etc/systemd/system/getty.target.wants/\n"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:822
+#: xen2kvm_quick.xml:821
 #, no-c-format
 msgid "Update the <filename>/etc/securetty</filename> file. Replace <literal>xvc0</literal> with <literal>ttyS0</literal> ."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:832
+#: xen2kvm_quick.xml:831
 #, no-c-format
 msgid "Update the &xen; &vmguest; Configuration"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:833
+#: xen2kvm_quick.xml:832
 #, no-c-format
 msgid "This section describes how to export the configuration of the original &xen; &vmguest;, and what particular changes to apply to it so it can be imported as a &kvm; guest into &libvirt;."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:839
+#: xen2kvm_quick.xml:838
 #, no-c-format
 msgid "Export the &xen; &vmguest; Configuration"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:840
+#: xen2kvm_quick.xml:839
 #, no-c-format
 msgid "First export the configuration of the guest and save it to a file. A typical one may look like this:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:844
+#: xen2kvm_quick.xml:843
 #, no-c-format
 msgid "&prompt.sudo;virsh dumpxml SLES11SP3\n"
       "&lt;domain type='xen'&gt;\n"
@@ -1093,37 +1093,37 @@ msgid "&prompt.sudo;virsh dumpxml SLES11SP3\n"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:879
+#: xen2kvm_quick.xml:878
 #, no-c-format
 msgid "You can find detailed information on the libvirt XML format for &vmguest; description at <link xlink:href=\"http://libvirt.org/formatdomain.html\"/> ."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:886
+#: xen2kvm_quick.xml:885
 #, no-c-format
 msgid "General Changes to the Guest Configuration"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:887
+#: xen2kvm_quick.xml:886
 #, no-c-format
 msgid "You need to make a few general changes to the exported &xen; guest XML configuration to run it under the &kvm; hypervisor. The following applies to both fully virtualized and paravirtualized guests. Note that not all of the following XML elements need to be in your specific configuration."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:895
+#: xen2kvm_quick.xml:894
 #, no-c-format
 msgid "Conventions Used"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:896
+#: xen2kvm_quick.xml:895
 #, no-c-format
 msgid "To refer to a node in the XML configuration file, an XPath syntax will be used throughout this document. For example, to refer to a <literal>&lt;name&gt;</literal> inside the <literal>&lt;domain&gt;</literal> tag"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:902
+#: xen2kvm_quick.xml:901
 #, no-c-format
 msgid "&lt;domain&gt;\n"
       "  &lt;name&gt;sles11sp3&lt;/name&gt;\n"
@@ -1131,199 +1131,199 @@ msgid "&lt;domain&gt;\n"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:905
+#: xen2kvm_quick.xml:904
 #, no-c-format
 msgid "an XPath equivalent <literal>/domain/name</literal> will be used."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:911
+#: xen2kvm_quick.xml:910
 #, no-c-format
 msgid "Change the <literal>type</literal> attribute of the <literal>/domain</literal> element from <literal>xen</literal> to <literal>kvm</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:918
+#: xen2kvm_quick.xml:917
 #, no-c-format
 msgid "Remove the <literal>/domain/bootloader</literal> element section."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:923
+#: xen2kvm_quick.xml:922
 #, no-c-format
 msgid "Remove the <literal>/domain/bootloader_args</literal> element section."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:929
+#: xen2kvm_quick.xml:928
 #, no-c-format
 msgid "Change the <literal>/domain/os/type</literal> element value from <literal>linux</literal> to <literal>hvm</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:935
+#: xen2kvm_quick.xml:934
 #, no-c-format
 msgid "Add <literal>&lt;boot dev=\"hd\"/&gt;</literal> under the <literal>/domain/os</literal> element."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:941
+#: xen2kvm_quick.xml:940
 #, no-c-format
 msgid "Add the <literal>arch</literal> attribute to the <literal>/domain/os/type</literal> element. Acceptable values are <literal>arch=”x86_64”</literal> or <literal>arch=”i686”</literal>"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:949
+#: xen2kvm_quick.xml:948
 #, no-c-format
 msgid "Change the <literal>/domain/devices/emulator</literal> element from <literal>/usr/lib/xen/bin/qemu-dm'</literal> to <literal>/usr/bin/qemu-kvm</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:956
+#: xen2kvm_quick.xml:955
 #, no-c-format
 msgid "For each disk associated with the paravirtualized (PV) guest, change the following:"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:962
+#: xen2kvm_quick.xml:961
 #, no-c-format
 msgid "Change the <literal>name</literal> attribute of the <literal>/domain/devices/disk/driver</literal> element from <literal>file</literal> to <literal>qemu</literal> , and add a <literal>type</literal> attribute for the disk type. For example, valid options include <literal>raw</literal> or <literal>qcow2</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:972
+#: xen2kvm_quick.xml:971
 #, no-c-format
 msgid "Change the <literal>dev</literal> attribute of the <literal>/domain/devices/disk/target</literal> element from <literal>xvda</literal> to <literal>vda</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:979
+#: xen2kvm_quick.xml:978
 #, no-c-format
 msgid "Change the <literal>bus</literal> attribute of the <literal>/domain/devices/disk/target</literal> element from <literal>xen</literal> to <literal>virtio</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:988
+#: xen2kvm_quick.xml:987
 #, no-c-format
 msgid "For each network interface card, do the following changes:"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:993
+#: xen2kvm_quick.xml:992
 #, no-c-format
 msgid "If there is <literal>model</literal> defined in <literal>/domain/devices/interface</literal> , change its <literal>type</literal> attribute value to <literal>virtio</literal>"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:999
+#: xen2kvm_quick.xml:998
 #, no-c-format
 msgid "&lt;model type=”virtio”&gt;"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1002
+#: xen2kvm_quick.xml:1001
 #, no-c-format
 msgid "Delete all <literal>/domain/devices/interface/script</literal> sections."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1008
+#: xen2kvm_quick.xml:1007
 #, no-c-format
 msgid "Delete all <literal>/domain/devices/interface/target</literal> elements if the <literal>dev</literal> attribute starts with <literal>vif</literal> or <literal>vnet</literal> or <literal>veth</literal> . If using a custom network then change the <literal>dev</literal> value to that target."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1019
+#: xen2kvm_quick.xml:1018
 #, no-c-format
 msgid "Remove the <literal>/domain/devices/console</literal> element section if it exists."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1025
+#: xen2kvm_quick.xml:1024
 #, no-c-format
 msgid "Remove the <literal>/domain/devices/serial</literal> element section if it exists."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1031
+#: xen2kvm_quick.xml:1030
 #, no-c-format
 msgid "Change the <literal>bus</literal> attribute on the <literal>/domain/devices/input</literal> element from <literal>xen</literal> to <literal>ps2</literal> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1038
+#: xen2kvm_quick.xml:1037
 #, no-c-format
 msgid "Add the following element for memory ballooning features under the <literal>/domain/devices</literal> element."
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1042
+#: xen2kvm_quick.xml:1041
 #, no-c-format
 msgid "&lt;memballoon model=\"virtio\"/&gt;"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:1046
+#: xen2kvm_quick.xml:1045
 #, no-c-format
 msgid "Device Name"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1047
+#: xen2kvm_quick.xml:1046
 #, no-c-format
 msgid "<literal>&lt;target dev='hda' bus='ide'/&gt;</literal> controls the device under which the disk is exposed to the guest OS. The <literal>dev</literal> attribute indicates the \"logical\" device name. The actual device name specified is not guaranteed to map to the device name in the guest OS. Therefore you may need to change the disk mapping on the boot loader command line. For example, if the boot loader expects a root disk to be <literal>hda2</literal> but &kvm; still sees it as <literal>sda2</literal> , change the boot loader command line from"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1058
+#: xen2kvm_quick.xml:1057
 #, no-c-format
 msgid "[...] root=/dev/hda2 resume=/dev/hda1 [...]"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1059
+#: xen2kvm_quick.xml:1058
 #, no-c-format
 msgid "to"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1062
+#: xen2kvm_quick.xml:1061
 #, no-c-format
 msgid "[...] root=/dev/sda2 resume=/dev/sda1 [...]"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1063
+#: xen2kvm_quick.xml:1062
 #, no-c-format
 msgid "In the case of paravirtualized <literal>xvda</literal> devices, change it to"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1067
+#: xen2kvm_quick.xml:1066
 #, no-c-format
 msgid "[...] root=/dev/vda2 resume=/dev/vda1 [...]"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1068
+#: xen2kvm_quick.xml:1067
 #, no-c-format
 msgid "Otherwise the &vmguest; will refuse to boot in the &kvm; environment."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:1075
+#: xen2kvm_quick.xml:1074
 #, no-c-format
 msgid "The Target &kvm; Guest Configuration"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1076
+#: xen2kvm_quick.xml:1075
 #, no-c-format
 msgid "After having applied all the modifications mentioned above, you end up with the following configuration for your &kvm; guest:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1080
+#: xen2kvm_quick.xml:1079
 #, no-c-format
 msgid "\n"
       "&lt;domain type='kvm'&gt;\n"
@@ -1361,129 +1361,129 @@ msgid "\n"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1113
+#: xen2kvm_quick.xml:1112
 #, no-c-format
 msgid "Save the configuration to a file in your home directory. After you later import it, it will be copied to the default <filename>/etc/libvirt/qemu</filename> . Suppose you save the file as <filename>SLES11SP3.xml</filename> ."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:1123
+#: xen2kvm_quick.xml:1122
 #, no-c-format
 msgid "Migrate the &vmguest;"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1124
+#: xen2kvm_quick.xml:1123
 #, no-c-format
 msgid "After you updated the &vmguest; configuration, and applied necessary changes to the guest OS, shut down the original &xen; guest, and run its clone under the &kvm; hypervisor."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1131
+#: xen2kvm_quick.xml:1130
 #, no-c-format
 msgid "Shut down the guest on the &xen; host by running <command>shutdown -h now</command> as &rootuser; from the console."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1137
+#: xen2kvm_quick.xml:1136
 #, no-c-format
 msgid "Copy the disk files associated with the &vmguest; if needed. A default configuration will require the &xen; disk files to be copied from <filename>/var/lib/xen/images</filename> to <filename>/var/lib/kvm/images</filename> . The <filename>/var/lib/kvm/images</filename> directory may need to be created (as &rootuser;) if you have not previously created a &vmguest;."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1148
+#: xen2kvm_quick.xml:1147
 #, no-c-format
 msgid "Create the new domain, and register it with &libvirt;:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1151
+#: xen2kvm_quick.xml:1150
 #, no-c-format
 msgid "&prompt.sudo;virsh define SLES11SP3.xml\n"
       " Domain SLES11SP3 defined from SLES11SP3.xml"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1155
+#: xen2kvm_quick.xml:1154
 #, no-c-format
 msgid "Verify that the new guest is seen in the &kvm; configuration:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1158
+#: xen2kvm_quick.xml:1157
 #, no-c-format
 msgid "&prompt.user;virsh list –all"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1161
+#: xen2kvm_quick.xml:1160
 #, no-c-format
 msgid "After the domain is created, you can start it:"
 msgstr ""
 
 #. Tag: screen
-#: xen2kvm_quick.xml:1164
+#: xen2kvm_quick.xml:1163
 #, no-c-format
 msgid "&prompt.sudo;virsh start SLES11SP3\n"
       " Domain SLES11SP3 started"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:1171
+#: xen2kvm_quick.xml:1170
 #, no-c-format
 msgid "For More Information"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1173
+#: xen2kvm_quick.xml:1172
 #, no-c-format
 msgid "For more information on libvirt, see <link xlink:href=\"http://libvirt.org\"/> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1178
+#: xen2kvm_quick.xml:1177
 #, no-c-format
 msgid "You can find more details on &libvirt; XML format at <link xlink:href=\"http://libvirt.org/formatdomain.html\"/> ."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1183
+#: xen2kvm_quick.xml:1182
 #, no-c-format
 msgid "For more information on virtualization with &xen; and &kvm;, see the &productname; documentation at <link xlink:href=\"http://www.suse.com/doc/\"/> ."
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:1191
+#: xen2kvm_quick.xml:1190
 #, no-c-format
 msgid "Documentation Updates"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1192
+#: xen2kvm_quick.xml:1191
 #, no-c-format
 msgid "This section lists content changes for this document."
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1197
+#: xen2kvm_quick.xml:1196
 #, no-c-format
 msgid "<xref linkend=\"x2k.docupdates.sle12sp2\"/>"
 msgstr ""
 
 #. Tag: title
-#: xen2kvm_quick.xml:1203
+#: xen2kvm_quick.xml:1202
 #, no-c-format
 msgid "October 2016 (Release of &productname; 12 SP2)"
 msgstr ""
 
 #. Tag: term
-#: xen2kvm_quick.xml:1207
+#: xen2kvm_quick.xml:1206
 #, no-c-format
 msgid "<xref linkend=\"x2k.v2v\"/>"
 msgstr ""
 
 #. Tag: para
-#: xen2kvm_quick.xml:1211
+#: xen2kvm_quick.xml:1210
 #, no-c-format
 msgid "New section (FATE #316274)."
 msgstr ""
