@@ -1,26 +1,29 @@
+# translation of net_basic.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: net_basic.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-08-08 01:10+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-10 15:17+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: net_basic.xml:9
 #, no-c-format
 msgid "Basic Networking"
-msgstr ""
+msgstr "基本的なネットワーキング"
 
 #. Tag: para
 #: net_basic.xml:12
@@ -32,12 +35,16 @@ msgid ""
 "this chapter only the fundamental mechanisms and the relevant network "
 "configuration files are covered."
 msgstr ""
+"Linux には、全ての種類のネットワーク構成で利用することのできる、様々なネットワーク"
+"ツールやネットワーク機能が用意されています。ネットワークカードを利用したアクセス"
+"設定は &yast; で行なうことができます。もちろん手作業での設定も可能です。本章では、"
+"ごく基本的な構造と、関連するネットワーク設定ファイルについて説明しています。"
 
 #. Tag: dm:translation
 #: net_basic.xml:22
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: net_basic.xml:25
@@ -50,6 +57,12 @@ msgid ""
 "IP. Networks combined by TCP/IP, comprising a worldwide network, are also "
 "called <quote>the Internet.</quote>"
 msgstr ""
+"Linux や他の Unix オペレーティングシステムでは、 TCP/IP プロトコルを使用します。"
+"これは単一のネットワークプロトコルを指す用語ではなく、様々なサービスを提供する"
+"ネットワークプロトコルファミリを指す用語です。 <xref linkend=\"tab.net.basic."
+"tcpproto\"/> に示されているプロトコルの一覧は、 TCP/IP を介して 2 台のマシン間で"
+"データを交換するために提供されているものです。また、 TCP/IP で構成されたネットワーク"
+"を世界中に広げたものを、 <quote>インターネット</quote> と呼びます。"
 
 #. Tag: para
 #: net_basic.xml:33
@@ -61,18 +74,23 @@ msgid ""
 "describe the setup of Internet protocols. For more information about RFCs, "
 "see <link xlink:href=\"http://www.ietf.org/rfc.html\"/> ."
 msgstr ""
+"RFC とは <emphasis>Request for Comments</emphasis> の略で、様々なインターネット"
+"プロトコルやオペレーティングシステムでの実装手順のほか、応用例などを説明している"
+"文書です。言い換えると、 RFC の文書はインターネットプロトコルの構造と仕組みを"
+"説明しているものになります。 RFC について、詳しくは <link xlink:href=\""
+"http://www.ietf.org/rfc.html\"/> (英語) をお読みください。"
 
 #. Tag: title
 #: net_basic.xml:41
 #, no-c-format
 msgid "Several Protocols in the TCP/IP Protocol Family"
-msgstr ""
+msgstr "TCP/IP プロトコルファミリで使用される主なプロトコル"
 
 #. Tag: term
 #: net_basic.xml:43
 #, no-c-format
 msgid "TCP"
-msgstr ""
+msgstr "TCP"
 
 #. Tag: para
 #: net_basic.xml:45
@@ -86,12 +104,20 @@ msgid ""
 "any data has been lost or jumbled during the transmission. TCP is "
 "implemented wherever the data sequence matters."
 msgstr ""
+"伝送制御プロトコル (Transmission Control Protocol) と呼ばれるプロトコルで、"
+"接続指向のプロトコルです。アプリケーションからもたらされた送信データは、"
+"一連のデータとしてオペレーティングシステム側で書式変換が行なわれます。"
+"宛先のホストにその変換済みのデータが到着すると、逆変換を行なって元のデータに"
+"戻して、受信側のアプリケーションに配信されます。 TCP では途中のデータが喪失"
+"してしまったり、順序が入れ替わってしまったりした場合でも、それを修復して元通りの"
+"構成に戻す機能を備えています。つまり、 TCP は順序が重要となるデータを送信する"
+"際に便利な仕組みです。"
 
 #. Tag: term
 #: net_basic.xml:57
 #, no-c-format
 msgid "UDP"
-msgstr ""
+msgstr "UDP"
 
 #. Tag: para
 #: net_basic.xml:59
@@ -103,12 +129,18 @@ msgid ""
 "loss is possible. UDP is suitable for record-oriented applications. It "
 "features a smaller latency period than TCP."
 msgstr ""
+"ユーザデータグラムプロトコル (User Datagram Protocol) と呼ばれるプロトコルで、"
+"接続制御のないプロトコルです。アプリケーションからもたらされた送信データは、"
+"書式変換のみを行なって送信されます。受信側では逆変換を行ないますが、受信側での"
+"到着順序については保証が無く、場合によってはデータを喪失してしまうこともあります。"
+" UDP はひとかたまり (パケット) のデータを送信する際に便利なプロトコルで、"
+" TCP よりも遅延を少なくすることができます。"
 
 #. Tag: term
 #: net_basic.xml:69
 #, no-c-format
 msgid "ICMP"
-msgstr ""
+msgstr "ICMP"
 
 #. Tag: para
 #: net_basic.xml:71
@@ -119,12 +151,17 @@ msgid ""
 "behavior of machines participating in TCP/IP data transfer. In addition, it "
 "provides a special echo mode that can be viewed using the program ping."
 msgstr ""
+"インターネット制御メッセージプロトコル (Internet Control Message Protocol) と呼ばれる"
+"プロトコルで、エンドユーザ側で使用するプロトコルではなく、ネットワーク内でのエラー"
+"報告を行なったり、 TCP/IP データ伝送に参加している機器を制御したりするための"
+"プロトコルです。これに加えて、 ping というプログラムを利用してネットワークの"
+"通信が成立しているかどうかを調べるプロトコルも用意されています。"
 
 #. Tag: term
 #: net_basic.xml:81
 #, no-c-format
 msgid "IGMP"
-msgstr ""
+msgstr "IGMP"
 
 #. Tag: para
 #: net_basic.xml:83
@@ -133,6 +170,9 @@ msgid ""
 "Internet Group Management Protocol: This protocol controls machine behavior "
 "when implementing IP multicast."
 msgstr ""
+"インターネットグループ管理プロトコル (Internet Group Management Protocol) と"
+"呼ばれるプロトコルで、 IP マルチキャストと呼ばれる仕組みを実装する際、それに参加"
+"するマシンの動作を制御するためのプロトコルです。"
 
 #. Tag: para
 #: net_basic.xml:90
@@ -145,12 +185,18 @@ msgid ""
 "The IP layer is supported by the underlying hardware-dependent protocol, "
 "such as Ethernet."
 msgstr ""
+"<xref linkend=\"fig.net.basic.OSI\"/> に示されているとおり、コンピュータ間での"
+"データ交換は階層 (レイヤ) 型の構造で処理されます。ネットワーク層は実際には IP "
+"(インターネットプロトコル) を介した通信で、 IP の上にトランスポート層の TCP "
+"(伝送制御プロトコル) が乗り、順序保証やある程度のセキュリティが確保された"
+"データ転送を実現しています。また、 IP 層はその下にあるハードウエア依存の"
+"プロトコル (例: イーサネット) 上で動作しています。"
 
 #. Tag: title
 #: net_basic.xml:98
 #, no-c-format
 msgid "Simplified Layer Model for TCP/IP"
-msgstr ""
+msgstr "TCP/IP での単純化したレイヤモデル"
 
 #. Tag: para
 #: net_basic.xml:108
@@ -164,6 +210,12 @@ msgid ""
 "description. The data link and physical layers represent the physical "
 "network used, such as Ethernet."
 msgstr ""
+"上の図では、各レイヤに対して 1 つもしくは 2 つの例を示しています。レイヤは"
+" <emphasis>抽象レベル</emphasis> とも呼べる仕組みで、低いレイヤほどハードウエアに"
+"近く、高いレイヤほどハードウエアからは離れた、独立した存在になっています。また、"
+"それぞれのレイヤには、名前からおおよそ推測のできる独自の機能が用意されています。"
+"なお、データリンク層と物理層は、イーサネットなどの物理的なネットワークを表わして"
+"います。"
 
 #. Tag: para
 #: net_basic.xml:117
@@ -178,6 +230,13 @@ msgid ""
 "when the data is sent over an Ethernet. If more data is transferred, more "
 "data packets need to be sent by the operating system."
 msgstr ""
+"ほぼ全てのハードウエアプロトコルがパケット指向の仕組みで動作します。具体的には、"
+"送信すべきデータは 1 回では送信しきれないことから、 <emphasis>パケット</emphasis> "
+"と呼ばれる単位でまとめられます。 TCP/IP の場合、パケットの最大サイズはおおよそ 64 KB "
+"程度になりますが、ネットワークハードウエア側ではより厳しい制限があることから、"
+"実際にはもっと小さな単位で送信されるようになります。たとえばイーサネットの場合、"
+"これは 1500 バイト程度のもので、イーサネット経由で TCP/IP パケットを送信する場合"
+"も、この単位で送信することになります。"
 
 #. Tag: para
 #: net_basic.xml:127
@@ -192,12 +251,20 @@ msgid ""
 "located at the end of the packet, not at the beginning. This simplifies "
 "things for the network hardware."
 msgstr ""
+"それぞれのレイヤが自身の機能を提供するため、データパケット内にはそれぞれのレイヤ"
+"が必要とする情報を保存しなければなりません。この情報は、パケット内では"
+" <emphasis>プロトコルヘッダ</emphasis> と呼ばれ、この中に情報を保存します。"
+"プロトコルヘッダは、名前の通り実際のデータよりも前に置かれますので、たとえば"
+"イーサネットケーブル上を通過する TCP/IP データパケットの場合は、"
+" <xref linkend=\"fig.net.basic.TCPPaket\"/> で示す図のようになります。"
+"なお、チェックサム (checksum) のみが冒頭ではなく、末尾に付いています。"
+"このような仕組みにより、ネットワークハードウエアでの処理を容易にしています。"
 
 #. Tag: title
 #: net_basic.xml:138
 #, no-c-format
 msgid "TCP/IP Ethernet Packet"
-msgstr ""
+msgstr "TCP/IP イーサネットパケット"
 
 #. Tag: para
 #: net_basic.xml:148
@@ -217,12 +284,24 @@ msgid ""
 "irrelevant for the data line which kind of data is transmitted, as long as "
 "packets are in the correct format."
 msgstr ""
+"アプリケーションがネットワークを介してデータを送信する際、データはそれぞれのレイヤ"
+"を通過します。物理レイヤを除き、全てのレイヤが Linux カーネルで実装されています。"
+"それぞれのレイヤはデータを準備して次のレイヤに送信する仕組みになっていて、"
+"最も下のレイヤがデータ送信に対する最終的な責任を負う構造になっています。"
+"データを受信した場合は、この逆順で処理が行なわれます。タマネギの皮のように、"
+"受信したデータからそれぞれのプロトコルヘッダを削除していって、最終的には"
+"トランスポート層がアプリケーションにデータを提供します。このような構造により、"
+"それぞれのレイヤは隣り合ったレイヤとだけやりとりを行なえば十分な仕組みになって"
+"いますので、アプリケーション側では 100 メガビット毎秒の FDDI ネットワークなのか、"
+"それとも 56 キロビット毎秒のモデム接続なのかを気にせずに通信できるようになって"
+"います。同様に、パケットが正しい形式に変換されている限り、データ回線側もデータの"
+"種類を気にする必要はありません。"
 
 #. Tag: title
 #: net_basic.xml:164
 #, no-c-format
 msgid "IP Addresses and Routing"
-msgstr ""
+msgstr "IP アドレスとルーティング"
 
 #. Tag: para
 #: net_basic.xml:166
@@ -232,12 +311,14 @@ msgid ""
 "about IPv6 protocol, the successor to IPv4, refer to <xref linkend=\"sec."
 "network.ipv6\"/> ."
 msgstr ""
+"本章では、 IPv4 ネットワークに限定して説明しています。 IPv4 プロトコルの後継である"
+" IPv6 プロトコルについては、 <xref linkend=\"sec.network.ipv6\"/> をお読みください。"
 
 #. Tag: title
 #: net_basic.xml:173
 #, no-c-format
 msgid "IP Addresses"
-msgstr ""
+msgstr "IP アドレス"
 
 #. Tag: para
 #: net_basic.xml:174
@@ -247,12 +328,15 @@ msgid ""
 "(or 4 bytes) are normally written as illustrated in the second row in <xref "
 "linkend=\"aus.net.basic.ipaddress\"/> ."
 msgstr ""
+"インターネットに接続されているコンピュータには、他のコンピュータと重複しない 32 "
+"ビットのアドレスが付与されています。この 32 ビット (4 バイト) は通常、"
+" <xref linkend=\"aus.net.basic.ipaddress\"/> の 2 行目のような書式で記述します。"
 
 #. Tag: title
 #: net_basic.xml:180
 #, no-c-format
 msgid "Writing IP Addresses"
-msgstr ""
+msgstr "IP アドレスの書き方"
 
 #. Tag: screen
 #: net_basic.xml:181
@@ -261,6 +345,8 @@ msgid ""
 "IP Address (binary):  11000000 10101000 00000000 00010100\n"
 "IP Address (decimal):      192.     168.       0.      20"
 msgstr ""
+"IP アドレス (バイナリ):  11000000 10101000 00000000 00010100\n"
+"IP アドレス (10 進数) :      192.     168.       0.      20"
 
 #. Tag: para
 #: net_basic.xml:184
@@ -272,6 +358,10 @@ msgid ""
 "exceptions to this rule, but these are not relevant to the following "
 "passages."
 msgstr ""
+"10 進数の表示では、 4 バイトそれぞれを 10 進数で表わし、ピリオドでそれぞれを"
+"区切ります。 IP アドレスはホストやネットワークインターフェイスに割り当てるもので、"
+"世界中を通して唯一のものでなければなりません。一部例外もありますが、本章の"
+"説明では省略します。"
 
 #. Tag: para
 #: net_basic.xml:191
@@ -282,12 +372,17 @@ msgid ""
 "system proved too inflexible and was discontinued. Now, <emphasis>classless "
 "routing</emphasis> (CIDR, classless interdomain routing) is used."
 msgstr ""
+"IP アドレスは階層構造型の仕組みで作られています。 1990 年代までは、 IP アドレスに"
+" <quote>クラス</quote> と呼ばれる分類が設定され、厳格に守られてきました。"
+"しかしながら、このような構造は柔軟性に欠けるため、現在は使用されていません。"
+"現在は <emphasis>クラスレスルーティング</emphasis> (CIDR, Classless InterDomain "
+"Routing) と呼ばれる仕組みで、クラスを使用しないようになっています。"
 
 #. Tag: title
 #: net_basic.xml:200
 #, no-c-format
 msgid "Netmasks and Routing"
-msgstr ""
+msgstr "ネットマスクとルーティング"
 
 #. Tag: para
 #: net_basic.xml:201
@@ -302,6 +397,13 @@ msgid ""
 "differences, the remote IP address, and thus the remote interface, can only "
 "be reached over a gateway."
 msgstr ""
+"ネットマスクとは、サブネットのアドレス範囲を定義するために使用するものです。"
+" 2 つのアドレスが同じサブネット内にある場合、それらは直接通信することができます。"
+"同じサブネット内に無い場合は、そのサブネットに到達するまでの中継器 (ゲートウエイ) "
+"のアドレスを介して、通信を行なう必要があります。 2 つの IP アドレスが同じサブネット"
+"内にあるかどうかを確認するには、それぞれのアドレスをネットマスクで"
+" <quote>論理積 (AND)</quote> して、結果が同じであるかどうかを調べます。結果が"
+"異なる場合、双方が通信する際にはゲートウエイを介して通信する必要があることになります。"
 
 #. Tag: para
 #: net_basic.xml:211
@@ -318,12 +420,23 @@ msgid ""
 "in the netmask. In <xref linkend=\"tab.net.basic.netmask\"/> the first net "
 "with 24 bits could also be written as <literal>192.168.0.0/24</literal> ."
 msgstr ""
+"ネットマスクの仕組みについて知るには、まず <xref linkend=\"tab.net.basic."
+"netmask\"/> をご覧ください。ネットマスクは 32 ビットの値で、 IP アドレスの"
+"どの部分までがサブネットであるのかを示しています。サブネット側に属する"
+"部分が <literal>1</literal> に、それ以外の部分が <literal>0</literal> に"
+"なっていますので、論理積 (AND) を取れば、ネットワーク部分だけを抽出できることに"
+"なります。言い換えると、より小さなサブネットほど <literal>1</literal> の数が"
+"多いことになります。また、ネットマスクは <literal>1</literal> が連続して"
+"現われることから、 <literal>1</literal> の長さでネットマスクを表わすことも"
+"できます。たとえば <xref linkend=\"tab.net.basic.netmask\"/> では 24 個の"
+" <literal>1</literal> になっていますので、前者を <literal>192.168.0.0/24</literal> "
+"と記述することができます。"
 
 #. Tag: title
 #: net_basic.xml:225
 #, no-c-format
 msgid "Linking IP Addresses to the Netmask"
-msgstr ""
+msgstr "IP アドレスとネットマスクのつながり"
 
 #. Tag: screen
 #: net_basic.xml:226
@@ -341,6 +454,17 @@ msgid ""
 "Result of the link:         11010101 10111111 00001111 00000000\n"
 "In the decimal system:           213.      95.      15.       0"
 msgstr ""
+"IP アドレス (192.168.0.20) : 11000000 10101000 00000000 00010100\n"
+"ネットマスク(255.255.255.0): 11111111 11111111 11111111 00000000\n"
+"---------------------------------------------------------------\n"
+"論理積の結果:                11000000 10101000 00000000 00000000\n"
+"10 進数への変換結果:              192.     168.       0.       0\n"
+"\n"
+"IP アドレス (213.95.15.200): 11010101 10111111 00001111 11001000\n"
+"ネットマスク(255.255.255.0): 11111111 11111111 11111111 00000000\n"
+"---------------------------------------------------------------\n"
+"論理積の結果:                11010101 10111111 00001111 00000000\n"
+"10 進数への変換結果:              213.      95.      15.       0"
 
 #. Tag: para
 #: net_basic.xml:238
@@ -351,6 +475,10 @@ msgid ""
 "when the subnet is physically divided by switches or bridges, these hosts "
 "can still be reached directly."
 msgstr ""
+"もう 1 つの例を挙げましょう。同じ LAN 内に接続されているコンピュータの場合、それら"
+"全ては同じサブネット内に存在していて、直接アクセスすることができます。スイッチや"
+"ブリッジで物理的に区切られている場合でも、これらのホスト同士は直接アクセスする"
+"ことができます。"
 
 #. Tag: para
 #: net_basic.xml:244
@@ -361,6 +489,10 @@ msgid ""
 "one gateway that handles all traffic that is external. However, it is also "
 "possible to configure several gateways for different subnets."
 msgstr ""
+"逆に、異なるサブネットの IP アドレス同士は、ゲートウエイの介在無しにはアクセスする"
+"ことができません。最もよくある環境では、ゲートウエイは 1 台だけで、そのゲートウエイが"
+"全てのサブネットに対するアクセスを中継します。環境によっては、複数のゲートウエイが"
+"存在していたりすることもあります。"
 
 #. Tag: para
 #: net_basic.xml:250
@@ -371,18 +503,23 @@ msgid ""
 "the same manner&mdash;from host to host&mdash;until it reaches the "
 "destination host or the packet's TTL (time to live) expires."
 msgstr ""
+"このように、お使いのネットワーク内にゲートウエイが存在する場合は、異なるサブネット宛"
+"の通信は全てゲートウエイを介して接続します。ゲートウエイはホスト間で通信を行なうのと"
+"同じ手順で、一方から他方にデータ (パケット) を中継します。ただし、各パケットには"
+" TTL (Time To Live) という値が設定されていて、ゲートウエイを通過するごとに 1 つ"
+"ずつ減らされ、 0 になると廃棄されてしまいます。"
 
 #. Tag: title
 #: net_basic.xml:257
 #, no-c-format
 msgid "Specific Addresses"
-msgstr ""
+msgstr "様々なアドレス"
 
 #. Tag: term
 #: net_basic.xml:259
 #, no-c-format
 msgid "Base Network Address"
-msgstr ""
+msgstr "ネットワークアドレス"
 
 #. Tag: para
 #: net_basic.xml:263
@@ -392,12 +529,15 @@ msgid ""
 "linkend=\"tab.net.basic.netmask\"/> under <literal>Result</literal> . This "
 "address cannot be assigned to any hosts."
 msgstr ""
+"このアドレスは、コンピュータの IP アドレスとネットマスクの論理積を取った結果で、"
+" <xref linkend=\"tab.net.basic.netmask\"/> の図では <literal>論理積の結果</literal> "
+"として示しているものです。このアドレスは、コンピュータに割り当てることができません。"
 
 #. Tag: term
 #: net_basic.xml:271
 #, no-c-format
 msgid "Broadcast Address"
-msgstr ""
+msgstr "ブロードキャストアドレス"
 
 #. Tag: para
 #: net_basic.xml:275
@@ -408,12 +548,17 @@ msgid ""
 "to the base network address with a logical OR. The above example therefore "
 "results in 192.168.0.255. This address cannot be assigned to any hosts."
 msgstr ""
+"このアドレスは、 <quote>そのサブネット内にある全てのホスト</quote> を意味する"
+"アドレスです。このアドレスを生成するには、ネットマスクの <literal>1</literal> "
+"と <literal>0</literal> を入れ替えて、 IP アドレスとの論理和 (OR) を取った"
+"値になります。上記の例では、 192.168.0.255 となります。このアドレスも、コンピュータ"
+"に割り当てることができません。"
 
 #. Tag: term
 #: net_basic.xml:285
 #, no-c-format
 msgid "Local Host"
-msgstr ""
+msgstr "ローカルホスト"
 
 #. Tag: para
 #: net_basic.xml:289
@@ -426,6 +571,13 @@ msgid ""
 "loopback network as defined with IPv4. With IPv6 there is only one loopback "
 "address ( <systemitem class=\"ipaddress\">::1</systemitem> )."
 msgstr ""
+"<systemitem class=\"ipaddress\">127.0.0.1</systemitem> というアドレスは特殊扱いの"
+"アドレスで、各ホストの　<quote>ループバックデバイス</quote> に割り当てます。この"
+"アドレスを指定することで、自分自身のコンピュータにアクセスすることができるように"
+"なっています。より正確に表現すると、このアドレスは <systemitem class=\"ipaddress\">"
+"127.0.0.0/8</systemitem> というネットワークアドレスで、 IPv4 の規格として決められて"
+"いるものです。なお、 IPv6 の場合は、ループバックアドレスは 1 つだけ  ( <systemitem "
+"class=\"ipaddress\">::1</systemitem> ) になっています。"
 
 #. Tag: para
 #: net_basic.xml:301
@@ -438,24 +590,30 @@ msgid ""
 "address domains are specified in RFC&nbsp;1597 and listed in <xref linkend="
 "\"tab.net.basic.privat.net\"/> ."
 msgstr ""
+"IP アドレスは全世界で唯一のものでなければならないことから、適当にアドレスを割り当てて"
+"良いというものではありません。ただし、内部で使用するためだけの <quote>プライベート"
+" IP アドレス</quote> と呼ばれるアドレスがあり、インターネットには直接接続しない"
+"環境下で使用することができるようになっています。これらのアドレス帯域は RFC&nbsp;1597 "
+"で規定されているもので、 <xref linkend=\"tab.net.basic.privat.net\"/> に一覧を"
+"示しています。"
 
 #. Tag: title
 #: net_basic.xml:310
 #, no-c-format
 msgid "Private IP Address Domains"
-msgstr ""
+msgstr "プライベート IP アドレスの範囲"
 
 #. Tag: para
 #: net_basic.xml:315
 #, no-c-format
 msgid "Network/Netmask"
-msgstr ""
+msgstr "ネットワーク／ネットマスク"
 
 #. Tag: para
 #: net_basic.xml:320
 #, no-c-format
 msgid "Domain"
-msgstr ""
+msgstr "範囲"
 
 #. Tag: para
 #: net_basic.xml:329
@@ -464,12 +622,14 @@ msgid ""
 "<systemitem class=\"ipaddress\">10.0.0.0</systemitem> / <systemitem class="
 "\"netmask\">255.0.0.0</systemitem>"
 msgstr ""
+"<systemitem class=\"ipaddress\">10.0.0.0</systemitem> / <systemitem class="
+"\"netmask\">255.0.0.0</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:334
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">10.x.x.x</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">10.x.x.x</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:341
@@ -478,6 +638,8 @@ msgid ""
 "<systemitem class=\"ipaddress\">172.16.0.0</systemitem> / <systemitem class="
 "\"netmask\">255.240.0.0</systemitem>"
 msgstr ""
+"<systemitem class=\"ipaddress\">172.16.0.0</systemitem> / <systemitem class="
+"\"netmask\">255.240.0.0</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:346
@@ -486,6 +648,8 @@ msgid ""
 "<systemitem class=\"ipaddress\">172.16.x.x</systemitem> &ndash; <systemitem "
 "class=\"ipaddress\">172.31.x.x</systemitem>"
 msgstr ""
+"<systemitem class=\"ipaddress\">172.16.x.x</systemitem> &ndash; <systemitem "
+"class=\"ipaddress\">172.31.x.x</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:354
@@ -494,24 +658,26 @@ msgid ""
 "<systemitem class=\"ipaddress\">192.168.0.0</systemitem> / <systemitem class="
 "\"netmask\">255.255.0.0</systemitem>"
 msgstr ""
+"<systemitem class=\"ipaddress\">192.168.0.0</systemitem> / <systemitem class="
+"\"netmask\">255.255.0.0</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:359
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">192.168.x.x</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">192.168.x.x</systemitem>"
 
 #. Tag: title
 #: net_basic.xml:370
 #, no-c-format
 msgid "IPv6&mdash;The Next Generation Internet"
-msgstr ""
+msgstr "IPv6&mdash;次世代インターネット"
 
 #. Tag: title
 #: net_basic.xml:373
 #, no-c-format
 msgid "&zseries;: IPv6 Support"
-msgstr ""
+msgstr "&zseries; での IPv6 サポートについて"
 
 #. Tag: para
 #: net_basic.xml:374
@@ -520,6 +686,8 @@ msgid ""
 "IPv6 is not supported by the CTC and IUCV network connections of the "
 "&zseries; hardware."
 msgstr ""
+"&zseries; ハードウエアで CTC/IUCV のネットワーク接続をお使いの場合、"
+" IPv6 には対応していません。"
 
 #. Tag: para
 #: net_basic.xml:380
@@ -532,6 +700,11 @@ msgid ""
 "in 1990, the number of Internet hosts has grown from a few thousand to about "
 "a hundred million."
 msgstr ""
+"World Wide Web (WWW) の普及に伴い、インターネットは爆発的に拡大しています。"
+"それに伴い、過去 15 年の間に TCP/IP を介して通信するコンピュータも、爆発的な"
+"数に膨れあがってきています。 CERN ( <link xlink:href=\"http://public.web.cern.ch\"/> ) "
+"の Tim Berners-Lee 氏が 1990 年に WWW を発明して以降、数千台規模のインターネット"
+"ホストが、今は 1 億台以上にもなってきています。"
 
 #. Tag: para
 #: net_basic.xml:389
@@ -546,6 +719,12 @@ msgid ""
 "only 254 are usable, because two IP addresses are needed for the structure "
 "of the subnet itself: the broadcast and the base network address."
 msgstr ""
+"上述のとおり、 IPv4 アドレスは 32 ビットしかありません。また、ネットワークの管理上の"
+"都合から、かなりの数の IP アドレスが使用できなくなってしまっています。また上述の"
+"とおり、サブネットは 2 進数で表記するため、 2 のべき乗 - 2 個 (ネットワークアドレスと"
+"ブロードキャストアドレス) のアドレスしか利用できません。たとえば 128 台の"
+"コンピュータをインターネットに接続する場合、 256 個のアドレスのサブネット (実際には"
+" 256 - 2 = 254 個のアドレスが利用可能) を利用する必要があります。"
 
 #. Tag: para
 #: net_basic.xml:400
@@ -561,6 +740,15 @@ msgid ""
 "the gateway address and maybe a name server address. All these items need to "
 "be known and cannot be derived from somewhere else."
 msgstr ""
+"なお、現在の IPv4 プロトコルには、 DHCP や NAT (ネットワークアドレス変換 (Network "
+"Address Translation)) の仕組みがあり、アドレスが枯渇する問題を回避しうる仕組みを"
+"備えています。また、上述のプライベートアドレスを併用して、それぞれを個別に管理する"
+"ことでも、確実に枯渇を防いでいます。ただ、このような構成は雑用を増やすばかりで、"
+"管理の負担も増やす結果になってしまっています。また、 IPv4 のネットワーク内で"
+"ホストを構築するには、そのホストに割り当てるアドレスとサブネットマスク、"
+"ゲートウエイのアドレスとネームサーバのアドレス (必要であれば) をそれぞれ設定する"
+"ことになります。これら全ての設定を知っておく必要があるため、それなりの手間にも"
+"なってしまいます。"
 
 #. Tag: para
 #: net_basic.xml:412
@@ -571,12 +759,15 @@ msgid ""
 "improvements and benefits brought by IPv6 and about the transition from the "
 "old protocol to the new one."
 msgstr ""
+"IPv6 を利用することで、アドレスの枯渇と複雑化した設定を過去のものにすることができます。"
+"下記の章では、 IPv6 で改善された内容や新しい内容を紹介しているほか、 IPv4 からの"
+"移行方法についても説明しています。"
 
 #. Tag: title
 #: net_basic.xml:420
 #, no-c-format
 msgid "Advantages"
-msgstr ""
+msgstr "利点"
 
 #. Tag: para
 #: net_basic.xml:421
@@ -587,6 +778,9 @@ msgid ""
 "made up of 128 bit values instead of the traditional 32 bits. This provides "
 "for as many as several quadrillion IP addresses."
 msgstr ""
+"最も重要で、最も目立つ改善点として、アドレス領域の巨大化があります。 IPv4 では"
+" 32 ビットしかなかったアドレスが、 IPv6 では 128 ビットの巨大なアドレス領域に"
+"なっています。これにより、数千兆個ものアドレスを割り当てることができるようになります。"
 
 #. Tag: para
 #: net_basic.xml:427
@@ -598,18 +792,22 @@ msgid ""
 "which they belong. More details about this are found in <xref linkend=\"sec."
 "network.ipv6.address\"/> ."
 msgstr ""
+"しかしながら、 IPv6 アドレスはアドレス領域を拡張しただけではありません。"
+"内部構造を新しくすることで、システムとネットワークに関する情報をより効率的に"
+"処理できるようになっています。詳しくは <xref linkend=\"sec.network.ipv6.address\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: net_basic.xml:434
 #, no-c-format
 msgid "The following is a list of other advantages of the new protocol:"
-msgstr ""
+msgstr "新しいプロトコルにおける利点の一覧は下記のとおりです:"
 
 #. Tag: term
 #: net_basic.xml:439
 #, no-c-format
 msgid "Autoconfiguration"
-msgstr ""
+msgstr "自動設定"
 
 #. Tag: para
 #: net_basic.xml:441
@@ -625,6 +823,13 @@ msgid ""
 "central server for address allocation&mdash;an additional advantage over "
 "IPv4, where automatic address allocation requires a DHCP server."
 msgstr ""
+"IPv6 ではネットワークを <quote>プラグ&amp;プレイ</quote> 対応に進化させています。"
+"これにより、新しいコンピュータを (ローカルの) ネットワークに接続する際、手作業での"
+"設定作業を全く必要としなくなっています。コンピュータを新しく接続すると、自動設定の"
+"仕組みが動作し、ルータが提供する情報をもとにして独自のアドレスを割り当てます。"
+"これは <emphasis>neighbor discovery</emphasis> (ND) プロトコルと呼ばれる仕組みです。"
+"この方法では、管理者側で行なう作業は何もなく、 IPv4 で自動的なアドレス割り当てを"
+"実現していた DHCP サーバのように、アドレスを割り当てるための中央サーバも不要です。"
 
 #. Tag: para
 #: net_basic.xml:453
@@ -635,12 +840,15 @@ msgid ""
 "should interact with each other. For more information, see RFC 2462 and the "
 "<systemitem>radvd.conf(5)</systemitem> man page, and RFC 3315."
 msgstr ""
+"ルータがスイッチに接続されている場合でも、ルータはネットワークに接続するための"
+"情報を定期的に発信し続けます。詳しくは RFC 2462 と <systemitem>radvd.conf(5)</systemitem> "
+"のマニュアルページ、そして RFC 3315 をお読みください。"
 
 #. Tag: term
 #: net_basic.xml:463
 #, no-c-format
 msgid "Mobility"
-msgstr ""
+msgstr "モビリティ"
 
 #. Tag: para
 #: net_basic.xml:465
@@ -654,12 +862,18 @@ msgid ""
 "corresponding area, so you can be reached under the same number everywhere "
 "and can place an outgoing call, as you would in your home area."
 msgstr ""
+"IPv6 では、 1 つのネットワークインターフェイスに対して複数のアドレスを割り当てる"
+"ことができます。この仕組みにより、複数のネットワークに簡単に接続することができるため、"
+"携帯電話の事業者が提供する国際ローミングのように使用することができます。たとえば"
+"お使いの携帯電話を海外に持ち出した場合、その電話機は自動的にその地域の携帯電話サービス"
+"に接続しますが、どの国でも同じ番号のまま発着信できて、国内にいる場合と全く同じ"
+"使い心地で使用することができます。これと同じような仕組みを利用することができます。"
 
 #. Tag: term
 #: net_basic.xml:478
 #, no-c-format
 msgid "Secure Communication"
-msgstr ""
+msgstr "セキュリティ"
 
 #. Tag: para
 #: net_basic.xml:480
@@ -669,12 +883,15 @@ msgid ""
 "one of its core features, allowing systems to communicate over a secure "
 "tunnel to avoid eavesdropping by outsiders on the Internet."
 msgstr ""
+"IPv4 ではネットワークセキュリティ (IPsec) がオプション扱いでしたが、 IPv6 では"
+" IPsec が中枢機能の 1 つとなり、盗聴の可能性があり得るインターネットの世界で、"
+"機密の守られた通信を行なうことができるようになっています。"
 
 #. Tag: term
 #: net_basic.xml:488
 #, no-c-format
 msgid "Backward Compatibility"
-msgstr ""
+msgstr "後方互換性"
 
 #. Tag: para
 #: net_basic.xml:490
@@ -690,12 +907,20 @@ msgid ""
 "they have two network stacks that are completely separate, such that there "
 "is no interference between the two protocol versions."
 msgstr ""
+"現実的には、インターネット全体を一気に IPv4 から IPv6 に移行することは不可能です。"
+"そのため、インターネット内だけでなく、それぞれのシステムにも両方のプロトコルを"
+"共存させる仕組みが必須となります。このような要件から、互換アドレス (IPv4 アドレスを"
+"容易に IPv6 アドレスに変換できるアドレス) が用意され、トンネルを介してアクセス"
+"できる仕組みになっています。詳しくは <xref linkend=\"sec.network.ipv6.coexist\"/> "
+"をお読みください。システム側では <emphasis>デュアルスタック IP</emphasis> と"
+"呼ばれる技術により、両方のプロトコルに対応し、どちらのプロトコルを経由しても"
+"インターネットにアクセスできる構造になっています。"
 
 #. Tag: term
 #: net_basic.xml:505
 #, no-c-format
 msgid "Custom Tailored Services through Multicasting"
-msgstr ""
+msgstr "マルチキャストを利用した独自サービス"
 
 #. Tag: para
 #: net_basic.xml:507
@@ -713,12 +938,22 @@ msgid ""
 "emphasis> ), for example, or all routers (the <emphasis>all routers "
 "multicast group</emphasis> )."
 msgstr ""
+"IPv4 では、 SMB などのサービスでブロードキャストを利用し、ローカルネットワーク内の"
+"全てのホストにパケットを送信していました。 IPv6 では、より精密なアプローチである"
+" <emphasis>マルチキャスト</emphasis> を利用して、特定のグループ内の全体に"
+"情報を伝えることができるようになっています。これは全てのホストに通知する"
+" <emphasis>ブロードキャスト</emphasis> とも、特定の 1 台のホストのみに通信する"
+" <emphasis>ユニキャスト</emphasis> とも異なる仕組みです。どのホストがグループ"
+"として割り当てられるのかは、それぞれの用途によって異なります。あらかじめ決められた"
+"グループとしては、全てのネームサーバ (<emphasis>全ネームサーバ マルチキャスト"
+"グループ</emphasis>) や全てのルータ (<emphasis>全ルータ マルチキャストグループ"
+"</emphasis>) などがあります。"
 
 #. Tag: title
 #: net_basic.xml:526
 #, no-c-format
 msgid "Address Types and Structure"
-msgstr ""
+msgstr "アドレスの種類と構造"
 
 #. Tag: para
 #: net_basic.xml:527
@@ -733,6 +968,13 @@ msgid ""
 "addresses, and <emphasis>multihoming</emphasis> (the ability to assign "
 "several addresses to one device, giving access to several networks)."
 msgstr ""
+"上述のとおり、現在の IP プロトコルには 2 種類の大きな制限があります。 IP アドレスの"
+"枯渇と、それに伴って発生する経路制御 (ルーティング) テーブルの複雑化、そして"
+"その運用の煩雑さです。 IPv6 では、アドレス領域を拡張することによって前者を解決して"
+"いますし、後者についてはネットワークアドレスを構造化し、より整理された管理を"
+"行なうと共に、 <emphasis>マルチホーミング</emphasis> (複数のアドレスを 1 台の"
+"デバイスに設定し、複数のネットワークそれぞれにアクセスできる機能) でそれらを"
+"解決しています。"
 
 #. Tag: para
 #: net_basic.xml:538
@@ -740,13 +982,13 @@ msgstr ""
 msgid ""
 "When dealing with IPv6, it is useful to know about three different types of "
 "addresses:"
-msgstr ""
+msgstr "IPv6 を扱うにあたっては、まずアドレスの種類について知っておくことをお勧めします:"
 
 #. Tag: term
 #: net_basic.xml:544
 #, no-c-format
 msgid "Unicast"
-msgstr ""
+msgstr "ユニキャスト"
 
 #. Tag: para
 #: net_basic.xml:546
@@ -757,12 +999,16 @@ msgid ""
 "Accordingly, unicast addresses are used to transfer packets to individual "
 "hosts on the local network or the Internet."
 msgstr ""
+"この種類のアドレスは、厳密に 1 つのネットワークインターフェイスに関連づけられるものです。"
+"このアドレス宛に発信されたパケットは、特定の 1 台に宛てて送信されます。"
+"そのため、ユニキャストのアドレスは、ネットワーク内やインターネットで、特定の"
+"ホスト同士が通信する際に使用します。"
 
 #. Tag: term
 #: net_basic.xml:555
 #, no-c-format
 msgid "Multicast"
-msgstr ""
+msgstr "マルチキャスト"
 
 #. Tag: para
 #: net_basic.xml:557
@@ -773,12 +1019,16 @@ msgid ""
 "Multicast addresses are mainly used by certain network services to "
 "communicate with certain groups of hosts in a well-directed manner."
 msgstr ""
+"この種類のアドレスは、ネットワークインターフェイスのグループに関連づけられるものです。"
+"このアドレス宛に発信されたパケットは、グループに属する全ての宛先に送信されます。"
+"マルチキャストアドレスは、主に特定のネットワークサービスが使用するもので、"
+"特定のグループに属するホストに対して通信する際に使用します。"
 
 #. Tag: term
 #: net_basic.xml:567
 #, no-c-format
 msgid "Anycast"
-msgstr ""
+msgstr "エニーキャスト"
 
 #. Tag: para
 #: net_basic.xml:569
@@ -795,6 +1045,14 @@ msgid ""
 "reason, the protocol automatically selects the second closest server, then "
 "the third one, and so forth."
 msgstr ""
+"この種類のアドレスも、ネットワークインターフェイスのグループに関連づけられるものです。"
+"ただし、このアドレス宛に発信されたパケットは、ルーティングプロトコルの仕組みに"
+"従って、最も送信者に近いグループのメンバーに配信されます。エニーキャストアドレスは、"
+"特定のサービスを提供するサーバが、インターネット内に多数存在するような場合に"
+"利用します。同じ種類のサービスのサーバは、同じエニーキャストアドレスを持ちます。"
+"通常はルーティングプロトコルの仕組みで最も近いサーバに送信されますが、そのサーバが"
+"利用できない場合は 2 番目に近いサーバに、そのサーバも利用できない場合は 3 番目に"
+"近いサーバに、のように配信されます。"
 
 #. Tag: para
 #: net_basic.xml:584
@@ -809,12 +1067,19 @@ msgid ""
 "per address. This kind of shorthand notation is shown in <xref linkend=\"aus."
 "netz.ipv6.add\"/> , where all three lines represent the same address."
 msgstr ""
+"IPv6 アドレスは 4 桁のフィールド 8 個で構成されています。それぞれのフィールドは"
+" 16 ビットの値を 16 進数で表わす仕組みで、フィールド間はコロン ( <literal>:</literal> ) "
+"で区切ります。また、 16 進数の上位の桁が 0 であった場合は 0 を省略して表記しますが、"
+"逆に下位の桁が 0 であった場合には省略を行ないません。また、特定のフィールドが"
+"完全な 0 であった場合にはそのフィールドの表記を省略して、 <literal>::</literal> "
+"と表わします。ただし <literal>::</literal> は 1 つしか設定できません。アドレス"
+"表記の例を下記に示します (いずれも同じアドレスを表わしています):"
 
 #. Tag: title
 #: net_basic.xml:596
 #, no-c-format
 msgid "Sample IPv6 Address"
-msgstr ""
+msgstr "IPv6 アドレスの例"
 
 #. Tag: screen
 #: net_basic.xml:597
@@ -824,6 +1089,9 @@ msgid ""
 "fe80 :    0 :    0 :    0 :    0 : 10 : 1000 : 1a4\n"
 "fe80 :                           : 10 : 1000 : 1a4"
 msgstr ""
+"fe80 : 0000 : 0000 : 0000 : 0000 : 10 : 1000 : 1a4\n"
+"fe80 :    0 :    0 :    0 :    0 : 10 : 1000 : 1a4\n"
+"fe80 :                           : 10 : 1000 : 1a4"
 
 #. Tag: para
 #: net_basic.xml:601
@@ -841,18 +1109,29 @@ msgid ""
 "is combined with AND with the values from the netmask to determine whether "
 "the host is located in the same subnet or in another one."
 msgstr ""
+"IPv6 アドレスは、それぞれのパートごとにそれぞれの意味があります。最初のいくつかの"
+"バイトはプレフィクスとアドレスの種類を表わします。中央の部分はアドレスのネットワーク"
+"パートと呼ばれ、場合によっては使用しません。末尾の部分はホストパートと呼ばれ、"
+"特定のホストを表わす部分になります。また、 IPv6 でのネットマスクはアドレスの末尾に"
+"スラッシュを置き、その後ろにプレフィクスの長さをビット数で表わします。たとえば"
+" <xref linkend=\"aus.netz.ipv6.addpre\"/> のアドレスの場合は、最初の 64 ビット"
+"までがアドレスのネットワークパートで、残りの 64 ビットがホストパートであることを"
+"示しています。これを言い換えると、 <literal>64</literal> とは左側から 64 ビット"
+"分までがネットワークパートであることになります。 IPv4 では、論理積 (AND) を利用して"
+"同じサブネットかどうかを判断していましたが、 IPv6 ではビット数のみを使用して判断"
+"します。"
 
 #. Tag: title
 #: net_basic.xml:615
 #, no-c-format
 msgid "IPv6 Address Specifying the Prefix Length"
-msgstr ""
+msgstr "プレフィクス長付きの IPv6 アドレス"
 
 #. Tag: screen
 #: net_basic.xml:616
 #, no-c-format
 msgid "fe80::10:1000:1a4/64"
-msgstr ""
+msgstr "fe80::10:1000:1a4/64"
 
 #. Tag: para
 #: net_basic.xml:618
@@ -861,18 +1140,20 @@ msgid ""
 "IPv6 knows about several predefined types of prefixes. Some are shown in "
 "<xref linkend=\"list.net.basic.ipv6.prefix\"/> ."
 msgstr ""
+"IPv6 には、いくつかの定義済みプレフィクスが存在しています。そのうちのいくつかを"
+" <xref linkend=\"list.net.basic.ipv6.prefix\"/> で示します。"
 
 #. Tag: title
 #: net_basic.xml:623
 #, no-c-format
 msgid "Various IPv6 Prefixes"
-msgstr ""
+msgstr "様々な IPv6 プレフィクス"
 
 #. Tag: term
 #: net_basic.xml:625
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">00</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">00</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:628
@@ -883,6 +1164,10 @@ msgid ""
 "translate IPv6 packets into IPv4 packets. Several special addresses, such as "
 "the one for the loopback device, have this prefix as well."
 msgstr ""
+"IPv4 アドレスと IPv4 over IPv6 互換アドレスを表わします。これらは IPv4 との互換性を"
+"維持するために使用されているもので、ルータが IPv6 パケットを IPv4 パケットに変換"
+"できるようにするために使用します。このほか、ループバックデバイス向けのアドレスなども"
+"このプレフィクスを使用しています。"
 
 #. Tag: term
 #: net_basic.xml:638
@@ -891,6 +1176,8 @@ msgid ""
 "<systemitem class=\"ipaddress\">2</systemitem> or <systemitem class="
 "\"ipaddress\">3</systemitem> as the first digit"
 msgstr ""
+"最初の 1 桁が <systemitem class=\"ipaddress\">2</systemitem> または <systemitem class="
+"\"ipaddress\">3</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:643
@@ -902,12 +1189,17 @@ msgid ""
 "systemitem> (production quality address space) and <systemitem class="
 "\"ipaddress\">2002::/16</systemitem> (6to4 address space)."
 msgstr ""
+"集約可能なグローバルユニキャストアドレス (Aggregatable global unicast addresses) "
+"と呼ばれるものです。 IPv4 の場合と同様に、インターフェイスに対して特定のサブネットの"
+"一部を構成するために割り当てられるものです。現時点では、下記のアドレス領域が存在して"
+"います: <systemitem class=\"ipaddress\">2001::/16</systemitem> (本番用アドレス領域) "
+"および <systemitem class=\"ipaddress\">2002::/16</systemitem> (6to4 用アドレス領域)"
 
 #. Tag: term
 #: net_basic.xml:654
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">fe80::/10</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">fe80::/10</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:657
@@ -916,12 +1208,14 @@ msgid ""
 "Link-local addresses. Addresses with this prefix should not be routed and "
 "should therefore only be reachable from within the same subnet."
 msgstr ""
+"リンクローカルアドレスと呼ばれ、このプレフィクスを持ったアドレスは経路制御を行なう"
+"べきではなく、そのため同じサブネット内にしかアクセスできないアドレスです。"
 
 #. Tag: term
 #: net_basic.xml:664
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">fec0::/10</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">fec0::/10</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:667
@@ -932,30 +1226,33 @@ msgid ""
 "equivalent of the current private network address space, such as <systemitem "
 "class=\"ipaddress\">10.x.x.x</systemitem> ."
 msgstr ""
+"サイトローカルアドレスと呼ばれ、経路制御を行なってもかまわないものの、所属する"
+"特定の組織内でのみ使用すべきものです。実際には、 <systemitem class=\"ipaddress\">"
+"10.x.x.x</systemitem> などの IPv6 アドレスにおけるプライベートアドレスとも呼べるものです。"
 
 #. Tag: term
 #: net_basic.xml:676
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">ff</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">ff</systemitem>"
 
 #. Tag: para
 #: net_basic.xml:679
 #, no-c-format
 msgid "These are multicast addresses."
-msgstr ""
+msgstr "これらはマルチキャストアドレスです。"
 
 #. Tag: para
 #: net_basic.xml:685
 #, no-c-format
 msgid "A unicast address consists of three basic components:"
-msgstr ""
+msgstr "ユニキャストアドレスには、 3 種類の基本コンポーネントが含まれています:"
 
 #. Tag: term
 #: net_basic.xml:690
 #, no-c-format
 msgid "Public Topology"
-msgstr ""
+msgstr "パブリックトポロジ"
 
 #. Tag: para
 #: net_basic.xml:692
@@ -965,12 +1262,15 @@ msgid ""
 "used to route packets through the public Internet. It includes information "
 "about the company or institution that provides the Internet access."
 msgstr ""
+"最初の部分 (上述のプレフィクスを含む) は、一般的なインターネットを介してパケットを"
+"経路制御する際に使用します。インターネットアクセスを提供する企業や団体の情報を"
+"含む部分です。"
 
 #. Tag: term
 #: net_basic.xml:701
 #, no-c-format
 msgid "Site Topology"
-msgstr ""
+msgstr "サイトトポロジ"
 
 #. Tag: para
 #: net_basic.xml:703
@@ -978,13 +1278,13 @@ msgstr ""
 msgid ""
 "The second part contains routing information about the subnet to which to "
 "deliver the packet."
-msgstr ""
+msgstr "2 つ目の部分には、パケットの配信先のサブネットに関する経路情報が含まれています。"
 
 #. Tag: term
 #: net_basic.xml:710
 #, no-c-format
 msgid "Interface ID"
-msgstr ""
+msgstr "インターフェイス ID"
 
 #. Tag: para
 #: net_basic.xml:712
@@ -1000,6 +1300,16 @@ msgid ""
 "possible to assign an <literal>EUI-64</literal> token to interfaces that do "
 "not have a MAC, such as those based on PPP."
 msgstr ""
+"3 つ目の部分には、パケットの配信先となるインターフェイスを識別するための情報が"
+"含まれています。このような構造により、 MAC アドレスをそのままアドレスとすることが"
+"できるようになっています。 MAC アドレスが全世界で唯一の番号であると仮定すると、"
+"ハードウエアの製造元が固定の識別子をデバイスに割り当てていることになりますので、"
+"設定の手順も大きく単純化することができることになります。実際のところ、最初の 64 "
+"ビットのアドレスは <literal>EUI-64</literal> トークンを構成する値で、最後の"
+" 48 ビットは MAC アドレスから、残りの 24 ビットはトークンの種類を示す特殊な"
+"情報として設定されています。また、 PPP ベースのインターフェイスのように、 MAC "
+"アドレスを持たないものに対しても、 <literal>EUI-64</literal> を割り当てる"
+"ことができます。"
 
 #. Tag: para
 #: net_basic.xml:727
@@ -1008,12 +1318,14 @@ msgid ""
 "On top of this basic structure, IPv6 distinguishes between five different "
 "types of unicast addresses:"
 msgstr ""
+"このような基本的なネットワーク構造に加えて、 IPv6 では 5 種類のユニキャストアドレス"
+"が規定されています:"
 
 #. Tag: term
 #: net_basic.xml:733
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">::</systemitem> (unspecified)"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">::</systemitem> (未指定)"
 
 #. Tag: para
 #: net_basic.xml:735
@@ -1023,24 +1335,26 @@ msgid ""
 "initialized for the first time (at which point, the address cannot yet be "
 "determined by other means)."
 msgstr ""
+"このアドレスは、インターフェイスを起動する際に初期のアドレスとして使用する"
+"ものです。"
 
 #. Tag: term
 #: net_basic.xml:743
 #, no-c-format
 msgid "<systemitem class=\"ipaddress\">::1</systemitem> (loopback)"
-msgstr ""
+msgstr "<systemitem class=\"ipaddress\">::1</systemitem> (ループバック)"
 
 #. Tag: para
 #: net_basic.xml:745
 #, no-c-format
 msgid "The address of the loopback device."
-msgstr ""
+msgstr "ループバックデバイスのアドレスです。"
 
 #. Tag: term
 #: net_basic.xml:751
 #, no-c-format
 msgid "IPv4 Compatible Addresses"
-msgstr ""
+msgstr "IPv4 互換アドレス"
 
 #. Tag: para
 #: net_basic.xml:753
@@ -1051,36 +1365,40 @@ msgid ""
 "<xref linkend=\"sec.network.ipv6.coexist\"/> ) to allow IPv4 and IPv6 hosts "
 "to communicate with others operating in a pure IPv4 environment."
 msgstr ""
+"この IPv6 アドレスは IPv4 アドレスを示すもので、 96 ビットのゼロをプレフィクスと"
+"して設定します。この種類の互換アドレスはトンネリング (詳しくは "
+"<xref linkend=\"sec.network.ipv6.coexist\"/> をお読みください) で使用され、"
+" IPv4 と IPv6 のホストが、純粋な IPv4 環境内で互いに通信できるようにするものです。"
 
 #. Tag: term
 #: net_basic.xml:763
 #, no-c-format
 msgid "IPv4 Addresses Mapped to IPv6"
-msgstr ""
+msgstr "IPv6 にマッピングされた IPv4 アドレス"
 
 #. Tag: para
 #: net_basic.xml:765
 #, no-c-format
 msgid "This type of address specifies a pure IPv4 address in IPv6 notation."
-msgstr ""
+msgstr "この種類のアドレスは、純粋に IPv4 のアドレスを IPv6 表記になおしたものです。"
 
 #. Tag: term
 #: net_basic.xml:771
 #, no-c-format
 msgid "Local Addresses"
-msgstr ""
+msgstr "ローカルアドレス"
 
 #. Tag: para
 #: net_basic.xml:773
 #, no-c-format
 msgid "There are two address types for local use:"
-msgstr ""
+msgstr "ローカルアドレスとしては、下記の 2 種類のものが存在します:"
 
 #. Tag: term
 #: net_basic.xml:778
 #, no-c-format
 msgid "link-local"
-msgstr ""
+msgstr "リンクローカル"
 
 #. Tag: para
 #: net_basic.xml:780
@@ -1094,12 +1412,18 @@ msgid ""
 "this type are used during automatic configuration to communicate with other "
 "hosts belonging to the same subnet."
 msgstr ""
+"この種類のアドレスは、ローカルのサブネット内でのみ使用することができます。この"
+"種類のアドレスを発信元または送信先に持つパケットは、インターネットや他のサブネットに"
+"配信すべきではありません。これらのアドレスに対しては、特別なプレフィクス ( <systemitem "
+"class=\"ipaddress\">fe80::/10</systemitem> ) が設定され、末尾にはネットワークカードの"
+"インターフェイス ID と、残りはゼロで埋められたアドレスになります。この種類のアドレスは、"
+"同じサブネット内に存在する他のホストとの通信に使用し、自動設定を目的として使用します。"
 
 #. Tag: term
 #: net_basic.xml:793
 #, no-c-format
 msgid "site-local"
-msgstr ""
+msgstr "サイトローカル"
 
 #. Tag: para
 #: net_basic.xml:795
@@ -1113,6 +1437,12 @@ msgid ""
 "ID, and a 16 bit field specifying the subnet ID. Again, the rest is filled "
 "with zero bytes."
 msgstr ""
+"この種類のアドレスは他のサブネットに配信してもかまわないものの、インターネットに"
+"対しては配信すべきではありません。企業内や団体内などの中でのみ使用すべきものです。"
+"イントラネットと呼ばれるネットワークで使用されるもので、 IPv4 で言うところの"
+"プライベートアドレスと同じ意味を持ちます。また、このアドレスには特殊なプレフィクス"
+" ( <systemitem class=\"ipaddress\">fec0::/10</systemitem> ) が設定され、末尾には"
+"ネットワークカードのインターフェイス ID と、残りはゼロで埋められたアドレスになります。"
 
 #. Tag: para
 #: net_basic.xml:811
@@ -1129,6 +1459,17 @@ msgid ""
 "<emphasis>public topology</emphasis> , depending on the actual network in "
 "which the host is currently operating."
 msgstr ""
+"IPv6 で全く新しい機能としては、それぞれのネットワークインターフェイスが複数の"
+"アドレスを持つのが一般的である、という機能があります。これにより、複数の"
+"ネットワークにアクセスするにあたっても、同じインターフェイスを使用することが"
+"できるようになります。これらのネットワークのうちいずれかは、 MAC アドレスと"
+"既知のプレフィクスを利用して完全に自動化された設定を行なうことができます。"
+"そのため、 IPv6 が有効化されてさえいれば、ローカルネットワーク内の全てのホストが"
+"リンクローカルアドレスで通信できることになります。なお、 MAC アドレスが IPv6 "
+"アドレスの一部となることから、世界中で使用される IPv6 アドレスもまた唯一の"
+"ものになります。アドレスの残りの部分は <emphasis>サイトトポロジ</emphasis> "
+"とか <emphasis>パブリックトポロジ</emphasis> などと呼ばれますが、これは"
+"コンピュータの接続するネットワークに従って決まります。"
 
 #. Tag: para
 #: net_basic.xml:823
@@ -1153,12 +1494,28 @@ msgid ""
 "On the other hand, those packets destined to the care-of address are "
 "directly transferred to the mobile host without any special detours."
 msgstr ""
+"特定のコンピュータが異なるネットワークに属するコンピュータと通信を行なう場合、"
+"少なくとも 2 種類のアドレスを必要とします。 1 つは <emphasis>ホームアドレス</emphasis> "
+"と呼ばれ、インターフェイス ID だけでなく、通常属するホームネットワークに関する"
+"識別子 (および対応するプレフィクス) を持つものです。ホームアドレスは固定のアドレス"
+"であり、通常は変化するものではありません。ただし、モバイルホスト宛の全ての"
+"パケットは、家庭内にいてもどこか別の場所にいても、必ず配信することができるように"
+"なっています。これは、 IPv6 で新しい機能として導入された <emphasis>ステートレス"
+"自動設定</emphasis> と <emphasis>近隣探索</emphasis> によって実現されています。"
+"ホームアドレスに加えて、モバイルホストでは接続先に対応する 1 つ以上の追加アドレス"
+"が設定されます。これらは <emphasis>ケア・オブ (気付) アドレス</emphasis> と呼ばれます。"
+"また、ホームネットワークには、そのホストが別の場所にいるような場合に、そのホスト"
+"宛の通信を別の場所に転送する機能を備えています。 IPv6 環境では、この処理は"
+" <emphasis>ホームエージェント</emphasis> と呼ばれる仕組みが実装しています。"
+"これはホームアドレス宛の全てのパケットを、トンネルを介して中継する仕組みで、"
+"逆にケア・オブアドレス宛の通信は、特にパケットを迂回させることなくモバイルの"
+"ホスト宛に転送されます。"
 
 #. Tag: title
 #: net_basic.xml:847
 #, no-c-format
 msgid "Coexistence of IPv4 and IPv6"
-msgstr ""
+msgstr "IPv4 と IPv6 の共存"
 
 #. Tag: para
 #: net_basic.xml:848
@@ -1173,6 +1530,15 @@ msgid ""
 "are predominantly IPv4-based. The best solutions offer tunneling and "
 "compatibility addresses (see <xref linkend=\"sec.network.ipv6.address\"/> )."
 msgstr ""
+"インターネットにおいて、全てのホストに対する IPv4 から IPv6 への以降は、順次"
+"進められている状況です。この場合は、両方のプロトコルが共存することになります。"
+" 1 つのシステム内での共存は、両方のプロトコルを実装する <emphasis>デュアル"
+"スタック</emphasis> の仕組みによって成り立っています。ただし、 IPv6 が有効化"
+"されたホストがどのようにして IPv4 のホストと通信するのか、および IPv6 パケットが"
+"どのように現在の (主に IPv4 ベースの) ネットワークで配送されていくのかが疑問に"
+"なります。このような問題を解決するために、トンネリングと互換アドレスと呼ばれる"
+"仕組みが用意されています (詳しくは <xref linkend=\"sec.network.ipv6.address\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: net_basic.xml:858
@@ -1188,6 +1554,14 @@ msgid ""
 "between the hosts' administrators. This is also called <emphasis>static "
 "tunneling</emphasis> ."
 msgstr ""
+"IPv6 のホストは (世界中にある) IPv4 ネットワーク内では孤立した存在で、トンネルを"
+"通して通信を行なうことになります。 IPv6 パケットは IPv4 パケットとしてカプセル化"
+"され、 IPv4 のネットワークを移動します。このような IPv4 ホスト同士の接続を、"
+" <emphasis>トンネル</emphasis> と呼びます。これを実現するためには、パケットには"
+" IPv6 の宛先アドレス (もしくは対応するプレフィクス) と、トンネルの出口となる"
+"リモートホストの IPv4 アドレスが含まれていなければなりません。ホストの管理者同士が"
+"合意して構築した基本的なトンネルは、 <emphasis>スタティック (静的) トンネリング</emphasis> "
+"と呼ばれます。"
 
 #. Tag: para
 #: net_basic.xml:869
@@ -1198,12 +1572,15 @@ msgid ""
 "provides for three different methods of <emphasis>dynamic tunneling</"
 "emphasis> :"
 msgstr ""
+"しかしながら、スタティックトンネリングの設定やメンテナンスには双方にとって手間の"
+"かかるもので、日々の負担にもなってしまいます。そのため、 IPv6 では 3 種類の"
+" <emphasis>ダイナミック (動的) トンネリング</emphasis> 方式が用意されています:"
 
 #. Tag: term
 #: net_basic.xml:877
 #, no-c-format
 msgid "6over4"
-msgstr ""
+msgstr "6over4"
 
 #. Tag: para
 #: net_basic.xml:879
@@ -1219,12 +1596,20 @@ msgid ""
 "multicasting can be enabled. The specifications for this method are laid "
 "down in RFC 2529."
 msgstr ""
+"IPv6 パケットは自動的に IPv4 パケットとしてカプセル化され、マルチキャストに対応"
+"した IPv4 ネットワーク内に送信されます。 IPv6 からの見た目では、ネットワーク全体"
+" (つまりインターネット) が巨大なローカルエリアネットワーク (LAN) であるかのように"
+"扱われます。これにより、 IPv4 トンネルの受信側を決定できることになります。"
+"しかしながら、インターネットの世界ではマルチキャストが十分に普及していないことから、"
+"この方法は規模の拡大には十分に対応できない状況です。そのため、この方法はマルチキャスト"
+"を利用できる小さな企業や団体などに対する解決方法にとどまっています。なお、この方式の"
+"仕様は、 RFC 2529 に規定されています。"
 
 #. Tag: term
 #: net_basic.xml:893
 #, no-c-format
 msgid "6to4"
-msgstr ""
+msgstr "6to4"
 
 #. Tag: para
 #: net_basic.xml:895
@@ -1236,12 +1621,16 @@ msgid ""
 "between those isolated IPv6 hosts and the Internet. The method is described "
 "in RFC 3056."
 msgstr ""
+"この方法を利用すると、 IPv6 アドレスから IPv4 アドレスを自動生成して、孤立した IPv6 "
+"ホストを IPv4 ネットワークと通信できるようにします。ただし、 IPv6 とインターネット"
+"との間での通信ら大して、いくつかの問題が報告されています。この方式は RFC 3056 に"
+"規定されています。"
 
 #. Tag: term
 #: net_basic.xml:905
 #, no-c-format
 msgid "IPv6 Tunnel Broker"
-msgstr ""
+msgstr "IPv6 トンネルブローカー"
 
 #. Tag: para
 #: net_basic.xml:907
@@ -1250,12 +1639,14 @@ msgid ""
 "This method relies on special servers that provide dedicated tunnels for "
 "IPv6 hosts. It is described in RFC 3053."
 msgstr ""
+"この方法は、 IPv6 ホスト向けの専用トンネルを提供する特別なサーバを使用します。"
+"この方式は RFC 3053 に規定されています。"
 
 #. Tag: title
 #: net_basic.xml:917
 #, no-c-format
 msgid "Configuring IPv6"
-msgstr ""
+msgstr "IPv6 の設定"
 
 #. Tag: para
 #: net_basic.xml:935
@@ -1272,6 +1663,17 @@ msgid ""
 "as <systemitem class=\"username\">root</systemitem> . It is impossible to "
 "unload the IPv6 module after it has been loaded."
 msgstr ""
+"IPv6 を設定するには、通常は個別のコンピュータに対して作業を行なう必要はありません。"
+"これは、 IPv6 は既定で有効化されているためです。インストール済みのシステムで IPv6 "
+"を有効化もしくは無効化するには、 &yast; を起動して <guimenu>ネットワークの設定</"
+"guimenu> モジュールを起動します。 <guimenu>グローバルオプション</guimenu> のタブ内に、"
+" <guimenu>IPv6 を有効にする</guimenu> のチェックボックスがありますので、必要に応じて"
+"チェックを入れるか外すかしてください。 <!--To enable or disable IPv6 manually, "
+"edit <filename>/etc/modprobe.d/50-ipv6.conf</filename> and restart the system.--> "
+"また、再起動するまでの間、一時的に IPv6 を有効化するには、 <systemitem class="
+"\"username\">root</systemitem> で <command>modprobe</command> <option>-i ipv6</option> "
+"を実行します。なお、いったんモジュールを読み込んでしまうと、再起動以外の手段では"
+"読み込みを解除することができなくなりますので、ご注意ください。"
 
 #. Tag: para
 #: net_basic.xml:949
@@ -1287,6 +1689,14 @@ msgid ""
 "the IPv6 addresses and which routers. Alternatively, use zebra/quagga for "
 "automatic configuration of both addresses and routing."
 msgstr ""
+"IPv6 の自動設定の考え方により、ネットワークカードには <emphasis>リンクローカル</emphasis> "
+"のアドレスが割り当てられます。また、通常はワークステーション内でのルーティングテーブル"
+"管理は行ないません。 <emphasis>ルータアドバタイズメントプロトコル</emphasis> を"
+"利用することで、ワークステーション側からネットワークルータに問い合わせを"
+"行ない、プレフィクスと使用すべきゲートウエイに関する情報を取得します。"
+"通常は radvd プログラムを利用することで、 IPv6 ルータを構築します。"
+"そのほか、 zebra や quagga などを利用して、アドレス設定とルーティングを"
+"行なうこともできます。"
 
 #. Tag: para
 #: net_basic.xml:962
@@ -1296,12 +1706,15 @@ msgid ""
 "<filename>/etc/sysconfig/network</filename> files, see the man page of "
 "<literal>ifcfg-tunnel</literal> ( <command>man ifcfg-tunnel</command> )."
 msgstr ""
+"<filename>/etc/sysconfig/network</filename> ファイルを利用して様々な種類の"
+"トンネルを設定する方法について、詳しくは <literal>ifcfg-tunnel</literal> の"
+"マニュアルページ ( <command>man ifcfg-tunnel</command> ) をお読みください。"
 
 #. Tag: title
 #: net_basic.xml:970
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: net_basic.xml:971
@@ -1311,72 +1724,75 @@ msgid ""
 "more in-depth look at the new protocol, refer to the following online "
 "documentation and books:"
 msgstr ""
+"これまでの章での説明は、 IPv6 の一部のみをカバーしたものであって、全てを"
+"説明しているわけではありません。この新しいプロトコルに関するより詳しい情報をご希望の場合は、"
+"下記のオンライン文書やブックをご覧ください:"
 
 #. Tag: term
 #: net_basic.xml:978
 #, no-c-format
 msgid "<link xlink:href=\"http://www.ipv6.org/\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://www.ipv6.org/\"/>"
 
 #. Tag: para
 #: net_basic.xml:981
 #, no-c-format
 msgid "The starting point for everything about IPv6."
-msgstr ""
+msgstr "IPv6 に関する全ての出発点です。"
 
 #. Tag: term
 #: net_basic.xml:987
 #, no-c-format
 msgid "<link xlink:href=\"http://www.ipv6day.org\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://www.ipv6day.org\"/>"
 
 #. Tag: para
 #: net_basic.xml:990
 #, no-c-format
 msgid "All information needed to start your own IPv6 network."
-msgstr ""
+msgstr "ご自身で IPv6 ネットワークを始めるにあたっての情報が提供されています。"
 
 #. Tag: term
 #: net_basic.xml:996
 #, no-c-format
 msgid "<link xlink:href=\"http://www.ipv6-to-standard.org/\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://www.ipv6-to-standard.org/\"/>"
 
 #. Tag: para
 #: net_basic.xml:999
 #, no-c-format
 msgid "The list of IPv6-enabled products."
-msgstr ""
+msgstr "IPv6 対応の製品の一覧が提供されています。"
 
 #. Tag: term
 #: net_basic.xml:1005
 #, no-c-format
 msgid "<link xlink:href=\"http://www.bieringer.de/linux/IPv6/\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://www.bieringer.de/linux/IPv6/\"/>"
 
 #. Tag: para
 #: net_basic.xml:1008
 #, no-c-format
 msgid "Here, find the Linux IPv6-HOWTO and many links related to the topic."
-msgstr ""
+msgstr "ここには、 Linux における IPv6 の HOWTO や、 IPv6 関連の様々なリンクが提供されています。"
 
 #. Tag: term
 #: net_basic.xml:1014
 #, no-c-format
 msgid "RFC 2460"
-msgstr ""
+msgstr "RFC 2460"
 
 #. Tag: para
 #: net_basic.xml:1016
 #, no-c-format
 msgid "The fundamental RFC about IPv6."
-msgstr ""
+msgstr "IPv6 に関する基礎 RFC です。"
 
 #. Tag: term
 #: net_basic.xml:1022
 #, no-c-format
 msgid "IPv6 Essentials"
-msgstr ""
+msgstr "IPv6 Essentials"
 
 #. Tag: para
 #: net_basic.xml:1024
@@ -1384,13 +1800,13 @@ msgstr ""
 msgid ""
 "A book describing all the important aspects of the topic is <emphasis>IPv6 "
 "Essentials</emphasis> by Silvia Hagen (ISBN 0-596-00125-8)."
-msgstr ""
+msgstr "Silvia Hagen 氏による IPv6 の主要な要素を説明した書籍です (ISBN 0-596-00125-8) 。"
 
 #. Tag: title
 #: net_basic.xml:1035
 #, no-c-format
 msgid "Name Resolution"
-msgstr ""
+msgstr "名前解決"
 
 #. Tag: para
 #: net_basic.xml:1037
@@ -1404,6 +1820,12 @@ msgid ""
 "The name hierarchy is, however, independent of the IP address hierarchy "
 "described above."
 msgstr ""
+"DNS は 1 つもしくは複数の名前を IP アドレスに割り当てたり、逆に IP アドレスを"
+"名前に割り当てたりすることのできる仕組みです。 DNS サービスを提供する側の Linux "
+"では、この変換を bind と呼ばれる特別な種類のソフトウエアで賄います。サービスを"
+"提供する側のコンピュータを、一般に <emphasis>ネームサーバ</emphasis> と呼びます。"
+"また、 DNS は階層型のシステムで、それぞれの階層をピリオドで区切ります。ただし、"
+" IP アドレスにある階層構造とは独立して運用されています。"
 
 #. Tag: para
 #: net_basic.xml:1047
@@ -1417,6 +1839,13 @@ msgid ""
 "systemitem> ). The latter also includes the <emphasis>top level domain</"
 "emphasis> or TLD ( <systemitem class=\"domainname\">com</systemitem> )."
 msgstr ""
+"たとえば <systemitem class=\"fqdomainname\">&wsIname;</systemitem> のような"
+"完全な名前は、 <systemitem class=\"fqdomainname\">ホスト名.ドメイン名</systemitem> "
+"のような形式で記述します。この完全な名前を <emphasis>完全修飾ドメイン名</emphasis> "
+"(Fully Qualified Domain Name; FQDN) と呼びます。また、ドメイン名 (例: <systemitem "
+"class=\"domainname\">&exampledomain;</systemitem> ) の末尾は <emphasis>"
+"トップレベルドメイン</emphasis> (Top Level Domain; TLD) と呼びます。 "
+"上述の例では、 <systemitem class=\"domainname\">com</systemitem> がそれにあたります。"
 
 #. Tag: para
 #: net_basic.xml:1058
@@ -1430,6 +1859,12 @@ msgid ""
 "systemitem> , <systemitem class=\"domainname\">.name</systemitem> , "
 "<systemitem class=\"domainname\">.museum</systemitem> )."
 msgstr ""
+"TLD の割り当ては、歴史的な事情からかなり複雑なことになっています。以前は、"
+" 3 文字の TLD はアメリカ合衆国が使用し、残りの国では、 2 文字の ISO 国コードを"
+" TLD として使用していました。これに加えて、 2000 年にはより長い TLD が導入され、"
+"様々な用途で使用されるようになりました (例: <systemitem class=\"domainname\">.info</"
+"systemitem> , <systemitem class=\"domainname\">.name</systemitem> , "
+"<systemitem class=\"domainname\">.museum</systemitem> など) 。"
 
 #. Tag: para
 #: net_basic.xml:1068
@@ -1444,6 +1879,13 @@ msgid ""
 "not have the data pertaining to all hosts in the Internet readily available, "
 "but can dispatch requests to other name servers."
 msgstr ""
+"インターネットが始まったばかりの頃 (1990 年以前) 、インターネット上の全てのマシン"
+"の名前を保存するために、 <filename>/etc/hosts</filename> が使われてきました。"
+"ところが、インターネットに接続するコンピュータの台数が爆発的に増えることによって、"
+"それは一瞬で非現実的なものになってしまいました。このような経験から、ホスト名を管理"
+"するための分散データベースを開発して、それを世界中に広げることにしました。この"
+"データベースはネームサーバに似た仕組みで、インターネット内の全てのホストを保持する"
+"には不十分であるものの、他のネームサーバにリクエストを転送できる仕組みを備えていました。"
 
 #. Tag: para
 #: net_basic.xml:1079
@@ -1456,6 +1898,12 @@ msgid ""
 "top level domain NICs is available at <link xlink:href=\"http://www.internic."
 "net\"/> ."
 msgstr ""
+"階層構造の頂点には <emphasis>ルートネームサーバ</emphasis> と呼ばれるサーバが"
+"存在しています。これらのルートネームサーバは、トップレベルドメインを管理する存在で、"
+"ネットワークインフォメーションセンター (Network Information Center; NIC) が管理"
+"しています。それぞれのルートネームサーバは、どのネームサーバがどのトップレベルドメイン"
+"を管理しているのかを知っています。トップレベルドメインの NIC は <link xlink:"
+"href=\"http://www.internic.net\"/> です。"
 
 #. Tag: para
 #: net_basic.xml:1088
@@ -1465,6 +1913,8 @@ msgid ""
 "host is receiving e-mails for an entire domain&mdash;the <emphasis>mail "
 "exchanger (MX)</emphasis> ."
 msgstr ""
+"DNS はホスト名の解決を行なうだけではありません。ドメイン全体の電子メールを受信する"
+"ホストなどの情報 (<emphasis>Mail Exchanger (MX)</emphasis>) も保持しています。"
 
 #. Tag: para
 #: net_basic.xml:1094
@@ -1477,6 +1927,12 @@ msgid ""
 "change.host\"/>. Setting up your own name server is described in <xref "
 "linkend=\"cha.dns\"/>.</phrase>"
 msgstr ""
+"お使いのマシンから IP アドレスを解決できるようにするためには、少なくとも 1 台の"
+"ネームサーバの IP アドレスが必要となります。ネームサーバの設定を行なうには、"
+" &yast; をお使いください。 <phrase os=\"sles;osuse\">&productnamereg; における"
+"具体的なネームサーバ設定については、 <xref linkend=\"sec.network.yast."
+"change.host\"/> をお読みください。また、独自のネームサーバを構築したい場合は、 <xref "
+"linkend=\"cha.dns\"/> をお読みください。</phrase>"
 
 #. Tag: para
 #: net_basic.xml:1104
@@ -1485,12 +1941,14 @@ msgid ""
 "The protocol <literal>whois</literal> is closely related to DNS. With this "
 "program, quickly find out who is responsible for a given domain."
 msgstr ""
+"<literal>whois</literal> と呼ばれるプロトコルは、 DNS と密接な関係を持つプロトコル"
+"です。このプロトコルは、特定のドメインに対する管理情報などを問い合わせることができます。"
 
 #. Tag: title
 #: net_basic.xml:1112
 #, no-c-format
 msgid "MDNS and .local Domain Names"
-msgstr ""
+msgstr "マルチキャスト DNS と .local ドメイン名について"
 
 #. Tag: para
 #: net_basic.xml:1113
@@ -1503,6 +1961,12 @@ msgid ""
 "option off in <filename>/etc/host.conf</filename> . For more information, "
 "see the <filename>host.conf</filename> manual page."
 msgstr ""
+"<literal>.local</literal> のトップレベルドメイン名はリンクローカルドメイン"
+"と呼ばれるもので、このドメイン宛の DNS リクエストは、通常の DNS リクエストでは"
+"なく、マルチキャスト DNS リクエストとして送信されます。既に <literal>.local</"
+"literal> というドメインをネームサーバの設定で使用している場合は、"
+" <filename>/etc/host.conf</filename> で無効化する必要があります。詳しくは"
+" <filename>host.conf</filename> のマニュアルページをお読みください。"
 
 #. Tag: para
 #: net_basic.xml:1121
@@ -1511,6 +1975,8 @@ msgid ""
 "To switch off MDNS during installation, use <literal>nomdns=1</literal> as a "
 "boot parameter."
 msgstr ""
+"インストール時にマルチキャスト DNS を使用しないようにするには、起動パラメータに"
+" <literal>nomdns=1</literal> を指定してください。"
 
 #. Tag: para
 #: net_basic.xml:1125
@@ -1519,3 +1985,6 @@ msgid ""
 "For more information on multicast DNS, see <link xlink:href=\"http://www."
 "multicastdns.org\"/> ."
 msgstr ""
+"マルチキャスト DNS についての詳細は、 <link xlink:href=\"http://www."
+"multicastdns.org\"/> をお読みください。"
+
