@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.network.yast">
- <title>Configuring a Network Connection with &yast;</title>
+ <title>&yast; を利用したネットワークの設定</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -15,70 +15,24 @@
 
 
 
- <para>
-  There are many supported networking types on Linux. Most of them use
-  different device names and the configuration files are spread over several
-  locations in the file system. For a detailed overview of the aspects of
-  manual network configuration, see <xref linkend="sec.network.manconf"/>.
- </para>
+ <para>Linux では様々な種類のネットワークに対応しています。これらのうちのほとんどは、それぞれ異なるデバイス名を使用するもので、ファイルシステム内の様々な箇所に設定ファイルが分散しています。手作業でのネットワーク設定について、詳しくは <xref linkend="sec.network.manconf"/> をお読みください。</para>
 
- <para>
-  <phrase os="sled">On &productname;, where &nm; is active by default, all
-  network cards are configured. If &nm; is not active, only the first interface
-  with link up (with a network cable connected) is automatically
-  configured.</phrase><phrase os="sles;osuse">All network interfaces with link
-  up (with a network cable connected) are automatically configured.</phrase>
-  Additional hardware can be configured any time on the installed system. The
-  following sections describe the network configuration for all types of
-  network connections supported by &productname;.
- </para>
+ <para><phrase os="sled">&productname; では &nm; が既定で有効化され、全てのネットワークカードを設定します。 &nm; が有効化されていない場合は、リンクの確立している (ケーブルが接続されている) 最初のインターフェイスのみを自動設定します。</phrase> <phrase os="sles;osuse">リンクの確立している (ケーブルが接続されている) 全てのインターフェイスが、自動的に設定されます。</phrase> インストール済みの状態でも、任意の時点で追加のハードウエアを設定することができます。下記の章では、 &productname; で対応している全種類のネットワーク接続に対して、その設定方法を説明しています。</para>
 
  <tip arch="zseries" os="sles">
-  <title>&zseries;: Hotpluggable Network Cards</title>
-  <para>
-   On &zseries; platforms, hotpluggable network cards are supported, but
-   not their automatic network integration via DHCP (as is the case on the PC).
-   After they have been detected, you need to manually configure the interface.
-  </para>
+  <title>&zseries;: ホットプラグ対応のネットワークカードについて</title>
+  <para>&zseries; プラットフォームでは、ホットプラグ対応のネットワークカードには対応していますが、 DHCP での自動ネットワーク設定には対応していません (この点が一般的な PC と異なります) 。デバイスが検出された後は、手作業でインターフェイスを設定する必要があります。</para>
  </tip>
 
  <sect2 xml:id="sec.network.yast.netcard">
-  <title>Configuring the Network Card with &yast;</title>
-  <para>
-   To configure your Ethernet or Wi-Fi/Bluetooth card in &yast;, select
-   <menuchoice> <guimenu>System</guimenu> <guimenu>Network Settings</guimenu>
-   </menuchoice>. After starting the module, &yast; displays the
-   <guimenu>Network Settings</guimenu> dialog with four tabs: <guimenu>Global
-   Options</guimenu>, <guimenu>Overview</guimenu>,
-   <guimenu>Hostname/DNS</guimenu> and <guimenu>Routing</guimenu>.
-  </para>
-  <para>
-   The <guimenu>Global Options</guimenu> tab allows you to set general
-   networking options such as the network setup method, IPv6, and general DHCP
-   options. For more information, see
-   <xref linkend="sec.network.yast.netcard.global"/>.
-  </para>
-  <para>
-   The <guimenu>Overview</guimenu> tab contains information about installed
-   network interfaces and configurations. Any properly detected network card is
-   listed with its name. You can manually configure new cards, remove or change
-   their configuration in this dialog. To manually configure a card
-   that was not automatically detected, see
-   <xref linkend="sec.network.yast.netcard.man"/>. To change the
-   configuration of an already configured card, see
-   <xref linkend="sec.network.yast.netcard.change"/>.
-  </para>
-  <para>
-   The <guimenu>Hostname/DNS</guimenu> tab allows to set the host name of the
-   machine and name the servers to be used. For more information, see
-   <xref linkend="sec.network.yast.change.host"/>.
-  </para>
-  <para>
-   The <guimenu>Routing</guimenu> tab is used for the configuration of routing.
-   See <xref linkend="sec.network.yast.change.route"/> for more information.
-  </para>
+  <title>&yast; を利用したネットワークカードの設定</title>
+  <para>&yast; でイーサネットや Wi-Fi, Bluetooth カードなどを設定したい場合は、 &yast; を起動して <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> </menuchoice> を選択します。モジュールを起動すると、 &yast; は <guimenu>ネットワーク設定</guimenu> ウインドウ内で 4 つのタブを表示します。それぞれ <guimenu>グローバルオプション</guimenu> , <guimenu>概要</guimenu> , <guimenu>ホスト名／DNS</guimenu> , <guimenu>ルーティング</guimenu> というタブになっています。</para>
+  <para><guimenu>グローバルオプション</guimenu> のタブでは、ネットワークの設定方法や IPv6 の利用可否、そして一般的な DHCP オプションなどを設定することができます。詳しくは <xref linkend="sec.network.yast.netcard.global"/> をお読みください。</para>
+  <para><guimenu>概要</guimenu> タブには、インストール済みのネットワークカードとその設定が表示されます。ここには、検出済みのネットワークカードが名前で表示されます。このダイアログでは新しいネットワークカードの設定のほか、既存のネットワークカードの設定変更や削除も行なうことができます。自動では検出されないネットワークカードを手作業で設定するには、 <xref linkend="sec.network.yast.netcard.man"/> の手順に従って作業を行なってください。また、既に設定済みのネットワークカードの設定を変更するには、 <xref linkend="sec.network.yast.netcard.change"/> をお読みください。</para>
+  <para><guimenu>ホスト名／DNS</guimenu> のタブでは、マシンに設定するホスト名や、使用すべきネームサーバなどを設定します。詳しくは <xref linkend="sec.network.yast.change.host"/> をお読みください。</para>
+  <para><guimenu>ルーティング</guimenu> タブでは、ルーティングに関連する設定を行ないます。詳しくは <xref linkend="sec.network.yast.change.route"/> をお読みください。</para>
   <figure xml:id="fig.yast2.neticard">
-   <title>Configuring Network Settings</title>
+   <title>ネットワークの設定</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="yast2_net_icard.png" width="75%" format="PNG"/>
@@ -89,171 +43,50 @@
    </mediaobject>
   </figure>
   <sect3 xml:id="sec.network.yast.netcard.global">
-   <title>Configuring Global Networking Options</title>
-   <para>
-    The <guimenu>Global Options</guimenu> tab of the &yast; <guimenu>Network
-    Settings</guimenu> module allows you to set important global networking
-    options, such as the use of &nm;, IPv6 and DHCP client options. These
-    settings are applicable for all network interfaces.
-   </para>
+   <title>グローバルネットワークオプションの設定</title>
+   <para>&yast; の <guimenu>ネットワークの設定</guimenu> モジュール内の <guimenu>グローバルオプション</guimenu> タブでは、 &nm; や IPv6 の使用可否のほか、 DHCP クライアントオプションなどを設定することができます。これらの設定は、全てのネットワークインターフェイスに適用されます。</para>
    <note os="sles">
 <!-- fate#316888 -->
-    <title>&nm; Provided by Workstation Extension</title>
-    <para>
-     &nm; is now provided by the Workstation Extension. To install &nm;,
-     activate the Workstation Extension repository, and select the &nm;
-     packages.
-    </para>
+    <title>&nm; の提供はワークステーション拡張を必要とする件について</title>
+    <para>&nm; はワークステーション拡張で提供されています。 &nm; をインストールするには、ワークステーション拡張リポジトリを有効化したあと、 &nm; パッケージを選択してください。</para>
    </note>
-   <para>
-    In the <guimenu>Network Setup Method</guimenu> choose the way network
-    connections are managed. If you want a &nm; desktop applet to manage
-    connections for all interfaces, choose <guimenu>&nm; Service</guimenu>.
-    &nm; is well suited for switching between multiple wired and wireless
-    networks. If you do not run a desktop environment, or if your computer is a
-    &xen; server, virtual system, or provides network services such as DHCP or
-    DNS in your network, use the <guimenu>Wicked Service</guimenu> method. If
-    &nm; is used, <command>nm-applet</command> should be used to configure
-    network options and the <guimenu>Overview</guimenu>,
-    <guimenu>Hostname/DNS</guimenu> and <guimenu>Routing</guimenu> tabs of the
-    <guimenu>Network Settings</guimenu> module are disabled.
-    <phrase os="sled;osuse">For more information on &nm;, see
-    <xref linkend="cha.nm"/>.</phrase> <phrase os="sles">For more information
-    on &nm;, see the &sled; documentation.</phrase>
-   </para>
-   <para>
-    In the <guimenu>IPv6 Protocol Settings</guimenu> choose whether to use the
-    IPv6 protocol. It is possible to use IPv6 together with IPv4. By default,
-    IPv6 is enabled. However, in networks not using IPv6 protocol, response
-    times can be faster with IPv6 protocol disabled. To disable IPv6,
-    deactivate <guimenu>Enable IPv6</guimenu>. If IPv6 is disabled, the kernel
-    no longer loads the IPv6 module automatically. This setting will be applied
-    after reboot.
-   </para>
-   <para>
-    In the <guimenu>DHCP Client Options</guimenu> configure options for the
-    DHCP client.
-<!-- This option is still available on SLED11 SP1b4 -->
-<!-- 2014-04-17, ke: I no longer see this in SLED/SLES 12
-    If you want the DHCP client to ask the server to always broadcast its
-    responses, check <guimenu>Request Broadcast Response</guimenu>. It may
-    be needed if your machine is moving between different networks.
-    -->
-    The <guimenu>DHCP Client Identifier</guimenu> must be different for each
-    DHCP client on a single network. If left empty, it defaults to the hardware
-    address of the network interface. However, if you are running several
-    virtual machines using the same network interface and, therefore, the same
-    hardware address, specify a unique free-form identifier here.
-   </para>
-   <para>
-    The <guimenu>Hostname to Send</guimenu> specifies a string used for the
-    host name option field when the DHCP client sends messages to DHCP server.
-    Some DHCP servers update name server zones (forward and reverse records)
-    according to this host name (Dynamic DNS). Also, some DHCP servers require
-    the <guimenu>Hostname to Send</guimenu> option field to contain a specific
-    string in the DHCP messages from clients. Leave <literal>AUTO</literal> to
-    send the current host name (that is the one defined in
-    <filename>/etc/HOSTNAME</filename>). Make the option field empty for not
-    sending any host name.
-   </para>
-   <para>
-    If you do not want to change the default route according to the information
-    from DHCP, deactivate <guimenu>Change Default Route via DHCP</guimenu>.
-   </para>
+   <para><guimenu>ネットワークの設定方法</guimenu> では、ネットワークの接続を管理するための方法を選択します。 &nm; のデスクトップアプレットを使用して全てのネットワークインターフェイスを管理したい場合は、 <guimenu>&nm; サービス</guimenu> を選択します。 &nm; は有線ネットワークと無線ネットワークを切り替えて使用する場合にも便利な仕組みです。デスクトップ環境を動作させていない場合や、お使いのコンピュータが &xen; サーバや仮想化システムであるような場合、もしくは DHCP や DNS などのネットワークサービスを提供しているような場合は、 <guimenu>Wicked サービス</guimenu> を選択します。なお、 &nm; を使用する場合は、ネットワークの設定は <command>nm-applet</command> を利用して行なうことになりますので、 <guimenu>概要</guimenu> , <guimenu>ホスト名／DNS</guimenu> , <guimenu>ルーティング</guimenu> などのタブは無効化され、選択できなくなります。 <phrase os="sled;osuse">&nm; について、詳しくは <xref linkend="cha.nm"/> をお読みください。</phrase> <phrase os="sles">&nm; について、詳しくは &sled; のドキュメンテーションをお読みください。</phrase></para>
+   <para><guimenu>IPv6 プロトコル設定</guimenu> では、 IPv6 プロトコルを使用するかどうかを選択します。 IPv6 は、 IPv4 と共に使用することができます。既定では IPv6 が有効化されています。しかしながら、 IPv6 を使用していないネットワークの場合は、 IPv6 プロトコルを無効化したほうが高速に動作しますので、この場合は <guimenu>IPv6 を有効にする</guimenu> のチェックを外してください。 IPv6 を無効化すると、カーネルは IPv6 モジュールを自動では読み込まなくなります。また、この設定は次回の再起動から有効になります。</para>
+   <para><guimenu>DHCP クライアントオプション</guimenu> では、 DHCP クライアントに対する設定を行なうことができます。 <!-- This option is still available on SLED11 SP1b4 --> <!-- 2014-04-17, ke: I no longer see this in SLED/SLES 12 If you want the DHCP client to ask the server to always broadcast its responses, check <guimenu>Request Broadcast Response</guimenu>. It may be needed if your machine is moving between different networks. --> <guimenu>DHCP クライアント識別子</guimenu> はネットワーク内で唯一とならなければならない値を入力する項目で、何も指定しない場合はネットワークインターフェイスのハードウエアアドレスを使用します。ただし、同じネットワークインターフェイスを利用して複数の仮想マシンを動作させているような場合は、複数の仮想マシンが不同じハードウエアアドレスになってしまいますので、それぞれで別々の識別子を入力する必要があります (記入に際してのルールはありません。自由記入です) 。</para>
+   <para><guimenu>送信するホスト名</guimenu> では、 DHCP クライアントが DHCP サーバに送信する際の、ホスト名オプションの値を文字列で指定します。 DHCP サーバによっては、ネームサーバのゾーン (正引きおよび逆引き) を更新しますが、この際に <guimenu>送信するホスト名</guimenu> の値を利用して更新を行なうものがあります (動的 DNS) 。また、 DHCP サーバによっては <guimenu>送信するホスト名</guimenu> に特定の文字列が含まれていることを確認して、応答を送信するものもあります。なお、現在のホスト名を送信したい場合は、 <literal>AUTO</literal> のままにしておいてください (ホスト名は <filename>/etc/hostname</filename> に設定されます) 。また、何もホスト名を送信したくない場合は、何も入力しないでください。</para>
+   <para>また、 DHCP サーバからの情報でデフォルトルートを更新したくない場合は、 <guimenu>DHCP で既定のルートを変更する</guimenu> のチェックを外してください。</para>
   </sect3>
   <sect3 xml:id="sec.network.yast.netcard.change">
-   <title>Changing the Configuration of a Network Card</title>
-   <para>
-    To change the configuration of a network card, select a card from the list
-    of the detected cards in <menuchoice> <guimenu>Network Settings</guimenu>
-    <guimenu>Overview</guimenu> </menuchoice> in &yast; and click
-    <guimenu>Edit</guimenu>. The <guimenu>Network Card Setup</guimenu> dialog
-    appears in which to adjust the card configuration using the
-    <guimenu>General</guimenu>, <guimenu>Address</guimenu> and
-    <guimenu>Hardware</guimenu> tabs.
-   </para>
+   <title>ネットワークカードの設定変更</title>
+   <para>ネットワークカードの設定を変更するには、 &yast; の <guimenu>ネットワークの設定</guimenu> から、 <guimenu>概要</guimenu> タブを選択します。すると、検出されたカードの一覧が表示されますので、必要な項目を選んで <guimenu>編集</guimenu> を押します。すると、 <guimenu>ネットワークカードの設定</guimenu> ダイアログが表示されますので、必要に応じて <guimenu>一般</guimenu> , <guimenu>アドレス</guimenu> , <guimenu>ハードウエア</guimenu> の各設定を変更してください。</para>
    <sect4 xml:id="sec.network.yast.change.address">
-    <title>Configuring IP Addresses</title>
+    <title>IP アドレスの設定</title>
 
-    <para>
-     You can set the IP address of the network card or the way its IP address
-     is determined in the <guimenu>Address</guimenu> tab of the
-     <guimenu>Network Card Setup</guimenu> dialog. Both IPv4 and IPv6 addresses
-     are supported. The network card can have <guimenu>No IP Address</guimenu>
-     (which is useful for bonding devices), a <guimenu>Statically Assigned IP
-     Address</guimenu> (IPv4 or IPv6) or a <guimenu>Dynamic Address</guimenu>
-     assigned via <guimenu>DHCP</guimenu> or <guimenu>Zeroconf</guimenu> or
-     both.
-    </para>
-    <para>
-     If using <guimenu>Dynamic Address</guimenu>, select whether to use
-     <guimenu>DHCP Version 4 Only</guimenu> (for IPv4), <guimenu>DHCP Version 6
-     Only</guimenu> (for IPv6) or <guimenu>DHCP Both Version 4 and 6</guimenu>.
-    </para>
-    <para>
-     If possible, the first network card with link that is available during the
-     installation is automatically configured to use automatic address setup
-     via DHCP. <phrase os="sled">On &sled;, where &nm; is active by default,
-     all network cards are configured.</phrase>
-    </para>
+    <para>IP アドレスそのものの設定や、 IP アドレスの割り当て方法の設定を行なう場合は、 <guimenu>ネットワークカードの設定</guimenu> ダイアログ内の <guimenu>アドレス</guimenu> タブで行ないます。ここでは IPv4 と IPv6 の両方に対応しています。ここでは、 <guimenu>リンクおよび IP の設定無し</guimenu> (ボンディングデバイスとして使用する場合に指定します) のほか、 <guimenu>固定 IP アドレス</guimenu> (IPv4 または IPv6) や <guimenu>可変 IP アドレス</guimenu> のいずれかを選択します。なお、 <guimenu>可変 IP アドレス</guimenu> を選択した場合は、 <guimenu>DHCP</guimenu> もしくは<guimenu>Zeroconf</guimenu> のいずれか、もしくはその両方を選択することができます。</para>
+    <para>また、 <guimenu>可変 IP アドレス</guimenu> を選択した場合は、 <guimenu>バージョン 4 のみでの DHCP</guimenu> (IPv4), <guimenu>バージョン 6 のみでの DHCP</guimenu> (IPv6), <guimenu>バージョン 4 と 6 の両方での DHCP</guimenu> のいずれかを選択します。</para>
+    <para>また、インストールの時点でリンクが確立しているネットワークカードがあれば、それらのうちの最初のネットワークカードが DHCP で設定されます。 <phrase os="sled">また、 &sled; では、 &nm; が既定で有効化され、全てのネットワークカードが設定されます。</phrase></para>
     <note arch="zseries" os="sles">
-     <title>&zseries; and DHCP</title>
-     <para>
-      On &zseries; platforms, DHCP-based address configuration is only
-      supported with network cards that have a MAC address. This is only the
-      case with OSA and OSA Express cards.
-     </para>
+     <title>&zseries; での DHCP について</title>
+     <para>&zseries; プラットフォームでは、 DHCP ベースのアドレス設定は MAC アドレスを持つネットワークカードでしかご利用いただけません。これは OSA および OSA Express カードにのみ当てはまります。</para>
     </note>
-    <para>
-     DHCP should also be used if you are using a DSL line but with no static IP
-     assigned by the ISP (Internet Service Provider). If you decide to use
-     DHCP, configure the details in <guimenu>DHCP Client Options</guimenu> in
-     the <guimenu>Global Options</guimenu> tab of the <guimenu>Network
-     Settings</guimenu> dialog of the &yast; network card configuration module.
-     If you have a virtual host setup where different hosts communicate through
-     the same interface, an <guimenu>DHCP Client Identifier</guimenu> is
-     necessary to distinguish them.
-    </para>
-    <para>
-     DHCP is a good choice for client configuration but it is not ideal for
-     server configuration. To set a static IP address, proceed as follows:
-    </para>
+    <para>DHCP は、インターネットサービスプロバイダ (Internet Service Provider; ISP) から固定の IP アドレスが割り当てられない DSL 回線をお使いの場合には、使用しておくべき設定となります。なお、 DHCP を使用する場合は、 <guimenu>ネットワーク設定</guimenu> ダイアログ内の <guimenu>グローバルオプション</guimenu> 内にある <guimenu>DHCP クライアントオプション</guimenu> についてもご確認ください。また、同じインターフェイスを利用して複数の仮想ホストを動作させるような場合は、それらを区別するために <guimenu>DHCP クライアント識別子</guimenu> の設定が必要となる場合があります。</para>
+    <para>また、 DHCP はクライアント側を設定する際には適切な選択ではありますが、サーバとして設定する場合には不適切です。固定の IP アドレスを設定するには、下記の手順で行ないます:</para>
     <procedure>
      <step>
-      <para>
-       Select a card from the list of detected cards in the
-       <guimenu>Overview</guimenu> tab of the &yast; network card configuration
-       module and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; のネットワーク設定モジュールの <guimenu>概要</guimenu> タブ内で、検出されたネットワークカードのうちのいずれかを選択して、 <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       In the <guimenu>Address</guimenu> tab, choose <guimenu>Statically
-       Assigned IP Address</guimenu>.
-      </para>
+      <para><guimenu>アドレス</guimenu> タブでは、 <guimenu>固定 IP アドレス</guimenu> を選択します。</para>
      </step>
      <step>
-      <para>
-       Enter the <guimenu>IP Address</guimenu>. Both IPv4 and IPv6 addresses
-       can be used. Enter the network mask in <guimenu>Subnet Mask</guimenu>.
-       If the IPv6 address is used, use <guimenu>Subnet Mask</guimenu> for
-       prefix length in format <literal>/64</literal>.
-      </para>
-      <para>
-       Optionally, you can enter a fully qualified <guimenu>Hostname</guimenu>
-       for this address, which will be written to the
-       <filename>/etc/hosts</filename> configuration file.
-      </para>
+      <para><guimenu>IP アドレス</guimenu> の欄にアドレスを入力します。 IPv4 と IPv6 の両方のアドレスを使用することができます。また、 <guimenu>サブネットマスク</guimenu> にはネットマスクを指定します。 IPv6 アドレスの場合は、 <guimenu>サブネットマスク</guimenu> の項目には <literal>/64</literal> のような形式で指定します。</para>
+      <para>また、必要であれば <guimenu>ホスト名</guimenu> の欄に、完全修飾ドメイン名を指定することができます。この設定は <filename>/etc/hosts</filename> 内に書き込まれます。</para>
      </step>
      <step>
-      <para>
-       Click <guimenu>Next</guimenu>.
-      </para>
+      <para><guimenu>次へ</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       To activate the configuration, click <guimenu>OK</guimenu>.
-      </para>
+      <para>設定を反映させるには、 <guimenu>OK</guimenu> を押します。</para>
      </step>
     </procedure>
     <!-- https://bugzilla.suse.com/show_bug.cgi?id=911562 -->
@@ -274,660 +107,283 @@
      * with all this information, the note should probably a section.
     -->
     <note>
-     <title>Interface Activation and Link Detection</title>
-     <para>
-      During activation of a network interface, <command>wicked</command>
-      checks for a carrier and only applies the IP configuration when a link
-      has been detected. If you need to apply the configuration regardless of
-      the link status (for example, when you want to test a service listening to a
-      certain address), you can skip link detection by adding the variable
-      <literal>LINK_REQUIRED=no</literal> to the configuration file of the
-      interface in <filename>/etc/sysconfig/network/ifcfg</filename>.
-     </para>
-     <para>
-      Additionally, you can use the variable
-      <literal>LINK_READY_WAIT=<replaceable>5</replaceable></literal> to
-      specify the timeout for waiting for a link in seconds.
-     </para>
-     <para>
-      For more information about the <filename>ifcfg-*</filename> configuration
-      files, refer to <xref linkend="sec.network.manconf.files.ifcfg"/> and
-      <command>man 5 ifcfg</command>.
-     </para>
+     <title>インターフェイスの有効化とリンクの検出</title>
+     <para>ネットワークインターフェイスを有効化する際、 <command>wicked</command> は物理的なリンク状況を確認して、リンクが検出できた場合にのみ IP 設定を適用します。リンクの確率とは関係なくアドレスを設定したい場合 (たとえば特定のアドレスで待ち受けるサービスをテストしたいような場合) は、 <filename>/etc/sysconfig/network/ifcfg-<replaceable>インターフェイス名</replaceable></filename> 設定ファイル内に <literal>LINK_REQUIRED=no</literal> を追加してください。</para>
+     <para>また、リンクを待機する秒数を指定したい場合は、 <literal>LINK_READY_WAIT=<replaceable>5</replaceable></literal> のような指定を行なうこともできます。</para>
+     <para><filename>ifcfg-*</filename> 設定ファイルについて、詳しくは <xref linkend="sec.network.manconf.files.ifcfg"/> および <command>man 5 ifcfg</command> をお読みください。</para>
     </note>
-    <para>
-     If you use the static address, the name servers and default gateway are
-     not configured automatically. To configure name servers, proceed as
-     described in <xref linkend="sec.network.yast.change.host"/>. To configure
-     a gateway, proceed as described in
-     <xref linkend="sec.network.yast.change.route"/>.
-    </para>
+    <para>固定のアドレスを使用する場合は、ネームサーバやデフォルトゲートウエイも自動では設定されません。ネームサーバを設定するには <xref linkend="sec.network.yast.change.host"/> の手順を、デフォルトゲートウエイを設定するには <xref linkend="sec.network.yast.change.route"/> の手順をお読みください。</para>
    </sect4>
    <sect4 xml:id="sec.network.yast.configure.addresses">
-    <title>Configuring Multiple Addresses</title>
-    <para>
-     One network device can have multiple IP addresses.
-    </para>
+    <title>複数アドレスの設定</title>
+    <para>1 つのネットワークデバイスに対して、複数の IP アドレスを設定することができます。</para>
     <note>
-     <title>Aliases Are a Compatibility Feature</title>
-     <para>
-      These so-called aliases or labels, respectively, work with IPv4 only.
-      With IPv6 they will be ignored. Using <command>iproute2</command> network
-      interfaces can have one or more addresses.
-     </para>
+     <title>エイリアス／ラベル機能について</title>
+     <para>エイリアスやラベルと呼ばれる機能は、 IPv4 でのみ動作します。 IPv6 の場合は無視されます。 <command>iproute2</command> を利用して、ネットワークインターフェイスに複数のアドレスを設定してください。</para>
     </note>
-    <para>
-     Using &yast; to set additional addresses for your network card, proceed as
-     follows:
-    </para>
+    <para>&yast; を利用してネットワークカードに追加のアドレスを設定するには、下記の手順で実施します:</para>
     <procedure>
      <step>
-      <para>
-       Select a card from the list of detected cards in the
-       <guimenu>Overview</guimenu> tab of the &yast; <guimenu>Network
-       Settings</guimenu> dialog and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; の <guimenu>ネットワーク設定</guimenu> ダイアログ内の <guimenu>概要</guimenu> タブで、検出されたネットワークカードのうちいずれかを選択し、 <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       In the <menuchoice> <guimenu>Address</guimenu> <guimenu>Additional
-       Addresses</guimenu> </menuchoice> tab, click <guimenu>Add</guimenu>.
-      </para>
+      <para><menuchoice> <guimenu>アドレス</guimenu> <guimenu>追加アドレス</guimenu> </menuchoice> で、 <guimenu>追加</guimenu> ボタンを押します。</para>
      </step>
      <step>
-      <para>
-       Enter <guimenu>IPv4 Address Label</guimenu>, <guimenu>IP
-       Address</guimenu>, and <guimenu>Netmask</guimenu>. Do not include the
-       interface name in the alias name.
-      </para>
+      <para>それぞれ <guimenu>IPv4 アドレスラベル</guimenu> , <guimenu>IP アドレス</guimenu> , <guimenu>ネットマスク</guimenu> をそれぞれ指定します。なお、別名内にインターフェイス名は入れないでください。</para>
      </step>
      <step>
-      <para>
-       To activate the configuration, confirm the settings.
-      </para>
+      <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
      </step>
     </procedure>
    </sect4>
    <sect4 xml:id="sec.network.yast.change.udev">
-    <title>Changing the Device Name and Udev Rules</title>
-    <para>
-     It is possible to change the device name of the network card when it is
-     used. It is also possible to determine whether the network card should be
-     identified by udev via its hardware (MAC) address or via the bus ID. The
-     latter option is preferable in large servers to simplify hotplugging of
-     cards. To set these options with &yast;, proceed as follows:
-    </para>
+    <title>デバイス名の変更と udev ルール</title>
+    <para>使用するネットワークカードの名前については、必要に応じて変更することができます。ネットワークカード同士の判別は、ハードウエア (MAC) アドレスのほか、コンピュータ内のバス ID で行ないます。巨大なサーバを構成するような場合は、後者を指定しておくとネットワークカードを後から接続 (ホットプラグ) することができるようになります。これらの設定を &yast; で行なうには、下記の手順で行ないます:</para>
     <procedure>
      <step>
-      <para>
-       Select a card from the list of detected cards in the
-       <guimenu>Overview</guimenu> tab of the &yast; <guimenu>Network
-       Settings</guimenu> dialog and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; の <guimenu>ネットワーク設定</guimenu> ダイアログ内の <guimenu>概要</guimenu> タブで、検出されたネットワークカードのうちいずれかを選択し、 <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       Go to the <guimenu>Hardware</guimenu> tab. The current device name is
-       shown in <guimenu>Udev Rules</guimenu>. Click <guimenu>Change</guimenu>.
-      </para>
+      <para><guimenu>ハードウエア</guimenu> タブに移動します。現在のデバイス名が、 <guimenu>udev ルール</guimenu> 内に表示されています。ここから <guimenu>変更</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       Select whether udev should identify the card by its <guimenu>MAC
-       Address</guimenu> or <guimenu>Bus ID</guimenu>. The current MAC address
-       and bus ID of the card are shown in the dialog.
-      </para>
+      <para>まずはネットワークカード同士の区別方法を、 <guimenu>MAC アドレス</guimenu> もしくは <guimenu>バス ID</guimenu> の中から選択します。それぞれ現在の MAC アドレスとバス ID がダイアログ内に表示されます。</para>
      </step>
      <step>
-      <para>
-       To change the device name, check the <guimenu>Change Device
-       Name</guimenu> option and edit the name.
-      </para>
+      <para>デバイス名を変更するには、 <guimenu>デバイス名</guimenu> の欄に新しいデバイス名を入力します。</para>
      </step>
      <step>
-      <para>
-       To activate the configuration, confirm the settings.
-      </para>
+      <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
      </step>
     </procedure>
    </sect4>
    <sect4 xml:id="sec.network.yast.change.driver">
-    <title>Changing Network Card Kernel Driver</title>
-    <para>
-     For some network cards, several kernel drivers may be available. If the
-     card is already configured, &yast; allows you to select a kernel driver to
-     be used from a list of available suitable drivers. It is also possible to
-     specify options for the kernel driver. To set these options with &yast;,
-     proceed as follows:
-    </para>
+    <title>ネットワークカードのカーネルドライバの変更</title>
+    <para>ネットワークカードによっては、複数のカーネルドライバの中からいずれかを選択することができます。カードが既に設定済みの場合、 &yast; では利用可能なドライバの一覧を表示して、その中からいずれかを選択することができます。また、ここではカーネルドライバに対するオプションを設定することもできます。 &yast; で設定を変更するには、下記の手順で行ないます:</para>
     <procedure>
      <step>
-      <para>
-       Select a card from the list of detected cards in the
-       <guimenu>Overview</guimenu> tab of the &yast; Network Settings module
-       and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; の <guimenu>ネットワーク設定</guimenu> ダイアログ内の <guimenu>概要</guimenu> タブで、検出されたネットワークカードのうちいずれかを選択し、 <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       Go to the <guimenu>Hardware</guimenu> tab.
-      </para>
+      <para><guimenu>ハードウエア</guimenu> タブに移動します。</para>
      </step>
      <step>
-      <para>
-       Select the kernel driver to be used in <guimenu>Module Name</guimenu>.
-       Enter any options for the selected driver in <guimenu>Options</guimenu>
-       in the form
-<!-- help with line-breaks to avoid xmlformat introduced spaces
-       right after the opening <command> -->
-       <command>=</command> =<replaceable>VALUE</replaceable>. If more options
-       are used, they should be space-separated.
-      </para>
+      <para>使用すべきカーネルドライバを、 <guimenu>モジュール名</guimenu> の欄で選択します。また、 <!-- help with line-breaks to avoid xmlformat introduced spaces right after the opening <command> --> <command>=</command> = <replaceable>値</replaceable> の形式で、 <guimenu>オプション</guimenu> 欄に必要なオプションを指定します。複数のオプションを指定したい場合は、スペースで区切って指定してください。</para>
      </step>
      <step>
-      <para>
-       To activate the configuration, confirm the settings.
-      </para>
+      <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
      </step>
     </procedure>
    </sect4>
    <sect4 xml:id="sec.network.yast.change.start">
-    <title>Activating the Network Device</title>
+    <title>ネットワークデバイスの有効化</title>
 
-    <para>
-     If you use the method with <command>wicked</command>, you can configure
-     your device to either start during boot, on cable connection, on card
-     detection, manually, or never. To change device start-up, proceed as
-     follows:
-    </para>
+    <para><command>wicked</command> を利用する方法を選択した場合、ネットワークデバイスをシステムの起動時に開始するか、ケーブルを接続したときに開始するか、カードを検出した際に開始するか、もしくは手作業で開始するか、何も有効化しないかを選択することができます。開始方法を変更するには、下記の手順で行ないます:</para>
     <procedure>
      <step>
-      <para>
-       In &yast; select a card from the list of detected cards in <menuchoice>
-       <guimenu>System</guimenu> <guimenu>Network Settings</guimenu>
-       </menuchoice> and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; から <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> </menuchoice> を選択して、検出されたネットワークカードの中からいずれかを選択し、 <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       In the <guimenu>General</guimenu> tab, select the desired entry from
-       <guimenu>Device Activation</guimenu>.
-      </para>
-      <para>
-       Choose <guimenu>At Boot Time</guimenu> to start the device during the
-       system boot. With <guimenu>On Cable Connection</guimenu>, the interface
-       is watched for any existing physical connection. With <guimenu>On
-       Hotplug</guimenu>, the interface is set when available. It is similar to
-       the <guimenu>At Boot Time</guimenu> option, and only differs in that no
-       error occurs if the interface is not present at boot time. Choose
-       <guimenu>Manually</guimenu> to control the interface manually with
-       <command>ifup</command>. Choose <guimenu>Never</guimenu> to not start
-       the device. The <guimenu>On NFSroot</guimenu> is similar to <guimenu>At
-       Boot Time</guimenu>, but the interface does not shut down with the
-       <command>systemctl stop network</command> command; the
-       <option>network</option> service also cares about the
-       <option>wicked</option> service if <command>wicked</command> is active.
-       Use this if you use an NFS or iSCSI root file system.
-      </para>
+      <para><guimenu>一般</guimenu> タブ内にある <guimenu>デバイスの有効化</guimenu> で、いずれかを選択します。</para>
+      <para><guimenu>起動時</guimenu> を選択すると、システムの起動時にデバイスが開始されます。 <guimenu>ケーブル接続時</guimenu> を選択すると、物理的な接続状況を監視して、接続が確認できると開始されます。 <guimenu>ホットプラグ</guimenu> を選択すると、インターフェイスが利用可能な状態になると開始されます。これは <guimenu>起動時</guimenu> の選択とほぼ同じ動作ですが、システムの起動時にデバイスが存在していなくても、エラーにならない点が異なります。また、 <guimenu>手動</guimenu> を選択すると、 <command>ifup</command> で手作業で開始する設定になります。 <guimenu>開始しない</guimenu> を選択すると、デバイスを開始しなくなります。また、 <guimenu>NFSroot</guimenu> の選択肢は、 <guimenu>起動時</guimenu> とほぼ同じ動作になりますが、 <command>systemctl stop network</command> を実行してもインターフェイスがシャットダウンされなくなります。また、 <command>wicked</command> が有効な際は、 <option>network</option> サービスが <option>wicked</option> サービスの起動も扱うようになります。この選択肢は、 NFS や iSCSI を介してルートファイルシステムにアクセスする際に選択します。</para>
      </step>
      <step>
-      <para>
-       To activate the configuration, confirm the settings.
-      </para>
+      <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
      </step>
     </procedure>
     <tip>
-     <title>NFS as a Root File System</title>
-     <para>
-      On (diskless) systems where the root partition is mounted via network as
-      an NFS share, you need to be careful when configuring the network device
-      with which the NFS share is accessible.
-     </para>
-     <para>
-      When shutting down or rebooting the system, the default processing order
-      is to turn off network connections, then unmount the root partition. With
-      NFS root, this order causes problems as the root partition cannot be
-      cleanly unmounted as the network connection to the NFS share is already
-      not activated. To prevent the system from deactivating the relevant
-      network device, open the network device configuration tab as described in
-      <xref linkend="sec.network.yast.change.start"/> and choose <guimenu>On
-      NFSroot</guimenu> in the <guimenu>Device Activation</guimenu> pane.
-     </para>
+     <title>NFS をルートファイルシステムで使用する場合の注意</title>
+     <para>ルートパーティションを NFS 共有経由でマウントするシステム (ディスクを持たないシステム) の場合、 NFS 共有にアクセスするネットワークデバイスについては、設定を注意して行なう必要があります。</para>
+     <para>システムをシャットダウンしたり再起動したりする際、既定の処理順序はネットワークの接続を切断してからルートパーティションをマウント解除しますが、ルートパーティションが NFS である場合、この順序で処理してしまうと、ネットワークが先に切れてしまうことから、 NFS のマウントを正しく解除することができなくなってしまいます。ネットワークデバイスが無効化されないようにするには、 <xref linkend="sec.network.yast.change.start"/> で説明しているとおりネットワークデバイスの設定ウインドウを開いて、 <guimenu>デバイスの有効化</guimenu> で <guimenu>NFSroot</guimenu> を選択してください。</para>
     </tip>
    </sect4>
    <sect4 xml:id="sec.network.yast.change.mtu">
-    <title>Setting Up Maximum Transfer Unit Size</title>
-    <para>
-     You can set a maximum transmission unit (MTU) for the interface. MTU
-     refers to the largest allowed packet size in bytes. A higher MTU brings
-     higher bandwidth efficiency. However, large packets can block up a slow
-     interface for some time, increasing the lag for further packets.
-    </para>
+    <title>最大転送単位サイズの設定</title>
+    <para>インターフェイスに対しては、最大転送単位 (MTU) を設定することができます。 MTU とは、最も大きいパケットのサイズをバイト単位で表わしたもので、 MTU を大きくすればするほど、帯域を効率的に使用することができるようになります。ただし、遅いインターフェイスで MTU を大きくしすぎると、その送信にかかる時間が大きくなってしまい、インターフェイスを長い時間占有してしまうことになりますので、即時性が損なわれてしまいます。</para>
     <procedure>
      <step>
-      <para>
-       In &yast; select a card from the list of detected cards in <menuchoice>
-       <guimenu>System</guimenu> <guimenu>Network Settings</guimenu>
-       </menuchoice> and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; から <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> </menuchoice> を選択して、検出されたネットワークカードの中からいずれかを選択し、 <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       In the <guimenu>General</guimenu> tab, select the desired entry from the
-       <guimenu>Set MTU</guimenu> list.
-      </para>
+      <para><guimenu>一般</guimenu> タブを選択し、 <guimenu>最大転送単位 (MTU)</guimenu> の欄内にあるドロップダウンボックスで、値を入力するか選択を行ないます。</para>
      </step>
      <step>
-      <para>
-       To activate the configuration, confirm the settings.
-      </para>
+      <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
      </step>
     </procedure>
    </sect4>
    <sect4 xml:id="sec.network.yast.change.pciemulti">
 <!-- fate#316090: -->
-    <title>PCIe Multifunction Devices</title>
-    <para>
-     Multifunction devices that support LAN, iSCSI, and FCoE are supported.
-     YaST FCoE client (<command>yast2 fcoe-client</command>) shows the private
-     flags in additional columns to allow the user to select the device meant
-     for FCoE. YaST network module (<command>yast2 lan</command>) excludes
-     <quote>storage only devices</quote> for network configuration.
-    </para>
-    <para os="sles">
-     For more information about FCoE, see <xref linkend="sec.fcoe.yast"/>.
-    </para>
+    <title>PCIe 多機能デバイス</title>
+    <para>LAN, iSCSI, FCoE のそれぞれに対応する多機能型デバイスを利用することができます。 YaST の FCoE クライアント ( <command>yast2 fcoe-client</command> ) では、ユーザ側で FCoE に使用するかどうかを選択できるようにするため、追加の列内にプライベートフラグが表示されます。 YaST のネットワークモジュール ( <command>yast2 lan</command> ) では、 <quote>ストレージのみ</quote> に設定したネットワークインターフェイスは除外して表示します。</para>
+    <para os="sles">FCoE について、詳しくは <xref linkend="sec.fcoe.yast"/> をお読みください。</para>
    </sect4>
    <sect4 xml:id="sec.network.yast.change.infiniband">
 <!-- fate#315501 -->
-    <title>Infiniband Configuration for IP-over-InfiniBand (IPoIB)</title>
+    <title>IP-over-InfiniBand (IPoIB) のための Infiniband 設定</title>
     <procedure>
      <step>
-      <para>
-       In &yast; select the InfiniBand device in <menuchoice>
-       <guimenu>System</guimenu> <guimenu>Network Settings</guimenu>
-       </menuchoice> and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; を起動し、 <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> </menuchoice> を選択して、表示された Infiniband デバイスを選択して <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       In the <guimenu>General</guimenu> tab, select one of the
-       <guimenu>IP-over-InfiniBand</guimenu> (IPoIB) modes:
-       <guimenu>connected</guimenu> (default) or <guimenu>datagram</guimenu>.
-      </para>
+      <para><guimenu>一般</guimenu> タブでは、 <guimenu>IP-over-InfiniBand</guimenu> (IPoIB) のモードのうち、 <guimenu>connected</guimenu> (既定値) もしくは <guimenu>datagram</guimenu> の中からいずれかを選択します。</para>
      </step>
      <step>
-      <para>
-       To activate the configuration, confirm the settings.
-      </para>
+      <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
      </step>
     </procedure>
-    <para>
-     For more information about InfiniBand, see
-     <filename>/usr/src/linux/Documentation/infiniband/ipoib.txt</filename>.
-    </para>
+    <para>InfiniBand について、詳しくは <filename>/usr/src/linux/Documentation/infiniband/ipoib.txt</filename> をお読みください。</para>
    </sect4>
    <sect4 xml:id="sec.network.yast.change.fire">
-    <title>Configuring the Firewall</title>
-    <para>
-     Without having to perform the detailed firewall setup as described in
-     <xref linkend="sec.security.firewall.firewalld"/>, you can determine the
-     basic firewall configuration for your device as part of the device setup.
-     Proceed as follows:
-    </para>
+    <title>ファイアウオールの設定</title>
+    <para><xref linkend="sec.security.firewall.firewalld"/> で説明している詳細なファイアウオール設定を行なっていない場合は、ネットワークインターフェイスの設定手順のうちの 1 つで、基本的なファイアウオール設定を行なうことができます。具体的には下記の手順で行ないます:</para>
     <procedure>
      <step>
-      <para>
-       Open the &yast; <menuchoice> <guimenu>System</guimenu> <guimenu>Network
-       Settings</guimenu> </menuchoice> module. In the
-       <guimenu>Overview</guimenu> tab, select a card from the list of detected
-       cards and click <guimenu>Edit</guimenu>.
-      </para>
+      <para>&yast; を開いて、 <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> </menuchoice> を選択します。 <guimenu>概要</guimenu> タブが表示されたら、検出済みのネットワークカードの一覧からいずれかを選択し、 <guimenu>編集</guimenu> を押します。</para>
      </step>
      <step>
-      <para>
-       Enter the <guimenu>General</guimenu> tab of the <guimenu>Network
-       Settings</guimenu> dialog.
-      </para>
+      <para><guimenu>ネットワークカードの設定</guimenu> ダイアログ内にある <guimenu>一般</guimenu> タブを選択します。</para>
      </step>
      <step>
-      <para>
-       Determine the <guimenu>Firewall Zone</guimenu> to which your interface
-       should be assigned. The following options are available:
-      </para>
+      <para><guimenu>ファイアウオールゾーン</guimenu> 内のリストボックスで、インターフェイスをどのゾーンに割り当てるのかを選択します。下記の選択肢が用意されています:</para>
       <variablelist>
        <varlistentry>
-        <term>Firewall Disabled</term>
+        <term>ファイアウオールを無効にする</term>
         <listitem>
-         <para>
-          This option is available only if the firewall is disabled and the
-          firewall does not run. Only use this option if your machine is part
-          of a greater network that is protected by an outer firewall.
-         </para>
+         <para>この選択肢はファイアウオールが無効化されていて、動作していない場合に表示されます。この設定は、別途のファイアウオールで保護された環境内に接続している場合にのみご利用ください。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
-        <term>Automatically Assign Zone</term>
+        <term>自動ゾーン割り当て</term>
         <listitem>
-         <para>
-          This option is available only if the firewall is enabled. The
-          firewall is running and the interface is automatically assigned to a
-          firewall zone. The zone which contains the keyword
-          <literal>any</literal> or the external zone will be used for such an
-          interface.
-         </para>
+         <para>このオプションはファイアウオールが有効化されている場合にのみ表示されます。ファイアウオールが動作すると、ファイアウオールがインターフェイスを自動的にゾーンに割り当てます。 <literal>any</literal> というキーワードを含むゾーン、もしくは外部ゾーンのいずれかに割り当てられます。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
-        <term>Internal Zone (Unprotected)</term>
+        <term>内部ゾーン (保護無し)</term>
         <listitem>
-         <para>
-          The firewall is running, but does not enforce any rules to protect
-          this interface. Use this option if your machine is part of a greater
-          network that is protected by an outer firewall. It is also useful for
-          the interfaces connected to the internal network, when the machine
-          has more network interfaces.
-         </para>
+         <para>ファイアウオール自身は動作させるものの、このインターフェイスに対する保護ルールは何も適用しないゾーンです。この設定は、別途のファイアウオールで保護された環境内に接続している場合や、外部には全く接続していない場合にお使いください。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
-        <term>Demilitarized Zone</term>
+        <term>非武装ゾーン</term>
         <listitem>
-         <para>
-          A demilitarized zone is an additional line of defense in front of an
-          internal network and the (hostile) Internet. Hosts assigned to this
-          zone can be reached from the internal network and from the Internet,
-          but cannot access the internal network.
-         </para>
+         <para>非武装ゾーンとは、内部ネットワークの最前線に立つ追加のゾーンで、その外側には (攻撃を受けうる) インターネットが存在するゾーンです。このゾーンに割り当てられたホストは、内部ネットワークとインターネットの両方から接続することができますが、インターネット側から内部にはアクセスさせない構成を取るのが一般的です。</para>
         </listitem>
        </varlistentry>
        <varlistentry>
-        <term>External Zone</term>
+        <term>外部ゾーン</term>
         <listitem>
-         <para>
-          The firewall is running on this interface and fully protects it
-          against other&mdash;presumably hostile&mdash;network traffic. This is
-          the default option.
-         </para>
+         <para>このインターフェイスでファイアウオールを動作させ、全てのネットワークトラフィックに対して (特に攻撃などから) 保護を適用するゾーンです。この選択肢が既定値になっています。</para>
         </listitem>
        </varlistentry>
       </variablelist>
      </step>
      <step>
-      <para>
-       To activate the configuration, confirm the settings.
-      </para>
+      <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
      </step>
     </procedure>
    </sect4>
   </sect3>
   <sect3 xml:id="sec.network.yast.netcard.man">
-   <title>Configuring an Undetected Network Card</title>
-   <para>
-    If a network card is not detected correctly, the card is not included in
-    the list of detected cards. If you are sure that your system includes a
-    driver for your card, you can configure it manually. You can also configure
-    special network device types, such as bridge, bond, TUN or TAP. To
-    configure an undetected network card (or a special device) proceed as
-    follows:
-   </para>
+   <title>未検出のネットワークカードの設定</title>
+   <para>ネットワークカードが正しく検出されなかった場合は、検出済みのネットワークインターフェイスの一覧内には表示されません。お使いのネットワークカード向けのドライバが存在することがわかっている場合は、手作業で設定を行なうことができます。このほか、ネットワークブリッジやボンディング、 TUN や TAP と呼ばれる特殊なネットワークインターフェイスについても、手作業で設定を行なうことになります。具体的には、下記の手順で行ないます:</para>
    <procedure>
     <step>
-     <para>
-      In the <menuchoice> <guimenu>System</guimenu> <guimenu>Network
-      Settings</guimenu> <guimenu>Overview</guimenu> </menuchoice> dialog in
-      &yast; click <guimenu>Add</guimenu>.
-     </para>
+     <para>&yast; から <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> <guimenu>概要</guimenu> </menuchoice> を選び、 <guimenu>追加</guimenu> ボタンを押します。</para>
     </step>
     <step>
-     <para>
-      In the <guimenu>Hardware</guimenu> dialog, set the <guimenu>Device
-      Type</guimenu> of the interface from the available options and
-      <guimenu>Configuration Name</guimenu>. If the network card is a
-      USB device, activate the respective check box and exit this dialog with
-      <guimenu>Next</guimenu>. Otherwise, you can define the kernel
-      <guimenu>Module Name</guimenu> to be used for the card and its
-      <guimenu>Options</guimenu>, if necessary.
-     </para>
-     <para>
-      In <guimenu>Ethtool Options</guimenu>, you can set
-      <command>ethtool</command> options used by <command>ifup</command> for
-      the interface. For information about available options, see the
-      <command>ethtool</command> manual page.
-     </para>
-     <para>
-      If the option string starts with a
-      <literal>-</literal> (for example, <literal>-K
-      <replaceable>INTERFACE_NAME</replaceable> rx on</literal>), the second
-      word in the string is replaced with the current interface name. Otherwise
-      (for example, <literal>autoneg off speed 10</literal>)
-      <command>ifup</command> adds <literal>-s
-      <replaceable>INTERFACE_NAME</replaceable></literal> to the beginning.
-     </para>
+     <para><guimenu>ハードウエアダイアログ</guimenu> 内では、まず <guimenu>デバイスの種類</guimenu> を選択し、 <guimenu>設定名</guimenu> で選択または入力を行ないます。お使いのネットワークカードが USB デバイスである場合は、対応するチェックボックスにチェックを入れてから <guimenu>次へ</guimenu> を押します。それ以外のデバイスである場合は、 <guimenu>モジュール名</guimenu> にカーネルのモジュール名を入力し、必要であれば <guimenu>オプション</guimenu> に必要なオプションを設定します。</para>
+     <para>なお、 <guimenu>ethtool オプション</guimenu> では、 <command>ifup</command> コマンドでインターフェイスを起動する際、 <command>ethtool</command> コマンドに指定するオプションを設定します。利用可能なオプションの一覧については、 <command>ethtool</command> のマニュアルページをお読みください。</para>
+     <para>オプションの文字列が <literal>-</literal> で始まるものの場合 (たとえば <literal>-K <replaceable>インターフェイス名</replaceable> rx on</literal> など)  は、文字列内の 2 番目の箇所が現在のインターフェイス名に置き換えられます。それ以外の場合 (たとえば <literal>autoneg off speed 10</literal>) は、<command>ifup</command> コマンドを実行する際、冒頭に <literal>-s <replaceable>インターフェイス名</replaceable></literal> を追加します。</para>
     </step>
     <step>
-     <para>
-      Click <guimenu>Next</guimenu>.
-     </para>
+     <para><guimenu>次へ</guimenu> を押します。</para>
     </step>
     <step>
-     <para>
-      Configure any needed options, such as the IP address, device activation
-      or firewall zone for the interface in the <guimenu>General</guimenu>,
-      <guimenu>Address</guimenu>, and <guimenu>Hardware</guimenu> tabs. For
-      more information about the configuration options, see
-      <xref linkend="sec.network.yast.netcard.change"/>.
-     </para>
+     <para>あとは IP アドレスやデバイスの有効化、インターフェイスに割り当てるファイアウオールのゾーンなど、残りのオプションを <guimenu>一般</guimenu> , <guimenu>アドレス</guimenu> , <guimenu>ハードウエア</guimenu> で設定します。設定項目についての詳細は、 <xref linkend="sec.network.yast.netcard.change"/> をお読みください。</para>
     </step>
     <step>
-     <para>
-      If you selected <guimenu>Wireless</guimenu> as the device type of the
-      interface, configure the wireless connection in the next dialog.
-     </para>
+     <para>なお、 <guimenu>デバイスの種類</guimenu> で <guimenu>無線</guimenu> を選択した場合は、次のダイアログで無線関連の設定を行ないます。</para>
     </step>
     <step>
-     <para>
-      To activate the new network configuration, confirm the settings.
-     </para>
+     <para>新しいネットワーク設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
     </step>
    </procedure>
   </sect3>
   <sect3 xml:id="sec.network.yast.change.host">
-   <title>Configuring Host Name and DNS</title>
-   <para>
-    If you did not change the network configuration during installation and the
-    Ethernet card was already available, a host name was automatically
-    generated for your computer and DHCP was activated. The same applies to the
-    name service information your host needs to integrate into a network
-    environment. If DHCP is used for network address setup, the list of domain
-    name servers is automatically filled with the appropriate data. If a static
-    setup is preferred, set these values manually.
-   </para>
-   <para>
-    To change the name of your computer and adjust the name server search list,
-    proceed as follows:
-   </para>
+   <title>ホスト名と DNS の設定</title>
+   <para>インストールの時点でお使いのネットワークカードが利用できる状態であり、かつネットワークの設定を変更していない場合は、お使いのコンピュータに対してホスト名が自動生成され、 DHCP が有効化された状態になります。これはネットワーク環境に接続するためのネームサーバの設定についても同様です。ネットワークアドレスを DHCP 経由で取得していると、ネームサーバの情報を受信した際に自動的に設定を行ないます。何らかの理由により、手作業で設定を行ないたい場合は、これらの設定を行なう必要があります。</para>
+   <para>お使いのコンピュータの名前や使用するネームサーバの検索リストを変更するには、下記の手順で行ないます:</para>
    <procedure>
     <step>
-     <para>
-      Go to the <menuchoice> <guimenu>Network Settings</guimenu>
-      <guimenu>Hostname/DNS</guimenu> </menuchoice> tab in the
-      <guimenu>System</guimenu> module in &yast;.
-     </para>
+     <para>&yast; を起動し、 <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワーク設定</guimenu> </menuchoice> を選択して、 <guimenu>ホスト名／DNS</guimenu> タブを選択します。</para>
     </step>
     <step>
-     <para>
-      Enter the <guimenu>Hostname</guimenu> and, if needed, the <guimenu>Domain
-      Name</guimenu>. The domain is especially important if the machine is a
-      mail server. Note that the host name is global and applies to all set
-      network interfaces.
-     </para>
-     <para>
-      If you are using DHCP to get an IP address, the host name of your
-      computer will be automatically set by the DHCP. You should disable this
-      behavior if you connect to different networks, because they may assign
-      different host names and changing the host name at runtime may confuse
-      the graphical desktop. To disable using DHCP to get an IP address
-      deactivate <guimenu>Change Hostname via DHCP</guimenu>.
-     </para>
-     <para>
-      <guimenu>Assign Hostname to Loopback IP</guimenu> associates your host
-      name with <literal>127.0.0.2</literal> (loopback) IP address in
-      <filename>/etc/hosts</filename>. This is a useful option if you want to
-      have the host name resolvable at all times, even without active network.
-     </para>
+     <para>まずは <guimenu>ホスト名</guimenu> の欄にホスト名を指定し、必要であれば <guimenu>ドメイン名</guimenu> に設定を行ないます。ドメイン名は、お使いのマシンをメールサーバとして動作させる際には特に重要となります。また、ホスト名はコンピュータ全体に対する設定であり、全てのネットワークインターフェイスに設定されることに注意してください。</para>
+     <para>IP アドレスを取得するのに DHCP を使用している場合は、 DHCP サーバ側から通知された名前がホスト名として自動設定されます。このような動作は、複数のネットワークに接続する環境では、ホスト名が頻繁に変わる結果になることから、グラフィカルデスクトップ環境に悪影響を及ぼすこともありますので、無効化しておくことをお勧めします。 DHCP で IP アドレスを取得する環境で、ホスト名を変更しないようにするには、 <guimenu>DHCP でホスト名を設定</guimenu> を <guimenu>いいえ</guimenu> に設定してください。</para>
+     <para><guimenu>ホスト名をループバック IP に割り当てる</guimenu> を選択すると、設定したホスト名を <filename>/etc/hosts</filename> 内で <literal>127.0.0.2</literal> (ループバック) という IP アドレスに割り当てます。これは、ネットワークに常に接続されている環境ではないものの、ホスト名だけは解決できなければならないような場合に、有用な項目です。</para>
     </step>
     <step>
-     <para>
-      In <guimenu>Modify DNS Configuration</guimenu>, select the way the DNS
-      configuration (name servers, search list, the content of the
-      <filename>/etc/resolv.conf</filename> file) is modified.
-     </para>
-     <para>
-      If the <guimenu>Use Default Policy</guimenu> option is selected, the
-      configuration is handled by the <command>netconfig</command> script which
-      merges the data defined statically (with &yast; or in the configuration
-      files) with data obtained dynamically (from the DHCP client or
-      NetworkManager). This default policy is usually sufficient.
-     </para>
-     <para>
-      If the <guimenu>Only Manually</guimenu> option is selected,
-      <command>netconfig</command> is not allowed to modify the
-      <filename>/etc/resolv.conf</filename> file. However, this file can be
-      edited manually.
-     </para>
-     <para>
-      If the <guimenu>Custom Policy</guimenu> option is selected, a
-      <guimenu>Custom Policy Rule</guimenu> string defining the merge policy
-      should be specified. The string consists of a comma-separated list of
-      interface names to be considered a valid source of settings. Except for
-      complete interface names, basic wild cards to match multiple interfaces
-      are allowed, as well. For example, <literal>eth* ppp?</literal> will
-      first target all eth and then all ppp0-ppp9 interfaces. There are two
-      special policy values that indicate how to apply the static settings
-      defined in the <filename>/etc/sysconfig/network/config</filename> file:
-     </para>
+     <para>また、 <guimenu>DNS 設定の修正</guimenu> では、 DNS まわりの設定 (ネームサーバ、検索リスト、 <filename>/etc/resolv.conf</filename> の内容) の修正方法を設定することができます。</para>
+     <para><guimenu>既定のポリシーを使用する</guimenu> を選択すると、設定内容は <command>netconfig</command> スクリプトが処理を行ない、固定で設定された内容 (&yast; もしくは設定ファイル内で設定した内容) と動的に取得した内容 (DHCP クライアントもしくは NetworkManager) を合成します。通常は、この既定のポリシーのままで問題ありません。</para>
+     <para><guimenu>手動のみ</guimenu> を選択すると、 <command>netconfig</command> が <filename>/etc/resolv.conf</filename> を変更しないようになります。ただし、このファイルは手作業で編集して変更することが可能です。</para>
+     <para><guimenu>カスタムポリシー</guimenu> を選択した場合は、 <guimenu>カスタムポリシールール</guimenu> で指定した文字列の合成ポリシーで制御が行なわれます。ここにはカンマ区切りでインターフェイス名を指定し、指定したインターフェイスからの情報を正しい情報源と見なして、設定を書き換える動作を行ないます。インターフェイス名は、そのまま指定するだけでなく、ワイルドカードを指定することもできます。たとえば <literal>eth* ppp?</literal> のように指定すると、 <literal>eth</literal> で始まるインターフェイスと、 <literal>ppp0</literal> から <literal>ppp9</literal> が該当するようになります。このほか、 <filename>/etc/sysconfig/network/config</filename> ファイルで定義されている下記のキーワードも指定することができます:</para>
      <variablelist>
       <varlistentry>
-       <term><literal>STATIC</literal>
-       </term>
+       <term><literal>STATIC</literal></term>
        <listitem>
-        <para>
-         The static settings need to be merged together with the dynamic
-         settings.
-        </para>
+        <para>固定で設定した内容を、動的に取得した内容と合成する必要があることを指定します。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><literal>STATIC_FALLBACK</literal>
-       </term>
+       <term><literal>STATIC_FALLBACK</literal></term>
        <listitem>
-        <para>
-         The static settings are used only when no dynamic configuration is
-         available.
-        </para>
+        <para>動的に設定が取得できない場合にのみ、固定の設定を使用するよう指定します。</para>
        </listitem>
       </varlistentry>
      </variablelist>
-     <para>
-      For more information, see the man page of <command>netconfig</command>(8)
-      (<command>man 8 netconfig</command>).
-     </para>
+     <para>さらに詳しい情報については、 <command>netconfig</command> (8) のマニュアルページ ( <command>man 8 netconfig</command> ) をお読みください。</para>
     </step>
     <step>
-     <para>
-      Enter the <guimenu>Name Servers</guimenu> and fill in the <guimenu>Domain
-      Search</guimenu> list. Name servers must be specified by IP addresses,
-      such as &dnsip;, not by host names. Names specified in the
-      <guimenu>Domain Search</guimenu> tab are domain names used for resolving
-      host names without a specified domain. If more than one <guimenu>Domain
-      Search</guimenu> is used, separate domains with commas or white space.
-     </para>
+     <para><guimenu>ネームサーバ</guimenu> と <guimenu>ドメイン検索</guimenu> に対して、それぞれ必要な設定を行ないます。ネームサーバに対しては、ホスト名ではなく IP アドレス (例: &dnsip;) で設定してください。また、 <guimenu>ドメイン検索</guimenu> には、ドメイン名無しでホスト名のみを指定した場合に、自動的に補完されるべきドメイン名を指定します。複数のドメインを <guimenu>ドメイン検索</guimenu> に指定したい場合は、カンマまたはスペースで区切ってください。</para>
     </step>
     <step>
-     <para>
-      To activate the configuration, confirm the settings.
-     </para>
+     <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
     </step>
    </procedure>
-   <para>
-    It is also possible to edit the host name using &yast; from the command
-    line. The changes made by &yast; take effect immediately (which is not the
-    case when editing the <filename>/etc/HOSTNAME</filename> file manually). To
-    change the host name, use the following command:
-   </para>
-<screen>&prompt.root;yast dns edit hostname=<replaceable>HOSTNAME</replaceable></screen>
-   <para>
-    To change the name servers, use the following commands:
-   </para>
+   <para>このほか、 &yast; を利用してコマンドラインからホスト名を変更することもできます。&yast; で変更を行なった場合、その設定は即時に反映されます (<filename>/etc/hostname</filename> を編集した場合とは異なります) 。ホスト名を変更するには、下記のコマンドを実行します:</para>
+<screen>&prompt.root;yast dns edit hostname=<replaceable>ホスト名</replaceable></screen>
+   <para>ネームサーバを変更したい場合は、下記のようなコマンドを実行します:</para>
 <screen>&prompt.root;yast dns edit nameserver1=&dnsip;
 &prompt.root;yast dns edit nameserver2=&dnsip117;
 &prompt.root;yast dns edit nameserver3=&dnsip118;</screen>
   </sect3>
 <!-- ===================================================================== -->
   <sect3 xml:id="sec.network.yast.change.route">
-   <title>Configuring Routing</title>
+   <title>ルーティングの設定</title>
 
-   <para>
-    To make your machine communicate with other machines and other networks,
-    routing information must be given to make network traffic take the correct
-    path. If DHCP is used, this information is automatically provided. If a
-    static setup is used, this data must be added manually.
-   </para>
+   <para>お使いのマシンを他のネットワーク内にあるマシンと通信したい場合は、ルーティング (経路制御) に関する情報を設定して、正しい経路で通信が配送されるように設定しなければなりません。 DHCP をお使いの場合、この情報は自動的に提供され適用されます。固定の設定をお使いの場合は、このデータは手作業で設定しなければなりません。</para>
    <procedure>
     <step>
-     <para>
-      In &yast; go to <menuchoice> <guimenu>Network Settings</guimenu>
-      <guimenu>Routing</guimenu> </menuchoice>.
-     </para>
+     <para>&yast; を起動して、 <menuchoice> <guimenu>ネットワークの設定</guimenu> <guimenu>ルーティング</guimenu> </menuchoice> を選択します。</para>
     </step>
     <step>
-     <para>
-      Enter the IP address of the <guimenu>Default Gateway</guimenu> (IPv4 and
-      IPv6 if necessary). The default gateway matches every possible
-      destination, but if a routing table entry exists that matches the
-      required address, this will be used instead of the default route via the
-      Default Gateway.
-     </para>
+     <para><guimenu>デフォルトゲートウエイ</guimenu> の IP アドレスを入力します (必要であれば、 IPv4 だけでなく IPv6 でも設定することができます) 。デフォルトゲートウエイは、その他のルーティング情報内に存在しなかった場合に、最後に使用すべき (既定の) ゲートウエイ (中継器) を意味するものです。</para>
     </step>
     <step>
-     <para>
-      More entries can be entered in the <guimenu>Routing Table</guimenu>.
-      Enter the <guimenu>Destination</guimenu> network IP address,
-      <guimenu>Gateway</guimenu> IP address and the <guimenu>Netmask</guimenu>.
-      Select the <guimenu>Device</guimenu> through which the traffic to the
-      defined network will be routed (the minus sign stands for any device).
-      <remark>mdejmek: ok, what does the minus exactly do? you are using it here for different things;</remark>
-      To omit any of these values, use the minus sign <literal>-</literal>. To
-      enter a default gateway into the table, use <literal>default</literal> in
-      the <guimenu>Destination</guimenu> field.
-     </para>
+     <para><guimenu>ルーティングテーブル</guimenu> の欄を利用することで、さらに細かい設定を行なうことができます。ここでは、 <guimenu>宛先</guimenu> に通信先の IP アドレスを、 <guimenu>ゲートウエイ</guimenu> には使用するゲートウエイの IP アドレスを、 <guimenu>ネットマスク</guimenu> にはネットマスクをそれぞれ指定します。また、 <guimenu>デバイス</guimenu> の欄には、使用すべきネットワークインターフェイスの名前を指定します (<literal>-</literal> を指定すると、任意のデバイスを使用する意味になります) 。 <remark>mdejmek: ok, what does the minus exactly do? you are using it here for different things;</remark> これらの値のうちのいずれかを省略したい場合は、マイナス記号 <literal>-</literal> を指定してください。また、表内にデフォルトゲートウエイを設定したい場合は、 <guimenu>宛先</guimenu> 欄に <literal>default</literal> と入力してください。</para>
      <note>
-      <title>Route Prioritization</title>
-      <para>
-       If more default routes are used, it is possible to specify the metric
-       option to determine which route has a higher priority. To specify the
-       metric option, enter <option>- metric
-       <replaceable>NUMBER</replaceable></option> in
-       <guimenu>Options</guimenu>. The route with the highest metric is used as
-       default. If the network device is disconnected, its route will be
-       removed and the next one will be used. However, the current kernel does
-       not use metric in static routing, only routing daemons like
-       <systemitem>multipathd</systemitem> do.
-      </para>
+      <title>ルートの優先制御</title>
+      <para>複数のデフォルトゲートウエイを使用する場合は、メトリック値を指定して優先順位を指定することができます。メトリック値を設定するには、 <guimenu>オプション</guimenu> の欄に <option>- metric <replaceable>数値</replaceable></option> の形式で指定を行ないます。既定では最も高いメトリック値の経路を使用します。ネットワークインターフェイスの接続が切れた場合は、ルーティング情報からその経路が削除され、次に有効なルーティングを使用します。しかしながら、現在のカーネルではスタティック (固定の) ルーティングは使用しておらず、 <systemitem>multipathd</systemitem> などのようなルーティングデーモンのみが使用しています。</para>
      </note>
     </step>
     <step>
-     <para>
-      If the system is a router, enable <guimenu>IPv4 Forwarding</guimenu> and
-      <guimenu>IPv6 Forwarding</guimenu> in the <guimenu>Network
-      Settings</guimenu> as needed.
-     </para>
+     <para>お使いのシステムをルータとして設定するには、 <guimenu>ネットワーク設定</guimenu> 内にある <guimenu>IPv4 転送を有効にする</guimenu> と <guimenu>IPv6 転送を有効にする</guimenu> をそれぞれ選択してください。</para>
     </step>
     <step>
-     <para>
-      To activate the configuration, confirm the settings.
-     </para>
+     <para>設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。</para>
     </step>
    </procedure>
   </sect3>

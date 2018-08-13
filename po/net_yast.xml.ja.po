@@ -1,32 +1,35 @@
+# translation of net_yast.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: net_yast.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-08-08 01:10+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-13 15:22+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: net_yast.xml:9
 #, no-c-format
 msgid "Configuring a Network Connection with &yast;"
-msgstr ""
+msgstr "&yast; を利用したネットワークの設定"
 
 #. Tag: dm:translation
 #: net_yast.xml:14
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: net_yast.xml:20
@@ -37,6 +40,10 @@ msgid ""
 "locations in the file system. For a detailed overview of the aspects of "
 "manual network configuration, see <xref linkend=\"sec.network.manconf\"/> ."
 msgstr ""
+"Linux では様々な種類のネットワークに対応しています。これらのうちのほとんどは、"
+"それぞれ異なるデバイス名を使用するもので、ファイルシステム内の様々な箇所に設定ファイルが"
+"分散しています。手作業でのネットワーク設定について、詳しくは <xref linkend=\""
+"sec.network.manconf\"/> をお読みください。"
 
 #. Tag: para
 #: net_yast.xml:27
@@ -51,12 +58,19 @@ msgid ""
 "system. The following sections describe the network configuration for all "
 "types of network connections supported by &productname;."
 msgstr ""
+"<phrase os=\"sled\">&productname; では &nm; が既定で有効化され、全てのネットワーク"
+"カードを設定します。 &nm; が有効化されていない場合は、リンクの確立している"
+" (ケーブルが接続されている) 最初のインターフェイスのみを自動設定します。</phrase> "
+"<phrase os=\"sles;osuse\">リンクの確立している (ケーブルが接続されている) 全ての"
+"インターフェイスが、自動的に設定されます。</phrase> インストール済みの状態でも、"
+"任意の時点で追加のハードウエアを設定することができます。下記の章では、 &productname; "
+"で対応している全種類のネットワーク接続に対して、その設定方法を説明しています。"
 
 #. Tag: title
 #: net_yast.xml:39
 #, no-c-format
 msgid "&zseries;: Hotpluggable Network Cards"
-msgstr ""
+msgstr "&zseries;: ホットプラグ対応のネットワークカードについて"
 
 #. Tag: para
 #: net_yast.xml:40
@@ -66,12 +80,15 @@ msgid ""
 "their automatic network integration via DHCP (as is the case on the PC). "
 "After they have been detected, you need to manually configure the interface."
 msgstr ""
+"&zseries; プラットフォームでは、ホットプラグ対応のネットワークカードには対応していますが、"
+" DHCP での自動ネットワーク設定には対応していません (この点が一般的な PC と異なります) 。"
+"デバイスが検出された後は、手作業でインターフェイスを設定する必要があります。"
 
 #. Tag: title
 #: net_yast.xml:48
 #, no-c-format
 msgid "Configuring the Network Card with &yast;"
-msgstr ""
+msgstr "&yast; を利用したネットワークカードの設定"
 
 #. Tag: para
 #: net_yast.xml:49
@@ -84,6 +101,12 @@ msgid ""
 "Options</guimenu> , <guimenu>Overview</guimenu> , <guimenu>Hostname/DNS</"
 "guimenu> and <guimenu>Routing</guimenu> ."
 msgstr ""
+"&yast; でイーサネットや Wi-Fi, Bluetooth カードなどを設定したい場合は、 &yast; "
+"を起動して <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> "
+"</menuchoice> を選択します。モジュールを起動すると、 &yast; は <guimenu>ネットワーク設定</guimenu> "
+"ウインドウ内で 4 つのタブを表示します。それぞれ <guimenu>グローバルオプション</guimenu> ,"
+" <guimenu>概要</guimenu> , <guimenu>ホスト名／DNS</guimenu> , <guimenu>ルーティング</guimenu> "
+"というタブになっています。"
 
 #. Tag: para
 #: net_yast.xml:57
@@ -94,6 +117,9 @@ msgid ""
 "options. For more information, see <xref linkend=\"sec.network.yast.netcard."
 "global\"/> ."
 msgstr ""
+"<guimenu>グローバルオプション</guimenu> のタブでは、ネットワークの設定方法や IPv6 "
+"の利用可否、そして一般的な DHCP オプションなどを設定することができます。詳しくは"
+" <xref linkend=\"sec.network.yast.netcard.global\"/> をお読みください。"
 
 #. Tag: para
 #: net_yast.xml:63
@@ -107,6 +133,13 @@ msgid ""
 "\"/> . To change the configuration of an already configured card, see <xref "
 "linkend=\"sec.network.yast.netcard.change\"/> ."
 msgstr ""
+"<guimenu>概要</guimenu> タブには、インストール済みのネットワークカードとその設定が"
+"表示されます。ここには、検出済みのネットワークカードが名前で表示されます。このダイアログでは"
+"新しいネットワークカードの設定のほか、既存のネットワークカードの設定変更や削除も"
+"行なうことができます。自動では検出されないネットワークカードを手作業で設定するには、"
+" <xref linkend=\"sec.network.yast.netcard.man\"/> の手順に従って作業を行なって"
+"ください。また、既に設定済みのネットワークカードの設定を変更するには、 <xref "
+"linkend=\"sec.network.yast.netcard.change\"/> をお読みください。"
 
 #. Tag: para
 #: net_yast.xml:73
@@ -116,6 +149,9 @@ msgid ""
 "machine and name the servers to be used. For more information, see <xref "
 "linkend=\"sec.network.yast.change.host\"/> ."
 msgstr ""
+"<guimenu>ホスト名／DNS</guimenu> のタブでは、マシンに設定するホスト名や、使用すべき"
+"ネームサーバなどを設定します。詳しくは <xref linkend=\"sec.network.yast.change.host\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: net_yast.xml:78
@@ -124,18 +160,20 @@ msgid ""
 "The <guimenu>Routing</guimenu> tab is used for the configuration of routing. "
 "See <xref linkend=\"sec.network.yast.change.route\"/> for more information."
 msgstr ""
+"<guimenu>ルーティング</guimenu> タブでは、ルーティングに関連する設定を行ないます。"
+"詳しくは <xref linkend=\"sec.network.yast.change.route\"/> をお読みください。"
 
 #. Tag: title
 #: net_yast.xml:83
 #, no-c-format
 msgid "Configuring Network Settings"
-msgstr ""
+msgstr "ネットワークの設定"
 
 #. Tag: title
 #: net_yast.xml:94
 #, no-c-format
 msgid "Configuring Global Networking Options"
-msgstr ""
+msgstr "グローバルネットワークオプションの設定"
 
 #. Tag: para
 #: net_yast.xml:95
@@ -146,12 +184,16 @@ msgid ""
 "options, such as the use of &nm;, IPv6 and DHCP client options. These "
 "settings are applicable for all network interfaces."
 msgstr ""
+"&yast; の <guimenu>ネットワークの設定</guimenu> モジュール内の <guimenu>"
+"グローバルオプション</guimenu> タブでは、 &nm; や IPv6 の使用可否のほか、"
+" DHCP クライアントオプションなどを設定することができます。これらの設定は、"
+"全てのネットワークインターフェイスに適用されます。"
 
 #. Tag: title
 #: net_yast.xml:103
 #, no-c-format
 msgid "&nm; Provided by Workstation Extension"
-msgstr ""
+msgstr "&nm; の提供はワークステーション拡張を必要とする件について"
 
 #. Tag: para
 #: net_yast.xml:104
@@ -160,6 +202,8 @@ msgid ""
 "&nm; is now provided by the Workstation Extension. To install &nm;, activate "
 "the Workstation Extension repository, and select the &nm; packages."
 msgstr ""
+"&nm; はワークステーション拡張で提供されています。 &nm; をインストールするには、"
+"ワークステーション拡張リポジトリを有効化したあと、 &nm; パッケージを選択してください。"
 
 #. Tag: para
 #: net_yast.xml:110
@@ -179,6 +223,19 @@ msgid ""
 "information on &nm;, see <xref linkend=\"cha.nm\"/>.</phrase> <phrase os="
 "\"sles\">For more information on &nm;, see the &sled; documentation.</phrase>"
 msgstr ""
+"<guimenu>ネットワークの設定方法</guimenu> では、ネットワークの接続を管理するための"
+"方法を選択します。 &nm; のデスクトップアプレットを使用して全てのネットワーク"
+"インターフェイスを管理したい場合は、 <guimenu>&nm; サービス</guimenu> を選択します。"
+" &nm; は有線ネットワークと無線ネットワークを切り替えて使用する場合にも便利な仕組みです。"
+"デスクトップ環境を動作させていない場合や、お使いのコンピュータが &xen; サーバや"
+"仮想化システムであるような場合、もしくは DHCP や DNS などのネットワークサービスを"
+"提供しているような場合は、 <guimenu>Wicked サービス</guimenu> を選択します。"
+"なお、 &nm; を使用する場合は、ネットワークの設定は <command>nm-applet</command> "
+"を利用して行なうことになりますので、 <guimenu>概要</guimenu> , <guimenu>ホスト名／"
+"DNS</guimenu> , <guimenu>ルーティング</guimenu> などのタブは無効化され、選択"
+"できなくなります。 <phrase os=\"sled;osuse\">&nm; について、詳しくは <xref "
+"linkend=\"cha.nm\"/> をお読みください。</phrase> <phrase os=\"sles\">&nm; "
+"について、詳しくは &sled; のドキュメンテーションをお読みください。</phrase>"
 
 #. Tag: para
 #: net_yast.xml:126
@@ -192,6 +249,13 @@ msgid ""
 "loads the IPv6 module automatically. This setting will be applied after "
 "reboot."
 msgstr ""
+"<guimenu>IPv6 プロトコル設定</guimenu> では、 IPv6 プロトコルを使用するかどうかを"
+"選択します。 IPv6 は、 IPv4 と共に使用することができます。既定では IPv6 が有効化"
+"されています。しかしながら、 IPv6 を使用していないネットワークの場合は、"
+" IPv6 プロトコルを無効化したほうが高速に動作しますので、この場合は <guimenu>IPv6 "
+"を有効にする</guimenu> のチェックを外してください。 IPv6 を無効化すると、カーネルは"
+" IPv6 モジュールを自動では読み込まなくなります。また、この設定は次回の再起動から"
+"有効になります。"
 
 #. Tag: para
 #: net_yast.xml:135
@@ -209,6 +273,18 @@ msgid ""
 "same network interface and, therefore, the same hardware address, specify a "
 "unique free-form identifier here."
 msgstr ""
+"<guimenu>DHCP クライアントオプション</guimenu> では、 DHCP クライアントに対する"
+"設定を行なうことができます。 <!-- This option is still available on SLED11 SP1b4 --> <!-- "
+"2014-04-17, ke: I no longer see this in SLED/SLES 12 If you want the DHCP "
+"client to ask the server to always broadcast its responses, check "
+"<guimenu>Request Broadcast Response</guimenu>. It may be needed if your "
+"machine is moving between different networks. --> <guimenu>DHCP クライアント"
+"識別子</guimenu> はネットワーク内で唯一とならなければならない値を入力する項目で、"
+"何も指定しない場合はネットワークインターフェイスのハードウエアアドレスを使用します。"
+"ただし、同じネットワークインターフェイスを利用して複数の仮想マシンを動作させている"
+"ような場合は、複数の仮想マシンが不同じハードウエアアドレスになってしまいますので、"
+"それぞれで別々の識別子を入力する必要があります (記入に際してのルールはありません。"
+"自由記入です) 。"
 
 #. Tag: para
 #: net_yast.xml:150
@@ -224,6 +300,15 @@ msgid ""
 "HOSTNAME</filename> ). Make the option field empty for not sending any host "
 "name."
 msgstr ""
+"<guimenu>送信するホスト名</guimenu> では、 DHCP クライアントが DHCP サーバに"
+"送信する際の、ホスト名オプションの値を文字列で指定します。 DHCP サーバによっては、"
+"ネームサーバのゾーン (正引きおよび逆引き) を更新しますが、この際に <guimenu>送信する"
+"ホスト名</guimenu> の値を利用して更新を行なうものがあります (動的 DNS) 。"
+"また、 DHCP サーバによっては <guimenu>送信するホスト名</guimenu> に特定の文字列"
+"が含まれていることを確認して、応答を送信するものもあります。なお、現在のホスト名"
+"を送信したい場合は、 <literal>AUTO</literal> のままにしておいてください"
+" (ホスト名は <filename>/etc/hostname</filename> に設定されます) 。また、何も"
+"ホスト名を送信したくない場合は、何も入力しないでください。"
 
 #. Tag: para
 #: net_yast.xml:161
@@ -232,12 +317,14 @@ msgid ""
 "If you do not want to change the default route according to the information "
 "from DHCP, deactivate <guimenu>Change Default Route via DHCP</guimenu> ."
 msgstr ""
+"また、 DHCP サーバからの情報でデフォルトルートを更新したくない場合は、"
+" <guimenu>DHCP で既定のルートを変更する</guimenu> のチェックを外してください。"
 
 #. Tag: title
 #: net_yast.xml:167
 #, no-c-format
 msgid "Changing the Configuration of a Network Card"
-msgstr ""
+msgstr "ネットワークカードの設定変更"
 
 #. Tag: para
 #: net_yast.xml:168
@@ -250,12 +337,18 @@ msgid ""
 "to adjust the card configuration using the <guimenu>General</guimenu> , "
 "<guimenu>Address</guimenu> and <guimenu>Hardware</guimenu> tabs."
 msgstr ""
+"ネットワークカードの設定を変更するには、 &yast; の <guimenu>ネットワークの設定"
+"</guimenu> から、 <guimenu>概要</guimenu> タブを選択します。すると、検出された"
+"カードの一覧が表示されますので、必要な項目を選んで <guimenu>編集</guimenu> を押します。"
+"すると、 <guimenu>ネットワークカードの設定</guimenu> ダイアログが表示されますので、"
+"必要に応じて <guimenu>一般</guimenu> , <guimenu>アドレス</guimenu> ,"
+" <guimenu>ハードウエア</guimenu> の各設定を変更してください。"
 
 #. Tag: title
 #: net_yast.xml:178
 #, no-c-format
 msgid "Configuring IP Addresses"
-msgstr ""
+msgstr "IP アドレスの設定"
 
 #. Tag: para
 #: net_yast.xml:180
@@ -269,6 +362,14 @@ msgid ""
 "or IPv6) or a <guimenu>Dynamic Address</guimenu> assigned via <guimenu>DHCP</"
 "guimenu> or <guimenu>Zeroconf</guimenu> or both."
 msgstr ""
+"IP アドレスそのものの設定や、 IP アドレスの割り当て方法の設定を行なう場合は、"
+" <guimenu>ネットワークカードの設定</guimenu> ダイアログ内の <guimenu>アドレス</guimenu> "
+"タブで行ないます。ここでは IPv4 と IPv6 の両方に対応しています。ここでは、"
+" <guimenu>リンクおよび IP の設定無し</guimenu> (ボンディングデバイスとして使用する"
+"場合に指定します) のほか、 <guimenu>固定 IP アドレス</guimenu> (IPv4 または IPv6) "
+"や <guimenu>可変 IP アドレス</guimenu> のいずれかを選択します。なお、 <guimenu>可変 "
+"IP アドレス</guimenu> を選択した場合は、 <guimenu>DHCP</guimenu> もしくは"
+"<guimenu>Zeroconf</guimenu> のいずれか、もしくはその両方を選択することができます。"
 
 #. Tag: para
 #: net_yast.xml:190
@@ -278,6 +379,9 @@ msgid ""
 "<guimenu>DHCP Version 4 Only</guimenu> (for IPv4), <guimenu>DHCP Version 6 "
 "Only</guimenu> (for IPv6) or <guimenu>DHCP Both Version 4 and 6</guimenu> ."
 msgstr ""
+"また、 <guimenu>可変 IP アドレス</guimenu> を選択した場合は、 <guimenu>バージョン 4 "
+"のみでの DHCP</guimenu> (IPv4), <guimenu>バージョン 6 のみでの DHCP</guimenu> (IPv6), "
+"<guimenu>バージョン 4 と 6 の両方での DHCP</guimenu> のいずれかを選択します。"
 
 #. Tag: para
 #: net_yast.xml:195
@@ -288,12 +392,15 @@ msgid ""
 "DHCP. <phrase os=\"sled\">On &sled;, where &nm; is active by default, all "
 "network cards are configured.</phrase>"
 msgstr ""
+"また、インストールの時点でリンクが確立しているネットワークカードがあれば、それらのうちの"
+"最初のネットワークカードが DHCP で設定されます。 <phrase os=\"sled\">また、 &sled;"
+" では、 &nm; が既定で有効化され、全てのネットワークカードが設定されます。</phrase>"
 
 #. Tag: title
 #: net_yast.xml:202
 #, no-c-format
 msgid "&zseries; and DHCP"
-msgstr ""
+msgstr "&zseries; での DHCP について"
 
 #. Tag: para
 #: net_yast.xml:203
@@ -303,6 +410,9 @@ msgid ""
 "with network cards that have a MAC address. This is only the case with OSA "
 "and OSA Express cards."
 msgstr ""
+"&zseries; プラットフォームでは、 DHCP ベースのアドレス設定は MAC アドレスを持つ"
+"ネットワークカードでしかご利用いただけません。これは OSA および OSA Express カード"
+"にのみ当てはまります。"
 
 #. Tag: para
 #: net_yast.xml:209
@@ -317,6 +427,13 @@ msgid ""
 "interface, an <guimenu>DHCP Client Identifier</guimenu> is necessary to "
 "distinguish them."
 msgstr ""
+"DHCP は、インターネットサービスプロバイダ (Internet Service Provider; ISP) から"
+"固定の IP アドレスが割り当てられない DSL 回線をお使いの場合には、使用しておくべき"
+"設定となります。なお、 DHCP を使用する場合は、 <guimenu>ネットワーク設定</guimenu> "
+"ダイアログ内の <guimenu>グローバルオプション</guimenu> 内にある <guimenu>DHCP "
+"クライアントオプション</guimenu> についてもご確認ください。また、同じインターフェイス"
+"を利用して複数の仮想ホストを動作させるような場合は、それらを区別するために"
+" <guimenu>DHCP クライアント識別子</guimenu> の設定が必要となる場合があります。"
 
 #. Tag: para
 #: net_yast.xml:219
@@ -325,6 +442,8 @@ msgid ""
 "DHCP is a good choice for client configuration but it is not ideal for "
 "server configuration. To set a static IP address, proceed as follows:"
 msgstr ""
+"また、 DHCP はクライアント側を設定する際には適切な選択ではありますが、サーバとして"
+"設定する場合には不適切です。固定の IP アドレスを設定するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: net_yast.xml:225
@@ -334,6 +453,8 @@ msgid ""
 "guimenu> tab of the &yast; network card configuration module and click "
 "<guimenu>Edit</guimenu> ."
 msgstr ""
+"&yast; のネットワーク設定モジュールの <guimenu>概要</guimenu> タブ内で、検出された"
+"ネットワークカードのうちのいずれかを選択して、 <guimenu>編集</guimenu> を押します。"
 
 #. Tag: para
 #: net_yast.xml:232
@@ -342,6 +463,8 @@ msgid ""
 "In the <guimenu>Address</guimenu> tab, choose <guimenu>Statically Assigned "
 "IP Address</guimenu> ."
 msgstr ""
+"<guimenu>アドレス</guimenu> タブでは、 <guimenu>固定 IP アドレス</guimenu> を"
+"選択します。"
 
 #. Tag: para
 #: net_yast.xml:238
@@ -352,6 +475,10 @@ msgid ""
 "IPv6 address is used, use <guimenu>Subnet Mask</guimenu> for prefix length "
 "in format <literal>/64</literal> ."
 msgstr ""
+"<guimenu>IP アドレス</guimenu> の欄にアドレスを入力します。 IPv4 と IPv6 の両方の"
+"アドレスを使用することができます。また、 <guimenu>サブネットマスク</guimenu> には"
+"ネットマスクを指定します。 IPv6 アドレスの場合は、 <guimenu>サブネットマスク</guimenu> "
+"の項目には <literal>/64</literal> のような形式で指定します。"
 
 #. Tag: para
 #: net_yast.xml:244
@@ -361,18 +488,20 @@ msgid ""
 "this address, which will be written to the <filename>/etc/hosts</filename> "
 "configuration file."
 msgstr ""
+"また、必要であれば <guimenu>ホスト名</guimenu> の欄に、完全修飾ドメイン名を指定"
+"することができます。この設定は <filename>/etc/hosts</filename> 内に書き込まれます。"
 
 #. Tag: para
 #: net_yast.xml:256
 #, no-c-format
 msgid "To activate the configuration, click <guimenu>OK</guimenu> ."
-msgstr ""
+msgstr "設定を反映させるには、 <guimenu>OK</guimenu> を押します。"
 
 #. Tag: title
 #: net_yast.xml:279
 #, no-c-format
 msgid "Interface Activation and Link Detection"
-msgstr ""
+msgstr "インターフェイスの有効化とリンクの検出"
 
 #. Tag: para
 #: net_yast.xml:280
@@ -386,6 +515,11 @@ msgid ""
 "<literal>LINK_REQUIRED=no</literal> to the configuration file of the "
 "interface in <filename>/etc/sysconfig/network/ifcfg</filename> ."
 msgstr ""
+"ネットワークインターフェイスを有効化する際、 <command>wicked</command> は物理的な"
+"リンク状況を確認して、リンクが検出できた場合にのみ IP 設定を適用します。リンクの"
+"確率とは関係なくアドレスを設定したい場合 (たとえば特定のアドレスで待ち受ける"
+"サービスをテストしたいような場合) は、 <filename>/etc/sysconfig/network/ifcfg-<replaceable>インターフェイス名</replaceable></filename> "
+"設定ファイル内に <literal>LINK_REQUIRED=no</literal> を追加してください。"
 
 #. Tag: para
 #: net_yast.xml:289
@@ -395,6 +529,9 @@ msgid ""
 "<literal>LINK_READY_WAIT=<replaceable>5</replaceable></literal> to specify "
 "the timeout for waiting for a link in seconds."
 msgstr ""
+"また、リンクを待機する秒数を指定したい場合は、"
+" <literal>LINK_READY_WAIT=<replaceable>5</replaceable></literal> のような"
+"指定を行なうこともできます。"
 
 #. Tag: para
 #: net_yast.xml:294
@@ -404,6 +541,9 @@ msgid ""
 "files, refer to <xref linkend=\"sec.network.manconf.files.ifcfg\"/> and "
 "<command>man 5 ifcfg</command> ."
 msgstr ""
+"<filename>ifcfg-*</filename> 設定ファイルについて、詳しくは"
+" <xref linkend=\"sec.network.manconf.files.ifcfg\"/> および <command>man 5 ifcfg</command> "
+"をお読みください。"
 
 #. Tag: para
 #: net_yast.xml:300
@@ -414,24 +554,28 @@ msgid ""
 "<xref linkend=\"sec.network.yast.change.host\"/> . To configure a gateway, "
 "proceed as described in <xref linkend=\"sec.network.yast.change.route\"/> ."
 msgstr ""
+"固定のアドレスを使用する場合は、ネームサーバやデフォルトゲートウエイも自動では"
+"設定されません。ネームサーバを設定するには <xref linkend=\"sec.network.yast.change.host\"/> "
+"の手順を、デフォルトゲートウエイを設定するには <xref linkend=\"sec.network.yast.change.route\"/> "
+"の手順をお読みください。"
 
 #. Tag: title
 #: net_yast.xml:309
 #, no-c-format
 msgid "Configuring Multiple Addresses"
-msgstr ""
+msgstr "複数アドレスの設定"
 
 #. Tag: para
 #: net_yast.xml:310
 #, no-c-format
 msgid "One network device can have multiple IP addresses."
-msgstr ""
+msgstr "1 つのネットワークデバイスに対して、複数の IP アドレスを設定することができます。"
 
 #. Tag: title
 #: net_yast.xml:314
 #, no-c-format
 msgid "Aliases Are a Compatibility Feature"
-msgstr ""
+msgstr "エイリアス／ラベル機能について"
 
 #. Tag: para
 #: net_yast.xml:315
@@ -441,6 +585,9 @@ msgid ""
 "IPv6 they will be ignored. Using <command>iproute2</command> network "
 "interfaces can have one or more addresses."
 msgstr ""
+"エイリアスやラベルと呼ばれる機能は、 IPv4 でのみ動作します。 IPv6 の場合は無視されます。"
+" <command>iproute2</command> を利用して、ネットワークインターフェイスに"
+"複数のアドレスを設定してください。"
 
 #. Tag: para
 #: net_yast.xml:321
@@ -449,6 +596,8 @@ msgid ""
 "Using &yast; to set additional addresses for your network card, proceed as "
 "follows:"
 msgstr ""
+"&yast; を利用してネットワークカードに追加のアドレスを設定するには、下記の手順で"
+"実施します:"
 
 #. Tag: para
 #: net_yast.xml:334
@@ -457,6 +606,8 @@ msgid ""
 "In the <menuchoice> <guimenu>Address</guimenu> <guimenu>Additional "
 "Addresses</guimenu> </menuchoice> tab, click <guimenu>Add</guimenu> ."
 msgstr ""
+"<menuchoice> <guimenu>アドレス</guimenu> <guimenu>追加アドレス</guimenu> "
+"</menuchoice> で、 <guimenu>追加</guimenu> ボタンを押します。"
 
 #. Tag: para
 #: net_yast.xml:340
@@ -466,12 +617,15 @@ msgid ""
 "guimenu> , and <guimenu>Netmask</guimenu> . Do not include the interface "
 "name in the alias name."
 msgstr ""
+"それぞれ <guimenu>IPv4 アドレスラベル</guimenu> , <guimenu>IP アドレス</"
+"guimenu> , <guimenu>ネットマスク</guimenu> をそれぞれ指定します。なお、"
+"別名内にインターフェイス名は入れないでください。"
 
 #. Tag: title
 #: net_yast.xml:354
 #, no-c-format
 msgid "Changing the Device Name and Udev Rules"
-msgstr ""
+msgstr "デバイス名の変更と udev ルール"
 
 #. Tag: para
 #: net_yast.xml:355
@@ -483,6 +637,11 @@ msgid ""
 "latter option is preferable in large servers to simplify hotplugging of "
 "cards. To set these options with &yast;, proceed as follows:"
 msgstr ""
+"使用するネットワークカードの名前については、必要に応じて変更することができます。"
+"ネットワークカード同士の判別は、ハードウエア (MAC) アドレスのほか、コンピュータ"
+"内のバス ID で行ないます。巨大なサーバを構成するような場合は、後者を指定しておくと"
+"ネットワークカードを後から接続 (ホットプラグ) することができるようになります。"
+"これらの設定を &yast; で行なうには、下記の手順で行ないます:"
 
 #. Tag: para
 #: net_yast.xml:364
@@ -492,6 +651,9 @@ msgid ""
 "guimenu> tab of the &yast; <guimenu>Network Settings</guimenu> dialog and "
 "click <guimenu>Edit</guimenu> ."
 msgstr ""
+"&yast; の <guimenu>ネットワーク設定</guimenu> ダイアログ内の <guimenu>概要</guimenu> "
+"タブで、検出されたネットワークカードのうちいずれかを選択し、 <guimenu>編集</guimenu> "
+"を押します。"
 
 #. Tag: para
 #: net_yast.xml:371
@@ -500,6 +662,9 @@ msgid ""
 "Go to the <guimenu>Hardware</guimenu> tab. The current device name is shown "
 "in <guimenu>Udev Rules</guimenu> . Click <guimenu>Change</guimenu> ."
 msgstr ""
+"<guimenu>ハードウエア</guimenu> タブに移動します。現在のデバイス名が、 <guimenu>"
+"udev ルール</guimenu> 内に表示されています。ここから <guimenu>変更</guimenu> "
+"を押します。"
 
 #. Tag: para
 #: net_yast.xml:377
@@ -509,6 +674,9 @@ msgid ""
 "guimenu> or <guimenu>Bus ID</guimenu> . The current MAC address and bus ID "
 "of the card are shown in the dialog."
 msgstr ""
+"まずはネットワークカード同士の区別方法を、 <guimenu>MAC アドレス</guimenu> もしくは"
+" <guimenu>バス ID</guimenu> の中から選択します。それぞれ現在の MAC アドレスと"
+"バス ID がダイアログ内に表示されます。"
 
 #. Tag: para
 #: net_yast.xml:384
@@ -517,12 +685,14 @@ msgid ""
 "To change the device name, check the <guimenu>Change Device Name</guimenu> "
 "option and edit the name."
 msgstr ""
+"デバイス名を変更するには、 <guimenu>デバイス名</guimenu> の欄に新しいデバイス名を"
+"入力します。"
 
 #. Tag: title
 #: net_yast.xml:397
 #, no-c-format
 msgid "Changing Network Card Kernel Driver"
-msgstr ""
+msgstr "ネットワークカードのカーネルドライバの変更"
 
 #. Tag: para
 #: net_yast.xml:398
@@ -534,6 +704,10 @@ msgid ""
 "specify options for the kernel driver. To set these options with &yast;, "
 "proceed as follows:"
 msgstr ""
+"ネットワークカードによっては、複数のカーネルドライバの中からいずれかを選択することが"
+"できます。カードが既に設定済みの場合、 &yast; では利用可能なドライバの一覧を表示して、"
+"その中からいずれかを選択することができます。また、ここではカーネルドライバに対する"
+"オプションを設定することもできます。 &yast; で設定を変更するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: net_yast.xml:407
@@ -543,12 +717,15 @@ msgid ""
 "guimenu> tab of the &yast; Network Settings module and click <guimenu>Edit</"
 "guimenu> ."
 msgstr ""
+"&yast; の <guimenu>ネットワーク設定</guimenu> ダイアログ内の <guimenu>概要</guimenu> "
+"タブで、検出されたネットワークカードのうちいずれかを選択し、 <guimenu>編集</guimenu> "
+"を押します。"
 
 #. Tag: para
 #: net_yast.xml:414
 #, no-c-format
 msgid "Go to the <guimenu>Hardware</guimenu> tab."
-msgstr ""
+msgstr "<guimenu>ハードウエア</guimenu> タブに移動します。"
 
 #. Tag: para
 #: net_yast.xml:419
@@ -561,12 +738,17 @@ msgid ""
 "<replaceable>VALUE</replaceable> . If more options are used, they should be "
 "space-separated."
 msgstr ""
+"使用すべきカーネルドライバを、 <guimenu>モジュール名</guimenu> の欄で選択します。"
+"また、 <!-- help with line-breaks to avoid xmlformat introduced spaces "
+"right after the opening <command> --> <command>=</command> = <replaceable>値"
+"</replaceable> の形式で、 <guimenu>オプション</guimenu> 欄に必要なオプションを"
+"指定します。複数のオプションを指定したい場合は、スペースで区切って指定してください。"
 
 #. Tag: title
 #: net_yast.xml:437
 #, no-c-format
 msgid "Activating the Network Device"
-msgstr ""
+msgstr "ネットワークデバイスの有効化"
 
 #. Tag: para
 #: net_yast.xml:439
@@ -576,6 +758,10 @@ msgid ""
 "your device to either start during boot, on cable connection, on card "
 "detection, manually, or never. To change device start-up, proceed as follows:"
 msgstr ""
+"<command>wicked</command> を利用する方法を選択した場合、ネットワークデバイスを"
+"システムの起動時に開始するか、ケーブルを接続したときに開始するか、カードを"
+"検出した際に開始するか、もしくは手作業で開始するか、何も有効化しないかを"
+"選択することができます。開始方法を変更するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: net_yast.xml:454
@@ -584,6 +770,8 @@ msgid ""
 "In the <guimenu>General</guimenu> tab, select the desired entry from "
 "<guimenu>Device Activation</guimenu> ."
 msgstr ""
+"<guimenu>一般</guimenu> タブ内にある <guimenu>デバイスの有効化</guimenu> "
+"で、いずれかを選択します。"
 
 #. Tag: para
 #: net_yast.xml:458
@@ -603,12 +791,25 @@ msgid ""
 "<option>wicked</option> service if <command>wicked</command> is active. Use "
 "this if you use an NFS or iSCSI root file system."
 msgstr ""
+"<guimenu>起動時</guimenu> を選択すると、システムの起動時にデバイスが開始されます。"
+" <guimenu>ケーブル接続時</guimenu> を選択すると、物理的な接続状況を監視して、接続が"
+"確認できると開始されます。 <guimenu>ホットプラグ</guimenu> を選択すると、インターフェイスが"
+"利用可能な状態になると開始されます。これは <guimenu>起動時</guimenu> の選択とほぼ"
+"同じ動作ですが、システムの起動時にデバイスが存在していなくても、エラーにならない点が"
+"異なります。また、 <guimenu>手動</guimenu> を選択すると、 <command>ifup</command> "
+"で手作業で開始する設定になります。 <guimenu>開始しない</guimenu> を選択すると、"
+"デバイスを開始しなくなります。また、 <guimenu>NFSroot</guimenu> の選択肢は、"
+" <guimenu>起動時</guimenu> とほぼ同じ動作になりますが、 <command>systemctl stop network</command> "
+"を実行してもインターフェイスがシャットダウンされなくなります。また、 <command>wicked</command> が"
+"有効な際は、 <option>network</option> サービスが <option>wicked</option> サービスの"
+"起動も扱うようになります。この選択肢は、 NFS や iSCSI を介してルートファイルシステムに"
+"アクセスする際に選択します。"
 
 #. Tag: title
 #: net_yast.xml:482
 #, no-c-format
 msgid "NFS as a Root File System"
-msgstr ""
+msgstr "NFS をルートファイルシステムで使用する場合の注意"
 
 #. Tag: para
 #: net_yast.xml:483
@@ -618,6 +819,9 @@ msgid ""
 "NFS share, you need to be careful when configuring the network device with "
 "which the NFS share is accessible."
 msgstr ""
+"ルートパーティションを NFS 共有経由でマウントするシステム (ディスクを持たない"
+"システム) の場合、 NFS 共有にアクセスするネットワークデバイスについては、設定を"
+"注意して行なう必要があります。"
 
 #. Tag: para
 #: net_yast.xml:488
@@ -632,12 +836,19 @@ msgid ""
 "linkend=\"sec.network.yast.change.start\"/> and choose <guimenu>On NFSroot</"
 "guimenu> in the <guimenu>Device Activation</guimenu> pane."
 msgstr ""
+"システムをシャットダウンしたり再起動したりする際、既定の処理順序はネットワークの"
+"接続を切断してからルートパーティションをマウント解除しますが、ルートパーティションが"
+" NFS である場合、この順序で処理してしまうと、ネットワークが先に切れてしまうことから、"
+" NFS のマウントを正しく解除することができなくなってしまいます。ネットワークデバイスが"
+"無効化されないようにするには、 <xref linkend=\"sec.network.yast.change.start\"/> "
+"で説明しているとおりネットワークデバイスの設定ウインドウを開いて、 <guimenu>デバイスの"
+"有効化</guimenu> で <guimenu>NFSroot</guimenu> を選択してください。"
 
 #. Tag: title
 #: net_yast.xml:501
 #, no-c-format
 msgid "Setting Up Maximum Transfer Unit Size"
-msgstr ""
+msgstr "最大転送単位サイズの設定"
 
 #. Tag: para
 #: net_yast.xml:502
@@ -648,6 +859,11 @@ msgid ""
 "bandwidth efficiency. However, large packets can block up a slow interface "
 "for some time, increasing the lag for further packets."
 msgstr ""
+"インターフェイスに対しては、最大転送単位 (MTU) を設定することができます。 MTU とは、"
+"最も大きいパケットのサイズをバイト単位で表わしたもので、 MTU を大きくすればするほど、"
+"帯域を効率的に使用することができるようになります。ただし、遅いインターフェイスで MTU "
+"を大きくしすぎると、その送信にかかる時間が大きくなってしまい、インターフェイスを長い時間"
+"占有してしまうことになりますので、即時性が損なわれてしまいます。"
 
 #. Tag: para
 #: net_yast.xml:510
@@ -657,6 +873,9 @@ msgid ""
 "<guimenu>System</guimenu> <guimenu>Network Settings</guimenu> </menuchoice> "
 "and click <guimenu>Edit</guimenu> ."
 msgstr ""
+"&yast; から <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu> "
+"</menuchoice> を選択して、検出されたネットワークカードの中からいずれかを選択し、"
+" <guimenu>編集</guimenu> を押します。"
 
 #. Tag: para
 #: net_yast.xml:517
@@ -665,12 +884,14 @@ msgid ""
 "In the <guimenu>General</guimenu> tab, select the desired entry from the "
 "<guimenu>Set MTU</guimenu> list."
 msgstr ""
+"<guimenu>一般</guimenu> タブを選択し、 <guimenu>最大転送単位 (MTU)</guimenu> "
+"の欄内にあるドロップダウンボックスで、値を入力するか選択を行ないます。"
 
 #. Tag: title
 #: net_yast.xml:531
 #, no-c-format
 msgid "PCIe Multifunction Devices"
-msgstr ""
+msgstr "PCIe 多機能デバイス"
 
 #. Tag: para
 #: net_yast.xml:532
@@ -682,19 +903,23 @@ msgid ""
 "YaST network module ( <command>yast2 lan</command> ) excludes <quote>storage "
 "only devices</quote> for network configuration."
 msgstr ""
+"LAN, iSCSI, FCoE のそれぞれに対応する多機能型デバイスを利用することができます。"
+" YaST の FCoE クライアント ( <command>yast2 fcoe-client</command> ) では、ユーザ側で"
+" FCoE に使用するかどうかを選択できるようにするため、追加の列内にプライベートフラグが"
+"表示されます。 YaST のネットワークモジュール ( <command>yast2 lan</command> ) では、"
+" <quote>ストレージのみ</quote> に設定したネットワークインターフェイスは除外して表示します。"
 
 #. Tag: para
 #: net_yast.xml:539
 #, no-c-format
-msgid ""
-"For more information about FCoE, see <xref linkend=\"sec.fcoe.yast\"/> ."
-msgstr ""
+msgid "For more information about FCoE, see <xref linkend=\"sec.fcoe.yast\"/> ."
+msgstr "FCoE について、詳しくは <xref linkend=\"sec.fcoe.yast\"/> をお読みください。"
 
 #. Tag: title
 #: net_yast.xml:545
 #, no-c-format
 msgid "Infiniband Configuration for IP-over-InfiniBand (IPoIB)"
-msgstr ""
+msgstr "IP-over-InfiniBand (IPoIB) のための Infiniband 設定"
 
 #. Tag: para
 #: net_yast.xml:548
@@ -704,6 +929,9 @@ msgid ""
 "guimenu> <guimenu>Network Settings</guimenu> </menuchoice> and click "
 "<guimenu>Edit</guimenu> ."
 msgstr ""
+"&yast; を起動し、 <menuchoice> <guimenu>システム</guimenu> "
+"<guimenu>ネットワークの設定</guimenu> </menuchoice> を選択して、表示された"
+" Infiniband デバイスを選択して <guimenu>編集</guimenu> を押します。"
 
 #. Tag: para
 #: net_yast.xml:555
@@ -713,6 +941,9 @@ msgid ""
 "InfiniBand</guimenu> (IPoIB) modes: <guimenu>connected</guimenu> (default) "
 "or <guimenu>datagram</guimenu> ."
 msgstr ""
+"<guimenu>一般</guimenu> タブでは、 <guimenu>IP-over-InfiniBand</guimenu> (IPoIB) "
+"のモードのうち、 <guimenu>connected</guimenu> (既定値) もしくは <guimenu>datagram</guimenu> "
+"の中からいずれかを選択します。"
 
 #. Tag: para
 #: net_yast.xml:567
@@ -721,12 +952,14 @@ msgid ""
 "For more information about InfiniBand, see <filename>/usr/src/linux/"
 "Documentation/infiniband/ipoib.txt</filename> ."
 msgstr ""
+"InfiniBand について、詳しくは <filename>/usr/src/linux/"
+"Documentation/infiniband/ipoib.txt</filename> をお読みください。"
 
 #. Tag: title
 #: net_yast.xml:573
 #, no-c-format
 msgid "Configuring the Firewall"
-msgstr ""
+msgstr "ファイアウオールの設定"
 
 #. Tag: para
 #: net_yast.xml:574
@@ -737,6 +970,9 @@ msgid ""
 "firewall configuration for your device as part of the device setup. Proceed "
 "as follows:"
 msgstr ""
+"<xref linkend=\"sec.security.firewall.firewalld\"/> で説明している詳細なファイアウオール"
+"設定を行なっていない場合は、ネットワークインターフェイスの設定手順のうちの 1 つで、"
+"基本的なファイアウオール設定を行なうことができます。具体的には下記の手順で行ないます:"
 
 #. Tag: para
 #: net_yast.xml:582
@@ -747,6 +983,9 @@ msgid ""
 "tab, select a card from the list of detected cards and click <guimenu>Edit</"
 "guimenu> ."
 msgstr ""
+"&yast; を開いて、 <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワーク"
+"の設定</guimenu> </menuchoice> を選択します。 <guimenu>概要</guimenu> タブが表示されたら、"
+"検出済みのネットワークカードの一覧からいずれかを選択し、 <guimenu>編集</guimenu> を押します。"
 
 #. Tag: para
 #: net_yast.xml:590
@@ -755,6 +994,8 @@ msgid ""
 "Enter the <guimenu>General</guimenu> tab of the <guimenu>Network Settings</"
 "guimenu> dialog."
 msgstr ""
+"<guimenu>ネットワークカードの設定</guimenu> ダイアログ内にある <guimenu>一般</guimenu> タブを"
+"選択します。"
 
 #. Tag: para
 #: net_yast.xml:596
@@ -763,12 +1004,14 @@ msgid ""
 "Determine the <guimenu>Firewall Zone</guimenu> to which your interface "
 "should be assigned. The following options are available:"
 msgstr ""
+"<guimenu>ファイアウオールゾーン</guimenu> 内のリストボックスで、インターフェイスを"
+"どのゾーンに割り当てるのかを選択します。下記の選択肢が用意されています:"
 
 #. Tag: term
 #: net_yast.xml:602
 #, no-c-format
 msgid "Firewall Disabled"
-msgstr ""
+msgstr "ファイアウオールを無効にする"
 
 #. Tag: para
 #: net_yast.xml:604
@@ -778,12 +1021,14 @@ msgid ""
 "does not run. Only use this option if your machine is part of a greater "
 "network that is protected by an outer firewall."
 msgstr ""
+"この選択肢はファイアウオールが無効化されていて、動作していない場合に表示されます。"
+"この設定は、別途のファイアウオールで保護された環境内に接続している場合にのみご利用ください。"
 
 #. Tag: term
 #: net_yast.xml:612
 #, no-c-format
 msgid "Automatically Assign Zone"
-msgstr ""
+msgstr "自動ゾーン割り当て"
 
 #. Tag: para
 #: net_yast.xml:614
@@ -794,12 +1039,16 @@ msgid ""
 "zone which contains the keyword <literal>any</literal> or the external zone "
 "will be used for such an interface."
 msgstr ""
+"このオプションはファイアウオールが有効化されている場合にのみ表示されます。"
+"ファイアウオールが動作すると、ファイアウオールがインターフェイスを自動的にゾーン"
+"に割り当てます。 <literal>any</literal> というキーワードを含むゾーン、もしくは"
+"外部ゾーンのいずれかに割り当てられます。"
 
 #. Tag: term
 #: net_yast.xml:624
 #, no-c-format
 msgid "Internal Zone (Unprotected)"
-msgstr ""
+msgstr "内部ゾーン (保護無し)"
 
 #. Tag: para
 #: net_yast.xml:626
@@ -811,12 +1060,15 @@ msgid ""
 "connected to the internal network, when the machine has more network "
 "interfaces."
 msgstr ""
+"ファイアウオール自身は動作させるものの、このインターフェイスに対する保護ルールは"
+"何も適用しないゾーンです。この設定は、別途のファイアウオールで保護された環境内に"
+"接続している場合や、外部には全く接続していない場合にお使いください。"
 
 #. Tag: term
 #: net_yast.xml:636
 #, no-c-format
 msgid "Demilitarized Zone"
-msgstr ""
+msgstr "非武装ゾーン"
 
 #. Tag: para
 #: net_yast.xml:638
@@ -827,12 +1079,16 @@ msgid ""
 "be reached from the internal network and from the Internet, but cannot "
 "access the internal network."
 msgstr ""
+"非武装ゾーンとは、内部ネットワークの最前線に立つ追加のゾーンで、その外側には"
+" (攻撃を受けうる) インターネットが存在するゾーンです。このゾーンに割り当てられた"
+"ホストは、内部ネットワークとインターネットの両方から接続することができますが、"
+"インターネット側から内部にはアクセスさせない構成を取るのが一般的です。"
 
 #. Tag: term
 #: net_yast.xml:647
 #, no-c-format
 msgid "External Zone"
-msgstr ""
+msgstr "外部ゾーン"
 
 #. Tag: para
 #: net_yast.xml:649
@@ -842,12 +1098,14 @@ msgid ""
 "other&mdash;presumably hostile&mdash;network traffic. This is the default "
 "option."
 msgstr ""
+"このインターフェイスでファイアウオールを動作させ、全てのネットワークトラフィック"
+"に対して (特に攻撃などから) 保護を適用するゾーンです。この選択肢が既定値になっています。"
 
 #. Tag: title
 #: net_yast.xml:667
 #, no-c-format
 msgid "Configuring an Undetected Network Card"
-msgstr ""
+msgstr "未検出のネットワークカードの設定"
 
 #. Tag: para
 #: net_yast.xml:668
@@ -859,6 +1117,11 @@ msgid ""
 "network device types, such as bridge, bond, TUN or TAP. To configure an "
 "undetected network card (or a special device) proceed as follows:"
 msgstr ""
+"ネットワークカードが正しく検出されなかった場合は、検出済みのネットワークインターフェイス"
+"の一覧内には表示されません。お使いのネットワークカード向けのドライバが存在することが"
+"わかっている場合は、手作業で設定を行なうことができます。このほか、ネットワーク"
+"ブリッジやボンディング、 TUN や TAP と呼ばれる特殊なネットワークインターフェイスに"
+"ついても、手作業で設定を行なうことになります。具体的には、下記の手順で行ないます:"
 
 #. Tag: para
 #: net_yast.xml:678
@@ -868,6 +1131,9 @@ msgid ""
 "guimenu> <guimenu>Overview</guimenu> </menuchoice> dialog in &yast; click "
 "<guimenu>Add</guimenu> ."
 msgstr ""
+"&yast; から <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</"
+"guimenu> <guimenu>概要</guimenu> </menuchoice> を選び、 <guimenu>追加</guimenu> "
+"ボタンを押します。"
 
 #. Tag: para
 #: net_yast.xml:685
@@ -881,6 +1147,12 @@ msgid ""
 "guimenu> to be used for the card and its <guimenu>Options</guimenu> , if "
 "necessary."
 msgstr ""
+"<guimenu>ハードウエアダイアログ</guimenu> 内では、まず <guimenu>デバイスの種類"
+"</guimenu> を選択し、 <guimenu>設定名</guimenu> で選択または入力を行ないます。"
+"お使いのネットワークカードが USB デバイスである場合は、対応するチェックボックスに"
+"チェックを入れてから <guimenu>次へ</guimenu> を押します。それ以外のデバイスである"
+"場合は、 <guimenu>モジュール名</guimenu> にカーネルのモジュール名を入力し、必要で"
+"あれば <guimenu>オプション</guimenu> に必要なオプションを設定します。"
 
 #. Tag: para
 #: net_yast.xml:694
@@ -891,6 +1163,10 @@ msgid ""
 "information about available options, see the <command>ethtool</command> "
 "manual page."
 msgstr ""
+"なお、 <guimenu>ethtool オプション</guimenu> では、 <command>ifup</command> コマンドで"
+"インターフェイスを起動する際、 <command>ethtool</command> コマンドに指定する"
+"オプションを設定します。利用可能なオプションの一覧については、 <command>ethtool</command> "
+"のマニュアルページをお読みください。"
 
 #. Tag: para
 #: net_yast.xml:700
@@ -903,12 +1179,18 @@ msgid ""
 "<command>ifup</command> adds <literal>-s <replaceable>INTERFACE_NAME</"
 "replaceable></literal> to the beginning."
 msgstr ""
+"オプションの文字列が <literal>-</literal> で始まるものの場合 (たとえば"
+" <literal>-K <replaceable>インターフェイス名</replaceable> rx on</literal> など) "
+" は、文字列内の 2 番目の箇所が現在のインターフェイス名に置き換えられます。"
+"それ以外の場合 (たとえば <literal>autoneg off speed 10</literal>) は、"
+"<command>ifup</command> コマンドを実行する際、冒頭に <literal>-s <replaceable>インターフェイス名</"
+"replaceable></literal> を追加します。"
 
 #. Tag: para
 #: net_yast.xml:711
 #, no-c-format
 msgid "Click <guimenu>Next</guimenu> ."
-msgstr ""
+msgstr "<guimenu>次へ</guimenu> を押します。"
 
 #. Tag: para
 #: net_yast.xml:716
@@ -920,6 +1202,10 @@ msgid ""
 "information about the configuration options, see <xref linkend=\"sec.network."
 "yast.netcard.change\"/> ."
 msgstr ""
+"あとは IP アドレスやデバイスの有効化、インターフェイスに割り当てるファイアウオールの"
+"ゾーンなど、残りのオプションを <guimenu>一般</guimenu> , <guimenu>アドレス</guimenu> ,"
+" <guimenu>ハードウエア</guimenu> で設定します。設定項目についての詳細は、 <xref "
+"linkend=\"sec.network.yast.netcard.change\"/> をお読みください。"
 
 #. Tag: para
 #: net_yast.xml:725
@@ -928,18 +1214,20 @@ msgid ""
 "If you selected <guimenu>Wireless</guimenu> as the device type of the "
 "interface, configure the wireless connection in the next dialog."
 msgstr ""
+"なお、 <guimenu>デバイスの種類</guimenu> で <guimenu>無線</guimenu> を選択した"
+"場合は、次のダイアログで無線関連の設定を行ないます。"
 
 #. Tag: para
 #: net_yast.xml:731
 #, no-c-format
 msgid "To activate the new network configuration, confirm the settings."
-msgstr ""
+msgstr "新しいネットワーク設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。"
 
 #. Tag: title
 #: net_yast.xml:738
 #, no-c-format
 msgid "Configuring Host Name and DNS"
-msgstr ""
+msgstr "ホスト名と DNS の設定"
 
 #. Tag: para
 #: net_yast.xml:739
@@ -953,6 +1241,12 @@ msgid ""
 "is automatically filled with the appropriate data. If a static setup is "
 "preferred, set these values manually."
 msgstr ""
+"インストールの時点でお使いのネットワークカードが利用できる状態であり、かつネットワークの"
+"設定を変更していない場合は、お使いのコンピュータに対してホスト名が自動生成され、 DHCP "
+"が有効化された状態になります。これはネットワーク環境に接続するためのネームサーバの"
+"設定についても同様です。ネットワークアドレスを DHCP 経由で取得していると、ネームサーバの"
+"情報を受信した際に自動的に設定を行ないます。何らかの理由により、手作業で設定を行ないたい"
+"場合は、これらの設定を行なう必要があります。"
 
 #. Tag: para
 #: net_yast.xml:748
@@ -960,7 +1254,7 @@ msgstr ""
 msgid ""
 "To change the name of your computer and adjust the name server search list, "
 "proceed as follows:"
-msgstr ""
+msgstr "お使いのコンピュータの名前や使用するネームサーバの検索リストを変更するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: net_yast.xml:754
@@ -970,6 +1264,9 @@ msgid ""
 "DNS</guimenu> </menuchoice> tab in the <guimenu>System</guimenu> module in "
 "&yast;."
 msgstr ""
+"&yast; を起動し、 <menuchoice> <guimenu>システム</guimenu> <guimenu>ネットワーク"
+"設定</guimenu> </menuchoice> を選択して、 <guimenu>ホスト名／DNS</guimenu> タブを"
+"選択します。"
 
 #. Tag: para
 #: net_yast.xml:761
@@ -980,6 +1277,10 @@ msgid ""
 "server. Note that the host name is global and applies to all set network "
 "interfaces."
 msgstr ""
+"まずは <guimenu>ホスト名</guimenu> の欄にホスト名を指定し、必要であれば <guimenu>"
+"ドメイン名</guimenu> に設定を行ないます。ドメイン名は、お使いのマシンをメールサーバ"
+"として動作させる際には特に重要となります。また、ホスト名はコンピュータ全体に対する"
+"設定であり、全てのネットワークインターフェイスに設定されることに注意してください。"
 
 #. Tag: para
 #: net_yast.xml:767
@@ -992,6 +1293,12 @@ msgid ""
 "desktop. To disable using DHCP to get an IP address deactivate "
 "<guimenu>Change Hostname via DHCP</guimenu> ."
 msgstr ""
+"IP アドレスを取得するのに DHCP を使用している場合は、 DHCP サーバ側から通知された"
+"名前がホスト名として自動設定されます。このような動作は、複数のネットワークに接続する"
+"環境では、ホスト名が頻繁に変わる結果になることから、グラフィカルデスクトップ環境に"
+"悪影響を及ぼすこともありますので、無効化しておくことをお勧めします。 DHCP で IP "
+"アドレスを取得する環境で、ホスト名を変更しないようにするには、 <guimenu>DHCP で"
+"ホスト名を設定</guimenu> を <guimenu>いいえ</guimenu> に設定してください。"
 
 #. Tag: para
 #: net_yast.xml:775
@@ -1002,6 +1309,11 @@ msgid ""
 "hosts</filename> . This is a useful option if you want to have the host name "
 "resolvable at all times, even without active network."
 msgstr ""
+"<guimenu>ホスト名をループバック IP に割り当てる</guimenu> を選択すると、設定した"
+"ホスト名を <filename>/etc/hosts</filename> 内で <literal>127.0.0.2</literal> "
+"(ループバック) という IP アドレスに割り当てます。これは、ネットワークに常に接続"
+"されている環境ではないものの、ホスト名だけは解決できなければならないような場合に、"
+"有用な項目です。"
 
 #. Tag: para
 #: net_yast.xml:783
@@ -1011,6 +1323,9 @@ msgid ""
 "configuration (name servers, search list, the content of the <filename>/etc/"
 "resolv.conf</filename> file) is modified."
 msgstr ""
+"また、 <guimenu>DNS 設定の修正</guimenu> では、 DNS まわりの設定 (ネームサーバ、"
+"検索リスト、 <filename>/etc/resolv.conf</filename> の内容) の修正方法を設定する"
+"ことができます。"
 
 #. Tag: para
 #: net_yast.xml:788
@@ -1022,6 +1337,10 @@ msgid ""
 "files) with data obtained dynamically (from the DHCP client or "
 "NetworkManager). This default policy is usually sufficient."
 msgstr ""
+"<guimenu>既定のポリシーを使用する</guimenu> を選択すると、設定内容は <command>"
+"netconfig</command> スクリプトが処理を行ない、固定で設定された内容 (&yast; もしくは"
+"設定ファイル内で設定した内容) と動的に取得した内容 (DHCP クライアントもしくは"
+" NetworkManager) を合成します。通常は、この既定のポリシーのままで問題ありません。"
 
 #. Tag: para
 #: net_yast.xml:795
@@ -1031,6 +1350,9 @@ msgid ""
 "<command>netconfig</command> is not allowed to modify the <filename>/etc/"
 "resolv.conf</filename> file. However, this file can be edited manually."
 msgstr ""
+"<guimenu>手動のみ</guimenu> を選択すると、 <command>netconfig</command> が"
+" <filename>/etc/resolv.conf</filename> を変更しないようになります。"
+"ただし、このファイルは手作業で編集して変更することが可能です。"
 
 #. Tag: para
 #: net_yast.xml:801
@@ -1046,32 +1368,39 @@ msgid ""
 "policy values that indicate how to apply the static settings defined in the "
 "<filename>/etc/sysconfig/network/config</filename> file:"
 msgstr ""
+"<guimenu>カスタムポリシー</guimenu> を選択した場合は、 <guimenu>カスタムポリシー"
+"ルール</guimenu> で指定した文字列の合成ポリシーで制御が行なわれます。ここにはカンマ"
+"区切りでインターフェイス名を指定し、指定したインターフェイスからの情報を正しい"
+"情報源と見なして、設定を書き換える動作を行ないます。インターフェイス名は、そのまま"
+"指定するだけでなく、ワイルドカードを指定することもできます。たとえば <literal>eth* ppp?</literal> "
+"のように指定すると、 <literal>eth</literal> で始まるインターフェイスと、"
+" <literal>ppp0</literal> から <literal>ppp9</literal> が該当するようになります。"
+"このほか、 <filename>/etc/sysconfig/network/config</filename> ファイルで定義"
+"されている下記のキーワードも指定することができます:"
 
 #. Tag: term
 #: net_yast.xml:814
 #, no-c-format
 msgid "<literal>STATIC</literal>"
-msgstr ""
+msgstr "<literal>STATIC</literal>"
 
 #. Tag: para
 #: net_yast.xml:817
 #, no-c-format
-msgid ""
-"The static settings need to be merged together with the dynamic settings."
-msgstr ""
+msgid "The static settings need to be merged together with the dynamic settings."
+msgstr "固定で設定した内容を、動的に取得した内容と合成する必要があることを指定します。"
 
 #. Tag: term
 #: net_yast.xml:824
 #, no-c-format
 msgid "<literal>STATIC_FALLBACK</literal>"
-msgstr ""
+msgstr "<literal>STATIC_FALLBACK</literal>"
 
 #. Tag: para
 #: net_yast.xml:827
 #, no-c-format
-msgid ""
-"The static settings are used only when no dynamic configuration is available."
-msgstr ""
+msgid "The static settings are used only when no dynamic configuration is available."
+msgstr "動的に設定が取得できない場合にのみ、固定の設定を使用するよう指定します。"
 
 #. Tag: para
 #: net_yast.xml:834
@@ -1080,6 +1409,8 @@ msgid ""
 "For more information, see the man page of <command>netconfig</command> (8) "
 "( <command>man 8 netconfig</command> )."
 msgstr ""
+"さらに詳しい情報については、 <command>netconfig</command> (8) のマニュアルページ"
+" ( <command>man 8 netconfig</command> ) をお読みください。"
 
 #. Tag: para
 #: net_yast.xml:840
@@ -1092,6 +1423,12 @@ msgid ""
 "a specified domain. If more than one <guimenu>Domain Search</guimenu> is "
 "used, separate domains with commas or white space."
 msgstr ""
+"<guimenu>ネームサーバ</guimenu> と <guimenu>ドメイン検索</guimenu> に対して、"
+"それぞれ必要な設定を行ないます。ネームサーバに対しては、ホスト名ではなく IP アドレス"
+" (例: &dnsip;) で設定してください。また、 <guimenu>ドメイン検索</guimenu> には、"
+"ドメイン名無しでホスト名のみを指定した場合に、自動的に補完されるべきドメイン名を"
+"指定します。複数のドメインを <guimenu>ドメイン検索</guimenu> に指定したい場合は、"
+"カンマまたはスペースで区切ってください。"
 
 #. Tag: para
 #: net_yast.xml:855
@@ -1102,18 +1439,21 @@ msgid ""
 "case when editing the <filename>/etc/HOSTNAME</filename> file manually). To "
 "change the host name, use the following command:"
 msgstr ""
+"このほか、 &yast; を利用してコマンドラインからホスト名を変更することもできます。"
+"&yast; で変更を行なった場合、その設定は即時に反映されます (<filename>/etc/hostname</filename> "
+"を編集した場合とは異なります) 。ホスト名を変更するには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: net_yast.xml:861
 #, no-c-format
 msgid "&prompt.root;yast dns edit hostname=<replaceable>HOSTNAME</replaceable>"
-msgstr ""
+msgstr "&prompt.root;yast dns edit hostname=<replaceable>ホスト名</replaceable>"
 
 #. Tag: para
 #: net_yast.xml:862
 #, no-c-format
 msgid "To change the name servers, use the following commands:"
-msgstr ""
+msgstr "ネームサーバを変更したい場合は、下記のようなコマンドを実行します:"
 
 #. Tag: screen
 #: net_yast.xml:865
@@ -1123,12 +1463,15 @@ msgid ""
 "&prompt.root;yast dns edit nameserver2=&dnsip117;\n"
 "&prompt.root;yast dns edit nameserver3=&dnsip118;"
 msgstr ""
+"&prompt.root;yast dns edit nameserver1=&dnsip;\n"
+"&prompt.root;yast dns edit nameserver2=&dnsip117;\n"
+"&prompt.root;yast dns edit nameserver3=&dnsip118;"
 
 #. Tag: title
 #: net_yast.xml:871
 #, no-c-format
 msgid "Configuring Routing"
-msgstr ""
+msgstr "ルーティングの設定"
 
 #. Tag: para
 #: net_yast.xml:873
@@ -1139,6 +1482,10 @@ msgid ""
 "path. If DHCP is used, this information is automatically provided. If a "
 "static setup is used, this data must be added manually."
 msgstr ""
+"お使いのマシンを他のネットワーク内にあるマシンと通信したい場合は、ルーティング"
+" (経路制御) に関する情報を設定して、正しい経路で通信が配送されるように設定しなければ"
+"なりません。 DHCP をお使いの場合、この情報は自動的に提供され適用されます。"
+"固定の設定をお使いの場合は、このデータは手作業で設定しなければなりません。"
 
 #. Tag: para
 #: net_yast.xml:881
@@ -1147,6 +1494,8 @@ msgid ""
 "In &yast; go to <menuchoice> <guimenu>Network Settings</guimenu> "
 "<guimenu>Routing</guimenu> </menuchoice> ."
 msgstr ""
+"&yast; を起動して、 <menuchoice> <guimenu>ネットワークの設定</guimenu> "
+"<guimenu>ルーティング</guimenu> </menuchoice> を選択します。"
 
 #. Tag: para
 #: net_yast.xml:887
@@ -1157,6 +1506,10 @@ msgid ""
 "but if a routing table entry exists that matches the required address, this "
 "will be used instead of the default route via the Default Gateway."
 msgstr ""
+"<guimenu>デフォルトゲートウエイ</guimenu> の IP アドレスを入力します (必要であれば、"
+" IPv4 だけでなく IPv6 でも設定することができます) 。デフォルトゲートウエイは、"
+"その他のルーティング情報内に存在しなかった場合に、最後に使用すべき (既定の) "
+"ゲートウエイ (中継器) を意味するものです。"
 
 #. Tag: para
 #: net_yast.xml:896
@@ -1172,12 +1525,23 @@ msgid ""
 "literal> . To enter a default gateway into the table, use <literal>default</"
 "literal> in the <guimenu>Destination</guimenu> field."
 msgstr ""
+"<guimenu>ルーティングテーブル</guimenu> の欄を利用することで、さらに細かい設定を"
+"行なうことができます。ここでは、 <guimenu>宛先</guimenu> に通信先の IP アドレスを、"
+" <guimenu>ゲートウエイ</guimenu> には使用するゲートウエイの IP アドレスを、"
+" <guimenu>ネットマスク</guimenu> にはネットマスクをそれぞれ指定します。"
+"また、 <guimenu>デバイス</guimenu> の欄には、使用すべきネットワークインターフェイスの"
+"名前を指定します (<literal>-</literal> を指定すると、任意のデバイスを使用する意味に"
+"なります) 。 <remark>mdejmek: ok, what does the minus exactly do? you are using "
+"it here for different things;</remark> これらの値のうちのいずれかを省略したい"
+"場合は、マイナス記号 <literal>-</literal> を指定してください。また、表内にデフォルト"
+"ゲートウエイを設定したい場合は、 <guimenu>宛先</guimenu> 欄に <literal>default</literal> "
+"と入力してください。"
 
 #. Tag: title
 #: net_yast.xml:908
 #, no-c-format
 msgid "Route Prioritization"
-msgstr ""
+msgstr "ルートの優先制御"
 
 #. Tag: para
 #: net_yast.xml:909
@@ -1192,6 +1556,14 @@ msgid ""
 "metric in static routing, only routing daemons like <systemitem>multipathd</"
 "systemitem> do."
 msgstr ""
+"複数のデフォルトゲートウエイを使用する場合は、メトリック値を指定して優先順位を"
+"指定することができます。メトリック値を設定するには、 <guimenu>オプション</guimenu> "
+"の欄に <option>- metric <replaceable>数値</replaceable></option> の形式で"
+"指定を行ないます。既定では最も高いメトリック値の経路を使用します。ネットワーク"
+"インターフェイスの接続が切れた場合は、ルーティング情報からその経路が削除され、"
+"次に有効なルーティングを使用します。しかしながら、現在のカーネルではスタティック"
+" (固定の) ルーティングは使用しておらず、 <systemitem>multipathd</systemitem> "
+"などのようなルーティングデーモンのみが使用しています。"
 
 #. Tag: para
 #: net_yast.xml:923
@@ -1201,9 +1573,13 @@ msgid ""
 "<guimenu>IPv6 Forwarding</guimenu> in the <guimenu>Network Settings</"
 "guimenu> as needed."
 msgstr ""
+"お使いのシステムをルータとして設定するには、 <guimenu>ネットワーク設定</guimenu> "
+"内にある <guimenu>IPv4 転送を有効にする</guimenu> と <guimenu>IPv6 転送を有効にする</guimenu> "
+"をそれぞれ選択してください。"
 
 #. Tag: para
 #: net_yast.xml:930
 #, no-c-format
 msgid "To activate the configuration, confirm the settings."
-msgstr ""
+msgstr "設定を有効化するには、 <guimenu>次へ</guimenu> または <guimenu>完了</guimenu> を押してください。"
+
