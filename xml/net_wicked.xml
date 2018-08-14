@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.network.manconf">
- <title>Configuring a Network Connection Manually</title>
+ <title>ネットワーク接続の手動管理</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,11 +13,7 @@
   </dm:docmanager>
  </info>
 
- <para>
-  Manual configuration of the network software should be the last alternative.
-  Using &yast; is recommended. However, this background information about the
-  network configuration can also assist your work with &yast;.
- </para>
+ <para>ネットワークインターフェイスの手動設定は最後の選択肢として用意されています。通常は &yast; の使用をお勧めしますが、下記に示す背景となる情報を知っておくことで、 &yast; での設定もよりわかりやすくなります。</para>
 
  <sect2 xml:id="sec.network.manconf.wicked">
 <!--
@@ -26,75 +22,20 @@
       The version of that README used here, I stored at
       background_information/wicked-readme
   -->
-  <title>The <command>wicked</command> Network Configuration</title>
-  <para>
-   The tool and library called <command>wicked</command> provides a new
-   framework for network configuration.
-  </para>
-  <para>
-   One of the challenges with traditional network interface management is that
-   different layers of network management get jumbled together into one single
-   script, or at most two different scripts. These scripts interact with each other in a
-   way that is not well defined. This leads to unpredictable issues, obscure
-   constraints and conventions, etc. Several layers of special hacks for a variety of different scenarios increase the maintenance
-   burden. Address configuration protocols are being used that are implemented
-   via daemons like dhcpcd, which interact rather poorly with the rest of the
-   infrastructure. Funky interface naming schemes that require heavy udev
-   support are introduced to achieve persistent identification of interfaces.
-  </para>
-  <para>
-   The idea of wicked is to decompose the problem in several ways. None of them
-   is entirely novel, but trying to put ideas from different projects together
-   is hopefully going to create a better solution overall.
-  </para>
-  <para>
-   One approach is to use a client/server model. This allows wicked to define
-   standardized facilities for things like address configuration that are well
-   integrated with the overall framework. For example, using a specific address
-   configuration, the administrator may request that an interface should be
-   configured via DHCP or IPv4 zeroconf. In this case, the address configuration
-   service simply obtains the lease from its server and passes it on to the
-   wicked server process that installs the requested addresses and routes.
-  </para>
-  <para>
-   The other approach to decomposing the problem is to enforce the layering
-   aspect. For any type of network interface, it is possible to define a dbus
-   service that configures the network interface's device layer&mdash;a VLAN, a
-   bridge, a bonding, or a paravirtualized device. Common functionality, such
-   as address configuration, is implemented by joint services that are layered
-   on top of these device specific services without having to implement them
-   specifically.
-  </para>
-  <para>
-   The wicked framework implements these two aspects by using a variety of dbus
-   services, which get attached to a network interface depending on its type.
-   Here is a rough overview of the current object hierarchy in wicked.
-  </para>
-  <para>
-   Each network interface is represented via a child object of
-   <systemitem>/org/opensuse/Network/Interfaces</systemitem>. The name of the
-   child object is given by its ifindex. For example, the loopback interface,
-   which usually gets ifindex 1, is
-   <systemitem>/org/opensuse/Network/Interfaces/1</systemitem>, the first
-   Ethernet interface registered is
-   <systemitem>/org/opensuse/Network/Interfaces/2</systemitem>.
-  </para>
-  <para>
-   Each network interface has a <quote>class</quote> associated with it, which
-   is used to select the dbus interfaces it supports. By default, each network
-   interface is of class <literal>netif</literal>, and
-   <systemitem class="daemon">wickedd</systemitem> will automatically
-   attach all interfaces compatible with this class. In the current
-   implementation, this includes the following interfaces:
-  </para>
+  <title><command>wicked</command> ネットワーク接続</title>
+  <para><command>wicked</command> と呼ばれるツールとライブラリが、ネットワーク設定に対する新しいフレームワークを提供しています。</para>
+  <para>以前のネットワークインターフェイス管理では、異なるレイヤのネットワーク管理を寄せ集めて単一のスクリプトにするか、あっても 2 つの異なるスクリプトに仕立て上げるものでした。これらのスクリプトは、きちんと定義されていない方法で互いに作用するものであり、これによって予期しない問題を発生させたり、不明瞭な制約や慣習などをもたらす結果になってしまっていました。また、様々なシナリオに対応するための様々なレイヤの特殊な修正により、さらにメンテナンスを複雑化させてしまっていました。アドレス設定プロトコルは dhcpcd のような実装を介して使用されていましたが、こちらも他のインフラストラクチャとの対話性は低いままでした。また、わけのわからないインターフェイス名の命名方式によって、インターフェイス名の永続性を達成するのに udev の支援を多く必要としてしまっていました。</para>
+  <para>wicked は、様々な方法でこれらの問題を切り分けるために作られています。いずれの箇所も奇抜なものではないものの、様々なプロジェクトからのアイディアをまとめて、全体的によりよいソリューションとなるよう期待が込められています。</para>
+  <para>1 つ目のアプローチは、クライアント／サーバモデルの採用です。これにより、 wicked はフレームワーク全体と十分に統合された仕組みの中で、アドレス設定などの標準化された仕組みを定義することができるようになっています。たとえば特定のアドレス設定を行なう場合、管理者は DHCP や IPv4 Zeroconf などを使用するよう設定する場合がありますが、この場合もサーバからアドレスの貸与情報を取得して、それを wicked のサーバプロセスに渡すことで、 wicked 側がそのアドレスと経路の設定を行なうようになっています。</para>
+  <para>問題を切り分けるためのもう 1 つのアプローチとしては、レイヤ構造をきちんと守っているということが挙げられます。どのような種類のネットワークインターフェイスであっても、ネットワークインターフェイスのデバイスレイヤ (VLAN, ブリッジ, ボンディング, 準仮想化デバイスなど) を設定する DBus サービスを定義することができるようになっています。アドレスの設定などの一般的な機能については、それぞれを特別に実装することなくデバイス固有のサービス上に搭載することのできる、接続サービスを用いて実装されています。</para>
+  <para>wicked フレームワークは、これら 2 つの要素を様々な DBus サービスを利用して実装しています。使用する DBus サービスはネットワークの種類によって異なりますが、ここには wicked 内での現在のオブジェクト構造について、大まかな概要を示しています。</para>
+  <para>それぞれのネットワークインターフェイスは <systemitem>/org/opensuse/Network/Interfaces</systemitem> の子オブジェクトとして表わされます。子オブジェクトの名前は ifindex の値から設定されます。たとえばループバックインターフェイスの場合、通常は ifindex が 1 になりますので、 <systemitem>/org/opensuse/Network/Interfaces/1</systemitem> になります。最初に登録されたイーサネットインターフェイスは、 <systemitem>/org/opensuse/Network/Interfaces/2</systemitem> になります。</para>
+  <para>それぞれのネットワークインターフェイスには <quote>クラス</quote> が割り当てられ、対応する DBus インターフェイスを選択する際に使用します。既定では、各ネットワークインター他フェイスは <literal>netif</literal> というクラスになっていて、 <systemitem class="daemon">wickedd</systemitem> はこのクラスと互換性のある全てのインターフェイスに自動的に接続するようになっています。また、現在の実装では、下記のインターフェイスが含まれています:</para>
   <variablelist>
    <varlistentry>
     <term>org.opensuse.Network.Interface</term>
     <listitem>
-     <para>
-      Generic network interface functions, such as taking the link up or down,
-      assigning an MTU, etc.
-     </para>
+     <para>リンクアップやリンクダウン、 MTU の割り当てなどの一般的なネットワークインターフェイス機能を表わします。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -105,47 +46,18 @@
     <term>org.opensuse.Network.Addrconf.ipv6.auto</term>
     -->
     <listitem>
-     <para>
-      Address configuration services for DHCP,
-<!-- IPv6 autoconf, -->
-      IPv4 zeroconf, etc.
-     </para>
+     <para>DHCP, <!-- IPv6 autoconf, --> IPv4 zeroconf などのアドレス設定サービスを表わします。</para>
     </listitem>
    </varlistentry>
   </variablelist>
-  <para>
-   Beyond this, network interfaces may require or offer special configuration
-   mechanisms. For an Ethernet device, for example, you should be able to
-   control the link speed, offloading of checksumming, etc. To achieve this,
-   Ethernet devices have a class of their own, called
-   <literal>netif-ethernet</literal>, which is a subclass of
-   <literal>netif</literal>. As a consequence, the dbus interfaces assigned to
-   an Ethernet interface include all the services listed above, plus the
-   <systemitem>org.opensuse.Network.Ethernet</systemitem> service available only to objects belonging to the <literal>netif-ethernet</literal>
-   class.
-  </para>
-  <para>
-   Similarly, there exist classes for interface types like bridges, VLANs,
-   bonds, or infinibands.
-  </para>
-  <para>
-   How do you interact with an interface like VLAN (which is really a virtual network interface that
-   sits on top of an Ethernet device) that needs to be created
-   first? For this, wicked defines factory
-   interfaces, such as
-   <systemitem>org.opensuse.Network.VLAN.Factory</systemitem>. Such a factory
-   interface offers a single function that lets you create an interface of the
-   requested type. These factory interfaces are attached to the
-   <systemitem>/org/opensuse/Network/Interfaces</systemitem> list node.
-  </para>
+  <para>これらに加えて、ネットワークインターフェイスによっては特別の設定機構を必要としていたり、提供していたりすることがあります。たとえばイーサネットデバイスであれば、リンク速度やチェックサムのオフロード機能などを制御することができるでしょう。これらを実現するために、イーサネットの場合は <literal>netif</literal> のサブクラスである<literal>netif-ethernet</literal> という特殊なクラスが用意されています。そのため、イーサネットインターフェイスに割り当てられている DBus インターフェイスは、上述の全てのサービスに加えて、 <systemitem>org.opensuse.Network.Ethernet</systemitem> サービスが提供されています。これにより、 <literal>netif-ethernet</literal> クラスに属するオブジェクトにアクセスできるようになっています。</para>
+  <para>同様に、ブリッジや VLAN 、ボンディングや InfiniBand 等のインターフェイスの種類に対しても、それぞれのクラスが用意されています。</para>
+  <para>VLAN のように、イーサネットデバイスを包含するタイプの仮想ネットワークインターフェイスである場合、これらを先に作成する必要がありますが、これは wicked でどのように扱われているのでしょうか？ これを実現するために、 wicked では <systemitem>org.opensuse.Network.VLAN.Factory</systemitem> などの factory インターフェイスを定義しています。この factory インターフェイスは、指定した種類のインターフェイスを作成する機能だけを持ち、このインターフェイスが <systemitem>/org/opensuse/Network/Interfaces</systemitem> のリストノードに割り付けられるようになっています。</para>
   <sect3 xml:id="sec.network.manconf.supported">
-   <title><literal>wicked</literal> Architecture and Features</title>
-   <para>
-    The <literal>wicked</literal> service comprises several parts as depicted
-    in <xref linkend="wicked.architecture"/>.
-   </para>
+   <title><literal>wicked</literal> の構造と機能</title>
+   <para><literal>wicked</literal> サービスは複数のパーツから構成されています。詳しくは <xref linkend="wicked.architecture"/> をお読みください。</para>
    <figure xml:id="wicked.architecture">
-    <title><literal>wicked</literal> architecture</title>
+    <title><literal>wicked</literal> の構造</title>
     <mediaobject>
      <imageobject role="html">
       <imagedata fileref="wicked_scheme.png" format="PNG"/>
@@ -155,169 +67,82 @@
      </imageobject>
     </mediaobject>
    </figure>
-   <para>
-    <literal>wicked</literal> currently supports the following:
-   </para>
+   <para><literal>wicked</literal> には現在、下記のものが含まれています:</para>
    <itemizedlist>
     <listitem>
-     <para>
-      Configuration file back-ends to parse SUSE style
-      <filename>/etc/sysconfig/network</filename> files.
-     </para>
+     <para>SUSE 形式の <filename>/etc/sysconfig/network</filename> ファイルを処理するための設定ファイルバックエンド</para>
     </listitem>
     <listitem>
-     <para>
-      An internal configuration back-end to represent network interface
-      configuration in XML.
-<!--
-      according to mt, that's nowerdays misleading:
-      -->
-<!-- The syntax evolved out of what netcf uses. -->
-     </para>
+     <para>ネットワークの設定を XML 形式で表わす内部用の設定バックエンド <!-- according to mt, that's nowerdays misleading: --> <!-- The syntax evolved out of what netcf uses. --></para>
     </listitem>
     <listitem>
-     <para>
-      Bring up and shutdown of <quote>normal</quote> network interfaces such as
-      Ethernet or InfiniBand, VLAN, bridge, bonds, tun, tap, dummy, macvlan,
-      macvtap, hsi, qeth, iucv, and wireless (currently limited to one
-      wpa-psk/eap network) devices.
-     </para>
+     <para>イーサネットや InfiniBand, VLAN,ブリッジ, ボンディング, TUN, TAP,ダミー, macvlan, macvtap, hsi, qeth, iucv, および無線 (現時点では WPA-PSK/EAP のみ) などの <quote>一般的な</quote> インターフェイスの起動と停止</para>
     </listitem>
     <listitem>
-     <para>
-      A built-in DHCPv4 client and a built-in DHCPv6 client.
-     </para>
+     <para>内蔵型の DHCPv4 クライアントおよび DHCPv6 クライアント</para>
     </listitem>
     <listitem>
-     <para>
-      The nanny daemon (enabled by default) helps to automatically bring up
-      configured interfaces when the device is available (interface
-      hotplugging) and set up the IP configuration when a link (carrier) is
-      detected. See <xref linkend="sec.network.manconf.using_nanny"/> for more
-      information.
-     </para>
+     <para>設定済みのインターフェイスが利用可能な状態になった場合の自動起動 (ホットプラグ) と、リンク (キャリア) を検出した際の IP 設定に対応する nanny デーモン (既定で有効化されています) 。詳しくは <xref linkend="sec.network.manconf.using_nanny"/> をお読みください</para>
     </listitem>
     <listitem>
-     <para>
-      <literal>wicked</literal> was implemented as a group of DBus services
-      that are integrated with systemd. So the usual
-      <command>systemctl</command> commands will apply to
-      <literal>wicked</literal>.
-     </para>
+     <para>systemd と統合するための DBus サービスの集合体としての実装 (そのため、通常の <command>systemctl</command> のコマンドが <literal>wicked</literal> にも適用されます)</para>
     </listitem>
    </itemizedlist>
   </sect3>
   <sect3 xml:id="sec.network.manconf.using_wicked">
-   <title>Using <literal>wicked</literal></title>
-   <para os="sles;sled">
-    On &sle;, <literal>wicked</literal> is running by default. If you want
-    to check what is currently enabled and whether it is running, call:
-   </para>
-   <para os="osuse">
-    On &opensuse; Leap, <literal>wicked</literal> is running by default on
-    desktop or server hardware. On mobile hardware &nm; is running by
-    default. If you want to check what is currently enabled and whether it is
-    running, call:
-   </para>
+   <title><literal>wicked</literal> の使用</title>
+   <para os="sles;sled">&sle; では、 <literal>wicked</literal> は既定で動作しています。現時点で何が有効化され動作しているのかを調べるには、下記のコマンドを実行します:</para>
+   <para os="osuse">&opensuse; Leap では、 <literal>wicked</literal> はデスクトップハードウエアやサーバハードウエアの場合に、既定で動作しています。モバイルハードウエアの場合は、 &nm; が既定で動作しています。現時点で何が有効化され動作しているのかを調べるには、下記のコマンドを実行します:</para>
 <screen>systemctl status network</screen>
-   <para>
-    If <literal>wicked</literal> is enabled, you will see something along these
-    lines:
-   </para>
+   <para><literal>wicked</literal> が有効化されている場合、下記のような出力が現われます:</para>
 <!-- 2nd line of the output is intentionally indented! -->
 <screen>wicked.service - wicked managed network interfaces
     Loaded: loaded (/usr/lib/systemd/system/wicked.service; enabled)
     ...</screen>
-   <para>
-    In case something different is running (for example, &nm;) and you want to
-    switch to <literal>wicked</literal>, first stop what is running and then
-    enable <literal>wicked</literal>:
-   </para>
+   <para>何か異なるシステム (たとえば &nm;) が動作しているような場合で、 <literal>wicked</literal> に切り替えたい場合は、まず動作しているものを停止してから <literal>wicked</literal> を有効化してください:</para>
 <screen>systemctl is-active network &amp;&amp; \
 systemctl stop      network
 systemctl enable --force wicked</screen>
-   <para>
-    This enables the wicked services, creates the
-    <filename>network.service</filename> to <filename>wicked.service</filename>
-    alias link, and starts the network at the next boot.
-   </para>
-   <para>
-    Starting the server process:
-   </para>
+   <para>これにより wicked サービスが有効化され、 <filename>network.service</filename> から <filename>wicked.service</filename> に別名リンクが設定され、次回以降の起動で開始されるようになります。</para>
+   <para>サーバプロセスを開始するには、下記のコマンドを実行します:</para>
 <screen>systemctl start wickedd</screen>
-   <para>
-    This starts <command>wickedd</command> (the main server) and associated
-    supplicants:
-   </para>
+   <para>これにより、 <command>wickedd</command> (メインサーバ) が起動され、関連する下記のプログラムも起動されます:</para>
 <screen>/usr/lib/wicked/bin/wickedd-auto4 --systemd --foreground
 /usr/lib/wicked/bin/wickedd-dhcp4 --systemd --foreground
 /usr/lib/wicked/bin/wickedd-dhcp6 --systemd --foreground
 /usr/sbin/wickedd --systemd --foreground
 /usr/sbin/wickedd-nanny --systemd --foreground</screen>
-   <para>
-    Then bringing up the network:
-   </para>
+   <para>あとはネットワークを起動します:</para>
 <screen>systemctl start wicked</screen>
-   <para>
-    Alternatively use the <filename>network.service</filename> alias:
-   </para>
+   <para>上記ではなく、別名である <filename>network.service</filename> のほうを起動してもかまいません:</para>
 <screen>systemctl start network</screen>
-   <para>
-    These commands are using the default or system configuration sources as
-    defined in <filename>/etc/wicked/client.xml</filename>.
-   </para>
-   <para>
-    To enable debugging, set <literal>WICKED_DEBUG</literal> in
-    <filename>/etc/sysconfig/network/config</filename>, for example:
-   </para>
+   <para>これらのコマンドは既定値を使用するか、もしくは <filename>/etc/wicked/client.xml</filename> 内に書かれているシステム設定を使用します。</para>
+   <para>デバッグを有効化するには、 <filename>/etc/sysconfig/network/config</filename> 内で <literal>WICKED_DEBUG</literal> を設定します。たとえば下記のようになります:</para>
 <screen>WICKED_DEBUG="all"</screen>
-   <para>
-    Or, to omit some:
-   </para>
+   <para>下記のようにいくつかのデバッグ項目を省いてもかまいません:</para>
 <screen>WICKED_DEBUG="all,-dbus,-objectmodel,-xpath,-xml"</screen>
-   <para>
-    Use the client utility to display interface information for all interfaces
-    or the interface specified with <replaceable>IFNAME</replaceable>:
-   </para>
+   <para>全てのインターフェイスに対する情報を表示したり、 <replaceable>インターフェイス名</replaceable> で指定したインターフェイスに対する情報を表示したりするには、下記のいずれかを実行します:</para>
 <screen>wicked show all
-wicked show <replaceable>IFNAME</replaceable></screen>
-   <para>
-    In XML output:
-   </para>
+wicked show <replaceable>インターフェイス名</replaceable></screen>
+   <para>XML 形式で出力させたい場合は、下記のように実行します:</para>
 <screen>wicked show-xml all
-wicked show-xml <replaceable>IFNAME</replaceable></screen>
-   <para>
-    Bringing up one interface:
-   </para>
+wicked show-xml <replaceable>インターフェイス名</replaceable></screen>
+   <para>いずれか 1 つのインターフェイスを起動する場合は、下記のように実行します:</para>
 <screen>wicked ifup eth0
 wicked ifup wlan0
 ...</screen>
-   <para>
-    Because there is no configuration source specified, the wicked client
-    checks its default sources of configuration defined in
-    <filename>/etc/wicked/client.xml</filename>:
-   </para>
+   <para>何も設定情報を指定しない場合、 wicked クライアントは <filename>/etc/wicked/client.xml</filename> 内で指定されている既定の情報源を利用して設定しようとします:</para>
    <orderedlist>
     <listitem>
 <!-- yes, the colon (:) is part of the attribution value in
           client.xml -->
-     <para>
-      <literal>firmware:</literal> iSCSI Boot Firmware Table (iBFT)
-     </para>
+     <para><literal>firmware:</literal> iSCSI 起動ファームウエアテーブル (iBFT)</para>
     </listitem>
     <listitem>
-     <para>
-      <literal>compat:</literal> <literal>ifcfg</literal>
-      files&mdash;implemented for compatibility
-     </para>
+     <para><literal>compat:</literal> <literal>ifcfg</literal> ファイル (互換性を維持するために実装されています)</para>
     </listitem>
    </orderedlist>
-   <para>
-    Whatever <literal>wicked</literal> gets from those sources for a given
-    interface is applied. The intended order of importance is
-    <literal>firmware</literal>, then <literal>compat</literal>&mdash;this may
-    be changed in the future.
-   </para>
+   <para><literal>wicked</literal> がインターフェイスの設定を取得した場合は、どのような内容であっても、 <literal>firmware</literal> , <literal>compat</literal> の順序で計画されています。ただし将来的には変更される可能性があります。</para>
 <!--
    <para>
     Now let's bring up something interesting, for example a sample VLAN
@@ -354,141 +179,60 @@ ip route show</screen>
    </para>
 <screen>wicked ifdown -\-delete -\-ifconfig ./samples/wicked/vlan-static.xml eth0.42</screen>
 -->
-   <para>
-    For more information, see the <command>wicked</command> man page.
-   </para>
+   <para>詳しくは <command>wicked</command> のマニュアルページをお読みください。</para>
   </sect3>
   <sect3 xml:id="sec.network.manconf.using_nanny">
    <title>Nanny</title>
-   <para>
-    Nanny is an event and policy driven daemon that is responsible for
-    asynchronous or unsolicited scenarios such as hotplugging devices. Thus the
-    nanny daemon helps with starting or restarting delayed or temporarily gone
-    devices. Nanny monitors device and link changes, and integrates new devices
-    defined by the current policy set. Nanny continues to set up even if
-    <command>ifup</command> already exited because of specified timeout
-    constraints.
-   </para>
-   <para>
-    By default, the nanny daemon is active on the system. It is enabled in the
-    <filename>/etc/wicked/common.xml</filename> configuration file:
-   </para>
+   <para>nanny はイベントおよびポリシー駆動型のデーモンで、ホットプラグ型のデバイスなどの非同期かつ不用意なシナリオに対応するための仕組みです。そのため、 nanny デーモンは開始や再起動の遅延のほか、一時的に取り外されたデバイスにも対応することができます。また、 nanny はデバイスとリンク状態の変更を監視しているほか、現在のポリシーセットで設定されている新しいデバイスを統合することができます。 Nanny では指定されたタイムアウト制約によって <command>ifup</command> が既に終了してしまったような場合でも、継続して設定を行なうことができます。</para>
+   <para>既定では、 nanny デーモンはシステム内で有効化されています。具体的には、<filename>/etc/wicked/common.xml</filename> 設定ファイル内の下記で有効化されています:</para>
 <screen>&lt;config&gt;
   ...
   &lt;use-nanny&gt;true&lt;/use-nanny&gt;
 &lt;/config&gt;</screen>
-   <para>
-    This setting causes ifup and ifreload to apply a policy with the effective
-    configuration to the nanny daemon; then, nanny configures
-    <systemitem class="daemon">wickedd</systemitem> and thus ensures
-    hotplug support. It waits in the background for events or changes (such as
-    new devices or carrier on).
-   </para>
+   <para>この設定により、 ifup と ifreload は nanny デーモンに対して効率的な設定ポリシーを適用することになります。その後、 nanny は <systemitem class="daemon">wickedd</systemitem> をも設定しますので、ホットプラグにも対応することになります。また、 nanny は裏でイベントや変更 (新しいデバイスの接続やキャリア状態の変更など) を待機する処理も行ないます。</para>
   </sect3>
 <!-- ============================================================== -->
   <sect3 xml:id="sec.network.manconf.multiple">
-   <title>Bringing Up Multiple Interfaces</title>
-   <para>
-    For bonds and bridges, it may make sense to define the entire device
-    topology in one file (ifcfg-bondX), and bring it up in one go. wicked then
-    can bring up the whole configuration if you specify the top level interface
-    names (of the bridge or bond):
-   </para>
+   <title>複数のインターフェイスの開始</title>
+   <para>ボンディングやブリッジでは、複数のデバイスを 1 つにまとめて設定を行ない (ifcfg-bondX) ますので、それらを一括で起動する必要があります。 wicked では、ボンディングやブリッジなどの上位側のインターフェイス名を起動するだけで、その中にあるインターフェイスを一括で起動することができます:</para>
 <screen>wicked ifup br0</screen>
-   <para>
-    This command automatically sets up the bridge and its dependencies in the
-    appropriate order without the need to list the dependencies (ports, etc.)
-    separately.
-   </para>
-   <para>
-    To bring up multiple interfaces in one command:
-   </para>
+   <para>このコマンドを実行すると、ブリッジを設定して起動するまでの処理を、特に依存関係の順序 (ポートなど) を指定することなく、自動で行なうことができます。</para>
+   <para>複数のインターフェイスを 1 つのコマンドで起動するには、下記のように実行します:</para>
 <screen>wicked ifup bond0 br0 br1 br2</screen>
-   <para>
-    Or also all interfaces:
-   </para>
+   <para>全てのインターフェイスを一括で起動するには、下記のように実行します:</para>
 <screen>wicked ifup all</screen>
   </sect3>
 <!-- ============================================================== -->
   <sect3 xml:id="sec.network.manconf.tunnel">
-   <title>Using Tunnels with Wicked</title>
-   <para>
-    When you need to use tunnels with Wicked, the <envar>TUNNEL_DEVICE</envar>
-    is used for this. It permits to specify an optional device name to bind
-    the tunnel to the device. The tunneled packets will only be routed via this
-    device.
-   </para>
-   <para>
-    For more information, refer to <command>man 5 ifcfg-tunnel</command>.
-   </para>
+   <title>Wicked によるトンネルの使用</title>
+   <para>wicked でトンネルを使用する必要がある場合は、 <envar>TUNNEL_DEVICE</envar> で設定を行なって対応することができます。必要であれば、デバイス名を指定してトンネルとデバイスを紐づけることもできます。トンネルされたパケットは、このデバイスを介して配信されることになります。</para>
+   <para>詳しくは <command>man 5 ifcfg-tunnel</command> をお読みください。</para>
   </sect3>
 <!-- ============================================================== -->
   <sect3 xml:id="sec.network.manconf.incremental">
-   <title>Handling Incremental Changes</title>
-   <para>
-    With <command>wicked</command>, there is no need to actually take down an
-    interface to reconfigure it (unless it is required by the kernel). For
-    example, to add another IP address or route to a statically configured
-    network interface, add the IP address to the interface definition, and do
-    another <quote>ifup</quote> operation. The server will try hard to update
-    only those settings that have changed. This applies to link-level options
-    such as the device MTU or the MAC address, and network-level settings, such
-    as addresses, routes, or even the address configuration mode (for example,
-    when moving from a static configuration to DHCP).
-   </para>
-   <para>
-    Things get tricky of course with virtual interfaces combining several real
-    devices such as bridges or bonds. For bonded devices, it is not possible to
-    change certain parameters while the device is up. Doing that will result in
-    an error.
-   </para>
-   <para>
-    However, what should still work, is the act of adding or removing the child
-    devices of a bond or bridge, or choosing a bond's primary interface.
-   </para>
+   <title>差分変更の処理</title>
+   <para><command>wicked</command> では、インターフェイスを再設定するにあたって、インターフェイスをいったん停止する必要はありません (カーネル側で求められている場合を除きます) 。たとえばネットワークインターフェイスに IP アドレスを追加したり、経路設定を行なったりする場合でも、インターフェイスの設定に IP アドレスを追加したあと、もう一度 <quote>ifup</quote> 操作を行なうだけで済むようになっています。サーバ側では変更すべき設定のみを抽出して適用する処理を行ないます。これは MTU や MAC アドレスなどのリンクレベルのオプションだけでなく、アドレスや経路、アドレスの設定モード (固定のアドレス設定から DHCP への変更など) のネットワークレベルの設定に対しても、このような動作をするようになっています。</para>
+   <para>ブリッジやボンディングなど、複数の実デバイスから構成される仮想デバイスの設定に対しては、注意する必要があります。たとえばボンディングデバイスの場合、デバイスの起動中には特定の設定を行なうことができません。設定しようとすると、エラーが発生することがあります。</para>
+   <para>しかしながら、ボンディングやブリッジなどの実デバイスの追加や削除、ボンディングにおけるプライマリインターフェイスの選択などは、行なうことが可能です。</para>
   </sect3>
 <!-- ============================================================== -->
   <sect3 xml:id="sec.network.manconf.address_config">
-   <title>Wicked Extensions: Address Configuration</title>
-   <para>
-    <command>wicked</command> is designed to be extensible with shell scripts.
-    These extensions can be defined in the <filename>config.xml</filename>
-    file.
-   </para>
-   <para>
-    Currently, several classes of extensions are supported:
-   </para>
+   <title>Wicked 拡張: アドレス設定</title>
+   <para><command>wicked</command> はシェルスクリプトによって拡張を行なうことができます。これらの拡張は、 <filename>config.xml</filename> ファイル内に定義されています。</para>
+   <para>現時点では、いくつかの拡張クラスに対応しています:</para>
    <itemizedlist>
     <listitem>
-     <para>
-      link configuration: these are scripts responsible for setting up a
-      device's link layer according to the configuration provided by the
-      client, and for tearing it down again.
-     </para>
+     <para>リンク設定: これらは、クライアント側から提供されたリンクレイヤの設定にあわせてデバイスを設定し起動する機能、およびデバイスを停止するためのスクリプトです。</para>
     </listitem>
     <listitem>
-     <para>
-      address configuration: these are scripts responsible for managing a
-      device's address configuration. Usually address configuration and DHCP
-      are managed by <command>wicked</command> itself, but can be implemented
-      by means of extensions.
-     </para>
+     <para>アドレス設定: これらは、デバイスのアドレス設定を行なうためのスクリプトです。通常はアドレスの設定や DHCP の設定などは <command>wicked</command> 自身が管理しますが、拡張として実装もされています。</para>
     </listitem>
     <listitem>
-     <para>
-      firewall extension: these scripts can apply firewall rules.
-     </para>
+     <para>ファイアウオール拡張: これらのスクリプトは、ファイアウオールのルールを適用します。</para>
     </listitem>
    </itemizedlist>
-   <para>
-    Typically, extensions have a start and a stop command, an optional
-    <quote>pid file</quote>, and a set of environment variables that get passed
-    to the script.
-   </para>
-   <para>
-    To illustrate how this is supposed to work, look at a firewall extension
-    defined in <filename>etc/server.xml</filename>:
-   </para>
+   <para>一般的に、拡張には開始と停止のコマンドが用意されているほか、必要に応じて <quote>PID ファイル</quote> やスクリプトに渡される環境変数などが存在しています。</para>
+   <para>拡張がどのように動作するのかを知るには、 <filename>etc/server.xml</filename> 内にあるファイアウオール拡張をご覧ください:</para>
 <screen>&lt;dbus-service interface="org.opensuse.Network.Firewall"&gt;
  &lt;action name="firewallUp"   command="/etc/wicked/extensions/firewall up"/&gt;
  &lt;action name="firewallDown" command="/etc/wicked/extensions/firewall down"/&gt;
@@ -498,65 +242,34 @@ ip route show</screen>
  &lt;putenv name="WICKED_INTERFACE_NAME" value="$property:name"/&gt;
  &lt;putenv name="WICKED_INTERFACE_INDEX" value="$property:index"/&gt;
 &lt;/dbus-service&gt;</screen>
-   <para>
-    The extension is attached to the
-    <tag class="starttag">dbus-service</tag>
-    tag and defines commands to execute for the actions of this interface.
-    Further, the declaration can define and initialize environment variables
-    passed to the actions.
-   </para>
+   <para>拡張は <tag class="starttag">dbus-service</tag> タグに割り当てられ、このインターフェイスのアクションを実行する際のコマンドを定義しています。また、アクションに対して渡される環境変数の定義を行なうこともできます。</para>
   </sect3>
 <!-- ============================================================== -->
   <sect3 xml:id="sec.network.manconf.configuration_files">
-   <title>Wicked Extensions: Configuration Files</title>
-   <para>
-    You can extend the handling of configuration files with scripts as well.
-    For example, DNS updates from leases are ultimately handled by the
-    <filename>extensions/resolver</filename> script, with behavior configured
-    in <filename>server.xml</filename>:
-   </para>
+   <title>Wicked 拡張: 設定ファイル</title>
+   <para>Wicked では、スクリプトを利用して設定ファイルの処理を拡張することができます。たとえば DHCP による貸与情報からの DNS の書き換えは、 <filename>extensions/resolver</filename> が実施していて、これは <filename>server.xml</filename> 内に記述されています:</para>
 <screen>&lt;system-updater name="resolver"&gt;
  &lt;action name="backup" command="/etc/wicked/extensions/resolver backup"/&gt;
  &lt;action name="restore" command="/etc/wicked/extensions/resolver restore"/&gt;
  &lt;action name="install" command="/etc/wicked/extensions/resolver install"/&gt;
  &lt;action name="remove" command="/etc/wicked/extensions/resolver remove"/&gt;
 &lt;/system-updater&gt;</screen>
-   <para>
-    When an update arrives in <systemitem>wickedd</systemitem>, the system
-    updater routines parse the lease and call the appropriate commands
-    (<literal>backup</literal>, <literal>install</literal>, etc.) in the
-    resolver script. This in turn configures the DNS settings using
-    <command>/sbin/netconfig</command>, or by manually writing
-    <filename>/etc/resolv.conf</filename> as a fallback.
-   </para>
+   <para><systemitem>wickedd</systemitem> に対して更新が届くと、貸与情報を処理して、 <command>resolver</command> スクリプトの対応するコマンド (( <literal>backup</literal> , <literal>install</literal> を実行します。ここから <command>/sbin/netconfig</command> を呼び出して DNS の設定を変更するか、手作業で <filename>/etc/resolv.conf</filename> を変更している場合は、このファイルを直接変更する処理を行ないます。</para>
   </sect3>
  </sect2>
 
  <xi:include href="net_config_files.xml"/>
 
  <sect2 xml:id="sec.network.manconf.testing">
-  <title>Testing the Configuration</title>
-  <para>
-   Before you write your configuration to the configuration files, you can test
-   it. To set up a test configuration, use the <command>ip</command> command.
-   To test the connection, use the <command>ping</command> command.
-  </para>
-  <para>
-   The command <command>ip</command> changes the network configuration directly
-   without saving it in the configuration file. Unless you enter your
-   configuration in the correct configuration files, the changed network
-   configuration is lost on reboot.
-  </para>
+  <title>設定のテスト</title>
+  <para>設定ファイル内に独自の設定を行なう前に、事前にテストを行なっておくことをお勧めします。テスト設定を行なうには <command>ip</command> コマンドを、接続をテストするには <command>ping</command> コマンドを使用します。</para>
+  <para><command>ip</command> コマンドは、設定ファイルに設定を保存することなく、ネットワークの設定を直接変更します。そのため、変更した設定はシステムを再起動すると元に戻ってしまいます。</para>
   <note>
-   <title><command>ifconfig</command> and <command>route</command> Are Obsolete</title>
-   <para>
-    The <command>ifconfig</command> and <command>route</command> tools are
-    obsolete. Use <command>ip</command> instead. <command>ifconfig</command>,
-    for example, limits interface names to 9 characters.
-   </para>
+   <title><command>ifconfig</command> と <command>route</command> の廃止予定について</title>
+   <para><command>ifconfig</command> と <command>route</command> の各ツールは、廃止予定としてマークされています。代わりに <command>ip</command> コマンドをお使いください。また、 <command>ifconfig</command> コマンドは、インターフェイス名の長さが 9 文字までに制限されています。</para>
   </note>
   <sect3 xml:id="sec.network.manconf.ip">
-   <title>Configuring a Network Interface with <command>ip</command></title>
+   <title><command>ip</command> を利用したネットワークインターフェイスの設定</title>
    <remark>
 From: Marius Tomaschewski mt@suse.de&gt;
 Subject: Re: Manual Network Config
@@ -615,165 +328,73 @@ ip link set down dev eth0
  ke 2014-05-15: ifconfig and route is removed sind quite some time.
  Maybe, we should add more ip examples as Marius proposes...
 </remark>
-   <para>
-    <command>ip</command> is a tool to show and configure network devices,
-    routing, policy routing, and tunnels.
-   </para>
-   <para>
-    <command>ip</command> is a very complex tool. Its common syntax is
-    <command>ip</command>&nbsp;<option><replaceable>OPTIONS</replaceable>
-    <replaceable>OBJECT</replaceable>
-    <replaceable>COMMAND</replaceable></option>. You can work with the
-    following objects:
-   </para>
+   <para><command>ip</command> コマンドは、ネットワークデバイスやルーティング、ポリシールーティングやトンネルなどを設定したり、設定を取得したりするためのツールです。</para>
+   <para><command>ip</command> コマンドは非常に複雑なツールです。一般的には <command>ip</command> &nbsp; <option><replaceable>オプション</replaceable> <replaceable>オブジェクト</replaceable> <replaceable>コマンド</replaceable></option> の形式で実行します。オブジェクトには下記のものがあります:</para>
    <variablelist>
     <varlistentry>
      <term>link</term>
      <listitem>
-      <para>
-       This object represents a network device.
-      </para>
+      <para>このオブジェクトは、ネットワークデバイスそのものを表わします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term>address</term>
      <listitem>
-      <para>
-       This object represents the IP address of device.
-      </para>
+      <para>このオブジェクトは、デバイスの IP アドレスを表わします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term>neighbor</term>
      <listitem>
-      <para>
-       This object represents an ARP or NDISC cache entry.
-      </para>
+      <para>このオブジェクトは、 ARP や NDISC のキャッシュ項目などを表わします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term>route</term>
      <listitem>
-      <para>
-       This object represents the routing table entry.
-      </para>
+      <para>このオブジェクトは、ルーティングテーブルの項目を表わします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term>rule</term>
      <listitem>
-      <para>
-       This object represents a rule in the routing policy database.
-      </para>
+      <para>このオブジェクトは、ルーティングポリシーデータベース内のルールを表わします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term>maddress</term>
      <listitem>
-      <para>
-       This object represents a multicast address.
-      </para>
+      <para>このオブジェクトは、マルチキャストのアドレスを表わします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term>mroute</term>
      <listitem>
-      <para>
-       This object represents a multicast routing cache entry.
-      </para>
+      <para>このオブジェクトは、マルチキャストのルーティングキャッシュ項目を表わします。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
      <term>tunnel</term>
      <listitem>
-      <para>
-       This object represents a tunnel over IP.
-      </para>
+      <para>このオブジェクトは、 IP 経由でのトンネルを表わします。</para>
      </listitem>
     </varlistentry>
    </variablelist>
-   <para>
-    If no command is given, the default command is used (usually
-    <command>list</command>).
-   </para>
-   <para>
-    Change the state of a device with the command <command>ip link
-    set</command>&nbsp;<option><replaceable>DEVICE_NAME</replaceable></option>&nbsp;<command/>
-    . For example, to deactivate device eth0, enter <command>ip link
-    set</command> <option>eth0 down</option>. To activate it again, use
-    <command>ip link set</command> <option>eth0 up</option>.
-   </para>
-   <para>
-    After activating a device, you can configure it. To set the IP address, use
-    <command>ip addr
-    add</command>&nbsp;<option><replaceable>IP_ADDRESS</replaceable> + dev
-    <replaceable>DEVICE_NAME</replaceable></option>. For example, to set the
-    address of the interface eth0 to 192.168.12.154/30 with standard broadcast
-    (option <option>brd</option>), enter <command>ip
-    addr</command>&nbsp;<option>add 192.168.12.154/30 brd + dev eth0</option>.
-   </para>
-   <para>
-    To have a working connection, you must also configure the default gateway.
-    To set a gateway for your system, enter <command>ip route
-    add</command>&nbsp;<option>gateway_ip_address</option>. To translate one IP
-    address to another, use <command>nat</command>: <command>ip route add
-    nat</command>&nbsp;<option>ip_address</option>&nbsp;<command>via</command>&nbsp;<option>other_ip_address</option>.
-   </para>
-   <para>
-    To display all devices, use <command>ip link ls</command>. To display the
-    running interfaces only, use <command>ip link ls up</command>. To print
-    interface statistics for a device, enter <command>ip -s link
-    ls</command>&nbsp;<option>device_name</option>. To view addresses of your
-    devices, enter <command>ip addr</command>. In the output of the <command>ip
-    addr</command>, also find information about MAC addresses of your devices.
-    To show all routes, use <command>ip route show</command>.
-   </para>
-   <para>
-    For more information about using <command>ip</command>, enter
-    <command>ip</command>&nbsp;<option>help</option> or see the
-    <systemitem>ip(8)</systemitem> man page. The <option>help</option> option
-    is also available for all <command>ip</command> subcommands. If, for
-    example, you need help for
-    <command>ip</command>&nbsp;<option>addr</option>, enter
-    <command>ip</command>&nbsp;<option>addr help</option>. Find the
-    <command>ip</command> manual in
-    <filename>/usr/share/doc/packages/iproute2/ip-cref.pdf</filename>.
-   </para>
+   <para>何もコマンドを指定しない場合は、指定のコマンド (通常は <command>list</command>) が指定されているものと見なします。</para>
+   <para>デバイスの状態を変更したい場合は、 <command>ip link set</command> &nbsp; <option><replaceable>デバイス名</replaceable></option> &nbsp; <command/> のように実行します。たとえば eth0 デバイスを無効化したい場合は、 <command>ip link set</command> <option>eth0 down</option> と入力して実行します。逆に有効化したい場合は、 <command>ip link set</command> <option>eth0 up</option> と入力して実行します。</para>
+   <para>デバイスを有効化したあとは、設定を行なうことができます。 IP アドレスを設定するには、<command>ip addr add</command> &nbsp; <option><replaceable>IP_アドレス</replaceable> + dev <replaceable>デバイス名</replaceable></option> のように実行します。たとえば eth0 インターフェイスに対して 192.168.12.154/30 というアドレスを設定し、標準的なブロードキャスト (<option>brd</option>) を設定したい場合は、 <command>ip addr</command> &nbsp; <option>add 192.168.12.154/30 brd + dev eth0</option> と入力して実行します。</para>
+   <para>既に物理的な接続を行なっている場合は、デフォルトゲートウエイを設定することもできます。デフォルトゲートウエイを設定するには、 <command>ip route add</command> &nbsp; <option>ゲートウエイの_IP_アドレス</option> のように実行します。なお、一方の IP アドレスから他方の IP アドレスに変換を行ないたい場合は、 <command>nat</command> を指定して、 <command>ip route add nat</command> &nbsp; <option>IP_アドレス</option> &nbsp; <command>via</command> &nbsp; <option>他の_IP_アドレス</option> のように実行します。</para>
+   <para>全てのデバイスを表示するには、 <command>ip link ls</command> を実行します。動作中のデバイスのみを表示したい場合は、 <command>ip link ls up</command> を実行します。また、デバイスのインターフェイス統計情報を表示したい場合は、 <command>ip -s link ls</command> を実行します。デバイスに設定されているアドレスを表示したい場合は、 <command>ip addr</command> を実行します。なお、 <command>ip addr</command> の出力には、デバイスの MAC アドレスも表示されます。このほか、全てのルーティング情報を表示するには、 <command>ip route show</command> を実行します。</para>
+   <para><command>ip</command> コマンドの使用方法について、詳しくは <command>ip</command> &nbsp; <option>help</option> を実行すると表示されるヘルプ、もしくは <systemitem>ip(8)</systemitem> のマニュアルページをお読みください。なお、 <option>help</option> オプションは <command>ip</command> のサブコマンド全てでもご利用いただけます。たとえば <command>ip</command> &nbsp; <option>addr</option> に対するヘルプを読みたい場合は、 <command>ip</command> &nbsp; <option>addr help</option> と入力して実行してください。また、 <command>ip</command> コマンドのマニュアルは<filename>/usr/share/doc/packages/iproute2/ip-cref.pdf</filename> にあります。</para>
   </sect3>
   <sect3 xml:id="sec.network.manconf.testingping">
-   <title>Testing a Connection with ping</title>
-   <para>
-    The <command>ping</command> command is the standard tool for testing
-    whether a TCP/IP connection works. It uses the ICMP protocol to send a
-    small data packet, ECHO_REQUEST datagram, to the destination host,
-    requesting an immediate reply. If this works, <command>ping</command>
-    displays a message to that effect. This indicates that the network link is
-    functioning.
-   </para>
-   <para>
-    <command>ping</command> does more than only test the function of the
-    connection between two computers: it also provides some basic information
-    about the quality of the connection. In
-    <xref linkend="ex.basicnet.manconf.ping"/>, you can see an example of the
-    <command>ping</command> output. The second-to-last line contains
-    information about the number of transmitted packets, packet loss, and total
-    time of <command>ping</command> running.
-   </para>
-   <para>
-    As the destination, you can use a host name or IP address, for example,
-    <command>ping</command>&nbsp;<option>&exampledomain;</option> or
-    <command>ping</command>&nbsp;<option>&wwwip;</option>. The program sends
-    packets until you press
-    <keycombo><keycap function="control"/><keycap>C</keycap></keycombo>.
-   </para>
-   <para>
-    If you only need to check the functionality of the connection, you can
-    limit the number of the packets with the <option>-c</option> option. For
-    example to limit ping to three packets, enter
-    <command>ping</command>&nbsp;<option>-c 3 &exampledomain;</option>.
-   </para>
+   <title>ping による通信テスト</title>
+   <para><command>ping</command> コマンドは、 TCP/IP の接続が動作しているかどうかをテストすることができる標準的なツールです。このツールは ICMP プロトコルを利用して、 ECHO_REQUEST データグラムと呼ばれる小さなデータパケットを宛先のホストに送信し、相手側からの即時の応答を待ちます。応答があると、 <command>ping</command> はその旨を示すメッセージを表示します。これにより、ネットワークが正しく動作していることを確認することができます。</para>
+   <para><command>ping</command> は 2 台のコンピュータ間での接続機能テストを行なうだけではありません。基本的な接続品質に関する情報も提供します。 <xref linkend="ex.basicnet.manconf.ping"/> には <command>ping</command> の出力例を示していますが、出力の末尾から 2 行目には、送信したパケット数と損失数、および <command>ping</command> の実行にかかった時間が表示されます。</para>
+   <para>また、宛先の指定には IP アドレスだけでなくホスト名を指定することもできます。たとえば<command>ping</command> &nbsp; <option>&exampledomain;</option> や <command>ping</command> &nbsp; <option>&wwwip;</option> のように実行することができます。また、このプログラムは <keycombo><keycap function="control"/><keycap>C</keycap></keycombo> を押すまでパケットを送り続けます。</para>
+   <para>接続ができるかどうかだけを調べたい場合は、 <option>-c</option> オプションでパケットの送信回数を制限してください。たとえば 3 回パケットを送信したい場合は、<command>ping</command> &nbsp; <option>-c 3 &exampledomain;</option> のように入力して実行します。</para>
    <example xml:id="ex.basicnet.manconf.ping">
-    <title>Output of the Command ping</title>
+    <title>ping コマンドの出力</title>
 <screen>ping -c 3 &exampledomain;
 PING &exampledomain; (&wwwip;) 56(84) bytes of data.
 64 bytes from &exampledomain; (&wwwip;): icmp_seq=1 ttl=49 time=188 ms
@@ -783,124 +404,63 @@ PING &exampledomain; (&wwwip;) 56(84) bytes of data.
 3 packets transmitted, 3 received, 0% packet loss, time 2007ms
 rtt min/avg/max/mdev = 183.417/185.447/188.259/2.052 ms</screen>
    </example>
-   <para>
-    The default interval between two packets is one second. To change the
-    interval, ping provides the option <option>-i</option>. For example, to
-    increase the ping interval to ten seconds, enter
-    <command>ping</command>&nbsp;<option>-i 10 &exampledomain;</option>.
-   </para>
-   <para>
-    In a system with multiple network devices, it is sometimes useful to send
-    the ping through a specific interface address. To do so, use the
-    <option>-I</option> option with the name of the selected device, for
-    example, <command>ping</command>&nbsp;<option>-I wlan1
-    &exampledomain;</option>.
-   </para>
-   <para>
-    For more options and information about using ping, enter
-    <command>ping</command>&nbsp;<option>-h</option> or see the
-    <systemitem>ping (8)</systemitem> man page.
-   </para>
+   <para>既定の送信間隔は 1 秒に設定されています。この間隔を変更したい場合は、 <option>-i</option> オプションを指定してください。たとえば送信間隔を 10 秒にしたい場合は、 <command>ping</command> &nbsp; <option>-i 10 &exampledomain;</option> のように入力して実行します。</para>
+   <para>なお、システムに複数のネットワークデバイスが存在する場合は、インターフェイスを指定して送信したほうが便利である場合があります。これを行なうには、 <option>-I</option> とデバイス名を指定してください。たとえば <command>ping</command> &nbsp; <option>-I wlan1 &exampledomain;</option> のように入力して実行します。</para>
+   <para><command>ping</command> の使用方法について、詳しくは <command>ping</command> &nbsp; <option>-h</option> で表示されるヘルプ、もしくは <systemitem>ping (8)</systemitem> のマニュアルページをお読みください。</para>
    <tip>
-    <title>Pinging IPv6 Addresses</title>
-    <para>
-     For IPv6 addresses use the <command>ping6</command> command. Note, to ping
-     link-local addresses, you must specify the interface with
-     <option>-I</option>. The following command works, if the address is
-     reachable via <literal>eth1</literal>:
-    </para>
+    <title>IPv6 アドレスへの ping</title>
+    <para>IPv6 アドレスの場合は、 <command>ping6</command> コマンドを使用します。ただし、リンクローカルアドレスに対して送信したい場合は、 <option>-I</option> でインターフェイス名を指定してください。たとえば下記のコマンドが成功した場合は、 <literal>eth1</literal> を介して指定したアドレスに到達できる意味になります:</para>
 <screen>ping6 -I eth1 fe80::117:21ff:feda:a425</screen>
    </tip>
   </sect3>
  </sect2>
 
  <sect2 xml:id="sec.network.manconf.scripts">
-  <title>Unit Files and Start-Up Scripts</title>
-  <para>
-   Apart from the configuration files described above, there are also systemd
-   unit files and various scripts that load the network services while the
-   machine is booting. These are started when the system is switched to the
-   <systemitem>multi-user.target</systemitem> target. Some of these unit files
-   and scripts are described in <xref linkend="var.net.start.scripts"/>. For
-   more information about <systemitem>systemd</systemitem>, see
-   <xref linkend="cha.systemd"/> and for more information about the
-   <systemitem>systemd</systemitem> targets, see the man page of
-   <systemitem>systemd.special</systemitem> (<command>man
-   systemd.special</command>).
-  </para>
+  <title>ユニットファイルと起動スクリプト</title>
+  <para>上述までの設定のほかに、マシンを起動する際にネットワークサービスを読み込むための systemd ユニットファイルと各種スクリプトが存在しています。これらはシステムが <systemitem>multi-user.target</systemitem> ターゲットに切り替わる際に開始されます。これらのユニットファイルやスクリプトファイルのいくつかは、 <xref linkend="var.net.start.scripts"/> で説明しています。なお、 <systemitem>systemd</systemitem> についての詳細は、 <xref linkend="cha.systemd"/> をお読みください。また、 <systemitem>systemd</systemitem> のターゲットに関する詳細は、 <systemitem>systemd.special</systemitem> のマニュアルページ ( <command>man systemd.special</command> ) をお読みください。</para>
   <variablelist xml:id="var.net.start.scripts">
-   <title>Some Unit Files and Start-Up Scripts for Network Programs</title>
+   <title>ネットワークプログラム向けのユニットファイルと起動スクリプト</title>
    <varlistentry>
-    <term><systemitem>network.target</systemitem>
-
-<!--ix-->
-    </term>
+    <term><systemitem>network.target</systemitem> <!--ix--></term>
     <listitem>
-     <para>
-      <systemitem>network.target</systemitem> is the systemd target for
-      networking, but its mean depends on the settings provided by the system
-      administrator.
-     </para>
-     <para>
-      For more information, see
-      <link xlink:href="http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/"/>.
-     </para>
+     <para><systemitem>network.target</systemitem> はネットワーク処理のための systemd ターゲットですが、この意味合いはシステム管理者が設定した内容によって異なります。</para>
+     <para>詳しくは <link xlink:href="http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/"/> をお読みください。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>multi-user.target</systemitem>
-    </term>
+    <term><systemitem>multi-user.target</systemitem></term>
     <listitem>
-     <para>
-      <systemitem>multi-user.target</systemitem> is the systemd target for a
-      multiuser system with all required network services.
-     </para>
+     <para><systemitem>multi-user.target</systemitem> は systemd ターゲットのうちの 1 つで、全てのネットワークサービスを有効化したマルチユーザシステムを開始するためのものです。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>rpcbind</systemitem>
-    </term>
+    <term><systemitem>rpcbind</systemitem></term>
     <listitem>
-     <para>
-      Starts the rpcbind utility that converts RPC program numbers to universal
-      addresses. It is needed for RPC services, such as an NFS server.
-     </para>
+     <para>RPC のプログラム番号をユニバーサルアドレスに変換する <command>rpcbind</command> ユーティリティを起動します。 NFS サーバなどで必要となります。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>ypserv</systemitem>
-    </term>
+    <term><systemitem>ypserv</systemitem></term>
     <listitem>
-     <para>
-      Starts the NIS server.
-     </para>
+     <para>NIS サーバを開始します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><systemitem>ypbind</systemitem>
-    </term>
+    <term><systemitem>ypbind</systemitem></term>
     <listitem>
-     <para>
-      Starts the NIS client.
-     </para>
+     <para>NIS クライアントを開始します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><filename>/etc/init.d/nfsserver</filename>
-    </term>
+    <term><filename>/etc/init.d/nfsserver</filename></term>
     <listitem>
-     <para>
-      Starts the NFS server.
-     </para>
+     <para>NFS サーバを開始します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><filename>/etc/init.d/postfix</filename>
-    </term>
+    <term><filename>/etc/init.d/postfix</filename></term>
     <listitem>
-     <para>
-      Controls the postfix process.
-     </para>
+     <para>postfix プロセスを制御します。</para>
     </listitem>
    </varlistentry>
   </variablelist>
