@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.network.iface-bonding">
- <title>Setting Up Bonding Devices</title>
+ <title>ボンディングデバイスの設定</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,126 +13,70 @@
   </dm:docmanager>
  </info>
 
- <para>
-  For some systems, there is a desire to implement network connections that
-  comply to more than the standard data security or availability requirements
-  of a typical Ethernet device. In these cases, several Ethernet devices can be
-  aggregated to a single bonding device.
- </para>
+ <para>システムによっては、一般的なイーサネットデバイスにおける標準的なセキュリティや可用性の要件を越えて、ネットワーク接続を実装する要望がある場合があります。このような場合は、複数のイーサネットデバイスをまとめて、 1 つのボンディングデバイスにすることができます。</para>
 
- <para>
-  The configuration of the bonding device is done by means of bonding module
-  options. The behavior is mainly affected by the mode of the bonding device.
-  By default, this is <systemitem>active-backup</systemitem> which means
-  that a different slave device will become active if the active slave fails.
-  The following bonding modes are avilable:
- </para>
+ <para>ボンディングデバイスの設定は、ボンディングモジュールを設定して行ないます。また、このモジュールの動作はモードによって切り替えることができます。既定では <systemitem>active-backup</systemitem> (アクティブ-バックアップ) モードに設定されていて、一方のデバイスに障害が発生した場合に、他方のデバイスに切り替える動作を行ないます。モードには下記の設定が用意されています:</para>
 
  <variablelist>
   <varlistentry>
    <term><guimenu>0</guimenu> (balance-rr)</term>
    <listitem>
-    <para>
-     Packets are transmitted in round-robin fashion from the first to the last
-     available interface. Provides fault tolerance and load balancing.
-    </para>
+    <para>パケットはラウンドロビン形式で、最初のインターフェイスから最後のインターフェイスまで、パケットを 1 つずつ送りながらインターフェイスを切り替える動作になります。これにより、冗長化と負荷分散の両方を実現することができます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
    <term><guimenu>1</guimenu> (active-backup)</term>
    <listitem>
-    <para>
-     Only one network interface is active. If it fails, a different interface
-     becomes active. This setting is the default for &productname;. Provides
-     fault tolerance.
-    </para>
+    <para>いずれか 1 つのネットワークインターフェイスのみを有効に設定します。そのネットワークインターフェイスに障害が発生すると、異なるインターフェイスが有効化されます。この設定は &productname; における既定値で、冗長化のみを実現することができます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
    <term><guimenu>2</guimenu> (balance-xor)</term>
    <listitem>
-    <para>
-     Traffic is split between all available interfaces based on the following
-     policy: <literal>[(source MAC address XOR'd with destination MAC address
-     XOR packet type ID) modulo slave count]</literal> Requires support from
-     the switch. Provides fault tolerance and load balancing.
-    </para>
+    <para>パケットは下記のポリシーを利用して、利用可能な全てのインターフェイスに分散されます: <literal>[({送信元 MAC アドレス} XOR {送信先 MAC アドレス} XOR {パケットタイプ ID}) をインターフェイス数で割った余り]</literal> 。接続するスイッチ側での対応が必要です。冗長化と負荷分散の両方を提供します。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
    <term><guimenu>3</guimenu> (broadcast)</term>
    <listitem>
-    <para>
-     All traffic is broadcast on all interfaces. Requires support from the
-     switch. Provides fault tolerance.
-    </para>
+    <para>全てのパケットを全てのインターフェイスに送信します。接続するスイッチ側での対応が必要です。冗長化のみを実現することができます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
    <term><guimenu>4</guimenu> (802.3ad)</term>
    <listitem>
-    <para>
-     Aggregates interfaces into groups that share the same speed and duplex
-     settings. Requires <command>ethtool</command> support in the interface
-     drivers, and a switch that supports and is configured for IEEE 802.3ad
-     Dynamic link aggregation. Provides fault tolerance and load balancing.
-    </para>
+    <para>同じ速度と二重通信方式を共有する複数のインターフェイスを、 1 つにまとめる設定です。インターフェイスドライバ側に <command>ethtool</command> のサポートが必要となるほか、接続するスイッチ側で IEEE 802.3ad 動的リンク集約の設定を行なう必要があります。冗長化と負荷分散の両方を提供します。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
    <term><guimenu>5</guimenu> (balance-tlb)</term>
    <listitem>
-    <para>
-     Adaptive transmit load balancing. Requires <command>ethtool</command>
-     support in the interface drivers but no switch support. Provides fault
-     tolerance and load balancing.
-    </para>
+    <para>順応型送信負荷分散を行ないます。インターフェイスドライバ側に <command>ethtool</command> のサポートが必要となりますが、スイッチ側での対応は不要です。冗長化と負荷分散の両方を提供します。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
    <term><guimenu>6</guimenu> (balance-alb)</term>
    <listitem>
-    <para>
-     Adaptive load balancing. Requires <command>ethtool</command> support in
-     the interface drivers but no switch support. Provides fault tolerance and
-     load balancing.
-    </para>
+    <para>順応型負荷分散を行ないます。インターフェイスドライバ側に <command>ethtool</command> のサポートが必要となりますが、スイッチ側での対応は不要です。冗長化と負荷分散の両方を提供します。</para>
    </listitem>
   </varlistentry>
  </variablelist>
 
- <para>
-  For a more detailed description of the modes, see
-  <link xlink:href="https://www.kernel.org/doc/Documentation/networking/bonding.txt"/>.
- </para>
+ <para>モードに関する詳細な説明については、 <link xlink:href="https://www.kernel.org/doc/Documentation/networking/bonding.txt"/> をお読みください。</para>
 
  <tip>
-  <title>Bonding and &xen;</title>
-  <para>
-   Using bonding devices is only of interest for machines where you have
-   multiple real network cards available. In most configurations, this means
-   that you should use the bonding configuration only in &dom0;. Only if you
-   have multiple network cards assigned to a &vmguest; system it may also be
-   useful to set up the bond in a &vmguest;.
-  </para>
+  <title>ボンディングと &xen;</title>
+  <para>ボンディングデバイスの使用は、複数のネットワークカードを接続しているマシンでのみ設定することができる仕様です。ほとんどの設定において、ボンディングデバイスは &dom0; でのみ使用すべきものであることを意味します。 &vmguest; システムに対して複数のネットワークカードを割り当てている場合にのみ、 &vmguest; 内でボンディングを設定することができることになります。</para>
  </tip>
 
- <para>
-  To configure a bonding device, use the following procedure:
- </para>
+ <para>ボンディングデバイスを設定するには、下記の手順で行ないます:</para>
 
  <procedure>
   <step>
-   <para>
-    Run <menuchoice><guimenu>&yast;</guimenu> <guimenu>System</guimenu>
-    <guimenu>Network Settings</guimenu></menuchoice>.
-   </para>
+   <para><menuchoice><guimenu>&yast;</guimenu> <guimenu>システム</guimenu> <guimenu>ネットワークの設定</guimenu></menuchoice> を実行します。</para>
   </step>
   <step>
-   <para>
-    Use <guimenu>Add</guimenu> and change the <guimenu>Device Type</guimenu> to
-    <guimenu>Bond</guimenu>. Proceed with <guimenu>Next</guimenu>.
-   </para>
+   <para><guimenu>追加</guimenu> を押し、 <guimenu>デバイスの種類</guimenu> に <guimenu>ボンド</guimenu> を選択して、 <guimenu>次へ</guimenu> を押します。</para>
    <informalfigure>
     <mediaobject>
      <imageobject role="fo">
@@ -145,69 +89,38 @@
    </informalfigure>
   </step>
   <step>
-   <para>
-    Select how to assign the IP address to the bonding device. Three methods
-    are at your disposal:
-   </para>
+   <para>ボンディングデバイスへの IP アドレスの割り当て方法を指定します。下記の 3 種類の中から選択します:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      No IP Address
-     </para>
+     <para>IP の設定無し</para>
     </listitem>
     <listitem>
-     <para>
-      Dynamic Address (with DHCP or Zeroconf)
-     </para>
+     <para>可変 IP アドレス (DHCP もしくは Zeroconf)</para>
     </listitem>
     <listitem>
-     <para>
-      Statically assigned IP Address
-     </para>
+     <para>固定 IP アドレス</para>
     </listitem>
    </itemizedlist>
-   <para>
-    Use the method that is appropriate for your environment.
-   </para>
+   <para>お使いの環境に適切なものを選択してください。</para>
   </step>
   <step>
-   <para>
-    In the <guimenu>Bond Slaves</guimenu> tab, select the Ethernet devices that
-    should be included into the bond by activating the related check box.
-   </para>
+   <para>また、 <guimenu>ボンドスレーブ</guimenu> のタブでは、ボンディングデバイスに含めるべきインターフェイスを、チェックボックスで選択します。</para>
   </step>
   <step>
-   <para>
-    Edit the <guimenu>Bond Driver Options</guimenu> and choose a bonding mode.
-   </para>
+   <para><guimenu>ボンドドライバのオプション</guimenu> を編集して、モードを設定します。</para>
   </step>
   <step>
-   <para>
-    Make sure that the parameter <literal>miimon=100</literal> is added to the
-    <guimenu>Bond Driver Options</guimenu>. Without this parameter, the data
-    integrity is not checked regularly.
-   </para>
+   <para>なお、 <guimenu>ボンドドライバのオプション</guimenu> の末尾に <literal>miimon=100</literal> のパラメータが存在していることを確認してください。このパラメータを指定しないと、定期的なチェックが行なわれなくなります。</para>
   </step>
   <step>
-   <para>
-    Click <guimenu>Next</guimenu> and leave &yast; with <guimenu>OK</guimenu>
-    to create the device.
-   </para>
+   <para><guimenu>Next</guimenu> を押して進み、 <guimenu>OK</guimenu> を押して &yast; を終了すると、デバイスを作成することができます。</para>
   </step>
  </procedure>
 
  <sect2 xml:id="sec.network.iface-bonding.hotplug">
-  <title>Hotplugging of Bonding Slaves</title>
-  <para>
-   In specific network environments (such as High Availability), there are
-   cases when you need to replace a bonding slave interface with another one.
-   The reason may be a constantly failing network device. The solution is to
-   set up hotplugging of bonding slaves.
-  </para>
-  <para>
-   The bond is configured as usual (according to <command>man 5
-   ifcfg-bonding</command>), for example:
-  </para>
+  <title>ボンドスレーブのホットプラグ</title>
+  <para>ネットワーク環境 (たとえば高可用性が必要な環境) によっては、障害の発生したネットワークインターフェイスを別のものに交換する必要がある場合があります。このような要件を満たすには、ボンドスレーブのホットプラグを設定して解決する必要があります。</para>
+  <para>ボンディングの設定を通常通りに行ないます (詳しくは <command>man 5 ifcfg-bonding</command> をお読みください) 。たとえば下記のようになります:</para>
 <screen>ifcfg-bond0
           STARTMODE='auto' # or 'onboot'
           BOOTPROTO='static'
@@ -216,10 +129,7 @@
           BONDING_SLAVE_0='eth0'
           BONDING_SLAVE_1='eth1'
           BONDING_MODULE_OPTS='mode=active-backup miimon=100'</screen>
-  <para>
-   The slaves are specified with <literal>STARTMODE=hotplug</literal> and
-   <literal>BOOTPROTO=none</literal>:
-  </para>
+  <para>スレーブ側には <literal>STARTMODE=hotplug</literal> と <literal>BOOTPROTO=none</literal> を指定します:</para>
 <screen>ifcfg-eth0
           STARTMODE='hotplug'
           BOOTPROTO='none'
@@ -234,47 +144,14 @@ ifcfg-eth1
    <literal>ens3</literal> and <literal>ens4</literal>.
   </para>
 -->
-  <para>
-   <literal>BOOTPROTO=none</literal> uses the <command>ethtool</command>
-   options (when provided), but does not set the link up on <command>ifup
-   eth0</command>. The reason is that the slave interface is controlled by the
-   bond master.
-  </para>
-  <para>
-   <literal>STARTMODE=hotplug</literal> causes the slave interface to join the
-   bond automatically when it is available.
-  </para>
-  <para>
-   The <systemitem>udev</systemitem> rules in
-   <filename>/etc/udev/rules.d/70-persistent-net.rules</filename> need to be
-   changed to match the device by bus ID (udev <systemitem>KERNELS</systemitem>
-   keyword equal to "SysFS BusID" as visible in <command>hwinfo
-   --netcard</command>) instead of by MAC address. This allows replacement of
-   defective hardware (a network card in the same slot but with a different
-   MAC) and prevents confusion when the bond changes the MAC address of all its
-   slaves.
-  </para>
-  <para>
-   For example:
-  </para>
+  <para><literal>BOOTPROTO=none</literal> を指定すると、 <command>ethtool</command> を使用して設定が行なわれますが、 <command>ifup eth0</command> で起動が行なわれなくなります。これはスレーブインターフェイスはボンドマスター側で制御されるべきであるためです。</para>
+  <para><literal>STARTMODE=hotplug</literal> を指定すると、スレーブインターフェイスが利用可能な状態になった際に、自動的にボンディングデバイスに参加するようになります。</para>
+  <para>また、 <filename>/etc/udev/rules.d/70-persistent-net.rules</filename> 内にある <systemitem>udev</systemitem> のルールを、 MAC アドレスではなくバス ID を指定する形式に変更する必要があります (udev の <systemitem>KERNELS</systemitem> キーに、 <command>hwinfo --netcard</command> で出力される "SysFS のバス ID"を指定します) 。これにより、障害の発生したハードウエア (同じスロットにありながら、 MAC アドレスの異なるハードウエア) を交換することができるようになり、 MAC アドレスが変更されることによるボンドドライバ側の問題を回避できるようになります。</para>
+  <para>たとえば下記のようになります:</para>
 <screen>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",
 KERNELS=="0000:00:19.0", ATTR{dev_id}=="0x0", ATTR{type}=="1",
 KERNEL=="eth*", NAME="eth0"</screen>
-  <para>
-   At boot time, the systemd <systemitem>network.service</systemitem> does not
-   wait for the hotplug slaves, but for the bond to become ready, which
-   requires at least one available slave. When one of the slave interfaces gets
-   removed (unbind from NIC driver, <command>rmmod</command> of the NIC driver
-   or true PCI hotplug remove) from the system, the kernel removes it from the
-   bond automatically. When a new card is added to the system (replacement of
-   the hardware in the slot), <systemitem>udev</systemitem> renames it using
-   the bus-based persistent name rule to the name of the slave, and calls
-   <command>ifup</command> for it. The <command>ifup</command> call
-   automatically joins it into the bond.
-   <remark>
-    ke: I think this can stay that way for now.
-   </remark>
-  </para>
+  <para>システムの起動時点では、 systemd の <systemitem>network.service</systemitem> はホットプラグ指定されたスレーブを待機しませんが、ボンドインターフェイスを動作させるためには、少なくとも 1 つ以上のスレーブが必要となります。スレーブインターフェイスのいずれかが取り外される (NIC ドライバからバインド解除される、つまり NIC のドライバが <command>rmmod</command> されるか、 PCI ホットプラグで取り外される) と、カーネルはボンドデバイスについても自動的に削除を行ないます。新しいカードがシステムに接続される (置き換えとして同じスロットに接続される) と、 <systemitem>udev</systemitem> はバス ID ベースの固定名をスレーブに付与して <command>ifup</command> を呼び出します。 <command>ifup</command> 側では、ボンドデバイス側への参加を自動的に行ないます。<remark> ke: I think this can stay that way for now. </remark></para>
  </sect2>
 
 <!--
