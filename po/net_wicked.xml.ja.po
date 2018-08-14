@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net_wicked.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-08-08 09:28+0000\n"
 "PO-Revision-Date: 2018-08-14 16:31+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
@@ -25,12 +25,6 @@ msgstr ""
 msgid "Configuring a Network Connection Manually"
 msgstr "ネットワーク接続の手動管理"
 
-#. Tag: dm:translation
-#: net_wicked.xml:14
-#, no-c-format
-msgid "yes"
-msgstr "yes"
-
 #. Tag: para
 #: net_wicked.xml:18
 #, no-c-format
@@ -40,8 +34,8 @@ msgid ""
 "network configuration can also assist your work with &yast;."
 msgstr ""
 "ネットワークインターフェイスの手動設定は最後の選択肢として用意されています。"
-"通常は &yast; の使用をお勧めしますが、下記に示す背景となる情報を知っておくことで、"
-" &yast; での設定もよりわかりやすくなります。"
+"通常は &yast; の使用をお勧めしますが、下記に示す背景となる情報を知っておくこ"
+"とで、 &yast; での設定もよりわかりやすくなります。"
 
 #. Tag: title
 #: net_wicked.xml:31
@@ -74,16 +68,16 @@ msgid ""
 "infrastructure. Funky interface naming schemes that require heavy udev "
 "support are introduced to achieve persistent identification of interfaces."
 msgstr ""
-"以前のネットワークインターフェイス管理では、異なるレイヤのネットワーク管理を寄せ"
-"集めて単一のスクリプトにするか、あっても 2 つの異なるスクリプトに仕立て上げるもの"
-"でした。これらのスクリプトは、きちんと定義されていない方法で互いに作用するもので"
-"あり、これによって予期しない問題を発生させたり、不明瞭な制約や慣習などをもたらす"
-"結果になってしまっていました。また、様々なシナリオに対応するための様々なレイヤの"
-"特殊な修正により、さらにメンテナンスを複雑化させてしまっていました。"
-"アドレス設定プロトコルは dhcpcd のような実装を介して使用されていましたが、こちらも"
-"他のインフラストラクチャとの対話性は低いままでした。また、わけのわからないインターフェイス"
-"名の命名方式によって、インターフェイス名の永続性を達成するのに udev の支援を多く"
-"必要としてしまっていました。"
+"以前のネットワークインターフェイス管理では、異なるレイヤのネットワーク管理を"
+"寄せ集めて単一のスクリプトにするか、あっても 2 つの異なるスクリプトに仕立て上"
+"げるものでした。これらのスクリプトは、きちんと定義されていない方法で互いに作"
+"用するものであり、これによって予期しない問題を発生させたり、不明瞭な制約や慣"
+"習などをもたらす結果になってしまっていました。また、様々なシナリオに対応する"
+"ための様々なレイヤの特殊な修正により、さらにメンテナンスを複雑化させてしまっ"
+"ていました。アドレス設定プロトコルは dhcpcd のような実装を介して使用されてい"
+"ましたが、こちらも他のインフラストラクチャとの対話性は低いままでした。また、"
+"わけのわからないインターフェイス名の命名方式によって、インターフェイス名の永"
+"続性を達成するのに udev の支援を多く必要としてしまっていました。"
 
 #. Tag: para
 #: net_wicked.xml:47
@@ -93,9 +87,9 @@ msgid ""
 "is entirely novel, but trying to put ideas from different projects together "
 "is hopefully going to create a better solution overall."
 msgstr ""
-"wicked は、様々な方法でこれらの問題を切り分けるために作られています。いずれの箇所も"
-"奇抜なものではないものの、様々なプロジェクトからのアイディアをまとめて、全体的に"
-"よりよいソリューションとなるよう期待が込められています。"
+"wicked は、様々な方法でこれらの問題を切り分けるために作られています。いずれの"
+"箇所も奇抜なものではないものの、様々なプロジェクトからのアイディアをまとめ"
+"て、全体的によりよいソリューションとなるよう期待が込められています。"
 
 #. Tag: para
 #: net_wicked.xml:52
@@ -110,13 +104,13 @@ msgid ""
 "on to the wicked server process that installs the requested addresses and "
 "routes."
 msgstr ""
-"1 つ目のアプローチは、クライアント／サーバモデルの採用です。これにより、 wicked は"
-"フレームワーク全体と十分に統合された仕組みの中で、アドレス設定などの標準化された"
-"仕組みを定義することができるようになっています。たとえば特定のアドレス設定を"
-"行なう場合、管理者は DHCP や IPv4 Zeroconf などを使用するよう設定する場合が"
-"ありますが、この場合もサーバからアドレスの貸与情報を取得して、それを wicked の"
-"サーバプロセスに渡すことで、 wicked 側がそのアドレスと経路の設定を行なうように"
-"なっています。"
+"1 つ目のアプローチは、クライアント／サーバモデルの採用です。これにより、 "
+"wicked はフレームワーク全体と十分に統合された仕組みの中で、アドレス設定などの"
+"標準化された仕組みを定義することができるようになっています。たとえば特定のア"
+"ドレス設定を行なう場合、管理者は DHCP や IPv4 Zeroconf などを使用するよう設定"
+"する場合がありますが、この場合もサーバからアドレスの貸与情報を取得して、それ"
+"を wicked のサーバプロセスに渡すことで、 wicked 側がそのアドレスと経路の設定"
+"を行なうようになっています。"
 
 #. Tag: para
 #: net_wicked.xml:61
@@ -130,12 +124,13 @@ msgid ""
 "on top of these device specific services without having to implement them "
 "specifically."
 msgstr ""
-"問題を切り分けるためのもう 1 つのアプローチとしては、レイヤ構造をきちんと守って"
-"いるということが挙げられます。どのような種類のネットワークインターフェイスであっても、"
-"ネットワークインターフェイスのデバイスレイヤ (VLAN, ブリッジ, ボンディング, "
-"準仮想化デバイスなど) を設定する DBus サービスを定義することができるようになっています。"
-"アドレスの設定などの一般的な機能については、それぞれを特別に実装することなくデバイス"
-"固有のサービス上に搭載することのできる、接続サービスを用いて実装されています。"
+"問題を切り分けるためのもう 1 つのアプローチとしては、レイヤ構造をきちんと守っ"
+"ているということが挙げられます。どのような種類のネットワークインターフェイス"
+"であっても、ネットワークインターフェイスのデバイスレイヤ (VLAN, ブリッジ, ボ"
+"ンディング, 準仮想化デバイスなど) を設定する DBus サービスを定義することがで"
+"きるようになっています。アドレスの設定などの一般的な機能については、それぞれ"
+"を特別に実装することなくデバイス固有のサービス上に搭載することのできる、接続"
+"サービスを用いて実装されています。"
 
 #. Tag: para
 #: net_wicked.xml:70
@@ -145,9 +140,10 @@ msgid ""
 "services, which get attached to a network interface depending on its type. "
 "Here is a rough overview of the current object hierarchy in wicked."
 msgstr ""
-"wicked フレームワークは、これら 2 つの要素を様々な DBus サービスを利用して実装して"
-"います。使用する DBus サービスはネットワークの種類によって異なりますが、ここには"
-" wicked 内での現在のオブジェクト構造について、大まかな概要を示しています。"
+"wicked フレームワークは、これら 2 つの要素を様々な DBus サービスを利用して実"
+"装しています。使用する DBus サービスはネットワークの種類によって異なります"
+"が、ここには wicked 内での現在のオブジェクト構造について、大まかな概要を示し"
+"ています。"
 
 #. Tag: para
 #: net_wicked.xml:75
@@ -161,11 +157,12 @@ msgid ""
 "opensuse/Network/Interfaces/2</systemitem> ."
 msgstr ""
 "それぞれのネットワークインターフェイスは <systemitem>/org/opensuse/Network/"
-"Interfaces</systemitem> の子オブジェクトとして表わされます。子オブジェクトの名前は"
-" ifindex の値から設定されます。たとえばループバックインターフェイスの場合、通常は"
-" ifindex が 1 になりますので、 <systemitem>/org/opensuse/Network/Interfaces/1</"
-"systemitem> になります。最初に登録されたイーサネットインターフェイスは、 <systemitem>/org/"
-"opensuse/Network/Interfaces/2</systemitem> になります。"
+"Interfaces</systemitem> の子オブジェクトとして表わされます。子オブジェクトの"
+"名前は ifindex の値から設定されます。たとえばループバックインターフェイスの場"
+"合、通常は ifindex が 1 になりますので、 <systemitem>/org/opensuse/Network/"
+"Interfaces/1</systemitem> になります。最初に登録されたイーサネットインター"
+"フェイスは、 <systemitem>/org/opensuse/Network/Interfaces/2</systemitem> にな"
+"ります。"
 
 #. Tag: para
 #: net_wicked.xml:84
@@ -178,12 +175,12 @@ msgid ""
 "compatible with this class. In the current implementation, this includes the "
 "following interfaces:"
 msgstr ""
-"それぞれのネットワークインターフェイスには <quote>クラス</quote> が割り当てられ、"
-"対応する DBus インターフェイスを選択する際に使用します。既定では、各ネットワーク"
-"インター他フェイスは <literal>netif</literal> というクラスになっていて、 <systemitem class="
-"\"daemon\">wickedd</systemitem> はこのクラスと互換性のある全てのインターフェイスに"
-"自動的に接続するようになっています。また、現在の実装では、下記のインターフェイスが"
-"含まれています:"
+"それぞれのネットワークインターフェイスには <quote>クラス</quote> が割り当てら"
+"れ、対応する DBus インターフェイスを選択する際に使用します。既定では、各ネッ"
+"トワークインター他フェイスは <literal>netif</literal> というクラスになってい"
+"て、 <systemitem class=\"daemon\">wickedd</systemitem> はこのクラスと互換性の"
+"ある全てのインターフェイスに自動的に接続するようになっています。また、現在の"
+"実装では、下記のインターフェイスが含まれています:"
 
 #. Tag: term
 #: net_wicked.xml:95
@@ -198,8 +195,8 @@ msgid ""
 "Generic network interface functions, such as taking the link up or down, "
 "assigning an MTU, etc."
 msgstr ""
-"リンクアップやリンクダウン、 MTU の割り当てなどの一般的なネットワークインターフェイス"
-"機能を表わします。"
+"リンクアップやリンクダウン、 MTU の割り当てなどの一般的なネットワークインター"
+"フェイス機能を表わします。"
 
 #. Tag: term
 #: net_wicked.xml:104
@@ -226,8 +223,8 @@ msgid ""
 "Address configuration services for DHCP, <!-- IPv6 autoconf, --> IPv4 "
 "zeroconf, etc."
 msgstr ""
-"DHCP, <!-- IPv6 autoconf, --> IPv4 zeroconf などのアドレス設定サービスを"
-"表わします。"
+"DHCP, <!-- IPv6 autoconf, --> IPv4 zeroconf などのアドレス設定サービスを表わ"
+"します。"
 
 #. Tag: para
 #: net_wicked.xml:119
@@ -243,15 +240,16 @@ msgid ""
 "Ethernet</systemitem> service available only to objects belonging to the "
 "<literal>netif-ethernet</literal> class."
 msgstr ""
-"これらに加えて、ネットワークインターフェイスによっては特別の設定機構を必要として"
-"いたり、提供していたりすることがあります。たとえばイーサネットデバイスであれば、"
-"リンク速度やチェックサムのオフロード機能などを制御することができるでしょう。これらを"
-"実現するために、イーサネットの場合は <literal>netif</literal> のサブクラスである"
-"<literal>netif-ethernet</literal> という特殊なクラスが用意されています。そのため、"
-"イーサネットインターフェイスに割り当てられている DBus インターフェイスは、上述の"
-"全てのサービスに加えて、 <systemitem>org.opensuse.Network.Ethernet</systemitem> "
-"サービスが提供されています。これにより、 <literal>netif-ethernet</literal> クラスに"
-"属するオブジェクトにアクセスできるようになっています。"
+"これらに加えて、ネットワークインターフェイスによっては特別の設定機構を必要と"
+"していたり、提供していたりすることがあります。たとえばイーサネットデバイスで"
+"あれば、リンク速度やチェックサムのオフロード機能などを制御することができるで"
+"しょう。これらを実現するために、イーサネットの場合は <literal>netif</"
+"literal> のサブクラスである<literal>netif-ethernet</literal> という特殊なクラ"
+"スが用意されています。そのため、イーサネットインターフェイスに割り当てられて"
+"いる DBus インターフェイスは、上述の全てのサービスに加えて、 <systemitem>org."
+"opensuse.Network.Ethernet</systemitem> サービスが提供されています。これによ"
+"り、 <literal>netif-ethernet</literal> クラスに属するオブジェクトにアクセスで"
+"きるようになっています。"
 
 #. Tag: para
 #: net_wicked.xml:130
@@ -260,8 +258,8 @@ msgid ""
 "Similarly, there exist classes for interface types like bridges, VLANs, "
 "bonds, or infinibands."
 msgstr ""
-"同様に、ブリッジや VLAN 、ボンディングや InfiniBand 等のインターフェイスの種類に"
-"対しても、それぞれのクラスが用意されています。"
+"同様に、ブリッジや VLAN 、ボンディングや InfiniBand 等のインターフェイスの種"
+"類に対しても、それぞれのクラスが用意されています。"
 
 #. Tag: para
 #: net_wicked.xml:134
@@ -275,14 +273,14 @@ msgid ""
 "requested type. These factory interfaces are attached to the <systemitem>/"
 "org/opensuse/Network/Interfaces</systemitem> list node."
 msgstr ""
-"VLAN のように、イーサネットデバイスを包含するタイプの仮想ネットワークインターフェイス"
-"である場合、これらを先に作成する必要がありますが、これは wicked でどのように"
-"扱われているのでしょうか？ これを実現するために、 wicked では"
-" <systemitem>org.opensuse.Network.VLAN.Factory</systemitem> などの factory "
-"インターフェイスを定義しています。この factory インターフェイスは、指定した種類の"
-"インターフェイスを作成する機能だけを持ち、このインターフェイスが <systemitem>/"
-"org/opensuse/Network/Interfaces</systemitem> のリストノードに割り付けられる"
-"ようになっています。"
+"VLAN のように、イーサネットデバイスを包含するタイプの仮想ネットワークインター"
+"フェイスである場合、これらを先に作成する必要がありますが、これは wicked でど"
+"のように扱われているのでしょうか？ これを実現するために、 wicked では "
+"<systemitem>org.opensuse.Network.VLAN.Factory</systemitem> などの factory イ"
+"ンターフェイスを定義しています。この factory インターフェイスは、指定した種類"
+"のインターフェイスを作成する機能だけを持ち、このインターフェイスが "
+"<systemitem>/org/opensuse/Network/Interfaces</systemitem> のリストノードに割"
+"り付けられるようになっています。"
 
 #. Tag: title
 #: net_wicked.xml:145
@@ -297,8 +295,8 @@ msgid ""
 "The <literal>wicked</literal> service comprises several parts as depicted in "
 "<xref linkend=\"wicked.architecture\"/> ."
 msgstr ""
-"<literal>wicked</literal> サービスは複数のパーツから構成されています。詳しくは"
-" <xref linkend=\"wicked.architecture\"/> をお読みください。"
+"<literal>wicked</literal> サービスは複数のパーツから構成されています。詳しく"
+"は <xref linkend=\"wicked.architecture\"/> をお読みください。"
 
 #. Tag: title
 #: net_wicked.xml:151
@@ -319,8 +317,8 @@ msgid ""
 "Configuration file back-ends to parse SUSE style <filename>/etc/sysconfig/"
 "network</filename> files."
 msgstr ""
-"SUSE 形式の <filename>/etc/sysconfig/network</filename> ファイルを処理するための"
-"設定ファイルバックエンド"
+"SUSE 形式の <filename>/etc/sysconfig/network</filename> ファイルを処理するた"
+"めの設定ファイルバックエンド"
 
 #. Tag: para
 #: net_wicked.xml:172
@@ -330,9 +328,9 @@ msgid ""
 "configuration in XML. <!-- according to mt, that's nowerdays misleading: --> "
 "<!-- The syntax evolved out of what netcf uses. -->"
 msgstr ""
-"ネットワークの設定を XML 形式で表わす内部用の設定バックエンド"
-" <!-- according to mt, that's nowerdays misleading: --> "
-"<!-- The syntax evolved out of what netcf uses. -->"
+"ネットワークの設定を XML 形式で表わす内部用の設定バックエンド <!-- according "
+"to mt, that's nowerdays misleading: --> <!-- The syntax evolved out of what "
+"netcf uses. -->"
 
 #. Tag: para
 #: net_wicked.xml:182
@@ -362,10 +360,10 @@ msgid ""
 "and set up the IP configuration when a link (carrier) is detected. See <xref "
 "linkend=\"sec.network.manconf.using_nanny\"/> for more information."
 msgstr ""
-"設定済みのインターフェイスが利用可能な状態になった場合の自動起動 (ホットプラグ) "
-"と、リンク (キャリア) を検出した際の IP 設定に対応する nanny デーモン"
-" (既定で有効化されています) 。詳しくは <xref "
-"linkend=\"sec.network.manconf.using_nanny\"/> をお読みください"
+"設定済みのインターフェイスが利用可能な状態になった場合の自動起動 (ホットプラ"
+"グ) と、リンク (キャリア) を検出した際の IP 設定に対応する nanny デーモン (既"
+"定で有効化されています) 。詳しくは <xref linkend=\"sec.network.manconf."
+"using_nanny\"/> をお読みください"
 
 #. Tag: para
 #: net_wicked.xml:204
@@ -375,9 +373,9 @@ msgid ""
 "are integrated with systemd. So the usual <command>systemctl</command> "
 "commands will apply to <literal>wicked</literal> ."
 msgstr ""
-"systemd と統合するための DBus サービスの集合体としての実装 (そのため、通常の"
-" <command>systemctl</command> のコマンドが <literal>wicked</literal> にも"
-"適用されます)"
+"systemd と統合するための DBus サービスの集合体としての実装 (そのため、通常の "
+"<command>systemctl</command> のコマンドが <literal>wicked</literal> にも適用"
+"されます)"
 
 #. Tag: title
 #: net_wicked.xml:214
@@ -392,8 +390,8 @@ msgid ""
 "On &sle;, <literal>wicked</literal> is running by default. If you want to "
 "check what is currently enabled and whether it is running, call:"
 msgstr ""
-"&sle; では、 <literal>wicked</literal> は既定で動作しています。現時点で何が"
-"有効化され動作しているのかを調べるには、下記のコマンドを実行します:"
+"&sle; では、 <literal>wicked</literal> は既定で動作しています。現時点で何が有"
+"効化され動作しているのかを調べるには、下記のコマンドを実行します:"
 
 #. Tag: para
 #: net_wicked.xml:219
@@ -405,9 +403,9 @@ msgid ""
 "call:"
 msgstr ""
 "&opensuse; Leap では、 <literal>wicked</literal> はデスクトップハードウエアや"
-"サーバハードウエアの場合に、既定で動作しています。モバイルハードウエアの場合は、"
-" &nm; が既定で動作しています。現時点で何が有効化され動作しているのかを調べるには、"
-"下記のコマンドを実行します:"
+"サーバハードウエアの場合に、既定で動作しています。モバイルハードウエアの場合"
+"は、 &nm; が既定で動作しています。現時点で何が有効化され動作しているのかを調"
+"べるには、下記のコマンドを実行します:"
 
 #. Tag: screen
 #: net_wicked.xml:225
@@ -421,7 +419,9 @@ msgstr "systemctl status network"
 msgid ""
 "If <literal>wicked</literal> is enabled, you will see something along these "
 "lines:"
-msgstr "<literal>wicked</literal> が有効化されている場合、下記のような出力が現われます:"
+msgstr ""
+"<literal>wicked</literal> が有効化されている場合、下記のような出力が現われま"
+"す:"
 
 #. Tag: screen
 #: net_wicked.xml:231
@@ -443,9 +443,9 @@ msgid ""
 "switch to <literal>wicked</literal> , first stop what is running and then "
 "enable <literal>wicked</literal> :"
 msgstr ""
-"何か異なるシステム (たとえば &nm;) が動作しているような場合で、 <literal>wicked</literal> "
-"に切り替えたい場合は、まず動作しているものを停止してから <literal>wicked</literal> "
-"を有効化してください:"
+"何か異なるシステム (たとえば &nm;) が動作しているような場合で、 "
+"<literal>wicked</literal> に切り替えたい場合は、まず動作しているものを停止し"
+"てから <literal>wicked</literal> を有効化してください:"
 
 #. Tag: screen
 #: net_wicked.xml:239
@@ -467,9 +467,9 @@ msgid ""
 "filename> to <filename>wicked.service</filename> alias link, and starts the "
 "network at the next boot."
 msgstr ""
-"これにより wicked サービスが有効化され、 <filename>network.service</filename> "
-"から <filename>wicked.service</filename> に別名リンクが設定され、次回以降の"
-"起動で開始されるようになります。"
+"これにより wicked サービスが有効化され、 <filename>network.service</"
+"filename> から <filename>wicked.service</filename> に別名リンクが設定され、次"
+"回以降の起動で開始されるようになります。"
 
 #. Tag: para
 #: net_wicked.xml:247
@@ -490,8 +490,8 @@ msgid ""
 "This starts <command>wickedd</command> (the main server) and associated "
 "supplicants:"
 msgstr ""
-"これにより、 <command>wickedd</command> (メインサーバ) が起動され、関連する"
-"下記のプログラムも起動されます:"
+"これにより、 <command>wickedd</command> (メインサーバ) が起動され、関連する下"
+"記のプログラムも起動されます:"
 
 #. Tag: screen
 #: net_wicked.xml:255
@@ -525,7 +525,9 @@ msgstr "systemctl start wicked"
 #: net_wicked.xml:264
 #, no-c-format
 msgid "Alternatively use the <filename>network.service</filename> alias:"
-msgstr "上記ではなく、別名である <filename>network.service</filename> のほうを起動してもかまいません:"
+msgstr ""
+"上記ではなく、別名である <filename>network.service</filename> のほうを起動し"
+"てもかまいません:"
 
 #. Tag: screen
 #: net_wicked.xml:267
@@ -540,8 +542,8 @@ msgid ""
 "These commands are using the default or system configuration sources as "
 "defined in <filename>/etc/wicked/client.xml</filename> ."
 msgstr ""
-"これらのコマンドは既定値を使用するか、もしくは <filename>/etc/wicked/client.xml</filename> "
-"内に書かれているシステム設定を使用します。"
+"これらのコマンドは既定値を使用するか、もしくは <filename>/etc/wicked/client."
+"xml</filename> 内に書かれているシステム設定を使用します。"
 
 #. Tag: para
 #: net_wicked.xml:272
@@ -550,8 +552,9 @@ msgid ""
 "To enable debugging, set <literal>WICKED_DEBUG</literal> in <filename>/etc/"
 "sysconfig/network/config</filename> , for example:"
 msgstr ""
-"デバッグを有効化するには、 <filename>/etc/sysconfig/network/config</filename> "
-"内で <literal>WICKED_DEBUG</literal> を設定します。たとえば下記のようになります:"
+"デバッグを有効化するには、 <filename>/etc/sysconfig/network/config</"
+"filename> 内で <literal>WICKED_DEBUG</literal> を設定します。たとえば下記のよ"
+"うになります:"
 
 #. Tag: screen
 #: net_wicked.xml:276
@@ -578,8 +581,9 @@ msgid ""
 "Use the client utility to display interface information for all interfaces "
 "or the interface specified with <replaceable>IFNAME</replaceable> :"
 msgstr ""
-"全てのインターフェイスに対する情報を表示したり、 <replaceable>インターフェイス名</replaceable> "
-"で指定したインターフェイスに対する情報を表示したりするには、下記のいずれかを実行します:"
+"全てのインターフェイスに対する情報を表示したり、 <replaceable>インターフェイ"
+"ス名</replaceable> で指定したインターフェイスに対する情報を表示したりするに"
+"は、下記のいずれかを実行します:"
 
 #. Tag: screen
 #: net_wicked.xml:285
@@ -611,7 +615,8 @@ msgstr ""
 #: net_wicked.xml:292
 #, no-c-format
 msgid "Bringing up one interface:"
-msgstr "いずれか 1 つのインターフェイスを起動する場合は、下記のように実行します:"
+msgstr ""
+"いずれか 1 つのインターフェイスを起動する場合は、下記のように実行します:"
 
 #. Tag: screen
 #: net_wicked.xml:295
@@ -634,7 +639,8 @@ msgid ""
 "xml</filename> :"
 msgstr ""
 "何も設定情報を指定しない場合、 wicked クライアントは <filename>/etc/wicked/"
-"client.xml</filename> 内で指定されている既定の情報源を利用して設定しようとします:"
+"client.xml</filename> 内で指定されている既定の情報源を利用して設定しようとし"
+"ます:"
 
 #. Tag: para
 #: net_wicked.xml:307
@@ -649,8 +655,8 @@ msgid ""
 "<literal>compat:</literal> <literal>ifcfg</literal> files&mdash;implemented "
 "for compatibility"
 msgstr ""
-"<literal>compat:</literal> <literal>ifcfg</literal> ファイル (互換性を維持するために"
-"実装されています)"
+"<literal>compat:</literal> <literal>ifcfg</literal> ファイル (互換性を維持す"
+"るために実装されています)"
 
 #. Tag: para
 #: net_wicked.xml:318
@@ -661,15 +667,16 @@ msgid ""
 "literal> , then <literal>compat</literal> &mdash;this may be changed in the "
 "future."
 msgstr ""
-"<literal>wicked</literal> がインターフェイスの設定を取得した場合は、どのような"
-"内容であっても、 <literal>firmware</literal> , <literal>compat</literal> "
-"の順序で計画されています。ただし将来的には変更される可能性があります。"
+"<literal>wicked</literal> がインターフェイスの設定を取得した場合は、どのよう"
+"な内容であっても、 <literal>firmware</literal> , <literal>compat</literal> の"
+"順序で計画されています。ただし将来的には変更される可能性があります。"
 
 #. Tag: para
 #: net_wicked.xml:360
 #, no-c-format
 msgid "For more information, see the <command>wicked</command> man page."
-msgstr "詳しくは <command>wicked</command> のマニュアルページをお読みください。"
+msgstr ""
+"詳しくは <command>wicked</command> のマニュアルページをお読みください。"
 
 #. Tag: title
 #: net_wicked.xml:365
@@ -689,13 +696,13 @@ msgid ""
 "<command>ifup</command> already exited because of specified timeout "
 "constraints."
 msgstr ""
-"nanny はイベントおよびポリシー駆動型のデーモンで、ホットプラグ型のデバイスなどの"
-"非同期かつ不用意なシナリオに対応するための仕組みです。そのため、 nanny デーモンは"
-"開始や再起動の遅延のほか、一時的に取り外されたデバイスにも対応することができます。"
-"また、 nanny はデバイスとリンク状態の変更を監視しているほか、現在のポリシーセット"
-"で設定されている新しいデバイスを統合することができます。 Nanny では指定されたタイム"
-"アウト制約によって <command>ifup</command> が既に終了してしまったような場合でも、"
-"継続して設定を行なうことができます。"
+"nanny はイベントおよびポリシー駆動型のデーモンで、ホットプラグ型のデバイスな"
+"どの非同期かつ不用意なシナリオに対応するための仕組みです。そのため、 nanny "
+"デーモンは開始や再起動の遅延のほか、一時的に取り外されたデバイスにも対応する"
+"ことができます。また、 nanny はデバイスとリンク状態の変更を監視しているほか、"
+"現在のポリシーセットで設定されている新しいデバイスを統合することができます。 "
+"Nanny では指定されたタイムアウト制約によって <command>ifup</command> が既に終"
+"了してしまったような場合でも、継続して設定を行なうことができます。"
 
 #. Tag: para
 #: net_wicked.xml:375
@@ -705,7 +712,8 @@ msgid ""
 "<filename>/etc/wicked/common.xml</filename> configuration file:"
 msgstr ""
 "既定では、 nanny デーモンはシステム内で有効化されています。具体的には、"
-"<filename>/etc/wicked/common.xml</filename> 設定ファイル内の下記で有効化されています:"
+"<filename>/etc/wicked/common.xml</filename> 設定ファイル内の下記で有効化され"
+"ています:"
 
 #. Tag: screen
 #: net_wicked.xml:379
@@ -730,11 +738,11 @@ msgid ""
 "\"daemon\">wickedd</systemitem> and thus ensures hotplug support. It waits "
 "in the background for events or changes (such as new devices or carrier on)."
 msgstr ""
-"この設定により、 ifup と ifreload は nanny デーモンに対して効率的な設定ポリシー"
-"を適用することになります。その後、 nanny は <systemitem class=\"daemon\">wickedd"
-"</systemitem> をも設定しますので、ホットプラグにも対応することになります。"
-"また、 nanny は裏でイベントや変更 (新しいデバイスの接続やキャリア状態の変更など) "
-"を待機する処理も行ないます。"
+"この設定により、 ifup と ifreload は nanny デーモンに対して効率的な設定ポリ"
+"シーを適用することになります。その後、 nanny は <systemitem class=\"daemon"
+"\">wickedd</systemitem> をも設定しますので、ホットプラグにも対応することにな"
+"ります。また、 nanny は裏でイベントや変更 (新しいデバイスの接続やキャリア状態"
+"の変更など) を待機する処理も行ないます。"
 
 #. Tag: title
 #: net_wicked.xml:394
@@ -751,10 +759,10 @@ msgid ""
 "can bring up the whole configuration if you specify the top level interface "
 "names (of the bridge or bond):"
 msgstr ""
-"ボンディングやブリッジでは、複数のデバイスを 1 つにまとめて設定を行ない (ifcfg-bondX) ますので、"
-"それらを一括で起動する必要があります。 wicked では、ボンディングやブリッジなどの"
-"上位側のインターフェイス名を起動するだけで、その中にあるインターフェイスを一括で"
-"起動することができます:"
+"ボンディングやブリッジでは、複数のデバイスを 1 つにまとめて設定を行ない "
+"(ifcfg-bondX) ますので、それらを一括で起動する必要があります。 wicked では、"
+"ボンディングやブリッジなどの上位側のインターフェイス名を起動するだけで、その"
+"中にあるインターフェイスを一括で起動することができます:"
 
 #. Tag: screen
 #: net_wicked.xml:401
@@ -770,14 +778,16 @@ msgid ""
 "appropriate order without the need to list the dependencies (ports, etc.) "
 "separately."
 msgstr ""
-"このコマンドを実行すると、ブリッジを設定して起動するまでの処理を、特に依存関係の"
-"順序 (ポートなど) を指定することなく、自動で行なうことができます。"
+"このコマンドを実行すると、ブリッジを設定して起動するまでの処理を、特に依存関"
+"係の順序 (ポートなど) を指定することなく、自動で行なうことができます。"
 
 #. Tag: para
 #: net_wicked.xml:407
 #, no-c-format
 msgid "To bring up multiple interfaces in one command:"
-msgstr "複数のインターフェイスを 1 つのコマンドで起動するには、下記のように実行します:"
+msgstr ""
+"複数のインターフェイスを 1 つのコマンドで起動するには、下記のように実行しま"
+"す:"
 
 #. Tag: screen
 #: net_wicked.xml:410
@@ -813,9 +823,9 @@ msgid ""
 "device."
 msgstr ""
 "wicked でトンネルを使用する必要がある場合は、 <envar>TUNNEL_DEVICE</envar> で"
-"設定を行なって対応することができます。必要であれば、デバイス名を指定してトンネル"
-"とデバイスを紐づけることもできます。トンネルされたパケットは、このデバイスを介して"
-"配信されることになります。"
+"設定を行なって対応することができます。必要であれば、デバイス名を指定してトン"
+"ネルとデバイスを紐づけることもできます。トンネルされたパケットは、このデバイ"
+"スを介して配信されることになります。"
 
 #. Tag: para
 #: net_wicked.xml:425
@@ -843,15 +853,15 @@ msgid ""
 "as addresses, routes, or even the address configuration mode (for example, "
 "when moving from a static configuration to DHCP)."
 msgstr ""
-"<command>wicked</command> では、インターフェイスを再設定するにあたって、"
-"インターフェイスをいったん停止する必要はありません (カーネル側で求められている"
-"場合を除きます) 。たとえばネットワークインターフェイスに IP アドレスを追加したり、"
-"経路設定を行なったりする場合でも、インターフェイスの設定に IP アドレスを追加したあと、"
-"もう一度 <quote>ifup</quote> 操作を行なうだけで済むようになっています。サーバ側では"
-"変更すべき設定のみを抽出して適用する処理を行ないます。これは MTU や MAC アドレス"
-"などのリンクレベルのオプションだけでなく、アドレスや経路、アドレスの設定モード"
-" (固定のアドレス設定から DHCP への変更など) のネットワークレベルの設定に対しても、"
-"このような動作をするようになっています。"
+"<command>wicked</command> では、インターフェイスを再設定するにあたって、イン"
+"ターフェイスをいったん停止する必要はありません (カーネル側で求められている場"
+"合を除きます) 。たとえばネットワークインターフェイスに IP アドレスを追加した"
+"り、経路設定を行なったりする場合でも、インターフェイスの設定に IP アドレスを"
+"追加したあと、もう一度 <quote>ifup</quote> 操作を行なうだけで済むようになって"
+"います。サーバ側では変更すべき設定のみを抽出して適用する処理を行ないます。こ"
+"れは MTU や MAC アドレスなどのリンクレベルのオプションだけでなく、アドレスや"
+"経路、アドレスの設定モード (固定のアドレス設定から DHCP への変更など) のネッ"
+"トワークレベルの設定に対しても、このような動作をするようになっています。"
 
 #. Tag: para
 #: net_wicked.xml:443
@@ -862,10 +872,10 @@ msgid ""
 "change certain parameters while the device is up. Doing that will result in "
 "an error."
 msgstr ""
-"ブリッジやボンディングなど、複数の実デバイスから構成される仮想デバイスの"
-"設定に対しては、注意する必要があります。たとえばボンディングデバイスの場合、"
-"デバイスの起動中には特定の設定を行なうことができません。設定しようとすると、"
-"エラーが発生することがあります。"
+"ブリッジやボンディングなど、複数の実デバイスから構成される仮想デバイスの設定"
+"に対しては、注意する必要があります。たとえばボンディングデバイスの場合、デバ"
+"イスの起動中には特定の設定を行なうことができません。設定しようとすると、エ"
+"ラーが発生することがあります。"
 
 #. Tag: para
 #: net_wicked.xml:449
@@ -874,8 +884,8 @@ msgid ""
 "However, what should still work, is the act of adding or removing the child "
 "devices of a bond or bridge, or choosing a bond's primary interface."
 msgstr ""
-"しかしながら、ボンディングやブリッジなどの実デバイスの追加や削除、ボンディングに"
-"おけるプライマリインターフェイスの選択などは、行なうことが可能です。"
+"しかしながら、ボンディングやブリッジなどの実デバイスの追加や削除、ボンディン"
+"グにおけるプライマリインターフェイスの選択などは、行なうことが可能です。"
 
 #. Tag: title
 #: net_wicked.xml:456
@@ -890,8 +900,9 @@ msgid ""
 "<command>wicked</command> is designed to be extensible with shell scripts. "
 "These extensions can be defined in the <filename>config.xml</filename> file."
 msgstr ""
-"<command>wicked</command> はシェルスクリプトによって拡張を行なうことができます。"
-"これらの拡張は、 <filename>config.xml</filename> ファイル内に定義されています。"
+"<command>wicked</command> はシェルスクリプトによって拡張を行なうことができま"
+"す。これらの拡張は、 <filename>config.xml</filename> ファイル内に定義されてい"
+"ます。"
 
 #. Tag: para
 #: net_wicked.xml:462
@@ -907,8 +918,9 @@ msgid ""
 "link layer according to the configuration provided by the client, and for "
 "tearing it down again."
 msgstr ""
-"リンク設定: これらは、クライアント側から提供されたリンクレイヤの設定にあわせてデバイスを"
-"設定し起動する機能、およびデバイスを停止するためのスクリプトです。"
+"リンク設定: これらは、クライアント側から提供されたリンクレイヤの設定にあわせ"
+"てデバイスを設定し起動する機能、およびデバイスを停止するためのスクリプトで"
+"す。"
 
 #. Tag: para
 #: net_wicked.xml:474
@@ -919,15 +931,17 @@ msgid ""
 "<command>wicked</command> itself, but can be implemented by means of "
 "extensions."
 msgstr ""
-"アドレス設定: これらは、デバイスのアドレス設定を行なうためのスクリプトです。通常は"
-"アドレスの設定や DHCP の設定などは <command>wicked</command> 自身が管理しますが、"
-"拡張として実装もされています。"
+"アドレス設定: これらは、デバイスのアドレス設定を行なうためのスクリプトです。"
+"通常はアドレスの設定や DHCP の設定などは <command>wicked</command> 自身が管理"
+"しますが、拡張として実装もされています。"
 
 #. Tag: para
 #: net_wicked.xml:482
 #, no-c-format
 msgid "firewall extension: these scripts can apply firewall rules."
-msgstr "ファイアウオール拡張: これらのスクリプトは、ファイアウオールのルールを適用します。"
+msgstr ""
+"ファイアウオール拡張: これらのスクリプトは、ファイアウオールのルールを適用し"
+"ます。"
 
 #. Tag: para
 #: net_wicked.xml:487
@@ -937,8 +951,9 @@ msgid ""
 "<quote>pid file</quote> , and a set of environment variables that get passed "
 "to the script."
 msgstr ""
-"一般的に、拡張には開始と停止のコマンドが用意されているほか、必要に応じて"
-" <quote>PID ファイル</quote> やスクリプトに渡される環境変数などが存在しています。"
+"一般的に、拡張には開始と停止のコマンドが用意されているほか、必要に応じて "
+"<quote>PID ファイル</quote> やスクリプトに渡される環境変数などが存在していま"
+"す。"
 
 #. Tag: para
 #: net_wicked.xml:492
@@ -987,9 +1002,9 @@ msgid ""
 "Further, the declaration can define and initialize environment variables "
 "passed to the actions."
 msgstr ""
-"拡張は <tag class=\"starttag\">dbus-service</tag> タグに割り当てられ、この"
-"インターフェイスのアクションを実行する際のコマンドを定義しています。また、"
-"アクションに対して渡される環境変数の定義を行なうこともできます。"
+"拡張は <tag class=\"starttag\">dbus-service</tag> タグに割り当てられ、このイ"
+"ンターフェイスのアクションを実行する際のコマンドを定義しています。また、アク"
+"ションに対して渡される環境変数の定義を行なうこともできます。"
 
 #. Tag: title
 #: net_wicked.xml:515
@@ -1006,9 +1021,10 @@ msgid ""
 "<filename>extensions/resolver</filename> script, with behavior configured in "
 "<filename>server.xml</filename> :"
 msgstr ""
-"Wicked では、スクリプトを利用して設定ファイルの処理を拡張することができます。たとえば"
-" DHCP による貸与情報からの DNS の書き換えは、 <filename>extensions/resolver</filename> "
-"が実施していて、これは <filename>server.xml</filename> 内に記述されています:"
+"Wicked では、スクリプトを利用して設定ファイルの処理を拡張することができます。"
+"たとえば DHCP による貸与情報からの DNS の書き換えは、 <filename>extensions/"
+"resolver</filename> が実施していて、これは <filename>server.xml</filename> 内"
+"に記述されています:"
 
 #. Tag: screen
 #: net_wicked.xml:522
@@ -1047,11 +1063,12 @@ msgid ""
 "sbin/netconfig</command> , or by manually writing <filename>/etc/resolv."
 "conf</filename> as a fallback."
 msgstr ""
-"<systemitem>wickedd</systemitem> に対して更新が届くと、貸与情報を処理して、"
-" <command>resolver</command> スクリプトの対応するコマンド (( <literal>backup</literal> ,"
-" <literal>install</literal> を実行します。ここから <command>/sbin/netconfig</command> "
-"を呼び出して DNS の設定を変更するか、手作業で <filename>/etc/resolv.conf</filename> "
-"を変更している場合は、このファイルを直接変更する処理を行ないます。"
+"<systemitem>wickedd</systemitem> に対して更新が届くと、貸与情報を処理して、 "
+"<command>resolver</command> スクリプトの対応するコマンド (( <literal>backup</"
+"literal> , <literal>install</literal> を実行します。ここから <command>/sbin/"
+"netconfig</command> を呼び出して DNS の設定を変更するか、手作業で <filename>/"
+"etc/resolv.conf</filename> を変更している場合は、このファイルを直接変更する処"
+"理を行ないます。"
 
 #. Tag: title
 #: net_wicked.xml:542
@@ -1067,9 +1084,9 @@ msgid ""
 "it. To set up a test configuration, use the <command>ip</command> command. "
 "To test the connection, use the <command>ping</command> command."
 msgstr ""
-"設定ファイル内に独自の設定を行なう前に、事前にテストを行なっておくことをお勧めします。"
-"テスト設定を行なうには <command>ip</command> コマンドを、接続をテストするには"
-" <command>ping</command> コマンドを使用します。"
+"設定ファイル内に独自の設定を行なう前に、事前にテストを行なっておくことをお勧"
+"めします。テスト設定を行なうには <command>ip</command> コマンドを、接続をテス"
+"トするには <command>ping</command> コマンドを使用します。"
 
 #. Tag: para
 #: net_wicked.xml:548
@@ -1080,14 +1097,16 @@ msgid ""
 "configuration in the correct configuration files, the changed network "
 "configuration is lost on reboot."
 msgstr ""
-"<command>ip</command> コマンドは、設定ファイルに設定を保存することなく、ネットワークの"
-"設定を直接変更します。そのため、変更した設定はシステムを再起動すると元に戻ってしまいます。"
+"<command>ip</command> コマンドは、設定ファイルに設定を保存することなく、ネッ"
+"トワークの設定を直接変更します。そのため、変更した設定はシステムを再起動する"
+"と元に戻ってしまいます。"
 
 #. Tag: title
 #: net_wicked.xml:555
 #, no-c-format
 msgid "<command>ifconfig</command> and <command>route</command> Are Obsolete"
-msgstr "<command>ifconfig</command> と <command>route</command> の廃止予定について"
+msgstr ""
+"<command>ifconfig</command> と <command>route</command> の廃止予定について"
 
 #. Tag: para
 #: net_wicked.xml:556
@@ -1097,10 +1116,10 @@ msgid ""
 "obsolete. Use <command>ip</command> instead. <command>ifconfig</command> , "
 "for example, limits interface names to 9 characters."
 msgstr ""
-"<command>ifconfig</command> と <command>route</command> の各ツールは、廃止予定として"
-"マークされています。代わりに <command>ip</command> コマンドをお使いください。"
-"また、 <command>ifconfig</command> コマンドは、インターフェイス名の長さが 9 文字までに"
-"制限されています。"
+"<command>ifconfig</command> と <command>route</command> の各ツールは、廃止予"
+"定としてマークされています。代わりに <command>ip</command> コマンドをお使いく"
+"ださい。また、 <command>ifconfig</command> コマンドは、インターフェイス名の長"
+"さが 9 文字までに制限されています。"
 
 #. Tag: title
 #: net_wicked.xml:563
@@ -1115,8 +1134,9 @@ msgid ""
 "<command>ip</command> is a tool to show and configure network devices, "
 "routing, policy routing, and tunnels."
 msgstr ""
-"<command>ip</command> コマンドは、ネットワークデバイスやルーティング、ポリシー"
-"ルーティングやトンネルなどを設定したり、設定を取得したりするためのツールです。"
+"<command>ip</command> コマンドは、ネットワークデバイスやルーティング、ポリ"
+"シールーティングやトンネルなどを設定したり、設定を取得したりするためのツール"
+"です。"
 
 #. Tag: para
 #: net_wicked.xml:626
@@ -1127,8 +1147,8 @@ msgid ""
 "<replaceable>OBJECT</replaceable> <replaceable>COMMAND</replaceable></"
 "option> . You can work with the following objects:"
 msgstr ""
-"<command>ip</command> コマンドは非常に複雑なツールです。一般的には"
-" <command>ip</command> &nbsp; <option><replaceable>オプション</replaceable> "
+"<command>ip</command> コマンドは非常に複雑なツールです。一般的には "
+"<command>ip</command> &nbsp; <option><replaceable>オプション</replaceable> "
 "<replaceable>オブジェクト</replaceable> <replaceable>コマンド</replaceable></"
 "option> の形式で実行します。オブジェクトには下記のものがあります:"
 
@@ -1190,7 +1210,8 @@ msgstr "rule"
 #: net_wicked.xml:669
 #, no-c-format
 msgid "This object represents a rule in the routing policy database."
-msgstr "このオブジェクトは、ルーティングポリシーデータベース内のルールを表わします。"
+msgstr ""
+"このオブジェクトは、ルーティングポリシーデータベース内のルールを表わします。"
 
 #. Tag: term
 #: net_wicked.xml:675
@@ -1214,7 +1235,8 @@ msgstr "mroute"
 #: net_wicked.xml:685
 #, no-c-format
 msgid "This object represents a multicast routing cache entry."
-msgstr "このオブジェクトは、マルチキャストのルーティングキャッシュ項目を表わします。"
+msgstr ""
+"このオブジェクトは、マルチキャストのルーティングキャッシュ項目を表わします。"
 
 #. Tag: term
 #: net_wicked.xml:691
@@ -1235,8 +1257,8 @@ msgid ""
 "If no command is given, the default command is used (usually <command>list</"
 "command> )."
 msgstr ""
-"何もコマンドを指定しない場合は、指定のコマンド (通常は <command>list</command>) "
-"が指定されているものと見なします。"
+"何もコマンドを指定しない場合は、指定のコマンド (通常は <command>list</"
+"command>) が指定されているものと見なします。"
 
 #. Tag: para
 #: net_wicked.xml:703
@@ -1248,11 +1270,12 @@ msgid ""
 "set</command> <option>eth0 down</option> . To activate it again, use "
 "<command>ip link set</command> <option>eth0 up</option> ."
 msgstr ""
-"デバイスの状態を変更したい場合は、 <command>ip link set</command> "
-"&nbsp; <option><replaceable>デバイス名</replaceable></option> &nbsp; "
-"<command/> のように実行します。たとえば eth0 デバイスを無効化したい場合は、 <command>ip link "
-"set</command> <option>eth0 down</option> と入力して実行します。逆に有効化したい場合は、"
-" <command>ip link set</command> <option>eth0 up</option> と入力して実行します。"
+"デバイスの状態を変更したい場合は、 <command>ip link set</command> &nbsp; "
+"<option><replaceable>デバイス名</replaceable></option> &nbsp; <command/> のよ"
+"うに実行します。たとえば eth0 デバイスを無効化したい場合は、 <command>ip "
+"link set</command> <option>eth0 down</option> と入力して実行します。逆に有効"
+"化したい場合は、 <command>ip link set</command> <option>eth0 up</option> と入"
+"力して実行します。"
 
 #. Tag: para
 #: net_wicked.xml:710
@@ -1265,13 +1288,13 @@ msgid ""
 "standard broadcast (option <option>brd</option> ), enter <command>ip addr</"
 "command> &nbsp; <option>add 192.168.12.154/30 brd + dev eth0</option> ."
 msgstr ""
-"デバイスを有効化したあとは、設定を行なうことができます。 IP アドレスを設定するには、"
-"<command>ip addr add</command> &nbsp; <option><replaceable>IP_アドレス</"
-"replaceable> + dev <replaceable>デバイス名</replaceable></option> のように"
-"実行します。たとえば eth0 インターフェイスに対して 192.168.12.154/30 という"
-"アドレスを設定し、標準的なブロードキャスト (<option>brd</option>) を設定したい"
-"場合は、 <command>ip addr</command> &nbsp; <option>add 192.168.12.154/30 brd "
-"+ dev eth0</option> と入力して実行します。"
+"デバイスを有効化したあとは、設定を行なうことができます。 IP アドレスを設定す"
+"るには、<command>ip addr add</command> &nbsp; <option><replaceable>IP_アドレ"
+"ス</replaceable> + dev <replaceable>デバイス名</replaceable></option> のよう"
+"に実行します。たとえば eth0 インターフェイスに対して 192.168.12.154/30 という"
+"アドレスを設定し、標準的なブロードキャスト (<option>brd</option>) を設定した"
+"い場合は、 <command>ip addr</command> &nbsp; <option>add 192.168.12.154/30 "
+"brd + dev eth0</option> と入力して実行します。"
 
 #. Tag: para
 #: net_wicked.xml:719
@@ -1284,13 +1307,13 @@ msgid ""
 "&nbsp; <option>ip_address</option> &nbsp; <command>via</command> &nbsp; "
 "<option>other_ip_address</option> ."
 msgstr ""
-"既に物理的な接続を行なっている場合は、デフォルトゲートウエイを設定することもできます。"
-"デフォルトゲートウエイを設定するには、 <command>ip route add</command> "
-"&nbsp; <option>ゲートウエイの_IP_アドレス</option> のように実行します。"
-"なお、一方の IP アドレスから他方の IP アドレスに変換を行ないたい場合は、 <command>nat</command> "
-"を指定して、 <command>ip route add nat</command> &nbsp; <option>IP_アドレス</option> "
-"&nbsp; <command>via</command> &nbsp; <option>他の_IP_アドレス</option> "
-"のように実行します。"
+"既に物理的な接続を行なっている場合は、デフォルトゲートウエイを設定することも"
+"できます。デフォルトゲートウエイを設定するには、 <command>ip route add</"
+"command> &nbsp; <option>ゲートウエイの_IP_アドレス</option> のように実行しま"
+"す。なお、一方の IP アドレスから他方の IP アドレスに変換を行ないたい場合は、 "
+"<command>nat</command> を指定して、 <command>ip route add nat</command> "
+"&nbsp; <option>IP_アドレス</option> &nbsp; <command>via</command> &nbsp; "
+"<option>他の_IP_アドレス</option> のように実行します。"
 
 #. Tag: para
 #: net_wicked.xml:726
@@ -1304,13 +1327,14 @@ msgid ""
 "command> , also find information about MAC addresses of your devices. To "
 "show all routes, use <command>ip route show</command> ."
 msgstr ""
-"全てのデバイスを表示するには、 <command>ip link ls</command> を実行します。"
-"動作中のデバイスのみを表示したい場合は、 <command>ip link ls up</command> を"
-"実行します。また、デバイスのインターフェイス統計情報を表示したい場合は、"
-" <command>ip -s link ls</command> を実行します。デバイスに設定されているアドレス"
-"を表示したい場合は、 <command>ip addr</command> を実行します。なお、 <command>ip addr</"
-"command> の出力には、デバイスの MAC アドレスも表示されます。このほか、全ての"
-"ルーティング情報を表示するには、 <command>ip route show</command> を実行します。"
+"全てのデバイスを表示するには、 <command>ip link ls</command> を実行します。動"
+"作中のデバイスのみを表示したい場合は、 <command>ip link ls up</command> を実"
+"行します。また、デバイスのインターフェイス統計情報を表示したい場合は、 "
+"<command>ip -s link ls</command> を実行します。デバイスに設定されているアドレ"
+"スを表示したい場合は、 <command>ip addr</command> を実行します。なお、 "
+"<command>ip addr</command> の出力には、デバイスの MAC アドレスも表示されま"
+"す。このほか、全てのルーティング情報を表示するには、 <command>ip route show</"
+"command> を実行します。"
 
 #. Tag: para
 #: net_wicked.xml:735
@@ -1326,12 +1350,13 @@ msgid ""
 msgstr ""
 "<command>ip</command> コマンドの使用方法について、詳しくは <command>ip</"
 "command> &nbsp; <option>help</option> を実行すると表示されるヘルプ、もしくは "
-"<systemitem>ip(8)</systemitem> のマニュアルページをお読みください。なお、"
-" <option>help</option> オプションは <command>ip</command> のサブコマンド全て"
-"でもご利用いただけます。たとえば <command>ip</command> &nbsp; <option>addr</option> "
-"に対するヘルプを読みたい場合は、 <command>ip</command> &nbsp; <option>addr help</option> "
-"と入力して実行してください。また、 <command>ip</command> コマンドのマニュアルは"
-"<filename>/usr/share/doc/packages/iproute2/ip-cref.pdf</filename> にあります。"
+"<systemitem>ip(8)</systemitem> のマニュアルページをお読みください。なお、 "
+"<option>help</option> オプションは <command>ip</command> のサブコマンド全てで"
+"もご利用いただけます。たとえば <command>ip</command> &nbsp; <option>addr</"
+"option> に対するヘルプを読みたい場合は、 <command>ip</command> &nbsp; "
+"<option>addr help</option> と入力して実行してください。また、 <command>ip</"
+"command> コマンドのマニュアルは<filename>/usr/share/doc/packages/iproute2/ip-"
+"cref.pdf</filename> にあります。"
 
 #. Tag: title
 #: net_wicked.xml:748
@@ -1349,12 +1374,12 @@ msgid ""
 "immediate reply. If this works, <command>ping</command> displays a message "
 "to that effect. This indicates that the network link is functioning."
 msgstr ""
-"<command>ping</command> コマンドは、 TCP/IP の接続が動作しているかどうかをテスト"
-"することができる標準的なツールです。このツールは ICMP プロトコルを利用して、"
-" ECHO_REQUEST データグラムと呼ばれる小さなデータパケットを宛先のホストに"
-"送信し、相手側からの即時の応答を待ちます。応答があると、 <command>ping</command> "
-"はその旨を示すメッセージを表示します。これにより、ネットワークが正しく動作している"
-"ことを確認することができます。"
+"<command>ping</command> コマンドは、 TCP/IP の接続が動作しているかどうかをテ"
+"ストすることができる標準的なツールです。このツールは ICMP プロトコルを利用し"
+"て、 ECHO_REQUEST データグラムと呼ばれる小さなデータパケットを宛先のホストに"
+"送信し、相手側からの即時の応答を待ちます。応答があると、 <command>ping</"
+"command> はその旨を示すメッセージを表示します。これにより、ネットワークが正し"
+"く動作していることを確認することができます。"
 
 #. Tag: para
 #: net_wicked.xml:757
@@ -1367,11 +1392,11 @@ msgid ""
 "second-to-last line contains information about the number of transmitted "
 "packets, packet loss, and total time of <command>ping</command> running."
 msgstr ""
-"<command>ping</command> は 2 台のコンピュータ間での接続機能テストを行なうだけでは"
-"ありません。基本的な接続品質に関する情報も提供します。 <xref linkend=\"ex.basicnet.manconf."
-"ping\"/> には <command>ping</command> の出力例を示していますが、出力の"
-"末尾から 2 行目には、送信したパケット数と損失数、および <command>ping</command> "
-"の実行にかかった時間が表示されます。"
+"<command>ping</command> は 2 台のコンピュータ間での接続機能テストを行なうだけ"
+"ではありません。基本的な接続品質に関する情報も提供します。 <xref linkend="
+"\"ex.basicnet.manconf.ping\"/> には <command>ping</command> の出力例を示して"
+"いますが、出力の末尾から 2 行目には、送信したパケット数と損失数、および "
+"<command>ping</command> の実行にかかった時間が表示されます。"
 
 #. Tag: para
 #: net_wicked.xml:766
@@ -1383,11 +1408,11 @@ msgid ""
 "packets until you press <keycombo><keycap function=\"control\"/><keycap>C</"
 "keycap></keycombo> ."
 msgstr ""
-"また、宛先の指定には IP アドレスだけでなくホスト名を指定することもできます。たとえば"
-"<command>ping</command> &nbsp; <option>&exampledomain;</option> や "
-"<command>ping</command> &nbsp; <option>&wwwip;</option> のように実行することが"
-"できます。また、このプログラムは <keycombo><keycap function=\"control\"/><keycap>C</"
-"keycap></keycombo> を押すまでパケットを送り続けます。"
+"また、宛先の指定には IP アドレスだけでなくホスト名を指定することもできます。"
+"たとえば<command>ping</command> &nbsp; <option>&exampledomain;</option> や "
+"<command>ping</command> &nbsp; <option>&wwwip;</option> のように実行すること"
+"ができます。また、このプログラムは <keycombo><keycap function=\"control\"/"
+"><keycap>C</keycap></keycombo> を押すまでパケットを送り続けます。"
 
 #. Tag: para
 #: net_wicked.xml:773
@@ -1398,8 +1423,8 @@ msgid ""
 "to limit ping to three packets, enter <command>ping</command> &nbsp; "
 "<option>-c 3 &exampledomain;</option> ."
 msgstr ""
-"接続ができるかどうかだけを調べたい場合は、 <option>-c</option> オプションで"
-"パケットの送信回数を制限してください。たとえば 3 回パケットを送信したい場合は、"
+"接続ができるかどうかだけを調べたい場合は、 <option>-c</option> オプションでパ"
+"ケットの送信回数を制限してください。たとえば 3 回パケットを送信したい場合は、"
 "<command>ping</command> &nbsp; <option>-c 3 &exampledomain;</option> のように"
 "入力して実行します。"
 
@@ -1440,10 +1465,10 @@ msgid ""
 "increase the ping interval to ten seconds, enter <command>ping</command> "
 "&nbsp; <option>-i 10 &exampledomain;</option> ."
 msgstr ""
-"既定の送信間隔は 1 秒に設定されています。この間隔を変更したい場合は、"
-" <option>-i</option> オプションを指定してください。たとえば送信間隔を 10 秒に"
-"したい場合は、 <command>ping</command> &nbsp; <option>-i 10 &exampledomain;</option> "
-"のように入力して実行します。"
+"既定の送信間隔は 1 秒に設定されています。この間隔を変更したい場合は、 "
+"<option>-i</option> オプションを指定してください。たとえば送信間隔を 10 秒に"
+"したい場合は、 <command>ping</command> &nbsp; <option>-i 10 &exampledomain;</"
+"option> のように入力して実行します。"
 
 #. Tag: para
 #: net_wicked.xml:796
@@ -1454,10 +1479,11 @@ msgid ""
 "option> option with the name of the selected device, for example, "
 "<command>ping</command> &nbsp; <option>-I wlan1 &exampledomain;</option> ."
 msgstr ""
-"なお、システムに複数のネットワークデバイスが存在する場合は、インターフェイスを"
-"指定して送信したほうが便利である場合があります。これを行なうには、 <option>-I</"
-"option> とデバイス名を指定してください。たとえば <command>ping</command> &nbsp;"
-" <option>-I wlan1 &exampledomain;</option> のように入力して実行します。"
+"なお、システムに複数のネットワークデバイスが存在する場合は、インターフェイス"
+"を指定して送信したほうが便利である場合があります。これを行なうには、 "
+"<option>-I</option> とデバイス名を指定してください。たとえば <command>ping</"
+"command> &nbsp; <option>-I wlan1 &exampledomain;</option> のように入力して実"
+"行します。"
 
 #. Tag: para
 #: net_wicked.xml:803
@@ -1467,9 +1493,9 @@ msgid ""
 "command> &nbsp; <option>-h</option> or see the <systemitem>ping (8)</"
 "systemitem> man page."
 msgstr ""
-"<command>ping</command> の使用方法について、詳しくは <command>ping</"
-"command> &nbsp; <option>-h</option> で表示されるヘルプ、もしくは <systemitem>ping (8)</"
-"systemitem> のマニュアルページをお読みください。"
+"<command>ping</command> の使用方法について、詳しくは <command>ping</command> "
+"&nbsp; <option>-h</option> で表示されるヘルプ、もしくは <systemitem>ping "
+"(8)</systemitem> のマニュアルページをお読みください。"
 
 #. Tag: title
 #: net_wicked.xml:809
@@ -1486,10 +1512,10 @@ msgid ""
 "option> . The following command works, if the address is reachable via "
 "<literal>eth1</literal> :"
 msgstr ""
-"IPv6 アドレスの場合は、 <command>ping6</command> コマンドを使用します。ただし、"
-"リンクローカルアドレスに対して送信したい場合は、 <option>-I</option> で"
-"インターフェイス名を指定してください。たとえば下記のコマンドが成功した場合は、"
-" <literal>eth1</literal> を介して指定したアドレスに到達できる意味になります:"
+"IPv6 アドレスの場合は、 <command>ping6</command> コマンドを使用します。ただ"
+"し、リンクローカルアドレスに対して送信したい場合は、 <option>-I</option> でイ"
+"ンターフェイス名を指定してください。たとえば下記のコマンドが成功した場合は、 "
+"<literal>eth1</literal> を介して指定したアドレスに到達できる意味になります:"
 
 #. Tag: screen
 #: net_wicked.xml:816
@@ -1517,16 +1543,15 @@ msgid ""
 "systemitem> targets, see the man page of <systemitem>systemd.special</"
 "systemitem> ( <command>man systemd.special</command> )."
 msgstr ""
-"上述までの設定のほかに、マシンを起動する際にネットワークサービスを読み込むための"
-" systemd ユニットファイルと各種スクリプトが存在しています。これらはシステムが"
-" <systemitem>multi-user.target</systemitem> ターゲットに切り替わる際に開始"
-"されます。これらのユニットファイルやスクリプトファイルのいくつかは、"
-" <xref linkend=\"var.net.start.scripts\"/> で説明しています。なお、"
-" <systemitem>systemd</systemitem> についての詳細は、 <xref linkend="
-"\"cha.systemd\"/> をお読みください。また、 <systemitem>systemd</"
-"systemitem> のターゲットに関する詳細は、 <systemitem>systemd.special</"
-"systemitem> のマニュアルページ ( <command>man systemd.special</command> ) "
-"をお読みください。"
+"上述までの設定のほかに、マシンを起動する際にネットワークサービスを読み込むた"
+"めの systemd ユニットファイルと各種スクリプトが存在しています。これらはシステ"
+"ムが <systemitem>multi-user.target</systemitem> ターゲットに切り替わる際に開"
+"始されます。これらのユニットファイルやスクリプトファイルのいくつかは、 <xref "
+"linkend=\"var.net.start.scripts\"/> で説明しています。なお、 "
+"<systemitem>systemd</systemitem> についての詳細は、 <xref linkend=\"cha."
+"systemd\"/> をお読みください。また、 <systemitem>systemd</systemitem> のター"
+"ゲットに関する詳細は、 <systemitem>systemd.special</systemitem> のマニュアル"
+"ページ ( <command>man systemd.special</command> ) をお読みください。"
 
 #. Tag: title
 #: net_wicked.xml:836
@@ -1549,7 +1574,8 @@ msgid ""
 "administrator."
 msgstr ""
 "<systemitem>network.target</systemitem> はネットワーク処理のための systemd "
-"ターゲットですが、この意味合いはシステム管理者が設定した内容によって異なります。"
+"ターゲットですが、この意味合いはシステム管理者が設定した内容によって異なりま"
+"す。"
 
 #. Tag: para
 #: net_wicked.xml:848
@@ -1558,8 +1584,8 @@ msgid ""
 "For more information, see <link xlink:href=\"http://www.freedesktop.org/wiki/"
 "Software/systemd/NetworkTarget/\"/> ."
 msgstr ""
-"詳しくは <link xlink:href=\"http://www.freedesktop.org/wiki/"
-"Software/systemd/NetworkTarget/\"/> をお読みください。"
+"詳しくは <link xlink:href=\"http://www.freedesktop.org/wiki/Software/systemd/"
+"NetworkTarget/\"/> をお読みください。"
 
 #. Tag: term
 #: net_wicked.xml:855
@@ -1574,9 +1600,9 @@ msgid ""
 "<systemitem>multi-user.target</systemitem> is the systemd target for a "
 "multiuser system with all required network services."
 msgstr ""
-"<systemitem>multi-user.target</systemitem> は systemd ターゲットのうちの"
-" 1 つで、全てのネットワークサービスを有効化したマルチユーザシステムを開始するための"
-"ものです。"
+"<systemitem>multi-user.target</systemitem> は systemd ターゲットのうちの 1 つ"
+"で、全てのネットワークサービスを有効化したマルチユーザシステムを開始するため"
+"のものです。"
 
 #. Tag: term
 #: net_wicked.xml:865
@@ -1591,8 +1617,8 @@ msgid ""
 "Starts the rpcbind utility that converts RPC program numbers to universal "
 "addresses. It is needed for RPC services, such as an NFS server."
 msgstr ""
-"RPC のプログラム番号をユニバーサルアドレスに変換する <command>rpcbind</command> "
-"ユーティリティを起動します。 NFS サーバなどで必要となります。"
+"RPC のプログラム番号をユニバーサルアドレスに変換する <command>rpcbind</"
+"command> ユーティリティを起動します。 NFS サーバなどで必要となります。"
 
 #. Tag: term
 #: net_wicked.xml:875
@@ -1642,3 +1668,5 @@ msgstr "<filename>/etc/init.d/postfix</filename>"
 msgid "Controls the postfix process."
 msgstr "postfix プロセスを制御します。"
 
+#~ msgid "yes"
+#~ msgstr "yes"

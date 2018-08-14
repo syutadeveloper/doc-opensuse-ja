@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: snapper.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-07-26 20:54+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
@@ -25,12 +25,6 @@ msgstr ""
 msgid "System Recovery and Snapshot Management with Snapper"
 msgstr "Snapper によるシステムの復元とスナップショット管理"
 
-#. Tag: dm:translation
-#: snapper.xml:16
-#, no-c-format
-msgid "yes"
-msgstr "yes"
-
 #. Tag: para
 #: snapper.xml:19
 #, no-c-format
@@ -40,9 +34,10 @@ msgid ""
 "the <literal>Btrfs</literal> file system or thin-provisioned LVM volumes now "
 "fills that gap."
 msgstr ""
-"Linux でファイルシステムのスナップショットを採取し、必要に応じてロールバック (巻き戻し) "
-"を行なう機能は、長年待ち望まれてきた機能でした。現在は Snapper と <literal>Btrfs</literal> "
-"もしくはシン・プロビジョン型の LVM ボリュームを併用することで、その機能が実現できるようになりました。"
+"Linux でファイルシステムのスナップショットを採取し、必要に応じてロールバック "
+"(巻き戻し) を行なう機能は、長年待ち望まれてきた機能でした。現在は Snapper と "
+"<literal>Btrfs</literal> もしくはシン・プロビジョン型の LVM ボリュームを併用"
+"することで、その機能が実現できるようになりました。"
 
 #. Tag: para
 #: snapper.xml:26
@@ -59,18 +54,18 @@ msgid ""
 "from <literal>Btrfs</literal> snapshots&mdash;see <xref linkend=\"sec."
 "snapper.snapshot-boot\"/> for more information."
 msgstr ""
-"<literal>Btrfs</literal> は Linux における新しいコピーオンライト型のファイルシステムで、"
-" 1 つの物理パーティション内に 1 つ以上のサブボリュームを作成し、それぞれ別々にマウント"
-"できる機能のほか、ファイルシステムのスナップショット機能 (特定の時点におけるファイル"
-"システムの状態のコピー) にも対応しています。スナップショットはシン・プロビジョン"
-"型の LVM ボリュームでも利用することができます。こちらの場合、ファイルシステムは"
-" XFS, Ext4, Ext3 のいずれかを利用することができます。 Snapper では、これらの"
-"ボリュームに対して、スナップショットを作成したり管理したりする機能を提供します。"
-"コマンドラインインターフェイスのほか、 &yast; も用意されています。また、"
-" <phrase os=\"sles;sled\">&sls; 12</phrase> <phrase os=\"osuse\">&opensuse; Leap</phrase> "
-"以降のバージョンでは、 <literal>Btrfs</literal> スナップショットからの"
-"起動にも対応しています。詳しくは <xref linkend=\"sec.snapper.snapshot-boot\"/> "
-"をお読みください。"
+"<literal>Btrfs</literal> は Linux における新しいコピーオンライト型のファイル"
+"システムで、 1 つの物理パーティション内に 1 つ以上のサブボリュームを作成し、"
+"それぞれ別々にマウントできる機能のほか、ファイルシステムのスナップショット機"
+"能 (特定の時点におけるファイルシステムの状態のコピー) にも対応しています。ス"
+"ナップショットはシン・プロビジョン型の LVM ボリュームでも利用することができま"
+"す。こちらの場合、ファイルシステムは XFS, Ext4, Ext3 のいずれかを利用すること"
+"ができます。 Snapper では、これらのボリュームに対して、スナップショットを作成"
+"したり管理したりする機能を提供します。コマンドラインインターフェイスのほか、 "
+"&yast; も用意されています。また、 <phrase os=\"sles;sled\">&sls; 12</phrase> "
+"<phrase os=\"osuse\">&opensuse; Leap</phrase> 以降のバージョンでは、 "
+"<literal>Btrfs</literal> スナップショットからの起動にも対応しています。詳しく"
+"は <xref linkend=\"sec.snapper.snapshot-boot\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:40
@@ -85,8 +80,8 @@ msgid ""
 "Undo system changes made by <command>zypper</command> and &yast;. See <xref "
 "linkend=\"sec.snapper.undo\"/> for details."
 msgstr ""
-"<command>zypper</command> や &yast; が実行したシステム変更の巻き戻し。詳しくは"
-" <xref linkend=\"sec.snapper.undo\"/> をお読みください。"
+"<command>zypper</command> や &yast; が実行したシステム変更の巻き戻し。詳しく"
+"は <xref linkend=\"sec.snapper.undo\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:51
@@ -95,8 +90,8 @@ msgid ""
 "Restore files from previous snapshots. See <xref linkend=\"sec.snapper.undo."
 "delete_file\"/> for details."
 msgstr ""
-"以前のスナップショット時点で存在していたファイルの復元。詳しくは"
-" <xref linkend=\"sec.snapper.undo.delete_file\"/> をお読みください。"
+"以前のスナップショット時点で存在していたファイルの復元。詳しくは <xref "
+"linkend=\"sec.snapper.undo.delete_file\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:57
@@ -105,8 +100,8 @@ msgid ""
 "Do a system rollback by booting from a snapshot. See <xref linkend=\"sec."
 "snapper.snapshot-boot\"/> for details."
 msgstr ""
-"スナップショットからの起動によるシステム全体の巻き戻し。詳しくは <xref linkend=\"sec."
-"snapper.snapshot-boot\"/> をお読みください。"
+"スナップショットからの起動によるシステム全体の巻き戻し。詳しくは <xref "
+"linkend=\"sec.snapper.snapshot-boot\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:63
@@ -115,8 +110,9 @@ msgid ""
 "Manually create snapshots on the fly and manage existing snapshots. See "
 "<xref linkend=\"sec.snapper.manage\"/> for details."
 msgstr ""
-"スナップショットは手作業でも作成することができるほか、既存のスナップショットを管理"
-"することもできます。詳しくは <xref linkend=\"sec.snapper.manage\"/> をお読みください。"
+"スナップショットは手作業でも作成することができるほか、既存のスナップショット"
+"を管理することもできます。詳しくは <xref linkend=\"sec.snapper.manage\"/> を"
+"お読みください。"
 
 #. Tag: title
 #: snapper.xml:70
@@ -136,13 +132,13 @@ msgid ""
 "snapshots on partitions other than <filename>/</filename> is not enabled by "
 "default."
 msgstr ""
-"&productname; での Snapper は、システムの変更に対する <quote>巻き戻しと復元のための"
-"ツール</quote> として動作するように設定されています。 &productname; の既定では、"
-"ルートパーティション ( <filename>/</filename> ) が <literal>Btrfs</literal> で"
-"フォーマットされます。また、ルートパーティション <filename>/</filename> が十分に"
-"大きい (おおよそ 16 GB 以上) 場合、スナップショットの採取が自動的に有効化されます。"
-"<filename>/</filename> 以外のパーティションに対するスナップショットは、既定では"
-"有効化されません。"
+"&productname; での Snapper は、システムの変更に対する <quote>巻き戻しと復元の"
+"ためのツール</quote> として動作するように設定されています。 &productname; の"
+"既定では、ルートパーティション ( <filename>/</filename> ) が <literal>Btrfs</"
+"literal> でフォーマットされます。また、ルートパーティション <filename>/</"
+"filename> が十分に大きい (おおよそ 16 GB 以上) 場合、スナップショットの採取が"
+"自動的に有効化されます。<filename>/</filename> 以外のパーティションに対するス"
+"ナップショットは、既定では有効化されません。"
 
 #. Tag: title
 #: snapper.xml:83
@@ -158,8 +154,8 @@ msgid ""
 "time later. To do so, create a default Snapper configuration for the root "
 "file system by running"
 msgstr ""
-"インストール時に Snapper を無効化している場合は、あとから有効化することもできます。"
-"有効化するには、下記を実行して既定の Snapper 設定を作成してください:"
+"インストール時に Snapper を無効化している場合は、あとから有効化することもでき"
+"ます。有効化するには、下記を実行して既定の Snapper 設定を作成してください:"
 
 #. Tag: screen
 #: snapper.xml:89
@@ -174,8 +170,8 @@ msgid ""
 "Afterward enable the different snapshot types as described in <xref linkend="
 "\"sec.snapper.setup.customize.auto_snapshots\"/> ."
 msgstr ""
-"あとは <xref linkend=\"sec.snapper.setup.customize.auto_snapshots\"/> で"
-"説明している手順に従って、スナップショットの種類を有効化します。"
+"あとは <xref linkend=\"sec.snapper.setup.customize.auto_snapshots\"/> で説明"
+"している手順に従って、スナップショットの種類を有効化します。"
 
 #. Tag: para
 #: snapper.xml:94
@@ -184,9 +180,9 @@ msgid ""
 "Keep in mind that snapshots require a Btrfs root file system with subvolumes "
 "set up as proposed by the installer and a partition size of at least 16 GB."
 msgstr ""
-"なお、スナップショットを採取するには、インストーラで提案したサブボリューム設定で"
-"ルートファイルシステムを設定し、パーティションのサイズが少なくとも 16 GB 以上で"
-"ある必要があります。"
+"なお、スナップショットを採取するには、インストーラで提案したサブボリューム設"
+"定でルートファイルシステムを設定し、パーティションのサイズが少なくとも 16 GB "
+"以上である必要があります。"
 
 #. Tag: para
 #: snapper.xml:102
@@ -202,16 +198,16 @@ msgid ""
 "literal> file system containing snapshots may <emphasis>not</emphasis> free "
 "disk space!"
 msgstr ""
-"スナップショットを作成すると、スナップショットと元のブロックはファイルシステム内で"
-"同じブロックを指し示します。そのため、スナップショットを採取した時点では、追加の"
-"ディスク領域を必要とすることはありません。ただし、スナップショットを作成した"
-"時点からファイルが変更されると、変更した部分のデータブロックが新しく確保され、"
-"元の (スナップショットを採取した時点の) データブロックがそのまま保持される"
-"ようになります。そのためスナップショットは、修正された分だけのデータに対応する"
-"ブロックを占有することになります。また、時間が経過するごとにスナップショットが"
-"占有する領域が定期的に増えていくことにも繋がります。そのため、 <literal>Btrfs</"
-"literal> ファイルシステムでファイルを削除しても、ディスクの空き領域を増やすこと"
-"には繋がらない場合があり得ます。"
+"スナップショットを作成すると、スナップショットと元のブロックはファイルシステ"
+"ム内で同じブロックを指し示します。そのため、スナップショットを採取した時点で"
+"は、追加のディスク領域を必要とすることはありません。ただし、スナップショット"
+"を作成した時点からファイルが変更されると、変更した部分のデータブロックが新し"
+"く確保され、元の (スナップショットを採取した時点の) データブロックがそのまま"
+"保持されるようになります。そのためスナップショットは、修正された分だけのデー"
+"タに対応するブロックを占有することになります。また、時間が経過するごとにス"
+"ナップショットが占有する領域が定期的に増えていくことにも繋がります。そのた"
+"め、 <literal>Btrfs</literal> ファイルシステムでファイルを削除しても、ディス"
+"クの空き領域を増やすことには繋がらない場合があり得ます。"
 
 #. Tag: title
 #: snapper.xml:115
@@ -227,8 +223,9 @@ msgid ""
 "snapshot has been taken. It is not possible to store snapshots on a "
 "different partition or subvolume."
 msgstr ""
-"スナップショットは、採取したファイルシステムと同じパーティションやサブボリューム"
-"内に存在します。異なるパーティションやサブボリュームに保存することはできません。"
+"スナップショットは、採取したファイルシステムと同じパーティションやサブボ"
+"リューム内に存在します。異なるパーティションやサブボリュームに保存することは"
+"できません。"
 
 #. Tag: para
 #: snapper.xml:123
@@ -242,12 +239,13 @@ msgid ""
 "cleaned up. Refer to <xref linkend=\"sec.snapper.setup.customize.archiving\"/"
 "> for details."
 msgstr ""
-"そのため、スナップショットを含むパーティションは、 <quote>通常の</quote> パーティション"
-"よりもサイズを大きくする必要があります。正確な容量は、保持すべきスナップショットの数と"
-"データ変更の容量によって異なりますが、一般的には通常必要とするサイズの 2 倍程度を"
-"確保しておくことをお勧めします。ディスクの空き容量が枯渇してしまうことがないよう、"
-"古いスナップショットは自動的にクリーンアップしておくとよいでしょう。詳しくは"
-" <xref linkend=\"sec.snapper.setup.customize.archiving\"/> をお読みください。"
+"そのため、スナップショットを含むパーティションは、 <quote>通常の</quote> パー"
+"ティションよりもサイズを大きくする必要があります。正確な容量は、保持すべきス"
+"ナップショットの数とデータ変更の容量によって異なりますが、一般的には通常必要"
+"とするサイズの 2 倍程度を確保しておくことをお勧めします。ディスクの空き容量が"
+"枯渇してしまうことがないよう、古いスナップショットは自動的にクリーンアップし"
+"ておくとよいでしょう。詳しくは <xref linkend=\"sec.snapper.setup.customize."
+"archiving\"/> をお読みください。"
 
 #. Tag: title
 #: snapper.xml:135
@@ -263,8 +261,8 @@ msgid ""
 "distinguish between three types of snapshots, based on the events that "
 "trigger them:"
 msgstr ""
-"スナップショットそれ自身は技術的な意味で何も違いがありませんが、それを発生させた"
-"イベントごとに、スナップショットの意味が異なります:"
+"スナップショットそれ自身は技術的な意味で何も違いがありませんが、それを発生さ"
+"せたイベントごとに、スナップショットの意味が異なります:"
 
 #. Tag: term
 #: snapper.xml:142
@@ -280,10 +278,10 @@ msgid ""
 "deleted. By default, the first snapshot of the last ten days, months, and "
 "years are kept. Timeline snapshots are disabled by default."
 msgstr ""
-"毎時作成される単独型のスナップショットです。古いスナップショットは自動的に"
-"削除されます。既定では、直近の 10 日、 10 ヶ月、 10 年の単位で最初のスナップ"
-"ショットのみが保持されます。タイムライン型のスナップショットは、既定では無効に"
-"なっています。"
+"毎時作成される単独型のスナップショットです。古いスナップショットは自動的に削"
+"除されます。既定では、直近の 10 日、 10 ヶ月、 10 年の単位で最初のスナップ"
+"ショットのみが保持されます。タイムライン型のスナップショットは、既定では無効"
+"になっています。"
 
 #. Tag: term
 #: snapper.xml:152
@@ -305,14 +303,16 @@ msgid ""
 "<quote>regular</quote> (including administration snapshots) snapshots are "
 "kept. Installation snapshots are enabled by default."
 msgstr ""
-"&yast; や zypper で 1 つまたは複数のパッケージをインストールすると、スナップショットの"
-"対を作成します。 1 つ目はインストール前のスナップショット ( <quote>Pre</quote> (事前)) で、"
-"2 つ目はインストール完了後のスナップショット ( <quote>Post</quote> (事後)) です。"
-"また、カーネルなどの重要なシステムコンポーネントがインストールされると、スナップショット"
-"の対には重要なものであるマーク ( <literal>important=yes</literal> ) が付けられます。"
-"古いスナップショットは自動的に削除されます。既定では、直近の重要な 10 回分のスナップショットと、"
-"直近の 10 回分の <quote>定期</quote> スナップショット (管理スナップショットを含む) "
-"が保持されます。インストールスナップショットは、既定で有効化されます。"
+"&yast; や zypper で 1 つまたは複数のパッケージをインストールすると、スナップ"
+"ショットの対を作成します。 1 つ目はインストール前のスナップショット "
+"( <quote>Pre</quote> (事前)) で、2 つ目はインストール完了後のスナップショッ"
+"ト ( <quote>Post</quote> (事後)) です。また、カーネルなどの重要なシステムコン"
+"ポーネントがインストールされると、スナップショットの対には重要なものである"
+"マーク ( <literal>important=yes</literal> ) が付けられます。古いスナップ"
+"ショットは自動的に削除されます。既定では、直近の重要な 10 回分のスナップ"
+"ショットと、直近の 10 回分の <quote>定期</quote> スナップショット (管理スナッ"
+"プショットを含む) が保持されます。インストールスナップショットは、既定で有効"
+"化されます。"
 
 #. Tag: term
 #: snapper.xml:168
@@ -331,12 +331,13 @@ msgid ""
 "last ten <quote>regular</quote> snapshots (including installation snapshots) "
 "are kept. Administration snapshots are enabled by default."
 msgstr ""
-"&yast; を利用してシステムの管理を行なうと、スナップショットの対を作成します。"
-" 1 つ目は &yast; のモジュールを開始した段階 ( <quote>Pre</quote> (事前)) 、"
-" 2 つ目は &yast; のモジュールを閉じた段階 ( <quote>Post</quote> (事後)) です。"
-"古いスナップショットは自動的に削除されます。既定では、直近の重要な 10 回分のスナップ"
-"ショットと、直近の 10  回分の <quote>定期</quote> スナップショット (インストールスナップショットを含む) "
-"が保持されます。管理スナップショットは、既定で有効化されます。"
+"&yast; を利用してシステムの管理を行なうと、スナップショットの対を作成しま"
+"す。 1 つ目は &yast; のモジュールを開始した段階 ( <quote>Pre</quote> (事"
+"前)) 、 2 つ目は &yast; のモジュールを閉じた段階 ( <quote>Post</quote> (事"
+"後)) です。古いスナップショットは自動的に削除されます。既定では、直近の重要"
+"な 10 回分のスナップショットと、直近の 10  回分の <quote>定期</quote> スナッ"
+"プショット (インストールスナップショットを含む) が保持されます。管理スナップ"
+"ショットは、既定で有効化されます。"
 
 #. Tag: title
 #: snapper.xml:185
@@ -351,8 +352,8 @@ msgid ""
 "Some directories need to be excluded from snapshots for different reasons. "
 "The following list shows all directories that are excluded:"
 msgstr ""
-"様々な理由から、いくつかのディレクトリについては除外を設定する必要があります。"
-"下記の一覧には、除外される全てのディレクトリを示しています:"
+"様々な理由から、いくつかのディレクトリについては除外を設定する必要がありま"
+"す。下記の一覧には、除外される全てのディレクトリを示しています:"
 
 #. Tag: title
 #: snapper.xml:194
@@ -368,8 +369,8 @@ msgid ""
 "sufficient for most use cases. However, all aspects of taking automatic "
 "snapshots and snapshot keeping can be configured according to your needs."
 msgstr ""
-"&productname; ではほとんどの用途に対応できる既定値が設定されています。"
-"ですが、必要であれば、自動スナップショットやスナップショットの保持設定について、"
+"&productname; ではほとんどの用途に対応できる既定値が設定されています。です"
+"が、必要であれば、自動スナップショットやスナップショットの保持設定について、"
 "全ての項目を設定することができます。"
 
 #. Tag: title
@@ -385,8 +386,8 @@ msgid ""
 "Each of the three snapshot types (timeline, installation, administration) "
 "can be enabled or disabled independently."
 msgstr ""
-"3 種類のスナップショット種類 (タイムライン, インストール, 管理) を"
-"個別に有効化／無効化することができます。"
+"3 種類のスナップショット種類 (タイムライン, インストール, 管理) を個別に有効"
+"化／無効化することができます。"
 
 #. Tag: term
 #: snapper.xml:208
@@ -421,8 +422,11 @@ msgstr "<command>snapper -c root set-config \"TIMELINE_CREATE=no\"</command>"
 #. Tag: para
 #: snapper.xml:222
 #, no-c-format
-msgid "Timeline snapshots are enabled by default, except for the root partition."
-msgstr "タイムラインスナップショットは、ルートパーティション以外は既定で有効化されます。"
+msgid ""
+"Timeline snapshots are enabled by default, except for the root partition."
+msgstr ""
+"タイムラインスナップショットは、ルートパーティション以外は既定で有効化されま"
+"す。"
 
 #. Tag: term
 #: snapper.xml:229
@@ -436,7 +440,9 @@ msgstr "インストールスナップショットの有効化／無効化"
 msgid ""
 "Install the package <systemitem class=\"resource\">snapper-zypp-plugin</"
 "systemitem>"
-msgstr "<systemitem class=\"resource\">snapper-zypp-plugin</systemitem> パッケージをインストールします。"
+msgstr ""
+"<systemitem class=\"resource\">snapper-zypp-plugin</systemitem> パッケージを"
+"インストールします。"
 
 #. Tag: para
 #: snapper.xml:240
@@ -444,7 +450,9 @@ msgstr "<systemitem class=\"resource\">snapper-zypp-plugin</systemitem> パッ�
 msgid ""
 "Uninstall the package <systemitem class=\"resource\">snapper-zypp-plugin</"
 "systemitem>"
-msgstr "<systemitem class=\"resource\">snapper-zypp-plugin</systemitem> パッケージを削除します。"
+msgstr ""
+"<systemitem class=\"resource\">snapper-zypp-plugin</systemitem> パッケージを"
+"削除します。"
 
 #. Tag: para
 #: snapper.xml:245
@@ -471,8 +479,8 @@ msgid ""
 "Set <envar>USE_SNAPPER</envar> to <literal>yes</literal> in <filename>/etc/"
 "sysconfig/yast2</filename> ."
 msgstr ""
-"<filename>/etc/sysconfig/yast2</filename> 内の <envar>USE_SNAPPER</envar> に"
-" <literal>yes</literal> を設定します。"
+"<filename>/etc/sysconfig/yast2</filename> 内の <envar>USE_SNAPPER</envar> に "
+"<literal>yes</literal> を設定します。"
 
 #. Tag: title
 #: snapper.xml:261
@@ -487,8 +495,8 @@ msgid ""
 "Set <envar>USE_SNAPPER</envar> to <literal>no</literal> in <filename>/etc/"
 "sysconfig/yast2</filename> ."
 msgstr ""
-"<filename>/etc/sysconfig/yast2</filename> 内の <envar>USE_SNAPPER</envar> に"
-" <literal>no</literal> を設定します。"
+"<filename>/etc/sysconfig/yast2</filename> 内の <envar>USE_SNAPPER</envar> に "
+"<literal>no</literal> を設定します。"
 
 #. Tag: para
 #: snapper.xml:267
@@ -512,9 +520,9 @@ msgid ""
 "conf</filename> defines, when to make snapshots. By default the file looks "
 "like the following:"
 msgstr ""
-"&yast; や zypper でパッケージをインストールした際、スナップショットは"
-" <systemitem class=\"resource\">snapper-zypp-plugin</systemitem> が処理します。"
-"このプラグインには XML の設定ファイル <filename>/etc/snapper/zypp-plugin."
+"&yast; や zypper でパッケージをインストールした際、スナップショットは "
+"<systemitem class=\"resource\">snapper-zypp-plugin</systemitem> が処理しま"
+"す。このプラグインには XML の設定ファイル <filename>/etc/snapper/zypp-plugin."
 "conf</filename> があり、これでスナップショットを採取するタイミングを設定する"
 "ことができます。既定では、設定ファイルは下記のようになっています:"
 
@@ -562,9 +570,9 @@ msgid ""
 "card ( <literal>w</literal> ) or a Python regular expression ( <literal>re</"
 "literal> )."
 msgstr ""
-"match 属性はパターンの定義方法を決めるもので、 Unix スタイルのワイルドカード"
-" ( <literal>w</literal> ) か、 Python の正規表現 ( <literal>re</"
-"literal> ) のいずれかを指定することができます。"
+"match 属性はパターンの定義方法を決めるもので、 Unix スタイルのワイルドカード "
+"( <literal>w</literal> ) か、 Python の正規表現 ( <literal>re</literal> ) の"
+"いずれかを指定することができます。"
 
 #. Tag: para
 #: snapper.xml:304
@@ -574,9 +582,9 @@ msgid ""
 "important (for example kernel packages), the snapshot will also be marked as "
 "important."
 msgstr ""
-"指定したパターンに該当し、関連するパッケージが重要であるとしてマークされている"
-" (たとえば kernel パッケージなど) と、スナップショットについても重要であるもの"
-"としてマークが付けられます。"
+"指定したパターンに該当し、関連するパッケージが重要であるとしてマークされてい"
+"る (たとえば kernel パッケージなど) と、スナップショットについても重要である"
+"ものとしてマークが付けられます。"
 
 #. Tag: para
 #: snapper.xml:311
@@ -589,8 +597,8 @@ msgid ""
 msgstr ""
 "パッケージ名と比較処理される内容です。 <literal>match</literal> 属性の設定に"
 "依存しますが、特殊文字はシェルのワイルドカードか、正規表現として扱われます。"
-"たとえばこのパターンは、 <literal>kernel-</literal> で始まる全てのパッケージが"
-"該当する指定になっています。"
+"たとえばこのパターンは、 <literal>kernel-</literal> で始まる全てのパッケージ"
+"が該当する指定になっています。"
 
 #. Tag: para
 #: snapper.xml:319
@@ -608,9 +616,9 @@ msgid ""
 "marked as important (lines 4 to 8). All rules are evaluated."
 msgstr ""
 "このスナップショットの設定では、パッケージがインストールされると必ずスナップ"
-"ショット対を作成します (9 行目の設定による) 。また、重要であるとマークされた"
-" kernel, dracut, glibc, systemd, udev の各パッケージがインストールされると、"
-"スナップショットの対にも重要 (important) のマークが付けられます。"
+"ショット対を作成します (9 行目の設定による) 。また、重要であるとマークされた "
+"kernel, dracut, glibc, systemd, udev の各パッケージがインストールされると、ス"
+"ナップショットの対にも重要 (important) のマークが付けられます。"
 
 #. Tag: para
 #: snapper.xml:330
@@ -621,8 +629,8 @@ msgid ""
 "for example, comment line 9:"
 msgstr ""
 "ルールを無効化するには、削除を行なうか XML のコメント機能を利用してください。"
-"たとえば各パッケージのインストールでスナップショット対を作成したくない場合は、"
-"下記のようにして 9 行目をコメントアウトします:"
+"たとえば各パッケージのインストールでスナップショット対を作成したくない場合"
+"は、下記のようにして 9 行目をコメントアウトします:"
 
 #. Tag: screen
 #: snapper.xml:335
@@ -673,10 +681,10 @@ msgid ""
 "rollback."
 msgstr ""
 "<filename>/</filename> の階層構造以下に新しいサブボリュームを作成し、恒久的に"
-"マウントすることができます。新しく作成したサブボリュームは、スナップショットから"
-"除外されます。ただし、既存のスナップショット内には、新しいサブボリュームを作成"
-"してはなりません。なぜなら、ロールバックを行なった後にスナップショットを削除できなく"
-"なってしまうためです。"
+"マウントすることができます。新しく作成したサブボリュームは、スナップショット"
+"から除外されます。ただし、既存のスナップショット内には、新しいサブボリューム"
+"を作成してはなりません。なぜなら、ロールバックを行なった後にスナップショット"
+"を削除できなくなってしまうためです。"
 
 #. Tag: para
 #: snapper.xml:356
@@ -688,10 +696,11 @@ msgid ""
 "filename> and others. Any new subvolumes you create and permanently mount "
 "need to be created in this initial root file system."
 msgstr ""
-"&productname; では、 <filename>/opt</filename> , <filename>/srv</filename> ,"
-" <filename>/home</filename> などのディレクトリに対して、<filename>/@/</filename> "
-"で始まる個別のサブボリュームが設定されます。また、新しく作成し恒久的にマウントする"
-"サブボリュームは、この初期ルートファイルシステム内に作成しなければなりません。"
+"&productname; では、 <filename>/opt</filename> , <filename>/srv</filename> , "
+"<filename>/home</filename> などのディレクトリに対して、<filename>/@/</"
+"filename> で始まる個別のサブボリュームが設定されます。また、新しく作成し恒久"
+"的にマウントするサブボリュームは、この初期ルートファイルシステム内に作成しな"
+"ければなりません。"
 
 #. Tag: para
 #: snapper.xml:363
@@ -701,9 +710,9 @@ msgid ""
 "<filename>/usr/important</filename> is created from <filename>/dev/sda2</"
 "filename> ."
 msgstr ""
-"これを行なうには、下記のコマンドを実行します。下記の例では、新しいサブボリューム"
-"<filename>/usr/important</filename> を、 <filename>/dev/sda2</filename> 内に"
-"作成します。"
+"これを行なうには、下記のコマンドを実行します。下記の例では、新しいサブボ"
+"リューム<filename>/usr/important</filename> を、 <filename>/dev/sda2</"
+"filename> 内に作成します。"
 
 #. Tag: screen
 #: snapper.xml:368
@@ -724,8 +733,8 @@ msgid ""
 "The corresponding entry in <filename>/etc/fstab</filename> needs to look "
 "like the following:"
 msgstr ""
-"<filename>/etc/fstab</filename> 内にサブボリュームのマウントを記述する場合は、"
-"下記のようになります:"
+"<filename>/etc/fstab</filename> 内にサブボリュームのマウントを記述する場合"
+"は、下記のようになります:"
 
 #. Tag: screen
 #: snapper.xml:375
@@ -749,11 +758,12 @@ msgid ""
 "Use the <option>nodatacow</option> mount option in <filename>/etc/fstab</"
 "filename> to do so:"
 msgstr ""
-"サブボリュームには、仮想マシンのイメージやデータベースファイル、ログファイルなど、"
-"絶えず変更されるファイルが含まれることがあります。このような場合は、そのサブボリューム"
-"に対してコピーオンライト (Copy On Write (cow)) 機能を無効化し、ディスクブロックの"
-"重複を避けるよう設定しておくことをお勧めします。これを行なうには、 <filename>/etc/fstab</"
-"filename> 内に <option>nodatacow</option> マウントオプションを追加します:"
+"サブボリュームには、仮想マシンのイメージやデータベースファイル、ログファイル"
+"など、絶えず変更されるファイルが含まれることがあります。このような場合は、そ"
+"のサブボリュームに対してコピーオンライト (Copy On Write (cow)) 機能を無効化"
+"し、ディスクブロックの重複を避けるよう設定しておくことをお勧めします。これを"
+"行なうには、 <filename>/etc/fstab</filename> 内に <option>nodatacow</option> "
+"マウントオプションを追加します:"
 
 #. Tag: screen
 #: snapper.xml:386
@@ -768,8 +778,9 @@ msgid ""
 "To alternatively disable copy-on-write for single files or directories, use "
 "the command <command>chattr +C <replaceable>PATH</replaceable></command> ."
 msgstr ""
-"また、単一のファイルやディレクトリに対して cow 機能を無効化することもできます。"
-"その場合は、 <command>chattr +C <replaceable>パス</replaceable></command> を実行してください。"
+"また、単一のファイルやディレクトリに対して cow 機能を無効化することもできま"
+"す。その場合は、 <command>chattr +C <replaceable>パス</replaceable></"
+"command> を実行してください。"
 
 #. Tag: title
 #: snapper.xml:396
@@ -789,14 +800,15 @@ msgid ""
 "additional snapshots will be deleted. A minimum of four important and two "
 "regular snapshots are always kept."
 msgstr ""
-"スナップショットはディスク領域を占有します。ディスクの容量が枯渇してシステムが"
-"止まってしまったりしないようにするため、古いスナップショットについては自動的に"
-"削除する必要があります。既定では最大で 10 回分までの重要なインストールスナップショット"
-"と管理スナップショットが保持されるほか、最大で 10 回分までの定期的なインストール"
-"スナップショットおよび管理スナップショットが保持されます。なお、これらのスナップ"
-"ショットが、ルートファイルシステムのサイズの 50% 以上を占有している場合は、"
-"さらに多くのスナップショットを削除します。ただし、最小でも 4 回分の重要なスナップ"
-"ショットと、 2 回分の定期スナップショットは必ず保持されます。"
+"スナップショットはディスク領域を占有します。ディスクの容量が枯渇してシステム"
+"が止まってしまったりしないようにするため、古いスナップショットについては自動"
+"的に削除する必要があります。既定では最大で 10 回分までの重要なインストールス"
+"ナップショットと管理スナップショットが保持されるほか、最大で 10 回分までの定"
+"期的なインストールスナップショットおよび管理スナップショットが保持されます。"
+"なお、これらのスナップショットが、ルートファイルシステムのサイズの 50% 以上を"
+"占有している場合は、さらに多くのスナップショットを削除します。ただし、最小で"
+"も 4 回分の重要なスナップショットと、 2 回分の定期スナップショットは必ず保持"
+"されます。"
 
 #. Tag: para
 #: snapper.xml:406
@@ -805,8 +817,8 @@ msgid ""
 "Refer to <xref linkend=\"sec.snapper.config.modify\"/> for instructions on "
 "how to change these values."
 msgstr ""
-"これらの値の変更方法について、詳しくは <xref linkend=\"sec.snapper.config.modify\"/> "
-"をお読みください。"
+"これらの値の変更方法について、詳しくは <xref linkend=\"sec.snapper.config."
+"modify\"/> をお読みください。"
 
 #. Tag: title
 #: snapper.xml:412
@@ -824,12 +836,12 @@ msgid ""
 "XFS, Ext4 or Ext3. For more information and setup instructions on LVM "
 "volumes, refer to <xref linkend=\"sec.yast.system.lvm\"/> ."
 msgstr ""
-"<literal>Btrfs</literal> ファイ値システムに対するスナップショット機能とは別に、"
-" Snapper では xfs/ext4/ext3 でフォーマットされたシン・プロビジョン型の LVM "
-"ボリュームに対するスナップショット機能にも対応しています (通常型の LVM ボリュームに"
-"対するスナップショットには <emphasis>対応していません</emphasis> ) 。 LVM "
-"ボリュームに関する詳細やセットアップ手順については、 <xref linkend=\"sec.yast.system.lvm\"/> "
-"をお読みください。"
+"<literal>Btrfs</literal> ファイ値システムに対するスナップショット機能とは別"
+"に、 Snapper では xfs/ext4/ext3 でフォーマットされたシン・プロビジョン型の "
+"LVM ボリュームに対するスナップショット機能にも対応しています (通常型の LVM ボ"
+"リュームに対するスナップショットには <emphasis>対応していません</"
+"emphasis> ) 。 LVM ボリュームに関する詳細やセットアップ手順については、 "
+"<xref linkend=\"sec.yast.system.lvm\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:420
@@ -841,18 +853,21 @@ msgid ""
 "<literal>ext3</literal> , <literal>etx4</literal> or <literal>xfs</literal> "
 "are valid values for <replaceable>FILESYSTEM</replaceable> . Example:"
 msgstr ""
-"シン・プロビジョン型の LVM ボリュームに対して、 Snapper を使用するには、まず"
-" Snapper の設定を作成する必要があります。 LVM の場合、ファイルシステムの種類を"
-" <option>--fstype=lvm(<replaceable>ファイルシステムの種類名</replaceable>)</option> "
-"で指定する必要があります。 <replaceable>ファイルシステムの種類名</replaceable> には、"
-" <literal>ext3</literal> , <literal>ext4</literal> , <literal>xfs</literal> "
-"のいずれかを指定します。たとえば下記のようになります:"
+"シン・プロビジョン型の LVM ボリュームに対して、 Snapper を使用するには、まず "
+"Snapper の設定を作成する必要があります。 LVM の場合、ファイルシステムの種類"
+"を <option>--fstype=lvm(<replaceable>ファイルシステムの種類名</"
+"replaceable>)</option> で指定する必要があります。 <replaceable>ファイルシステ"
+"ムの種類名</replaceable> には、 <literal>ext3</literal> , <literal>ext4</"
+"literal> , <literal>xfs</literal> のいずれかを指定します。たとえば下記のよう"
+"になります:"
 
 #. Tag: screen
 #: snapper.xml:428
 #, no-c-format
-msgid "&prompt.sudo;snapper -c lvm create-config --fstype=\"lvm(xfs)\" /thin_lvm"
-msgstr "&prompt.sudo;snapper -c lvm create-config --fstype=\"lvm(xfs)\" /thin_lvm"
+msgid ""
+"&prompt.sudo;snapper -c lvm create-config --fstype=\"lvm(xfs)\" /thin_lvm"
+msgstr ""
+"&prompt.sudo;snapper -c lvm create-config --fstype=\"lvm(xfs)\" /thin_lvm"
 
 #. Tag: para
 #: snapper.xml:429
@@ -861,8 +876,8 @@ msgid ""
 "You can adjust this configuration according to your needs as described in "
 "<xref linkend=\"sec.snapper.config.modify\"/> ."
 msgstr ""
-"ここで書き込んだ設定は、必要に応じて変更することができます。詳しくは"
-" <xref linkend=\"sec.snapper.config.modify\"/> をお読みください。"
+"ここで書き込んだ設定は、必要に応じて変更することができます。詳しくは <xref "
+"linkend=\"sec.snapper.config.modify\"/> をお読みください。"
 
 #. Tag: title
 #: snapper.xml:437
@@ -883,14 +898,15 @@ msgid ""
 "see <xref linkend=\"sec.snapper.setup.customize.auto_snapshots\"/> for "
 "details."
 msgstr ""
-"&productname; における Snapper は、 <command>zypper</command> や &yast; が行なった"
-"変更点を巻き戻すためのツールとして動作するよう設定されています。この目的を実現する"
-"ため、 Snapper では <command>zypper</command> や &yast; を実行するごとに、"
-"事前と事後のスナップショット対を作成するよう設定しています。また、 Snapper では"
-"誤って削除してしまったり、書き換えてしまったりしたシステムファイルを取り戻す"
-"ためにも利用することができます。この用途で使用する場合は、ルートパーティションに"
-"対するタイムラインスナップショットを有効化する必要があります。詳しくは"
-" <xref linkend=\"sec.snapper.setup.customize.auto_snapshots\"/> をお読みください。"
+"&productname; における Snapper は、 <command>zypper</command> や &yast; が行"
+"なった変更点を巻き戻すためのツールとして動作するよう設定されています。この目"
+"的を実現するため、 Snapper では <command>zypper</command> や &yast; を実行す"
+"るごとに、事前と事後のスナップショット対を作成するよう設定しています。また、 "
+"Snapper では誤って削除してしまったり、書き換えてしまったりしたシステムファイ"
+"ルを取り戻すためにも利用することができます。この用途で使用する場合は、ルート"
+"パーティションに対するタイムラインスナップショットを有効化する必要がありま"
+"す。詳しくは <xref linkend=\"sec.snapper.setup.customize.auto_snapshots\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: snapper.xml:450
@@ -901,9 +917,10 @@ msgid ""
 "partitions such as <filename>/home</filename> for example, you can create "
 "custom configurations."
 msgstr ""
-"既定では、上述の自動スナップショットがルートパーティションとサブボリュームに対して"
-"設定されます。たとえば <filename>/home</filename> などの別のパーティションに対して、"
-"スナップショットを作成するには、独自の設定を作成する必要があります。"
+"既定では、上述の自動スナップショットがルートパーティションとサブボリュームに"
+"対して設定されます。たとえば <filename>/home</filename> などの別のパーティ"
+"ションに対して、スナップショットを作成するには、独自の設定を作成する必要があ"
+"ります。"
 
 #. Tag: para
 #: snapper.xml:467
@@ -914,9 +931,9 @@ msgid ""
 "this method also allows to explicitly select the files that should be "
 "restored."
 msgstr ""
-"下記に示す手順で変更点を巻き戻す場合、2 つのスナップショットを比較して、それらの"
-"間での変更点を巻き戻すことができます。この方法を利用することで、復元すべきファイルを"
-"明示的に選択することができるようになります。"
+"下記に示す手順で変更点を巻き戻す場合、2 つのスナップショットを比較して、それ"
+"らの間での変更点を巻き戻すことができます。この方法を利用することで、復元すべ"
+"きファイルを明示的に選択することができるようになります。"
 
 #. Tag: para
 #: snapper.xml:478
@@ -925,8 +942,9 @@ msgid ""
 "When doing rollbacks as described in <xref linkend=\"sec.snapper.snapshot-"
 "boot\"/> , the system is reset to the state at which the snapshot was taken."
 msgstr ""
-"<xref linkend=\"sec.snapper.snapshot-boot\"/> に示されている手順でロールバックを"
-"行なうと、システムはスナップショットを採取した時点の状態にリセットされます。"
+"<xref linkend=\"sec.snapper.snapshot-boot\"/> に示されている手順でロールバッ"
+"クを行なうと、システムはスナップショットを採取した時点の状態にリセットされま"
+"す。"
 
 #. Tag: para
 #: snapper.xml:486
@@ -939,12 +957,12 @@ msgid ""
 "for rollbacks should be preferred, since it is faster and allows you to "
 "review the system before doing the rollback."
 msgstr ""
-"変更点を元に戻す際、現在のシステムとスナップショットとを比較することができます。"
-"この比較で <emphasis>全て</emphasis> のファイルを戻す場合は、ロールバックを"
-"行なったのと同じ結果になります。ただし、全てのファイルを戻す場合は、"
-" <xref linkend=\"sec.snapper.snapshot-boot\"/> で説明している手順に従って"
-"ロールバックを行なうことをお勧めします。これは、ロールバックのほうがより高速で"
-"あるだけでなく、ロールバックを行なう前にシステムを確認できるという利点もあります。"
+"変更点を元に戻す際、現在のシステムとスナップショットとを比較することができま"
+"す。この比較で <emphasis>全て</emphasis> のファイルを戻す場合は、ロールバック"
+"を行なったのと同じ結果になります。ただし、全てのファイルを戻す場合は、 <xref "
+"linkend=\"sec.snapper.snapshot-boot\"/> で説明している手順に従ってロールバッ"
+"クを行なうことをお勧めします。これは、ロールバックのほうがより高速であるだけ"
+"でなく、ロールバックを行なう前にシステムを確認できるという利点もあります。"
 
 #. Tag: title
 #: snapper.xml:497
@@ -965,14 +983,15 @@ msgid ""
 "review the list of changed files and their diffs. Only restore files that "
 "really belong to the action you want to revert."
 msgstr ""
-"スナップショットを作成する際、データの一貫性に関するチェックを行なう仕組みは用意"
-"されていません。たとえばデータベースファイルなどが顕著ですが、ファイルがスナップ"
-"ショットを採取したタイミングで同時に書き込まれていた場合、データベースファイルが"
-"壊れてしまうか、部分的に書き込まれた状態になります。このような場合、このファイルの"
-"巻き戻しで問題が発生することになります。これらに加えて、 <filename>/etc/mtab</filename> "
-"のようなファイルについても、復元してはなりません。そのため、変更されたファイルの"
-"確認では、 <emphasis>必ず</emphasis> 内容をよく確認するようにしてください。"
-"また、ファイル単位での復元では、巻き戻したいファイルだけを戻すようにしてください。"
+"スナップショットを作成する際、データの一貫性に関するチェックを行なう仕組みは"
+"用意されていません。たとえばデータベースファイルなどが顕著ですが、ファイルが"
+"スナップショットを採取したタイミングで同時に書き込まれていた場合、データベー"
+"スファイルが壊れてしまうか、部分的に書き込まれた状態になります。このような場"
+"合、このファイルの巻き戻しで問題が発生することになります。これらに加えて、 "
+"<filename>/etc/mtab</filename> のようなファイルについても、復元してはなりませ"
+"ん。そのため、変更されたファイルの確認では、 <emphasis>必ず</emphasis> 内容を"
+"よく確認するようにしてください。また、ファイル単位での復元では、巻き戻したい"
+"ファイルだけを戻すようにしてください。"
 
 #. Tag: title
 #: snapper.xml:511
@@ -992,14 +1011,14 @@ msgid ""
 "the start of the module and a <quote>post-snapshot</quote> after the module "
 "has been finished."
 msgstr ""
-"インストール時にルートパーティションを <literal>btrfs</literal> で設定すると、"
-" &yast; や zypper の変更点を自動的に巻き戻すことができる設定を施した状態で、"
-" Snapper が自動的にインストールされます。 &yast; モジュールや zypper の"
-"トランザクションを開始すると、 2 種類のスナップショットが必ず作成されるように"
-"なっています。 1 つ目は <quote>事前スナップショット</quote> と呼ばれ、モジュール"
-"を開始する際にファイルシステムの状態を採取するスナップショットです。 2 つ目は"
-" <quote>事後スナップショット</quote> と呼ばれ、モジュールが完了した際に採取する"
-"スナップショットです。"
+"インストール時にルートパーティションを <literal>btrfs</literal> で設定する"
+"と、 &yast; や zypper の変更点を自動的に巻き戻すことができる設定を施した状態"
+"で、 Snapper が自動的にインストールされます。 &yast; モジュールや zypper のト"
+"ランザクションを開始すると、 2 種類のスナップショットが必ず作成されるように"
+"なっています。 1 つ目は <quote>事前スナップショット</quote> と呼ばれ、モ"
+"ジュールを開始する際にファイルシステムの状態を採取するスナップショットです。 "
+"2 つ目は <quote>事後スナップショット</quote> と呼ばれ、モジュールが完了した際"
+"に採取するスナップショットです。"
 
 #. Tag: para
 #: snapper.xml:521
@@ -1011,17 +1030,19 @@ msgid ""
 "also allow you to see which files have been changed. You can also display "
 "the differences between two versions of a file (diff)."
 msgstr ""
-"&yast; の Snapper モジュールや <command>snapper</command> コマンドラインツール"
-"を使用すると、 &yast; や zypper が行なった変更を、 <quote>事前スナップショット</quote> "
-"からのファイルで戻すことができるようになります。 2 つのスナップショットを比較する際、"
-"ツールではどのファイルが書き換えられたのかを表示することができるほか、変更された"
-"ファイルの違い (diff) も表示することができます。"
+"&yast; の Snapper モジュールや <command>snapper</command> コマンドラインツー"
+"ルを使用すると、 &yast; や zypper が行なった変更を、 <quote>事前スナップ"
+"ショット</quote> からのファイルで戻すことができるようになります。 2 つのス"
+"ナップショットを比較する際、ツールではどのファイルが書き換えられたのかを表示"
+"することができるほか、変更されたファイルの違い (diff) も表示することができま"
+"す。"
 
 #. Tag: title
 #: snapper.xml:529
 #, no-c-format
 msgid "Undoing Changes Using the &yast; <guimenu>Snapper</guimenu> Module"
-msgstr "&yast; を使用した変更点の巻き戻し; <guimenu>Snapper</guimenu> モジュール"
+msgstr ""
+"&yast; を使用した変更点の巻き戻し; <guimenu>Snapper</guimenu> モジュール"
 
 #. Tag: para
 #: snapper.xml:538
@@ -1031,9 +1052,9 @@ msgid ""
 "guimenu> . This is always the case unless you have manually added own "
 "Snapper configurations."
 msgstr ""
-"<guimenu>現在の設定</guimenu> が <guimenu>root</guimenu> になっていることを"
-"確認してください。 Snapper の設定を手動で追加していない限り、必ず確認すべき項目に"
-"なります。"
+"<guimenu>現在の設定</guimenu> が <guimenu>root</guimenu> になっていることを確"
+"認してください。 Snapper の設定を手動で追加していない限り、必ず確認すべき項目"
+"になります。"
 
 #. Tag: para
 #: snapper.xml:545
@@ -1047,9 +1068,10 @@ msgid ""
 msgstr ""
 "一覧から事前および事後のスナップショットの対を選択します。 &yast; や zypper "
 "で採取されたスナップショット対には、 <guimenu>事前および事後</guimenu> という"
-"種類になっているはずです。また、 &yast; でのスナップショットには <guimenu>説明</guimenu> "
-"列に <literal>zypp(y2base)</literal> が書かれています。同様に、 zypper での"
-"スナップショットには、 <literal>zypp(zypper)</literal> が書かれています。"
+"種類になっているはずです。また、 &yast; でのスナップショットには <guimenu>説"
+"明</guimenu> 列に <literal>zypp(y2base)</literal> が書かれています。同様に、 "
+"zypper でのスナップショットには、 <literal>zypp(zypper)</literal> が書かれて"
+"います。"
 
 #. Tag: para
 #: snapper.xml:564
@@ -1058,8 +1080,8 @@ msgid ""
 "Click <guimenu>Show Changes</guimenu> to open the list of files that differ "
 "between the two snapshots."
 msgstr ""
-"2 つのスナップショットの間で変更されたファイルの一覧を表示するには、"
-" <guimenu>変更点の表示</guimenu> を押します。"
+"2 つのスナップショットの間で変更されたファイルの一覧を表示するには、 "
+"<guimenu>変更点の表示</guimenu> を押します。"
 
 #. Tag: para
 #: snapper.xml:580
@@ -1068,8 +1090,8 @@ msgid ""
 "Review the list of files. To display a <quote>diff</quote> between the pre- "
 "and post-version of a file, select it from the list."
 msgstr ""
-"ファイルの一覧が表示されます。事前と事後のスナップショットでの <quote>差分</quote> "
-"を表示するには、一覧からファイルを選択します。"
+"ファイルの一覧が表示されます。事前と事後のスナップショットでの <quote>差分</"
+"quote> を表示するには、一覧からファイルを選択します。"
 
 #. Tag: para
 #: snapper.xml:596
@@ -1079,9 +1101,10 @@ msgid ""
 "activating the respective check box. Click <guimenu>Restore Selected</"
 "guimenu> and confirm the action by clicking <guimenu>Yes</guimenu> ."
 msgstr ""
-"1 つまたは複数のファイルを復元するには、ファイルやディレクトリのチェックボックスに"
-"チェックを入れてから、 <guimenu>選択したものを復元</guimenu> を押します。"
-"その後、確認メッセージが表示されますので、 <guimenu>はい</guimenu> を押して確認します。"
+"1 つまたは複数のファイルを復元するには、ファイルやディレクトリのチェックボッ"
+"クスにチェックを入れてから、 <guimenu>選択したものを復元</guimenu> を押しま"
+"す。その後、確認メッセージが表示されますので、 <guimenu>はい</guimenu> を押し"
+"て確認します。"
 
 #. Tag: para
 #: snapper.xml:612
@@ -1091,9 +1114,9 @@ msgid ""
 "<guimenu>Restore From First</guimenu> and confirm your choice with "
 "<guimenu>Yes</guimenu> ."
 msgstr ""
-"単一のファイルを復元する場合は、その名前欄を押して差分を表示します。"
-"あとは <guimenu>最初から復元する</guimenu> を押して確認メッセージを表示させ、"
-" <guimenu>はい</guimenu> を押して確認します。"
+"単一のファイルを復元する場合は、その名前欄を押して差分を表示します。あとは "
+"<guimenu>最初から復元する</guimenu> を押して確認メッセージを表示させ、 "
+"<guimenu>はい</guimenu> を押して確認します。"
 
 #. Tag: title
 #: snapper.xml:620
@@ -1111,37 +1134,54 @@ msgid ""
 "column</guimenu> ; Zypper snapshots are labeled <literal>zypp(zypper)</"
 "literal> ."
 msgstr ""
-"&yast; や zypper で作成したスナップショットの一覧を表示するには、 <command>snapper list -"
-"t pre-post</command> と入力して実行します。 &yast; でのスナップショットの場合、"
-" <guimenu>説明</guimenu> 欄に <literal>yast <replaceable>モジュール名</replaceable></literal> "
-"が表示されます。 zypper でのスナップショットの場合は、 <literal>zypp(zypper)</"
-"literal> が表示されます。"
+"&yast; や zypper で作成したスナップショットの一覧を表示するには、 "
+"<command>snapper list -t pre-post</command> と入力して実行します。 &yast; で"
+"のスナップショットの場合、 <guimenu>説明</guimenu> 欄に <literal>yast "
+"<replaceable>モジュール名</replaceable></literal> が表示されます。 zypper で"
+"のスナップショットの場合は、 <literal>zypp(zypper)</literal> が表示されます。"
 
 #. Tag: screen
 #: snapper.xml:629
 #, no-c-format
 msgid ""
 "<?dbsuse-fo font-size=\"0.60em\"?>&prompt.sudo;snapper list -t pre-post\n"
-"Pre # | Post # | Pre Date                      | Post Date                     | Description\n"
-"------+--------+-------------------------------+-------------------------------+--------------\n"
-"311   | 312    | Tue 06 May 2018 14:05:46 CEST | Tue 06 May 2018 14:05:52 CEST | zypp(y2base)\n"
-"340   | 341    | Wed 07 May 2018 16:15:10 CEST | Wed 07 May 2018 16:15:16 CEST | zypp(zypper)\n"
-"342   | 343    | Wed 07 May 2018 16:20:38 CEST | Wed 07 May 2018 16:20:42 CEST | zypp(y2base)\n"
-"344   | 345    | Wed 07 May 2018 16:21:23 CEST | Wed 07 May 2018 16:21:24 CEST | zypp(zypper)\n"
-"346   | 347    | Wed 07 May 2018 16:41:06 CEST | Wed 07 May 2018 16:41:10 CEST | zypp(y2base)\n"
-"348   | 349    | Wed 07 May 2018 16:44:50 CEST | Wed 07 May 2018 16:44:53 CEST | zypp(y2base)\n"
-"350   | 351    | Wed 07 May 2018 16:46:27 CEST | Wed 07 May 2018 16:46:38 CEST | zypp(y2base) "
+"Pre # | Post # | Pre Date                      | Post "
+"Date                     | Description\n"
+"------+--------+-------------------------------"
+"+-------------------------------+--------------\n"
+"311   | 312    | Tue 06 May 2018 14:05:46 CEST | Tue 06 May 2018 14:05:52 "
+"CEST | zypp(y2base)\n"
+"340   | 341    | Wed 07 May 2018 16:15:10 CEST | Wed 07 May 2018 16:15:16 "
+"CEST | zypp(zypper)\n"
+"342   | 343    | Wed 07 May 2018 16:20:38 CEST | Wed 07 May 2018 16:20:42 "
+"CEST | zypp(y2base)\n"
+"344   | 345    | Wed 07 May 2018 16:21:23 CEST | Wed 07 May 2018 16:21:24 "
+"CEST | zypp(zypper)\n"
+"346   | 347    | Wed 07 May 2018 16:41:06 CEST | Wed 07 May 2018 16:41:10 "
+"CEST | zypp(y2base)\n"
+"348   | 349    | Wed 07 May 2018 16:44:50 CEST | Wed 07 May 2018 16:44:53 "
+"CEST | zypp(y2base)\n"
+"350   | 351    | Wed 07 May 2018 16:46:27 CEST | Wed 07 May 2018 16:46:38 "
+"CEST | zypp(y2base) "
 msgstr ""
 "<?dbsuse-fo font-size=\"0.60em\"?>&prompt.sudo;snapper list -t pre-post\n"
 "前  # | 後   # | 前日付                  | 後日付                  | 説明\n"
-"------+--------+-------------------------+------------------------+--------------\n"
-"311   | 312    | 2018年05月06日 14:05:46 | 2018年05月06日 14:05:52 | zypp(y2base)\n"
-"340   | 341    | 2018年05月07日 16:15:10 | 2018年05月07日 16:15:16 | zypp(zypper)\n"
-"342   | 343    | 2018年05月07日 16:20:38 | 2018年05月07日 16:20:42 | zypp(y2base)\n"
-"344   | 345    | 2018年05月07日 16:21:23 | 2018年05月07日 16:21:24 | zypp(zypper)\n"
-"346   | 347    | 2018年05月07日 16:41:06 | 2018年05月07日 16:41:10 | zypp(y2base)\n"
-"348   | 349    | 2018年05月07日 16:44:50 | 2018年05月07日 16:44:53 | zypp(y2base)\n"
-"350   | 351    | 2018年05月07日 16:46:27 | 2018年05月07日 16:46:38 | zypp(y2base) "
+"------+--------+-------------------------+------------------------"
+"+--------------\n"
+"311   | 312    | 2018年05月06日 14:05:46 | 2018年05月06日 14:05:52 | "
+"zypp(y2base)\n"
+"340   | 341    | 2018年05月07日 16:15:10 | 2018年05月07日 16:15:16 | "
+"zypp(zypper)\n"
+"342   | 343    | 2018年05月07日 16:20:38 | 2018年05月07日 16:20:42 | "
+"zypp(y2base)\n"
+"344   | 345    | 2018年05月07日 16:21:23 | 2018年05月07日 16:21:24 | "
+"zypp(zypper)\n"
+"346   | 347    | 2018年05月07日 16:41:06 | 2018年05月07日 16:41:10 | "
+"zypp(y2base)\n"
+"348   | 349    | 2018年05月07日 16:44:50 | 2018年05月07日 16:44:53 | "
+"zypp(y2base)\n"
+"350   | 351    | 2018年05月07日 16:46:27 | 2018年05月07日 16:46:38 | "
+"zypp(y2base) "
 
 #. Tag: para
 #: snapper.xml:641
@@ -1153,12 +1193,12 @@ msgid ""
 "guimenu> , files that have been added are marked with <guimenu>+</guimenu> "
 "and deleted files are marked with <guimenu>-</guimenu> ."
 msgstr ""
-"<command>snapper status</command> <replaceable>前 #</replaceable> .."
-" <replaceable>後 #</replaceable> と入力すると、スナップショット対の間で"
-"変更されたファイルの一覧を取得することができます。内容が変更されたファイルには"
-" <guimenu>c</guimenu> が表示されるほか、新規に作成されたファイルには"
-" <guimenu>+</guimenu> が、削除されたファイルには <guimenu>-</guimenu> が"
-"それぞれ表示されます。"
+"<command>snapper status</command> <replaceable>前 #</replaceable> .. "
+"<replaceable>後 #</replaceable> と入力すると、スナップショット対の間で変更さ"
+"れたファイルの一覧を取得することができます。内容が変更されたファイルには "
+"<guimenu>c</guimenu> が表示されるほか、新規に作成されたファイルには <guimenu>"
+"+</guimenu> が、削除されたファイルには <guimenu>-</guimenu> がそれぞれ表示さ"
+"れます。"
 
 #. Tag: screen
 #: snapper.xml:649
@@ -1221,8 +1261,8 @@ msgid ""
 msgstr ""
 "特定のファイルに対する差分を表示するには、 <command>snapper diff</command> "
 "<replaceable>前 #</replaceable> .. <replaceable>後 #</replaceable> "
-"<replaceable>ファイル名</replaceable> と入力して実行します。ファイル名を指定しない"
-"場合は、全てのファイルに対する差分が表示されます。"
+"<replaceable>ファイル名</replaceable> と入力して実行します。ファイル名を指定"
+"しない場合は、全てのファイルに対する差分が表示されます。"
 
 #. Tag: screen
 #: snapper.xml:680
@@ -1265,10 +1305,11 @@ msgid ""
 "<replaceable>FILENAMES</replaceable> . If you do not specify a "
 "<replaceable>FILENAMES</replaceable> , all changed files will be restored."
 msgstr ""
-"1 つまたは複数のファイルを復元するには、 <command>snapper -v undochange</command> "
-"<replaceable>Pre の ID</replaceable> .. <replaceable>Post の ID</replaceable> "
-"<replaceable>ファイル名 (複数可)</replaceable> のように入力して実行します。"
-"ファイル名を何も指定しない場合は、変更された全てのファイルが復元されます。"
+"1 つまたは複数のファイルを復元するには、 <command>snapper -v undochange</"
+"command> <replaceable>Pre の ID</replaceable> .. <replaceable>Post の ID</"
+"replaceable> <replaceable>ファイル名 (複数可)</replaceable> のように入力して"
+"実行します。ファイル名を何も指定しない場合は、変更された全てのファイルが復元"
+"されます。"
 
 #. Tag: screen
 #: snapper.xml:697
@@ -1343,13 +1384,14 @@ msgid ""
 "Therefore it is strongly recommended to use the &yast; <guimenu>User and "
 "Group Management</guimenu> tool to remove users."
 msgstr ""
-"Snapper の巻き戻し機能を利用して、ユーザの作成を巻き戻すのはお勧めできません。"
-"特定のディレクトリがスナップショットから除外されるため、これらのユーザに属する"
-"ファイルがファイルシステム内に残る可能性があるためです。巻き戻し機能でユーザの"
-"作成を取り消した後、別のユーザを作成してしまうと、作成を巻き戻したユーザのユーザ"
-" ID と、新たに作成したユーザのユーザ ID が同じになってしまうため、残ったファイル"
-"をそのユーザがアクセスできてしまいます。ユーザを削除する際は、 &yast; の <guimenu>ユーザと"
-"グループの管理</guimenu> を利用して削除することを強くお勧めします。"
+"Snapper の巻き戻し機能を利用して、ユーザの作成を巻き戻すのはお勧めできませ"
+"ん。特定のディレクトリがスナップショットから除外されるため、これらのユーザに"
+"属するファイルがファイルシステム内に残る可能性があるためです。巻き戻し機能で"
+"ユーザの作成を取り消した後、別のユーザを作成してしまうと、作成を巻き戻した"
+"ユーザのユーザ ID と、新たに作成したユーザのユーザ ID が同じになってしまうた"
+"め、残ったファイルをそのユーザがアクセスできてしまいます。ユーザを削除する際"
+"は、 &yast; の <guimenu>ユーザとグループの管理</guimenu> を利用して削除するこ"
+"とを強くお勧めします。"
 
 #. Tag: title
 #: snapper.xml:737
@@ -1367,11 +1409,12 @@ msgid ""
 "By using Snapper's diff feature you can also find out which modifications "
 "have been made at a certain point of time."
 msgstr ""
-"インストールスナップショットや管理スナップショットとは別に、 Snapper にはタイムライン"
-"スナップショットという機能があります。これは誤って削除してしまったり、誤って書き換えて"
-"しまったりしたファイルを復元するためのバックアップ用スナップショットです。"
-" Snapper の差分表示機能を利用することで、その時点のファイルからどのように書き換えて"
-"しまったのかについても、確認を行なうことができるようになっています。"
+"インストールスナップショットや管理スナップショットとは別に、 Snapper にはタイ"
+"ムラインスナップショットという機能があります。これは誤って削除してしまった"
+"り、誤って書き換えてしまったりしたファイルを復元するためのバックアップ用ス"
+"ナップショットです。 Snapper の差分表示機能を利用することで、その時点のファイ"
+"ルからどのように書き換えてしまったのかについても、確認を行なうことができるよ"
+"うになっています。"
 
 #. Tag: para
 #: snapper.xml:745
@@ -1384,12 +1427,13 @@ msgid ""
 "automatic timeline snapshots. See <xref linkend=\"sec.snapper.config\"/> for "
 "instructions."
 msgstr ""
-"ファイルを復元できるという機能は、特に各種データ類に対して有用な仕組みですが、"
-"これらは、既定ではスナップショットの採取されないサブボリュームやパーティション内に"
-"置かれている場合があります。たとえばホームディレクトリなどでファイルを復元できる"
-"ようにするには、 <filename>/home</filename> に対して個別の Snapper 設定を"
-"作成し、自動的なタイムラインスナップショットを有効化する必要があります。詳しい"
-"手順については、 <xref linkend=\"sec.snapper.config\"/> をお読みください。"
+"ファイルを復元できるという機能は、特に各種データ類に対して有用な仕組みです"
+"が、これらは、既定ではスナップショットの採取されないサブボリュームやパーティ"
+"ション内に置かれている場合があります。たとえばホームディレクトリなどでファイ"
+"ルを復元できるようにするには、 <filename>/home</filename> に対して個別の "
+"Snapper 設定を作成し、自動的なタイムラインスナップショットを有効化する必要が"
+"あります。詳しい手順については、 <xref linkend=\"sec.snapper.config\"/> をお"
+"読みください。"
 
 #. Tag: title
 #: snapper.xml:754
@@ -1406,11 +1450,11 @@ msgid ""
 "do such a rollback is to boot from the snapshot and then perform the "
 "rollback. See <xref linkend=\"sec.snapper.snapshot-boot\"/> for details."
 msgstr ""
-"ルートファイルシステムに対して採取したスナップショット (Snapper のルート"
-"ディレクトリ設定で設定されます) は、システムのロールバックとして使用することが"
-"できます。システムのロールバックを実施するにあたっては、対応するスナップショット"
-"から起動を行なって、その後にロールバックを行なうのがお勧めです。詳しくは"
-" <xref linkend=\"sec.snapper.snapshot-boot\"/> をお読みください。"
+"ルートファイルシステムに対して採取したスナップショット (Snapper のルートディ"
+"レクトリ設定で設定されます) は、システムのロールバックとして使用することがで"
+"きます。システムのロールバックを実施するにあたっては、対応するスナップショッ"
+"トから起動を行なって、その後にロールバックを行なうのがお勧めです。詳しくは "
+"<xref linkend=\"sec.snapper.snapshot-boot\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:761
@@ -1422,19 +1466,20 @@ msgid ""
 "from the <systemitem>/etc</systemitem> directory, but not the complete list "
 "of files from the snapshot."
 msgstr ""
-"ロールバックの方法としては、下記で説明するとおり、特定のルートファイルシステムの"
-"スナップショットからファイルを復元する方法もありますが、こちらはお勧めできません。"
-"<systemitem>/etc</systemitem> ディレクトリ内にある設定ファイルなど、個別の"
-"ファイルを取り戻す方法としては有用ですが、全てのファイルを巻き戻す際にはお勧め"
-"できません。"
+"ロールバックの方法としては、下記で説明するとおり、特定のルートファイルシステ"
+"ムのスナップショットからファイルを復元する方法もありますが、こちらはお勧めで"
+"きません。<systemitem>/etc</systemitem> ディレクトリ内にある設定ファイルな"
+"ど、個別のファイルを取り戻す方法としては有用ですが、全てのファイルを巻き戻す"
+"際にはお勧めできません。"
 
 #. Tag: para
 #: snapper.xml:768
 #, no-c-format
-msgid "This restriction only affects snapshots taken from the root file system!"
+msgid ""
+"This restriction only affects snapshots taken from the root file system!"
 msgstr ""
-"なお、この制限はルートファイルシステムに対して採取されたスナップショットのみに"
-"適用すべきものです。"
+"なお、この制限はルートファイルシステムに対して採取されたスナップショットのみ"
+"に適用すべきものです。"
 
 #. Tag: title
 #: snapper.xml:773
@@ -1449,8 +1494,9 @@ msgid ""
 "Start the <guimenu>Snapper</guimenu> module from the <guimenu>Miscellaneous</"
 "guimenu> section in &yast; or by entering <command>yast2 snapper</command> ."
 msgstr ""
-"&yast; を起動して <guimenu>その他</guimenu> にある <guimenu>Snapper</guimenu> "
-"を選択するか、もしくは <command>yast2 snapper</command> と入力して実行します。"
+"&yast; を起動して <guimenu>その他</guimenu> にある <guimenu>Snapper</"
+"guimenu> を選択するか、もしくは <command>yast2 snapper</command> と入力して実"
+"行します。"
 
 #. Tag: para
 #: snapper.xml:782
@@ -1458,7 +1504,8 @@ msgstr ""
 msgid ""
 "Choose the <guimenu>Current Configuration</guimenu> from which to choose a "
 "snapshot."
-msgstr "スナップショットを選択するため、 <guimenu>現在の設定</guimenu> を選択します。"
+msgstr ""
+"スナップショットを選択するため、 <guimenu>現在の設定</guimenu> を選択します。"
 
 #. Tag: para
 #: snapper.xml:788
@@ -1469,9 +1516,10 @@ msgid ""
 "<guimenu>Single</guimenu> with a description value of <guimenu>timeline</"
 "guimenu> ."
 msgstr ""
-"ファイルを復元したいタイムラインスナップショットを選択して、 <guimenu>変更点の表示</guimenu> "
-"を押します。タイムラインスナップショットは、種類が <guimenu>単一</guimenu> "
-"になっているほか、説明欄に <guimenu>timeline</guimenu> と書かれています。"
+"ファイルを復元したいタイムラインスナップショットを選択して、 <guimenu>変更点"
+"の表示</guimenu> を押します。タイムラインスナップショットは、種類が <guimenu>"
+"単一</guimenu> になっているほか、説明欄に <guimenu>timeline</guimenu> と書か"
+"れています。"
 
 #. Tag: para
 #: snapper.xml:796
@@ -1482,9 +1530,9 @@ msgid ""
 "check box to select the file for restore. Do so for all files you want to "
 "restore."
 msgstr ""
-"ファイル名を押して、テキストボックスからファイルを選択します。すると、スナップショットで"
-"保存された版と現在の版の差分が表示されるようになります。あとは復元したいファイルや"
-"ディレクトリのチェックボックスに、チェックを入れます。"
+"ファイル名を押して、テキストボックスからファイルを選択します。すると、スナッ"
+"プショットで保存された版と現在の版の差分が表示されるようになります。あとは復"
+"元したいファイルやディレクトリのチェックボックスに、チェックを入れます。"
 
 #. Tag: para
 #: snapper.xml:804
@@ -1493,8 +1541,8 @@ msgid ""
 "Click <guimenu>Restore Selected</guimenu> and confirm the action by clicking "
 "<guimenu>Yes</guimenu> ."
 msgstr ""
-" <guimenu>選択したものを復元</guimenu> を押します。その後、確認メッセージが表示されます"
-"ので、 <guimenu>はい</guimenu> を押して確認します。"
+" <guimenu>選択したものを復元</guimenu> を押します。その後、確認メッセージが表"
+"示されますので、 <guimenu>はい</guimenu> を押して確認します。"
 
 #. Tag: title
 #: snapper.xml:811
@@ -1508,7 +1556,9 @@ msgstr "<command>snapper</command> コマンドを利用するファイルの復
 msgid ""
 "Get a list of timeline snapshots for a specific configuration by running the "
 "following command:"
-msgstr "特定の設定に対するタイムラインスナップショットの一覧を表示するには、下記のコマンドを実行します:"
+msgstr ""
+"特定の設定に対するタイムラインスナップショットの一覧を表示するには、下記のコ"
+"マンドを実行します:"
 
 #. Tag: screen
 #: snapper.xml:817
@@ -1528,9 +1578,9 @@ msgid ""
 "Snapper configuration. Use <command>snapper list-configs</command> to "
 "display a list."
 msgstr ""
-"<replaceable>設定</replaceable> には既存の Snapper 設定の値を指定します。"
-" <command>snapper list-configs</command> と入力して実行すると、設定の一覧を"
-"表示することができます。"
+"<replaceable>設定</replaceable> には既存の Snapper 設定の値を指定します。 "
+"<command>snapper list-configs</command> と入力して実行すると、設定の一覧を表"
+"示することができます。"
 
 #. Tag: para
 #: snapper.xml:825
@@ -1539,8 +1589,8 @@ msgid ""
 "Get a list of changed files for a given snapshot by running the following "
 "command:"
 msgstr ""
-"特定のスナップショットで変更されたファイルの一覧を表示するには、下記のコマンドを"
-"実行します:"
+"特定のスナップショットで変更されたファイルの一覧を表示するには、下記のコマン"
+"ドを実行します:"
 
 #. Tag: screen
 #: snapper.xml:829
@@ -1549,8 +1599,8 @@ msgid ""
 "&prompt.sudo;snapper -c <replaceable>CONFIG</replaceable> status "
 "<replaceable>SNAPSHOT_ID</replaceable>..0"
 msgstr ""
-"&prompt.sudo;snapper -c <replaceable>設定</replaceable> status "
-"<replaceable>スナップショット_ID</replaceable>..0"
+"&prompt.sudo;snapper -c <replaceable>設定</replaceable> status <replaceable>"
+"スナップショット_ID</replaceable>..0"
 
 #. Tag: para
 #: snapper.xml:830
@@ -1559,8 +1609,8 @@ msgid ""
 "Replace <replaceable>SNAPSHOT_ID</replaceable> by the ID for the snapshot "
 "from which you want to restore the file(s)."
 msgstr ""
-"<replaceable>スナップショット_ID</replaceable> には、ファイルを復元したい"
-"スナップショットの ID を指定します。"
+"<replaceable>スナップショット_ID</replaceable> には、ファイルを復元したいス"
+"ナップショットの ID を指定します。"
 
 #. Tag: para
 #: snapper.xml:836
@@ -1569,8 +1619,8 @@ msgid ""
 "Optionally list the differences between the current file version and the one "
 "from the snapshot by running"
 msgstr ""
-"必要であれば、現在のファイルとスナップショット内のファイルの差分を表示することも"
-"できます:"
+"必要であれば、現在のファイルとスナップショット内のファイルの差分を表示するこ"
+"ともできます:"
 
 #. Tag: screen
 #: snapper.xml:840
@@ -1580,9 +1630,8 @@ msgid ""
 "<replaceable>SNAPSHOT_ID</replaceable>..0 <replaceable>FILE NAME</"
 "replaceable>"
 msgstr ""
-"&prompt.sudo;snapper -c <replaceable>設定</replaceable> diff "
-"<replaceable>スナップショット_ID</replaceable>..0 <replaceable>ファイル名</"
-"replaceable>"
+"&prompt.sudo;snapper -c <replaceable>設定</replaceable> diff <replaceable>ス"
+"ナップショット_ID</replaceable>..0 <replaceable>ファイル名</replaceable>"
 
 #. Tag: para
 #: snapper.xml:841
@@ -1591,8 +1640,8 @@ msgid ""
 "If you do not specify <replaceable>&lt;FILE NAME&gt;</replaceable> , the "
 "difference for all files are shown."
 msgstr ""
-"<replaceable>ファイル名</replaceable> を指定せずに実行すると、全てのファイルに"
-"対する差分が表示されます。"
+"<replaceable>ファイル名</replaceable> を指定せずに実行すると、全てのファイル"
+"に対する差分が表示されます。"
 
 #. Tag: para
 #: snapper.xml:847
@@ -1633,11 +1682,11 @@ msgid ""
 "misconfigured system. Only snapshots created for the default Snapper "
 "configuration ( <literal>root</literal> ) are bootable."
 msgstr ""
-"&productname; に含まれている &grub; では、 btrfs のスナップショットからの起動を"
-"行なうことができます。これは Snapper のロールバック機能と共に働くもので、"
-"これによって誤って設定してしまったシステムを、元に戻すことができるようになります。"
-"ただし、既定の Snapper 設定 ( <literal>root</literal> ) で作成したスナップショット"
-"のみを起動することができます。"
+"&productname; に含まれている &grub; では、 btrfs のスナップショットからの起動"
+"を行なうことができます。これは Snapper のロールバック機能と共に働くもので、こ"
+"れによって誤って設定してしまったシステムを、元に戻すことができるようになりま"
+"す。ただし、既定の Snapper 設定 ( <literal>root</literal> ) で作成したスナッ"
+"プショットのみを起動することができます。"
 
 #. Tag: title
 #: snapper.xml:869
@@ -1654,8 +1703,9 @@ msgid ""
 "default subvolume configuration of the root partition has not been changed."
 msgstr ""
 "<!-- fs 2016-06-17: This will change with SP3 - see FATE #316347 --> "
-"&productname; &productnumber; では、ルートパーティションに対する既定のサブボリューム"
-"設定を変更していない場合にのみ、システムロールバックをサポートします。"
+"&productname; &productnumber; では、ルートパーティションに対する既定のサブボ"
+"リューム設定を変更していない場合にのみ、システムロールバックをサポートしま"
+"す。"
 
 #. Tag: para
 #: snapper.xml:878
@@ -1665,10 +1715,10 @@ msgid ""
 "snapshot are mounted read-only; all other file systems and parts that are "
 "excluded from snapshots are mounted read-write and can be modified."
 msgstr ""
-"スナップショットから起動を行なう場合、スナップショット内に含まれるファイルシステム"
-"は読み込み専用でマウントされます。また、その他のファイルシステムやスナップショット"
-"から除外されているサブボリュームなどについては、読み書きが可能で修正することが"
-"できるようになります。"
+"スナップショットから起動を行なう場合、スナップショット内に含まれるファイルシ"
+"ステムは読み込み専用でマウントされます。また、その他のファイルシステムやス"
+"ナップショットから除外されているサブボリュームなどについては、読み書きが可能"
+"で修正することができるようになります。"
 
 #. Tag: title
 #: snapper.xml:885
@@ -1683,8 +1733,8 @@ msgid ""
 "When working with snapshots to restore data, it is important to know that "
 "there are two fundamentally different scenarios Snapper can handle:"
 msgstr ""
-"データを復元する目的でスナップショットを利用する場合、 Snapper が処理できる"
-"シナリオとしては、下記の 2 つのものがあることを知っておくのが重要です:"
+"データを復元する目的でスナップショットを利用する場合、 Snapper が処理できるシ"
+"ナリオとしては、下記の 2 つのものがあることを知っておくのが重要です:"
 
 #. Tag: term
 #: snapper.xml:892
@@ -1701,9 +1751,10 @@ msgid ""
 "reverted. Using this method also allows to explicitly exclude selected files "
 "from being restored."
 msgstr ""
-"<xref linkend=\"sec.snapper.undo\"/> で説明しているとおりに変更点を巻き戻す場合、"
-" 2 つのスナップショット間を比較して、これらの間での違いを元に戻すことになります。"
-"この方法を利用することで、選択したファイルが明示的に巻き戻されないようにすることができます。"
+"<xref linkend=\"sec.snapper.undo\"/> で説明しているとおりに変更点を巻き戻す場"
+"合、 2 つのスナップショット間を比較して、これらの間での違いを元に戻すことにな"
+"ります。この方法を利用することで、選択したファイルが明示的に巻き戻されないよ"
+"うにすることができます。"
 
 #. Tag: term
 #: snapper.xml:903
@@ -1718,8 +1769,8 @@ msgid ""
 "When doing rollbacks as described in the following, the system is reset to "
 "the state at which the snapshot was taken."
 msgstr ""
-"下記に示す方法でロールバックを行なうと、システムはスナップショットを採取した時点の状態に"
-"リセットされます。"
+"下記に示す方法でロールバックを行なうと、システムはスナップショットを採取した"
+"時点の状態にリセットされます。"
 
 #. Tag: para
 #: snapper.xml:914
@@ -1728,8 +1779,9 @@ msgid ""
 "To do a rollback from a bootable snapshot, the following requirements must "
 "be met. When doing a default installation, the system is set up accordingly."
 msgstr ""
-"起動可能なスナップショットからロールバックを行なうには、下記の要件を満たさなければ"
-"なりません。既定の状態でインストールを行なった場合は、下記の要件を満たすように設定されます。"
+"起動可能なスナップショットからロールバックを行なうには、下記の要件を満たさな"
+"ければなりません。既定の状態でインストールを行なった場合は、下記の要件を満た"
+"すように設定されます。"
 
 #. Tag: title
 #: snapper.xml:920
@@ -1744,8 +1796,8 @@ msgid ""
 "The root file system needs to be Btrfs. Booting from LVM volume snapshots is "
 "not supported."
 msgstr ""
-"ルートファイルシステムは btrfs でなければなりません。 LVM ボリュームのスナップショット"
-"からの起動には、対応していません。"
+"ルートファイルシステムは btrfs でなければなりません。 LVM ボリュームのスナッ"
+"プショットからの起動には、対応していません。"
 
 #. Tag: para
 #: snapper.xml:928
@@ -1757,9 +1809,9 @@ msgid ""
 "a full list) may reside on separate partitions."
 msgstr ""
 "ルートファイルシステムは単一のデバイスかつ単一のパーティションであり、さらに"
-"単一のサブボリュームである必要があります。ただし、 <filename>/srv</filename> などの"
-"スナップショットから除外されるディレクトリについては、別途のパーティション内に"
-"存在していてもかまいません。"
+"単一のサブボリュームである必要があります。ただし、 <filename>/srv</filename> "
+"などのスナップショットから除外されるディレクトリについては、別途のパーティ"
+"ション内に存在していてもかまいません。"
 
 #. Tag: para
 #: snapper.xml:936
@@ -1771,7 +1823,9 @@ msgstr "システムはインストールされたブートローダから起動
 #: snapper.xml:942
 #, no-c-format
 msgid "To perform a rollback from a bootable snapshot, do as follows:"
-msgstr "起動可能なスナップショットからロールバックを行なうには、下記のように行ないます:"
+msgstr ""
+"起動可能なスナップショットからロールバックを行なうには、下記のように行ないま"
+"す:"
 
 #. Tag: para
 #: snapper.xml:948
@@ -1782,9 +1836,9 @@ msgid ""
 "listed by date&mdash;the most recent snapshot is listed first."
 msgstr ""
 "まずはシステムを起動します。起動メニューでは <guimenu>Bootable snapshots</"
-"guimenu> (起動可能なスナップショット) を選択して、起動したいスナップショットを"
-"選択します。スナップショットは日付順に並べられていて、最も新しいものが最初に"
-"表示されます。"
+"guimenu> (起動可能なスナップショット) を選択して、起動したいスナップショット"
+"を選択します。スナップショットは日付順に並べられていて、最も新しいものが最初"
+"に表示されます。"
 
 #. Tag: para
 #: snapper.xml:956
@@ -1795,10 +1849,11 @@ msgid ""
 "Data you write to other directories will <emphasis>not</emphasis> get lost, "
 "regardless of what you do next."
 msgstr ""
-"システムにログインします。全ての処理が期待通りに動作することを確認してください。"
-"また、スナップショットの一部になっているディレクトリに対しては、一切書き込むことが"
-"できないことに注意してください。逆に、それ以外のディレクトリへの書き込みであれば、"
-"次の手順でどちらを選択した場合であっても、それらは失われることが <emphasis>ありません</emphasis> 。"
+"システムにログインします。全ての処理が期待通りに動作することを確認してくださ"
+"い。また、スナップショットの一部になっているディレクトリに対しては、一切書き"
+"込むことができないことに注意してください。逆に、それ以外のディレクトリへの書"
+"き込みであれば、次の手順でどちらを選択した場合であっても、それらは失われるこ"
+"とが <emphasis>ありません</emphasis> 。"
 
 #. Tag: para
 #: snapper.xml:964
@@ -1816,9 +1871,9 @@ msgid ""
 "to boot into the current system state. You can then choose a different "
 "snapshot, or start the rescue system."
 msgstr ""
-"システムが期待通りに動作しない場合は、システムを再起動して現在のシステムに戻して"
-"ください。再度別のスナップショットを選択してもかまいませんし、レスキューシステムを"
-"お使いいただいてもかまいません。"
+"システムが期待通りに動作しない場合は、システムを再起動して現在のシステムに戻"
+"してください。再度別のスナップショットを選択してもかまいませんし、レスキュー"
+"システムをお使いいただいてもかまいません。"
 
 #. Tag: para
 #: snapper.xml:977
@@ -1842,11 +1897,11 @@ msgid ""
 "replaced with a fresh read-write snapshot. For details, see <xref linkend="
 "\"sec.snapper.snapshot-boot.rollback\"/> ."
 msgstr ""
-"上記を実行した後、システムを再起動します。起動画面では既定の起動項目を選択して、"
-"復帰したシステムを起動してください。なお、ロールバックを行なう前のファイルシステム"
-"に対するスナップショットが作成されます。ルートに対する既定のサブボリュームは、"
-"新しく読み書き可能なスナップショットに置き換えられます。詳しくは <xref linkend="
-"\"sec.snapper.snapshot-boot.rollback\"/> をお読みください。"
+"上記を実行した後、システムを再起動します。起動画面では既定の起動項目を選択し"
+"て、復帰したシステムを起動してください。なお、ロールバックを行なう前のファイ"
+"ルシステムに対するスナップショットが作成されます。ルートに対する既定のサブボ"
+"リュームは、新しく読み書き可能なスナップショットに置き換えられます。詳しくは "
+"<xref linkend=\"sec.snapper.snapshot-boot.rollback\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:988
@@ -1855,8 +1910,8 @@ msgid ""
 "It is useful to add a description for the snapshot with the <option>-d</"
 "option> option. For example:"
 msgstr ""
-"なお、 <option>-d</option> オプションを指定して、スナップショットに説明を"
-"設定しておくと便利です。たとえば下記のように実行します:"
+"なお、 <option>-d</option> オプションを指定して、スナップショットに説明を設定"
+"しておくと便利です。たとえば下記のように実行します:"
 
 #. Tag: screen
 #: snapper.xml:992
@@ -1864,7 +1919,9 @@ msgstr ""
 msgid ""
 "New file system root since rollback on <replaceable>DATE</replaceable> "
 "<replaceable>TIME</replaceable>"
-msgstr "<replaceable>日付</replaceable> <replaceable>時刻</replaceable> のロールバック以降の新しいファイルシステム"
+msgstr ""
+"<replaceable>日付</replaceable> <replaceable>時刻</replaceable> のロールバッ"
+"ク以降の新しいファイルシステム"
 
 #. Tag: title
 #: snapper.xml:998
@@ -1881,10 +1938,11 @@ msgid ""
 "go back to that state at any time by booting this snapshot. The snapshot can "
 "be identified by the description <literal>after installation</literal> ."
 msgstr ""
-"インストール時にスナップショットを無効化していなかった場合、初期の起動可能なスナップ"
-"ショットがシステムインストールの最後に採取されます。このスナップショットから起動を"
-"行なうことで、いつでも最初の時点に戻れるようになります。このスナップショットには、"
-" <literal>after installation</literal> という説明が設定されます。"
+"インストール時にスナップショットを無効化していなかった場合、初期の起動可能な"
+"スナップショットがシステムインストールの最後に採取されます。このスナップ"
+"ショットから起動を行なうことで、いつでも最初の時点に戻れるようになります。こ"
+"のスナップショットには、 <literal>after installation</literal> という説明が設"
+"定されます。"
 
 #. Tag: para
 #: snapper.xml:1005
@@ -1893,9 +1951,9 @@ msgid ""
 "A bootable snapshot is also created when starting a system upgrade to a "
 "service pack or a new major release (provided snapshots are not disabled)."
 msgstr ""
-"起動可能なスナップショットは、サービスパックへのシステムアップグレードを開始した"
-"場合や、新しいメジャーリリースへのシステムアップグレードでも作成されます"
-" (ただし、スナップショットを無効化していない場合に限ります) 。"
+"起動可能なスナップショットは、サービスパックへのシステムアップグレードを開始"
+"した場合や、新しいメジャーリリースへのシステムアップグレードでも作成されます "
+"(ただし、スナップショットを無効化していない場合に限ります) 。"
 
 #. Tag: title
 #: snapper.xml:1011
@@ -1911,8 +1969,9 @@ msgid ""
 "created. The description references the ID of the snapshot that was restored "
 "in the rollback."
 msgstr ""
-"ロールバックを実施する前に、現在実行中のファイルシステムに対するスナップショットが"
-"作成されます。説明には、ロールバックに復元した際のスナップショットの ID が書かれます。"
+"ロールバックを実施する前に、現在実行中のファイルシステムに対するスナップ"
+"ショットが作成されます。説明には、ロールバックに復元した際のスナップショット"
+"の ID が書かれます。"
 
 #. Tag: para
 #: snapper.xml:1017
@@ -1925,12 +1984,12 @@ msgid ""
 "snapshot contains important data, extract the data from the snapshot before "
 "it is removed."
 msgstr ""
-"ロールバックで作成されたスナップショットには、 <literal>Cleanup</literal> 属性に"
-" <literal>number</literal> という値が設定されます。そのため、ロールバックスナップショットは"
-"設定されたスナップショット数に達したとき、自動的に削除されます。詳しくは"
-" <xref linkend=\"sec.snapper.clean-up\"/> をお読みください。スナップショットに"
-"重要なデータが含まれる場合は、スナップショットが削除される前に必要なデータを"
-"抽出するようにしてください。"
+"ロールバックで作成されたスナップショットには、 <literal>Cleanup</literal> 属"
+"性に <literal>number</literal> という値が設定されます。そのため、ロールバック"
+"スナップショットは設定されたスナップショット数に達したとき、自動的に削除され"
+"ます。詳しくは <xref linkend=\"sec.snapper.clean-up\"/> をお読みください。ス"
+"ナップショットに重要なデータが含まれる場合は、スナップショットが削除される前"
+"に必要なデータを抽出するようにしてください。"
 
 #. Tag: title
 #: snapper.xml:1026
@@ -1945,8 +2004,8 @@ msgid ""
 "For example, after a fresh installation the following snapshots are "
 "available on the system:"
 msgstr ""
-"たとえば新規インストールを行なった場合、システムには下記のスナップショット"
-"が作成されます:"
+"たとえば新規インストールを行なった場合、システムには下記のスナップショットが"
+"作成されます:"
 
 #. Tag: screen
 #: snapper.xml:1031
@@ -1977,10 +2036,10 @@ msgid ""
 "was executed. Snapshot <literal>4</literal> is the new default Btrfs "
 "subvolume and thus the system after a reboot."
 msgstr ""
-"ここで <command>sudo snapper rollback</command> を実行すると、スナップショット"
-" <literal>3</literal> が作成され、ロールバック前のシステムの状態が保存されます。"
-"スナップショット <literal>4</literal> が新しい btrfs のサブボリュームとなり、"
-"システムの再起動後に使用されるものとなります。"
+"ここで <command>sudo snapper rollback</command> を実行すると、スナップショッ"
+"ト <literal>3</literal> が作成され、ロールバック前のシステムの状態が保存され"
+"ます。スナップショット <literal>4</literal> が新しい btrfs のサブボリュームと"
+"なり、システムの再起動後に使用されるものとなります。"
 
 #. Tag: screen
 #: snapper.xml:1045
@@ -2025,14 +2084,15 @@ msgid ""
 "the machine immediately, but rather opens the boot loader of the selected "
 "snapshot."
 msgstr ""
-"スナップショットから起動を行なうには、お使いのマシンを再起動して <guimenu>Start "
-"Bootloader from a read-only snapshot</guimenu> を選択します。すると、起動可能な"
-"全てのスナップショットが一覧表示されます。最も新しいスナップショットが最初に、"
-"最も古いスナップショットが最後に表示されます。 <keycap function=\"down\"/> および"
-" <keycap function=\"up\"/> を利用して選択して、 <keycap function=\"enter\"/> "
-"を押してください。これで選択したスナップショットを有効化することができます。"
-"なお、起動メニューでスナップショットを選択しても、マシンはそのまま起動することは"
-"ありません。選択したスナップショット内のブートローダを表示します。"
+"スナップショットから起動を行なうには、お使いのマシンを再起動して "
+"<guimenu>Start Bootloader from a read-only snapshot</guimenu> を選択します。"
+"すると、起動可能な全てのスナップショットが一覧表示されます。最も新しいスナッ"
+"プショットが最初に、最も古いスナップショットが最後に表示されます。 <keycap "
+"function=\"down\"/> および <keycap function=\"up\"/> を利用して選択して、 "
+"<keycap function=\"enter\"/> を押してください。これで選択したスナップショット"
+"を有効化することができます。なお、起動メニューでスナップショットを選択して"
+"も、マシンはそのまま起動することはありません。選択したスナップショット内の"
+"ブートローダを表示します。"
 
 #. Tag: title
 #: snapper.xml:1071
@@ -2047,8 +2107,8 @@ msgid ""
 "Each snapshot entry in the boot loader follows a naming scheme which makes "
 "it possible to identify it easily:"
 msgstr ""
-"ブートローダ内でのスナップショット項目には、それらを容易に識別できるようにする"
-"ための名前付け方式が設定されています:"
+"ブートローダ内でのスナップショット項目には、それらを容易に識別できるようにす"
+"るための名前付け方式が設定されています:"
 
 #. Tag: screen
 #: snapper.xml:1085
@@ -2065,8 +2125,8 @@ msgstr ""
 "xml:id=\"snapper.boot.os\"/> (<replaceable>カーネル</replaceable><co xml:id="
 "\"snapper.boot.kernel\"/>,<replaceable>日付</replaceable><co xml:id="
 "\"snapper.boot.date\"/>T<replaceable>時刻</replaceable><co xml:id=\"snapper."
-"boot.time\"/>,<replaceable>説明</replaceable><co xml:id=\"snapper."
-"boot.description\"/>)"
+"boot.time\"/>,<replaceable>説明</replaceable><co xml:id=\"snapper.boot."
+"description\"/>)"
 
 #. Tag: para
 #: snapper.xml:1088
@@ -2075,8 +2135,8 @@ msgid ""
 "If the snapshot was marked <literal>important</literal> , the entry is "
 "marked with a <literal>*</literal> ."
 msgstr ""
-"スナップショットに <literal>important</literal> のマークが付けられている場合、"
-"項目には <literal>*</literal> というマークが付けられます。"
+"スナップショットに <literal>important</literal> のマークが付けられている場"
+"合、項目には <literal>*</literal> というマークが付けられます。"
 
 #. Tag: para
 #: snapper.xml:1094
@@ -2109,12 +2169,13 @@ msgid ""
 "truncated, depending on the size of the boot screen."
 msgstr ""
 "この項目には、スナップショットの説明が書かれます。手作業で作成したスナップ"
-"ショットの場合、ここには作成時に <option>--description</option> で指定した"
-"文字列か、独自の文字列 (詳しくは <xref linkend=\"tip.snapper.snapshot-boot.custom_descr\"/> "
-"をお読みください) が設定されます。自動作成されたスナップショットの場合は、"
-"呼び出し側のツール名が記録されます (例: <literal>zypp(zypper)</literal> または"
-" <literal>yast_sw_single</literal> など) 。説明が長い場合は自動的に後ろ側が"
-"切られますが、これは起動画面のサイズに依存して決まります。"
+"ショットの場合、ここには作成時に <option>--description</option> で指定した文"
+"字列か、独自の文字列 (詳しくは <xref linkend=\"tip.snapper.snapshot-boot."
+"custom_descr\"/> をお読みください) が設定されます。自動作成されたスナップ"
+"ショットの場合は、呼び出し側のツール名が記録されます (例: "
+"<literal>zypp(zypper)</literal> または <literal>yast_sw_single</literal> な"
+"ど) 。説明が長い場合は自動的に後ろ側が切られますが、これは起動画面のサイズに"
+"依存して決まります。"
 
 #. Tag: title
 #: snapper.xml:1123
@@ -2133,11 +2194,11 @@ msgid ""
 "replaceable> for snapshot <replaceable>NUMBER</replaceable> , use the "
 "following command:"
 msgstr ""
-"スナップショットの説明文は、既定の文字列から変更することができます。これはたとえば、"
-"自動的に採取されたスナップショットの説明文では不十分だったり、ユーザが指定した"
-"説明文が長すぎるような場合に有用です。スナップショット <replaceable>番号</replaceable> "
-"に対して <replaceable>文字列</replaceable> を設定するには、下記のようなコマンドを"
-"実行します:"
+"スナップショットの説明文は、既定の文字列から変更することができます。これはた"
+"とえば、自動的に採取されたスナップショットの説明文では不十分だったり、ユーザ"
+"が指定した説明文が長すぎるような場合に有用です。スナップショット "
+"<replaceable>番号</replaceable> に対して <replaceable>文字列</replaceable> を"
+"設定するには、下記のようなコマンドを実行します:"
 
 #. Tag: screen
 #: snapper.xml:1132
@@ -2156,8 +2217,8 @@ msgid ""
 "The description should be no longer than 25 characters&mdash;everything that "
 "exceeds this size will not be readable on the boot screen."
 msgstr ""
-"なお、この説明は 25 文字以上の長さにはしないでください。このサイズを超過した場合、"
-"起動画面ではおそらく表示しきれなくなります。"
+"なお、この説明は 25 文字以上の長さにはしないでください。このサイズを超過した"
+"場合、起動画面ではおそらく表示しきれなくなります。"
 
 #. Tag: title
 #: snapper.xml:1141
@@ -2173,8 +2234,9 @@ msgid ""
 "system to the identical state as it was in when a snapshot was taken, is not "
 "possible."
 msgstr ""
-"<emphasis>完全な</emphasis> システムロールバックには対応していません。たとえば、"
-"スナップショットを採取した時点と全く等価な状態にシステムを戻すことはできません。"
+"<emphasis>完全な</emphasis> システムロールバックには対応していません。たとえ"
+"ば、スナップショットを採取した時点と全く等価な状態にシステムを戻すことはでき"
+"ません。"
 
 #. Tag: title
 #: snapper.xml:1148
@@ -2191,16 +2253,17 @@ msgid ""
 "consequence, data from these directories is not restored, resulting in the "
 "following limitations."
 msgstr ""
-"ルートファイルシステムのスナップショットには、全てのディレクトリが含まれている"
-"というわけではありません。詳細と理由については、 <xref linkend=\"snapper.dir-excludes\"/> "
-"をお読みください。一般的には、これらのディレクトリのデータは復元されず、"
-"下記のような制限事項が生まれます。"
+"ルートファイルシステムのスナップショットには、全てのディレクトリが含まれてい"
+"るというわけではありません。詳細と理由については、 <xref linkend=\"snapper."
+"dir-excludes\"/> をお読みください。一般的には、これらのディレクトリのデータは"
+"復元されず、下記のような制限事項が生まれます。"
 
 #. Tag: term
 #: snapper.xml:1157
 #, no-c-format
 msgid "Add-ons and Third Party Software may be Unusable after a Rollback"
-msgstr "ロールバック後のアドオンおよびサードパーティ製ソフトウエアの使用について"
+msgstr ""
+"ロールバック後のアドオンおよびサードパーティ製ソフトウエアの使用について"
 
 #. Tag: para
 #: snapper.xml:1161
@@ -2212,11 +2275,11 @@ msgid ""
 "included in the snapshot. Re-install the application or the add-on to solve "
 "this problem."
 msgstr ""
-"<filename>/opt</filename> など、スナップショットから除外されるサブボリューム内に"
-"データをインストールするアプリケーションやアドオンについては、スナップショットに"
-"含まれるサブボリュームにデータをインストールするような場合は、ロールバックを行なうことで"
-"動作しなくなってしまう場合があります。この場合は、アプリケーションやアドオンを"
-"再インストールして問題を解決してください。"
+"<filename>/opt</filename> など、スナップショットから除外されるサブボリューム"
+"内にデータをインストールするアプリケーションやアドオンについては、スナップ"
+"ショットに含まれるサブボリュームにデータをインストールするような場合は、ロー"
+"ルバックを行なうことで動作しなくなってしまう場合があります。この場合は、アプ"
+"リケーションやアドオンを再インストールして問題を解決してください。"
 
 #. Tag: term
 #: snapper.xml:1171
@@ -2233,10 +2296,10 @@ msgid ""
 "files. Reset permissions and/or ownership for the affected files after the "
 "rollback."
 msgstr ""
-"スナップショットと現在動作中のシステムとの間で、アプリケーションがファイルのアクセス権や"
-"所有者を変更している場合、アプリケーションがそれらのファイルにアクセスできなくなって"
-"しまうことがあります。この場合は、ロールバック後にアクセス権や所有者をリセットして"
-"対応してください。"
+"スナップショットと現在動作中のシステムとの間で、アプリケーションがファイルの"
+"アクセス権や所有者を変更している場合、アプリケーションがそれらのファイルにア"
+"クセスできなくなってしまうことがあります。この場合は、ロールバック後にアクセ"
+"ス権や所有者をリセットして対応してください。"
 
 #. Tag: term
 #: snapper.xml:1182
@@ -2252,9 +2315,9 @@ msgid ""
 "snapshot and current system, the application may not be able to read the "
 "affected data files after a rollback."
 msgstr ""
-"スナップショットと現在動作中のシステムでサービスやアプリケーションの使用するデータ形式が"
-"変更されているような場合、ロールバックを行なうとアプリケーションがデータを"
-"読めなくなってしまうことがあります。"
+"スナップショットと現在動作中のシステムでサービスやアプリケーションの使用する"
+"データ形式が変更されているような場合、ロールバックを行なうとアプリケーション"
+"がデータを読めなくなってしまうことがあります。"
 
 #. Tag: term
 #: snapper.xml:1192
@@ -2270,10 +2333,11 @@ msgid ""
 "data. A rollback may result in non-functional code. A downgrade of the PHP "
 "version, for example, may result in broken PHP scripts for the Web server."
 msgstr ""
-"<filename>/srv</filename> のようなサブボリュームの場合、コードとデータが混在している"
-"ことがあります。この場合ロールバックを行なうと、動作しないコードになってしまう場合が"
-"あります。これは PHP のダウングレードが発生する場合があるためで、これによって"
-" Web サーバ内で PHP スクリプトがうく動作しなくなってしまいます。"
+"<filename>/srv</filename> のようなサブボリュームの場合、コードとデータが混在"
+"していることがあります。この場合ロールバックを行なうと、動作しないコードに"
+"なってしまう場合があります。これは PHP のダウングレードが発生する場合があるた"
+"めで、これによって Web サーバ内で PHP スクリプトがうく動作しなくなってしまい"
+"ます。"
 
 #. Tag: term
 #: snapper.xml:1203
@@ -2290,12 +2354,12 @@ msgid ""
 "with the same user ID is created, this user will inherit the files. Use a "
 "tool like <command>find</command> to locate and remove orphaned files."
 msgstr ""
-"ロールバックによってシステムからユーザが削除される場合、これらのユーザが所有して"
-"いたデータは、スナップショットから除外されているディレクトリにあるものについては、"
-"削除が行なわれません。ロールバック後、同じユーザ ID でユーザを作成してしまうと、"
-"そのユーザが古いユーザのファイル権限を引き継ぐことになってしまいます。"
-"そのため、 <command>find</command> のようなツールを利用して、孤立したファイルを"
-"検索して削除することをお勧めします。"
+"ロールバックによってシステムからユーザが削除される場合、これらのユーザが所有"
+"していたデータは、スナップショットから除外されているディレクトリにあるものに"
+"ついては、削除が行なわれません。ロールバック後、同じユーザ ID でユーザを作成"
+"してしまうと、そのユーザが古いユーザのファイル権限を引き継ぐことになってしま"
+"います。そのため、 <command>find</command> のようなツールを利用して、孤立した"
+"ファイルを検索して削除することをお勧めします。"
 
 #. Tag: title
 #: snapper.xml:1217
@@ -2311,10 +2375,10 @@ msgid ""
 "quote> of the boot loader must fit together. This cannot be guaranteed when "
 "doing rollbacks of <filename>/boot</filename> ."
 msgstr ""
-"ブートローダをロールバックすることはできません。なぜなら、ブートローダにおける全ての"
-" <quote>ステージ</quote> 同士が密接に関係し合っているためです。そのため、"
-" <filename>/boot</filename> のロールバックを行なった場合には、正しく動作する"
-"保証ができません。"
+"ブートローダをロールバックすることはできません。なぜなら、ブートローダにおけ"
+"る全ての <quote>ステージ</quote> 同士が密接に関係し合っているためです。そのた"
+"め、 <filename>/boot</filename> のロールバックを行なった場合には、正しく動作"
+"する保証ができません。"
 
 #. Tag: title
 #: snapper.xml:1227
@@ -2331,8 +2395,8 @@ msgid ""
 "configuration files reside under <filename>/etc/snapper/configs/</filename> ."
 msgstr ""
 "Snapper の動作は、各パーティションや <literal>btrfs</literal> サブボリューム"
-"別に設定ファイルで設定することができます。設定ファイルは <filename>/etc/snapper/configs/</filename> "
-"内に存在しています。"
+"別に設定ファイルで設定することができます。設定ファイルは <filename>/etc/"
+"snapper/configs/</filename> 内に存在しています。"
 
 #. Tag: para
 #: snapper.xml:1235
@@ -2345,12 +2409,12 @@ msgid ""
 "snapshot. See <xref linkend=\"sec.snapper.config.modify.values\"/> for a "
 "list of the default values."
 msgstr ""
-"ルートファイルシステムが十分に大きい (おおよそ 12 GB 以上) の場合、ルートファイルシステム"
-" <filename>/</filename> に対するスナップショットは、インストール時に自動的に有効化されます。"
-"この時点で作成される既定の設定は <filename>root</filename> という名前になっています。"
-"これにより、 &yast; や zypper のスナップショットを作成して管理しています。"
-"既定値の一覧について、詳しくは <xref linkend=\"sec.snapper.config.modify.values\"/> "
-"をお読みください。"
+"ルートファイルシステムが十分に大きい (おおよそ 12 GB 以上) の場合、ルートファ"
+"イルシステム <filename>/</filename> に対するスナップショットは、インストール"
+"時に自動的に有効化されます。この時点で作成される既定の設定は <filename>root</"
+"filename> という名前になっています。これにより、 &yast; や zypper のスナップ"
+"ショットを作成して管理しています。既定値の一覧について、詳しくは <xref "
+"linkend=\"sec.snapper.config.modify.values\"/> をお読みください。"
 
 #. Tag: title
 #: snapper.xml:1246
@@ -2368,11 +2432,11 @@ msgid ""
 "volume that is included in snapshots. The snapshot frequency and the number "
 "of snapshots that get archived also matter."
 msgstr ""
-"<xref linkend=\"sec.snapper.setup\"/> で説明しているとおり、スナップショットの"
-"有効化を行なうには、ルートファイルシステム内に追加の空き領域が必要となります。"
-"必要な容量はインストール済みのパッケージ数に依存するほか、スナップショットに"
-"含まれるボリュームで行なわれた変更量に依存して決まります。また、スナップショットの"
-"頻度やアーカイブされたスナップショットの数も影響します。"
+"<xref linkend=\"sec.snapper.setup\"/> で説明しているとおり、スナップショット"
+"の有効化を行なうには、ルートファイルシステム内に追加の空き領域が必要となりま"
+"す。必要な容量はインストール済みのパッケージ数に依存するほか、スナップショッ"
+"トに含まれるボリュームで行なわれた変更量に依存して決まります。また、スナップ"
+"ショットの頻度やアーカイブされたスナップショットの数も影響します。"
 
 #. Tag: para
 #: snapper.xml:1254
@@ -2385,11 +2449,12 @@ msgid ""
 "the following tags in the file <filename>/control.xml</filename> from the "
 "installation media:"
 msgstr ""
-"インストール時に自動的なスナップショットを有効化するのに必要な、最小のルートファイル"
-"システムのサイズが決められています。現時点では、これは 12 GB に設定されています。"
-"この値は、アーキテクチャや基本システムのサイズによって、将来的に変更される可能性が"
-"あります。また、この値はインストールメディア内の <filename>/control.xml</filename> "
-"ファイル内にある下記のタグで設定されています:"
+"インストール時に自動的なスナップショットを有効化するのに必要な、最小のルート"
+"ファイルシステムのサイズが決められています。現時点では、これは 12 GB に設定さ"
+"れています。この値は、アーキテクチャや基本システムのサイズによって、将来的に"
+"変更される可能性があります。また、この値はインストールメディア内の "
+"<filename>/control.xml</filename> ファイル内にある下記のタグで設定されていま"
+"す:"
 
 #. Tag: screen
 #: snapper.xml:1262
@@ -2409,9 +2474,9 @@ msgid ""
 "replaceable> * (1 + <replaceable>BTRFS_INCREASE_PERCENTAGE</"
 "replaceable> /100)"
 msgstr ""
-"上記の値を利用して、下記の数式で計算することができます: <replaceable>ROOT_BASE_SIZE の値</"
-"replaceable> * (1 + <replaceable>BTRFS_INCREASE_PERCENTAGE の値</"
-"replaceable> /100)"
+"上記の値を利用して、下記の数式で計算することができます: "
+"<replaceable>ROOT_BASE_SIZE の値</replaceable> * (1 + "
+"<replaceable>BTRFS_INCREASE_PERCENTAGE の値</replaceable> /100)"
 
 #. Tag: para
 #: snapper.xml:1267
@@ -2421,9 +2486,9 @@ msgid ""
 "for the root file system. As a rule of thumb, double the size you would use "
 "when not having enabled snapshots."
 msgstr ""
-"ただし、ここでの値は最小値であることに注意してください。ルートファイルシステムに対しては、"
-"それ以上のサイズを設定することをお勧めします。一般的には、スナップショットを"
-"使用しない場合のサイズ想定の 2 倍程度を設定してください。"
+"ただし、ここでの値は最小値であることに注意してください。ルートファイルシステ"
+"ムに対しては、それ以上のサイズを設定することをお勧めします。一般的には、ス"
+"ナップショットを使用しない場合のサイズ想定の 2 倍程度を設定してください。"
 
 #. Tag: para
 #: snapper.xml:1274
@@ -2436,11 +2501,11 @@ msgid ""
 "<literal>Btrfs</literal> -formatted partition mounted at <filename>/srv/www</"
 "filename> ."
 msgstr ""
-"<literal>btrfs</literal> でフォーマットされた他のパーティションや、 <literal>btrfs</literal> "
-"の既存のサブボリュームに対して、独自の設定を作成することもできます。下記の例では、"
-" <filename>/srv/www</filename> にマウントされた <literal>btrfs</literal> "
-"パーティション内の Web サーバのデータに対して、これらをバックアップするための"
-"設定を作成しています。"
+"<literal>btrfs</literal> でフォーマットされた他のパーティションや、 "
+"<literal>btrfs</literal> の既存のサブボリュームに対して、独自の設定を作成する"
+"こともできます。下記の例では、 <filename>/srv/www</filename> にマウントされ"
+"た <literal>btrfs</literal> パーティション内の Web サーバのデータに対して、こ"
+"れらをバックアップするための設定を作成しています。"
 
 #. Tag: para
 #: snapper.xml:1283
@@ -2453,12 +2518,12 @@ msgid ""
 "configuration for <command>snapper</command> with the global switch <option>-"
 "c</option> (for example, <command>snapper -c myconfig list</command> )."
 msgstr ""
-"設定を作成したら、 <command>snapper</command> を利用するか、もしくは &yast; の"
-" <guimenu>Snapper</guimenu> モジュールを利用して、これらのスナップショットから"
-"復元することができるようになります。なお、 &yast; では <guimenu>現在の設定</guimenu> "
-"で作成した設定を選択する必要があります。 <command>snapper</command> の場合は、"
-"グローバルスイッチ <option>-c</option> で設定を指定してください (例:"
-" <command>snapper -c myconfig list</command> ) 。"
+"設定を作成したら、 <command>snapper</command> を利用するか、もしくは &yast; "
+"の <guimenu>Snapper</guimenu> モジュールを利用して、これらのスナップショット"
+"から復元することができるようになります。なお、 &yast; では <guimenu>現在の設"
+"定</guimenu> で作成した設定を選択する必要があります。 <command>snapper</"
+"command> の場合は、グローバルスイッチ <option>-c</option> で設定を指定してく"
+"ださい (例: <command>snapper -c myconfig list</command> ) 。"
 
 #. Tag: para
 #: snapper.xml:1293
@@ -2466,7 +2531,9 @@ msgstr ""
 msgid ""
 "To create a new Snapper configuration, run <command>snapper create-config</"
 "command> :"
-msgstr "Snapper の設定を作成するには、 <command>snapper create-config</command> を実行します:"
+msgstr ""
+"Snapper の設定を作成するには、 <command>snapper create-config</command> を実"
+"行します:"
 
 #. Tag: screen
 #: snapper.xml:1298
@@ -2491,8 +2558,8 @@ msgid ""
 "Mount point of the partition or <literal>Btrfs</literal> subvolume on which "
 "to take snapshots."
 msgstr ""
-"スナップショットを採取したいパーティションのマウントポイント、もしくは <literal>btrfs</literal> "
-"サブボリューム名。"
+"スナップショットを採取したいパーティションのマウントポイント、もしくは "
+"<literal>btrfs</literal> サブボリューム名。"
 
 #. Tag: para
 #: snapper.xml:1314
@@ -2504,11 +2571,11 @@ msgid ""
 "linkend=\"sec.snapper.config.modify\"/> for instructions on how to adjust "
 "these defaults."
 msgstr ""
-"このコマンドは新しい設定ファイル <filename>/etc/snapper/configs/www-data</filename> "
-"を作成し、適切な既定値を設定します (設定値は <filename>/etc/snapper/"
-"config-templates/default</filename> にあるものを使用します) 。これらの既定値を"
-"調整する方法について、詳しくは <xref linkend=\"sec.snapper.config.modify\"/> を"
-"お読みください。"
+"このコマンドは新しい設定ファイル <filename>/etc/snapper/configs/www-data</"
+"filename> を作成し、適切な既定値を設定します (設定値は <filename>/etc/"
+"snapper/config-templates/default</filename> にあるものを使用します) 。これら"
+"の既定値を調整する方法について、詳しくは <xref linkend=\"sec.snapper.config."
+"modify\"/> をお読みください。"
 
 #. Tag: title
 #: snapper.xml:1324
@@ -2526,11 +2593,11 @@ msgid ""
 "needs. To use it, specify the <option>-t</option> option with the create-"
 "config command:"
 msgstr ""
-"新しい設定に対する既定値は、 <filename>/etc/snapper/config-templates/default</filename> "
-"にあるものを使用します。独自の既定値を設定したい場合は、同じディレクトリ内に"
-"ファイルのコピーを作成して、必要な値を設定して保存してください。あとは設定を"
-"作成する際、 create-config コマンドに <option>-t</option> オプションを追加して"
-"設定します:"
+"新しい設定に対する既定値は、 <filename>/etc/snapper/config-templates/"
+"default</filename> にあるものを使用します。独自の既定値を設定したい場合は、同"
+"じディレクトリ内にファイルのコピーを作成して、必要な値を設定して保存してくだ"
+"さい。あとは設定を作成する際、 create-config コマンドに <option>-t</option> "
+"オプションを追加して設定します:"
 
 #. Tag: screen
 #: snapper.xml:1332
@@ -2555,8 +2622,9 @@ msgid ""
 "The <command>snapper</command> offers several subcommands for managing "
 "existing configurations. You can list, show, delete and modify them:"
 msgstr ""
-"<command>snapper</command> には、既存の設定を管理するためのいくつかのサブコマンドが"
-"用意されています。一覧表示のほか、表示と削除、修正にそれぞれ対応しています:"
+"<command>snapper</command> には、既存の設定を管理するためのいくつかのサブコマ"
+"ンドが用意されています。一覧表示のほか、表示と削除、修正にそれぞれ対応してい"
+"ます:"
 
 #. Tag: term
 #: snapper.xml:1343
@@ -2609,10 +2677,10 @@ msgid ""
 "\"sec.snapper.config.modify.values\"/> for more information on the "
 "configuration options."
 msgstr ""
-"指定した設定を表示するには、 <command>snapper -c <replaceable>設定</replaceable> get-"
-"config</command> のサブコマンドを使用します。"
-"<replaceable>設定</replaceable> の箇所には <command>snapper list-configs</command> で"
-"表示される設定の名前を指定します。設定オプションについて、詳しくは <xref linkend="
+"指定した設定を表示するには、 <command>snapper -c <replaceable>設定</"
+"replaceable> get-config</command> のサブコマンドを使用します。<replaceable>設"
+"定</replaceable> の箇所には <command>snapper list-configs</command> で表示さ"
+"れる設定の名前を指定します。設定オプションについて、詳しくは <xref linkend="
 "\"sec.snapper.config.modify.values\"/> をお読みください。"
 
 #. Tag: para
@@ -2645,13 +2713,13 @@ msgid ""
 "<replaceable>OPTION</replaceable> and <replaceable>VALUE</replaceable> are "
 "listed in <xref linkend=\"sec.snapper.config.modify.values\"/> ."
 msgstr ""
-"指定した設定のオプションを変更するには、 <command>snapper -c <replaceable>設定</replaceable>"
-" set-config <replaceable>オプション</replaceable>=<replaceable>値</replaceable></"
-"command> のサブコマンドを使用します。"
-"<replaceable>設定</replaceable> の箇所には <command>snapper list-configs</command> で"
-"表示される設定の名前を指定します。 <replaceable>オプション</replaceable> と"
-" <replaceable>値</replaceable> で設定可能な値は、"
-" <xref linkend=\"sec.snapper.config.modify.values\"/> に一覧表示しています。"
+"指定した設定のオプションを変更するには、 <command>snapper -c <replaceable>設"
+"定</replaceable> set-config <replaceable>オプション</"
+"replaceable>=<replaceable>値</replaceable></command> のサブコマンドを使用しま"
+"す。<replaceable>設定</replaceable> の箇所には <command>snapper list-"
+"configs</command> で表示される設定の名前を指定します。 <replaceable>オプショ"
+"ン</replaceable> と <replaceable>値</replaceable> で設定可能な値は、 <xref "
+"linkend=\"sec.snapper.config.modify.values\"/> に一覧表示しています。"
 
 #. Tag: term
 #: snapper.xml:1392
@@ -2668,10 +2736,10 @@ msgid ""
 "replaceable> needs to be replaced by a configuration name shown by "
 "<command>snapper list-configs</command> ."
 msgstr ""
-"指定した設定を削除するには、 <command>snapper -c <replaceable>設定</replaceable> "
-"delete-config</command> のサブコマンドを使用します。"
-"<replaceable>設定</replaceable> の箇所には <command>snapper list-configs</command> で"
-"表示される設定の名前を指定します。"
+"指定した設定を削除するには、 <command>snapper -c <replaceable>設定</"
+"replaceable> delete-config</command> のサブコマンドを使用します。"
+"<replaceable>設定</replaceable> の箇所には <command>snapper list-configs</"
+"command> で表示される設定の名前を指定します。"
 
 #. Tag: title
 #: snapper.xml:1404
@@ -2689,10 +2757,11 @@ msgid ""
 "config \"<replaceable>KEY</replaceable>=<replaceable>VALUE</replaceable>\"</"
 "command> ."
 msgstr ""
-"各設定には、コマンドラインから変更することのできるオプションの一覧が含まれています。"
-"下記の一覧には、それぞれのオプションに対する詳細が記されています。値を変更するには、"
-" <command>snapper -c <replaceable>設定</replaceable> set-config \"<replaceable>キー"
-"</replaceable>=<replaceable>値</replaceable>\"</command> の形式で入力して実行します。"
+"各設定には、コマンドラインから変更することのできるオプションの一覧が含まれて"
+"います。下記の一覧には、それぞれのオプションに対する詳細が記されています。値"
+"を変更するには、 <command>snapper -c <replaceable>設定</replaceable> set-"
+"config \"<replaceable>キー</replaceable>=<replaceable>値</replaceable>\"</"
+"command> の形式で入力して実行します。"
 
 #. Tag: term
 #: snapper.xml:1414
@@ -2707,8 +2776,8 @@ msgid ""
 "Granting permissions to use snapshots to regular users. See <xref linkend="
 "\"sec.snapper.config.user\"/> for more information."
 msgstr ""
-"一般ユーザに対してスナップショットの使用を許可するためのオプションです。"
-"詳しくは <xref linkend=\"sec.snapper.config.user\"/> をお読みください。"
+"一般ユーザに対してスナップショットの使用を許可するためのオプションです。詳し"
+"くは <xref linkend=\"sec.snapper.config.user\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:1422
@@ -2728,7 +2797,9 @@ msgstr "<literal>BACKGROUND_COMPARISON</literal>"
 msgid ""
 "Defines whether pre and post snapshots should be compared in the background "
 "after creation."
-msgstr "事前と事後のスナップショットを作成後、裏でそれらを比較しておくべきかどうかを指定します。"
+msgstr ""
+"事前と事後のスナップショットを作成後、裏でそれらを比較しておくべきかどうかを"
+"指定します。"
 
 #. Tag: term
 #: snapper.xml:1441
@@ -2744,8 +2815,9 @@ msgid ""
 "post snapshots. See <xref linkend=\"sec.snapper.clean-up.empty\"/> for "
 "details."
 msgstr ""
-"事前と事後のスナップショット対で、変更がない場合のクリーンアップアルゴリズムを"
-"設定します。詳しくは <xref linkend=\"sec.snapper.clean-up.empty\"/> をお読みください。"
+"事前と事後のスナップショット対で、変更がない場合のクリーンアップアルゴリズム"
+"を設定します。詳しくは <xref linkend=\"sec.snapper.clean-up.empty\"/> をお読"
+"みください。"
 
 #. Tag: term
 #: snapper.xml:1452
@@ -2757,7 +2829,8 @@ msgstr "<literal>FSTYPE</literal>"
 #: snapper.xml:1455
 #, no-c-format
 msgid "File system type of the partition. Do not change."
-msgstr "パーティションのファイルシステムの種類を指定します。変更してはなりません。"
+msgstr ""
+"パーティションのファイルシステムの種類を指定します。変更してはなりません。"
 
 #. Tag: para
 #: snapper.xml:1458
@@ -2778,8 +2851,9 @@ msgid ""
 "Defines the clean-up algorithm for installation and admin snapshots. See "
 "<xref linkend=\"sec.snapper.clean-up.number\"/> for details."
 msgstr ""
-"インストールスナップショットと管理スナップショットに対するクリーンアップアルゴリズム"
-"を指定します。詳しくは <xref linkend=\"sec.snapper.clean-up.number\"/> をお読みください。"
+"インストールスナップショットと管理スナップショットに対するクリーンアップアル"
+"ゴリズムを指定します。詳しくは <xref linkend=\"sec.snapper.clean-up.number\"/"
+"> をお読みください。"
 
 #. Tag: term
 #: snapper.xml:1473
@@ -2794,8 +2868,8 @@ msgid ""
 "Adds quota support to the clean-up algorithms. See <xref linkend=\"sec."
 "snapper.clean-up.quota\"/> for details."
 msgstr ""
-"クリーンアップアルゴリズムにクォータへの対応を追加します。詳しくは"
-" <xref linkend=\"sec.snapper.clean-up.quota\"/> をお読みください。"
+"クリーンアップアルゴリズムにクォータへの対応を追加します。詳しくは <xref "
+"linkend=\"sec.snapper.clean-up.quota\"/> をお読みください。"
 
 #. Tag: term
 #: snapper.xml:1484
@@ -2807,7 +2881,9 @@ msgstr "<literal>SUBVOLUME</literal>"
 #: snapper.xml:1487
 #, no-c-format
 msgid "Mount point of the partition or subvolume to snapshot. Do not change."
-msgstr "スナップショットを採取するパーティションのマウントポイントまたはサブボリュームを指定します。変更してはなりません。"
+msgstr ""
+"スナップショットを採取するパーティションのマウントポイントまたはサブボリュー"
+"ムを指定します。変更してはなりません。"
 
 #. Tag: para
 #: snapper.xml:1490
@@ -2831,12 +2907,12 @@ msgid ""
 "<literal>yes</literal> , Snapper automatically makes them accessible using "
 "ACLs for users and groups from the ALLOW_USERS or ALLOW_GROUPS entries."
 msgstr ""
-"Snapper を一般ユーザから使用している場合 (詳しくは <xref linkend=\"sec.snapper.config."
-"user\"/> をお読みください) 、対象のユーザは <filename>.snapshot</filename> "
-"ディレクトリへのアクセス許可と、そのディレクトリ内のファイルの読み込み許可が必要"
-"となります。 SYNC_ACL を <literal>yes</literal> に設定していると、 Snapper は"
-" ALLOW_USERS と ALLOW_GROUPS の設定にあわせて、自動的にユーザとグループへの"
-"アクセス ACL を設定します。"
+"Snapper を一般ユーザから使用している場合 (詳しくは <xref linkend=\"sec."
+"snapper.config.user\"/> をお読みください) 、対象のユーザは <filename>."
+"snapshot</filename> ディレクトリへのアクセス許可と、そのディレクトリ内のファ"
+"イルの読み込み許可が必要となります。 SYNC_ACL を <literal>yes</literal> に設"
+"定していると、 Snapper は ALLOW_USERS と ALLOW_GROUPS の設定にあわせて、自動"
+"的にユーザとグループへのアクセス ACL を設定します。"
 
 #. Tag: term
 #: snapper.xml:1513
@@ -2851,8 +2927,9 @@ msgid ""
 "If set to <literal>yes</literal> , hourly snapshots are created. Valid "
 "values: <literal>yes</literal> , <literal>no</literal> ."
 msgstr ""
-"<literal>yes</literal> (はい) に設定していると、 1 時間ごとのスナップショットを"
-"作成します。設定可能な値は下記のとおりです: <literal>yes</literal> (はい), <literal>no</literal> (いいえ)"
+"<literal>yes</literal> (はい) に設定していると、 1 時間ごとのスナップショット"
+"を作成します。設定可能な値は下記のとおりです: <literal>yes</literal> (はい), "
+"<literal>no</literal> (いいえ)"
 
 #. Tag: para
 #: snapper.xml:1520
@@ -2863,8 +2940,10 @@ msgstr "既定値は <literal>\"no\"</literal> (いいえ) です。"
 #. Tag: term
 #: snapper.xml:1526
 #, no-c-format
-msgid "<literal>TIMELINE_CLEANUP</literal> / <literal>TIMELINE_LIMIT_*</literal>"
-msgstr "<literal>TIMELINE_CLEANUP</literal> / <literal>TIMELINE_LIMIT_*</literal>"
+msgid ""
+"<literal>TIMELINE_CLEANUP</literal> / <literal>TIMELINE_LIMIT_*</literal>"
+msgstr ""
+"<literal>TIMELINE_CLEANUP</literal> / <literal>TIMELINE_LIMIT_*</literal>"
 
 #. Tag: para
 #: snapper.xml:1530
@@ -2890,9 +2969,9 @@ msgid ""
 "in which certain groups or users need to be able to create snapshots or undo "
 "changes by reverting to a snapshot:"
 msgstr ""
-"既定では、 Snapper は &rootuser; だけが使用できます。しかし、場合によっては特定の"
-"グループやユーザに対してアクセスを許可し、スナップショットの作成やスナップショット"
-"からの巻き戻しを実施したい場合があります:"
+"既定では、 Snapper は &rootuser; だけが使用できます。しかし、場合によっては特"
+"定のグループやユーザに対してアクセスを許可し、スナップショットの作成やスナッ"
+"プショットからの巻き戻しを実施したい場合があります:"
 
 #. Tag: para
 #: snapper.xml:1548
@@ -2900,13 +2979,16 @@ msgstr ""
 msgid ""
 "Web site administrators who want to take snapshots of <filename>/srv/www</"
 "filename>"
-msgstr "<filename>/srv/www</filename> 以下のスナップショットを採取しておきたい Web サイト管理者"
+msgstr ""
+"<filename>/srv/www</filename> 以下のスナップショットを採取しておきたい Web サ"
+"イト管理者"
 
 #. Tag: para
 #: snapper.xml:1554
 #, no-c-format
 msgid "Users who want to take a snapshot of their home directory"
-msgstr "自分自身のホームディレクトリのスナップショットを採取しておきたい一般ユーザ"
+msgstr ""
+"自分自身のホームディレクトリのスナップショットを採取しておきたい一般ユーザ"
 
 #. Tag: para
 #: snapper.xml:1559
@@ -2918,11 +3000,11 @@ msgid ""
 "easiest way to achieve this is to set the SYNC_ACL option to <literal>yes</"
 "literal> ."
 msgstr ""
-"このような目的で、 Snapper には一般ユーザやグループへのアクセス許可を設定することが"
-"できます。なお、対応する <filename>.snapshots</filename> ディレクトリには、"
-"それらのユーザからアクセスできるよう権限を設定する必要があります。権限の設定を"
-"最も簡単に行なうには、 SYNC_ACL オプションを <literal>yes</literal> に設定するのが"
-"お勧めです。"
+"このような目的で、 Snapper には一般ユーザやグループへのアクセス許可を設定する"
+"ことができます。なお、対応する <filename>.snapshots</filename> ディレクトリに"
+"は、それらのユーザからアクセスできるよう権限を設定する必要があります。権限の"
+"設定を最も簡単に行なうには、 SYNC_ACL オプションを <literal>yes</literal> に"
+"設定するのがお勧めです。"
 
 #. Tag: title
 #: snapper.xml:1567
@@ -2944,9 +3026,10 @@ msgid ""
 "subvolume on which the user should be able to use Snapper. Refer to <xref "
 "linkend=\"sec.snapper.config\"/> for instructions. Example:"
 msgstr ""
-"Snapper によるスナップショットを採取したいパーティションやサブボリュームに"
-"対して、まだ設定を作成していない場合は設定を作成します。詳しい手順は <xref "
-"linkend=\"sec.snapper.config\"/> をお読みください。たとえば下記のように実行します:"
+"Snapper によるスナップショットを採取したいパーティションやサブボリュームに対"
+"して、まだ設定を作成していない場合は設定を作成します。詳しい手順は <xref "
+"linkend=\"sec.snapper.config\"/> をお読みください。たとえば下記のように実行し"
+"ます:"
 
 #. Tag: screen
 #: snapper.xml:1577
@@ -2965,12 +3048,12 @@ msgid ""
 "according to your needs; see <xref linkend=\"sec.snapper.config.modify\"/> "
 "for details."
 msgstr ""
-"すると、 <filename>/etc/snapper/configs/<replaceable>設定</replaceable></filename> "
-"に設定が作成されます (ここで、 <replaceable>設定</replaceable> には"
-" <option>-c/--config</option> で指定した値が入ります。たとえば上記の例では、"
-" <filename>/etc/snapper/configs/web_data</filename> になります) 。必要に応じて"
-"設定を変更することもできます。詳しくは <xref linkend=\"sec.snapper.config.modify\"/> "
-"をお読みください。"
+"すると、 <filename>/etc/snapper/configs/<replaceable>設定</replaceable></"
+"filename> に設定が作成されます (ここで、 <replaceable>設定</replaceable> に"
+"は <option>-c/--config</option> で指定した値が入ります。たとえば上記の例で"
+"は、 <filename>/etc/snapper/configs/web_data</filename> になります) 。必要に"
+"応じて設定を変更することもできます。詳しくは <xref linkend=\"sec.snapper."
+"config.modify\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:1591
@@ -2982,11 +3065,11 @@ msgid ""
 "to the user <systemitem class=\"username\">www_admin</systemitem> for "
 "example, run:"
 msgstr ""
-"アクセスを許可したいユーザやグループを、 <envar>ALLOW_USERS</envar> および"
-" <envar>ALLOW_GROUPS</envar> でそれぞれ指定します。複数のユーザやグループを"
-"指定したい場合は、 <keycap function=\"space\"/> で区切って指定してください。なお、"
-" <systemitem class=\"username\">www_admin</systemitem> ユーザに対して許可を"
-"与えたい場合は、下記のように実行します:"
+"アクセスを許可したいユーザやグループを、 <envar>ALLOW_USERS</envar> および "
+"<envar>ALLOW_GROUPS</envar> でそれぞれ指定します。複数のユーザやグループを指"
+"定したい場合は、 <keycap function=\"space\"/> で区切って指定してください。な"
+"お、 <systemitem class=\"username\">www_admin</systemitem> ユーザに対して許可"
+"を与えたい場合は、下記のように実行します:"
 
 #. Tag: screen
 #: snapper.xml:1598
@@ -3006,8 +3089,9 @@ msgid ""
 "or group(s). You can test it with the <literal>list</literal> command, for "
 "example:"
 msgstr ""
-"これで指定した Snapper の設定を指定したユーザやグループから使用できるようになります。"
-"たとえば <literal>list</literal> のようなコマンドで、利用できることを確認することができます:"
+"これで指定した Snapper の設定を指定したユーザやグループから使用できるようにな"
+"ります。たとえば <literal>list</literal> のようなコマンドで、利用できることを"
+"確認することができます:"
 
 #. Tag: screen
 #: snapper.xml:1606
@@ -3030,9 +3114,10 @@ msgid ""
 "after</quote> ) or single snapshots manually using either the command-line "
 "tool or the &yast; module."
 msgstr ""
-"Snapper は設定で自動的にスナップショットを採取したり管理したりするだけでなく、"
-"コマンドラインや &yast; モジュールを利用して、スナップショット対 (<quote>事前</quote> "
-"および <quote>事後</quote>) や単一のスナップショットを手動で作成することもできます。"
+"Snapper は設定で自動的にスナップショットを採取したり管理したりするだけでな"
+"く、コマンドラインや &yast; モジュールを利用して、スナップショット対 (<quote>"
+"事前</quote> および <quote>事後</quote>) や単一のスナップショットを手動で作成"
+"することもできます。"
 
 #. Tag: para
 #: snapper.xml:1622
@@ -3048,14 +3133,14 @@ msgid ""
 "( <command>snapper -c <replaceable>MYCONFIG</replaceable> "
 "<replaceable>COMMAND</replaceable></command> )."
 msgstr ""
-"全ての Snapper の操作は、既存の設定に対して行なわれます (詳しくは"
-" <xref linkend=\"sec.snapper.config\"/> をお読みください) 。また、スナップ"
-"ショットは設定の存在するパーティションやボリュームに対してのみ採取することが"
-"できます。既定では、システム設定 ( <literal>root</literal> ) を使用します。"
-"独自の設定でスナップショットを作成したり管理したりしたい場合は、設定を明示的に"
-"指定する必要があります。 &yast; の場合は <guimenu>現在の設定</guimenu> の"
-"ドロップダウンボックスを、コマンドラインの場合は <option>-c</option> を"
-"それぞれ指定してください (例: <command>snapper -c <replaceable>設定</replaceable> "
+"全ての Snapper の操作は、既存の設定に対して行なわれます (詳しくは <xref "
+"linkend=\"sec.snapper.config\"/> をお読みください) 。また、スナップショットは"
+"設定の存在するパーティションやボリュームに対してのみ採取することができます。"
+"既定では、システム設定 ( <literal>root</literal> ) を使用します。独自の設定で"
+"スナップショットを作成したり管理したりしたい場合は、設定を明示的に指定する必"
+"要があります。 &yast; の場合は <guimenu>現在の設定</guimenu> のドロップダウン"
+"ボックスを、コマンドラインの場合は <option>-c</option> をそれぞれ指定してくだ"
+"さい (例: <command>snapper -c <replaceable>設定</replaceable> "
 "<replaceable>COMMAND</replaceable></command>) 。"
 
 #. Tag: title
@@ -3075,10 +3160,10 @@ msgid ""
 "metadata:"
 msgstr ""
 "それぞれのスナップショットにはメタデータが含まれています。スナップショットを"
-"作成する際、メタデータを指定する必要があります。また、スナップショットの内容に"
-"ついては変更ができないことから、スナップショットの修正はメタデータの変更を意味"
-"することにもなります。 <command>snapper list</command> を実行すると、既存の"
-"スナップショットとそのメタデータを表示することができます:"
+"作成する際、メタデータを指定する必要があります。また、スナップショットの内容"
+"については変更ができないことから、スナップショットの修正はメタデータの変更を"
+"意味することにもなります。 <command>snapper list</command> を実行すると、既存"
+"のスナップショットとそのメタデータを表示することができます:"
 
 #. Tag: term
 #: snapper.xml:1645
@@ -3094,9 +3179,10 @@ msgid ""
 "snapshots for the default configuration (root), use <command>snapper -c root "
 "list</command> or <command>snapper list</command> ."
 msgstr ""
-"上記を実行すると、 <literal>home</literal> という設定のスナップショットを一覧表示します。"
-"既定の設定 (root) に対するスナップショットを一覧表示するには、 <command>snapper -c root "
-"list</command> もしくは単に <command>snapper list</command> と実行します。"
+"上記を実行すると、 <literal>home</literal> という設定のスナップショットを一覧"
+"表示します。既定の設定 (root) に対するスナップショットを一覧表示するには、 "
+"<command>snapper -c root list</command> もしくは単に <command>snapper list</"
+"command> と実行します。"
 
 #. Tag: term
 #: snapper.xml:1656
@@ -3123,8 +3209,8 @@ msgid ""
 "Lists all pre and post snapshot pairs for the default ( <literal>root</"
 "literal> ) configuration."
 msgstr ""
-"既定の設定 ( <literal>root</literal> ) に対する全ての事前／事後スナップショット対を"
-"一覧表示します。"
+"既定の設定 ( <literal>root</literal> ) に対する全ての事前／事後スナップショッ"
+"ト対を一覧表示します。"
 
 #. Tag: term
 #: snapper.xml:1675
@@ -3139,8 +3225,8 @@ msgid ""
 "Lists all snapshots of the type <literal>single</literal> for the default "
 "( <literal>root</literal> ) configuration."
 msgstr ""
-"既定の設定 ( <literal>root</literal> ) に対する全ての <literal>単一</literal> スナップショットを"
-"一覧表示します。"
+"既定の設定 ( <literal>root</literal> ) に対する全ての <literal>単一</"
+"literal> スナップショットを一覧表示します。"
 
 #. Tag: para
 #: snapper.xml:1685
@@ -3156,8 +3242,9 @@ msgid ""
 "\"sec.snapper.manage.metadata.type\"/> for details. This data cannot be "
 "changed."
 msgstr ""
-"<emphasis role=\"bold\">Type</emphasis> : スナップショットの種類。詳しくは <xref linkend="
-"\"sec.snapper.manage.metadata.type\"/> をお読みください。このデータは変更できません。"
+"<emphasis role=\"bold\">Type</emphasis> : スナップショットの種類。詳しくは "
+"<xref linkend=\"sec.snapper.manage.metadata.type\"/> をお読みください。この"
+"データは変更できません。"
 
 #. Tag: para
 #: snapper.xml:1697
@@ -3166,8 +3253,8 @@ msgid ""
 "<emphasis role=\"bold\">Number</emphasis> : Unique number of the snapshot. "
 "This data cannot be changed."
 msgstr ""
-"<emphasis role=\"bold\">Number</emphasis> : スナップショットに対する唯一の番号。"
-"このデータは変更できません。"
+"<emphasis role=\"bold\">Number</emphasis> : スナップショットに対する唯一の番"
+"号。このデータは変更できません。"
 
 #. Tag: para
 #: snapper.xml:1703
@@ -3177,8 +3264,9 @@ msgid ""
 "corresponding pre snapshot. For snapshots of type post only. This data "
 "cannot be changed."
 msgstr ""
-"<emphasis role=\"bold\">Pre Number</emphasis> : 対応する事前スナップショットの番号。"
-" Type=post のスナップショットにのみ設定されます。このデータは変更できません。"
+"<emphasis role=\"bold\">Pre Number</emphasis> : 対応する事前スナップショット"
+"の番号。 Type=post のスナップショットにのみ設定されます。このデータは変更でき"
+"ません。"
 
 #. Tag: para
 #: snapper.xml:1710
@@ -3186,7 +3274,8 @@ msgstr ""
 msgid ""
 "<emphasis role=\"bold\">Description</emphasis> : A description of the "
 "snapshot."
-msgstr "<emphasis role=\"bold\">Description</emphasis> : スナップショットの説明。"
+msgstr ""
+"<emphasis role=\"bold\">Description</emphasis> : スナップショットの説明。"
 
 #. Tag: para
 #: snapper.xml:1716
@@ -3199,10 +3288,10 @@ msgid ""
 "list the user that created the snapshot (user=&exampleuser_plain;)."
 msgstr ""
 "<emphasis role=\"bold\">Userdata</emphasis> : カンマ区切りで key=value 形式の"
-"独自データを設定することのできるメタデータです。たとえば下記のように設定します:"
-"<literal>reason=testing, project=foo</literal> 。この項目は重要性を表わす"
-"際に使用される ( <literal>important=yes</literal> ) ほか、一般ユーザが作成した"
-"スナップショットに対しても設定されます (user=&exampleuser_plain;) 。"
+"独自データを設定することのできるメタデータです。たとえば下記のように設定しま"
+"す:<literal>reason=testing, project=foo</literal> 。この項目は重要性を表わす"
+"際に使用される ( <literal>important=yes</literal> ) ほか、一般ユーザが作成し"
+"たスナップショットに対しても設定されます (user=&exampleuser_plain;) 。"
 
 #. Tag: para
 #: snapper.xml:1726
@@ -3211,8 +3300,9 @@ msgid ""
 "<emphasis role=\"bold\">Cleanup-Algorithm</emphasis> : Cleanup-algorithm for "
 "the snapshot, see <xref linkend=\"sec.snapper.clean-up\"/> for details."
 msgstr ""
-"<emphasis role=\"bold\">Cleanup-Algorithm</emphasis> : スナップショットに対する"
-"クリーンアップアルゴリズム。詳しくは <xref linkend=\"sec.snapper.clean-up\"/> をお読みください。"
+"<emphasis role=\"bold\">Cleanup-Algorithm</emphasis> : スナップショットに対す"
+"るクリーンアップアルゴリズム。詳しくは <xref linkend=\"sec.snapper.clean-up"
+"\"/> をお読みください。"
 
 #. Tag: title
 #: snapper.xml:1733
@@ -3227,8 +3317,8 @@ msgid ""
 "Snapper knows three different types of snapshots: pre, post, and single. "
 "Physically they do not differ, but Snapper handles them differently."
 msgstr ""
-"Snapper では、事前／事後／単一の各スナップショットの種類があります。"
-"物理的には違いがありませんが、 Snapper 側での処理に違いがあります。"
+"Snapper では、事前／事後／単一の各スナップショットの種類があります。物理的に"
+"は違いがありませんが、 Snapper 側での処理に違いがあります。"
 
 #. Tag: term
 #: snapper.xml:1740
@@ -3245,10 +3335,10 @@ msgid ""
 "literal> snapshot. Used for the automatic &yast;/Zypper snapshots, for "
 "example."
 msgstr ""
-"変更を行なう <emphasis>前</emphasis> のファイルシステムのスナップショットです。"
-"それぞれの <literal>pre</literal> スナップショットには、対応する <literal>post</"
-"literal> スナップショットが存在します。たとえば &yast; や zypper が自動的に採取する"
-"スナップショットがこれにあたります。"
+"変更を行なう <emphasis>前</emphasis> のファイルシステムのスナップショットで"
+"す。それぞれの <literal>pre</literal> スナップショットには、対応する "
+"<literal>post</literal> スナップショットが存在します。たとえば &yast; や "
+"zypper が自動的に採取するスナップショットがこれにあたります。"
 
 #. Tag: term
 #: snapper.xml:1752
@@ -3265,10 +3355,10 @@ msgid ""
 "literal> snapshot. Used for the automatic &yast;/Zypper snapshots, for "
 "example."
 msgstr ""
-"変更を行なった <emphasis>後</emphasis> のファイルシステムのスナップショットです。"
-"それぞれの <literal>post</literal> スナップショットには、対応する <literal>pre</"
-"literal> スナップショットが存在します。たとえば &yast; や zypper が自動的に採取する"
-"スナップショットがこれにあたります。"
+"変更を行なった <emphasis>後</emphasis> のファイルシステムのスナップショットで"
+"す。それぞれの <literal>post</literal> スナップショットには、対応する "
+"<literal>pre</literal> スナップショットが存在します。たとえば &yast; や "
+"zypper が自動的に採取するスナップショットがこれにあたります。"
 
 #. Tag: term
 #: snapper.xml:1764
@@ -3283,8 +3373,8 @@ msgid ""
 "Stand-alone snapshot. Used for the automatic hourly snapshots, for example. "
 "This is the default type when creating snapshots."
 msgstr ""
-"単独で採取されるスナップショットです。自動的な定時スナップショットなどで使用します。"
-"スナップショットを作成する際、既定の種類はこれになります。"
+"単独で採取されるスナップショットです。自動的な定時スナップショットなどで使用"
+"します。スナップショットを作成する際、既定の種類はこれになります。"
 
 #. Tag: title
 #: snapper.xml:1776
@@ -3301,10 +3391,11 @@ msgid ""
 "different types of snapshots to keep in the Snapper configuration (see <xref "
 "linkend=\"sec.snapper.config.modify\"/> for details)."
 msgstr ""
-"Snapper には、古いスナップショットをクリーンアップ (清掃) するためのアルゴリズムが"
-" 3 種類あります。アルゴリズムは日々の cron ジョブで実行されます。また、複数のスナップ"
-"ショットの種類に対して設定を行ない、 Snapper の設定内に保持することもできます"
-" (詳しくは <xref linkend=\"sec.snapper.config.modify\"/> をお読みください) 。"
+"Snapper には、古いスナップショットをクリーンアップ (清掃) するためのアルゴリ"
+"ズムが 3 種類あります。アルゴリズムは日々の cron ジョブで実行されます。また、"
+"複数のスナップショットの種類に対して設定を行ない、 Snapper の設定内に保持する"
+"こともできます (詳しくは <xref linkend=\"sec.snapper.config.modify\"/> をお読"
+"みください) 。"
 
 #. Tag: term
 #: snapper.xml:1786
@@ -3331,8 +3422,9 @@ msgid ""
 "Deletes old snapshots having passed a certain age, but keeps several hourly, "
 "daily, monthly, and yearly snapshots."
 msgstr ""
-"指定した時間が経過すると、古いスナップショットを削除します。ただし、いくつかの"
-"定期スナップショット (1 時間ごと, 1 日ごと, 1 ヶ月ごと, 1 年ごと) は保持されます。"
+"指定した時間が経過すると、古いスナップショットを削除します。ただし、いくつか"
+"の定期スナップショット (1 時間ごと, 1 日ごと, 1 ヶ月ごと, 1 年ごと) は保持さ"
+"れます。"
 
 #. Tag: term
 #: snapper.xml:1803
@@ -3362,11 +3454,11 @@ msgid ""
 "command line. It should be easy to adopt them when using the &yast; "
 "interface."
 msgstr ""
-"スナップショットの採取は、 <command>snapper create</command> を実行するか、"
-"もしくは &yast; モジュールの <guimenu>Snapper</guimenu> で <guimenu>作成</guimenu> "
-"を押すことで作成することができます。下記の例では、コマンドラインからスナップショットを"
-"採取する方法を示しています。 &yast; インターフェイスであれば、より簡単に採取"
-"することができます。"
+"スナップショットの採取は、 <command>snapper create</command> を実行するか、も"
+"しくは &yast; モジュールの <guimenu>Snapper</guimenu> で <guimenu>作成</"
+"guimenu> を押すことで作成することができます。下記の例では、コマンドラインから"
+"スナップショットを採取する方法を示しています。 &yast; インターフェイスであれ"
+"ば、より簡単に採取することができます。"
 
 #. Tag: title
 #: snapper.xml:1824
@@ -3382,15 +3474,17 @@ msgid ""
 "identify its purpose. Even more information can be specified via the user "
 "data option."
 msgstr ""
-"スナップショットの説明にはわかりやすい説明を記述しておいて、後から何のために採取したもの"
-"なのかを判別できるようにしておくことをお勧めします。 userdata オプションを使用すると、"
-"さらに詳しい情報を保存することができます。"
+"スナップショットの説明にはわかりやすい説明を記述しておいて、後から何のために"
+"採取したものなのかを判別できるようにしておくことをお勧めします。 userdata オ"
+"プションを使用すると、さらに詳しい情報を保存することができます。"
 
 #. Tag: term
 #: snapper.xml:1834
 #, no-c-format
-msgid "<command>snapper create --description \"Snapshot for week 2 2014\"</command>"
-msgstr "<command>snapper create --description \"Snapshot for week 2 2014\"</command>"
+msgid ""
+"<command>snapper create --description \"Snapshot for week 2 2014\"</command>"
+msgstr ""
+"<command>snapper create --description \"Snapshot for week 2 2014\"</command>"
 
 #. Tag: para
 #: snapper.xml:1838
@@ -3401,9 +3495,9 @@ msgid ""
 "cleanup-algorithm is specified, the snapshot will never be deleted "
 "automatically."
 msgstr ""
-"既定の設定 ( <literal>root</literal> ) に対して単一の (single) スナップショット"
-"を作成し、説明文を指定した場合の例です。クリーンアップアルゴリズムを指定していない"
-"ため、このスナップショットは自動では削除されません。"
+"既定の設定 ( <literal>root</literal> ) に対して単一の (single) スナップショッ"
+"トを作成し、説明文を指定した場合の例です。クリーンアップアルゴリズムを指定し"
+"ていないため、このスナップショットは自動では削除されません。"
 
 #. Tag: term
 #: snapper.xml:1847
@@ -3423,9 +3517,9 @@ msgid ""
 "named <literal>home</literal> with a description. Because no cleanup-"
 "algorithm is specified, the snapshot will never be deleted automatically."
 msgstr ""
-"<literal>home</literal> という設定に対して単一の (single) スナップショット"
-"を作成し、説明文を指定した場合の例です。クリーンアップアルゴリズムを指定していない"
-"ため、このスナップショットは自動では削除されません。"
+"<literal>home</literal> という設定に対して単一の (single) スナップショットを"
+"作成し、説明文を指定した場合の例です。クリーンアップアルゴリズムを指定してい"
+"ないため、このスナップショットは自動では削除されません。"
 
 #. Tag: term
 #: snapper.xml:1860
@@ -3446,9 +3540,10 @@ msgid ""
 "automatically be deleted when it meets the criteria specified for the "
 "timeline cleanup-algorithm in the configuration."
 msgstr ""
-"<literal>home</literal> という設定に対して単一の (single) スナップショット"
-"を作成し、説明文を指定した場合の例です。クリーンアップアルゴリズム (cleanup-algorithm) "
-"に timeline を指定しているため、条件を満たすと自動的に削除されます。"
+"<literal>home</literal> という設定に対して単一の (single) スナップショットを"
+"作成し、説明文を指定した場合の例です。クリーンアップアルゴリズム (cleanup-"
+"algorithm) に timeline を指定しているため、条件を満たすと自動的に削除されま"
+"す。"
 
 #. Tag: term
 #: snapper.xml:1873
@@ -3470,10 +3565,10 @@ msgid ""
 "marked as important."
 msgstr ""
 "種類に <literal>pre</literal> (事前) を指定してスナップショットを作成し、その"
-"スナップショット番号を表示する場合の例です。何を行なう <quote>前</quote> と"
-" <quote>後</quote> の状態を保存しておく際、 <quote>前</quote> を採取する"
-"場合に使用するコマンドです。このスナップショットには important (重要) のマークが"
-"付けられます。"
+"スナップショット番号を表示する場合の例です。何を行なう <quote>前</quote> と "
+"<quote>後</quote> の状態を保存しておく際、 <quote>前</quote> を採取する場合に"
+"使用するコマンドです。このスナップショットには important (重要) のマークが付"
+"けられます。"
 
 #. Tag: term
 #: snapper.xml:1886
@@ -3494,11 +3589,12 @@ msgid ""
 "command needed to create a pair of snapshots used to save a <quote>before</"
 "quote> and <quote>after</quote> state. The snapshot is marked as important."
 msgstr ""
-"種類に <literal>post</literal> (事後) を指定してスナップショットを作成し、"
-" <literal>pre</literal> (事前) 側のスナップショット番号を <literal>30</literal> "
-"として採取する場合の例です。何を行なう <quote>前</quote> と <quote>後</quote> "
-"の状態を保存しておく際、 <quote>後</quote> を採取する場合に使用するコマンドです。"
-"このスナップショットには important (重要) のマークが付けられます。"
+"種類に <literal>post</literal> (事後) を指定してスナップショットを作成し、 "
+"<literal>pre</literal> (事前) 側のスナップショット番号を <literal>30</"
+"literal> として採取する場合の例です。何を行なう <quote>前</quote> と <quote>"
+"後</quote> の状態を保存しておく際、 <quote>後</quote> を採取する場合に使用す"
+"るコマンドです。このスナップショットには important (重要) のマークが付けられ"
+"ます。"
 
 #. Tag: term
 #: snapper.xml:1900
@@ -3518,8 +3614,8 @@ msgid ""
 "<replaceable>COMMAND</replaceable> . This option is only available when "
 "using snapper on the command line."
 msgstr ""
-"<replaceable>コマンド</replaceable> で指定されるコマンドを実行する前後に、"
-"スナップショット対を自動的に作成するコマンドです。このオプションは、 snapper を"
+"<replaceable>コマンド</replaceable> で指定されるコマンドを実行する前後に、ス"
+"ナップショット対を自動的に作成するコマンドです。このオプションは、 snapper を"
 "コマンドラインから実行する場合にのみ利用できます。"
 
 #. Tag: title
@@ -3537,10 +3633,11 @@ msgid ""
 "examples explain how to modify snapshots from the command line. It should be "
 "easy to adopt them when using the &yast; interface."
 msgstr ""
-"Snapper では、スナップショットに対する説明やクリーンアップアルゴリズム、ユーザデータ"
-"をそれぞれ変更することができます。その他の全てのメタデータは変更できません。下記の"
-"例では、コマンドラインからスナップショットを変更する方法を示しています。"
-" &yast; インターフェイスであれば、より簡単に変更することができます。"
+"Snapper では、スナップショットに対する説明やクリーンアップアルゴリズム、ユー"
+"ザデータをそれぞれ変更することができます。その他の全てのメタデータは変更でき"
+"ません。下記の例では、コマンドラインからスナップショットを変更する方法を示し"
+"ています。 &yast; インターフェイスであれば、より簡単に変更することができま"
+"す。"
 
 #. Tag: para
 #: snapper.xml:1922
@@ -3549,9 +3646,9 @@ msgid ""
 "To modify a snapshot on the command line, you need to know its number. Use "
 "<command>snapper list</command> to display all snapshots and their numbers."
 msgstr ""
-"コマンドラインからスナップショットの変更を行なうには、まずスナップショットの番号を"
-"知っておく必要があります。スナップショットの一覧と番号を表示するには、"
-" <command>snapper list</command> を実行してください。"
+"コマンドラインからスナップショットの変更を行なうには、まずスナップショットの"
+"番号を知っておく必要があります。スナップショットの一覧と番号を表示するには、 "
+"<command>snapper list</command> を実行してください。"
 
 #. Tag: para
 #: snapper.xml:1927
@@ -3560,9 +3657,9 @@ msgid ""
 "The &yast; <guimenu>Snapper</guimenu> module already lists all snapshots. "
 "Choose one from the list and click <guimenu>Modify</guimenu> ."
 msgstr ""
-"&yast; <guimenu>Snapper</guimenu> モジュールの場合は、開いた時点で全ての"
-"スナップショットが表示されます。一覧からいずれかを選んで <guimenu>修正</guimenu> "
-"を押してください。"
+"&yast; <guimenu>Snapper</guimenu> モジュールの場合は、開いた時点で全てのス"
+"ナップショットが表示されます。一覧からいずれかを選んで <guimenu>修正</"
+"guimenu> を押してください。"
 
 #. Tag: term
 #: snapper.xml:1933
@@ -3578,9 +3675,9 @@ msgid ""
 "literal> ) configuration. The cleanup algorithm is set to <literal>timeline</"
 "literal> ."
 msgstr ""
-"既定の設定 ( <literal>root</literal> ) のスナップショット 10 に対して、メタデータの"
-"修正を行ないます。この場合は、クリーンアップアルゴリズムを <literal>timeline</literal> "
-"に設定します。"
+"既定の設定 ( <literal>root</literal> ) のスナップショット 10 に対して、メタ"
+"データの修正を行ないます。この場合は、クリーンアップアルゴリズムを "
+"<literal>timeline</literal> に設定します。"
 
 #. Tag: term
 #: snapper.xml:1945
@@ -3600,9 +3697,9 @@ msgid ""
 "<literal>home</literal> . A new description is set and the cleanup algorithm "
 "is unset."
 msgstr ""
-"<literal>home</literal> という名前の設定のスナップショット 120 に対して、メタデータの"
-"修正を行ないます。新しい説明を設定し、クリーンアップアルゴリズムを <literal>timeline</literal> "
-"に設定します。"
+"<literal>home</literal> という名前の設定のスナップショット 120 に対して、メタ"
+"データの修正を行ないます。新しい説明を設定し、クリーンアップアルゴリズムを "
+"<literal>timeline</literal> に設定します。"
 
 #. Tag: title
 #: snapper.xml:1960
@@ -3617,8 +3714,8 @@ msgid ""
 "To delete a snapshot with the &yast; <guimenu>Snapper</guimenu> module, "
 "choose a snapshot from the list and click <guimenu>Delete</guimenu> ."
 msgstr ""
-"&yast; <guimenu>Snapper</guimenu> モジュールでスナップショットを削除するには、"
-"一覧からスナップショットを選んで <guimenu>削除</guimenu> を押します。"
+"&yast; <guimenu>Snapper</guimenu> モジュールでスナップショットを削除するに"
+"は、一覧からスナップショットを選んで <guimenu>削除</guimenu> を押します。"
 
 #. Tag: para
 #: snapper.xml:1965
@@ -3629,9 +3726,9 @@ msgid ""
 "snapshot, run <command>snapper delete</command> <replaceable>NUMBER</"
 "replaceable> ."
 msgstr ""
-"コマンドラインツールからスナップショットを削除するには、まずスナップショットの番号を"
-"知っておく必要があります。スナップショットの一覧と番号を表示するには、"
-" <command>snapper list</command> を実行してください。その後、"
+"コマンドラインツールからスナップショットを削除するには、まずスナップショット"
+"の番号を知っておく必要があります。スナップショットの一覧と番号を表示するに"
+"は、 <command>snapper list</command> を実行してください。その後、"
 "<command>snapper delete</command> <replaceable>番号</replaceable> と入力して"
 "実行すると、削除を行なうことができます。"
 
@@ -3651,11 +3748,11 @@ msgid ""
 "deleting a snapshot to be available immediately, use the option <option>--"
 "sync</option> with the delete command."
 msgstr ""
-"Snapper でスナップショットを削除する場合は、裏で動作する btrfs のプロセスが"
-"空き領域を開放します。そのため、空き領域の表示も遅れて反映されることになるほか、"
-"空き領域を利用する場合もしばらく待ってから行なう必要があります。空き領域を即時に"
-"反映させたい場合は、 delete コマンドに <option>--sync</option> オプションを"
-"指定してください。"
+"Snapper でスナップショットを削除する場合は、裏で動作する btrfs のプロセスが空"
+"き領域を開放します。そのため、空き領域の表示も遅れて反映されることになるほ"
+"か、空き領域を利用する場合もしばらく待ってから行なう必要があります。空き領域"
+"を即時に反映させたい場合は、 delete コマンドに <option>--sync</option> オプ"
+"ションを指定してください。"
 
 #. Tag: title
 #: snapper.xml:1982
@@ -3670,8 +3767,9 @@ msgid ""
 "When deleting a <literal>pre</literal> snapshot, you should always delete "
 "its corresponding <literal>post</literal> snapshot (and vice versa)."
 msgstr ""
-"<literal>pre</literal> (事前) スナップショットを削除する際は、必ず対応する"
-" <literal>post</literal> (事後) スナップショットもあわせて削除してください (逆も同様です) 。"
+"<literal>pre</literal> (事前) スナップショットを削除する際は、必ず対応する "
+"<literal>post</literal> (事後) スナップショットもあわせて削除してください (逆"
+"も同様です) 。"
 
 #. Tag: term
 #: snapper.xml:1990
@@ -3685,7 +3783,8 @@ msgstr "<command>snapper delete 65</command>"
 msgid ""
 "Deletes snapshot 65 for the default ( <literal>root</literal> ) "
 "configuration."
-msgstr "既定の設定 ( <literal>root</literal> ) のスナップショット 65 を削除します。"
+msgstr ""
+"既定の設定 ( <literal>root</literal> ) のスナップショット 65 を削除します。"
 
 #. Tag: term
 #: snapper.xml:2000
@@ -3699,7 +3798,9 @@ msgstr "<command>snapper -c home delete 89 90</command>"
 msgid ""
 "Deletes snapshots 89 and 90 for a custom configuration named <literal>home</"
 "literal> ."
-msgstr "<literal>home</literal> という名前の設定のスナップショット 89 と 90 を削除します。"
+msgstr ""
+"<literal>home</literal> という名前の設定のスナップショット 89 と 90 を削除し"
+"ます。"
 
 #. Tag: term
 #: snapper.xml:2010
@@ -3714,8 +3815,8 @@ msgid ""
 "Deletes snapshot 23 for the default ( <literal>root</literal> ) "
 "configuration and makes the freed space available immediately."
 msgstr ""
-"既定の設定 ( <literal>root</literal> ) のスナップショット 23 を削除し、"
-"空き容量を即時に反映させるようにします。"
+"既定の設定 ( <literal>root</literal> ) のスナップショット 23 を削除し、空き容"
+"量を即時に反映させるようにします。"
 
 #. Tag: title
 #: snapper.xml:2020
@@ -3731,9 +3832,9 @@ msgid ""
 "metadata for Snapper is missing. In this case the snapshot is not visible "
 "for Snapper and needs to be deleted manually:"
 msgstr ""
-"場合によっては、 btrfs のスナップショットが存在しているものの、メタデータを"
-"含む XML ファイルが失われている場合があります。この場合、スナップショットは"
-" Snapper で表示することができません。また、手作業で削除する必要があります:"
+"場合によっては、 btrfs のスナップショットが存在しているものの、メタデータを含"
+"む XML ファイルが失われている場合があります。この場合、スナップショットは "
+"Snapper で表示することができません。また、手作業で削除する必要があります:"
 
 #. Tag: screen
 #: snapper.xml:2026
@@ -3761,9 +3862,9 @@ msgid ""
 "old snapshots first. The older a snapshot is, the more disk space it "
 "occupies."
 msgstr ""
-"ハードディスクの空き容量を増やすためにスナップショットを削除する場合、古いスナップ"
-"ショットから順に削除することをお勧めします。これは、古いスナップショットほど"
-"より多くのディスク領域を占有するためです。"
+"ハードディスクの空き容量を増やすためにスナップショットを削除する場合、古いス"
+"ナップショットから順に削除することをお勧めします。これは、古いスナップショッ"
+"トほどより多くのディスク領域を占有するためです。"
 
 #. Tag: para
 #: snapper.xml:2037
@@ -3772,8 +3873,8 @@ msgid ""
 "Snapshots are also automatically deleted by a daily cron job. Refer to <xref "
 "linkend=\"sec.snapper.manage.metadata.cleanup\"/> for details."
 msgstr ""
-"スナップショットは毎日の cron ジョブでも自動的に削除されます。詳しくは"
-" <xref linkend=\"sec.snapper.manage.metadata.cleanup\"/> をお読みください。"
+"スナップショットは毎日の cron ジョブでも自動的に削除されます。詳しくは <xref "
+"linkend=\"sec.snapper.manage.metadata.cleanup\"/> をお読みください。"
 
 #. Tag: title
 #: snapper.xml:2044
@@ -3793,12 +3894,12 @@ msgid ""
 "the number of snapshots to keep for each type."
 msgstr ""
 "スナップショットはディスク領域を占有するだけでなく、時間が経過するごとに占有"
-"されるサイズが大きくなっていく、という特徴があります。ディスクの空き容量が"
-"枯渇しないようにするため、 Snapper では古いスナップショットを自動的に削除する"
-"アルゴリズムを提供しています。これらのアルゴリズムでは、タイムラインスナップショットと"
-"番号スナップショット (管理スナップショットとインストールスナップショット) "
-"とを区別して扱います。また、それぞれの種類に対して、維持すべきスナップショット数"
-"を設定することもできます。"
+"されるサイズが大きくなっていく、という特徴があります。ディスクの空き容量が枯"
+"渇しないようにするため、 Snapper では古いスナップショットを自動的に削除するア"
+"ルゴリズムを提供しています。これらのアルゴリズムでは、タイムラインスナップ"
+"ショットと番号スナップショット (管理スナップショットとインストールスナップ"
+"ショット) とを区別して扱います。また、それぞれの種類に対して、維持すべきス"
+"ナップショット数を設定することもできます。"
 
 #. Tag: para
 #: snapper.xml:2055
@@ -3822,10 +3923,10 @@ msgid ""
 "snapshots from being automatically deleted, refer to <xref linkend=\"faq."
 "snapper.permanent\"/> ."
 msgstr ""
-"クリーンアップのアルゴリズムは、常に 1 つの Snapper 設定に結びつけられています。"
-"そのため、それぞれの設定に対してアルゴリズムを設定する必要があります。また、"
-"特定のスナップショットを自動削除されないように設定することもできます。"
-"詳しくは <xref linkend=\"faq.snapper.permanent\"/> をお読みください。"
+"クリーンアップのアルゴリズムは、常に 1 つの Snapper 設定に結びつけられていま"
+"す。そのため、それぞれの設定に対してアルゴリズムを設定する必要があります。ま"
+"た、特定のスナップショットを自動削除されないように設定することもできます。詳"
+"しくは <xref linkend=\"faq.snapper.permanent\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:2069
@@ -3837,12 +3938,12 @@ msgid ""
 "disk space of the root partition. Timeline snapshots are disabled by "
 "default, therefore the timeline clean-up algorithm is also disabled."
 msgstr ""
-"既定の設定 ( <literal>root</literal> ) では、番号スナップショットと pre (事前) "
-"と post (事後) で差異のないものをクリーンアップするよう設定しています。"
-"また、クォータサポートも有効化されていて、ルートパーティションのディスク領域に"
-"対して、スナップショットが 50% 以上を占有しないように設定されています。"
-"また、タイムラインスナップショットは無効化されているため、タイムライン"
-"スナップショットのクリーンアップアルゴリズムも無効化されています。"
+"既定の設定 ( <literal>root</literal> ) では、番号スナップショットと pre (事"
+"前) と post (事後) で差異のないものをクリーンアップするよう設定しています。ま"
+"た、クォータサポートも有効化されていて、ルートパーティションのディスク領域に"
+"対して、スナップショットが 50% 以上を占有しないように設定されています。また、"
+"タイムラインスナップショットは無効化されているため、タイムラインスナップ"
+"ショットのクリーンアップアルゴリズムも無効化されています。"
 
 #. Tag: title
 #: snapper.xml:2078
@@ -3858,8 +3959,9 @@ msgid ""
 "snapshot pairs&mdash;is controlled by the following parameters of a Snapper "
 "configuration."
 msgstr ""
-"番号スナップショット (管理スナップショットとインストールスナップショット) "
-"のクリーンアップは、 Snapper 設定のうち下記のパラメータで制御することができます。"
+"番号スナップショット (管理スナップショットとインストールスナップショット) の"
+"クリーンアップは、 Snapper 設定のうち下記のパラメータで制御することができま"
+"す。"
 
 #. Tag: term
 #: snapper.xml:2086
@@ -3878,12 +3980,13 @@ msgid ""
 "specified with <literal>NUMBER_MIN_AGE</literal> . Valid values: "
 "<literal>yes</literal> (enable), <literal>no</literal> (disable)."
 msgstr ""
-"インストールスナップショットと管理スナップショットの対に対して、クリーン"
-"アップを有効にするか無効にするかを設定することができます。スナップショットの対は、"
-" <literal>NUMBER_LIMIT</literal> で指定した数を超過するか、もしくは"
-"<literal>NUMBER_LIMIT_IMPORTANT</literal> と <literal>NUMBER_MIN_AGE</literal> の"
-"<emphasis>両方</emphasis> を超過した場合に削除されます。設定可能な値は"
-" <literal>yes</literal> (有効), <literal>no</literal> (無効) のいずれかです。"
+"インストールスナップショットと管理スナップショットの対に対して、クリーンアッ"
+"プを有効にするか無効にするかを設定することができます。スナップショットの対"
+"は、 <literal>NUMBER_LIMIT</literal> で指定した数を超過するか、もしくは"
+"<literal>NUMBER_LIMIT_IMPORTANT</literal> と <literal>NUMBER_MIN_AGE</"
+"literal> の<emphasis>両方</emphasis> を超過した場合に削除されます。設定可能な"
+"値は <literal>yes</literal> (有効), <literal>no</literal> (無効) のいずれかで"
+"す。"
 
 #. Tag: screen
 #: snapper.xml:2103
@@ -3898,8 +4001,10 @@ msgstr ""
 #. Tag: term
 #: snapper.xml:2107
 #, no-c-format
-msgid "<literal>NUMBER_LIMIT</literal> / <literal>NUMBER_LIMIT_IMPORTANT</literal>"
-msgstr "<literal>NUMBER_LIMIT</literal> / <literal>NUMBER_LIMIT_IMPORTANT</literal>"
+msgid ""
+"<literal>NUMBER_LIMIT</literal> / <literal>NUMBER_LIMIT_IMPORTANT</literal>"
+msgstr ""
+"<literal>NUMBER_LIMIT</literal> / <literal>NUMBER_LIMIT_IMPORTANT</literal>"
 
 #. Tag: para
 #: snapper.xml:2111
@@ -3909,10 +4014,10 @@ msgid ""
 "snapshot pairs to keep. Only the youngest snapshots will be kept. Ignored if "
 "<literal>NUMBER_CLEANUP</literal> is set to <literal>\"no\"</literal> ."
 msgstr ""
-"通常の番号スナップショットと重要な番号スナップショットに対して、保持すべき"
-"スナップショット対の数を指定します。より新しいスナップショットが保持されます。"
-"ただし、 <literal>NUMBER_CLEANUP</literal> か <literal>\"no\"</literal> の場合は"
-"無視されます。"
+"通常の番号スナップショットと重要な番号スナップショットに対して、保持すべきス"
+"ナップショット対の数を指定します。より新しいスナップショットが保持されます。"
+"ただし、 <literal>NUMBER_CLEANUP</literal> か <literal>\"no\"</literal> の場"
+"合は無視されます。"
 
 #. Tag: para
 #: snapper.xml:2117
@@ -3922,8 +4027,9 @@ msgid ""
 "literal> and <literal>\"4-10\"</literal> for "
 "<literal>NUMBER_LIMIT_IMPORTANT</literal> ."
 msgstr ""
-"既定値は <literal>NUMBER_LIMIT</literal> が <literal>\"2-10\"</literal> で、"
-" <literal>NUMBER_LIMIT_IMPORTANT</literal> が <literal>\"4-10\"</literal> です。"
+"既定値は <literal>NUMBER_LIMIT</literal> が <literal>\"2-10\"</literal> で、 "
+"<literal>NUMBER_LIMIT_IMPORTANT</literal> が <literal>\"4-10\"</literal> で"
+"す。"
 
 #. Tag: screen
 #: snapper.xml:2125
@@ -3953,9 +4059,9 @@ msgid ""
 msgstr ""
 "クォータサポートを有効にしている場合 (<xref linkend=\"sec.snapper.clean-up."
 "quota\"/> をお読みください) は、 <literal>2-10</literal> のように最小-最大の"
-"形式で制限を範囲指定する必要があります。クォータサポートが無効の場合は、"
-" <literal>10</literal> のように固定値を指定する必要があります。それ以外の場合は、"
-"エラーで失敗します。"
+"形式で制限を範囲指定する必要があります。クォータサポートが無効の場合は、 "
+"<literal>10</literal> のように固定値を指定する必要があります。それ以外の場合"
+"は、エラーで失敗します。"
 
 #. Tag: term
 #: snapper.xml:2141
@@ -3971,8 +4077,8 @@ msgid ""
 "automatically be deleted. Snapshots younger than the value specified here "
 "will not be deleted, regardless of how many exist."
 msgstr ""
-"スナップショットを自動削除するまでの最小経過秒数を指定します。ここで指定した値"
-"よりも新しいスナップショットは、どれだけ存在していても削除されません。"
+"スナップショットを自動削除するまでの最小経過秒数を指定します。ここで指定した"
+"値よりも新しいスナップショットは、どれだけ存在していても削除されません。"
 
 #. Tag: screen
 #: snapper.xml:2155
@@ -3998,9 +4104,10 @@ msgid ""
 "and <literal>NUMBER_MIN_AGE</literal> are always evaluated. Snapshots are "
 "only deleted when <emphasis>all</emphasis> conditions are met."
 msgstr ""
-"<literal>NUMBER_LIMIT</literal> , <literal>NUMBER_LIMIT_IMPORTANT</literal> ,"
-" <literal>NUMBER_MIN_AGE</literal> は常に自動削除の判断基準となります。"
-"スナップショットは、 <emphasis>全て</emphasis> の条件に合致した場合にのみ削除されます。"
+"<literal>NUMBER_LIMIT</literal> , <literal>NUMBER_LIMIT_IMPORTANT</"
+"literal> , <literal>NUMBER_MIN_AGE</literal> は常に自動削除の判断基準となりま"
+"す。スナップショットは、 <emphasis>全て</emphasis> の条件に合致した場合にのみ"
+"削除されます。"
 
 #. Tag: para
 #: snapper.xml:2166
@@ -4010,8 +4117,8 @@ msgid ""
 "<literal>NUMBER_LIMIT*</literal> regardless of their age, set "
 "<literal>NUMBER_MIN_AGE</literal> to <literal>0</literal> ."
 msgstr ""
-"新しいか古いカニ関係なく、常に <literal>NUMBER_LIMIT*</literal> "
-"で設定した数だけスナップショットを保持させたい場合は、 <literal>NUMBER_MIN_AGE</literal> "
+"新しいか古いカニ関係なく、常に <literal>NUMBER_LIMIT*</literal> で設定した数"
+"だけスナップショットを保持させたい場合は、 <literal>NUMBER_MIN_AGE</literal> "
 "を <literal>0</literal> に設定してください。"
 
 #. Tag: para
@@ -4047,8 +4154,8 @@ msgid ""
 "provide the age with <literal>NUMBER_MIN_AGE</literal> ."
 msgstr ""
 "逆に、特定の時間が経過したら常にスナップショットを削除してかまわない場合は、"
-"<literal>NUMBER_LIMIT*</literal> に <literal>0</literal> を設定し、"
-" <literal>NUMBER_MIN_AGE</literal> で時間を設定してください。"
+"<literal>NUMBER_LIMIT*</literal> に <literal>0</literal> を設定し、 "
+"<literal>NUMBER_MIN_AGE</literal> で時間を設定してください。"
 
 #. Tag: para
 #: snapper.xml:2184
@@ -4056,7 +4163,8 @@ msgstr ""
 msgid ""
 "The following example shows a configuration to only keep snapshots younger "
 "than ten days:"
-msgstr "下記の例は、常に直近の 10 日分のスナップショットのみを保持する設定です:"
+msgstr ""
+"下記の例は、常に直近の 10 日分のスナップショットのみを保持する設定です:"
 
 #. Tag: screen
 #: snapper.xml:2188
@@ -4085,8 +4193,8 @@ msgid ""
 "Cleaning up timeline snapshots is controlled by the following parameters of "
 "a Snapper configuration."
 msgstr ""
-"タイムラインスナップショットのクリーンアップは、 Snapper 設定のうち"
-"下記のパラメータで制御することができます。"
+"タイムラインスナップショットのクリーンアップは、 Snapper 設定のうち下記のパラ"
+"メータで制御することができます。"
 
 #. Tag: term
 #: snapper.xml:2203
@@ -4104,11 +4212,11 @@ msgid ""
 "specified with <literal>TIMELINE_MIN_AGE</literal> . Valid values: "
 "<literal>yes</literal> , <literal>no</literal> ."
 msgstr ""
-"タイムラインスナップショットに対して、クリーンアップを有効にするか無効にするかを"
-"設定することができます。スナップショットは <literal>TIMELINE_LIMIT_*</literal> "
-"と <literal>TIMELINE_MIN_AGE</literal> の <emphasis>両方</emphasis> を超過した"
-"場合に削除されます。設定可能な値は"
-" <literal>yes</literal> (有効), <literal>no</literal> (無効) のいずれかです。"
+"タイムラインスナップショットに対して、クリーンアップを有効にするか無効にする"
+"かを設定することができます。スナップショットは <literal>TIMELINE_LIMIT_*</"
+"literal> と <literal>TIMELINE_MIN_AGE</literal> の <emphasis>両方</emphasis> "
+"を超過した場合に削除されます。設定可能な値は <literal>yes</literal> (有効), "
+"<literal>no</literal> (無効) のいずれかです。"
 
 #. Tag: para
 #: snapper.xml:2217
@@ -4135,15 +4243,17 @@ msgid ""
 "<literal>TIMELINE_LIMIT_WEEKLY</literal> , <literal>TIMELINE_LIMIT_YEARLY</"
 "literal>"
 msgstr ""
-"<literal>TIMELINE_LIMIT_DAILY</literal> , <literal>TIMELINE_LIMIT_HOURLY</literal> ,"
-" <literal>TIMELINE_LIMIT_MONTHLY</literal> , "
-"<literal>TIMELINE_LIMIT_WEEKLY</literal> , <literal>TIMELINE_LIMIT_YEARLY</literal>"
+"<literal>TIMELINE_LIMIT_DAILY</literal> , <literal>TIMELINE_LIMIT_HOURLY</"
+"literal> , <literal>TIMELINE_LIMIT_MONTHLY</literal> , "
+"<literal>TIMELINE_LIMIT_WEEKLY</literal> , <literal>TIMELINE_LIMIT_YEARLY</"
+"literal>"
 
 #. Tag: para
 #: snapper.xml:2231
 #, no-c-format
 msgid "Number of snapshots to keep for hour, day, month, week, and year."
-msgstr "時間単位／日単位／週単位／年単位に保持すべきスナップショット数を指定します。"
+msgstr ""
+"時間単位／日単位／週単位／年単位に保持すべきスナップショット数を指定します。"
 
 #. Tag: para
 #: snapper.xml:2234
@@ -4153,9 +4263,9 @@ msgid ""
 "<literal>TIMELINE_LIMIT_WEEKLY</literal> , which is set to <literal>\"0\"</"
 "literal> by default."
 msgstr ""
-"各項目の既定値はそれぞれ <literal>\"10\"</literal> になっています。"
-"ただし、 <literal>TIMELINE_LIMIT_WEEKLY</literal> については、例外的に"
-" <literal>\"0\"</literal> が設定されます。"
+"各項目の既定値はそれぞれ <literal>\"10\"</literal> になっています。ただし、 "
+"<literal>TIMELINE_LIMIT_WEEKLY</literal> については、例外的に <literal>"
+"\"0\"</literal> が設定されます。"
 
 #. Tag: term
 #: snapper.xml:2242
@@ -4213,12 +4323,12 @@ msgid ""
 "is kept, too."
 msgstr ""
 "この設定例は 1 時間おきのスナップショットを自動的にクリーンアップする例です。"
-"<literal>TIMELINE_MIN_AGE</literal> と <literal>TIMELINE_LIMIT_*</literal> の両方が"
-"常に自動削除の判断基準となります。この例では、スナップショットを削除するまでの"
-"最小経過秒数が 30 分 (1800 秒) になっています。 1 時間おきのスナップショットを"
-"設定している場合は、常に最新のスナップショットのみを保持することになります。"
-"また、 <literal>TIMELINE_LIMIT_DAILY</literal> を 0 以外にしていると、"
-" 1 日の最初のスナップショットも保持されることになります。"
+"<literal>TIMELINE_MIN_AGE</literal> と <literal>TIMELINE_LIMIT_*</literal> の"
+"両方が常に自動削除の判断基準となります。この例では、スナップショットを削除す"
+"るまでの最小経過秒数が 30 分 (1800 秒) になっています。 1 時間おきのスナップ"
+"ショットを設定している場合は、常に最新のスナップショットのみを保持することに"
+"なります。また、 <literal>TIMELINE_LIMIT_DAILY</literal> を 0 以外にしている"
+"と、 1 日の最初のスナップショットも保持されることになります。"
 
 #. Tag: title
 #: snapper.xml:2276
@@ -4238,7 +4348,8 @@ msgstr "1 時間単位: 直近の 24 個のスナップショットを保持し�
 msgid ""
 "Daily: The first daily snapshot that has been made is kept from the last "
 "seven days."
-msgstr "1 日単位: 直近の 7 日分に対して、 1 日の最初のスナップショットを保持します。"
+msgstr ""
+"1 日単位: 直近の 7 日分に対して、 1 日の最初のスナップショットを保持します。"
 
 #. Tag: para
 #: snapper.xml:2289
@@ -4256,7 +4367,9 @@ msgstr ""
 msgid ""
 "Weekly: The first snapshot made on the last day of the week is kept from the "
 "last four weeks."
-msgstr "1 週単位: 直近の 4 週間に対して、週の最後の日の最初のスナップショットを保持します。"
+msgstr ""
+"1 週単位: 直近の 4 週間に対して、週の最後の日の最初のスナップショットを保持し"
+"ます。"
 
 #. Tag: para
 #: snapper.xml:2301
@@ -4264,7 +4377,9 @@ msgstr "1 週単位: 直近の 4 週間に対して、週の最後の日の最�
 msgid ""
 "Yearly: The first snapshot made on the last day of the year is kept for the "
 "last two years."
-msgstr "1 年単位: 直近の 2 年に対して、年の最後の日の最初のスナップショットを保持します。"
+msgstr ""
+"1 年単位: 直近の 2 年に対して、年の最後の日の最初のスナップショットを保持しま"
+"す。"
 
 #. Tag: title
 #: snapper.xml:2311
@@ -4283,12 +4398,12 @@ msgid ""
 "<quote>empty</quote> snapshot pairs can be automatically be deleted by "
 "setting the following parameters in a Snapper configuration:"
 msgstr ""
-"<xref linkend=\"snapper.snapshot-type\"/> で説明しているとおり、 &yast; モジュール"
-"や zypper を実行すると、その起動時に pre (事前) スナップショットが作成され、"
-"終了時に post (事後) スナップショットが作成されます。ただ、何も変更せずにそれらを"
-"終了したような場合など、 pre と post の間で何も変更が無い場合があります。"
-"このような <quote>空の</quote> スナップショットは、 Snapper の設定内の下記の"
-"パラメータを利用することで、自動削除を行なうことができます:"
+"<xref linkend=\"snapper.snapshot-type\"/> で説明しているとおり、 &yast; モ"
+"ジュールや zypper を実行すると、その起動時に pre (事前) スナップショットが作"
+"成され、終了時に post (事後) スナップショットが作成されます。ただ、何も変更せ"
+"ずにそれらを終了したような場合など、 pre と post の間で何も変更が無い場合があ"
+"ります。このような <quote>空の</quote> スナップショットは、 Snapper の設定内"
+"の下記のパラメータを利用することで、自動削除を行なうことができます:"
 
 #. Tag: term
 #: snapper.xml:2322
@@ -4303,8 +4418,8 @@ msgid ""
 "If set to <literal>yes</literal> , pre and post snapshot pairs that do not "
 "differ will be deleted."
 msgstr ""
-"<literal>yes</literal> (はい) を指定すると、何も差異のない pre と post の"
-"スナップショット対が削除されます。"
+"<literal>yes</literal> (はい) を指定すると、何も差異のない pre と post のス"
+"ナップショット対が削除されます。"
 
 #. Tag: para
 #: snapper.xml:2329
@@ -4324,7 +4439,9 @@ msgstr "<literal>EMPTY_PRE_POST_MIN_AGE</literal>"
 msgid ""
 "Defines the minimum age in seconds a pre and post snapshot pair that does "
 "not differ must have before it can automatically be deleted."
-msgstr "何も差異のない pre/post スナップショット対のうち、自動削除するまでの最小経過秒数を指定します。"
+msgstr ""
+"何も差異のない pre/post スナップショット対のうち、自動削除するまでの最小経過"
+"秒数を指定します。"
 
 #. Tag: para
 #: snapper.xml:2342
@@ -4349,13 +4466,13 @@ msgid ""
 "specify a clean-up algorithm when creating a snapshot, or by modifying an "
 "existing snapshot:"
 msgstr ""
-"Snapper には、手作業で採取したスナップショットに対する独自のクリーンアップ"
-"アルゴリズムが用意されていません。しかしながら、番号やタイムラインのクリーン"
-"アップアルゴリズムを、手作業で作成したスナップショットに適用することができます。"
-"これを行なうと、スナップショットがアルゴリズムの <quote>クリーンアップキュー</quote> "
-"内に追加されるようになります。また、クリーンアップアルゴリズムは、スナップショットの"
-"作成時に指定することができるほか、既存のスナップショットに対して設定する"
-"こともできます:"
+"Snapper には、手作業で採取したスナップショットに対する独自のクリーンアップア"
+"ルゴリズムが用意されていません。しかしながら、番号やタイムラインのクリーン"
+"アップアルゴリズムを、手作業で作成したスナップショットに適用することができま"
+"す。これを行なうと、スナップショットがアルゴリズムの <quote>クリーンアップ"
+"キュー</quote> 内に追加されるようになります。また、クリーンアップアルゴリズム"
+"は、スナップショットの作成時に指定することができるほか、既存のスナップショッ"
+"トに対して設定することもできます:"
 
 #. Tag: term
 #: snapper.xml:2362
@@ -4375,7 +4492,8 @@ msgid ""
 "configuration and assigns the <literal>number</literal> clean-up algorithm."
 msgstr ""
 "既定の設定 (root) に対して単一の (single) スナップショットを作成し、"
-"<literal>number</literal> (番号) クリーンアップアルゴリズムを適用した場合の例です。"
+"<literal>number</literal> (番号) クリーンアップアルゴリズムを適用した場合の例"
+"です。"
 
 #. Tag: term
 #: snapper.xml:2373
@@ -4390,8 +4508,8 @@ msgid ""
 "Modifies the snapshot with the number 25 and assigns the clean-up algorithm "
 "<literal>timeline</literal> ."
 msgstr ""
-"スナップショット番号 25 に対して、クリーンアップアルゴリズム <literal>timeline</literal> "
-"(タイムライン) を適用した場合の例です。"
+"スナップショット番号 25 に対して、クリーンアップアルゴリズム "
+"<literal>timeline</literal> (タイムライン) を適用した場合の例です。"
 
 #. Tag: title
 #: snapper.xml:2386
@@ -4411,8 +4529,8 @@ msgid ""
 msgstr ""
 "上述の番号／タイムラインのクリーンアップアルゴリズムに加えて、 Snapper では"
 "クォータ (容量制限) を設定することができます。容量制限は利用可能な空き容量に"
-"対する比率で指定します。この比率での指定は、それぞれの Snapper 設定内で指定"
-"された btrfs サブボリュームに対して常に適用されます。"
+"対する比率で指定します。この比率での指定は、それぞれの Snapper 設定内で指定さ"
+"れた btrfs サブボリュームに対して常に適用されます。"
 
 #. Tag: para
 #: snapper.xml:2394
@@ -4424,11 +4542,11 @@ msgid ""
 "quota</command> . This requires a valid configuration (see <xref linkend="
 "\"sec.snapper.config\"/> for more information)."
 msgstr ""
-"インストール時に Snapper を有効化していると、クォータサポートも自動的に"
-"有効化されます。 Snapper を後から有効化した場合は、 <command>snapper setup-quota</command> "
-"を実行することでクォータサポートを有効化することができます。また、この動作には"
-"正しい設定が必要です (詳しくは <xref linkend=\"sec.snapper.config\"/> を"
-"お読みください) 。"
+"インストール時に Snapper を有効化していると、クォータサポートも自動的に有効化"
+"されます。 Snapper を後から有効化した場合は、 <command>snapper setup-quota</"
+"command> を実行することでクォータサポートを有効化することができます。また、こ"
+"の動作には正しい設定が必要です (詳しくは <xref linkend=\"sec.snapper.config"
+"\"/> をお読みください) 。"
 
 #. Tag: para
 #: snapper.xml:2402
@@ -4436,7 +4554,9 @@ msgstr ""
 msgid ""
 "Quota support is controlled by the following parameters of a Snapper "
 "configuration."
-msgstr "クォータサポートは、 Snapper 設定のうち下記のパラメータで制御することができます。"
+msgstr ""
+"クォータサポートは、 Snapper 設定のうち下記のパラメータで制御することができま"
+"す。"
 
 #. Tag: term
 #: snapper.xml:2408
@@ -4453,11 +4573,11 @@ msgid ""
 "<command>man 8 btrfs-qgroup</command> . This value is set with "
 "<command>snapper setup-quota</command> and should not be changed."
 msgstr ""
-"Snapper で使用されるクォータグループを指定します。何も指定されていない場合は、"
-" <command>snapper setup-quota</command> で設定することができます。既に設定"
-"されている場合は、 <command>man 8 btrfs-qgroup</command> をよくお読みのうえ"
-"変更してください。また、この値は <command>snapper setup-quota</command> で"
-"設定すべきもので、通常は変更すべきではありません。"
+"Snapper で使用されるクォータグループを指定します。何も指定されていない場合"
+"は、 <command>snapper setup-quota</command> で設定することができます。既に設"
+"定されている場合は、 <command>man 8 btrfs-qgroup</command> をよくお読みのうえ"
+"変更してください。また、この値は <command>snapper setup-quota</command> で設"
+"定すべきもので、通常は変更すべきではありません。"
 
 #. Tag: term
 #: snapper.xml:2420
@@ -4489,9 +4609,9 @@ msgid ""
 "number and/or timeline clean-up algorithm. If no clean-up algorithm is "
 "active, quota restrictions are not applied."
 msgstr ""
-"クォータは既存の番号／タイムラインに対するクリーンアップアルゴリズムに"
-" <emphasis>加えて</emphasis> のみ有効化されるべきものです。何もクリーン"
-"アップアルゴリズムを指定していないと、クォータによる制限も適用されません。"
+"クォータは既存の番号／タイムラインに対するクリーンアップアルゴリズムに "
+"<emphasis>加えて</emphasis> のみ有効化されるべきものです。何もクリーンアップ"
+"アルゴリズムを指定していないと、クォータによる制限も適用されません。"
 
 #. Tag: para
 #: snapper.xml:2442
@@ -4502,10 +4622,10 @@ msgid ""
 "timeline snapshots. Only if the quota is exceeded after this run, the quota-"
 "specific rules will be applied in a second run."
 msgstr ""
-"クォータサポートが有効化されていると、 Snapper は必要に応じて 2 回の"
-"クリーンアップ処理を実施します。 1 回目の実行では番号もしくはタイムラインの"
-"スナップショットに対するルールを適用し、その時点でクォータを超過している"
-"場合、 2 回目の実行としてクォータ固有のルールが適用されます。"
+"クォータサポートが有効化されていると、 Snapper は必要に応じて 2 回のクリーン"
+"アップ処理を実施します。 1 回目の実行では番号もしくはタイムラインのスナップ"
+"ショットに対するルールを適用し、その時点でクォータを超過している場合、 2 回目"
+"の実行としてクォータ固有のルールが適用されます。"
 
 #. Tag: para
 #: snapper.xml:2450
@@ -4519,12 +4639,13 @@ msgid ""
 "literal> ) for <literal>NUMBER_LIMIT*</literal> and "
 "<literal>TIMELINE_LIMIT*</literal> to ensure the quota can be applied."
 msgstr ""
-"クォータサポートが有効化されていても、 Snapper は <literal>NUMBER_LIMIT*</literal> と "
-"<literal>TIMELINE_LIMIT*</literal> の各値で指定された数のスナップショットを、"
-"クォータを超過している場合でも常に保持します。そのため、 <literal>NUMBER_LIMIT*</literal> と "
-"<literal>TIMELINE_LIMIT*</literal> では値の範囲を指定 (<literal><replaceable>MIN</replaceable>-"
-"<replaceable>MAX</replaceable></literal>) して、クォータによる削除が"
-"適用されるようにしてください。"
+"クォータサポートが有効化されていても、 Snapper は <literal>NUMBER_LIMIT*</"
+"literal> と <literal>TIMELINE_LIMIT*</literal> の各値で指定された数のスナップ"
+"ショットを、クォータを超過している場合でも常に保持します。そのため、 "
+"<literal>NUMBER_LIMIT*</literal> と <literal>TIMELINE_LIMIT*</literal> では値"
+"の範囲を指定 (<literal><replaceable>MIN</replaceable>-<replaceable>MAX</"
+"replaceable></literal>) して、クォータによる削除が適用されるようにしてくださ"
+"い。"
 
 #. Tag: para
 #: snapper.xml:2459
@@ -4537,11 +4658,11 @@ msgid ""
 "five snapshots will always be kept, regardless of the amount of space they "
 "occupy."
 msgstr ""
-"たとえば <literal>NUMBER_LIMIT=5-20</literal> という設定の場合、 Snapper は"
-"最初のクリーンアップ実行で定期的に採取されたスナップショットを 20 個まで減らします。"
-" 20 個まで減らしてもクォータを超過している場合は、 Snapper はクォータを超過しなく"
-"なるまで古いスナップショットを削除します。ただし、最新の 5 個分については、"
-"領域の問題が解決していなくても、必ず保持する動作になります。"
+"たとえば <literal>NUMBER_LIMIT=5-20</literal> という設定の場合、 Snapper は最"
+"初のクリーンアップ実行で定期的に採取されたスナップショットを 20 個まで減らし"
+"ます。 20 個まで減らしてもクォータを超過している場合は、 Snapper はクォータを"
+"超過しなくなるまで古いスナップショットを削除します。ただし、最新の 5 個分につ"
+"いては、領域の問題が解決していなくても、必ず保持する動作になります。"
 
 #. Tag: title
 #: snapper.xml:2472
@@ -4556,8 +4677,8 @@ msgid ""
 "Why does Snapper Never Show Changes in <filename>/var/log</filename> , "
 "<filename>/tmp</filename> and Other Directories?"
 msgstr ""
-"Snapper が  <filename>/var/log</filename> や <filename>/tmp</filename> "
-"などの変更を表示しないのはなぜ？"
+"Snapper が  <filename>/var/log</filename> や <filename>/tmp</filename> などの"
+"変更を表示しないのはなぜ？"
 
 #. Tag: para
 #: snapper.xml:2483
@@ -4567,15 +4688,17 @@ msgid ""
 "linkend=\"snapper.dir-excludes\"/> for a list and reasons. To exclude a path "
 "from snapshots we create a subvolume for that path."
 msgstr ""
-"ディレクトリによってはスナップショットから除外されているものがあります。"
-"詳しい一覧とその理由については、 <xref linkend=\"snapper.dir-excludes\"/> をご覧ください。"
-"スナップショットからの除外にあたっては、サブボリュームを作成して対応しています。"
+"ディレクトリによってはスナップショットから除外されているものがあります。詳し"
+"い一覧とその理由については、 <xref linkend=\"snapper.dir-excludes\"/> をご覧"
+"ください。スナップショットからの除外にあたっては、サブボリュームを作成して対"
+"応しています。"
 
 #. Tag: para
 #: snapper.xml:2492
 #, no-c-format
 msgid "How much disk space is used by snapshots? How to free disk space?"
-msgstr "スナップショットが使用しているディスク領域のサイズは？ 空き容量を増やすには？"
+msgstr ""
+"スナップショットが使用しているディスク領域のサイズは？ 空き容量を増やすには？"
 
 #. Tag: para
 #: snapper.xml:2497
@@ -4586,16 +4709,19 @@ msgid ""
 "enabled, it is possible to determine how much space would be freed if "
 "<emphasis>all</emphasis> snapshots would be deleted:"
 msgstr ""
-"スナップショットが使用しているディスク領域のサイズについては、現状の"
-" <literal>btrfs</literal> ツールではサポートされていません。ただし、クォータ"
-"を有効化していれば、 <emphasis>全ての</emphasis> スナップショットを削除した"
-"場合に、どれだけの空き容量が確保できるのかを知ることができます:"
+"スナップショットが使用しているディスク領域のサイズについては、現状の "
+"<literal>btrfs</literal> ツールではサポートされていません。ただし、クォータを"
+"有効化していれば、 <emphasis>全ての</emphasis> スナップショットを削除した場合"
+"に、どれだけの空き容量が確保できるのかを知ることができます:"
 
 #. Tag: para
 #: snapper.xml:2505
 #, no-c-format
-msgid "Get the quota group ID ( <literal>1/0</literal> in the following example):"
-msgstr "まずはクォータグループ ID を取得します (下記の例では <literal>1/0</literal> になっています):"
+msgid ""
+"Get the quota group ID ( <literal>1/0</literal> in the following example):"
+msgstr ""
+"まずはクォータグループ ID を取得します (下記の例では <literal>1/0</literal> "
+"になっています):"
 
 #. Tag: screen
 #: snapper.xml:2509
@@ -4646,8 +4772,8 @@ msgid ""
 "The third column shows the amount of space that would be freed when deleting "
 "all snapshots ( <literal>108.82MiB</literal> )."
 msgstr ""
-"3 列目に全てのスナップショットを削除した場合に開放される容量が示されます"
-" ( この場合は <literal>108.82MiB</literal> ) 。"
+"3 列目に全てのスナップショットを削除した場合に開放される容量が示されます ( こ"
+"の場合は <literal>108.82MiB</literal> ) 。"
 
 #. Tag: para
 #: snapper.xml:2531
@@ -4658,11 +4784,10 @@ msgid ""
 "occupy more space than recent ones. See <xref linkend=\"sec.snapper.setup."
 "customize.archiving\"/> for details."
 msgstr ""
-"<literal>btrfs</literal> パーティションでスナップショットを含む場合、"
-"空き領域を増やすには、不要なファイルではなく不要なスナップショットを削除"
-"してください。古いスナップショットほどより多くのディスク領域を占有します。"
-"詳しくは <xref linkend=\"sec.snapper.setup.customize.archiving\"/> を"
-"お読みください。"
+"<literal>btrfs</literal> パーティションでスナップショットを含む場合、空き領域"
+"を増やすには、不要なファイルではなく不要なスナップショットを削除してくださ"
+"い。古いスナップショットほどより多くのディスク領域を占有します。詳しくは "
+"<xref linkend=\"sec.snapper.setup.customize.archiving\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:2537
@@ -4674,11 +4799,11 @@ msgid ""
 "they are no longer needed is recommended. See <xref linkend=\"sec.snapper."
 "manage.delete\"/> for details."
 msgstr ""
-"また、一方のサービスパックから他方のサービスパックにアップグレードを"
-"行なったりすると、パッケージの更新により多数のデータが変更されるため、"
-"スナップショットがシステムサブボリューム内の多くの領域を占有するようになります。"
-"これらは、不要になった段階で手作業で削除することをお勧めします。詳しくは"
-" <xref linkend=\"sec.snapper.manage.delete\"/> をお読みください。"
+"また、一方のサービスパックから他方のサービスパックにアップグレードを行なった"
+"りすると、パッケージの更新により多数のデータが変更されるため、スナップショッ"
+"トがシステムサブボリューム内の多くの領域を占有するようになります。これらは、"
+"不要になった段階で手作業で削除することをお勧めします。詳しくは <xref linkend="
+"\"sec.snapper.manage.delete\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:2548
@@ -4689,8 +4814,10 @@ msgstr "ブートローダからスナップショットを起動するには？
 #. Tag: para
 #: snapper.xml:2553
 #, no-c-format
-msgid "Yes&mdash;refer to <xref linkend=\"sec.snapper.snapshot-boot\"/> for details."
-msgstr "詳しくは <xref linkend=\"sec.snapper.snapshot-boot\"/> をお読みください。"
+msgid ""
+"Yes&mdash;refer to <xref linkend=\"sec.snapper.snapshot-boot\"/> for details."
+msgstr ""
+"詳しくは <xref linkend=\"sec.snapper.snapshot-boot\"/> をお読みください。"
 
 #. Tag: para
 #: snapper.xml:2561
@@ -4712,14 +4839,14 @@ msgid ""
 "To remove such an assignment from one or more snapshots, proceed as follows:"
 msgstr ""
 "現時点では、スナップショットを手作業による削除から保護する方法はありません。"
-"しかしながら、クリーンアップアルゴリズムで自動削除されないように設定する"
-"ことは可能です。手作業で採取したスナップショットの場合 (詳しくは <xref "
-"linkend=\"sec.snapper.manage.create\"/> をお読みください) 、 <option>--cleanup-algorithm</option> "
-"でクリーンアップアルゴリズムを指定しない限り、何もクリーンアップアルゴリズムが"
-"割り当てられません。また、自動的に採取されたスナップショットには、 <literal>number</literal> "
-"または <literal>timeline</literal> のいずれかのアルゴリズムが割り当てられます。"
-" 1 つまたは複数のスナップショットに対して、この割り当てを削除したい場合は、"
-"下記のようにして行ないます:"
+"しかしながら、クリーンアップアルゴリズムで自動削除されないように設定すること"
+"は可能です。手作業で採取したスナップショットの場合 (詳しくは <xref linkend="
+"\"sec.snapper.manage.create\"/> をお読みください) 、 <option>--cleanup-"
+"algorithm</option> でクリーンアップアルゴリズムを指定しない限り、何もクリーン"
+"アップアルゴリズムが割り当てられません。また、自動的に採取されたスナップ"
+"ショットには、 <literal>number</literal> または <literal>timeline</literal> "
+"のいずれかのアルゴリズムが割り当てられます。 1 つまたは複数のスナップショット"
+"に対して、この割り当てを削除したい場合は、下記のようにして行ないます:"
 
 #. Tag: para
 #: snapper.xml:2579
@@ -4748,9 +4875,9 @@ msgid ""
 "Run the following command and replace the number placeholders with the "
 "number(s) you memorized:"
 msgstr ""
-"下記のコマンドを実行します。このとき、上記で覚えておいた番号を"
-" <replaceable>#1</replaceable> <replaceable>#2</replaceable> "
-" <replaceable>#n</replaceable> の部分に指定します:"
+"下記のコマンドを実行します。このとき、上記で覚えておいた番号を "
+"<replaceable>#1</replaceable> <replaceable>#2</replaceable>  "
+"<replaceable>#n</replaceable> の部分に指定します:"
 
 #. Tag: screen
 #: snapper.xml:2595
@@ -4770,9 +4897,9 @@ msgid ""
 "entry in the column <literal>Cleanup</literal> should now be empty for the "
 "snapshots you modified."
 msgstr ""
-"最後にもう一度 <command>snapper list -a</command> を実行して、結果を確認します。"
-"変更したスナップショットの <literal>Cleanup</literal> 欄が空白になっていれば"
-"成功です。"
+"最後にもう一度 <command>snapper list -a</command> を実行して、結果を確認しま"
+"す。変更したスナップショットの <literal>Cleanup</literal> 欄が空白になってい"
+"れば成功です。"
 
 #. Tag: para
 #: snapper.xml:2609
@@ -4783,6 +4910,11 @@ msgstr "Snapper に関してさらに詳しい情報を知るには？"
 #. Tag: para
 #: snapper.xml:2614
 #, no-c-format
-msgid "See the Snapper home page at <link xlink:href=\"http://snapper.io/\"/> ."
-msgstr "Snapper の Web ページ <link xlink:href=\"http://snapper.io/\"/> をご覧ください。"
+msgid ""
+"See the Snapper home page at <link xlink:href=\"http://snapper.io/\"/> ."
+msgstr ""
+"Snapper の Web ページ <link xlink:href=\"http://snapper.io/\"/> をご覧くださ"
+"い。"
 
+#~ msgid "yes"
+#~ msgstr "yes"

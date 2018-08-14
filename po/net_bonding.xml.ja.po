@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: net_bonding.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-08-14 18:19+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
@@ -25,12 +25,6 @@ msgstr ""
 msgid "Setting Up Bonding Devices"
 msgstr "ボンディングデバイスの設定"
 
-#. Tag: dm:translation
-#: net_bonding.xml:14
-#, no-c-format
-msgid "yes"
-msgstr "yes"
-
 #. Tag: para
 #: net_bonding.xml:18
 #, no-c-format
@@ -40,10 +34,10 @@ msgid ""
 "of a typical Ethernet device. In these cases, several Ethernet devices can "
 "be aggregated to a single bonding device."
 msgstr ""
-"システムによっては、一般的なイーサネットデバイスにおける標準的なセキュリティや"
-"可用性の要件を越えて、ネットワーク接続を実装する要望がある場合があります。このような"
-"場合は、複数のイーサネットデバイスをまとめて、 1 つのボンディングデバイスにする"
-"ことができます。"
+"システムによっては、一般的なイーサネットデバイスにおける標準的なセキュリティ"
+"や可用性の要件を越えて、ネットワーク接続を実装する要望がある場合があります。"
+"このような場合は、複数のイーサネットデバイスをまとめて、 1 つのボンディングデ"
+"バイスにすることができます。"
 
 #. Tag: para
 #: net_bonding.xml:25
@@ -55,11 +49,11 @@ msgid ""
 "a different slave device will become active if the active slave fails. The "
 "following bonding modes are avilable:"
 msgstr ""
-"ボンディングデバイスの設定は、ボンディングモジュールを設定して行ないます。"
-"また、このモジュールの動作はモードによって切り替えることができます。"
-"既定では <systemitem>active-backup</systemitem> (アクティブ-バックアップ) "
-"モードに設定されていて、一方のデバイスに障害が発生した場合に、他方のデバイスに"
-"切り替える動作を行ないます。モードには下記の設定が用意されています:"
+"ボンディングデバイスの設定は、ボンディングモジュールを設定して行ないます。ま"
+"た、このモジュールの動作はモードによって切り替えることができます。既定では "
+"<systemitem>active-backup</systemitem> (アクティブ-バックアップ) モードに設定"
+"されていて、一方のデバイスに障害が発生した場合に、他方のデバイスに切り替える"
+"動作を行ないます。モードには下記の設定が用意されています:"
 
 #. Tag: term
 #: net_bonding.xml:35
@@ -74,9 +68,9 @@ msgid ""
 "Packets are transmitted in round-robin fashion from the first to the last "
 "available interface. Provides fault tolerance and load balancing."
 msgstr ""
-"パケットはラウンドロビン形式で、最初のインターフェイスから最後のインターフェイス"
-"まで、パケットを 1 つずつ送りながらインターフェイスを切り替える動作になります。"
-"これにより、冗長化と負荷分散の両方を実現することができます。"
+"パケットはラウンドロビン形式で、最初のインターフェイスから最後のインターフェ"
+"イスまで、パケットを 1 つずつ送りながらインターフェイスを切り替える動作になり"
+"ます。これにより、冗長化と負荷分散の両方を実現することができます。"
 
 #. Tag: term
 #: net_bonding.xml:44
@@ -92,10 +86,10 @@ msgid ""
 "becomes active. This setting is the default for &productname;. Provides "
 "fault tolerance."
 msgstr ""
-"いずれか 1 つのネットワークインターフェイスのみを有効に設定します。その"
-"ネットワークインターフェイスに障害が発生すると、異なるインターフェイスが有効化"
-"されます。この設定は &productname; における既定値で、冗長化のみを実現する"
-"ことができます。"
+"いずれか 1 つのネットワークインターフェイスのみを有効に設定します。そのネット"
+"ワークインターフェイスに障害が発生すると、異なるインターフェイスが有効化され"
+"ます。この設定は &productname; における既定値で、冗長化のみを実現することがで"
+"きます。"
 
 #. Tag: term
 #: net_bonding.xml:54
@@ -112,10 +106,10 @@ msgid ""
 "packet type ID) modulo slave count]</literal> Requires support from the "
 "switch. Provides fault tolerance and load balancing."
 msgstr ""
-"パケットは下記のポリシーを利用して、利用可能な全てのインターフェイスに分散されます:"
-" <literal>[({送信元 MAC アドレス} XOR {送信先 MAC アドレス} XOR {パケットタイプ ID})"
-" をインターフェイス数で割った余り]</literal> 。接続するスイッチ側での対応が必要です。"
-"冗長化と負荷分散の両方を提供します。"
+"パケットは下記のポリシーを利用して、利用可能な全てのインターフェイスに分散さ"
+"れます: <literal>[({送信元 MAC アドレス} XOR {送信先 MAC アドレス} XOR {パ"
+"ケットタイプ ID}) をインターフェイス数で割った余り]</literal> 。接続するス"
+"イッチ側での対応が必要です。冗長化と負荷分散の両方を提供します。"
 
 #. Tag: term
 #: net_bonding.xml:65
@@ -130,8 +124,8 @@ msgid ""
 "All traffic is broadcast on all interfaces. Requires support from the "
 "switch. Provides fault tolerance."
 msgstr ""
-"全てのパケットを全てのインターフェイスに送信します。接続するスイッチ側での対応が"
-"必要です。冗長化のみを実現することができます。"
+"全てのパケットを全てのインターフェイスに送信します。接続するスイッチ側での対"
+"応が必要です。冗長化のみを実現することができます。"
 
 #. Tag: term
 #: net_bonding.xml:74
@@ -148,10 +142,10 @@ msgid ""
 "drivers, and a switch that supports and is configured for IEEE 802.3ad "
 "Dynamic link aggregation. Provides fault tolerance and load balancing."
 msgstr ""
-"同じ速度と二重通信方式を共有する複数のインターフェイスを、 1 つにまとめる"
-"設定です。インターフェイスドライバ側に <command>ethtool</command> のサポートが"
-"必要となるほか、接続するスイッチ側で IEEE 802.3ad 動的リンク集約の設定を"
-"行なう必要があります。冗長化と負荷分散の両方を提供します。"
+"同じ速度と二重通信方式を共有する複数のインターフェイスを、 1 つにまとめる設定"
+"です。インターフェイスドライバ側に <command>ethtool</command> のサポートが必"
+"要となるほか、接続するスイッチ側で IEEE 802.3ad 動的リンク集約の設定を行なう"
+"必要があります。冗長化と負荷分散の両方を提供します。"
 
 #. Tag: term
 #: net_bonding.xml:85
@@ -167,9 +161,9 @@ msgid ""
 "support in the interface drivers but no switch support. Provides fault "
 "tolerance and load balancing."
 msgstr ""
-"順応型送信負荷分散を行ないます。インターフェイスドライバ側に <command>ethtool</command> "
-"のサポートが必要となりますが、スイッチ側での対応は不要です。"
-"冗長化と負荷分散の両方を提供します。"
+"順応型送信負荷分散を行ないます。インターフェイスドライバ側に "
+"<command>ethtool</command> のサポートが必要となりますが、スイッチ側での対応は"
+"不要です。冗長化と負荷分散の両方を提供します。"
 
 #. Tag: term
 #: net_bonding.xml:95
@@ -185,9 +179,9 @@ msgid ""
 "interface drivers but no switch support. Provides fault tolerance and load "
 "balancing."
 msgstr ""
-"順応型負荷分散を行ないます。インターフェイスドライバ側に <command>ethtool</command> "
-"のサポートが必要となりますが、スイッチ側での対応は不要です。"
-"冗長化と負荷分散の両方を提供します。"
+"順応型負荷分散を行ないます。インターフェイスドライバ側に <command>ethtool</"
+"command> のサポートが必要となりますが、スイッチ側での対応は不要です。冗長化と"
+"負荷分散の両方を提供します。"
 
 #. Tag: para
 #: net_bonding.xml:106
@@ -196,8 +190,8 @@ msgid ""
 "For a more detailed description of the modes, see <link xlink:href=\"https://"
 "www.kernel.org/doc/Documentation/networking/bonding.txt\"/> ."
 msgstr ""
-"モードに関する詳細な説明については、 <link xlink:href=\"https://"
-"www.kernel.org/doc/Documentation/networking/bonding.txt\"/> をお読みください。"
+"モードに関する詳細な説明については、 <link xlink:href=\"https://www.kernel."
+"org/doc/Documentation/networking/bonding.txt\"/> をお読みください。"
 
 #. Tag: title
 #: net_bonding.xml:113
@@ -215,11 +209,11 @@ msgid ""
 "have multiple network cards assigned to a &vmguest; system it may also be "
 "useful to set up the bond in a &vmguest;."
 msgstr ""
-"ボンディングデバイスの使用は、複数のネットワークカードを接続しているマシンでのみ"
-"設定することができる仕様です。ほとんどの設定において、ボンディングデバイスは"
-" &dom0; でのみ使用すべきものであることを意味します。 &vmguest; システムに対して"
-"複数のネットワークカードを割り当てている場合にのみ、 &vmguest; 内でボンディング"
-"を設定することができることになります。"
+"ボンディングデバイスの使用は、複数のネットワークカードを接続しているマシンで"
+"のみ設定することができる仕様です。ほとんどの設定において、ボンディングデバイ"
+"スは &dom0; でのみ使用すべきものであることを意味します。 &vmguest; システムに"
+"対して複数のネットワークカードを割り当てている場合にのみ、 &vmguest; 内でボン"
+"ディングを設定することができることになります。"
 
 #. Tag: para
 #: net_bonding.xml:123
@@ -234,8 +228,8 @@ msgid ""
 "Run <menuchoice><guimenu>&yast;</guimenu> <guimenu>System</guimenu> "
 "<guimenu>Network Settings</guimenu></menuchoice> ."
 msgstr ""
-"<menuchoice><guimenu>&yast;</guimenu> <guimenu>システム</guimenu> "
-"<guimenu>ネットワークの設定</guimenu></menuchoice> を実行します。"
+"<menuchoice><guimenu>&yast;</guimenu> <guimenu>システム</guimenu> <guimenu>"
+"ネットワークの設定</guimenu></menuchoice> を実行します。"
 
 #. Tag: para
 #: net_bonding.xml:135
@@ -254,8 +248,8 @@ msgid ""
 "Select how to assign the IP address to the bonding device. Three methods are "
 "at your disposal:"
 msgstr ""
-"ボンディングデバイスへの IP アドレスの割り当て方法を指定します。下記の 3 種類の"
-"中から選択します:"
+"ボンディングデバイスへの IP アドレスの割り当て方法を指定します。下記の 3 種類"
+"の中から選択します:"
 
 #. Tag: para
 #: net_bonding.xml:157
@@ -288,14 +282,17 @@ msgid ""
 "In the <guimenu>Bond Slaves</guimenu> tab, select the Ethernet devices that "
 "should be included into the bond by activating the related check box."
 msgstr ""
-"また、 <guimenu>ボンドスレーブ</guimenu> のタブでは、ボンディングデバイスに含める"
-"べきインターフェイスを、チェックボックスで選択します。"
+"また、 <guimenu>ボンドスレーブ</guimenu> のタブでは、ボンディングデバイスに含"
+"めるべきインターフェイスを、チェックボックスで選択します。"
 
 #. Tag: para
 #: net_bonding.xml:183
 #, no-c-format
-msgid "Edit the <guimenu>Bond Driver Options</guimenu> and choose a bonding mode."
-msgstr "<guimenu>ボンドドライバのオプション</guimenu> を編集して、モードを設定します。"
+msgid ""
+"Edit the <guimenu>Bond Driver Options</guimenu> and choose a bonding mode."
+msgstr ""
+"<guimenu>ボンドドライバのオプション</guimenu> を編集して、モードを設定しま"
+"す。"
 
 #. Tag: para
 #: net_bonding.xml:188
@@ -305,9 +302,9 @@ msgid ""
 "<guimenu>Bond Driver Options</guimenu> . Without this parameter, the data "
 "integrity is not checked regularly."
 msgstr ""
-"なお、 <guimenu>ボンドドライバのオプション</guimenu> の末尾に"
-" <literal>miimon=100</literal> のパラメータが存在していることを確認してください。"
-"このパラメータを指定しないと、定期的なチェックが行なわれなくなります。"
+"なお、 <guimenu>ボンドドライバのオプション</guimenu> の末尾に "
+"<literal>miimon=100</literal> のパラメータが存在していることを確認してくださ"
+"い。このパラメータを指定しないと、定期的なチェックが行なわれなくなります。"
 
 #. Tag: para
 #: net_bonding.xml:195
@@ -335,9 +332,9 @@ msgid ""
 "set up hotplugging of bonding slaves."
 msgstr ""
 "ネットワーク環境 (たとえば高可用性が必要な環境) によっては、障害の発生した"
-"ネットワークインターフェイスを別のものに交換する必要がある場合があります。"
-"このような要件を満たすには、ボンドスレーブのホットプラグを設定して解決する必要が"
-"あります。"
+"ネットワークインターフェイスを別のものに交換する必要がある場合があります。こ"
+"のような要件を満たすには、ボンドスレーブのホットプラグを設定して解決する必要"
+"があります。"
 
 #. Tag: para
 #: net_bonding.xml:210
@@ -346,8 +343,8 @@ msgid ""
 "The bond is configured as usual (according to <command>man 5 ifcfg-bonding</"
 "command> ), for example:"
 msgstr ""
-"ボンディングの設定を通常通りに行ないます (詳しくは <command>man 5 ifcfg-bonding</"
-"command> をお読みください) 。たとえば下記のようになります:"
+"ボンディングの設定を通常通りに行ないます (詳しくは <command>man 5 ifcfg-"
+"bonding</command> をお読みください) 。たとえば下記のようになります:"
 
 #. Tag: screen
 #: net_bonding.xml:214
@@ -411,9 +408,9 @@ msgid ""
 "master."
 msgstr ""
 "<literal>BOOTPROTO=none</literal> を指定すると、 <command>ethtool</command> "
-"を使用して設定が行なわれますが、 <command>ifup eth0</command> で起動が行なわれ"
-"なくなります。これはスレーブインターフェイスはボンドマスター側で制御されるべき"
-"であるためです。"
+"を使用して設定が行なわれますが、 <command>ifup eth0</command> で起動が行なわ"
+"れなくなります。これはスレーブインターフェイスはボンドマスター側で制御される"
+"べきであるためです。"
 
 #. Tag: para
 #: net_bonding.xml:246
@@ -423,7 +420,8 @@ msgid ""
 "bond automatically when it is available."
 msgstr ""
 "<literal>STARTMODE=hotplug</literal> を指定すると、スレーブインターフェイスが"
-"利用可能な状態になった際に、自動的にボンディングデバイスに参加するようになります。"
+"利用可能な状態になった際に、自動的にボンディングデバイスに参加するようになり"
+"ます。"
 
 #. Tag: para
 #: net_bonding.xml:250
@@ -437,13 +435,14 @@ msgid ""
 "the same slot but with a different MAC) and prevents confusion when the bond "
 "changes the MAC address of all its slaves."
 msgstr ""
-"また、 <filename>/etc/udev/rules.d/70-persistent-net.rules</filename> 内にある"
-" <systemitem>udev</systemitem> のルールを、 MAC アドレスではなくバス ID "
-"を指定する形式に変更する必要があります (udev の <systemitem>KERNELS</systemitem> "
-"キーに、 <command>hwinfo --netcard</command> で出力される \"SysFS のバス ID\""
-"を指定します) 。これにより、障害の発生したハードウエア (同じスロットにありながら、"
-" MAC アドレスの異なるハードウエア) を交換することができるようになり、 MAC アドレス"
-"が変更されることによるボンドドライバ側の問題を回避できるようになります。"
+"また、 <filename>/etc/udev/rules.d/70-persistent-net.rules</filename> 内にあ"
+"る <systemitem>udev</systemitem> のルールを、 MAC アドレスではなくバス ID を"
+"指定する形式に変更する必要があります (udev の <systemitem>KERNELS</"
+"systemitem> キーに、 <command>hwinfo --netcard</command> で出力される "
+"\"SysFS のバス ID\"を指定します) 。これにより、障害の発生したハードウエア (同"
+"じスロットにありながら、 MAC アドレスの異なるハードウエア) を交換することがで"
+"きるようになり、 MAC アドレスが変更されることによるボンドドライバ側の問題を回"
+"避できるようになります。"
 
 #. Tag: para
 #: net_bonding.xml:260
@@ -479,14 +478,17 @@ msgid ""
 "automatically joins it into the bond. <remark> ke: I think this can stay "
 "that way for now. </remark>"
 msgstr ""
-"システムの起動時点では、 systemd の <systemitem>network.service</systemitem> は"
-"ホットプラグ指定されたスレーブを待機しませんが、ボンドインターフェイスを動作させる"
-"ためには、少なくとも 1 つ以上のスレーブが必要となります。スレーブインターフェイスの"
-"いずれかが取り外される (NIC ドライバからバインド解除される、つまり NIC のドライバ"
-"が <command>rmmod</command> されるか、 PCI ホットプラグで取り外される) と、"
-"カーネルはボンドデバイスについても自動的に削除を行ないます。新しいカードがシステムに"
-"接続される (置き換えとして同じスロットに接続される) と、 <systemitem>udev</systemitem> "
-"はバス ID ベースの固定名をスレーブに付与して <command>ifup</command> を呼び出します。"
-" <command>ifup</command> 側では、ボンドデバイス側への参加を自動的に行ないます。"
-"<remark> ke: I think this can stay that way for now. </remark>"
+"システムの起動時点では、 systemd の <systemitem>network.service</systemitem> "
+"はホットプラグ指定されたスレーブを待機しませんが、ボンドインターフェイスを動"
+"作させるためには、少なくとも 1 つ以上のスレーブが必要となります。スレーブイン"
+"ターフェイスのいずれかが取り外される (NIC ドライバからバインド解除される、つ"
+"まり NIC のドライバが <command>rmmod</command> されるか、 PCI ホットプラグで"
+"取り外される) と、カーネルはボンドデバイスについても自動的に削除を行ないま"
+"す。新しいカードがシステムに接続される (置き換えとして同じスロットに接続され"
+"る) と、 <systemitem>udev</systemitem> はバス ID ベースの固定名をスレーブに付"
+"与して <command>ifup</command> を呼び出します。 <command>ifup</command> 側で"
+"は、ボンドデバイス側への参加を自動的に行ないます。<remark> ke: I think this "
+"can stay that way for now. </remark>"
 
+#~ msgid "yes"
+#~ msgstr "yes"

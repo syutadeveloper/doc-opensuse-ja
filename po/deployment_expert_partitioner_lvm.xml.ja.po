@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: deployment_expert_partitioner_lvm.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-07-29 10:42+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
@@ -25,12 +25,6 @@ msgstr ""
 msgid "LVM Configuration"
 msgstr "LVM 設定"
 
-#. Tag: dm:translation
-#: deployment_expert_partitioner_lvm.xml:17
-#, no-c-format
-msgid "yes"
-msgstr "yes"
-
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:21
 #, no-c-format
@@ -39,9 +33,10 @@ msgid ""
 "os=\"sles\">If you need information about the Logical Volume Manager in "
 "general, refer to the <xref linkend=\"sec.lvm.explained\"/>.</phrase>"
 msgstr ""
-"この章では、 LVM (Logical Volume Manager; 論理ボリュームマネージャ) を設定する"
-"ための固有の手順について説明しています。 <phrase os=\"sles\">一般的な LVM の"
-"情報については、 <xref linkend=\"sec.lvm.explained\"/> をお読みください。</phrase>"
+"この章では、 LVM (Logical Volume Manager; 論理ボリュームマネージャ) を設定す"
+"るための固有の手順について説明しています。 <phrase os=\"sles\">一般的な LVM "
+"の情報については、 <xref linkend=\"sec.lvm.explained\"/> をお読みください。</"
+"phrase>"
 
 #. Tag: title
 #: deployment_expert_partitioner_lvm.xml:29
@@ -59,10 +54,10 @@ msgid ""
 "without a backup."
 msgstr ""
 "LVM を使用することで、場合によってはデータ損失を引き起こす可能性があります。"
-"データの損失は、アプリケーションのクラッシュや電源の問題、誤ったコマンドの"
-"入力によって発生する可能性もあります。そのため、 LVM を設定したりボリュームを"
-"再設定したりする場合は、事前に必ずバックアップを採取して置いてください。"
-"バックアップ無しでの作業は危険です。"
+"データの損失は、アプリケーションのクラッシュや電源の問題、誤ったコマンドの入"
+"力によって発生する可能性もあります。そのため、 LVM を設定したりボリュームを再"
+"設定したりする場合は、事前に必ずバックアップを採取して置いてください。バック"
+"アップ無しでの作業は危険です。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:38
@@ -74,11 +69,11 @@ msgid ""
 "guimenu> pane. The Expert Partitioner allows you to edit and delete existing "
 "partitions and create new ones that need to be used with LVM."
 msgstr ""
-"&yast; の LVM 設定は、 &yast; の熟練者向けパーティション設定 (詳しくは"
-" <xref linkend=\"sec.expert_partitioner\"/> をお読みください) の <guimenu>"
-"システムビュー</guimenu> ペイン内にある <guimenu>ボリューム管理</guimenu> の"
-"項目からアクセスすることができます。熟練者向けパーティション設定では、 LVM で"
-"使用するためのパーティションの新規作成や編集、削除などを行なうこともできます。"
+"&yast; の LVM 設定は、 &yast; の熟練者向けパーティション設定 (詳しくは <xref "
+"linkend=\"sec.expert_partitioner\"/> をお読みください) の <guimenu>システム"
+"ビュー</guimenu> ペイン内にある <guimenu>ボリューム管理</guimenu> の項目から"
+"アクセスすることができます。熟練者向けパーティション設定では、 LVM で使用する"
+"ためのパーティションの新規作成や編集、削除などを行なうこともできます。"
 
 #. Tag: title
 #: deployment_expert_partitioner_lvm.xml:47
@@ -93,8 +88,8 @@ msgid ""
 "The first task is to create physical volumes that provide space to a volume "
 "group:"
 msgstr ""
-"LVM を使用するにあたって最初の作業は、ボリュームグループに対して領域を提供する"
-"物理ボリュームの作成です:"
+"LVM を使用するにあたって最初の作業は、ボリュームグループに対して領域を提供す"
+"る物理ボリュームの作成です:"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:53
@@ -114,7 +109,9 @@ msgstr "<guimenu>パーティション</guimenu> タブに切り替えます。"
 msgid ""
 "Click <guimenu>Add</guimenu> and enter the desired size of the PV on this "
 "disk."
-msgstr "<guimenu>追加</guimenu> を押して、このディスクにおける PV のサイズを入力します。"
+msgstr ""
+"<guimenu>追加</guimenu> を押して、このディスクにおける PV のサイズを入力しま"
+"す。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:69
@@ -125,9 +122,9 @@ msgid ""
 "partition."
 msgstr ""
 "<guimenu>デバイスをフォーマットしない</guimenu> を選択したあと、 <guimenu>"
-"パーティション ID</guimenu> で <guimenu>0x8E Linux LVM</guimenu> を選択します。"
-" <guimenu>マウントのオプション</guimenu> では <guimenu>デバイスをマウントしない</guimenu> "
-"を選択します。"
+"パーティション ID</guimenu> で <guimenu>0x8E Linux LVM</guimenu> を選択しま"
+"す。 <guimenu>マウントのオプション</guimenu> では <guimenu>デバイスをマウント"
+"しない</guimenu> を選択します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:76
@@ -153,18 +150,20 @@ msgid ""
 "<guimenu>System View</guimenu> pane, and then on <guimenu>Add Volume Group</"
 "guimenu> . One single volume group is usually sufficient."
 msgstr ""
-"お使いのシステム内にボリュームグループが存在していない場合は、まずそれを"
-"追加しなければなりません (詳しくは <xref linkend=\"fig.lvm.yast.volgrp\"/> "
-"をお読みください) 。また、 <guimenu>システムビュー</guimenu> ペイン内の"
-" <guimenu>ボリューム管理</guimenu> を選択し、 <guimenu>追加</guimenu> 内にある"
-" <guimenu>ボリュームグループ</guimenu> を選択することで、追加のボリュームグループ"
-"を作成することもできます。通常はボリュームグループが 1 つだけ存在すれば十分です。"
+"お使いのシステム内にボリュームグループが存在していない場合は、まずそれを追加"
+"しなければなりません (詳しくは <xref linkend=\"fig.lvm.yast.volgrp\"/> をお読"
+"みください) 。また、 <guimenu>システムビュー</guimenu> ペイン内の <guimenu>ボ"
+"リューム管理</guimenu> を選択し、 <guimenu>追加</guimenu> 内にある <guimenu>"
+"ボリュームグループ</guimenu> を選択することで、追加のボリュームグループを作成"
+"することもできます。通常はボリュームグループが 1 つだけ存在すれば十分です。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:94
 #, no-c-format
 msgid "Enter a name for the VG, for example, <literal>system</literal> ."
-msgstr "VG に対する名前を指定します。たとえば <literal>system</literal> のように指定します。"
+msgstr ""
+"VG に対する名前を指定します。たとえば <literal>system</literal> のように指定"
+"します。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:99
@@ -174,9 +173,9 @@ msgid ""
 "defines the size of a physical block in the volume group. All the disk space "
 "in a volume group is handled in blocks of this size."
 msgstr ""
-"<guimenu>物理エクステントサイズ</guimenu> を選択します。この値は、ボリュームグループ内での"
-"物理的なブロックのサイズを設定するものです。ボリュームグループ内にある全てのディスク領域は、"
-"このサイズのブロック単位で処理が行なわれます。"
+"<guimenu>物理エクステントサイズ</guimenu> を選択します。この値は、ボリューム"
+"グループ内での物理的なブロックのサイズを設定するものです。ボリュームグループ"
+"内にある全てのディスク領域は、このサイズのブロック単位で処理が行なわれます。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:106
@@ -186,9 +185,9 @@ msgid ""
 "<guimenu>Add</guimenu> . Selecting several devices is possible by holding "
 "<keycap function=\"control\"/> while selecting the devices."
 msgstr ""
-"デバイスを選択して <guimenu>Add</guimenu> を押し、 VG 内に PV を追加して"
-"いきます。デバイスを選択する際、 <keycap function=\"control\"/> を押しながら"
-"選択すると、複数のデバイスを選択することができます。"
+"デバイスを選択して <guimenu>Add</guimenu> を押し、 VG 内に PV を追加していき"
+"ます。デバイスを選択する際、 <keycap function=\"control\"/> を押しながら選択"
+"すると、複数のデバイスを選択することができます。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:113
@@ -196,7 +195,9 @@ msgstr ""
 msgid ""
 "Select <guimenu>Finish</guimenu> to make the VG available to further "
 "configuration steps."
-msgstr "<guimenu>完了</guimenu> を押すと VG が作成され、後続の手順を実施できるようになります。"
+msgstr ""
+"<guimenu>完了</guimenu> を押すと VG が作成され、後続の手順を実施できるように"
+"なります。"
 
 #. Tag: title
 #: deployment_expert_partitioner_lvm.xml:120
@@ -213,10 +214,10 @@ msgid ""
 "click <guimenu>Resize</guimenu> . In the following window, you can add or "
 "remove PVs to the selected volume group."
 msgstr ""
-"既にボリュームグループを作成済みで、物理ボリュームを追加もしくは削除したい場合は、"
-"まず <guimenu>ボリューム管理</guimenu> 内で対象のボリュームグループを選択して、"
-" <guimenu>サイズ変更</guimenu> を選択します。表示されているウインドウ内で、"
-"必要な物理ボリュームの追加や削除を行なうことができるようになります。"
+"既にボリュームグループを作成済みで、物理ボリュームを追加もしくは削除したい場"
+"合は、まず <guimenu>ボリューム管理</guimenu> 内で対象のボリュームグループを選"
+"択して、 <guimenu>サイズ変更</guimenu> を選択します。表示されているウインドウ"
+"内で、必要な物理ボリュームの追加や削除を行なうことができるようになります。"
 
 #. Tag: title
 #: deployment_expert_partitioner_lvm.xml:138
@@ -236,13 +237,13 @@ msgid ""
 "the volume group has been occupied. Assign at least one LV to each volume "
 "group."
 msgstr ""
-"ボリュームグループに物理ボリュームを追加したら、あとはオペレーティングシステムが"
-"使用する論理ボリュームの作成を行ないます。まずは対象のボリュームグループを"
-"選択して、 <guimenu>論理ボリューム</guimenu> タブに移動します。その後、"
-" <guimenu>追加</guimenu> , <guimenu>編集</guimenu> , <guimenu>サイズ変更</guimenu> ,"
-" <guimenu>削除</guimenu> のボタンを利用して、ボリュームグループを使用していきます。"
-"ただし、 1 つのボリュームグループに対して、 1 つ以上の論理ボリュームを割り当てる"
-"必要があります。"
+"ボリュームグループに物理ボリュームを追加したら、あとはオペレーティングシステ"
+"ムが使用する論理ボリュームの作成を行ないます。まずは対象のボリュームグループ"
+"を選択して、 <guimenu>論理ボリューム</guimenu> タブに移動します。その後、 "
+"<guimenu>追加</guimenu> , <guimenu>編集</guimenu> , <guimenu>サイズ変更</"
+"guimenu> , <guimenu>削除</guimenu> のボタンを利用して、ボリュームグループを使"
+"用していきます。ただし、 1 つのボリュームグループに対して、 1 つ以上の論理ボ"
+"リュームを割り当てる必要があります。"
 
 #. Tag: title
 #: deployment_expert_partitioner_lvm.xml:148
@@ -256,7 +257,9 @@ msgstr "論理ボリューム (LV) の管理"
 msgid ""
 "Click <guimenu>Add</guimenu> and go through the wizard-like pop-up that "
 "opens:"
-msgstr "<guimenu>追加</guimenu> を押してウイザードを開きます。それぞれ下記のように設定します:"
+msgstr ""
+"<guimenu>追加</guimenu> を押してウイザードを開きます。それぞれ下記のように設"
+"定します:"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:164
@@ -266,8 +269,9 @@ msgid ""
 "<filename>/home</filename> , a name like <literal>HOME</literal> could be "
 "used."
 msgstr ""
-"まずは LV の名前を入力します。たとえば <filename>/home</filename> にマウントする"
-"論理ボリュームであれば、 <literal>HOME</literal> のような名前を指定します。"
+"まずは LV の名前を入力します。たとえば <filename>/home</filename> にマウント"
+"する論理ボリュームであれば、 <literal>HOME</literal> のような名前を指定しま"
+"す。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:171
@@ -280,12 +284,13 @@ msgid ""
 "total sum of all thin volumes stored in a thin pool can exceed the size of "
 "the pool itself."
 msgstr ""
-"次に LV の種類を指定します。 <guimenu>通常ボリューム</guimenu> , <guimenu>Thin "
-"プール</guimenu> , <guimenu>Thin ボリューム</guimenu> のいずれかを選択することができます。"
-"なお、 Thin ボリュームを作成する場合は、あらかじめ Thin プールを先に作成して"
-"おく必要があることに注意してください。 Thin プロビジョニングを使用する最大の"
-"利点は、 Thin プール内に保存する全ての Thin ボリュームの合計サイズは、プール"
-"それ自身のサイズを超えて設定できる、という点です。"
+"次に LV の種類を指定します。 <guimenu>通常ボリューム</guimenu> , "
+"<guimenu>Thin プール</guimenu> , <guimenu>Thin ボリューム</guimenu> のいずれ"
+"かを選択することができます。なお、 Thin ボリュームを作成する場合は、あらかじ"
+"め Thin プールを先に作成しておく必要があることに注意してください。 Thin プロ"
+"ビジョニングを使用する最大の利点は、 Thin プール内に保存する全ての Thin ボ"
+"リュームの合計サイズは、プールそれ自身のサイズを超えて設定できる、という点で"
+"す。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:181
@@ -294,8 +299,9 @@ msgid ""
 "Select the size and the number of stripes of the LV. If you have only one "
 "PV, selecting more than one stripe is not useful."
 msgstr ""
-"論理ボリュームに対して設定するサイズと、スイライプ数を指定します。なお、物理ボリュームが"
-" 1 つしか無いボリュームグループの場合、複数のストライプを指定しても意味がありません。"
+"論理ボリュームに対して設定するサイズと、スイライプ数を指定します。なお、物理"
+"ボリュームが 1 つしか無いボリュームグループの場合、複数のストライプを指定して"
+"も意味がありません。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:187
@@ -314,13 +320,14 @@ msgid ""
 "Stripe \"1\" means \"no striping\". Striping only makes sense with PVs on "
 "different hard disks, otherwise performance will decrease."
 msgstr ""
-"ストライプを使用することで、データストリームを複数の物理ボリューム内に分散"
-"させて配置する (ストライピング) ことができます。ただし、ボリュームのストライピングは"
-"異なる物理ボリューム間でのみ行なわれるものであり、これによって分散を実現している"
-"ことに注意してください。また、ストライプ数の最大値は物理ボリュームの個数で、"
-"\"1\" は \"ストライピングしない\" ことを意味します。さらに、ストライピングは"
-"異なるハードディスクにある複数の物理ボリュームでのみ効果を発揮するもので、"
-"同じハードディスク内で設定してしまうと、むしろ性能が下がってしまいます。"
+"ストライプを使用することで、データストリームを複数の物理ボリューム内に分散さ"
+"せて配置する (ストライピング) ことができます。ただし、ボリュームのストライピ"
+"ングは異なる物理ボリューム間でのみ行なわれるものであり、これによって分散を実"
+"現していることに注意してください。また、ストライプ数の最大値は物理ボリューム"
+"の個数で、\"1\" は \"ストライピングしない\" ことを意味します。さらに、ストラ"
+"イピングは異なるハードディスクにある複数の物理ボリュームでのみ効果を発揮する"
+"もので、同じハードディスク内で設定してしまうと、むしろ性能が下がってしまいま"
+"す。"
 
 #. Tag: title
 #: deployment_expert_partitioner_lvm.xml:201
@@ -336,9 +343,9 @@ msgid ""
 "concerning striping. Any mistake made here is apparent only later when the "
 "LVM is implemented on disk."
 msgstr ""
-"&yast; は現時点では、ストライピングに関するパラメータの正しさをチェックすることが"
-"できません。ここでの設定が誤っていても、 LVM がディスク内で設定されるまで、"
-"エラーにはなりません。"
+"&yast; は現時点では、ストライピングに関するパラメータの正しさをチェックするこ"
+"とができません。ここでの設定が誤っていても、 LVM がディスク内で設定されるま"
+"で、エラーにはなりません。"
 
 #. Tag: para
 #: deployment_expert_partitioner_lvm.xml:208
@@ -349,8 +356,10 @@ msgid ""
 "to these LVs. With <guimenu>Finish</guimenu> , return to the &yast; Expert "
 "Partitioner and finish your work there."
 msgstr ""
-"お使いのシステムに既に LVM を設定してある場合は、既存の論理ボリュームを利用して"
-"設定することもできます。ただし、続行する前に LV に対して適切なマウントポイントを"
-"設定してください。 <guimenu>完了</guimenu> を押すと、 &yast; の熟練者向け"
-"パーティション設定に戻り、残りの作業を実施できるようになります。"
+"お使いのシステムに既に LVM を設定してある場合は、既存の論理ボリュームを利用し"
+"て設定することもできます。ただし、続行する前に LV に対して適切なマウントポイ"
+"ントを設定してください。 <guimenu>完了</guimenu> を押すと、 &yast; の熟練者向"
+"けパーティション設定に戻り、残りの作業を実施できるようになります。"
 
+#~ msgid "yes"
+#~ msgstr "yes"

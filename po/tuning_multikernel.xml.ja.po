@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuning_multikernel.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
-"POT-Creation-Date: 2018-07-05 01:25+0000\n"
+"POT-Creation-Date: 2018-06-28 08:14+0000\n"
 "PO-Revision-Date: 2018-07-30 13:47+0900\n"
 "Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
 "Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
@@ -35,10 +35,11 @@ msgid ""
 "rebooting the machine, the newly added kernel is available as an additional "
 "boot parameter."
 msgstr ""
-"&productname; では、複数のバージョンのカーネルを同時にインストールすることができます。"
-"複数のバージョンのカーネルをインストールしていても、それぞれのバージョンに対する initrd と"
-"起動項目が作成されますので、手作業で何かを行なう必要はありません。通常通り起動するだけで、"
-"いずれかのバージョンを選んで起動することができるようになっています。"
+"&productname; では、複数のバージョンのカーネルを同時にインストールすることが"
+"できます。複数のバージョンのカーネルをインストールしていても、それぞれのバー"
+"ジョンに対する initrd と起動項目が作成されますので、手作業で何かを行なう必要"
+"はありません。通常通り起動するだけで、いずれかのバージョンを選んで起動するこ"
+"とができるようになっています。"
 
 #. Tag: para
 #: tuning_multikernel.xml:23
@@ -49,17 +50,11 @@ msgid ""
 "the update tools (such as the &yast; Online Update or the updater applet), "
 "but instead follow the process described in this chapter."
 msgstr ""
-"このような機能を利用することで、カーネルの更新を行なっても元のバージョンに戻ることが"
-"できるようになります。新しいバージョンのカーネルで何か問題が発生しても、すぐに元の"
-" (問題の起こらない) バージョンのカーネルに戻すことができます。なお、この機能を利用する"
-"場合は、更新ツール (&yast; オンライン更新や更新アプレット) を使用せず、本章で示している"
-"手順に従って作業を行なってください。"
-
-#. Tag: dm:translation
-#: tuning_multikernel.xml:32
-#, no-c-format
-msgid "yes"
-msgstr "yes"
+"このような機能を利用することで、カーネルの更新を行なっても元のバージョンに戻"
+"ることができるようになります。新しいバージョンのカーネルで何か問題が発生して"
+"も、すぐに元の (問題の起こらない) バージョンのカーネルに戻すことができます。"
+"なお、この機能を利用する場合は、更新ツール (&yast; オンライン更新や更新アプ"
+"レット) を使用せず、本章で示している手順に従って作業を行なってください。"
 
 #. Tag: title
 #: tuning_multikernel.xml:37
@@ -76,9 +71,10 @@ msgid ""
 "with &productname; and kernels delivered via the official update channels "
 "for &productname; are supported."
 msgstr ""
-"ご自身で独自にコンパイルしたカーネルや、サードパーティ製のカーネルを使用してしまうと、"
-"サポート契約の範囲外の行為になってしまいます。 &productname; に同梱されているカーネルや、"
-" &productname; 公式の更新チャンネル経由で提供されたカーネルのみをお使いください。"
+"ご自身で独自にコンパイルしたカーネルや、サードパーティ製のカーネルを使用して"
+"しまうと、サポート契約の範囲外の行為になってしまいます。 &productname; に同梱"
+"されているカーネルや、 &productname; 公式の更新チャンネル経由で提供されたカー"
+"ネルのみをお使いください。"
 
 #. Tag: title
 #: tuning_multikernel.xml:46
@@ -94,9 +90,9 @@ msgid ""
 "installed another kernel to set the default boot entry of your choice. See "
 "<xref linkend=\"sec.grub2.yast2.config\"/> for more information."
 msgstr ""
-"複数のバージョンのカーネルをインストールした場合は、ブートローダの設定を確認し、"
-"どのバージョンを既定にするのかを選択してください。詳しくは"
-" <xref linkend=\"sec.grub2.yast2.config\"/> をお読みください。"
+"複数のバージョンのカーネルをインストールした場合は、ブートローダの設定を確認"
+"し、どのバージョンを既定にするのかを選択してください。詳しくは <xref linkend="
+"\"sec.grub2.yast2.config\"/> をお読みください。"
 
 #. Tag: title
 #: tuning_multikernel.xml:54
@@ -113,10 +109,10 @@ msgid ""
 "os=\"osuse\">&opensuse; Leap</phrase> . To verify this setting, proceed as "
 "follows:"
 msgstr ""
-"ソフトウエアパッケージに対して、複数のバージョンをインストールできるようにする"
-"機能 (マルチバージョン対応) は、 <phrase os=\"sles;sled\">&sls; 12</phrase> <phrase "
-"os=\"osuse\">&opensuse; Leap</phrase> 以降では既定で有効化されています。設定を"
-"確認するには、下記の手順で行ないます:"
+"ソフトウエアパッケージに対して、複数のバージョンをインストールできるようにす"
+"る機能 (マルチバージョン対応) は、 <phrase os=\"sles;sled\">&sls; 12</"
+"phrase> <phrase os=\"osuse\">&opensuse; Leap</phrase> 以降では既定で有効化さ"
+"れています。設定を確認するには、下記の手順で行ないます:"
 
 #. Tag: para
 #: tuning_multikernel.xml:73
@@ -127,8 +123,8 @@ msgid ""
 "appears uncommented:"
 msgstr ""
 "<literal>multiversion</literal> で文字列検索を行ないます。この機能に対応する"
-"全てのカーネルパッケージに対して、マルチバージョン機能が有効化されている場合は、"
-"下記のような行がコメントアウトされていない形で書かれているはずです:"
+"全てのカーネルパッケージに対して、マルチバージョン機能が有効化されている場合"
+"は、下記のような行がコメントアウトされていない形で書かれているはずです:"
 
 #. Tag: screen
 #: tuning_multikernel.xml:78
@@ -144,9 +140,10 @@ msgid ""
 "names as a comma-separated list to the <literal>multiversion</literal> "
 "option in <filename>/etc/zypp/zypp.conf</filename> &mdash;for example"
 msgstr ""
-"特定のカーネルフレーバーに対してのみマルチバージョン対応を行なう場合は、"
-" <filename>/etc/zypp/zypp.conf</filename> 内の <literal>multiversion</literal> "
-"オプション内に、下記のような形でパッケージ名をカンマ区切りで指定します:"
+"特定のカーネルフレーバーに対してのみマルチバージョン対応を行なう場合は、 "
+"<filename>/etc/zypp/zypp.conf</filename> 内の <literal>multiversion</"
+"literal> オプション内に、下記のような形でパッケージ名をカンマ区切りで指定しま"
+"す:"
 
 #. Tag: screen
 #: tuning_multikernel.xml:87
@@ -176,13 +173,13 @@ msgid ""
 "package requirements are still fulfilled by the old kernel that is kept on "
 "the system."
 msgstr ""
-"更新されたカーネルをインストールする場合は、必要なカーネルモジュール"
-" (カーネルモジュールパッケージ) についても、更新されたバージョンに対応するものが"
-"製造元から提供されていることをご確認ください。上記の設定を行なって複数のバージョンの"
-"カーネルがインストールできるようになると、古いカーネルにのみ対応するカーネルモジュールが"
-"存在していても、パッケージの依存関係としては問題が発生しませんので、"
-"新しいカーネルを起動しようとした際に、必要なカーネルモジュールを見つけることが"
-"できずに問題が発生することがあります。"
+"更新されたカーネルをインストールする場合は、必要なカーネルモジュール (カーネ"
+"ルモジュールパッケージ) についても、更新されたバージョンに対応するものが製造"
+"元から提供されていることをご確認ください。上記の設定を行なって複数のバージョ"
+"ンのカーネルがインストールできるようになると、古いカーネルにのみ対応するカー"
+"ネルモジュールが存在していても、パッケージの依存関係としては問題が発生しませ"
+"んので、新しいカーネルを起動しようとした際に、必要なカーネルモジュールを見つ"
+"けることができずに問題が発生することがあります。"
 
 #. Tag: title
 #: tuning_multikernel.xml:108
@@ -203,13 +200,14 @@ msgid ""
 "automatically delete kernels no longer used. By default no kernels are "
 "deleted."
 msgstr ""
-"複数バージョンのカーネルに対応するよう設定していて、頻繁に新しいカーネルをインストール"
-"していると、起動メニューが非常に複雑化していってしまいます。一般的には、 <filename>/boot"
-"</filename> パーティションにはそれほど大きなサイズが割り当てられていないため、"
-" <filename>/boot</filename> の容量不足として顕在化する場合もあります。このような"
-"場合は、 &yast; や zypper を利用して不要なバージョンのカーネルを削除できるだけでなく、"
-" <systemitem class=\"library\">libzypp</systemitem> に対してカーネルの自動削除を"
-"設定することができます。既定では何もカーネルを削除しない設定になっています。"
+"複数バージョンのカーネルに対応するよう設定していて、頻繁に新しいカーネルをイ"
+"ンストールしていると、起動メニューが非常に複雑化していってしまいます。一般的"
+"には、 <filename>/boot</filename> パーティションにはそれほど大きなサイズが割"
+"り当てられていないため、 <filename>/boot</filename> の容量不足として顕在化す"
+"る場合もあります。このような場合は、 &yast; や zypper を利用して不要なバー"
+"ジョンのカーネルを削除できるだけでなく、 <systemitem class=\"library"
+"\">libzypp</systemitem> に対してカーネルの自動削除を設定することができます。"
+"既定では何もカーネルを削除しない設定になっています。"
 
 #. Tag: para
 #: tuning_multikernel.xml:120
@@ -217,7 +215,9 @@ msgstr ""
 msgid ""
 "Open <filename>/etc/zypp/zypp.conf</filename> with the editor of your choice "
 "as &rootuser;."
-msgstr "&rootuser; でエディタを利用して <filename>/etc/zypp/zypp.conf</filename> を開きます。"
+msgstr ""
+"&rootuser; でエディタを利用して <filename>/etc/zypp/zypp.conf</filename> を開"
+"きます。"
 
 #. Tag: para
 #: tuning_multikernel.xml:126
@@ -228,7 +228,8 @@ msgid ""
 "list of the following values:"
 msgstr ""
 "<literal>multiversion.kernels</literal> で文字列検索を行ない、まずはその行の"
-"コメントを外します。このオプションでは、カンマ区切りで下記の値のいずれかを指定します:"
+"コメントを外します。このオプションでは、カンマ区切りで下記の値のいずれかを指"
+"定します:"
 
 #. Tag: title
 #: tuning_multikernel.xml:132
@@ -291,8 +292,8 @@ msgid ""
 "keep the kernel with the lowest version number (the one that was originally "
 "shipped with &productname;)"
 msgstr ""
-"最も古いバージョン番号 (もしくは &productname; の出荷時に添付されている) "
-"のカーネルを維持します"
+"最も古いバージョン番号 (もしくは &productname; の出荷時に添付されている) の"
+"カーネルを維持します"
 
 #. Tag: title
 #: tuning_multikernel.xml:163
@@ -327,9 +328,10 @@ msgid ""
 "<emphasis>after the next reboot</emphasis> and not immediately after the "
 "installation."
 msgstr ""
-"最新のカーネルと、現在使用中のカーネルを維持します。これはマルチバージョン機能を"
-"有効化しない場合と似た動作になりますが、古いほうのカーネルの削除は、インストールの"
-"時点ではなく、 <emphasis>次回の再起動時</emphasis> にのみ行なわれる点が異なります。"
+"最新のカーネルと、現在使用中のカーネルを維持します。これはマルチバージョン機"
+"能を有効化しない場合と似た動作になりますが、古いほうのカーネルの削除は、イン"
+"ストールの時点ではなく、 <emphasis>次回の再起動時</emphasis> にのみ行なわれる"
+"点が異なります。"
 
 #. Tag: term
 #: tuning_multikernel.xml:185
@@ -341,7 +343,8 @@ msgstr "<literal>multiversion.kernels = latest,latest-1,running</literal>"
 #: tuning_multikernel.xml:188
 #, no-c-format
 msgid "Keep the last two kernels and the one currently running."
-msgstr "最新の 2 つのバージョンのカーネルと、現在使用中のカーネルを維持します。"
+msgstr ""
+"最新の 2 つのバージョンのカーネルと、現在使用中のカーネルを維持します。"
 
 #. Tag: term
 #: tuning_multikernel.xml:194
@@ -360,8 +363,8 @@ msgid ""
 "Keep the latest kernel, the one currently running, and "
 "<replaceable>4.4.126-48</replaceable> ."
 msgstr ""
-"最新のカーネルと現在使用中のカーネル、そしてバージョン固定で"
-" <replaceable>4.4.126-48</replaceable> を維持します。"
+"最新のカーネルと現在使用中のカーネル、そしてバージョン固定で "
+"<replaceable>4.4.126-48</replaceable> を維持します。"
 
 #. Tag: title
 #: tuning_multikernel.xml:206
@@ -388,8 +391,9 @@ msgid ""
 "also deleted and cannot be loaded anymore."
 msgstr ""
 "現在使用中のカーネルを維持するように設定していないと、カーネルを更新した際に"
-"使用中のカーネルパッケージが削除されてしまいます。パッケージにはカーネルモジュールが"
-"含まれますので、更新後は新しいカーネルモジュールを読み込めなくなってしまいます。"
+"使用中のカーネルパッケージが削除されてしまいます。パッケージにはカーネルモ"
+"ジュールが含まれますので、更新後は新しいカーネルモジュールを読み込めなくなっ"
+"てしまいます。"
 
 #. Tag: para
 #: tuning_multikernel.xml:216
@@ -398,8 +402,8 @@ msgid ""
 "If you decide not to keep the running kernel, always reboot immediately "
 "after a kernel upgrade to avoid issues with modules."
 msgstr ""
-"現在使用中のカーネルを維持しない場合は、カーネルの更新後すぐに再起動を行なうように"
-"して、モジュールによる問題を回避してください。"
+"現在使用中のカーネルを維持しない場合は、カーネルの更新後すぐに再起動を行なう"
+"ようにして、モジュールによる問題を回避してください。"
 
 #. Tag: title
 #: tuning_multikernel.xml:225
@@ -413,7 +417,9 @@ msgstr "設定例: 再起動後に古いカーネルのみを削除する設定"
 msgid ""
 "You want to make sure that an old kernel will only be deleted after the "
 "system has rebooted successfully with the new kernel."
-msgstr "新しいカーネルで正常に再起動ができた場合にのみ、再起動時に古いカーネルを削除する設定です。"
+msgstr ""
+"新しいカーネルで正常に再起動ができた場合にのみ、再起動時に古いカーネルを削除"
+"する設定です。"
 
 #. Tag: screen
 #: tuning_multikernel.xml:233
@@ -428,8 +434,8 @@ msgid ""
 "The previous parameters tell the system to keep the latest kernel and the "
 "running one only if they differ."
 msgstr ""
-"上記のパラメータを指定すると、最新のカーネルと現在使用中のカーネル (最新のカーネルでなければ) "
-"を維持する動作になります。"
+"上記のパラメータを指定すると、最新のカーネルと現在使用中のカーネル (最新の"
+"カーネルでなければ) を維持する動作になります。"
 
 #. Tag: title
 #: tuning_multikernel.xml:241
@@ -443,7 +449,9 @@ msgstr "設定例: 古いカーネルを残す設定"
 msgid ""
 "You want to keep one or more kernel versions to have one or more "
 "<quote>spare</quote> kernels."
-msgstr "1 つ以上のバージョンのカーネルを、 <quote>予備の</quote> カーネルとして残しておく設定です。"
+msgstr ""
+"1 つ以上のバージョンのカーネルを、 <quote>予備の</quote> カーネルとして残して"
+"おく設定です。"
 
 #. Tag: para
 #: tuning_multikernel.xml:246
@@ -453,9 +461,9 @@ msgid ""
 "(for example, your machine does not boot), you still can use one or more "
 "kernel versions which are known to be good."
 msgstr ""
-"この設定は、テスト目的でカーネルをインストールするような場合に便利です。"
-"マシンの起動ができないなど何らかの問題が発生した場合、予備として残しておいた"
-"カーネルに戻すことができます。"
+"この設定は、テスト目的でカーネルをインストールするような場合に便利です。マシ"
+"ンの起動ができないなど何らかの問題が発生した場合、予備として残しておいたカー"
+"ネルに戻すことができます。"
 
 #. Tag: screen
 #: tuning_multikernel.xml:254
@@ -472,10 +480,10 @@ msgid ""
 "<literal>latest,running</literal> ) and its two immediate predecessors "
 "(configured as <literal>latest-1</literal> and <literal>latest-2</literal> )."
 msgstr ""
-"新しいバージョンのカーネルをインストールしてシステムを再起動すると、システムは"
-" 3 種類のバージョンのカーネル (現在のカーネル (<literal>latest,"
-"running</literal> と 2 種類の古いカーネル (<literal>latest-1</literal> ,"
-" <literal>latest-2</literal>)) を残すようになります。"
+"新しいバージョンのカーネルをインストールしてシステムを再起動すると、システム"
+"は 3 種類のバージョンのカーネル (現在のカーネル (<literal>latest,running</"
+"literal> と 2 種類の古いカーネル (<literal>latest-1</literal> , "
+"<literal>latest-2</literal>)) を残すようになります。"
 
 #. Tag: title
 #: tuning_multikernel.xml:264
@@ -491,9 +499,9 @@ msgid ""
 "you are also compiling your own kernel version and want to make sure that "
 "the system will keep them."
 msgstr ""
-"通常のシステム更新を行ない、必要に応じて新しいバージョンのカーネルをインストール"
-"します。ただし、独自のバージョンのカーネルをコンパイルしていて、そのバージョンに"
-"ついては、削除せずに残しておきたいものとします。"
+"通常のシステム更新を行ない、必要に応じて新しいバージョンのカーネルをインス"
+"トールします。ただし、独自のバージョンのカーネルをコンパイルしていて、その"
+"バージョンについては、削除せずに残しておきたいものとします。"
 
 #. Tag: para
 #: tuning_multikernel.xml:270
@@ -516,9 +524,10 @@ msgid ""
 "<literal>latest,running</literal> ) and your self-compiled kernel "
 "(configured as <literal>3.12.28-4.20</literal> )."
 msgstr ""
-"新しいバージョンのカーネルをインストールしてシステムを再起動すると、システムは"
-" 2 種類のバージョンのカーネル (現在のカーネル (<literal>latest,running</literal>) と"
-" 独自にコンパイルしたカーネル (<literal>3.12.28-4.20</literal>) を残すようになります。"
+"新しいバージョンのカーネルをインストールしてシステムを再起動すると、システム"
+"は 2 種類のバージョンのカーネル (現在のカーネル (<literal>latest,running</"
+"literal>) と 独自にコンパイルしたカーネル (<literal>3.12.28-4.20</literal>) "
+"を残すようになります。"
 
 #. Tag: title
 #: tuning_multikernel.xml:283
@@ -530,7 +539,9 @@ msgstr "&yast; による複数バージョンのカーネルのインストー�
 #: tuning_multikernel.xml:284
 #, no-c-format
 msgid "You can install or remove multiple kernels with &yast;:"
-msgstr "&yast; を利用することで、複数のバージョンのカーネルをインストールしたり削除したりすることができます:"
+msgstr ""
+"&yast; を利用することで、複数のバージョンのカーネルをインストールしたり削除し"
+"たりすることができます:"
 
 #. Tag: para
 #: tuning_multikernel.xml:289
@@ -540,9 +551,9 @@ msgid ""
 "<guimenu>Software</guimenu> <guimenu>Software Management</guimenu> </"
 "menuchoice> ."
 msgstr ""
-"&yast; を起動して <menuchoice> <guimenu>ソフトウエア</guimenu> "
-"<guimenu>ソフトウエア管理</guimenu> </menuchoice> を選び、ソフトウエアマネージャを"
-"起動します。"
+"&yast; を起動して <menuchoice> <guimenu>ソフトウエア</guimenu> <guimenu>ソフ"
+"トウエア管理</guimenu> </menuchoice> を選び、ソフトウエアマネージャを起動しま"
+"す。"
 
 #. Tag: para
 #: tuning_multikernel.xml:296
@@ -553,8 +564,8 @@ msgid ""
 "<guimenu>Multiversion Packages</guimenu> </menuchoice> ."
 msgstr ""
 "<menuchoice> <guimenu>表示</guimenu> <guimenu>パッケージグループ</guimenu> "
-"<guimenu>複数バージョンのパッケージ</guimenu> </menuchoice> を選択すると、"
-"複数バージョンに対応したパッケージを一覧表示することができます。"
+"<guimenu>複数バージョンのパッケージ</guimenu> </menuchoice> を選択すると、複"
+"数バージョンに対応したパッケージを一覧表示することができます。"
 
 #. Tag: title
 #: tuning_multikernel.xml:302
@@ -569,8 +580,8 @@ msgid ""
 "Select a package and open its <guimenu>Version</guimenu> tab in the bottom "
 "pane on the left."
 msgstr ""
-"パッケージを選択したあと、 <!-- ?? on the left --> 右下にある <guimenu>バージョン</guimenu> "
-"タブを選択します。"
+"パッケージを選択したあと、 <!-- ?? on the left --> 右下にある <guimenu>バー"
+"ジョン</guimenu> タブを選択します。"
 
 #. Tag: para
 #: tuning_multikernel.xml:320
@@ -579,8 +590,9 @@ msgid ""
 "To install a package, click the check box next to it. A green check mark "
 "indicates it is selected for installation."
 msgstr ""
-"パッケージをインストールするには、左側にあるチェックボックスにチェックを入れます。"
-"緑色のチェックマークが、インストールするよう選択されていることを表わしています。"
+"パッケージをインストールするには、左側にあるチェックボックスにチェックを入れ"
+"ます。緑色のチェックマークが、インストールするよう選択されていることを表わし"
+"ています。"
 
 #. Tag: para
 #: tuning_multikernel.xml:324
@@ -590,8 +602,9 @@ msgid ""
 "click the check box next to it until a red <literal>X</literal> indicates it "
 "is selected for removal."
 msgstr ""
-"インストール済みのパッケージ (白いチェックマークが付いているもの) を削除するには、"
-"左側にあるチェックボックスが赤い <literal>X</literal> 印になるようにチェックを入れます。"
+"インストール済みのパッケージ (白いチェックマークが付いているもの) を削除する"
+"には、左側にあるチェックボックスが赤い <literal>X</literal> 印になるように"
+"チェックを入れます。"
 
 #. Tag: para
 #: tuning_multikernel.xml:331
@@ -608,8 +621,11 @@ msgstr "zypper による複数バージョンのカーネルのインストー�
 #. Tag: para
 #: tuning_multikernel.xml:339
 #, no-c-format
-msgid "You can install or remove multiple kernels with <command>zypper</command> :"
-msgstr "<command>zypper</command> を利用することでも、複数バージョンのカーネルをインストールしたり削除したりすることができます:"
+msgid ""
+"You can install or remove multiple kernels with <command>zypper</command> :"
+msgstr ""
+"<command>zypper</command> を利用することでも、複数バージョンのカーネルをイン"
+"ストールしたり削除したりすることができます:"
 
 #. Tag: para
 #: tuning_multikernel.xml:344
@@ -618,36 +634,47 @@ msgid ""
 "Use the command <command>zypper se -s 'kernel*'</command> to display a list "
 "of all kernel packages available:"
 msgstr ""
-"<command>zypper se -s 'kernel*'</command> と入力して実行すると、利用可能な全ての"
-"バージョンのカーネルパッケージを一覧表示することができます:"
+"<command>zypper se -s 'kernel*'</command> と入力して実行すると、利用可能な全"
+"てのバージョンのカーネルパッケージを一覧表示することができます:"
 
 #. Tag: screen
 #: tuning_multikernel.xml:348
 #, no-c-format
 msgid ""
-"<?dbsuse-fo font-size=\"7pt\"?>"
-"S | Name           | Type       | Version         | Arch   | Repository\n"
-"--+----------------+------------+-----------------+--------+-------------------\n"
-"v | kernel-default | package    | 2.6.32.10-0.4.1 | x86_64 | Alternative Kernel\n"
-"i | kernel-default | package    | 2.6.32.9-0.5.1  | x86_64 | (System Packages)\n"
-"  | kernel-default | srcpackage | 2.6.32.10-0.4.1 | noarch | Alternative Kernel\n"
-"i | kernel-default | package    | 2.6.32.9-0.5.1  | x86_64 | (System Packages)\n"
+"<?dbsuse-fo font-size=\"7pt\"?>S | Name           | Type       | "
+"Version         | Arch   | Repository\n"
+"--+----------------+------------+-----------------+--------"
+"+-------------------\n"
+"v | kernel-default | package    | 2.6.32.10-0.4.1 | x86_64 | Alternative "
+"Kernel\n"
+"i | kernel-default | package    | 2.6.32.9-0.5.1  | x86_64 | (System "
+"Packages)\n"
+"  | kernel-default | srcpackage | 2.6.32.10-0.4.1 | noarch | Alternative "
+"Kernel\n"
+"i | kernel-default | package    | 2.6.32.9-0.5.1  | x86_64 | (System "
+"Packages)\n"
 "..."
 msgstr ""
-"<?dbsuse-fo font-size=\"7pt\"?>"
-"S | 名前           | 種類             | バージョン       | アーキテクチャ | リポジトリ\n"
-"--+----------------+------------------+-----------------+---------------+-------------------\n"
-"v | kernel-default | パッケージ       | 2.6.32.10-0.4.1 | x86_64        | Alternative Kernel\n"
-"i | kernel-default | パッケージ       | 2.6.32.9-0.5.1  | x86_64        | (System Packages)\n"
-"  | kernel-default | ソースパッケージ | 2.6.32.10-0.4.1 | noarch        | Alternative Kernel\n"
-"i | kernel-default | パッケージ       | 2.6.32.9-0.5.1  | x86_64        | (System Packages)\n"
+"<?dbsuse-fo font-size=\"7pt\"?>S | 名前           | 種類             | バー"
+"ジョン       | アーキテクチャ | リポジトリ\n"
+"--+----------------+------------------+-----------------+---------------"
+"+-------------------\n"
+"v | kernel-default | パッケージ       | 2.6.32.10-0.4.1 | x86_64        | "
+"Alternative Kernel\n"
+"i | kernel-default | パッケージ       | 2.6.32.9-0.5.1  | x86_64        | "
+"(System Packages)\n"
+"  | kernel-default | ソースパッケージ | 2.6.32.10-0.4.1 | noarch        | "
+"Alternative Kernel\n"
+"i | kernel-default | パッケージ       | 2.6.32.9-0.5.1  | x86_64        | "
+"(System Packages)\n"
 "..."
 
 #. Tag: para
 #: tuning_multikernel.xml:357
 #, no-c-format
 msgid "Specify the exact version when installing:"
-msgstr "特定のバージョンをインストールしたい場合は、下記のように入力して実行します:"
+msgstr ""
+"特定のバージョンをインストールしたい場合は、下記のように入力して実行します:"
 
 #. Tag: screen
 #: tuning_multikernel.xml:360
@@ -664,9 +691,10 @@ msgid ""
 "command> <replaceable>PACKAGENAME-VERSION</replaceable> to remove the "
 "package."
 msgstr ""
-"カーネルを削除する場合は、まず <command>zypper se -si 'kernel*'</command> を実行して"
-"インストール済みのカーネルを確認して、 <command>zypper rm</command> <replaceable>"
-"パッケージ名-バージョン</replaceable> のように入力して実行し、パッケージを削除します。"
+"カーネルを削除する場合は、まず <command>zypper se -si 'kernel*'</command> を"
+"実行してインストール済みのカーネルを確認して、 <command>zypper rm</command> "
+"<replaceable>パッケージ名-バージョン</replaceable> のように入力して実行し、"
+"パッケージを削除します。"
 
 #. Tag: title
 #: tuning_multikernel.xml:373
@@ -674,7 +702,8 @@ msgstr ""
 msgid ""
 "Installing the Latest Kernel Version from the Repository <literal>Kernel:"
 "HEAD</literal>"
-msgstr "<literal>Kernel:HEAD</literal> リポジトリからの最新カーネルのインストール"
+msgstr ""
+"<literal>Kernel:HEAD</literal> リポジトリからの最新カーネルのインストール"
 
 #. Tag: para
 #: tuning_multikernel.xml:378
@@ -683,8 +712,8 @@ msgid ""
 "Add the <literal>Kernel:HEAD</literal> repository with (the repository is "
 "added using the alias <literal>kernel-repo</literal> ):"
 msgstr ""
-"<literal>Kernel:HEAD</literal> リポジトリを追加します (リポジトリには、"
-" <literal>kernel-repo</literal> という別名を付与します):"
+"<literal>Kernel:HEAD</literal> リポジトリを追加します (リポジトリには、 "
+"<literal>kernel-repo</literal> という別名を付与します):"
 
 #. Tag: screen
 #: tuning_multikernel.xml:382
@@ -717,8 +746,8 @@ msgid ""
 "To upgrade the kernel to the latest version in the <literal>Kernel:HEAD</"
 "literal> repository, run:"
 msgstr ""
-"<literal>Kernel:HEAD</literal> が提供する最新バージョンのカーネルにアップグレード"
-"したい場合は、下記のように実行します:"
+"<literal>Kernel:HEAD</literal> が提供する最新バージョンのカーネルにアップグ"
+"レードしたい場合は、下記のように実行します:"
 
 #. Tag: screen
 #: tuning_multikernel.xml:397
@@ -749,11 +778,14 @@ msgid ""
 "HEAD</literal> , be aware that it may break your system. Make sure to always "
 "have the original kernel available for booting as well."
 msgstr ""
-"カーネルに対する重要な修正は &suse; 側で既存のバージョンに移植 (バックポート) され、"
-"公式の更新として公開されるため、 <literal>Kernel:HEAD</literal> が提供するカーネルを"
-"インストールする必要はありません。最新のバージョンのカーネルは、主にカーネルの開発者や"
-"テスターがインストールして使用するものです。また、 <literal>Kernel:HEAD</literal> から"
-"インストールを行なう場合は、お使いのシステムが壊れてしまうことがあり得ることにも注意"
-"してください。さらに、元のバージョンのカーネルについても、起動時の問題が発生した場合に"
-"向けて残しておいてください。"
+"カーネルに対する重要な修正は &suse; 側で既存のバージョンに移植 (バックポー"
+"ト) され、公式の更新として公開されるため、 <literal>Kernel:HEAD</literal> が"
+"提供するカーネルをインストールする必要はありません。最新のバージョンのカーネ"
+"ルは、主にカーネルの開発者やテスターがインストールして使用するものです。ま"
+"た、 <literal>Kernel:HEAD</literal> からインストールを行なう場合は、お使いの"
+"システムが壊れてしまうことがあり得ることにも注意してください。さらに、元の"
+"バージョンのカーネルについても、起動時の問題が発生した場合に向けて残しておい"
+"てください。"
 
+#~ msgid "yes"
+#~ msgstr "yes"
