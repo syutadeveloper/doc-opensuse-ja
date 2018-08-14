@@ -1,32 +1,35 @@
+# translation of net_router.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: net_router.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-14 17:33+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: net_router.xml:8
 #, no-c-format
 msgid "Basic Router Setup"
-msgstr ""
+msgstr "基本的なルータの構築"
 
 #. Tag: dm:translation
 #: net_router.xml:15
 #, no-c-format
 msgid "yes"
-msgstr ""
+msgstr "yes"
 
 #. Tag: para
 #: net_router.xml:19
@@ -39,12 +42,19 @@ msgid ""
 "with features such as NAT (Network Address Translation) or advanced "
 "firewalling."
 msgstr ""
+"ルータとはネットワークデバイスの一種で、一方のインターフェイスからデータ"
+" (ネットワークパケット) を受信して、他方 (複数の場合もある) に送信して中継する"
+"機器です。ルータはローカルのネットワークからリモートのネットワーク (インターネット) "
+"に接続する際に一般的に使用されているほか、ローカルのネットワーク同士を接続する場合にも"
+"用いられることがあります。 &productname; でも、 NAT (ネットワークアドレス変換; Network "
+"Address Translation) や高度なファイアウオール機能の付属したルータを構築することが"
+"できます。"
 
 #. Tag: para
 #: net_router.xml:29
 #, no-c-format
 msgid "The following are basic steps to turn &productname; into a router."
-msgstr ""
+msgstr "&productname; をルータにするには、下記の基本的な手順を踏む必要があります。"
 
 #. Tag: para
 #: net_router.xml:35
@@ -53,6 +63,8 @@ msgid ""
 "Enable forwarding, for example in <filename>/etc/sysctl.d/50-router.conf</"
 "filename>"
 msgstr ""
+"まずはパケットの転送機能を有効化します。たとえば <filename>/etc/sysctl.d/50-router.conf</"
+"filename> 内で下記のように設定します:"
 
 #. Tag: screen
 #: net_router.xml:39
@@ -61,6 +73,8 @@ msgid ""
 "net.ipv4.conf.all.forwarding = 1\n"
 "net.ipv6.conf.all.forwarding = 1"
 msgstr ""
+"net.ipv4.conf.all.forwarding = 1\n"
+"net.ipv6.conf.all.forwarding = 1"
 
 #. Tag: para
 #: net_router.xml:41
@@ -71,6 +85,9 @@ msgid ""
 "IPv6 RA (router advertisement) anymore, which also prevents the creation of "
 "a default route."
 msgstr ""
+"あとはそれぞれのインターフェイスに対して、 IPv4 と IPv6 の固定アドレスを設定します。"
+"パケットの転送機能を有効化すると、 IPv6 の RA (ルータ告知; Router Advertisement) "
+"などのいくつかの仕組みが無効化され、既定のルートも自動では設定されなくなります。"
 
 #. Tag: para
 #: net_router.xml:49
@@ -81,18 +98,22 @@ msgid ""
 "<quote>normal multi-home hosts</quote> ), you must disable the IPv4 reverse "
 "path filter (this feature does not currently exist for IPv6):"
 msgstr ""
+"多くの場合 (たとえば複数のインターフェイスを介して同じネットワークに到達できる"
+"ような場合や、 VPN を一般的に使用している <quote>一般的なマルチホームホスト</quote> "
+"の場合など) において、 IPv4 のリバースパスフィルタを無効化しなければなりません"
+" (この機能は、 IPv6 では現在存在していません):"
 
 #. Tag: screen
 #: net_router.xml:55
 #, no-c-format
 msgid "net.ipv4.conf.all.rp_filter = 0"
-msgstr ""
+msgstr "net.ipv4.conf.all.rp_filter = 0"
 
 #. Tag: para
 #: net_router.xml:56
 #, no-c-format
 msgid "You can also filter with firewall settings instead."
-msgstr ""
+msgstr "ファイアウオールの設定でフィルタすることもできます。"
 
 #. Tag: para
 #: net_router.xml:61
@@ -102,6 +123,8 @@ msgid ""
 "interface) and create a default (or also a more specific) IPv6 route again, "
 "set:"
 msgstr ""
+"外部やアップリンク、 ISP などから IPv6 RA を受け付けて、 IPv6 のデフォルトルートを"
+"作成するようにするには、下記のように設定します:"
 
 #. Tag: screen
 #: net_router.xml:66
@@ -110,6 +133,8 @@ msgid ""
 "net.ipv6.conf.${ifname}.accept_ra = 2\n"
 "net.ipv6.conf.${ifname}.autoconf = 0"
 msgstr ""
+"net.ipv6.conf.${ifname}.accept_ra = 2\n"
+"net.ipv6.conf.${ifname}.autoconf = 0"
 
 #. Tag: para
 #: net_router.xml:68
@@ -118,6 +143,8 @@ msgid ""
 "(Note: <quote><literal>eth0.42</literal></quote> needs to be written as "
 "<literal>eth0/42</literal> in a dot-separated sysfs path.)"
 msgstr ""
+"(注意: <quote><literal>eth0.42</literal></quote> のようなインターフェイスの場合は、"
+" <literal>eth0/42</literal> のように sysfs パス形式で記述する必要があります)"
 
 #. Tag: para
 #: net_router.xml:75
@@ -128,6 +155,10 @@ msgid ""
 "txt\">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</"
 "link> ."
 msgstr ""
+"さらなるルータの動作に転送ポリシーなどについて、詳しくは <link "
+"xlink:href=\"https://www.kernel.org/doc/Documentation/networking/ip-sysctl."
+"txt\">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</"
+"link> をお読みください。"
 
 #. Tag: para
 #: net_router.xml:81
@@ -138,6 +169,10 @@ msgid ""
 "and configure <systemitem class=\"daemon\">radvd</systemitem> in <filename>/"
 "etc/radvd.conf</filename> , for example:"
 msgstr ""
+"IPv6 を内部 (もしくは DMZ) インターフェイスに提供し、自分自身を IPv6 ルータとして"
+"動作させて <quote>autoconf ネットワーク</quote> を提供するには、"
+" <systemitem class=\"daemon\">radvd</systemitem> をインストールして"
+" <filename>/etc/radvd.conf</filename> を下記のように設定する必要があります:"
 
 #. Tag: screen
 #: net_router.xml:89
@@ -164,6 +199,25 @@ msgid ""
 "    }\n"
 "}"
 msgstr ""
+"interface eth0\n"
+"{\n"
+"    IgnoreIfMissing on;         # インターフェイスが存在していなくてもエラーにしない\n"
+"\n"
+"    AdvSendAdvert on;           # RA の送信の有効化\n"
+"    AdvManagedFlag on;          # DHCPv6 での IPv6 アドレスの管理\n"
+"    AdvOtherConfigFlag on;      # DNS, NTP などは DHCPv6 のみ\n"
+"\n"
+"    AdvDefaultLifetime 3600;    # クライアント側でのデフォルトルートの有効期間 (1 時間)\n"
+"\n"
+"    prefix 2001:db8:0:1::/64    # (/64 は既定値であり、 autoconf でも必要となる)\n"
+"    {\n"
+"        AdvAutonomous off;         # アドレス autoconf の無効化 (DHCPv6 のみ)\n"
+"\n"
+"        AdvValidLifetime 3600;     # プレフィクス (autoconf アドレス) の有効期間 (1 時間)\n"
+"        AdvPreferredLifetime 1800; # プレフィクス (autoconf アドレス) の更新期間はその半分"
+"h\n"
+"    }\n"
+"}"
 
 #. Tag: para
 #: net_router.xml:108
@@ -172,6 +226,8 @@ msgid ""
 "Configure the firewall to masquerade traffic with NAT from the LAN into the "
 "WAN and to block inbound traffic on the WAN interface:"
 msgstr ""
+"また、 NAT を利用して LAN から WAN にパケットを転送し、それと共にアドレス変換を"
+"行ない、さらに WAN 側からの入力パケットをブロックしたい場合は、下記のように実行します:"
 
 #. Tag: screen
 #: net_router.xml:112
@@ -185,3 +241,8 @@ msgid ""
 "change-interface=<replaceable>LAN_INTERFACE</replaceable>\n"
 "&prompt.sudo;<command>firewall-cmd</command> --reload"
 msgstr ""
+"&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --change-interface=<replaceable>WAN_インターフェイス</replaceable>\n"
+"&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --add-masquerade\n"
+"&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=internal --change-interface=<replaceable>LAN_インターフェイス</replaceable>\n"
+"&prompt.sudo;<command>firewall-cmd</command> --reload"
+

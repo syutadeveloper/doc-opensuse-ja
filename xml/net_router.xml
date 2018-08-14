@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.network.router">
- <title>Basic Router Setup</title>
+ <title>基本的なルータの構築</title>
 
 <!-- 2015-09-28, ke: based on fate#317121, converted to DB -->
 
@@ -15,99 +15,58 @@
   </dm:docmanager>
  </info>
 
- <para>
-  A router is a networking device that delivers and receives data (network
-  packets) to or from more than one network back and forth. You often use a
-  router to connect your local network to the remote network (Internet) or to
-  connect local network segments. With &productname; you can build a router with
-  features such as NAT (Network Address Translation) or advanced firewalling.
- </para>
+ <para>ルータとはネットワークデバイスの一種で、一方のインターフェイスからデータ (ネットワークパケット) を受信して、他方 (複数の場合もある) に送信して中継する機器です。ルータはローカルのネットワークからリモートのネットワーク (インターネット) に接続する際に一般的に使用されているほか、ローカルのネットワーク同士を接続する場合にも用いられることがあります。 &productname; でも、 NAT (ネットワークアドレス変換; Network Address Translation) や高度なファイアウオール機能の付属したルータを構築することができます。</para>
 
 <!-- ============================================================ -->
 
- <para>
-  The following are basic steps to turn &productname; into a router.
- </para>
+ <para>&productname; をルータにするには、下記の基本的な手順を踏む必要があります。</para>
 
  <procedure>
   <step>
-   <para>
-    Enable forwarding, for example in
-    <filename>/etc/sysctl.d/50-router.conf</filename>
-   </para>
+   <para>まずはパケットの転送機能を有効化します。たとえば <filename>/etc/sysctl.d/50-router.conf</filename> 内で下記のように設定します:</para>
 <screen>net.ipv4.conf.all.forwarding = 1
 net.ipv6.conf.all.forwarding = 1</screen>
-   <para>
-    Then provide a static IPv4 and IPv6 IP setup for the interfaces. Enabling
-    forwarding disables several mechanisms, for example IPv6 does not accept an
-    IPv6 RA (router advertisement) anymore, which also prevents the creation of
-    a default route.
-   </para>
+   <para>あとはそれぞれのインターフェイスに対して、 IPv4 と IPv6 の固定アドレスを設定します。パケットの転送機能を有効化すると、 IPv6 の RA (ルータ告知; Router Advertisement) などのいくつかの仕組みが無効化され、既定のルートも自動では設定されなくなります。</para>
   </step>
   <step>
-   <para>
-    In many situations (for example, when you can reach the same network
-    via more than one interface, or when VPN usually is used and already
-    on <quote>normal multi-home hosts</quote>), you must disable the IPv4
-    reverse path filter (this feature does not currently exist for IPv6):
-   </para>
+   <para>多くの場合 (たとえば複数のインターフェイスを介して同じネットワークに到達できるような場合や、 VPN を一般的に使用している <quote>一般的なマルチホームホスト</quote> の場合など) において、 IPv4 のリバースパスフィルタを無効化しなければなりません (この機能は、 IPv6 では現在存在していません):</para>
 <screen>net.ipv4.conf.all.rp_filter = 0</screen>
-   <para>
-    You can also filter with firewall settings instead.
-   </para>
+   <para>ファイアウオールの設定でフィルタすることもできます。</para>
   </step>
   <step>
-   <para>
-    To accept an IPv6 RA (from the router on an external, uplink, or ISP
-    interface) and create a default (or also a more specific) IPv6 route again,
-    set:
-   </para>
+   <para>外部やアップリンク、 ISP などから IPv6 RA を受け付けて、 IPv6 のデフォルトルートを作成するようにするには、下記のように設定します:</para>
 <screen>net.ipv6.conf.${ifname}.accept_ra = 2
 net.ipv6.conf.${ifname}.autoconf = 0</screen>
-   <para>
-    (Note: <quote><literal>eth0.42</literal></quote> needs to be written as
-    <literal>eth0/42</literal> in a dot-separated sysfs path.)
-   </para>
+   <para>(注意: <quote><literal>eth0.42</literal></quote> のようなインターフェイスの場合は、 <literal>eth0/42</literal> のように sysfs パス形式で記述する必要があります)</para>
   </step>
  </procedure>
 
- <para>
-  More router behavior and forwarding dependencies are described in
-  <link xlink:href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</link>.
- </para>
+ <para>さらなるルータの動作に転送ポリシーなどについて、詳しくは <link xlink:href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</link> をお読みください。</para>
 
- <para>
-  To provide IPv6 on your internal (DMZ) interfaces, and announce yourself as
-  an IPv6 router and <quote>autoconf networks</quote> to the clients, install
-  and configure <systemitem class="daemon">radvd</systemitem> in
-  <filename>/etc/radvd.conf</filename>, for example:
- </para>
+ <para>IPv6 を内部 (もしくは DMZ) インターフェイスに提供し、自分自身を IPv6 ルータとして動作させて <quote>autoconf ネットワーク</quote> を提供するには、 <systemitem class="daemon">radvd</systemitem> をインストールして <filename>/etc/radvd.conf</filename> を下記のように設定する必要があります:</para>
 
 <screen>interface eth0
 {
-    IgnoreIfMissing on;         # do not fail if interface missed
+    IgnoreIfMissing on;         # インターフェイスが存在していなくてもエラーにしない
 
-    AdvSendAdvert on;           # enable sending RAs
-    AdvManagedFlag on;          # IPv6 addresses managed via DHCPv6
-    AdvOtherConfigFlag on;      # DNS, NTP... only via DHCPv6
+    AdvSendAdvert on;           # RA の送信の有効化
+    AdvManagedFlag on;          # DHCPv6 での IPv6 アドレスの管理
+    AdvOtherConfigFlag on;      # DNS, NTP などは DHCPv6 のみ
 
-    AdvDefaultLifetime 3600;    # client default route lifetime of 1 hour
+    AdvDefaultLifetime 3600;    # クライアント側でのデフォルトルートの有効期間 (1 時間)
 
-    prefix 2001:db8:0:1::/64    # (/64 is default and required for autoconf)
+    prefix 2001:db8:0:1::/64    # (/64 は既定値であり、 autoconf でも必要となる)
     {
-        AdvAutonomous off;         # Disable address autoconf (DHCPv6 only)
+        AdvAutonomous off;         # アドレス autoconf の無効化 (DHCPv6 のみ)
 
-        AdvValidLifetime 3600;     # prefix (autoconf addr) is valid 1 h
-        AdvPreferredLifetime 1800; # prefix (autoconf addr) is prefered 1/2 h
+        AdvValidLifetime 3600;     # プレフィクス (autoconf アドレス) の有効期間 (1 時間)
+        AdvPreferredLifetime 1800; # プレフィクス (autoconf アドレス) の更新期間はその半分h
     }
 }</screen>
 
- <para>
-  Configure the firewall to masquerade traffic with NAT from the LAN
-  into the WAN and to block inbound traffic on the WAN interface:
- </para>
-<screen>&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --change-interface=<replaceable>WAN_INTERFACE</replaceable>
+ <para>また、 NAT を利用して LAN から WAN にパケットを転送し、それと共にアドレス変換を行ない、さらに WAN 側からの入力パケットをブロックしたい場合は、下記のように実行します:</para>
+<screen>&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --change-interface=<replaceable>WAN_インターフェイス</replaceable>
 &prompt.sudo;<command>firewall-cmd</command> --permanent --zone=external --add-masquerade
-&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=internal --change-interface=<replaceable>LAN_INTERFACE</replaceable>
+&prompt.sudo;<command>firewall-cmd</command> --permanent --zone=internal --change-interface=<replaceable>LAN_インターフェイス</replaceable>
 &prompt.sudo;<command>firewall-cmd</command> --reload</screen>
 </sect1>
