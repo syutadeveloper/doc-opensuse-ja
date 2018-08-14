@@ -16,7 +16,7 @@ my @SkipNodes =
 my @literalNodes =
   ( "screen" );
 my @ignoreNodes =
-  ( "#comment", "remark", "xml-stylesheet", "suse-quickstart" );
+  ( "#comment", "remark", "xml-stylesheet", "suse-quickstart", "dm:translation" );
 my $dummyParaStart =
   "<para xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:xi=\"http://www.w3.org/2001/XInclude\">";
 my $dummyParaEnd = "</para>";
@@ -67,6 +67,10 @@ sub ProcessNode {
 
   # always skip DTD
   if (ref($node) eq "XML::LibXML::Dtd") {
+    return;
+  }
+  # always skip PI
+  if (ref($node) eq "XML::LibXML::PI") {
     return;
   }
 
@@ -223,7 +227,7 @@ __EOF__
             if ($msgmode == 2) {
               $msgid =~ s/\\\\/\\/g;
               $msgid =~ s/\\"/"/g;
-	      $msgbuf =~ s/\\\\/\\/g;
+              $msgbuf =~ s/\\\\/\\/g;
               $msgbuf =~ s/\\"/"/g;
 
               $po{$msgid} = $msgbuf;
