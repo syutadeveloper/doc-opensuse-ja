@@ -24,111 +24,47 @@ osc -A https://api.suse.de sr -m"Update text and image files" home:keichwa:branc
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
- <para>
-  UEFI (Unified Extensible Firmware Interface) is the interface between the
-  firmware that comes with the system hardware, all the hardware components of
-  the system, and the operating system.
- </para>
- <para>
-  UEFI is becoming more and more available on PC systems and thus is replacing
-  the traditional PC-BIOS. UEFI, for example, properly supports 64-bit systems
-  and offers secure booting (<quote>Secure Boot</quote>, firmware version
-  2.3.1c or better required), which is one of its most important features.
-  Lastly, with UEFI a standard firmware will become available on all x86
-  platforms.
- </para>
- <para>
-  UEFI additionally offers the following advantages:
- </para>
+ <para>UEFI (Unified Extensible Firmware Interface) はシステムに付属するファームウエアと、システム内の全てのハードウエアコンポーネント、そしてオペレーティングシステムとの間に存在するインターフェイスを意味する用語です。</para>
+ <para>UEFI は現在の PC システムに順次取り入れられている仕組みで、従来の PC-BIOS を置き換える目的で作られています。たとえば UEFI では 64 ビットシステムを正しくサポートしているほか、最も重要な点として、 <quote>Secure Boot</quote> (ファームウエアバージョン 2.3.1c もしくはそれ以降が必要) と呼ばれる仕組みにも対応しています。最終的には、全ての x86 プラットフォームで利用できるようになるはずのものです。</para>
+ <para>UEFI には、これらに加えて下記の利点が用意されています:</para>
  <itemizedlist mark="bullet" spacing="normal">
   <listitem>
-   <para>
-    Booting from large disks (over 2 TiB) with a GUID Partition Table (GPT).
-   </para>
+   <para>GUID Partition Table (GPT) を利用した、巨大なディスク (2 TiB 以上) からの起動に対応しています。</para>
   </listitem>
   <listitem>
-   <para>
-    CPU-independent architecture and drivers.
-   </para>
+   <para>CPU に依存しないアーキテクチャとドライバに対応しています。</para>
   </listitem>
   <listitem>
-   <para>
-    Flexible pre-OS environment with network capabilities.
-   </para>
+   <para>ネットワーク機能にも対応した柔軟な OS 起動前環境 (pre-OS) に対応しています。</para>
   </listitem>
   <listitem>
-   <para>
-    CSM (Compatibility Support Module) to support booting legacy operating
-    systems via a PC-BIOS-like emulation.
-   </para>
+   <para>CSM (互換性サポートモジュール; Compatibility Support Module) により、 PC-BIOS を疑似できるようになっています。これにより、古いオペレーティングシステムにも対応できます。</para>
   </listitem>
  </itemizedlist>
- <para>
-  For more information, see
-  <link xlink:href="http://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface"/>.
-  The following sections are not meant as a general UEFI overview; these are
-  only hints about how some features are implemented in &productname;.
- </para>
+ <para>さらに詳しい情報については、 <link xlink:href="https://ja.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface"/> をお読みください。下記の章では、 UEFI に関する一般的な説明ではなく、 &productname; ではこれらがどのように実装されているかを説明しています。</para>
  <sect1 xml:id="sec.uefi.secboot">
   <title>Secure Boot</title>
 
 <!-- # http://www.suse.com/blogs/uefi-secure-boot-overview/ -->
 
-  <para>
-   In the world of UEFI, securing the bootstrapping process means establishing
-   a chain of trust. The <quote>platform</quote> is the root of this chain of
-   trust; in the context of &productname;, the mainboard and the on-board firmware
-   could be considered the <quote>platform</quote>. In other words, it is the hardware vendor, and the chain of trust flows from
-   that hardware vendor to the component manufacturers, the OS vendors, etc.
-  </para>
+  <para>UEFI の世界では、起動処理時に不正なコードが紛れ込むことのないよう、信頼の鎖 (くさり) を構成して解決しています。このとき、 &productname; の用語で <quote>プラットフォーム</quote> は信頼の鎖の基礎となる存在ですが、これは一般にメインボードとそこに搭載されたファームウエアを意味します。これはハードウエアの製造元と言い換えることもできますので、ハードウエイの製造元からコンポーネントの製造元、そして OS の製造元へと信頼の鎖が繋がることになります。</para>
 
-  <para>
-   The trust is expressed via public key cryptography. The hardware vendor puts
-   a so-called Platform Key (PK) into the firmware, representing the root of
-   trust. The trust relationship with operating system vendors and others is
-   documented by signing their keys with the Platform Key.
-  </para>
+  <para>信頼そのものは公開鍵認証の仕組みを利用しています。ハードウエアの製造元は、プラットフォーム鍵 (PK; Platform Key) をファームウエア内に配置し、これを信頼の鎖の基礎とします。オペレーティングシステムなどの製造元との信頼関係は、それらの鍵をプラットフォーム鍵で署名することによって成立させます。</para>
 
-  <para>
-   Finally, security is established by requiring that no code will be executed
-   by the firmware unless it has been signed by one of these
-   <quote>trusted</quote> keys&mdash;be it an OS boot loader, some driver
-   located in the flash memory of some PCI Express card or on disk, or be it an
-   update of the firmware itself.
-  </para>
+  <para>最後にファームウエアは、それらの <quote>信頼済み</quote> 鍵のいずれかで署名されたコードだけを実行することによって、セキュリティを成立させます。このコードにはブートローダのほか、 PCI Express カードやディスク内に配置されたいくつかのドライバ、そしてファームウエア更新そのものも含まれます。</para>
 
-  <para>
-   To use Secure Boot, you need to have your OS loader signed with
-   a key trusted by the firmware, and you need the OS loader to verify that the
-   kernel it loads can be trusted.
-  </para>
+  <para>Secure Boot を使用するには、まずファームウエアが信頼する鍵で OS ローダに署名し、 OS ローダが読み込むカーネルを信頼する必要があります。</para>
 
-  <para>
-<!-- WP, re-phrased -->
-   Key Exchange Keys (KEK) can be added to the UEFI key database. This way, you
-   can use other certificates, as long as they are signed with the private part
-   of the PK.
-<!-- but they must still
-have a connection to the private portion of the Platform key.-->
-  </para>
+  <para><!-- WP, re-phrased --> 鍵交換鍵 (KEK; Key Exchange Key) を UEFI の鍵データベースに追加することができます。この方法により、 PK で署名されている他の証明書を使用することができるようになります。 <!-- but they must stillhave a connection to the private portion of the Platform key.--></para>
 
   <sect2 xml:id="sec.uefi.secboot.sle">
-   <title>Implementation on &productname;</title>
-   <para>
-    Microsoft’s Key Exchange Key (KEK) is installed by default.
-   </para>
+   <title>&productname; での実装</title>
+   <para>Microsoft 社の鍵交換鍵 (KEK) が既定でインストールされています。</para>
    <note>
-    <title>GUID Partitioning Table (GPT) Required</title>
-    <para>
-     The Secure Boot feature is enabled by default on UEFI/x86_64
-     installations. You can find the <guimenu>Enable Secure Boot
-     Support</guimenu> option in the <guimenu>Boot Code Options</guimenu> tab
-     of the <guimenu>Boot Loader Settings</guimenu> dialog. It supports booting
-     when the secure boot is activated in the firmware, while making it
-     possible to boot when it is deactivated.
-    </para>
+    <title>GUID Partitioning Table (GPT) が必要となる件について</title>
+    <para>Secure Boot の機能は UEFI/x86_64 環境にインストールする場合は、既定で有効化されます。具体的には、 <guimenu>ブートローダの設定</guimenu> ダイアログ内の <guimenu>ブートコードのオプション</guimenu> タブにある <guimenu>Secure Boot サポートを有効にする</guimenu> に既定でチェックが入っています。ファームウエア側で Secure Boot を有効にしていれば起動を行なうことができますし、無効化しても起動することができます。</para>
     <figure>
-     <title>Secure Boot Support</title>
+     <title>Secure Boot サポート</title>
      <mediaobject>
       <imageobject role="fo">
        <imagedata fileref="yast2_bootloader_boot_code_efi.png" width="70%" format="PNG"/>
@@ -138,34 +74,15 @@ have a connection to the private portion of the Platform key.-->
       </imageobject>
      </mediaobject>
     </figure>
-    <para>
-     The Secure Boot feature requires that a GUID Partitioning Table (GPT)
-     replaces the old partitioning with a Master Boot Record (MBR). If &yast;
-     detects EFI mode during the installation, it will try to create a GPT
-     partition. UEFI expects to find the EFI programs on a FAT-formatted EFI
-     System Partition (ESP).
-    </para>
+    <para>Secure Boot の機能を利用するには、パーティション方式を古いマスターブートレコード (MBR; Master Boot Record) 形式から、GUID パーティションテーブル (GPT; GUID Partition Table) に置き換える必要があります。 &yast; がインストール時に EFI モードを検出すると、 GPT でパーティションを作成しようとします。また、 UEFI では、 FAT 形式でフォーマットされた EFI システムパーティション (ESP; EFI System Partition) 内に EFI プログラムを配置する必要があります。</para>
    </note>
 <!-- http://www.suse.com/blogs/uefi-secure-boot-plan/ -->
-   <para>
-    Supporting UEFI Secure Boot requires having a boot loader with
-    a digital signature that the firmware recognizes as a trusted key. That key
-    is trusted by the firmware a priori, without requiring any manual
-    intervention.
-   </para>
-   <para>
-    There are two ways of getting there. One is to work with hardware vendors
-    to have them endorse a SUSE key, which SUSE then signs the boot loader
-    with. The other way is to go through Microsoft’s Windows Logo
-    Certification program to have the boot loader certified and have Microsoft
-    recognize the SUSE signing key (that is, have it signed with their KEK). By
-    now, SUSE got the loader signed by UEFI Signing Service (that is Microsoft
-    in this case).
-   </para>
+   <para>さらに、 UEFI の Secure Boot を利用するには、ファームウエア側で信頼されている鍵で署名されたブートローダを使用する必要があります。また、この鍵はあらかじめ信頼されていなければなりません。</para>
+   <para>この信頼を得るには、 2 種類の方法があります。 1 つ目の方法は、ハードウエアの製造元に依頼して、 SUSE の鍵を信頼してもらう方法です。 SUSE ではブートローダに対して署名を付与しています。もう 1 つの方法は、 Microsoft 社の Windows ロゴ認証プログラムに申し込んでブートローダの証明を得て、 Microsoft 社から SUSE の署名鍵を認証してもらう (つまり、 KEK で署名してもらう) 方法です。現在は SUSE 社が UEFI 署名サービス (この場合は Microsoft 社) を介して、署名を付与してもらっています。</para>
 <!-- We are currently evaluating both approaches, and may eventually
 even pursue both in parallel. -->
    <figure xml:id="fig.uefi.secure.boot.mok2">
-    <title>UEFI: Secure Boot Process</title>
+    <title>UEFI: Secure Boot の処理</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="uefi-secure-boot-mok2.png" width="50%"/>
@@ -175,93 +92,34 @@ even pursue both in parallel. -->
      </imageobject>
     </mediaobject>
    </figure>
-   <para>
-    At the implementation layer, SUSE uses the <systemitem>shim</systemitem>
-    loader which is installed by default. It is a smart solution that avoids
-    legal issues, and simplifies the certification and signing step
-    considerably. The <systemitem>shim</systemitem> loader’s job is to load a
-    boot loader such as &grub; and verify it; this boot loader in
-    turn will load kernels signed by a SUSE key only. <phrase os="sles;sled">SUSE provides this
-    functionality since SLE11 SP3 on fresh installations with UEFI Secure Boot
-    enabled.</phrase>
-   </para>
-   <para>
-    There are two types of trusted users:
-   </para>
+   <para>実装レイヤでは SUSE は、既定でインストールされる <systemitem>shim</systemitem> ローダを使用しています。これは法的な問題を回避できる賢いソリューションであるだけでなく、証明書と署名の手順を非常に簡単にすることができます。 <systemitem>shim</systemitem> ローダが行なう処理は、 &grub; のようなブートローダを読み込んで、それを検証するだけです。このブートローダは、 SUSE の鍵で署名されたカーネルのみを読み込むようになっています。 <phrase os="sles;sled">SUSE では、この機能を SLE11 SP3 の新規インストールで提供していて、 UEFI Secure Boot が有効化された環境であれば使用できるようになっています。</phrase></para>
+   <para>信頼済みのユーザという観点では、下記の 2 種類のユーザが存在します:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      First, those who hold the keys. The Platform Key (PK) allows almost
-      everything. The Key Exchange Key (KEK) allows all a PK can except
-      changing the PK.
-     </para>
+     <para>1 つ目は鍵の所有者です。プラットフォーム鍵 (PK) はほぼ全てのことが許可されます。鍵交換鍵 (KEK) は PK の変更を除き、 PK と同じ内容が許可されます。</para>
     </listitem>
     <listitem>
-     <para>
-      Second, anyone with physical access to the machine. A user with physical
-      access can reboot the machine, and configure UEFI.
-     </para>
+     <para>2 つ目はマシンに対して物理的なアクセスのできるユーザです。このユーザはマシンを再起動することができるほか、 UEFI の設定を行なうことができます。</para>
     </listitem>
    </itemizedlist>
-   <para>
-    UEFI offers two types of variables to fulfill the needs of those users:
-   </para>
+   <para>UEFI では、これらのユーザの要件を満たすため、 2 種類の変数を提供しています:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      The first is the so-called <quote>Authenticated Variables</quote>, which
-      can be updated from both within the boot process (the so-called Boot
-      Services Environment) and the running OS. This can be done only when the new value of
-      the variable is signed with the same key that the old value of the
-      variable was signed with. And they can only be appended to or changed to
-      a value with a higher serial number.
-     </para>
+     <para>1 つ目は <quote>認証済み変数</quote> と呼ばれるもので、起動処理 (起動サービス環境 (Boot Services Environment)) 内でも起動済みの OS 内でも、変更できる変数です。ただし、変数の値は古い値と同じ鍵で署名されている場合にのみ変更することができます。また、より高いシリアル番号の値を追記するか、もしくはより高いシリアル番号の値にのみ置き換えることができます。</para>
     </listitem>
     <listitem>
-     <para>
-      The second is the so-called <quote>Boot Services Only Variables</quote>.
-      These variables are accessible to any code that runs during the boot
-      process. After the boot process ends and before the OS starts, the boot
-      loader must call the <literal>ExitBootServices</literal> call. After
-      that, these variables are no longer accessible, and the OS cannot touch
-      them.
-     </para>
+     <para>2 つ目は <quote>起動サービスのみの変数</quote> と呼ばれるもので、起動処理中に実行される任意のコードからのみアクセスすることができます。起動処理が終わると、 OS の起動前にブートローダ側で <literal>ExitBootServices</literal> を呼び出さなければなりません。その後、これらの変数にはアクセスできなくなりますので、 OS 側からもアクセスができなくなります。</para>
     </listitem>
    </itemizedlist>
-   <para>
-    The various UEFI key lists are of the first type, as this allows online
-    updating, adding, and blacklisting of keys, drivers, and firmware
-    fingerprints. It is the second type of variable, the <quote>Boot Services
-    Only Variable</quote>, that helps to implement Secure Boot in a secure and
-    open source-friendly manner, and thus compatible with
-    GPLv3.
-   </para>
-   <para>
-    SUSE starts with <systemitem>shim</systemitem>&mdash;a small and simple EFI
-    boot loader signed by SUSE and Microsoft.
-   </para>
-   <para>
-    This allows <systemitem>shim</systemitem> to load and execute.
-   </para>
-   <para>
-    <systemitem>shim</systemitem> then goes on to verify that the boot loader
-    it wants to load is trusted.
-<!-- ??? It will not use the SUSE KEK nor the
-Microsoft certificate for this. -->
-    In a default situation <systemitem>shim</systemitem> will use an
-    independent SUSE certificate embedded in its body. In addition,
-    <systemitem>shim</systemitem> will allow to <quote>enroll</quote>
-    additional keys, overriding the default SUSE key. In the following, we call
-    them <quote>Machine Owner Keys</quote> or MOKs for short.
-   </para>
-   <para>
-    Next the boot loader will verify and then boot the kernel, and the kernel
-    will do the same on the modules.
-   </para>
+   <para>様々な UEFI 鍵リストは最初の種類のものであり、これによってオンラインでの更新や追加、鍵やドライバ／ファームウエアのフィンガープリントのブラックリストなどを行なうことができます。また、 2 番目の <quote>起動サービスのみの変数</quote> では、 Secure Boot を安全かつオープンソースのやり方で実装し、それによって GPLv3 との互換性も確保することができています。</para>
+   <para>SUSE では <systemitem>shim</systemitem> と呼ばれる、 SUSE と Microsoft が署名している小さくてシンプルな EFI ブートローダを使用しています。</para>
+   <para>これにより、 <systemitem>shim</systemitem> が読み込みと実行ができるようになっています。</para>
+   <para><systemitem>shim</systemitem> を読み込んで実行すると、読み込むべきブートローダが信頼のできるものかどうかを確認しようとします。 <!-- ??? It will not use the SUSE KEK nor theMicrosoft certificate for this. --> 既定の動作では、 <systemitem>shim</systemitem> は独立した SUSE の内蔵署名を使用します。これに加えて <systemitem>shim</systemitem> は、既定の SUSE 鍵を上書きする追加の鍵を <quote>登録</quote> します。下記では、この鍵を略して <quote>マシン所有者鍵</quote> (MOK) と呼んでいます。</para>
+   <para>あとはブートローダがカーネルを検証して起動し、カーネルが同様にモジュールを検証して読み込みます。</para>
   </sect2>
 
   <sect2 xml:id="sec.uefi.secboot.mok">
-   <title>MOK (Machine Owner Key)</title>
+   <title>MOK (マシン所有者鍵; Machine Owner Key)</title>
 <!-- <para>
 Enroll key from the OS (with a password for MOK list), using mokutils tool.
 Rebooted is required, where <systemitem>shim</systemitem> will check password: ensure physical user is present.
@@ -271,158 +129,74 @@ Enroll can also be done at boot time if key is available on EFI System
 Partition.
 </para>
 -->
-   <para>
-    If the user (<quote>machine owner</quote>) wants to replace any components
-    of the boot process, Machine Owner Keys (MOKs) are to be used. The
-    <systemitem>mokutils</systemitem> tool will help with signing components
-    and managing MOKs.
-   </para>
-   <para>
-    The enrollment process begins with rebooting the machine and interrupting
-    the boot process (for example, pressing a key) when
-    <systemitem>shim</systemitem> loads. <systemitem>shim</systemitem> will
-    then go into enrollment mode, allowing the user to replace the default SUSE
-    key with keys from a file on the boot partition. If the user chooses to do
-    so, <systemitem>shim</systemitem> will then calculate a hash of that file
-    and put the result in a <quote>Boot Services Only</quote> variable. This
-    allows <systemitem>shim</systemitem> to detect any change of the file made
-    outside of Boot Services and thus avoid tampering with the list of
-    user-approved MOKs.
-   </para>
-   <para>
-    All of this happens during boot time&mdash;only verified code is executing
-    now. Therefore, only a user present at the console can use the machine
-    owner's set of keys. It cannot be malware or a hacker with remote access to
-    the OS because hackers or malware can only change the file, but not the
-    hash stored in the <quote>Boot Services Only</quote> variable.
-   </para>
-   <para>
-    The boot loader, after having been loaded and verified by
-    <systemitem>shim</systemitem>, will call back to
-    <systemitem>shim</systemitem> when it wants to verify the kernel&mdash;to
-    avoid duplication of the verification code. <systemitem>Shim</systemitem>
-    will use the same list of MOKs for this and tell the boot loader whether it
-    can load the kernel.
-   </para>
-   <para>
-    This way, you can install your own kernel or boot loader. It is only
-    necessary to install a new set of keys and authorize them by being
-    physically present during the first reboot. Because MOKs are a list and
-    not a single MOK, you can make <systemitem>shim</systemitem> trust keys
-    from several vendors, allowing dual- and multi-boot from the boot loader.
-   </para>
+   <para>ユーザ ( <quote>マシン所有者</quote> ) が起動処理のコンポーネントを入れ替えたい場合は、マシン所有者鍵 (MOKs) を使用します。これを行なうには、 <systemitem>mokutils</systemitem> と呼ばれるツールを利用して、コンポーネントへの署名と MOK の管理を行ないます。</para>
+   <para>登録の処理はマシンの再起動から始まります。 <systemitem>shim</systemitem> の読み込みの際、起動処理内での割り込み (たとえばキーの押下) を行なって、登録モードに移行します。これにより、起動パーティション内のファイルを通して、既定の SUSE の鍵を置き換えることができるようになります。ユーザ側で処理を行なうと、 <systemitem>shim</systemitem> はファイルのハッシュ値を計算し、結果を <quote>起動サービスのみの変数</quote> に書き込みます。これにより <systemitem>shim</systemitem> は、信頼の鎖に入っていないファイルの変更を検知できるようになりますので、ユーザが指定した MOK が正しいことを確認できる仕組みになっています。</para>
+   <para>これら全ての処理は起動時に行なわれ、検証済みのコードのみが実行されることになります。また、コンソールにアクセスできるユーザだけが、マシン所有者の鍵セットを利用できることにもなります。マルウェアなどの不正なコードや、リモートからの攻撃者は、たとえリモートから OS にアクセスできてしまったとしても、 OSのファイルを変更することができても <quote>起動サービスのみの変数</quote> を変更することができませんので、不正なコードを実行させることができなくなる、というわけです。</para>
+   <para>一方、 <systemitem>shim</systemitem> から読み込まれて検証されたブートローダは、カーネルを検証する目的で <systemitem>shim</systemitem> を呼び返します。これは、検証を行なうコードの重複を防ぐための仕組みです。 <systemitem>shim</systemitem> は MOK の同じリストを使用してカーネルを検証し、ブートローダがカーネルを読み込んでよいものかどうかを応答します。</para>
+   <para>この仕組みによって、独自のカーネルやブートローダをインストールできることになります。これを行なうには、新しい鍵セットをインストールして、初回の再起動でコンソール経由で認可を与えるだけです。 MOK は一覧であり、 1 つの鍵だけを示すものではありませんので、複数の製造元からの <systemitem>shim</systemitem> 信頼鍵を利用することができますから、ブートローダで任意のカーネルを起動できることになります。</para>
   </sect2>
 
   <sect2 xml:id="sec.uefi.secboot.custom">
-   <title>Booting a Custom Kernel</title>
-   <para>
-    The following is based on
-    <link xlink:href="http://en.opensuse.org/openSUSE:UEFI#Booting_a_custom_kernel"/>.
-   </para>
-   <para>
-    Secure Boot does not prevent you from using a self-compiled kernel. You
-    must sign it with your own certificate and make that certificate known to
-    the firmware or MOK.
-   </para>
+   <title>独自のカーネルの起動</title>
+   <para>下記の説明は、 <link xlink:href="https://ja.opensuse.org/openSUSE:UEFI#.E7.8B.AC.E8.87.AA.E3.81.AE.E3.82.AB.E3.83.BC.E3.83.8D.E3.83.AB.E3.81.AE.E8.B5.B7.E5.8B.95"/> をベースにしています。</para>
+   <para>Secure Boot は、独自にコンパイルしたカーネルを起動できないようにする仕組みではありません。自分の証明書で署名したあと、その証明書の発行者をファームウエアか MOK にインストールすることで、解決することができます。</para>
    <procedure>
     <step>
-     <para>
-      Create a custom X.509 key and certificate used for signing:
-     </para>
+     <para>まずは署名に使用する独自の X.509 鍵と証明書を作成します:</para>
 <screen>openssl req -new -x509 -newkey rsa:2048 -keyout key.asc \
   -out cert.pem -nodes -days 666 -subj "/CN=$USER/"</screen>
-     <para>
-<!-- bnc#811869 -->
-      For more information about creating certificates, see
-      <link xlink:href="http://en.opensuse.org/openSUSE:UEFI_Image_File_Sign_Tools#Create_Your_Own_Certificate"/>.
-     </para>
+     <para><!-- bnc#811869 --> 証明書の作成方法について、詳しくは <link xlink:href="https://ja.opensuse.org/openSUSE:UEFI_%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E7%BD%B2%E5%90%8D%E3%83%84%E3%83%BC%E3%83%AB"/> をお読みください。</para>
     </step>
     <step>
-     <para>
-      Package the key and the certificate as a PKCS#12 structure:
-     </para>
+     <para>鍵と証明書を PKCS#12 形式にパッケージ化します:</para>
 <screen>&prompt.user;openssl pkcs12 -export -inkey key.asc -in cert.pem \
   -name kernel_cert -out cert.p12</screen>
     </step>
     <step>
-     <para>
-      Generate an NSS database for use with <command>pesign</command>:
-     </para>
+     <para>pesign で使用する NSS データベースを生成します:</para>
 <screen>&prompt.user;certutil -d . -N</screen>
     </step>
     <step>
-     <para>
-      Import the key and the certificate contained in PKCS#12 into the NSS
-      database:
-     </para>
+     <para>NSS データベース内に PKCS#12 に含まれる鍵と証明書を取り込みます:</para>
 <screen>&prompt.user;pk12util -d . -i cert.p12</screen>
     </step>
     <step>
-     <para>
-      <quote>Bless</quote> the kernel with the new signature using
-      <command>pesign</command>:
-     </para>
+     <para><command>pesign</command> を利用して、新しい署名をカーネルを追加します:</para>
 <screen>&prompt.user;pesign -n . -c kernel_cert -i arch/x86/boot/bzImage \
   -o vmlinuz.signed -s</screen>
     </step>
     <step>
-     <para>
-      List the signatures on the kernel image:
-     </para>
+     <para>カーネルイメージに含まれる署名を一覧表示します:</para>
 <screen>&prompt.user;pesign -n . -S -i vmlinuz.signed</screen>
-     <para>
-      At that point, you can install the kernel in <filename>/boot</filename>
-      as usual. Because the kernel now has a custom signature the certificate
-      used for signing needs to be imported into the UEFI firmware or MOK.
-     </para>
+     <para>あとは通常通り、 /boot ディレクトリ内にカーネルをインストールすることができます。ただし、カーネルには独自の証明書による署名が設定されているため、これをファームウエアか MOK に取り込む必要があります。</para>
     </step>
     <step>
-     <para>
-      Convert the certificate to the DER format for import into the firmware or
-      MOK:
-     </para>
+     <para>UEFI ファームウエアまたは MOK に取り込むため、証明書を DER 形式に変換します:</para>
 <screen>&prompt.user;openssl x509 -in cert.pem -outform der -out cert.der</screen>
     </step>
     <step>
-     <para>
-      Copy the certificate to the ESP for easier access:
-     </para>
+     <para>簡単にアクセスできるよう、 ESP に証明書をコピーします:</para>
 <screen>&prompt.sudo;cp cert.der /boot/efi/</screen>
     </step>
     <step>
-     <para>
-      Use <command>mokutil</command> to launch the MOK list automatically.
-     </para>
+     <para>MOK を自動的に取り扱うには、 <command>mokutil</command> を使用します。</para>
      <stepalternatives>
       <step>
        <substeps>
         <step>
-         <para>
-          Import the certificate to MOK:
-         </para>
+         <para>証明書を MOK に取り込みます:</para>
 <screen>&prompt.user;mokutil --root-pw --import cert.der</screen>
-         <para>
-          The <option>--root-pw</option> option enables usage of the &rootuser;
-          user directly.
-         </para>
+         <para><option>--root-pw</option> オプションを指定することで、 &rootuser; ユーザ経由でアクセスすることができます。</para>
         </step>
         <step>
-         <para>
-          Check the list of certificates that are prepared to be enrolled:
-         </para>
+         <para>登録の準備ができた証明書の一覧を確認します:</para>
 <screen>&prompt.user;mokutil --list-new</screen>
         </step>
         <step>
-         <para>
-          Reboot the system; <systemitem>shim</systemitem> should launch
-          MokManager. You need to enter the &rootuser; password to confirm the
-          import of the certificate to the MOK list.
-         </para>
+         <para>システムを再起動します。 <systemitem>shim</systemitem> から MokManager が起動できるはずです。 &rootuser; のパスワードを入力して、 MOK の一覧内への証明書の取り込みを確認します。</para>
         </step>
         <step>
-         <para>
-          Check if the newly imported key was enrolled:
-         </para>
+         <para>新しく取り込んだ鍵が登録されていることを確認します:</para>
 <screen>&prompt.user;mokutil --list-enrolled</screen>
         </step>
        </substeps>
@@ -430,47 +204,26 @@ Partition.
       <step>
        <substeps>
         <step>
-         <para>
-          Alternatively, this is the procedure if you want to launch MOK
-          manually:
-         </para>
-         <para>
-          Reboot
-         </para>
+         <para>上記以外にも、 MOK を手作業で処理することもできます:</para>
+         <para>まずは再起動します。</para>
         </step>
         <step>
-         <para>
-          In the &grub; menu press the '<literal>c</literal>' key.
-         </para>
+         <para>&grub; のメニューが表示されたら、 ' <literal>c</literal> ' キーを押します。</para>
         </step>
         <step>
-         <para>
-          Type:
-         </para>
+         <para>下記のように入力します:</para>
 <screen>chainloader $efibootdir/MokManager.efi
 boot</screen>
         </step>
         <step>
-         <para>
-          Select <guimenu>Enroll key from disk</guimenu>.
-         </para>
+         <para><guimenu>Enroll key from disk</guimenu> を選択します。</para>
         </step>
         <step>
-         <para>
-          Navigate to the <filename>cert.der</filename> file and press
-          <keycap function="enter"/>.
-         </para>
+         <para><filename>cert.der</filename> ファイルを指定して <keycap function="enter"/> を押します。</para>
         </step>
         <step>
-         <para>
-          Follow the instructions to enroll the key. Normally this should be
-          pressing '<literal>0</literal>' and then '<literal>y</literal>' to
-          confirm.
-         </para>
-         <para>
-          Alternatively, the firmware menu may provide ways to add a new key to
-          the Signature Database.
-         </para>
+         <para>後は表示された手順に従います。通常は ' <literal>0</literal> ' を押してから ' <literal>y</literal> ' を押すと、確認を完了することができます。</para>
+         <para>それ以外にも、ファームウエア側のメニューで、署名データベース内に新しい鍵を追加することができるものもあります。</para>
         </step>
        </substeps>
       </step>
@@ -503,171 +256,90 @@ MOK
   </sect2>
 
   <sect2 xml:id="sec.uefi.secboot.non-inbox">
-   <title>Using Non-Inbox Drivers</title>
-   <para>
-    There is no support for adding non-inbox drivers (that is, drivers that do
-    not come with &productname;) during installation with Secure Boot enabled. The
-    signing key used for SolidDriver/PLDP is not trusted by default.
-   </para>
-   <para>
-    It is possible to install third party drivers during installation with
-    Secure Boot enabled in two different ways. In both cases:
-   </para>
+   <title>非同梱ドライバの使用について</title>
+   <para>Secure Boot が有効化されている場合、インストール時に非同梱ドライバ (&productname; には含まれていないドライバ) の追加を行なうことはできません。 SolidDriver/PLDP 向けの署名鍵は、既定では信頼されていません。</para>
+   <para>Secure Boot が有効化されている場合、インストール時にサードパーティ製のドライバをインストールする方法が 2 種類用意されています。いずれも下記に注意してください:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      Add the needed keys to the firmware database via firmware/system
-      management tools before the installation. This option depends on the
-      specific hardware you are using. Consult your hardware vendor for more
-      information.
-     </para>
+     <para>インストールを行なう前に、ファームウエアやシステム管理ツールを介して、ファームウエアデータベース内に必要な鍵を取り込んでおいてください。この設定は、使用しているハードウエアによって異なります。詳しくはハードウエアの製造元にお問い合わせください。</para>
     </listitem>
     <listitem>
-     <para>
-      Use a bootable driver ISO from
-      <link xlink:href="https://drivers.suse.com/"/> or your hardware vendor to
-      enroll the needed keys in the MOK list at first boot.
-     </para>
+     <para><link xlink:href="https://drivers.suse.com/"/> もしくはハードウエアの製造元が提供する起動可能な ISO を利用して、初回の起動時に必要な鍵を登録します。</para>
     </listitem>
    </itemizedlist>
-   <para>
-    To use the bootable driver ISO to enroll the driver keys to the MOK list,
-    follow these steps:
-   </para>
+   <para>起動可能な ISO を利用して MOK リスト内にドライバの鍵を登録するには、下記の手順を実施します:</para>
    <procedure>
     <step>
-     <para>
-      Burn the ISO image above to an empty CD/DVD medium.
-     </para>
+     <para>空きの CD/DVD メディアに ISO イメージを書き込みます。</para>
     </step>
     <step>
-     <para>
-      Start the installation using the new CD/DVD medium, having the standard
-      installation media at hand or a URL to a network installation
-      server.
-     </para>
-     <para>
-      If doing a network installation, enter the URL of the network
-      installation source on the boot command line using the
-      <option>install=</option> option.
-     </para>
-     <para>
-      If doing installation from optical media, the installer will first boot
-      from the driver kit and then ask to insert the first installation disk of
-      the product.
-     </para>
+     <para>標準のインストールメディアを利用するか、もしくはネットワークのインストールサーバを利用してインストールを開始します。</para>
+     <para>ネットワーク経由でインストールする場合は、起動パラメータに <option>install=</option> オプションで URL を指定します。</para>
+     <para>光学メディアからインストールを行なう場合、インストールプログラムは最初にドライバキットから起動し、その後製品のインストールディスクを挿入してください。</para>
     </step>
     <step>
-     <para>
-      An initrd containing updated drivers will be used for installation.
-     </para>
+     <para>initrd には更新済みのドライバが含まれていますので、それを利用してインストールすることができます。</para>
     </step>
    </procedure>
-   <para>
-    For more information, see
-    <link xlink:href="https://drivers.suse.com/doc/Usage/Secure_Boot_Certificate.html"/>.
-   </para>
+   <para>詳しくは <link xlink:href="https://drivers.suse.com/doc/Usage/Secure_Boot_Certificate.html"/> をお読みください。</para>
   </sect2>
 
   <sect2 xml:id="sec.uefi.secboot.feats">
 <!-- 2014-06-03, ke: according to fate#317500 -->
-   <title>Features and Limitations</title>
-   <para>
-    When booting in Secure Boot mode, the following features apply:
-   </para>
+   <title>機能と制限</title>
+   <para>Secure Boot モードで起動する場合、下記の機能が提供されます:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      Installation to UEFI default boot loader location, a mechanism to keep or
-      restore the EFI boot entry.
-     </para>
+     <para>UEFI の既定の場所に対するブートローダのインストール、および EFI の起動項目に対する維持や復元の仕組み</para>
     </listitem>
     <listitem>
-     <para>
-      Reboot via UEFI.
-     </para>
+     <para>UEFI 経由での再起動</para>
     </listitem>
     <listitem>
-     <para>
-      Xen hypervisor will boot with UEFI when there is no legacy BIOS to fall
-      back to.
-     </para>
+     <para>従来の BIOS にフォールバックすることのない、 UEFI での Xen ハイパーバイザの起動</para>
     </listitem>
     <listitem>
-     <para>
-      UEFI IPv6 PXE boot support.
-     </para>
+     <para>UEFI の IPv6 PXE 起動への対応</para>
     </listitem>
     <listitem>
-     <para>
-      UEFI videomode support, the kernel can retrieve video mode from UEFI
-      to configure KMS mode with the same parameters.
-     </para>
+     <para>UEFI ビデオモードサポート (UEFI 経由でカーネルがビデオモードを取得し、同じパラメータで KMS モードを設定する機能)</para>
     </listitem>
     <listitem>
-     <para>
-      UEFI booting from USB devices is supported.
-     </para>
+     <para>USB デバイス経由の UEFI 起動</para>
     </listitem>
    </itemizedlist>
-   <para>
-    When booting in Secure Boot mode, the following limitations apply:
-   </para>
+   <para>Secure Boot モードでの起動時には、下記の制限事項が適用されます:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      To ensure that Secure Boot cannot be easily circumvented, some kernel
-      features are disabled when running under Secure Boot.
-     </para>
+     <para>Secure Boot が容易に突破されないようにするため、 Secure Boot の動作中はいくつかのカーネル機能が無効化されます。</para>
     </listitem>
 <!-- the rest is taken from fate#317500 -->
     <listitem>
-     <para>
-      Boot loader, kernel, and kernel modules must be signed.
-     </para>
+     <para>ブートローダ、カーネル、カーネルモジュールは、いずれも署名されていなければなりません。</para>
     </listitem>
     <listitem>
-     <para>
-      Kexec and Kdump are disabled.
-     </para>
+     <para>Kexec と Kdump の機能が無効化されます。</para>
     </listitem>
     <listitem>
-     <para>
-      Hibernation (suspend on disk) is disabled.
-     </para>
+     <para>ハイバネーション (suspend to disk) が無効化されます。</para>
     </listitem>
     <listitem>
-     <para>
-      Access to <filename>/dev/kmem</filename> and
-      <filename>/dev/mem</filename> is not possible, not even as root user.
-     </para>
+     <para>root ユーザであっても <filename>/dev/kmem</filename> および <filename>/dev/mem</filename> にアクセスできなくなります。</para>
     </listitem>
     <listitem>
-     <para>
-      Access to the I/O port is not possible, not even as root user. All X11
-      graphical drivers must use a kernel driver.
-     </para>
+     <para>root ユーザであっても I/O ポートへのアクセスができなくなります。また、 X11 のグラフィカルドライバはカーネルドライバを使用しなければなりません。</para>
     </listitem>
     <listitem>
-     <para>
-      PCI BAR access through sysfs is not possible.
-     </para>
+     <para>sysfs を介した PCI BAR アクセスができなくなります。</para>
     </listitem>
     <listitem>
-     <para>
-      <literal>custom_method</literal> in ACPI is not available.
-     </para>
+     <para>ACPI の <literal>custom_method</literal> が利用できなくなります。</para>
     </listitem>
     <listitem>
-     <para>
-      debugfs for asus-wmi module is not available.
-     </para>
+     <para>asus-wmi モジュール向けの debugfs が利用できなくなります。</para>
     </listitem>
     <listitem>
-     <para>
-      the <literal>acpi_rsdp</literal> parameter does not have any effect on
-      the kernel.
-     </para>
+     <para><literal>acpi_rsdp</literal> がカーネルに対して何も影響を及ぼさなくなります。</para>
     </listitem>
    </itemizedlist>
 <!--
@@ -686,43 +358,28 @@ media that will boot on both legacy architectures and UEFI platforms.
   </sect2>
  </sect1>
  <sect1 xml:id="sec.uefi.moreinfo">
-  <title>For More Information</title>
+  <title>さらなる情報</title>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     <link xlink:href="http://www.uefi.org"/> &mdash;UEFI home page where you
-     can find the current UEFI specifications.
-    </para>
+    <para><link xlink:href="http://www.uefi.org"/>: UEFI の Web ページです。ここには最新の UEFI 仕様に関する情報が記載されています。</para>
    </listitem>
    <listitem>
-    <para>
-     Blog posts by Olaf Kirch and Vojtěch Pavlík (the chapter above is
-     heavily based on these posts):
-    </para>
+    <para>Olaf Kirch 氏および Vojtěch Pavlík 氏によるブログ投稿 (本章の内容は、この投稿をベースにしています):</para>
     <itemizedlist mark="bullet" spacing="normal">
      <listitem>
-      <para>
-       <link xlink:href="http://www.suse.com/blogs/uefi-secure-boot-plan/"/>
-      </para>
+      <para><link xlink:href="http://www.suse.com/blogs/uefi-secure-boot-plan/"/></para>
      </listitem>
      <listitem>
-      <para>
-       <link xlink:href="http://www.suse.com/blogs/uefi-secure-boot-overview/"/>
-      </para>
+      <para><link xlink:href="http://www.suse.com/blogs/uefi-secure-boot-overview/"/></para>
      </listitem>
      <listitem>
-      <para>
-       <link xlink:href="http://www.suse.com/blogs/uefi-secure-boot-details/"/>
-      </para>
+      <para><link xlink:href="http://www.suse.com/blogs/uefi-secure-boot-details/"/></para>
      </listitem>
     </itemizedlist>
    </listitem>
    <listitem>
-    <para>
-     <link xlink:href="http://en.opensuse.org/openSUSE:UEFI"/> &mdash;UEFI with
-     openSUSE.
-    </para>
+    <para><link xlink:href="http://ja.opensuse.org/openSUSE:UEFI"/> openSUSE での UEFI</para>
    </listitem>
   </itemizedlist>
  </sect1>

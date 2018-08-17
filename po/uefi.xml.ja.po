@@ -1,26 +1,29 @@
+# translation of uefi.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: uefi.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-17 21:23+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: uefi.xml:22
 #, no-c-format
 msgid "UEFI (Unified Extensible Firmware Interface)"
-msgstr ""
+msgstr "UEFI (Unified Extensible Firmware Interface)"
 
 #. Tag: para
 #: uefi.xml:29
@@ -30,6 +33,9 @@ msgid ""
 "firmware that comes with the system hardware, all the hardware components of "
 "the system, and the operating system."
 msgstr ""
+"UEFI (Unified Extensible Firmware Interface) はシステムに付属するファームウエアと、"
+"システム内の全てのハードウエアコンポーネント、そしてオペレーティングシステムとの間に"
+"存在するインターフェイスを意味する用語です。"
 
 #. Tag: para
 #: uefi.xml:34
@@ -42,31 +48,35 @@ msgid ""
 "Lastly, with UEFI a standard firmware will become available on all x86 "
 "platforms."
 msgstr ""
+"UEFI は現在の PC システムに順次取り入れられている仕組みで、従来の PC-BIOS を置き換える"
+"目的で作られています。たとえば UEFI では 64 ビットシステムを正しくサポートしている"
+"ほか、最も重要な点として、 <quote>Secure Boot</quote> (ファームウエアバージョン"
+" 2.3.1c もしくはそれ以降が必要) と呼ばれる仕組みにも対応しています。最終的には、"
+"全ての x86 プラットフォームで利用できるようになるはずのものです。"
 
 #. Tag: para
 #: uefi.xml:42
 #, no-c-format
 msgid "UEFI additionally offers the following advantages:"
-msgstr ""
+msgstr "UEFI には、これらに加えて下記の利点が用意されています:"
 
 #. Tag: para
 #: uefi.xml:47
 #, no-c-format
-msgid ""
-"Booting from large disks (over 2 TiB) with a GUID Partition Table (GPT)."
-msgstr ""
+msgid "Booting from large disks (over 2 TiB) with a GUID Partition Table (GPT)."
+msgstr "GUID Partition Table (GPT) を利用した、巨大なディスク (2 TiB 以上) からの起動に対応しています。"
 
 #. Tag: para
 #: uefi.xml:52
 #, no-c-format
 msgid "CPU-independent architecture and drivers."
-msgstr ""
+msgstr "CPU に依存しないアーキテクチャとドライバに対応しています。"
 
 #. Tag: para
 #: uefi.xml:57
 #, no-c-format
 msgid "Flexible pre-OS environment with network capabilities."
-msgstr ""
+msgstr "ネットワーク機能にも対応した柔軟な OS 起動前環境 (pre-OS) に対応しています。"
 
 #. Tag: para
 #: uefi.xml:62
@@ -75,6 +85,8 @@ msgid ""
 "CSM (Compatibility Support Module) to support booting legacy operating "
 "systems via a PC-BIOS-like emulation."
 msgstr ""
+"CSM (互換性サポートモジュール; Compatibility Support Module) により、 PC-BIOS "
+"を疑似できるようになっています。これにより、古いオペレーティングシステムにも対応できます。"
 
 #. Tag: para
 #: uefi.xml:68
@@ -85,12 +97,16 @@ msgid ""
 "meant as a general UEFI overview; these are only hints about how some "
 "features are implemented in &productname;."
 msgstr ""
+"さらに詳しい情報については、 <link xlink:href=\"https://ja.wikipedia.org/wiki/"
+"Unified_Extensible_Firmware_Interface\"/> をお読みください。下記の章では、 UEFI "
+"に関する一般的な説明ではなく、 &productname; ではこれらがどのように実装されているか"
+"を説明しています。"
 
 #. Tag: title
 #: uefi.xml:75
 #, no-c-format
 msgid "Secure Boot"
-msgstr ""
+msgstr "Secure Boot"
 
 #. Tag: para
 #: uefi.xml:79
@@ -103,6 +119,12 @@ msgid ""
 "it is the hardware vendor, and the chain of trust flows from that hardware "
 "vendor to the component manufacturers, the OS vendors, etc."
 msgstr ""
+"UEFI の世界では、起動処理時に不正なコードが紛れ込むことのないよう、信頼の鎖 (くさり) "
+"を構成して解決しています。このとき、 &productname; の用語で <quote>プラットフォーム</quote> "
+"は信頼の鎖の基礎となる存在ですが、これは一般にメインボードとそこに搭載されたファーム"
+"ウエアを意味します。これはハードウエアの製造元と言い換えることもできますので、"
+"ハードウエイの製造元からコンポーネントの製造元、そして OS の製造元へと信頼の"
+"鎖が繋がることになります。"
 
 #. Tag: para
 #: uefi.xml:87
@@ -113,6 +135,10 @@ msgid ""
 "trust. The trust relationship with operating system vendors and others is "
 "documented by signing their keys with the Platform Key."
 msgstr ""
+"信頼そのものは公開鍵認証の仕組みを利用しています。ハードウエアの製造元は、プラット"
+"フォーム鍵 (PK; Platform Key) をファームウエア内に配置し、これを信頼の鎖の基礎と"
+"します。オペレーティングシステムなどの製造元との信頼関係は、それらの鍵をプラット"
+"フォーム鍵で署名することによって成立させます。"
 
 #. Tag: para
 #: uefi.xml:94
@@ -124,6 +150,10 @@ msgid ""
 "memory of some PCI Express card or on disk, or be it an update of the "
 "firmware itself."
 msgstr ""
+"最後にファームウエアは、それらの <quote>信頼済み</quote> 鍵のいずれかで署名された"
+"コードだけを実行することによって、セキュリティを成立させます。このコードにはブート"
+"ローダのほか、 PCI Express カードやディスク内に配置されたいくつかのドライバ、そして"
+"ファームウエア更新そのものも含まれます。"
 
 #. Tag: para
 #: uefi.xml:102
@@ -133,6 +163,8 @@ msgid ""
 "trusted by the firmware, and you need the OS loader to verify that the "
 "kernel it loads can be trusted."
 msgstr ""
+"Secure Boot を使用するには、まずファームウエアが信頼する鍵で OS ローダに署名し、"
+" OS ローダが読み込むカーネルを信頼する必要があります。"
 
 #. Tag: para
 #: uefi.xml:108
@@ -143,24 +175,28 @@ msgid ""
 "signed with the private part of the PK. <!-- but they must stillhave a "
 "connection to the private portion of the Platform key.-->"
 msgstr ""
+"<!-- WP, re-phrased --> 鍵交換鍵 (KEK; Key Exchange Key) を UEFI の鍵データベース"
+"に追加することができます。この方法により、 PK で署名されている他の証明書を使用する"
+"ことができるようになります。 <!-- but they must stillhave a connection to the "
+"private portion of the Platform key.-->"
 
 #. Tag: title
 #: uefi.xml:118
 #, no-c-format
 msgid "Implementation on &productname;"
-msgstr ""
+msgstr "&productname; での実装"
 
 #. Tag: para
 #: uefi.xml:119
 #, no-c-format
 msgid "Microsoft’s Key Exchange Key (KEK) is installed by default."
-msgstr ""
+msgstr "Microsoft 社の鍵交換鍵 (KEK) が既定でインストールされています。"
 
 #. Tag: title
 #: uefi.xml:123
 #, no-c-format
 msgid "GUID Partitioning Table (GPT) Required"
-msgstr ""
+msgstr "GUID Partitioning Table (GPT) が必要となる件について"
 
 #. Tag: para
 #: uefi.xml:124
@@ -173,12 +209,17 @@ msgid ""
 "activated in the firmware, while making it possible to boot when it is "
 "deactivated."
 msgstr ""
+"Secure Boot の機能は UEFI/x86_64 環境にインストールする場合は、既定で有効化されます。"
+"具体的には、 <guimenu>ブートローダの設定</guimenu> ダイアログ内の <guimenu>ブートコードの"
+"オプション</guimenu> タブにある <guimenu>Secure Boot サポートを有効にする</guimenu> "
+"に既定でチェックが入っています。ファームウエア側で Secure Boot を有効にしていれば"
+"起動を行なうことができますし、無効化しても起動することができます。"
 
 #. Tag: title
 #: uefi.xml:133
 #, no-c-format
 msgid "Secure Boot Support"
-msgstr ""
+msgstr "Secure Boot サポート"
 
 #. Tag: para
 #: uefi.xml:143
@@ -190,6 +231,12 @@ msgid ""
 "partition. UEFI expects to find the EFI programs on a FAT-formatted EFI "
 "System Partition (ESP)."
 msgstr ""
+"Secure Boot の機能を利用するには、パーティション方式を古いマスターブートレコード"
+" (MBR; Master Boot Record) 形式から、GUID パーティションテーブル (GPT; GUID "
+"Partition Table) に置き換える必要があります。 &yast; がインストール時に EFI "
+"モードを検出すると、 GPT でパーティションを作成しようとします。また、 UEFI "
+"では、 FAT 形式でフォーマットされた EFI システムパーティション (ESP; EFI System "
+"Partition) 内に EFI プログラムを配置する必要があります。"
 
 #. Tag: para
 #: uefi.xml:152
@@ -199,6 +246,9 @@ msgid ""
 "signature that the firmware recognizes as a trusted key. That key is trusted "
 "by the firmware a priori, without requiring any manual intervention."
 msgstr ""
+"さらに、 UEFI の Secure Boot を利用するには、ファームウエア側で信頼されている鍵で"
+"署名されたブートローダを使用する必要があります。また、この鍵はあらかじめ信頼されて"
+"いなければなりません。"
 
 #. Tag: para
 #: uefi.xml:158
@@ -211,12 +261,18 @@ msgid ""
 "SUSE signing key (that is, have it signed with their KEK). By now, SUSE got "
 "the loader signed by UEFI Signing Service (that is Microsoft in this case)."
 msgstr ""
+"この信頼を得るには、 2 種類の方法があります。 1 つ目の方法は、ハードウエアの製造元に"
+"依頼して、 SUSE の鍵を信頼してもらう方法です。 SUSE ではブートローダに対して署名を"
+"付与しています。もう 1 つの方法は、 Microsoft 社の Windows ロゴ認証プログラムに"
+"申し込んでブートローダの証明を得て、 Microsoft 社から SUSE の署名鍵を認証してもらう"
+" (つまり、 KEK で署名してもらう) 方法です。現在は SUSE 社が UEFI 署名サービス"
+" (この場合は Microsoft 社) を介して、署名を付与してもらっています。"
 
 #. Tag: title
 #: uefi.xml:170
 #, no-c-format
 msgid "UEFI: Secure Boot Process"
-msgstr ""
+msgstr "UEFI: Secure Boot の処理"
 
 #. Tag: para
 #: uefi.xml:180
@@ -231,12 +287,19 @@ msgid ""
 "this functionality since SLE11 SP3 on fresh installations with UEFI Secure "
 "Boot enabled.</phrase>"
 msgstr ""
+"実装レイヤでは SUSE は、既定でインストールされる <systemitem>shim</systemitem> "
+"ローダを使用しています。これは法的な問題を回避できる賢いソリューションであるだけ"
+"でなく、証明書と署名の手順を非常に簡単にすることができます。 <systemitem>shim</systemitem> "
+"ローダが行なう処理は、 &grub; のようなブートローダを読み込んで、それを検証するだけ"
+"です。このブートローダは、 SUSE の鍵で署名されたカーネルのみを読み込むようになって"
+"います。 <phrase os=\"sles;sled\">SUSE では、この機能を SLE11 SP3 の新規インストール"
+"で提供していて、 UEFI Secure Boot が有効化された環境であれば使用できるようになっています。</phrase>"
 
 #. Tag: para
 #: uefi.xml:190
 #, no-c-format
 msgid "There are two types of trusted users:"
-msgstr ""
+msgstr "信頼済みのユーザという観点では、下記の 2 種類のユーザが存在します:"
 
 #. Tag: para
 #: uefi.xml:195
@@ -246,6 +309,8 @@ msgid ""
 "everything. The Key Exchange Key (KEK) allows all a PK can except changing "
 "the PK."
 msgstr ""
+"1 つ目は鍵の所有者です。プラットフォーム鍵 (PK) はほぼ全てのことが許可されます。"
+"鍵交換鍵 (KEK) は PK の変更を除き、 PK と同じ内容が許可されます。"
 
 #. Tag: para
 #: uefi.xml:202
@@ -254,12 +319,14 @@ msgid ""
 "Second, anyone with physical access to the machine. A user with physical "
 "access can reboot the machine, and configure UEFI."
 msgstr ""
+"2 つ目はマシンに対して物理的なアクセスのできるユーザです。このユーザはマシンを"
+"再起動することができるほか、 UEFI の設定を行なうことができます。"
 
 #. Tag: para
 #: uefi.xml:208
 #, no-c-format
 msgid "UEFI offers two types of variables to fulfill the needs of those users:"
-msgstr ""
+msgstr "UEFI では、これらのユーザの要件を満たすため、 2 種類の変数を提供しています:"
 
 #. Tag: para
 #: uefi.xml:213
@@ -272,6 +339,11 @@ msgid ""
 "variable was signed with. And they can only be appended to or changed to a "
 "value with a higher serial number."
 msgstr ""
+"1 つ目は <quote>認証済み変数</quote> と呼ばれるもので、起動処理 (起動サービス"
+"環境 (Boot Services Environment)) 内でも起動済みの OS 内でも、変更できる変数です。"
+"ただし、変数の値は古い値と同じ鍵で署名されている場合にのみ変更することができます。"
+"また、より高いシリアル番号の値を追記するか、もしくはより高いシリアル番号の値に"
+"のみ置き換えることができます。"
 
 #. Tag: para
 #: uefi.xml:223
@@ -283,6 +355,11 @@ msgid ""
 "loader must call the <literal>ExitBootServices</literal> call. After that, "
 "these variables are no longer accessible, and the OS cannot touch them."
 msgstr ""
+"2 つ目は <quote>起動サービスのみの変数</quote> と呼ばれるもので、起動処理中に"
+"実行される任意のコードからのみアクセスすることができます。起動処理が終わると、"
+" OS の起動前にブートローダ側で <literal>ExitBootServices</literal> を呼び出さ"
+"なければなりません。その後、これらの変数にはアクセスできなくなりますので、"
+" OS 側からもアクセスができなくなります。"
 
 #. Tag: para
 #: uefi.xml:233
@@ -294,6 +371,11 @@ msgid ""
 "Only Variable</quote> , that helps to implement Secure Boot in a secure and "
 "open source-friendly manner, and thus compatible with GPLv3."
 msgstr ""
+"様々な UEFI 鍵リストは最初の種類のものであり、これによってオンラインでの更新や"
+"追加、鍵やドライバ／ファームウエアのフィンガープリントのブラックリストなどを"
+"行なうことができます。また、 2 番目の <quote>起動サービスのみの変数</quote> "
+"では、 Secure Boot を安全かつオープンソースのやり方で実装し、それによって"
+" GPLv3 との互換性も確保することができています。"
 
 #. Tag: para
 #: uefi.xml:241
@@ -302,12 +384,14 @@ msgid ""
 "SUSE starts with <systemitem>shim</systemitem> &mdash;a small and simple EFI "
 "boot loader signed by SUSE and Microsoft."
 msgstr ""
+"SUSE では <systemitem>shim</systemitem> と呼ばれる、 SUSE と Microsoft が署名"
+"している小さくてシンプルな EFI ブートローダを使用しています。"
 
 #. Tag: para
 #: uefi.xml:245
 #, no-c-format
 msgid "This allows <systemitem>shim</systemitem> to load and execute."
-msgstr ""
+msgstr "これにより、 <systemitem>shim</systemitem> が読み込みと実行ができるようになっています。"
 
 #. Tag: para
 #: uefi.xml:248
@@ -322,6 +406,12 @@ msgid ""
 "In the following, we call them <quote>Machine Owner Keys</quote> or MOKs for "
 "short."
 msgstr ""
+"<systemitem>shim</systemitem> を読み込んで実行すると、読み込むべきブートローダが"
+"信頼のできるものかどうかを確認しようとします。 <!-- ??? It will not use the SUSE KEK nor "
+"theMicrosoft certificate for this. --> 既定の動作では、 <systemitem>shim</systemitem> は"
+"独立した SUSE の内蔵署名を使用します。これに加えて <systemitem>shim</systemitem> は、"
+"既定の SUSE 鍵を上書きする追加の鍵を <quote>登録</quote> します。下記では、この鍵を"
+"略して <quote>マシン所有者鍵</quote> (MOK) と呼んでいます。"
 
 #. Tag: para
 #: uefi.xml:259
@@ -330,12 +420,14 @@ msgid ""
 "Next the boot loader will verify and then boot the kernel, and the kernel "
 "will do the same on the modules."
 msgstr ""
+"あとはブートローダがカーネルを検証して起動し、カーネルが同様にモジュールを検証して"
+"読み込みます。"
 
 #. Tag: title
 #: uefi.xml:266
 #, no-c-format
 msgid "MOK (Machine Owner Key)"
-msgstr ""
+msgstr "MOK (マシン所有者鍵; Machine Owner Key)"
 
 #. Tag: para
 #: uefi.xml:276
@@ -346,6 +438,9 @@ msgid ""
 "<systemitem>mokutils</systemitem> tool will help with signing components and "
 "managing MOKs."
 msgstr ""
+"ユーザ ( <quote>マシン所有者</quote> ) が起動処理のコンポーネントを入れ替えたい場合は、"
+"マシン所有者鍵 (MOKs) を使用します。これを行なうには、 <systemitem>mokutils</systemitem> "
+"と呼ばれるツールを利用して、コンポーネントへの署名と MOK の管理を行ないます。"
 
 #. Tag: para
 #: uefi.xml:282
@@ -362,6 +457,15 @@ msgid ""
 "of Boot Services and thus avoid tampering with the list of user-approved "
 "MOKs."
 msgstr ""
+"登録の処理はマシンの再起動から始まります。 <systemitem>shim</systemitem> の"
+"読み込みの際、起動処理内での割り込み (たとえばキーの押下) を行なって、登録モード"
+"に移行します。これにより、起動パーティション内のファイルを通して、既定の SUSE "
+"の鍵を置き換えることができるようになります。ユーザ側で処理を行なうと、"
+" <systemitem>shim</systemitem> はファイルのハッシュ値を計算し、結果を"
+" <quote>起動サービスのみの変数</quote> に書き込みます。これにより"
+" <systemitem>shim</systemitem> は、信頼の鎖に入っていないファイルの変更を"
+"検知できるようになりますので、ユーザが指定した MOK が正しいことを確認できる"
+"仕組みになっています。"
 
 #. Tag: para
 #: uefi.xml:294
@@ -373,6 +477,12 @@ msgid ""
 "the OS because hackers or malware can only change the file, but not the hash "
 "stored in the <quote>Boot Services Only</quote> variable."
 msgstr ""
+"これら全ての処理は起動時に行なわれ、検証済みのコードのみが実行されることになります。"
+"また、コンソールにアクセスできるユーザだけが、マシン所有者の鍵セットを利用できる"
+"ことにもなります。マルウェアなどの不正なコードや、リモートからの攻撃者は、たとえ"
+"リモートから OS にアクセスできてしまったとしても、 OSのファイルを変更することができても"
+" <quote>起動サービスのみの変数</quote> を変更することができませんので、不正な"
+"コードを実行させることができなくなる、というわけです。"
 
 #. Tag: para
 #: uefi.xml:301
@@ -384,6 +494,11 @@ msgid ""
 "<systemitem>Shim</systemitem> will use the same list of MOKs for this and "
 "tell the boot loader whether it can load the kernel."
 msgstr ""
+"一方、 <systemitem>shim</systemitem> から読み込まれて検証されたブートローダは、"
+"カーネルを検証する目的で <systemitem>shim</systemitem> を呼び返します。"
+"これは、検証を行なうコードの重複を防ぐための仕組みです。 <systemitem>shim</systemitem> "
+"は MOK の同じリストを使用してカーネルを検証し、ブートローダがカーネルを読み込んで"
+"よいものかどうかを応答します。"
 
 #. Tag: para
 #: uefi.xml:309
@@ -395,12 +510,17 @@ msgid ""
 "a single MOK, you can make <systemitem>shim</systemitem> trust keys from "
 "several vendors, allowing dual- and multi-boot from the boot loader."
 msgstr ""
+"この仕組みによって、独自のカーネルやブートローダをインストールできることになります。"
+"これを行なうには、新しい鍵セットをインストールして、初回の再起動でコンソール"
+"経由で認可を与えるだけです。 MOK は一覧であり、 1 つの鍵だけを示すものでは"
+"ありませんので、複数の製造元からの <systemitem>shim</systemitem> 信頼鍵を"
+"利用することができますから、ブートローダで任意のカーネルを起動できることになります。"
 
 #. Tag: title
 #: uefi.xml:319
 #, no-c-format
 msgid "Booting a Custom Kernel"
-msgstr ""
+msgstr "独自のカーネルの起動"
 
 #. Tag: para
 #: uefi.xml:320
@@ -409,6 +529,9 @@ msgid ""
 "The following is based on <link xlink:href=\"http://en.opensuse.org/openSUSE:"
 "UEFI#Booting_a_custom_kernel\"/> ."
 msgstr ""
+"下記の説明は、 <link xlink:href=\"https://ja.opensuse.org/openSUSE:UEFI#.E7.8B.AC.E8.87.AA.E3."
+"81.AE.E3.82.AB.E3.83.BC.E3.83.8D.E3.83.AB.E3.81.AE.E8.B5.B7.E5.8B.95\"/> を"
+"ベースにしています。"
 
 #. Tag: para
 #: uefi.xml:324
@@ -418,12 +541,15 @@ msgid ""
 "sign it with your own certificate and make that certificate known to the "
 "firmware or MOK."
 msgstr ""
+"Secure Boot は、独自にコンパイルしたカーネルを起動できないようにする仕組みではありません。"
+"自分の証明書で署名したあと、その証明書の発行者をファームウエアか MOK にインストール"
+"することで、解決することができます。"
 
 #. Tag: para
 #: uefi.xml:331
 #, no-c-format
 msgid "Create a custom X.509 key and certificate used for signing:"
-msgstr ""
+msgstr "まずは署名に使用する独自の X.509 鍵と証明書を作成します:"
 
 #. Tag: screen
 #: uefi.xml:334
@@ -432,6 +558,8 @@ msgid ""
 "openssl req -new -x509 -newkey rsa:2048 -keyout key.asc \\\n"
 "  -out cert.pem -nodes -days 666 -subj \"/CN=$USER/\""
 msgstr ""
+"openssl req -new -x509 -newkey rsa:2048 -keyout key.asc \\\n"
+"  -out cert.pem -nodes -days 666 -subj \"/CN=$USER/\""
 
 #. Tag: para
 #: uefi.xml:336
@@ -441,12 +569,16 @@ msgid ""
 "<link xlink:href=\"http://en.opensuse.org/openSUSE:"
 "UEFI_Image_File_Sign_Tools#Create_Your_Own_Certificate\"/> ."
 msgstr ""
+"<!-- bnc#811869 --> 証明書の作成方法について、詳しくは"
+" <link xlink:href=\"https://ja.opensuse.org/openSUSE:UEFI_%E3%82%A4%E3%83%A1%E3%83"
+"%BC%E3%82%B8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E7%BD%B2%E5%90%8D%E3%83%84%E3%83%BC%E3%83%AB\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: uefi.xml:343
 #, no-c-format
 msgid "Package the key and the certificate as a PKCS#12 structure:"
-msgstr ""
+msgstr "鍵と証明書を PKCS#12 形式にパッケージ化します:"
 
 #. Tag: screen
 #: uefi.xml:346
@@ -455,18 +587,20 @@ msgid ""
 "&prompt.user;openssl pkcs12 -export -inkey key.asc -in cert.pem \\\n"
 "  -name kernel_cert -out cert.p12"
 msgstr ""
+"&prompt.user;openssl pkcs12 -export -inkey key.asc -in cert.pem \\\n"
+"  -name kernel_cert -out cert.p12"
 
 #. Tag: para
 #: uefi.xml:350
 #, no-c-format
 msgid "Generate an NSS database for use with <command>pesign</command> :"
-msgstr ""
+msgstr "pesign で使用する NSS データベースを生成します:"
 
 #. Tag: screen
 #: uefi.xml:353
 #, no-c-format
 msgid "&prompt.user;certutil -d . -N"
-msgstr ""
+msgstr "&prompt.user;certutil -d . -N"
 
 #. Tag: para
 #: uefi.xml:356
@@ -474,13 +608,13 @@ msgstr ""
 msgid ""
 "Import the key and the certificate contained in PKCS#12 into the NSS "
 "database:"
-msgstr ""
+msgstr "NSS データベース内に PKCS#12 に含まれる鍵と証明書を取り込みます:"
 
 #. Tag: screen
 #: uefi.xml:360
 #, no-c-format
 msgid "&prompt.user;pk12util -d . -i cert.p12"
-msgstr ""
+msgstr "&prompt.user;pk12util -d . -i cert.p12"
 
 #. Tag: para
 #: uefi.xml:363
@@ -488,7 +622,7 @@ msgstr ""
 msgid ""
 "<quote>Bless</quote> the kernel with the new signature using "
 "<command>pesign</command> :"
-msgstr ""
+msgstr "<command>pesign</command> を利用して、新しい署名をカーネルを追加します:"
 
 #. Tag: screen
 #: uefi.xml:367
@@ -497,18 +631,20 @@ msgid ""
 "&prompt.user;pesign -n . -c kernel_cert -i arch/x86/boot/bzImage \\\n"
 "  -o vmlinuz.signed -s"
 msgstr ""
+"&prompt.user;pesign -n . -c kernel_cert -i arch/x86/boot/bzImage \\\n"
+"  -o vmlinuz.signed -s"
 
 #. Tag: para
 #: uefi.xml:371
 #, no-c-format
 msgid "List the signatures on the kernel image:"
-msgstr ""
+msgstr "カーネルイメージに含まれる署名を一覧表示します:"
 
 #. Tag: screen
 #: uefi.xml:374
 #, no-c-format
 msgid "&prompt.user;pesign -n . -S -i vmlinuz.signed"
-msgstr ""
+msgstr "&prompt.user;pesign -n . -S -i vmlinuz.signed"
 
 #. Tag: para
 #: uefi.xml:375
@@ -518,6 +654,9 @@ msgid ""
 "usual. Because the kernel now has a custom signature the certificate used "
 "for signing needs to be imported into the UEFI firmware or MOK."
 msgstr ""
+"あとは通常通り、 /boot ディレクトリ内にカーネルをインストールすることができます。"
+"ただし、カーネルには独自の証明書による署名が設定されているため、これをファームウエアか"
+" MOK に取り込む必要があります。"
 
 #. Tag: para
 #: uefi.xml:382
@@ -525,43 +664,43 @@ msgstr ""
 msgid ""
 "Convert the certificate to the DER format for import into the firmware or "
 "MOK:"
-msgstr ""
+msgstr "UEFI ファームウエアまたは MOK に取り込むため、証明書を DER 形式に変換します:"
 
 #. Tag: screen
 #: uefi.xml:386
 #, no-c-format
 msgid "&prompt.user;openssl x509 -in cert.pem -outform der -out cert.der"
-msgstr ""
+msgstr "&prompt.user;openssl x509 -in cert.pem -outform der -out cert.der"
 
 #. Tag: para
 #: uefi.xml:389
 #, no-c-format
 msgid "Copy the certificate to the ESP for easier access:"
-msgstr ""
+msgstr "簡単にアクセスできるよう、 ESP に証明書をコピーします:"
 
 #. Tag: screen
 #: uefi.xml:392
 #, no-c-format
 msgid "&prompt.sudo;cp cert.der /boot/efi/"
-msgstr ""
+msgstr "&prompt.sudo;cp cert.der /boot/efi/"
 
 #. Tag: para
 #: uefi.xml:395
 #, no-c-format
 msgid "Use <command>mokutil</command> to launch the MOK list automatically."
-msgstr ""
+msgstr "MOK を自動的に取り扱うには、 <command>mokutil</command> を使用します。"
 
 #. Tag: para
 #: uefi.xml:402
 #, no-c-format
 msgid "Import the certificate to MOK:"
-msgstr ""
+msgstr "証明書を MOK に取り込みます:"
 
 #. Tag: screen
 #: uefi.xml:405
 #, no-c-format
 msgid "&prompt.user;mokutil --root-pw --import cert.der"
-msgstr ""
+msgstr "&prompt.user;mokutil --root-pw --import cert.der"
 
 #. Tag: para
 #: uefi.xml:406
@@ -570,18 +709,20 @@ msgid ""
 "The <option>--root-pw</option> option enables usage of the &rootuser; user "
 "directly."
 msgstr ""
+"<option>--root-pw</option> オプションを指定することで、 &rootuser; ユーザ経由で"
+"アクセスすることができます。"
 
 #. Tag: para
 #: uefi.xml:412
 #, no-c-format
 msgid "Check the list of certificates that are prepared to be enrolled:"
-msgstr ""
+msgstr "登録の準備ができた証明書の一覧を確認します:"
 
 #. Tag: screen
 #: uefi.xml:415
 #, no-c-format
 msgid "&prompt.user;mokutil --list-new"
-msgstr ""
+msgstr "&prompt.user;mokutil --list-new"
 
 #. Tag: para
 #: uefi.xml:418
@@ -591,43 +732,45 @@ msgid ""
 "You need to enter the &rootuser; password to confirm the import of the "
 "certificate to the MOK list."
 msgstr ""
+"システムを再起動します。 <systemitem>shim</systemitem> から MokManager が"
+"起動できるはずです。 &rootuser; のパスワードを入力して、 MOK の一覧内への"
+"証明書の取り込みを確認します。"
 
 #. Tag: para
 #: uefi.xml:425
 #, no-c-format
 msgid "Check if the newly imported key was enrolled:"
-msgstr ""
+msgstr "新しく取り込んだ鍵が登録されていることを確認します:"
 
 #. Tag: screen
 #: uefi.xml:428
 #, no-c-format
 msgid "&prompt.user;mokutil --list-enrolled"
-msgstr ""
+msgstr "&prompt.user;mokutil --list-enrolled"
 
 #. Tag: para
 #: uefi.xml:435
 #, no-c-format
-msgid ""
-"Alternatively, this is the procedure if you want to launch MOK manually:"
-msgstr ""
+msgid "Alternatively, this is the procedure if you want to launch MOK manually:"
+msgstr "上記以外にも、 MOK を手作業で処理することもできます:"
 
 #. Tag: para
 #: uefi.xml:439
 #, no-c-format
 msgid "Reboot"
-msgstr ""
+msgstr "まずは再起動します。"
 
 #. Tag: para
 #: uefi.xml:444
 #, no-c-format
 msgid "In the &grub; menu press the ' <literal>c</literal> ' key."
-msgstr ""
+msgstr "&grub; のメニューが表示されたら、 ' <literal>c</literal> ' キーを押します。"
 
 #. Tag: para
 #: uefi.xml:449
 #, no-c-format
 msgid "Type:"
-msgstr ""
+msgstr "下記のように入力します:"
 
 #. Tag: screen
 #: uefi.xml:452
@@ -636,12 +779,14 @@ msgid ""
 "chainloader $efibootdir/MokManager.efi\n"
 "boot"
 msgstr ""
+"chainloader $efibootdir/MokManager.efi\n"
+"boot"
 
 #. Tag: para
 #: uefi.xml:456
 #, no-c-format
 msgid "Select <guimenu>Enroll key from disk</guimenu> ."
-msgstr ""
+msgstr "<guimenu>Enroll key from disk</guimenu> を選択します。"
 
 #. Tag: para
 #: uefi.xml:461
@@ -650,6 +795,8 @@ msgid ""
 "Navigate to the <filename>cert.der</filename> file and press <keycap "
 "function=\"enter\"/> ."
 msgstr ""
+"<filename>cert.der</filename> ファイルを指定して <keycap "
+"function=\"enter\"/> を押します。"
 
 #. Tag: para
 #: uefi.xml:467
@@ -658,6 +805,8 @@ msgid ""
 "Follow the instructions to enroll the key. Normally this should be pressing "
 "' <literal>0</literal> ' and then ' <literal>y</literal> ' to confirm."
 msgstr ""
+"後は表示された手順に従います。通常は ' <literal>0</literal> ' を押してから"
+" ' <literal>y</literal> ' を押すと、確認を完了することができます。"
 
 #. Tag: para
 #: uefi.xml:472
@@ -666,12 +815,14 @@ msgid ""
 "Alternatively, the firmware menu may provide ways to add a new key to the "
 "Signature Database."
 msgstr ""
+"それ以外にも、ファームウエア側のメニューで、署名データベース内に新しい鍵を"
+"追加することができるものもあります。"
 
 #. Tag: title
 #: uefi.xml:508
 #, no-c-format
 msgid "Using Non-Inbox Drivers"
-msgstr ""
+msgstr "非同梱ドライバの使用について"
 
 #. Tag: para
 #: uefi.xml:509
@@ -681,6 +832,9 @@ msgid ""
 "not come with &productname;) during installation with Secure Boot enabled. "
 "The signing key used for SolidDriver/PLDP is not trusted by default."
 msgstr ""
+"Secure Boot が有効化されている場合、インストール時に非同梱ドライバ (&productname; "
+"には含まれていないドライバ) の追加を行なうことはできません。 SolidDriver/PLDP "
+"向けの署名鍵は、既定では信頼されていません。"
 
 #. Tag: para
 #: uefi.xml:514
@@ -689,6 +843,8 @@ msgid ""
 "It is possible to install third party drivers during installation with "
 "Secure Boot enabled in two different ways. In both cases:"
 msgstr ""
+"Secure Boot が有効化されている場合、インストール時にサードパーティ製のドライバを"
+"インストールする方法が 2 種類用意されています。いずれも下記に注意してください:"
 
 #. Tag: para
 #: uefi.xml:520
@@ -698,6 +854,9 @@ msgid ""
 "tools before the installation. This option depends on the specific hardware "
 "you are using. Consult your hardware vendor for more information."
 msgstr ""
+"インストールを行なう前に、ファームウエアやシステム管理ツールを介して、ファームウエア"
+"データベース内に必要な鍵を取り込んでおいてください。この設定は、使用している"
+"ハードウエアによって異なります。詳しくはハードウエアの製造元にお問い合わせください。"
 
 #. Tag: para
 #: uefi.xml:528
@@ -707,6 +866,8 @@ msgid ""
 "\"/> or your hardware vendor to enroll the needed keys in the MOK list at "
 "first boot."
 msgstr ""
+"<link xlink:href=\"https://drivers.suse.com/\"/> もしくはハードウエアの製造元が"
+"提供する起動可能な ISO を利用して、初回の起動時に必要な鍵を登録します。"
 
 #. Tag: para
 #: uefi.xml:535
@@ -715,12 +876,14 @@ msgid ""
 "To use the bootable driver ISO to enroll the driver keys to the MOK list, "
 "follow these steps:"
 msgstr ""
+"起動可能な ISO を利用して MOK リスト内にドライバの鍵を登録するには、"
+"下記の手順を実施します:"
 
 #. Tag: para
 #: uefi.xml:541
 #, no-c-format
 msgid "Burn the ISO image above to an empty CD/DVD medium."
-msgstr ""
+msgstr "空きの CD/DVD メディアに ISO イメージを書き込みます。"
 
 #. Tag: para
 #: uefi.xml:546
@@ -729,6 +892,8 @@ msgid ""
 "Start the installation using the new CD/DVD medium, having the standard "
 "installation media at hand or a URL to a network installation server."
 msgstr ""
+"標準のインストールメディアを利用するか、もしくはネットワークのインストール"
+"サーバを利用してインストールを開始します。"
 
 #. Tag: para
 #: uefi.xml:551
@@ -737,6 +902,8 @@ msgid ""
 "If doing a network installation, enter the URL of the network installation "
 "source on the boot command line using the <option>install=</option> option."
 msgstr ""
+"ネットワーク経由でインストールする場合は、起動パラメータに <option>install=</option> "
+"オプションで URL を指定します。"
 
 #. Tag: para
 #: uefi.xml:556
@@ -746,12 +913,14 @@ msgid ""
 "the driver kit and then ask to insert the first installation disk of the "
 "product."
 msgstr ""
+"光学メディアからインストールを行なう場合、インストールプログラムは最初に"
+"ドライバキットから起動し、その後製品のインストールディスクを挿入してください。"
 
 #. Tag: para
 #: uefi.xml:563
 #, no-c-format
 msgid "An initrd containing updated drivers will be used for installation."
-msgstr ""
+msgstr "initrd には更新済みのドライバが含まれていますので、それを利用してインストールすることができます。"
 
 #. Tag: para
 #: uefi.xml:568
@@ -760,18 +929,20 @@ msgid ""
 "For more information, see <link xlink:href=\"https://drivers.suse.com/doc/"
 "Usage/Secure_Boot_Certificate.html\"/> ."
 msgstr ""
+"詳しくは <link xlink:href=\"https://drivers.suse.com/doc/Usage/Secure_Boot_"
+"Certificate.html\"/> をお読みください。"
 
 #. Tag: title
 #: uefi.xml:576
 #, no-c-format
 msgid "Features and Limitations"
-msgstr ""
+msgstr "機能と制限"
 
 #. Tag: para
 #: uefi.xml:577
 #, no-c-format
 msgid "When booting in Secure Boot mode, the following features apply:"
-msgstr ""
+msgstr "Secure Boot モードで起動する場合、下記の機能が提供されます:"
 
 #. Tag: para
 #: uefi.xml:582
@@ -780,12 +951,14 @@ msgid ""
 "Installation to UEFI default boot loader location, a mechanism to keep or "
 "restore the EFI boot entry."
 msgstr ""
+"UEFI の既定の場所に対するブートローダのインストール、および EFI の起動"
+"項目に対する維持や復元の仕組み"
 
 #. Tag: para
 #: uefi.xml:588
 #, no-c-format
 msgid "Reboot via UEFI."
-msgstr ""
+msgstr "UEFI 経由での再起動"
 
 #. Tag: para
 #: uefi.xml:593
@@ -793,13 +966,13 @@ msgstr ""
 msgid ""
 "Xen hypervisor will boot with UEFI when there is no legacy BIOS to fall back "
 "to."
-msgstr ""
+msgstr "従来の BIOS にフォールバックすることのない、 UEFI での Xen ハイパーバイザの起動"
 
 #. Tag: para
 #: uefi.xml:599
 #, no-c-format
 msgid "UEFI IPv6 PXE boot support."
-msgstr ""
+msgstr "UEFI の IPv6 PXE 起動への対応"
 
 #. Tag: para
 #: uefi.xml:604
@@ -808,18 +981,20 @@ msgid ""
 "UEFI videomode support, the kernel can retrieve video mode from UEFI to "
 "configure KMS mode with the same parameters."
 msgstr ""
+"UEFI ビデオモードサポート (UEFI 経由でカーネルがビデオモードを取得し、"
+"同じパラメータで KMS モードを設定する機能)"
 
 #. Tag: para
 #: uefi.xml:610
 #, no-c-format
 msgid "UEFI booting from USB devices is supported."
-msgstr ""
+msgstr "USB デバイス経由の UEFI 起動"
 
 #. Tag: para
 #: uefi.xml:615
 #, no-c-format
 msgid "When booting in Secure Boot mode, the following limitations apply:"
-msgstr ""
+msgstr "Secure Boot モードでの起動時には、下記の制限事項が適用されます:"
 
 #. Tag: para
 #: uefi.xml:620
@@ -828,24 +1003,26 @@ msgid ""
 "To ensure that Secure Boot cannot be easily circumvented, some kernel "
 "features are disabled when running under Secure Boot."
 msgstr ""
+"Secure Boot が容易に突破されないようにするため、 Secure Boot の動作中は"
+"いくつかのカーネル機能が無効化されます。"
 
 #. Tag: para
 #: uefi.xml:627
 #, no-c-format
 msgid "Boot loader, kernel, and kernel modules must be signed."
-msgstr ""
+msgstr "ブートローダ、カーネル、カーネルモジュールは、いずれも署名されていなければなりません。"
 
 #. Tag: para
 #: uefi.xml:632
 #, no-c-format
 msgid "Kexec and Kdump are disabled."
-msgstr ""
+msgstr "Kexec と Kdump の機能が無効化されます。"
 
 #. Tag: para
 #: uefi.xml:637
 #, no-c-format
 msgid "Hibernation (suspend on disk) is disabled."
-msgstr ""
+msgstr "ハイバネーション (suspend to disk) が無効化されます。"
 
 #. Tag: para
 #: uefi.xml:642
@@ -854,6 +1031,8 @@ msgid ""
 "Access to <filename>/dev/kmem</filename> and <filename>/dev/mem</filename> "
 "is not possible, not even as root user."
 msgstr ""
+"root ユーザであっても <filename>/dev/kmem</filename> および <filename>/dev/mem</filename> "
+"にアクセスできなくなります。"
 
 #. Tag: para
 #: uefi.xml:648
@@ -862,24 +1041,26 @@ msgid ""
 "Access to the I/O port is not possible, not even as root user. All X11 "
 "graphical drivers must use a kernel driver."
 msgstr ""
+"root ユーザであっても I/O ポートへのアクセスができなくなります。"
+"また、 X11 のグラフィカルドライバはカーネルドライバを使用しなければなりません。"
 
 #. Tag: para
 #: uefi.xml:654
 #, no-c-format
 msgid "PCI BAR access through sysfs is not possible."
-msgstr ""
+msgstr "sysfs を介した PCI BAR アクセスができなくなります。"
 
 #. Tag: para
 #: uefi.xml:659
 #, no-c-format
 msgid "<literal>custom_method</literal> in ACPI is not available."
-msgstr ""
+msgstr "ACPI の <literal>custom_method</literal> が利用できなくなります。"
 
 #. Tag: para
 #: uefi.xml:664
 #, no-c-format
 msgid "debugfs for asus-wmi module is not available."
-msgstr ""
+msgstr "asus-wmi モジュール向けの debugfs が利用できなくなります。"
 
 #. Tag: para
 #: uefi.xml:669
@@ -887,13 +1068,13 @@ msgstr ""
 msgid ""
 "the <literal>acpi_rsdp</literal> parameter does not have any effect on the "
 "kernel."
-msgstr ""
+msgstr "<literal>acpi_rsdp</literal> がカーネルに対して何も影響を及ぼさなくなります。"
 
 #. Tag: title
 #: uefi.xml:691
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: uefi.xml:695
@@ -902,6 +1083,8 @@ msgid ""
 "<link xlink:href=\"http://www.uefi.org\"/> &mdash;UEFI home page where you "
 "can find the current UEFI specifications."
 msgstr ""
+"<link xlink:href=\"http://www.uefi.org\"/>: UEFI の Web ページです。ここには"
+"最新の UEFI 仕様に関する情報が記載されています。"
 
 #. Tag: para
 #: uefi.xml:701
@@ -910,26 +1093,26 @@ msgid ""
 "Blog posts by Olaf Kirch and Vojtěch Pavlík (the chapter above is heavily "
 "based on these posts):"
 msgstr ""
+"Olaf Kirch 氏および Vojtěch Pavlík 氏によるブログ投稿 (本章の内容は、"
+"この投稿をベースにしています):"
 
 #. Tag: para
 #: uefi.xml:707
 #, no-c-format
 msgid "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-plan/\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-plan/\"/>"
 
 #. Tag: para
 #: uefi.xml:712
 #, no-c-format
-msgid ""
-"<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-overview/\"/>"
-msgstr ""
+msgid "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-overview/\"/>"
+msgstr "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-overview/\"/>"
 
 #. Tag: para
 #: uefi.xml:717
 #, no-c-format
-msgid ""
-"<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-details/\"/>"
-msgstr ""
+msgid "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-details/\"/>"
+msgstr "<link xlink:href=\"http://www.suse.com/blogs/uefi-secure-boot-details/\"/>"
 
 #. Tag: para
 #: uefi.xml:724
@@ -937,4 +1120,5 @@ msgstr ""
 msgid ""
 "<link xlink:href=\"http://en.opensuse.org/openSUSE:UEFI\"/> &mdash;UEFI with "
 "openSUSE."
-msgstr ""
+msgstr "<link xlink:href=\"http://ja.opensuse.org/openSUSE:UEFI\"/> openSUSE での UEFI"
+
