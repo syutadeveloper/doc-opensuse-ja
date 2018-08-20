@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.suse.kb">
- <title>Keyboard Mapping</title>
+ <title>キーボードマッピング</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,10 +13,7 @@
   </dm:docmanager>
  </info>
 
- <para>
-  To standardize the keyboard mapping of programs, changes were made to the
-  following files:
- </para>
+ <para>プログラムによるキーボードマッピングを標準化するため、下記のファイルに対して変更が加えられています:</para>
 
 <screen>/etc/inputrc
 /etc/X11/Xmodmap
@@ -27,31 +24,16 @@
 /etc/termcap
 /usr/share/terminfo/x/xterm
 /usr/share/X11/app-defaults/XTerm
-/usr/share/emacs/<replaceable>VERSION</replaceable>/site-lisp/term/*.el</screen>
+/usr/share/emacs/<replaceable>バージョン番号</replaceable>/site-lisp/term/*.el</screen>
 
- <para>
-  These changes only affect applications that use <command>terminfo</command>
-  entries or whose configuration files are changed directly
-  (<command>vi</command>, <command>emacs</command>, etc.). Applications not
-  shipped with the system should be adapted to these defaults.
- </para>
+ <para>これらの変更は、 <command>terminfo</command> の項目を使用するアプリケーションか、もしくはこれらの設定ファイルを直接使用するアプリケーション ( <command>vi</command> , <command>emacs</command> など) にのみ影響があります。システムに付属していないアプリケーションについては、これらの既定値にあわせて調整してください。</para>
 
- <para>
-  Under X, the compose key (multikey) can be enabled as explained in
-  <filename>/etc/X11/Xmodmap</filename>.
- </para>
+ <para>また、 X 環境下では合成キー (マルチキー) の有効化を行なうことができます。詳しくは <filename>/etc/X11/Xmodmap</filename> をお読みください。</para>
 
- <para>
-  Further settings are possible using the X Keyboard Extension (XKB). This
-  extension is also used by the desktop environment &gnome; (gswitchit).
- </para>
+ <para>それ以外の設定については、 X キーボード拡張 (X Keyboard Extensions (XKB)) を利用して行なうことができます。この拡張は、デスクトップ環境の &gnome; でも使用されています (gswitchit) 。</para>
 
  <tip>
-  <title>For More Information</title>
-  <para>
-   Information about XKB is available in the documents listed in
-   <filename>/usr/share/doc/packages/xkeyboard-config</filename> (part of the
-   <systemitem>xkeyboard-config</systemitem> package).
-  </para>
+  <title>さらなる情報</title>
+  <para>XKB に関する詳細は、 <filename>/usr/share/doc/packages/xkeyboard-config</filename> 内にある文書 (<systemitem>xkeyboard-config</systemitem> パッケージ) をお読みください。</para>
  </tip>
 </sect1>

@@ -1,26 +1,29 @@
+# translation of suse_kb.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: suse_kb.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-20 14:33+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: suse_kb.xml:9
 #, no-c-format
 msgid "Keyboard Mapping"
-msgstr ""
+msgstr "キーボードマッピング"
 
 #. Tag: para
 #: suse_kb.xml:18
@@ -29,6 +32,8 @@ msgid ""
 "To standardize the keyboard mapping of programs, changes were made to the "
 "following files:"
 msgstr ""
+"プログラムによるキーボードマッピングを標準化するため、下記のファイルに対して変更が"
+"加えられています:"
 
 #. Tag: screen
 #: suse_kb.xml:23
@@ -45,6 +50,16 @@ msgid ""
 "/usr/share/X11/app-defaults/XTerm\n"
 "/usr/share/emacs/<replaceable>VERSION</replaceable>/site-lisp/term/*.el"
 msgstr ""
+"/etc/inputrc\n"
+"/etc/X11/Xmodmap\n"
+"/etc/skel/.emacs\n"
+"/etc/skel/.gnu-emacs\n"
+"/etc/skel/.vimrc\n"
+"/etc/csh.cshrc\n"
+"/etc/termcap\n"
+"/usr/share/terminfo/x/xterm\n"
+"/usr/share/X11/app-defaults/XTerm\n"
+"/usr/share/emacs/<replaceable>バージョン番号</replaceable>/site-lisp/term/*.el"
 
 #. Tag: para
 #: suse_kb.xml:34
@@ -55,6 +70,10 @@ msgid ""
 "command> , <command>emacs</command> , etc.). Applications not shipped with "
 "the system should be adapted to these defaults."
 msgstr ""
+"これらの変更は、 <command>terminfo</command> の項目を使用するアプリケーションか、"
+"もしくはこれらの設定ファイルを直接使用するアプリケーション ( <command>vi</"
+"command> , <command>emacs</command> など) にのみ影響があります。システムに付属"
+"していないアプリケーションについては、これらの既定値にあわせて調整してください。"
 
 #. Tag: para
 #: suse_kb.xml:41
@@ -63,6 +82,8 @@ msgid ""
 "Under X, the compose key (multikey) can be enabled as explained in "
 "<filename>/etc/X11/Xmodmap</filename> ."
 msgstr ""
+"また、 X 環境下では合成キー (マルチキー) の有効化を行なうことができます。"
+"詳しくは <filename>/etc/X11/Xmodmap</filename> をお読みください。"
 
 #. Tag: para
 #: suse_kb.xml:46
@@ -71,12 +92,15 @@ msgid ""
 "Further settings are possible using the X Keyboard Extension (XKB). This "
 "extension is also used by the desktop environment &gnome; (gswitchit)."
 msgstr ""
+"それ以外の設定については、 X キーボード拡張 (X Keyboard Extensions (XKB)) "
+"を利用して行なうことができます。この拡張は、デスクトップ環境の &gnome; でも"
+"使用されています (gswitchit) 。"
 
 #. Tag: title
 #: suse_kb.xml:52
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: suse_kb.xml:53
@@ -86,3 +110,6 @@ msgid ""
 "share/doc/packages/xkeyboard-config</filename> (part of the "
 "<systemitem>xkeyboard-config</systemitem> package)."
 msgstr ""
+"XKB に関する詳細は、 <filename>/usr/share/doc/packages/xkeyboard-config</filename> "
+"内にある文書 (<systemitem>xkeyboard-config</systemitem> パッケージ) をお読みください。"
+
