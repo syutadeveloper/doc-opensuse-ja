@@ -4,7 +4,7 @@
 %entities;
 ]>
 <sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="sec.suse.l10n">
- <title>Language and Country-Specific Settings</title>
+ <title>言語および国固有の設定</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -13,110 +13,47 @@
   </dm:docmanager>
  </info>
 
- <para>
-  The system is, to a very large extent, internationalized and can be modified
-  for local needs. Internationalization (<emphasis>I18N</emphasis>) allows
-  specific localization (<emphasis>L10N</emphasis>). The abbreviations I18N and
-  L10N are derived from the first and last letters of the words and, in
-  between, the number of letters omitted.
- </para>
+ <para>システムとは、非常に幅広い意味で国際化され、地域の要件にあわせた変更が加えられます。つまり、国際化 (internationalization ( <emphasis>I18N</emphasis> )) は特定の地域への対応 (localization ( <emphasis>L10N</emphasis> ) を含む意味になります。ちなみに、 I18N や L10N とは、最初と最後の文字だけを残して、その途中の文字を文字数で省略した表現です。</para>
 
- <para>
-  Settings are made with <systemitem>LC_</systemitem> variables defined in the
-  file <filename>/etc/sysconfig/language</filename>. This refers not only to
-  <emphasis>native language support</emphasis>, but also to the categories
-  <emphasis>Messages</emphasis> (Language), <emphasis>Character Set</emphasis>,
-  <emphasis>Sort Order</emphasis>, <emphasis>Time and Date</emphasis>,
-  <emphasis>Numbers</emphasis> and <emphasis>Money</emphasis>. Each of these
-  categories can be defined directly with its own variable or indirectly with a
-  master variable in the file <filename>language</filename> (see the
-  <command>locale</command> man page).
- </para>
+ <para><systemitem>LC_</systemitem> 変数に対する設定は、 <filename>/etc/sysconfig/language</filename> ファイル内で行ないます。ここでの設定は <emphasis>言語サポート</emphasis> という意味だけでなく、 <emphasis>メッセージ</emphasis> (言語), <emphasis>文字セット</emphasis> , <emphasis>並び替え順序</emphasis> , <emphasis>日付と時刻の表示形式</emphasis> , <emphasis>数字の表記方法</emphasis> , <emphasis>通貨単位</emphasis> などの分野があります。それぞれの分野に対する設定は、直接指定することができるほか、 <filename>language</filename> ファイル内のマスター変数で間接的に使用することもできます (詳しくは <command>locale</command> のマニュアルページをお読みください) 。</para>
 
  <variablelist>
   <varlistentry>
-   <term><systemitem>RC_LC_MESSAGES</systemitem>,
-    <systemitem>RC_LC_CTYPE</systemitem>,
-    <systemitem>RC_LC_COLLATE</systemitem>,
-    <systemitem>RC_LC_TIME</systemitem>,
-    <systemitem>RC_LC_NUMERIC</systemitem>,
-    <systemitem>RC_LC_MONETARY</systemitem>
-   </term>
+   <term><systemitem>RC_LC_MESSAGES</systemitem> , <systemitem>RC_LC_CTYPE</systemitem> , <systemitem>RC_LC_COLLATE</systemitem> , <systemitem>RC_LC_TIME</systemitem> , <systemitem>RC_LC_NUMERIC</systemitem> , <systemitem>RC_LC_MONETARY</systemitem></term>
    <listitem>
-    <para>
-     These variables are passed to the shell without the
-     <systemitem>RC_</systemitem> prefix and represent the listed categories.
-     The shell profiles concerned are listed below. The current setting can be
-     shown with the command <command>locale</command>.
-    </para>
+    <para>これらの変数は <systemitem>RC_</systemitem> のプレフィクスを取り除いてシェルに渡され、それぞれの分類ごとの意味を表わすようになっています。関連するシェルのプロファイルを下記に示します。現在の設定は、 <command>locale</command> コマンドで表示することができます。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><systemitem>RC_LC_ALL</systemitem>
-   </term>
+   <term><systemitem>RC_LC_ALL</systemitem></term>
    <listitem>
-    <para>
-     This variable, if set, overwrites the values of the variables already
-     mentioned.
-    </para>
+    <para>この変数が設定されている場合、上述の各変数の値をこの値で上書きします。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><systemitem>RC_LANG</systemitem>
-   </term>
+   <term><systemitem>RC_LANG</systemitem></term>
    <listitem>
-    <para>
-     If none of the previous variables are set, this is the fallback. By
-     default, only <systemitem>RC_LANG</systemitem> is set. This makes it
-     easier for users to enter their own values.
-    </para>
+    <para>上述までの変数のいずれも設定されていない場合、この変数を代替として使用します。既定では <systemitem>RC_LANG</systemitem> のみが設定されます。これにより、ユーザが独自の設定を行ないやすくしています。</para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><systemitem>ROOT_USES_LANG</systemitem>
-   </term>
+   <term><systemitem>ROOT_USES_LANG</systemitem></term>
    <listitem>
-    <para>
-     A <literal>yes</literal> or <literal>no</literal> variable. If set to
-     <literal>no</literal>, <systemitem class="username">root</systemitem>
-     always works in the POSIX environment.
-    </para>
+    <para><literal>yes</literal> もしくは <literal>no</literal> を指定する変数です。 <literal>no</literal> を指定すると、 <systemitem class="username">root</systemitem> が常に POSIX 環境に設定されます。</para>
    </listitem>
   </varlistentry>
  </variablelist>
 
- <para>
-  The variables can be set with the &yast; sysconfig editor. The value of such
-  a variable contains the language code, country code, encoding and modifier.
-  The individual components are connected by special characters:
- </para>
+ <para>なお、これらの変数は &yast; sysconfig エディタで設定することができます。これらの変数の値は言語コードや国コード、エンコーディングや修飾子などが含まれます。具体的には、下記のような書式になります:</para>
 
 <screen>
-  LANG=&lt;language&gt;[[_&lt;COUNTRY&gt;].&lt;Encoding&gt;[@&lt;Modifier&gt;]]
+  LANG=&lt;言語&gt;[[_&lt;国コード&gt;].&lt;エンコーディング&gt;[@&lt;修飾子&gt;]]
 </screen>
 
  <sect2 xml:id="sec.suse.l10n.examples">
-  <title>Some Examples</title>
-  <para>
-   You should always set the language and country codes together. Language
-   settings follow the standard ISO&nbsp;639 available at
-   <link xlink:href="http://www.evertype.com/standards/iso639/iso639-en.html"/>
-   and <link xlink:href="http://www.loc.gov/standards/iso639-2/"/>. Country
-   codes are listed in ISO&nbsp;3166, see
-   <link xlink:href="http://en.wikipedia.org/wiki/ISO_3166"/>.
-<!--taroth 2013-02-06: the following URL now redirects to a generic site on which the
-    ISO standard can be bought, but not really be accessed-->
-<!--<ulink  url="http://www.din.de/gremien/nas/nabd/iso3166ma/codlstp1/en_listp1.html"/>.-->
-  </para>
-  <para>
-   It only makes sense to set values for which usable description files can be
-   found in <filename>/usr/lib/locale</filename>. Additional description files
-   can be created from the files in <filename>/usr/share/i18n</filename> using
-   the command <command>localedef</command>. The description files are part of
-   the <systemitem>glibc-i18ndata</systemitem> package. A description file for
-   <literal>en_US.UTF-8</literal> (for English and United States) can be
-   created with:
-  </para>
+  <title>いくつかの例</title>
+  <para>言語と国コードについては、必ず指定してください。言語は ISO-639 (一覧は <link xlink:href="https://ja.wikipedia.org/wiki/ISO_639-1%E3%82%B3%E3%83%BC%E3%83%89%E4%B8%80%E8%A6%A7"/> にあります) を、国コードは ISO-3166 (一覧は <link xlink:href="https://ja.wikipedia.org/wiki/ISO_3166-1"/> にあります) をそれぞれお使いください。 <!--taroth 2013-02-06: the following URL now redirects to a generic site on which the ISO standard can be bought, but not really be accessed--> <!--<ulink url="http://www.din.de/gremien/nas/nabd/iso3166ma/codlstp1/en_listp1.html"/>.--></para>
+  <para>なお、 <filename>/usr/lib/locale</filename> 以下にあるディレクトリの言語および国コードなどの組み合わせのみを使用することができます。また、追加の定義ファイルを作成したい場合は、 <command>localedef</command> コマンドをお使いのうえ、 <filename>/usr/share/i18n</filename> 内にファイルを作成してください。定義ファイルは <systemitem>glibc-i18ndata</systemitem> に含まれているものです。たとえば <literal>en_US.UTF-8</literal> (イギリスおよびアメリカ英語) を作成したい場合は、下記のように実行します:</para>
 <!--
 For German use:
 localedef -i de_DE@euro -f UTF-8 de_DE@euro.UTF-8
@@ -134,41 +71,15 @@ localedef -i en_US -f UTF-8 en_US.UTF-8
 </screen>
   <variablelist>
    <varlistentry>
-    <term>
-<!--
-Use for:
-German:   <systemitem>LANG=de_DE.UTF-8</systemitem>
-French:   <systemitem>LANG=fr_FR.UTF-8</systemitem>
-Italian:  <systemitem>LANG=it_IT.UTF-8</systemitem>
-Spanish:  <systemitem>LANG=es_ES.UTF-8</systemitem>
---><systemitem>LANG=en_US.UTF-8</systemitem>
-    </term>
+    <term><!--Use for:German: <systemitem>LANG=de_DE.UTF-8</systemitem>French: <systemitem>LANG=fr_FR.UTF-8</systemitem>Italian: <systemitem>LANG=it_IT.UTF-8</systemitem>Spanish: <systemitem>LANG=es_ES.UTF-8</systemitem>--> <systemitem>LANG=en_US.UTF-8</systemitem></term>
     <listitem>
-     <para>
-      This is the default setting if American English is selected during
-      installation. If you selected another language, that language is enabled
-      but still with UTF-8 as the character encoding.
-     </para>
+     <para>インストール時にアメリカ英語を選択すると、上記のような既定の設定になります。他の言語を選択した場合は言語と国コードが代わりますが、文字エンコーディングの UTF-8 についてはそのまま保持されます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>
-<!--
-For German use:     <systemitem>LANG=de_DE.ISO-8859-1</systemitem>
-French:   <systemitem>LANG=fr_FR.ISO-8859-1</systemitem>
-Italian:  <systemitem>LANG=it_IT.ISO-8859-1</systemitem>
-Spanish:  <systemitem>LANG=es_ES.ISO-8859-1</systemitem>
---><systemitem>LANG=en_US.ISO-8859-1</systemitem>
-    </term>
+    <term><!--For German use: <systemitem>LANG=de_DE.ISO-8859-1</systemitem>French: <systemitem>LANG=fr_FR.ISO-8859-1</systemitem>Italian: <systemitem>LANG=it_IT.ISO-8859-1</systemitem>Spanish: <systemitem>LANG=es_ES.ISO-8859-1</systemitem>--> <systemitem>LANG=en_US.ISO-8859-1</systemitem></term>
     <listitem>
-     <para>
-      This sets the language to English, country to United States and the
-      character set to <literal>ISO-8859-1</literal>. This character set does
-      not support the Euro sign, but it can be useful sometimes for programs
-      that have not been updated to support <literal>UTF-8</literal>. The
-      string defining the charset (<literal>ISO-8859-1</literal> in this case)
-      is then evaluated by programs like Emacs.
-     </para>
+     <para>この設定は、言語を英語に、国をアメリカに、文字セットを <literal>ISO-8859-1</literal> にする設定です。この文字セットにはユーロ記号などが含まれていませんが、 <literal>UTF-8</literal> では正しく動作しないプログラムには有用な設定です。なお、文字セットの部分 (この場合は <literal>ISO-8859-1</literal>) については、 emacs のようなプログラム側で使用されます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -178,155 +89,63 @@ French:   <systemitem>LANG=fr_FR@euro</systemitem>
 Italian:  <systemitem>LANG=it_IT@euro</systemitem>
 Spanish:  <systemitem>LANG=es_ES@euro</systemitem>
 -->
-    <term><systemitem>LANG=en_IE@euro</systemitem>
-    </term>
+    <term><systemitem>LANG=en_IE@euro</systemitem></term>
     <listitem>
-     <para>
-      The above example explicitly includes the Euro sign in a language
-      setting. This setting is obsolete now, as UTF-8 also covers the Euro
-      symbol. It is only useful if an application supports ISO-8859-15 and not
-      UTF-8.
-     </para>
+     <para>上記の設定は、言語の設定内でユーロ記号を使用できるように明示的に指定しているものです。UTF-8 には既にユーロ記号が含まれていますので、この設定は既に古い方式の設定になります。このような設定は、 ISO-8859-15 には対応しているものの、 UTF-8 には対応していないアプリケーションを使用する際に便利です。</para>
     </listitem>
    </varlistentry>
   </variablelist>
-  <para>
-   Changes to <filename>/etc/sysconfig/language</filename> are activated by the
-   following process chain:
-  </para>
+  <para><filename>/etc/sysconfig/language</filename> に対する設定は、下記の処理順序で反映されます:</para>
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     For the Bash: <filename>/etc/profile</filename> reads
-     <filename>/etc/profile.d/lang.sh</filename> which, in turn, analyzes
-     <filename>/etc/sysconfig/language</filename>.
-    </para>
+    <para>bash の場合: <filename>/etc/profile</filename> が <filename>/etc/profile.d/lang.sh</filename> を読み込み、そのファイル内で <filename>/etc/sysconfig/language</filename> を読み込みます。</para>
    </listitem>
    <listitem>
-    <para>
-     For tcsh: At login, <filename>/etc/csh.login</filename> reads
-     <filename>/etc/profile.d/lang.csh</filename> which, in turn, analyzes
-     <filename>/etc/sysconfig/language</filename>.
-    </para>
+    <para>tcsh の場合: ログイン時に <filename>/etc/csh.login</filename> が <filename>/etc/profile.d/lang.csh</filename> を読み込み、そのファイル内で <filename>/etc/sysconfig/language</filename> を読み込みます。</para>
    </listitem>
   </itemizedlist>
-  <para>
-   This ensures that any changes to
-   <filename>/etc/sysconfig/language</filename> are available at the next login
-   to the respective shell, without having to manually activate
-   them.
-  </para>
-  <para>
-   Users can override the system defaults by editing their
-   <filename>~/.bashrc</filename> accordingly. For example, if you do not want
-   to use the system-wide <literal>en_US</literal> for program messages,
-   include <systemitem>LC_MESSAGES=es_ES</systemitem> so that messages are
-   displayed in Spanish instead.
-  </para>
+  <para>このような仕組みにより、 <filename>/etc/sysconfig/language</filename> を変更すると、手作業で反映させる処理を行なうことなく、次回のログイン時に言語設定が反映されるようになっています。</para>
+  <para>ユーザ側では、システムに設定された言語設定を <filename>~/.bashrc</filename> で上書きすることができます。たとえばシステム全体に <literal>en_US</literal> が設定されている場合、この設定をプログラムメッセージに対して使用したくない場合は、 <systemitem>LC_MESSAGES=es_ES</systemitem> を設定することで、英語ではなくスペイン語で表示することができるようになります。</para>
  </sect2>
 
  <sect2 xml:id="sec.suse.l10n.dot.i18n">
-  <title>Locale Settings in <filename>~/.i18n</filename></title>
-  <para>
-   If you are not satisfied with locale system defaults, change the settings in
-   <filename>~/.i18n</filename> according to the Bash scripting syntax. Entries
-   in <filename>~/.i18n</filename> override system defaults from
-   <filename>/etc/sysconfig/language</filename>. Use the same variable names
-   but without the <literal>RC_</literal> namespace prefixes. For example, use
-   <literal>LANG</literal> instead of <literal>RC_LANG</literal>:
-  </para>
+  <title><filename>~/.i18n</filename> 内でのロケール (言語) 設定</title>
+  <para>システム側で設定された既定値では不都合がある場合は、 <filename>~/.i18n</filename> ファイルを bash のスクリプト形式で記述することで、設定を変更することができます。 <filename>~/.i18n</filename> 内での記述は <filename>/etc/sysconfig/language</filename> の設定を上書きすることができます。なお、変数名は <filename>/etc/sysconfig/language</filename> のものから、 <literal>RC_</literal> の接頭辞を取り除いて指定してください。たとえば <literal>RC_LANG</literal> ではなく <literal>LANG</literal> のようになります:</para>
 <screen>LANG=cs_CZ.UTF-8
 LC_COLLATE=C
 </screen>
  </sect2>
 
  <sect2 xml:id="sec.suse.l10n.fallback">
-  <title>Settings for Language Support</title>
-  <para>
-   Files in the category <emphasis>Messages</emphasis> are, as a rule, only
-   stored in the corresponding language directory (like
-   <filename>en</filename>) to have a fallback. If you set
-   <systemitem>LANG</systemitem> to <literal>en_US</literal> and the message
-   file in <filename>/usr/share/locale/en_US/LC_MESSAGES</filename> does not
-   exist, it falls back to
-   <filename>/usr/share/locale/en/LC_MESSAGES</filename>.
-  </para>
-  <para>
-   A fallback chain can also be defined, for example, for Breton to French or
-   for Galician to Spanish to Portuguese:
-  </para>
-  <para>
-   <systemitem>LANGUAGE="br_FR:fr_FR"</systemitem>
-  </para>
-  <para>
-   <systemitem>LANGUAGE="gl_ES:es_ES:pt_PT"</systemitem>
-  </para>
-  <para>
-   If desired, use the Norwegian variants Nynorsk and Bokmål instead (with
-   additional fallback to <literal>no</literal>):
-  </para>
-  <para>
-   <systemitem>LANG="nn_NO"</systemitem>
-  </para>
-  <para>
-   <systemitem>LANGUAGE="nn_NO:nb_NO:no"</systemitem>
-  </para>
-  <para>
-   or
-  </para>
-  <para>
-   <systemitem>LANG="nb_NO"</systemitem>
-  </para>
-  <para>
-   <systemitem>LANGUAGE="nb_NO:nn_NO:no"</systemitem>
-  </para>
-  <para>
-   Note that in Norwegian, <systemitem>LC_TIME</systemitem> is also treated
-   differently.
-  </para>
+  <title>言語に対応するための設定</title>
+  <para><emphasis>メッセージ</emphasis> に対する言語の設定には、フォールバック (後退) という仕組みが用意されています。これはたとえば、優先して使用したい言語のメッセージがアプリケーション側に用意されていない場合、提供されている言語の中からいずれか (一般的には <filename>en</filename> (英語)) を選択して表示することができます。たとえば <systemitem>LANG</systemitem> に <literal>en_US</literal> を設定していて、 <filename>/usr/share/locale/en_US/LC_MESSAGES</filename> ディレクトリ内にメッセージファイルが存在しない場合、 <filename>/usr/share/locale/en/LC_MESSAGES</filename> などをフォールバックとして使用することができます。</para>
+  <para>フォールバックの仕組みでは複数のものを指定することができます。たとえばブルトン語からフランス語に、もしくはガリシア語からスペイン語、ポルトガル語にフォールバックさせたい場合は、下記のように設定します:</para>
+  <para><systemitem>LANGUAGE="br_FR:fr_FR"</systemitem></para>
+  <para><systemitem>LANGUAGE="gl_ES:es_ES:pt_PT"</systemitem></para>
+  <para>また、ノルウェー語の変形であるニーノシュクとブークモールを使用したいような場合は、下記のように指定します (一般的なノルウェー語を表わす <literal>no</literal> の意味も含まれます):</para>
+  <para><systemitem>LANG="nn_NO"</systemitem></para>
+  <para><systemitem>LANGUAGE="nn_NO:nb_NO:no"</systemitem></para>
+  <para>もしくは、下記のように指定してもかまいません:</para>
+  <para><systemitem>LANG="nb_NO"</systemitem></para>
+  <para><systemitem>LANGUAGE="nb_NO:nn_NO:no"</systemitem></para>
+  <para>ただし、ノルウェー語では <systemitem>LC_TIME</systemitem> も異なる形式になることに注意してください。</para>
   <remark>The following example does not make sense  for 'en'; that's why I
    use 'de' as an example here. -ke- </remark>
 <!-- Translators: Please, use this 'de' example as-is -->
-  <para>
-   One problem that can arise is a separator used to delimit groups of digits
-   not being recognized properly. This occurs if <systemitem>LANG</systemitem>
-   is set to only a two-letter language code like <literal>de</literal>, but
-   the definition file glibc uses is located in
-   <filename>/usr/share/lib/de_DE/LC_NUMERIC</filename>. Thus
-   <systemitem>LC_NUMERIC</systemitem> must be set to <literal>de_DE</literal>
-   to make the separator definition visible to the system.
-  </para>
+  <para>なお、言語の設定によって数値の桁区切り文字が正しく認識されない、という問題が発生する場合があります。これは <systemitem>LANG</systemitem> に 2 桁の言語コードのみを指定した場合 (例: <literal>de</literal>) に起こります。 glibc では <filename>/usr/share/lib/de_DE/LC_NUMERIC</filename> に区切り文字の設定があるため、<literal>de</literal> では区切り文字が読み込まれないためです。この場合は、 <systemitem>LC_NUMERIC</systemitem> に <literal>de_DE</literal> のような正しい言語コードおよび国コードを入力して、区切り文字を読み込めるようにしてください。</para>
  </sect2>
 
  <sect2 xml:id="sec.suse.l10n.info">
-  <title>For More Information</title>
+  <title>さらなる情報</title>
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     <emphasis>The GNU C Library Reference Manual</emphasis>, Chapter
-     <quote>Locales and Internationalization</quote>. It is included in
-     <systemitem>glibc-info</systemitem>.<phrase os="sles;sled"> The package is
-     available from the &sle; SDK. The SDK is a module for &sle; and is
-     available via an online channel from the &scc;. Alternatively, go to <link xlink:href="http://download.suse.com/"/>, search for <literal>&sle;
-     Software Development Kit</literal> and download it from there. Refer to
-     <xref linkend="cha.add-ons"/> for details.</phrase>
-    </para>
+    <para><emphasis>The GNU C Library Reference Manual</emphasis> 内の <quote>Locales and Internationalization</quote> 章をお読みください。この文書は <systemitem>glibc-info</systemitem> パッケージに含まれています。 <phrase os="sles;sled"> なお、このパッケージは &sle; SDK 内に含まれています。 SDK は &sle; 向けのモジュールで、 &scc; のオンラインチャンネルを通じて取得することができるほか、 <link xlink:href="http://download.suse.com/"/> で <literal>&sle; Software Development Kit</literal> を検索してもダウンロードすることができます。詳しくは <xref linkend="cha.add-ons"/> をお読みください。</phrase></para>
    </listitem>
    <listitem>
-    <para>
-     Markus Kuhn, <emphasis>UTF-8 and Unicode FAQ for Unix/Linux</emphasis>,
-     currently at
-     <link xlink:href="http://www.cl.cam.ac.uk/~mgk25/unicode.html"/>.
-    </para>
+    <para>Markus Kuhn 氏による <emphasis>UTF-8 and Unicode FAQ for Unix/Linux</emphasis> (英語): 現時点では <link xlink:href="http://www.cl.cam.ac.uk/~mgk25/unicode.html"/> にあります。</para>
    </listitem>
    <listitem>
-    <para>
-     <emphasis>Unicode-HOWTO</emphasis> by Bruno Haible, available at
-<!--taroth 2011-07-26: package does not seem to exist any more (not on usual
-     or SDK media), theferore pointing to the online version now <filename>/usr/share/doc/howto/en/txt/Unicode-HOWTO.gz</filename>
-     (package <systemitem>howto</systemitem>).-->
-     <link xlink:href="http://tldp.org/HOWTO/Unicode-HOWTO-1.html"/>.
-    </para>
+    <para>Bruno Haible 氏による <emphasis>Unicode-HOWTO</emphasis> (英語): <!--taroth 2011-07-26: package does not seem to exist any more (not on usual or SDK media), theferore pointing to the online version now <filename>/usr/share/doc/howto/en/txt/Unicode-HOWTO.gz</filename> (package <systemitem>howto</systemitem>).--> <link xlink:href="http://tldp.org/HOWTO/Unicode-HOWTO-1.html"/> .</para>
    </listitem>
   </itemizedlist>
  </sect2>

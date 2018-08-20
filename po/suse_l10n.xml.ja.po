@@ -1,26 +1,29 @@
+# translation of suse_l10n.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: suse_l10n.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-20 16:30+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: suse_l10n.xml:9
 #, no-c-format
 msgid "Language and Country-Specific Settings"
-msgstr ""
+msgstr "言語および国固有の設定"
 
 #. Tag: para
 #: suse_l10n.xml:18
@@ -32,6 +35,11 @@ msgid ""
 "and L10N are derived from the first and last letters of the words and, in "
 "between, the number of letters omitted."
 msgstr ""
+"システムとは、非常に幅広い意味で国際化され、地域の要件にあわせた変更が加えられます。"
+"つまり、国際化 (internationalization ( <emphasis>I18N</emphasis> )) は特定の"
+"地域への対応 (localization ( <emphasis>L10N</emphasis> ) を含む意味になります。"
+"ちなみに、 I18N や L10N とは、最初と最後の文字だけを残して、その途中の文字を文字数"
+"で省略した表現です。"
 
 #. Tag: para
 #: suse_l10n.xml:26
@@ -47,6 +55,14 @@ msgid ""
 "indirectly with a master variable in the file <filename>language</filename> "
 "(see the <command>locale</command> man page)."
 msgstr ""
+"<systemitem>LC_</systemitem> 変数に対する設定は、 <filename>/etc/sysconfig/language</filename> "
+"ファイル内で行ないます。ここでの設定は <emphasis>言語サポート</emphasis> という意味"
+"だけでなく、 <emphasis>メッセージ</emphasis> (言語), <emphasis>文字セット"
+"</emphasis> , <emphasis>並び替え順序</emphasis> , <emphasis>日付と時刻の表示形式"
+"</emphasis> , <emphasis>数字の表記方法</emphasis> , <emphasis>通貨単位</emphasis> "
+"などの分野があります。それぞれの分野に対する設定は、直接指定することができるほか、"
+" <filename>language</filename> ファイル内のマスター変数で間接的に使用することもできます"
+" (詳しくは <command>locale</command> のマニュアルページをお読みください) 。"
 
 #. Tag: term
 #: suse_l10n.xml:40
@@ -57,6 +73,9 @@ msgid ""
 "<systemitem>RC_LC_TIME</systemitem> , <systemitem>RC_LC_NUMERIC</"
 "systemitem> , <systemitem>RC_LC_MONETARY</systemitem>"
 msgstr ""
+"<systemitem>RC_LC_MESSAGES</systemitem> , <systemitem>RC_LC_CTYPE</systemitem> ,"
+" <systemitem>RC_LC_COLLATE</systemitem> , <systemitem>RC_LC_TIME</systemitem> ,"
+" <systemitem>RC_LC_NUMERIC</systemitem> , <systemitem>RC_LC_MONETARY</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:48
@@ -67,12 +86,16 @@ msgid ""
 "concerned are listed below. The current setting can be shown with the "
 "command <command>locale</command> ."
 msgstr ""
+"これらの変数は <systemitem>RC_</systemitem> のプレフィクスを取り除いてシェルに"
+"渡され、それぞれの分類ごとの意味を表わすようになっています。関連するシェルの"
+"プロファイルを下記に示します。現在の設定は、 <command>locale</command> コマンドで"
+"表示することができます。"
 
 #. Tag: term
 #: suse_l10n.xml:57
 #, no-c-format
 msgid "<systemitem>RC_LC_ALL</systemitem>"
-msgstr ""
+msgstr "<systemitem>RC_LC_ALL</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:60
@@ -80,13 +103,13 @@ msgstr ""
 msgid ""
 "This variable, if set, overwrites the values of the variables already "
 "mentioned."
-msgstr ""
+msgstr "この変数が設定されている場合、上述の各変数の値をこの値で上書きします。"
 
 #. Tag: term
 #: suse_l10n.xml:67
 #, no-c-format
 msgid "<systemitem>RC_LANG</systemitem>"
-msgstr ""
+msgstr "<systemitem>RC_LANG</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:70
@@ -96,12 +119,15 @@ msgid ""
 "only <systemitem>RC_LANG</systemitem> is set. This makes it easier for users "
 "to enter their own values."
 msgstr ""
+"上述までの変数のいずれも設定されていない場合、この変数を代替として使用します。既定では"
+" <systemitem>RC_LANG</systemitem> のみが設定されます。これにより、ユーザが独自の"
+"設定を行ないやすくしています。"
 
 #. Tag: term
 #: suse_l10n.xml:78
 #, no-c-format
 msgid "<systemitem>ROOT_USES_LANG</systemitem>"
-msgstr ""
+msgstr "<systemitem>ROOT_USES_LANG</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:81
@@ -111,6 +137,9 @@ msgid ""
 "<literal>no</literal> , <systemitem class=\"username\">root</systemitem> "
 "always works in the POSIX environment."
 msgstr ""
+"<literal>yes</literal> もしくは <literal>no</literal> を指定する変数です。"
+" <literal>no</literal> を指定すると、 <systemitem class=\"username\">root"
+"</systemitem> が常に POSIX 環境に設定されます。"
 
 #. Tag: para
 #: suse_l10n.xml:90
@@ -120,6 +149,9 @@ msgid ""
 "a variable contains the language code, country code, encoding and modifier. "
 "The individual components are connected by special characters:"
 msgstr ""
+"なお、これらの変数は &yast; sysconfig エディタで設定することができます。これらの"
+"変数の値は言語コードや国コード、エンコーディングや修飾子などが含まれます。"
+"具体的には、下記のような書式になります:"
 
 #. Tag: screen
 #: suse_l10n.xml:96
@@ -129,12 +161,15 @@ msgid ""
 "  LANG=&lt;language&gt;[[_&lt;COUNTRY&gt;].&lt;Encoding&gt;[@&lt;"
 "Modifier&gt;]]\n"
 msgstr ""
+"\n"
+"  LANG=&lt;言語&gt;[[_&lt;国コード&gt;].&lt;エンコーディング&gt;[@&lt;"
+"修飾子&gt;]]\n"
 
 #. Tag: title
 #: suse_l10n.xml:101
 #, no-c-format
 msgid "Some Examples"
-msgstr ""
+msgstr "いくつかの例"
 
 #. Tag: para
 #: suse_l10n.xml:102
@@ -150,6 +185,14 @@ msgid ""
 "accessed--> <!--<ulink url=\"http://www.din.de/gremien/nas/nabd/iso3166ma/"
 "codlstp1/en_listp1.html\"/>.-->"
 msgstr ""
+"言語と国コードについては、必ず指定してください。言語は ISO-639 (一覧は"
+" <link xlink:href=\"https://ja.wikipedia.org/wiki/ISO_639-1%E3%82%B3%E3%83"
+"%BC%E3%83%89%E4%B8%80%E8%A6%A7\"/> にあります) を、国コードは ISO-3166 (一覧は"
+" <link xlink:href=\"https://ja.wikipedia.org/wiki/ISO_3166-1\"/> にあります) "
+"をそれぞれお使いください。 <!--taroth 2013-02-06: the following URL now redirects to a "
+"generic site on which the ISO standard can be bought, but not really be "
+"accessed--> <!--<ulink url=\"http://www.din.de/gremien/nas/nabd/iso3166ma/"
+"codlstp1/en_listp1.html\"/>.-->"
 
 #. Tag: para
 #: suse_l10n.xml:113
@@ -163,6 +206,13 @@ msgid ""
 "<literal>en_US.UTF-8</literal> (for English and United States) can be "
 "created with:"
 msgstr ""
+"なお、 <filename>/usr/lib/locale</filename> 以下にあるディレクトリの言語および"
+"国コードなどの組み合わせのみを使用することができます。また、追加の定義ファイルを"
+"作成したい場合は、 <command>localedef</command> コマンドをお使いのうえ、"
+" <filename>/usr/share/i18n</filename> 内にファイルを作成してください。定義"
+"ファイルは <systemitem>glibc-i18ndata</systemitem> に含まれているものです。"
+"たとえば <literal>en_US.UTF-8</literal> (イギリスおよびアメリカ英語) を作成したい"
+"場合は、下記のように実行します:"
 
 #. Tag: screen
 #: suse_l10n.xml:134
@@ -171,6 +221,8 @@ msgid ""
 "\n"
 "localedef -i en_US -f UTF-8 en_US.UTF-8\n"
 msgstr ""
+"\n"
+"localedef -i en_US -f UTF-8 en_US.UTF-8\n"
 
 #. Tag: term
 #: suse_l10n.xml:139
@@ -181,6 +233,10 @@ msgid ""
 "UTF-8</systemitem>Spanish: <systemitem>LANG=es_ES.UTF-8</systemitem>--> "
 "<systemitem>LANG=en_US.UTF-8</systemitem>"
 msgstr ""
+"<!--Use for:German: <systemitem>LANG=de_DE.UTF-8</systemitem>French: "
+"<systemitem>LANG=fr_FR.UTF-8</systemitem>Italian: <systemitem>LANG=it_IT."
+"UTF-8</systemitem>Spanish: <systemitem>LANG=es_ES.UTF-8</systemitem>--> "
+"<systemitem>LANG=en_US.UTF-8</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:149
@@ -190,6 +246,9 @@ msgid ""
 "installation. If you selected another language, that language is enabled but "
 "still with UTF-8 as the character encoding."
 msgstr ""
+"インストール時にアメリカ英語を選択すると、上記のような既定の設定になります。"
+"他の言語を選択した場合は言語と国コードが代わりますが、文字エンコーディングの UTF-8 "
+"についてはそのまま保持されます。"
 
 #. Tag: term
 #: suse_l10n.xml:157
@@ -201,6 +260,11 @@ msgid ""
 "<systemitem>LANG=es_ES.ISO-8859-1</systemitem>--> <systemitem>LANG=en_US."
 "ISO-8859-1</systemitem>"
 msgstr ""
+"<!--For German use: <systemitem>LANG=de_DE.ISO-8859-1</systemitem>French: "
+"<systemitem>LANG=fr_FR.ISO-8859-1</systemitem>Italian: "
+"<systemitem>LANG=it_IT.ISO-8859-1</systemitem>Spanish: "
+"<systemitem>LANG=es_ES.ISO-8859-1</systemitem>--> <systemitem>LANG=en_US."
+"ISO-8859-1</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:166
@@ -213,12 +277,16 @@ msgid ""
 "the charset ( <literal>ISO-8859-1</literal> in this case) is then evaluated "
 "by programs like Emacs."
 msgstr ""
+"この設定は、言語を英語に、国をアメリカに、文字セットを <literal>ISO-8859-1</literal> "
+"にする設定です。この文字セットにはユーロ記号などが含まれていませんが、 <literal>UTF-8</literal> "
+"では正しく動作しないプログラムには有用な設定です。なお、文字セットの部分 (この場合は"
+" <literal>ISO-8859-1</literal>) については、 emacs のようなプログラム側で使用されます。"
 
 #. Tag: term
 #: suse_l10n.xml:183
 #, no-c-format
 msgid "<systemitem>LANG=en_IE@euro</systemitem>"
-msgstr ""
+msgstr "<systemitem>LANG=en_IE@euro</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:186
@@ -228,6 +296,10 @@ msgid ""
 "This setting is obsolete now, as UTF-8 also covers the Euro symbol. It is "
 "only useful if an application supports ISO-8859-15 and not UTF-8."
 msgstr ""
+"上記の設定は、言語の設定内でユーロ記号を使用できるように明示的に指定しているものです。"
+"UTF-8 には既にユーロ記号が含まれていますので、この設定は既に古い方式の設定になります。"
+"このような設定は、 ISO-8859-15 には対応しているものの、 UTF-8 には対応していない"
+"アプリケーションを使用する際に便利です。"
 
 #. Tag: para
 #: suse_l10n.xml:195
@@ -236,6 +308,8 @@ msgid ""
 "Changes to <filename>/etc/sysconfig/language</filename> are activated by the "
 "following process chain:"
 msgstr ""
+"<filename>/etc/sysconfig/language</filename> に対する設定は、下記の処理順序で"
+"反映されます:"
 
 #. Tag: para
 #: suse_l10n.xml:201
@@ -245,6 +319,8 @@ msgid ""
 "d/lang.sh</filename> which, in turn, analyzes <filename>/etc/sysconfig/"
 "language</filename> ."
 msgstr ""
+"bash の場合: <filename>/etc/profile</filename> が <filename>/etc/profile.d/lang.sh</filename> "
+"を読み込み、そのファイル内で <filename>/etc/sysconfig/language</filename> を読み込みます。"
 
 #. Tag: para
 #: suse_l10n.xml:208
@@ -254,6 +330,9 @@ msgid ""
 "profile.d/lang.csh</filename> which, in turn, analyzes <filename>/etc/"
 "sysconfig/language</filename> ."
 msgstr ""
+"tcsh の場合: ログイン時に <filename>/etc/csh.login</filename> が <filename>/etc/"
+"profile.d/lang.csh</filename> を読み込み、そのファイル内で <filename>/etc/"
+"sysconfig/language</filename> を読み込みます。"
 
 #. Tag: para
 #: suse_l10n.xml:215
@@ -263,6 +342,9 @@ msgid ""
 "filename> are available at the next login to the respective shell, without "
 "having to manually activate them."
 msgstr ""
+"このような仕組みにより、 <filename>/etc/sysconfig/language</filename> を変更すると、"
+"手作業で反映させる処理を行なうことなく、次回のログイン時に言語設定が反映される"
+"ようになっています。"
 
 #. Tag: para
 #: suse_l10n.xml:221
@@ -274,12 +356,17 @@ msgid ""
 "<systemitem>LC_MESSAGES=es_ES</systemitem> so that messages are displayed in "
 "Spanish instead."
 msgstr ""
+"ユーザ側では、システムに設定された言語設定を <filename>~/.bashrc</filename> で"
+"上書きすることができます。たとえばシステム全体に <literal>en_US</literal> が設定"
+"されている場合、この設定をプログラムメッセージに対して使用したくない場合は、"
+" <systemitem>LC_MESSAGES=es_ES</systemitem> を設定することで、英語ではなく"
+"スペイン語で表示することができるようになります。"
 
 #. Tag: title
 #: suse_l10n.xml:231
 #, no-c-format
 msgid "Locale Settings in <filename>~/.i18n</filename>"
-msgstr ""
+msgstr "<filename>~/.i18n</filename> 内でのロケール (言語) 設定"
 
 #. Tag: para
 #: suse_l10n.xml:232
@@ -292,6 +379,12 @@ msgid ""
 "<literal>RC_</literal> namespace prefixes. For example, use <literal>LANG</"
 "literal> instead of <literal>RC_LANG</literal> :"
 msgstr ""
+"システム側で設定された既定値では不都合がある場合は、 <filename>~/.i18n</filename> "
+"ファイルを bash のスクリプト形式で記述することで、設定を変更することができます。"
+" <filename>~/.i18n</filename> 内での記述は <filename>/etc/sysconfig/language</filename> "
+"の設定を上書きすることができます。なお、変数名は <filename>/etc/sysconfig/language</filename> "
+"のものから、 <literal>RC_</literal> の接頭辞を取り除いて指定してください。たとえば"
+" <literal>RC_LANG</literal> ではなく <literal>LANG</literal> のようになります:"
 
 #. Tag: screen
 #: suse_l10n.xml:240
@@ -300,12 +393,14 @@ msgid ""
 "LANG=cs_CZ.UTF-8\n"
 "LC_COLLATE=C\n"
 msgstr ""
+"LANG=cs_CZ.UTF-8\n"
+"LC_COLLATE=C\n"
 
 #. Tag: title
 #: suse_l10n.xml:246
 #, no-c-format
 msgid "Settings for Language Support"
-msgstr ""
+msgstr "言語に対応するための設定"
 
 #. Tag: para
 #: suse_l10n.xml:247
@@ -318,6 +413,14 @@ msgid ""
 "en_US/LC_MESSAGES</filename> does not exist, it falls back to <filename>/usr/"
 "share/locale/en/LC_MESSAGES</filename> ."
 msgstr ""
+"<emphasis>メッセージ</emphasis> に対する言語の設定には、フォールバック (後退) という"
+"仕組みが用意されています。これはたとえば、優先して使用したい言語のメッセージが"
+"アプリケーション側に用意されていない場合、提供されている言語の中からいずれか"
+" (一般的には <filename>en</filename> (英語)) を選択して表示することができます。"
+"たとえば <systemitem>LANG</systemitem> に <literal>en_US</literal> を設定していて、"
+" <filename>/usr/share/locale/en_US/LC_MESSAGES</filename> ディレクトリ内に"
+"メッセージファイルが存在しない場合、 <filename>/usr/share/locale/en/LC_MESSAGES</filename> "
+"などをフォールバックとして使用することができます。"
 
 #. Tag: para
 #: suse_l10n.xml:256
@@ -326,18 +429,21 @@ msgid ""
 "A fallback chain can also be defined, for example, for Breton to French or "
 "for Galician to Spanish to Portuguese:"
 msgstr ""
+"フォールバックの仕組みでは複数のものを指定することができます。たとえばブルトン語から"
+"フランス語に、もしくはガリシア語からスペイン語、ポルトガル語にフォールバック"
+"させたい場合は、下記のように設定します:"
 
 #. Tag: para
 #: suse_l10n.xml:260
 #, no-c-format
 msgid "<systemitem>LANGUAGE=\"br_FR:fr_FR\"</systemitem>"
-msgstr ""
+msgstr "<systemitem>LANGUAGE=\"br_FR:fr_FR\"</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:263
 #, no-c-format
 msgid "<systemitem>LANGUAGE=\"gl_ES:es_ES:pt_PT\"</systemitem>"
-msgstr ""
+msgstr "<systemitem>LANGUAGE=\"gl_ES:es_ES:pt_PT\"</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:266
@@ -346,36 +452,39 @@ msgid ""
 "If desired, use the Norwegian variants Nynorsk and Bokmål instead (with "
 "additional fallback to <literal>no</literal> ):"
 msgstr ""
+"また、ノルウェー語の変形であるニーノシュクとブークモールを使用したいような"
+"場合は、下記のように指定します (一般的なノルウェー語を表わす <literal>no</literal> "
+"の意味も含まれます):"
 
 #. Tag: para
 #: suse_l10n.xml:270
 #, no-c-format
 msgid "<systemitem>LANG=\"nn_NO\"</systemitem>"
-msgstr ""
+msgstr "<systemitem>LANG=\"nn_NO\"</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:273
 #, no-c-format
 msgid "<systemitem>LANGUAGE=\"nn_NO:nb_NO:no\"</systemitem>"
-msgstr ""
+msgstr "<systemitem>LANGUAGE=\"nn_NO:nb_NO:no\"</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:276
 #, no-c-format
 msgid "or"
-msgstr ""
+msgstr "もしくは、下記のように指定してもかまいません:"
 
 #. Tag: para
 #: suse_l10n.xml:279
 #, no-c-format
 msgid "<systemitem>LANG=\"nb_NO\"</systemitem>"
-msgstr ""
+msgstr "<systemitem>LANG=\"nb_NO\"</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:282
 #, no-c-format
 msgid "<systemitem>LANGUAGE=\"nb_NO:nn_NO:no\"</systemitem>"
-msgstr ""
+msgstr "<systemitem>LANGUAGE=\"nb_NO:nn_NO:no\"</systemitem>"
 
 #. Tag: para
 #: suse_l10n.xml:285
@@ -384,6 +493,8 @@ msgid ""
 "Note that in Norwegian, <systemitem>LC_TIME</systemitem> is also treated "
 "differently."
 msgstr ""
+"ただし、ノルウェー語では <systemitem>LC_TIME</systemitem> も異なる形式に"
+"なることに注意してください。"
 
 #. Tag: para
 #: suse_l10n.xml:292
@@ -397,12 +508,19 @@ msgid ""
 "to <literal>de_DE</literal> to make the separator definition visible to the "
 "system."
 msgstr ""
+"なお、言語の設定によって数値の桁区切り文字が正しく認識されない、という問題が発生"
+"する場合があります。これは <systemitem>LANG</systemitem> に 2 桁の言語コードのみを"
+"指定した場合 (例: <literal>de</literal>) に起こります。 glibc では"
+" <filename>/usr/share/lib/de_DE/LC_NUMERIC</filename> に区切り文字の設定があるため、"
+"<literal>de</literal> では区切り文字が読み込まれないためです。この場合は、"
+" <systemitem>LC_NUMERIC</systemitem> に <literal>de_DE</literal> のような正しい"
+"言語コードおよび国コードを入力して、区切り文字を読み込めるようにしてください。"
 
 #. Tag: title
 #: suse_l10n.xml:304
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: suse_l10n.xml:307
@@ -417,6 +535,14 @@ msgid ""
 "Software Development Kit</literal> and download it from there. Refer to "
 "<xref linkend=\"cha.add-ons\"/> for details.</phrase>"
 msgstr ""
+"<emphasis>The GNU C Library Reference Manual</emphasis> 内の"
+" <quote>Locales and Internationalization</quote> 章をお読みください。"
+"この文書は <systemitem>glibc-info</systemitem> パッケージに含まれています。"
+" <phrase os=\"sles;sled\"> なお、このパッケージは &sle; SDK 内に含まれています。"
+" SDK は &sle; 向けのモジュールで、 &scc; のオンラインチャンネルを通じて取得する"
+"ことができるほか、 <link xlink:href=\"http://download.suse.com/\"/> で <literal>&sle; "
+"Software Development Kit</literal> を検索してもダウンロードすることができます。詳しくは"
+" <xref linkend=\"cha.add-ons\"/> をお読みください。</phrase>"
 
 #. Tag: para
 #: suse_l10n.xml:319
@@ -426,6 +552,9 @@ msgid ""
 "currently at <link xlink:href=\"http://www.cl.cam.ac.uk/~mgk25/unicode.html"
 "\"/> ."
 msgstr ""
+"Markus Kuhn 氏による <emphasis>UTF-8 and Unicode FAQ for Unix/Linux</emphasis> "
+"(英語): 現時点では <link xlink:href=\"http://www.cl.cam.ac.uk/~mgk25/unicode.html\"/> "
+"にあります。"
 
 #. Tag: para
 #: suse_l10n.xml:326
@@ -438,3 +567,10 @@ msgid ""
 "systemitem>).--> <link xlink:href=\"http://tldp.org/HOWTO/Unicode-HOWTO-1."
 "html\"/> ."
 msgstr ""
+"Bruno Haible 氏による <emphasis>Unicode-HOWTO</emphasis> (英語): <!--taroth "
+"2011-07-26: package does not seem to exist any more (not on usual or SDK "
+"media), theferore pointing to the online version now <filename>/usr/share/"
+"doc/howto/en/txt/Unicode-HOWTO.gz</filename> (package <systemitem>howto</"
+"systemitem>).--> <link xlink:href=\"http://tldp.org/HOWTO/Unicode-HOWTO-1."
+"html\"/> ."
+
