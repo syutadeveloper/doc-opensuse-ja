@@ -1,20 +1,23 @@
+# translation of udev.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: udev.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-27 17:08+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: udev.xml:9
@@ -22,7 +25,7 @@ msgstr ""
 msgid ""
 "Dynamic Kernel Device Management with <systemitem class=\"service\">udev</"
 "systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem> による動的なカーネルデバイス管理"
 
 #. Tag: para
 #: udev.xml:16
@@ -42,12 +45,24 @@ msgid ""
 "execute as part of kernel device handling, or request and import additional "
 "data to evaluate during device handling."
 msgstr ""
+"カーネルは、それが実行中であったとしても、ほぼ全てのデバイスを追加したり削除したりする"
+"ことができます。また、デバイスの状態の変化 (デバイスの接続や取り外し) についても、"
+"その情報をユーザスペース側に配信する必要がありますし、接続時や認識時に設定を行なう"
+"必要もあります。また、デバイスによっては、ユーザ側にその認識状態を知らせる必要が"
+"あるものもあります。 <systemitem class=\"service\">udev</systemitem> では、"
+" <filename>/dev</filename> ディレクトリ内にあるデバイスノードファイルやシンボリック"
+"リンクファイルを動的に管理するのに必要な、インフラストラクチャを提供しています。"
+"また、 <systemitem class=\"service\">udev</systemitem> のルールでは、カーネルの"
+"デバイスイベントを処理する外部プログラムを定義する機能も提供しています。これにより"
+" <systemitem class=\"service\">udev</systemitem> は、カーネルのデバイス処理の一部"
+"として独自のスクリプトを動作させることができるほか、デバイスの処理時に必要な追加の"
+"データを要求したり、取り込んだりすることができるようになっています。"
 
 #. Tag: title
 #: udev.xml:32
 #, no-c-format
 msgid "The <filename>/dev</filename> Directory"
-msgstr ""
+msgstr "<filename>/dev</filename> ディレクトリ"
 
 #. Tag: para
 #: udev.xml:34
@@ -60,6 +75,11 @@ msgid ""
 "device file. If a device is disconnected from the system, the device node is "
 "removed."
 msgstr ""
+"<filename>/dev</filename> ディレクトリ内にあるデバイスノードは、対応するカーネル"
+"デバイスへのアクセス機能を提供します。 <systemitem class=\"service\">udev</systemitem> "
+"を使用する環境では、 <filename>/dev</filename> ディレクトリはカーネル側での現状を"
+"反映したものになっています。それぞれのカーネルデバイスはデバイスファイルという形で"
+"提供され、システムからデバイスが取り外されると、デバイスノードも削除されるようになっています。"
 
 #. Tag: para
 #: udev.xml:43
@@ -75,6 +95,14 @@ msgid ""
 "tmpfiles.d/</filename> ; for more information, see the <systemitem>systemd-"
 "tmpfiles(8)</systemitem> man page."
 msgstr ""
+"<filename>/dev</filename> ディレクトリの内容は一時的なファイルシステムとして"
+"用意されているもので、システムが起動するたびに新しくデバイスファイルを作成しています。"
+"手作業でデバイスファイルを作成したり変更したりしても、そのような構造から、システムを"
+"再起動するとリセットされてしまいます。 <filename>/dev</filename> 内に、カーネル側の"
+"認識とは無関係に、固定で配置すべきファイルやディレクトリがある場合は、 systemd-tmpfiles "
+"を利用して作成する必要があります。設定ファイルはそれぞれ <filename>/usr/lib/tmpfiles.d/</filename> "
+"と <filename>/etc/tmpfiles.d/</filename> にあります。詳しくは <systemitem>systemd-"
+"tmpfiles(8)</systemitem> のマニュアルページをお読みください。"
 
 #. Tag: title
 #: udev.xml:56
@@ -83,6 +111,8 @@ msgid ""
 "Kernel <systemitem class=\"service\">uevents</systemitem> and <systemitem "
 "class=\"service\">udev</systemitem>"
 msgstr ""
+"カーネルの <systemitem class=\"service\">uevent</systemitem> と <systemitem "
+"class=\"service\">udev</systemitem>"
 
 #. Tag: para
 #: udev.xml:58
@@ -93,6 +123,10 @@ msgid ""
 "has detected and initialized, a directory with the device name is created. "
 "It contains attribute files with device-specific properties."
 msgstr ""
+"必要なデバイス情報は <systemitem class=\"filesystem\">sysfs</systemitem> ファイルシステム"
+"経由で開示されています。それぞれのデバイスに対して、カーネルが認識し準備を行なうと、"
+"デバイス名のディレクトリを作成します。ここには属性ファイルのほか、デバイス固有の"
+"プロパティファイルなどが含まれています。"
 
 #. Tag: para
 #: udev.xml:66
@@ -108,6 +142,15 @@ msgid ""
 "details on <systemitem class=\"service\">udev</systemitem> rules and their "
 "syntax, refer to <xref linkend=\"sec.udev.rules\"/> ."
 msgstr ""
+"デバイスが追加されたり削除されたりすると、カーネルは uevent を送信し、"
+" <systemitem class=\"service\">udev</systemitem> に変更を通知します。"
+" <systemitem class=\"service\">udev</systemitem> デーモンは、その起動時に"
+" <filename>/etc/udev/rules.d/*.rules</filename> にあるファイルから設定されている"
+"全てのルールを読み込み、メモリ内に保持します。ルールファイルを変更したり、"
+"追加もしくは削除を行なったりした場合は、 <command>udevadm control --reload</command> "
+"コマンドでデーモン側に再読み込みを依頼することができます。 <systemitem class=\"service\">"
+"udev</systemitem> のルールとその文法について、詳しくは <xref linkend=\"sec.udev.rules\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: udev.xml:78
@@ -120,12 +163,18 @@ msgid ""
 "<systemitem class=\"service\">uevents</systemitem> are received from a "
 "kernel netlink socket."
 msgstr ""
+"受信したそれぞれのイベントは、読み込んだルールに対して適合可否を判断します。"
+"ルール側では環境キーを追加したり変更したりすることができるほか、作成すべきデバイス"
+"ノードの名前を指定したり、ノードを指し示すシンボリックリンクを追加したり、"
+"デバイスノードの作成後に実行すべきプログラムなどを指定したりすることができます。"
+"なお、 <systemitem class=\"service\">uevent</systemitem> はカーネルの netlink "
+"ソケットを介して受信されます。"
 
 #. Tag: title
 #: udev.xml:88
 #, no-c-format
 msgid "Drivers, Kernel Modules and Devices"
-msgstr ""
+msgstr "ドライバ／カーネルモジュール／デバイス"
 
 #. Tag: para
 #: udev.xml:90
@@ -141,12 +190,19 @@ msgid ""
 "composes a <envar>MODALIAS</envar> ID string from it and sends that string "
 "along with the event. For a USB mouse, it looks like this:"
 msgstr ""
+"カーネルのバスドライバがデバイスを探索します。カーネルは検出されたデバイスごとに"
+"内部デバイス構造を作成し、ドライバコアが uevent を <systemitem class=\"service\">udev</systemitem> "
+"デーモンに送信します。バスデバイスは特殊な書式の ID で識別され、その ID にはデバイスの"
+"種類が示されています。また、バスごとに ID の割り当てルールが存在していて、それらは"
+" <envar>MODALIAS</envar> と呼ばれています。カーネルはデバイスの情報を取得して"
+" <envar>MODALIAS</envar> ID 文字列を生成し、イベントと共にその文字列を送信します。"
+"たとえば USB マウスの場合、下記のようになります:"
 
 #. Tag: screen
 #: udev.xml:102
 #, no-c-format
 msgid "MODALIAS=usb:v046DpC03Ed2000dc00dsc00dp00ic03isc01ip02"
-msgstr ""
+msgstr "MODALIAS=usb:v046DpC03Ed2000dc00dsc00dp00ic03isc01ip02"
 
 #. Tag: para
 #: udev.xml:104
@@ -164,12 +220,22 @@ msgid ""
 "is loaded. All this is automatically triggered by <systemitem class=\"service"
 "\">udev</systemitem> ."
 msgstr ""
+"それぞれのデバイスドライバには、自身が扱うことのできる既知の別名一覧が含まれています。"
+"この一覧はカーネルモジュールファイル自身に含まれています。 depmod プログラムは、利用可能な"
+"全てのモジュール内にある ID の一覧を読み込んで、 <filename>/lib/modules</filename> 内に"
+"ある対応するディレクトリ内に <filename>modules.alias</filename> ファイルを作成します。"
+"このような構造になっていることから、モジュールの読み込みは、それぞれのイベント時に"
+" <literal>MODALIAS</literal> キーを取得し、 <command>modprobe</command> を呼び出す"
+"だけの簡単な作業で済むようになっています。 <command>modprobe $MODALIAS</command> "
+"を呼び出すと、モジュール側で提供されている別名と、デバイス向けに作成した別名を比較して、"
+"一致する項目があれば読み込むようになっています。これらの全ては <systemitem class=\"service"
+"\">udev</systemitem> によって発動される処理です。"
 
 #. Tag: title
 #: udev.xml:120
 #, no-c-format
 msgid "Booting and Initial Device Setup"
-msgstr ""
+msgstr "システムの起動と初期デバイス設定"
 
 #. Tag: para
 #: udev.xml:122
@@ -186,6 +252,16 @@ msgid ""
 "<filename>uevent</filename> files in <filename>/sys</filename> triggers all "
 "events again to create the device nodes and perform device setup."
 msgstr ""
+"システムの起動時、 <systemitem class=\"service\">udev</systemitem> が動作する前に"
+"発生したデバイスのイベントは、読み込まれずに失われてしまいます。これは、これらの"
+"イベントを処理するインフラストラクチャがルートファイルシステム内に存在しているため、"
+"起動処理中には利用できないためです。このような問題を解決するため、カーネル側では"
+" <systemitem class=\"filesystem\">sysfs</systemitem> ファイルシステム内の"
+"各デバイスのディレクトリ内に <filename>uevent</filename> ファイルを用意しています。"
+"このファイルに <literal>add</literal> を書き込むと、カーネルは起動時に送信した"
+"ものと同じイベントを再送するようになっています。 <filename>/sys</filename> ディレクトリ"
+"内にある全ての <filename>uevent</filename> ファイルに対して、同じことを繰り返す"
+"ことで、必要なデバイスノードの作成とデバイスの設定を行なうことができるようになっています。"
 
 #. Tag: para
 #: udev.xml:135
@@ -200,6 +276,14 @@ msgid ""
 "the USB mouse device runs again. Now it finds the kernel module on the "
 "mounted root file system and the USB mouse can be initialized."
 msgstr ""
+"たとえば起動時に USB マウスを接続していた場合、ドライバは起動時には利用できないため、"
+"初期の起動ロジックでは準備が行なわれません。そのため、デバイスの検出イベントは"
+"失われ、デバイスに対応するカーネルモジュールの検出も失敗します。そのため"
+" <systemitem class=\"service\">udev</systemitem> では、ルートファイルシステムの"
+"準備が完了した段階で、接続されている全てのデバイスを手作業で検索するのではなく、"
+"カーネルから発せられた起動時の全てのイベントを取得します。これにより、 USB マウスの"
+"イベントが届くようになりますので、ルートファイルシステム内のカーネルモジュールを"
+"読み込んで初期化することができるようになっています。"
 
 #. Tag: para
 #: udev.xml:146
@@ -209,13 +293,15 @@ msgid ""
 "sequence and a device discovery during runtime. In both cases, the same "
 "rules are used to match and the same configured programs are run."
 msgstr ""
+"ユーザスペース側では、起動時にデバイスを接続しても起動後にデバイスを接続しても、"
+"目に見える違いはありません。いずれの場合も、同じルールが適用され、同じ設定プログラム"
+"が動作します。"
 
 #. Tag: title
 #: udev.xml:153
 #, no-c-format
-msgid ""
-"Monitoring the Running <systemitem class=\"service\">udev</systemitem> Daemon"
-msgstr ""
+msgid "Monitoring the Running <systemitem class=\"service\">udev</systemitem> Daemon"
+msgstr "動作中の <systemitem class=\"service\">udev</systemitem> デーモンの監視"
 
 #. Tag: para
 #: udev.xml:155
@@ -225,6 +311,9 @@ msgid ""
 "driver core events and the timing of the <systemitem class=\"service\">udev</"
 "systemitem> event processes."
 msgstr ""
+"<command>udevadm monitor</command> プログラムを利用することで、ドライバコアのイベント"
+"や <systemitem class=\"service\">udev</systemitem> のイベント処理のタイミングを"
+"視覚化することができます。"
 
 #. Tag: screen
 #: udev.xml:161
@@ -251,6 +340,16 @@ msgid ""
 "UDEV  [1185238505.342257] add   /devices/pci0000:00/0000:00:1d.2/"
 "usb3/3-1/3-1:1.0/input/input10/mouse2 (input)"
 msgstr ""
+"UEVENT[1185238505.276660] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1 (usb)\n"
+"UDEV  [1185238505.279198] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1 (usb)\n"
+"UEVENT[1185238505.279527] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0 (usb)\n"
+"UDEV  [1185238505.285573] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0 (usb)\n"
+"UEVENT[1185238505.298878] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10 (input)\n"
+"UDEV  [1185238505.305026] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10 (input)\n"
+"UEVENT[1185238505.305442] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10/mouse2 (input)\n"
+"UEVENT[1185238505.306440] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10/event4 (input)\n"
+"UDEV  [1185238505.325384] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10/event4 (input)\n"
+"UDEV  [1185238505.342257] add   /devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10/mouse2 (input)"
 
 #. Tag: para
 #: udev.xml:172
@@ -267,6 +366,15 @@ msgid ""
 "wait for the main disk device event to finish, because the partition events "
 "may rely on the data that the main disk event has queried from the hardware."
 msgstr ""
+"<literal>UEVENT</literal> の行には、カーネルが netlink 経由で送信したイベントが表示"
+"されています。 <literal>UDEV</literal> の行には、完了した <systemitem class=\"service\">"
+"udev</systemitem> のイベントハンドラが表示されています。それぞれのタイミングはマイクロ"
+"秒単位で示されています。 <literal>UEVENT</literal> から <literal>UDEV</literal> までの"
+"時間は、 <systemitem class=\"service\">udev</systemitem> がイベントを処理するのに"
+"かかった時間か、もしくは <systemitem class=\"service\">udev</systemitem> が関連する"
+"イベントを待機していて遅延した時間を示しています。たとえばハードディスクのパーティション"
+"に関するイベントは、メインのディスクのイベント内で、ハードウエアに対して問い合わせを"
+"行なった結果を待たなければならないため、その分だけ遅延することになります。"
 
 #. Tag: para
 #: udev.xml:186
@@ -274,7 +382,7 @@ msgstr ""
 msgid ""
 "<command>udevadm monitor --env</command> shows the complete event "
 "environment:"
-msgstr ""
+msgstr "<command>udevadm monitor --env</command> を実行すると、完全なイベント環境を表示することができます:"
 
 #. Tag: screen
 #: udev.xml:191
@@ -292,6 +400,17 @@ msgid ""
 "REL=103\n"
 "MODALIAS=input:b0003v046DpC03Ee0110-e0,1,2,k110,111,112,r0,1,8,amlsfw"
 msgstr ""
+"ACTION=add\n"
+"DEVPATH=/devices/pci0000:00/0000:00:1d.2/usb3/3-1/3-1:1.0/input/input10\n"
+"SUBSYSTEM=input\n"
+"SEQNUM=1181\n"
+"NAME=\"Logitech USB-PS/2 Optical Mouse\"\n"
+"PHYS=\"usb-0000:00:1d.2-1/input0\"\n"
+"UNIQ=\"\"\n"
+"EV=7\n"
+"KEY=70000 0 0 0 0\n"
+"REL=103\n"
+"MODALIAS=input:b0003v046DpC03Ee0110-e0,1,2,k110,111,112,r0,1,8,amlsfw"
 
 #. Tag: para
 #: udev.xml:203
@@ -304,6 +423,12 @@ msgid ""
 "priority of the running daemon can be changed with <command>udevadm control "
 "--log_priority=</command> <replaceable>LEVEL/NUMBER</replaceable> ."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> はメッセージを syslog にも送信します。"
+"どのメッセージを syslog に送信するかを決定する、既定の syslog の優先順位は、"
+" <systemitem class=\"service\">udev</systemitem> の設定ファイルである"
+" <filename>/etc/udev/udev.conf</filename> で設定します。実行中のデーモンのログの"
+"優先順位は、 <command>udevadm control --log_priority=</command> "
+"<replaceable>レベル/番号</replaceable> で設定することができます。"
 
 #. Tag: title
 #: udev.xml:213
@@ -311,7 +436,7 @@ msgstr ""
 msgid ""
 "Influencing Kernel Device Event Handling with <systemitem class=\"service"
 "\">udev</systemitem> Rules"
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem> ルールによるカーネルのデバイスイベント処理の調整"
 
 #. Tag: para
 #: udev.xml:215
@@ -324,6 +449,12 @@ msgid ""
 "against all provided rules. All rules are located in the <filename>/etc/udev/"
 "rules.d</filename> directory."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> のルールは、カーネルがイベント"
+"自身に付与するプロパティ情報のほか、カーネルが <filename>sysfs</filename> で開示する"
+"任意の情報を条件として設定することができます。このほか、外部プログラムから追加の"
+"情報を取得することもできます。また、それぞれのイベントは提供されている全てのルールに"
+"対して適合可否を判断します。全てのルールは <filename>/etc/udev/rules.d</filename> "
+"内に配置されます。"
 
 #. Tag: para
 #: udev.xml:224
@@ -343,12 +474,25 @@ msgid ""
 "<systemitem class=\"service\">udev</systemitem> default rule set that is "
 "located under <filename>/etc/udev/rules.d/50-udev-default.rules</filename> ."
 msgstr ""
+"ルールファイルの各行には、少なくとも 1 つ以上のキーと値の対が含まれています。キー"
+"には 2 種類のものがあり、それぞれマッチ (適合可否) キーと代入キーと呼ばれています。"
+"ルール内のマッチキーで指定された全ての条件が満たされると、そのルールが適用され、"
+"代入キーに対して値が割り当てられます。また、マッチキーのルールではデバイスノード"
+"の名前を指定することができるほか、ノードを指し示すシンボリックリンクを追加したり、"
+"イベント処理の一部として指定したプログラムを起動したりすることができます。なお、"
+"いずれのルールにも該当しない場合は、デバイスノードを作成する際に既定のデバイス名が"
+"使われます。ルールの文法やマッチキーの一覧、およびデータの取り込み方法などについては、"
+" <systemitem class=\"service\">udev</systemitem> のマニュアルページをお読みください。"
+"下記の例では、 <systemitem class=\"service\">udev</systemitem> のルールに関する"
+"基本的な文法の説明を行なっています。ルールの例は、 <filename>/etc/udev/rules.d/"
+"50-udev-default.rules</filename> にある <systemitem class=\"service\">udev"
+"</systemitem> の既定のルールから引用されているものです。"
 
 #. Tag: title
 #: udev.xml:242
 #, no-c-format
 msgid "Example <systemitem class=\"service\">udev</systemitem> Rules"
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem> ルールの例"
 
 #. Tag: screen
 #: udev.xml:243
@@ -368,6 +512,17 @@ msgid ""
 "# kernel firmware loader\n"
 "SUBSYSTEM==\"firmware\", ACTION==\"add\", RUN+=\"firmware.sh\""
 msgstr ""
+"# コンソール\n"
+"KERNEL==\"console\", MODE=\"0600\", OPTIONS=\"last_rule\"\n"
+"\n"
+"# シリアルデバイス\n"
+"KERNEL==\"ttyUSB*\", ATTRS{product}==\"[Pp]alm*Handheld*\", SYMLINK+=\"pilot\"\n"
+"\n"
+"# プリンタ\n"
+"SUBSYSTEM==\"usb\", KERNEL==\"lp*\", NAME=\"usb/%k\", SYMLINK+=\"usb%k\", GROUP=\"lp\"\n"
+"\n"
+"# カーネルファームウエアローダ\n"
+"SUBSYSTEM==\"firmware\", ACTION==\"add\", RUN+=\"firmware.sh\""
 
 #. Tag: para
 #: udev.xml:256
@@ -384,6 +539,16 @@ msgid ""
 "rule to be applied to any device of this type. Any later rule matching this "
 "particular device type does not have any effect."
 msgstr ""
+"<systemitem>console</systemitem> のルールには 3 種類のキーが設定されています。"
+" 1 つ目はマッチキー ( <literal>KERNEL</literal> ) で、残りの 2 つは代入キーに"
+"なっています ( <literal>MODE</literal> , <literal>OPTIONS</literal> ) 。"
+" <literal>KERNEL</literal> のマッチキーは、種類が <literal>console</literal> "
+"である任意のデバイスに適合するものです。この場合は正確一致で比較処理が行なわれ、"
+"正確に一致した場合にのみルールが実行されます。 <literal>MODE</literal> キーは"
+"デバイスノードに対するアクセス権の設定を示すもので、この場合はこのデバイスの"
+"所有者のみが読み書きできるルールになります。最後の <literal>OPTIONS</literal> "
+"キーは、この種類の任意のデバイスに対して、最後に適用すべきルールであることを示して"
+"います。この種類のデバイスの場合、これ以降のルールは適用されなくなります。"
 
 #. Tag: para
 #: udev.xml:270
@@ -406,6 +571,24 @@ msgid ""
 "symbolic links. As this rule contains two match keys, it is only applied if "
 "both conditions are met."
 msgstr ""
+"<systemitem>serial devices</systemitem> のルールは既に <filename>50-udev-"
+"default.rules</filename> から削除されているルールですが、ルールを理解するには"
+"格好の材料です。ここには 2 種類のマッチキー ( <literal>KERNEL</literal> と "
+"<literal>ATTRS</literal> ) と、 1 種類の代入キー ( <literal>SYMLINK</literal> ) "
+"が書かれています。 <literal>KERNEL</literal> キーはデバイスの種類が"
+" <literal>ttyUSB</literal> である任意のデバイスに適合するものです。ここでは"
+" <literal>*</literal> というワイルドカードを指定しているため、正確一致ではなく"
+"複数の種類にマッチできるようになっています。 2 つ目のマッチキーである <literal>ATTRS"
+"</literal> では、種類が <literal>ttyUSB</literal> である任意のデバイスに対して、"
+" <literal>sysfs</literal> 内にある <filename>product</filename> という属性"
+"ファイルを読み込んで、特定の文字列に合致するかどうかを調べています。代入キー"
+" ( <literal>SYMLINK</literal> ) は、このデバイスに対するシンボリックリンクを"
+" <filename>/dev/pilot</filename> として作成するよう指示しています。このキーで"
+"使用されている ( <literal>+=</literal> ) という演算子は <systemitem class="
+"\"service\">udev</systemitem> に対して、以前のルールや後続のルールで他の"
+"シンボリックリンクを作成している場合でも、そのルールを適用することを示しています。"
+"なお、このルールには 2 種類のマッチキーがありますので、両方の条件に合致した場合"
+"にのみルールが適用されることにも注意してください。"
 
 #. Tag: para
 #: udev.xml:289
@@ -424,6 +607,18 @@ msgid ""
 "example, the symbolic link to the first <literal>lp</literal> USB printer "
 "would read <filename>/dev/usblp0</filename> ."
 msgstr ""
+"<systemitem>printer</systemitem> ルールは USB プリンタを扱うためのルールで、"
+"ルール全体を適用する際の条件となる 2 種類のマッチキー ( <literal>SUBSYSTEM</literal> "
+"および <literal>KERNEL</literal> ) が含まれています。また、 3 種類の代入キーは、"
+"それぞれこの種類のデバイスの命名ルール ( <literal>NAME</literal> ) やデバイスの"
+"シンボリックリンクの作成方法 ( <literal>SYMLINK</literal> ) 、そしてこの種類の"
+"デバイスに対するグループメンバー設定 ( <literal>GROUP</literal> ) が書かれています。"
+"また、 <literal>KERNEL</literal> 内には <literal>*</literal> というワイルドカードが"
+"含まれているため、複数の <literal>lp</literal> プリンタデバイスに合致する仕組みに"
+"なっていのす。また、 <literal>NAME</literal> と <literal>SYMLINK</literal> には"
+"置換が設定されていて、これによって内部デバイス名からそれぞれを拡張できるように"
+"なっています。たとえば <literal>lp</literal> という内部名の最初の USB プリンタ"
+"であれば、 <filename>/dev/usblp0</filename> のような名前になります。"
 
 #. Tag: para
 #: udev.xml:304
@@ -438,18 +633,25 @@ msgid ""
 "the execution of the <literal>firmware.sh</literal> script to locate the "
 "firmware that is to be loaded."
 msgstr ""
+"<systemitem>kernel firmware loader</systemitem> は <systemitem class=\"service\">"
+"udev</systemitem> から実行時に外部のヘルパースクリプトを実行して、追加のファーム"
+"ウエアを読み込むためのものです。 <literal>SUBSYSTEM</literal> のマッチキーは"
+" <literal>firmware</literal> サブシステムを検索します。 <literal>ACTION</literal> "
+"キーは、 <literal>firmware</literal> サブシステムに属する任意のデバイスが追加された"
+"かどうかを判断しています。 <literal>RUN+=</literal> キーは <literal>firmware.sh</literal> "
+"スクリプトの実行を指定していて、これによってファームウエアの読み込みを行ないます。"
 
 #. Tag: para
 #: udev.xml:316
 #, no-c-format
 msgid "Some general characteristics are common to all rules:"
-msgstr ""
+msgstr "全てのルールに対して適用される、一般的な規約は下記の通りです:"
 
 #. Tag: para
 #: udev.xml:322
 #, no-c-format
 msgid "Each rule consists of one or more key value pairs separated by a comma."
-msgstr ""
+msgstr "それぞれのルールには、カンマ区切りで 1 つまたは複数のキー／値の対を指定します。"
 
 #. Tag: para
 #: udev.xml:327
@@ -458,12 +660,14 @@ msgid ""
 "A key's operation is determined by the operator. <systemitem class=\"service"
 "\">udev</systemitem> rules support several operators."
 msgstr ""
+"キーの操作は演算子で決定します。 <systemitem class=\"service\">udev</systemitem> では"
+"複数の演算子に対応しています。"
 
 #. Tag: para
 #: udev.xml:334
 #, no-c-format
 msgid "Each given value must be enclosed by quotation marks."
-msgstr ""
+msgstr "それぞれの値は引用符で括らなければなりません。"
 
 #. Tag: para
 #: udev.xml:339
@@ -473,6 +677,8 @@ msgid ""
 "one line, use <literal>\\</literal> to join the different lines as you would "
 "do in shell syntax."
 msgstr ""
+"ルールファイル内の 1 行は 1 つのルールに対応します。ルールが 1 行に収まらない場合は、"
+"シェルでの記法と同じく、行末に <literal>\\</literal> を記述して次の行に続けます。"
 
 #. Tag: para
 #: udev.xml:346
@@ -482,20 +688,21 @@ msgid ""
 "pattern that matches the <literal>*</literal> , <literal>?</literal> , and "
 "<literal>[]</literal> patterns."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> のルールでは、シェル形式の"
+"パターンマッチに対応しています。具体的には <literal>*</literal> , <literal>?</literal> , "
+"<literal>[]</literal> の各パターンを利用することができます。"
 
 #. Tag: para
 #: udev.xml:353
 #, no-c-format
-msgid ""
-"<systemitem class=\"service\">udev</systemitem> rules support substitutions."
-msgstr ""
+msgid "<systemitem class=\"service\">udev</systemitem> rules support substitutions."
+msgstr "<systemitem class=\"service\">udev</systemitem> では置換に対応しています。"
 
 #. Tag: title
 #: udev.xml:360
 #, no-c-format
-msgid ""
-"Using Operators in <systemitem class=\"service\">udev</systemitem> Rules"
-msgstr ""
+msgid "Using Operators in <systemitem class=\"service\">udev</systemitem> Rules"
+msgstr "<systemitem class=\"service\">udev</systemitem> ルール内での演算子の使用"
 
 #. Tag: para
 #: udev.xml:361
@@ -506,12 +713,15 @@ msgid ""
 "that either matches or explicitly mismatches the search value. Match keys "
 "contain either of the following operators:"
 msgstr ""
+"代入キーの場合は、代入するキーの種類によって利用できる演算子が異なります。マッチ"
+"キーの場合は通常、値と比較するための様々な演算子を利用することができます。マッチ"
+"キーでは、下記の演算子を指定することができます:"
 
 #. Tag: term
 #: udev.xml:369
 #, no-c-format
 msgid "<literal>==</literal>"
-msgstr ""
+msgstr "<literal>==</literal>"
 
 #. Tag: para
 #: udev.xml:372
@@ -520,12 +730,14 @@ msgid ""
 "Compare for equality. If the key contains a search pattern, all results "
 "matching this pattern are valid."
 msgstr ""
+"一致しているかどうかを判断します。値にパターンマッチが指定されている場合は、"
+"そのパターンに一致するかどうかを判断します。"
 
 #. Tag: term
 #: udev.xml:379
 #, no-c-format
 msgid "<literal>!=</literal>"
-msgstr ""
+msgstr "<literal>!=</literal>"
 
 #. Tag: para
 #: udev.xml:382
@@ -534,18 +746,20 @@ msgid ""
 "Compare for non-equality. If the key contains a search pattern, all results "
 "matching this pattern are valid."
 msgstr ""
+"不一致を判断します。値にパターンマッチが指定されている場合は、"
+"そのパターンに一致していないかどうかを判断します。"
 
 #. Tag: para
 #: udev.xml:389
 #, no-c-format
 msgid "Any of the following operators can be used with assign keys:"
-msgstr ""
+msgstr "代入キーの場合は、下記の演算子を指定することができます:"
 
 #. Tag: term
 #: udev.xml:394
 #, no-c-format
 msgid "<literal>=</literal>"
-msgstr ""
+msgstr "<literal>=</literal>"
 
 #. Tag: para
 #: udev.xml:397
@@ -554,37 +768,38 @@ msgid ""
 "Assign a value to a key. If the key previously consisted of a list of "
 "values, the key resets and only the single value is assigned."
 msgstr ""
+"キーに対して値を代入します。以前に値や値のリストが代入されていた場合は、"
+"その値は消去され、指定した単一の値が代入されます。"
 
 #. Tag: term
 #: udev.xml:404
 #, no-c-format
 msgid "<literal>+=</literal>"
-msgstr ""
+msgstr "<literal>+=</literal>"
 
 #. Tag: para
 #: udev.xml:407
 #, no-c-format
 msgid "Add a value to a key that contains a list of entries."
-msgstr ""
+msgstr "項目の一覧内に値を追加します。"
 
 #. Tag: term
 #: udev.xml:413
 #, no-c-format
 msgid "<literal>:=</literal>"
-msgstr ""
+msgstr "<literal>:=</literal>"
 
 #. Tag: para
 #: udev.xml:416
 #, no-c-format
 msgid "Assign a final value. Disallow any later change by later rules."
-msgstr ""
+msgstr "最終値を代入します。後続のルールで変更ができなくなります。"
 
 #. Tag: title
 #: udev.xml:425
 #, no-c-format
-msgid ""
-"Using Substitutions in <systemitem class=\"service\">udev</systemitem> Rules"
-msgstr ""
+msgid "Using Substitutions in <systemitem class=\"service\">udev</systemitem> Rules"
+msgstr "<systemitem class=\"service\">udev</systemitem> ルール内での置換の使用"
 
 #. Tag: para
 #: udev.xml:426
@@ -595,90 +810,94 @@ msgid ""
 "do in any other scripts. The following substitutions can be used with "
 "<systemitem class=\"service\">udev</systemitem> rules:"
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> ではプレースホルダや置換の"
+"仕組みを利用することができます。これは他のスクリプトでも利用できる仕組みに"
+"似たもので、 <systemitem class=\"service\">udev</systemitem> のルールでは"
+"下記のものを使用することができます:"
 
 #. Tag: term
 #: udev.xml:434
 #, no-c-format
 msgid "<literal>%r</literal> , <literal>$root</literal>"
-msgstr ""
+msgstr "<literal>%r</literal> , <literal>$root</literal>"
 
 #. Tag: para
 #: udev.xml:437
 #, no-c-format
 msgid "The device directory, <filename>/dev</filename> by default."
-msgstr ""
+msgstr "デバイスのディレクトリ (既定では <filename>/dev</filename>)"
 
 #. Tag: term
 #: udev.xml:443
 #, no-c-format
 msgid "<literal>%p</literal> , <literal>$devpath</literal>"
-msgstr ""
+msgstr "<literal>%p</literal> , <literal>$devpath</literal>"
 
 #. Tag: para
 #: udev.xml:446
 #, no-c-format
 msgid "The value of <envar>DEVPATH</envar> ."
-msgstr ""
+msgstr "<envar>DEVPATH</envar> の値"
 
 #. Tag: term
 #: udev.xml:452
 #, no-c-format
 msgid "<literal>%k</literal> , <literal>$kernel</literal>"
-msgstr ""
+msgstr "<literal>%k</literal> , <literal>$kernel</literal>"
 
 #. Tag: para
 #: udev.xml:455
 #, no-c-format
 msgid "The value of <envar>KERNEL</envar> or the internal device name."
-msgstr ""
+msgstr "<envar>KERNEL</envar> の値もしくは内部デバイス名"
 
 #. Tag: term
 #: udev.xml:461
 #, no-c-format
 msgid "<literal>%n</literal> , <literal>$number</literal>"
-msgstr ""
+msgstr "<literal>%n</literal> , <literal>$number</literal>"
 
 #. Tag: para
 #: udev.xml:464
 #, no-c-format
 msgid "The device number."
-msgstr ""
+msgstr "デバイスの番号"
 
 #. Tag: term
 #: udev.xml:470
 #, no-c-format
 msgid "<literal>%N</literal> , <literal>$tempnode</literal>"
-msgstr ""
+msgstr "<literal>%N</literal> , <literal>$tempnode</literal>"
 
 #. Tag: para
 #: udev.xml:473
 #, no-c-format
 msgid "The temporary name of the device file."
-msgstr ""
+msgstr "デバイスファイルの一時的な名前"
 
 #. Tag: term
 #: udev.xml:479
 #, no-c-format
 msgid "<literal>%M</literal> , <literal>$major</literal>"
-msgstr ""
+msgstr "<literal>%M</literal> , <literal>$major</literal>"
 
 #. Tag: para
 #: udev.xml:482
 #, no-c-format
 msgid "The major number of the device."
-msgstr ""
+msgstr "デバイスのメジャー番号"
 
 #. Tag: term
 #: udev.xml:488
 #, no-c-format
 msgid "<literal>%m</literal> , <literal>$minor</literal>"
-msgstr ""
+msgstr "<literal>%m</literal> , <literal>$minor</literal>"
 
 #. Tag: para
 #: udev.xml:491
 #, no-c-format
 msgid "The minor number of the device."
-msgstr ""
+msgstr "デバイスのマイナー番号"
 
 #. Tag: term
 #: udev.xml:497
@@ -687,6 +906,8 @@ msgid ""
 "<literal>%s{<replaceable>ATTRIBUTE</replaceable>}</literal> , <literal>"
 "$attr{<replaceable>ATTRIBUTE</replaceable>}</literal>"
 msgstr ""
+"<literal>%s{<replaceable>属性名</replaceable>}</literal> , <literal>"
+"$attr{<replaceable>属性名</replaceable>}</literal>"
 
 #. Tag: para
 #: udev.xml:501
@@ -695,6 +916,8 @@ msgid ""
 "The value of a <filename>sysfs</filename> attribute (specified by "
 "<replaceable>ATTRIBUTE</replaceable> )."
 msgstr ""
+"<filename>sysfs</filename> の属性の値 (<replaceable>属性名</replaceable> "
+"で名前を指定します)"
 
 #. Tag: term
 #: udev.xml:508
@@ -703,6 +926,8 @@ msgid ""
 "<literal>%E{<replaceable>VARIABLE</replaceable>}</literal> , <literal>"
 "$env{<replaceable>VARIABLE</replaceable>}</literal>"
 msgstr ""
+"<literal>%E{<replaceable>変数名</replaceable>}</literal> , <literal>"
+"$env{<replaceable>変数名</replaceable>}</literal>"
 
 #. Tag: para
 #: udev.xml:512
@@ -710,49 +935,49 @@ msgstr ""
 msgid ""
 "The value of an environment variable (specified by <replaceable>VARIABLE</"
 "replaceable> )."
-msgstr ""
+msgstr "環境変数の値 (<replaceable>変数名</replaceable> で名前を指定します)"
 
 #. Tag: term
 #: udev.xml:519
 #, no-c-format
 msgid "<literal>%c</literal> , <literal>$result</literal>"
-msgstr ""
+msgstr "<literal>%c</literal> , <literal>$result</literal>"
 
 #. Tag: para
 #: udev.xml:522
 #, no-c-format
 msgid "The output of <envar>PROGRAM</envar> ."
-msgstr ""
+msgstr "<envar>PROGRAM</envar> の出力"
 
 #. Tag: term
 #: udev.xml:528
 #, no-c-format
 msgid "<literal>%%</literal>"
-msgstr ""
+msgstr "<literal>%%</literal>"
 
 #. Tag: para
 #: udev.xml:531
 #, no-c-format
 msgid "The <literal>%</literal> character."
-msgstr ""
+msgstr "<literal>%</literal> 文字そのもの"
 
 #. Tag: term
 #: udev.xml:537
 #, no-c-format
 msgid "<literal>$$</literal>"
-msgstr ""
+msgstr "<literal>$$</literal>"
 
 #. Tag: para
 #: udev.xml:540
 #, no-c-format
 msgid "The <literal>$</literal> character."
-msgstr ""
+msgstr "<literal>$</literal> 文字そのもの"
 
 #. Tag: title
 #: udev.xml:549
 #, no-c-format
 msgid "Using <systemitem class=\"service\">udev</systemitem> Match Keys"
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem> マッチキーの使用"
 
 #. Tag: para
 #: udev.xml:550
@@ -762,12 +987,14 @@ msgid ""
 "\"service\">udev</systemitem> rule can be applied. The following match keys "
 "are available:"
 msgstr ""
+"マッチキーは <systemitem class=\"service\">udev</systemitem> のルールを適用する際、"
+"条件を指定するものです。下記のマッチキーを使用することができます:"
 
 #. Tag: term
 #: udev.xml:557
 #, no-c-format
 msgid "<literal>ACTION</literal>"
-msgstr ""
+msgstr "<literal>ACTION</literal>"
 
 #. Tag: para
 #: udev.xml:560
@@ -776,12 +1003,14 @@ msgid ""
 "The name of the event action, for example, <literal>add</literal> or "
 "<literal>remove</literal> when adding or removing a device."
 msgstr ""
+"イベントアクションの名前 (デバイスを追加する場合は <literal>add</literal> に、"
+"デバイスを削除する場合は <literal>remove</literal> になります)"
 
 #. Tag: term
 #: udev.xml:567
 #, no-c-format
 msgid "<literal>DEVPATH</literal>"
-msgstr ""
+msgstr "<literal>DEVPATH</literal>"
 
 #. Tag: para
 #: udev.xml:570
@@ -791,24 +1020,26 @@ msgid ""
 "drivers/ipw3945</literal> to search for all events related to the ipw3945 "
 "driver."
 msgstr ""
+"イベントデバイスのデバイスパス (たとえば <literal>DEVPATH=/bus/pci/drivers/ipw3945</literal> "
+"のように指定すると、 ipw3945 ドライバに関連する全てのイベントに合致するようになります)"
 
 #. Tag: term
 #: udev.xml:578
 #, no-c-format
 msgid "<literal>KERNEL</literal>"
-msgstr ""
+msgstr "<literal>KERNEL</literal>"
 
 #. Tag: para
 #: udev.xml:581
 #, no-c-format
 msgid "The internal (kernel) name of the event device."
-msgstr ""
+msgstr "イベントデバイスの内部 (カーネル) 名"
 
 #. Tag: term
 #: udev.xml:587
 #, no-c-format
 msgid "<literal>SUBSYSTEM</literal>"
-msgstr ""
+msgstr "<literal>SUBSYSTEM</literal>"
 
 #. Tag: para
 #: udev.xml:590
@@ -817,12 +1048,15 @@ msgid ""
 "The subsystem of the event device, for example, <literal>SUBSYSTEM=usb</"
 "literal> for all events related to USB devices."
 msgstr ""
+"イベントデバイスのサブシステム名 (たとえば <literal>SUBSYSTEM=usb</"
+"literal> のように指定すると、 USB デバイスに関連する全てのイベントに合致する"
+"ようになります)"
 
 #. Tag: term
 #: udev.xml:597
 #, no-c-format
 msgid "<literal>ATTR{<replaceable>FILENAME</replaceable>}</literal>"
-msgstr ""
+msgstr "<literal>ATTR{<replaceable>ファイル名</replaceable>}</literal>"
 
 #. Tag: para
 #: udev.xml:600
@@ -833,12 +1067,15 @@ msgid ""
 "attribute file name, you could use <literal>ATTR{vendor}==\"On[sS]tream\"</"
 "literal> , for example."
 msgstr ""
+"イベントの <systemitem class=\"filesystem\">sysfs</systemitem> 属性 (たとえば"
+" <filename>vendor</filename> 内に特定の文字列が含まれているかどうかを調べるには、"
+" <literal>ATTR{vendor}==\"On[sS]tream\"</literal> のように指定します)"
 
 #. Tag: term
 #: udev.xml:609
 #, no-c-format
 msgid "<literal>KERNELS</literal>"
-msgstr ""
+msgstr "<literal>KERNELS</literal>"
 
 #. Tag: para
 #: udev.xml:612
@@ -847,12 +1084,14 @@ msgid ""
 "Let <systemitem class=\"service\">udev</systemitem> search the device path "
 "upward for a matching device name."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、該当するデバイス名を"
+"上位方向に検索させる指定"
 
 #. Tag: term
 #: udev.xml:619
 #, no-c-format
 msgid "<literal>SUBSYSTEMS</literal>"
-msgstr ""
+msgstr "<literal>SUBSYSTEMS</literal>"
 
 #. Tag: para
 #: udev.xml:622
@@ -861,12 +1100,14 @@ msgid ""
 "Let <systemitem class=\"service\">udev</systemitem> search the device path "
 "upward for a matching device subsystem name."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、該当するデバイスの"
+"サブシステム名を上位方向に検索させる指定"
 
 #. Tag: term
 #: udev.xml:629
 #, no-c-format
 msgid "<literal>DRIVERS</literal>"
-msgstr ""
+msgstr "<literal>DRIVERS</literal>"
 
 #. Tag: para
 #: udev.xml:632
@@ -875,12 +1116,14 @@ msgid ""
 "Let <systemitem class=\"service\">udev</systemitem> search the device path "
 "upward for a matching device driver name."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、該当するデバイスの"
+"ドライバ名を上位方向に検索させる指定"
 
 #. Tag: term
 #: udev.xml:639
 #, no-c-format
 msgid "<literal>ATTRS{<replaceable>FILENAME</replaceable>}</literal>"
-msgstr ""
+msgstr "<literal>ATTRS{<replaceable>ファイル名</replaceable>}</literal>"
 
 #. Tag: para
 #: udev.xml:642
@@ -890,6 +1133,8 @@ msgid ""
 "upward for a device with matching <systemitem class=\"filesystem\">sysfs</"
 "systemitem> attribute values."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、該当する <systemitem "
+"class=\"filesystem\">sysfs</systemitem> の属性名を上位方向に検索させる指定"
 
 #. Tag: para
 #: udev.xml:653
@@ -898,12 +1143,14 @@ msgid ""
 "The value of an environment variable, for example, <literal>ENV{ID_BUS}="
 "\"ieee1394</literal> to search for all events related to the FireWire bus ID."
 msgstr ""
+"環境変数の値 (たとえば <literal>ENV{ID_BUS}=\"ieee1394\"</literal> のように指定すると、"
+" FireWire バス ID に関連する全てのイベントに合致するようになります)"
 
 #. Tag: term
 #: udev.xml:661
 #, no-c-format
 msgid "<literal>PROGRAM</literal>"
-msgstr ""
+msgstr "<literal>PROGRAM</literal>"
 
 #. Tag: para
 #: udev.xml:664
@@ -914,12 +1161,16 @@ msgid ""
 "program's output, printed to STDOUT, is available to the <literal>RESULT</"
 "literal> key."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して外部プログラムを実行"
+"する指定 (成功を表わす場合、プログラムは 0 を返さなければなりません。また、"
+"プログラムが STDOUT に出力した実行結果は、 <literal>RESULT</literal> キーで"
+"チェックすることができます)"
 
 #. Tag: term
 #: udev.xml:673
 #, no-c-format
 msgid "<literal>RESULT</literal>"
-msgstr ""
+msgstr "<literal>RESULT</literal>"
 
 #. Tag: para
 #: udev.xml:676
@@ -929,12 +1180,14 @@ msgid ""
 "include this key in the same rule as the <literal>PROGRAM</literal> key or "
 "in a later one."
 msgstr ""
+"直近の <literal>PROGRAM</literal> の出力 (<literal>PROGRAM</literal> キーと"
+"同じルール内に含めるか、後続のルールで指定する必要があります)"
 
 #. Tag: title
 #: udev.xml:687
 #, no-c-format
 msgid "Using <systemitem class=\"service\">udev</systemitem> Assign Keys"
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem> 代入キーの使用"
 
 #. Tag: para
 #: udev.xml:688
@@ -944,12 +1197,15 @@ msgid ""
 "conditions that must be met. They assign values, names and actions to the "
 "device nodes maintained by <systemitem class=\"service\">udev</systemitem> ."
 msgstr ""
+"上述のように合致すべき条件を指定するマッチキーとは異なり、代入キーでは"
+"<systemitem class=\"service\">udev</systemitem> が管理するデバイスノードに対して、"
+"値や名前、アクションなどを代入します。"
 
 #. Tag: term
 #: udev.xml:695
 #, no-c-format
 msgid "<literal>NAME</literal>"
-msgstr ""
+msgstr "<literal>NAME</literal>"
 
 #. Tag: para
 #: udev.xml:698
@@ -958,12 +1214,14 @@ msgid ""
 "The name of the device node to be created. After a rule has set a node name, "
 "all other rules with a <literal>NAME</literal> key for this node are ignored."
 msgstr ""
+"作成すべきデバイスノードの名前 (ルール内でデバイスノード名が設定されると、"
+"<literal>NAME</literal> キーがある他のルールは全て無視されるようになります)"
 
 #. Tag: term
 #: udev.xml:706
 #, no-c-format
 msgid "<literal>SYMLINK</literal>"
-msgstr ""
+msgstr "<literal>SYMLINK</literal>"
 
 #. Tag: para
 #: udev.xml:709
@@ -974,12 +1232,16 @@ msgid ""
 "You can also specify multiple symbolic links for one node in one rule using "
 "the space character to separate the symbolic link names."
 msgstr ""
+"このノードに対して作成すべき関連シンボリックリンクの名前 (特定のデバイスノードに"
+"対して、複数のルールでシンボリックリンクを作成することができます。また、 1 つの"
+"ルール内でも、スペースで区切って指定することで、複数のシンボリックリンクを"
+"作成することができます。"
 
 #. Tag: term
 #: udev.xml:718
 #, no-c-format
 msgid "<literal>OWNER, GROUP, MODE</literal>"
-msgstr ""
+msgstr "<literal>OWNER, GROUP, MODE</literal>"
 
 #. Tag: para
 #: udev.xml:721
@@ -988,12 +1250,14 @@ msgid ""
 "The permissions for the new device node. Values specified here overwrite "
 "anything that has been compiled in."
 msgstr ""
+"新しいデバイスノードのアクセス権 (ここで何らかの値を指定すると、内蔵されている"
+"既定のルールが上書きされます)"
 
 #. Tag: term
 #: udev.xml:728
 #, no-c-format
 msgid "<literal>ATTR{<replaceable>KEY</replaceable>}</literal>"
-msgstr ""
+msgstr "<literal>ATTR{<replaceable>キー</replaceable>}</literal>"
 
 #. Tag: para
 #: udev.xml:731
@@ -1004,12 +1268,16 @@ msgid ""
 "operator is used, this key is also used to match against the value of a "
 "<systemitem class=\"filesystem\">sysfs</systemitem> attribute."
 msgstr ""
+"イベントデバイスの <systemitem class=\"filesystem\">sysfs</systemitem> 属性に"
+"対して書き込むべき値 (<literal>==</literal> 演算子を使用した場合、このキーは"
+"マッチキーとして作用し、特定の <systemitem class=\"filesystem\">sysfs</systemitem> "
+"属性と比較が行なわれることに注意してください)"
 
 #. Tag: term
 #: udev.xml:741
 #, no-c-format
 msgid "<literal>ENV{<replaceable>KEY</replaceable>}</literal>"
-msgstr ""
+msgstr "<literal>ENV{<replaceable>キー</replaceable>}</literal>"
 
 #. Tag: para
 #: udev.xml:744
@@ -1019,12 +1287,16 @@ msgid ""
 "the environment. If the <literal>==</literal> operator is used, this key is "
 "also used to match against an environment variable."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、この環境変数に設定"
+"すべき値 (<literal>==</literal> 演算子を使用した場合、このキーはマッチキーとして"
+"作用し、特定の <systemitem class=\"filesystem\">sysfs</systemitem> 属性と比較が"
+"行なわれることに注意してください)"
 
 #. Tag: term
 #: udev.xml:752
 #, no-c-format
 msgid "<literal>RUN</literal>"
-msgstr ""
+msgstr "<literal>RUN</literal>"
 
 #. Tag: para
 #: udev.xml:755
@@ -1034,24 +1306,27 @@ msgid ""
 "list of programs to be executed for this device. Keep in mind to restrict "
 "this to very short tasks to avoid blocking further events for this device."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、このデバイス向けに"
+"実行すべきプログラムの一覧への追加 (ただし、後続の処理が遅延したりすることのないよう、"
+"非常に短時間で終了する処理にしてください)"
 
 #. Tag: term
 #: udev.xml:764
 #, no-c-format
 msgid "<literal>LABEL</literal>"
-msgstr ""
+msgstr "<literal>LABEL</literal>"
 
 #. Tag: para
 #: udev.xml:767
 #, no-c-format
 msgid "Add a label where a <literal>GOTO</literal> can jump to."
-msgstr ""
+msgstr "<literal>GOTO</literal> でジャンプできる先のラベル指定"
 
 #. Tag: term
 #: udev.xml:773
 #, no-c-format
 msgid "<literal>GOTO</literal>"
-msgstr ""
+msgstr "<literal>GOTO</literal>"
 
 #. Tag: para
 #: udev.xml:776
@@ -1061,12 +1336,14 @@ msgid ""
 "and continue with the one that carries the label referenced by the "
 "<literal>GOTO</literal> key."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、ラベルで指定した位置まで"
+"いくつかのルールを読み飛ばす指定"
 
 #. Tag: term
 #: udev.xml:784
 #, no-c-format
 msgid "<literal>IMPORT{<replaceable>TYPE</replaceable>}</literal>"
-msgstr ""
+msgstr "<literal>IMPORT{<replaceable>種類</replaceable>}</literal>"
 
 #. Tag: para
 #: udev.xml:787
@@ -1078,6 +1355,10 @@ msgid ""
 "\">udev</systemitem> tries to determine the type itself based on the "
 "executable bit of the file permissions."
 msgstr ""
+"外部プログラムの出力などをイベント環境に読み込む指定 (<systemitem class=\""
+"service\">udev</systemitem> は複数の種類の変数を取り込むことができます。"
+"種類を指定しない場合、<systemitem class=\"service\">udev</systemitem> "
+"はファイルのアクセス権をもとに実行可否を自身で判断するようになります)"
 
 #. Tag: para
 #: udev.xml:796
@@ -1086,6 +1367,8 @@ msgid ""
 "<literal>program</literal> tells <systemitem class=\"service\">udev</"
 "systemitem> to execute an external program and import its output."
 msgstr ""
+"<literal>program</literal> を指定すると、 <systemitem class=\"service\">udev</"
+"systemitem> は外部プログラムを実行して出力を取り込みます。"
 
 #. Tag: para
 #: udev.xml:803
@@ -1094,6 +1377,8 @@ msgid ""
 "<literal>file</literal> tells <systemitem class=\"service\">udev</"
 "systemitem> to import a text file."
 msgstr ""
+"<literal>file</literal> を指定すると、 <systemitem class=\"service\">udev</"
+"systemitem> はテキストファイルから取り込みを行ないます。"
 
 #. Tag: para
 #: udev.xml:809
@@ -1102,12 +1387,14 @@ msgid ""
 "<literal>parent</literal> tells <systemitem class=\"service\">udev</"
 "systemitem> to import the stored keys from the parent device."
 msgstr ""
+"<literal>parent</literal> を指定すると、 <systemitem class=\"service\">udev</"
+"systemitem> は親デバイスに保存されているキーを取り込みます。"
 
 #. Tag: term
 #: udev.xml:819
 #, no-c-format
 msgid "<literal>WAIT_FOR_SYSFS</literal>"
-msgstr ""
+msgstr "<literal>WAIT_FOR_SYSFS</literal>"
 
 #. Tag: para
 #: udev.xml:822
@@ -1120,18 +1407,23 @@ msgid ""
 "systemitem> to wait until the <filename>ioerr_cnt</filename> file has been "
 "created."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に対して、指定した"
+" <systemitem class=\"filesystem\">sysfs</systemitem> ファイルが作成される"
+"まで待機する指定 (たとえば <literal>WAIT_FOR_SYSFS=\"ioerr_cnt\"</literal> "
+"のように指定すると、 <systemitem class=\"service\">udev</systemitem> は"
+" <filename>ioerr_cnt</filename> ファイルが作成されるまで待機します)"
 
 #. Tag: term
 #: udev.xml:833
 #, no-c-format
 msgid "<literal>OPTIONS</literal>"
-msgstr ""
+msgstr "<literal>OPTIONS</literal>"
 
 #. Tag: para
 #: udev.xml:836
 #, no-c-format
 msgid "The <literal>OPTION</literal> key may have several values:"
-msgstr ""
+msgstr "<literal>OPTION</literal> キーには下記のような値を指定することができます:"
 
 #. Tag: para
 #: udev.xml:841
@@ -1140,6 +1432,8 @@ msgid ""
 "<literal>last_rule</literal> tells <systemitem class=\"service\">udev</"
 "systemitem> to ignore all later rules."
 msgstr ""
+"<literal>last_rule</literal> を指定すると、 <systemitem class=\"service\">udev</"
+"systemitem> は後続の全てのルールを無視するようになります。"
 
 #. Tag: para
 #: udev.xml:848
@@ -1148,6 +1442,8 @@ msgid ""
 "<literal>ignore_device</literal> tells <systemitem class=\"service\">udev</"
 "systemitem> to ignore this event completely."
 msgstr ""
+"<literal>ignore_device</literal> を指定すると、 <systemitem class=\"service\">udev</"
+"systemitem> はこのイベントを完全に無視するようになります。"
 
 #. Tag: para
 #: udev.xml:855
@@ -1156,6 +1452,8 @@ msgid ""
 "<literal>ignore_remove</literal> tells <systemitem class=\"service\">udev</"
 "systemitem> to ignore all later remove events for the device."
 msgstr ""
+"<literal>ignore_remove</literal> を指定すると、 <systemitem class=\"service\">udev</"
+"systemitem> はこのデバイスに対して後から発生する全ての削除イベントを無視するようになります。"
 
 #. Tag: para
 #: udev.xml:862
@@ -1165,12 +1463,15 @@ msgid ""
 "systemitem> to create device nodes for all available partitions on a block "
 "device."
 msgstr ""
+"<literal>all_partitions</literal> を指定すると、 <systemitem class=\"service\">udev</"
+"systemitem> はブロックデバイス内に存在する全てのパーティションに対して、デバイスノードを"
+"作成するようになります。"
 
 #. Tag: title
 #: udev.xml:875
 #, no-c-format
 msgid "Persistent Device Naming"
-msgstr ""
+msgstr "デバイスの命名の恒久化"
 
 #. Tag: para
 #: udev.xml:877
@@ -1185,6 +1486,13 @@ msgid ""
 "node name, <systemitem class=\"service\">udev</systemitem> maintains classes "
 "of persistent symbolic links pointing to the device:"
 msgstr ""
+"動的なデバイスディレクトリと <systemitem class=\"service\">udev</systemitem> "
+"ルールの構造により、デバイスの認識順序や接続方式によらず、全てのディスクデバイスに"
+"対して、一貫した命名を行なうことができるようになっています。カーネルが作成する"
+"それぞれのブロックデバイスは、バスやドライブの種類、ファイルシステムに対して"
+"特別な知識のあるツールが検証して作成することになります。カーネルが提供するデバイス"
+"ノード名と共に、 <systemitem class=\"service\">udev</systemitem> では"
+"そのデバイスを指し示す一貫したシンボリックリンクを作成します:"
 
 #. Tag: screen
 #: udev.xml:889
@@ -1215,18 +1523,42 @@ msgid ""
 "    |-- 3e999973-00c9-4917-9442-b7633bd95b9e -&gt; ../../sda6\n"
 "    `-- 4210-8F8C -&gt; ../../sdd1"
 msgstr ""
+"/dev/disk\n"
+"|-- by-id\n"
+"|   |-- scsi-SATA_HTS726060M9AT00_MRH453M4HWHG7B -&gt; ../../sda\n"
+"|   |-- scsi-SATA_HTS726060M9AT00_MRH453M4HWHG7B-part1 -&gt; ../../sda1\n"
+"|   |-- scsi-SATA_HTS726060M9AT00_MRH453M4HWHG7B-part6 -&gt; ../../sda6\n"
+"|   |-- scsi-SATA_HTS726060M9AT00_MRH453M4HWHG7B-part7 -&gt; ../../sda7\n"
+"|   |-- usb-Generic_STORAGE_DEVICE_02773 -&gt; ../../sdd\n"
+"|   `-- usb-Generic_STORAGE_DEVICE_02773-part1 -&gt; ../../sdd1\n"
+"|-- by-label\n"
+"|   |-- Photos -&gt; ../../sdd1\n"
+"|   |-- SUSE10 -&gt; ../../sda7\n"
+"|   `-- devel -&gt; ../../sda6\n"
+"|-- by-path\n"
+"|   |-- pci-0000:00:1f.2-scsi-0:0:0:0 -&gt; ../../sda\n"
+"|   |-- pci-0000:00:1f.2-scsi-0:0:0:0-part1 -&gt; ../../sda1\n"
+"|   |-- pci-0000:00:1f.2-scsi-0:0:0:0-part6 -&gt; ../../sda6\n"
+"|   |-- pci-0000:00:1f.2-scsi-0:0:0:0-part7 -&gt; ../../sda7\n"
+"|   |-- pci-0000:00:1f.2-scsi-1:0:0:0 -&gt; ../../sr0\n"
+"|   |-- usb-02773:0:0:2 -&gt; ../../sdd\n"
+"|   |-- usb-02773:0:0:2-part1 -&gt; ../../sdd1\n"
+"`-- by-uuid\n"
+"    |-- 159a47a4-e6e6-40be-a757-a629991479ae -&gt; ../../sda7\n"
+"    |-- 3e999973-00c9-4917-9442-b7633bd95b9e -&gt; ../../sda6\n"
+"    `-- 4210-8F8C -&gt; ../../sdd1"
 
 #. Tag: title
 #: udev.xml:915
 #, no-c-format
 msgid "Files used by <systemitem class=\"service\">udev</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem> で使用されるファイル"
 
 #. Tag: term
 #: udev.xml:919
 #, no-c-format
 msgid "<filename>/sys/*</filename>"
-msgstr ""
+msgstr "<filename>/sys/*</filename>"
 
 #. Tag: para
 #: udev.xml:922
@@ -1236,12 +1568,15 @@ msgid ""
 "known devices. This information is used by <systemitem class=\"service"
 "\">udev</systemitem> to create device nodes in <filename>/dev</filename>"
 msgstr ""
+"Linux カーネルが提供する仮想ファイルシステムで、既知のすべてのデバイスに対する"
+"情報を保持しています。この情報は、 <systemitem class=\"service\">udev</systemitem> "
+"が <filename>/dev</filename> 内にデバイスノードを作成する際に用いられます。"
 
 #. Tag: term
 #: udev.xml:931
 #, no-c-format
 msgid "<filename>/dev/*</filename>"
-msgstr ""
+msgstr "<filename>/dev/*</filename>"
 
 #. Tag: para
 #: udev.xml:934
@@ -1251,6 +1586,9 @@ msgid ""
 "tmpfiles; for more information, see the <systemitem>systemd-tmpfiles(8)</"
 "systemitem> man page."
 msgstr ""
+"動的に作成されたデバイスノードと、 systemd-tmpfiles で指定された固定の内容が"
+"含まれます。詳しくは <systemitem>systemd-tmpfiles(8)</systemitem> のマニュアル"
+"ページをお読みください。"
 
 #. Tag: para
 #: udev.xml:943
@@ -1259,31 +1597,32 @@ msgid ""
 "The following files and directories contain the crucial elements of the "
 "<systemitem class=\"service\">udev</systemitem> infrastructure:"
 msgstr ""
+"下記のファイルやディレクトリは、 <systemitem class=\"service\">udev</systemitem> "
+"インフラストラクチャにとって重要なものとなっています:"
 
 #. Tag: term
 #: udev.xml:950
 #, no-c-format
 msgid "<filename>/etc/udev/udev.conf</filename>"
-msgstr ""
+msgstr "<filename>/etc/udev/udev.conf</filename>"
 
 #. Tag: para
 #: udev.xml:953
 #, no-c-format
-msgid ""
-"Main <systemitem class=\"service\">udev</systemitem> configuration file."
-msgstr ""
+msgid "Main <systemitem class=\"service\">udev</systemitem> configuration file."
+msgstr "<systemitem class=\"service\">udev</systemitem> のメインの設定ファイルです。"
 
 #. Tag: term
 #: udev.xml:959
 #, no-c-format
 msgid "<filename>/etc/udev/rules.d/*</filename>"
-msgstr ""
+msgstr "<filename>/etc/udev/rules.d/*</filename>"
 
 #. Tag: para
 #: udev.xml:962
 #, no-c-format
 msgid "<systemitem class=\"service\">udev</systemitem> event matching rules."
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem> イベントマッチングルールです。"
 
 #. Tag: term
 #: udev.xml:968
@@ -1292,18 +1631,20 @@ msgid ""
 "<filename>/usr/lib/tmpfiles.d/</filename> and <filename>/etc/tmpfiles.d/</"
 "filename>"
 msgstr ""
+"<filename>/usr/lib/tmpfiles.d/</filename> および <filename>/etc/tmpfiles.d/</"
+"filename>"
 
 #. Tag: para
 #: udev.xml:972
 #, no-c-format
 msgid "Responsible for static <filename>/dev</filename> content."
-msgstr ""
+msgstr "<filename>/dev</filename> 以下に配置する固定の内容を設定する場所です。"
 
 #. Tag: term
 #: udev.xml:978
 #, no-c-format
 msgid "<filename>/usr/lib/udev/*</filename>"
-msgstr ""
+msgstr "<filename>/usr/lib/udev/*</filename>"
 
 #. Tag: para
 #: udev.xml:981
@@ -1312,12 +1653,14 @@ msgid ""
 "Helper programs called from <systemitem class=\"service\">udev</systemitem> "
 "rules."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> のルールから呼び出されるヘルパー"
+"プログラムです。"
 
 #. Tag: title
 #: udev.xml:990
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: udev.xml:992
@@ -1326,12 +1669,14 @@ msgid ""
 "For more information about the <systemitem class=\"service\">udev</"
 "systemitem> infrastructure, refer to the following man pages:"
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> のインフラストラクチャについて、"
+"詳しくは下記のマニュアルページをお読みください:"
 
 #. Tag: term
 #: udev.xml:999
 #, no-c-format
 msgid "<systemitem class=\"service\">udev</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"service\">udev</systemitem>"
 
 #. Tag: para
 #: udev.xml:1002
@@ -1340,12 +1685,14 @@ msgid ""
 "General information about <systemitem class=\"service\">udev</systemitem> , "
 "keys, rules and other important configuration issues."
 msgstr ""
+"<systemitem class=\"service\">udev</systemitem> に関する一般的な情報のほか、"
+"ルールやその他の重要な設定問題について説明しています。"
 
 #. Tag: term
 #: udev.xml:1009
 #, no-c-format
 msgid "<command>udevadm</command>"
-msgstr ""
+msgstr "<command>udevadm</command>"
 
 #. Tag: para
 #: udev.xml:1012
@@ -1355,12 +1702,15 @@ msgid ""
 "<systemitem class=\"service\">udev</systemitem> , request kernel events, "
 "manage the event queue and provide simple debugging mechanisms."
 msgstr ""
+"<command>udevadm</command> は <systemitem class=\"service\">udev</systemitem> "
+"の実行時の振る舞いを制御する際に使用するもので、カーネルイベントの要求やイベント"
+"キューの管理、シンプルなデバッグ機構などが提供されています。"
 
 #. Tag: term
 #: udev.xml:1020
 #, no-c-format
 msgid "<systemitem class=\"daemon\">udevd</systemitem>"
-msgstr ""
+msgstr "<systemitem class=\"daemon\">udevd</systemitem>"
 
 #. Tag: para
 #: udev.xml:1023
@@ -1369,3 +1719,6 @@ msgid ""
 "Information about the <systemitem class=\"daemon\">udev</systemitem> event "
 "managing daemon."
 msgstr ""
+"<systemitem class=\"daemon\">udev</systemitem> イベント管理デーモンに関する"
+"情報が記されています。"
+
