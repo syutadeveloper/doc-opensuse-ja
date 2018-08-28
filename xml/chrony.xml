@@ -7,69 +7,30 @@
 <!-- =============================================================== -->
 <!-- ==                                                           == -->
 <!-- =============================================================== -->
- <title>Time Synchronization with NTP</title>
+ <title>NTP を利用した時刻同期</title>
  <info>
   <abstract>
-   <para>
-    The NTP (network time protocol) mechanism is a protocol for synchronizing
-    the system time over the network. First, a machine can obtain the time from
-    a server that is a reliable time source. Second, a machine can itself act
-    as a time source for other computers in the network. The goal is
-    twofold&mdash;maintaining the absolute time and synchronizing the system
-    time of all machines within a network.
-   </para>
+   <para>NTP (Network Time Protocol) はネットワークを介してシステムの時刻を同期させるためのプロトコルです。まず、コンピュータは信頼できる時刻の発信源となるサーバから、時刻を取得します。次にコンピュータ自身が時刻の発信源となって、ネットワークに時刻を提供します。つまり、目的は 2 つ存在することになります。絶対時刻の管理と、ネットワーク内の全てのマシンでの時刻同期です。</para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
    <dm:translation>yes</dm:translation>
   </dm:docmanager>
  </info>
- <para>
-  Maintaining an exact system time is important in many situations. The
-  built-in hardware clock does often not meet the requirements of applications
-  such as databases or clusters. Manual correction of the system time would
-  lead to severe problems because, for example, a backward leap can cause
-  malfunction of critical applications. Within a network, it is usually
-  necessary to synchronize the system time of all machines, but manual time
-  adjustment is a bad approach. NTP provides a mechanism to solve these
-  problems. The NTP service continuously adjusts the system time with reliable
-  time servers in the network. It further enables the management of local
-  reference clocks, such as radio-controlled clocks.
- </para>
- <para>
-  Since &productname; 15, &chrony; is the default implementation of NTP.
-  &chrony; includes two parts; &chronyd; is a daemon that can be started at
-  boot time and &chronyc; is a command line interface program to monitor the
-  performance of &chronyd;, and to change various operating parameters at
-  runtime.
- </para>
+ <para>システム時刻の正確性は、様々な状況下で重要となります。内蔵のハードウエア時計は、データベースやクラスタなどのアプリケーションの要件に適合するほど正確なものではありませんし、だからといって手作業で時刻を修正してしまったりすると、時刻が逆戻りすることによって、重要なアプリケーションの動作に問題が発生したりしてしまいます。ネットワークに接続されているコンピュータであれば、通常は全てのマシンのシステム時刻を同期させる必要がありますが、この場合も手作業での修正は好ましくありません。 NTP ではこれらの問題を解決する仕組みを備えています。 NTP では、ネットワーク経由でシステムの時刻を信頼できる時刻に少しずつ調整する仕組みを提供しています。このほか、ラジオ制御の時計など、ローカルの参照時計を管理する機能もあります。</para>
+ <para>&productname; 15 以降では、 &chrony; が NTP の既定の実装になっています。 &chrony; は 2 種類のパーツから構成されています。 1 つは &chronyd; と呼ばれるデーモンで、システムの起動時に開始されるものです。もう 1 つは &chronyc; と呼ばれるもので、 &chronyd; の状態を監視したり、動作中に様々なパラメータを変更したりするためのコマンドラインインターフェイスです。</para>
  <note os="sled;osuse">
-  <para>
-   To enable time synchronization by means of active directory, follow the
-   instructions found at <xref linkend="proc.ad.join"/>.
-  </para>
+  <para>Active Directory を利用して時刻同期を行なう場合は、 <xref linkend="proc.ad.join"/> に示されている手順に従ってください。</para>
  </note>
  <sect1 xml:id="sec.ntp.yast">
-  <title>Configuring an NTP Client with &yast;</title>
+  <title>&yast; を利用した NTP クライアントの設定</title>
 
-  <para>
-   The NTP daemon (&chronyd;) coming with the <systemitem>chrony</systemitem>
-   package is preset to use the local computer hardware clock as a time
-   reference.  The precision of a hardware clock heavily depends on its time
-   source. For example, an atomic clock or GPS receiver is a very precise time
-   source, while a common RTC chip is not a reliable time source.  &yast;
-   simplifies the configuration of an NTP client.
-  </para>
+  <para><systemitem>chrony</systemitem> パッケージに付属する NTP デーモン (&chronyd;) は、ローカルコンピュータのハードウエア時計を参照先として使用するように事前設定されています。ハードウエア時計の正確さは、その時刻の発信源に大きく依存しています。たとえば原子時計や GPS レシーバは非常に正確な時刻源となりますが、一般的な PC に搭載されている RTC チップは、信頼できる時刻源とは言えません。このような場合は、 &yast; を利用して時刻同期を行なってください。</para>
 
-  <para>
-   In the &yast; NTP client configuration (<menuchoice><guimenu>Network
-   Services</guimenu> <guimenu>NTP Configuration</guimenu></menuchoice>)
-   window, you can specify when to start the NTP daemon, the type of the
-   configuration source, and add custom time servers.
-  </para>
+  <para>&yast; NTP クライアント設定 ( <menuchoice><guimenu>ネットワークサービス</guimenu> <guimenu>NTP 設定</guimenu></menuchoice> ) のウインドウでは、 NTP デーモンの起動のタイミングや設定元の種類、そして独自のタイムサーバの指定を行なうことができます。</para>
 
   <figure>
-   <title>NTP Configuration Window</title>
+   <title>NTP 設定ウインドウ</title>
    <mediaobject>
     <imageobject role="fo">
      <imagedata fileref="ntp_client.png" width="70%" format="PNG"/>
@@ -81,69 +42,41 @@
   </figure>
 
   <sect2>
-   <title>NTP Daemon Start</title>
-   <para>
-    You can choose from three options for when to start the NTP daemon:
-   </para>
+   <title>NTP デーモンの開始</title>
+   <para>NTP デーモンの起動については、下記のいずれかを選択することができます:</para>
    <variablelist>
     <varlistentry>
-     <term><guimenu>Only Manually</guimenu>
-     </term>
+     <term><guimenu>手動でのみ起動</guimenu></term>
      <listitem>
-      <para>
-       Select <guimenu>Only Manually</guimenu>, if you want to manually start
-       the &chrony; daemon.
-      </para>
+      <para>必要な場合にのみ &chrony; デーモンを手作業で起動したい場合は、 <guimenu>手動でのみ起動</guimenu> を選択してください。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Synchronize without Daemon</guimenu>
-     </term>
+     <term><guimenu>デーモンを使用せずに同期する</guimenu></term>
      <listitem>
-      <para>
-       Select <guimenu>Synchronize without Daemon</guimenu> to set the system
-       time periodically without a permanently running &chrony;. You can set
-       the <guimenu>Interval of the Synchronization in Minutes</guimenu>.
-      </para>
+      <para>&chrony; を恒久的に起動したりせず、定期的にシステム時刻を設定したい場合は、 <guimenu>デーモンを使用せずに同期する</guimenu> を選択してください。なお、 <guimenu>同期間隔 [分]</guimenu> で間隔を指定することもできます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Now and On Boot</guimenu>
-     </term>
+     <term><guimenu>今すぐ開始し、システム起動時に開始するよう設定</guimenu></term>
      <listitem>
-      <para>
-       Select <guimenu>Now and On Boot</guimenu> to start &chronyd;
-       automatically when the system is booted. This setting is recommended.
-      </para>
+      <para>システムの起動時に &chronyd; を開始したい場合は、 <guimenu>今すぐ開始し、システム起動時に開始するよう設定</guimenu> を選択してください。こちらを選択しておくことをお勧めします。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect2>
 
   <sect2>
-   <title>Type of the Configuration Source</title>
-   <para>
-    In the <guimenu>Configuration Source</guimenu> drop-down box, select
-    either <guimenu>Dynamic</guimenu> or <guimenu>Static</guimenu>. Set
-    <guimenu>Static</guimenu> if your server uses only a fixed set of (public)
-    NTP servers, while <guimenu>Dynamic</guimenu> is better if your internal
-    network offers NTP servers via DHCP.
-   </para>
+   <title>設定元の種類</title>
+   <para><guimenu>設定元</guimenu> のドロップダウンボックスでは、 <guimenu>動的</guimenu> または <guimenu>静的</guimenu> のいずれかを選択します。お使いのサーバが固定の (公開されている) NTP サーバを利用する場合は <guimenu>静的</guimenu> を、 DHCP を介して NTP サーバの情報を提供しているネットワークの場合は <guimenu>動的</guimenu> を選択してください。</para>
   </sect2>
 
   <sect2 xml:id="sec.net.ntp.yast.new_sync">
-   <title>Configure Time Servers</title>
-   <para>
-    Time servers for the client to query are listed in the lower part of the
-    <guimenu>NTP Configuration</guimenu> window. Modify this list as needed
-    with <guimenu>Add</guimenu>, <guimenu>Edit</guimenu>, and
-    <guimenu>Delete</guimenu>.
-   </para>
-   <para>
-    Click <guimenu>Add</guimenu> to add a new time server:
-   </para>
+   <title>タイムサーバの設定</title>
+   <para>時刻の問い合わせ先となるタイムサーバの設定は、 <guimenu>NTP 設定</guimenu> ウインドウの下半分に書かれています。この一覧は、 <guimenu>追加</guimenu> , <guimenu>編集</guimenu> , <guimenu>削除</guimenu> の各ボタンで変更することができます。</para>
+   <para>新しいタイムサーバを追加するには、 <guimenu>追加</guimenu> を押します:</para>
    <figure>
-    <title>Adding a Time Server</title>
+    <title>タイムサーバの追加</title>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="ntp_client_serveradd.png" width="70%" format="PNG"/>
@@ -155,31 +88,16 @@
    </figure>
    <procedure>
     <step>
-     <para>
-      In the <guimenu>Address</guimenu> field, type the URL of the time server
-      or pool of time servers with which you want to synchronize the machine
-      time. After the URL is complete, click <guimenu>Test</guimenu> to verify
-      that it points to a valid time source.
-     </para>
+     <para><guimenu>アドレス</guimenu> 欄には、そのマシンの同期先となるタイムサーバの URL か、タイムサーバのプールの URL を指定します。入力が終わったら <guimenu>テスト</guimenu> を押すと、タイムサーバとの通信を確認することができます。</para>
     </step>
     <step>
-     <para>
-      Activate <guimenu>Quick Initial Sync</guimenu> to speed up the time
-      synchronization by sending more requests at the &chronyd; daemon start.
-     </para>
+     <para>&chronyd; の起動時に多くの要求を送信して同期を高速化するには、 <guimenu>初期同期の高速化</guimenu> を選択します。</para>
     </step>
     <step>
-     <para>
-      Activate <guimenu>Start Offline</guimenu> to speed up the boot time on
-      systems that start the &chronyd; daemon automatically and may not have an
-      Internet connection at boot time. This option is useful for example for
-      laptops whose network connection is managed by &nm;.
-     </para>
+     <para><guimenu>オフライン起動</guimenu> を選択すると、システムの起動時に &chronyd; を素早く起動することができます。これは、システムの起動時にインターネットに接続できない環境のほか、 &nm; でネットワーク接続を管理しているような場合に便利な機能です。</para>
     </step>
     <step>
-     <para>
-      Confirm with <guimenu>OK</guimenu>.
-     </para>
+     <para><guimenu>OK</guimenu> を押して閉じます。</para>
     </step>
    </procedure>
   </sect2>
@@ -190,75 +108,40 @@
 <!-- ==                                                           == -->
 <!-- =============================================================== -->
  <sect1 xml:id="sec.netz.xntp.netconf">
-  <title>Manually Configuring NTP in the Network</title>
+  <title>ネットワーク内での NTP の手動設定</title>
 
-  <para>
-   &chrony; reads its configuration from the
-   <filename>/etc/chrony.conf</filename> file. To keep the computer clock
-   synchronized, you need to tell &chrony; what time servers to use. You can
-   use specific server names or IP addresses, for example:
-  </para>
+  <para>&chronyd; は <filename>/etc/chrony.conf</filename> にある設定ファイルを読み込みます。お使いのコンピュータの同期を維持するため、 &chrony; に対してどのタイムサーバを使用するのかを指定します。タイムサーバの指定は完全修飾ホスト名のほか、 IP アドレスでも指定することができます。たとえば下記のようになります:</para>
 
-<screen>server 0.europe.pool.ntp.org
-server 1.europe.pool.ntp.org
-server 2.europe.pool.ntp.org</screen>
+<screen>server 0.jp.pool.ntp.org
+server 1.jp.pool.ntp.org
+server 2.jp.pool.ntp.org</screen>
 
-  <para>
-   You can also specify a <emphasis>pool</emphasis> name. Pool name resolves to
-   several IP addresses:
-  </para>
+  <para>下記のようにして <emphasis>pool</emphasis> (プール) を指定することもできます。プールは複数の IP アドレスに展開される仕組みです:</para>
 
 <screen>pool pool.ntp.org</screen>
 
   <tip>
-   <title>Computers on the Same Network</title>
-   <para>
-    To synchronize time on multiple computers on the same network, we do not
-    recommend to synchronize all of them with an external server. A good
-    practice is to make one computer the time server which is synchronized with
-    an external time server, and the other computers act as its clients. Add a
-    <literal>local</literal> directive to the server's
-    <filename>/etc/chrony.conf</filename> to distinguish it from an
-    authoritative time server:
-   </para>
+   <title>同じネットワーク内のコンピュータ</title>
+   <para>同じネットワーク内にある複数のコンピュータの時刻を同期するにあたっては、それら全てを外部のサーバと同期させる構成はお勧めできません。その代わりに、いずれか 1 台のコンピュータを外部のタイムサーバと同期させ、残りのコンピュータをそのコンピュータに同期させることをお勧めします。この場合は、サーバ側の <filename>/etc/chrony.conf</filename> 内に <literal>local</literal> ディレクティブを指定して、信頼できるタイムサーバと区別するようにしてください:</para>
 <screen>local stratum 10</screen>
   </tip>
 
-  <para>
-   To start &chrony;, run:
-  </para>
+  <para>&chrony; を開始するには、下記のように実行します:</para>
 
 <screen>systemctl start chronyd.service</screen>
 
-  <para>
-   After initializing &chronyd;, it takes some time before the time is
-   stabilized and the drift file for correcting the local computer clock is
-   created. With the drift file, the systematic error of the hardware clock can
-   be computed when the computer is powered on. The correction is used
-   immediately, resulting in a higher stability of the system time.
-  </para>
+  <para>&chronyd; の準備が完了すると、時刻が安定して受信され、ローカルコンピュータの時計の調整を行なうためのドリフトファイルが作成されるまで、しばらくの時間がかかります。ドリフトファイルは、コンピュータが起動されてからのハードウエア時計のズレの計算結果を表わしたファイルです。補正は直ちに開始されるため、これによってシステム時刻の安定性を高めるようになっています。</para>
 
-  <para>
-   To enable the service so that &chrony; starts automatically at boot time,
-   run:
-  </para>
+  <para>システムの起動時に &chrony; サービスを開始するには、下記のように実行します:</para>
 
 <screen>systemctl enable chronyd.service</screen>
  </sect1>
  <sect1 xml:id="ntp.chronyc">
-  <title>Configure &chronyd; at Runtime Using &chronyc;</title>
+  <title>&chronyc; による動作中の &chronyd; の設定</title>
 
-  <para>
-   You can use &chronyc; to change the behavior of &chronyd; at runtime. It
-   also generates status reports about the operation of &chronyd;.
-  </para>
+  <para>&chronyd; の動作中に何らかの変更を行ないたい場合は、 &chronyc; を使用することができます。 &chronyc; では、 &chronyd; の操作に関する状態レポートを生成することもできます。</para>
 
-  <para>
-   You can run &chronyc; either in interactive or non-interactive mode. To
-   run &chronyc; interactively, enter &chronyc; on the command line. It
-   displays a prompt and waits for your command input. For example, to check
-   how many NTP sources are online or offline, run:
-  </para>
+  <para>&chronyc; は対話モードと非対話モードの両方に対応しています。 &chronyc; を対話モードで起動したい場合は、コマンドラインに &chronyc; とだけ入力してください。これによりプロンプトが表示され、コマンドの入力を待機するようになります。たとえば NTP の対向でオンラインのものとオフラインのものの数を知りたい場合は、下記のように実行します:</para>
 
 <screen>&prompt.root;&chronyc;
 chronyc&gt; activity
@@ -269,144 +152,79 @@ chronyc&gt; activity
 1 sources doing burst (return to offline)
 0 sources with unknown address</screen>
 
-  <para>
-   To exit &chronyc;'s prompt, enter <command>quit</command> or
-   <command>exit</command>.
-  </para>
+  <para>&chronyc; のプロンプトを終了するには、 <command>quit</command> もしくは <command>exit</command> と入力してください。</para>
 
-  <para>
-   If you do not need to use the interactive prompt, enter the command
-   directly:
-  </para>
+  <para>対話プロンプトが必要ない場合は、コマンドを直接指定して実行することもできます:</para>
 
 <screen>&prompt.root;&chronyc; activity</screen>
 
   <note>
-   <title>Temporary Changes</title>
-   <para>
-    Changes made using &chronyc; are not permanent. They will be lost after the
-    next &chronyd; restart. For permanent changes, modify
-    <filename>/etc/chrony.conf</filename>.
-   </para>
+   <title>一時的な変更</title>
+   <para>&chronyc; を利用した変更は恒久的なものではありません。 &chronyd; を再起動すると、元の設定に戻ってしまいます。設定を恒久化させたい場合は、 <filename>/etc/chrony.conf</filename> を編集してください。</para>
   </note>
 
-  <para>
-   For a complete list of &chronyc; commands, see its manual page (<command>man
-   1 chronyc</command>).
-  </para>
+  <para>利用可能な &chronyc; のコマンド一覧について、詳しくはマニュアルページ ( <command>man 1 chronyc</command> ) をお読みください。</para>
  </sect1>
  <sect1 xml:id="sec.netz.xntp.dynamic">
-  <title>Dynamic Time Synchronization at Runtime</title>
+  <title>動作中の動的な時刻同期</title>
 
 <!-- For reference see fate#306288 -->
 
-  <para>
-   If the system boots without network connection, &chronyd; starts up, but it
-   cannot resolve DNS names of the time servers set in the configuration file.
-   This can happen if you use &nm; with an encrypted Wi-Fi.
-  </para>
+  <para>システムの起動時にネットワークの接続が利用できないような環境では、 &chronyd; は起動できるものの、設定ファイル内に書かれたタイムサーバの DNS 名が解決できないことになります。これは特に、暗号化された無線 LAN を &nm; で設定しているような場合に発生します。</para>
 
-  <para>
-   &chronyd; keeps trying to resolve the time server names specified by the
-   <option>server</option>, <option>pool</option>, and <option>peer</option>
-   directives in an increasing time interval until it succeeds.
-  </para>
+  <para>&chronyd; では <option>server</option> , <option>pool</option> , <option>peer</option> の各ディレクティブで指定したタイムサーバ名を、成功するまで間隔を増やしながら解決を試みます。</para>
 
-  <para>
-   If the time server will not be reachable when &chronyd; is started, you can
-   specify the <option>offline</option> option:
-  </para>
+  <para>&chronyd; の起動時にはタイムサーバに接続できないことがわかっている場合は、下記のようにして <option>offline</option> オプションを指定してください:</para>
 
-<screen>server <replaceable>server_address</replaceable> offline</screen>
+<screen>server <replaceable>サーバアドレス</replaceable> offline</screen>
 
-  <para>
-   &chronyd; will then not try to poll the server until it is enabled using the
-   following command:
-  </para>
+  <para>上記のように設定すると、 &chronyd; は下記のコマンドを送信するまで、サーバへの問い合わせを行なわないようになります:</para>
 
-<screen>&prompt.root;chronyc online <replaceable>server_address</replaceable></screen>
+<screen>&prompt.root;chronyc online <replaceable>サーバアドレス</replaceable></screen>
 
-  <para>
-   When the <option>auto_offline</option> option is set, &chronyd; assumes that
-   the time server has gone offline when two requests have been sent to it
-   without receiving a response. This option avoids the need to run the
-   'offline' command from &chronyc; when disconnecting the network link.
-  </para>
+  <para>なお、 <option>auto_offline</option> オプションを指定すると、 &chronyd; はタイムサーバに対して 2 回リクエストを送信しても応答がない場合、そのタイムサーバがオフライン状態にあるものと判断するようになります。これにより、ネットワーク接続が切れている状態でも 'offline' コマンドを実行する必要がなくなります。</para>
  </sect1>
 <!-- =============================================================== -->
 <!-- ==                                                           == -->
 <!-- =============================================================== -->
  <sect1 xml:id="sec.netz.xntp.normal">
-  <title>Setting Up a Local Reference Clock</title>
+  <title>ローカル参照時計の設定</title>
 
-  <para>
-   The software package &chrony; relies on other programs (such as
-   <systemitem>gpsd</systemitem>) to access the timing data via the SHM or SOCK
-   driver. Use the <option>refclock</option> directive in
-   <filename>/etc/chrony.conf</filename> to specify a hardware reference clock
-   to be used as a time source. It has two mandatory parameters: a driver name
-   and a driver-specific parameter. The two parameters are followed by zero or
-   more <option>refclock</option> options. &chronyd; includes the following
-   drivers:
-  </para>
+  <para>ソフトウエアパッケージ &chrony; は、他のプログラム (たとえば <systemitem>gpsd</systemitem> ) を利用して SHM や SOCK ドライバ経由でタイミングデータを取得することができます。 <filename>/etc/chrony.conf</filename> 内に <option>refclock</option> ディレクティブを指定することで、ハードウエア参照時計を同期先として使用することができます。このディレクティブには、 2 種類の必須パラメータがあります。 1 つはドライバ名で、もう 1 つはドライバ固有のパラメータです。 2 つのパラメータは 0 個以上の <option>refclock</option> オプションの後ろに続きます。 &chronyd; では、下記のドライバに対応しています:</para>
 
   <itemizedlist>
    <listitem>
-    <para>
-     PPS - driver for the kernel 'pulse per second' API. For example:
-    </para>
+    <para>PPS - カーネルの 'Pulse Per Second' API 向けのドライバです。たとえば下記のように設定します:</para>
 <screen>refclock PPS /dev/pps0 lock NMEA refid GPS</screen>
    </listitem>
    <listitem>
-    <para>
-     SHM - NTP shared memory driver. For example:
-    </para>
+    <para>SHM - NTP 共有メモリドライバです。たとえば下記のように設定します:</para>
 <screen>refclock SHM 0 poll 3 refid GPS1
 refclock SHM 1:perm=0644 refid GPS2</screen>
    </listitem>
    <listitem>
-    <para>
-     SOCK - Unix domain socket driver. For example:
-    </para>
+    <para>SOCK - Unix ドメインソケットドライバです。たとえば下記のように設定します:</para>
 <screen>refclock SOCK /var/run/chrony.ttyS0.sock</screen>
    </listitem>
    <listitem>
-    <para>
-     PHC - PTP hardware clock driver. For example:
-    </para>
+    <para>PHC - PTP ハードウエアクロックドライバです。たとえば下記のように設定します:</para>
 <screen>refclock PHC /dev/ptp0 poll 0 dpoll -2 offset -37
 refclock PHC /dev/ptp1:nocrossts poll 3 pps</screen>
    </listitem>
   </itemizedlist>
 
-  <para>
-   For more information on individual drivers' options, see <command>man 8
-   chrony.conf</command>.
-  </para>
+  <para>個別のドライバのオプションについて、詳しくは <command>man 8 chrony.conf</command> をお読みください。</para>
  </sect1>
  <sect1 xml:id="sec.netz.xntp.etr" arch="zseries">
-  <title>Clock Synchronization to an External Time Reference (ETR)</title>
+  <title>外部時刻参照 (External Time Reference; ETR) への時刻同期</title>
 
 <!-- taken from bnc#341392; also see fate#301693 -->
 
-  <para>
-   Support for clock synchronization to an external time reference (ETR) is
-   available. The external time reference sends an oscillator signal and a
-   synchronization signal every 2**20 (2 to the power of 20) microseconds to
-   keep TOD clocks of all connected servers synchronized.
-  </para>
+  <para>外部時刻参照 (External Time Reference; ETR) に対する時刻同期も利用することができます。外部時刻参照ではオシレータの信号と同期信号を 2**20 (2 の 20 乗) マイクロ秒ごとに送信するもので、 TOD の時計を接続されている全てのサーバと同期させるためのものです。</para>
 
-  <para>
-   For availability two ETR units can be connected to a machine. If the clock
-   deviates for more than the sync-check tolerance all CPUs get a machine check
-   that indicates that the clock is not synchronized. If this happens, all DASD I/O
-   to XRC enabled devices is stopped until the clock is synchronized again.
-  </para>
+  <para>可用性を高めるため、 2 つの ETR ユニットがマシンに接続されています。もしも時計が同期チェック限界を超えて逸脱する場合は、クロックに対して同期していない旨を示すマシンチェックが全ての CPU 宛に届けられます。このような状況が発生した場合は、時計が再度同期できるまで、全ての XRC が有効化されたデバイスに対する DASD I/O を停止する必要があります。</para>
 
-  <para>
-   The ETR support is activated via two <literal>sysfs</literal> attributes;
-   run the following commands as &rootuser;:
-  </para>
+  <para>ETR サポートは、 2 つの <literal>sysfs</literal> 属性を介して有効化することができます。それぞれ下記のコマンドを &rootuser; で実行してください:</para>
 
 <screen>echo 1 &gt; /sys/devices/system/etr/etr0/online
 echo 1 &gt; /sys/devices/system/etr/etr1/online
