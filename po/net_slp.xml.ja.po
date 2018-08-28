@@ -1,26 +1,29 @@
+# translation of net_slp.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: net_slp.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-08-28 12:35+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: net_slp.xml:9
 #, no-c-format
 msgid "SLP"
-msgstr ""
+msgstr "SLP"
 
 #. Tag: para
 #: net_slp.xml:12
@@ -34,6 +37,14 @@ msgid ""
 "local network. Applications that support SLP can use this information to be "
 "configured automatically."
 msgstr ""
+"ネットワーククライアントの設定にあたっては、ネットワーク側で提供されている様々な"
+"サービス (印刷関連のプロトコルや LDAP など) に関する知識が必要となります。"
+" <quote>Service Location Protocol</quote> (SLP) はそのような目的で開発された"
+"仕組みで、ネットワークサービスを利用するクライアントの設定をより簡単にすることが"
+"できるようになっています。 SLP では、ローカルのネットワーク内に存在する全ての"
+"クライアントに対して、選択したサービスが利用できる旨と、その設定データを提供する"
+"ことができます。 SLP に対応したアプリケーションであれば、その情報をもとに自動"
+"設定を行なうことができます。"
 
 #. Tag: para
 #: net_slp.xml:27
@@ -46,6 +57,13 @@ msgid ""
 "Services that offer SLP support include cupsd, login, ntp, openldap2, "
 "postfix, rpasswd, rsyncd, saned, sshd (via fish), vnc, and ypserv."
 msgstr ""
+"&productnamereg; では SLP 経由でインストールソースの情報を提供し、その情報を"
+"もとにインストールを行なうことができます。また、多数のシステムサービスが SLP と"
+"統合しています。 SLP を利用することで、お使いのシステム内に存在するインストール"
+"サーバやファイルサーバ、印刷サーバなどの中央サーバに関する情報を、ネットワークに"
+"接続されたクライアントに通知することができます。 SLP に対応するサービスとしては、"
+" cupsd, login, ntp, openldap2, postfix, rpasswd, rsyncd, saned, sshd (fish 経由),"
+" vnc, ypserv などがあります。"
 
 #. Tag: para
 #: net_slp.xml:35
@@ -56,12 +74,15 @@ msgid ""
 "via SLP, check that the <systemitem>openslp-server</systemitem> package is "
 "installed."
 msgstr ""
+"ネットワーククライアント側では、 SLP のサービスを利用するにあたって必要なパッケージが"
+"既定でインストールされています。逆に SLP を介してサービスを <emphasis>提供する</emphasis> "
+"場合は、 <systemitem>openslp-server</systemitem> パッケージをインストールする必要があります。"
 
 #. Tag: title
 #: net_slp.xml:42
 #, no-c-format
 msgid "The SLP Front-End <command>slptool</command>"
-msgstr ""
+msgstr "SLP フロントエンド <command>slptool</command>"
 
 #. Tag: para
 #: net_slp.xml:44
@@ -73,18 +94,23 @@ msgid ""
 "<command>slptool</command> &nbsp; <option>--help</option> lists all "
 "available options and functions."
 msgstr ""
+"<command>slptool</command> ツールは SLP のサービスを問い合わせたり、登録したりする"
+"ことができるコマンドラインツールです。問い合わせの機能は調査を行なうような場合に"
+"便利です。最も重要な <command>slptool</command> サブコマンドを下記に示します。"
+"<command>slptool</command> &nbsp; <option>--help</option> を実行すると、"
+"利用可能の全てのオプションと機能を一覧表示することができます。"
 
 #. Tag: term
 #: net_slp.xml:54
 #, no-c-format
 msgid "findsrvtypes"
-msgstr ""
+msgstr "findsrvtypes"
 
 #. Tag: para
 #: net_slp.xml:56
 #, no-c-format
 msgid "List all service types available on the network."
-msgstr ""
+msgstr "ネットワーク内で利用可能な全てのサービスタイプを一覧表示します。"
 
 #. Tag: screen
 #: net_slp.xml:59
@@ -105,18 +131,32 @@ msgid ""
 "service:ntp\n"
 "service:ypserv"
 msgstr ""
+"&prompt.user;slptool findsrvtypes\n"
+"service:install.suse:nfs\n"
+"service:install.suse:ftp\n"
+"service:install.suse:http\n"
+"service:install.suse:smb\n"
+"service:ssh\n"
+"service:fish\n"
+"service:YaST.installation.suse:vnc\n"
+"service:smtp\n"
+"service:domain\n"
+"service:management-software.IBM:hardware-management-console\n"
+"service:rsync\n"
+"service:ntp\n"
+"service:ypserv"
 
 #. Tag: term
 #: net_slp.xml:76
 #, no-c-format
 msgid "findsrvs <replaceable>SERVICE_TYPE</replaceable>"
-msgstr ""
+msgstr "findsrvs <replaceable>サービスタイプ</replaceable>"
 
 #. Tag: para
 #: net_slp.xml:79
 #, no-c-format
 msgid "List all servers providing <replaceable>SERVICE_TYPE</replaceable>"
-msgstr ""
+msgstr "<replaceable>サービスタイプ</replaceable> を提供する全てのサーバを一覧表示します。"
 
 #. Tag: screen
 #: net_slp.xml:82
@@ -126,6 +166,9 @@ msgid ""
 "service:ntp://&ntpname;:123,57810\n"
 "service:ntp://ntp2.&exampledomain;:123,57810"
 msgstr ""
+"&prompt.user;slptool findsrvs service:ntp\n"
+"service:ntp://&ntpname;:123,57810\n"
+"service:ntp://ntp2.&exampledomain;:123,57810"
 
 #. Tag: term
 #: net_slp.xml:88
@@ -133,7 +176,7 @@ msgstr ""
 msgid ""
 "findattrs <replaceable>SERVICE_TYPE</replaceable> // <replaceable>HOST</"
 "replaceable>"
-msgstr ""
+msgstr "findattrs <replaceable>サービスタイプ</replaceable> // <replaceable>ホスト</replaceable>"
 
 #. Tag: para
 #: net_slp.xml:92
@@ -142,6 +185,8 @@ msgid ""
 "List attributes for <replaceable>SERVICE_TYPE</replaceable> on "
 "<replaceable>HOST</replaceable>"
 msgstr ""
+"指定した <replaceable>ホスト</replaceable> の <replaceable>サービスタイプ</replaceable> に"
+"対して、属性情報を表示します。"
 
 #. Tag: screen
 #: net_slp.xml:96
@@ -150,6 +195,8 @@ msgid ""
 "&prompt.user;slptool findattrs service:ntp://&ntpname;\n"
 "(owner=&exampleuser_plain;),(email=&exampleuser_plain;@&exampledomain;)"
 msgstr ""
+"&prompt.user;slptool findattrs service:ntp://&ntpname;\n"
+"(owner=&exampleuser_plain;),(email=&exampleuser_plain;@&exampledomain;)"
 
 #. Tag: term
 #: net_slp.xml:101
@@ -160,6 +207,9 @@ msgid ""
 "\"( <replaceable>ATTRIBUTE=VALUE</replaceable> ),"
 "( <replaceable>ATTRIBUTE=VALUE</replaceable> )\""
 msgstr ""
+"register <replaceable>サービスタイプ</replaceable> // <replaceable>ホスト</replaceable> "
+": <replaceable>ポート</replaceable> \"( <replaceable>属性=値</replaceable> ),"
+"( <replaceable>属性=値</replaceable> )\""
 
 #. Tag: para
 #: net_slp.xml:107
@@ -168,6 +218,8 @@ msgid ""
 "Registers <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</"
 "replaceable> with an optional list of attributes"
 msgstr ""
+"指定した <replaceable>ホスト</replaceable> の <replaceable>サービスタイプ</replaceable> を、"
+"属性の一覧と共に登録します。"
 
 #. Tag: screen
 #: net_slp.xml:111
@@ -176,6 +228,8 @@ msgid ""
 "slptool register service:ntp://&ntpname;:57810 \\\n"
 "\"(owner=&exampleuser_plain;),(email=&exampleuser_plain;@&exampledomain;)\""
 msgstr ""
+"slptool register service:ntp://&ntpname;:57810 \\\n"
+"\"(owner=&exampleuser_plain;),(email=&exampleuser_plain;@&exampledomain;)\""
 
 #. Tag: term
 #: net_slp.xml:116
@@ -183,7 +237,7 @@ msgstr ""
 msgid ""
 "deregister <replaceable>SERVICE_TYPE</replaceable> // <replaceable>host</"
 "replaceable>"
-msgstr ""
+msgstr "deregister <replaceable>サービスタイプ</replaceable> // <replaceable>ホスト</replaceable>"
 
 #. Tag: para
 #: net_slp.xml:120
@@ -192,24 +246,26 @@ msgid ""
 "De-registers <replaceable>SERVICE_TYPE</replaceable> on <replaceable>HOST</"
 "replaceable>"
 msgstr ""
+"指定した <replaceable>ホスト</replaceable> の <replaceable>サービスタイプ</replaceable> の"
+"登録を解除します。"
 
 #. Tag: screen
 #: net_slp.xml:124
 #, no-c-format
 msgid "slptool deregister service:ntp://&ntpname;"
-msgstr ""
+msgstr "slptool deregister service:ntp://&ntpname;"
 
 #. Tag: para
 #: net_slp.xml:129
 #, no-c-format
 msgid "For more information run <command>slptool --help</command> ."
-msgstr ""
+msgstr "さらに詳しい情報については、 <command>slptool --help</command> をお読みください。"
 
 #. Tag: title
 #: net_slp.xml:134
 #, no-c-format
 msgid "Providing Services via SLP"
-msgstr ""
+msgstr "SLP を介したサービス情報の提供"
 
 #. Tag: para
 #: net_slp.xml:136
@@ -224,6 +280,14 @@ msgid ""
 "should be activated on system start-up, run <command>sudo systemctl enable "
 "slpd</command> ."
 msgstr ""
+"SLP 経由でサービス情報を公開するには、 SLP デーモン ( <systemitem class=\"daemon\">slpd</"
+"systemitem> ) を動作させなければなりません。 &productname; でのほとんどのサービスと"
+"同様に、 <systemitem class=\"daemon\">slpd</systemitem> は個別の起動スクリプト"
+"で制御しています。なお、インストールを行なっても、デーモンは既定で有効化されません。"
+"現在のセッションでサービスを起動するには、 <command>sudo systemctl start slpd</command> "
+"を実行します。システムの起動時に <systemitem class=\"daemon\">slpd</systemitem> "
+"を開始したい場合は、 <command>sudo systemctl enable slpd</command> を実行して"
+"ください。"
 
 #. Tag: para
 #: net_slp.xml:148
@@ -233,12 +297,15 @@ msgid ""
 "<literal>libslp</literal> library. If a service has not been compiled with "
 "SLP support, use one of the following methods to make it available via SLP:"
 msgstr ""
+"&productname; では、多数のアプリケーションが <literal>libslp</literal> ライブラリを"
+"利用して SLP に対応しています。特定のサービスが SLP サポート付きでコンパイルされていない"
+"場合は、下記のいずれかの方法で SLP に対応させることができます:"
 
 #. Tag: term
 #: net_slp.xml:156
 #, no-c-format
 msgid "Static Registration with <filename>/etc/slp.reg.d</filename>"
-msgstr ""
+msgstr "<filename>/etc/slp.reg.d</filename> を利用した固定登録"
 
 #. Tag: para
 #: net_slp.xml:159
@@ -247,6 +314,8 @@ msgid ""
 "Create a separate registration file for each new service. The following "
 "example registers a scanner service:"
 msgstr ""
+"新しいサービスそれぞれに対して、個別の登録ファイルを作成して対応します。下記の例では、"
+"スキャナサービスを登録しています:"
 
 #. Tag: screen
 #: net_slp.xml:163
@@ -260,6 +329,12 @@ msgid ""
 "watch-port-tcp=6566\n"
 "description=SANE scanner daemon"
 msgstr ""
+"## このシステム内にある saned サービスを登録しています。\n"
+"## en は英語を、 65535 はタイムアウトの無効化を意味しています。\n"
+"## タイムアウトを無効化することで、サービスの更新を不要にしています。\n"
+"service:scanner.sane://$HOSTNAME:6566,en,65535\n"
+"watch-port-tcp=6566\n"
+"description=SANE scanner daemon"
 
 #. Tag: para
 #: net_slp.xml:170
@@ -278,6 +353,15 @@ msgid ""
 "literal> prevents registration. <literal>65535</literal> removes all "
 "restrictions."
 msgstr ""
+"このファイル内で最も重要な行は <literal>service:</literal> で始まる <emphasis>"
+"service URL</emphasis> の行です。ここにはサービスの種類 ( <literal>scanner.sane"
+"</literal> ) のほか、サーバ内でサービスが提供されているアドレスが示されています。"
+"<replaceable>$HOSTNAME</replaceable> を指定すると、自動的に自分自身の完全修飾ホスト名"
+"に置き換えられます。その後ろにはコロンに続いて、サービスが待ち受けている TCP ポートが"
+"書かれています。その後ろにはカンマ区切りでサービスの提供言語と、登録の有効期間が秒単位で"
+"示されています。登録の有効期間は <literal>0</literal> から <literal>65535</literal> "
+"までの間で指定します。ただし、 <literal>0</literal> は登録の無効化を、"
+" <literal>65535</literal> は無期限の登録を表わします。"
 
 #. Tag: para
 #: net_slp.xml:184
@@ -291,12 +375,18 @@ msgid ""
 "variable contains a more precise description of the service that is "
 "displayed in suitable browsers."
 msgstr ""
+"また、登録ファイルには <systemitem>watch-port-tcp</systemitem> と <systemitem>"
+"description</systemitem> という行があります。 <systemitem>watch-port-tcp</systemitem> は"
+" SLP によるサービスの告知と関係するサービスを連携させる仕組みで、"
+" <systemitem class=\"daemon\">slpd</systemitem> がサービスの状態をチェックして"
+"サービスを告知するようになります。また、 2 つ目の値はブラウザ側に表示するテキストで、"
+"サービスに関するより詳しい説明を記述します。"
 
 #. Tag: title
 #: net_slp.xml:195
 #, no-c-format
 msgid "&yast; and SLP"
-msgstr ""
+msgstr "&yast; と SLP の関係について"
 
 #. Tag: para
 #: net_slp.xml:196
@@ -306,12 +396,16 @@ msgid ""
 "server, perform this registration automatically when you activate SLP in the "
 "module dialogs. &yast; then creates registration files for these services."
 msgstr ""
+"インストールサーバや YOU (&yast; オンライン更新) などでは、 &yast; が仲介役となって"
+"サービスを登録することができます。この登録は、モジュールのダイアログ内で SLP を"
+"有効化することで、自動的に行なうことができます。 &yast; 側では、これらのサービスに"
+"対する登録ファイルを作成します。"
 
 #. Tag: term
 #: net_slp.xml:206
 #, no-c-format
 msgid "Static Registration with <filename>/etc/slp.reg</filename>"
-msgstr ""
+msgstr "<filename>/etc/slp.reg</filename> を利用した固定登録"
 
 #. Tag: para
 #: net_slp.xml:209
@@ -321,12 +415,14 @@ msgid ""
 "etc/slp.reg.d</filename> is that all services are grouped within a central "
 "file."
 msgstr ""
+"<filename>/etc/slp.reg.d</filename> とこの方式の違いは、全てのサービスを 1 つの"
+"ファイルにまとめる、という点のみです。"
 
 #. Tag: term
 #: net_slp.xml:217
 #, no-c-format
 msgid "Dynamic Registration with <command>slptool</command>"
-msgstr ""
+msgstr "<command>slptool</command> を利用した動的な登録"
 
 #. Tag: para
 #: net_slp.xml:220
@@ -338,12 +434,17 @@ msgid ""
 "restarting <systemitem class=\"daemon\">slpd</systemitem> . See <xref "
 "linkend=\"sec.slp.sl.fend\"/> for details."
 msgstr ""
+"設定ファイルを使用せずに動的に登録を行なう必要がある場合は、 slptool コマンド"
+"ラインユーティリティをお使いください。同じユーティリティを使用することで、"
+" <systemitem class=\"daemon\">slpd</systemitem> を再起動したりすることなく、"
+"既存のサービスの登録を解除することもできます。詳しくは <xref linkend=\"sec.slp.sl.fend\"/> "
+"をお読みください。"
 
 #. Tag: title
 #: net_slp.xml:232
 #, no-c-format
 msgid "Setting up an SLP Installation Server"
-msgstr ""
+msgstr "SLP インストールサーバの構築"
 
 #. Tag: para
 #: net_slp.xml:233
@@ -355,18 +456,23 @@ msgid ""
 "automatically required via SLP query. <phrase os=\"sles;sled\">Refer to "
 "<xref linkend=\"cha.deployment.instserver\"/> for instructions.</phrase>"
 msgstr ""
+"お使いのネットワーク内で SLP を介してインストールデータを告知することで、"
+"ネットワーク経由でのインストールをより簡単に行なうことができるようになります。"
+"特に、インストールメディアの存在するサーバの IP アドレスやパスなどを、クライアント"
+"側で自動的に取得できる点が便利です。 <phrase os=\"sles;sled\">詳しい手順に"
+"ついては、 <xref linkend=\"cha.deployment.instserver\"/> をお読みください。</phrase>"
 
 #. Tag: title
 #: net_slp.xml:243
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: term
 #: net_slp.xml:247
 #, no-c-format
 msgid "RFC 2608, 2609, 2610"
-msgstr ""
+msgstr "RFC 2608, 2609, 2610"
 
 #. Tag: para
 #: net_slp.xml:249
@@ -376,24 +482,26 @@ msgid ""
 "syntax of the service URLs used in greater detail and RFC 2610 deals with "
 "DHCP via SLP."
 msgstr ""
+"RFC 2608 には SLP に対する一般的な説明があります。また、 RFC 2609 にはサービス URL "
+"の書式説明が、 RFC 2610 には DHCP 経由での SLP の説明があります。"
 
 #. Tag: term
 #: net_slp.xml:257
 #, no-c-format
 msgid "<link xlink:href=\"http://www.openslp.org\"/>"
-msgstr ""
+msgstr "<link xlink:href=\"http://www.openslp.org\"/>"
 
 #. Tag: para
 #: net_slp.xml:260
 #, no-c-format
 msgid "The home page of the OpenSLP project."
-msgstr ""
+msgstr "OpenSLP プロジェクトのホームページです。"
 
 #. Tag: term
 #: net_slp.xml:266
 #, no-c-format
 msgid "<filename>/usr/share/doc/packages/openslp</filename>"
-msgstr ""
+msgstr "<filename>/usr/share/doc/packages/openslp</filename>"
 
 #. Tag: para
 #: net_slp.xml:269
@@ -408,3 +516,12 @@ msgid ""
 "devel</systemitem> package <phrase os=\"sles;sled\"> that is provided with "
 "the &sdk;</phrase> ."
 msgstr ""
+"このディレクトリには、 <systemitem>openslp-server</systemitem> パッケージに"
+"付属するドキュメンテーションが配置されています。また、 &productname; での"
+"詳細は、 <filename>README.SUSE</filename> ファイルに書かれているほか、"
+" RFC や 2 種類の入門文書なども用意されています。 SLP の機能を利用したい"
+"プログラマ向けには、 <systemitem class=\"resource\">openslp-devel</systemitem> "
+"パッケージ内に含まれている <emphasis>Programmers Guide (プログラマガイド)</emphasis> "
+"をお読みになることをお勧めします。 <phrase os=\"sles;sled\"> なお、このパッケージは"
+" &sdk; 内に含まれています。</phrase>"
+
