@@ -7,17 +7,7 @@
  <title>DHCP</title>
  <info>
   <abstract>
-   <para>
-    The purpose of the <emphasis>Dynamic Host Configuration Protocol</emphasis>
-    (DHCP) is to assign network settings centrally (from a server) rather than
-    configuring them locally on every workstation. A host configured to use
-    DHCP does not have control over its own static address. It is enabled to
-    configure itself completely and automatically according to directions from
-    the server. If you use the &nm; on the client side, you do not need to
-    configure the client. This is useful if you have changing environments and
-    only one interface active at a time. Never use &nm; on a machine that runs
-    a DHCP server.
-   </para>
+   <para><emphasis>Dynamic Host Configuration Protocol</emphasis> (DHCP) はそれぞれのコンピュータに対して個別の設定を行なうことなく、ネットワークの設定を集中管理するための仕組みです。 DHCP を使用するように設定したコンピュータは、自分自身のアドレスを固定で持つことはなく、サーバからの指示に従って完全かつ自動で設定を行なうことができます。また、クライアント側で &nm; を使用している場合は、クライアント側の設定を行なう必要はありません。この仕組みは、特に 1 つのインターフェイスで複数のネットワークに接続するような場合に有用です。なお、 DHCP サーバを動作させているマシンでは、 &nm; を使用してはなりません。</para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
@@ -26,109 +16,40 @@
  </info>
 
  <tip arch="zseries" os="sles">
-  <title>&zseries;: DHCP Support</title>
-  <para>
-   On &zseries; platforms, DHCP only works on interfaces using the OSA and
-   OSA Express network cards. These cards are the only ones with a MAC, which
-   is required for the DHCP autoconfiguration features.
-  </para>
+  <title>&zseries;: DHCP サポートについて</title>
+  <para>&zseries; プラットフォームでは、 DHCP は OSA および OSA Express ネットワークカードを使用するインターフェイスでのみ動作します。これらのカードには MAC アドレスが 1 つだけ用意されていますので、 DHCP の自動設定の機能を利用することができるようになっています。</para>
  </tip>
- <para>
-  One way to configure a DHCP server is to identify each client using the
-  hardware address of its network card (which should usually be fixed),
-  then supply that client with identical settings each time it connects to the
-  server. DHCP can also be configured to assign addresses to each relevant
-  client dynamically from an address pool set up for this purpose. In the
-  latter case, the DHCP server tries to assign the same address to the client
-  each time it receives a request, even over extended periods. This works only
-  if the network does not have more clients than addresses.
- </para>
- <para>
-  DHCP makes life easier for system administrators. Any changes, even bigger
-  ones, related to addresses and the network configuration in general can be
-  implemented centrally by editing the server's configuration file. This is
-  much more convenient than reconfiguring numerous workstations. It is also
-  much easier to integrate machines, particularly new machines, into the
-  network, because they can be given an IP address from the pool. Retrieving
-  the appropriate network settings from a DHCP server is especially useful in
-  case of laptops regularly used in different networks.
- </para>
- <para>
-  In this chapter, the DHCP server will run in the same subnet as the
-  workstations, <systemitem class="ipaddress">&subnetIImask;</systemitem> with
-  <systemitem class="ipaddress">&routerintipII;</systemitem> as gateway. It has
-  the fixed IP address <systemitem class="ipaddress">&dhcpip;</systemitem> and
-  serves two address ranges,
-  <systemitem class="ipaddress">&subnetII;.10</systemitem> to
-  <systemitem class="ipaddress">&subnetII;.20</systemitem> and
-  <systemitem class="ipaddress">&subnetII;.100</systemitem> to
-  <systemitem class="ipaddress">&subnetII;.200</systemitem>.
- </para>
- <para>
-  A DHCP server supplies not only the IP address and the netmask, but also the
-  host name, domain name, gateway, and name server addresses for the client to
-  use. In addition to that, DHCP allows several parameters to be
-  configured in a centralized way, for example, a time server from which
-  clients may poll the current time or even a print server.
- </para>
+ <para>DHCP サーバを使用するもう 1 つの用途としては、ネットワークカードのハードウエアアドレス (通常は固定のアドレスが割り当てられています) を利用して各クライアントを識別し、常に同じアドレスを割り当てたり、動的にアドレスを割り当てたりすることがあげられます。動的にアドレスを割り当てる場合でも、 DHCP サーバ側では貸与期限を越えて同じアドレスを割り当てようとします。この方式は、クライアント数よりもアドレス数のほうが多い場合にのみ成立します。</para>
+ <para>DHCP はシステム管理者にとっても利点があります。一般的にアドレスやネットワークの設定変更は面倒な作業になりがちですが、サーバの設定ファイルだけで集中管理すれば、クライアント側の設定を一斉に変えることができますので、クライアントの台数が多くなればなるほどメリットとなります。また、新しいマシンのネットワークへの接続に際しても、プールから IP アドレスを取るだけの簡単な話になってしまいます。 DHCP サーバ側で適切な設定を提供することで、様々なネットワークに接続するラップトップに対しても、非常に便利な機能となります。</para>
+ <para>本章では、 DHCP サーバとクライアントは同じサブネット (<systemitem class="ipaddress">&subnetIImask;</systemitem>) 内で動作するものとし、ルータが <systemitem class="ipaddress">&routerintipII;</systemitem> にあるものとします。また、 DHCP サーバの IP アドレスは <systemitem class="ipaddress">&dhcpip;</systemitem> で、それぞれ <systemitem class="ipaddress">&subnetII;.10</systemitem> から <systemitem class="ipaddress">&subnetII;.20</systemitem> までと、 <systemitem class="ipaddress">&subnetII;.100</systemitem> から <systemitem class="ipaddress">&subnetII;.200</systemitem> までのアドレス範囲を提供するものとします。</para>
+ <para>DHCP サーバは IP アドレスとネットマスクの情報を提供するだけではありません。ホスト名やドメイン名、デフォルトゲートウエイやネームサーバのアドレスなどをクライアントに提供して、設定させることができます。また、これに加えて、 DHCP サーバではクライアントが現在時刻を問い合わせるためのタイムサーバや、印刷サーバなどの情報を集中管理して提供することもできます。</para>
  <sect1 xml:id="sec.dhcp.yast">
-  <title>Configuring a DHCP Server with &yast;</title>
+  <title>&yast; を利用した DHCP サーバの設定</title>
 
 
 
-  <para>
-   To install a DHCP server, start &yast; and select
-   <menuchoice><guimenu>Software</guimenu> <guimenu>Software
-   Management</guimenu></menuchoice>. Choose
-   <menuchoice><guimenu>Filter</guimenu>
-   <guimenu>Patterns</guimenu></menuchoice> and select <guimenu>DHCP and DNS
-   Server</guimenu>. Confirm the installation of the dependent packages to
-   finish the installation process.
-  </para>
+  <para>DHCP サーバをインストールするには、 &yast; を起動して <menuchoice><guimenu>ソフトウエア</guimenu> <guimenu>ソフトウエア管理</guimenu></menuchoice> を選択します。その後 <menuchoice><guimenu>表示</guimenu><guimenu>パターン</guimenu></menuchoice> を選択して <guimenu>DHCP および DNS サーバ</guimenu> を選択します。あとは <guimenu>了解</guimenu> を押して必要なパッケージをインストールします。</para>
 
   <important>
-   <title>LDAP Support</title>
-   <para>
-    The &yast; DHCP module can be set up to store the server configuration
-    locally (on the host that runs the DHCP server) or to have its
-    configuration data managed by an LDAP server. To use LDAP, set
-    up your LDAP environment before configuring the DHCP server.
-   </para>
-   <para>
-    For more information about LDAP, see <xref linkend="cha.security.ldap"/>.
-   </para>
+   <title>LDAP サポートについて</title>
+   <para>&yast; DHCP モジュールでは、サーバの設定をローカル (DHCP サーバを動作させるマシン自身) に保存することができるほか、 LDAP サーバで設定データを管理させることもできます。 LDAP を使用するには、 DHCP サーバを設定する前に LDAP の環境を設定してください。</para>
+   <para>LDAP について、詳しくは <xref linkend="cha.security.ldap"/> をお読みください。</para>
   </important>
 
-  <para>
-   The &yast; DHCP module (<systemitem>yast2-dhcp-server</systemitem>) allows
-   you to set up your own DHCP server for the local network. The module can run
-   in wizard mode or expert configuration mode.
-  </para>
+  <para>&yast; の DHCP モジュール ( <systemitem>yast2-dhcp-server</systemitem> ) では、ローカルネットワークに対する DHCP サーバの設定を行なうことができます。このモジュールは、ウイザードモードのほか、熟練者向けの設定モードで動作させることができます。</para>
 
   <sect2 xml:id="sec.dhcp.yast.init">
-   <title>Initial Configuration (Wizard)</title>
-   <para>
-    When the module is started for the first time, a wizard starts, prompting
-    you to make a few basic decisions concerning server administration.
-    Completing this initial setup produces a very basic server configuration
-    that should function in its essential aspects. The expert mode can be used
-    to deal with more advanced configuration tasks. Proceed as follows:
-   </para>
+   <title>初期設定 (ウイザード)</title>
+   <para>このモジュールを初めて起動した場合は、ウイザードが表示されます。ここでは、サーバの管理に関わるいくつかの基本的な決定を行ないます。この初期設定を完了することで、サーバの非常に基本的な部分を作成することができます。また、熟練者モードを使用することで、より高度な設定作業を行なうこともできます。具体的には下記のように進めていきます:</para>
    <remark>
    It has changed in the meantime.  DHCP Server Configuration ("expert mode")
    now allows more detailed configuration.  2010-06-22, ke.
   </remark>
    <procedure xml:id="pro.dhcp.yast.init">
     <step>
-     <para>
-      Select the interface from the list to which the DHCP server should listen
-      and click <guimenu>Select</guimenu>. After this, select <guimenu>Open
-      Firewall for Selected Interfaces</guimenu> to open the firewall for this
-      interface, and click <guimenu>Next</guimenu>. See
-      <xref linkend="fig.yast2.dhcp.wiz1"/>.
-     </para>
+     <para>まずは DHCP サーバが待ち受けるべきネットワークインターフェイスを一覧から選択し、 <guimenu>選択</guimenu> を押します。また、選択したインターフェイスでファイアウオールのポートを開きたい場合は、 <guimenu>ファイアウオールで選択したインターフェイスを開く</guimenu> を選択します。設定が終わったら <guimenu>次へ</guimenu> を押します。詳しくは <xref linkend="fig.yast2.dhcp.wiz1"/> をご覧ください。</para>
      <figure xml:id="fig.yast2.dhcp.wiz1">
-      <title>DHCP Server: Card Selection</title>
+      <title>DHCP サーバ: カードの選択</title>
       <mediaobject>
        <imageobject role="fo">
         <imagedata width="75%" fileref="yast2_dhcp_wiz1.png" format="PNG"/>
@@ -140,17 +61,9 @@
      </figure>
     </step>
     <step>
-     <para>
-      Use the check box to determine whether your DHCP settings should be
-      automatically stored by an LDAP server. In the text boxes, provide the
-      network specifics for all clients the DHCP server should manage. These
-      specifics are the domain name, address of a time server, addresses of the
-      primary and secondary name server, addresses of a print and a WINS server
-      (for a mixed network with both Windows and Linux clients), gateway
-      address, and lease time. See <xref linkend="fig.yast2.dhcp.wiz2"/>.
-     </para>
+     <para>まずは LDAP サーバ内に DHCP の設定を保存するかどうかを、チェックボックスで選択します。テキストボックスは、 DHCP サーバが管理する全てのクライアントに対する情報を設定します。ドメイン名やタイムサーバのアドレス、プライマリおよびセカンダリのネームサーバ、印刷 (プリント) サーバや WINS サーバ (Windows と Linux のクライアントが共存している場合) やゲートウエイ、貸与時間を設定します。詳しくは <xref linkend="fig.yast2.dhcp.wiz2"/> をご覧ください。</para>
      <figure xml:id="fig.yast2.dhcp.wiz2">
-      <title>DHCP Server: Global Settings</title>
+      <title>DHCP サーバ: グローバル設定</title>
       <mediaobject>
        <imageobject role="fo">
         <imagedata width="75%" fileref="yast2_dhcp_wiz2.png" format="PNG"/>
@@ -162,18 +75,9 @@
      </figure>
     </step>
     <step>
-     <para>
-      Configure how dynamic IP addresses should be assigned to clients. To do
-      so, specify an IP range from which the server can assign addresses to
-      DHCP clients. All these addresses must be covered by the same netmask.
-      Also specify the lease time during which a client may keep its IP address
-      without needing to request an extension of the lease. Optionally, specify
-      the maximum lease time&mdash;the period during which the server reserves
-      an IP address for a particular client. See
-      <xref linkend="fig.yast2.dhcp.wiz3"/>.
-     </para>
+     <para>ここでは、動的な IP アドレスをどのようにしてクライアントに配布するかを設定します。まずはサーバがクライアントに対して配布する IP アドレスの範囲を指定します。配布するアドレスは、同じネットマスク内のものに限られることに注意してください。また、クライアント側から再貸与を送信させるまでの貸与時間を設定することもできます。必要であれば、サーバ側で IP アドレスを予約しておく最大の貸与時間を設定することもできます。詳しくは <xref linkend="fig.yast2.dhcp.wiz3"/> をご覧ください。</para>
      <figure xml:id="fig.yast2.dhcp.wiz3">
-      <title>DHCP Server: Dynamic DHCP</title>
+      <title>DHCP サーバ: 動的 DHCP</title>
       <mediaobject>
        <imageobject role="fo">
         <imagedata width="75%" fileref="yast2_dhcp_wiz3.png" format="PNG"/>
@@ -185,19 +89,9 @@
      </figure>
     </step>
     <step>
-     <para>
-      Define how the DHCP server should be started. Specify whether to start
-      the DHCP server automatically when the system is booted or manually when
-      needed (for example, for testing purposes). Click
-      <guimenu>Finish</guimenu> to complete the configuration of the server.
-      See <xref linkend="fig.yast2.dhcp.start"/>.
-<!-- Alternatively, you can select
-       <guimenu>Host Management</guimenu> from the tree structure to the
-       left to configure special host management features in addition to the
-       basic configuration (see <xref linkend="fig.yast2.dhcp.statdhcp"/>). -->
-     </para>
+     <para>ここでは DHCP サーバの開始方法を設定します。システムの起動時に DHCP サーバを自動的に開始するか、もしくは必要に応じて開始する (テスト用途など) かを選択することができます。サーバの設定が終わったら、 <guimenu>完了</guimenu> を押してください。詳しくは <xref linkend="fig.yast2.dhcp.start"/> をご覧ください。 <!-- Alternatively, you can select <guimenu>Host Management</guimenu> from the tree structure to the left to configure special host management features in addition to the basic configuration (see <xref linkend="fig.yast2.dhcp.statdhcp"/>). --></para>
      <figure xml:id="fig.yast2.dhcp.start">
-      <title>DHCP Server: Start-Up</title>
+      <title>DHCP サーバ: 起動</title>
       <mediaobject>
        <imageobject role="fo">
         <imagedata width="75%" fileref="yast2_dhcp_start.png" format="PNG"/>
@@ -209,20 +103,9 @@
      </figure>
     </step>
     <step os="sles;osuse">
-     <para>
-      Instead of using dynamic DHCP in the way described in the preceding
-      steps, you can also configure the server to assign addresses in
-      quasi-static fashion. Use the text boxes provided in the lower part to
-      specify a list of the clients to manage in this way. Specifically,
-      provide the <guimenu>Name</guimenu> and the <guimenu>IP Address</guimenu>
-      to give to such a client, the <guimenu>Hardware Address</guimenu>, and
-      the <guimenu>Network Type</guimenu> (token ring or Ethernet). Modify the
-      list of clients, which is shown in the upper part with
-      <guimenu>Add</guimenu>, <guimenu>Edit</guimenu>, and <guimenu>Delete from
-      List</guimenu>. See <xref linkend="fig.yast2.dhcp.statdhcp"/>.
-     </para>
+     <para>上述の手順で動的なアドレス割り当てを設定するだけでなく、サーバに対してほぼ固定のアドレスを割り当てさせる方法があります。下半分に表示されたテキストボックスを利用して、固定のアドレスを割り当てるべきクライアントを指定していってください。具体的には、<guimenu>名前</guimenu> と <guimenu>IP アドレス</guimenu> がクライアントに対して割り当てる名前とアドレスを、 <guimenu>ハードウエアアドレス</guimenu> と <guimenu>ネットワークの種類</guimenu> (トークンリングもしくはイーサネット) がそのクライアントを識別するための情報になっています。上半分に表示されているクライアントの設定には、 <guimenu>追加</guimenu> を押すことで追加することができます。追加済みの設定を編集したり削除したりするには、対象を上半分で選択して編集を行ない、 <guimenu>変更</guimenu> もしくは <guimenu>一覧から削除</guimenu> を押します。詳しくは <xref linkend="fig.yast2.dhcp.statdhcp"/> をご覧ください。</para>
      <figure xml:id="fig.yast2.dhcp.statdhcp">
-      <title>DHCP Server: Host Management</title>
+      <title>DHCP サーバ: ホスト管理</title>
       <mediaobject>
        <imageobject role="fo">
         <imagedata width="75%" fileref="yast2_dhcp_statdhcp.png" format="PNG"/>
@@ -237,38 +120,15 @@
   </sect2>
 
   <sect2 xml:id="sec.dhcp.yast.expert" os="sles;osuse">
-   <title>DHCP Server Configuration (Expert)</title>
-   <para>
-    In addition to the configuration method discussed earlier, there is also an
-    expert configuration mode that allows you to change the DHCP server setup
-    in every detail. Start the expert configuration by clicking <guimenu>DHCP
-    Server Expert Configuration</guimenu> in the <guimenu>Start-Up</guimenu>
-    dialog (see <xref linkend="fig.yast2.dhcp.start"/>).
-   </para>
+   <title>DHCP サーバ設定 (熟練者向け)</title>
+   <para>上記までの設定方法に加えて、 &yast; ではより詳しい設定を行なうことのできる熟練者モードが用意されています。熟練者モードを起動するには、 <guimenu>起動</guimenu> ダイアログ内にある <guimenu>DHCP サーバ熟練者設定</guimenu> ボタンを押してください (詳しくは <xref linkend="fig.yast2.dhcp.start"/> をご覧ください) 。</para>
    <variablelist>
     <varlistentry>
-     <term>Chroot Environment and Declarations</term>
+     <term>Chroot 環境と宣言</term>
      <listitem>
-      <para>
-       In this first dialog, make the existing configuration editable by
-       selecting <guimenu>Start DHCP Server</guimenu>. An important feature of
-       the behavior of the DHCP server is its ability to run in a chroot
-       environment, or chroot jail, to secure the server host. If the DHCP
-       server should ever be compromised by an outside attack, the attacker
-       will still be in the chroot jail, which prevents him from
-       accessing the rest of the system. The lower part of the dialog displays a
-       tree view with the declarations that have already been defined. Modify
-       these with <guimenu>Add</guimenu>, <guimenu>Delete</guimenu>, and
-       <guimenu>Edit</guimenu>. Selecting <guimenu>Advanced</guimenu> takes you
-       to additional expert dialogs. See
-       <xref linkend="fig.yast2.dhcp.chroot"/>. After selecting
-       <guimenu>Add</guimenu>, define the type of declaration to add. With
-       <guimenu>Advanced</guimenu>, view the log file of the server, configure
-       TSIG key management, and adjust the configuration of the firewall
-       according to the setup of the DHCP server.
-      </para>
+      <para>最初に表示されたダイアログでは、以前のダイアログでも表示された <guimenu>サービスの状態</guimenu> が表示されます。ただし、このモードではさらに詳しい設定である chroot 環境 (chroot jail とも呼びます) の使用可否を選択することができるようになっています。これは DHCP サーバのコンピュータを保護するための仕組みで、外部から DHCP サーバが脆弱性に対する攻撃を受けても、システム全体には被害が及ばないように緩和するためのものです。ダイアログの下半分には、宣言に関するツリービューが表示されています。それぞれ <guimenu>追加</guimenu> , <guimenu>削除</guimenu> , <guimenu>編集</guimenu> でツリーを操作することができます。詳しくは <xref linkend="fig.yast2.dhcp.chroot"/> をご覧ください。なお、 <guimenu>追加</guimenu> を押した場合は、追加する宣言の種類を選択することになります。また、 <guimenu>詳細</guimenu> ボタンを押すと、サーバのログファイルを表示したり、 TSIG 鍵の管理を行なったり、 DHCP サーバの設定にあわせてファイウオールの設定を調整したりすることもできます。</para>
       <figure xml:id="fig.yast2.dhcp.chroot">
-       <title>DHCP Server: Chroot Jail and Declarations</title>
+       <title>DHCP サーバ: Chroot Jail と宣言</title>
        <mediaobject>
         <imageobject role="fo">
          <imagedata width="75%" fileref="yast2_dhcp_chroot.png" format="PNG"/>
@@ -281,19 +141,11 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Selecting the Declaration Type</term>
+     <term>宣言の種類の選択</term>
      <listitem>
-      <para>
-       The <guimenu>Global Options</guimenu> of the DHCP server are made up of
-       several declarations. This dialog lets you set the declaration types
-       <guimenu>Subnet</guimenu>, <guimenu>Host</guimenu>, <guimenu>Shared
-       Network</guimenu>, <guimenu>Group</guimenu>, <guimenu>Pool of
-       Addresses</guimenu>, and <guimenu>Class</guimenu>. This example shows
-       the selection of a new subnet (see
-       <xref linkend="fig.yast2.dhcp.newdec"/>).
-      </para>
+      <para>DHCP サーバの <guimenu>グローバルオプション</guimenu> には、いくつかの宣言を追加することができます。このダイアログでは、 <guimenu>サブネット</guimenu> , <guimenu>ホスト</guimenu> , <guimenu>共有ネットワーク</guimenu> , <guimenu>グループ</guimenu> , <guimenu>グループ</guimenu> , <guimenu>アドレスのプール</guimenu> , <guimenu>クラス</guimenu> のいずれかを追加することができます。この例ではサブネットを選択しています (<xref linkend="fig.yast2.dhcp.newdec"/> をご覧ください) 。</para>
       <figure xml:id="fig.yast2.dhcp.newdec">
-       <title>DHCP Server: Selecting a Declaration Type</title>
+       <title>DHCP サーバ: 宣言の種類の選択</title>
        <mediaobject>
         <imageobject role="fo">
          <imagedata width="75%" fileref="yast2_dhcp_newdec.png" format="PNG"/>
@@ -306,17 +158,11 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Subnet Configuration</term>
+     <term>サブネットの設定</term>
      <listitem>
-      <para>
-       This dialog allows you specify a new subnet with its IP address and
-       netmask. In the middle part of the dialog, modify the DHCP server start
-       options for the selected subnet using <guimenu>Add</guimenu>,
-       <guimenu>Edit</guimenu>, and <guimenu>Delete</guimenu>. To set up
-       dynamic DNS for the subnet, select <guimenu>Dynamic DNS</guimenu>.
-      </para>
+      <para>このダイアログでは、 IP アドレスとネットマスクからなる新しいサブネットを宣言することができます。ダイアログの中央部では、 <guimenu>追加</guimenu> , <guimenu>編集</guimenu> ,  <guimenu>削除</guimenu> の各ボタンを利用して、サブネットに対するオプションを指定することができます。また、サブネットに対してダイナミック DNS を設定するには、 <guimenu>ダイナミック DNS</guimenu> を押します。</para>
       <figure xml:id="fig.yast2.dhcp.sub">
-       <title>DHCP Server: Configuring Subnets</title>
+       <title>DHCP サーバ: サブネットの設定</title>
        <mediaobject>
         <imageobject role="fo">
          <imagedata width="75%" fileref="yast2_dhcp_sub.png" format="PNG"/>
@@ -329,17 +175,11 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>TSIG Key Management</term>
+     <term>TSIG 鍵管理</term>
      <listitem>
-      <para>
-       If you chose to configure dynamic DNS in the previous dialog, you can
-       now configure the key management for a secure zone transfer. Selecting
-       <guimenu>OK</guimenu> takes you to another dialog in which to configure
-       the interface for dynamic DNS (see
-       <xref linkend="fig.yast2.dhcp.dyndns"/>).
-      </para>
+      <para>以前のダイアログでダイナミック DNS を設定するように選択している場合は、ここでゾーン転送の機密を保持するための鍵を管理することができます。ここで <guimenu>OK</guimenu> を押すと次のダイアログが表示され、ダイナミック DNS を利用するインターフェイスを設定することができるようになります (詳しくは <xref linkend="fig.yast2.dhcp.dyndns"/> をご覧ください) 。</para>
       <figure xml:id="fig.yast2.dhcp.tsig">
-       <title>DHCP Server: TSIG Configuration</title>
+       <title>DHCP サーバ: TSIG 設定</title>
        <mediaobject>
         <imageobject role="fo">
          <imagedata width="75%" fileref="yast2_dhcp_tsig.png" format="PNG"/>
@@ -352,24 +192,11 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Dynamic DNS: Interface Configuration</term>
+     <term>ダイナミック DNS: インターフェイス設定</term>
      <listitem>
-      <para>
-       You can now activate dynamic DNS for the subnet by selecting
-       <guimenu>Enable Dynamic DNS for This Subnet</guimenu>. After doing so,
-       use the drop-down box to activate the TSIG keys for forward and reverse
-       zones, making sure that the keys are the same for the DNS and the DHCP
-       server. With <guimenu>Update Global Dynamic DNS Settings</guimenu>,
-       enable the automatic update and adjustment of the global DHCP server
-       settings according to the dynamic DNS environment. Finally, define which
-       forward and reverse zones should be updated per dynamic DNS, specifying
-       the name of the primary name server for each of the two zones. Selecting
-       <guimenu>OK</guimenu> returns to the subnet configuration dialog (see
-       <xref linkend="fig.yast2.dhcp.sub"/>). Selecting <guimenu>OK</guimenu>
-       again returns to the original expert configuration dialog.
-      </para>
+      <para>ここでは <guimenu>このサブネットのダイナミック DNS を有効にする</guimenu> を選択することで、動的な DNS の更新を行なうことができるようになります。選択を行なったら、正引きと逆引きの各ゾーンに対して使用する TSIG 鍵をドロップダウンから選択します。なお、 DNS サーバと DHCP サーバとの間で、同じ鍵を設定しなければならないことに注意してください。また、 <guimenu>グローバルダイナミック DNS 設定の更新</guimenu> を選択することで、ダイナミック DNS の環境に合わせて、グローバルな DHCP サーバの設定を自動調整することもできます。さらに、更新すべきダイナミック DNS の正引きおよび逆引きのゾーンを指定したあと、 <guimenu>OK</guimenu> を押してください。これにより、サブネットの設定ダイアログ (<xref linkend="fig.yast2.dhcp.sub"/>) に戻ることができます。再度 <guimenu>OK</guimenu> を押すと、熟練者向け設定ダイアログに戻ることができます。</para>
       <figure xml:id="fig.yast2.dhcp.dyndns">
-       <title>DHCP Server: Interface Configuration for Dynamic DNS</title>
+       <title>DHCP サーバ: ダイナミック DNS のためのインターフェイス設定</title>
        <mediaobject>
         <imageobject role="fo">
          <imagedata width="75%" fileref="yast2_dhcp_dyndns.png" format="PNG"/>
@@ -382,24 +209,11 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Network Interface Configuration</term>
+     <term>ネットワークインターフェイスの設定</term>
      <listitem>
-      <para>
-       To define the interfaces the DHCP server should listen to and to adjust
-       the firewall configuration, select <menuchoice>
-       <guimenu>Advanced</guimenu> <guimenu>Interface Configuration</guimenu>
-       </menuchoice> from the expert configuration dialog. From the list of
-       interfaces displayed, select one or more that should be attended by the
-       DHCP server. If clients in all subnets need to be able to communicate
-       with the server and the server host also runs a firewall, adjust the
-       firewall accordingly. To do so, select <guimenu>Adapt Firewall
-       Settings</guimenu>. &yast; then adjusts the rules of &susefirewall; to
-       the new conditions (see <xref linkend="fig.yast2.dhcp.fire"/>), after
-       which you can return to the original dialog by selecting
-       <guimenu>OK</guimenu>.
-      </para>
+      <para>DHCP サーバが待ち受けるべきネットワークインターフェイスの選択と、ファイアウオールの設定調整を行なうには、熟練者向け設定ダイアログ内の <guimenu>カードの選択</guimenu> で行ないます。表示されたインターフェイスの一覧から、 DHCP サービスへのアクセスを許可するインターフェイスを 1 つまたは複数選択します。全てのサブネット内のクライアントがサーバと通信できるようにするには、サーバ側のファイアウオールも調整する必要があります。これを行なうには、 <guimenu>ファイアウオールで選択したポートを開く</guimenu> を選択します。すると、 &yast; は &susefirewall; のルールを調整して、 DHCP のサービスにアクセスできるようにします。設定が終わったら <guimenu>OK</guimenu> を押して閉じます。</para>
       <figure xml:id="fig.yast2.dhcp.fire">
-       <title>DHCP Server: Network Interface and Firewall</title>
+       <title>DHCP サーバ: ネットワークインターフェイスとファイアウオール</title>
        <mediaobject>
         <imageobject role="fo">
          <imagedata width="75%" fileref="yast2_dhcp_fire.png" format="PNG"/>
@@ -412,57 +226,28 @@
      </listitem>
     </varlistentry>
    </variablelist>
-   <para>
-    After completing all configuration steps, close the dialog with
-    <guimenu>OK</guimenu>. The server is now started with its new
-    configuration.
-   </para>
+   <para>全ての設定手順が完了したら、 <guimenu>OK</guimenu> を押してダイアログを閉じてください。新しい設定が書き込まれ、サーバが再起動されます。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.dhcp.soft">
-  <title>DHCP Software Packages</title>
+  <title>DHCP ソフトウエアパッケージ</title>
 
-  <para>
-   Both the DHCP server and the DHCP clients are available for
-   &productname;. The DHCP server available is <systemitem class="daemon">dhcpd</systemitem> (published by the Internet Systems
-   Consortium).
-<!-- the client software is available on SLED as well. -->
-   On the client side, there is <systemitem>dhcp-client</systemitem> (also from
-   ISC) and tools coming with the <systemitem>wicked</systemitem> package.
-  </para>
+  <para>&productname; では、 DHCP サーバと DHCP クライアントの両方が提供されています。提供されている DHCP サーバは <systemitem class="daemon">dhcpd</systemitem> (Internet Systems Consortium 提供) で、 <!-- the client software is available on SLED as well. --> DHCP クライアントは <systemitem>dhcp-client</systemitem> (こちらも Internet Systems Consortium 提供) というパッケージ名になっています。また、ネットワークを設定するためのツールとして <systemitem>wicked</systemitem> が用意されています。</para>
 
-  <para>
-   By default, the <systemitem>wicked</systemitem> tools are installed with the
-   services <systemitem>wickedd-dhcp4</systemitem> and
-   <systemitem>wickedd-dhcp6</systemitem>. Both are launched automatically on
-   each system boot to watch for a DHCP server. They do not need a
-   configuration file to do their job and work out of the box in most standard
-   setups. For more complex situations, use the ISC
-   <systemitem>dhcp-client</systemitem>, which is controlled by means of the
-   configuration files <filename>/etc/dhclient.conf</filename> and
-   <filename>/etc/dhclient6.conf</filename>.
-  </para>
+  <para>既定では、 <systemitem>wicked</systemitem> ツールと <systemitem>wickedd-dhcp4</systemitem> および <systemitem>wickedd-dhcp6</systemitem> の各サービスがインストールされています。各システムでは、 DHCP サーバの監視を行なう目的で、自動的にどのシステムでも動作するようになっています。これらのサービスを利用するにあたっては、ほとんどの環境で設定ファイルを用意する必要がなく、そのままの状態で問題なく動作するようになっています。より複雑な環境の場合は、 <filename>/etc/dhclient.conf</filename> や<filename>/etc/dhclient6.conf</filename> などの設定ファイルを利用して、制御することもできます。</para>
  </sect1>
  <sect1 xml:id="sec.dhcp.server">
-  <title>The DHCP Server dhcpd</title>
+  <title>DHCP サーバ dhcpd</title>
 
 
 
-  <para>
-   The core of any DHCP system is the dynamic host configuration protocol
-   daemon. This server <emphasis>leases</emphasis> addresses and watches how
-   they are used, according to the settings defined in the configuration file
-   <filename>/etc/dhcpd.conf</filename>. By changing the parameters and values
-   in this file, a system administrator can influence the program's behavior in
-   numerous ways. Look at the basic sample <filename>/etc/dhcpd.conf</filename>
-   file in <xref linkend="dat.dhcp.conf"/>.
-  </para>
+  <para>DHCP システムの中枢は Dynamic Host Configuration Protocol (DHCP) デーモンと呼ばれるものです。このサーバは設定ファイル <filename>/etc/dhcpd.conf</filename> の設定に従って、アドレスを <emphasis>貸し出し</emphasis> たあと、それがどのように使用されているのかを監視します。このファイルのパラメータや値を変更することで、システム管理者が様々な方法でプログラムの動作を変更することができます。まずは <xref linkend="dat.dhcp.conf"/> にある <filename>/etc/dhcpd.conf</filename> の設定例をご覧ください。</para>
 
   <example xml:id="dat.dhcp.conf">
-   <title>The Configuration File /etc/dhcpd.conf</title>
+   <title>設定ファイル /etc/dhcpd.conf</title>
 <screen><!--adjust to standard network example-->
-default-lease-time 600;         # 10 minutes
-max-lease-time 7200;            # 2  hours
+default-lease-time 600;         # 10 分
+max-lease-time 7200;            # 2  時間
 
 option domain-name "&exampledomain;";
 option domain-name-servers &dnsip;;
@@ -478,222 +263,78 @@ subnet &subnetII;.0 netmask &subnetmask;
 </screen>
   </example>
 
-  <para>
-   This simple configuration file should be sufficient to get the DHCP server
-   to assign IP addresses in the network. Make sure that a semicolon is
-   inserted at the end of each line, because otherwise dhcpd is not started.
-  </para>
+  <para>これは DHCP サーバからネットワークに対して、 IP アドレスを割り当てるための必要十分な設定ファイルです。なお、各行の末尾にはセミコロンを忘れずに付けてください。正しく付けておかないと、 dhcpd が起動しなくなってしまいます。</para>
 
-  <para>
-   The sample file can be divided into three sections. The first one defines
-   how many seconds an IP address is leased to a requesting client by default
-   (<literal>default-lease-time</literal>) before it should apply for renewal.
-   This section also includes a statement of the maximum period for which a
-   machine may keep an IP address assigned by the DHCP server without applying
-   for renewal (<literal>max-lease-time</literal>).
-  </para>
+  <para>このサンプルファイルは、大きく分けて 3 つのセクションに分割することができます。最初のセクションは、 IP アドレスを貸し出してから、クライアント側から更新要求を受け取るまでの既定の貸与時間を秒単位で指定しています ( <literal>default-lease-time</literal> ) 。また、このセクションでは、 DHCP サーバが更新を受け取るまでに IP アドレスを予約しておくべき最大の時間も指定しています ( <literal>max-lease-time</literal> ) 。</para>
 
-  <para>
-   In the second part, some basic network parameters are defined on a global
-   level:
-  </para>
+  <para>2 番目のセクションでは、グローバルな範囲でいくつかのネットワークパラメータを定義しています。</para>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     The line <literal>option domain-name</literal> defines the default domain
-     of your network.
-    </para>
+    <para><literal>option domain-name</literal> の行では、ネットワーク内で使用すべき既定のドメイン名を指定しています。</para>
    </listitem>
    <listitem>
-    <para>
-     With the entry <literal>option domain-name-servers</literal>, specify up
-     to three values for the DNS servers used to resolve IP addresses into host
-     names and vice versa. Ideally, configure a name server on your machine or
-     somewhere else in your network before setting up DHCP. That name server
-     should also define a host name for each dynamic address and vice versa. To
-     learn how to configure your own name server, read
-     <xref linkend="cha.dns"/>.
-    </para>
+    <para><literal>option domain-name-servers</literal> の行では、最大 3 つまで、ホスト名から IP アドレスを、もしくは IP アドレスからホスト名を解決することのできる DNS サーバを指定することができます。実際には、お使いのマシンにあるネームサーバと DHCP を設定する前から使用していたネットワーク内の DNS サーバを指定するのが一般的です。またネームサーバは、ホスト名と動的なアドレスとの間での解決を行なうこともできます。ネームサーバの構築について、詳しくは <xref linkend="cha.dns"/> をお読みください。</para>
    </listitem>
    <listitem>
-    <para>
-     The line <literal>option broadcast-address</literal> defines the broadcast
-     address the requesting client should use.
-    </para>
+    <para><literal>option broadcast-address</literal> の行では、クライアント側で使用すべきブロードキャストアドレスを指定しています。</para>
    </listitem>
    <listitem>
-    <para>
-     With <literal>option routers</literal>, set where the server should send
-     data packets that cannot be delivered to a host on the local network
-     (according to the source and target host address and the subnet mask
-     provided). Usually, especially in smaller networks, this router is
-     identical to the Internet gateway.
-    </para>
+    <para><literal>option routers</literal> の行では、設定された自分のアドレスとサブネットマスクと、宛先のアドレスとを比較した結果、ローカルネットワーク内に存在していない宛先にデータパケットを送信する際、経由すべきゲートウエイ (ルータ) を指定しています。小さなネットワーク環境の場合、このゲートウエイはインターネットに接続しているルータのアドレスになります。</para>
    </listitem>
    <listitem>
-    <para>
-     With <literal>option subnet-mask</literal>, specify the netmask assigned
-     to clients.
-    </para>
+    <para><literal>option subnet-mask</literal> の行では、クライアントに対して割り当てるネットマスクを指定しています。</para>
    </listitem>
   </itemizedlist>
 
-  <para>
-   The last section of the file defines a network, including a subnet mask. To
-   finish, specify the address range that the DHCP daemon should use to assign
-   IP addresses to interested clients. In <xref linkend="dat.dhcp.conf"/>,
-   clients may be given any address between <literal>&subnetII;.10</literal>
-   and <literal>&subnetII;.20</literal> or <literal>&subnetII;.100</literal>
-   and <literal>&subnetII;.200</literal>.
-  </para>
+  <para>ファイル内の最後のセクションはネットワークとサブネットマスクを定義しているものです。この定義の中には、 DHCP サーバがクライアントに対して割り当てるアドレスの範囲を指定する必要があります。 <xref linkend="dat.dhcp.conf"/> の例では、<literal>&subnetII;.10</literal> から <literal>&subnetII;.20</literal> まで、および <literal>&subnetII;.100</literal> から <literal>&subnetII;.200</literal> までが割り当ての範囲になっています。</para>
 
-  <para>
-   After editing these few lines, you should be able to activate the DHCP
-   daemon with the command <command>systemctl start dhcpd</command>. It will be
-   ready for use immediately. Use the command
-   <command>rcdhcpd</command>&nbsp;<option>check-syntax</option>
-<!--taroth 2014-02-13: systemd - this command is going to stay according to a
-    discussion with Marius (mt): "Could you open a bug for me, that rcdhcpd /
-    rcdhcp6 currently does not support the "check-syntax" action (referring to
-    bnc#861124)? I'd submit the required scripts ASAP then and you can keep
-    the text" - see also
-    http://bugzilla.suse.com/show_bug.cgi?id=868713-->
-<!--ke 2014-05-14: mt implemented it as promised.-->
-   to perform a brief syntax check. If you encounter any unexpected problems
-   with your configuration (the server aborts with an error or does not return
-   <literal>done</literal> on start), you should be able to find out what has
-   gone wrong by looking for information either in the main system log that can
-   be queried with the command <command>journalctl</command> (see
-   <xref linkend="cha.journalctl"/> for more information).
-  </para>
+  <para>必要に応じていくつかの行を変更したら、あとは <command>systemctl start dhcpd</command> コマンドを実行して DHCP デーモンを起動するだけです。このコマンドを実行すると、即時にサービスが開始されます。なお、 <command>rcdhcpd</command> &nbsp; <option>check-syntax</option> <!--taroth 2014-02-13: systemd - this command is going to stay according to a discussion with Marius (mt): "Could you open a bug for me, that rcdhcpd / rcdhcp6 currently does not support the "check-syntax" action (referring to bnc#861124)? I'd submit the required scripts ASAP then and you can keep the text" - see also http://bugzilla.suse.com/show_bug.cgi?id=868713--> <!--ke 2014-05-14: mt implemented it as promised.--> を実行することで、簡単な文法チェックを行なうこともできます。設定内に何らかの問題があって起動時にエラーメッセージが表示された場合は、 <command>journalctl</command> コマンドを利用することで、メインのシステムログを表示させて、原因を探ることができます (詳しくは <xref linkend="cha.journalctl"/> をお読みください) 。</para>
 
-  <para>
-   On a default &productname; system, the DHCP daemon is started in a chroot
-   environment for security reasons. The configuration files must be copied to
-   the chroot environment so the daemon can find them. Normally, there is no
-   need to worry about this because the command <command>systemctl start dhcpd
-   </command> automatically copies the files.
-  </para>
+  <para>なお、既定の &productname; システムでは、セキュリティ上の理由から、 DHCP デーモンが chroot 環境で実行されます。設定ファイルは、 chroot 環境から読み込むことができるようにするため、あらかじめコピーしておかなければなりません。ただし、通常は <command>systemctl start dhcpd </command> を実行することで、設定ファイルが自動的にコピーされますので、特に気にする必要はありません。</para>
 
   <sect2 xml:id="sec.dhcp.statip">
-   <title>Clients with Fixed IP Addresses</title>
-   <para>
-    DHCP can also be used to assign a predefined, static address to a specific
-    client. Addresses assigned explicitly always take priority over dynamic
-    addresses from the pool. A static address never expires in the way a
-    dynamic address would, for example, if there were not enough addresses
-    available and the server needed to redistribute them among clients.
-   </para>
-   <para>
-    To identify a client configured with a static address, dhcpd uses the
-    hardware address (which is a globally unique, fixed numerical code
-    consisting of six octet pairs) for the identification of all network
-    devices (for example, <literal>&wsImac;</literal>). If the respective
-    lines, like the ones in <xref linkend="dat.dhcp.conf.add"/>, are added to
-    the configuration file of <xref linkend="dat.dhcp.conf"/>, the DHCP daemon
-    always assigns the same set of data to the corresponding client.
-   </para>
+   <title>固定 IP アドレスのクライアント</title>
+   <para>DHCP では、特定のクライアントに対して固定のアドレスを定義して、割り当てることができます。ただし、アドレスはプール内で事前に明示的に割り当てておかなければなりません。動的なアドレスとは異なり、固定のアドレスでは有効期限が切れることはありません。</para>
+   <para>クライアントに対して固定のアドレスを割り当てるにあたって、クライアントの識別はハードウエアアドレスを使用します (ハードウエアアドレスはグローバルにユニークなアドレスで、 6 バイトの値から構成されています。たとえば <literal>&wsImac;</literal> のように表記します) 。固定のアドレスを割り当てるには、 <xref linkend="dat.dhcp.conf.add"/> のような内容を <xref linkend="dat.dhcp.conf"/> にある設定ファイルに追加する必要があります。 DHCP サーバ側では、このクライアントからアクセスがあると、常に同じデータを返すようになります。</para>
    <example xml:id="dat.dhcp.conf.add">
-    <title>Additions to the Configuration File</title>
+    <title>設定ファイルへの追加</title>
 <screen>host &wsI; {
 hardware ethernet &wsImac;;
 fixed-address &wsIip;;
 }</screen>
    </example>
-   <para>
-    The name of the respective client (<literal>host</literal>
-    <replaceable>HOSTNAME</replaceable>, here <systemitem>&wsI;</systemitem>)
-    is entered in the first line and the MAC address in the second line. On
-    Linux hosts, find the MAC address with the command <command>ip</command>
-    <option>link show</option> followed by the network device (for example,
-    <literal>eth0</literal>). The output should contain something like
-   </para>
+   <para>最初の行にはクライアントの名前 (( <literal>host</literal> <replaceable>ホスト名</replaceable> 、ここでは <systemitem>&wsI;</systemitem> ) が記述され、 2 行目には MAC アドレスが記述されています。 Linux コンピュータであれば、 MAC アドレスは <command>ip</command> <option>link show</option> に続いて、インターフェイス名 (例: <literal>eth0</literal>) を指定することで、表示することができます。このコマンドを実行すると、下記のような内容が出力されます:</para>
 <screen>link/ether &wsImac;</screen>
-   <para>
-    In the preceding example, a client with a network card having the MAC
-    address <literal>&wsImac;</literal> is assigned the IP address
-    <systemitem class="ipaddress">&wsIip;</systemitem> and the host name
-    <literal>&wsI;</literal> automatically. The type of hardware to enter is
-    <literal>ethernet</literal> in nearly all cases, although
-    <literal>token-ring</literal>, which is often found on IBM systems, is also
-    supported.
-   </para>
+   <para>上記の例では、 MAC アドレスが <literal>&wsImac;</literal> のクライアントに対して、 IP アドレス <systemitem class="ipaddress">&wsIip;</systemitem> とホスト名 <literal>&wsI;</literal> を自動的に割り当てる設定になります。なお、 <literal>hardware</literal> の後ろはほぼ全ての場合において <literal>ethernet</literal> になりますが、 IBM システムなどでは <literal>token-ring</literal> を指定する必要がある場合もあります。</para>
   </sect2>
 
   <sect2 xml:id="sec.dhcp.sle">
-   <title>The &productname; Version</title>
-   <para>
-    To improve security, the &productname; version of the ISC's DHCP server
-    comes with the non-root/chroot patch by Ari Edelkind applied. This enables
-    dhcpd to run with the user ID
-    <systemitem class="username">nobody</systemitem> and run in a chroot
-    environment (<filename>/var/lib/dhcp</filename>). To make this possible,
-    the configuration file <filename>dhcpd.conf</filename> must be located in
-    <filename>/var/lib/dhcp/etc</filename>. The init script automatically
-    copies the file to this directory when starting.
-   </para>
-   <para>
-    Control the server's behavior regarding this feature by means of entries in
-    the file <filename>/etc/sysconfig/dhcpd</filename>. To run dhcpd without
-    the chroot environment, set the variable
-    <systemitem>DHCPD_RUN_CHROOTED</systemitem> in
-    <filename>/etc/sysconfig/dhcpd</filename> to <quote>no</quote>.
-   </para>
-   <para>
-    To enable dhcpd to resolve host names even from within the chroot
-    environment, some other configuration files must be copied as well:
-   </para>
+   <title>&productname; 版について</title>
+   <para>セキュリティを向上させる理由から、 ISC 提供の DHCP サーバの &productname; 版では、 Ari Edelkind 氏による non-root/chroot (root 以外のユーザで動作させ、かつ chroot 環境を使用する) 修正が適用されています。これにより、 dhcpd は <systemitem class="username">nobody</systemitem> というユーザ権限で、かつ chroot 環境内 ( <filename>/var/lib/dhcp</filename> ) で動作するように設定されています。また、この構成を利用するため、設定ファイルである <filename>dhcpd.conf</filename> は、 <filename>/var/lib/dhcp/etc</filename> 内に配置しなければならなくなっています。通常は、サービスの起動時にスクリプト側で自動的にコピーするように設計されているため、特に特殊な作業を行なう必要はありません。</para>
+   <para>この機能に関するサーバ側の動作を制御したい場合は、 <filename>/etc/sysconfig/dhcpd</filename> ファイルを編集してください。 chroot 環境を利用したくない場合は、 <filename>/etc/sysconfig/dhcpd</filename> ファイル内の <systemitem>DHCPD_RUN_CHROOTED</systemitem> の変数を、 <quote>no</quote> に設定してください。</para>
+   <para>また、 chroot 環境下で dhcpd がホスト名を解決できるようにするため、下記の設定ファイルも chroot 環境内にコピーされるようになっています:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      <filename>/etc/localtime</filename>
-     </para>
+     <para><filename>/etc/localtime</filename></para>
     </listitem>
     <listitem>
-     <para>
-      <filename>/etc/host.conf</filename>
-     </para>
+     <para><filename>/etc/host.conf</filename></para>
     </listitem>
     <listitem>
-     <para>
-      <filename>/etc/hosts</filename>
-     </para>
+     <para><filename>/etc/hosts</filename></para>
     </listitem>
     <listitem>
-     <para>
-      <filename>/etc/resolv.conf</filename>
-     </para>
+     <para><filename>/etc/resolv.conf</filename></para>
     </listitem>
    </itemizedlist>
-   <para>
-    These files are copied to <filename>/var/lib/dhcp/etc/</filename> when
-    starting the init script. Take these copies into account for any changes
-    that they require if they are dynamically modified by scripts like
-    <filename>/etc/ppp/ip-up</filename>. However, there should be no need to
-    worry about this if the configuration file only specifies IP addresses
-    (instead of host names).
-   </para>
-   <para>
-    If your configuration includes additional files that should be copied into
-    the chroot environment, set these under the variable
-    <systemitem>DHCPD_CONF_INCLUDE_FILES</systemitem> in the file
-    <filename>/etc/sysconfig/dhcpd</filename>. To ensure that the DHCP logging
-    facility keeps working even after a restart of the syslog daemon, there is
-    an additional entry <systemitem>SYSLOGD_ADDITIONAL_SOCKET_DHCP</systemitem>
-    in the file <filename>/etc/sysconfig/syslog</filename>.
-   </para>
+   <para>これらのファイルは、起動スクリプト内で <filename>/var/lib/dhcp/etc/</filename> 内にコピーされるようになっています。 <filename>/etc/ppp/ip-up</filename> のようなスクリプトでこれらのファイルを動的に変更するような場合は、それらが反映されなくなってしまいますが、設定ファイル内では IP アドレスのみを指定していることから、ほとんど影響はありません。</para>
+   <para>また、 chroot 環境内にコピーすべき追加のファイルが存在する場合は、それらのファイルを <filename>/etc/sysconfig/dhcpd</filename> 内の <systemitem>DHCPD_CONF_INCLUDE_FILES</systemitem> 内で指定してください。また、 DHCP のログ機構に対して、 syslog デーモンの再起動後も正しく動作するようにするには、 <filename>/etc/sysconfig/syslog</filename> 内の <systemitem>SYSLOGD_ADDITIONAL_SOCKET_DHCP</systemitem> を設定してください。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.dhcp.addinfo">
-  <title>For More Information</title>
+  <title>さらなる情報</title>
 
-  <para>
-   More information about DHCP is available at the Web site of the
-   <emphasis>Internet Systems Consortium</emphasis>
-   (<link xlink:href="http://www.isc.org/products/DHCP/"/>). Information is
-   also available in the <option>dhcpd</option>, <option>dhcpd.conf</option>,
-   <option>dhcpd.leases</option>, and <option>dhcp-options</option> man pages.
-  </para>
+  <para>DHCP に関する詳しい情報は、 <emphasis>Internet Systems Consortium</emphasis> ( <link xlink:href="http://www.isc.org/products/DHCP/"/> ) で提供されています。ここには <option>dhcpd</option> , <option>dhcpd.conf</option> , <option>dhcpd.leases</option> , <option>dhcp-options</option> の各マニュアルページも用意されています。</para>
  </sect1>
 </chapter>
