@@ -1,26 +1,29 @@
+# translation of net_samba.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: net_samba.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-08-08 09:28+0000\n"
-"PO-Revision-Date: 2018-06-28 07:14+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-09-07 15:13+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: net_samba.xml:19
 #, no-c-format
 msgid "Samba"
-msgstr ""
+msgstr "Samba"
 
 #. Tag: para
 #: net_samba.xml:22
@@ -31,12 +34,16 @@ msgid ""
 "and rather complex product. Configure Samba with &yast;, or by editing the "
 "configuration file manually."
 msgstr ""
+"Samba を使用することで、 Unix マシンを MacOS や Windows, OS/2 マシンに対する"
+"ファイルサーバや印刷サーバに仕立て上げることができます。 Samba は今や本格的な"
+"使用にも耐える複雑な製品になっています。 Samba の設定は &yast; で行なうことができる"
+"ほか、設定ファイルを手作業で修正して設定することもできます。"
 
 #. Tag: title
 #: net_samba.xml:35
 #, no-c-format
 msgid "Terminology"
-msgstr ""
+msgstr "用語"
 
 #. Tag: para
 #: net_samba.xml:37
@@ -44,13 +51,13 @@ msgstr ""
 msgid ""
 "The following are some terms used in Samba documentation and in the &yast; "
 "module."
-msgstr ""
+msgstr "Samba の文書や &yast; のモジュールでは、それぞれ下記のような用語を使用します。"
 
 #. Tag: term
 #: net_samba.xml:44
 #, no-c-format
 msgid "SMB protocol"
-msgstr ""
+msgstr "SMB プロトコル"
 
 #. Tag: para
 #: net_samba.xml:46
@@ -62,12 +69,18 @@ msgid ""
 "a Microsoft domain network. With Samba, the SMB protocol works on top of the "
 "TCP/IP protocol, so the TCP/IP protocol must be installed on all clients."
 msgstr ""
+"Samba では <phrase role=\"productname\">NetBIOS</phrase> サービスをベースにした"
+" SMB (Server Message Block) というプロトコルを使用しています。 Microsoft 社は"
+"ソフトウエアの製造元に向けてプロトコルを公開していて、 Microsoft のドメイン"
+"ネットワークに接続できるようにしています。なお、 Samba では SMB プロトコルを TCP/IP "
+"プロトコル上で動作させていることから、 Samba に接続するクライアントは TCP/IP "
+"プロトコルをインストールしておかなければなりません。"
 
 #. Tag: title
 #: net_samba.xml:55
 #, no-c-format
 msgid "&zseries;: NetBIOS Support"
-msgstr ""
+msgstr "&zseries;: NetBIOS のサポートについて"
 
 #. Tag: para
 #: net_samba.xml:56
@@ -76,12 +89,14 @@ msgid ""
 "&zseries; merely supports SMB over TCP/IP. NetBIOS support is not available "
 "on these systems."
 msgstr ""
+"&zseries; では SMB over TCP/IP のみに対応しています。これらのシステムでは、 NetBIOS "
+"へのサポートはご利用いただけません。"
 
 #. Tag: term
 #: net_samba.xml:64
 #, no-c-format
 msgid "CIFS protocol"
-msgstr ""
+msgstr "CIFS プロトコル"
 
 #. Tag: para
 #: net_samba.xml:66
@@ -92,12 +107,16 @@ msgid ""
 "over the network, enabling groups of users to work together and share "
 "documents across the network."
 msgstr ""
+"Samba では、もう 1 つのプロトコルとして CIFS (Common Internet File System) にも"
+"対応しています。 CIFS はネットワークを介して遠隔のファイルシステムにアクセスする"
+"ためのプロトコルを規定していて、共同作業のグループを作成したり、ネットワークを"
+"介して文書を共有したりすることができます。"
 
 #. Tag: term
 #: net_samba.xml:75
 #, no-c-format
 msgid "NetBIOS"
-msgstr ""
+msgstr "NetBIOS"
 
 #. Tag: para
 #: net_samba.xml:77
@@ -115,6 +134,17 @@ msgid ""
 "\">NetBIOS</phrase> . Network protocols implemented with NetBIOS are IPX "
 "from Novell (NetBIOS via TCP/IP) and TCP/IP."
 msgstr ""
+"NetBIOS はソフトウエアインターフェイス (API) の名称で、ネームサービスを提供する"
+"マシン間での通信を行なうための仕組みです。 NetBIOS は、まず自分自身の名前を、接続"
+"されているネットワーク内で予約する処理を行ないます。予約が完了すると、それらの"
+"マシン間は名前で通信できるようになります。名前を管理するための中央サーバのような"
+"仕組みは存在せず、ネットワーク内で既に使用されている場合を除いて、任意の名前を"
+"予約することができます。 NetBIOS のインターフェイスは、様々なネットワークアーキ"
+"テクチャに対応するように作られています。特に <phrase role=\"productname\">NetBEUI</phrase> "
+"と呼ばれるプロトコルと密接に連携するように作られていて、このプロトコルを利用する"
+"仕組みを <phrase role=\"productname\">NetBIOS</phrase> と呼んでいました。"
+"現在は NetBIOS を実装するプロトコルとして、 Novell 社提供の IPX と、 TCP/IP "
+"が利用できるようになっています。"
 
 #. Tag: para
 #: net_samba.xml:91
@@ -126,12 +156,17 @@ msgid ""
 "use names that correspond to DNS host names to make administration easier or "
 "use DNS natively. This is the default used by Samba."
 msgstr ""
+"TCP/IP で送信される NetBIOS の名前は、 <filename>/etc/hosts</filename> や DNS で"
+"管理される名前とは無関係に動作します。 NetBIOS では、独自の独立した名前付け規約が"
+"存在しています。ただし、 DNS のホスト名と NetBIOS の名前を一致させておくことで、"
+"管理上の混乱を避けることをお勧めします。 Samba でも、特に指定のない限り、 DNS 名と"
+" NetBIOS の名前は一致するように動作します。"
 
 #. Tag: term
 #: net_samba.xml:102
 #, no-c-format
 msgid "Samba server"
-msgstr ""
+msgstr "Samba サーバ"
 
 #. Tag: para
 #: net_samba.xml:104
@@ -141,12 +176,16 @@ msgid ""
 "to clients. For Linux, there are three daemons for Samba server: smbd for "
 "SMB/CIFS services, nmbd for naming services, and winbind for authentication."
 msgstr ""
+"Samba サーバは SMB/CIFS サービスや NetBIOS over IP の名前付けサービスを、クライアントに"
+"対して提供する仕組みです。 Linux では、 Samba サーバは 3 種類のデーモンから構成されて"
+"います。 SMB/CIFS サービスを提供する smbd 、名前付けサービスを提供する nmbd 、そして"
+"認証機能を提供する winbind があります。"
 
 #. Tag: term
 #: net_samba.xml:113
 #, no-c-format
 msgid "Samba client"
-msgstr ""
+msgstr "Samba クライアント"
 
 #. Tag: para
 #: net_samba.xml:115
@@ -160,6 +199,14 @@ msgid ""
 "resources on the Linux system level. You do not need to run any daemon for "
 "the Samba client."
 msgstr ""
+"Samba クライアントは、 SMB プロトコルを介して Samba サーバが提供するサービスを"
+"使用するシステムを意味します。 Windows や MacOS などの一般的なオペレーティング"
+"システムが SMB プロトコルに対応しています。なお、 TCP/IP プロトコルも全ての"
+"コンピュータにインストールしておかなければなりません。 Samba は様々な Unix 系"
+"オペレーティングシステムに対して、クライアント機能を提供しています。 Linux の"
+"場合は、 Linux のシステムレベルで SMB の資源を利用することができるよう、 SMB "
+"向けのカーネルモジュールが用意されています。そのため、 Samba クライアント側では、"
+"デーモンを動作させる必要がありません。"
 
 #. Tag: para
 #: net_samba.xml:129
@@ -172,12 +219,17 @@ msgid ""
 "directory. A printer is also assigned a name. Clients can access the printer "
 "by its name."
 msgstr ""
+"SMB サーバは、共有と呼ばれるものを介してクライアントに資源を提供します。共有は"
+"プリンタのほか、サーバ内の特定のディレクトリを意味します。また、共有には名前を"
+"付けて公開し、名前でアクセスを行ないます。共有名には任意の名前を付けることができ、"
+"ディレクトリ名と必ずしも一致する必要はありません。プリンタについても名前を設定します。"
+"クライアント側からは名前でプリンタにアクセスします。"
 
 #. Tag: term
 #: net_samba.xml:140
 #, no-c-format
 msgid "DC"
-msgstr ""
+msgstr "DC"
 
 #. Tag: para
 #: net_samba.xml:142
@@ -186,12 +238,14 @@ msgid ""
 "A domain controller (DC) is a server that handles accounts in a domain. For "
 "data replication, additional domain controllers are available in one domain."
 msgstr ""
+"ドメインコントローラ (DC) は、ドメイン内のアカウントを処理するサーバです。データ"
+"を複製する目的で、 1 つのドメイン内には複数のドメインコントローラが用意されることもあります。"
 
 #. Tag: title
 #: net_samba.xml:152
 #, no-c-format
 msgid "Installing a Samba Server"
-msgstr ""
+msgstr "Samba サーバのインストール"
 
 #. Tag: para
 #: net_samba.xml:154
@@ -204,12 +258,17 @@ msgid ""
 "guimenu> . Confirm the installation of the required packages to finish the "
 "installation process."
 msgstr ""
+"Samba サーバをインストールするには、 &yast; を起動して <menuchoice><guimenu>"
+"ソフトウエア</guimenu> <guimenu>ソフトウエア管理</guimenu></menuchoice> を"
+"選択し、表示されたウインドウ内で <menuchoice><guimenu>表示</guimenu> "
+"<guimenu>パターン</guimenu></menuchoice> を選んで <guimenu>ファイルサーバ</guimenu> "
+"を選択します。あとは <guimenu>了解</guimenu> を押して必要なパッケージをインストールします。"
 
 #. Tag: title
 #: net_samba.xml:164
 #, no-c-format
 msgid "Starting and Stopping Samba"
-msgstr ""
+msgstr "Samba の開始と停止"
 
 #. Tag: para
 #: net_samba.xml:166
@@ -219,6 +278,9 @@ msgid ""
 "manually. Starting and stopping policy is a part of the &yast; Samba server "
 "configuration described in <xref linkend=\"sec.samba.yast2.conf\"/> ."
 msgstr ""
+"Samba サーバは、システムの起動時に自動的に開始することができるほか、手作業で開始する"
+"ように設定することができます。開始と停止のポリシーは、 <xref linkend=\"sec.samba."
+"yast2.conf\"/> で説明しているとおり、 &yast; の Samba サーバ設定内で指定することができます。"
 
 #. Tag: para
 #: net_samba.xml:172
@@ -229,12 +291,16 @@ msgid ""
 "<command>systemctl start nmb smb</command> . The <literal>smb</literal> "
 "service cares about <literal>winbind</literal> if needed."
 msgstr ""
+"コマンドラインから Samba サービスを停止するには、 <command>systemctl stop smb nmb</command> "
+"を実行します。 Samba サービスを開始するには、 <command>systemctl start nmb smb</command> "
+"を実行します。 <literal>smb</literal> サービスを開始することで、 <literal>winbind</literal> "
+"も必要に応じて自動的に開始されます。"
 
 #. Tag: title
 #: net_samba.xml:180
 #, no-c-format
 msgid "<systemitem>winbind</systemitem>"
-msgstr ""
+msgstr "<systemitem>winbind</systemitem>"
 
 #. Tag: para
 #: net_samba.xml:181
@@ -243,12 +309,14 @@ msgid ""
 "<systemitem>winbind</systemitem> is an independent service, and as such is "
 "also offered as an individual <systemitem>samba-winbind</systemitem> package."
 msgstr ""
+"<systemitem>winbind</systemitem> は個別のサービスとして提供されているもので、"
+"パッケージとしても <systemitem>samba-winbind</systemitem> という別の名前のパッケージになっています。"
 
 #. Tag: title
 #: net_samba.xml:189
 #, no-c-format
 msgid "Configuring a Samba Server"
-msgstr ""
+msgstr "Samba サーバの設定"
 
 #. Tag: para
 #: net_samba.xml:191
@@ -258,18 +326,22 @@ msgid ""
 "with &yast; or manually. Manual configuration offers a higher level of "
 "detail, but lacks the convenience of the &yast; GUI."
 msgstr ""
+"&productnamereg; 内での Samba サーバは、 2 種類の異なる方法で設定することができます。"
+" 1 つは &yast; を利用する方法、もう 1 つは手作業で設定する方法です。手作業で設定を"
+"行なうことで、より細かい設定を行ないことができますが、 &yast; GUI ほどの利便性は"
+"ありません。"
 
 #. Tag: para
 #: net_samba.xml:197
 #, no-c-format
 msgid "For configuring a Samba server, see the &sls; documentation."
-msgstr ""
+msgstr "Samba サーバを設定するには、 &sls; のドキュメンテーションをお読みください。"
 
 #. Tag: title
 #: net_samba.xml:202
 #, no-c-format
 msgid "Configuring a Samba Server with &yast;"
-msgstr ""
+msgstr "&yast; を利用した Samba サーバの設定"
 
 #. Tag: para
 #: net_samba.xml:203
@@ -279,12 +351,15 @@ msgid ""
 "<menuchoice><guimenu>Network Services</guimenu><guimenu>Samba Server</"
 "guimenu></menuchoice> ."
 msgstr ""
+"Samba サーバを設定するには、 &yast; を起動して"
+" <menuchoice><guimenu>ネットワークサービス</guimenu><guimenu>Samba サーバ"
+"</guimenu></menuchoice> を選択します。"
 
 #. Tag: title
 #: net_samba.xml:209
 #, no-c-format
 msgid "Initial Samba Configuration"
-msgstr ""
+msgstr "Samba の初期設定"
 
 #. Tag: para
 #: net_samba.xml:210
@@ -297,6 +372,11 @@ msgid ""
 "( <guimenu>Samba Root Password</guimenu> ). For later starts, the "
 "<guimenu>Samba Configuration</guimenu> dialog appears."
 msgstr ""
+"初めてモジュールを起動した場合は、 <guimenu>Samba インストール</guimenu> "
+"のダイアログが表示され、サーバの管理に関わる基本的な設定を行なうことができます。"
+"また設定の最後では、 Samba の管理者パスワード (<guimenu>Samba の管理者 (root) "
+"パスワード</guimenu>) を入力します。 2 回目以降のモジュール起動では、"
+" <guimenu>Samba の設定</guimenu> ダイアログが表示されます。"
 
 #. Tag: para
 #: net_samba.xml:218
@@ -305,12 +385,14 @@ msgid ""
 "The <guimenu>Samba Installation</guimenu> dialog consists of two steps and "
 "optional detailed settings:"
 msgstr ""
+"<guimenu>Samba インストール</guimenu> ダイアログは 2 つの手順から構成され、"
+"必要であれば詳細な設定を行なうことができるようになっています:"
 
 #. Tag: term
 #: net_samba.xml:224
 #, no-c-format
 msgid "Workgroup or Domain Name"
-msgstr ""
+msgstr "ワークグループまたはドメイン名"
 
 #. Tag: para
 #: net_samba.xml:226
@@ -319,12 +401,15 @@ msgid ""
 "Select an existing name from <guimenu>Workgroup or Domain Name</guimenu> or "
 "enter a new one and click <guimenu>Next</guimenu> ."
 msgstr ""
+"<guimenu>ワークグループまたはドメイン名</guimenu> では、新しいワークグループ"
+"またはドメインの名前、もしくは既存の名前を選択して <guimenu>次へ</guimenu> "
+"を押します。"
 
 #. Tag: term
 #: net_samba.xml:246
 #, no-c-format
 msgid "Samba Server Type"
-msgstr ""
+msgstr "Samba サーバの種類"
 
 #. Tag: para
 #: net_samba.xml:248
@@ -334,6 +419,10 @@ msgid ""
 "controller (PDC), backup domain controller (BDC), or not act as a domain "
 "controller. Continue with <guimenu>Next</guimenu> ."
 msgstr ""
+"次の手順では、サーバをプライマリドメインコントローラ (PDC) として動作させるか、"
+"もしくはバックアップドメインコントローラ (BDC) として動作させるか、もしくは"
+"ドメインコントローラとして動作させないようにするかを選択することができます。"
+"選択を行なったら <guimenu>次へ</guimenu> を押します。"
 
 #. Tag: para
 #: net_samba.xml:256
@@ -343,6 +432,9 @@ msgid ""
 "with <guimenu>OK</guimenu> . Then in the final pop-up box, set the "
 "<guimenu>Samba root Password</guimenu> ."
 msgstr ""
+"詳細なサーバ設定を行ないたくない場合は、 <guimenu>OK</guimenu> を押してそのまま"
+"閉じてください。最後に表示されたポップアップボックスで <guimenu>Samba の管理者 (root) "
+"パスワード</guimenu> を入力します。"
 
 #. Tag: para
 #: net_samba.xml:261
@@ -353,12 +445,16 @@ msgid ""
 "guimenu> , <guimenu>Identity</guimenu> , <guimenu>Trusted Domains</"
 "guimenu> , and <guimenu>LDAP Settings</guimenu> tabs."
 msgstr ""
+"全ての設定は、 <guimenu>Samba の設定</guimenu> ダイアログ内で後から変更することが"
+"できます。ダイアログには <guimenu>起動</guimenu> , <guimenu>共有</guimenu> ,"
+" <guimenu>識別情報</guimenu> , <guimenu>信頼するドメイン</guimenu> ,"
+" <guimenu>LDAP の設定</guimenu> の各タブが用意されています。"
 
 #. Tag: title
 #: net_samba.xml:269
 #, no-c-format
 msgid "Advanced Samba Configuration"
-msgstr ""
+msgstr "高度な Samba の設定"
 
 #. Tag: para
 #: net_samba.xml:270
@@ -369,6 +465,10 @@ msgid ""
 "described in <xref linkend=\"sec.samba.yast2.conf.inst\"/> . Use it to "
 "adjust your Samba server configuration."
 msgstr ""
+"Samba サーバモジュールを初めて起動した場合も、初回起動時の設定を行なうと、"
+" <xref linkend=\"sec.samba.yast2.conf.inst\"/> にあるとおりの"
+" <guimenu>Samba の設定</guimenu> ダイアログが表示されるようになります。"
+"ここから Samba サーバの設定を変更することができます。"
 
 #. Tag: para
 #: net_samba.xml:276
@@ -376,13 +476,13 @@ msgstr ""
 msgid ""
 "After editing your configuration, click <guimenu>OK</guimenu> to save your "
 "settings."
-msgstr ""
+msgstr "設定の変更が終わったら、 <guimenu>OK</guimenu> を押すと設定を保存することができます。"
 
 #. Tag: title
 #: net_samba.xml:281
 #, no-c-format
 msgid "Starting the Server"
-msgstr ""
+msgstr "サーバの開始"
 
 #. Tag: para
 #: net_samba.xml:282
@@ -394,6 +494,11 @@ msgid ""
 "<guimenu>Manually</guimenu> . More information about starting a Samba server "
 "is provided in <xref linkend=\"sec.samba.serv.start\"/> ."
 msgstr ""
+"<guimenu>開始</guimenu> タブでは、 Samba サーバの開始方法を設定することができます。"
+"システムの起動時にサービスを開始するように設定するには、 <guimenu>システム起動時</guimenu> "
+"を選択します。手作業で開始するように設定するには、 <guimenu>手動</guimenu> を"
+"選択します。 Samba サーバの開始に関する詳細は、 <xref linkend=\"sec.samba.serv.start\"/> "
+"をお読みください。"
 
 #. Tag: para
 #: net_samba.xml:289
@@ -405,6 +510,12 @@ msgid ""
 "<guimenu>Firewall Details</guimenu> , selecting the interfaces, and clicking "
 "<guimenu>OK</guimenu> ."
 msgstr ""
+"このタブでは、ファイアウオールのポートを開く作業を行なうこともできます。ポートを"
+"開くには、 <guimenu>ファイアウオールでポートを開く</guimenu> を選択します。"
+"複数のネットワークインターフェイスを接続している場合は、 <guimenu>ファイア"
+"ウオールの詳細</guimenu> を押して、 Samba サービスを提供するネットワーク"
+"インターフェイスを選択することができます。インターフェイスを選択したら"
+" <guimenu>OK</guimenu> を押して閉じてください。"
 
 #. Tag: para
 #: net_samba.xml:312
@@ -416,6 +527,12 @@ msgid ""
 "and <guimenu>Inactive</guimenu> . Click <guimenu>Add</guimenu> to add new "
 "shares and <guimenu>Delete</guimenu> to delete the selected share."
 msgstr ""
+"<guimenu>共有</guimenu> タブでは、有効にする Samba の共有を選択することが"
+"できます。なお、 homes や printers のように、いくつかの事前設定が用意されています。"
+"共有を選択して <guimenu>状態切り替え</guimenu> を押すことで、 <guimenu>有効</guimenu> "
+"と <guimenu>無効</guimenu> の間を切り替えることができます。また、新しい共有を"
+"追加するには <guimenu>追加</guimenu> を、選択した共有を削除するには "
+"<guimenu>削除</guimenu> を押します。"
 
 #. Tag: para
 #: net_samba.xml:332
@@ -431,12 +548,22 @@ msgid ""
 "authentication, enable <guimenu>Allow Guest Access</guimenu> . <!-- Bug "
 "579993 is this option gone? -->"
 msgstr ""
+"ユーザが独自にディレクトリを指定して共有できるようにするには、 <guimenu>ユーザに"
+"ディレクトリの共有を許可する</guimenu> を選択し、 <guimenu>許可するグループ</guimenu> "
+"内に共有の設定を許可するグループを指定します。たとえば <systemitem>users</systemitem> "
+"のように指定した場合はローカルのグループを、 <systemitem>ドメイン\\ユーザ</systemitem> "
+"のように指定した場合はドメインのグループを指定することができます。また、共有を設定"
+"するには、ファイルシステム側のアクセス権で許可しておかなければならないことにも注意"
+"してください。このほか、 <guimenu>最大共有数</guimenu> を指定することで、作成する"
+"ことのできる共有数の最大値を制限することができます。認証を行なわずにユーザの作成した"
+"共有にアクセスできるようにするには、 <guimenu>ゲストアクセスを許可</guimenu> を"
+"選択してください。 <!-- Bug 579993 is this option gone? -->"
 
 #. Tag: title
 #: net_samba.xml:346
 #, no-c-format
 msgid "Identity"
-msgstr ""
+msgstr "識別情報"
 
 #. Tag: para
 #: net_samba.xml:347
@@ -454,12 +581,22 @@ msgid ""
 "example LDAP instead of TDB database, </phrase> click <guimenu>Advanced "
 "Settings</guimenu> ."
 msgstr ""
+"<guimenu>識別情報</guimenu> タブでは、ホストの所属するドメイン (<guimenu>"
+"基本設定</guimenu>) やネットワーク内での代替ホスト名の使用 (<guimenu>NetBIOS "
+"ホスト名</guimenu>) を設定することができます。 <!-- [x] Retrieve WINS server "
+"via DHCP [ ] Use WINS for Hostname Resolution--> このほか、名前解決に対して"
+" Microsoft Windows Internet Name Service (WINS) を使用するよう設定することも"
+"できます。この場合は、 <guimenu>ホスト名の解決に WINS を使用する</guimenu> "
+"を選択し、 <guimenu>DHCP で WINS サーバのアドレスを取得</guimenu> を必要に応じて"
+"選択してください。 <phrase os=\"sles;osuse\">TDB データベースではなく LDAP "
+"を使用するような場合など、</phrase> より高度なグローバル設定やユーザ認証設定"
+"を行ないたい場合は、 <guimenu>詳細設定</guimenu> を押します。"
 
 #. Tag: title
 #: net_samba.xml:379
 #, no-c-format
 msgid "Trusted Domains"
-msgstr ""
+msgstr "信頼するドメイン"
 
 #. Tag: para
 #: net_samba.xml:380
@@ -470,12 +607,16 @@ msgid ""
 "new domain, click <guimenu>Add</guimenu> . To remove the selected domain, "
 "click <guimenu>Delete</guimenu> ."
 msgstr ""
+"他のドメインのユーザがお使いのドメインにアクセスできるようにするには、 <guimenu>"
+"信頼するドメイン</guimenu> のタブで適切な設定を行ないます。新しいドメインを追加する"
+"には <guimenu>追加</guimenu> を押します。選択したドメインを削除するには <guimenu>"
+"削除</guimenu> を押します。"
 
 #. Tag: title
 #: net_samba.xml:388
 #, no-c-format
 msgid "LDAP Settings"
-msgstr ""
+msgstr "LDAP の設定"
 
 #. Tag: para
 #: net_samba.xml:389
@@ -486,6 +627,10 @@ msgid ""
 "server, click <guimenu>Test Connection</guimenu> . To set expert LDAP "
 "settings or use default values, click <guimenu>Advanced Settings</guimenu> ."
 msgstr ""
+"<guimenu>LDAP 設定</guimenu> のタブでは、認証時に LDAP のサーバを使用するように"
+"設定することができます。 LDAP サーバとの通信をテストするには、 <guimenu>接続の"
+"テスト</guimenu> を押します。より高度な設定や既定値の設定を行なうには、 <guimenu>"
+"詳細設定</guimenu> を押します。"
 
 #. Tag: para
 #: net_samba.xml:396
@@ -493,13 +638,13 @@ msgstr ""
 msgid ""
 "For more information about LDAP configuration, see <xref linkend=\"cha."
 "security.ldap\"/> ."
-msgstr ""
+msgstr "LDAP の設定に関する詳細は、 <xref linkend=\"cha.security.ldap\"/> をお読みください。"
 
 #. Tag: title
 #: net_samba.xml:405
 #, no-c-format
 msgid "Configuring the Server Manually"
-msgstr ""
+msgstr "手作業によるサーバの設定"
 
 #. Tag: para
 #: net_samba.xml:406
@@ -512,36 +657,42 @@ msgid ""
 "global settings. The following default sections contain the individual file "
 "and printer shares:"
 msgstr ""
+"Samba をサーバとして使用したい場合は、 <systemitem class=\"resource\">samba</systemitem> "
+"をインストールしてください。 Samba のメインの設定ファイルは <filename>/"
+"etc/samba/smb.conf</filename> です。このファイルは論理的に 2 つのパートから構成"
+"されていて、 <literal>[global]</literal> セクションには全体的な設定が含まれて"
+"います。また、下記の既定のセクションには、個別のファイルおよびプリンタの共有が"
+"含まれています:"
 
 #. Tag: para
 #: net_samba.xml:421
 #, no-c-format
 msgid "[profiles]"
-msgstr ""
+msgstr "[profiles]"
 
 #. Tag: para
 #: net_samba.xml:426
 #, no-c-format
 msgid "[users]"
-msgstr ""
+msgstr "[users]"
 
 #. Tag: para
 #: net_samba.xml:431
 #, no-c-format
 msgid "[groups]"
-msgstr ""
+msgstr "[groups]"
 
 #. Tag: para
 #: net_samba.xml:436
 #, no-c-format
 msgid "[printers]"
-msgstr ""
+msgstr "[printers]"
 
 #. Tag: para
 #: net_samba.xml:441
 #, no-c-format
 msgid "[print$]"
-msgstr ""
+msgstr "[print$]"
 
 #. Tag: para
 #: net_samba.xml:446
@@ -551,12 +702,15 @@ msgid ""
 "globally in the <literal>[global]</literal> section, which makes the "
 "configuration file easier to understand."
 msgstr ""
+"このような構造になっていることから、共有に対する設定は個別に行なうことができる"
+"だけでなく、 <literal>[global]</literal> セクションで一括に設定することも"
+"できるようになっています。これにより、設定ファイルを読みやすくしています。"
 
 #. Tag: title
 #: net_samba.xml:452
 #, no-c-format
 msgid "The global Section"
-msgstr ""
+msgstr "global セクション"
 
 #. Tag: para
 #: net_samba.xml:453
@@ -566,12 +720,15 @@ msgid ""
 "be modified to match the requirements of your network setup, so other "
 "machines can access your Samba server via SMB in a Windows environment."
 msgstr ""
+"<literal>[global]</literal> セクション内の下記のパラメータは、お使いのネットワーク"
+"環境や要件に応じて、修正する必要があります。これにより、 Windows 環境の他のマシン"
+"から、お使いの Samba サーバにアクセスすることができるようになります。"
 
 #. Tag: term
 #: net_samba.xml:461
 #, no-c-format
 msgid "<literal>workgroup = WORKGROUP</literal>"
-msgstr ""
+msgstr "<literal>workgroup = WORKGROUP</literal>"
 
 #. Tag: para
 #: net_samba.xml:464
@@ -586,12 +743,19 @@ msgid ""
 "details about this parameter, see the <systemitem>smb.conf</systemitem> man "
 "page."
 msgstr ""
+"この行は、 Samba サーバをワークグループに割り当てる設定です。"
+" <literal>WORKGROUP</literal> の箇所は、お使いのネットワーク環境に合わせて設定"
+"してください。また、お使いの Samba サーバは、ネットワーク内に同じ名前のものが"
+"存在していない限り、 DNS ホスト名でアクセスすることができます。ホスト名が利用"
+"できない場合は、 <literal>netbiosname=<replaceable>ホスト名</replaceable></literal> "
+"を指定して対応することもできます。このパラメータについて、詳しくは"
+" <systemitem>smb.conf</systemitem> のマニュアルページをお読みください。"
 
 #. Tag: term
 #: net_samba.xml:477
 #, no-c-format
 msgid "<literal>os level = 20</literal>"
-msgstr ""
+msgstr "<literal>os level = 20</literal>"
 
 #. Tag: para
 #: net_samba.xml:480
@@ -605,6 +769,12 @@ msgid ""
 "Howto; for more information on the Samba 3 Howto, see <xref linkend=\"sec."
 "samba.info\"/> ."
 msgstr ""
+"このパラメータは、お使いの Samba サーバがワークグループ内の LMB (ローカルマスタブラウザ;"
+" Local Master Browser) になるかどうかを設定するものです。 <literal>2</literal> "
+"のように非常に小さい値を設定すると、もしも Samba サーバの設定を誤っていても、"
+"既存の Windows ネットワークに悪影響を及ぼさないようにすることができます。"
+"この設定値に関する詳細は、 Samba 3 Howto の Network Browsing 章をお読みください。"
+" Samba 3 Howto については <xref linkend=\"sec.samba.info\"/> をご覧ください。"
 
 #. Tag: para
 #: net_samba.xml:489
@@ -616,6 +786,11 @@ msgid ""
 "(for example, <literal>65</literal> ). Your Samba server is then chosen as "
 "LMB for your local network."
 msgstr ""
+"他の SMB サーバ (Windows 2000 Server など) がネットワーク内に存在しない場合で、"
+"お使いの Samba サーバに対してローカル環境内に存在するコンピュータの管理を行なわせたい"
+"場合は、 <literal>os level</literal> の値をより大きく (例: <literal>65</literal>) "
+"してください。これにより、 Samba サーバがローカルネットワーク内の LMB として動作する"
+"ようになります。"
 
 #. Tag: para
 #: net_samba.xml:496
@@ -625,12 +800,15 @@ msgid ""
 "existing Windows network environment. First test the changes in an isolated "
 "network or at a noncritical time of day."
 msgstr ""
+"この設定を変更する場合は、既存の Windows ネットワーク環境に対してどのような影響が"
+"発生しうるのかをよくお確かめください。可能の限り、個別の環境を構築してテストするか、"
+"業務上の影響がない日を選んで設定してください。"
 
 #. Tag: term
 #: net_samba.xml:504
 #, no-c-format
 msgid "<literal>wins support</literal> and <literal>wins server</literal>"
-msgstr ""
+msgstr "<literal>wins support</literal> および <literal>wins server</literal>"
 
 #. Tag: para
 #: net_samba.xml:507
@@ -640,6 +818,9 @@ msgid ""
 "active WINS server, enable the <option>wins server</option> option and set "
 "its value to the IP address of that WINS server."
 msgstr ""
+"お使いの Samba サーバを WINS サーバのある Windows ネットワークに接続するには、"
+" <option>wins server</option> オプションを追加して、 WINS サーバのアドレスを指定"
+"してください。"
 
 #. Tag: para
 #: net_samba.xml:512
@@ -653,12 +834,19 @@ msgid ""
 "<literal>wins support</literal> must never be enabled at the same time in "
 "your <filename>smb.conf</filename> file."
 msgstr ""
+"もしもお使いの Windows マシンが異なるサブネット内に存在している環境で、 Samba "
+"サーバとの間で相互に通信を行なう必要がある場合も、 WINS サーバを設定する必要が"
+"あります。 Samba サーバを WINS サーバとしても動作させるには、 <literal>wins "
+"support = Yes</literal> を設定してください。ただし、ネットワーク内の 1 台のみで、"
+"この設定を有効化してください。また、 <literal>wins server</literal> と"
+" <literal>wins support</literal> は、同じ <filename>smb.conf</filename> ファイル"
+"内で同時に設定してはなりません。"
 
 #. Tag: title
 #: net_samba.xml:526
 #, no-c-format
 msgid "Shares"
-msgstr ""
+msgstr "共有"
 
 #. Tag: para
 #: net_samba.xml:527
@@ -668,12 +856,14 @@ msgid ""
 "directories ( <literal>homes</literal> ) are made available to the SMB "
 "clients."
 msgstr ""
+"下記の例では、 CD-ROM ドライブとユーザのホームディレクトリ ( <literal>homes</literal> ) "
+"を、 SMB クライアントに対して公開する設定を示しています。"
 
 #. Tag: term
 #: net_samba.xml:534
 #, no-c-format
 msgid "[cdrom]"
-msgstr ""
+msgstr "[cdrom]"
 
 #. Tag: para
 #: net_samba.xml:536
@@ -683,12 +873,15 @@ msgid ""
 "are deactivated with comment marks (semicolons in this case). Remove the "
 "semicolons in the first column to share the CD-ROM drive with Samba."
 msgstr ""
+"CD-ROM ドライブが意図せずに公開されてしまうことを防ぐため、これらの行は行頭に"
+"コメント文字 (この場合はセミコロン) を追加して無効化されています。 Samba で"
+" CD-ROM ドライブを共有するには、行頭のセミコロンを削除してください。"
 
 #. Tag: title
 #: net_samba.xml:543
 #, no-c-format
 msgid "A CD-ROM Share"
-msgstr ""
+msgstr "CD-ROM ドライブの共有"
 
 #. Tag: screen
 #: net_samba.xml:544
@@ -699,12 +892,16 @@ msgid ""
 "       path = /media/cdrom\n"
 "       locking = No"
 msgstr ""
+"[cdrom]\n"
+"       comment = Linux CD-ROM\n"
+"       path = /media/cdrom\n"
+"       locking = No"
 
 #. Tag: term
 #: net_samba.xml:551
 #, no-c-format
 msgid "<option>[cdrom]</option> and <option>comment</option>"
-msgstr ""
+msgstr "<option>[cdrom]</option> と <option>comment</option>"
 
 #. Tag: para
 #: net_samba.xml:554
@@ -714,12 +911,15 @@ msgid ""
 "can be seen by all SMB clients on the network. An additional "
 "<literal>comment</literal> can be added to further describe the share."
 msgstr ""
+"<literal>[cdrom]</literal> では、ネットワーク内で全ての SMB クライアントに"
+"対して表示される、共有名を設定しています。また、 <literal>comment</literal> 以下の"
+"値はコメント欄で、共有に関するより詳しい説明文を設定します。"
 
 #. Tag: term
 #: net_samba.xml:563
 #, no-c-format
 msgid "<option>path = /media/cdrom</option>"
-msgstr ""
+msgstr "<option>path = /media/cdrom</option>"
 
 #. Tag: para
 #: net_samba.xml:566
@@ -728,6 +928,8 @@ msgid ""
 "<option>path</option> exports the directory <filename>/media/cdrom</"
 "filename> ."
 msgstr ""
+"<option>path</option> の指定を行なうことで、指定したディレクトリ (この場合は"
+" <filename>/media/cdrom</filename>) を公開することになります。"
 
 #. Tag: para
 #: net_samba.xml:573
@@ -741,12 +943,18 @@ msgid ""
 "This applies even more to the use of this parameter in the "
 "<literal>[global]</literal> section."
 msgstr ""
+"既定の設定は非常に限定された構成になっているため、この種類の共有は、このシステム内に"
+"存在するユーザにのみ提供されます。この共有を誰にでも利用できるようにするには、設定内に"
+" <literal>guest ok = yes</literal> を追加してください。この設定により、ネットワーク"
+"内の誰にでも読み込むことができるようになります。ただし、このパラメータはよく注意して"
+"お使いください。また、このパラメータは <literal>[global]</literal> セクション内でも"
+"設定することができます。"
 
 #. Tag: term
 #: net_samba.xml:585
 #, no-c-format
 msgid "<option>[homes]</option>"
-msgstr ""
+msgstr "<option>[homes]</option>"
 
 #. Tag: para
 #: net_samba.xml:588
@@ -756,12 +964,15 @@ msgid ""
 "user has a valid account and password for the Linux file server and his own "
 "home directory, he can be connected to it."
 msgstr ""
+"<option>[homes]</option> の共有は、ここでは特別な意味があります。 Linux ファイルサーバ"
+"内にアカウントとパスワードが存在し、ホームディレクトリが存在するユーザであれば、"
+"誰でも接続することができるようになります。"
 
 #. Tag: title
 #: net_samba.xml:594
 #, no-c-format
 msgid "[homes] Share"
-msgstr ""
+msgstr "[homes] 共有"
 
 #. Tag: screen
 #: net_samba.xml:595
@@ -774,12 +985,18 @@ msgid ""
 "        read only = No\n"
 "        inherit acls = Yes"
 msgstr ""
+"[homes]\n"
+"        comment = Home Directories\n"
+"        valid users = %S\n"
+"        browseable = No\n"
+"        read only = No\n"
+"        inherit acls = Yes"
 
 #. Tag: term
 #: net_samba.xml:604
 #, no-c-format
 msgid "[homes]"
-msgstr ""
+msgstr "[homes]"
 
 #. Tag: para
 #: net_samba.xml:606
@@ -790,12 +1007,14 @@ msgid ""
 "<literal>[homes]</literal> share directives. The resulting name of the share "
 "is the user name."
 msgstr ""
+"SMB サーバに接続するユーザ名と同じ名前の共有が存在する場合を除き、 <literal>[homes]</literal> "
+"では動的に共有が生成されます。生成される共有名は、ユーザ名と同じになります。"
 
 #. Tag: term
 #: net_samba.xml:615
 #, no-c-format
 msgid "<option>valid users = %S</option>"
-msgstr ""
+msgstr "<option>valid users = %S</option>"
 
 #. Tag: para
 #: net_samba.xml:618
@@ -806,24 +1025,28 @@ msgid ""
 "share, this is always the user name. As a consequence, access rights to a "
 "user's share are restricted exclusively to that user."
 msgstr ""
+"<literal>%S</literal> は Samba サーバとの接続が確立した際に、共有の名前に置き換え"
+"られる項目です。 <option>[homes]</option> セクションでこれを指定した場合は、"
+"ユーザ名に置き換えられます。そのため、ユーザ名と同じ名前の共有は、そのユーザでのみ"
+"アクセスすることができます。"
 
 #. Tag: term
 #: net_samba.xml:628
 #, no-c-format
 msgid "<option>browseable = No</option>"
-msgstr ""
+msgstr "<option>browseable = No</option>"
 
 #. Tag: para
 #: net_samba.xml:631
 #, no-c-format
 msgid "This setting makes the share invisible in the network environment."
-msgstr ""
+msgstr "この設定は、ネットワーク環境内では表示を行なわないようにする設定です。"
 
 #. Tag: term
 #: net_samba.xml:637
 #, no-c-format
 msgid "<option>read only = No</option>"
-msgstr ""
+msgstr "<option>read only = No</option>"
 
 #. Tag: para
 #: net_samba.xml:640
@@ -834,12 +1057,16 @@ msgid ""
 "set the value <literal>read only = No</literal> , which is synonymous with "
 "<literal>writable = Yes</literal> ."
 msgstr ""
+"既定では、 Samba は <literal>read only = Yes</literal> パラメータと同じ効力に"
+"なっていて、公開された共有への書き込みを禁止しています。この共有に対する書き込みを"
+"許可するには、 <literal>read only = No</literal> を設定してください。なお、"
+" <literal>writable = Yes</literal> でも同じ意味になります。"
 
 #. Tag: term
 #: net_samba.xml:649
 #, no-c-format
 msgid "<option>create mask = 0640</option>"
-msgstr ""
+msgstr "<option>create mask = 0640</option>"
 
 #. Tag: para
 #: net_samba.xml:652
@@ -855,12 +1082,22 @@ msgid ""
 "permissions. For the group to have read or write access, deactivate the line "
 "<option>valid users = %S</option> ."
 msgstr ""
+"MS Windows NT ベースではないシステムの場合、 Unix のアクセス権 (パーミッション) "
+"に相当する考え方はなく、ファイルを作成する際にもアクセス権を設定することができません。"
+" <literal>create mask</literal> パラメータでは、新しく作成したファイルに対して"
+"割り当てるアクセス権を指定します。この設定は書き込みのできる共有に対してのみ適用"
+"されます。そのため、上記の設定を行なうと、所有者が読み込みと書き込みの権限を、"
+"所有者のプライマリグループに属するユーザが読み込みの権限を持つようになります。"
+"ただし、 <option>valid users = %S</option> という設定が存在しているため、グループ"
+"に対して読み込みアクセスを許可していても、実際にはアクセスができなくなります。"
+"グループに対して読み込みや書き込みのアクセスを許可するには、 <option>valid users "
+"= %S</option> の行を無効化してください。"
 
 #. Tag: title
 #: net_samba.xml:671
 #, no-c-format
 msgid "Do Not Share <literal>NFS</literal> Mounts with Samba"
-msgstr ""
+msgstr "Samba における <literal>NFS</literal> マウントの共有設定について"
 
 #. Tag: para
 #: net_samba.xml:672
@@ -870,12 +1107,16 @@ msgid ""
 "is not supported. Install Samba directly on the file server or consider "
 "using alternatives such as <literal>iSCSI</literal> ."
 msgstr ""
+"<literal>NFS</literal> でマウントされているディレクトリは、 Samba で共有してしまうと"
+"データの損失が発生する可能性がありますので、サポート対象外となります。対象のファイル"
+"が存在するサーバで直接 Samba を動作させるか、 <literal>iSCSI</literal> などを"
+"お使いください。"
 
 #. Tag: title
 #: net_samba.xml:680
 #, no-c-format
 msgid "Security Levels"
-msgstr ""
+msgstr "セキュリティレベル"
 
 #. Tag: para
 #: net_samba.xml:681
@@ -884,12 +1125,14 @@ msgid ""
 "To improve security, each share access can be protected with a password. SMB "
 "offers the following ways of checking permissions:"
 msgstr ""
+"セキュリティを強化する目的で、それぞれの共有にはパスワードを設定して保護することが"
+"できます。 SMB では、アクセス許可を確認するための様々な方法が用意されています:"
 
 #. Tag: term
 #: net_samba.xml:687
 #, no-c-format
 msgid "User Level Security ( <literal>security = user</literal> )"
-msgstr ""
+msgstr "ユーザレベルセキュリティ ( <literal>security = user</literal> )"
 
 #. Tag: para
 #: net_samba.xml:689
@@ -900,12 +1143,15 @@ msgid ""
 "the server can grant access to individual exported shares dependent on user "
 "names."
 msgstr ""
+"この設定は、 SMB に対してユーザの考え方を導入します。各ユーザはサーバに対して、"
+"あらかじめ登録を行なってパスワードを設定する必要があります。登録完了後は、"
+"設定したユーザ名に従って個別にアクセスを許可するようになります。"
 
 #. Tag: term
 #: net_samba.xml:711
 #, no-c-format
 msgid "ADS Level Security ( <literal>security = ADS</literal> )"
-msgstr ""
+msgstr "ADS レベルセキュリティ ( <literal>security = ADS</literal> )"
 
 #. Tag: para
 #: net_samba.xml:713
@@ -917,12 +1163,17 @@ msgid ""
 "the ADS realm. This can be done using the &yast; <guimenu>Windows Domain "
 "Membership</guimenu> module."
 msgstr ""
+"このモードでは、 Samba を Active Directory 環境内のドメインメンバーとして"
+"動作させます。このモードでは、 Samba サーバ内に Kerberos をインストールして"
+"設定しておく必要があります。また、 Samba サーバは ADS の領域内に参加させておく"
+"必要もあります。 ADS への参加は、 &yast; の <guimenu>Windows ドメインメンバー"
+"シップ</guimenu> モジュールで実施することができます。"
 
 #. Tag: term
 #: net_samba.xml:723
 #, no-c-format
 msgid "Domain Level Security ( <literal>security = domain</literal> )"
-msgstr ""
+msgstr "ドメインレベルセキュリティ ( <literal>security = domain</literal> )"
 
 #. Tag: para
 #: net_samba.xml:725
@@ -934,6 +1185,12 @@ msgid ""
 "as a Windows NT Server would do. It expects the encrypted passwords "
 "parameter to be set to <literal>yes</literal> ."
 msgstr ""
+"このモードは、 Samba サーバを Windows NT ドメインに参加させた場合にのみ正しく"
+"動作します。 Samba は指定されたユーザ名とパスワードを Windows NT のプライマリ"
+"もしくはバックアップドメインコントローラに送信して、認証作業を行なうように"
+"なります。これは Windows NT Server のメンバーサーバと同じ動作になります。"
+"また、このモードではパスワードの暗号化を <literal>yes</literal> に設定する"
+"必要があります。"
 
 #. Tag: para
 #: net_samba.xml:735
@@ -945,6 +1202,10 @@ msgid ""
 "However, you can run a separate Samba server for each configured IP address "
 "on a system."
 msgstr ""
+"上記のユーザレベル、 ADS レベル、ドメインレベルのセキュリティ設定は、サーバ全体に"
+"対して適用されます。一方の共有をユーザレベルに、他方の共有を ADS レベルに、などの"
+"設定を行なうことはできません。しかしながら、システムに複数の IP アドレスが設定"
+"されていれば、それぞれに対して別々の Samba サーバを起動することは可能です。"
 
 #. Tag: para
 #: net_samba.xml:742
@@ -954,12 +1215,15 @@ msgid ""
 "multiple servers on one system, pay attention to the options "
 "<option>interfaces</option> and <option>bind interfaces only</option> ."
 msgstr ""
+"本件について、より詳しい情報は Samba 3 HOWTO に記載されています。また、 1 つの"
+"システム内で複数のサーバを動作させる場合は、 <option>interfaces</option> と"
+" <option>bind interfaces only</option> のオプション設定にご注意ください。"
 
 #. Tag: title
 #: net_samba.xml:751
 #, no-c-format
 msgid "Configuring Clients"
-msgstr ""
+msgstr "クライアントの設定"
 
 #. Tag: para
 #: net_samba.xml:753
@@ -968,12 +1232,14 @@ msgid ""
 "Clients can only access the Samba server via TCP/IP. NetBEUI and NetBIOS via "
 "IPX cannot be used with Samba."
 msgstr ""
+"クライアント側から Samba サーバへのアクセスは、 TCP/IP 経由でのみ実施することができます。"
+" NetBEUI や IPX などのプロトコルは、 Samba では使用できません。"
 
 #. Tag: title
 #: net_samba.xml:759
 #, no-c-format
 msgid "Configuring a Samba Client with &yast;"
-msgstr ""
+msgstr "&yast; での Samba クライアントの設定"
 
 #. Tag: para
 #: net_samba.xml:760
@@ -986,6 +1252,12 @@ msgid ""
 "<guimenu>Also Use SMB Information for Linux Authentication</guimenu> , the "
 "user authentication runs over the Samba, NT or Kerberos server."
 msgstr ""
+"Samba クライアントを設定することで、 Samba サーバや Windows サーバにあるファイルや"
+"プリンタなどの資源にアクセスすることができるようになります。また、 <menuchoice> "
+"<guimenu>ネットワークサービス</guimenu> <guimenu>Windows ドメインメンバーシップ</guimenu>"
+"</menuchoice> ダイアログを使用することで、 NT ドメインや Active Directory ドメインに"
+"参加することもできます。また、 <guimenu>Linux の認証に SMB の情報を使用する</guimenu> "
+"を選択すると、 Samba や NT, Kerberos サーバなどの認証を使用することができるようになります。"
 
 #. Tag: para
 #: net_samba.xml:768
@@ -997,6 +1269,12 @@ msgid ""
 "This way users can access their home directories when hosted on CIFS. For "
 "details, see the <systemitem>pam_mount</systemitem> man page."
 msgstr ""
+"<guimenu>熟練者向け設定</guimenu> を押すと、より高度な設定オプションにアクセスする"
+"ことができます。たとえば <guimenu>サーバディレクトリのマウント</guimenu> の表では、"
+"サーバのホームディレクトリを認証を指定して自動的にマウントする設定を行なうことが"
+"できます。この方法により、 CIFS で提供されているホームディレクトリに対して、ユーザが"
+"アクセスできるようになります。詳しくは <systemitem>pam_mount</systemitem> "
+"のマニュアルページをお読みください。"
 
 #. Tag: para
 #: net_samba.xml:776
@@ -1004,13 +1282,13 @@ msgstr ""
 msgid ""
 "After completing all settings, confirm the dialog to finish the "
 "configuration."
-msgstr ""
+msgstr "全ての設定が完了したら、 <guimenu>OK</guimenu> を押して閉じることで設定を保存することができます。"
 
 #. Tag: title
 #: net_samba.xml:783
 #, no-c-format
 msgid "Samba as Login Server"
-msgstr ""
+msgstr "ログインサーバとしての Samba"
 
 #. Tag: para
 #: net_samba.xml:785
@@ -1024,12 +1302,19 @@ msgid ""
 "made in the <literal>[global]</literal> section of <filename>smb.conf</"
 "filename> are shown in <xref linkend=\"dat.samba.smb.conf.dom\"/> ."
 msgstr ""
+"主に Windows クライアントが多く存在するネットワーク環境の場合、ユーザアカウント"
+"とパスワードを一括で管理する機能が一般に求められます。 Windows ベースのネットワーク"
+"の場合、この処理はプライマリドメインコントローラ (PDC) で処理を行ないます。"
+" PDC として設定されている Windows NT Server が存在していればそれでも"
+"かまいませんが、 Samba サーバを PDC にすることもできます。このような構成は、"
+" <filename>smb.conf</filename> 内の <literal>[global]</literal> セクションを、"
+" <xref linkend=\"dat.samba.smb.conf.dom\"/> のように設定することで可能になります。"
 
 #. Tag: title
 #: net_samba.xml:797
 #, no-c-format
 msgid "Global Section in smb.conf"
-msgstr ""
+msgstr "smb.conf の global セクション"
 
 #. Tag: screen
 #: net_samba.xml:798
@@ -1040,6 +1325,10 @@ msgid ""
 "    domain logons = Yes\n"
 "    domain master = Yes"
 msgstr ""
+"[global]\n"
+"    workgroup = WORKGROUP\n"
+"    domain logons = Yes\n"
+"    domain master = Yes"
 
 #. Tag: para
 #: net_samba.xml:804
@@ -1051,6 +1340,11 @@ msgid ""
 "account for the computers, required by the Windows domain concept, with the "
 "following commands:"
 msgstr ""
+"なお、ユーザアカウントパスワードは、 Windows 側の暗号化方式に準拠させるため、"
+"事前の準備が必要となります。この作業は <command>smbpasswd</command> <option>-a "
+"<replaceable>ユーザ名</replaceable></option> を実行することで行なうことができます。"
+"また、 Windows のドメインの考え方では、コンピュータ向けのドメインアカウントを"
+"作成する必要もあります。コンピュータ向けのアカウントを作成するには、下記を実行します。"
 
 #. Tag: screen
 #: net_samba.xml:812
@@ -1059,6 +1353,8 @@ msgid ""
 "useradd hostname\\$\n"
 "smbpasswd -a -m hostname"
 msgstr ""
+"useradd <replaceable>ホスト名</replaceable>\\$\n"
+"smbpasswd -a -m <replaceable>ホスト名</replaceable>"
 
 #. Tag: para
 #: net_samba.xml:815
@@ -1070,6 +1366,11 @@ msgid ""
 "( <filename>/usr/share/doc/packages/samba/examples/smb.conf.SUSE</"
 "filename> ) contains settings that automate this task."
 msgstr ""
+"上記の通り、 <command>useradd</command> コマンドの末尾にドル記号を付けている"
+"ことに注意してください。 <command>smbpasswd</command> コマンドでは、"
+" <option>-m</option> オプションを指定すれば自動的に追加されます。"
+"また、 <filename>/usr/share/doc/packages/samba/examples/smb.conf.SUSE</filename> "
+"にある設定例では、これを自動化するための設定が書かれています。"
 
 #. Tag: screen
 #: net_samba.xml:823
@@ -1080,6 +1381,10 @@ msgid ""
 "-s /bin/false %m\\$\n"
 "     "
 msgstr ""
+"add machine script = /usr/sbin/useradd -g nogroup -c \"NT Machine Account\" "
+"\\\n"
+"-s /bin/false %m\\$\n"
+"     "
 
 #. Tag: para
 #: net_samba.xml:827
@@ -1091,18 +1396,23 @@ msgid ""
 "belonging to this Linux group can be assigned <literal>Domain Admin</"
 "literal> status with the command:"
 msgstr ""
+"Samba 側で上記のスクリプトが正しく実行されるようにするため、必要な管理者権限の"
+"ある Samba ユーザを選択して、そのユーザを <systemitem class=\"groupname\">ntadmin"
+"</systemitem> グループに追加してください。この Linux グループに属する全ての"
+"ユーザが <literal>Domain Admin</literal> になるようにするには、下記のコマンドを"
+"実行します:"
 
 #. Tag: screen
 #: net_samba.xml:835
 #, no-c-format
 msgid "net groupmap add ntgroup=\"Domain Admins\" unixgroup=ntadmin"
-msgstr ""
+msgstr "net groupmap add ntgroup=\"Domain Admins\" unixgroup=ntadmin"
 
 #. Tag: title
 #: net_samba.xml:838
 #, no-c-format
 msgid "Samba Server in the Network with Active Directory"
-msgstr ""
+msgstr "Active Directory ネットワーク環境での Samba サーバ"
 
 #. Tag: para
 #: net_samba.xml:840
@@ -1114,18 +1424,23 @@ msgid ""
 "with an active directory domain, you can join your &productname; server with "
 "an Active Directory (AD) domain."
 msgstr ""
+"Linux サーバと Windows サーバを共存させているような環境では、それぞれが個別の"
+"認証システムや認証ネットワークを構成できるだけでなく、中央の 1 つの認証システムを"
+"利用するように構成することができます。 Samba では Active Directory ドメインとの"
+"協調作業を行なうことができることから、 &productname; サーバを Active Directory "
+"(AD) のドメインに参加させることができます。"
 
 #. Tag: para
 #: net_samba.xml:848
 #, no-c-format
 msgid "To join an AD domain proceed as follows:"
-msgstr ""
+msgstr "Active Directory ドメインに参加するには、下記の手順を実施します:"
 
 #. Tag: para
 #: net_samba.xml:854
 #, no-c-format
 msgid "Log in as &rootuser; and start &yast;."
-msgstr ""
+msgstr "&rootuser; でログインして、 &yast; を起動します。"
 
 #. Tag: para
 #: net_samba.xml:859
@@ -1134,6 +1449,8 @@ msgid ""
 "Start <menuchoice> <guimenu>Network Services</guimenu> <guimenu>Windows "
 "Domain Membership</guimenu> </menuchoice> ."
 msgstr ""
+"<menuchoice> <guimenu>ネットワークサービス</guimenu> <guimenu>Windows "
+"ドメインメンバーシップ</guimenu> </menuchoice> を選択します。"
 
 #. Tag: para
 #: net_samba.xml:865
@@ -1142,12 +1459,14 @@ msgid ""
 "Enter the domain to join at <guimenu>Domain or Workgroup</guimenu> in the "
 "<guimenu>Windows Domain Membership</guimenu> screen."
 msgstr ""
+"<guimenu>Windows ドメインメンバーシップ</guimenu> が表示されたら、"
+" <guimenu>ドメインまたはワークグループ</guimenu> の欄に、参加したいドメインを入力します。"
 
 #. Tag: title
 #: net_samba.xml:870
 #, no-c-format
 msgid "Determining Windows Domain Membership"
-msgstr ""
+msgstr "Windows ドメインメンバーシップの決定"
 
 #. Tag: para
 #: net_samba.xml:882
@@ -1156,13 +1475,14 @@ msgid ""
 "Check <guimenu>Also Use SMB Information for Linux Authentication</guimenu> "
 "to use the SMB source for Linux authentication on your server."
 msgstr ""
+"お使いのサーバの Linux 認証に SMB の認証を使用したい場合は、 <guimenu>Linux の"
+"認証に SMB の情報を使用する</guimenu> を選択します。"
 
 #. Tag: para
 #: net_samba.xml:888
 #, no-c-format
-msgid ""
-"Click <guimenu>OK</guimenu> and confirm the domain join when prompted for it."
-msgstr ""
+msgid "Click <guimenu>OK</guimenu> and confirm the domain join when prompted for it."
+msgstr "<guimenu>OK</guimenu> を押して閉じ、ドメインへの参加確認メッセージが表示されたら、それに応答します。"
 
 #. Tag: para
 #: net_samba.xml:894
@@ -1171,6 +1491,8 @@ msgid ""
 "Provide the password for the Windows Administrator on the AD server and "
 "click <guimenu>OK</guimenu> ."
 msgstr ""
+"あとは Active Directory サーバの Windows 管理者のユーザ名と、パスワードを入力して"
+" <guimenu>OK</guimenu> を押します。"
 
 #. Tag: para
 #: net_samba.xml:898
@@ -1179,12 +1501,14 @@ msgid ""
 "Your server is now set up to pull in all authentication data from the Active "
 "Directory domain controller."
 msgstr ""
+"これでお使いのサーバは、認証データを Active Directory ドメインコントローラから"
+"取得できるようになっています。"
 
 #. Tag: title
 #: net_samba.xml:906
 #, no-c-format
 msgid "Identity Mapping"
-msgstr ""
+msgstr "識別情報のマッピング"
 
 #. Tag: para
 #: net_samba.xml:907
@@ -1197,12 +1521,18 @@ msgid ""
 "xlink:href=\"https://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/"
 "idmapper.html\"/> for more details."
 msgstr ""
+"Samba サーバが複数台存在するような環境では、 UID と GID がそれぞれ別々に管理される"
+"ことになります。ユーザに対する UID の割り当ては、初回のログイン時に割り当てられる"
+"ことから、サーバ間では同じユーザ名でも UID が異なる結果になってしまいます。この"
+"問題を解決するには、識別情報のマッピング設定を行なう必要があります。詳しくは"
+" <link xlink:href=\"https://www.samba.org/samba/docs/man/Samba-HOWTO-Collection/"
+"idmapper.html\"/> をお読みください。"
 
 #. Tag: title
 #: net_samba.xml:919
 #, no-c-format
 msgid "Advanced Topics"
-msgstr ""
+msgstr "高度なトピック"
 
 #. Tag: para
 #: net_samba.xml:921
@@ -1211,12 +1541,14 @@ msgid ""
 "This section introduces more advanced techniques to manage both the client "
 "and server part of the Samba suite."
 msgstr ""
+"本章では、 Samba スイートのクライアントとサーバにおける、さらに高度な技術に関する"
+"説明を行なっています。"
 
 #. Tag: title
 #: net_samba.xml:927
 #, no-c-format
 msgid "Transparent File Compression on Btrfs"
-msgstr ""
+msgstr "btrfs による透過型ファイル圧縮"
 
 #. Tag: para
 #: net_samba.xml:928
@@ -1228,12 +1560,17 @@ msgid ""
 "<menuchoice><guimenu>File</guimenu><guimenu>Properties</"
 "guimenu><guimenu>Advanced</guimenu></menuchoice> dialog:"
 msgstr ""
+"Samba では、 btrfs ファイルシステム内に存在する共有に対して、クライアント側から"
+"ファイルやディレクトリの圧縮フラグを遠隔で操作できるようになっています。 Windows "
+"エクスプローラでは、 <menuchoice><guimenu>ファイル</guimenu><guimenu>プロパティ"
+"</guimenu><guimenu>詳細設定</guimenu></menuchoice> 内で、透過圧縮の設定を行なう"
+"ことができます:"
 
 #. Tag: title
 #: net_samba.xml:936
 #, no-c-format
 msgid "Windows Explorer <guimenu>Advanced Attributes</guimenu> Dialog"
-msgstr ""
+msgstr "Windows エクスプローラの <guimenu>属性の詳細</guimenu> ダイアログ"
 
 #. Tag: para
 #: net_samba.xml:946
@@ -1246,6 +1583,11 @@ msgid ""
 "flag from the parent directory, unless created with the FILE_NO_COMPRESSION "
 "option."
 msgstr ""
+"圧縮フラグの設定されたファイルは、そのファイルに対してアクセスや修正があるごとに、"
+"透過的に圧縮もしくは展開されます。これは通常ストレージの容量を削減する効果があり"
+"ますが、ファイルにアクセスする際に CPU の負荷がかかります。また、新しいファイルや"
+"ディレクトリは、 FILE_NO_COMPRESSION を指定して作成していない限り、親ディレクトリの"
+"圧縮フラグを引き継ぐようになっています。"
 
 #. Tag: para
 #: net_samba.xml:954
@@ -1254,24 +1596,26 @@ msgid ""
 "Windows Explorer presents compressed files and directories visually "
 "differently to those that are not compressed:"
 msgstr ""
+"Windows エクスプローラでは、圧縮されたファイルと圧縮されていないファイルを、"
+"視覚的に区別できる形で表示します:"
 
 #. Tag: title
 #: net_samba.xml:959
 #, no-c-format
 msgid "Windows Explorer Directory Listing with Compressed Files"
-msgstr ""
+msgstr "圧縮されたファイルに対する Windows エクスプローラのディレクトリ一覧表示"
 
 #. Tag: para
 #: net_samba.xml:969
 #, no-c-format
 msgid "You can enable Samba share compression either manually by adding"
-msgstr ""
+msgstr "Samba 共有での圧縮機能を有効化するには、"
 
 #. Tag: screen
 #: net_samba.xml:972
 #, no-c-format
 msgid "vfs objects = btrfs"
-msgstr ""
+msgstr "vfs objects = btrfs"
 
 #. Tag: para
 #: net_samba.xml:973
@@ -1282,6 +1626,10 @@ msgid ""
 "Server</guimenu><guimenu>Add</guimenu></menuchoice> , and checking "
 "<guimenu>Utilize Btrfs Features</guimenu> ."
 msgstr ""
+"を <filename>/etc/samba/smb.conf</filename> 内の共有設定内に追加するか、もしくは"
+" &yast; から <menuchoice><guimenu>ネットワークサービス</guimenu><guimenu>Samba "
+"サーバ</guimenu><guimenu>Add</guimenu></menuchoice> を選択して、 <guimenu>"
+"btrfs の機能を使用する</guimenu> にチェックを入れてもかまいません。"
 
 #. Tag: para
 #: net_samba.xml:979
@@ -1290,12 +1638,14 @@ msgid ""
 "A general overview of compression on Btrfs can be found in <xref linkend="
 "\"sec.filesystems.major.btrfs.compress\"/> ."
 msgstr ""
+"btrfs の圧縮に関する一般的な情報については、 <xref linkend="
+"\"sec.filesystems.major.btrfs.compress\"/> をお読みください。"
 
 #. Tag: title
 #: net_samba.xml:986
 #, no-c-format
 msgid "Snapshots"
-msgstr ""
+msgstr "スナップショット"
 
 #. Tag: para
 #: net_samba.xml:987
@@ -1307,12 +1657,18 @@ msgid ""
 "or thin-provisioned LVM volumes. The Samba suite supports managing of remote "
 "snapshots through the FSRVP protocol on both the server and client side."
 msgstr ""
+"スナップショットはシャドウコピーとも呼ばれ、特定の時点におけるファイルシステムの"
+"サブボリュームのコピーを意味します。 Linux では、 Snapper を利用することで、"
+"これらのスナップショットを管理することができます。スナップショットは btrfs ファイル"
+"システムのほか、シン・プロビジョン型の LVM ボリュームでも利用することができます。"
+" Samba スイートでは、サーバとクライアントとの間で FSRVP プロトコルを利用することで、"
+"リモートのスナップショットを管理することができます。"
 
 #. Tag: title
 #: net_samba.xml:996
 #, no-c-format
 msgid "Previous Versions"
-msgstr ""
+msgstr "以前のバージョン"
 
 #. Tag: para
 #: net_samba.xml:997
@@ -1321,6 +1677,8 @@ msgid ""
 "Snapshots on a Samba server can be exposed to remote Windows clients as file "
 "or directory previous versions."
 msgstr ""
+"Samba サーバにおけるスナップショットは、リモートの Windows クライアントから見ると、"
+"ファイルやディレクトリの <quote>以前のバージョン</quote> として見えるようになっています。"
 
 #. Tag: para
 #: net_samba.xml:1001
@@ -1329,12 +1687,14 @@ msgid ""
 "To enable snapshots on a Samba server, the following conditions must be "
 "fulfilled:"
 msgstr ""
+"Samba サーバでスナップショット機能を有効化するには、下記の条件を満たさなければ"
+"なりません:"
 
 #. Tag: para
 #: net_samba.xml:1007
 #, no-c-format
 msgid "The SMB network share resides on a Btrfs subvolume."
-msgstr ""
+msgstr "SMB のネットワーク共有が、 btrfs のサブボリューム内に存在しなければなりません。"
 
 #. Tag: para
 #: net_samba.xml:1012
@@ -1343,6 +1703,8 @@ msgid ""
 "The SMB network share path has a related snapper configuration file. You can "
 "create the snapper file with"
 msgstr ""
+"SMB ネットワーク共有のパスに対して、対応する Snapper の設定ファイルを用意する必要が"
+"あります。 Snapper の設定ファイルを作成するには、下記のように実行します:"
 
 #. Tag: screen
 #: net_samba.xml:1016
@@ -1351,12 +1713,14 @@ msgid ""
 "&prompt.sudo;snapper -c &lt;cfg_name&gt; create-config <option>/path/to/"
 "share</option>"
 msgstr ""
+"&prompt.sudo;snapper -c &lt;設定名&gt; create-config <option>/path/to/"
+"share</option>"
 
 #. Tag: para
 #: net_samba.xml:1017
 #, no-c-format
 msgid "For more information on snapper, see <xref linkend=\"cha.snapper\"/> ."
-msgstr ""
+msgstr "Snapper について、詳しくは <xref linkend=\"cha.snapper\"/> をお読みください。"
 
 #. Tag: para
 #: net_samba.xml:1022
@@ -1366,6 +1730,9 @@ msgid ""
 "information, see the PERMISSIONS section of the vfs_snapper manual page "
 "( <command>man 8 vfs_snapper</command> )."
 msgstr ""
+"スナップショットのディレクトリツリーは、対応するユーザに対してアクセスを許可しなければ"
+"なりません。詳しくは vfs_snapper のマニュアルページ内にある PERMISSIONS セクション"
+" ( <command>man 8 vfs_snapper</command> ) をお読みください。"
 
 #. Tag: para
 #: net_samba.xml:1029
@@ -1376,12 +1743,17 @@ msgid ""
 "guimenu><guimenu>Network Services</guimenu><guimenu>Samba Server</guimenu></"
 "menuchoice> , or manually by enhancing the relevant share section with"
 msgstr ""
+"リモートからのスナップショット機能に対応するには、 <filename>/etc/samba/smb."
+"conf</filename> ファイルを修正する必要があります。これは <menuchoice><guimenu>&yast;"
+"</guimenu><guimenu>ネットワークサービス</guimenu><guimenu>Samba サーバ</guimenu></"
+"menuchoice> から行なうことができるほか、手作業でも設定することができます。具体的には、"
+"対応する共有に対して、下記の設定を追加します:"
 
 #. Tag: screen
 #: net_samba.xml:1036
 #, no-c-format
 msgid "vfs objects = snapper"
-msgstr ""
+msgstr "vfs objects = snapper"
 
 #. Tag: para
 #: net_samba.xml:1037
@@ -1390,18 +1762,20 @@ msgid ""
 "Note that you need to restart the Samba service for manual <filename>smb."
 "conf</filename> changes to take effect:"
 msgstr ""
+"なお、 <filename>smb.conf</filename> を手作業で修正した場合は、 Samba サービスを"
+"再起動する必要があります:"
 
 #. Tag: screen
 #: net_samba.xml:1041
 #, no-c-format
 msgid "&prompt.sudo;systemctl restart nmb smb"
-msgstr ""
+msgstr "&prompt.sudo;systemctl restart nmb smb"
 
 #. Tag: title
 #: net_samba.xml:1043
 #, no-c-format
 msgid "Adding a New Samba Share with Snapshotting Enabled"
-msgstr ""
+msgstr "スナップショットを有効化した新しい Samba 共有の追加"
 
 #. Tag: para
 #: net_samba.xml:1053
@@ -1411,18 +1785,21 @@ msgid ""
 "path can be accessed from Windows Explorer from a file or directory's "
 "<guimenu>Previous Versions</guimenu> tab."
 msgstr ""
+"設定作業を行なうことで、 Windows エクスプローラのファイルやディレクトリの"
+" <guimenu>以前のバージョン</guimenu> タブ内に、 Snapper が作成したスナップ"
+"ショットが表示されるようになります。"
 
 #. Tag: title
 #: net_samba.xml:1059
 #, no-c-format
 msgid "The <guimenu>Previous Versions</guimenu> tab in Windows Explorer"
-msgstr ""
+msgstr "Windows エクスプローラでの <guimenu>以前のバージョン</guimenu> タブ"
 
 #. Tag: title
 #: net_samba.xml:1071
 #, no-c-format
 msgid "Remote Share Snapshots"
-msgstr ""
+msgstr "リモート共有のスナップショット"
 
 #. Tag: para
 #: net_samba.xml:1072
@@ -1432,6 +1809,9 @@ msgid ""
 "locally, via the snapper command line utility, or using snapper's time line "
 "feature."
 msgstr ""
+"既定では、スナップショットは Samba サーバ自身でコマンドラインユーティリティを"
+"使用するか、もしくは Snapper のタイムライン機能を利用することでのみ、"
+"スナップショットを作成もしくは削除することができます。"
 
 #. Tag: para
 #: net_samba.xml:1077
@@ -1440,6 +1820,9 @@ msgid ""
 "Samba can be configured to process share snapshot creation and deletion "
 "requests from remote hosts using the File Server Remote VSS Protocol (FSRVP)."
 msgstr ""
+"Samba では、ファイルサーバリモート VSS プロトコル (File Server Remote VSS Protocol;"
+" VSRVP) を利用することで、リモートのホストから共有に対するスナップショットを"
+"作成したり、削除したりできるようにすることができます。"
 
 #. Tag: para
 #: net_samba.xml:1082
@@ -1449,6 +1832,9 @@ msgid ""
 "linkend=\"sec.samba.advanced.snapshots.client\"/> , the following global "
 "configuration is required in <filename>/etc/samba/smb.conf</filename> :"
 msgstr ""
+"<xref linkend=\"sec.samba.advanced.snapshots.client\"/> に書かれている"
+"設定と事前要件に加えて、 <filename>/etc/samba/smb.conf</filename> 内に"
+"下記のグローバル設定を追加する必要があります:"
 
 #. Tag: screen
 #: net_samba.xml:1087
@@ -1459,6 +1845,10 @@ msgid ""
 "registry shares = yes\n"
 "include = registry"
 msgstr ""
+"[global]\n"
+"rpc_daemon:fssd = fork\n"
+"registry shares = yes\n"
+"include = registry"
 
 #. Tag: para
 #: net_samba.xml:1091
@@ -1469,13 +1859,16 @@ msgid ""
 "create or delete a snapshot for a given share, and expose the snapshot as a "
 "new share."
 msgstr ""
+"これにより、 Samba の <command>rpcclient</command> や Windows Server 2012 に"
+"付属する <command>DiskShadow.exe</command> などの FSRVP クライアントから、"
+" Samba の特定の共有に対してスナップショットを作成することができるほか、スナップ"
+"ショットの削除や新しい共有としての公開などを行なうことができるようになります。"
 
 #. Tag: title
 #: net_samba.xml:1099
 #, no-c-format
-msgid ""
-"Managing Snapshots Remotely from Linux with <command>rpcclient</command>"
-msgstr ""
+msgid "Managing Snapshots Remotely from Linux with <command>rpcclient</command>"
+msgstr "<command>rpcclient</command> による Linux からのリモートスナップショット管理"
 
 #. Tag: para
 #: net_samba.xml:1100
@@ -1487,6 +1880,11 @@ msgid ""
 "to mount the exposed share and back up its files. Requests to the server are "
 "sent using the <command>rpcclient</command> binary."
 msgstr ""
+"<systemitem>samba-client</systemitem> パッケージには、リモートの Windows Server や"
+" Samba サーバに対して、対応する共有のスナップショットを作成したり公開したりするための"
+"リクエストを送信することができる、 FSRVP クライアントが含まれています。共有のマウントや"
+"バックアップなどは、 &productname; に付属する既存のツールを利用することができます。"
+"また、サーバへのリクエストは <command>rpcclient</command> バイナリを利用して行ないます。"
 
 #. Tag: title
 #: net_samba.xml:1108
@@ -1494,7 +1892,7 @@ msgstr ""
 msgid ""
 "Using <command>rpcclient</command> to Request a Windows Server 2012 Share "
 "Snapshot"
-msgstr ""
+msgstr "<command>rpcclient</command> による Windows Server 2012 共有に対するスナップショット要求"
 
 #. Tag: para
 #: net_samba.xml:1109
@@ -1503,6 +1901,8 @@ msgid ""
 "Connect to <literal>win-server.example.com</literal> server as an "
 "administrator in an <literal>EXAMPLE</literal> domain:"
 msgstr ""
+"<literal>EXAMPLE</literal> ドメイン内にある <literal>win-server.example.com</literal> "
+"サーバに対して、 Administrator で接続する場合の例です:"
 
 #. Tag: screen
 #: net_samba.xml:1113
@@ -1513,18 +1913,22 @@ msgid ""
 "replaceable>[ndr64,sign]\n"
 "Enter EXAMPLE/Administrator's password:"
 msgstr ""
+"&prompt.root;rpcclient -U '<replaceable>EXAMPLE</replaceable>"
+"\\Administrator' ncacn_np:<replaceable>win-server.example.com</"
+"replaceable>[ndr64,sign]\n"
+"Enter EXAMPLE/Administrator's password:"
 
 #. Tag: para
 #: net_samba.xml:1115
 #, no-c-format
 msgid "Check that the SMB share is visible for <command>rpcclient</command> :"
-msgstr ""
+msgstr "<command>rpcclient</command> で SMB の共有が見えるかどうかを確認します:"
 
 #. Tag: para
 #: net_samba.xml:1123
 #, no-c-format
 msgid "Check that the SMB share supports snapshot creation:"
-msgstr ""
+msgstr "SMB 共有がスナップショットの作成に対応しているかどうかを確認します:"
 
 #. Tag: screen
 #: net_samba.xml:1126
@@ -1533,12 +1937,14 @@ msgid ""
 "&prompt.root;rpcclient $&gt; fss_is_path_sup windows_server_2012_share \\\n"
 "UNC \\\\WIN-SERVER\\windows_server_2012_share\\ supports shadow copy requests"
 msgstr ""
+"&prompt.root;rpcclient $&gt; fss_is_path_sup windows_server_2012_share \\\n"
+"UNC \\\\WIN-SERVER\\windows_server_2012_share\\ supports shadow copy requests"
 
 #. Tag: para
 #: net_samba.xml:1128
 #, no-c-format
 msgid "Request the creation of a share snapshot:"
-msgstr ""
+msgstr "スナップショット共有の作成を要求します:"
 
 #. Tag: screen
 #: net_samba.xml:1131
@@ -1557,12 +1963,24 @@ msgid ""
 "share windows_server_2012_share@{1C26544E-8251-445F-BE89-D1E0A3938777} \\\n"
 "exposed as a snapshot of \\\\WIN-SERVER\\windows_server_2012_share\\"
 msgstr ""
+"&prompt.root;rpcclient $&gt; fss_create_expose backup ro "
+"windows_server_2012_share\n"
+"13fe880e-e232-493d-87e9-402f21019fb6: shadow-copy set created\n"
+"13fe880e-e232-493d-87e9-402f21019fb6(1c26544e-8251-445f-be89-d1e0a3938777): "
+"\\\n"
+"\\\\WIN-SERVER\\windows_server_2012_share\\ shadow-copy added to set\n"
+"13fe880e-e232-493d-87e9-402f21019fb6: prepare completed in 0 secs\n"
+"13fe880e-e232-493d-87e9-402f21019fb6: commit completed in 1 secs\n"
+"13fe880e-e232-493d-87e9-402f21019fb6(1c26544e-8251-445f-be89-d1e0a3938777): "
+"\\\n"
+"share windows_server_2012_share@{1C26544E-8251-445F-BE89-D1E0A3938777} \\\n"
+"exposed as a snapshot of \\\\WIN-SERVER\\windows_server_2012_share\\"
 
 #. Tag: para
 #: net_samba.xml:1140
 #, no-c-format
 msgid "Confirm that the snapshot share is exposed by the server:"
-msgstr ""
+msgstr "サーバ側でスナップショット共有が公開されているかどうかを確認します:"
 
 #. Tag: screen
 #: net_samba.xml:1143
@@ -1580,12 +1998,23 @@ msgid ""
 "F537-11E3-9404-B8AC6F927453}\\Shares\\windows_server_2012_share\\\n"
 "password:       (null)"
 msgstr ""
+"&prompt.root;rpcclient $&gt; netshareenum\n"
+"netname: windows_server_2012_share\n"
+"remark:\n"
+"path:   C:\\Shares\\windows_server_2012_share\n"
+"password:       (null)\n"
+"\n"
+"netname: windows_server_2012_share@{1C26544E-8251-445F-BE89-D1E0A3938777}\n"
+"remark: (null)\n"
+"path:   \\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy{F6E6507E-"
+"F537-11E3-9404-B8AC6F927453}\\Shares\\windows_server_2012_share\\\n"
+"password:       (null)"
 
 #. Tag: para
 #: net_samba.xml:1153
 #, no-c-format
 msgid "Attempt to delete the snapshot share:"
-msgstr ""
+msgstr "スナップショット共有を削除します:"
 
 #. Tag: screen
 #: net_samba.xml:1156
@@ -1597,12 +2026,17 @@ msgid ""
 "\\\n"
 "\\\\WIN-SERVER\\windows_server_2012_share\\ shadow-copy deleted"
 msgstr ""
+"&prompt.root;rpcclient $&gt; fss_delete windows_server_2012_share \\\n"
+"13fe880e-e232-493d-87e9-402f21019fb6 1c26544e-8251-445f-be89-d1e0a3938777\n"
+"13fe880e-e232-493d-87e9-402f21019fb6(1c26544e-8251-445f-be89-d1e0a3938777): "
+"\\\n"
+"\\\\WIN-SERVER\\windows_server_2012_share\\ shadow-copy deleted"
 
 #. Tag: para
 #: net_samba.xml:1160
 #, no-c-format
 msgid "Confirm that the snapshot share has been removed by the server:"
-msgstr ""
+msgstr "サーバ側でスナップショット共有が削除されていることを確認します:"
 
 #. Tag: screen
 #: net_samba.xml:1163
@@ -1614,6 +2048,11 @@ msgid ""
 "path:   C:\\Shares\\windows_server_2012_share\n"
 "password:       (null)"
 msgstr ""
+"&prompt.root;rpcclient $&gt; netshareenum\n"
+"netname: windows_server_2012_share\n"
+"remark:\n"
+"path:   C:\\Shares\\windows_server_2012_share\n"
+"password:       (null)"
 
 #. Tag: title
 #: net_samba.xml:1171
@@ -1621,7 +2060,7 @@ msgstr ""
 msgid ""
 "Managing Snapshots Remotely from Windows with <command>DiskShadow.exe</"
 "command>"
-msgstr ""
+msgstr "<command>DiskShadow.exe</command> による Windows からのリモートスナップショット管理"
 
 #. Tag: para
 #: net_samba.xml:1172
@@ -1634,6 +2073,12 @@ msgid ""
 "samba.advanced.snapshots.client.linux\"/> . Note that you need to carefully "
 "set up the Samba server first."
 msgstr ""
+"Windows 側からも、 Linux Samba サーバ内の SMB 共有のスナップショットを管理すること"
+"ができます。 Windows Server 2012 には <command>DiskShadow.exe</command> ユーティリティ"
+"が用意されていますので、 <xref linkend=\"sec.samba.advanced.snapshots.client.linux\"/> "
+"で説明している <command>rpcclient</command> コマンドと同様に、リモートの共有に"
+"対するスナップショットを管理することができます。なお、 Samba サーバ側では、"
+"あらかじめ注意して設定を行なっておく必要があります。"
 
 #. Tag: para
 #: net_samba.xml:1180
@@ -1646,12 +2091,17 @@ msgid ""
 "name of the Samba server, and <filename>/srv/smb</filename> is the path to "
 "the SMB share."
 msgstr ""
+"下記は Samba サーバの共有のスナップショットを、 Windows Server のクライアント側から"
+"管理できるようにするための手順例です。なお、下記の例では <replaceable>EXAMPLE</replaceable> "
+"が Active Directory ドメインを、 <uri>fsrvp-server.example.com</uri> が Samba "
+"サーバのホスト名を、 <filename>/srv/smb</filename> が SMB 共有のパスをそれぞれ"
+"表わしています。"
 
 #. Tag: title
 #: net_samba.xml:1188
 #, no-c-format
 msgid "Detailed Samba Server Configuration"
-msgstr ""
+msgstr "より細かい Samba サーバの設定"
 
 #. Tag: para
 #: net_samba.xml:1190
@@ -1660,12 +2110,14 @@ msgid ""
 "Join Active Directory domain via &yast;. <phrase os=\"sles;osuse\"> For more "
 "information, <xref linkend=\"sec.samba.adnet\"/>.</phrase>"
 msgstr ""
+"&yast; を利用して Active Directory ドメインに参加します。 <phrase os=\"sles;osuse\">"
+"詳しくは <xref linkend=\"sec.samba.adnet\"/> をお読みください。</phrase>"
 
 #. Tag: para
 #: net_samba.xml:1196
 #, no-c-format
 msgid "Ensure that the Active Domain DNS entry was correct:"
-msgstr ""
+msgstr "Active Directory の DNS 項目が正しく設定されていることを確認します:"
 
 #. Tag: screen
 #: net_samba.xml:1199
@@ -1675,32 +2127,33 @@ msgid ""
 "fsrvp-server.example.com &lt;IP address&gt;\n"
 "Successfully registered hostname with DNS"
 msgstr ""
+"fsrvp-server:~ # net -U 'Administrator' ads dns register \\\n"
+"fsrvp-server.example.com &lt;IP address&gt;\n"
+"Successfully registered hostname with DNS"
 
 #. Tag: para
 #: net_samba.xml:1204
 #, no-c-format
 msgid "Create Btrfs subvolume at <filename>/srv/smb</filename>"
-msgstr ""
+msgstr "<filename>/srv/smb</filename> 内に btrfs のサブボリュームを作成します:"
 
 #. Tag: screen
 #: net_samba.xml:1207
 #, no-c-format
 msgid "fsrvp-server:~ # btrfs subvolume create /srv/smb"
-msgstr ""
+msgstr "fsrvp-server:~ # btrfs subvolume create /srv/smb"
 
 #. Tag: para
 #: net_samba.xml:1210
 #, no-c-format
-msgid ""
-"Create snapper configuration file for path <filename>/srv/smb</filename>"
-msgstr ""
+msgid "Create snapper configuration file for path <filename>/srv/smb</filename>"
+msgstr "<filename>/srv/smb</filename> に対する Snapper の設定ファイルを作成します:"
 
 #. Tag: screen
 #: net_samba.xml:1213
 #, no-c-format
-msgid ""
-"fsrvp-server:~ # snapper -c &lt;snapper_config&gt; create-config /srv/smb"
-msgstr ""
+msgid "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; create-config /srv/smb"
+msgstr "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; create-config /srv/smb"
 
 #. Tag: para
 #: net_samba.xml:1216
@@ -1712,6 +2165,11 @@ msgid ""
 "filename> as mentioned in <xref linkend=\"sec.samba.advanced.snapshots.server"
 "\"/> :"
 msgstr ""
+"&yast; で <filename>/srv/smb</filename> に対する新しい共有を作成します。このとき、"
+" <guimenu>スナップショットの公開</guimenu> のチェックボックスにチェックが入っている"
+"ことをご確認ください。また、 <xref linkend=\"sec.samba.advanced.snapshots.server"
+"\"/> で説明しているとおり、 <filename>/etc/samba/smb.conf</filename> のグローバル"
+"セクションに下記の内容が追加されていることも、あわせてご確認ください:"
 
 #. Tag: screen
 #: net_samba.xml:1223
@@ -1722,18 +2180,22 @@ msgid ""
 " registry shares = yes\n"
 " include = registry"
 msgstr ""
+"[global]\n"
+" rpc_daemon:fssd = fork\n"
+" registry shares = yes\n"
+" include = registry"
 
 #. Tag: para
 #: net_samba.xml:1229
 #, no-c-format
 msgid "Restart Samba with <command>systemctl restart nmb smb</command>"
-msgstr ""
+msgstr "あとは <command>systemctl restart nmb smb</command> を実行して Samba を再起動します。"
 
 #. Tag: para
 #: net_samba.xml:1234
 #, no-c-format
 msgid "Configure snapper permissions:"
-msgstr ""
+msgstr "続いて Snapper のアクセス権を調整します:"
 
 #. Tag: screen
 #: net_samba.xml:1237
@@ -1742,6 +2204,8 @@ msgid ""
 "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; set-config \\\n"
 "ALLOW_USERS=\"EXAMPLE\\\\\\\\Administrator EXAMPLE\\\\\\\\win-client$\""
 msgstr ""
+"fsrvp-server:~ # snapper -c &lt;snapper_config&gt; set-config \\\n"
+"ALLOW_USERS=\"EXAMPLE\\\\\\\\Administrator EXAMPLE\\\\\\\\win-client$\""
 
 #. Tag: para
 #: net_samba.xml:1239
@@ -1750,19 +2214,20 @@ msgid ""
 "Ensure that any ALLOW_USERS are also permitted traversal of the <filename>."
 "snapshots</filename> subdirectory."
 msgstr ""
+"さらに <filename>.snapshots</filename> サブディレクトリに対して、 ALLOW_USERS "
+"で許可されるユーザからのアクセスを許すように設定します:"
 
 #. Tag: screen
 #: net_samba.xml:1243
 #, no-c-format
-msgid ""
-"fsrvp-server:~ # snapper -c &lt;snapper_config&gt; set-config SYNC_ACL=yes"
-msgstr ""
+msgid "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; set-config SYNC_ACL=yes"
+msgstr "fsrvp-server:~ # snapper -c &lt;snapper_config&gt; set-config SYNC_ACL=yes"
 
 #. Tag: title
 #: net_samba.xml:1245
 #, no-c-format
 msgid "Path Escaping"
-msgstr ""
+msgstr "パスのエスケープ処理について"
 
 #. Tag: para
 #: net_samba.xml:1246
@@ -1772,6 +2237,9 @@ msgid ""
 "stored in <filename>/etc/snapper/configs/&lt;snapper_config&gt;</filename> "
 "is escaped once."
 msgstr ""
+"'\\' のエスケープ処理にご注意ください。 <filename>/etc/snapper/configs/&lt;"
+"snapper_config&gt;</filename> 内でエスケープ処理を行なうため、コマンドの実行時には"
+" 2 回エスケープ処理が必要となります。"
 
 #. Tag: para
 #: net_samba.xml:1253
@@ -1780,12 +2248,14 @@ msgid ""
 "\"EXAMPLE\\win-client$\" corresponds to the Windows client computer account. "
 "Windows issues initial FSRVP requests while authenticated with this account."
 msgstr ""
+"\"EXAMPLE\\win-client$\" は Windows クライアントのコンピュータアカウントを表わしています。"
+" Windows 側では、最初の FSRVP リクエストを、このアカウントで認証して行ないます。"
 
 #. Tag: para
 #: net_samba.xml:1260
 #, no-c-format
 msgid "Grant Windows client account necessary privileges:"
-msgstr ""
+msgstr "Windows クライアントのアカウントに対して、必要な権限を許可します:"
 
 #. Tag: screen
 #: net_samba.xml:1263
@@ -1795,6 +2265,9 @@ msgid ""
 "\"EXAMPLE\\\\win-client$\" SeBackupPrivilege\n"
 "Successfully granted rights."
 msgstr ""
+"fsrvp-server:~ # net -U 'Administrator' rpc rights grant \\\n"
+"\"EXAMPLE\\\\win-client$\" SeBackupPrivilege\n"
+"Successfully granted rights."
 
 #. Tag: para
 #: net_samba.xml:1266
@@ -1803,43 +2276,44 @@ msgid ""
 "The previous command is not needed for the \"EXAMPLE\\Administrator\" user, "
 "which has privileges already granted."
 msgstr ""
+"上記のコマンドは \"EXAMPLE\\Administrator\" に対して実行する必要はありません。"
+"既に権限が許可されているためです。"
 
 #. Tag: title
 #: net_samba.xml:1273
 #, no-c-format
 msgid "Windows Client Setup and <command>DiskShadow.exe</command> in Action"
-msgstr ""
+msgstr "Windows クライアントの設定と <command>DiskShadow.exe</command> の実行"
 
 #. Tag: para
 #: net_samba.xml:1275
 #, no-c-format
 msgid "Boot Windows Server 2012 (example host name WIN-CLIENT)."
-msgstr ""
+msgstr "Windows Server 2012 を起動します (この例では WIN-CLIENT というホスト名とします) 。"
 
 #. Tag: para
 #: net_samba.xml:1280
 #, no-c-format
-msgid ""
-"Join the same Active Directory domain EXAMPLE as with the &productname;."
-msgstr ""
+msgid "Join the same Active Directory domain EXAMPLE as with the &productname;."
+msgstr "&productname; と同じ Active Directory ドメイン (EXAMPLE) に参加します。"
 
 #. Tag: para
 #: net_samba.xml:1285
 #, no-c-format
 msgid "Reboot."
-msgstr ""
+msgstr "再起動します。"
 
 #. Tag: para
 #: net_samba.xml:1290
 #, no-c-format
 msgid "Open Powershell."
-msgstr ""
+msgstr "PowerShell を起動します。"
 
 #. Tag: para
 #: net_samba.xml:1295
 #, no-c-format
 msgid "Start <command>DiskShadow.exe</command> and begin the backup procedure:"
-msgstr ""
+msgstr "<command>DiskShadow.exe</command> を起動して、バックアップ手順を開始します:"
 
 #. Tag: screen
 #: net_samba.xml:1298
@@ -1852,24 +2326,30 @@ msgid ""
 "\n"
 "DISKSHADOW&gt; begin backup"
 msgstr ""
+"PS C:\\Users\\Administrator.EXAMPLE&gt; diskshadow.exe\n"
+"Microsoft DiskShadow バージョン 1.0\n"
+"Copyright (C) 2012 Microsoft Corporation\n"
+"On computer:  WIN-CLIENT,  6/17/2014 3:53:54 PM\n"
+"\n"
+"DISKSHADOW&gt; begin backup"
 
 #. Tag: para
 #: net_samba.xml:1306
 #, no-c-format
 msgid "Specify that shadow copy persists across program exit, reset or reboot:"
-msgstr ""
+msgstr "プログラム終了後やリセット／再起動後にも、シャドウコピーが保持されるように設定します:"
 
 #. Tag: screen
 #: net_samba.xml:1309
 #, no-c-format
 msgid "DISKSHADOW&gt; set context PERSISTENT"
-msgstr ""
+msgstr "DISKSHADOW&gt; set context PERSISTENT"
 
 #. Tag: para
 #: net_samba.xml:1312
 #, no-c-format
 msgid "Check whether the specified share supports snapshots, and create one:"
-msgstr ""
+msgstr "指定した共有でスナップショットが有効化されているかどうかを調べ、有効化されていればスナップショットを作成します:"
 
 #. Tag: screen
 #: net_samba.xml:1315
@@ -1906,25 +2386,47 @@ msgid ""
 "\n"
 "Number of shadow copies listed: 1"
 msgstr ""
+"DISKSHADOW&gt; add volume \\\\fsrvp-server\\sles_snapper\n"
+"\n"
+"DISKSHADOW&gt; create\n"
+"シャドウ ID {de4ddca4-4978-4805-8776-cdf82d190a4a} のエイリアス VSS_SHADOW_1 は環境変数として設定されています。\n"
+"シャドウ セット ID {c58e1452-c554-400e-a266-d11d5c837cb1} のエイリアス VSS_SHADOW_SET は環境変数として設定されています。\n"
+"\n"
+"シャドウ コピー セット ID {c58e1452-c554-400e-a266-d11d5c837cb1} を使用してすべてのシャドウ コピーを照会しています\n"
+"\n"
+" * シャドウ コピー ID = {de4ddca4-4978-4805-8776-cdf82d190a4a}     %VSS_SHADOW_1%\n"
+"    - シャドウ コピー セット: {c58e1452-c554-400e-a266-d11d5c837cb1}  %VSS_SHADOW_SET%\n"
+"    - シャドウ コピーのオリジナル カウント数 = 1\n"
+"    - 元のボリューム名: \\\\FSRVP-SERVER\\SLES_SNAPPER\\ \\\n"
+"      [ボリュームはこのマシンにありません]\n"
+"    - 作成時間: 6/17/2014 3:54:43 PM\n"
+"    - シャドウ コピー デバイス名:\n"
+"      \\\\FSRVP-SERVER\\SLES_SNAPPER@{31afd84a-44a7-41be-b9b0-751898756faa}\n"
+"    - 作成元のコンピューター: FSRVP-SERVER\n"
+"    - サービス コンピューター: win-client.example.com\n"
+"    - 露出されていません\n"
+"    - プロバイダー ID: {89300202-3cec-4981-9171-19f59559e0f2}\n"
+"    - 属性:  No_Auto_Release Persistent FileShare\n"
+"\n"
+"一覧表示したシャドウ コピーの数: 1"
 
 #. Tag: para
 #: net_samba.xml:1343
 #, no-c-format
 msgid "Finish the backup procedure:"
-msgstr ""
+msgstr "最後にバックアップを完了します:"
 
 #. Tag: screen
 #: net_samba.xml:1346
 #, no-c-format
 msgid "DISKSHADOW&gt; end backup"
-msgstr ""
+msgstr "DISKSHADOW&gt; end backup"
 
 #. Tag: para
 #: net_samba.xml:1349
 #, no-c-format
-msgid ""
-"After the snapshot was created, try to delete it and verify the deletion:"
-msgstr ""
+msgid "After the snapshot was created, try to delete it and verify the deletion:"
+msgstr "スナップショットを作成したら、削除を行なったあと、削除ができたことを確認します:"
 
 #. Tag: screen
 #: net_samba.xml:1353
@@ -1942,12 +2444,21 @@ msgid ""
 "Querying all shadow copies on the computer ...\n"
 "No shadow copies found in system."
 msgstr ""
+"DISKSHADOW&gt; delete shadows volume \\\\FSRVP-SERVER\\SLES_SNAPPER\\\n"
+"プロバイダー {89300202-3cec-4981-9171-19f59559e0f2} からボリューム \\\\FSRVP-SERVER\\SLES_SNAPPER\\ のシャドウ コピー {de4ddca4-4978-4805-8776-cdf82d190a4a} を削除しています [Attributes: 0x04000009]...\n"
+"\n"
+"削除したシャドウ コピーの数: 1\n"
+"\n"
+"DISKSHADOW&gt; list shadows all\n"
+"\n"
+"コンピューター上のすべてのシャドウ コピーを照会しています...\n"
+"システム内にシャドウ コピーが見つかりませんでした。"
 
 #. Tag: title
 #: net_samba.xml:1370
 #, no-c-format
 msgid "For More Information"
-msgstr ""
+msgstr "さらなる情報"
 
 #. Tag: para
 #: net_samba.xml:1372
@@ -1964,6 +2475,16 @@ msgid ""
 "related information is <filename>/usr/share/doc/packages/samba/README.SUSE</"
 "filename> ."
 msgstr ""
+"Samba 向けのドキュメンテーションは、既定ではインストールされない <systemitem>"
+"samba-doc</systemitem> パッケージ内に含まれています。インストールを行ないたい"
+"場合は、 <command>zypper install samba-doc</command> を実行してください。"
+"コマンドラインで <command>apropos</command> <option>samba</option> と入力して"
+"実行するとマニュアルページの一覧を表示することができるほか、 <filename>/usr/share"
+"/doc/packages/samba</filename> ディレクトリ内には、さらなるオンライン文書と設定例"
+"が用意されています。また <filename>examples</filename> サブディレクトリ内には、"
+"コメント付きの設定サンプル ( <filename>smb.conf.SUSE</filename> ) も用意されています。"
+"このほか、 Samba 関連の情報として <filename>/usr/share/doc/packages/samba/README.SUSE</"
+"filename> ファイルもあります。"
 
 #. Tag: para
 #: net_samba.xml:1385
@@ -1974,3 +2495,7 @@ msgid ""
 "addition to that, Part V of the document provides a step-by-step guide to "
 "checking your configuration."
 msgstr ""
+"Samba チームが提供する Samba HOWTO (<link xlink:href=\"https://wiki.samba.org\"/>) "
+"には、主にトラブルシューティングの情報が提供されています。これに加えて、設定を"
+"チェックするための手順を追った説明も用意されています。"
+
