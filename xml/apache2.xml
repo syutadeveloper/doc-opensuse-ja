@@ -4,18 +4,10 @@
 %entities;
 ]>
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha.apache2">
- <title>The Apache HTTP Server</title>
+ <title>Apache HTTP サーバ</title>
  <info>
   <abstract>
-   <para>
-    According to the survey from <link xlink:href="http://www.netcraft.com/"/>,
-    the Apache HTTP Server (Apache) is the world's most widely-used Web server.
-    Developed by the Apache Software Foundation
-    (<link xlink:href="http://www.apache.org/"/>), it is available for most
-    operating systems. &productnamereg; includes Apache version 2.4. In this
-    chapter, learn how to install, configure and set up a Web server; how to
-    use SSL, CGI, and additional modules; and how to troubleshoot Apache.
-   </para>
+   <para><link xlink:href="http://www.netcraft.com/"/> の調査によると、 Apache HTTP サーバ (Apache) は世界で最も使われている Web サーバです。この Web サーバは Apache Software Foundation ( <link xlink:href="http://www.apache.org/"/> ) によって開発されているソフトウエアで、ほとんどのオペレーティングシステムで動作します。 &productnamereg; では Apache バージョン 2.4 が同梱されています。本章では、 Web サーバのインストールから設定のほか、 SSL や CGI などの追加モジュールの設定方法やトラブルシューティングまでの範囲を説明しています。</para>
   </abstract>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker/>
@@ -23,226 +15,110 @@
   </dm:docmanager>
  </info>
  <sect1 xml:id="sec.apache2.quickstart">
-  <title>Quick Start</title>
+  <title>クイックスタート</title>
 
-  <para>
-   With this section, quickly set up and start Apache. You must be &rootuser;
-   to install and configure Apache.
-  </para>
+  <para>本章では、 Apache を手短かに設定して起動するまでの手順を説明しています。なお、 Apache のインストールと設定は、 &rootuser; で行なわなければなりません。</para>
 
   <sect2 xml:id="sec.apache.quickstart.requirements">
-   <title>Requirements</title>
-   <para>
-    Make sure the following requirements are met before trying to set up the
-    Apache Web server:
-   </para>
+   <title>要件</title>
+   <para>Apache Web サーバを設定しようとする前に、まずは下記の要件全てを満たしていることをご確認ください:</para>
    <orderedlist spacing="normal">
     <listitem>
-     <para>
-      The machine's network is configured properly. For more information about
-      this topic, refer to <xref linkend="cha.network"/>.
-     </para>
+     <para>対象となるマシンのネットワークが正しく設定されている必要があります。ネットワークの設定について、詳しくは <xref linkend="cha.network"/> をお読みください。</para>
     </listitem>
     <listitem>
-     <para>
-      The machine's exact system time is maintained by synchronizing with a
-      time server. This is necessary because parts of the HTTP protocol depend
-      on the correct time. See <xref linkend="cha.ntp"/> to learn more
-      about this topic.
-     </para>
+     <para>対象となるマシンのシステム時刻が、タイムサーバとの間で正しく同期している必要があります。 HTTP プロトコルでは、時刻をベースにした仕組みを利用しているものがあるためです。詳しくは <xref linkend="cha.ntp"/> をお読みください。</para>
     </listitem>
     <listitem>
-     <para>
-      The latest security updates are installed. If in doubt, run a &yast;
-      Online Update.
-     </para>
+     <para>最新のセキュリティ更新を適用しておく必要があります。何か不安な点があれば、念のため &yast; オンライン更新を実行しておいてください。</para>
     </listitem>
     <listitem>
-     <para>
-      The default Web server port (<literal>80</literal>) is opened in the
-      firewall. For this, configure &firewalld; to allow the service
-      <literal>http</literal> in the public zone.
-      See <xref linkend="sec.security.firewall.firewalld.cmd"/> for details.
-     </para>
+     <para>既定の Web サーバのポート ( <literal>80</literal> ) をファイアウオールで開く必要があります。ファイアウオールでポートを開くには、 &firewalld; で <literal>http</literal> サービスを公開ゾーンで許可する必要があります。詳しくは <xref linkend="sec.security.firewall.firewalld.cmd"/> をお読みください。</para>
     </listitem>
    </orderedlist>
   </sect2>
 
   <sect2 xml:id="sec.apache2.quickstart.installation">
-   <title>Installation</title>
-   <para>
-    Apache on &productname; is not installed by default. To install it with a
-    standard, predefined configuration that runs <quote>out of the box</quote>,
-    proceed as follows:
-   </para>
+   <title>インストール</title>
+   <para>&productname; では、 Apache は既定ではインストールされません。インストールを行ない、標準的な <quote>出荷時設定</quote> で開始したい場合は、下記の手順を実施します:</para>
    <procedure>
-    <title>Installing Apache with the Default Configuration</title>
+    <title>既定の設定による Apache のインストール</title>
     <step>
-     <para>
-      Start &yast; and select <menuchoice> <guimenu>Software</guimenu>
-      <guimenu>Software Management</guimenu> </menuchoice>.
-     </para>
+     <para>&yast; を起動して、 <menuchoice> <guimenu>ソフトウエア</guimenu> <guimenu>ソフトウエア管理</guimenu> </menuchoice> を選択します。</para>
     </step>
     <step>
-     <para>
-      Choose <menuchoice> <guimenu>View</guimenu> <guimenu>Patterns</guimenu>
-      </menuchoice> and select <guimenu>Web and LAMP Server</guimenu>.
-     </para>
+     <para><menuchoice> <guimenu>表示</guimenu> <guimenu>パターン</guimenu> </menuchoice> を選択し、 <guimenu>Web および LAMP サーバ</guimenu> にチェックを入れます。</para>
     </step>
     <step>
-     <para>
-      Confirm the installation of the dependent packages to finish the
-      installation process.
-     </para>
+     <para>あとは <guimenu>了解</guimenu> を押して、インストール処理を完了します。依存関係のパッケージ一覧が表示されますので、こちらでも <guimenu>続行</guimenu> を押してください。</para>
     </step>
    </procedure>
   </sect2>
 
   <sect2 xml:id="sec.apache.quickstart.start">
-   <title>Start</title>
-   <para>
-    You can start Apache automatically at boot time or start it manually.
-   </para>
-   <para>
-    To make sure that Apache is automatically started during boot in the
-    targets <literal>multi-user.target</literal> and
-    <literal>graphical.target</literal>, execute the following command:
-   </para>
+   <title>起動</title>
+   <para>Apache はシステムの起動時に自動的に開始することができるほか、手作業で開始することもできます。</para>
+   <para>Apache をシステムの起動時に自動的に開始したい場合は、 <literal>multi-user.target</literal> と <literal>graphical.target</literal> のターゲット内に Apache を追加します。具体的には、下記のコマンドを実行します:</para>
 <screen>&prompt.sudo;systemctl enable apache2</screen>
-   <para>
-    <remark>taroth 2014-02-11: commenting the following procedure as it is unsure
-      how to enable a service for certain targets with YaST Services Manager,
-      filed bnc# 863333 for it
-     UPDATE tbazant 2015-08-20: still not clear, leaving commented out
-     </remark>
-   </para>
-   <para>
-    For more information about the systemd targets in &productname; and a
-    description of the &yast; <guimenu>&ycc_runlevel;</guimenu>, refer to
-    <xref linkend="sec.boot.runlevel.edit"/>.
-   </para>
-   <para>
-    To manually start Apache using the shell, run <command>systemctl start
-    apache2</command>.
-   </para>
+   <para><remark>taroth 2014-02-11: commenting the following procedure as it is unsure how to enable a service for certain targets with YaST Services Manager, filed bnc# 863333 for it UPDATE tbazant 2015-08-20: still not clear, leaving commented out </remark></para>
+   <para>&productname; における systemd のターゲットに関する説明や、 &yast; の <guimenu>&ycc_runlevel;</guimenu> の説明について、詳しくは <xref linkend="sec.boot.runlevel.edit"/> をお読みください。</para>
+   <para>シェルを利用して Apache を手作業で開始したい場合は、 <command>systemctl start apache2</command> を実行します。</para>
    <procedure>
-    <title>Checking if Apache is Running</title>
-    <para>
-     If you do not receive error messages when starting Apache, this usually
-     indicates that the Web server is running. To test this:
-    </para>
+    <title>Apache が動作しているかどうかの確認</title>
+    <para>Apache の開始時に何もエラーメッセージが表示されない場合は、 Web サーバが問題なく起動して動作していることを表わしています。動作確認を行なうには、下記の手順で行ないます:</para>
     <step>
-     <para>
-      Start a browser and open <link xlink:href="http://localhost/"/>.
-     </para>
-     <para>
-      If Apache is up and running, you get a test page stating <quote>It
-      works!</quote>.
-     </para>
+     <para>ブラウザを起動して <link xlink:href="http://localhost/"/> を開きます。</para>
+     <para>Apache が開始されていて動作していれば、 <quote>It works!</quote> というメッセージが表示されるはずです。</para>
     </step>
     <step>
-     <para>
-      If you do not see this page, refer to
-      <xref linkend="sec.apache2.troubleeshooting"/>.
-     </para>
+     <para>このようなページが表示されない場合は、 <xref linkend="sec.apache2.troubleeshooting"/> をご覧ください。</para>
     </step>
    </procedure>
-   <para>
-    Now that the Web server is running, you can add your own documents, adjust
-    the configuration according to your needs, or add functionality by
-    installing modules.
-   </para>
+   <para>Web サーバが動作していることを確認できたら、あとは必要な文書を追加したり、必要に応じて設定を調整したり、モジュールを追加して機能を追加したりすることができるようになります。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.apache2.configuration">
-  <title>Configuring Apache</title>
+  <title>Apache の設定</title>
 
-  <para>
-   &productname; offers two configuration options:
-  </para>
+  <para>&productname; では 2 種類の設定方法を用意しています:</para>
 
   <itemizedlist mark="bullet" spacing="normal">
    <listitem>
-    <para>
-     <xref linkend="sec.apache2.configuration.manually" xrefstyle="select:title"/>
-    </para>
+    <para><xref linkend="sec.apache2.configuration.manually" xrefstyle="select:title"/></para>
    </listitem>
    <listitem>
-    <para>
-     <xref linkend="sec.apache2.configuration.yast" xrefstyle="select:title"/>
-    </para>
+    <para><xref linkend="sec.apache2.configuration.yast" xrefstyle="select:title"/></para>
    </listitem>
   </itemizedlist>
 
-  <para>
-   Manual configuration offers a higher level of detail, but lacks the
-   convenience of the &yast; GUI.
-  </para>
+  <para>手作業で設定を行なうと、より細かいところまで設定を行なうことができますが、 &yast; GUI ほどの利便性はありません。</para>
 
   <important>
-   <title>Reload or Restart Apache after Configuration Changes</title>
-   <para>
-    Most configuration changes require a reload (some also a restart) of Apache
-    to take effect. Manually reload Apache with <command>systemctl reload
-    apache2</command> or use one of the restart options as described in
-    <xref linkend="sec.apache2.start_stop"/>.
-   </para>
-   <para>
-    If you configure Apache with &yast;, this can be taken care of
-    automatically if you set <guimenu>HTTP Service</guimenu> to
-    <guimenu>Enabled</guimenu> as described in
-    <xref linkend="sec.apache2.configuration.yast.server_configuration"/>.
-   </para>
+   <title>設定変更後の Apache の再読み込みもしくは再起動について</title>
+   <para>設定を変更した場合は、設定を反映させるために Apache の再読み込み (場合によっては再起動) が必要となります。手作業で再読み込みを行ないたい場合は、 <command>systemctl reload apache2</command> を実行してください。また、再起動は <xref linkend="sec.apache2.start_stop"/> に示されているいずれかの方法を実行してください。</para>
+   <para>&yast; で Apache を設定した場合は、 <guimenu>HTTP サービス</guimenu> が <guimenu>有効</guimenu> に設定されていると、再読み込みを自動的に実施するようになっています。詳しくは <xref linkend="sec.apache2.configuration.yast.server_configuration"/> をお読みください。</para>
   </important>
 
   <sect2 xml:id="sec.apache2.configuration.manually.configfiles">
-   <title>Apache Configuration Files</title>
-   <para>
-    This section gives an overview of the Apache configuration files. If you
-    use &yast; for configuration, you do not need to touch these
-    files&mdash;however, the information might be useful for you to
-    switch to manual configuration later on.
-   </para>
-   <para>
-    Apache configuration files can be found in two different locations:
-   </para>
+   <title>Apache の設定ファイル</title>
+   <para>本章では、 Apache の設定ファイルに関する概要説明を行なっています。設定にあたって &yast; を使用している場合は、これらのファイルを直接編集する必要はありません。しかしながら、あとから手作業で編集するように切り替える場合に備えて、あらかじめいくつかの情報を知っておくと良いでしょう。</para>
+   <para>Apache の設定ファイルは、下記の 2 箇所に配置されています:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      <xref linkend="sec.apache2.configuration.manually.configfiles.etc_sysconfig_apache2" xrefstyle="select:title"/>
-     </para>
+     <para><xref linkend="sec.apache2.configuration.manually.configfiles.etc_sysconfig_apache2" xrefstyle="select:title"/></para>
     </listitem>
     <listitem>
-     <para>
-      <xref linkend="sec.apache2.configuration.manually.configfiles.etc_apache2" xrefstyle="select:title"/>
-     </para>
+     <para><xref linkend="sec.apache2.configuration.manually.configfiles.etc_apache2" xrefstyle="select:title"/></para>
     </listitem>
    </itemizedlist>
    <sect3 xml:id="sec.apache2.configuration.manually.configfiles.etc_sysconfig_apache2">
     <title><filename>/etc/sysconfig/apache2</filename></title>
-    <para>
-     <filename>/etc/sysconfig/apache2</filename> controls some global settings
-     of Apache, like modules to load, additional configuration files to
-     include, flags with which the server should be started, and flags that
-     should be added to the command line. Every configuration option in this
-     file is extensively documented and therefore not mentioned here. For a
-     general-purpose Web server, the settings in
-     <filename>/etc/sysconfig/apache2</filename> should be sufficient for any
-     configuration needs.
-    </para>
+    <para><filename>/etc/sysconfig/apache2</filename> では、 Apache 全体のグローバル設定が提供されています。たとえば読み込むべきモジュールや取り込むべき追加の設定ファイル、サーバを起動する際のフラグやコマンドラインに追加すべき設定などがあります。このファイル内での全ての設定オプションは、設定ファイル内にコメントで説明しているため、ここでは詳しく説明しません。一般的な Web サーバであれば、 <filename>/etc/sysconfig/apache2</filename> を設定するだけで、要件に十分対応することができるはずです。</para>
    </sect3>
    <sect3 xml:id="sec.apache2.configuration.manually.configfiles.etc_apache2">
     <title><filename>/etc/apache2/</filename></title>
-    <para>
-     <filename>/etc/apache2/</filename> hosts all configuration files for
-     Apache. In the following, the purpose of each file is explained. Each file
-     includes several configuration options (also called
-     <emphasis>directives</emphasis>). Every configuration option in these
-     files is extensively documented and therefore not mentioned here.
-    </para>
-    <para>
-     The Apache configuration files are organized as follows:
-    </para>
+    <para><filename>/etc/apache2/</filename> には Apache に対する全ての設定ファイルが含まれています。下記ではそれぞれのファイルの用途を説明しています。各ファイルにはいくつかの設定オプション (<emphasis>ディレクティブ</emphasis> と呼びます) が用意されていますが、同様にこれらのファイルのコメント内に説明が書かれています。そのため、こちらもここでは詳しく説明しません。</para>
+    <para>Apache の設定ファイルは、下記のような構成になっています:</para>
 <screen>/etc/apache2/
      |
      |- charset.conv
@@ -270,164 +146,89 @@
      |- vhosts.d
      |   |- *.conf</screen>
     <variablelist>
-     <title>Apache Configuration Files in /etc/apache2/</title>
+     <title>/etc/apache2/ 内の Apache 設定ファイル</title>
      <varlistentry>
-      <term><filename>charset.conv</filename>
-      </term>
+      <term><filename>charset.conv</filename></term>
       <listitem>
-       <para>
-        Specifies which character sets to use for different languages. Do not
-        edit this file.
-       </para>
+       <para>様々な言語でどの文字セットを使用するのかを指定しています。このファイルについては編集してはなりません。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>conf.d/*.conf</filename>
-      </term>
+      <term><filename>conf.d/*.conf</filename></term>
       <listitem>
-       <para>
-        Configuration files added by other modules. These configuration files
-        can be included into your virtual host configuration where needed. See
-        <filename>vhosts.d/vhost.template</filename> for examples. By doing so,
-        you can provide different module sets for different virtual hosts.
-       </para>
+       <para>他のモジュールによって追加された設定ファイルが保存されます。これらの設定ファイルは、必要に応じて仮想ホストの設定ファイルから取り込むことができます。使用例について、詳しくは <filename>vhosts.d/vhost.template</filename> をお読みください。また、これを行なうことで、それぞれの仮想ホストに対して別々のモジュールセットを提供することができるようになります。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>default-server.conf</filename>
-      </term>
+      <term><filename>default-server.conf</filename></term>
       <listitem>
-       <para>
-        Global configuration for all virtual hosts with reasonable defaults.
-        Instead of changing the values, overwrite them with a virtual host
-        configuration.
-       </para>
+       <para>適切な既定値が設定された、全ての仮想ホスト向けのグローバル設定です。ここに書かれている値を書き換えるのではなく、仮想ホストの設定ファイル内で値を指定して変更するようにしてください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>errors.conf</filename>
-      </term>
+      <term><filename>errors.conf</filename></term>
       <listitem>
-       <para>
-        Defines how Apache responds to errors. To customize these messages for
-        all virtual hosts, edit this file. Otherwise overwrite these directives
-        in your virtual host configurations.
-       </para>
+       <para>Apache のエラー応答方法を定義しています。全ての仮想ホストに対してエラーメッセージをカスタマイズしたい場合は、このファイルを編集してください。それぞれの仮想ホストで別々のエラーメッセージを設定したい場合は、それぞれの仮想ホストの設定内で設定を行なってください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>httpd.conf</filename>
-      </term>
+      <term><filename>httpd.conf</filename></term>
       <listitem>
-       <para>
-        The main Apache server configuration file. Avoid changing this file. It
-        primarily contains include statements and global settings. Overwrite
-        global settings in the pertinent configuration files listed here.
-        Change host-specific settings (such as document root) in your virtual
-        host configuration.
-       </para>
+       <para>Apache のメインの設定ファイルです。このファイルを変更することは避けてください。主にステートメントとグローバル設定が含まれています。設定を変更したい場合は、対応する設定ファイル内で設定を行なってください。また、ホスト固有の設定 (たとえばドキュメントルートなど) を行ないたい場合は、仮想ホストの設定で行なってください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>listen.conf</filename>
-      </term>
+      <term><filename>listen.conf</filename></term>
       <listitem>
-       <para>
-        Binds Apache to specific IP addresses and ports. Name-based virtual
-        hosting is also configured here. For details, see
-        <xref linkend="sec.apache2.configuration.manually.vhost.named_vhosts"/>.
-       </para>
+       <para>Apache がどの IP アドレスやポートで待ち受けるかを設定するファイルです。名前ベースの仮想ホストについても、ここで設定を行ないます。詳しくは <xref linkend="sec.apache2.configuration.manually.vhost.named_vhosts"/> をお読みください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>magic</filename>
-      </term>
+      <term><filename>magic</filename></term>
       <listitem>
-       <para>
-        Data for the mime_magic module that helps Apache automatically
-        determine the MIME type of an unknown file. Do not change this file.
-       </para>
+       <para>Apache が未知のファイルに対して MIME タイプを自動判別する際に使用する、 mime_magic モジュール向けのデータファイルです。このファイルを変更してはなりません。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>mime.types</filename>
-      </term>
+      <term><filename>mime.types</filename></term>
       <listitem>
-       <para>
-        MIME types known by the system (this actually is a link to
-        <filename>/etc/mime.types</filename>). Do not edit this file. If you
-        need to add MIME types not listed here, add them to
-        <filename>mod_mime-defaults.conf</filename>.
-       </para>
+       <para>システム側で既知の MIME タイプを一覧で示しているファイルです (実際には <filename>/etc/mime.types</filename> へのリンクになっています) 。このファイルについても、変更を行なってはなりません。ここに書かれていない MIME タイプを追加したい場合は、 <filename>mod_mime-defaults.conf</filename> ファイルに追加を行なってください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>mod_*.conf</filename>
-      </term>
+      <term><filename>mod_*.conf</filename></term>
       <listitem>
-       <para>
-        Configuration files for the modules that are installed by default.
-        Refer to <xref linkend="sec.apache2.modules"/> for details. Note that
-        configuration files for optional modules reside in the directory
-        <filename>conf.d</filename>.
-       </para>
+       <para>既定でインストールされるモジュール向けの設定ファイルです。詳しくは <xref linkend="sec.apache2.modules"/> をお読みください。なお、オプションモジュール向けの設定ファイルは、 <filename>conf.d</filename> ディレクトリ内に存在しています。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>server-tuning.conf</filename>
-      </term>
+      <term><filename>server-tuning.conf</filename></term>
       <listitem>
-       <para>
-        Contains configuration directives for the different MPMs (see
-        <xref linkend="sec.apache2.modules.mpm"/>) and general configuration
-        options that control Apache's performance. Properly test your Web
-        server when making changes here.
-       </para>
+       <para>様々な MPM (詳しくは <xref linkend="sec.apache2.modules.mpm"/> をお読みください) に対する設定ディレクティブと、 Apache の性能を制御するための一般的な設定オプションが含まれています。このファイル内の設定を変更するにあたっては、お使いの Web サーバで十分なテストを行なってください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>ssl-global.conf</filename> and <filename>ssl.*</filename>
-      </term>
+      <term><filename>ssl-global.conf</filename> および <filename>ssl.*</filename></term>
       <listitem>
-       <para>
-        Global SSL configuration and SSL certificate data. Refer to
-        <xref linkend="sec.apache2.ssl"/> for details.
-       </para>
+       <para>SSL の全体設定と SSL の証明書ファイルが含まれています。詳しくは <xref linkend="sec.apache2.ssl"/> をお読みください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>sysconfig.d/*.conf</filename>
-      </term>
+      <term><filename>sysconfig.d/*.conf</filename></term>
       <listitem>
-       <para>
-        Configuration files automatically generated from
-        <filename>/etc/sysconfig/apache2</filename>. Do not change any of these
-        files&mdash;edit <filename>/etc/sysconfig/apache2</filename> instead.
-        Do not put other configuration files in this directory.
-       </para>
+       <para><filename>/etc/sysconfig/apache2</filename> から自動生成された設定ファイルです。これらのファイルについては変更せず、 <filename>/etc/sysconfig/apache2</filename> を変更して対応してください。また、このディレクトリには他の設定ファイルを配置しないでください。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>uid.conf</filename>
-      </term>
+      <term><filename>uid.conf</filename></term>
       <listitem>
-       <para>
-        Specifies under which user and group ID Apache runs. Do not change this
-        file.
-       </para>
+       <para>Apache を動作させる際のユーザ ID とグループ ID を指定しています。このファイルについても変更してはなりません。</para>
       </listitem>
      </varlistentry>
      <varlistentry>
-      <term><filename>vhosts.d/*.conf</filename>
-      </term>
+      <term><filename>vhosts.d/*.conf</filename></term>
       <listitem>
-       <para>
-        Your virtual host configuration should be located here. The directory
-        contains template files for virtual hosts with and without SSL. Every
-        file in this directory ending with <filename>.conf</filename> is
-        automatically included in the Apache configuration. Refer to
-        <xref linkend="sec.apache2.configuration.manually.vhost"/> for details.
-       </para>
+       <para>仮想ホストの設定は、この形式で保存する必要があります。このディレクトリ内には、 SSL ありの場合と無しの場合に対応する、仮想ホストの設定テンプレート (雛形) が用意されています。また、 Apache の設定ファイルとして自動的に取り込むには、ファイル名の末尾が <filename>.conf</filename> で終わっていなければなりません。詳しくは <xref linkend="sec.apache2.configuration.manually.vhost"/> をお読みください。</para>
       </listitem>
      </varlistentry>
     </variablelist>
@@ -435,99 +236,28 @@
   </sect2>
 
   <sect2 xml:id="sec.apache2.configuration.manually">
-   <title>Configuring Apache Manually</title>
-   <para>
-    Configuring Apache manually involves editing plain text configuration files
-    as user <systemitem class="username">root</systemitem>.
-   </para>
+   <title>Apache の手作業での設定</title>
+   <para>Apache を手作業で設定するにあたっては、純粋なテキストファイルで書かれている設定ファイルを <systemitem class="username">root</systemitem> で編集する必要があります。</para>
    <sect3 xml:id="sec.apache2.configuration.manually.vhost">
-    <title>Virtual Host Configuration</title>
-    <para>
-     The term <emphasis>virtual host</emphasis> refers to Apache's ability to
-     serve multiple universal resource identifiers (URIs) from the same
-     physical machine. This means that several domains, such as &wwwname; and
-     &wwwname1;, are run by a single Web server on one physical machine.
-    </para>
-    <para>
-     It is common practice to use virtual hosts to save administrative effort
-     (only a single Web server needs to be maintained) and hardware expenses
-     (each domain does not require a dedicated server). Virtual hosts can be
-     name based, IP based, or port based.
-    </para>
-    <para>
-     To list all existing virtual hosts, use the command
-     <command>apache2ctl</command> <option>-S</option>. This outputs a list
-     showing the default server and all virtual hosts together with their IP
-     addresses and listening ports. Furthermore, the list also contains an
-     entry for each virtual host showing its location in the configuration
-     files.
-    </para>
-    <para>
-     Virtual hosts can be configured via &yast; as described in
-     <xref linkend="sec.apache2.configuration.yast.wizard.virtual_hosts"/> or
-     by manually editing a configuration file. By default, Apache in
-     &productname; is prepared for one configuration file per virtual host in
-     <filename>/etc/apache2/vhosts.d/</filename>. All files in this directory
-     with the extension <filename>.conf</filename> are automatically included
-     to the configuration. A basic template for a virtual host is provided in
-     this directory (<filename>vhost.template</filename> or
-     <filename>vhost-ssl.template</filename> for a virtual host with SSL
-     support).
-    </para>
+    <title>仮想ホストの設定</title>
+    <para>Apache における <emphasis>仮想ホスト</emphasis> とは、同一の物理マシン内で複数の統一資源識別子 (URI) を賄う仕組みです。たとえば &wwwname; や &wwwname1; などの異なるドメイン名の Web サーバを、 1 台の物理マシン内にある 1 つの Web サーバで提供することができます。</para>
+    <para>仮想ホストの使用は、管理費用の削減 (管理すべき Web サーバを 1 台にまとめることができる) やハードウエア費用の削減 (それぞれのドメインに対して別々の専用サーバを用意する必要が無くなる) などの効果がある実践的な方法です。仮想ホストは名前 (ドメイン名, ホスト名) ベースのほか、 IP ベースやポートベースでも設定することができます。</para>
+    <para>設定済みの仮想ホストを一覧表示したい場合は、 <command>apache2ctl</command> <option>-S</option> を実行します。これにより、既定のサーバと全ての仮想ホストが一覧表示することができるほか、待ち受ける IP アドレスとポートも表示することができます。これに加えて、それぞれの仮想ホストが指定されている設定ファイル内の場所も表示することができます。</para>
+    <para>仮想ホストは <xref linkend="sec.apache2.configuration.yast.wizard.virtual_hosts"/> で説明しているとおり &yast; で設定することができるほか、設定ファイルを直接編集して設定することもできます。既定では、 &productname; 内の Apache は <filename>/etc/apache2/vhosts.d/</filename> ディレクトリ内にある 1 つのファイルで 1 つの仮想ホストを設定します。また、 Apache の設定ファイルとして自動的に取り込むには、ファイル名の末尾が <filename>.conf</filename> で終わっていなければなりません。また、このディレクトリ内には、仮想ホストを設定するためのテンプレート (雛形) も用意されています。 SSL 無しの場合は <filename>vhost.template</filename> を、 SSL ありの場合は <filename>vhost-ssl.template</filename> をご覧ください。</para>
     <tip>
-     <title>Always Create a Virtual Host Configuration</title>
-     <para>
-      It is recommended to always create a virtual host configuration file,
-      even if your Web server only hosts one domain. By doing so, you not only
-      have the domain-specific configuration in one file, but you can always
-      fall back to a working basic configuration by simply moving, deleting, or
-      renaming the configuration file for the virtual host. For the same
-      reason, you should also create separate configuration files for each
-      virtual host.
-     </para>
-     <para>
-      When using name-based virtual hosts it is recommended to set up a default
-      configuration that will be used when a domain name does not match a
-      virtual host configuration. The default virtual host is the one whose
-      configuration is loaded first. Since the order of the configuration files
-      is determined by file name, start the file name of the default virtual
-      host configuration with an underscore character (<literal>_</literal>) to
-      make sure it is loaded first (for example:
-      <filename>_default_vhost.conf</filename>).
-     </para>
+     <title>仮想ホストの作成について</title>
+     <para>お使いの Web サーバに 1 つのドメインしか存在しないような場合であっても、仮想ホストの設定ファイルを作成しておくことをお勧めします。これにより、ドメイン固有の設定を 1 つのファイルにまとめることができるだけでなく、仮想ホストの設定ファイルを移動したり削除したり名前変更したりするだけで、容易に元の設定に戻すことができるようになります。複数のドメインが存在する場合も同じ理由により、それぞれの仮想ホストに対してそれぞれ設定ファイルを個別に作成することをお勧めします。</para>
+     <para>名前ベースの仮想ホストを使用する場合は、どの仮想ホストの設定にも該当しなかった場合に備えて、その他のドメインの場合 (既定の仮想ホスト) の設定ファイルを作成しておくことをお勧めします。 Apache では、設定ファイルの中で最初に読み込まれる仮想ホストが既定の仮想ホストに設定されますが、読み込みの順序はファイル名で判断される仕組みになっていますので、たとえばファイル名の最初に ( <literal>_</literal> ) 文字を入れるなど (例: <filename>_default_vhost.conf</filename>) して、最初に読み込まれるようにすると良いでしょう。</para>
     </tip>
-    <para>
-     The
-     <systemitem>&lt;VirtualHost&gt;</systemitem><systemitem>&lt;/VirtualHost&gt;</systemitem>
-     block holds the information that applies to a particular domain. When
-     Apache receives a client request for a defined virtual host, it uses the
-     directives enclosed in this section. Almost all directives can be used in
-     a virtual host context. See
-     <link xlink:href="http://httpd.apache.org/docs/2.4/mod/quickreference.html"/>
-     for further information about Apache's configuration directives.
-    </para>
+    <para><systemitem>&lt;VirtualHost&gt;</systemitem> から <systemitem>&lt;/VirtualHost&gt;</systemitem> までのブロックには、特定のドメイン (仮想ホスト) にのみ適用される設定を記述します。 Apache が設定済みの仮想ホストに対する要求を受け取ると、対応するセクション内に書かれた設定を利用して要求を処理します。仮想ホストのブロックには、ほとんど全てのディレクティブを記述することができます。 Apache の設定ディレクティブについて、詳しくは <link xlink:href="http://httpd.apache.org/docs/2.4/mod/quickreference.html"/> をお読みください。</para>
     <sect4 xml:id="sec.apache2.configuration.manually.vhost.named_vhosts">
-     <title>Name-Based Virtual Hosts</title>
-     <para>
-      With name-based virtual hosts, more than one Web site is served per IP
-      address. Apache uses the host field in the HTTP header that is sent by
-      the client to connect the request to a matching
-      <systemitem>ServerName</systemitem> entry of one of the virtual host
-      declarations. If no matching <systemitem>ServerName</systemitem> is
-      found, the first specified virtual host is used as a default.
-     </para>
-     <para>
-      The first step is to create a <literal>&lt;VirtualHost&gt;</literal>
-      block for each different name-based host that you want to serve. Inside
-      each <literal>&lt;VirtualHost&gt;</literal> block, you will need at
-      minimum a <literal>ServerName</literal> directive to designate which host
-      is served and a <literal>DocumentRoot</literal> directive to show where
-      in the file system the content for that host resides.
-     </para>
+     <title>名前ベースの仮想ホスト</title>
+     <para>名前ベースの仮想ホストを使用すると、複数の Web サイトを 1 つの IP アドレスで提供できるようになります。 Apache では、クライアントが送信する HTTP ヘッダ内の Host フィールドを、それぞれの仮想ホスト設定の <systemitem>ServerName</systemitem> と比較して、一致する仮想ホストを使用するようになっています。該当する <systemitem>ServerName</systemitem> が見つからない場合は、一番最初に設定された仮想ホストを既定で使用するようになっています。</para>
+     <para><literal>&lt;VirtualHost&gt;</literal> ブロックを作成するにあたって最初にやるべきことは、提供する名前ベースの仮想ホストの名前の設定です。それぞれの <literal>&lt;VirtualHost&gt;</literal> ブロック内に <literal>ServerName</literal> ディレクティブを指定してドメイン名を指定し、そのドメイン名にアクセスがあった場合に、どのディレクトリからファイルを提供するのかを <literal>DocumentRoot</literal> ディレクティブで指定します。</para>
      <example xml:id="ex.apache2.virtual_hosts.name_based">
-      <title>Basic Examples of Name-Based <systemitem>VirtualHost</systemitem> Entries</title>
+      <title>名前ベースの仮想ホスト (<systemitem>VirtualHost</systemitem>) の設定例</title>
 <screen>&lt;VirtualHost *:80&gt;
-# This first-listed virtual host is also the default for *:80
+# 最初に記述された仮想ホストが既定のホストになります
 ServerName www.example.com
 ServerAlias example.com
 DocumentRoot /srv/www/htdocs/domain
@@ -538,18 +268,10 @@ ServerName other.example.com
 DocumentRoot /srv/www/htdocs/otherdomain
 &lt;/VirtualHost&gt;</screen>
      </example>
-     <para>
-      The opening <systemitem>VirtualHost</systemitem> tag takes the IP address
-      (or fully qualified domain name) as an argument in a name-based virtual
-      host configuration. A port number directive is optional.
-     </para>
-     <para>
-      The wild card <emphasis>*</emphasis> is also allowed as a substitute for
-      the IP address. When using IPv6 addresses, the address must be included
-      in square brackets.
-     </para>
+     <para>名前ベースの仮想ホストを設定する場合、開く側の <systemitem>VirtualHost</systemitem> タグには IP アドレス (もしくは完全修飾ドメイン名) をパラメータとして指定します。ポート番号は指定しても指定していなくてもかまいません。</para>
+     <para>なお、 IP アドレスの代わりにワイルドカード <emphasis>*</emphasis> を指定することもできます。 IPv6 アドレスを指定する場合、アドレスは角括弧で括らなければなりません。</para>
      <example xml:id="ex.apache.directives.virtualhost.name_based">
-      <title>Name-Based <systemitem>VirtualHost</systemitem> Directives</title>
+      <title>名前ベースの仮想ホスト (<systemitem>VirtualHost</systemitem>) の設定</title>
 <screen>&lt;VirtualHost &wwwip;:80&gt;
   ...
 &lt;/VirtualHost&gt;
@@ -572,27 +294,12 @@ DocumentRoot /srv/www/htdocs/otherdomain
      </example>
     </sect4>
     <sect4 xml:id="sec.apache2.configuration.manually.vhost.ip_vhosts">
-     <title>IP-Based Virtual Hosts</title>
-     <para>
-      This alternative virtual host configuration requires the setup of
-      multiple IPs for a machine. One instance of Apache hosts several domains,
-      each of which is assigned a different IP.
-     </para>
-     <para>
-      The physical server must have one IP address for each IP-based virtual
-      host. If the machine does not have multiple network cards, virtual
-      network interfaces (IP aliasing) can also be used.
-     </para>
-     <para>
-      The following example shows Apache running on a machine with the IP
-      <systemitem class="ipaddress">&wwwip;</systemitem>, hosting two domains
-      on the additional IPs <systemitem class="ipaddress">&wwwip1;</systemitem>
-      and <systemitem class="ipaddress">&wwwip2;</systemitem>. A separate
-      <systemitem>VirtualHost</systemitem> block is needed for every virtual
-      server.
-     </para>
+     <title>IP ベースの仮想ホスト</title>
+     <para>IP ベースの仮想ホストを設定するにあたっては、マシンに対して複数の IP アドレスを設定しておかなければなりません。 IP ベースの仮想ホストでも、 Apache は 1 つのインスタンスで複数のドメインに対応することができます (それぞれ異なる IP アドレスに対応する必要があります) 。</para>
+     <para>言い換えると、 IP ベースの仮想ホストを使用するにあたっては、物理サーバ側に仮想ホストの数と同じだけの IP アドレスを設定する必要があります。ただし、ネットワークカードについては、仮想ホストの数と同じだけ存在する必要はありません。 1 つのネットワークカードに複数の IP アドレスを設定すれば十分です。</para>
+     <para>下記の例では、 <systemitem class="ipaddress">&wwwip;</systemitem> の IP アドレスを持つマシンで Apache を動作させ、追加で設定した 2 つの IP アドレスを利用して <systemitem class="ipaddress">&wwwip1;</systemitem> と <systemitem class="ipaddress">&wwwip2;</systemitem> のドメインを動作させています。それぞれの仮想ホストに対して、別々の <systemitem>VirtualHost</systemitem> を指定していることに注意してください。</para>
      <example xml:id="ex.apache.directives.virtualhost.ip_based">
-      <title>IP-Based <systemitem>VirtualHost</systemitem> Directives</title>
+      <title>IP ベースの仮想ホスト (<systemitem>VirtualHost</systemitem>) の設定</title>
 <screen>&lt;VirtualHost &wwwip1;&gt;
   ...
 &lt;/VirtualHost&gt;
@@ -601,112 +308,57 @@ DocumentRoot /srv/www/htdocs/otherdomain
   ...
 &lt;/VirtualHost&gt;</screen>
      </example>
-     <para>
-      Here, <systemitem>VirtualHost</systemitem> directives are only specified
-      for interfaces other than <systemitem>&wwwip;</systemitem>. When a
-      <systemitem>Listen</systemitem> directive is also configured for
-      <systemitem>&wwwip;</systemitem>, a separate IP-based virtual host must
-      be created to answer HTTP requests to that interface&mdash;otherwise the
-      directives found in the default server configuration
-      (<filename>/etc/apache2/default-server.conf</filename>) are applied.
-     </para>
+     <para>なお、この例では <systemitem>VirtualHost</systemitem> ディレクティブで <systemitem>&wwwip;</systemitem> の IP アドレスを設定していません。 <systemitem>Listen</systemitem> ディレクティブで <systemitem>&wwwip;</systemitem> の IP アドレスに対するアクセスを受け入れるように設定している場合は、 <systemitem>&wwwip;</systemitem> 向けの仮想ホストの設定も必要となります。設定を行なわない場合は、既定のサーバ設定 ( <filename>/etc/apache2/default-server.conf</filename> ) が適用されます。</para>
     </sect4>
     <sect4 xml:id="sec.apache2.configuration.manually.vhost.basic_configuration">
-     <title>Basic Virtual Host Configuration</title>
-     <para>
-      At least the following directives should be in each virtual host
-      configuration to set up a virtual host. See
-      <filename>/etc/apache2/vhosts.d/vhost.template</filename> for more
-      options.
-     </para>
+     <title>基本的な仮想ホストの設定</title>
+     <para>仮想ホストを設定するにあたっては、少なくともそれぞれの仮想ホストの設定内に下記のディレクティブを設定する必要があります。それ以外のオプションについては <filename>/etc/apache2/vhosts.d/vhost.template</filename> をお読みください。</para>
      <variablelist>
       <varlistentry>
-       <term><systemitem>ServerName</systemitem>
-       </term>
+       <term><systemitem>ServerName</systemitem></term>
        <listitem>
-        <para>
-         The fully qualified domain name under which the host should be
-         addressed.
-        </para>
+        <para>その仮想ホストに対応する完全修飾ドメイン名を指定します。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><systemitem>DocumentRoot</systemitem>
-       </term>
+       <term><systemitem>DocumentRoot</systemitem></term>
        <listitem>
-        <para>
-         Path to the directory from which Apache should serve files for this
-         host. For security reasons, access to the entire file system is
-         forbidden by default, so you must explicitly unlock this directory
-         within a <systemitem>Directory</systemitem> container.
-        </para>
+        <para>その仮想ホストが提供すべきファイルのあるディレクトリパスを指定します。また、セキュリティ上の理由から、既定ではファイルシステム全体へのアクセスが禁止されていますので、 <systemitem>Directory</systemitem> コンテナを利用して、ディレクトリに対するアクセスを許可しなければなりません。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><systemitem>ServerAdmin</systemitem>
-       </term>
+       <term><systemitem>ServerAdmin</systemitem></term>
        <listitem>
-        <para>
-         E-mail address of the server administrator. This address is, for
-         example, shown on error pages Apache creates.
-        </para>
+        <para>サーバ管理者の電子メールアドレスを指定します。このアドレスはたとえば、 Apache がエラーページを表示する際などに使用されます。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><systemitem>ErrorLog</systemitem>
-       </term>
+       <term><systemitem>ErrorLog</systemitem></term>
        <listitem>
-        <para>
-         The error log file for this virtual host. Although it is not necessary
-         to create separate error log files for each virtual host, it is common
-         practice to do so, because it makes the debugging of errors much
-         easier. <filename>/var/log/apache2/</filename> is the default
-         directory for Apache's log files.
-        </para>
+        <para>この仮想ホストに対するエラーログファイルを指定します。各仮想ホストに対して、それぞれ別々のエラーログファイルを用意する必要はありませんが、エラーへの対応を容易にする目的から、それぞれ別々にしておくことをお勧めします。なお、 Apache のログファイルの既定のディレクトリは、 <filename>/var/log/apache2/</filename> になっています。</para>
        </listitem>
       </varlistentry>
       <varlistentry>
-       <term><systemitem>CustomLog</systemitem>
-       </term>
+       <term><systemitem>CustomLog</systemitem></term>
        <listitem>
-        <para>
-         The access log file for this virtual host. Although it is not
-         necessary to create separate access log files for each virtual host,
-         it is common practice to do so, because it allows the separate
-         analysis of access statistics for each host.
-         <filename>/var/log/apache2/</filename> is the default directory for
-         Apache's log files.
-        </para>
+        <para>この仮想ホストに対するアクセスログファイルを指定します。各仮想ホストに対して、それぞれ別々のアクセスログを用意する必要はありませんが、それぞれの仮想ホストに対するアクセス解析を容易にする目的から、それぞれ別々にしておくことをお勧めします。なお、 Apache のログファイルの既定のディレクトリは、 <filename>/var/log/apache2/</filename> になっています。</para>
        </listitem>
       </varlistentry>
      </variablelist>
-     <para>
-      As mentioned above, access to the whole file system is forbidden by
-      default for security reasons. Therefore, explicitly unlock the
-      directories in which you have placed the files Apache should
-      serve&mdash;for example the <systemitem>DocumentRoot</systemitem>:
-     </para>
+     <para>上述のとおり、ファイルシステム全体に対するアクセスは、セキュリティ上の理由から、規定で禁止されるようになっています。そのため、 Apache がファイルを提供するディレクトリに対しては、明示的に指定して許可を与える必要があります。たとえば <systemitem>DocumentRoot</systemitem> の場合は、下記のように設定します:</para>
 <screen>&lt;Directory "/srv/www/&wwwname;/htdocs"&gt;
   Require all granted
 &lt;/Directory&gt;</screen>
      <note>
       <title><literal>Require all granted</literal></title>
-      <para>
-       In previous versions of Apache, the statement <literal>Require all
-       granted</literal> was expressed as:
-      </para>
+      <para>Apache の以前のバージョンでは、 <literal>Require all granted</literal> と同じ意味を持つ設定は下記のとおりです:</para>
 <screen>Order allow,deny
 Allow from all</screen>
-      <para>
-       This old syntax is still supported by the
-       <literal>mod_access_compat</literal> module.
-      </para>
+      <para>この古い書式は、 <literal>mod_access_compat</literal> モジュールを読み込むことによって、現在も使用することができます。</para>
      </note>
-     <para>
-      The complete configuration file looks like this:
-     </para>
+     <para>これらを組み合わせると、完全な設定ファイルは下記のようになります:</para>
      <example xml:id="ex.apache.directives.virtualhost.basic_configuration">
-      <title>Basic <systemitem>VirtualHost</systemitem> Configuration</title>
+      <title>基本的な <systemitem>VirtualHost</systemitem> の設定</title>
 <screen>&lt;VirtualHost &wwwip;&gt;
   ServerName &wwwname;
   DocumentRoot /srv/www/&wwwname;/htdocs
@@ -729,7 +381,7 @@ Allow from all</screen>
 <!-- /YaST configuration -->
  </sect1>
  <sect1 xml:id="sec.apache2.start_stop">
-  <title>Starting and Stopping Apache</title>
+  <title>Apache の開始と停止</title>
 
   <remark>taroth 2014-02-11: @file-maintainer: please give the following a
  thorough check - so far I only replaced the rc* commands by the systemctl
@@ -737,44 +389,23 @@ Allow from all</screen>
  crrodriguez), but the descriptions might need adjustment and some commands
  are probably no longer around, therefore I commented them</remark>
 
-  <para>
-   If configured with &yast; as described in
-   <xref linkend="sec.apache2.configuration.yast"/>, Apache is started at boot
-   time in the <systemitem>multi-user.target</systemitem> and
-   <systemitem>graphical.target</systemitem>. You can change this behavior
-   using &yast;'s <guimenu>&ycc_runlevel;</guimenu> or with the
-   <command>systemctl</command> command line tool (<command>systemctl
-   enable</command> or <command>systemctl disable</command>).
-  </para>
+  <para><xref linkend="sec.apache2.configuration.yast"/> で説明している手順に従って &yast; で設定を行なった場合、 Apache は <systemitem>multi-user.target</systemitem> と <systemitem>graphical.target</systemitem> 内で、システムの起動時に自動的に開始されるようになります。この動作を変更したい場合は、 &yast; の <guimenu>&ycc_runlevel;</guimenu> を使用するか、もしくは <command>systemctl</command> コマンドラインツールをお使いください (<command>systemctl enable</command> もしくは <command>systemctl disable</command> を実行します) 。</para>
 
-  <para>
-   To start, stop, or manipulate Apache on a running system, use either the
-   <command>systemctl</command> or the <command>apachectl</command> commands as
-   described below.
-  </para>
+  <para>Apache の開始と停止、もしくは動作中の Apache に対して何らかの処理を行なわせたい場合は、下記のようにして <command>systemctl</command> もしくは <command>apachectl</command> コマンドをご利用ください。</para>
 
-  <para>
-   For general information about <command>systemctl</command> commands, refer
-   to <xref linkend="sec.boot.systemd.basics.services"/>.
-  </para>
+  <para><command>systemctl</command> コマンドに関する一般的な情報については、 <xref linkend="sec.boot.systemd.basics.services"/> をお読みください。</para>
 
   <variablelist>
    <varlistentry>
-    <term><command>systemctl status apache2</command>
-    </term>
+    <term><command>systemctl status apache2</command></term>
     <listitem>
-     <para>
-      Checks if Apache is started.
-     </para>
+     <para>Apache が動作しているかどうかを調べます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>systemctl start apache2</command>
-    </term>
+    <term><command>systemctl start apache2</command></term>
     <listitem>
-     <para>
-      Starts Apache if it is not already running.
-     </para>
+     <para>Apache が動作していない場合、 Apache を開始します。</para>
     </listitem>
    </varlistentry>
 <!-- taroth 2014-02-11: startssl no longer supported, can be achieched
@@ -795,50 +426,31 @@ Allow from all</screen>
    </varlistentry>
   -->
    <varlistentry>
-    <term><command>systemctl stop apache2</command>
-    </term>
+    <term><command>systemctl stop apache2</command></term>
     <listitem>
-     <para>
-      Stops Apache by terminating the parent process.
-     </para>
+     <para>親プロセスを終了させることで Apache を終了します。</para>
     </listitem>
    </varlistentry>
 <!--   -->
    <varlistentry>
-    <term><command>systemctl restart apache2</command>
-    </term>
+    <term><command>systemctl restart apache2</command></term>
     <listitem>
-     <para>
-      Stops and then restarts Apache. Starts the Web server if it was not
-      running before.
-     </para>
+     <para>Apache を一旦停止して起動し直します。 Apache が動作中でなかった場合は、単純に開始します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>systemctl try-restart apache2</command>
-    </term>
+    <term><command>systemctl try-restart apache2</command></term>
     <listitem>
-     <para>
-      Stops then restarts Apache only if it is already running.
-     </para>
+     <para>動作中の場合にのみ、 Apache をいったん停止して起動し直します。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>systemctl reload apache2</command>
-    </term>
+    <term><command>systemctl reload apache2</command></term>
     <listitem>
-     <para>
-      Stops the Web server by advising all forked Apache processes to first
-      finish their requests before shutting down. As each process dies, it is
-      replaced by a newly started one, resulting in a complete
-      <quote>restart</quote> of Apache.
-     </para>
+     <para>全ての起動済み Apache プロセスに対して、現在処理中のリクエストの処理を完了してから終了するように促します。それぞれのプロセスが終了したタイミングで新しいプロセスを起動して入れ替えていき、最終的に Apache が完全に <quote>再起動</quote> できるようにします。</para>
      <tip>
-      <title>Restarting Apache in Production Environments</title>
-      <para>
-       This command allows activating changes in the Apache configuration
-       without causing connection break-offs.
-      </para>
+      <title>本番環境における Apache の再起動について</title>
+      <para>このコマンドを実行することで、クライアントから Apache への接続を強制的に終了させることなく、 Apache の設定変更を反映させることができるようになります。</para>
      </tip>
     </listitem>
    </varlistentry>
@@ -871,39 +483,19 @@ Allow from all</screen>
    <varlistentry>
     <term><command>systemctl stop apache2</command></term>
     <listitem>
-     <para>
-      Stops the Web server after a defined period of time configured with
-      <systemitem>GracefulShutdownTimeout</systemitem> to ensure that existing
-      requests can be finished.
-     </para>
+     <para>Web サーバを停止しますが、その際に <systemitem>GracefulShutdownTimeout</systemitem> で指定された長さの時間だけ終了を待機します。これにより、既存のリクエスト処理を正常に終了させることができるようになります。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>apachectl configtest</command>
-    </term>
+    <term><command>apachectl configtest</command></term>
     <listitem>
-     <para>
-      Checks the syntax of the configuration files without affecting a running
-      Web server. Because this check is forced every time the server is
-      started, reloaded, or restarted, it is usually not necessary to run the
-      test explicitly (if a configuration error is found, the Web server is not
-      started, reloaded, or restarted).
-     </para>
+     <para>現在動作中の Web サーバに影響を与えずに、設定ファイルの文法をチェックします。このチェックはサーバの開始時や再読み込み時、再起動時にそれぞれ実行されるように設定されているため、このコマンドを明示的に実行する必要はありません (何らかの設定エラーが検出されると、開始／再読み込み／再起動を行なわないように設定されています) 。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>apachectl status</command> and
-      <command>apachectl fullstatus</command>
-    </term>
+    <term><command>apachectl status</command> および <command>apachectl fullstatus</command></term>
     <listitem>
-     <para>
-      Dumps a short or full status screen, respectively. Requires the module
-      <systemitem>mod_status</systemitem> to be enabled and a text-based
-      browser (such as <command>links</command> or <command>w3m</command>) to
-      be installed. In addition to that, <literal>STATUS</literal> must be
-      added to <systemitem>APACHE_SERVER_FLAGS</systemitem> in the file
-      <filename>/etc/sysconfig/apache2</filename>.
-     </para>
+     <para>それぞれ現在の Apache サーバに関する情報を、短くもしくは長く表示します。この情報を表示するには、 <systemitem>mod_status</systemitem> モジュールを有効化する必要があるほか、テキストベースのブラウザ (たとえば <command>links</command> や <command>w3m</command> など) をインストールしておく必要があります。さらに、 <filename>/etc/sysconfig/apache2</filename> ファイル内の <systemitem>APACHE_SERVER_FLAGS</systemitem> に対して、 <literal>STATUS</literal> を追加しなければなりません。</para>
     </listitem>
    </varlistentry>
 <!-- rcapache2 could do the following two, apachectl/systemctl cannot. -
@@ -946,578 +538,282 @@ sknorr, 2017-06-07 -->
   </variablelist>
 
   <tip>
-   <title>Additional Flags</title>
-   <para>
-    If you specify additional flags to the commands,
-    these are passed through to the Web server.
-   </para>
+   <title>追加フラグについて</title>
+   <para>コマンドに対して追加のフラグを指定すると、それらは Web サーバにそのまま渡されます。</para>
   </tip>
  </sect1>
  <sect1 xml:id="sec.apache2.modules">
-  <title>Installing, Activating, and Configuring Modules</title>
+  <title>モジュールのインストール／有効化／設定</title>
 
-  <para>
-   The Apache software is built in a modular fashion: all functionality except
-   some core tasks are handled by modules. This has progressed so far that even
-   HTTP is processed by a module (<systemitem>http_core</systemitem>).
-  </para>
+  <para>Apache ソフトウエアはモジュール型の構造になっているため、いくつかの中枢機能を除くと、ほとんどの機能はモジュールとして作られています。 HTTP 自身でさえも、モジュールとして作られ処理されています (<systemitem>http_core</systemitem>) 。</para>
 
-  <para>
-   Apache modules can be compiled into the Apache binary at build time or
-   be dynamically loaded at runtime. Refer to
-   <xref linkend="sec.apache2.modules.activating"/> for details of how to load
-   modules dynamically.
-  </para>
+  <para>Apache のモジュールは構築時に Apache バイナリ内に組み込むことができるほか、実行時に動的に読み込むことができます。モジュールを動的に読み込む方法について、詳しくは <xref linkend="sec.apache2.modules.activating"/> をお読みください。</para>
 
-  <para>
-   Apache modules can be divided into four different categories:
-  </para>
+  <para>Apache のモジュールは、下記の 4 種類の分野に分かれています:</para>
 
   <variablelist>
    <varlistentry>
-    <term>Base Modules</term>
+    <term>基本モジュール</term>
     <listitem>
-     <para>
-      Base modules are compiled into Apache by default. Apache in &productname;
-      has only <systemitem>mod_so</systemitem> (needed to load other modules)
-      and <systemitem>http_core</systemitem> compiled in. All others are
-      available as shared objects: rather than being included in the server
-      binary itself, they can be included at runtime.
-     </para>
+     <para>基本モジュールは、既定で Apache 内に組み込まれます。 &productname; での Apache では、 <systemitem>mod_so</systemitem> (他のモジュールを読み込むためのモジュール) と <systemitem>http_core</systemitem> のみが組み込まれます。それ以外のモジュールは共有オブジェクトとして提供され、サーバのバイナリファイルそのものに組み込まれずに、実行時に別途読み込む仕組みになっています。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Extension Modules</term>
+    <term>拡張モジュール</term>
     <listitem>
-     <para>
-      In general, modules labeled as extensions are included in the Apache
-      software package, but are usually not compiled into the server
-      statically. In &productname;, they are available as shared objects that
-      can be loaded into Apache at runtime.
-     </para>
+     <para>一般的に、拡張として位置づけられているモジュールは Apache ソフトウエア内に同梱されているものの、通常はサーバのバイナリファイル内に組み込まないものを意味します。 &productname; では、これらについても共有オブジェクトとして提供され、実行時に別途読み込む仕組みになっています。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>External Modules</term>
+    <term>外部モジュール</term>
     <listitem>
-     <para>
-      Modules labeled external are not included in the official Apache
-      distribution. However, &productname; provides several of them.
-     </para>
+     <para>外部モジュールとして位置づけられているモジュールは、公式の Apache ソフトウエア内には含まれていないものを意味します。 &productname; では、これらのうちのいくつかを提供しています。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Multiprocessing Modules (MPMs)</term>
+    <term>マルチプロセッシングモジュール (MPM)</term>
     <listitem>
-     <para>
-      MPMs are responsible for accepting and handling requests to the Web
-      server, representing the core of the Web server software.
-     </para>
+     <para>MPM は Web サーバに対するリクエストを受け付け、処理するためのモジュールです。 Web サーバソフトウエアの中枢部分でもあります。</para>
     </listitem>
    </varlistentry>
   </variablelist>
 
   <sect2 xml:id="sec.apache2.modules.installing">
-   <title>Module Installation</title>
-   <para>
-    If you have done a default installation as described in
-    <xref linkend="sec.apache2.quickstart.installation"/>, the following
-    modules are already installed: all base and extension modules, the
-    multiprocessing module Prefork MPM, and the external module
-    <systemitem>mod_python</systemitem>.
-   </para>
-   <para>
-    You can install additional external modules by starting &yast; and choosing
-    <menuchoice><guimenu>Software</guimenu> <guimenu>Software
-    Management</guimenu></menuchoice>. Now choose
-    <menuchoice><guimenu>View</guimenu> <guimenu>Search</guimenu></menuchoice>
-    and search for <literal>apache</literal>. Among other packages, the
-    results list contains all available external Apache modules.
-   </para>
+   <title>モジュールのインストール</title>
+   <para><xref linkend="sec.apache2.quickstart.installation"/> の手順に従って既定のインストール作業を行なうと、全ての基本モジュールと拡張モジュールのほか、マルチプロセッシングモジュールである Prefork MPM と、外部モジュール <systemitem>mod_python</systemitem> がそれぞれインストールされます。</para>
+   <para>追加の外部モジュールをインストールしたい場合は、 &yast; を起動して <menuchoice><guimenu>ソフトウエア</guimenu> <guimenu>ソフトウエア管理</guimenu></menuchoice> を選択し、 <menuchoice><guimenu>表示</guimenu><guimenu>検索</guimenu></menuchoice> を選択して <literal>apache</literal> と入力し、検索を行なってください。これにより、利用可能な全ての外部 Apache モジュールなどを表示することができます。</para>
   </sect2>
 
   <sect2 xml:id="sec.apache2.modules.activating">
-   <title>Activation and Deactivation</title>
-   <para>
-    Activate or deactivate particular modules either manually or with &yast;.
-    In &yast;, script language modules (PHP 5 and Python) need to be
-    enabled or disabled with the module configuration described in
-    <xref linkend="sec.apache2.configuration.yast.wizard"/>. All other modules
-    can be enabled or disabled as described in
-    <xref linkend="sec.apache2.configuration.yast.server_configuration.modules"/>.
-   </para>
-   <para>
-    If you prefer to activate or deactivate the modules manually, use the
-    commands <command>a2enmod</command> <replaceable>MODULE</replaceable> or
-    <command>a2dismod</command> <replaceable>MODULE</replaceable>,
-    respectively. <command>a2enmod -l</command> outputs a list of all currently
-    active modules.
-   </para>
+   <title>有効化と無効化</title>
+   <para>モジュールの有効化と無効化は、手作業で実施することができるほか、 &yast; でも設定することができます。 &yast; では、 <xref linkend="sec.apache2.configuration.yast.wizard"/> で説明しているとおり、スクリプト言語モジュール (PHP 5 および Python) を有効化もしくは無効化することができます。その他のモジュールの有効化と無効化については、 <xref linkend="sec.apache2.configuration.yast.server_configuration.modules"/> で説明しています。</para>
+   <para>モジュールの有効化や無効化を手作業で実施したい場合は、 <command>a2enmod</command> <replaceable>モジュール名</replaceable> もしくは <command>a2dismod</command> <replaceable>モジュール名</replaceable> のコマンドをお使いください。 <command>a2enmod -l</command> と入力して実行すると、現時点で有効化されている全てのモジュールを一覧表示することができます。</para>
    <important>
-    <title>Including Configuration Files for External Modules</title>
-    <para>
-     If you have activated external modules manually, make sure to load their
-     configuration files in all virtual host configurations. Configuration
-     files for external modules are located under
-     <filename>/etc/apache2/conf.d/</filename> and are loaded in
-     <filename>/etc/apache2/default-server.conf</filename> by default. For more
-     fine-grained control you can comment out the inclusion in
-     <filename>/etc/apache2/default-server.conf</filename> and add it to
-     specific virtual hosts only. See
-     <filename>/etc/apache2/vhosts.d/vhost.template</filename> for examples.
-    </para>
+    <title>外部モジュールに対する設定ファイルの取り込み</title>
+    <para>外部モジュールを手作業で有効化した場合は、全ての仮想ホストの設定に対して、外部モジュールの設定ファイルが読み込まれていることをご確認ください。外部モジュールの設定ファイルは <filename>/etc/apache2/conf.d/</filename> 内に存在していて、既定では <filename>/etc/apache2/default-server.conf</filename> から読み込まれるようになっています。より細かい調整を行ないたい場合は、 <filename>/etc/apache2/default-server.conf</filename> 内にある外部モジュールに対する取り込み設定をコメントアウトして、特定の仮想ホストでのみ読み込むように設定してもかまいません。設定例については <filename>/etc/apache2/vhosts.d/vhost.template</filename> をお読みください。</para>
    </important>
   </sect2>
 
   <sect2 xml:id="sec.apache2.modules.base_extension">
-   <title>Base and Extension Modules</title>
-   <para>
-    All base and extension modules are described in detail in the Apache
-    documentation. Only a brief description of the most important modules is
-    available here. Refer to
-    <link xlink:href="http://httpd.apache.org/docs/2.4/mod/">http://httpd.apache.org/docs/2.4/mod/</link>
-    to learn details about each module.
-   </para>
+   <title>基本モジュールと拡張モジュール</title>
+   <para>全ての基本モジュールと拡張モジュールについては、 Apache のドキュメンテーション内に詳細説明が用意されています。下記では主要なモジュールに関する概要説明のみを行なっています。それぞれのモジュールに関する詳細は、 <link xlink:href="http://httpd.apache.org/docs/2.4/mod/">http://httpd.apache.org/docs/2.4/mod/</link> をお読みください。</para>
    <remark>taroth 2010-07-07: new module "mod_reqtimeout" to set timeouts and
     minimum data rates for receiving requests from a client (see changelog entry
     from Mar 08th 2010) -- module classified as "experimental" on the Apache
     Web site </remark>
    <variablelist>
     <varlistentry>
-     <term><systemitem>mod_actions</systemitem>
-     </term>
+     <term><systemitem>mod_actions</systemitem></term>
      <listitem>
-      <para>
-       Provides methods to execute a script whenever a certain MIME type (such
-       as <systemitem>application/pdf</systemitem>), a file with a specific
-       extension (like <filename>.rpm</filename>), or a certain request method
-       (such as <systemitem>GET</systemitem>) is requested. This module is
-       enabled by default.
-      </para>
+      <para>特定の MIME タイプ (たとえば <systemitem>application/pdf</systemitem> など) や特定の拡張子を持つファイル (たとえば <filename>.rpm</filename>) 、もしくは特定のリクエストメソッド (たとえば <systemitem>GET</systemitem>) が要求された際に、特定のスクリプトを実行する機能を提供します。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_alias</systemitem>
-     </term>
+     <term><systemitem>mod_alias</systemitem></term>
      <listitem>
-      <para>
-       Provides <systemitem>Alias</systemitem> and
-       <systemitem>Redirect</systemitem> directives with which you can map a
-       URL to a specific directory (<systemitem>Alias</systemitem>) or redirect
-       a requested URL to another location. This module is enabled by default.
-      </para>
+      <para><systemitem>Alias</systemitem> や <systemitem>Redirect</systemitem> のディレクティブを提供するモジュールです。これにより、特定の URL に対してディレクトリを割り当てる ( <systemitem>Alias</systemitem> の名前の通り、別名を定義する) ことができるほか、他の場所に転送を行なうことができます。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_auth*</systemitem>
-     </term>
+     <term><systemitem>mod_auth*</systemitem></term>
      <listitem>
-      <para>
-       The authentication modules provide different authentication methods:
-       basic authentication with <systemitem>mod_auth_basic</systemitem> or
-       digest authentication with <systemitem>mod_auth_digest</systemitem>.
-      </para>
-      <para>
-       <systemitem>mod_auth_basic</systemitem> and
-       <systemitem>mod_auth_digest</systemitem> must be combined with an
-       authentication provider module, <systemitem>mod_authn_*</systemitem>
-       (for example, <systemitem>mod_authn_file</systemitem> for text
-       file&ndash;based authentication) and with an authorization module
-       <systemitem>mod_authz_*</systemitem> (for example,
-       <systemitem>mod_authz_user</systemitem> for user authorization).
-      </para>
-      <para>
-       More information about this topic is available in the
-       <citetitle>Authentication HOWTO</citetitle> at
-       <link xlink:href="http://httpd.apache.org/docs/2.4/howto/auth.html"/>.
-      </para>
+      <para>様々な認証方式を提供する認証モジュールです。 <systemitem>mod_auth_basic</systemitem> はベーシック認証を、 <systemitem>mod_auth_digest</systemitem> はダイジェスト認証をそれぞれ提供します。</para>
+      <para>なお、 <systemitem>mod_auth_basic</systemitem> と <systemitem>mod_auth_digest</systemitem> は、 <systemitem>mod_authn_*</systemitem> で表わされる認証プロバイダモジュールと、 <systemitem>mod_authz_*</systemitem> で表わされる認可モジュールを組み合わせて使用します。たとえば <systemitem>mod_authn_file</systemitem> はテキストファイルに認証情報を保存するモジュールであるほか、 <systemitem>mod_authz_user</systemitem> はユーザ認可を提供するモジュールです。</para>
+      <para>この分野の説明について、詳しくは <link xlink:href="http://httpd.apache.org/docs/2.4/howto/auth.html"/> にある <citetitle>認証、承認、アクセス制御</citetitle> をお読みください。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_autoindex</systemitem>
-     </term>
+     <term><systemitem>mod_autoindex</systemitem></term>
      <listitem>
-      <para>
-       Autoindex generates directory listings when no index file (for example,
-       <filename>index.html</filename>) is present. The look and feel of these
-       indexes is configurable. This module is enabled by default. However,
-       directory listings are disabled by default via the
-       <systemitem>Options</systemitem> directive&mdash;overwrite this setting
-       in your virtual host configuration. The default configuration file for
-       this module is located at
-       <filename>/etc/apache2/mod_autoindex-defaults.conf</filename>.
-      </para>
+      <para>autoindex モジュールは、インデックスファイル (例: <filename>index.html</filename>) が存在しない場合に、ディレクトリ内の一覧を生成する機能を提供します。一覧の外観は様々に設定することができます。このモジュールについても既定で有効化されますが、ディレクトリ一覧の表示機能は <systemitem>Options</systemitem> ディレクティブで無効化されています。そのため、この機能が必要である場合は、お使いの仮想ホストの設定内で上書きしてお使いください。このモジュールの既定の設定ファイルは、 <filename>/etc/apache2/mod_autoindex-defaults.conf</filename> に配置されています。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_cgi</systemitem>
-     </term>
+     <term><systemitem>mod_cgi</systemitem></term>
      <listitem>
-      <para>
-       <systemitem>mod_cgi</systemitem> is needed to execute CGI scripts. This
-       module is enabled by default.
-      </para>
+      <para><systemitem>mod_cgi</systemitem> は CGI スクリプトを実行する際に必要となるモジュールです。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_deflate</systemitem>
-     </term>
+     <term><systemitem>mod_deflate</systemitem></term>
      <listitem>
-      <para>
-       Using this module, Apache can be configured to compress given file types
-       on the fly before delivering them.
-      </para>
+      <para>このモジュールを使用すると、 Apache が特定のファイルを配信する際、その場でデータ圧縮を行なうことができるようになります。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_dir</systemitem>
-     </term>
+     <term><systemitem>mod_dir</systemitem></term>
      <listitem>
-      <para>
-       <systemitem>mod_dir</systemitem> provides the
-       <systemitem>DirectoryIndex</systemitem> directive with which you can
-       configure which files are automatically delivered when a directory is
-       requested (<filename>index.html</filename> by default). It also provides
-       an automatic redirect to the correct URL when a directory request does
-       not contain a trailing slash. This module is enabled by default.
-      </para>
+      <para><systemitem>mod_dir</systemitem> は <systemitem>DirectoryIndex</systemitem> ディレクティブを提供するモジュールで、ディレクトリそのものに対してリクエストが届いた際に、どのファイルを自動的に配信するかを指定します。既定値は <filename>index.html</filename> に設定されています。また、このモジュールは、ディレクトリに対するリクエストが届いた場合、末尾がスラッシュで終わっていないと、末尾のスラッシュを追加する (実際にはそのような URL に転送する) 機能も提供します。このモジュールも既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_env</systemitem>
-     </term>
+     <term><systemitem>mod_env</systemitem></term>
      <listitem>
-      <para>
-       Controls the environment that is passed to CGI scripts or SSI pages.
-       Environment variables can be set or unset or passed from the shell that
-       invoked the httpd process. This module is enabled by default.
-      </para>
+      <para>CGI スクリプトや SSI ページに対して渡される、環境変数の制御を行ないます。環境変数は追加や削除を行なうことができるほか、 httpd プロセスから起動されるシェルからの値を渡すこともできます。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_expires</systemitem>
-     </term>
+     <term><systemitem>mod_expires</systemitem></term>
      <listitem>
-      <para>
-       With <systemitem>mod_expires</systemitem>, you can control how often
-       proxy and browser caches refresh your documents by sending an
-       <systemitem>Expires</systemitem> header. This module is enabled by
-       default.
-      </para>
+      <para><systemitem>mod_expires</systemitem> を使用すると、 <systemitem>Expires</systemitem> ヘッダを送信して、プロキシサーバやブラウザのキャッシュ機能に対して、どれだけの時間で文書の期限が切れるのかを指定することができるようになります。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_http2</systemitem>
-     </term>
+     <term><systemitem>mod_http2</systemitem></term>
      <listitem>
-      <para>
-       With <systemitem>mod_http2</systemitem>, Apache gains support for the
-       HTTP/2 protocol. It can be enabled by specifying
-       <literal>Protocols h2 http/1.1</literal> in a
-       <systemitem>VirtualHost</systemitem>.
-      </para>
+      <para><systemitem>mod_http2</systemitem> を利用することで、 Apache は HTTP/2 プロトコルに対応するようになります。 <systemitem>VirtualHost</systemitem> 内で <literal>Protocols h2 http/1.1</literal> と指定することで有効化することができます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_include</systemitem>
-     </term>
+     <term><systemitem>mod_include</systemitem></term>
      <listitem>
-      <para>
-       <systemitem>mod_include</systemitem> lets you use Server Side Includes
-       (SSI), which provide a basic functionality to generate HTML pages
-       dynamically. This module is enabled by default.
-      </para>
+      <para><systemitem>mod_include</systemitem> は Server Side Includes (SSI) と呼ばれる機能を提供するモジュールで、 HTML ページを動的に生成するための基本的な技術を提供します。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_info</systemitem>
-     </term>
+     <term><systemitem>mod_info</systemitem></term>
      <listitem>
-      <para>
-       Provides a comprehensive overview of the server configuration under
-       http://localhost/server-info/. For security reasons, you should always
-       limit access to this URL. By default only
-       <systemitem class="domainname">localhost</systemitem> is allowed to
-       access this URL. <systemitem>mod_info</systemitem> is configured at
-       <filename>/etc/apache2/mod_info.conf</filename>.
-      </para>
+      <para>http://localhost/server-info/ にアクセスすることで、サーバの設定概要を表示することができるようになるモジュールです。セキュリティ上の理由から、この URL に対するアクセスは常に制限しておくべきです。既定では <systemitem class="domainname">localhost</systemitem> からのみアクセスすることができます。また、 <systemitem>mod_info</systemitem> は <filename>/etc/apache2/mod_info.conf</filename> で設定されています。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_log_config</systemitem>
-     </term>
+     <term><systemitem>mod_log_config</systemitem></term>
      <listitem>
-      <para>
-       With this module, you can configure the look of the Apache log files.
-       This module is enabled by default.
-      </para>
+      <para>このモジュールを使用することで、 Apache のログファイルに出力される内容を制御することができます。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_mime</systemitem>
-     </term>
+     <term><systemitem>mod_mime</systemitem></term>
      <listitem>
-      <para>
-       The mime module ensures that a file is delivered with the correct
-       MIME header based on the file name's extension (for example
-       <systemitem>text/html</systemitem> for HTML documents). This module is
-       enabled by default.
-      </para>
+      <para>このモジュールは、ファイル名の拡張子を利用することで、ファイルに対する正しい MIME ヘッダ (たとえば HTML 文書であれば <systemitem>text/html</systemitem>) を配信する仕組みを提供します。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_negotiation</systemitem>
-     </term>
+     <term><systemitem>mod_negotiation</systemitem></term>
      <listitem>
-      <para>
-       Necessary for content negotiation. See
-       <link xlink:href="http://httpd.apache.org/docs/2.4/content-negotiation.html">http://httpd.apache.org/docs/2.4/content-negotiation.html</link>
-       for more information. This module is enabled by default.
-      </para>
+      <para>コンテンツネゴシエーションを行なうために必要なモジュールです。詳しい説明は、 <link xlink:href="http://httpd.apache.org/docs/2.4/content-negotiation.html">http://httpd.apache.org/docs/2.4/content-negotiation.html</link> をお読みください。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_rewrite</systemitem>
-     </term>
+     <term><systemitem>mod_rewrite</systemitem></term>
      <listitem>
-      <para>
-       Provides the functionality of <systemitem>mod_alias</systemitem>, but
-       offers more features and flexibility. With
-       <systemitem>mod_rewrite</systemitem>, you can redirect URLs based on
-       multiple rules, request headers, and more.
-      </para>
+      <para><systemitem>mod_alias</systemitem> と同じような機能を提供するモジュールですが、より多くの機能が追加され、より柔軟な設定ができるようになっています。 <systemitem>mod_rewrite</systemitem> を利用することで、複数のルールやリクエストヘッダをベースにして URL の転送を設定したりすることができます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_setenvif</systemitem>
-     </term>
+     <term><systemitem>mod_setenvif</systemitem></term>
      <listitem>
-      <para>
-       Sets environment variables based on details of the client's request,
-       such as the browser string the client sends, or the client's IP address.
-       This module is enabled by default.
-      </para>
+      <para>クライアント側からのリクエストに応じて環境変数を設定するモジュールです。これにはたとえば、クライアントが送信したブラウザ文字列やクライアントの IP アドレスなどが含まれます。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_spelling</systemitem>
-     </term>
+     <term><systemitem>mod_spelling</systemitem></term>
      <listitem>
-      <para>
-       <systemitem>mod_spelling</systemitem> attempts to automatically correct
-       typographical errors in URLs, such as capitalization errors.
-      </para>
+      <para><systemitem>mod_spelling</systemitem> は、大文字と小文字の違いなどの入力ミスを自動的に修正しようと試みるモジュールです。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_ssl</systemitem>
-     </term>
+     <term><systemitem>mod_ssl</systemitem></term>
      <listitem>
-      <para>
-       Enables encrypted connections between Web server and clients. See
-       <xref linkend="sec.apache2.ssl"/> for details. This module is enabled by
-       default.
-      </para>
+      <para>ブラウザとクライアントとの間で、暗号化した接続を実現するモジュールです。詳しくは <xref linkend="sec.apache2.ssl"/> をお読みください。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_status</systemitem>
-     </term>
+     <term><systemitem>mod_status</systemitem></term>
      <listitem>
-      <para>
-       Provides information on server activity and performance under
-       http://localhost/server-status/. For security reasons, you should always
-       limit access to this URL. By default, only
-       <systemitem class="domainname">localhost</systemitem> is allowed to
-       access this URL. <systemitem>mod_status</systemitem> is configured at
-       <filename>/etc/apache2/mod_status.conf</filename>.
-      </para>
+      <para>http://localhost/server-status/ にアクセスすることで、サーバの動作状況と性能情報を表示することができるようになるモジュールです。セキュリティ上の理由から、この URL に対するアクセスは常に制限しておくべきです。既定では <systemitem class="domainname">localhost</systemitem> からのみアクセスすることができます。また、 <systemitem>mod_status</systemitem> は <filename>/etc/apache2/mod_status.conf</filename> で設定されています。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_suexec</systemitem>
-     </term>
+     <term><systemitem>mod_suexec</systemitem></term>
      <listitem>
-      <para>
-       <systemitem>mod_suexec</systemitem> lets you run CGI scripts under a
-       different user and group. This module is enabled by default.
-      </para>
+      <para><systemitem>mod_suexec</systemitem> は、 CGI スクリプトを異なるユーザやグループで実行することができるモジュールです。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_userdir</systemitem>
-     </term>
+     <term><systemitem>mod_userdir</systemitem></term>
      <listitem>
-      <para>
-       Enables user-specific directories available under
-       <filename>~<replaceable>USER</replaceable>/</filename>. The
-       <systemitem>UserDir</systemitem> directive must be specified in the
-       configuration. This module is enabled by default.
-      </para>
+      <para><filename>~<replaceable>ユーザ名</replaceable>/</filename> の形式で、ユーザ別のディレクトリを有効化するモジュールです。このモジュールを利用するには、 <systemitem>UserDir</systemitem> ディレクティブを設定しなければなりません。このモジュールは既定で有効化されます。</para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect2>
 
   <sect2 xml:id="sec.apache2.modules.mpm">
-   <title>Multiprocessing Modules</title>
-   <para>
-    &productname; provides two different multiprocessing modules (MPMs) for use
-    with Apache:
-   </para>
+   <title>マルチプロセッシングモジュール (MPM)</title>
+   <para>&productname; では、 Apache で利用することのできるマルチプロセッシングモジュールが 2 種類用意されています:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      <xref linkend="sec.apache2.modules.mpm.prefork" xrefstyle="select:title"/>
-     </para>
+     <para><xref linkend="sec.apache2.modules.mpm.prefork" xrefstyle="select:title"/></para>
     </listitem>
     <listitem>
-     <para>
-      <xref linkend="sec.apache2.modules.mpm.worker" xrefstyle="select:title"/>
-     </para>
+     <para><xref linkend="sec.apache2.modules.mpm.worker" xrefstyle="select:title"/></para>
     </listitem>
    </itemizedlist>
    <sect3 xml:id="sec.apache2.modules.mpm.prefork">
-    <title>Prefork MPM</title>
-    <para>
-     The prefork MPM implements a non-threaded, preforking Web server. It makes
-     the Web server behave similarly to Apache version 1.x. In this version it
-     isolates each request and handles it by forking a separate child process.
-     Thus problematic requests cannot affect others, avoiding a lockup of the
-     Web server.
-    </para>
-    <para>
-     While providing stability with this process-based approach, the prefork
-     MPM consumes more system resources than its counterpart, the worker MPM.
-     The prefork MPM is considered the default MPM for Unix-based operating
-     systems.
-    </para>
+    <title>prefork MPM</title>
+    <para>prefork MPM はスレッドを使用しない、事前 fork 型の Web サーバです。 Apache バージョン 1.x に似た動作の Web サーバになります。このバージョンでは、それぞれのリクエストと処理を個別の子プロセスに分離して処理します。これにより、何らかの問題が発生しても、他のプロセスには影響を及ぼすことがなく、 Web サーバの機能停止を防ぐことができるようになっています。</para>
+    <para>このようなプロセスベースの仕組みでは安定性がもたらされるものの、 worker MPM よりはより多くのシステム資源を消費してしまいます。また、 Unix ベースのオペレーティングシステムでは、 prefork MPM を既定の MPM としています。</para>
     <important>
-     <title>MPMs in This Document</title>
-     <para>
-      This document assumes Apache is used with the prefork MPM.
-     </para>
+     <title>本文書内での MPM について</title>
+     <para>この文書内では、 Apache 内で prefork MPM を使用することを前提に説明しています。</para>
     </important>
    </sect3>
    <sect3 xml:id="sec.apache2.modules.mpm.worker">
-    <title>Worker MPM</title>
-    <para>
-     The worker MPM provides a multi-threaded Web server. A thread is a
-     <quote>lighter</quote> form of a process. The advantage of a thread over a
-     process is its lower resource consumption. Instead of only forking child
-     processes, the worker MPM serves requests by using threads with server
-     processes. The preforked child processes are multi-threaded. This approach
-     makes Apache perform better by consuming fewer system resources than the
-     prefork MPM.
-    </para>
-    <para>
-     One major disadvantage is the stability of the worker MPM: if a thread
-     becomes corrupt, all threads of a process can be affected. In the worst
-     case, this may result in a server crash. Especially when using the Common
-     Gateway Interface (CGI) with Apache under heavy load, internal server
-     errors might occur because of threads being unable to communicate with
-     system resources. Another argument against using the worker MPM with
-     Apache is that not all available Apache modules are thread-safe and thus
-     cannot be used with the worker MPM.
-    </para>
+    <title>worker MPM</title>
+    <para>worker MPM はマルチスレッド型の Web サーバです。スレッドはプロセスよりもずっと <quote>軽量</quote> な仕組みであるため、より少ない資源消費が特長になります。この MPM では、子プロセスを起動する代わりに、それぞれのリクエストに対してスレッドを割り当てて処理を行ないます。また、場合によっては複数のプロセスを起動することもありますが、子プロセスも同様にマルチスレッドになります。このような仕組みにより、 prefork MPM よりずっと少ない資源で Apache を動作させることができます。</para>
+    <para>worker MPM での最も大きな欠点は、その安定性です。何らかの理由でスレッド内のメモリが破壊されてしまうと、同じプロセスに属する全てのスレッドが影響を受けます。最も悪いケースでは、サーバ自身がクラッシュしてしまいます。特に、負荷の高い環境下で Common Gateway Interface (CGI) を使用した場合、システム資源との通信が失敗することによってサーバ内部エラーが発生することがあります。また、もう 1 つの欠点としては、全ての Apache モジュールがスレッド型の仕組みに対応しているというわけではない (スレッドセーフではない) というものがあります。これにより、 worker MPM を利用できない場合もあります。</para>
     <warning>
-     <title>Using PHP Modules with MPMs</title>
-     <para>
-      Not all available PHP modules are thread-safe. Using the worker MPM with
-      <systemitem>mod_php</systemitem> is strongly discouraged.
-     </para>
+     <title>MPM と PHP の関係について</title>
+     <para>PHP モジュールによっては、マルチスレッド環境での使用が安全ではない (スレッドセーフではない) ものがあります。そのため、 <systemitem>mod_php</systemitem> を使用する場合は、 Worker MPM を使用しないことを強くお勧めします。</para>
     </warning>
    </sect3>
   </sect2>
 
   <sect2 xml:id="sec.apache2.modules.external">
-   <title>External Modules</title>
-   <para>
-    Find a list of all external modules shipped with &productname; here. Find
-    the module's documentation in the listed directory.
-   </para>
+   <title>外部モジュール</title>
+   <para>ここには、 &productname; に同梱されている全ての外部モジュールが一覧で示されています。それぞれのモジュールのドキュメンテーションについては、それぞれのディレクトリをご覧ください。</para>
    <variablelist>
     <varlistentry>
-     <term><systemitem>mod_apparmor</systemitem>
-     </term>
+     <term><systemitem>mod_apparmor</systemitem></term>
      <listitem>
-      <para>
-       Adds support to Apache to provide &aa; confinement to individual CGI
-       scripts handled by modules like <systemitem>mod_php5</systemitem>.
-      </para>
+      <para><systemitem>mod_php5</systemitem> などで処理される CGI スクリプトに対して、 &aa; の制約を適用する Apache 向けのモジュールです。</para>
       <simplelist>
-       <member>
-        Package Name: <systemitem>apache2-mod_apparmor</systemitem>
-       </member>
-       <member>
-        More Information: <xref linkend="part.apparmor"/>
-       </member>
+       <member>パッケージ名: <systemitem>apache2-mod_apparmor</systemitem></member>
+       <member>詳しい情報: <xref linkend="part.apparmor"/></member>
       </simplelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_php5</systemitem>
-     </term>
+     <term><systemitem>mod_php5</systemitem></term>
      <listitem>
-      <para>
-       PHP is a server-side, cross-platform HTML embedded scripting language.
-      </para>
+      <para>PHP はサーバサイドスクリプトで複数プラットフォームに対応する HTML 組み込み型のスクリプト言語です。</para>
       <simplelist>
-       <member>
-        Package Name: <systemitem>apache2-mod_php5</systemitem>
-       </member>
-       <member>
-        Configuration File: <filename>/etc/apache2/conf.d/php5.conf</filename>
-       </member>
-       <member>
-        More Information:
-        <filename>/usr/share/doc/packages/apache2-mod_php5</filename>
-       </member>
+       <member>パッケージ名: <systemitem>apache2-mod_php5</systemitem></member>
+       <member>設定ファイル: <filename>/etc/apache2/conf.d/php5.conf</filename></member>
+       <member>詳しい情報: <filename>/usr/share/doc/packages/apache2-mod_php5</filename></member>
       </simplelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_python</systemitem>
-     </term>
+     <term><systemitem>mod_python</systemitem></term>
      <listitem>
-      <para>
-       <systemitem>mod_python</systemitem> allows embedding Python within the
-       Apache HTTP server for a considerable boost in performance and added
-       flexibility in designing Web-based applications.
-      </para>
+      <para><systemitem>mod_python</systemitem> は Apache HTTP サーバ内に Python の機能を組み込むもので、性能を大きく向上させることができるほか、 Web ベースのアプリケーションに柔軟性を与えます。</para>
       <simplelist>
-       <member>
-        Package Name: <systemitem>apache2-mod_python</systemitem>
-       </member>
-       <member>
-        More Information:
-        <filename>/usr/share/doc/packages/apache2-mod_python</filename>
-       </member>
+       <member>パッケージ名: <systemitem>apache2-mod_python</systemitem></member>
+       <member>詳しい情報: <filename>/usr/share/doc/packages/apache2-mod_python</filename></member>
       </simplelist>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_security</systemitem>
-     </term>
+     <term><systemitem>mod_security</systemitem></term>
      <listitem>
-      <para>
-       <systemitem>mod_security</systemitem> provides a Web application
-       firewall to protect Web applications from a range of attacks. It also
-       enables HTTP traffic monitoring and real-time analysis.
-      </para>
+      <para><systemitem>mod_security</systemitem> は Web アプリケーションファイアウオールで、様々な範囲の攻撃から Web アプリケーションを保護します。 HTTP のトラフィック監視やリアルタイム分析に使用することもできます。</para>
       <simplelist>
-       <member>
-        Package Name: <systemitem>apache2-mod_security2</systemitem>
-       </member>
-       <member>
-        Configuration File: <filename>/etc/apache2/conf.d/mod_security2.conf</filename>
-       </member>
-       <member>
-        More Information: <filename>/usr/share/doc/packages/apache2-mod_security2</filename>
-       </member>
-       <member>
-        Documentation: <link xlink:href="http://modsecurity.org/documentation/"/>
-       </member>
+       <member>パッケージ名: <systemitem>apache2-mod_security2</systemitem></member>
+       <member>設定ファイル: <filename>/etc/apache2/conf.d/mod_security2.conf</filename></member>
+       <member>詳しい情報: <filename>/usr/share/doc/packages/apache2-mod_security2</filename></member>
+       <member>ドキュメンテーション: <link xlink:href="http://modsecurity.org/documentation/"/></member>
       </simplelist>
      </listitem>
     </varlistentry>
@@ -1525,100 +821,44 @@ sknorr, 2017-06-07 -->
   </sect2>
 
   <sect2 xml:id="sec.apache2.modules.building_modules">
-   <title>Compilation</title>
-   <para>
-    Apache can be extended by advanced users by writing custom modules. To
-    develop modules for Apache or compile third-party modules, the package
-    <systemitem>apache2-devel</systemitem> is required along with the
-    corresponding development tools. <systemitem>apache2-devel</systemitem>
-    also contains the <command>apxs2</command> tools, which are necessary for
-    compiling additional modules for Apache.
-   </para>
-   <para>
-    <command>apxs2</command> enables the compilation and installation of
-    modules from source code (including the required changes to the
-    configuration files), which creates <emphasis>dynamic shared
-    objects</emphasis> (DSOs) that can be loaded into Apache at runtime.
-   </para>
-   <para>
-    The <command>apxs2</command> binaries are located under
-    <filename>/usr/sbin</filename>:
-   </para>
+   <title>コンパイル</title>
+   <para>知識のあるユーザであれば、 Apache に対して独自のモジュールを作成して拡張することができます。 Apache 向けのモジュールを開発したり、サードパーティ製のモジュールをコンパイルしたりしたい場合は、 <systemitem>apache2-devel</systemitem> パッケージをインストールして、提供される開発ツールをお使いください。 <systemitem>apache2-devel</systemitem> には <command>apxs2</command> ツールが含まれていますが、これは Apache 向けのモジュールをコンパイルする際に使用するツールです。</para>
+   <para><command>apxs2</command> は、ソースコードからモジュールをコンパイルして、インストールする機能を提供します (設定ファイルへの必要な変更を含みます) 。コンパイルを行なうと、 <emphasis>動的共有オブジェクト</emphasis> (Dynamic Shared Objects; DSO) として作成され、 Apache の起動時に読み込みができるようになります。</para>
+   <para><command>apxs2</command> バイナリは、 <filename>/usr/sbin</filename> ディレクトリ内に配置されます:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      <filename>/usr/sbin/apxs2</filename>&mdash;suitable for building an
-      extension module that works with any MPM. The installation location is
-      <filename>/usr/lib64/apache2</filename>.
-     </para>
+     <para><filename>/usr/sbin/apxs2</filename> は、どの MPM でも動作する拡張モジュールをコンパイルするためのツールです。インストールを行なうと、そのモジュールは <filename>/usr/lib64/apache2</filename> 内にインストールされます。</para>
     </listitem>
     <listitem>
-     <para>
-      <filename>/usr/sbin/apxs2-prefork</filename>&mdash;suitable for prefork
-      MPM modules. The installation location is
-      <filename>/usr/lib64/apache2-prefork</filename>.
-     </para>
+     <para><filename>/usr/sbin/apxs2-prefork</filename> は、 prefork MPM で動作する拡張モジュールをコンパイルするためのツールです。インストールを行なうと、そのモジュールは <filename>/usr/lib64/apache2-prefork</filename> 内にインストールされます。</para>
     </listitem>
     <listitem>
-     <para>
-      <filename>/usr/sbin/apxs2-worker</filename>&mdash;suitable for worker MPM
-      modules. The installation location is
-      <filename>/usr/lib64/apache2-worker</filename>.
-     </para>
+     <para><filename>/usr/sbin/apxs2-worker</filename> は、 worker MPM で動作する拡張モジュールをコンパイルするためのツールです。インストールを行なうと、そのモジュールは <filename>/usr/lib64/apache2-worker</filename> 内にインストールされます。</para>
     </listitem>
    </itemizedlist>
-   <para>
-    Install and activate a module from source code with the following commands:
-   </para>
-<screen>&prompt.sudo;cd /path/to/module/source
-&prompt.sudo;apxs2 -cia <replaceable>MODULE</replaceable>.c</screen>
-   <para>
-    where <option>-c</option> compiles the module, <option>-i</option> installs
-    it, and <option>-a</option> activates it. Other options of
-    <command>apxs2</command> are described in the
-    <systemitem>apxs2(1)</systemitem> man page.
-   </para>
+   <para>ソースコードからモジュールをコンパイルしてインストールし、有効化するには、下記のコマンドを実行します:</para>
+<screen>&prompt.sudo;cd /<replaceable>モジュールのソースコードのパス</replaceable>
+&prompt.sudo;apxs2 -cia <replaceable>モジュール名</replaceable>.c</screen>
+   <para>ここで、 <option>-c</option> はモジュールのコンパイルを、 <option>-i</option> はインストールを、 <option>-a</option> は有効化をそれぞれ行なうオプションです。 <command>apxs2</command> に対するその他のオプションについては、 <systemitem>apxs2(1)</systemitem> のマニュアルページをお読みください。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.apache2.cgi">
-  <title>Enabling CGI Scripts</title>
+  <title>CGI スクリプトの有効化</title>
 
-  <para>
-   Apache's Common Gateway Interface (CGI) lets you create dynamic content with
-   programs or scripts usually called CGI scripts. CGI scripts can be written
-   in any programming language. Usually, script languages such as PHP
-   are used.
-  </para>
+  <para>Apache の汎用ゲートウエイインターフェイス (Common Gateway Interface (CGI)) を利用することで、 CGI と呼ばれるプログラムやスクリプトを実行して動的なコンテンツを生成することができます。 CGI スクリプトは任意のプログラミング言語を利用することができます。通常は PHP などのスクリプト言語を使用します。</para>
 
-  <para>
-   To enable Apache to deliver content created by CGI scripts,
-   <systemitem>mod_cgi</systemitem> needs to be activated.
-   <systemitem>mod_alias</systemitem> is also needed. Both modules are enabled
-   by default. Refer to <xref linkend="sec.apache2.modules.activating"/> for
-   details on activating modules.
-  </para>
+  <para>CGI スクリプトが生成したコンテンツを Apache から配信できるようにするには、 <systemitem>mod_cgi</systemitem> を有効化する必要があります。また、 <systemitem>mod_alias</systemitem> もあわせて有効化する必要があります。いずれのモジュールとも既定で有効化されています。モジュールの有効化について、詳しくは <xref linkend="sec.apache2.modules.activating"/> をお読みください。</para>
 
   <warning>
-   <title>CGI Security</title>
-   <para>
-    Allowing the server to execute CGI scripts is a potential security hole.
-    Refer to <xref linkend="sec.apache2.security"/> for additional information.
-   </para>
+   <title>CGI セキュリティ</title>
+   <para>サーバ内で CGI スクリプトを実行できるように設定すると、潜在的なセキュリティホールとなる可能性があります。詳しくは <xref linkend="sec.apache2.security"/> をお読みください。</para>
   </warning>
 
   <sect2 xml:id="sec.apache2.cgi.configuration">
-   <title>Apache Configuration</title>
-   <para>
-    In &productname;, the execution of CGI scripts is only allowed in the
-    directory <filename>/srv/www/cgi-bin/</filename>. This location is already
-    configured to execute CGI scripts. If you have created a virtual host
-    configuration (see
-    <xref linkend="sec.apache2.configuration.manually.vhost"/>) and want to
-    place your scripts in a host-specific directory, you must unlock and
-    configure this directory.
-   </para>
+   <title>Apache の設定</title>
+   <para>&productname; では、 CGI スクリプトの実行は <filename>/srv/www/cgi-bin/</filename> ディレクトリ内でのみ許可されるように設定されています。この場所は CGI スクリプトを実行する場所として設定されているディレクトリでもあります。仮想ホストの設定を作成している (詳しくは <xref linkend="sec.apache2.configuration.manually.vhost"/>) 場合で、仮想ホスト固有のディレクトリ内で CGI スクリプトを実行したい場合は、そのディレクトリでの CGI スクリプトの実行を許可するよう設定しなければなりません。</para>
    <example xml:id="ex.apache2.cgi.configuration">
-    <title>VirtualHost CGI Configuration</title>
+    <title>VirtualHost CGI 設定</title>
 <screen>ScriptAlias /cgi-bin/ "/srv/www/&wwwname;/cgi-bin/"<co xml:id="co.apache2.cgi.script_alias"/>
 
 &lt;Directory "/srv/www/&wwwname;/cgi-bin/"&gt;
@@ -1628,242 +868,101 @@ sknorr, 2017-06-07 -->
 &lt;/Directory&gt;</screen>
     <calloutlist>
      <callout arearefs="co.apache2.cgi.script_alias">
-      <para>
-       Tells Apache to handle all files within this directory as CGI scripts.
-      </para>
+      <para>このディレクトリ内にある全てのファイルを、 CGI スクリプトとして実行するよう指定しています。</para>
      </callout>
      <callout arearefs="co.apache2.cgi.options">
-      <para>
-       Enables CGI script execution
-      </para>
+      <para>CGI スクリプトの実行を有効化しています。</para>
      </callout>
      <callout arearefs="co.apache2.cgi.handler">
-      <para>
-       Tells the server to treat files with the extensions .pl and .cgi as CGI
-       scripts. Adjust according to your needs.
-      </para>
+      <para>.pl と .cgi の拡張子を持つファイルを、 CGI スクリプトとして扱うよう指定しています。こちらは必要に応じて変更してください。</para>
      </callout>
      <callout arearefs="co.apache2.cgi.order">
-      <para>
-       The <systemitem>Require</systemitem> directive controls the default
-       access state. In this case, access is granted to the specified directory
-       without limitation. For more information on authentication and
-       authorization, see
-       <link xlink:href="http://httpd.apache.org/docs/2.4/howto/auth.html"/>.
-      </para>
+      <para><systemitem>Require</systemitem> ディレクティブは、既定のアクセス状態を制御するためのディレクティブです。この場合、指定したディレクトリへのアクセスは制限無く許可されます。認証と認可について、詳しくは <link xlink:href="http://httpd.apache.org/docs/2.4/howto/auth.html"/> をお読みください。</para>
      </callout>
     </calloutlist>
    </example>
   </sect2>
 
   <sect2 xml:id="sec.apache2.cgi.example_script">
-   <title>Running an Example Script</title>
-   <para>
-    CGI programming differs from "regular" programming in that the CGI programs
-    and scripts must be preceded by a MIME-Type header such as
-    <literal>Content-type: text/html</literal>. This header is sent to the
-    client, so it understands what kind of content it receives. Secondly, the
-    script's output must be something the client, usually a Web browser,
-    understands&mdash;HTML usually, or plain text or images, for example.
-   </para>
-   <para>
-    A simple test script available under
-    <filename>/usr/share/doc/packages/apache2/test-cgi</filename> is part of
-    the Apache package. It outputs the content of some environment variables as
-    plain text. Copy this script to either
-    <filename>/srv/www/cgi-bin/</filename> or the script directory of your
-    virtual host (<filename>/srv/www/&wwwname;/cgi-bin/</filename>) and name it
-    <filename>test.cgi</filename>. Edit the file to have
-    <literal>#!/bin/sh</literal> as the first line.
-   </para>
-   <para>
-    Files accessible by the Web server should be owned by the user
-    <systemitem class="username">root</systemitem>. For additional information
-    see <xref linkend="sec.apache2.security"/>. Because the Web server runs
-    with a different user, the CGI scripts must be world-executable and
-    world-readable. Change into the CGI directory and use the command
-    <command>chmod 755 test.cgi</command> to apply the proper permissions.
-   </para>
-   <para>
-    Now call <literal>http://localhost/cgi-bin/test.cgi</literal> or
-    <literal>http://&wwwname;/cgi-bin/test.cgi</literal>. You should see the
-    <quote>CGI/1.0 test script report</quote>.
-   </para>
+   <title>サンプルスクリプトの実行</title>
+   <para>CGI のプログラミングは "通常の" プログラミングとは異なり、 <literal>Content-type: text/html</literal> のような MIME タイプヘッダなどを冒頭に送信しなければなりません。このヘッダはクライアントに送信されるもので、どのような種類のコンテンツを送信しているのかを表明しています。また、スクリプトが送信するコンテンツは、クライアント側 (たとえば Web ブラウザ) が解釈できるものでなければなりません。通常は HTML などですが、純粋なテキストや画像などでもかまいません。</para>
+   <para><filename>/usr/share/doc/packages/apache2/test-cgi</filename> には、シンプルなテスト用スクリプトが用意されています。これは Apache パッケージの一部として提供されているもので、純粋なテキスト形式でいくつかの環境変数を出力するものです。このスクリプトを <filename>/srv/www/cgi-bin/</filename> にコピーするか、もしくは仮想ホスト ( <filename>/srv/www/&wwwname;/cgi-bin/</filename> ) などにコピーして、 <filename>test.cgi</filename> のような名前に変更してください。また、ファイルの冒頭に <literal>#!/bin/sh</literal> を追加してください。</para>
+   <para>また、 Web サーバからアクセスできるようにするには、所有者が <systemitem class="username">root</systemitem> である必要もあります。詳しくは <xref linkend="sec.apache2.security"/> をお読みください。なお、 Web サーバは異なるユーザとして動作する仕組みであるため、 CGI スクリプトは全てのユーザが実行でき、かつ読み込みできるものでなければなりません。必要なアクセス権を適用するには、 CGI のディレクトリに移動して <command>chmod 755 test.cgi</command> を実行してください。</para>
+   <para>これで <literal>http://localhost/cgi-bin/test.cgi</literal> または <literal>http://&wwwname;/cgi-bin/test.cgi</literal> で CGI スクリプトを実行することができます。 <quote>CGI/1.0 test script report</quote> のような画面が表示されるはずです。</para>
   </sect2>
 
   <sect2 xml:id="sec.apache2.cgi.troubleshooting">
-   <title>CGI Troubleshooting</title>
-   <para>
-    If you do not see the output of the test program but an error message
-    instead, check the following:
-   </para>
+   <title>CGI トラブルシューティング</title>
+   <para>テストプログラムの出力が正しく表示されず、エラーメッセージが表示されてしまった場合は、下記をご確認ください:</para>
    <itemizedlist mark="bullet" spacing="normal">
-    <title>CGI Troubleshooting</title>
+    <title>CGI トラブルシューティング</title>
     <listitem>
-     <para>
-      <emphasis>Have you reloaded the server after having changed the
-      configuration?</emphasis>
-      If not, reload with <command>systemctl reload apache2</command>.
-     </para>
+     <para><emphasis>設定の変更後、設定を反映させるために再読み込みを実施しましたか？</emphasis> 実施していない場合は、 <command>systemctl reload apache2</command> で再読み込みを実施してください。</para>
     </listitem>
     <listitem>
-     <para>
-      <emphasis>If you have configured your custom CGI directory, is it
-      configured properly?</emphasis>
-      If in doubt, try the script within the default CGI directory
-      <filename>/srv/www/cgi-bin/</filename> and call it with
-      <literal>http://localhost/cgi-bin/test.cgi</literal>.
-     </para>
+     <para><emphasis>独自の CGI ディレクトリを設定している場合は、その設定が適切に行なわれていますか？</emphasis> 何か不安な点がある場合は、既定の CGI ディレクトリである <filename>/srv/www/cgi-bin/</filename> にスクリプトをコピーして、 <literal>http://localhost/cgi-bin/test.cgi</literal> にアクセスしてみてください。</para>
     </listitem>
     <listitem>
-     <para>
-      <emphasis>Are the file permissions correct?</emphasis>
-      Change into the CGI directory and
-      execute <command>ls -l test.cgi</command>. The output should start with
-     </para>
+     <para><emphasis>ファイルのアクセス権は正しく設定されていますか？</emphasis> CGI のディレクトリに移動して、 <command>ls -l test.cgi</command> を実行してください。出力の冒頭は下記のようになっているはずです:</para>
 <screen>-rwxr-xr-x  1 root root</screen>
     </listitem>
     <listitem>
-     <para>
-      Make sure that the script does not contain programming errors. If you
-      have not changed <filename>test.cgi</filename>, this should not be the
-      case, but if you are using your own programs, always make sure that they
-      do not contain programming errors.
-     </para>
+     <para>スクリプトにプログラミングエラーが無いことをご確認ください。 <filename>test.cgi</filename> を変更せずにそのまま使用している場合は問題なく動作するはずですが、独自に作成したプログラムを使用している場合は、プログラミングに問題がないことをよく確認する必要があります。</para>
     </listitem>
    </itemizedlist>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.apache2.ssl">
-  <title>Setting Up a Secure Web Server with SSL</title>
+  <title>SSL を利用した暗号化機能付き Web サーバの設定</title>
 
-  <para>
-   Whenever sensitive data, such as credit card information, is transferred
-   between Web server and client, it is desirable to have a secure, encrypted
-   connection with authentication.  <systemitem>mod_ssl</systemitem> provides
-   strong encryption using the secure sockets layer (SSL) and transport layer
-   security (TLS) protocols for HTTP communication between a client and the Web
-   server. Using TLS/SSL, a private connection between Web server and client is
-   established. Data integrity is ensured and client and server can
-   authenticate each other.
-  </para>
+  <para>クレジットカード情報などの機密データを Web サーバとクライアントとの間でやりとりするにあたっては、認証機能付きの暗号化接続を行なって機密を保持する必要があります。 <systemitem>mod_ssl</systemitem> では Secure Sockets Layer (SSL) や Transport Layer Security (TLS) を利用して、クライアントと Web サーバとの間の HTTP 通信に対して強力な暗号化機能を提供します。つまり、 TLS/SSL を利用することで Web サーバとクライアントの間の通信を盗聴できなくすることになります。もちろんデータの整合性についても確認が行なわれますし、クライアントとサーバはお互いに認証することができます。</para>
 
-  <para>
-   For this purpose, the server sends an SSL certificate that holds information
-   proving the server's valid identity before any request to a URL is answered.
-   In turn, this guarantees that the server is the uniquely correct end point
-   for the communication. Additionally, the certificate generates an encrypted
-   connection between client and server that can transport information without
-   the risk of exposing sensitive, plain-text content.
-  </para>
+  <para>このような目的から、サーバは要求された URL に応答する前に、サーバ自身の正しい識別情報を示す SSL 証明書を送信します。これによりクライアント側は、通信している相手が間違いのないものであることを確認できることになります。これに加えて、証明書は暗号化接続を生成することができますので、クライアントとサーバとの間でやり取りされる情報が、純粋なテキストのように漏洩することがなくなります。</para>
 
-  <para>
-   <systemitem>mod_ssl</systemitem> does not implement the TLS/SSL protocols
-   itself, but acts as an interface between Apache and an SSL library. In
-   &productname;, the OpenSSL library is used. OpenSSL is automatically
-   installed with Apache.
-  </para>
+  <para><systemitem>mod_ssl</systemitem> は TLS/SSL プロトコルを直接実装しているわけではありません。その代わりに、 Apache と SSL ライブラリとの仲介インターフェイスとして動作します。 &productname; では OpenSSL ライブラリを使用します。 OpenSSL は、 Apache をインストールすると自動的にインストールされます。</para>
 
-  <para>
-   The most visible effect of using <systemitem>mod_ssl</systemitem> with
-   Apache is that URLs are prefixed with <literal>https://</literal> instead of
-   <literal>http://</literal>.
-  </para>
+  <para>Apache で <systemitem>mod_ssl</systemitem> を利用すると、目に見える違いとしては URL が <literal>http://</literal> ではなく <literal>https://</literal> になります。</para>
 
   <sect2 xml:id="sec.apache2.ssl.certificate">
-   <title>Creating an SSL Certificate</title>
-   <para>
-    To use TLS/SSL with the Web server, you need to create an SSL
-    certificate. This certificate is needed for the authorization between Web
-    server and client, so that each party can clearly identify the other
-    party. To ensure the integrity of the certificate, it must be signed by a
-    party every user trusts.
-   </para>
-   <para>
-    There are three types of certificates you can create: a
-    <quote>dummy</quote> certificate for testing purposes only, a self-signed
-    certificate for a defined circle of users that trust you, and a certificate
-    signed by an independent, publicly-known certificate authority (CA).
-   </para>
-   <para>
-    Creating a certificate is a two step process. First, a private key for the
-    certificate authority is generated then the server certificate is signed
-    with this key.
-   </para>
+   <title>SSL 証明書の作成</title>
+   <para>Web サーバで TLS/SSL を使用するには、まず SSL 証明書を作成する必要があります。この証明書は Web サーバとクライアントとの間で認証を行なうのに必要なもので、クライアントがサーバを明確に識別することができます。証明書の正当性を確保するには、各ユーザが信頼する団体で署名してもらわなければなりません。</para>
+   <para>作成できる証明書には、 3 つの種類があります。 1 つ目は <quote>ダミー</quote> の証明書で、テスト用にのみ使用することができます。 2 つ目は自己署名証明書と呼ばれるもので、あなた自身を信頼する特定範囲のユーザのみ利用できるものです。 3 つ目は公的な証明書で、証明機関 (Certificate Authority (CA)) と呼ばれる独立した第三者機関が署名する正式な証明書です。</para>
+   <para>証明書の作成は 2 段階の手順から構成されています。最初に証明機関の機密鍵を作成し、次にその鍵でサーバ証明書に署名を行ないます。</para>
    <tip>
-    <title>For More Information</title>
-    <para>
-     To learn more about concepts and definitions of TLS/SSL, refer to
-     <link xlink:href="http://httpd.apache.org/docs/2.4/ssl/ssl_intro.html">http://httpd.apache.org/docs/2.4/ssl/ssl_intro.html</link>.
-    </para>
+    <title>さらなる情報</title>
+    <para>TLS/SSL の考え方や定義についての詳細は、 <link xlink:href="http://httpd.apache.org/docs/2.4/ssl/ssl_intro.html">http://httpd.apache.org/docs/2.4/ssl/ssl_intro.html</link> をお読みください。</para>
    </tip>
    <sect3 xml:id="sec.apache2.ssl.certificate.dummy">
-    <title>Creating a <quote>Dummy</quote> Certificate</title>
-    <para>
-     To generate a dummy certificate, call the script
-     <command>/usr/bin/gensslcert</command>. It creates or overwrites the files
-     listed below. Use <command>gensslcert</command>'s optional switches to
-     fine-tune the certificate. Call <command>/usr/bin/gensslcert </command>
-     <option>-h</option> for more information.
-    </para>
+    <title><quote>ダミー</quote> の証明書の作成</title>
+    <para>ダミーの証明書を作成するには、 <command>/usr/bin/gensslcert</command> を実行します。これを実行すると、下記に示すファイルを作成もしくは上書きします。なお、 <command>gensslcert</command> のオプションスイッチを指定することで、証明書の詳細を調整することができます。詳しくは <command>/usr/bin/gensslcert </command> <option>-h</option> を実行してください。</para>
     <itemizedlist mark="bullet" spacing="normal">
      <listitem>
-      <para>
-       <filename>/etc/apache2/ssl.crt/ca.crt</filename>
-      </para>
+      <para><filename>/etc/apache2/ssl.crt/ca.crt</filename></para>
      </listitem>
      <listitem>
-      <para>
-       <filename>/etc/apache2/ssl.crt/server.crt</filename>
-      </para>
+      <para><filename>/etc/apache2/ssl.crt/server.crt</filename></para>
      </listitem>
      <listitem>
-      <para>
-       <filename>/etc/apache2/ssl.key/server.key</filename>
-      </para>
+      <para><filename>/etc/apache2/ssl.key/server.key</filename></para>
      </listitem>
      <listitem>
-      <para>
-       <filename>/etc/apache2/ssl.csr/server.csr</filename>
-      </para>
+      <para><filename>/etc/apache2/ssl.csr/server.csr</filename></para>
      </listitem>
     </itemizedlist>
-    <para>
-     A copy of <filename>ca.crt</filename> is also placed at
-     <filename>/srv/www/htdocs/CA.crt</filename> for download.
-    </para>
+    <para><filename>ca.crt</filename> のコピーを <filename>/srv/www/htdocs/CA.crt</filename> に配置して、ダウンロードできるようにしておくとよいでしょう。</para>
     <important>
-     <title>For Testing Purposes Only</title>
-     <para>
-      A dummy certificate should never be used on a production system. Only use
-      it for testing purposes.
-     </para>
+     <title>テスト用途のみでの使用について</title>
+     <para>ダミーの証明書は本番環境で使用すべきではありません。テスト目的にのみお使いください。</para>
     </important>
    </sect3>
    <sect3 xml:id="sec.apache2.ssl.certificate.custom">
-    <title>Creating a Self-Signed Certificate</title>
-    <para>
-     If you are setting up a secure Web server for an intranet or for a defined
-     circle of users, it is probably sufficient if you sign a certificate with
-     your own certificate authority (CA). Note that visitors to such a site
-     will see a warning like <quote>this is an untrusted site</quote>, as Web
-     browsers do not recognize self-signed certificates.
-    </para>
+    <title>自己署名証明書の作成</title>
+    <para>イントラネット環境や特定の範囲のユーザのみ公開する Web サーバを構築する際は、自分自身が証明機関 (CA) になって証明書に署名を付与し、使用すれば十分な場合があります。ただし、公的な証明書ではなく、 Web ブラウザが証明書を識別することができないことから、ユーザがアクセスすると <quote>安全な接続ではありません</quote> のような警告メッセージが表示されることに注意してください。</para>
     <important>
-     <title>Self-Signed Certificates</title>
-     <para>
-      Only use a self-signed certificate on a Web server that is accessed by
-      people who know and trust you as a certificate authority. It is not
-      recommended to use such a certificate for a public shop, for example.
-     </para>
+     <title>自己署名証明書について</title>
+     <para>自己署名証明書は、あなた自身を証明機関として信頼してくれる特定の範囲のユーザに対して提供する Web サーバにのみお使いください。たとえば一般向けの販売サイトなどでは、このような証明書を使用しないことをお勧めします。</para>
     </important>
-    <para>
-     First you need to generate a certificate signing request (CSR). You are
-     going to use <command>openssl</command>, with <literal>PEM</literal> as
-     the certificate format. During this step, you will be asked for a
-     passphrase, and to answer several questions. Remember the passphrase you
-     enter as you will need it in the future.
-    </para>
+    <para>まずは証明書署名要求 (Certificate Signing Request (CSR)) を生成します。この作業では <command>openssl</command> を利用し、 <literal>PEM</literal> 形式で作成を行ないます。また、この手順ではパスフレーズのほか、いくつかの質問に解凍する必要があります。パスフレーズは今後入力を求められることになりますので、忘れずに記憶しておいてください。</para>
 <screen>&prompt.sudo;openssl req -new &gt; new.cert.csr
 Generating a 1024 bit RSA private key
 ..++++++
@@ -1893,775 +992,364 @@ A challenge password []:<co xml:id="co.ssl.self.challenge"/>
 An optional company name []:<co xml:id="co.ssl.self.optional"/></screen>
     <calloutlist>
      <callout arearefs="co.ssl.self.pass1">
-      <para>
-       Fill in your passphrase,
-      </para>
+      <para>パスフレーズを入力します。</para>
      </callout>
      <callout arearefs="co.ssl.self.pass2">
-      <para>
-       ...fill it in once more (and remember it).
-      </para>
+      <para>再度パスフレーズを入力します (パスフレーズは忘れてはなりません) 。</para>
      </callout>
      <callout arearefs="co.ssl.self.country">
-      <para>
-       Fill in your 2 letter country code, such as <literal>GB</literal> or
-       <literal>CZ</literal>.
-      </para>
+      <para>2 文字の国コードを入力します。日本であれば <literal>JP</literal> を入力します。</para>
      </callout>
      <callout arearefs="co.ssl.self.state">
-      <para>
-       Fill in the name of the state where you live.
-      </para>
+      <para>通常は州名を入力します。<!-- NOTE: Japanese content --> 日本の場合は都道府県名を一般に入力します。 <!-- end --></para>
      </callout>
      <callout arearefs="co.ssl.self.city">
-      <para>
-       Fill in the city name, such as <literal>Prague</literal>.
-      </para>
+      <para>市区町村名を入力します。たとえば <literal>Chiyoda-ku</literal> のように入力します。</para>
      </callout>
      <callout arearefs="co.ssl.self.org">
-      <para>
-       Fill in the name of the organization you work for.
-      </para>
+      <para>所属する団体名を入力します。</para>
      </callout>
      <callout arearefs="co.ssl.self.uname">
-      <para>
-       Fill in your organization unit, or leave blank if you have none.
-      </para>
+      <para>組織単位を入力します。組織単位がない場合は、何も入力しなくてかまいません。</para>
      </callout>
      <callout arearefs="co.ssl.self.cname">
-      <para>
-       Fill in either the domain name of the server, or your first and last
-       name.
-      </para>
+      <para>サーバのドメイン名、もしくはあなた自身のフルネームを入力します。</para>
      </callout>
      <callout arearefs="co.ssl.self.email">
-      <para>
-       Fill in your work e-mail address.
-      </para>
+      <para>電子メールアドレスを入力します。</para>
      </callout>
      <callout arearefs="co.ssl.self.challenge">
-      <para>
-       Leave the challenge password empty, otherwise you will need to enter it
-       every time you restart the Apache Web server.
-      </para>
+      <para>必要に応じてチャレンジパスワードを入力します。ここで何らかのパスワードを指定した場合は、 Apache Web サーバを再起動するたびに入力を求められます。</para>
      </callout>
      <callout arearefs="co.ssl.self.optional">
-      <para>
-       Fill in the optional company name, or leave blank.
-      </para>
+      <para>必要であれば企業名を入力します。不要であれば何も入力しなくてかまいません。</para>
      </callout>
     </calloutlist>
-    <para>
-     Now you can generate the certificate. You are going to use
-     <command>openssl</command> again, and the format of the certificate is the
-     default <literal>PEM</literal>.
-    </para>
+    <para>これで証明書を生成できるようになります。再度 <command>openssl</command> を使用して、既定の <literal>PEM</literal> 形式で証明書を生成します。</para>
     <procedure>
-     <title>Generating the Certificate</title>
+     <title>証明書の生成</title>
      <step>
-      <para>
-       Export the private part of the key to <filename>new.cert.key</filename>.
-       You will be prompted for the passphrase you entered when creating the
-       certificate signing request (CSR).
-      </para>
+      <para>機密鍵を <filename>new.cert.key</filename> にエクスポートします。証明書署名要求 (Certificate Signing Request; CSR) でパスフレーズを入力している場合は、ここで入力を求められます。</para>
 <screen>&prompt.sudo;openssl rsa -in privkey.pem -out new.cert.key</screen>
      </step>
      <step>
-      <para>
-       Generate the public part of the certificate according to the information
-       you filled out in the signing request. The <option>-days</option> option
-       specifies the length of time before the certificate expires. You can
-       revoke a certificate, or replace one before it expires.
-      </para>
+      <para>署名要求で入力した情報に従って証明書の公開部分を生成します。 <option>-days</option> オプションは、証明書の期限が切れるまでの日数を指定します。なお、期限切れになる前でも、証明書を取り消したり新しいものに置き換えたりすることができます。</para>
 <screen>&prompt.sudo;openssl x509 -in new.cert.csr -out new.cert.cert -req \
 -signkey new.cert.key -days 365</screen>
      </step>
      <step>
-      <para>
-       Copy the certificate files to the relevant directories, so that the
-       Apache server can read them. Make sure that the private key
-       <filename>/etc/apache2/ssl.key/server.key</filename> is not
-       world-readable, while the public PEM certificate
-       <filename>/etc/apache2/ssl.crt/server.crt</filename> is.
-      </para>
+      <para>生成された証明書ファイルを、 Apache から読み取ることのできるディレクトリにコピーします。なお、機密鍵である <filename>/etc/apache2/ssl.key/server.key</filename> ファイルは全てのユーザが読み込めるようにしてはなりませんが、公開鍵である <filename>/etc/apache2/ssl.crt/server.crt</filename> については、全てのユーザが読み込めるようにしておく必要があります。</para>
 <screen>&prompt.sudo;cp new.cert.cert /etc/apache2/ssl.crt/server.crt
 &prompt.sudo;cp new.cert.key /etc/apache2/ssl.key/server.key</screen>
      </step>
     </procedure>
     <tip>
-     <title>Public Certificate Location</title>
-     <para>
-      The last step is to copy the public certificate file from
-      <filename>/etc/apache2/ssl.crt/server.crt</filename> to a location where
-      your users can access it to incorporate it into the list of known and
-      trusted CAs in their Web browsers. Otherwise a browser complains that the
-      certificate was issued by an unknown authority.
-     </para>
+     <title>証明書の公開先について</title>
+     <para>最後に証明書ファイル <filename>/etc/apache2/ssl.crt/server.crt</filename> をユーザからアクセスできる場所にコピーして、各ユーザの Web ブラウザ内に取り込んで信頼してもらう作業が必要となります。この作業を実施しないと、ブラウザ側では未知の証明機関が発行した証明書であるものとして扱われてしまい、エラーまたは警告が表示されるようになってしまいます。</para>
     </tip>
    </sect3>
    <sect3 xml:id="sec.apache2.ssl.certificate.official">
-    <title>Getting an Officially Signed Certificate</title>
-    <para>
-     There are several official certificate authorities that sign your
-     certificates. The certificate is signed by a trustworthy third party, so
-     can be fully trusted. Publicly operating secure Web servers usually have
-     an officially signed certificate.  A list of the most used Certificate
-     Authorities (CAs) is available at <link xlink:href="https://en.wikipedia.org/wiki/Certificate_authority#Providers"/>.
-    </para>
-    <para>
-     When requesting an officially signed certificate, you do not send a
-     certificate to the CA. Instead, issue a Certificate Signing Request
-<!-- 2015-08-24, tbazant: replacing CA.sh with openssl
-     (http://doccomments.provo.novell.com/comments/28367)
-
-     (CSR). To create a CSR, call the script
-     <command>/usr/share/ssl/misc/CA.sh -newreq</command>.
-
-     -->
-     (CSR). To create a CSR, run the following command:
-    </para>
+    <title>公的に署名された証明書の取得</title>
+    <para>一般的に利用可能な証明書を発行する機関は様々あります。証明書を公的に信頼されている機関に署名してもらうことで、 Web サーバ自身を完全に信頼してもらうことができるようになります。また、一般的な SSL/TLS 対応のブラウザであれば、公的な証明機関の証明書を保持していますので、ここから正当性を確認することができます。一般的に使用される証明機関 (CA) の一覧については、 <link xlink:href="https://en.wikipedia.org/wiki/Certificate_authority#Providers"/> などをご覧ください。</para>
+    <para>公的に証明された証明書を取得するにあたっては、証明書そのものを CA に送信する必要はありません。その代わりに、証明書署名要求 (Certificate Signing Request; CSR) <!-- 2015-08-24, tbazant: replacing CA.sh with openssl (http://doccomments.provo.novell.com/comments/28367) (CSR). To create a CSR, call the script <command>/usr/share/ssl/misc/CA.sh -newreq</command>. --> を送信します。 CSR を作成するには、下記のコマンドを実行します:</para>
 <screen>&prompt.user;openssl req -new -newkey rsa:2048 -nodes -keyout newkey.pem -out newreq.pem</screen>
-    <para>
-<!-- First the script asks for a password with which the CSR should be
-     encrypted. -->
-     You are asked to enter a distinguished name. This requires you to answer a
-     few questions, such as country name or organization name. Enter valid
-     data&mdash;everything you enter here later shows up in the certificate and
-     is checked. You do not need to answer every question. If one does not
-     apply to you or you want to leave it blank, use <quote>.</quote>. Common
-     name is the name of the CA itself&mdash;choose a significant name, such as
-     <replaceable>My company</replaceable> CA. Last, a challenge password and
-     an alternative company name must be entered.
-    </para>
-    <para>
-     Find the CSR in the directory from which you called the script. The file
-     is named <filename>newreq.pem</filename>.
-    </para>
+    <para><!-- First the script asks for a password with which the CSR should be encrypted. --> ここでは識別名 (Distinguished Name) の入力を求められるほか、国コードや組織名などのいくつかの質問に回答する必要があります。ここで入力した内容は証明書内に記載されるほか、証明機関が内容をチェックすることもあります。なお、全ての質問に回答する必要はありません。不要であると判断した項目に対しては、 <quote>.</quote> とだけ入力して先に進めてください。<!-- ??? Common name is the name of the CA itself&mdash;choose a significant name, such as <replaceable>My company</replaceable> CA. Last, a challenge password and an alternative company name must be entered. --></para>
+    <para>作成した CSR は、スクリプトを実行したディレクトリ内に出力されます。ファイル名は <filename>newreq.pem</filename> という名前になります。</para>
    </sect3>
   </sect2>
 
   <sect2 xml:id="sec.apache2.ssl.configuration">
-   <title>Configuring Apache with SSL</title>
-   <para>
-    The default port for TLS/SSL requests on the Web server side is 443.
-    There is no conflict between a <quote>regular</quote> Apache listening on
-    port 80 and an TLS/SSL-enabled Apache listening on port 443. In fact, HTTP
-    and HTTPS can be run with the same Apache instance. Usually separate
-    virtual hosts are used to dispatch requests to port 80 and port 443 to
-    separate virtual servers.
-   </para>
+   <title>SSL を利用する場合の Apache の設定</title>
+   <para>Web サーバで TLS/SSL を使用する場合、既定のポートは 443 が割り当てられています。 TLS/SSL のない <quote>通常の</quote> Apache はポート 80 で、 TLS/SSL を使用する場合の Apache は 443 を使用しますが、両方のサービスを単一の Apache インスタンスで賄うことができます。また、それぞれに対して別々の仮想ホストを設定して、提供する内容やサービスなどを変更したりすることもあります。</para>
    <important>
-    <title>Firewall Configuration</title>
-    <para>
-     Do not forget to open the firewall for SSL-enabled Apache on port 443.
-     This can be done with &firewalld; as described in
-     <xref linkend="sec.security.firewall.firewalld.cmd"/>.
-    </para>
+    <title>ファイアウオールの設定</title>
+    <para>なお、 Apache で SSL (ポート 443) を使用するにあたっては、ファイアウオールでポートを開くことを忘れずに実施してください。この作業は &firewalld; で行ないます。詳しくは <xref linkend="sec.security.firewall.firewalld.cmd"/> をお読みください。</para>
    </important>
-   <para>
-    The SSL module is enabled by default in the global server configuration.
-    In case it has been disabled on your host, activate it with the following
-    command: <command>a2enmod ssl</command>. To finally enable SSL, the server
-    needs to be started with the flag <quote>SSL</quote>. To do so, call
-    <command>a2enflag SSL</command> (case-sensitive!).  If you have chosen to
-    encrypt your server certificate with a password, you should also increase
-    the value for <systemitem>APACHE_TIMEOUT</systemitem> in
-    <filename>/etc/sysconfig/apache2</filename>, so you have enough time to
-    enter the passphrase when Apache starts. Restart the server to make these
-    changes active. A reload is not sufficient.
-   </para>
-   <para>
-    The virtual host configuration directory contains a template
-    <filename>/etc/apache2/vhosts.d/vhost-ssl.template</filename> with
-    SSL-specific directives that are extensively documented. Refer to
-    <xref linkend="sec.apache2.configuration.manually.vhost"/> for the general
-    virtual host configuration.
-   </para>
-   <para>
-    To get started, copy the template to
-    <filename>/etc/apache2/vhosts.d/<replaceable>MYSSL-HOST</replaceable>.conf</filename>
-    and edit it. Adjusting the values for the following directives should be
-    sufficient:
-   </para>
+   <para>SSL モジュールは、サーバ全体の設定の中で既定で有効化されています。有効化されていない場合は、 <command>a2enmod ssl</command> で有効化することができます。また、 SSL を有効化する場合は、フラグ <quote>SSL</quote> を設定する必要があります。フラグを設定するには、 <command>a2enflag SSL</command> (大文字であることに注意してください) を実行します。また、サーバ証明書を暗号化している場合は、 <filename>/etc/sysconfig/apache2</filename> 内の <systemitem>APACHE_TIMEOUT</systemitem> の値を十分に大きな値にして、 Apache 開始時のパスワード入力に十分な時間が確保されるようにしてください。最後にサーバを再起動すると、変更を反映させることができます。再読み込みでは不十分ですので、あらかじめご注意ください。</para>
+   <para>仮想ホストの設定では、 <filename>/etc/apache2/vhosts.d/vhost-ssl.template</filename> の雛形に従って、いくつかの SSL 固有のディレクティブを追加する必要があります。雛形内には詳しく説明がありますので、こちらをお読みください。また、仮想ホストの設定についての一般的な情報は、 <xref linkend="sec.apache2.configuration.manually.vhost"/> をお読みください。</para>
+   <para>初めて SSL を設定する場合は、雛形を <filename>/etc/apache2/vhosts.d/<replaceable>仮想ホスト名</replaceable>.conf</filename> にコピーして、このファイルを編集していってください。それぞれ下記のディレクティブ部分を調整すれば、サーバを開始することができます:</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
-     <para>
-      <systemitem>DocumentRoot</systemitem>
-     </para>
+     <para><systemitem>DocumentRoot</systemitem></para>
     </listitem>
     <listitem>
-     <para>
-      <systemitem>ServerName</systemitem>
-     </para>
+     <para><systemitem>ServerName</systemitem></para>
     </listitem>
     <listitem>
-     <para>
-      <systemitem>ServerAdmin</systemitem>
-     </para>
+     <para><systemitem>ServerAdmin</systemitem></para>
     </listitem>
     <listitem>
-     <para>
-      <systemitem>ErrorLog</systemitem>
-     </para>
+     <para><systemitem>ErrorLog</systemitem></para>
     </listitem>
     <listitem>
-     <para>
-      <systemitem>TransferLog</systemitem>
-     </para>
+     <para><systemitem>TransferLog</systemitem></para>
     </listitem>
    </itemizedlist>
    <sect3 xml:id="sec.apache2.ssl.configuration.name-based">
-    <title>Name-Based Virtual Hosts and SSL</title>
-    <para>
-     By default it is not possible to run multiple SSL-enabled virtual hosts on
-     a server with only one IP address. Name-based virtual hosting requires
-     that Apache knows which server name has been requested. The problem with
-     SSL connections is, that such a request can only be read after the SSL
-     connection has already been established (by using the default virtual
-     host). As a result, users will receive a warning message stating that the
-     certificate does not match the server name.
-    </para>
-    <para>
-     &productname; comes with an extension to the SSL protocol called Server
-     Name Indication (SNI) addresses this issue by sending the name of the
-     virtual domain as part of the SSL negotiation. This enables the server to
-     <quote>switch</quote> to the correct virtual domain early and present the
-     browser the correct certificate.
-    </para>
-    <para>
-     SNI is enabled by default on &productname;. To enable Name-Based Virtual
-     Hosts for SSL, configure the server as described in
-     <xref linkend="sec.apache2.configuration.manually.vhost.named_vhosts"/>
-     (note that you need to use port <literal>443</literal> rather than port
-     <literal>80</literal> with SSL).
-    </para>
+    <title>名前ベースの仮想ホストと SSL の関係</title>
+    <para>既定では、 1 つの IP アドレスしか設定されていないサーバの場合、 SSL が有効化された仮想ホストを複数実行することはできません。名前ベースの仮想ホストでは、 Apache 側に仮想ホストのホスト名を設定し、 Apache がリクエストの内容を読み込んで仮想ホストを判別しますが、 SSL 接続の処理は Apache がリクエストを処理するよりも前に行なわれるため、 1 つの IP アドレスに対して SSL の設定を複数持たせることができず、これによって常に既定の仮想ホストのみが使われる結果になってしまいます。これにより、証明書に書かれているサーバ名と、実際にアクセスしているサーバ名が異なる、という警告メッセージをユーザが受け取る結果にもなってしまいます。</para>
+    <para>そのため、 &productname; では、サーバ名表示 (Server Name Indication (SNI)) と呼ばれる SSL プロトコルの拡張に対応するようになっています。これは、 SSL の処理内で仮想ホストのドメイン名を送信するための仕組みで、これによってサーバは、 SSL の処理を行なう時点で仮想ホストの判別ができるようになります。そのため、サーバ側は早期に適切な仮想ホストに <quote>切り替える</quote> ことができるようなり、ブラウザ側にも正しい証明書を配信できるようになります。</para>
+    <para>SNI は &productname; では既定で有効化されています。 SSL を利用して名前ベースの仮想ホストを設定するには、 <xref linkend="sec.apache2.configuration.manually.vhost.named_vhosts"/> の手順に従って設定を行なってください (ただし、 SSL を利用するには、ポート <literal>80</literal> ではなくポート <literal>443</literal> を使用するように設定する必要があります) 。</para>
     <important>
-     <title>SNI Browser Support</title>
-     <para>
-      SNI must also be supported on the client side. However, SNI is
-      supported by most browsers, except for certain older browsers. For more
-      information, see
-      <link xlink:href="https://en.wikipedia.org/wiki/Server_Name_Indication#Support"/>.
-     </para>
-     <para>
-      To configure handling of non-SNI capable browsers, use the directive
-      <systemitem>SSLStrictSNIVHostCheck</systemitem>. When set to
-      <literal>on</literal> in the server configuration, non-SNI capable
-      browser will be rejected for all virtual hosts. When set to
-      <literal>on</literal> within a <systemitem>VirtualHost</systemitem>
-      directive, access to this particular host will be rejected.
-     </para>
-     <para>
-      When set to <literal>off</literal> in the server configuration, the
-      server will behave as if not having SNI support. SSL requests will be
-      handled by the <emphasis>first</emphasis> virtual host defined (for port
-      443).
-     </para>
+     <title>SNI 対応ブラウザについて</title>
+     <para>SNI はクライアント側でも対応している必要がありますが、現時点では特定の古いブラウザを除いて、ほとんどのブラウザで対応するようになっています。詳しくは <link xlink:href="https://ja.wikipedia.org/wiki/Server_Name_Indication#%E5%AF%BE%E5%BF%9C%E7%8A%B6%E6%B3%81"/> をお読みください。</para>
+     <para>SNI 対応のブラウザに対する処理を設定するには、 <systemitem>SSLStrictSNIVHostCheck</systemitem> というディレクティブを設定します。この値をサーバ全体の設定で <literal>on</literal> にすると、全ての仮想ホストに対して SNI 非対応のブラウザからのアクセスを拒否するようになります。 <systemitem>VirtualHost</systemitem> ディレクティブ内で <literal>on</literal> に設定すると、特定の仮想ホストのみが拒否されるようになります。</para>
+     <para>サーバ全体の設定で <literal>off</literal> に設定した場合、サーバ側は SNI への対応を全く行なわなくなります。この場合、 SSL のリクエストが届くと、設定された <emphasis>最初の</emphasis> 仮想ホスト (ポート: 443) にアクセスがあったものとして扱われます。</para>
     </important>
    </sect3>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.apache2.multiple_instances">
-  <title>Running Multiple Apache Instances on the Same Server</title>
+  <title>同一サーバ内での複数 Apache インスタンスの起動</title>
 
-  <para>
-   As of &productnamereg; <phrase os="sles;sled">12 SP1</phrase><phrase os="osuse">42.1</phrase>, you can run multiple Apache instances on the same
-   server. This has several advantages over running multiple virtual hosts (see
-   <xref linkend="sec.apache2.configuration.manually.vhost"/>):
-  </para>
+  <para>&productnamereg; <phrase os="sles;sled">12 SP1</phrase> <phrase os="osuse">42.1</phrase> 以降のバージョンでは、同一のサーバ内で複数の Apache インスタンスを動作させることができます。これは複数の仮想ホストを動作させるのに比べて、幾分かの利点があります (詳しくは <xref linkend="sec.apache2.configuration.manually.vhost"/> をお読みください) 。</para>
 
   <itemizedlist>
    <listitem>
-    <para>
-     When a virtual host needs to be disabled for some time, you need to change
-     the Web server configuration and restart it so that the change takes
-     effect.
-    </para>
+    <para>何らかの理由で仮想ホストを無効化したい場合、通常であれば Web サーバの設定を変更して、その変更を反映させるために再起動を行なう必要があります。</para>
    </listitem>
    <listitem>
-    <para>
-     In case of problems with one virtual host, you need to restart all of
-     them.
-    </para>
+    <para>いずれかの仮想ホストで何らかの障害が発生した場合、全ての仮想ホストを再起動する必要があります。</para>
    </listitem>
   </itemizedlist>
 
-  <para>
-   You can run the default Apache instance as usual:
-  </para>
+  <para>既定の Apache インスタンスについては、通常通り開始することができます:</para>
 
 <screen>&prompt.sudo;systemctl start apache2</screen>
 
-  <para>
-   It reads the default <filename>/etc/sysconfig/apache2</filename> file. If
-   the file is not present, or it is present but it does not set the
-   <systemitem>APACHE_HTTPD_CONF</systemitem> variable, it reads
-   <filename>/etc/apache2/httpd.conf</filename>.
-  </para>
+  <para>上記を実行すると、既定の <filename>/etc/sysconfig/apache2</filename> ファイルを読み込みます。このファイルが存在しない場合や、 <systemitem>APACHE_HTTPD_CONF</systemitem> 変数が設定されていない場合は、 <filename>/etc/apache2/httpd.conf</filename> を読み込みます。</para>
 
-  <para>
-   To activate another Apache instance, run:
-  </para>
+  <para>もう 1 つの Apache インスタンスを開始したい場合は、下記のように実行します:</para>
 
-<screen>&prompt.sudo;systemctl start apache2@<replaceable>INSTANCE_NAME</replaceable></screen>
+<screen>&prompt.sudo;systemctl start apache2@<replaceable>インスタンス名</replaceable></screen>
 
-  <para>
-   For example:
-  </para>
+  <para>たとえば、下記のようになります:</para>
 
 <screen>&prompt.sudo;systemctl start apache2@example_web.org</screen>
 
-  <para>
-   By default, the instance uses
-   <filename>/etc/apache2@example_web.org/httpd.conf</filename> as a main
-   configuration file, which can be overwritten by setting
-   <systemitem>APACHE_HTTPD_CONF</systemitem> in
-   <filename>/etc/sysconfig/apache2@example_web.org</filename>.
-  </para>
+  <para>既定では、このインスタンスは <filename>/etc/apache2@example_web.org/httpd.conf</filename> というファイル名の設定ファイルを読み込みます。このファイル名の指定は、 <filename>/etc/sysconfig/apache2@example_web.org</filename> というファイル名の <systemitem>APACHE_HTTPD_CONF</systemitem> の設定で変更することができます。</para>
 
-  <para>
-   An example to set up an additional instance of Apache follows. Note that you
-   need to execute all the commands as &rootuser;.
-  </para>
+  <para>Apache の追加インスタンスを設定するには、下記の手順を実施します。なお、全てのコマンドを &rootuser; で実行することに注意してください。</para>
 
   <procedure>
-   <title>Configuring an Additional Apache Instance</title>
+   <title>追加の Apache インスタンスの設定</title>
    <step>
-    <para>
-     Create a new configuration file based on
-     <filename>/etc/sysconfig/apache2</filename>, for example
-     <filename>/etc/sysconfig/apache2@example_web.org</filename>:
-    </para>
+    <para>まずは新しい設定ファイルを、 <filename>/etc/sysconfig/apache2</filename> にあるものをベースにして作成します。たとえば <filename>/etc/sysconfig/apache2@example_web.org</filename> を作成します:</para>
 <screen>&prompt.sudo;cp /etc/sysconfig/apache2 /etc/sysconfig/apache2@example_web.org</screen>
    </step>
    <step>
-    <para>
-     Edit the file <filename>/etc/sysconfig/apache2@example_web.org</filename>
-     and change the line containing
-    </para>
+    <para><filename>/etc/sysconfig/apache2@example_web.org</filename> ファイルを編集し、下記の変数を修正します:</para>
 <screen>APACHE_HTTPD_CONF</screen>
-    <para>
-     to
-    </para>
+    <para>上記を、下記のように変更します:</para>
 <screen>APACHE_HTTPD_CONF="/etc/apache2/httpd@example_web.org.conf"</screen>
    </step>
    <step>
-    <para>
-     Create the file
-     <filename>/etc/apache2/httpd@example_web.org.conf</filename> based on
-     <filename>/etc/apache2/httpd.conf</filename>.
-    </para>
+    <para>次に <filename>/etc/apache2/httpd.conf</filename> ファイルをベースにして、 <filename>/etc/apache2/httpd@example_web.org.conf</filename> ファイルを作成します。</para>
 <screen>&prompt.sudo;cp /etc/apache2/httpd.conf /etc/apache2/httpd@example_web.org.conf</screen>
    </step>
    <step>
-    <para>
-     Edit <filename>/etc/apache2/httpd@example_web.org.conf</filename> and
-     change
-    </para>
+    <para><filename>/etc/apache2/httpd@example_web.org.conf</filename> ファイルを編集し、下記を変更します:</para>
 <screen>Include /etc/apache2/listen.conf</screen>
-    <para>
-     to
-    </para>
+    <para>上記を、下記のように変更します:</para>
 <screen>Include /etc/apache2/listen@example_web.org.conf</screen>
-    <para>
-     Review all the directives and change them to fit your needs. You will
-     probably want to change
-    </para>
+    <para>その他のディレクティブを確認して、必要であれば変更します。おそらくは下記のディレクティブを変更する必要があるものと思われます:</para>
 <screen>Include /etc/apache2/global.conf</screen>
-    <para>
-     and create new <filename>global@example_web.org.conf</filename> for each
-     instance. We suggest to change
-    </para>
+    <para>上記を変更して、新しいインスタンス用に <filename>global@example_web.org.conf</filename> ファイルを作成します。また、下記についても変更しておくことをお勧めします:</para>
 <screen>ErrorLog /var/log/apache2/error_log</screen>
-    <para>
-     to
-    </para>
+    <para>上記を、下記のように変更します:</para>
 <screen>ErrorLog /var/log/apache2/error@example_web.org_log</screen>
-    <para>
-     to have separate logs for each instance.
-    </para>
+    <para>これにより、各インスタンスのログを別々にすることができます。</para>
    </step>
    <step>
-    <para>
-     Create <filename>/etc/apache2/listen@example_web.org.conf</filename> based
-     on <filename>/etc/apache2/listen.conf</filename>.
-    </para>
+    <para>さらに <filename>/etc/apache2/listen.conf</filename> をベースにして、 <filename>/etc/apache2/listen@example_web.org.conf</filename> ファイルを作成します。</para>
 <screen>&prompt.sudo;cp /etc/apache2/listen.conf /etc/apache2/listen@example_web.org.conf</screen>
    </step>
    <step>
-    <para>
-     Edit <filename>/etc/apache2/listen@example_web.org.conf</filename> and
-     change
-    </para>
+    <para><filename>/etc/apache2/listen@example_web.org.conf</filename> を編集して、下記を変更します:</para>
 <screen>Listen 80</screen>
-    <para>
-     to the port number you want the new instance to run on, for example 82:
-    </para>
+    <para>上記を新しいインスタンスのポート番号に変更します。たとえば 82 であれば、下記のようになります:</para>
 <screen>Listen 82</screen>
-    <para>
-     To run the new Apache instance over a secured protocol (see
-     <xref linkend="sec.apache2.ssl"/>), change also the line
-    </para>
+    <para>新しい Apache インスタンスで SSL/TLS を利用する場合 (詳しくは <xref linkend="sec.apache2.ssl"/> をお読みください) は、下記の行についても変更する必要があります:</para>
 <screen>Listen 443</screen>
-    <para>
-     for example to
-    </para>
+    <para>上記を、たとえば下記のように変更します:</para>
 <screen>Listen 445</screen>
    </step>
    <step>
-    <para>
-     Start the new Apache instance:
-    </para>
+    <para>あとは新しい Apache インスタンスを開始します:</para>
 <screen>&prompt.sudo;systemctl start apache2@example_web.org</screen>
    </step>
    <step>
-    <para>
-     Check if the server is running by pointing your Web browser at
-     <literal>http://server_name:82</literal>. If you previously changed the
-     name of the error log file for the new instance, you can check it:
-    </para>
+    <para>最後にお使いの Web ブラウザから、サーバが動作していることを確認します。ここまでの設定を行なっていれば、 <literal>http://server_name:82</literal> でアクセスできるはずです。なお、新しいインスタンスで個別のエラーログを出力するように設定している場合は、下記のようにして確認することができます:</para>
 <screen>&prompt.sudo;tail -f /var/log/apache2/error@example_web.org_log</screen>
    </step>
   </procedure>
 
-  <para>
-   Here are several points to consider when setting up more Apache instances on
-   the same server:
-  </para>
+  <para>同一のサーバで複数の Apache インスタンスを動作させるにあたっては、下記の点を考慮する必要があります:</para>
 
   <itemizedlist>
    <listitem>
-    <para>
-     The file
-     <filename>/etc/sysconfig/apache2@<replaceable>INSTANCE_NAME</replaceable></filename>
-     can include the same variables as
-     <filename>/etc/sysconfig/apache2</filename>, including module loading and
-     MPM setting.
-    </para>
+    <para><filename>/etc/sysconfig/apache2@<replaceable>インスタンス名</replaceable></filename> ファイルでは、 <filename>/etc/sysconfig/apache2</filename> と同じ値を設定することができます。これにより、モジュールの読み込みや MPM の設定を同じにすることができます。</para>
    </listitem>
    <listitem>
-    <para>
-     The default Apache instance does not need to be running while other
-     instances run.
-    </para>
+    <para>また、新しい Apache インスタンスは、既定の Apache インスタンスが動作していなくても開始することができます。</para>
    </listitem>
    <listitem>
-    <para>
-     The Apache helper utilities <command>a2enmod</command>,
-     <command>a2dismod</command> and <command>apachectl</command> operate on
-     the default Apache instance if not specified otherwise with the
-     <systemitem>HTTPD_INSTANCE</systemitem> environment variable. The
-     following example
-    </para>
+    <para>Apache のヘルパーユーティリティである <command>a2enmod</command> , <command>a2dismod</command> , <command>apachectl</command> は、 <systemitem>HTTPD_INSTANCE</systemitem> 環境変数を指定していない場合、いずれも既定の Apache インスタンスに対して操作を行ないます。インスタンス名を指定する場合は、たとえば下記のようにして実行します:</para>
 <screen>&prompt.sudo;export HTTPD_INSTANCE=example_web.org
 &prompt.sudo;a2enmod access_compat
 &prompt.sudo;a2enmod status
 &prompt.sudo;apachectl start</screen>
-    <para>
-     will add <systemitem>access_compat</systemitem> and
-     <systemitem>status</systemitem> modules to the
-     <systemitem>APACHE_MODULES</systemitem> variable of
-     <filename>/etc/sysconfig/apache2@example_web.org</filename>, and then
-     start the <literal>example_web.org</literal> instance.
-    </para>
+    <para>上記を実行すると、 <filename>/etc/sysconfig/apache2@example_web.org</filename> にある <systemitem>APACHE_MODULES</systemitem> の値に対して、 <systemitem>access_compat</systemitem> と <systemitem>status</systemitem> を追加し、 <literal>example_web.org</literal> のインスタンスを起動します。</para>
    </listitem>
   </itemizedlist>
  </sect1>
  <sect1 xml:id="sec.apache2.security">
-  <title>Avoiding Security Problems</title>
+  <title>セキュリティ問題の回避</title>
 
-  <para>
-   A Web server exposed to the public Internet requires an ongoing
-   administrative effort. It is inevitable that security issues appear, both
-   related to the software and to accidental misconfiguration. Here are some
-   tips for how to deal with them.
-  </para>
+  <para>Web サーバは全世界のインターネットに公開される仕組みであるため、常に管理面の労力を必要とします。ソフトウエアに起因するセキュリティ問題のほか、設定ミスによる情報漏洩なども必然的に発生しうる問題となります。ここでは、これらの問題を解決するためのいくつかのヒントを示しています。</para>
 
   <sect2 xml:id="sec.apache2.security.up-to-date">
-   <title>Up-to-Date Software</title>
-   <para>
-    If there are vulnerabilities found in the Apache software, a security
-    advisory will be issued by &suse;. It contains instructions for fixing the
-    vulnerabilities, which in turn should be applied when possible. The &suse;
-    security announcements are available from the following locations:
-   </para>
+   <title>最新版のソフトウエアの使用</title>
+   <para>Apache ソフトウエアに対して脆弱性が発見されると、 &suse; はセキュリティ勧告を発信します。この勧告には詳細の説明のほか、脆弱性の修正手順が含まれています。 &suse; のセキュリティ勧告は、下記の場所で公開されます (<!-- NOTE: These are mainly expressed in English -->いずれも基本的には英語のみでの提供となります):</para>
    <itemizedlist mark="bullet" spacing="normal">
     <listitem>
      <formalpara>
-      <title>Web Page</title>
-      <para>
-       <link xlink:href="http://www.suse.com/support/security/"/>
-      </para>
+      <title>Web ページ</title>
+      <para><link xlink:href="http://www.suse.com/support/security/"/></para>
      </formalpara>
     </listitem>
     <listitem>
      <formalpara>
-      <title>Mailing List Archive</title>
-      <para>
-       <link xlink:href="http://lists.opensuse.org/opensuse-security-announce/"/>
-      </para>
+      <title>メーリングリスト</title>
+      <para><link xlink:href="http://lists.opensuse.org/opensuse-security-announce/"/></para>
      </formalpara>
     </listitem>
     <listitem>
      <formalpara>
-      <title>List of Security Announcements</title>
-      <para>
-       <link xlink:href="http://www.suse.com/support/update/"/>
-      </para>
+      <title>セキュリティアナウンス</title>
+      <para><link xlink:href="http://www.suse.com/support/update/"/></para>
      </formalpara>
     </listitem>
    </itemizedlist>
   </sect2>
 
   <sect2 xml:id="sec.apache2.security.permissions">
-   <title>DocumentRoot Permissions</title>
-   <para>
-    By default in &productname;, the <systemitem>DocumentRoot</systemitem>
-    directory <filename>/srv/www/htdocs</filename> and the CGI directory
-    <filename>/srv/www/cgi-bin</filename> belong to the user and group
-    <systemitem>root</systemitem>. You should not change these permissions. If
-    the directories are writable for all, any user can place files into them.
-    These files might then be executed by Apache with the permissions of
-    <systemitem>wwwrun</systemitem>, which may give the user unintended access
-    to file system resources. Use subdirectories of
-    <filename>/srv/www</filename> to place the
-    <systemitem>DocumentRoot</systemitem> and CGI directories for your virtual
-    hosts and make sure that directories and files belong to user and group
-    <systemitem class="username">root</systemitem>.
-   </para>
+   <title>DocumentRoot のアクセス権</title>
+   <para>&productname; では、 <systemitem>DocumentRoot</systemitem> で指定されている <filename>/srv/www/htdocs</filename> ディレクトリと、 CGI のディレクトリ <filename>/srv/www/cgi-bin</filename> については、 <systemitem>root</systemitem> のユーザおよびグループが設定されています。これらのアクセス権については、変更すべきではありません。これらのディレクトリが全てのユーザに対して書き込み可能になってしまうと、どのユーザからでもファイルを保存できることになってしまいます。ここに配置されたファイルは、 Apache 側では <systemitem>wwwrun</systemitem> というユーザの権限で実行されるため、場合によっては予期しないファイルシステムへのアクセスが為されてしまうことがあります。また、仮想ホストに対して <systemitem>DocumentRoot</systemitem> や CGI のディレクトリを設定する場合は、 <filename>/srv/www</filename> 以下のサブディレクトリを使用するものとし、それらのディレクトリに対して、 <systemitem class="username">root</systemitem> のユーザおよびグループに所属させるようにしてください。</para>
   </sect2>
 
   <sect2 xml:id="sec.apache2.security.filesystem">
-   <title>File System Access</title>
-   <para>
-    By default, access to the whole file system is denied in
-    <filename>/etc/apache2/httpd.conf</filename>. You should never overwrite
-    these directives, but specifically enable access to all directories Apache
-    should be able to read. For details, see
-    <xref linkend="sec.apache2.configuration.manually.vhost.basic_configuration"/>.
-    In doing so, ensure that no critical files, such as password or system
-    configuration files, can be read from the outside.
-   </para>
+   <title>ファイルシステムのアクセス権</title>
+   <para>既定では、ファイルシステム全体へのアクセスは <filename>/etc/apache2/httpd.conf</filename> で禁止されるようになっています。これらのディレクティブについては、削除したりしてはなりません。 Apache が読み込む必要のあるディレクトリに限定して、アクセスを許可するよう設定してください。詳しくは <xref linkend="sec.apache2.configuration.manually.vhost.basic_configuration"/> をお読みください。また、指定したディレクトリ内には、パスワードやシステムの設定ファイルなど、機密を確保する必要のあるファイルを配置していないことをご確認ください。誤って配置してしまうと、外部から読み取られてしまう危険性があります。</para>
   </sect2>
 
   <sect2 xml:id="sec.apache2.security.cgi">
-   <title>CGI Scripts</title>
-   <para>
-    Interactive scripts in PHP, SSI, or any other programming language
-    can essentially run arbitrary commands and therefore present a general
-    security issue. Scripts that will be executed from the server should only
-    be installed from sources the server administrator trusts&mdash;allowing
-    users to run their own scripts is generally not a good idea. It is also
-    recommended to do security audits for all scripts.
-   </para>
-   <para>
-    To make the administration of scripts as easy as possible, it is common
-    practice to limit the execution of CGI scripts to specific directories
-    instead of globally allowing them. The directives
-    <systemitem>ScriptAlias</systemitem> and <systemitem>Option
-    ExecCGI</systemitem> are used for configuration. The &productname; default
-    configuration does not allow execution of CGI scripts from everywhere.
-   </para>
-   <para>
-    All CGI scripts run as the same user, so different scripts can potentially
-    conflict with each other. The module suEXEC lets you run CGI scripts under
-    a different user and group.
-   </para>
+   <title>CGI スクリプト</title>
+   <para>PHP や SSI などのプログラミング言語で書かれた対話的なスクリプトは、本質的には任意のコマンドを実行することができる仕組みであるため、一般的なセキュリティ問題となりうる存在であります。サーバが実行するスクリプトについては、システム管理者が信頼する情報源から得たスクリプトだけになるようにすべきです。一般ユーザに対してスクリプトを作成させて実行できるようにするのは、適切ではありません。また、全てのスクリプトに対して、監査の仕組みを用意しておくことをお勧めします。</para>
+   <para>スクリプトの管理をできるだけ簡単に行ないたい場合は、 CGI スクリプトの実行をサーバ全体で許可するのではなく、特定のディレクトリに限定して許可するようにするとよいでしょう。それぞれ <systemitem>ScriptAlias</systemitem> と <systemitem>Option ExecCGI</systemitem> のディレクティブで設定することができます。 &productname; の既定の設定では、どこでも CGI スクリプトを実行できるような許可は与えていません。</para>
+   <para>また、 CGI スクリプトは全て同じユーザで実行されるため、場合によってはスクリプト間で競合が発生することがあります。 suEXEC モジュールを利用することで、 CGI スクリプトを異なるユーザやグループで実行することができます。</para>
   </sect2>
 
   <sect2 xml:id="sec.apache2.security.users">
-   <title>User Directories</title>
-   <para>
-    When enabling user directories (with <systemitem>mod_userdir</systemitem>
-    or <systemitem>mod_rewrite</systemitem>) you should strongly consider not
-    allowing <filename>.htaccess</filename> files, which would allow users to
-    overwrite security settings. At least you should limit the user's
-    engagement by using the directive <systemitem>AllowOverRide</systemitem>.
-    In &productname;, <filename>.htaccess</filename> files are enabled by
-    default, but the user is not allowed to overwrite any
-    <systemitem>Option</systemitem> directives when using
-    <systemitem>mod_userdir</systemitem> (see the
-    <filename>/etc/apache2/mod_userdir.conf</filename> configuration file).
-   </para>
+   <title>ユーザディレクトリ</title>
+   <para><systemitem>mod_userdir</systemitem> もしくは <systemitem>mod_rewrite</systemitem> モジュールを利用してユーザディレクトリを有効化した場合、 <filename>.htaccess</filename> ファイルへのアクセスについては、禁止しておくことを強くお勧めします。これは、このファイルがセキュリティ設定を上書きできてしまう存在であるためです。少なくとも <systemitem>AllowOverRide</systemitem> を利用して、ユーザ側で設定できる項目を制限してください。 &productname; では、 <filename>.htaccess</filename> ファイルへのアクセスは既定で有効化されていますが、 <systemitem>mod_userdir</systemitem> モジュールを利用した場合、 <systemitem>Option</systemitem> ディレクティブによる設定の上書きは許可されないようになっています (詳しくは <filename>/etc/apache2/mod_userdir.conf</filename> 設定ファイルをお読みください) 。</para>
   </sect2>
  </sect1>
  <sect1 xml:id="sec.apache2.troubleeshooting">
-  <title>Troubleshooting</title>
+  <title>トラブルシューティング</title>
 
-  <para>
-   If Apache does not start, the Web page is not accessible, or users cannot
-   connect to the Web server, it is important to find the cause of the problem.
-   Here are some typical places to look for error explanations and important
-   things to check:
-  </para>
+  <para>Apache が起動しない場合や Web ページにアクセスできない場合、もしくはユーザが Web サーバに接続できない場合は、問題の原因を突き止めることが重要です。ここでは、一般的なエラーの出力先と、主要なチェック項目について説明しています:</para>
 
   <variablelist>
    <varlistentry>
-    <term>Output of the <systemitem class="service">apache2.service</systemitem>
-     subcommand:</term>
+    <term><systemitem class="service">apache2.service</systemitem> サブコマンドの出力:</term>
     <listitem>
-     <para>
-      Instead of starting and stopping the Web server with the binary
-      <filename>/usr/sbin/apache2ctl</filename>, rather use the
-      <command>systemctl</command> commands instead (described in <xref linkend="sec.apache2.start_stop"/>). <command>systemctl status
-      apache2</command> is verbose about errors, and it even provides tips and
-      hints for fixing configuration errors.
-     </para>
+     <para><filename>/usr/sbin/apache2ctl</filename> バイナリで Web サーバを開始したり停止したりするのではなく、 <command>systemctl</command> コマンドをお使いください (詳しくは <xref linkend="sec.apache2.start_stop"/> をお読みください) 。なお、 <command>systemctl status apache2</command> と入力して実行すると、エラーに関する詳細な情報を出力することができます。ここから設定エラーを修正するためのヒントが得られます。</para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Log Files and Verbosity</term>
+    <term>ログファイルと饒舌性</term>
     <listitem>
-     <para>
-      In case of both fatal and nonfatal errors, check the Apache log files for
-      causes, mainly the error log file located at
-      <filename>/var/log/apache2/error_log</filename> by default. Additionally,
-      you can control the verbosity of the logged messages with the
-      <systemitem>LogLevel</systemitem> directive if more detail is needed in
-      the log files.
-     </para>
+     <para>致命的なエラーであってもそうでなくても、 Apache のログファイルを調査することで原因を調査することができます。既定の設定では、主なエラーログは <filename>/var/log/apache2/error_log</filename> に出力されます。これに加えて <systemitem>LogLevel</systemitem> ディレクティブを使用することで、ログファイル内により詳しい情報を出力することができます。</para>
      <tip>
-      <title>A Simple Test</title>
-      <para>
-       Watch the Apache log messages with the command <command>tail -F
-       /var/log/apache2/<replaceable>MY_ERROR_LOG</replaceable></command>.
-       Then run
-       <command>systemctl restart apache2</command>. Now, try to connect with a
-       browser and check the output.
-      </para>
+      <title>シンプルなテストについて</title>
+      <para>まずは <command>tail -F /var/log/apache2/<replaceable>エラーログファイル名</replaceable></command> を実行して、 Apache のログファイルを監視してください。監視を続けた状態で <command>systemctl restart apache2</command> を実行し、ブラウザで接続してみて出力される内容を確認すると良いでしょう。</para>
      </tip>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Firewall and Ports</term>
+    <term>ファイアウオールとポート</term>
     <listitem>
-     <para>
-      A common mistake is to not open the ports for Apache in the firewall
-      configuration of the server. If you configure Apache with &yast;, there
-      is a separate option available to take care of this specific issue (see
-      <xref linkend="sec.apache2.configuration.yast"/>). If you are configuring
-      Apache manually, open firewall ports for HTTP and HTTPS via &yast;'s
-      firewall module.
-     </para>
+     <para>良くあるミスとして、 Apache が待ち受けているポートをファイアウオール側で開いていないという問題があります。 &yast; で Apache を設定した場合は、この問題に対応するためのオプションが用意されています (詳しくは <xref linkend="sec.apache2.configuration.yast"/> をお読みください) 。 Apache を手作業で設定している場合は、 &yast; のファイアウオールモジュールを利用して、 HTTP および HTTPS に対するファイアウオールのポートを開いてください。</para>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para>
-   If the error cannot be tracked down with any of these, check the online
-   Apache bug database at
-   <link xlink:href="http://httpd.apache.org/bug_report.html"/>. Additionally,
-   the Apache user community can be reached via a mailing list available at
-   <link xlink:href="http://httpd.apache.org/userslist.html"/>.
-  </para>
+  <para>これらのヒントを利用しても原因がわからない場合は、 <link xlink:href="http://httpd.apache.org/bug_report.html"/> にある Apache のバグデータベースを利用することもできます。これに加えて、 Apache ユーザコミュニティのメーリングリストをお使いいただくこともできます。詳しくは <link xlink:href="http://httpd.apache.org/userslist.html"/> をお読みください。</para>
  </sect1>
  <sect1 xml:id="sec.apache2.more_information">
-  <title>For More Information</title>
+  <title>さらなる情報</title>
 
-  <para>
-   The package <systemitem>apache2-doc</systemitem> contains the complete
-   Apache manual in various localizations for local installation and reference.
-   It is not installed by default&mdash;the quickest way to install it is to
-   use the command <command>zypper in apache2-doc</command>. having been
-   installed, the Apache manual is available at
-   <link xlink:href="http://localhost/manual/"/>. You may also access it on the
-   Web at <link xlink:href="http://httpd.apache.org/docs-2.4/"/>. SUSE-specific
-   configuration hints are available in the directory
-   <filename>/usr/share/doc/packages/apache2/README.*</filename>.
-  </para>
+  <para><systemitem>apache2-doc</systemitem> パッケージには、様々な言語に対応した Apache の完全マニュアルが用意されています。このパッケージは既定ではインストールされていません。最も手短かにインストールするには、 <command>zypper in apache2-doc</command> コマンドをお使いください。インストールを行なうと、 Apache のマニュアルが <link xlink:href="http://localhost/manual/"/> からアクセスできるようになります。また、オンライン版のマニュアルにアクセスするには、 <link xlink:href="http://httpd.apache.org/docs-2.4/"/> をご利用ください。また、 SUSE 固有の設定ヒントについては、 <filename>/usr/share/doc/packages/apache2/README.*</filename> 内に用意されています。</para>
 
   <sect2 xml:id="sec.apache2.more_information.apache22">
    <title>Apache 2.4</title>
-   <para>
-    For a list of new features in Apache 2.4, refer to
-    <link xlink:href="http://httpd.apache.org/docs/2.4/new_features_2_4.html"/>.
-    Information about upgrading from version 2.2 to 2.4 is available at
-    <link xlink:href="http://httpd.apache.org/docs-2.4/upgrading.html"/>.
-   </para>
+   <para>Apache 2.4 での新機能の一覧については、 <link xlink:href="http://httpd.apache.org/docs/2.4/new_features_2_4.html"/> をお読みください。また、 2.2 から 2.4 へのアップグレードに関する情報は、 <link xlink:href="http://httpd.apache.org/docs-2.4/upgrading.html"/> にて提供されています。</para>
   </sect2>
 
   <sect2 xml:id="sec.apache2.more_information.modules">
-   <title>Apache Modules</title>
-   <para>
-    More information about external Apache modules that are briefly described
-    in <xref linkend="sec.apache2.modules.external"/> is available at the
-    following locations:
-   </para>
+   <title>Apache モジュール</title>
+   <para>Apache の外部モジュールに関する情報については、概要説明が <xref linkend="sec.apache2.modules.external"/> に用意されています。より詳しくお読みになりたい場合は、下記の場所をご覧ください:</para>
    <variablelist>
     <varlistentry>
-     <term><systemitem>mod_apparmor</systemitem>
-     </term>
+     <term><systemitem>mod_apparmor</systemitem></term>
      <listitem>
-      <para>
-       <link xlink:href="http://en.opensuse.org/SDB:AppArmor"/>
-      </para>
+      <para><link xlink:href="http://ja.opensuse.org/SDB:AppArmor"/></para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_php5</systemitem>
-     </term>
+     <term><systemitem>mod_php5</systemitem></term>
      <listitem>
-      <para>
-       <link xlink:href="http://www.php.net/manual/en/install.unix.apache2.php"/>
-      </para>
+      <para><link xlink:href="http://www.php.net/manual/ja/install.unix.apache2.php"/></para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_python</systemitem>
-     </term>
+     <term><systemitem>mod_python</systemitem></term>
      <listitem>
-      <para>
-       <link xlink:href="http://www.modpython.org/"/>
-      </para>
+      <para><link xlink:href="http://www.modpython.org/"/></para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><systemitem>mod_security</systemitem>
-     </term>
+     <term><systemitem>mod_security</systemitem></term>
      <listitem>
-      <para>
-       <link xlink:href="http://modsecurity.org/"/>
-      </para>
+      <para><link xlink:href="http://modsecurity.org/"/></para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect2>
 
   <sect2 xml:id="sec.apache2.more_information.cgi">
-   <title>Development</title>
-   <para>
-    More information about developing Apache modules or about getting involved
-    in the Apache Web server project are available at the following locations:
-   </para>
+   <title>開発</title>
+   <para>Apache のモジュール開発に関する情報や、 Apache Web サーバ自身の開発に参加したい場合は、下記をお読みになることをお勧めします:</para>
    <variablelist>
     <varlistentry>
-     <term>Apache Developer Information</term>
+     <term>Apache 開発者向け情報</term>
      <listitem>
-      <para>
-       <link xlink:href="http://httpd.apache.org/dev/"/>
-      </para>
+      <para><link xlink:href="http://httpd.apache.org/dev/"/></para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Apache Developer Documentation</term>
+     <term>Apache 開発者向けドキュメンテーション</term>
      <listitem>
-      <para>
-       <link xlink:href="http://httpd.apache.org/docs/2.4/developer/"/>
-      </para>
+      <para><link xlink:href="http://httpd.apache.org/docs/2.4/developer/"/></para>
      </listitem>
     </varlistentry>
    </variablelist>
   </sect2>
 
   <sect2 xml:id="sec.apache2.more_information.miscellaneous_sources" os="sles;sled">
-   <title>Miscellaneous Sources</title>
-   <para>
-    If you experience difficulties specific to Apache in &productname;, take a
-    look at the Technical Information Search at
-    <link xlink:href="http://www.suse.com/support"/>. The history of Apache is
-    provided at <link xlink:href="http://httpd.apache.org/ABOUT_APACHE.html"/>.
-    This page also explains why the server is called Apache.
-   </para>
+   <title>その他の情報</title>
+   <para>&productname; 内の Apache に固有の問題に直面した場合は、まず <link xlink:href="http://www.suse.com/support"/> にある Technical Information Search をお使いください。また、 Apache の履歴については <link xlink:href="http://httpd.apache.org/ABOUT_APACHE.html"/> をお読みください。こちらには、サーバが Apache と呼ばれるようになった理由も説明されています。</para>
   </sect2>
  </sect1>
 </chapter>
