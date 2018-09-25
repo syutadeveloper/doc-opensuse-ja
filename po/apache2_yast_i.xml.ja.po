@@ -1,26 +1,29 @@
+# translation of apache2_yast_i.xml.po to Japanese
 # Japanese translations for PACKAGE package
 # PACKAGE パッケージに対する英訳.
-# Automatically generated, 2018.
 #
+# Automatically generated, 2018.
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: apache2_yast_i.xml\n"
 "Report-Msgid-Bugs-To: https://github.com/belphegor-belbel/doc-opensuse-ja\n"
 "POT-Creation-Date: 2018-06-28 08:14+0000\n"
-"PO-Revision-Date: 2018-06-28 07:13+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-09-25 14:18+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #. Tag: title
 #: apache2_yast_i.xml:9
 #, no-c-format
 msgid "Configuring Apache with &yast;"
-msgstr ""
+msgstr "&yast; による Apache の設定"
 
 #. Tag: para
 #: apache2_yast_i.xml:16
@@ -36,12 +39,21 @@ msgid ""
 "more information, see <xref linkend=\"sec.apache2.configuration.yast."
 "server_configuration\"/> ."
 msgstr ""
+"&yast; を利用して Web サーバを管理するには、 &yast; を起動して <menuchoice>"
+" <guimenu>ネットワークサービス</guimenu> <guimenu>HTTP サーバ</guimenu> </menuchoice> "
+"と選択していきます。初めてモジュールを起動した場合は <guimenu>HTTP サーバ"
+"ウイザード</guimenu> が起動し、サーバの管理に関わるいくつかの基本設定を"
+"行なうことになります。ウイザードを完了すると、 <guimenu>HTTP サーバの設定"
+"</guimenu> ダイアログが表示されるようになり、これ以降は、 <guimenu>HTTP サーバ</guimenu> "
+"モジュールを起動すると、このダイアログが表示されるようになります。詳しくは"
+" <xref linkend=\"sec.apache2.configuration.yast.server_configuration\"/> "
+"をお読みください。"
 
 #. Tag: title
 #: apache2_yast_i.xml:28
 #, no-c-format
 msgid "HTTP Server Wizard"
-msgstr ""
+msgstr "HTTP サーバウイザード"
 
 #. Tag: para
 #: apache2_yast_i.xml:29
@@ -51,12 +63,15 @@ msgid ""
 "dialog, you may enter the expert configuration mode to make even more "
 "specific settings."
 msgstr ""
+"HTTP サーバウイザードは 5 つのステップから構成されています。ダイアログの最後の"
+"ステップでは、熟練者向け設定モードに入ることができますので、ここからさらに細かい"
+"設定を行なうことができます。"
 
 #. Tag: title
 #: apache2_yast_i.xml:35
 #, no-c-format
 msgid "Network Device Selection"
-msgstr ""
+msgstr "ネットワークデバイスの選択"
 
 #. Tag: para
 #: apache2_yast_i.xml:36
@@ -70,6 +85,13 @@ msgid ""
 "on all network interfaces (IP addresses) on port <systemitem>80</"
 "systemitem> ."
 msgstr ""
+"ここでは、 Apache がリクエストを待ち受けるネットワークインターフェイスとポートを"
+"指定します。ここでは既存のネットワークインターフェイスと IP アドレスの組み合わせ"
+"のうち、任意のものを選択することができます。なお、ポートについては、他のサービスが"
+"利用していないことを前提に、任意のポート (いわゆる well-known ポートや registered "
+"ポート、もしくは動的なポートや独自のポートなど) を設定することができます。既定では"
+"全てのネットワークインターフェイス (IP アドレス) に対して、ポート <systemitem>80"
+"</systemitem> で待ち受けるようになっています。"
 
 #. Tag: para
 #: apache2_yast_i.xml:45
@@ -83,18 +105,25 @@ msgid ""
 "interfaces, click <guimenu>Firewall Details</guimenu> to specify on which "
 "interface(s) the port(s) should be opened."
 msgstr ""
+"Web サーバが待ち受けるポートに対して、ファイアウオールでポートを開きたい場合は、"
+" <guimenu>ファイアウオールでポートを開く</guimenu> を選択します。これは LAN や WAN "
+"のほか、インターネットから Web サーバへのアクセスを受け付ける際に必要な設定です。"
+"ポートを閉じたままにしておいた場合は Web サーバ自身からしかアクセスできなくなります"
+"ので、テスト用途にのみ有用です。また、複数のネットワークインターフェイスを設定"
+"している場合は、 <guimenu>ファイアウオールの詳細</guimenu> を押して、どのネットワーク"
+"インターフェイスを利用してポートを開くのかを選択することができます。"
 
 #. Tag: para
 #: apache2_yast_i.xml:54
 #, no-c-format
 msgid "Click <guimenu>Next</guimenu> to continue with the configuration."
-msgstr ""
+msgstr "<guimenu>次へ</guimenu> を押すと設定を続けることができます。"
 
 #. Tag: title
 #: apache2_yast_i.xml:59
 #, no-c-format
 msgid "Modules"
-msgstr ""
+msgstr "モジュール"
 
 #. Tag: para
 #: apache2_yast_i.xml:60
@@ -106,12 +135,16 @@ msgid ""
 "to <xref linkend=\"sec.apache2.configuration.yast.server_configuration."
 "modules\"/> . Click <guimenu>Next</guimenu> to advance to the next dialog."
 msgstr ""
+"<guimenu>モジュール</guimenu> 設定オプションでは、 Web サーバ側で動作させる"
+"スクリプト言語の有効化と無効化を行なうことができます。他のモジュールを有効化"
+"もしくは無効化したい場合は、 <xref linkend=\"sec.apache2.configuration.yast.server_configuration."
+"modules\"/> をお読みください。 <guimenu>次へ</guimenu> を押すと次のダイアログに進みます。"
 
 #. Tag: title
 #: apache2_yast_i.xml:70
 #, no-c-format
 msgid "Default Host"
-msgstr ""
+msgstr "既定のホスト"
 
 #. Tag: para
 #: apache2_yast_i.xml:71
@@ -124,6 +157,11 @@ msgid ""
 "<emphasis>default host</emphasis> . Each virtual host inherits the default "
 "host's configuration."
 msgstr ""
+"この設定画面では、既定の Web サーバに関する設定を行ないます。 <xref "
+"linkend=\"sec.apache2.configuration.manually.vhost\"/> でも説明しているとおり、"
+" Apache では複数の仮想ホストを単一の物理マシンで賄うことができます。設定ファイル内で"
+"最初に設定した仮想ホストが <emphasis>既定のホスト</emphasis> として設定され、"
+"それぞれの仮想ホストでは、その既定のホスト設定を引き継いで動作するようになります。"
 
 #. Tag: para
 #: apache2_yast_i.xml:79
@@ -134,24 +172,28 @@ msgid ""
 "guimenu> . To add new directives, click <guimenu>Add</guimenu> . To delete a "
 "directive, select it and click <guimenu>Delete</guimenu> ."
 msgstr ""
+"ホストの設定 (<emphasis>ディレクティブ</emphasis> とも呼びます) を編集するには、"
+"表内で対応する項目を選択して <guimenu>選択</guimenu> を押します。新しいディレクティブ"
+"を追加するには、 <guimenu>追加</guimenu> を押します。ディレクティブを削除するには、"
+"削除したい項目を選んで <guimenu>削除</guimenu> を押します。"
 
 #. Tag: title
 #: apache2_yast_i.xml:87
 #, no-c-format
 msgid "HTTP Server Wizard: Default Host"
-msgstr ""
+msgstr "HTTP サーバウイザード: 既定のホスト"
 
 #. Tag: para
 #: apache2_yast_i.xml:97
 #, no-c-format
 msgid "Here is list of the default settings of the server:"
-msgstr ""
+msgstr "ここではサーバに対する既定の設定を行ないます:"
 
 #. Tag: term
 #: apache2_yast_i.xml:102
 #, no-c-format
 msgid "<systemitem>Document Root</systemitem>"
-msgstr ""
+msgstr "<systemitem>ドキュメントルート</systemitem>"
 
 #. Tag: para
 #: apache2_yast_i.xml:105
@@ -160,12 +202,14 @@ msgid ""
 "Path to the directory from which Apache serves files for this host. "
 "<filename>/srv/www/htdocs</filename> is the default location."
 msgstr ""
+"このホストに対するアクセスが届いた場合、 Apache が提供すべきファイルの"
+"ディレクトリを指定します。既定値は <filename>/srv/www/htdocs</filename> です。"
 
 #. Tag: term
 #: apache2_yast_i.xml:112
 #, no-c-format
 msgid "<systemitem>Alias</systemitem>"
-msgstr ""
+msgstr "<systemitem>Alias</systemitem>"
 
 #. Tag: para
 #: apache2_yast_i.xml:115
@@ -176,6 +220,10 @@ msgid ""
 "the <literal>Document Root</literal> in the file system can be accessed via "
 "a URL aliasing that path."
 msgstr ""
+"<systemitem>Alias</systemitem> ディレクティブを使用することで、 URL を物理的な"
+"ファイルシステムの場所に割り当てることができます。これにより、ファイルシステム内の"
+" <systemitem>ドキュメントルート</systemitem> 以外の場所を、 URL に割り当てることが"
+"できるようになります。"
 
 #. Tag: para
 #: apache2_yast_i.xml:121
@@ -185,12 +233,16 @@ msgid ""
 "filename> points to <filename>/usr/share/apache2/icons</filename> for the "
 "Apache icons displayed in the directory index view."
 msgstr ""
+"既定の &productname; では、 <filename>/icons</filename> が <filename>/usr/share/"
+"apache2/icons</filename> を指すように <systemitem>Alias</systemitem> の設定が"
+"行なわれていて、これによってディレクトリ一覧を表示した場合に、 Apache が提供する"
+"アイコンを表示するようになっています。"
 
 #. Tag: term
 #: apache2_yast_i.xml:130
 #, no-c-format
 msgid "<systemitem>ScriptAlias</systemitem>"
-msgstr ""
+msgstr "<systemitem>ScriptAlias</systemitem>"
 
 #. Tag: para
 #: apache2_yast_i.xml:133
@@ -202,12 +254,16 @@ msgid ""
 "designates the target directory as a CGI location, meaning that CGI scripts "
 "should be executed in that location."
 msgstr ""
+"<systemitem>Alias</systemitem> ディレクティブと同様に、 <systemitem>ScriptAlias"
+"</systemitem> ではファイルシステムと URL との間の対応付けを設定します。ただし、"
+" <systemitem>ScriptAlias</systemitem> では CGI のディレクトリを設定する点が"
+"異なり、そのディレクトリの中ではスクリプトを動作させることができるようになります。"
 
 #. Tag: term
 #: apache2_yast_i.xml:144
 #, no-c-format
 msgid "<systemitem>Directory</systemitem>"
-msgstr ""
+msgstr "<systemitem>Directory</systemitem>"
 
 #. Tag: para
 #: apache2_yast_i.xml:147
@@ -216,6 +272,8 @@ msgid ""
 "With <systemitem>Directory</systemitem> settings, you can enclose a group of "
 "configuration options that will only apply to the specified directory."
 msgstr ""
+"<systemitem>Directory</systemitem> 設定を指定することで、特定のディレクトリにのみ"
+"適用する設定オプションを定義することができるようになります。"
 
 #. Tag: para
 #: apache2_yast_i.xml:152
@@ -226,12 +284,16 @@ msgid ""
 "www/cgi-bin</filename> are configured here. It should not be necessary to "
 "change the defaults."
 msgstr ""
+"ここでは、それぞれ <filename>/srv/www/htdocs</filename> , <filename>/usr/share/"
+"apache2/icons</filename> , <filename>/srv/www/cgi-bin</filename> の各ディレクトリに"
+"対するアクセスおよび表示オプションが設定されています。これらの値は特に変更する必要は"
+"ないはずです。"
 
 #. Tag: term
 #: apache2_yast_i.xml:162
 #, no-c-format
 msgid "<systemitem>Include</systemitem>"
-msgstr ""
+msgstr "<systemitem>Include</systemitem>"
 
 #. Tag: para
 #: apache2_yast_i.xml:165
@@ -246,12 +308,20 @@ msgid ""
 "manual.conf</filename> , the <filename>apache2-manual</filename> "
 "configuration file is included."
 msgstr ""
+"<systemitem>Include</systemitem> ディレクティブを指定することで、追加の設定ファイルを"
+"指定することができます。既定では 2 種類の <systemitem>Include</systemitem> ディレクティブ"
+"が設定されています。 1 つは <filename>/etc/apache2/conf.d/</filename> ディレクトリに"
+"対する設定で、こちらは外部モジュールが提供する設定ファイルを取り込むためのものです。"
+"このディレクティブを使用することで、そのディレクトリ内に存在していて <filename>.conf</filename> "
+"で終わるファイル全てを取り込むことができます。もう 1 つは <filename>/etc/apache2/conf.d/apache2-"
+"manual.conf</filename> の指定で、こちらは <filename>apache2-manual</filename> の"
+"設定ファイルを取り込むためのものです。"
 
 #. Tag: term
 #: apache2_yast_i.xml:178
 #, no-c-format
 msgid "<systemitem>Server Name</systemitem>"
-msgstr ""
+msgstr "<systemitem>サーバ名</systemitem>"
 
 #. Tag: para
 #: apache2_yast_i.xml:181
@@ -263,12 +333,17 @@ msgid ""
 "address. You cannot choose an arbitrary name here&mdash;the server must be "
 "<quote>known</quote> under this name."
 msgstr ""
+"ここでは、 Web サーバがアクセスする際にクライアントが使用する既定の URL を指定します。"
+"<literal>http://<replaceable>FQDN</replaceable>/</literal> の形式でアクセスできる"
+"完全修飾ドメイン名 (FQDN) を指定するか、もしくは IP アドレスで指定してください。"
+"なお、ここでは任意の名前を指定することはできません。サーバ名には <quote>既知の</quote> "
+"名前を指定しなければなりません。"
 
 #. Tag: term
 #: apache2_yast_i.xml:191
 #, no-c-format
 msgid "<systemitem>Server Administrator E-Mail</systemitem>"
-msgstr ""
+msgstr "<systemitem>サーバ管理者のメールアドレス</systemitem>"
 
 #. Tag: para
 #: apache2_yast_i.xml:194
@@ -277,6 +352,8 @@ msgid ""
 "E-mail address of the server administrator. This address is, for example, "
 "shown on error pages Apache creates."
 msgstr ""
+"サーバ管理者の電子メールアドレスを指定します。このアドレスは、たとえば Apache が"
+"生成するエラーページなどに記載されます。"
 
 #. Tag: para
 #: apache2_yast_i.xml:222
@@ -285,12 +362,14 @@ msgid ""
 "After finishing with the <guimenu>Default Host</guimenu> step, click "
 "<guimenu>Next</guimenu> to continue with the configuration."
 msgstr ""
+"<guimenu>既定のホスト</guimenu> のステップを完了したら、 <guimenu>次へ</guimenu> "
+"を押して設定を続けてください。"
 
 #. Tag: title
 #: apache2_yast_i.xml:228
 #, no-c-format
 msgid "Virtual Hosts"
-msgstr ""
+msgstr "仮想ホスト"
 
 #. Tag: para
 #: apache2_yast_i.xml:229
@@ -301,6 +380,10 @@ msgid ""
 "have not made manual changes prior to starting the &yast; HTTP wizard, no "
 "virtual host is present."
 msgstr ""
+"このステップでは、ウイザードは既に設定済みの仮想ホストの一覧を表示します (詳しくは"
+" <xref linkend=\"sec.apache2.configuration.manually.vhost\"/> をお読みください) 。"
+" &yast; の HTTP ウイザードを起動するまでに何も手作業で設定していない場合は、"
+"仮想ホストが何も表示されません。"
 
 #. Tag: para
 #: apache2_yast_i.xml:235
@@ -314,6 +397,13 @@ msgid ""
 "how a host is identified (name based or IP based). Specify the name or IP "
 "address with <guimenu>Change Virtual Host ID</guimenu>"
 msgstr ""
+"仮想ホストを追加するには、 <guimenu>追加</guimenu> を押してダイアログを表示させ、"
+" <guimenu>サーバ名</guimenu> , <guimenu>サーバコンテンツのルート</guimenu> "
+"( <systemitem>DocumentRoot</systemitem> ), <guimenu>管理者のメールアドレス</guimenu> "
+"など、仮想ホストに関する基本設定を行なってください。また、 <guimenu>サーバの解決</guimenu> "
+"では、ホストの識別方法を指定することができます (名前ベースまたは IP アドレスベース) 。"
+"また、 <guimenu>仮想ホスト ID の変更</guimenu> では、名前もしくは IP アドレスを"
+"指定することができます。"
 
 #. Tag: para
 #: apache2_yast_i.xml:244
@@ -322,6 +412,8 @@ msgid ""
 "Clicking <guimenu>Next</guimenu> advances to the second part of the virtual "
 "host configuration dialog."
 msgstr ""
+"<guimenu>次へ</guimenu> を押すと、仮想ホストの設定ダイアログの 2 番目に移動する"
+"ことができます。"
 
 #. Tag: para
 #: apache2_yast_i.xml:248
@@ -340,12 +432,25 @@ msgid ""
 "made available on the server under <literal>http://www.&exampledomain;/"
 "~<replaceable>USER</replaceable></literal> ."
 msgstr ""
+"仮想ホストに対する 2 番目の設定ダイアログでは、 CGI スクリプトの有効化を行なう"
+"かどうかや、これらのスクリプトの配置先ディレクトリをなどを設定することができます。"
+"また、 SSL の有効化についても設定を行なうことができます。 SSL を設定する場合は、"
+"証明書のパスについても設定を行なわなければなりません。 SSL と証明書について、"
+"詳しくは <xref linkend=\"sec.apache2.ssl.configuration\"/> をお読みください。"
+"また、 <guimenu>ディレクトリインデックス</guimenu> では、クライアントからディレクトリに"
+"対してアクセスがあった場合に、表示するファイルを指定することができます (既定では"
+" <filename>index.html</filename> を表示します) 。必要であれば、スペース区切りで"
+"複数のファイルを指定することもできます。また、 <guimenu>公開 HTML を有効にする</guimenu> "
+"を選択すると、各ユーザの公開ディレクトリ (( <filename>~<replaceable>ユーザ名</replaceable>"
+"/public_html/</filename> ) の内容を、 <literal>http://www.&exampledomain;/"
+"~<replaceable>ユーザ名</replaceable></literal> のような URL で提供することが"
+"できるようになります。"
 
 #. Tag: title
 #: apache2_yast_i.xml:264
 #, no-c-format
 msgid "Creating Virtual Hosts"
-msgstr ""
+msgstr "仮想ホストの作成について"
 
 #. Tag: para
 #: apache2_yast_i.xml:265
@@ -355,12 +460,16 @@ msgid ""
 "hosts, each host name must be resolved on the network. If using IP-based "
 "virtual hosts, you can assign only one host to each IP address available."
 msgstr ""
+"仮想ホストは完全に自由に作成できるというものではありません。名前ベースの仮想ホストを"
+"使用する場合、それぞれのホスト名はネットワーク内で解決可能な名前でなければなりません。"
+" IP ベースの仮想ホストを使用する場合は、それぞれの IP アドレスに対して 1 つの"
+"仮想ホストを割り当てることができます。"
 
 #. Tag: title
 #: apache2_yast_i.xml:274
 #, no-c-format
 msgid "Summary"
-msgstr ""
+msgstr "概要"
 
 #. Tag: para
 #: apache2_yast_i.xml:275
@@ -375,18 +484,26 @@ msgid ""
 "the dialog described in <xref linkend=\"sec.apache2.configuration.yast."
 "server_configuration\"/> ."
 msgstr ""
+"これがウイザードの最後のステップです。ここでは、 Apache サーバの開始方法 (システム"
+"起動時に自動的に開始するか、もしくは手作業で開始するか) を指定することができます。"
+"また、ここまでに設定してきた内容の概要も表示されます。ここに表示された設定で"
+"問題か無ければ、 <guimenu>完了</guimenu> を押して設定を完了させてください。"
+"何らかの項目を変更したい場合は、 <guimenu>戻る</guimenu> を押して、対応する"
+"ダイアログまで戻っていってください。また、 <guimenu>HTTP サーバの熟練者向け設定</guimenu> "
+"を押すと、 <xref linkend=\"sec.apache2.configuration.yast.server_configuration\"/> "
+"で示されているダイアログを表示することができます。"
 
 #. Tag: title
 #: apache2_yast_i.xml:285
 #, no-c-format
 msgid "HTTP Server Wizard: Summary"
-msgstr ""
+msgstr "HTTP サーバウイザード: 概要"
 
 #. Tag: title
 #: apache2_yast_i.xml:298
 #, no-c-format
 msgid "HTTP Server Configuration"
-msgstr ""
+msgstr "HTTP サーバの設定"
 
 #. Tag: para
 #: apache2_yast_i.xml:299
@@ -400,12 +517,18 @@ msgid ""
 "<guimenu>Finish</guimenu> to make them effective. Clicking <guimenu>Abort</"
 "guimenu> leaves the configuration module and discards your changes."
 msgstr ""
+"<guimenu>HTTP サーバの設定</guimenu> ダイアログでは、ウイザードで提示されるもの"
+"よりも細かい設定を行なうことができます (ウイザードは、お使いの Web サーバを初めて"
+"設定しようとした場合にのみ表示されます) 。このダイアログは、下記に説明する 4 つの"
+"タブから構成されています。ここで設定した内容は即時には反映されず、 <guimenu>完了</guimenu> "
+"を押すことによって反映されるようになっています。また、 <guimenu>中止</guimenu> "
+"を押すと、設定モジュールを終了して変更点を破棄することができます。"
 
 #. Tag: title
 #: apache2_yast_i.xml:310
 #, no-c-format
 msgid "Listen Ports and Addresses"
-msgstr ""
+msgstr "待ち受けるポートとアドレス"
 
 #. Tag: para
 #: apache2_yast_i.xml:311
@@ -423,6 +546,18 @@ msgid ""
 "you have multiple network interfaces, click <guimenu>Firewall Details</"
 "guimenu> to specify on which interface(s) the port(s) should be opened."
 msgstr ""
+"<guimenu>HTTP サービス</guimenu> の枠内では、 Apache を動作させる (<guimenu>"
+"有効</guimenu>) のか、もしくは停止させる (<guimenu>無効</guimenu>) のかを選択"
+"することができます。また、 <guimenu>待ち受けるポート</guimenu> では、サーバが"
+"待ち受けるべきアドレスやポートを <guimenu>追加</guimenu> , <guimenu>編集</guimenu> ,"
+" <guimenu>削除</guimenu> することができます。既定では全てのインターフェイスに"
+"対して、ポート <literal>80</literal> で待ち受けるように設定されています。また、"
+"外部から Web サーバに対してアクセスができるようにするため、 <guimenu>ファイア"
+"ウオールでポートを開く</guimenu> についてもチェックしておくべきでしょう。"
+"ポートを閉じたままにしておくと、外部から Web サーバに対してアクセスすることが"
+"できなくなりますので、テスト用途の場合にのみ役立ちます。また、複数のネットワーク"
+"インターフェイスを設定している場合は、 <guimenu>ファイアウオールの詳細</guimenu> "
+"を押して、どのインターフェイスのどのポートを開くべきなのかを設定することもできます。"
 
 #. Tag: para
 #: apache2_yast_i.xml:325
@@ -435,18 +570,23 @@ msgid ""
 "start_stop\"/> . These commands are effective immediately and their log "
 "messages are also displayed immediately."
 msgstr ""
+"<guimenu>ログファイル</guimenu> では、アクセスログファイルやエラーログファイルを"
+"表示することができます。これは設定のテストを行なう場合に有用な機能です。ログファイルは"
+"異なるウインドウ内に表示され、ここから Web サーバを再起動したり再読み込みさせたりする"
+"ことができます。詳しくは <xref linkend=\"sec.apache2.start_stop\"/> をお読みください。"
+"これらのコマンドはその場で動作しますので、ログメッセージについても最新のものを読むことができます。"
 
 #. Tag: title
 #: apache2_yast_i.xml:334
 #, no-c-format
 msgid "HTTP Server Configuration: Listen Ports and Addresses"
-msgstr ""
+msgstr "HTTP サーバの設定: 待ち受けポートとアドレスの設定"
 
 #. Tag: title
 #: apache2_yast_i.xml:346
 #, no-c-format
 msgid "Server Modules"
-msgstr ""
+msgstr "サーバモジュール"
 
 #. Tag: para
 #: apache2_yast_i.xml:347
@@ -457,18 +597,23 @@ msgid ""
 "guimenu> to add a new module that is already installed but not yet listed. "
 "Learn more about modules in <xref linkend=\"sec.apache2.modules\"/> ."
 msgstr ""
+"ここでは <guimenu>状態の切り替え</guimenu> を押すことで、 Apache2 モジュールの"
+"状態を変更 (有効もしくは無効) することができます。既にインストールされているものの、"
+"一覧には表示されないモジュールがある場合は、 <guimenu>モジュールの追加</guimenu> "
+"を押してください。モジュールに関する詳細は、 <xref linkend=\"sec.apache2.modules\"/> "
+"をお読みください。"
 
 #. Tag: title
 #: apache2_yast_i.xml:354
 #, no-c-format
 msgid "HTTP Server Configuration: Server Modules"
-msgstr ""
+msgstr "HTTP サーバの設定: サーバモジュール"
 
 #. Tag: title
 #: apache2_yast_i.xml:366
 #, no-c-format
 msgid "Main Host or Hosts"
-msgstr ""
+msgstr "メインホストとホスト"
 
 #. Tag: para
 #: apache2_yast_i.xml:367
@@ -478,3 +623,7 @@ msgid ""
 "linkend=\"sec.apache2.configuration.yast.wizard.default_host\"/> and <xref "
 "linkend=\"sec.apache2.configuration.yast.wizard.virtual_hosts\"/> ."
 msgstr ""
+"これらのダイアログは説明済みのものと同じです。それぞれ <xref "
+"linkend=\"sec.apache2.configuration.yast.wizard.default_host\"/> と <xref "
+"linkend=\"sec.apache2.configuration.yast.wizard.virtual_hosts\"/> をお読みください。"
+
